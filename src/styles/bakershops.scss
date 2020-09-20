@@ -1,0 +1,231 @@
+.bakershops {
+  background-color: $c-accentLight;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 57px;
+    margin-bottom: 40px;
+    @include container;
+  }
+
+  &__title {
+    margin-bottom: 41px;
+
+    @media (max-width: $tabletBreakpoint) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__search {
+    display: flex;
+    gap: 32px;
+    align-items: flex-end;
+    margin-bottom: 55px;
+    width: 720px;
+
+    @media (max-width: $tabletBreakpoint) {
+      display: grid;
+      width: 100%;
+    }
+  }
+
+  &__select {
+    border-bottom: 1px solid $c-basic;
+    height: 31px;
+    opacity: 0.5;
+
+    &--city {
+      width: 173px;
+    }
+
+    &--address {
+      width: 323px;
+    }
+
+    @media (max-width: $tabletBreakpoint) {
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    justify-self: center;
+  }
+
+  &__map {
+    position: relative;
+
+    @media (max-width: $mobileBreakpoint) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__map-ua {
+    @media (max-width: 900px) {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &__quantity {
+    position: absolute;
+    top: 0;
+
+    &--lviv {
+      left: 8%;
+      top: 25%;
+    }
+
+    &--lutsk {
+      left: 15%;
+      top: 9%;
+    }
+
+    &--zhytomyr {
+      left: 32%;
+      top: 12%;
+    }
+
+    &--vinnytsya {
+      left: 34%;
+      top: 39%;
+    }
+
+    &--kyiv {
+      left: 45%;
+      top: 24%;
+    }
+
+    &--chernihiv {
+      left: 52%;
+      top: 8%;
+    }
+
+    &--poltava {
+      left: 62%;
+      top: 26%;
+    }
+
+    &--kharkiv {
+      left: 78%;
+      top: 27%;
+    }
+
+    &--dnipro {
+      left: 68%;
+      top: 44%;
+    }
+
+    &--kherson {
+      left: 63%;
+      top: 64%;
+    }
+  }
+
+  &__cookie {
+    position: absolute;
+    top: 0;
+    width: 41px;
+    height: 41px;
+    background: url(../images/logo.svg) no-repeat center;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: $tabletBreakpoint) {
+      background-size: 80%;
+    }
+
+    @media (max-width: $mobileBreakpoint) {
+      background-size: 60%;
+    }
+
+    @media (max-width: 400px) {
+      background-size: 40%;
+      left: -5px;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    left: -15px;
+    width: 25px;
+    height: 25px;
+    background-color: $c-red;
+    border-radius: 50%;
+    line-height: 25px;
+    text-align: center;
+    color: white;
+
+    @media (max-width: $tabletBreakpoint) {
+      left: -5px;
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      font-size: 10px;
+    }
+
+    @media (max-width: $mobileBreakpoint) {
+      left: 0;
+      top: 5px;
+      width: 15px;
+      height: 15px;
+      line-height: 15px;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 8px;
+      // left: 5px;
+    }
+  }
+
+  &__city {
+    position: absolute;
+    top: 41px;
+
+    @media (max-width: $tabletBreakpoint) {
+      top: 37px;
+      font-size: 10px;
+    }
+
+    @media (max-width: 400px) {
+      top: 30px;
+      font-size: 8px;
+    }
+  }
+
+  &__zoom {
+    display: none;
+
+    @media (max-width: $mobileBreakpoint) {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__zoom-btn {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $c-accent;
+    }
+  }
+
+  &__plus,
+  &__minus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+  }
+}
