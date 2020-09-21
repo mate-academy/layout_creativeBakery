@@ -11,6 +11,18 @@
   width: 500px;
   height: 800px;
 
+  @media (max-width: 1400px) {
+    width: 400px;
+  }
+
+  @media (max-width: 550px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0;
+    width: 280px;
+  }
+
   &__button {
     background-color: inherit;
 
@@ -24,6 +36,11 @@
 
   &__img {
     width: 48px;
+
+    @media (max-width: 550px) {
+      height: 20px;
+      width: 20px;
+    }
   }
 
   &__number {
@@ -33,6 +50,12 @@
 
     font-family: $secondary-font;
 
+    @media (max-width: 550px) {
+      font-size: 16px;
+      line-height: 19px;
+      margin: 0;
+    }
+
     &--first {
       color: $chocolate;
       font-size: 177px;
@@ -41,13 +64,14 @@
       position: relative;
 
       right: -20px;
-    }
-  }
-}
 
-@media (max-width: 1400px) {
-  .counter {
-    width: 400px;
+      @media (max-width: 550px) {
+        font-size: 40px;
+        line-height: 47px;
+
+        top: -10px;
+      }
+    }
   }
 }
 
@@ -71,33 +95,12 @@
       &--first {
         right: 0;
 
-        height: 177px;
+        line-height: 177px;
       }
     }
 
     &__img {
       width: 20px;
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .counter {
-    align-items: center;
-    padding: 100px;
-
-    &__number {
-      font-size: 16px;
-      line-height: 19px;
-
-      &--first {
-        font-size: 40px;
-        height: 37px;
-      }
-    }
-
-    &__img {
-      height: 12px;
     }
   }
 }
