@@ -1,4 +1,6 @@
 .nav {
+  position: relative;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,6 +8,9 @@
   padding: 50px;
 
   &__list {
+    position: relative;
+    left: -200px;
+
     display: flex;
   }
 
@@ -18,12 +23,46 @@
     margin-right: 34px;
     text-decoration: none;
 
+    flex-shrink: 1;
+
     &:first-child {
       margin-left: 260px;
     }
   }
 
-  &__burger {
-    margin-left: 300px;
+  &__label,
+  &__toggler {
+    display: none;
+  }
+}
+
+@media (max-width: 1350px) {
+  .nav {
+    justify-content: space-around;
+
+    &__list {
+      left: -100px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav {
+    flex-direction: column;
+
+    padding: 10px;
+
+    &__list {
+      flex-direction: column;
+      left: 0;
+    }
+
+    &__item {
+      margin-bottom: 20px;
+      
+      &:first-child {
+        margin-left: 0;
+      }
+    }
   }
 }
