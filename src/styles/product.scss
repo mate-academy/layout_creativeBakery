@@ -1,18 +1,33 @@
 .product {
   display: flex;
+  justify-content: space-around;
 
-  margin-bottom: 130px;
+  width: 100%;
+
+  @media (max-width: 1350px) {
+    flex-direction: column;
+
+    &:nth-child(odd) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  @media (max-width: 999px) {
+    align-items: center;
+  }
 
   &__info {
     font-family: $secondary-font;
-    color: $info-color;
+    color: $chocolate;
 
-    &:nth-child(even) {
-      margin-left: 100px;
+    width: max-content;
+
+    @media (max-width: 999px) {
+      align-self: flex-start;
     }
 
-    &:nth-child(odd) {
-      margin-left: 100px;
+    @media (max-width: 400px) {
+      align-self: center;
     }
   }
 
@@ -22,6 +37,13 @@
     color: $croissant;
 
     margin-bottom: 43px;
+
+    @media (max-width: 767px) {
+      font-size: 35px;
+      line-height: 41px;
+
+      margin-bottom: 23px;
+    }
   }
 
   &__name {
@@ -29,6 +51,11 @@
     line-height: 39px;
 
     margin-bottom: 12px;
+
+    @media (max-width: 767px) {
+      font-size: 20px;
+      line-height: 150%;
+    }
   }
 
   &__description {
@@ -52,18 +79,26 @@
     border-radius: 50%;
 
     background: $cream;
+
+    @media (max-width: 767px) {
+      width: 75px;
+      height: 75px;
+
+      line-height: 75px;
+    }
   }
 
   &__img {
     display: flex;
     align-items: center;
 
-    &:nth-child(even) {
-      margin-left: 100px;
+    @media (max-width: 1350px) {
+      position: relative;
+      top: -2em;
     }
 
-    &:nth-child(odd) {
-      margin-right: 100px;
+    @media(max-width: 600px) {
+      top: 0;
     }
   }
 
@@ -77,10 +112,33 @@
     margin: 0 50px;
 
     cursor: pointer;
+
+    @media (max-width: 600px) {
+      margin: 0 20px;
+    }
+
+    @media (max-width: 400px) {
+      margin: 0;
+    }
   }
 
   &__photo {
     width: 700px;
     height: 500px;
+
+    @media (max-width: 999px) {
+      width: 560px;
+      height: 400px;
+    }
+
+    @media (max-width: 767px) {
+      width: 420px;
+      height: 300px;
+    }
+
+    @media (max-width: 600px) {
+      width: 270px;
+      height: 200px;
+    }
   }
 }
