@@ -1,0 +1,133 @@
+.footer {
+  background-color: $c-basic;
+  color: white;
+  height: 157px;
+
+  @media (max-width: 880px) {
+    height: 380px;
+  }
+
+  @media (max-width: $mobileBreakpoint) {
+    height: 580px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-areas: "footer__logotype footer__nav footer__soc-media"
+      ". footer__copyright ." ;
+    padding-top: 50px;
+    row-gap: 15px;
+    @include container;
+
+    @media (max-width: 880px) {
+      grid-template-areas: "footer__logotype" "footer__nav"
+        "footer__soc-media" "footer__copyright";
+      justify-content: start;
+      gap: 50px;
+    }
+
+    @media (max-width: $mobileBreakpoint) {
+      grid-template-columns: 1fr;
+      padding-left: 47px;
+      padding-right: 47px;
+    }
+  }
+
+  &__logotype {
+    width: 114px;
+    grid-area: footer__logotype;
+
+    @media (max-width: 880px) {
+      margin-left: -31px;
+    }
+  }
+
+  &__nav {
+    justify-self: center;
+    align-self: end;
+    line-height: 150%;
+    grid-area: footer__nav;
+
+    @media (max-width: 880px) {
+      margin-left: -10px;
+      justify-self: start;
+    }
+
+    @media (max-width: $mobileBreakpoint) {
+      > .nav__list {
+        display: block;
+
+        .nav__item {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  &__soc-media {
+    display: flex;
+    gap: 20px;
+    align-self: end;
+    justify-self: end;
+    grid-area: footer__soc-media;
+
+    @media (max-width: 880px) {
+      justify-self: start;
+      width: 100%;
+    }
+
+    @media (max-width: $mobileBreakpoint) {
+      justify-content: space-between;
+    }
+  }
+
+  &__soc-media-item {
+    display: block;
+    width: $iconSize;
+    height: $iconSize;
+    border-radius: 50%;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: $c-accent;
+    }
+
+    &--twitter {
+      background-image: url(../images/twitter.svg);
+    }
+
+    &--facebook {
+      background-image: url(../images/facebook.svg);
+    }
+
+    &--linkedin {
+      background-image: url(../images/linkedin.svg);
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-self: center;
+    gap: 30px;
+    font-size: 12px;
+    opacity: 0.7;
+    grid-area: footer__copyright;
+
+    @media (max-width: 880px) {
+      justify-self: start;
+    }
+
+    @media (max-width: $mobileBreakpoint) {
+      justify-self: center;
+    }
+  }
+
+  &__privacy {
+    &:hover {
+      color: $c-accent;
+    }
+  }
+}
