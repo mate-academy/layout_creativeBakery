@@ -1,0 +1,97 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__card {
+    margin-bottom: 135px;
+  }
+
+  &__title {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-around;
+
+  }
+
+  &__card:nth-child(2n) &__item {
+    flex-direction: row-reverse;
+  }
+
+  &__heading {
+    margin-bottom: 43px;
+  }
+
+  &__second-heading {
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    max-width: 300px;
+  }
+
+  &__price {
+    margin-top: 32px;
+    font-weight: 700;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border-radius: 50% ;
+    background-color: #f1cc9d;
+  }
+
+  &__photo {
+    position: relative;
+  }
+
+  &__arrow-left::after {
+    @include arrow;
+
+    top: 228px;
+    left: -85px;
+
+    background-color: #f1cc9d;
+    transform: rotate(-45deg);
+  }
+  
+  &__arrow-left::before {
+    @include arrow;
+
+    top: 240px;
+    left: -85px;
+
+    background-color: #f1cc9d;
+    transform: rotate(45deg);
+  }
+
+  &__arrow-right::after {
+    @include arrow;
+
+    top: 228px;
+    left: 800px;
+
+    background-color: #412d22;
+    transform: rotate(45deg);
+  }
+
+  &__arrow-right::before {
+    @include arrow;
+
+    top: 240px;
+    left: 800px;
+
+    background-color: #412d22;
+    transform: rotate(-45deg);
+  }
+
+  &__button {
+    @include button;
+
+    width: 170px;
+    margin: 0 auto 87px;
+  }
+}
