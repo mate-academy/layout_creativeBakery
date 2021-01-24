@@ -1,3 +1,5 @@
+https://jastler.github.io/layout_creativeBakery/
+
 # Creative Bakery landing
 Implement landing page according to [Figma design](https://www.figma.com/file/zIi6yfSpSIV4dnTzwaXSjt/Bakerlab?node-id=0%3A1) - Use BEM and SCSS
 
