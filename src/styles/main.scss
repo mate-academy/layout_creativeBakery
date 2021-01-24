@@ -1,7 +1,388 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+@import "mixin";
+@import "numbers";
+@import "preview";
+@import "secondary-button";
+@import "language__option";
+@import "call-back";
+@import "nav";
+@import "logo";
+@import "header";
+@import "_reset";
 
-body {
-  background: $c-gray;
+.caption {
+  font-family: $h-font-famiy;
+  font-size: 120px;
+  line-height: 133.08px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  color: $h-color;
+}
+
+.main {
+  
+  &__head {
+    margin: 55px 60px;
+
+  }
+
+  &__title {
+    margin-bottom: 22px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 50px;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    line-height: 59.25px;
+    color: #e39a3b;
+  }
+
+  &__name {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 32px;
+    display: inline-block;
+  }
+
+  &__price {
+    background-color: #f1cc9d;
+    // display: inline-block;
+    height: 110px;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  &__photo {
+    max-width: 699.42px;
+    height: 514px;
+    margin: 0 112px;
+  }
+
+  &__photo--left {
+    order: -1;
+  }
+}
+
+.backershops {
+  background-color: #f1cc9d;
+  outline: none;
+  padding: 40px 0;
+
+  &__search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 83px;
+  }
+
+  &__select {
+    width: 173px;
+    padding-bottom: 0;
+    margin-right: 30px;
+
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #412d22;
+    outline: none;
+
+    cursor: pointer;
+  }
+
+  &__select--adress {
+    width: 323px;
+  }
+
+  &__map {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.about {
+  
+  &__description {
+    width: 480px;
+    height: 72px;
+    line-height: 24px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 59px;
+  }
+}
+
+.statistic {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 139px;
+
+  &__img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 12px;
+  }
+
+  &__item {
+    display: grid;
+    justify-items: center;
+  }
+
+  &__numb {
+    width: 200px;
+    height: 59px;
+    margin-bottom: 7px;
+
+    font-weight: 300px;
+    font-style: normal;
+    font-size: 60px;
+    line-height: 71.1px;
+    text-align: center;
+  }
+
+  &__name {
+    font-style: normal;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.contacts__container {
+  display: flex;
+}
+
+.information {
+  height: 507px;
+
+  position: relative;
+  width: 530px;
+
+  background-color: #e39a3b;
+
+  &__title {
+    display: flex;
+    padding-top: 40px;
+    margin: 0 0 24px 120px;
+
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26px;
+    line-height: 39px;
+  }
+}
+
+.touch {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0 0 80px;
+
+  &__title {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &--location::before {
+    position: absolute;
+    content: url(..\images\location.svg);
+    top: 110px;
+    left: 50px;
+    width: 14.5px;
+    height: 20.15px;
+  }
+
+  &--phone::before {
+    content: url(..\images\phone.svg);
+    position: absolute;
+    left: 50px;
+    top: 175px;
+  }
+
+  &--message::before {
+    content: url(..\images\message.svg);
+    position: absolute;
+    left: 50px;
+    top: 235px;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 507px;
+  border: 0;
+}
+
+.footer {
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__photo {
+    height: 417px;
+    width: 509px;
+    margin: 70px 0 70px 70px;
+  }
+}
+
+.feedback {
+  display: flex;
+  
+  margin-top: 70px;
+  margin-right: 70px;
+
+  flex-direction: column;
+  align-items: center;
+
+  &__title-text {
+    line-height: 39px;
+    margin-bottom: 30px;
+
+    font-size: 26px;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+}
+
+.form {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  &__item {
+    width: 378px;
+    margin-bottom: 20px;
+
+    border: 0;
+    border-bottom: 1px solid rgba(65, 45, 34, 0.5);
+    outline: none;
+    
+
+    &::placeholder {
+      opacity: 50%;
+    }
+  }
+
+  &__item--phone {
+    margin-bottom: 90px;
+  }
+
+  &__item--message {
+    margin-bottom: 46px;
+  }
+}
+
+.floor {
+  height: 157px;
+  background-color: #412d22;
+  color: #fff;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  &__main {
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__privacy {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    opacity: 70%;
+  }
+
+}
+
+.privacy__info {
+  margin-left: 20px;
+}
+
+.soc {
+  margin-right: 80px;
+
+  &__logo {
+    margin-left: 15px;
+  }
+}
+
+.logo__text-bottom {
+  color: #fff;
+  margin-left: 89px;
+}
+
+.call-back__button {
+  width: 100px;
+  height: 30.01px;
+  font-weight: 400px;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #412d22;
+  box-sizing: border-box;
+  border: 1px solid #f1cc9d;
+  background-color: #f1cc9d;
+  border-radius: 40px;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:active {
+    background-color: #f1cc9d;
+  }
+
+  &:disabled {
+    background: #e0e0e0;
+    color: #828282;
+  }
 }
