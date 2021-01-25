@@ -1,0 +1,55 @@
+.data {
+  position: relative;
+  
+  @include flexColumn;
+  align-items: flex-start;
+  width: 440px;
+
+  background-color: $light-brown;
+
+  &__title {
+    margin: 75px 0 24px 50px;
+
+    @extend %textM;
+  }
+
+  &__information {
+    margin: 9px 0 0 50px;
+
+    @extend %textSbold;
+  }
+
+  &__information--icon-location::before {
+    position: absolute;
+
+    content: url(..\images\data-location.svg);
+
+    transform: translate(-30px,5px);
+  }
+
+  &__information--icon-phone::before {
+    position: absolute;
+
+    content: url(..\images\data-phone.svg);
+
+    transform: translate(-30px,5px);
+  }
+
+  &__information--icon-email::before {
+    position: absolute;
+
+    content: url(..\images\data-message.svg);
+
+    transform: translate(-30px, 7px);
+  }
+
+  &__text {
+    margin: 10px 0 0 50px;
+
+    @extend %textS;
+
+    &:last-child {
+      margin-bottom: 128px;
+    }
+  }
+}

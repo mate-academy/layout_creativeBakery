@@ -1,0 +1,45 @@
+.switcher {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 400px;
+
+  &__page {
+    display: flex;
+  
+    &--big {
+      @extend %switcherL;
+
+      &::before {
+        position: absolute;
+        
+        height: 10px;
+        
+        content: url(..\images\top-arrow.svg);
+        
+        transform: translate(140px, -160px);
+        cursor: pointer;
+      }
+
+      &::after {
+        position: absolute;
+       
+        height: 10px;
+        
+        content: url(..\images\bottom-arrow.svg);
+        
+        transform: translate(140px, 170px);
+        cursor: pointer;
+      }
+    }
+
+    &--small {
+      margin-right: 15px;
+
+      @extend %switcherM;
+    }
+  }
+}

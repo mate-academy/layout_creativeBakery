@@ -1,0 +1,65 @@
+.products {
+  display: flex;
+  justify-content: space-between;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__type {
+    margin: 50px 0 43px;
+
+    @extend %titleS;
+  }
+
+  &__name {
+    margin-bottom: 12px;
+
+    @extend %titleXs;
+  }
+
+  &__text {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    margin-bottom: 32px;
+    
+    @extend %textS;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @extend %productPrice;
+  }
+  
+  &__info--side {
+    display: flex;
+    order: 1;
+  }
+
+  &__photos {
+    position: relative;
+    
+    &::before {
+      position: absolute;
+      
+      content: url(..\images\left-arrow.svg);
+      
+      transform: translate(-45px, 220px);
+      cursor: pointer;
+    }
+
+    &::after {
+      position: absolute;
+      
+      content: url(..\images\right-arrow.svg);
+      
+      transform: translate(45px, 220px);
+      cursor: pointer;
+    }
+  }
+}
