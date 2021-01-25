@@ -12,7 +12,7 @@
 @import "nav";
 @import "logo";
 @import "header";
-@import "_reset";
+@import "reset";
 
 .caption {
   font-family: $h-font-famiy;
@@ -43,7 +43,7 @@
 
 .product {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 50px;
 
@@ -56,7 +56,6 @@
     font-weight: 400;
     font-style: normal;
     font-size: 50px;
-    line-height: 59.25px;
     color: #e39a3b;
   }
 
@@ -64,40 +63,39 @@
     font-weight: 400;
     font-style: normal;
     font-size: 26px;
-    line-height: 39px;
   }
 
   &__description {
     font-size: 16px;
-    line-height: 24px;
     margin-bottom: 32px;
     display: inline-block;
   }
 
   &__price {
-    background-color: #f1cc9d;
-    // display: inline-block;
+    display: flex;
+    
     height: 110px;
     width: 110px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
+
     font-weight: 700;
     font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-  }
 
-  &__photo {
-    max-width: 699.42px;
-    height: 514px;
-    margin: 0 112px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #f1cc9d;
+    border-radius: 100%;
   }
 
   &__photo--left {
     order: -1;
   }
+}
+
+.product__img {
+  max-width: 100%;
+  height: auto;
 }
 
 .backershops {
@@ -138,8 +136,6 @@
   
   &__description {
     width: 480px;
-    height: 72px;
-    line-height: 24px;
     margin: 0 auto;
     text-align: center;
     margin-bottom: 59px;
@@ -150,11 +146,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-bottom: 139px;
+  margin-bottom: 140px;
 
   &__img {
-    width: 200px;
-    height: 200px;
     margin-bottom: 12px;
   }
 
@@ -165,14 +159,12 @@
 
   &__numb {
     width: 200px;
-    height: 59px;
     margin-bottom: 7px;
 
+    text-align: center;
     font-weight: 300px;
     font-style: normal;
     font-size: 60px;
-    line-height: 71.1px;
-    text-align: center;
   }
 
   &__name {
@@ -188,9 +180,8 @@
 }
 
 .information {
-  height: 507px;
-
   position: relative;
+
   width: 530px;
 
   background-color: #e39a3b;
@@ -203,7 +194,6 @@
     font-weight: 400;
     font-style: normal;
     font-size: 26px;
-    line-height: 39px;
   }
 }
 
@@ -216,37 +206,33 @@
     font-weight: 700;
     font-style: normal;
     font-size: 16px;
-    line-height: 24px;
   }
 
   &__text {
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
-    line-height: 24px;
   }
 
   &--location::before {
     position: absolute;
     content: url(..\images\location.svg);
-    top: 110px;
+    top: 100px;
     left: 50px;
-    width: 14.5px;
-    height: 20.15px;
   }
 
   &--phone::before {
     content: url(..\images\phone.svg);
     position: absolute;
     left: 50px;
-    top: 175px;
+    top: 155px;
   }
 
   &--message::before {
     content: url(..\images\message.svg);
     position: absolute;
     left: 50px;
-    top: 235px;
+    top: 205px;
   }
 }
 
@@ -264,8 +250,8 @@
   }
 
   &__photo {
-    height: 417px;
-    width: 509px;
+    max-width: 100%;
+    height: auto;
     margin: 70px 0 70px 70px;
   }
 }
@@ -280,12 +266,11 @@
   align-items: center;
 
   &__title-text {
-    line-height: 39px;
     margin-bottom: 30px;
 
+    font-style: normal;
     font-size: 26px;
     font-weight: 400;
-    font-style: normal;
   }
 
 }
@@ -334,8 +319,10 @@
 
   &__privacy {
     display: grid;
+
     justify-items: center;
     align-content: center;
+
     opacity: 70%;
   }
 
@@ -360,16 +347,18 @@
 
 .call-back__button {
   width: 100px;
-  height: 30.01px;
+
   font-weight: 400px;
   font-style: normal;
   font-size: 16px;
-  line-height: 24px;
   color: #412d22;
+
   box-sizing: border-box;
+
   border: 1px solid #f1cc9d;
   background-color: #f1cc9d;
   border-radius: 40px;
+  
   cursor: pointer;
   outline: none;
 
