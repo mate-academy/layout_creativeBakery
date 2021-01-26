@@ -1,6 +1,6 @@
 .products {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 
   &__info {
     display: flex;
@@ -41,25 +41,56 @@
     order: 1;
   }
 
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
   &__photos {
     position: relative;
+  }
+
+  &__arrow-left {
+    right: 20px;
+    top: 50%;
     
-    &::before {
-      position: absolute;
-      
-      content: url(..\images\left-arrow.svg);
-      
-      transform: translate(-45px, 220px);
-      cursor: pointer;
+    @include arrows;
+    
+    transform: rotate(180deg);
+  }
+
+  &__arrow-right {
+    left: 20px;
+    top: 50%;
+
+    @include arrows;
+  }
+}
+
+@media (max-width: 1024px) {
+  .products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__type {
+      font-size: 34px;
     }
 
-    &::after {
-      position: absolute;
-      
-      content: url(..\images\right-arrow.svg);
-      
-      transform: translate(45px, 220px);
-      cursor: pointer;
+    &__name {
+      font-size: 20px;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    &__info--side {
+      display: flex;
+      order: 0;
     }
   }
 }

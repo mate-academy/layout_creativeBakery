@@ -5,41 +5,67 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-  height: 400px;
+  height: 100%;
+
+  &__arrow-top {
+    @include arrows;
+
+    transform: rotate(-90deg) translate(280px, -30px);
+  }
+
+  &__arrow-bottom {
+    @include arrows;
+
+    transform: rotate(90deg) translate(50px, 30px);
+  }
 
   &__page {
-    display: flex;
   
     &--big {
+      margin-top: 150px;
+
       @extend %switcherL;
-
-      &::before {
-        position: absolute;
-        
-        height: 10px;
-        
-        content: url(..\images\top-arrow.svg);
-        
-        transform: translate(140px, -160px);
-        cursor: pointer;
-      }
-
-      &::after {
-        position: absolute;
-       
-        height: 10px;
-        
-        content: url(..\images\bottom-arrow.svg);
-        
-        transform: translate(140px, 170px);
-        cursor: pointer;
-      }
     }
 
     &--small {
       margin-right: 15px;
 
       @extend %switcherM;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .switcher {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    height: 100%;
+    
+    &__arrow-top {
+      @include arrows;
+
+      transform: rotate(180deg) translate(100px, -45px);
+    }
+
+    &__arrow-bottom {
+      @include arrows;
+
+      transform: translate(80px, 45px);
+    }
+
+    &__page {
+      
+      &--big {
+        font-size: 40px;
+        margin: 40px 20px 0 0;
+      }
+
+      &--small {
+        font-size: 16px;
+        margin: 0 20px 0 0;
+      }
     }
   }
 }
