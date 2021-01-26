@@ -1,8 +1,10 @@
 .numbers {
+  position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   flex-direction: column;
+  bottom: 250px;
 
   &__item {
     color: #f1cc9d;
@@ -12,5 +14,60 @@
   &__item--active {
     color: #412d22;
     font-size: 176px;
+  }
+
+  &__prev {
+    @extend %carus-position-numb;
+
+    top: 110%;
+    left: 95%;
+
+    &:hover {
+      @extend %carus-hover;
+    }
+  }
+
+  &__next {
+    @extend %carus-position-numb;
+
+    bottom: 100%;
+    left: 95%;
+    
+    &:hover {
+      @extend %carus-hover;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .numbers {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: row;
+    column-gap: 10px;
+    bottom: 0;
+
+    &__item {
+      font-size: 16px;
+
+      &--active {
+        font-size: 40px;
+      }
+    }
+
+    &__prev {
+      top: 20%;
+      left: 20%;
+      transform: rotate(0deg);
+
+    }
+    
+    &__next {
+      top: 20%;
+      left: 75%;
+      transform: rotate(0deg);
+
+    }
   }
 }

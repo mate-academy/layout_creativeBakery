@@ -20,6 +20,10 @@
   &__link {
     display: grid;
 
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+
     align-self: center;
 
     cursor: pointer;
@@ -27,5 +31,21 @@
     &:hover {
       @extend %link-hover;
     }
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav__item--header {
+    display: none;
+  }
+
+  .nav__ul-list--footer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+  }
+
+  .nav__link--footer {
+    margin-bottom: 20px;
   }
 }
