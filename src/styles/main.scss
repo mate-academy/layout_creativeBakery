@@ -27,3 +27,110 @@
 @import "floor";
 @import "contacts";
 @import "soc";
+
+@media (max-width: 1024px) {
+  .m-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+    
+
+    &__backdrop {
+      z-index: 1;
+      position: sticky;
+      top: 1.1rem;
+      right: 1.1rem;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 500ms ease-out;
+      pointer-events: none;
+    }
+
+    &__burger {
+      z-index: 2;
+      position: absolute;
+      width: 4rem;
+      height: 4rem;
+      top: 1.1rem;
+      right: 1.1rem;
+      padding: 0.6rem 0.4rem;
+    }
+
+    &__burger span,
+    &__burger span::before,
+    &__burger span::after {
+      content: "";
+      display: block;
+      width: 3.2rem;
+      height: 2px;
+      position: absolute;
+      margin-top: 1.2rem;
+      background: #412d22;
+      border-radius: 0.3rem;
+    }
+
+    &__burger span::before {
+      margin-top: -0.8rem;
+    }
+
+    &__burger span::after {
+      margin-top: 0.8rem;
+    }
+
+    &__toggle {
+      z-index: 6;
+      position: absolute;
+      width: 4rem;
+      height: 4rem;
+      top: 1.1rem;
+      right: 1.1rem;
+      cursor: pointer;
+      opacity: 0;
+      outline: 1px solid black;
+      pointer-events: all;
+    }
+  
+
+    &__content {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      overflow: auto;
+      width: 18rem;
+      height: 600px;
+      margin: 0;
+      padding: 0 0 2rem;
+      background: orange;
+      transform-origin: 0 0;
+      transform: translateX(31.5rem);
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1);
+      pointer-events: all;
+      box-shadow: 0 0 1rem #678;
+    }
+
+    &__toggle:checked {
+      top: 1.1rem;
+      right: 1.1rem;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+    
+    &__toggle:checked ~ .m-menu__content {
+      transform: none;
+    }
+
+    &__toggle:checked ~ .m-menu__backdrop {
+      opacity: 0;
+    }
+ 
+  }
+}
