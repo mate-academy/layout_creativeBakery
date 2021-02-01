@@ -1,0 +1,92 @@
+.burger--label {
+  display: none;
+  position: relative;
+  z-index: 2;
+  height: max-content;
+  cursor: pointer;
+  width: 48px;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.burger--line {
+  width: 48px;
+  height: 3px;
+  margin: 8px 0;
+  background-color: $chocolateColor;
+
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.burger--input {
+  display: none;
+}
+
+.burger--input:checked ~ .burger--label :nth-child(1) {
+  transform: rotate(-45deg) translate(-8px);
+}
+
+.burger--input:checked ~ .burger--label :nth-child(2) {
+  transform: rotate(45deg) translate(-7px);
+}
+
+.burger--input:checked ~ .burger--label :nth-child(3) {
+  opacity: 0;
+}
+
+.burger--input:checked ~ .nav {
+  @include tablet {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+
+    padding-left: 24px;
+    width: 50vw;
+    height: 90vh;
+    background-color: $croissantColour;
+
+    .nav__list {
+      display: block;
+      height: 100%;
+    }
+
+    .nav__item {
+      position: relative;
+      top: 15vh;
+
+      &:nth-child(5) {
+        margin-top: 25vh;
+      }
+    }
+
+    .nav__item--hidden {
+      display: block;
+      margin: 30px 0;
+    }
+
+    .nav__link {
+      display: inline-block;
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  @include mobile {
+    width: 65vw;
+    height: 100vh;
+  }
+
+  @include mobile {
+    .nav__item {
+      top: 10vh;
+
+      &:nth-child(5) {
+        margin-top: 15vh;
+      }
+    }
+  }
+}
