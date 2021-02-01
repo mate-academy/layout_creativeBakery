@@ -12,7 +12,7 @@
   &__logo {
     display: flex;
     justify-content: space-between;
-    margin-left: 90px;
+    margin-left: 60px;
   }
 
   &__background {
@@ -36,17 +36,22 @@
   @media screen and (max-width: 1230px) {
     height: 700px;
     grid-template-columns: 100% 0%;
-    grid-template-rows: auto;
+    grid-template-rows: 100px 1fr;
+    
     grid-template-areas: "logo side-info "  
       "info side-info"
       "slides side-info";
 
+    &__logo {
+      margin-left: 45px;
+    }
+    
     &__menu {
       .menu {
         &__list {
           position: relative;
           display: none;
-          top: -250px;
+          top: -130px;
           left: 0;
           z-index: 1;
           flex-direction: column;
@@ -58,5 +63,13 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    height: 570px;
+    background: url(../images/Header-mobile-img.png) 0 0 / contain no-repeat;
+    background-size: cover;
   }
 }
