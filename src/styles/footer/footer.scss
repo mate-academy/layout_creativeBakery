@@ -1,11 +1,11 @@
 .footer {
   padding: 70px 0 10px;
   background-color: #412d22;
+  color: white;
 
-  &__menu {
-    color: white;
+  &__main {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: baseline;
   }
 
@@ -20,7 +20,6 @@
 
   &__networks {
     display: flex;
-    margin-right: 60px;
   }
 
   &__networks-icon {
@@ -38,7 +37,7 @@
   }
 
   &__copyright {
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     color: white;
@@ -53,6 +52,45 @@
       &:hover {
         color: #e39a3b;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+
+    &__main {
+      flex-direction: column;
+    }
+    &__logo {
+      margin: 0 60px 40px;
+    }
+    &__menu {
+
+      .menu__list {
+        flex-direction: column;
+      }
+
+      .menu__item {
+        padding: 20px 0;
+      }
+    }
+
+    &__networks {
+      margin-top: 20px;
+      justify-content: space-around;
+      width: 40%;
+    }
+    
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .footer {
+
+    &__networks {
+      justify-content: space-around;
+      width: 100%;
     }
   }
 }
