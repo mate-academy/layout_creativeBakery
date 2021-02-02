@@ -1,7 +1,6 @@
 .side-info.active,
 .header__menu .menu__list.active {
-  transform: translate(-200px);
-  height: 90%;
+  transform: translate(-400px);
   transition: transform 0.2s;
 }
 
@@ -14,9 +13,6 @@
 
   background-color: $main-color;
 
-  border-left: 1px solid white;
-  border-bottom: 1px solid white;
-
   &__list {
     margin: 68px 10%;
     display: flex;
@@ -25,6 +21,10 @@
 
   &__item {
     margin-left: 10px;
+  }
+
+  .phone__icon {
+    display: none;
   }
 
   &__link {
@@ -43,15 +43,39 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1280px) {
+  .side-info {
+    &__link {
+      display: none;
+    }
+
+    .phone__icon {
+      display: block;
+      font-size: 1.3em;
+      margin-right: 10px;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.4);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
   .side-info {
     display: block;
     position: absolute;
     flex-direction: column-reverse;
-    width: 200px;
-    transform: translate(200px);
+    width: 400px;
+    height: 70%;
+    transform: translate(400px);
+
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
 
     &__list {
+      
       position: relative;
       top: 300px;
       width: 160px;
@@ -60,5 +84,27 @@
       flex-direction: column;
       justify-content: space-between;
     }
+
+    &__link {
+      display: block;
+    }
+
+    .phone__icon {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .side-info {
+    width: 200px;
+    height: 80%;
+    transform: translate(400px);
+  }
+
+  .side-info.active,
+  .header__menu .menu__list.active {
+    transform: translate(-200px);
+    transition: transform 0.2s;
   }
 }
