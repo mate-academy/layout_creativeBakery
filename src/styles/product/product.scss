@@ -57,19 +57,7 @@
     width: max-content;
   }
 
-  &__arrow-left,
-  &__arrow-right {
-    position: relative;
-    font-size: 40px;
-    cursor: pointer;
-
-    @media screen and (max-width: 425px) {
-      font-size: 25px;
-    }
-  }
-
   &__arrow-left {
-    color: $second-color;
     left: -15px;
     margin-left: 15px;
   }
@@ -77,6 +65,24 @@
   &__arrow-right {
     right: -15px;
     margin-right: 15px;
+  }
+
+  &__arrow-left,
+  &__arrow-right {
+    position: relative;
+    font-size: 40px;
+    cursor: pointer;
+
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.2);
+      color: $second-color;
+    }
+
+    @media screen and (max-width: 425px) {
+      font-size: 25px;
+    }
   }
 
   &__button {

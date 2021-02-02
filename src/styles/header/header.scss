@@ -1,6 +1,7 @@
 .header {
   position: relative;
-  height: 900px;
+  height: 100vh;
+  min-height: 500px;
   display: grid;
   grid-template-columns: 20% 1fr 425px;
   grid-template-rows: 150px 1fr;
@@ -24,9 +25,14 @@
   }
 }
 
+@media screen and (min-width: 1920px) {
+  .header {
+    height: 1080px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .header {
-    height: 700px;
     grid-template-columns: 100% 0%;
     grid-template-rows: 100px 1fr;
     
@@ -43,14 +49,16 @@
     &__menu {
       .menu {
         &__list {
-          position: relative;
-          display: none;
-          top: -130px;
-          left: 0;
+          position: absolute;
+          display: block;
+          top: 100px;
+          right: -140px;
           z-index: 1;
           flex-direction: column;
           align-items: flex-start;
           margin: 0;
+          transform: translate(200px);
+          transition: all 0.2s;
         }
         &__item {
           margin: 30px 20px;
@@ -66,7 +74,6 @@
 
 @media screen and (max-width: 425px) {
   .header {
-    height: 570px;
     background: url(../images/Header-mobile-img.png) 0 0 / cover no-repeat;
   }
 }
