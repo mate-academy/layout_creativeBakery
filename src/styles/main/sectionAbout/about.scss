@@ -1,0 +1,48 @@
+.about {
+  $minimalCardSpace: 20px;
+
+  background: linear-gradient(
+    0deg, rgba(255,255,255,1) 36%, rgba(241,204,157,1) 100%
+  );
+
+  &__text {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    text-align: center;
+
+    @for $i from 1 through 4 {
+      & > :nth-child(#{$i}) {
+        margin-right: $minimalCardSpace;
+      }
+    }
+
+    @include desktopMini {
+      width: 100%;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+
+  }
+
+  &__image {
+    border-radius: 50%;
+    transition: box-shadow 0.5s;
+
+    &:hover {
+      box-shadow: 27px 16px 30px rgba(0, 0, 0, 0.35%);
+    }
+  }
+
+  &__number {
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 71px;
+  }
+}
