@@ -1,6 +1,94 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin secondaryButtons {
+  background: $c-cream;
+  border-radius: 40px;
+  border-color: transparent;
+  outline: none;
+  height: 30px;
+  width: 100px;
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+  color: $c-chocolate;
+
   &:hover {
-    #{$_property}: $_toValue;
+    background: $c-milk;
+    border: 2px solid $c-cream;
+    box-sizing: border-box;
+    border-radius: 40px;
+  }
+  &:active {
+    background: $c-cream;
+    opacity: 0.8;
+    border-radius: 40px;
+    outline: none;
+  }
+
+  &:disabled {
+    color: $c-disabled;
+  }
+}
+
+@mixin primaryButtons {
+  height: 40px;
+  width: 160px;
+  border-radius: 40px;
+  outline: none;
+  background: $c-croissant;
+  border-color: transparent;
+  color: $c-chocolate;
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+
+  &:hover {
+    border: 2px solid $c-croissant;
+    box-sizing: border-box;
+    border-radius: 40px;
+    background-color: $c-milk;
+  }
+
+  &:active {
+    background: $c-croissant;
+    opacity: 0.8;
+    border-radius: 40px;
+    color: $c-chocolate;
+
+  }
+
+  &:disabled {
+    background: $c-disabled;
+    border-radius: 40px;
+    color: $c-disabled;
+  }
+}
+
+@mixin feedbackBorder {
+  border: none;
+  border-bottom: 1px solid $c-chocolate;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin arrows {
+  position: absolute;
+
+  font-weight: $fw-bold;
+  color: $c-chocolate;
+  font-size: 28px;
+  text-decoration: none;
+
+  border-radius: 0 3px 3px 0;
+
+  &:hover {
+    color: $c-cream;
   }
 }

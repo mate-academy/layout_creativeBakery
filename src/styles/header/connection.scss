@@ -1,0 +1,50 @@
+.connection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @extend %textS;
+
+  &__text {
+    margin-right: 20px;
+  }
+
+  &__button {
+    margin-right: 20px;
+
+    @include secondaryButtons;
+  }
+
+  &__switcher {
+    @extend %textS;
+
+    border: none;
+    background-color: transparent;
+    outline: none;
+
+    &:focus {
+      background-color: $c-croissant;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .connection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: baseline;
+
+    &__text {
+      margin: 0 0 30px 10px;
+    }
+
+    &__button {
+      margin: 0 0 30px 10px;
+    }
+
+    &__switcher {
+      margin: 0 0 30px 10px;
+    }
+  }
+}
