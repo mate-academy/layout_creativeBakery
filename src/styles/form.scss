@@ -1,0 +1,44 @@
+.form {
+  &__select {
+    @include fontText($mainColor, 16px, 24px);
+    opacity: 0.5;
+    border: none;
+    border-bottom: 1px solid $mainColor;
+    width: 100%;
+    background-color: transparent;
+    padding: 10px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  &__button {
+    margin-top: 35px;
+    margin-bottom: 12px;
+  }
+
+  &__input {
+    @extend .form__select;
+
+    &--message {
+      padding-top: 90px;
+    }
+  }
+
+  @include onNotebook {
+    display: flex;
+    width: 720px;
+    align-items: baseline;
+    margin: auto;
+    margin-bottom: 55px;
+
+    &__select + .form__select,
+    &__button {
+      margin-left: 32px;
+    }
+
+    &__input + .form__input {
+      margin-left: 0;
+    }
+  }
+}

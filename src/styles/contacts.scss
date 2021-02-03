@@ -1,0 +1,89 @@
+.contacts {
+  background-color: $accentColor;
+
+  &__title {
+    color: #fff;
+  }
+
+  &__heading {
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: -45px;
+    text-align: center;
+  }
+
+  &__info {
+    padding: 0 0 40px 45px;
+  }
+
+  &__header {
+    margin-bottom: 10px;
+    position: relative;
+
+    &--address {
+      ::before {
+        content: url(../images/address.svg);
+        position: absolute;
+        left: -35px;
+      }
+    }
+
+    &--phone {
+      margin-bottom: 0;
+      ::before {
+        content: url(../images/phone.svg);
+        position: absolute;
+        left: -35px;
+      }
+    }
+
+    &--mail {
+      margin-bottom: 0;
+      ::before {
+        content: url(../images/mail.svg);
+        position: absolute;
+        left: -35px;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+
+    &--phone,
+    &--mail {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__map {
+    width: 100%;
+
+    iframe {
+      width: inherit;
+    }
+  }
+
+  @include onTablet {
+    background-color: #fff;
+
+    &__container {
+      display: flex;
+    }
+
+    &__info {
+      padding-top: 40px;
+      background-color: $accentColor;
+      flex-grow: 1;
+    }
+
+    &__map {
+      flex-grow: 2;
+    }
+
+    &__title {
+      color: $accentColor;
+    }
+  }
+}
