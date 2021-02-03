@@ -1,0 +1,36 @@
+.cards {
+  @include flexRow;
+  justify-content: space-between;
+  width: calc(100vw - 120px);
+  margin-bottom: 140px;
+
+  &__card {
+    @include flexColumn;
+    justify-content: center;
+  }
+
+  &__img {
+    margin-bottom: 12px;
+  }
+
+  &__count {
+    @extend %textL;
+    margin-bottom: 7px;
+  }
+
+  &__text {
+    @extend %textS;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .cards {
+    width: 100%;
+    justify-content: space-between;
+    overflow-x: auto;
+
+    &__card {
+      margin-right: 27px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.search-form {
+  @include flexRow;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 55px;
+
+  &__city {
+    display: flex;
+    align-self: flex-end;
+    width: 173px;
+    margin-right: 32px;
+
+    @extend %formBorder;
+  }
+
+  &__address {
+    display: flex;
+    align-self: flex-end;
+    width: 323px;
+    margin-right: 32px;
+
+    @extend %formBorder;
+  }
+
+  &__button {
+    @include primaryButtons;
+  }
+}
+
+@media (max-width: 1024px) {
+  .search-form {
+    display: flex;
+    flex-direction: column;
+
+    &__city {
+      align-self: center;
+      width: 288px;
+      margin: 0 0 25px;
+    }
+
+    &__address {
+      align-self: center;
+      width: 288px;
+      margin: 0 0 35px;
+
+    }
+
+    &__button {
+      align-self: center;
+    }
+  }
+}
