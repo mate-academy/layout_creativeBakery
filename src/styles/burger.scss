@@ -1,0 +1,51 @@
+.burger {
+  width: 35px;
+  height: 35px;
+  margin-top: -10px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+
+  &__line {
+    width: 25px;
+    height: 2px;
+    background-color: $mainColor;
+    position: relative;
+    transition: transform linear 0.3s;
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      bottom: -8px;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 2px;
+      background-color: $mainColor;
+    }
+
+    &--open {
+      transform: rotate(45deg);
+
+      &::before {
+        top: 0;
+        transform: rotate(0);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  @include onNotebook {
+    display: none;
+  }
+}
