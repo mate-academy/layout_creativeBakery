@@ -1,0 +1,41 @@
+.touch {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0 0 70px;
+
+  &__title {
+    @extend %fs-classic;
+    position: relative;
+
+    font-weight: 700;
+    font-style: normal;
+
+    margin-bottom: 10px;
+
+    &--location::before {
+      position: absolute;
+      content: url(..\images\location.svg);
+      top: 0;
+      left: -30px;
+    }
+
+    &--phone::before {
+      content: url(..\images\phone.svg);
+      position: absolute;
+      left: -30px;
+      top: 0;
+    }
+
+    &--message::before {
+      content: url(..\images\message.svg);
+      position: absolute;
+      left: -30px;
+      top: 0;
+    }
+  }
+
+  &__text {
+    @extend %ft-middle;
+    @extend %fs-classic;
+  }
+}
