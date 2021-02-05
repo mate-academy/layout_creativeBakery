@@ -15,7 +15,6 @@
     font-size: 26px;
     line-height: 39px;
     margin-bottom: 12px;
-
   }
 
   &__description {
@@ -33,7 +32,6 @@
     padding: 43px 12px;
     background: $col-subcol;
     border-radius: 50%;
-
   }
 
   &__photo {
@@ -54,27 +52,48 @@
   }
 
   &__switch {
-    width: 25px;
-    height: 26px;
+    font-size: 30px;
+    font-weight: 700;
+    background-color: transparent;
+    outline: transparent;
     border-width: 0;
     cursor: pointer;
+
+    &:hover {
+      color: $col-subcol;
+    }
   }
 
   &__switch--left {
-    background: url(../images/product-switch-left.svg) no-repeat;
+    transform: rotate(180deg);
   }
-
-  &__switch--rigth {
-    background: url(../images/switch-bottom.svg) no-repeat;
-    transform: rotate(-90deg);
-
-  }
-
 }
 
 @media screen and (max-width: 999px) {
   .product {
     flex-direction: column;
     align-items: center;
+
+    &__title {
+      font-size: 45px;
+    }
+
+    &__photo--reverse {
+      order: 2;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .product {
+    &__title {
+      font-size: 35px;
+      margin-bottom: 15px;
+
+    }
+    &__switch {
+      font-size: 20px;
+      padding: 0 10px;
+    }
   }
 }

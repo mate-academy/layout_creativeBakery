@@ -1,10 +1,11 @@
 .toggle {
   width: 40px;
   height: 40px;
-  margin: 20px;
 
-  border-radius: 5px;
-  position: relative;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: -1;
 
   &__line {
     top: 50%;
@@ -13,7 +14,8 @@
     position: absolute;
     width: 40px;
     height: 5px;
-    background-color: red;
+    background-color: $col-dark-brown;
+    border-radius: 2px;
 
     &::before,
     &::after {
@@ -22,30 +24,31 @@
 
       width: 40px;
       height: 5px;
-      background-color: red;
-      transition: transform 7s ;
+      background-color: $col-dark-brown;
+      border-radius: 2px;
     }
     &::before {
-
-      transform: translateY(-10px);
-
+      transform: translateY(-15px);
     }
     &::after {
-      transform: translateY(5px);
+      transform: translateY(10px);
     }
-
   }
-
-  &:hover &__line {
-    height: 0;
+  &--active {
+    .toggle__line {
+      height: 0;
+    }
+    .toggle__line::before {
+      transform: rotate(45deg) translatey(3px);
+    }
+    .toggle__line::after {
+      transform: rotate(-45deg) translateY(-3px);
+    }
   }
+}
 
-  &:hover &__line::before {
-    transform: rotate(45deg);
+@media screen and (max-width: 999px) {
+  .toggle {
+    z-index: 2;
   }
-
-  &:hover &__line::after {
-    transform: rotate(-45deg);
-  }
-
 }
