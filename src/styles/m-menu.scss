@@ -33,9 +33,9 @@
       padding: 0.6rem 0.4rem;
     }
 
-    &__burger span,
-    &__burger span::before,
-    &__burger span::after {
+    &__burger .burger__span,
+    &__burger .burger__span::before,
+    &__burger .burger__span::after {
       content: "";
       display: block;
       width: 3.2rem;
@@ -46,11 +46,11 @@
       border-radius: 0.3rem;
     }
 
-    &__burger span::before {
+    &__burger .burger__span::before {
       margin-top: -0.8rem;
     }
 
-    &__burger span::after {
+    &__burger .burger__span::after {
       margin-top: 0.8rem;
     }
 
@@ -92,18 +92,18 @@
       margin: 0;
     }
     
-    &__toggle:checked ~ .m-menu__content {
+    &__toggle:checked ~ &__content {
       transform: none;
     }
 
-    &__toggle:checked ~ .m-menu__backdrop {
+    &__toggle:checked ~ &__backdrop {
       opacity: 0;
     }
  
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $medium-screen) {
   .m-menu__content {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -112,7 +112,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $medium-screen) {
   .m-menu__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
