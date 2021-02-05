@@ -3,6 +3,8 @@
   justify-content: center;
 
   &__title {
+    margin-top: 56px;
+    
     @extend %titleM;
   }
 
@@ -16,30 +18,29 @@
 
   &__row {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
   }
-}
- 
-@media (max-width: $desktop-width) {
-  .about {
-    margin: 0 auto;
-    &__row {
-      justify-content: space-around;
-      margin: 0;
+
+  @media (max-width: $desktop-width) {
+    & {
+
+      &__row {
+        justify-content: space-around;
+        margin: 0;
+      }
     }
-    
   }
-}
 
-@media (max-width: $notebook-width) {
-  .about {
+  @media (max-width: $notebook-width) {
+    & {
 
-    &__title {
-      font-size: 60px;
-    }
+      &__title {
+        font-size: 60px;
+      }
 
-    &__text {
-      width: 288px;
+      &__text {
+        width: 288px;
+      }
     }
   }
 }
