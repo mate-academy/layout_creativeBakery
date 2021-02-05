@@ -3,7 +3,7 @@
   height: 100vh;
   min-height: 700px;
   display: grid;
-  grid-template-columns: 20% 1fr 425px;
+  grid-template-columns: 20% 1fr $phone-bp;
   grid-template-rows: 150px 1fr;
   grid-template-areas: "logo menu side-info"  
     "info info side-info" ;
@@ -32,13 +32,13 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: $laptop-bp) {
   .header {
     grid-template-columns: 20% 1fr 290px;
   }
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: $tablet-bp) {
   .header {
     grid-template-columns: 100% 0%;
     grid-template-rows: 100px 1fr;
@@ -66,6 +66,11 @@
           margin: 0;
           transform: translate(200px);
           transition: all 0.2s;
+
+          &_active {
+            transform: translate(-400px);
+            transition: transform 0.2s;
+          }
         }
         &__item {
           margin: 30px 20px;
@@ -79,8 +84,17 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: $phone-bp) {
   .header {
     background: url(../images/Header-mobile-img.png) 0 0 / cover no-repeat;
+    &__menu {
+      .menu {
+        &__list {
+          &_active {
+            transform: translate(-200px);
+          }
+        }
+      }
+    }
   }
 }

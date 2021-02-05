@@ -5,7 +5,7 @@ const menu = document.querySelector('.side-info');
 const menuLink = document.querySelector('.menu__list');
 
 navBurder.onclick = function() {
-  navBurder.classList.toggle('active');
-  menu.classList.toggle('active');
-  menuLink.classList.toggle('active');
+  navBurder.classList.toggle('burger_active');
+  menu.classList.toggle('side-info_active');
+  menuLink.classList.toggle('menu__list_active');
 };
