@@ -5,147 +5,145 @@
   &__logo {
     margin-right: 100px;
   }
-}
 
-@media (max-width: 1024px) {
-  .menu {
-    display: grid;
-    grid-auto-flow: row;
+  &__burger-toggle {
+    display: none;
+  }
+
+  &__burger-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
-.menu__burger-toggle {
-  display: none;
-}
+@media (max-width: $notebook-width) {
+  .menu {
+    display: grid;
+    grid-auto-flow: row;
 
-.menu__burger-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-@media (max-width: 1024px) {
-  .menu__burger {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 100;
-    
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-
-    pointer-events: none;
- 
-    &-backdrop {
+    &__burger {
       position: fixed;
-      z-index: 1;
       top: 0;
       right: 0;
+      z-index: 100;
       
-      width: 100%;
-      height: 100%;
-      
-      opacity: 0;
-
-      transition: opacity 500ms ease-out;
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
 
       pointer-events: none;
-    }
+  
+      &-backdrop {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        
+        width: 100%;
+        height: 100%;
+        
+        opacity: 0;
 
-    &-icon {
-      position: absolute;
-      z-index: 2;
-      top: 1.1rem;
-      right: 1.1rem;
+        transition: opacity 500ms ease-out;
 
-      width: 4rem;
-      height: 4rem;
-      padding: 0.6rem 0.4rem;
-    }
+        pointer-events: none;
+      }
 
-    &-icon span,
-    &-icon span::before,
-    &-icon span::after {
-      position: absolute;
-      
-      content: "";
-      display: block;
-      width: 3rem;
-      height: 0.3rem;
-      margin-top: 1.2rem;
-      
-      background: $dark-brown;
-      border-radius: 0.3rem;
-    }
+      &-icon {
+        position: absolute;
+        z-index: 2;
+        top: 1.1rem;
+        right: 1.1rem;
 
-    &-icon span::before {
-      margin-top: -0.8rem;
-    }
+        width: 4rem;
+        height: 4rem;
+        padding: 0.6rem 0.4rem;
+      }
 
-    &-icon span::after {
-      margin-top: 0.8rem;
-    }
+      &-icon span,
+      &-icon span::before,
+      &-icon span::after {
+        position: absolute;
+        
+        content: "";
+        display: block;
+        width: 3rem;
+        height: 0.3rem;
+        margin-top: 1.2rem;
+        
+        background: $dark-brown;
+        border-radius: 0.3rem;
+      }
 
-    &-toggle {
-      position: absolute;
-      z-index: 3;
-      top: 1.1rem;
-      right: 1.1rem;
+      &-icon span::before {
+        margin-top: -0.8rem;
+      }
 
-      display: block;
-      width: 4rem;
-      height: 4rem;
-      
-      opacity: 0;
-      outline: 1px solid black;
+      &-icon span::after {
+        margin-top: 0.8rem;
+      }
 
-      cursor: pointer;
-      pointer-events: all;
-    }
+      &-toggle {
+        position: absolute;
+        z-index: 3;
+        top: 1.1rem;
+        right: 1.1rem;
 
-    &-content {
-      position: absolute;
-      z-index: 4;
-      top: 0;
-      right: 0;
-      
-      display: flex;
-      flex-direction: column;
-      
-      width: 13rem;
-      height: 600px;
-      margin: 0;
-      padding: 0 0 2rem;
+        display: block;
+        width: 4rem;
+        height: 4rem;
+        
+        opacity: 0;
+        outline: 1px solid black;
 
-      overflow: hidden;
+        cursor: pointer;
+        pointer-events: all;
+      }
 
-      background: $light-brown;
-      box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.75);
+      &-content {
+        position: absolute;
+        z-index: 4;
+        top: 0;
+        right: 0;
+        
+        display: flex;
+        flex-direction: column;
+        
+        width: 13rem;
+        height: 600px;
+        margin: 0;
+        padding: 0 0 2rem;
 
-      transform-origin: 0 0;
-      transform: translateX(31.5rem);
-      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+        overflow: hidden;
 
-      pointer-events: all;
-    }
+        background: $light-brown;
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.75);
 
-    &-toggle:checked {
-      top: 0;
-      right: 0;
-      
-      width: 100%;
-      height: 100%;
-      margin: 0;
-    }
+        transform-origin: 0 0;
+        transform: translateX(31.5rem);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 
-    &-toggle:checked ~ .menu__burger-content {
-      transform: none;
-    }
+        pointer-events: all;
+      }
 
-    &-toggle:checked ~ .menu__burger-backdrop {
-      opacity: 1;
+      &-toggle:checked {
+        top: 0;
+        right: 0;
+        
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      &-toggle:checked ~ .menu__burger-content {
+        transform: none;
+      }
+
+      &-toggle:checked ~ .menu__burger-backdrop {
+        opacity: 1;
+      }
     }
   }
 }
