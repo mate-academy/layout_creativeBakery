@@ -48,8 +48,9 @@
     justify-items: center;
     align-items: baseline;
     justify-content: center;
-    width: 100%;
     position: absolute;
+    right: 0;
+    left: 0;
     bottom: 26px;
 
     &::before {
@@ -96,18 +97,33 @@
       background-image: url(../images/header-bg.jpg);
       background-position: center;
       background-size: cover;
+      position: absolute;
+      left: 0;
+      width: 65%;
+      height: 840px;
+    }
+
+    &__center {
+      padding-left: 20px;
     }
 
     &__aside {
       display: block;
       flex-grow: 1;
       background-color: $accentColor;
+      position: absolute;
+      right: 0;
+      width: 35%;
+      height: 840px;
+      padding-right: 20px;
     }
   }
 
   @include onBigScreen {
     &__center {
-      padding-left: 60px;
+      position: absolute;
+      right: 30%;
+      top: 5%;
     }
   }
 }

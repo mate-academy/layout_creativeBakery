@@ -2,7 +2,7 @@
   display: none;
 
   &--mobile {
-    padding-top: 85px;
+    padding-top: 60px;
     position: absolute;
     display: block;
     height: 568px;
@@ -18,16 +18,16 @@
     padding: 20px;
     transition: color linear 0.2s;
 
+    &:hover {
+      color: $accentColor;
+    }
+
     &--tel {
       padding-top: 30px;
 
       &:hover {
         color: $secondaryColor;
       }
-    }
-
-    &:hover {
-      color: $accentColor;
     }
 
     &--active {
@@ -46,6 +46,18 @@
     padding: 0 15px;
     cursor: pointer;
     outline: none;
+  }
+
+  &__press {
+    padding-left: 20px;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: url(../images/vector-right.svg);
+      position: absolute;
+      transform: rotate(90deg) scale(0.5);
+    }
   }
 
   @include onNotebook {
