@@ -1,0 +1,46 @@
+.about {
+  @include flexColumn;
+  justify-content: center;
+
+  &__title {
+    margin-top: 56px;
+    
+    @extend %titleM;
+  }
+
+  &__text {
+    width: 480px;
+    margin-bottom: 59px;
+
+    @extend %textS;
+    text-align: center;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: $desktop-width) {
+    & {
+
+      &__row {
+        justify-content: space-around;
+        margin: 0;
+      }
+    }
+  }
+
+  @media (max-width: $notebook-width) {
+    & {
+
+      &__title {
+        font-size: 60px;
+      }
+
+      &__text {
+        width: 288px;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__list {
+    margin: 0 34px 0 0;
+
+    list-style: none;
+  }
+
+  &__link {
+    display: flex;
+   
+    @extend %textS;
+    text-decoration: none;
+
+    transition: color 300ms;
+  
+    &:hover {
+      color: $light-brown;
+    }
+  }
+
+  &__item {
+    display: flex;
+  }
+}
+
+@media (max-width: $notebook-width) {
+  .nav {
+    position: relative;
+    left: 10px;
+
+    display: flex;
+    justify-content: start;
+    align-items: flex-end;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+      margin-bottom: 100px;
+    }
+
+    &__list {
+      align-self: flex-start;
+      margin: 0 0 30px 10px;
+    }
+
+    &__link:hover {
+      color: $dark-brown;
+    }
+  }
+}

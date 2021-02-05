@@ -1,0 +1,43 @@
+.item-about {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  &__title {
+    margin-top: 12px;
+    
+    @extend %textL;
+  }
+
+  &__text {
+    margin-top: 7px;
+
+    @extend %textS;
+  }
+
+  &__img {
+    transition: transform 500ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px 5px #917661;
+      border-radius: 60%;
+    }
+  }
+}
+
+@media (max-width: $notebook-width) {
+  .about__row {
+    display: flex;
+    justify-content: stretch;
+    width: 100%;
+
+    overflow-x: auto;
+  }
+  .item-about {
+    flex-shrink: 0;
+    width: 230px;
+    height: 100%;
+    margin-right: 30px;
+  }
+}

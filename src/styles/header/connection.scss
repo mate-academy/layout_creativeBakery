@@ -1,0 +1,61 @@
+.connection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 350px;
+
+  @extend %textS;
+
+  &__text {
+    margin-right: 20px;
+
+    text-decoration: none;
+    color: $dark-brown;
+
+    transition: color 300ms;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &__button {
+    margin-right: 20px;
+
+    @include secondaryButtons;
+  }
+  
+  &__switcher {
+    @extend %textS;
+
+    border: none;
+    background-color: transparent;
+
+    &:focus {
+      background-color: $light-brown;
+    }
+  }
+}
+
+@media (max-width: $notebook-width) {
+  .connection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: baseline;
+    margin-left: 10px;
+    width: 160px;
+
+    &__text {
+      margin: 0 0 30px 10px;
+    }
+
+    &__button {
+      margin: 0 0 30px 10px;
+    }
+
+    &__switcher {
+      margin: 0 0 30px 10px;
+    }
+  }
+}

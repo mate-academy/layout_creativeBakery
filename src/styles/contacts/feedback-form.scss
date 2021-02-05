@@ -1,0 +1,52 @@
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin: 0 0 27px;
+
+    @extend %textM;
+  }
+
+  &__name {
+    @extend %feedbackBorder;
+  }
+
+  &__email {
+    @extend %feedbackBorder;
+  }
+
+  &__tel {
+    margin-bottom: 90px;
+
+    @extend %feedbackBorder;
+  }
+
+  &__text {
+    margin-bottom: 37px;
+
+    @extend %feedbackBorder;
+  }
+
+  &__button {
+    align-self: center;
+
+    @include primaryButtons;
+  }
+}
+
+@media (max-width: $notebook-width) {
+  .feedback-form {
+    display: flex;
+    order: 1;
+    margin: 0 auto;
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__button {
+      margin-bottom: 20px;
+    }
+  }
+}

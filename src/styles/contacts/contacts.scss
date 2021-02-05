@@ -1,0 +1,53 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  
+
+  &__body {
+    @include flexColumn;
+    margin-top: 135px;
+  }
+
+  &__column {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin-bottom: 135px;
+  }
+
+  &__map {
+    width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    margin-bottom: 26px;
+
+    @extend %titleM;
+  }
+}
+
+@media (max-width: $notebook-width) {
+  .contacts {
+    display: flex;
+
+    &__title {
+      z-index: 1;
+
+      font-size: 60px;
+      color: $white;
+
+      transform: translate(0, 100px);
+    }
+
+    &__column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__map {
+      width: 100%;
+      height: 500px;
+    }
+  }
+}
