@@ -4,10 +4,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
-    <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="stylesheet" href="./styles/style.scss">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cookie:regular" rel="stylesheet">
+    <link rel="icon" href="images/icon.svg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("a").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+            window.location.hash = hash;
+          });
+        }
+      });
+    });
+    </script>
   </head>
   <body>
-    <h1>Hello Mate Academy</h1>
+    <header class="header">
+      <div class="header__burger-container">
+        <input
+          id="burger-toggle"
+          class="burger-toggle"
+          type="checkbox"
+        >
+        <div class="header__top">
+          <div class="header__left">
+            <div class="header__logo">
+              <img src="images/header/logo.svg" alt="main logo">
+            </div>
+
+            <label class="header__burger" for="burger-toggle">
+              <span class="header__click"></span>
+            </label>
+
+            <nav class="header__nav nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="#bakery" class="nav__link">
+                    Bakery
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="#bakershop" class="nav__link">
+                    Bakershops
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="#about" class="nav__link">
+                    About
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="#contacts" class="nav__link">
+                    Contacts
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="header__tel-small">
+              <a href="tel:+380663363636" class="header__number-tel-small">
+                +38 066 336 36 36
+              </a>
+            </div>
+
+            <select
+            name="language"
+            id="language"
+            class="header__change-small"
+          >
+              <option value="EN">
+                EN
+              </option>
+              <option value="UA">
+                UA
+              </option>
+              <option value="RU">
+                RU
+              </option>
+            </select>
+
+            <div class="header__main-text">
+              <h1 class="header__text-big">
+                Creative bakery
+              </h1>
+            </div>
+
+            <div class="header__text">
+              <p>
+                We bake your fantasies: croissants
+                cakes, cookies, and cupcakes.
+              </p>
+            </div>
+
+            <div class="header__button">
+              Learn more
+            </div>
+          </div>
+
+          <div class="header__side side">
+            <div class="side__container">
+              <div class="side__tel">
+                <a href="tel:+380663363636" class="side__number-tel">
+                  +38 066 336 36 36
+                </a>
+              </div>
+              <div class="side__number-button">
+                Call back
+              </div>
+              <div class="side__change">
+                <label for="language" class="side__change-language"></label>
+                <select
+                  name="change-language"
+                  id="change-language"
+                  class="side__change-language-name"
+                >
+                  <option value="EN" class="side__change-language-active">
+                    EN
+                  </option>
+                  <option value="UA">
+                    UA
+                  </option>
+                  <option value="RU">
+                    RU
+                  </option>
+                </select>
+              </div>
+              <div class="side__number-container">
+                <div class="side__number">
+                  <p class="side__number-big">01</p>
+                </div>
+
+                <div class="side__number-small">
+                  <p class="side__num">02</p>
+                </div>
+
+                <div class="side__number-small-two">
+                  <p class="side__num">03</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__logo">
+          <img src="images/footer/logo_footer.svg" alt="main logo">
+        </div>
+
+        <nav class="footer__nav">
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a href="#bakery" class="footer__link">
+                Bakery
+              </a>
+            </li>
+            <li class="footer__item">
+              <a href="#bakershop" class="footer__link">
+                Bakershops
+              </a>
+            </li>
+            <li class="footer__item">
+              <a href="#about" class="footer__link">
+                About
+              </a>
+            </li>
+            <li class="footer__item">
+              <a href="#contacts" class="footer__link">
+                Contacts
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="footer__icons">
+          <div class="footer__icon">
+            <a href=""><img src="images/footer/twitter.svg" alt="icon twitter"></a>
+          </div>
+          <div class="footer__icon">
+            <a href=""><img src="images/footer/twitter.svg" alt="icon facebook"></a>
+          </div>
+          <div class="footer__icon">
+            <a href=""><img src="images/footer/linkedin.svg" alt="icon linked in"></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__down-container">
+        <div class="footer__year">
+          <p class="footer__text">&copy; 2015–2020</p>
+        </div>
+        <div>
+          <p class="footer__text">Privacy — Terms</p>
+        </div>
+      </div>
+    </footer>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
+
