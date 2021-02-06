@@ -1,0 +1,212 @@
+#burger-toggle {
+  display: none;
+}
+
+.header {
+  max-width: 1440px;
+  margin: auto;
+
+  &__top {
+    display: grid;
+    grid-template-columns: 67% 33%;
+    background: url(..\images\header\bake-cream-puff-cup.png) no-repeat;
+  }
+
+  &__left {
+    display: grid;
+    grid-template-areas: "logo nav" "main main" "text text" "button button";
+    grid-template-columns: 112px 1fr;
+    grid-template-rows: 87px 177px 78px 40px;
+    gap: 20px;
+    padding: 34px 0 0 59px;
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__nav {
+    grid-area: nav;
+    display: grid;
+    align-content: center;
+  }
+
+  &__tel-small {
+    display: none;
+  }
+
+  &__change-small {
+    display: none;
+  }
+
+  &__main-text {
+    grid-area: main;
+    color: $chocolate;
+  }
+
+  &__text {
+    grid-area: text;
+    max-width: 300px;
+    color: $chocolate;
+  }
+
+  &__button {
+    display: grid;
+    grid-area: button;
+    align-items: center;
+    background-color: $croissant;
+    border-radius: 40px;
+    border: 1px solid $croissant;
+    color: $chocolate;
+    transition: background-color 1s;
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &__button:hover {
+    background-color: $milk;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+
+    &__top {
+      grid-template-columns: 1fr;
+      height: 840px;
+    }
+
+    &__left {
+      grid-template-rows: 87px 180px 48px 40px;
+    }
+
+    &__number-tel-small {
+      color: $chocolate;
+    }
+
+    &__text-big {
+      font-size: 150px;
+      line-height: 80%;
+      text-align: center;
+    }
+
+    &__side {
+      display: none;
+    }
+
+    &__burger {
+      display: flex;
+      position: absolute;
+      align-items: center;
+
+      width: 26px;
+      height: 26px;
+      top: 39px;
+      right: 23px ;
+
+      z-index: 1;
+    }
+
+    &__click,
+    &__click::after,
+    &__click::before {
+      display: block;
+      position: absolute;
+
+      width: 18px;
+      height: 2px;
+
+      transition: 1s;
+
+      background-color: #616161;
+    }
+
+    &__click::before {
+      content: "";
+      top: 8px;
+    }
+
+    &__click::after {
+      content: "";
+      top: -9px;
+    }
+
+    #burger-toggle:checked ~ &__top > &__left > &__burger > &__click {
+      transform: rotate(45deg);
+    }
+
+    #burger-toggle:checked ~ &__top > &__left > &__burger > &__click::before {
+      top: 0;
+      transform: rotate(0);
+    }
+
+    #burger-toggle:checked ~ &__top > &__left > &__burger > &__click::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+
+    #burger-toggle:checked ~ &__top > &__left > &__nav {
+      visibility: visible;
+      background-color: $croissant;
+      transition: 1s;
+    }
+
+    #burger-toggle:checked ~ &__top > &__left > &__tel-small {
+      display: initial;
+      background-color: $croissant;
+      transition: 1s;
+      position: absolute;
+      right: 50px;
+      top: 700px;
+    }
+
+    #burger-toggle:checked ~ &__top > &__left > &__change-small {
+      display: initial;
+      position: absolute;
+      top: 42px;
+      right: 90px;
+      width: 50px;
+      height: 20px;
+      color: $chocolate;
+      border: none;
+      background-color: $croissant;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    
+    &__burger-container {
+      top: 30px;
+      right: 16px;
+    }
+    
+    &__top {
+      background-position: center;
+      height: 568px;
+    }
+
+    &__left {
+      grid-template-rows: 87px 180px 48px 40px;
+      padding: 15px 0 0 16px;
+    }
+
+    &__text-big {
+      max-width: 257px;
+      font-size: 100px;
+      line-height: 80%;
+      text-align: center;
+    }
+
+    #burger-toggle:checked ~ &__top > &__left > &__tel-small {
+      top: 500px;
+    }
+
+    #burger-toggle:checked ~ &__top > &__left > &__change-small {
+      top: 33px;
+    }
+  }
+}

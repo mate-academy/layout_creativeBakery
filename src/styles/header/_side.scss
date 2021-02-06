@@ -1,0 +1,110 @@
+.side {
+  background-color: $croissant;
+  height: 840px;
+
+  &__container {
+    display: grid;
+    grid-template-areas: "tel button change" " number number number";
+    grid-template-columns: 143px 100px 47px;
+    text-align: end;
+    justify-content: end;
+    align-items: baseline;
+    gap: 20px;
+    height: 87px;
+    padding: 60px 59px 0 0;
+  }
+
+  &__number-tel {
+    grid-area: tel;
+    text-decoration: none;
+    color: $chocolate;
+
+    transition: color 1s;
+  }
+
+  &__number-tel:hover {
+    color: $croissant;
+  }
+
+  &__number-button {
+    grid-area: button;
+    padding: 5px 15px 4px 18px;
+    border-radius: 40px;
+    width: 100px;
+    height: 30px;
+    
+    background-color: $cream;
+    color: $chocolate;
+    border: 2px solid $cream;
+
+    transition: background-color 1s;
+
+    cursor: pointer;
+  }
+
+  &__number-button:hover {
+    border: 2px solid $cream;
+    background-color: $milk;
+  }
+
+  &__change {
+    grid-area: change;
+  }
+
+  &__change-language-name {
+    cursor: pointer;
+    color: $chocolate;
+    border: none;
+    background-color: $croissant;
+  }
+
+  &__number-container {
+    grid-area: number;
+  }
+
+  &__number {
+    padding-top: 130px;
+    position: relative;
+  }
+  
+  &__number::before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    background: url(..\images\header\icon_up.svg) no-repeat;
+    width: 26px;
+    height: 15px;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  &__number::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    bottom: -125px;
+    background: url(..\images\header\icon_down.svg) no-repeat;
+    width: 26px;
+    height: 15px;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  &__number-big {
+    font-size: 176px;
+    line-height: 209px;
+    color: $chocolate;
+  }
+
+  &__num {
+    font-size: 40px;
+    line-height: 47px;
+    color: $cream;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .side {
+    height: 568px;
+  }
+}
