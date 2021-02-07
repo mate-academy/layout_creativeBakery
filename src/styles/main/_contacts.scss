@@ -1,3 +1,139 @@
-// .contacts {
+.contacts {
 
-// }
+  &__main-container {
+    display: grid;
+    grid-template-columns: 430px 1fr;
+  }
+
+  &__left-side {
+    background-color: $croissant;
+  }
+
+  &__main-text {
+    padding: 40px 0 34px;
+    text-align: center;
+  }
+
+  &__text-container {
+    display: grid;
+    grid-template-columns: 20px 240px;
+    gap: 36px;
+    justify-content: center;
+    padding-bottom: 9px;
+  }
+
+  &__text-container:nth-of-type(5n) {
+    padding-bottom: 40px;
+  }
+
+  &__text-icon {
+    align-self: center;
+  }
+
+  &__text-head {
+    font-weight: bold;
+    color: $chocolate;
+  }
+
+  &__text-bottom {
+    color: $chocolate;
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: 510px 400px;
+    justify-content: center;
+    gap: 100px;
+    padding: 90px 0;
+  }
+
+  &__form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 40px 40px 100px;
+    justify-items: center;
+  }
+
+  &__form-header {
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 150%;
+    color: $chocolate;
+    padding-bottom: 27px;
+  }
+
+  &__form-input {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $chocolate;
+    opacity: 0.5;
+    border: none;
+    border-bottom: 1px solid $chocolate;
+    width: 378px;
+  }
+
+  &__form-message {
+    height: 50px;
+  }
+
+  &__button {
+    justify-self: center;
+    margin: 30px 0 50px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .contacts {
+    &__bottom {
+      gap: 20px;
+    }
+
+    &__letter-icon {
+      max-width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contacts {
+    &__bottom {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+
+    &__form-container {
+      order: 0;
+    }
+
+    &__letter-icon {
+      order: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .contacts {
+    &__main-container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contacts {
+    &__form-header {
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 150%;
+    }
+
+    &__letter-icon {
+      width: 250px;
+    }
+
+    &__form-input {
+      width: 288px;
+    }
+  }
+}
