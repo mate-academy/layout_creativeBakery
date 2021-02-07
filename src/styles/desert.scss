@@ -1,18 +1,25 @@
 .desert {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+
+  &:nth-child(2n+1) {
+    flex-direction: row-reverse;
+  }
 
   &__description {
     display: inline-block;
-
     
-
-    color: #412d22;
+    color: $chocolate;
   }
 
   &__heading {
+    margin-bottom: 43px;
+
     font-weight: 400;
     font-size: 50px;
     line-height: 60px;
-    color: #e39a3b;
+    color: $croissant;
   }
 
   &__name {
@@ -27,7 +34,7 @@
   &__text {
     margin-bottom: 32px;
 
-    line-height: 1.5;
+    line-height: 24px;
   }
 
   &__price {
@@ -39,24 +46,57 @@
     line-height: 110px;
 
     border-radius: 50%;
-    background-color: #f1cc9d;
+    background-color: $cream;
   }
 
   &__slider {
-    position: absolute;
-    right: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    width: 60%;
-    gap: 85px;
+
+    max-width: 700px;
+    
+    gap: 65px;
+
+    & p {
+      position: relative;
+      right: -40px;
+      font-size: 26px;
+  
+      &:hover {
+        color: $cream;
+      }
+  
+      &:last-of-type {
+        right: 20px;
+      }
+    }
   }
 
-  // &__arrow {
+  &__img {
+    width: 90%;
+  }
+}
 
-  // }
+@media screen and (max-width: 1150px) {
+  .desert {
+    flex-direction: column;
+    justify-content: center;
+    &:nth-child(2n+1) {
+      flex-direction: column;
+    }
 
-  // &__img {
-    
-  // }
+    &__slider {
+      & p {
+        position: relative;
+        right: -60px;
+        font-size: 26px;
+        
+       
+        &:last-of-type {
+          left: -40px;
+        }
+      }
+    }
+  }
 }
