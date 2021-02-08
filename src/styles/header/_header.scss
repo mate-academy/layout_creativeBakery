@@ -1,14 +1,11 @@
-#burger-toggle {
-  display: none;
-}
-
 .header {
-  max-width: 1440px;
-  margin: auto;
+  &__burger-toggle {
+    display: none;
+  }
 
   &__top {
     display: grid;
-    grid-template-columns: 67% 33%;
+    grid-template-columns: 2fr 1fr;
     
     background: url(..\images\header\bake-cream-puff-cup.png) no-repeat;
   }
@@ -144,27 +141,27 @@
       top: -9px;
     }
 
-    #burger-toggle:checked ~ &__top > &__left > &__burger > &__click {
+    &__burger-toggle:checked ~ &__top * &__click {
       transform: rotate(45deg);
     }
 
-    #burger-toggle:checked ~ &__top > &__left > &__burger > &__click::before {
+    &__burger-toggle:checked ~ &__top * &__click::before {
       top: 0;
       transform: rotate(0);
     }
 
-    #burger-toggle:checked ~ &__top > &__left > &__burger > &__click::after {
+    &__burger-toggle:checked ~ &__top * &__click::after {
       top: 0;
       transform: rotate(90deg);
     }
 
-    #burger-toggle:checked ~ &__top > &__left > &__nav {
+    &__burger-toggle:checked ~ &__top * &__nav {
       visibility: visible;
       background-color: $croissant;
       transition: 1s;
     }
 
-    #burger-toggle:checked ~ &__top > &__left > &__tel-small {
+    &__burger-toggle:checked ~ &__top * &__tel-small {
       display: initial;
       position: absolute;
       top: 700px;
@@ -175,7 +172,7 @@
       background-color: $croissant;
     }
 
-    #burger-toggle:checked ~ &__top > &__left > &__change-small {
+    &__burger-toggle:checked ~ &__top * &__change-small {
       display: initial;
       position: absolute;
       top: 42px;
@@ -217,11 +214,11 @@
       line-height: 80%;
     }
 
-    #burger-toggle:checked ~ &__top > &__left > &__tel-small {
+    &__burger-toggle:checked ~ &__top * &__tel-small {
       top: 500px;
     }
 
-    #burger-toggle:checked ~ &__top > &__left > &__change-small {
+    &__burger-toggle:checked ~ &__top * &__change-small {
       top: 33px;
     }
   }
