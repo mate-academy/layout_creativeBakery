@@ -4,14 +4,15 @@
 
   &__container {
     display: grid;
+    height: 87px;
+    grid-template-columns: 160px 110px 50px;
     grid-template-areas: "tel button change" " number number number";
-    grid-template-columns: 143px 100px 47px;
-    text-align: end;
     justify-content: end;
     align-items: baseline;
-    gap: 20px;
-    height: 87px;
     padding: 60px 59px 0 0;
+    gap: 20px;
+    
+    text-align: end;
   }
 
   &__number-tel {
@@ -20,31 +21,34 @@
     color: $chocolate;
 
     transition: color 1s;
-  }
 
-  &__number-tel:hover {
-    color: $croissant;
+    &:hover {
+      color: $cream;
+    }
   }
 
   &__number-button {
     grid-area: button;
     padding: 5px 15px 4px 18px;
-    border-radius: 40px;
     width: 110px;
     height: 30px;
     
+    border: 2px solid $cream;
+    border-radius: 40px;
+    
     background-color: $cream;
     color: $chocolate;
-    border: 2px solid $cream;
-
+    
+    text-align: center;
+    
     transition: background-color 1s;
 
     cursor: pointer;
-  }
 
-  &__number-button:hover {
-    border: 2px solid $cream;
-    background-color: $milk;
+    &:hover {
+      border: 2px solid $cream;
+      background-color: $milk;
+    }
   }
 
   &__change {
@@ -52,10 +56,11 @@
   }
 
   &__change-language-name {
-    cursor: pointer;
-    color: $chocolate;
     border: none;
+    color: $chocolate;
     background-color: $croissant;
+    
+    cursor: pointer;
   }
 
   &__number-container {
@@ -63,47 +68,59 @@
   }
 
   &__number {
-    padding-top: 130px;
     position: relative;
+    padding-top: 130px;
   }
   
   &__number::before {
     content: "";
+    
     position: absolute;
     right: 10px;
+    
     background: url(..\images\header\icon_up.svg) no-repeat;
+    
     width: 26px;
     height: 15px;
+    
     z-index: 1;
+    
     cursor: pointer;
   }
 
   &__number::after {
     content: "";
+    
     position: absolute;
     right: 10px;
+    
     bottom: -125px;
     background: url(..\images\header\icon_down.svg) no-repeat;
+    
     width: 26px;
     height: 15px;
+    
     z-index: 1;
+    
     cursor: pointer;
   }
 
   &__number-big {
     font-size: 176px;
     line-height: 209px;
+    
     color: $chocolate;
   }
 
   &__num {
     font-size: 40px;
     line-height: 47px;
+    
     color: $cream;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: $small-tablet-width) {
   .side {
     height: 568px;
   }

@@ -1,11 +1,13 @@
 .footer {
-  position: sticky;
-  bottom: 0;
   display: grid;
+  position: sticky;
   max-width: 1440px;
-  margin: auto;
   height: 157px;
+  bottom: 0;
+  margin: auto;
+  
   background-color: $chocolate;
+  
   z-index: -1;
 
   &__container {
@@ -25,44 +27,48 @@
 
   &__link {
     color: $milk;
+    
     cursor: pointer;
+    
     transition: color 1s;
-
-  }
-
-  &__link:hover {
-    color: $croissant;
+  
+    &:hover {
+      color: $croissant;
+    }
   }
 
   &__icons {
-    justify-self: end;
     display: grid;
     grid-template-columns: repeat(3,31px);
+    justify-self: end;
     gap: 20px;
   }
 
   &__down-container {
-    padding-top: 15px;
     display: grid;
     grid-template-columns: 75px 88px;
-    gap: 30px;
     justify-content: center;
+    padding-top: 15px;
+    gap: 50px;
+    
     white-space: nowrap;
   }
 
   &__text {
     font-size: 12px;
-    line-height: 140.62%;
+    line-height: 140%;
+    
     opacity: 0.7;
+    
     color: $milk;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: $small-tablet-width) {
   .footer {
-    height: 570px;
     display: flex;
     flex-direction: column;
+    height: 570px;
     
     &__logo {
       padding-top: 66px;
@@ -75,10 +81,10 @@
     }
 
     &__list {
-      padding-top: 60px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-top: 60px;
       gap: 0;
     }
 
@@ -92,11 +98,12 @@
 
     &__down-container {
       padding-top: 47px;
+      gap: 30px;
     }
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: $small-mobile-width) {
   .footer {
     &__container {
       display: flex;

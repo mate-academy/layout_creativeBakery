@@ -23,20 +23,22 @@
   }
 
   &__recipe-about {
+    max-width: 302px;
     padding: 12px 0 42px;
     color: $chocolate;
-    max-width: 302px;
   }
 
   &__price {
-    color: $chocolate;
-    padding: 43px 12px;
-    background-color: $croissant;
-    border-radius: 50%;
     width: 110px;
     height: 110px;
+    padding: 43px 12px;
+    border-radius: 50%;
+    
     text-align: center;
     font-weight: bold;
+    
+    color: $chocolate;
+    background-color: $croissant;
   }
 
   &__photo-container {
@@ -52,6 +54,7 @@
     left: -30px;
     width: 15px;
     height: 26px;
+    
     cursor: pointer;
   }
 
@@ -63,6 +66,7 @@
     right: 0;
     width: 15px;
     height: 26px;
+    
     cursor: pointer;
   }
 
@@ -76,12 +80,12 @@
 
   &__array {
     display: grid;
-    align-self: center;
     justify-content: end;
+    align-self: center;
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: $desctop-width) {
   .bakery {
     &__photo {
       width: 400px;
@@ -103,28 +107,30 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: $tablet-width) {
   .bakery {
     padding: 0 10px;
 
     &__photo-container {
       padding-top: 30px;
     }
+    
     &__photo {
       width: 250px;
     }
 
+    &__photo-container::after,
     &__photo-container::before {
       position: absolute;
       content: "";
       top: 130px;
+    }
+
+    &__photo-container::before {
       left: -20px;
     }
   
     &__photo-container::after {
-      position: absolute;
-      content: "";
-      top: 130px;
       left: 260px;
     }
 

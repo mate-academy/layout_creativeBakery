@@ -20,10 +20,10 @@
     gap: 36px;
     justify-content: center;
     padding-bottom: 9px;
-  }
-
-  &__text-container:nth-of-type(5n) {
-    padding-bottom: 40px;
+  
+    &:nth-of-type(5n) {
+      padding-bottom: 40px;
+    }
   }
 
   &__text-icon {
@@ -43,8 +43,8 @@
     display: grid;
     grid-template-columns: 510px 400px;
     justify-content: center;
-    gap: 100px;
     padding: 90px 0;
+    gap: 100px;
   }
 
   &__form-container {
@@ -55,22 +55,26 @@
   }
 
   &__form-header {
+    padding-bottom: 27px;
+    
     font-weight: normal;
     font-size: 26px;
     line-height: 150%;
+    
     color: $chocolate;
-    padding-bottom: 27px;
   }
 
   &__form-input {
+    width: 378px;
+    border: none;
+    border-bottom: 1px solid $chocolate;
+    
     font-weight: normal;
     font-size: 16px;
     line-height: 150%;
+    
     color: $chocolate;
     opacity: 0.5;
-    border: none;
-    border-bottom: 1px solid $chocolate;
-    width: 378px;
   }
 
   &__form-message {
@@ -81,9 +85,13 @@
     justify-self: center;
     margin: 30px 0 50px;
   }
+
+  &__big-map {
+    border: none;
+  }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: $desctop-width) {
   .contacts {
     &__bottom {
       gap: 20px;
@@ -112,7 +120,7 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: $tablet-width) {
   .contacts {
     &__main-container {
       grid-template-columns: 1fr;
@@ -120,7 +128,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: $mobile-width) {
   .contacts {
     &__form-header {
       font-weight: normal;
