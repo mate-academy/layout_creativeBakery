@@ -1,0 +1,35 @@
+.form {
+  @include flexCol;
+  justify-content: center;
+  width: 50vw;
+
+  &__heading {
+    @extend %titleXSmall;
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    width: 378px;
+    @extend %feedbackBorder;
+
+    &--phone {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__button {
+    @include buttonPri;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .form {
+    width: auto;
+    padding-bottom: 50px;
+
+    &__input {
+      width: calc(100vw - 30px);
+      max-width: 378px;
+    }
+  }
+}
