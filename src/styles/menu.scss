@@ -30,4 +30,45 @@
       }
     }
   }
+
+  .header {
+    &__menu {
+      .menu {
+        &__list {
+          position: absolute;
+          display: block;
+          top: 100px;
+          right: -140px;
+          z-index: 1;
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 0;
+          transform: translate(200px);
+          transition: all 0.2s;
+
+          &_active {
+            transform: translate(-400px);
+            transition: transform 0.2s;
+          }
+        }
+        &__item {
+          margin: 30px 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $phone-bp) {
+  .header {
+    &__menu {
+      .menu {
+        &__list {
+          &_active {
+            transform: translate(-200px);
+          }
+        }
+      }
+    }
+  }
 }
