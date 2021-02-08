@@ -29,10 +29,8 @@
         color: $second-color;
       }
     }
-  }
 
-  .header__menu {
-    > .menu__list {
+    &__list_tablet {
       position: absolute;
       display: block;
       top: 100px;
@@ -42,23 +40,23 @@
       align-items: flex-start;
       margin: 0;
       transform: translate(200px);
-      transition: all 0.2s;
-
-      > .menu__item {
-        margin: 30px 20px;
-      }
-
+      transition: translate 0.2s;
+  
       &_active {
         transform: translate(-400px);
         transition: transform 0.2s;
       }
     }
+
+    &__item_tablet {
+      margin: 30px 20px;
+    }
   }
 }
 
 @media screen and (max-width: $phone-bp) {
-  .header__menu {
-    > .menu__list {
+  .menu {
+    &__list_tablet {
       &_active {
         transform: translate(-200px);
       }
