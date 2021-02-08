@@ -1,19 +1,40 @@
 .header {
   position: relative;
   height: 840px;
+  z-index: 1;
+  max-width: 100%;
   background-color: $croissantColour;
-  background-image: url(../images/header.png);
-  background-repeat: no-repeat;
-  background-position: left center ;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 840px;
+    width: 65%;
+    background-image: url(../images/header.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    background-image: url(../images/header.png);
+    background-position: left center;
+  }
 
   @include tabletMini {
-    background-position: center ;
+    background-position: center;
   }
 
   @include mobile {
+    background-position: top center;
     background-color: #f9f3f5;
     height: 100vh;
   }
+
   &__top {
     display: flex;
     justify-content: space-between;
@@ -36,7 +57,7 @@
     line-height: 177px;
     margin-bottom: 24px;
 
-    @include tablet {
+    @include desktopMini {
       font-size: 120px;
       line-height: 140px;
     }
