@@ -8,6 +8,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Rubik:wght@300;400&display=swap" rel="stylesheet">
     <link rel="icon" href="images/logo/logo.svg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("a").on('click', function(event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+
+            var hash = this.hash;
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800, function() {
+              window.location.hash = hash;
+            });
+          }
+        });
+      });
+    </script>
   </head>
   <body>
 
@@ -44,8 +61,10 @@
         </nav>
 
         <div class="menu__contacts">
-          <div class="menu phone">
-            +38 066 336 36 36
+          <div class="menu__phone">
+            <a href="tel:+38 066 336 36 36" class="menu__phone-link">
+              +38 066 336 36 36
+            </a>
           </div>
           <button class="menu__button button">
             Call back
@@ -104,7 +123,7 @@
         We bake your fantasies: croissants
         cakes, cookies, and cupcakes.
       </div>
-      <button class="mobile-header__button">
+      <button class="mobile-header__button button">
         Learn more
       </button>
 
@@ -158,13 +177,17 @@
               +38 066 336 36 36
             </a>
           </div>
-          <div class="burger__nav-button">
+          <div class="burger__nav-button button">
             Call back
           </div>
           <div class="burger__nav-language">
             <select name="language" class="burger__nav-select">
-              <option class="burger__nav-option" value="End">ENG</option>
-              <option class="burger__nav-option" value="End">UA</option>
+              <option class="burger__nav-option" value="End">
+                ENG
+              </option>
+              <option class="burger__nav-option" value="End">
+                UA
+              </option>
             </select>
           </div>
         </nav>
@@ -187,7 +210,7 @@
                 Chocolate mix
               </div>
               <div class="product__description">
-                Oatmeal cookies with golden raisins, <br> orange zest and chocolate chips.
+                Oatmeal cookies with golden raisins, orange zest and chocolate chips.
               </div>
               <div class="product__price">
                 $ 4 / 100 g
@@ -236,7 +259,7 @@
                 Mint coffee mocca
               </div>
               <div class="product__description">
-                Chocolate biscuit coffee cake topped <br> with a mint buttercream and powder.
+                Chocolate biscuit coffee cake topped with a mint buttercream and powder.
               </div>
               <div class="product__price">
                 $ 5 / 100 g
@@ -253,7 +276,7 @@
                 Almond classic
               </div>
               <div class="product__description">
-                Light multi-layered croissant strewn <br> with cinammon and almond “petals”.
+                Light multi-layered croissant strewn with cinammon and almond “petals”.
               </div>
               <div class="product__price">
                 $ 6.5 / 2
@@ -302,14 +325,14 @@
                 Triple creamy
               </div>
               <div class="product__description">
-                Chocolate salted caramel, Vanilla frutti <br> pebbles and Chocolate chip cupcakes.
+                Chocolate salted caramel, Vanilla frutti pebbles and Chocolate chip cupcakes.
               </div>
               <div class="product__price">
                 $ 8 / 3
               </div>
             </div>
           </div>
-          <button class="catalog__button">
+          <button class="catalog__button button">
             All bakeries
           </button>
         </div>
@@ -342,7 +365,7 @@
                 Adress
               </option>
             </select>
-            <button class="form__button" type="submit">
+            <button class="form__button button" type="submit">
               Search
             </button>
           </form>
@@ -362,7 +385,8 @@
         </h2>
         <div class="section__about about">
           <div class="about__description">
-            Bakerlab is a bakery network in Ukraine, specialising in creating unique pastry using unconventional recepies. We are commited to delivering the best experience to our clients.
+            Bakerlab is a bakery network in Ukraine, specialising in creating unique pastry using unconventional recepies.
+            We are commited to delivering the best experience to our clients.
           </div>
           <div class="about__content">
             <div class="about__item">
@@ -381,7 +405,7 @@
             <div class="about__item">
               <img
                 src="images/companies.png"
-                alt="foundation"
+                alt="companies"
                 class="about__img"
               >
               <div class="about__value">
@@ -394,7 +418,7 @@
             <div class="about__item">
               <img
                 src="images/workers.png"
-                alt="foundation"
+                alt="workers"
                 class="about__img"
               >
               <div class="about__value">
@@ -408,7 +432,7 @@
             <div class="about__item">
               <img
                 src="images/threats.png"
-                alt="foundation"
+                alt="treats"
                 class="about__img"
               >
               <div class="about__value">
@@ -422,7 +446,7 @@
             <div class="about__item">
               <img
                 src="images/foundation.png"
-                alt="foundation"
+                alt="clients"
                 class="about__img"
               >
               <div class="about__value">
@@ -450,9 +474,9 @@
               <div class="contacts__item-title">
                 Bakerlab Head Office
               </div>
-              <div class="contacts__item-value">
+              <a href="https://goo.gl/maps/c2AyiUDSPU2Vhcos6" class="contacts__item-value">
                 Ukraine, Kyiv, Holosiivska St, 53
-              </div>
+              </a>a>
             </div>
 
             <div class="contacts__item contacts__item--phone">
@@ -525,29 +549,28 @@
               type="text"
               class="feedback__form-input"
               placeholder="Name*"
-              value=""
+              name="name"
             >
             <input
               type="email"
               class="feedback__form-input"
               placeholder="E-mail*"
-              value=""
+              name="email"
             >
             <input
               type="text"
               class="feedback__form-input"
               placeholder="Phone"
-              value=""
+              name="phone"
             >
             <textarea
               type="textarea"
               class="feedback__form-input"
               placeholder="Massage"
-              value=""
               cols="30"
               rows="5">
             </textarea>
-            <button class="feedback__form-button">
+            <button class="feedback__form-button button">
               Send
             </button>
           </form>
