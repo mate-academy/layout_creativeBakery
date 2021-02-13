@@ -89,10 +89,12 @@
   }
 
   &__btn {
+    position: relative;
     width: 160px;
     height: 40px;
     background: hsl(34, 75%, 56%);
     border-radius: 40px;
+    overflow: hidden;
 
     @media (max-width: 780px) {
       display: block;
@@ -172,6 +174,8 @@
     padding-left: 15px;
     position: relative;
 
+    @include animation-shake;
+
     &::before {
       content: "6";
       @include circles-on-the-map;
@@ -216,6 +220,9 @@
   &__lutsk {
     grid-column: 4;
     grid-row: 2;
+    position: relative;
+
+    @include animation-shake;
 
     &::before {
       content: "4";
@@ -257,6 +264,7 @@
     position: relative;
     grid-column: 8;
     grid-row: 9;
+    @include animation-shake;
 
     &::before {
       content: "4";
@@ -301,6 +309,7 @@
     position: relative;
     grid-column: 8;
     grid-row: 4;
+    @include animation-shake;
 
     &::before {
       content: "3";
@@ -347,6 +356,7 @@
     grid-row: 4;
     padding-left: 45px;
     padding-top: 15px;
+    @include animation-shake;
 
     &::before {
       content: "9";
@@ -398,6 +408,7 @@
     grid-column: 11;
     grid-row: 2;
     padding-left: 35px;
+    @include animation-shake;
 
     &::before {
       content: "4";
@@ -449,6 +460,7 @@
     grid-column: 14;
     grid-row: 14;
     padding-top: 25px;
+    @include animation-shake;
 
     &::before {
       content: "2";
@@ -491,6 +503,7 @@
     grid-column: 14;
     grid-row: 10;
     padding-left: 35px;
+    @include animation-shake;
 
     &::before {
       content: "4";
@@ -523,6 +536,7 @@
     grid-column: 14;
     grid-row: 6;
     padding-top: 15px;
+    @include animation-shake;
 
     &::before {
       content: "2";
@@ -568,6 +582,7 @@
     position: relative;
     grid-column: 17;
     grid-row: 6;
+    @include animation-shake;
 
     &::before {
       content: "5";
@@ -714,6 +729,22 @@
         justify-self: center;
         background-color: hsl(21, 31%, 19%);
       }
+    }
+  }
+}
+
+.pulse {
+  background-color: aqua;
+  border-radius: 50%;
+  animation: pulse 0.7s ease-out;
+  transform: scale(0);
+  position: absolute;
+
+  @keyframes pulse {
+    to {
+      transform: scale(2);
+      background-color: white ;
+      opacity: 0;
     }
   }
 }

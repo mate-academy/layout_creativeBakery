@@ -103,10 +103,29 @@
   }
 
   &__button {
+    position: relative;
+    display: inline-block;
     margin-top: 40px;
     width: 160px;
     height: 40px;
     background: hsl(34, 75%, 56%);
     border-radius: 40px;
+    overflow: hidden;
+  }
+}
+
+.pulse {
+  background-color: aqua;
+  border-radius: 50%;
+  animation: pulse 0.7s ease-out;
+  transform: scale(0);
+  position: absolute;
+
+  @keyframes pulse {
+    to {
+      transform: scale(2);
+      background-color: white ;
+      opacity: 0;
+    }
   }
 }

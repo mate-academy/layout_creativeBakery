@@ -33,6 +33,14 @@
   &__photo {
     display: flex;
     padding-top: 19px;
+
+    transform-origin: center 80%;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scaleY(0.6) scaleX(1.2);
+    }
+
     &::after {
       content: "Bakerlab";
       position: relative;
@@ -42,6 +50,12 @@
       font-size: 30px;
       line-height: 33px;
       color: hsl(21, 31%, 19%);
+      transform-origin: center 80%;
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scaleY(0.6) scaleX(1.2);
+      }
     }
   }
 
@@ -80,13 +94,46 @@
   }
 
   &__btn--small {
+    position: relative;
     @include Font-Family-RubikR;
     margin-right: 20px;
     background: hsl(34, 75%, 78%);
     border-radius: 40px;
     width: 100px;
     height: 30px;
-    border: none;
+    border: 3px solid hsl(34, 52%, 52%);
+
+    transition: all 300ms ease;
+    box-shadow: 0 4px 10px 2px rgba(black, 0.2);
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 0%;
+      height: 100%;
+      background: red;
+      top: 0;
+      left: 50%;
+      z-index: -1;
+      transition: all 0ms ease;
+    }
+
+    &:hover {
+      color: white;
+      box-shadow: none;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: red;
+        top: 0;
+        left: 0%;
+        z-index: -1;
+        transition: all 300ms ease;
+      }
+    }
   }
 
   &__language {
@@ -162,6 +209,7 @@
   }
 
   &__btn {
+    position: relative;
     @include Font-Family-RubikR;
     font-size: 16px;
     line-height: 24px;
@@ -171,6 +219,7 @@
     border-radius: 40px;
     border: none;
     margin-top: 35px;
+    overflow: hidden;
   }
 
   &__wrap {
@@ -320,7 +369,33 @@
     display: flex;
     justify-content: space-between;
     width: 355px;
+  }
 
+  &__item {
+    text-decoration: none;
+    font-size: 1em;
+    position: relative;
+    transition: all 0.6s;
+
+    &:before {
+      content: "";
+      width: 0;
+      height: 0.1em;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      background: hsl(34, 75%, 56%);
+      transition: all 0.3s;
+    }
+    &:hover {
+      transform: scale(1.2);
+
+      &:before {
+        width: 100%;
+        left: 0;
+        background: hsl(34, 75%, 56%);
+      }
+    }
   }
 
   &__link {
@@ -329,5 +404,22 @@
     line-height: 24px;
     color: hsl(21, 31%, 19%);
     padding: 10px;
+  }
+
+}
+
+.pulse {
+  background-color: aqua;
+  border-radius: 50%;
+  animation: pulse 0.7s ease-out;
+  transform: scale(0);
+  position: absolute;
+
+  @keyframes pulse {
+    to {
+      transform: scale(2);
+      background-color: white ;
+      opacity: 0;
+    }
   }
 }
