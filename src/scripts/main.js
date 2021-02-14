@@ -26,3 +26,59 @@ function addElement(event) {
   addDiv.classList.add('pulse');
   this.appendChild(addDiv);
 }
+
+const divs = document.getElementsByClassName('header__index');
+let i = 0;
+
+// eslint-disable-next-line no-undef
+down.onclick = function() {
+  i = (i < divs.length - 1) ? i + 1 : 0;
+
+  divs[1 - i].classList.remove('header__index--big');
+  divs[i].classList.add('header__index--big');
+};
+
+// eslint-disable-next-line no-undef
+up.onclick = function() {
+  i = (i > 0) ? i - 1 : divs.length - 1;
+
+  divs[1 - i].classList.remove('header__index--big');
+
+  divs[i].classList.add('header__index--big');
+};
+
+const check = document.getElementById('toggler');
+
+// eslint-disable-next-line no-undef
+show.onclick = function() {
+  if (check.hasAttribute('checked')) {
+    check.removeAttribute('checked');
+
+    return;
+  }
+  check.setAttribute('checked', 'checked');
+};
+
+// eslint-disable-next-line no-undef
+end.onclick = function() {
+  check.setAttribute('disabled', 'disabled');
+  check.removeAttribute('checked');
+};
+
+// eslint-disable-next-line no-undef
+end1.onclick = function() {
+  check.setAttribute('disabled', 'disabled');
+  check.removeAttribute('checked');
+};
+
+// eslint-disable-next-line no-undef
+end2.onclick = function() {
+  check.setAttribute('disabled', 'disabled');
+  check.removeAttribute('checked');
+};
+
+// eslint-disable-next-line no-undef
+end3.onclick = function() {
+  check.setAttribute('disabled', 'disabled');
+  check.removeAttribute('checked');
+};
