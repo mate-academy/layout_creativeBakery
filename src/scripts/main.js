@@ -28,11 +28,20 @@ function addElement(event) {
 }
 
 const divs = document.getElementsByClassName('header__index');
+
 let i = 0;
+const def = document.getElementById('def');
+
+def.setAttribute('class', 'header__index--big');
 
 // eslint-disable-next-line no-undef
 down.onclick = function() {
   i = (i < divs.length - 1) ? i + 1 : 0;
+
+  if (def.hasAttribute('class')) {
+    def.removeAttribute('class');
+    def.setAttribute('class', 'header__index');
+  }
 
   divs[1 - i].classList.remove('header__index--big');
   divs[i].classList.add('header__index--big');
@@ -41,6 +50,11 @@ down.onclick = function() {
 // eslint-disable-next-line no-undef
 up.onclick = function() {
   i = (i > 0) ? i - 1 : divs.length - 1;
+
+  if (def.hasAttribute('class')) {
+    def.removeAttribute('class');
+    def.setAttribute('class', 'header__index');
+  }
 
   divs[1 - i].classList.remove('header__index--big');
 
