@@ -1,5 +1,7 @@
 'use strict';
 
+//!  Animation button
+
 const buttons = document.getElementsByClassName('butt');
 
 const forEach = Array.prototype.forEach;
@@ -27,72 +29,60 @@ function addElement(event) {
   this.appendChild(addDiv);
 }
 
+//! Block header
+//! Count number
+
 const divs = document.getElementsByClassName('header__index');
-
 let i = 0;
-const def = document.getElementById('def');
 
-def.setAttribute('class', 'header__index--big');
+divs[i].classList.add('header__index--big');
 
-// eslint-disable-next-line no-undef
-down.onclick = function() {
+// const def = document.getElementById('def');
+
+document.querySelector('#down').addEventListener('click', () => {
+  divs[i].classList.remove('header__index--big');
+
   i = (i < divs.length - 1) ? i + 1 : 0;
 
-  if (def.hasAttribute('class')) {
-    def.removeAttribute('class');
-    def.setAttribute('class', 'header__index');
-  }
-
-  divs[1 - i].classList.remove('header__index--big');
   divs[i].classList.add('header__index--big');
-};
+});
 
-// eslint-disable-next-line no-undef
-up.onclick = function() {
+document.querySelector('#up').addEventListener('click', () => {
+  divs[i].classList.remove('header__index--big');
   i = (i > 0) ? i - 1 : divs.length - 1;
 
-  if (def.hasAttribute('class')) {
-    def.removeAttribute('class');
-    def.setAttribute('class', 'header__index');
-  }
-
-  divs[1 - i].classList.remove('header__index--big');
-
   divs[i].classList.add('header__index--big');
-};
+});
+
+//!  Burger menu close or open
 
 const check = document.getElementById('toggler');
 
-// eslint-disable-next-line no-undef
-show.onclick = function() {
+document.querySelector('#show').addEventListener('click', () => {
   if (check.hasAttribute('checked')) {
     check.removeAttribute('checked');
 
     return;
   }
   check.setAttribute('checked', 'checked');
-};
+});
 
-// eslint-disable-next-line no-undef
-end.onclick = function() {
+document.querySelector('#end').addEventListener('click', () => {
   check.setAttribute('disabled', 'disabled');
   check.removeAttribute('checked');
-};
+});
 
-// eslint-disable-next-line no-undef
-end1.onclick = function() {
+document.querySelector('#end1').addEventListener('click', () => {
   check.setAttribute('disabled', 'disabled');
   check.removeAttribute('checked');
-};
+});
 
-// eslint-disable-next-line no-undef
-end2.onclick = function() {
+document.querySelector('#end2').addEventListener('click', () => {
   check.setAttribute('disabled', 'disabled');
   check.removeAttribute('checked');
-};
+});
 
-// eslint-disable-next-line no-undef
-end3.onclick = function() {
+document.querySelector('#end3').addEventListener('click', () => {
   check.setAttribute('disabled', 'disabled');
   check.removeAttribute('checked');
-};
+});
