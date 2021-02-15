@@ -1,0 +1,98 @@
+@mixin Font-Family-CookieR {
+  font-family: "Cookie", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin Font-Family-RubikR {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin Font-Family-RubikB {
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin Font-Family-RubikL {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin circles-on-the-map {
+  position: absolute;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50%;
+  background-color: hsl(356, 79%, 46%);
+  color: rgb(255, 255, 255);
+
+  @media (max-width: 616px) {
+    width: 15px;
+    height: 15px;
+    font-size: 14px;
+    line-height: 15px;
+  }
+}
+
+@mixin animation-shake {
+  &:hover {
+    animation: 1.2s ease-in-out 0s normal
+      none infinite running trambling-animation;
+  }
+
+  @keyframes trambling-animation {
+    0%,
+    50%,
+    100% {
+      transform: rotate(0deg);
+    }
+
+    10%,
+    30% {
+      transform: rotate(-10deg);
+    }
+
+    20%,
+    40% {
+      transform: rotate(10deg);
+    }
+  }
+}
+
+@mixin animation-btn {
+  transition: all 300ms ease;
+  box-shadow: 0 4px 10px 2px rgba(black, 0.2);
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    transition: all 0ms ease;
+  }
+
+  &:hover {
+    color: $white;
+    box-shadow: none;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0%;
+      z-index: -1;
+      transition: all 300ms ease;
+    }
+  }
+}

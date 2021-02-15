@@ -1,0 +1,150 @@
+.bakery {
+  padding: 0 46px 40px 62px;
+
+  @media (max-width: 1036px) {
+    padding: 0 20px;
+  }
+
+  &__title {
+    @include Font-Family-CookieR;
+    font-size: 120px;
+    line-height: 133px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: $orange;
+
+    @media (max-width: 325px) {
+      font-size: 60px;
+      line-height: 67px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 135px;
+
+    @media (max-width: 851px) {
+      flex-direction: column;
+      margin-bottom: 45px;
+    }
+  }
+
+  &__photo--two {
+    @media (max-width: 851px) {
+      order: 2;
+    }
+  }
+
+  &__photo--four {
+    @media (max-width: 851px) {
+      order: 2;
+    }
+  }
+
+  &__product {
+    display: flex;
+    flex-direction: column;
+    @include Font-Family-RubikR;
+  }
+
+  &__caption {
+    font-size: 50px;
+    line-height: 59px;
+    color: $orange;
+    margin-bottom: 43px;
+
+    @media (max-width: 325px) {
+      font-size: 35px;
+      line-height: 41px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__lead {
+    color: $brown;
+    font-size: 26px;
+    line-height: 39px;
+    margin-bottom: 12px;
+
+    @media (max-width: 325px) {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  &__desc {
+    font-size: 16px;
+    line-height: 24px;
+    color: hsl(21, 31%, 19%);
+    max-width: 302px;
+    margin-bottom: 32px;
+  }
+
+  &__cost {
+    display: flex;
+    @include Font-Family-RubikB;
+    width: 110px;
+    height: 110px;
+    background: $lightOrange;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    border-radius: 50%;
+
+    @media (max-width: 325px) {
+      width: 65px;
+      height: 65px;
+      text-align: center;
+    }
+  }
+
+  &__pic {
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+      0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: all 0.4s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__button {
+    text-align: center;
+  }
+
+  &__btn {
+    position: relative;
+    display: inline-block;
+    @include Font-Family-RubikR;
+    width: 160px;
+    height: 40px;
+    color: $brown;
+    font-size: 16px;
+    line-height: 24px;
+    background: $orange;
+    border-radius: 40px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    @include animation-btn;
+  }
+}
+
+.pulse {
+  background-color: $aqua;
+  border-radius: 50%;
+  animation: pulse 0.7s ease-out;
+  transform: scale(0);
+  position: absolute;
+
+  @keyframes pulse {
+    to {
+      transform: scale(2);
+      background-color: $white ;
+      opacity: 0;
+    }
+  }
+}

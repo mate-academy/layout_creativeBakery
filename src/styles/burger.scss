@@ -1,0 +1,167 @@
+.menu {
+
+  &__box {
+    position: relative;
+    display: none;
+
+    @media (max-width: 915px) {
+      display: flex;
+    }
+  }
+}
+
+.burger {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 200px;
+  height: 100%;
+  margin: 0;
+  padding: 60px 0;
+  list-style: none;
+  z-index: 3;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 150%;
+  color: gray;
+  background: $orange;
+
+  &__item {
+    text-align: left;
+    padding: 13px 20px;
+  }
+
+  &__link {
+    @include Font-Family-RubikR;
+    color: hsl(21, 31%, 19%);
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__contact {
+    margin-top: 130px;
+    margin-left: 20px;
+
+  }
+
+  &__number {
+    font-size: 16px;
+    line-height: 24px;
+    color: hsl(21, 31%, 19%);
+    @include Font-Family-RubikR;
+  }
+
+  &__btn--small {
+    position: relative;
+    display: block;
+    @include Font-Family-RubikR;
+    margin-right: 20px;
+    background: $lightOrange;
+    border-radius: 40px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    margin-top: 30px;
+    overflow: hidden;
+  }
+
+  &__language {
+    display: block;
+    @include Font-Family-RubikR;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    line-height: 24px;
+    background: $orange;
+    margin-top: 34px;
+  }
+}
+
+.header {
+  position: relative;
+
+  &__span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $brown;
+    z-index: 4;
+
+    &::before {
+      content: "";
+      top: -8px;
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $brown;
+      z-index: 4;
+    }
+
+    &::after {
+      content: "";
+      top: 8px;
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $brown;
+      z-index: 4;
+    }
+  }
+
+  &__toggler {
+    display: none;
+
+    &:checked ~ .header__label > .header__span {
+      position: relative;
+      z-index: 4;
+      top: 0;
+      background-color: $orange;
+      transform: rotate(0);
+
+      &::before {
+        content: "";
+        top: 0;
+        display: block;
+        position: absolute;
+        transform: rotate(-45deg);
+        z-index: 4;
+        text-transform: uppercase;
+        background-color: $brown;
+      }
+
+      &::after {
+        content: "";
+        top: 0;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $brown;
+        z-index: 4;
+        transform: rotate(45deg);
+      }
+    }
+
+    &:checked ~ .burger {
+      display: block;
+      right: 0;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: flex-end;
+    top: 35px;
+    right: 15px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 5;
+  }
+}
