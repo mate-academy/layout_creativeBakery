@@ -102,36 +102,7 @@
     width: 100px;
     height: 30px;
     border: 3px solid $orange;
-
-    transition: all 300ms ease;
-    box-shadow: 0 4px 10px 2px rgba(black, 0.2);
-
-    &::before {
-      position: absolute;
-      content: "";
-      width: 0%;
-      height: 100%;
-      top: 0;
-      left: 50%;
-      z-index: -1;
-      transition: all 0ms ease;
-    }
-
-    &:hover {
-      color: $white;
-      box-shadow: none;
-
-      &::before {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0%;
-        z-index: -1;
-        transition: all 300ms ease;
-      }
-    }
+    @include animation-btn;
   }
 
   &__language {
@@ -218,6 +189,7 @@
     border: none;
     margin-top: 35px;
     overflow: hidden;
+    @include animation-btn;
   }
 
   &__wrap {
