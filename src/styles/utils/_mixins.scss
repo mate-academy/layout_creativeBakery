@@ -1,6 +1,35 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hoverBtn($bgColor, $borderColor) {
   &:hover {
-    #{$_property}: $_toValue;
+    background-color: $bgColor;
+    border-color: $borderColor;
   }
+}
+
+@mixin activeBtn($bgColor, $borderColor) {
+  &:active {
+    background-color: $bgColor;
+    border-color: $borderColor;
+    opacity: 0.5;
+  }
+}
+
+@mixin button($padd, $fontColor, $bgColor) {
+  padding: $padd;
+  font-size: 16px;
+  color: $fontColor;
+  text-align: center;
+  background-color: $bgColor;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  @extend %transition;
+  @include hoverBtn($milkColor, $bgColor);
+  @include activeBtn($bgColor, transparent);
+}
+
+@mixin secondaryBtn {
+  @include button(5px 23px, $chocolateColor, $creamColor);
+}
+
+@mixin primaryBtn {
+  @include button(10px 40px, $chocolateColor, $croissantColor);
 }
