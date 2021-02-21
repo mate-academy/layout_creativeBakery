@@ -1,3 +1,49 @@
-p {
-  margin: 0;
+.about {
+  max-width: 1440px;
+  margin: auto;
+  padding-bottom: 139px;
+
+  @media (max-width: 600px) {
+    padding-bottom: 40px;
+  }
+
+  &__description {
+    @include default-font;
+    width: 480px;
+    text-align: center;
+    margin: auto;
+    margin-top: 22px;
+    margin-bottom: 59px;
+
+    @media (max-width: 600px) {
+      & {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+      width: 288px;
+      text-align: center;
+      margin: 20px auto;
+
+      @media (max-width: 600px) {
+        & {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 27px;
+    overflow: hidden;
+    padding: 0 61px;
+
+    @media (max-width: 700px) {
+      padding: 0 85px;
+    }
+  }
 }
