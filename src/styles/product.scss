@@ -1,0 +1,49 @@
+.product {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 45px;
+
+  &:nth-child(2n + 1) {
+    flex-direction: row-reverse;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+  }
+
+  &__type {
+    @extend %h3;
+    color: $croissantColor;
+  }
+
+  &__name {
+    @extend %h4;
+  }
+
+  &__recipt {
+    line-height: 1.5em;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+    width: 110px;
+    background-color: $creamColor;
+    border-radius: 50%;
+  }
+
+  &__image {
+    width: 80%;
+    transition: transform $duration, box-shadow $duration;
+    border-radius: 10%;
+
+    &:hover {
+      box-shadow: 0 0 7px 0 $chocolateColor;
+      transform: scale(1.2);
+    }
+  }
+}
