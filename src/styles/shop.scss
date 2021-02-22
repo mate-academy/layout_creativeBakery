@@ -1,7 +1,59 @@
 .shop {
-  @include container;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $creamColor;
 
   &__heading {
     @extend %h2;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: 20px 0;
+  }
+
+  &__city-select {
+    @include select;
+
+    opacity: 0.5;
+    width: 150px;
+    border-bottom-color: $chocolateColor;
+    transition: border-color $duration, border-radius $duration;
+    
+    &:hover {
+      border-color: $chocolateColor;
+      border-radius: 5px;
+    }
+  }
+
+  &__address {
+    @include select;
+
+    width: 300px;
+    opacity: 0.5;
+    border-bottom-color: $chocolateColor;
+    transition: border-color $duration, border-radius $duration;
+    
+    &:hover {
+      border-color: $chocolateColor;
+      border-radius: 5px;
+    }
+  }
+
+  &__city-option,
+  &__address-option {
+    background-color: $creamColor;
+  }
+
+  &__search-btn {
+    @include primaryBtn;
+  }
+
+  &__map {
+    margin: 70px 0;
   }
 }

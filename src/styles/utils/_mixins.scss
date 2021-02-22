@@ -13,6 +13,15 @@
   }
 }
 
+@mixin hoverImage {
+  transition: transform $duration, box-shadow $duration;
+
+  &:hover {
+    box-shadow: 0 0 7px 0 $chocolateColor;
+    transform: scale(1.2);
+  }
+}
+
 @mixin button($padd, $fontColor, $bgColor) {
   padding: $padd;
   font-size: 16px;
@@ -32,6 +41,50 @@
 
 @mixin primaryBtn {
   @include button(10px 40px, $chocolateColor, $croissantColor);
+}
+
+@mixin select {
+  font-family: $rubicFont;
+  font-size: 16px;
+  color: $chocolateColor;
+  background-color: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
+  outline: $chocolateColor;
+}
+
+@mixin input {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: $rubicFont;
+  border: 2px solid transparent;
+  border-bottom-color: $chocolateColor;
+  outline: none;
+  opacity: 0.5;
+  transition: border-radius $duration,
+    border-color $duration,
+    transform $duration,
+    box-shadow $duration;
+
+  &:hover {
+    border-bottom-color: transparent;
+    box-shadow: 0 0 7px 0 $chocolateColor;
+    transform: scale(1.1);
+    border-radius: 10px;
+  }
+
+  &:focus {
+    border-color: $chocolateColor;
+    box-shadow: none;
+    border-radius: 10px;
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  &::placeholder {
+    font-family: $rubicFont;
+    font-size: 16px;
+  }
 }
 
 @mixin container {
