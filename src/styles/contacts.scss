@@ -71,6 +71,10 @@
 
   &__feedback-img {
     width: 30%;
+    
+    &:hover {
+      animation: $duration / 2 linear infinite alternate shake;
+    }
   }
 
   &__form {
@@ -94,5 +98,15 @@
   &__form-button {
     @include primaryBtn;
     width: 160px;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(-10deg);
   }
 }
