@@ -3,19 +3,44 @@
   justify-content: space-between;
   padding-bottom: 45px;
 
+  @media (max-width: 768px) {
+    & {
+      flex-direction: column;
+    }
+  }
+
   &:nth-child(2n + 1) {
     flex-direction: row-reverse;
+
+    @media (max-width: 768px) {
+      & {
+        flex-direction: column;
+      }
+    }
   }
 
   &__description {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 30%;
+
+    @media (max-width: $smallScreen) {
+      & {
+        width: 70%;
+        margin: 0 auto;
+      }
+    }
   }
 
   &__type {
     @extend %h3;
     color: $croissantColor;
+
+    @media (max-width: $smallScreen) {
+      & {
+        margin-top: 0;
+      }
+    }
   }
 
   &__name {
@@ -34,10 +59,27 @@
     width: 110px;
     background-color: $creamColor;
     border-radius: 50%;
+
+    @media (max-width: $smallScreen) {
+      height: 65px;
+      width: 65px;
+      text-align: center;
+    }
+  }
+
+  &__picture {
+    width: 50%;
+
+    @media (max-width: 768px) {
+      & {
+        width: 70%;
+        margin: 20px auto;
+      }
+    }
   }
 
   &__image {
-    width: 80%;
+    width: 100%;
     border-radius: 10%;
 
     @include hoverImage;

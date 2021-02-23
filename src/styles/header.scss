@@ -63,10 +63,36 @@
 
   &__phone {
     @extend %link;
+    font-size: 12px;
+
+    @media (max-width: 1200px) {
+      & {
+        display: none;
+      }
+    }
+
+    &--small {
+      display: none;
+
+      @media (max-width: 1200px) {
+        display: block;
+      }
+    }
+  }
+
+  &__phone-icon {
+    width: 30px;
   }
 
   &__call-button {
     @include secondaryBtn;
+    font-size: 14px;
+
+    @media (max-width: 1200px) {
+      & {
+        display: none;
+      }
+    }
   }
 
   &__lenguages {
@@ -76,6 +102,11 @@
     
     &:hover {
       border-color: $chocolateColor;
+    }
+
+    @media (max-width: 1200px) {
+      width: 60px;
+      font-size: 20px;
     }
   }
 
