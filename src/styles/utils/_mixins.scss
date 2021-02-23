@@ -87,6 +87,49 @@
   }
 }
 
+@mixin logo-container(
+  $top, $left, $afterTop, $afterleft, $beforeContent, $afterContent
+) {
+  position: absolute;
+  top: $top;
+  left: $left;
+
+  &::before {
+    content: $beforeContent;
+    position: absolute;
+    right: 80%;
+    z-index: 3;
+    width: 18px;
+    height: 18px;
+    line-height: 1.5em;
+    font-size: 12px;
+    text-align: center;
+    color: $milkColor;
+    background-color: red;
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: $afterContent;
+    position: absolute;
+    top: $afterTop;
+    left: $afterleft;
+    z-index: 2;
+    color: $chocolateColor;
+    font-size: 14px;
+  }
+}
+
+@mixin logo($size) {
+  width: $size;
+  height: $size;
+  transition: transform $duration;
+
+  &:hover {
+    transform: rotate(360deg);
+  }
+}
+
 @mixin container {
   max-width: 1400px;
   margin: 0 auto;
