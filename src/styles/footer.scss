@@ -1,10 +1,20 @@
 .footer {
   padding: 20px;
   margin-top: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: $chocolateColor;
+
+  &__nav-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $smallScreen) {
+      & {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
 
   &__logo-sec {
     position: relative;
@@ -16,6 +26,12 @@
 
     &:hover {
       transform: rotate(360deg);
+    }
+
+    @media (max-width: $smallScreen) {
+      & {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -33,6 +49,15 @@
     margin: 0;
   }
 
+  &__nav-list {
+    @media (max-width: $smallScreen) {
+      & {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+  }
+
   &__nav-link {
     color: $milkColor;
 
@@ -44,6 +69,14 @@
   &__soc-network {
     display: flex;
     gap: 20px;
+
+    @media (max-width: $smallScreen) {
+      & {
+        width: 80%;
+        margin: 20px auto;
+        justify-content: space-between;
+      }
+    }
   }
 
   &__soc-icon {
@@ -59,5 +92,16 @@
     &:hover {
       transform: rotate(360deg);
     }
+  }
+
+  &__license {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 12px;
+    color: $milkColor;
+    opacity: 0.7;
   }
 }

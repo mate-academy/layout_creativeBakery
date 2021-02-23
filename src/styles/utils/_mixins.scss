@@ -107,6 +107,12 @@
     color: $milkColor;
     background-color: red;
     border-radius: 50%;
+
+    @media (max-width: $smallScreen) {
+      width: 12px;
+      height: 12px;
+      font-size: 10px;
+    }
   }
 
   &::after {
@@ -117,6 +123,10 @@
     z-index: 2;
     color: $chocolateColor;
     font-size: 14px;
+
+    @media (max-width: $smallScreen) {
+      top: 2 * $afterTop / 3;
+    }
   }
 }
 
@@ -127,6 +137,11 @@
 
   &:hover {
     transform: rotate(360deg);
+  }
+
+  @media (max-width: $smallScreen) {
+    width: (2 * $size) / 3;
+    height: (2 * $size) /3;
   }
 }
 
