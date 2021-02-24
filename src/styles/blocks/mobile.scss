@@ -1,0 +1,78 @@
+.mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 300px;
+  height: 100vh;
+  background-color: $color-brown;
+  border-left: 3px solid $color-white;
+  transform: translateX(300px);
+  transition: 0.5s;
+
+  &--active {
+    transform: translateX(0);
+  }
+
+  &__close {
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    cursor: pointer;
+  }
+
+  &__nav {
+    padding-top: 85px;
+  }
+
+  &__nav-list {
+    @include flex-column;
+  }
+
+  &__nav-item {
+    margin-bottom: 30px;
+  }
+
+  &__nav-link {
+    @include default-font;
+    color: $color-dark-brown;
+    transition: 0.3s;
+
+    &:hover {
+      color: $color-light-brown;
+    }
+  }
+
+  &__bottom {
+    @include flex-column;
+    justify-content: flex-start;
+    margin-left: 34px;
+  }
+
+  &__phone {
+    margin-top: 100px;
+    color: $color-dark-brown;
+    transition: 0.3s;
+
+    &:hover {
+      color: $color-light-brown;
+    }
+  }
+
+  &__button {
+    @include default-font;
+    width: 100px;
+    height: 30px;
+    margin-top: 30px;
+    color: $color-dark-brown;
+    background-color: $color-light-brown;
+    border-radius: 40px;
+  }
+
+  &__select {
+    @include default-font;
+    width: 45px;
+    margin-top: 30px;
+    background-color: $color-brown;
+  }
+}

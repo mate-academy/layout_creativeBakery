@@ -1,0 +1,97 @@
+.map {
+  display: flex;
+  height: 507px;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+
+  &__info {
+    width: 430px;
+    background-color: $color-brown;
+
+    @media (max-width: 900px) {
+      & {
+        width: 350px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      & {
+        width: $full-size;
+      }
+    }
+  }
+
+  &__title--mobile {
+    @include heading-second-mobile;
+    display: none;
+    margin-top: 40px;
+    color: $color-white;
+
+    @media (max-width: 700px) {
+      display: block;
+    }
+  }
+
+  &__subtitle {
+    @include heading-fourth;
+    margin-bottom: 24px;
+    padding-top: 40px;
+    text-align: center;
+
+    @media (max-width: 700px) {
+      & {
+        @include heading-fourth-mobile;
+        margin-bottom: 20px;
+        padding-top: 20px;
+      }
+    }
+  }
+
+  &__adress {
+    display: flex;
+    margin-bottom: 9px;
+    padding-left: 60px;
+
+    @media (max-width: 900px) {
+      & {
+        padding-left: 16px;
+      }
+    }
+  }
+
+  &__image {
+    @include flex-centered;
+    width: 31px;
+    height: 31px;
+    margin-right: 29px;
+  }
+
+  &__description {
+    @include default-font;
+    @include flex-column;
+  }
+
+  &__google-map {
+    width: calc(100% - 430px);
+    height: 505px;
+
+    @media (max-width: 900px) {
+      & {
+        width: calc(100% - 350px);
+      }
+    }
+
+    @media (max-width: 700px) {
+      & {
+        width: $full-size;
+      }
+    }
+  }
+
+  &__frame {
+    width: $full-size;
+    height: 505px;
+  }
+}
