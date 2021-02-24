@@ -1,0 +1,81 @@
+.header {
+  &__mobile {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 0;
+    width: 67%;
+    padding: 30px 15px;
+    border-left: 3px solid $milkColor;
+    background-color: $croissantColor;
+    opacity: 0;
+    transition: opacity $duration;
+
+    @media (max-width: 850px) {
+      flex-direction: column;
+      align-items: flex-end;
+      height: 100vh;
+      opacity: 1;
+    }
+  }
+
+  &__burger--close {
+    display: block;
+  }
+
+  &__mobile-info-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    width: 100%;
+  }
+
+  &__mobile-call-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__mobile-phone {
+    @extend %link;
+
+    &:hover {
+      border-color: transparent;
+      transform: scale(1);
+    }
+  }
+
+  &__mobile-call-button {
+    @include secondaryBtn;
+    width: 120px;
+  }
+
+  &__mobile-numbers {
+    display: none;
+    width: 60%;
+    margin: 0 auto;
+
+    @media (max-width: $smallScreen) {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+
+  &__mobile-num {
+    margin: 0;
+    line-height: 1em;
+    font-size: 20px;
+    color: $croissantColor;
+
+    &--big {
+      font-size: 40px;
+      color: $chocolateColor;
+    }
+  }
+
+  &__arrow {
+    height: 20px;
+  }
+}

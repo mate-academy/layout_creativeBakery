@@ -1,6 +1,152 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hoverBtn($bgColor, $borderColor) {
   &:hover {
-    #{$_property}: $_toValue;
+    background-color: $bgColor;
+    border-color: $borderColor;
   }
+}
+
+@mixin activeBtn($bgColor, $borderColor) {
+  &:active {
+    background-color: $bgColor;
+    border-color: $borderColor;
+    opacity: 0.5;
+  }
+}
+
+@mixin hoverImage {
+  transition: transform $duration, box-shadow $duration;
+
+  &:hover {
+    box-shadow: 0 0 7px 0 $chocolateColor;
+    transform: scale(1.2);
+  }
+}
+
+@mixin button($padd, $fontColor, $bgColor) {
+  padding: $padd;
+  font-size: 16px;
+  color: $fontColor;
+  text-align: center;
+  background-color: $bgColor;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  @extend %transition;
+  @include hoverBtn($milkColor, $bgColor);
+  @include activeBtn($bgColor, transparent);
+}
+
+@mixin secondaryBtn {
+  @include button(5px 23px, $chocolateColor, $creamColor);
+}
+
+@mixin primaryBtn {
+  @include button(10px 40px, $chocolateColor, $croissantColor);
+}
+
+@mixin select {
+  font-family: $rubicFont;
+  font-size: 16px;
+  color: $chocolateColor;
+  background-color: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
+  outline: $chocolateColor;
+}
+
+@mixin input {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: $rubicFont;
+  border: 2px solid transparent;
+  border-bottom-color: $chocolateColor;
+  outline: none;
+  opacity: 0.5;
+  transition: border-radius $duration,
+    border-color $duration,
+    transform $duration,
+    box-shadow $duration;
+
+  &:hover {
+    border-bottom-color: transparent;
+    box-shadow: 0 0 7px 0 $chocolateColor;
+    transform: scale(1.1);
+    border-radius: 10px;
+  }
+
+  &:focus {
+    border-color: $chocolateColor;
+    box-shadow: none;
+    border-radius: 10px;
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  &::placeholder {
+    font-family: $rubicFont;
+    font-size: 16px;
+  }
+}
+
+@mixin logo-container(
+  $top, $left, $afterTop, $afterleft, $beforeContent, $afterContent
+) {
+  position: absolute;
+  top: $top;
+  left: $left;
+
+  &::before {
+    content: $beforeContent;
+    position: absolute;
+    right: 80%;
+    z-index: 3;
+    width: 18px;
+    height: 18px;
+    line-height: 1.5em;
+    font-size: 12px;
+    text-align: center;
+    color: $milkColor;
+    background-color: red;
+    border-radius: 50%;
+
+    @media (max-width: $smallScreen) {
+      width: 12px;
+      height: 12px;
+      font-size: 10px;
+    }
+  }
+
+  &::after {
+    content: $afterContent;
+    position: absolute;
+    top: $afterTop;
+    left: $afterleft;
+    z-index: 2;
+    color: $chocolateColor;
+    font-size: 14px;
+
+    @media (max-width: $smallScreen) {
+      top: 2 * $afterTop / 3;
+    }
+  }
+}
+
+@mixin logo($size) {
+  width: $size;
+  height: $size;
+  transition: transform $duration;
+
+  &:hover {
+    transform: rotate(360deg);
+  }
+
+  @media (max-width: $smallScreen) {
+    width: (2 * $size) / 3;
+    height: (2 * $size) /3;
+  }
+}
+
+@mixin container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
 }

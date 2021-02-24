@@ -1,0 +1,177 @@
+.shop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $creamColor;
+
+  &__heading {
+    @extend %h2;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: 20px 0;
+
+    @media (max-width: $smallScreen) {
+      & {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+      }
+    }
+  }
+
+  &__city-select {
+    @include select;
+
+    opacity: 0.5;
+    width: 150px;
+    border-bottom-color: $chocolateColor;
+    transition: border-color $duration, border-radius $duration;
+    
+    &:hover {
+      border-color: $chocolateColor;
+      border-radius: 5px;
+    }
+
+    @media (max-width: $smallScreen) {
+      & {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__address {
+    @include select;
+
+    width: 300px;
+    opacity: 0.5;
+    border-bottom-color: $chocolateColor;
+    transition: border-color $duration, border-radius $duration;
+    
+    &:hover {
+      border-color: $chocolateColor;
+      border-radius: 5px;
+    }
+
+    @media (max-width: $smallScreen) {
+      & {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__city-option,
+  &__address-option {
+    background-color: $creamColor;
+  }
+
+  &__search-btn {
+    @include primaryBtn;
+
+    @media (max-width: $smallScreen) {
+      width: 50%;
+    }
+  }
+
+  &__map {
+    position: relative;
+    margin: 70px 0;
+  }
+
+  &__map-img {
+    width: 100%;
+  }
+
+  &__logo-container {
+    //($top, $left, $afterTop, $afterleft, $beforeContent, $afterContent)
+    &--lviv {
+      @include logo-container(23%, 8%, 65px, 25px, "6", "Lviv");
+    }
+
+    &--lutsk {
+      @include logo-container(10%, 15%, 50px, 10px, "4", "Lutsk");
+    }
+
+    &--zhytomyr {
+      @include logo-container(15%, 34%, 40px, -10px, "3", "Zhytomyr");
+    }
+
+    &--vinnytsa {
+      @include logo-container(38%, 34%, 50px, -10px, "4", "Vinnytsa");
+    }
+
+    &--kyiv {
+      @include logo-container(20%, 45%, 75px, 30px, "9", "Kyiv");
+    }
+
+    &--chernihiv {
+      @include logo-container(10%, 52%, 50px, 0, "4", "Chernihiv");
+    }
+
+    &--poltava {
+      @include logo-container(30%, 62%, 30px, -5px, "2", "Poltava");
+    }
+
+    &--kherson {
+      @include logo-container(65%, 65%, 30px, -5px, "2", "Kherson");
+    }
+
+    &--dnipro {
+      @include logo-container(45%, 68%, 50px, 10px, "4", "Dnipro");
+    }
+
+    &--kharkiv {
+      @include logo-container(27%, 77%, 60px, 10px, "5", "Kharkiv");
+    }
+  }
+
+  &__logo {
+    &--lviv {
+      @include logo(65px);
+    }
+
+    &--lutsk {
+      @include logo(50px);
+    }
+
+    &--zhytomyr {
+      @include logo(40px);
+    }
+
+    &--vinnytsa {
+      @include logo(50px);
+    }
+
+    &--kyiv {
+      @include logo(75px);
+    }
+
+    &--chernihiv {
+      @include logo(50px);
+    }
+
+    &--poltava {
+      @include logo(30px);
+    }
+
+    &--kherson {
+      @include logo(30px);
+    }
+
+    &--dnipro {
+      @include logo(50px);
+    }
+
+    &--kharkiv {
+      @include logo(60px);
+    }
+  }
+}
