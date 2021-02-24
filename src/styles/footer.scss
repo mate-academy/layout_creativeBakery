@@ -5,6 +5,10 @@
 
   &__container {
     @include container;
+
+    @media (max-width: $smallScreen) {
+      padding: 0;
+    }
   }
 
   &__nav-sec {
@@ -13,15 +17,14 @@
     align-items: center;
 
     @media (max-width: $smallScreen) {
-      & {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 
   &__logo-sec {
     position: relative;
+    width: 15%;
   }
 
   &__logo {
@@ -33,9 +36,7 @@
     }
 
     @media (max-width: $smallScreen) {
-      & {
-        margin-bottom: 20px;
-      }
+      margin-bottom: 20px;
     }
   }
 
@@ -48,17 +49,10 @@
     font-size: 30px;
   }
 
-  &__nav {
-    width: 40%;
-    margin: 0;
-  }
-
   &__nav-list {
     @media (max-width: $smallScreen) {
-      & {
-        flex-direction: column;
-        gap: 30px;
-      }
+      flex-direction: column;
+      gap: 30px;
     }
   }
 
@@ -71,15 +65,15 @@
   }
 
   &__soc-network {
+    width: 130px;
     display: flex;
+    justify-content: space-between;
     gap: 20px;
 
     @media (max-width: $smallScreen) {
-      & {
-        width: 80%;
-        margin: 20px auto;
-        justify-content: space-between;
-      }
+      width: 80%;
+      margin: 20px auto;
+      justify-content: space-between;
     }
   }
 
@@ -87,8 +81,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-color: $milkColor;
     transition: transform $duration;
