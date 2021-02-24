@@ -1,24 +1,24 @@
 .header {
   position: relative;
-  height: 840px;
-  width: 100%;
   display: flex;
+  width: $full-size;
+  height: 840px;
 
   @media (max-width: 1000px) {
     height: 570px;
   }
 
   &__left {
+    width: 70%;
+    height: $full-size;
+    padding-left: 10%;
     background-image: url("../images/bake_cream.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100%;
-    width: 70%;
-    padding-left: 10%;
 
     @media (max-width: 1000px) {
-      width: 100%;
+      width: $full-size;
     }
 
     @media (max-width: 500px) {
@@ -50,11 +50,11 @@
   }
 
   &__title {
-    font-family: "Cookie", sans-serif;
     @include heading-first;
-    color: $color-dark-brown;
     margin-top: 70px;
     margin-bottom: 50px;
+    font-family: "Cookie", sans-serif;
+    color: $color-dark-brown;
 
     @media (max-width: 1000px) {
       @include heading-first-mobile;
@@ -64,9 +64,9 @@
   }
 
   &__subtitle {
-    color: $color-dark-brown;
     @include heading-fourth;
     margin-bottom: 24px;
+    color: $color-dark-brown;
 
     @media (max-width: 1000px) {
       @include default-font;
@@ -75,9 +75,8 @@
   }
 
   &__left-top {
-    display: flex;
+    @include flex-between;
     align-items: flex-end;
-    justify-content: space-between;
     margin-top: 45px;
 
     @media (max-width: 1000px) {
@@ -86,9 +85,9 @@
   }
 
   &__right {
-    background-color: #e39a3b;
     width: 30%;
-    height: 100%;
+    height: $full-size;
+    background-color: $color-brown;
 
     @media (max-width: 1000px) {
       display: none;
@@ -96,10 +95,10 @@
   }
 
   &__right-top {
-    margin-top: 75px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 75px;
   }
 
   &__phone {
@@ -109,14 +108,14 @@
   &__button-right {
     width: 100px;
     height: 30px;
-    border-radius: 40px;
-    background-color: #f1cc9d;
     color: $color-dark-brown;
+    background-color: $color-light-brown;
+    border-radius: 40px;
   }
 
   &__select {
-    background-color: #e39a3b;
     @include default-font;
+    background-color: $color-brown;
   }
 
   &__logo {
@@ -124,34 +123,33 @@
   }
 
   &__counter {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     align-items: flex-end;
     margin-top: 123px;
     margin-right: 46px;
   }
 
   &__first-value {
+    margin-top: 40px;
+    color: $color-dark-brown;
     font-size: 176px;
     line-height: 150px;
-    color: $color-dark-brown;
-    margin-top: 40px;
   }
 
   &__second-value {
-    font-size: 40px;
-    line-height: 47.4px;
-    color: #f1cc9d;
     margin-bottom: 12px;
     margin-right: 7px;
+    color: $color-light-brown;
+    font-size: 40px;
+    line-height: 47.4px;
   }
 
   &__third-value {
-    font-size: 40px;
-    line-height: 47.4px;
-    color: #f1cc9d;
     margin-right: 7px;
     margin-bottom: 40px;
+    color: $color-light-brown;
+    font-size: 40px;
+    line-height: 47.4px;
   }
 
   &__top-arrow {
@@ -165,15 +163,15 @@
   }
 
   &__counter-mobile {
-    display: none;
-    align-items: flex-end;
-    justify-content: center;
-    width: 100%;
-    margin-top: 123px;
-    margin-right: 46px;
     position: absolute;
     bottom: 30px;
     left: 0;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    width: $full-size;
+    margin-top: 123px;
+    margin-right: 46px;
 
     @media (max-width: 1000px) {
       display: flex;
@@ -181,21 +179,21 @@
   }
 
   &__first-value-mobile {
+    color: $color-dark-brown;
     font-size: 40px;
     line-height: 47.4px;
-    color: $color-dark-brown;
   }
 
   &__second-value-mobile {
     @include default-font;
-    color: #e39a3b;
     margin-left: 10px;
+    color: $color-brown;
   }
 
   &__third-value-mobile {
     @include default-font;
-    color: #e39a3b;
     margin-left: 10px;
+    color: $color-brown;
   }
 
   &__left-arrow-mobile {

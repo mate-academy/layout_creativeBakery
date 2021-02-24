@@ -2,13 +2,12 @@
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 1;
   width: 300px;
   height: 100vh;
-  background-color: #e39a3b;
-  border-left: 3px solid #fff;
+  background-color: $color-brown;
+  border-left: 3px solid $color-white;
   transform: translateX(300px);
-  contain: paint;
-  z-index: 1;
   transition: 0.5s;
 
   &--active {
@@ -27,8 +26,7 @@
   }
 
   &__nav-list {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
   }
 
   &__nav-item {
@@ -36,10 +34,9 @@
   }
 
   &__bottom {
-    margin-left: 34px;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     justify-content: flex-start;
+    margin-left: 34px;
   }
 
   &__phone {
@@ -47,19 +44,19 @@
   }
 
   &__button {
+    @include default-font;
     width: 100px;
     height: 30px;
-    border-radius: 40px;
-    background-color: #f1cc9d;
-    color: $color-dark-brown;
     margin-top: 30px;
-    @include default-font;
+    color: $color-dark-brown;
+    background-color: $color-light-brown;
+    border-radius: 40px;
   }
 
   &__select {
-    background-color: #e39a3b;
     @include default-font;
     width: 45px;
     margin-top: 30px;
+    background-color: $color-brown;
   }
 }
