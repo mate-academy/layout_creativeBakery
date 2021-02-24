@@ -3,7 +3,7 @@
   justify-content: space-between;
   padding-bottom: 45px;
 
-  @media (max-width: 768px) {
+  @media (max-width: $smallScreen) {
     & {
       flex-direction: column;
     }
@@ -12,7 +12,7 @@
   &:nth-child(2n + 1) {
     flex-direction: row-reverse;
 
-    @media (max-width: 768px) {
+    @media (max-width: $smallScreen) {
       & {
         flex-direction: column;
       }
@@ -63,6 +63,8 @@
     @media (max-width: $smallScreen) {
       height: 65px;
       width: 65px;
+      padding: 12px;
+      font-weight: 700;
       text-align: center;
     }
   }
@@ -70,7 +72,7 @@
   &__picture {
     width: 50%;
 
-    @media (max-width: 768px) {
+    @media (max-width: $smallScreen) {
       & {
         width: 70%;
         margin: 20px auto;
@@ -83,5 +85,13 @@
     border-radius: 10%;
 
     @include hoverImage;
+  }
+
+  &__slash {
+    @media (max-width: $smallScreen) {
+      & {
+        display: none;
+      }
+    }
   }
 }

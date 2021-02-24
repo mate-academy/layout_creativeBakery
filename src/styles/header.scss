@@ -13,6 +13,9 @@
 
     @media (max-width: 850px) {
       & {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         width: 100%;
         padding: 30px 15px;
       }
@@ -41,13 +44,23 @@
   }
 
   &__text {
+    width: 420px;
     margin-bottom: 50px;
     font-size: 24px;
-    line-height: 1.7em;
+    line-height: 1.5em;
+
+    @media (max-width: $smallScreen) {
+      & {
+        width: 100%;
+        font-size: 16px;
+        margin-bottom: 25px;
+      }
+    }
   }
 
   &__button {
     @include primaryBtn;
+    width: 200px;
   }
 
   &__nav-sec {
@@ -164,6 +177,8 @@
 
   &__burger {
     display: none;
+    width: 25px;
+    height: 24px;
 
     @media (max-width: 850px) {
       display: block;
