@@ -46,8 +46,21 @@
     align-items: flex-start;
   }
 
+  &__info-container {
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+
+    @media (max-width: $smallScreen) {
+      flex-direction: column;
+    }
+  }
+
   &__info {
     display: flex;
+    width: 100%;
+    background-color: $croissantColor;
 
     &--heding {
       display: block;
@@ -57,10 +70,6 @@
 
     &--text {
       margin: 0;
-    }
-
-    @media (max-width: $smallScreen) {
-      flex-direction: column;
     }
   }
 
@@ -80,6 +89,8 @@
   }
 
   &__map {
+    position: relative;
+    z-index: 2;
     width: 70%;
 
     @media (max-width: 1024px) {
@@ -106,6 +117,7 @@
     display: flex;
     justify-content: space-evenly;
     padding: 30px 0;
+    @include container;
 
     @media (max-width: $smallScreen) {
       & {
