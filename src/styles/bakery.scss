@@ -1,0 +1,110 @@
+.bakery {
+  max-width: $max-width - 130px;
+  width: $width;
+  margin: 40px auto 0;
+  flex-wrap: wrap;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__section {
+    margin-top: 27px;
+  }
+
+  &__name {
+    margin-top: 43px;
+  }
+
+  &__desription {
+    margin-top: 12px;
+  }
+
+  &__cirlce {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: $cream;
+    font-weight: 700;
+  }
+
+  &__photo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 85px;
+  }
+
+  &__photo {
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+    object-fit: contain;
+  }
+
+  &__left {
+    width: 15px;
+    height: 26px;
+    color: $cream;
+    background-image: url("/images/left.svg");
+    background-repeat: no-repeat;
+  }
+
+  &__right {
+    width: 15px;
+    height: 26px;
+    color: $cream;
+    background-image: url("/images/right.svg");
+    background-repeat: no-repeat;
+    opacity: 50%;
+  }
+
+  &__button {
+    @extend %p;
+    display: block;
+    margin: 159px auto 80px;
+    width: 160px;
+    height: 40px;
+    background: $title-color;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1203px) {
+  .bakery {
+    &__photo-container {
+      gap: 1px;
+      width: 100%;
+      order: 2;
+    }
+
+    &__photo {
+      width: 90%;
+    }
+
+    &__left {
+      width: 10%;
+    }
+
+    &__right {
+      width: 10%;
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .bakery {
+    &__cirlce {
+      width: 65px;
+      height: 65px;
+      font-size: 12px;
+    }
+  }
+}
