@@ -6,7 +6,7 @@ const menuToggle = () => {
 
 const burgerBtn = document.querySelector('.header__burger');
 const closeBtn = document.querySelector('.mobile__close');
-const navLinks = [...document.querySelectorAll('.nav__link')];
+const navLinks = [...document.querySelectorAll('.mobile__nav-link')];
 const mobileMenu = document.querySelector('.mobile');
 
 window.addEventListener('resize', event => {
