@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
 
-  &__container1 {
+  &__container-first {
     display: flex;
     flex-wrap: wrap;
     flex-basis: 70%;
@@ -13,14 +13,14 @@
     background-repeat: no-repeat;
   }
 
-  &__container1-row {
+  &__container-first-row {
     display: flex;
     justify-content: space-between;
     flex-basis: 100%;
     margin-top: 54px;
   }
 
-  &__container2 {
+  &__container-second {
     background-color: $title-color;
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
     max-width: $max-width*0.3;
   }
 
-  &__row1 {
+  &__row-first {
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -40,6 +40,17 @@
   &__logo {
     width: 112px;
     height: 57px;
+  }
+
+  &__open {
+    display: none;
+    width: 25px;
+    height: 25px;
+    background-image: url(/images/burger.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin: auto 0;
   }
 
   &__title {
@@ -86,7 +97,7 @@
     cursor: pointer;
   }
 
-  &__row2 {
+  &__row-second {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -124,5 +135,39 @@
     background-image: url("/images/down.svg");
     background-repeat: no-repeat;
     margin: 41px 20px 0 0;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .header {
+
+    &__container-first {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding-right: $padding-list;
+    }
+
+    &__container-second {
+      display: none;
+    }
+
+    &__open {
+      display: inline-block;
+    }
+
+    &__title {
+      font-size: 100px;
+      line-height: 0.8em;
+      margin-top: 97px;
+    }
+
+    &__article {
+      font-size: 16px;
+      margin-top: 29px;
+    }
+
+    &__button-learn {
+      margin: 19px 0 125px;
+    }
   }
 }

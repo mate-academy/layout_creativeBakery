@@ -12,11 +12,38 @@
     <link rel="stylesheet" href="./styles/main.scss">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Roboto&family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   </head>
   <body>
     <header class="header">
-      <div class="header__container1">
-        <div class="header__container1-row">
+      <div class="burger">
+        <div class="burger__nav">
+          <div class="burger__close-container">
+            <div class="burger__close" id="burger__close"></div>
+          </div>
+          <ul class="burger__list">
+            <li>
+              <a href="#bakery" class="burger__link">Bakery</a>
+            </li>
+            <li>
+              <a href="#bakershop" class="burger__link">Bakershops</a>
+            </li>
+            <li>
+              <a href="#about" class="burger__link">About</a>
+            </li>
+            <li>
+              <a href="#contacts" class="burger__link">Contacts</a>
+            </li>
+          </ul>
+          <div class="burger__phone">+38 066 336 36 36</div>
+          <div class="burger__button">Call back</div>
+          <select class="burger__select">
+            <option value="0">En:</option>
+          </select>
+        </div>
+      </div>
+      <div class="header__container-first">
+        <div class="header__container-first-row">
           <a href="#" class="header__logo">
             <img
               src="/images/logo.svg"
@@ -39,6 +66,7 @@
               </li>
             </ul>
           </nav>
+          <div class="header__open" id="header__open"></div>
         </div>
         <h1 class="header__title">Creative bakery</h1>
         <p class="header__article">
@@ -47,8 +75,8 @@
         </p>
         <button class="header__button-learn">Learn more</button>
       </div>
-      <div class="header__container2">
-        <div class="header__row1">
+      <div class="header__container-second">
+        <div class="header__row-first">
           <a href="tel:+38 066 336 36 36" class="header__phone">
             +38 066 336 36 36
           </a>
@@ -57,15 +85,16 @@
             <option value="0">En:</option>
           </select>
         </div>
-        <div class="header__row2">
+        <div class="header__row-second">
           <div class="header__up"></div>
           <div class="header__number-big">01</div>
-          <div class="header__number-small">02<br>03</div>
+          <div class="header__number-small">02</div>
+          <div class="header__number-small">03</div>
           <div class="header__down"></div>
         </div>
       </div>
     </header>
-    <main>
+    <main class="main-page">
       <section class="bakery">
         <h2 class="bakery__title">Bakery</h2>
         <div class="bakery__row">
@@ -77,18 +106,28 @@
             </p>
             <div class="bakery__cirlce">$ 4 / 100 g</div>
           </div>
-          <div class="bakery__left"></div>
-          <div class="bakery__photo">
-            <img src="/images/cake1.png" alt="Chocolate mix">
+          <div class="bakery__photo-container">
+            <div class="bakery__left"></div>
+            <img
+              src="/images/mix.png"
+              alt="Chocolate mix"
+              class="bakery__photo"
+            >
+            <div class="bakery__right"></div>
           </div>
-          <div class="bakery__right"></div>
         </div>
         <div class="bakery__row">
-          <div class="bakery__left"></div>
-          <div class="bakery__photo">
-            <img src="/images/cake2.png" alt="Cakes">
+          <div class="bakery__photo-container">
+            <div class="bakery__left"></div>
+            <div class="bakery__photo">
+              <img
+                src="/images/cake.png"
+                alt="Cakes"
+                class="bakery__photo"
+              >
+            </div>
+            <div class="bakery__right"></div>
           </div>
-          <div class="bakery__right"></div>
           <div>
             <h3 class="bakery__section">Cakes</h3>
             <h4 class="bakery__name">Mint coffee mocca</h4>
@@ -107,18 +146,30 @@
             </p>
             <div class="bakery__cirlce">$ 6.5 / 2</div>
           </div>
-          <div class="bakery__left"></div>
-          <div class="bakery__photo">
-            <img src="/images/cake3.png" alt="Croissants">
+          <div class="bakery__photo-container">
+            <div class="bakery__left"></div>
+            <div class="bakery__photo">
+              <img
+                src="/images/croissant.png"
+                alt="Croissants"
+                class="bakery__photo"
+              >
+            </div>
+            <div class="bakery__right"></div>
           </div>
-          <div class="bakery__right"></div>
         </div>
         <div class="bakery__row">
-          <div class="bakery__left"></div>
-          <div class="bakery__photo">
-            <img src="/images/cake4.png" alt="Cupcakes">
+          <div class="bakery__photo-container">
+            <div class="bakery__left"></div>
+            <div class="bakery__photo">
+              <img
+                src="/images/cupcake.png"
+                alt="Cupcakes"
+                class="bakery__photo"
+              >
+            </div>
+            <div class="bakery__right"></div>
           </div>
-          <div class="bakery__right"></div>
           <div>
             <h3 class="bakery__section">Cupcakes</h3>
             <h4 class="bakery__name">Triple creamy</h4>
@@ -135,7 +186,7 @@
         <div class="bakershops__row">
           <select class="bakershops__select-city">
             <option
-              value=""
+              value="default"
               disabled
               selected
             >
@@ -144,7 +195,7 @@
           </select>
           <select class="bakershops__select-adress">
             <option
-              value=""
+              value="default"
               disabled
               selected
             >
@@ -227,12 +278,25 @@
             ihor.lukash@bakerlab.com
           </p>
         </div>
-        <div class="contacts__map">
-          <img src="/images/map.png" alt="map">
+        <div class="contacts__map-container">
+          <img
+            src="/images/map.png"
+            alt="map"
+            class="contacts__map"
+          >
         </div>
       </section>
+      <img
+      src="/images/map.png"
+      alt="map"
+      class="contacts__map-new"
+      >
       <section class="form">
-        <div class="form__picture"></div>
+        <img
+          src="/images/form.svg"
+          alt="mail"
+          class="form__picture"
+        >
         <div class="form__column">
           <h4>We’d love to hear your feedback</h4>
           <input
@@ -255,19 +319,13 @@
             class="form__field"
             placeholder="Phone"
           >
-          <textarea
-            id="text"
-            class="form__field-big"
-            placeholder="Message*"
-            required
-          >
-          </textarea>
+          <textarea class="form__field-big" placeholder="Message*"></textarea>
           <button class="form__button">Send</button>
         </div>
       </section>
     </main>
     <footer class="footer">
-      <div class="footer__row">
+      <div class="footer__row-first">
         <a href="index.html">
           <img
             src="images/footerlogo.svg"
@@ -275,8 +333,8 @@
             class="footer__logo"
           >
         </a>
-        <nav class="nav">
-          <ul class="nav__list">
+        <nav class="nav footer__nav">
+          <ul class="nav__list footer__nav-list">
             <li class="nav__item">
               <a href="" class="nav__link footer__link">Bakery</a>
             </li>
@@ -297,11 +355,11 @@
           <div class="footer__in"></div>
         </div>
       </div>
-      <div class="footer__row2">
-        <div class="footer__text">© 2015–2020</div>
+      <div class="footer__row-second">
+        <div class="footer__text">© 2015–2021</div>
         <div class="footer__text">Privacy — Terms</div>
       </div>
     </footer>
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
