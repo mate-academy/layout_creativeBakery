@@ -1,0 +1,151 @@
+.bakery {
+  padding: 0 66px;
+
+  &__main-container {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+  }
+
+  &__main-container:nth-child(2n) {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 40px;
+  }
+
+  &__name {
+    padding-top: 27px;
+    color: $croissant;
+  }
+
+  &__recipe-name {
+    padding-top: 43px;
+    color: $chocolate;
+  }
+
+  &__recipe-about {
+    max-width: 302px;
+    padding: 12px 0 42px;
+    color: $chocolate;
+  }
+
+  &__price {
+    width: 110px;
+    height: 110px;
+    padding: 43px 12px;
+    border-radius: 50%;
+    
+    text-align: center;
+    font-weight: bold;
+    
+    color: $chocolate;
+    background-color: $croissant;
+  }
+
+  &__photo-container {
+    padding-top: 50px;
+    position: relative;
+  }
+
+  &__photo-container::before {
+    content: "";
+    position: absolute;
+    background: url(..\images\bakery\array_back.svg) no-repeat;
+    top: 250px;
+    left: -30px;
+    width: 15px;
+    height: 26px;
+    
+    cursor: pointer;
+  }
+
+  &__photo-container::after {
+    content: "";
+    position: absolute;
+    background: url(..\images\bakery\array.svg) no-repeat;
+    top: 250px;
+    right: 0;
+    width: 15px;
+    height: 26px;
+    
+    cursor: pointer;
+  }
+
+  &__photo {
+    transition: opacity 1s;
+  }
+  
+  &__photo:hover {
+    opacity: 0.7;
+  }
+
+  &__array {
+    display: grid;
+    justify-content: end;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: $desctop-width) {
+  .bakery {
+    &__photo {
+      width: 400px;
+    }
+
+    &__photo-container::before {
+      position: absolute;
+      content: "";
+      top: 170px;
+      left: -30px;
+    }
+  
+    &__photo-container::after {
+      position: absolute;
+      content: "";
+      top: 170px;
+      left: 420px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-width) {
+  .bakery {
+    padding: 0 10px;
+
+    &__photo-container {
+      padding-top: 30px;
+    }
+    
+    &__photo {
+      width: 250px;
+    }
+
+    &__photo-container::after,
+    &__photo-container::before {
+      position: absolute;
+      content: "";
+      top: 130px;
+    }
+
+    &__photo-container::before {
+      left: -20px;
+    }
+  
+    &__photo-container::after {
+      left: 260px;
+    }
+
+    &__main-container,
+    &__main-container:nth-child(2n) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+
+    &__main-container:nth-child(2n) > &__about-container {
+      order: 0;
+    }
+
+    &__main-container:nth-child(2n) > &__photo-container {
+      order: 1;
+    }
+  }
+}

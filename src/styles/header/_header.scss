@@ -1,0 +1,231 @@
+.header {
+  &__burger-toggle {
+    display: none;
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    
+    background: url(..\images\header\bake-cream-puff-cup.png) no-repeat;
+  }
+
+  &__left {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    grid-template-rows: 87px 177px 78px 40px;
+    grid-template-areas: "logo nav" "main main" "text text" "button button";
+    padding: 34px 0 0 59px;
+    gap: 20px;
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__nav {
+    grid-area: nav;
+    display: grid;
+    align-content: center;
+  }
+
+  &__change-small,
+  &__tel-small {
+    display: none;
+  }
+
+  &__main-text {
+    grid-area: main;
+    
+    color: $chocolate;
+  }
+
+  &__text {
+    grid-area: text;
+    max-width: 300px;
+    
+    color: $chocolate;
+  }
+
+  &__button {
+    grid-area: button;
+    display: grid;
+    width: 160px;
+    height: 40px;
+    align-items: center;
+    
+    border-radius: 40px;
+    border: 1px solid $croissant;
+    
+    text-align: center;
+    
+    background-color: $croissant;
+    color: $chocolate;
+    
+    transition: background-color 1s;
+    
+    cursor: pointer;
+
+    &:hover {
+      background-color: $milk;
+    }
+  }
+}
+
+@media screen and (max-width: $desctop-width) {
+  .header {
+
+    &__top {
+      grid-template-columns: 1fr;
+      height: 840px;
+    }
+
+    &__left {
+      grid-template-rows: 87px 180px 48px 40px;
+    }
+
+    &__number-tel-small {
+      color: $chocolate;
+
+      transition: color 1s;
+
+      &:hover {
+        color: $cream;
+      }
+    }
+
+    &__text-big {
+      text-align: center;
+      font-size: 150px;
+      line-height: 80%;
+    }
+
+    &__side {
+      display: none;
+    }
+
+    &__burger {
+      display: flex;
+      position: absolute;
+      align-items: center;
+
+      width: 26px;
+      height: 26px;
+      top: 39px;
+      right: 23px ;
+
+      z-index: 1;
+    }
+
+    &__click,
+    &__click::after,
+    &__click::before {
+      display: block;
+      position: absolute;
+
+      width: 18px;
+      height: 2px;
+
+      transition: 1s;
+
+      background-color: #616161;
+    }
+
+    &__click::before {
+      content: "";
+      top: 8px;
+    }
+
+    &__click::after {
+      content: "";
+      top: -9px;
+    }
+
+    &__burger-toggle:checked ~ &__top * &__click {
+      transform: rotate(45deg);
+    }
+
+    &__burger-toggle:checked ~ &__top * &__click::before {
+      top: 0;
+      transform: rotate(0);
+    }
+
+    &__burger-toggle:checked ~ &__top * &__click::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+
+    &__burger-toggle:checked ~ &__top * &__nav {
+      visibility: visible;
+      background-color: $croissant;
+      transition: 1s;
+    }
+
+    &__burger-toggle:checked ~ &__top * &__tel-small {
+      display: initial;
+      position: absolute;
+      top: 700px;
+      right: 50px;
+      
+      transition: 1s;
+      
+      background-color: $croissant;
+    }
+
+    &__burger-toggle:checked ~ &__top * &__change-small {
+      display: initial;
+      position: absolute;
+      top: 42px;
+      right: 90px;
+      width: 50px;
+      height: 20px;
+      
+      border: none;
+      
+      color: $chocolate;
+      background-color: $croissant;
+    }
+  }
+}
+
+@media screen and (max-width: $small-tablet-width) {
+  .header {
+    
+    &__burger-container {
+      top: 30px;
+      right: 16px;
+    }
+    
+    &__top {
+      height: 568px;
+      background-position: center;
+    }
+
+    &__left {
+      grid-template-rows: 87px 180px 48px 40px;
+      padding: 15px 0 0 16px;
+    }
+
+    &__text-big {
+      max-width: 257px;
+      
+      text-align: center;
+      font-size: 100px;
+      line-height: 80%;
+    }
+
+    &__number-tel-small {
+      position: relative;
+      bottom: 205px;
+      left: 10px;
+    }
+
+    &__burger-toggle:checked ~ &__top * &__tel-small {
+      top: 500px;
+    }
+
+    &__burger-toggle:checked ~ &__top * &__change-small {
+      top: 33px;
+    }
+  }
+}
