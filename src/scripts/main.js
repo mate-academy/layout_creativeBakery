@@ -37,8 +37,6 @@ let i = 0;
 
 divs[i].classList.add('header__index--big');
 
-// const def = document.getElementById('def');
-
 document.querySelector('#down').addEventListener('click', () => {
   divs[i].classList.remove('header__index--big');
 
