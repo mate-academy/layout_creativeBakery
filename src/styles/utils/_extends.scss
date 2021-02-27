@@ -21,11 +21,18 @@
 %section-subtitle {
   font-size: 50px;
   line-height: 59px;
+  font-weight: 400;
 }
 
 %section-item-title {
   font-size: 26px;
   line-height: 39px;
+  font-weight: 400;
+}
+
+%text {
+  font-size: 16px;
+  line-height: 24px;
 }
 
 %button-primary {
@@ -38,6 +45,8 @@
 
   background-color: $color-light-brown;
   color: $color-dark-brown;
+
+  font-family: "Rubik", sans-serif;
 
   transition: color 0.3s, background-color 0.3s, opacity 0.3s;
 
@@ -57,5 +66,67 @@
 }
 
 %button-secondary {
-  color: $color-cream;
+  display: block;
+  width: 100px;
+  height: 30px;
+
+  border: 2px solid $color-cream;
+  border-radius: 40px;
+
+  background-color: $color-cream;
+  color: $color-dark-brown;
+
+  font-family: "Rubik", sans-serif;
+
+  transition: color 0.3s, background-color 0.3s, opacity 0.3s;
+
+  &:hover {
+    background-color: $color-white;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    border-color: $color-gray;
+    background-color: $color-gray;
+    color: $color-dark-gray;
+  }
+}
+
+%input {
+  border: none;
+  border-bottom: 1px solid $color-dark-brown;
+  border-radius: 0;
+  
+  color: $color-dark-brown;
+  font-family: "Rubik", sans-serif;
+  
+  @extend %text;
+
+  opacity: 0.5;
+
+  transition: color 0.3s, opacity 0.3s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:focus {
+    opacity: 1;
+    
+    &::placeholder {
+      color: $color-dark-brown;
+    }
+  }
+}
+
+%text-copyright {
+  color: $color-white;
+
+  font-size: 12px;
+  line-height: 17px;
+
+  opacity: 0.7;
 }

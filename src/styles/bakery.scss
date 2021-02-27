@@ -1,5 +1,70 @@
 .bakery {
+  width: calc(100% - 120px);
+
+  display: flex;
+  flex-direction: column;
+
   &__title {
     @extend %section-title;
+
+    margin: 40px 0 27px;
+  }
+
+  &__row {
+    width: 100%;
+
+    margin-bottom: 135px;
+
+    &:last-child {
+      margin-bottom: 160px;
+    }
+  }
+
+  &__button {
+    @extend %button-primary;
+
+    align-self: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 80px;
+
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 1050px) {
+  .bakery {
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .bakery {
+    &__content {
+      padding: 0 16px;
+    }
+
+    &__title {
+      font-size: 60px;
+      line-height: 66px;
+      
+      margin: 40px 0 20px;
+    }
+
+    &__row {
+      margin-bottom: 40px;
+  
+      &:last-child {
+        margin-bottom: 48px;
+      }
+    }
+
+    &__button {
+      margin-bottom: 40px;
+    }
   }
 }
