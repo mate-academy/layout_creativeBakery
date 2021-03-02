@@ -1,5 +1,5 @@
 .about {
-  width: calc(100% - 120px);
+  // width: calc(100% - 120px);
 
   &__title {
     @extend %section-title;
@@ -45,12 +45,24 @@
   }
 
   &__facts {
-    display: grid;
-
+    width: 100%;
     margin: auto;
 
-    grid-template-columns: repeat(5, 200px);
-    column-gap: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+
+    padding: 0 60px;
+
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1200px) {
+  .about {
+    &__facts {
+      justify-content: flex-start;
+    }
   }
 }
 
@@ -78,8 +90,7 @@
     }
 
     &__facts {
-      grid-template-columns: repeat(5, 150px);
-      column-gap: 27px;
+      gap: 27px;
       padding: 0 85px;
     }
   }
