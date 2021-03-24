@@ -1,0 +1,66 @@
+.data {
+  display: grid;
+  justify-items: center;
+
+  @include tabletMini {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  &__arrow {
+    display: inline-block;
+    transform: rotate(-90deg);
+    cursor: pointer;
+    font-size: 26px;
+
+    &:hover {
+      color: $creamColor;
+    }
+
+    @include tabletMini {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__number {
+    display: block;
+    margin: 0 10px;
+  }
+
+  &__main {
+    font-weight: normal;
+    font-size: 176px;
+    line-height: 209px;
+
+    @include tablet {
+      font-size: 120px;
+      line-height: 160px;
+    }
+
+    @include tabletMini {
+      font-size: 40px;
+      line-height: 47px;
+    }
+  }
+
+  &__secondary {
+    font-size: 40px;
+    line-height: 47px;
+
+    @include tablet {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    @include tabletMini {
+      color: $croissantColour;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+}
