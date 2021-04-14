@@ -1,13 +1,15 @@
 .header-asidebar {
-
-  max-width: 425px;
   padding: 30px 40px 0 20px;
-  background-color: $light-brown-color;
-  flex-grow: 2;
+
+  @media (min-width: 1400px) {
+    background-color: $light-brown-color;
+    height: 100vh;
+  }
 
   &__wrapper {
     display: flex;
     height: 60px;
+    gap: 20px;
     justify-content: space-between;
     align-items: flex-end;
   }
@@ -31,9 +33,21 @@
   &__language {
     @extend %p;
     height: 30px;
-    background-color: transparent;
-    border: transparent;
+    width: 60px;
+    padding: 5px;
+    background-color: $cream-color;
+    border: 1px solid $cream-color;
     outline: none;
-    padding-bottom: 6px;
+    border-radius: 15px;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $cream-color;
+      background-color: transparent;
+    }
+
+    &:focus > option {
+      background-color: $cream-color;
+    }
   }
 }
