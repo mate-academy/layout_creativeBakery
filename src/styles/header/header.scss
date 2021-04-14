@@ -1,7 +1,7 @@
 .header {
   background: url(../images/head.jpg) no-repeat center center;
   background-size: cover;
-  // width: 100%;
+  width: 100vw;
   height: 100vh;
   padding: 33px 16px;
   font-family: "Cookie", cursive;
@@ -11,6 +11,28 @@
       padding: 34px 59px;
     }
   }
+
+  &__max-size {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ////////////////////////////////////
+
+  &__max-title-size {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title-container {
+    width: 100%;
+    max-width: 1300px;
+  }
+
+  /////////////////////////////////////
 
   &__title {
     font-size: 100px;
@@ -28,12 +50,27 @@
     @media (min-width: 1300px) {
       & {
         font-size: 160px;
+        width: 727px;
       }
     }
     
     @media (min-width: 1000px) {
       & {
         margin-top: 20px;
+      }
+    }
+
+    @media (max-height: 500px) {
+      & {
+        font-size: 90px;
+        margin-top: 20px;
+      }
+    }
+
+    @media screen and (min-width: 800px) and (max-height: 460px) {
+      & {
+        margin-top: 10px;
+        line-height: 80%;
       }
     }
   }
@@ -57,6 +94,12 @@
         margin-top: 20px;
       }
     }
+
+    @media (max-height: 440px) {
+      & {
+        margin-top: 5px;
+      }
+    }
   }
 
   &__button {
@@ -65,14 +108,25 @@
     height: 45px;
     border: 0;
     line-height: 150%;
+    cursor: pointer;
 
     background: #e39a3b;
     border-radius: 40px;
     margin-top: 19px;
     color: #412d22;
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 0 13px 27px rgba(227, 154, 59, 0.46);
+    }
 
     &:focus {
       outline: none;
+    }
+
+    &:active {
+      transform: translateY(4px);
+      box-shadow: 0 8px 14px rgba(227, 154, 59, 0.46);
     }
 
     @media (min-width: 800px) {
@@ -96,7 +150,25 @@
 
     @media (min-width: 1100px) {
       & {
-        width: 425px;
+        width: 34%;
+      }
+    }
+
+    @media (min-width: 1700px) {
+      & {
+        width: 36%;
+      }
+    }
+
+    @media (min-width: 2000px) {
+      & {
+        width: 39%;
+      }
+    }
+
+    @media (min-width: 2600px) {
+      & {
+        width: 42%;
       }
     }
   }

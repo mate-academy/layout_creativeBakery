@@ -11,6 +11,12 @@
   z-index: 1;
   font-family: "Rubik", sans-serif;
 
+  @media (max-height: 440px) {
+    & {
+      gap: 10px;
+    }
+  }
+
   @media (min-width: 1000px) {
     & {
       transform: translateY(0);
@@ -63,21 +69,39 @@
           margin-right: 16%;
         }
       }
+
+      @media (max-height: 560px) {
+        & {
+          margin: 0;
+        }
+      }
     }
   }
 
   &__button {
+    font-family: "Rubik", sans-serif;
     width: 100px;
     height: 30px;
     border: 0;
     background: #f1cc9d;
     border-radius: 40px;
+    cursor: pointer;
 
     color: #412d22;
     line-height: 150%;
+    transition: 0.4;
+
+    &:hover {
+      box-shadow: 0 13px 27px rgba(241, 204, 157, 0.46);
+    }
 
     &:focus {
       outline: none;
+    }
+
+    &:active {
+      transform: translateY(4px);
+      box-shadow: 0 8px 14px rgba(241, 204, 157, 0.46);
     }
   }
 
