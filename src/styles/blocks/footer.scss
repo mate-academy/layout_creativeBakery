@@ -1,0 +1,48 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  height: 570px;
+  background-color: $chocolate;
+  padding: 66px 47px;
+
+  &__header {
+    margin-bottom: 60px;
+  }
+
+  &__logo {
+    @include logo;
+    margin: 0;
+    color: $milk;
+
+    &:before {
+      @include logo-before($logo-footer-small);
+      top: -28px;
+      left: -33px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+  }
+
+  &__icon {
+    width: 31px;
+    height: 31px;
+  }
+
+  &__rights {
+    color: $milk;
+  }
+  
+}
+
+@each $num, $icon in $icons {
+  .footer__icons:nth-child(1)::after {
+    content: $icon;
+    color: $milk;
+    width: 31px;
+    height: 31px;
+  }
+}
