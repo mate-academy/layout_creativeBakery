@@ -1,11 +1,47 @@
 .bakery {
+  width: 100%;
+  padding: 0 60px;
+
+  @include breakpoint($notebook-bp) {
+    padding: 0 40px;
+  }
 
   &__container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 1720px;
-    height: 100vh;
+    padding-bottom: 80px;
     margin: 0 auto;
     background-color: #fff;
-    // border: 1px solid;
+  }
+
+  &__cookies {
+    margin-bottom: 130px;
+  }
+
+  &__title h2 {
+    margin: 27px 0;
+  }
+
+  &__button {
+    height: 40px;
+    width: 160px;
+    border-radius: 40px;
+    outline: none;
+    font-family: Rubik, sans-serif;
+    border: 2px solid $main-color;
+    background-color: $main-color;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #fff;
+      transition: background-color 0.3s;
+    }
+
+    &:active {
+      background-color: $main-color;
+      opacity: 0.8;
+    }
   }
 }

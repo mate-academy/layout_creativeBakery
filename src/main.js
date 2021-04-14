@@ -1,12 +1,14 @@
-// 'use strict';
+'use strict';
 
-// const nav = document.querySelector('.nav');
-// const burger = document.querySelector('.head__burger');
-// const burgerLine = document.querySelector('.head__burger-line');
-// const toggler = document.querySelector('#toggler');
+const burger = document.querySelector('.nav-header__burger');
+const callbackTop = document.querySelector('.callback__top');
+const callback = document.querySelector('.callback');
+const burgerLine = document.querySelector('.nav-header__burger-line');
+const toggler = document.querySelector('#toggler');
 
-// toggler.addEventListener('click', () => {
-//   nav.classList.toggle('nav--active');
-//   burger.classList.toggle('head__burger--active');
-//   burgerLine.classList.toggle('head__burger-line--active');
-// });
+toggler.addEventListener('click', () => {
+  callbackTop.classList.toggle('callback__top--active');
+  callback.classList.toggle('callback--active');
+  burger.classList.toggle('nav-header__burger--active');
+  burgerLine.classList.toggle('nav-header__burger-line--active');
+});

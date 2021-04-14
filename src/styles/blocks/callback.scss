@@ -1,6 +1,7 @@
 .callback {
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   &__top {
     width: min-content;
@@ -12,6 +13,11 @@
 
     &-phone {
       width: 143px;
+      transition: 0.3s;
+
+      &:hover {
+        color: $alter-button-color;
+      }
     }
 
     &-button {
@@ -39,6 +45,32 @@
       outline: none;
       border: none;
       background: transparent;
+    }
+
+    @include breakpoint($tablet-bp) {
+      display: none;
+  
+      &--active {
+        display: block;
+        flex-direction: column;
+      }
+    }
+  }
+
+  @include breakpoint($notebook-bp) {
+    width: 395px;
+    padding: 34px 40px;
+  }
+
+  @include breakpoint($tablet-bp) {
+    display: none;
+
+    &--active {
+      position: absolute;
+      display: block;
+      right: 0;
+      width: 200px;
+      padding: 34px 20px;
 
     }
   }
