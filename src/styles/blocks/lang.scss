@@ -1,0 +1,43 @@
+
+.lang {
+  display: flex;
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__link {
+    @include p();
+    line-height: 30px;
+    text-decoration: none;
+  }
+  &__item {
+    &:nth-of-type(n + 2) {
+      position: relative;
+      top: -30%;
+      visibility: hidden;
+      opacity: 0;
+      transition: 250ms;
+    }
+    &:nth-of-type(n + 2) > .lang__link {
+      color: $main_lightColor;
+    }
+  }
+  &__checkbox {
+    position: absolute;
+    visibility: hidden;
+    &:checked ~ .lang__item:nth-of-type(n + 2) {
+      top: 0%;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &__arrow {
+    margin-left: 5px;
+    width: 11px;
+    height: 30px;
+    background-image: url("../images/icons/down-arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
