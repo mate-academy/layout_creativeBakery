@@ -7,12 +7,15 @@
     background-image: url(../images/bake-cream-puff-cup-1775045.png);
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media (min-width: 1000px) {
+      background-position: center;
+    }
   }
 
   &__two {
     background-color: $light-brown-color;
-    flex-grow: 1;
-    min-width: 435px;
+    flex-grow: 2;
 
     @media (min-width: 1400px) {
       min-width: 20vw;
@@ -22,11 +25,7 @@
       min-width: 30vw;
     }
 
-    @media (min-width: 1800px) {
-      min-width: 35vw;
-    }
-
-    @media (min-width: 2000px) {
+    @media (min-width: 2200px) {
       min-width: 40vw;
     }
   }
@@ -42,14 +41,48 @@
   display: flex;
   justify-content: space-between;
 
+  &__menu-icon {
+    z-index: 2;
+    height: 18px;
+    width: 25px;
+    background-image: url(../images/burger.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: transform 0.5s;
+
+    @media (min-width: 1000px) {
+
+      display: none;
+    }
+
+    &--active {
+      background-image: url(../images/close.png);
+      transform: rotate(90deg);
+    }
+  }
+
   &__main {
-    padding: 30px 0 0 60px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 60px 0;
+    width: 1015px;
+
+    @media (min-width: 1000px) {
+      padding-right: 20px;
+    }
   }
 
   &__wrapper {
     display: flex;
     position: relative;
-    flex-grow: 1;
+
+    @media (max-width: 1000px) {
+      justify-content: space-between;
+    }
   }
 
   &__logo {
@@ -64,6 +97,7 @@
 
   &__title {
     padding-top: 45px;
+    padding-right: 20px;
     line-height: 177px;
   }
 

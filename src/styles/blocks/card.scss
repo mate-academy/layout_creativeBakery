@@ -1,0 +1,32 @@
+.card {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(5, 200px);
+  gap: 80px;
+  padding-bottom: 135px;
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__image {
+    height: 200px;
+    width: 200px;
+
+    @for $index from 1 through 5 {
+      &--#{$index} {
+        background-image: url(../images/photo-#{$index}.png);
+      }
+    }
+  }
+
+  &__num {
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 71px;
+    text-align: center;
+    color: $dark-brown-color;
+  }
+}

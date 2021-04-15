@@ -1,17 +1,38 @@
 .header-asidebar {
-  padding: 30px 40px 0 20px;
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1000px) {
     background-color: $light-brown-color;
     height: 100vh;
+    padding: 30px 20px 0;
+    min-width: 425px;
+  }
+
+  &__menu {
+    position: absolute;
+    z-index: 1;
+    transform: translate(100%, 0);
+    display: none;
+    transition: transform 0.5s;
+    @extend %p;
+
+    &--active {
+      transform: translate(100%, 0);
+      background-color: $light-brown-color;
+      height: 100vh;
+      width: 50vw;
+      display: block;
+    }
   }
 
   &__wrapper {
-    display: flex;
-    height: 60px;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: flex-end;
+    display: none;
+
+    @media (min-width: 1000px) {
+      display: flex;
+      height: 60px;
+      gap: 10px;
+      align-items: flex-end;
+    }
   }
 
   &__phone {
@@ -34,7 +55,7 @@
     @extend %p;
     height: 30px;
     width: 60px;
-    padding: 5px;
+    padding: 0 5px;
     background-color: $cream-color;
     border: 1px solid $cream-color;
     outline: none;
