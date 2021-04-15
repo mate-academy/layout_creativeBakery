@@ -1,0 +1,141 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-bottom: 130px;
+  background-color: #fff;
+  
+  
+  &__title h2 {
+    line-height: 90px;
+    margin-top: 0;
+    margin-bottom: 45px;
+  }
+
+  &__row-first {
+    display: flex;
+    width: 100%;
+    margin-bottom: 120px;
+  }
+
+  &__left-column {
+    padding: 40px 25px 120px 120px;
+    background-color: $main-color;
+  }
+ 
+  &__right-column {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__row-second {
+    display: flex;
+    width: 100%;
+    margin-bottom: 120px;
+  }
+
+  &__call {
+    display: flex;
+    padding: 0 60px;
+    justify-content: flex-end;
+    flex-basis: 50%;
+  }
+
+  &__img {
+    justify-content: flex-end;
+    align-self: flex-end;
+  }
+
+  &__map {
+    border: none;
+  }
+
+  &__form {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.contacts-get {
+  width: 35%;
+
+  &__title h4 {
+    margin-top: 0;
+    font-size: 26px;
+  }
+  
+  &__address,
+  &__phone,
+  &__support {
+    position: relative;
+    margin-bottom: 10px;
+
+    &::first-line {
+      font-weight: 700;
+    }
+  }
+
+  &__address::before,
+  &__phone::before,
+  &__support--icon::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    left: -55px;
+    background-image: url(/images/pin.png);
+  }
+
+  &__phone::before {
+    background-image: url(/images/ph.png);
+  }
+
+  &__support--icon::before {
+    background-image: url(/images/mail.png);
+  }
+}
+
+.contacts-form {
+  &__feilds {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 170px;
+  }
+
+  &__title h4 {
+    margin: 0 0 25px;
+  }
+
+  &__input,
+  &__messege {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $dark-color;
+    padding: 10px 0;
+    font-family: Rubik, sans-serif;
+
+    &::placeholder {
+      font-size: 16px;
+      font-weight: 400;
+      font-family: Rubik, sans-serif;
+    }
+  }
+
+  &__messege {
+    margin-top: 100px;
+    padding: 0;
+    resize: none;
+  }
+
+  &__button {
+    align-self: center;
+    margin-top: 37px;
+    @extend %main-button;
+  }
+}
