@@ -151,11 +151,38 @@
   }
 
   &__arrow-left {
-    display: inline-block;
-    position: relative;
-    width: 15px;
-    height: 26px;
-    background-image: url(../images/arrow-left.svg);
+    $arrowWidth: 12px;
+    $arrowHeight: 20px;
+    width: 12px;
+    height: 20px;
+    position: absolute;
+    top: calc(50% - #{$arrowHeight / 2});
+    left: -$arrowWidth;
+    background-image: url(../images/cookie-left-arrow.svg);
+    transition: 0.4s;
+
+    &:hover {
+      background-image: url(../images/cookie-right-arrow.svg);
+      transform: rotateZ(180deg);
+    }
+  }
+
+  &__arrow-right {
+    $arrowWidth: 12px;
+    $arrowHeight: 20px;
+    width: 12px;
+    height: 20px;
+    position: absolute;
+    top: calc(50% - #{$arrowHeight / 2});
+    right: -$arrowWidth;
+    background-image: url(../images/cookie-left-arrow.svg);
+    transform: rotateZ(180deg);
+    transition: 0.4s;
+
+    &:hover {
+      background-image: url(../images/cookie-right-arrow.svg);
+      transform: rotateZ(0);
+    }
   }
 
   &__button {
