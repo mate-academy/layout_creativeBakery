@@ -30,8 +30,18 @@
   color: $chocolate;
   text-decoration: none;
   border-radius: 40px;
-  border: none;
+  border: 2px solid $croissant;
   background-color: $croissant;
+}
+
+@mixin btn-hover {
+  background-color: $milk;
+}
+
+@mixin btn-active {
+  background-color: $croissant;
+  opacity: 0.8;
+  outline: none;
 }
 
 @mixin logo {
@@ -45,13 +55,10 @@
 }
 
 @mixin logo-before($_logo-size) {
-  content: "";
+  content: url("../images/cookie-top.svg");
   background-image: url("../images/cookie.svg");
-  background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  width: $_logo-size;
-  height: $_logo-size;
-  top: -14px;
-  left: -19px;
+  top: -25px;
+  left: -30px;
 }
