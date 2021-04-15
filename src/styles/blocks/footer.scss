@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 570px;
   background-color: $chocolate;
-  padding: 66px 47px;
+  padding: 66px 47px 40px;
 
   &__header {
     margin-bottom: 60px;
@@ -13,9 +13,10 @@
     @include logo;
     margin: 0;
     color: $milk;
+    font-size: 30px;
 
     &:before {
-      @include logo-before($logo-footer-small);
+      @include logo-before;
       top: -28px;
       left: -33px;
     }
@@ -24,25 +25,31 @@
   &__icons {
     display: flex;
     justify-content: space-between;
-    padding-top: 60px;
+    margin-bottom: 47px;
   }
 
   &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 31px;
     height: 31px;
+    background-color: $milk;
+    border-radius: 50%;
+  }
+
+  &__img {
+    width: 60%;
+    height: 60%;
   }
 
   &__rights {
+    display: flex;
+    justify-content: center;
+    gap: 29px;
+    font-size: 12px;
     color: $milk;
+    opacity: 0.7;
   }
   
-}
-
-@each $num, $icon in $icons {
-  .footer__icons:nth-child(1)::after {
-    content: $icon;
-    color: $milk;
-    width: 31px;
-    height: 31px;
-  }
 }

@@ -1,20 +1,51 @@
 .nav {
-  display: none;
-  background-color: $croissant;
-  padding: 85px 15px;
-  
+  opacity: 1;
+  transition: opacity 400ms;
+
+  &--header {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: $croissant;
+    padding: 85px 15px;
+    border-left: 3px solid $milk;
+    z-index: 1;
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
     row-gap: 40px;
+    margin-bottom: 60px;
+
+    &--header {
+      row-gap: 30px;
+      margin-bottom: 147px;
+    }
+  }
+
+  &__item {
+    list-style: none;
   }
 
   &__link {
     text-decoration: none;
     color: $milk;
+  }
+
+  
+  &__link--header {
+    color: $chocolate;
 
     &:hover {
       color: $milk;
     }
   }
+}
+
+.display-none {
+  visibility: hidden;
+  opacity: 0;
 }
