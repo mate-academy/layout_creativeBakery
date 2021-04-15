@@ -1,17 +1,38 @@
 'use strict';
 
-const numList = document.querySelectorAll('.roller__num-list')[0];
+const numList1 = document.querySelectorAll('.roller__num-list')[0];
+const numList2 = document.querySelectorAll('.roller__num-list')[1];
 
-const numUp = function() {
-  numList.appendChild(numList.firstElementChild);
+const numUp1 = function() {
+  numList1.appendChild(numList1.firstElementChild);
 };
-const numDown = function() {
-  numList.prepend(numList.lastElementChild);
+const numDown1 = function() {
+  numList1.prepend(numList1.lastElementChild);
 };
 
-document.querySelector('.roller__up-arrow').addEventListener('click', numUp);
+const numUp2 = function() {
+  numList2.appendChild(numList2.firstElementChild);
+};
+const numDown2 = function() {
+  numList2.prepend(numList2.lastElementChild);
+};
 
-document.querySelector('.roller__down-arrow').addEventListener(
+document.querySelectorAll('.roller__up-arrow')[0].addEventListener(
   'click',
-  numDown
+  numUp1
+);
+
+document.querySelectorAll('.roller__down-arrow')[0].addEventListener(
+  'click',
+  numDown1
+);
+
+document.querySelectorAll('.roller__up-arrow')[1].addEventListener(
+  'click',
+  numUp2
+);
+
+document.querySelectorAll('.roller__down-arrow')[1].addEventListener(
+  'click',
+  numDown2
 );
