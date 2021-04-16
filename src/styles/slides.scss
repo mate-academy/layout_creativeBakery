@@ -1,0 +1,80 @@
+.slides {
+  position: relative;
+  grid-area: side-info;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 80px;
+
+  &__number {
+    font-size: 2.5em;
+    color: $second-color;
+    line-height: 48px;
+    
+  }
+
+  &__number--active {
+    font-size: 11em;
+    color: $font-color;
+    line-height: 160px;
+    
+  }
+  &__arrow-top {
+    top: -30px;
+  }
+
+  &__arrow-down {
+    top: 35px;
+  }
+
+  &__arrow-top,
+  &__arrow-down {
+    position: relative;
+    left: -40px;
+    font-size: 40px;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $second-color;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-bp) {
+  .slides {
+    grid-area: slides;
+    flex-direction: row;
+    justify-content: center;
+    max-width: max-content;
+    padding: 0;
+    margin: 20px auto;
+
+    &__number {
+      margin-right: 20px;
+      font-size: 1em;
+      color: $main-color;
+      line-height: 19px;
+    }
+
+    &__number--active {
+      margin: 0 10px;
+      font-size: 2.5em;
+      color: $font-color;
+      line-height: 47px;
+    }
+
+    &__arrow-top,
+    &__arrow-down {
+      position: relative;
+      left: 0;
+      top: 0;
+      font-size: 34px;
+      transform: rotate(-90deg);
+    }
+
+    &__arrow-top {
+      color: $second-color;
+    }
+  }
+}

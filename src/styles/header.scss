@@ -1,0 +1,73 @@
+.header {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  
+  display: grid;
+  grid-template-columns: 20% 1fr $phone-bp;
+  grid-template-rows: 150px 1fr;
+  grid-template-areas: "logo menu side-info"  
+    "info info side-info" ;
+
+  align-items: center;
+  overflow: hidden;
+
+  &__logo {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 60px;
+  }
+
+  &__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../images/Header-img.png) 0 / cover no-repeat;
+    z-index: -1;
+  }
+}
+
+@media screen and (min-width: 2300px) {
+  .header {
+    padding-left: 500px;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  .header {
+    height: 1080px;
+  }
+}
+
+@media screen and (max-width: $laptop-bp) {
+  .header {
+    grid-template-columns: 20% 1fr 290px;
+  }
+}
+
+@media screen and (max-width: $tablet-bp) {
+  .header {
+    grid-template-columns: 100% 0%;
+    grid-template-rows: 100px 1fr;
+    
+    grid-template-areas: "logo side-info "  
+      "info side-info"
+      "slides side-info";
+
+    background: url(../images/Header-img.png) 0 / cover no-repeat;
+
+    &__logo {
+      margin-left: 45px;
+    }
+
+    &__background {
+      background: none;
+    }
+  }
+}
+
+@media screen and (max-width: $phone-bp) {
+  .header {
+    background: url(../images/Header-mobile-img.png) 0 0 / cover no-repeat;
+  }
+}

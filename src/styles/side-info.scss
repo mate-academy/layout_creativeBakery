@@ -1,0 +1,107 @@
+.side-info {
+  grid-area: side-info;
+
+  position: relative;
+  top: 0;
+  height: 100%;
+
+  background-color: $main-color;
+
+  &__list {
+    margin: 68px 10%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    margin-left: 10px;
+  }
+
+  .phone__icon {
+    display: none;
+  }
+
+  &__link {
+    font-size: 1em;
+    text-decoration: none;
+    color: $font-color;
+
+    &:hover {
+      color: $second-color;
+    }
+  }
+
+  &__select {
+    background-color: $main-color;
+    border: none;
+  }
+}
+
+@media screen and (max-width: $laptop-bp) {
+  .side-info {
+    &__link {
+      display: none;
+    }
+
+    .phone__icon {
+      display: block;
+      font-size: 1.3em;
+      margin-right: 10px;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.4);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-bp) {
+  .side-info {
+    display: block;
+    position: absolute;
+    flex-direction: column-reverse;
+    width: 400px;
+    height: 70%;
+    transform: translate(400px);
+
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+
+    &__list {
+      
+      position: relative;
+      top: 300px;
+      width: 160px;
+      height: 120px;
+
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__link {
+      display: block;
+    }
+
+    .phone__icon {
+      display: none;
+    }
+
+    &_active {
+      transform: translate(-400px);
+      transition: transform 0.2s;
+    }
+  }
+}
+
+@media screen and (max-width: $phone-bp) {
+  .side-info {
+    width: 200px;
+    height: 80%;
+    transform: translate(400px);
+
+    &_active {
+      transform: translate(-200px);
+    }
+  }
+}
