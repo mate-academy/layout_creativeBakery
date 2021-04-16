@@ -1,0 +1,165 @@
+
+@mixin cookiesSize($mult: 1) {
+  width: #{15px * $mult};
+  height: #{15px * $mult};
+  @include tablet() {
+    width: #{8px * $mult};
+    height: #{8px * $mult};
+  }
+}
+
+@mixin cookiesLabelSize() {
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
+  line-height: 25px;
+  @include tablet() {
+    width: 15px;
+    height: 15px;
+    font-size: 6px;
+    line-height: 15px;
+  }
+}
+
+$cookieWidth: 15px;
+
+.express {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  background-color: $main_lightColor;
+  &__title {
+    margin-bottom: 87px;
+    @include h2();
+    @include tablet() {
+      font-size: 60px;
+      left: 65px;
+    }
+  }
+  &__form {
+    display: flex;
+    gap: 42px;
+    margin-bottom: 71px;
+    @include tablet() {
+      flex-direction: column;
+    }
+  }
+  &__cities,
+  &__adresses {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+    padding-left: 5px;
+    list-style: none;
+    border-bottom: 1px solid $main_darkColor;
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 60%;
+      width: 11px;
+      height: 6px;
+      background-image: url("../images/icons/down-arrow.svg");
+    }
+  }
+  &__cities {
+    width: 173px;
+    @include tablet() {
+      width: 100%;
+    }
+  }
+  &__adresses {
+    width: 323px;
+    @include tablet() {
+      width: 100%;
+    }
+  }
+  &__city-default,
+  &__adress-default {
+    border: none;
+    background-color: $main_lightColor;
+  }
+  &__submit {
+    margin: 0 auto;
+    @include primaryButton;
+  }
+  &__map-wrap {
+    position: relative;
+  }
+  &__map {
+    width: 1020px;
+    object-fit: contain;
+    @include tablet() {
+      width: 300px;
+    }
+  }
+  &__cookie {
+    position: absolute;
+    @include cookiesSize();
+    background-image: url("../images/icons/logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    @for $order from 1 through 9 {
+      &--#{$order} {
+        @include cookiesSize($order);
+        &::before {
+          content: "#{$order}";
+        }
+      }
+    }
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-25%, -25%) scale(1);
+      @include cookiesLabelSize();
+      @include p();
+      text-align: center;
+      color: $main_pseudoWhiteColor;
+      background-color: #d21925;
+      border-radius: 50%;
+    }
+    &:nth-of-type(1) {
+      left: 65%;
+      top: 67%;
+    }
+    &:nth-of-type(2) {
+      left: 64%;
+      top: 32%;
+    }
+    &:nth-of-type(3) {
+      left: 35%;
+      top: 21%;
+    }
+    &:nth-of-type(4) {
+      left: 16%;
+      top: 13%;
+    }
+    &:nth-of-type(5) {
+      left: 36%;
+      top: 43%;
+    }
+    &:nth-of-type(6) {
+      left: 54%;
+      top: 12%;
+    }
+    &:nth-of-type(7) {
+      left: 70%;
+      top: 46%;
+    }
+    &:nth-of-type(8) {
+      left: 79%;
+      top: 32%;
+    }
+    &:nth-of-type(9) {
+      left: 10%;
+      top: 30%;
+    }
+    &:nth-of-type(10) {
+      left: 47%;
+      top: 25%;
+    }
+  }
+}

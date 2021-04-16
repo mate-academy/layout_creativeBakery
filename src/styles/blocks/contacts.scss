@@ -1,0 +1,70 @@
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media (max-width: 1014px) {
+    flex-direction: column;
+  }
+  &__title {
+    @include h2();
+    width: 100%;
+    text-align: center;
+  }
+  &__info-title {
+    @include h4();
+    margin-bottom: 24px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0 0 120px;
+    width: 430px;
+    min-height: 507px;
+    background-color: $main_mainColor;
+    @include tablet() {
+      height: auto;
+    }
+  }
+  &__contact {
+    position: relative;
+    margin-bottom: 9px;
+    @include p();
+    text-decoration: none;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 37px;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+    }
+    &:nth-of-type(1) {
+      &::before {
+        background-image: url("../images/icons/pin.svg");
+      }
+    }
+    &:nth-of-type(2) {
+      &::before {
+        background-image: url("../images/icons/ph.svg");
+      }
+    }
+    &:nth-of-type(3) {
+      &::before {
+        background-image: url("../images/icons/mail 2.svg");
+      }
+    }
+  }
+  &__contact-label {
+    font-weight: 700;
+  }
+  &__map {
+    flex-grow: 1;
+    max-width: calc(#{$max_contentWidth} - 430px);
+    height: 507px;
+    background-color: lightgreen;
+    @media (max-width: 1014px) {
+      max-width: 380px;
+    }
+  }
+}
