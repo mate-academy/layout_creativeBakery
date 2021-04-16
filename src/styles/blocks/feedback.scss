@@ -1,7 +1,14 @@
 .feedback {
   display: flex;
-  justify-content: space-between;
-  padding: 135px 176px;
+  flex-direction: column;
+  padding: 50px 15px;
+  align-items: center;
+
+  @media (min-width: 1000px) {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 135px 60px;
+  }
 
   &__title {
     padding-bottom: 27px;
@@ -9,10 +16,14 @@
   }
 
   &__image {
-    background-image: url(../images/pic.png);
-    height: 417px;
-    width: 509px;
-    background-position: center;
-    background-repeat: no-repeat;
+    max-height: 100%;
+    max-width: 100%;
+    order: 2;
+    margin-top: 50px;
+
+    @media (min-width: 1000px) {
+      order: 0;
+    }
+
   }
 }

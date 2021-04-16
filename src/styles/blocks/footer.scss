@@ -1,11 +1,24 @@
 .footer {
-  padding: 0 60px;
-  height: 157px;
+  padding: 40px 15px;
+  height: 100vh;
   background-color: $dark-brown-color;
+
+  @media (min-width: 768px) {
+    height: 157px;
+    padding: 0 60px;
+
+  }
 
   &__wrapper {
     display: flex;
-    padding-top: 50px;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      padding-top: 50px;
+
+    }
+
   }
 
   &__logo {
@@ -71,5 +84,41 @@
 
   &__year {
     padding-right: 29px;
+  }
+
+  &__nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px 0;
+    height: 60px;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: 34px;
+
+    .footer & {
+      @media (max-width: 768px) {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        bottom: 0;
+        transform: translate(0, 0);
+      }
+
+    }
+  }
+
+  &__link {
+    @extend %p;
+    color: $white-color;
+    text-decoration: none;
+    padding: 5px;
+
+    &:hover {
+      color: $light-brown-color;
+    }
   }
 }
