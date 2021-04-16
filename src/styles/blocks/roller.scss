@@ -5,7 +5,7 @@
   justify-content: center;
   gap: 20px;
   width: fit-content;
-  left: 30%;
+  left: 36%;
   bottom: 28px;
 
   &__item {
@@ -29,5 +29,43 @@
     content: url("../images/arrow-choc-right-small.svg");
     bottom: 4px;
     right: -29px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .roller {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: 29px;
+
+    &__item {
+      color: $cream;
+      font-size: 40px;
+      &:first-child {
+        font-size: 176px;
+        line-height: 209px;
+        color: $chocolate;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      content: url("../images/arrow-up-light.svg");
+      width: 26px;
+      top: -9px;
+      left: 94px;
+    }
+  
+    &::after {
+      position: absolute;
+      content: url("../images/arrow-down-choc.svg");
+      width: 26px;
+      bottom: -41px;
+      left: 94px;
+    }
   }
 }

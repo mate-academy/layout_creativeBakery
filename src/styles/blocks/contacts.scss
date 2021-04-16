@@ -37,19 +37,19 @@
     &:first-child::before {
       content: url(../images/pin.svg);
       position: absolute;
-      left: 23px;
+      left: $contacts-item-before-left-xs;
     }
 
     &:nth-child(2)::before {
       content: url(../images/ph.svg);
       position: absolute;
-      left: 23px;
+      left: $contacts-item-before-left-xs;
     }
 
     &:nth-child(3)::before {
       content: url(../images/mail.svg);
       position: absolute;
-      left: 23px;
+      left: $contacts-item-before-left-xs;
     }
   }
 
@@ -65,5 +65,29 @@
   &__iframe {
     width: 100%;
     height: 504px;
+  }
+}
+
+@media (min-width: 576px) {
+  .contacts {
+    &__info {
+      width: fit-content;
+      padding-left: 0;
+      margin: 0 auto 40px;
+    }
+
+    &__item {
+      &:first-child::before {
+        left: $contacts-item-before-left-s;
+      }
+  
+      &:nth-child(2)::before {
+        left: $contacts-item-before-left-s;
+      }
+  
+      &:nth-child(3)::before {
+        left: $contacts-item-before-left-s;
+      }
+    }
   }
 }

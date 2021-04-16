@@ -1,12 +1,18 @@
 .hero {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 20px 16px 115px;
   background: url("../images/hero-img.png") no-repeat center;
   background-size: cover;
   height: 100vh;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1600px;
+    height: 100vh;
+    margin: auto;
+  }
 
   &__header {
     display: flex;
@@ -16,6 +22,7 @@
   &__logo {
     @include logo;
     margin: 18px 30px;
+    height: fit-content;
 
     &::before {
       @include logo-before;
@@ -32,7 +39,7 @@
     font-size: 100px;
     line-height: 80%;
     font-family: $cookie;
-    margin-bottom: 29px;
+    margin: 97px 0 29px;
   }
 
   &__description {
@@ -51,5 +58,11 @@
     &:active {
       @include btn-active;
     }
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    padding: 40px;
   }
 }

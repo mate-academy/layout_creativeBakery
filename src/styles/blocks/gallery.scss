@@ -61,3 +61,44 @@
     width: inherit;
   }
 }
+
+@media (min-width: 768px) {
+  .gallery {
+    flex-direction: row;
+
+    &__info {
+      flex-basis: 30%;
+    }
+
+    &__description {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    &__img-container {
+      margin: auto;
+      position: relative;
+      width: 400px;
+  
+      &::before {
+        content: url(../images/arrow-crois-left-small.svg);
+        position: absolute;
+        top: #{$gallery-picture-small / 2};
+        left: -7%;
+        opacity: 0.5;
+      }
+  
+      &::after {
+        content: url(../images/arrow-choc-right-small.svg);
+        position: absolute;
+        top: #{$gallery-picture-small / 2};
+        right: -7%;
+      }
+    }
+  
+    &__picture {
+      height: auto;
+      width: 100%;
+    }
+  }
+}
