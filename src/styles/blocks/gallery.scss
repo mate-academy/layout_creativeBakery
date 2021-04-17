@@ -36,10 +36,6 @@
     position: relative;
     width: 272px;
 
-    &_:last-child {
-      margin-top: 40px;
-    }
-
     &::before {
       content: url(../images/arrow-crois-left-small.svg);
       position: absolute;
@@ -53,6 +49,10 @@
       position: absolute;
       top: #{$gallery-picture-small / 2};
       right: -5%;
+    }
+
+    &:last-child > .gallery__img-container {
+      margin-top: 30px;
     }
   }
 
@@ -99,6 +99,52 @@
     &__picture {
       height: auto;
       width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .gallery {
+
+    &__title {
+      @include gallery-title(
+        $gallery-title-fsz-screen, $gallery-title-mb-screen);
+    }
+
+    &__subtitle {
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
+    &__description {
+      width: 302px;
+      margin-bottom: 32px;
+    }
+
+    &__price {
+      width: $prize-size-large;
+      height: $prize-size-large;
+      flex-direction: row;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    &__break::before {
+      content: "/  ";
+    }
+
+    &__img-container {
+      width: 600px;
+
+      &::before {
+        top: 166px;
+        left: -85px;
+      }
+
+      &::after {
+        top: 166px;
+        right: -85px;
+      }
     }
   }
 }

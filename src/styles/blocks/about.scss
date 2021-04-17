@@ -7,8 +7,11 @@
   }
 
   &__info {
+    width: 100%;
+    max-width: 480px;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
+    color: #000;
 
     &--screen {
       display: none;
@@ -20,6 +23,46 @@
     gap: 27px;
     overflow-x: scroll;
     margin-left: 59px;
+  }
+}
+
+@media (min-width: 768px) {
+  .about {
+    &__info {
+      margin: 0 auto 30px;
+
+      &--mobile {
+        display: none;
+      }
+
+      &--screen {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (min-width: 950px) {
+  .about {
+    &__gallery {
+      width: fit-content;
+      margin: auto;
+      overflow: visible;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .about {
+
+    &__title {
+      font-size: 120px;
+      margin-bottom: 27px;
+    }
+    &__gallery {
+      display: flex;
+      gap: 80px;
+    }
   }
 }
 
