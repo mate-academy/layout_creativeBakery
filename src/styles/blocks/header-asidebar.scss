@@ -6,7 +6,8 @@
     background-color: $light-brown-color;
     height: 100vh;
     padding: 30px 20px 0;
-    width: 50%;
+    min-width: 425px;
+    flex-grow: 1;
   }
 
   &__right-menu {
@@ -17,6 +18,7 @@
     right: 0;
     z-index: 1;
     visibility: hidden;
+    border-left: 3px solid $white-color;
     @extend %p;
 
     &--active {
@@ -36,11 +38,11 @@
       height: 60px;
       gap: 10px;
       align-items: flex-end;
+      justify-content: space-around;
     }
   }
 
   &__phone {
-    @extend %p;
     text-decoration: none;
     color: $dark-brown-color;
     padding: 5px;
@@ -60,16 +62,11 @@
     height: 30px;
     width: 60px;
     padding: 0 5px;
-    background-color: $cream-color;
-    border: 1px solid $cream-color;
+    background-color: transparent;
+    border: 1px solid transparent;
     outline: none;
     border-radius: 15px;
     cursor: pointer;
-
-    &:hover {
-      border-color: $cream-color;
-      background-color: transparent;
-    }
 
     &:focus > option {
       background-color: $cream-color;
@@ -86,7 +83,6 @@
 
   &__item {
     padding-bottom: 20px;
-
   }
 
   &__link {
@@ -121,7 +117,6 @@
     @extend %p;
     text-decoration: none;
     margin-bottom: 30px;
-
   }
 
   &__language {
@@ -145,5 +140,4 @@
       background-color: $cream-color;
     }
   }
-
 }
