@@ -1,4 +1,101 @@
 
 .footer {
-  background-color: violet;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 74px 20px 18px;
+  background-color: $main_darkColor;
+  @include tablet {
+    flex-direction: column;
+    gap: 60px;
+  }
+  &__logo {
+    position: relative;
+    margin-left: 35px;
+    @include h1();
+    font-size: 30px;
+    line-height: 33px;
+    text-decoration: none;
+    color: $main_pseudoWhiteColor;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 41px;
+      height: 41px;
+      transform: translate(-75%, -55%);
+      background-image: url("../images/icons/logo.svg");
+    }
+  }
+  &__nav {
+    margin-bottom: 15px;
+  }
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include tablet {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+  &__item {
+    margin-right: 34px;
+  }
+  &__link {
+    @include p;
+    color: $main_pseudoWhiteColor;
+    text-decoration: none;
+    transition: color 200ms;
+    &:hover {
+      color: $main_mainColor;
+    }
+  }
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  &__icon {
+    margin-right: 20px;
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    background-color: $main_pseudoWhiteColor;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-color 200ms;
+    &:hover {
+      background-color: $main_mainColor;
+    }
+    &:nth-of-type(1) {
+      background-image: url("../images/icons/twitter.svg");
+    }
+    &:nth-of-type(2) {
+      background-image: url("../images/icons/facebook.svg");
+    }
+    &:nth-of-type(3) {
+      background-image: url("../images/icons/in.svg");
+    }
+  }
+  &__copyright {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  &__date {
+    margin-right: 30px;
+  }
+  &__date,
+  &__privacy {
+    @include p();
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: $main_pseudoWhiteColor;
+  }
 }

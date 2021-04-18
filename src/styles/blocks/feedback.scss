@@ -1,4 +1,49 @@
 
 .feedback {
-  background-color: red;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  max-width: $max_contentWidth;
+  @include tablet() {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  &__img {
+    max-width: 500px;
+    @include tablet() {
+      width: 250px;
+    }
+  }
+  &__form-wrap {
+    max-width: 378px;
+    min-width: 320px;
+  }
+  &__form-title {
+    margin-bottom: 27px;
+    @include h4();
+    text-align: center;
+    white-space: nowrap;
+    @include tablet() {
+      font-size: 20px;
+    }
+  }
+  &__input {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid grey;
+    &::placeholder {
+      @include p();
+      color: $main_darkColor;
+    }
+    &:nth-of-type(3) {
+      margin-bottom: 90px;
+    }
+  }
+  &__form-button {
+    @include primaryButton;
+    margin: 0 auto;
+    @include p;
+  }
 }

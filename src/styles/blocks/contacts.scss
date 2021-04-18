@@ -2,10 +2,8 @@
 .contacts {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  @media (max-width: 1014px) {
-    flex-direction: column;
-  }
+  max-width: 1440px;
+  min-width: 320px;
   &__title {
     @include h2();
     width: 100%;
@@ -18,12 +16,12 @@
   &__info {
     display: flex;
     flex-direction: column;
-    padding: 40px 0 0 120px;
-    width: 430px;
-    min-height: 507px;
+    padding: 40px 10px 128px 120px;
+    flex-grow: 1;
+    min-width: 320px;
     background-color: $main_mainColor;
-    @include tablet() {
-      height: auto;
+    @include contentMinWidth() {
+      padding-left: 50px;
     }
   }
   &__contact {
@@ -34,7 +32,7 @@
     &::before {
       content: "";
       position: absolute;
-      left: 37px;
+      left: -37px;
       width: 30px;
       height: 30px;
       background-repeat: no-repeat;
@@ -59,12 +57,12 @@
     font-weight: 700;
   }
   &__map {
-    flex-grow: 1;
-    max-width: calc(#{$max_contentWidth} - 430px);
-    height: 507px;
-    background-color: lightgreen;
-    @media (max-width: 1014px) {
-      max-width: 380px;
+    flex-grow: 7;
+    min-width: 600px;
+    // background-image: url("../images/photos/location.png");
+    // background-size: contain;
+    @include contentMinWidth() {
+      height: 516px;
     }
   }
 }

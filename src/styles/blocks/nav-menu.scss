@@ -35,6 +35,17 @@ $min_menuWidth: 260px;
     height: 25px;
     background-image: url("../images/icons/burger.svg");
     background-repeat: no-repeat;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 25px;
+      height: 25px;
+      opacity: 0;
+      background-image: url("../images/icons/close.svg");
+      transition: transform 250ms;
+    }
     @include contentMinWidth() {
       display: block;
     }
@@ -81,7 +92,7 @@ $min_menuWidth: 260px;
     display: block;
     text-decoration: none;
     @include p();
-    transition: 200ms;
+    transition: color 200ms;
     &:hover {
       color: $main_mainColor;
     }
@@ -122,6 +133,13 @@ $min_menuWidth: 260px;
     visibility: hidden;
     &:checked ~ .nav-complex__menu > .nav-complex__list {
       right: 0;
+    }
+    &:checked + .nav-complex__label {
+      background-image: none;
+      &::before {
+        opacity: 1;
+        transform: rotate(-90deg);
+      }
     }
   }
 }
