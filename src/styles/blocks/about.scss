@@ -1,0 +1,50 @@
+.about {
+  @include main-block-position;
+
+  &__content {
+    @include main-content-position;
+  }
+
+  &__title {
+    padding-top: 40px;
+    padding-bottom: 36px;
+  }
+
+  &__subtitle {
+    text-align: center;
+    max-width: 480px;
+    padding-bottom: 60px;
+  }
+
+  &__feedbacks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    
+    @media (min-width: 950px) and (max-width: 1250px) {
+      width: 600px;
+    }
+  }
+
+  &__feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 40px;
+
+    &-img {
+      width: 100%;
+    }
+    
+    &-title {
+      @extend %about-title;
+    }
+
+    &-subtitle {
+      @extend %p;
+    }
+  }
+}
