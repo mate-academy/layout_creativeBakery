@@ -1,0 +1,179 @@
+.nav {
+  z-index: 1;
+  position: absolute;
+
+  right: 0;
+  top: -100vh;
+  width: 202px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-left: 3px solid $c-white;
+  background-color: $c-light-brown;
+
+  transition-duration: 0.5s;
+
+  &__active {
+    top: 0;
+    transition-duration: 0.5s;
+  }
+
+  @media (min-width: $def-desktop-size) {
+    border: none;
+    height: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    position: relative;
+    justify-content: space-between;
+    max-width: 884px;
+    width: 100%;
+
+    top: 0;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    transition-duration: 0.5s;
+  }
+
+  &__list-1 {
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+
+    @media (min-width: $def-desktop-size) {
+      align-self: center;
+      flex-direction: row;
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    align-self: start;
+    padding: 15px;
+    cursor: pointer;
+
+    @extend %p;
+
+    color: $c-dark-brown;
+
+    @media (min-width: $def-desktop-size) {
+      padding: 17px;
+    }
+
+    transition-duration: 0.5s;
+  }
+
+  &__link:hover {
+    color: $c-white;
+    text-shadow: $def-text-shadow;
+    
+    @media (min-width: $def-desktop-size) {
+      color: $c-light-brown;
+    }
+
+    transition-duration: 0.5s;
+  }
+
+  &__list-2 {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding-bottom: 30px;
+
+    @media (min-width: $def-desktop-size) {
+      align-items: flex-end;
+      flex-direction: row;
+      padding-bottom: 0;
+    }
+  }
+
+  &__phone {
+    align-self: start;
+    @extend %p;
+    padding: 15px;
+    color: $c-dark-brown;
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition-duration: 0.5s;
+
+    @media (min-width: $def-desktop-size) {
+      align-self: center;
+      padding-right: 20px;
+    }
+  }
+
+  &__phone:hover {
+    color: $c-white;
+    text-shadow: $def-text-shadow;
+    transition-duration: 0.5s;
+  }
+
+  &__button {
+    box-sizing: border-box;
+    align-self: start;
+
+    width: 100px;
+    height: 30px;
+
+    border-radius: 40px;
+    border: 2px solid $c-cream;
+    outline: none;
+    margin: 15px;
+
+    cursor: pointer;
+
+    @extend %p;
+    color: $c-dark-brown;
+
+    background-color: $c-cream;
+    transition-duration: 0.5s;
+
+    @media (min-width: $def-desktop-size) {
+      align-self: center;
+      margin: 0;
+    }
+  }
+
+  &__button:hover {
+    background-color: $c-white;
+    transition-duration: 0.5s;
+  }
+
+  &__button:active {
+    border: 2px solid $c-cream;
+    background-color: $c-cream;
+    opacity: 0.8;
+    
+    transition-duration: 0.5s;
+    transform: scale(0.9);
+  }
+
+  &__slector {
+    z-index: 1;
+    padding: 15px;
+    align-self: start;
+
+    @media (min-width: $def-desktop-size) {
+      padding-left: 20px;
+      align-self: center;
+    }
+  }
+
+  &__lang-selector {
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    @extend %p;
+    color: $c-dark-brown;
+    transition-duration: 0.5s;
+
+    background-color: $c-light-brown;
+  }
+}
