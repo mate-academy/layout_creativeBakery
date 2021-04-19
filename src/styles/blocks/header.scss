@@ -20,13 +20,53 @@
     @include breakpoint($notebook-bp) {
       padding: 34px 40px;
     }
+
+    @include breakpoint($mobile-bp) {
+      padding: 34px 20px;
+    }
   }
 
-  &__title,
+  &__title {
+    margin: 50px 0;
+
+    @include breakpoint(1210px) {
+      font-size: 125px;
+      margin: 35px 0;
+    }
+
+    @include breakpoint($mobile-bp) {
+      font-size: 100px;
+      line-height: 80px;
+    }
+
+    &--active {
+      transition: 0.3s;
+
+      @include breakpoint($tablet-bp) {
+        width: 50%;
+        font-size: 100px;
+        line-height: 100px;
+      }
+
+      @include breakpoint(700px) {
+        width: 50%;
+        font-size: 100px;
+        line-height: 80px;
+      }
+    }
+  }
+
   &__text {
-    margin: 25px 0;
-  }
 
+    @include breakpoint($mobile-bp) {
+      font-size: 16px;
+    }
+
+    &--active {
+      transition: 0.3s;
+      font-size: 16px;
+    }
+  }
   &__learn-button {
     @extend %main-button;
   }

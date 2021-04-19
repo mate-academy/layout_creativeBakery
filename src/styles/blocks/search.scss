@@ -4,13 +4,21 @@
   max-width: 900px;
   padding-bottom: 70px;
 
+  @include breakpoint($small-tablet-bp) {
+    flex-direction: column;
+  }
+
   &__button {
     @extend %main-button;
+
+    @include breakpoint($small-tablet-bp) {
+      align-self: center;
+    }
   }
 
   &__city,
   &__address {
-    width: 300px;
+    min-width: 290px;
     position: relative;
     outline: none;
     border: none;
@@ -25,10 +33,18 @@
       bottom: 15px;
       right: 0;
       left: 0;
+
+      @include breakpoint($small-tablet-bp) {
+        bottom: -10px;
+      }
     }
   }
 
   &__city {
-    width: 150px;
+    min-width: 150px;
+
+    @include breakpoint($small-tablet-bp) {
+      width: 100%;
+    }
   }
 }

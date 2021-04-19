@@ -6,23 +6,64 @@
   margin: 0 auto;
   padding-bottom: 130px;
   background-color: #fff;
-  
+
+  @include breakpoint($tablet-bp) {
+    padding-bottom: 50px;
+  }
   
   &__title h2 {
     line-height: 90px;
     margin-top: 0;
     margin-bottom: 45px;
+
+    @include breakpoint($tablet-bp) {
+      display: none;
+    }
   }
 
   &__row-first {
     display: flex;
     width: 100%;
     margin-bottom: 120px;
+
+    @include breakpoint($tablet-bp) {
+      flex-direction: column;
+    }
+
+    @include breakpoint($mobile-bp) {
+      margin-bottom: 35px;
+    }
   }
 
   &__left-column {
+    align-items: center;
     padding: 40px 25px 120px 120px;
     background-color: $main-color;
+
+    &-title h2 {
+      display: none;
+      color: #fff;
+      line-height: 0;
+      font-size: 100px;
+
+      @include breakpoint($tablet-bp) {
+        display: block;
+      }
+
+      @include breakpoint($mobile-bp) {
+        display: block;
+        font-size: 60px;
+        margin-bottom: 40px;
+      }
+    }
+
+    @include breakpoint($tablet-bp) {
+      padding-bottom: 60px;
+    }
+
+    @include breakpoint($mobile-bp) {
+      padding-bottom: 40px;
+    }
   }
  
   &__right-column {
@@ -34,6 +75,11 @@
     display: flex;
     width: 100%;
     margin-bottom: 120px;
+
+    @include breakpoint($tablet-bp) {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
   }
 
   &__call {
@@ -41,11 +87,18 @@
     padding: 0 60px;
     justify-content: flex-end;
     flex-basis: 50%;
+
+    @include breakpoint($tablet-bp) {
+      margin-top: 50px;
+      justify-content: center;
+      order: 1;
+    }
   }
 
   &__img {
     justify-content: flex-end;
     align-self: flex-end;
+    width: 100%;
   }
 
   &__map {
@@ -63,9 +116,28 @@
 .contacts-get {
   width: 35%;
 
+  @include breakpoint($tablet-bp) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  &__info {
+
+    @include breakpoint($mobile-bp) {
+      padding-left: 60px;
+    }
+  }
+
   &__title h4 {
     margin-top: 0;
     font-size: 26px;
+
+    @include breakpoint($mobile-bp) {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
   }
   
   &__address,
@@ -88,6 +160,10 @@
     height: 30px;
     left: -55px;
     background-image: url(/images/pin.png);
+
+    @include breakpoint($mobile-bp) {
+      left: -45px;
+    }
   }
 
   &__phone::before {
@@ -105,10 +181,19 @@
     flex-direction: column;
     width: 100%;
     padding: 0 170px;
+
+    @include breakpoint($mobile-bp) {
+      padding: 0 20px;
+    }
   }
 
   &__title h4 {
     margin: 0 0 25px;
+
+    @include breakpoint($mobile-bp) {
+      margin: 0 14px;
+      font-size: 20px;
+    }
   }
 
   &__input,

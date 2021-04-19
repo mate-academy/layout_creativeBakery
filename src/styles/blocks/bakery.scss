@@ -4,6 +4,18 @@
 
   @include breakpoint($notebook-bp) {
     padding: 0 40px;
+  
+    & .cookies:nth-child(2n) .cookies__column {
+      padding-left: 30px;
+
+      @include breakpoint($small-tablet-bp) {
+        padding: 0;
+      }
+    }
+  }
+
+  @include breakpoint($mobile-bp) {
+    padding: 0 20px;
   }
 }
 
@@ -16,8 +28,17 @@
   margin: 0 auto;
   background-color: #fff;
 
+  @include breakpoint($mobile-bp) {
+    padding-bottom: 40px;
+  }
+
   &__title h2 {
     margin: 27px 0;
+
+    @include breakpoint($mobile-bp) {
+      font-size: 60px;
+      line-height: 60px;
+    }
   }
 
   &__button {

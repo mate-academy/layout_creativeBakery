@@ -12,12 +12,23 @@
     list-style: none;
     text-decoration: none;
 
+    @include breakpoint($tablet-bp) {
+      display: none;
+    }
+
     &--footer {
       align-self: center;
       display: flex;
       gap: 34px;
       list-style: none;
       text-decoration: none;
+
+      @include breakpoint($mobile-bp) {
+        align-self: flex-start;
+        flex-direction: column;
+        margin-bottom: 70px;
+        padding-left: 0;
+      }
     }
   }
 
@@ -44,6 +55,8 @@
     margin-left: -20px;
     cursor: pointer;
     z-index: 2;
+
+    transition: 0.3s;
 
     &-line {
       position: relative;
@@ -108,21 +121,16 @@
   &__profiles {
     display: flex;
     gap: 20px;
-  }
+    max-width: 290px;
 
-  &__data {
-    display: flex;
-    gap: 29px;
-    font-size: 12px;
-    padding-bottom: 20px;
-    color: #fff;
+    @include breakpoint($small-tablet-bp) {
+      margin-bottom: 20px;
+    }
 
-    &-text a {
-      color: #fff;
-
-      &:hover {
-        color: $main-color;
-      }
+    @include breakpoint($mobile-bp) {
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 47px;
     }
   }
 }
