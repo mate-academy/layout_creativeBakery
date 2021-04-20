@@ -1,4 +1,5 @@
 .image-change {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -7,10 +8,33 @@
   &__down {
     height: 15px;
     width: 26px;
-    padding-right: 45px;
+    padding-right: 63px;
     background-image: url(/images/up.png);
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.4s;
+
+    @include breakpoint($tablet-bp) {
+      transform: rotate(-90deg);
+
+      &:hover {
+        transform: scale(1.3) rotate(-90deg);
+      }
+    }
+
+    @include breakpoint($mobile-bp) {
+      height: 12px;
+    }
+
+    &:hover {
+      transform: scale(1.3);
+      transition: 0.4s;
+    }
+  }
+
+  &__down {
+    background-image: url(/images/down.png);
   }
 
   &__num {
@@ -19,22 +43,66 @@
     justify-content: flex-end;
     height: 200px;
     width: 200px;
+    cursor: pointer;
+    transition: 0.4s;
 
     &::before {
       font-size: 176px;
       content: "01";
+
+      @include breakpoint($tablet-bp) {
+        font-size: 100px;
+      }
+
+      @include breakpoint($mobile-bp) {
+        font-size: 40px;
+      }
+    }
+
+    @include breakpoint($tablet-bp) {
+      width: 110px;
+      height: 150px;
+    }
+
+    @include breakpoint($mobile-bp) {
+      width: 35px;
+      height: 100px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.4s;
     }
   }
 
   &__num2,
   &__num3 {
     height: 65px;
+    transition: 0.4s;
+    cursor: pointer;
 
     &::before {
       font-size: 40px;
       content: "02";
       color: $alter-color;
       padding-right: 9px;
+
+      @include breakpoint($tablet-bp) {
+        font-size: 30px;
+      }
+  
+      @include breakpoint($mobile-bp) {
+        font-size: 16px;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.4s;
+    }
+
+    @include breakpoint($tablet-bp) {
+      height: 0;
     }
   }
 
@@ -42,11 +110,22 @@
     content: "03";
   }
 
-  &__down {
-    background-image: url(/images/down.png);
-  }
-
   @include breakpoint($tablet-bp) {
     display: none;
+  }
+
+  &-mb {
+    display: none;
+    position: absolute;
+    flex-direction: row;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+
+    @include breakpoint($tablet-bp) {
+      display: flex;
+      gap: 20px;
+    }
   }
 }

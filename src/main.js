@@ -9,6 +9,7 @@ const callback = document.querySelector('.callback');
 const navList = document.querySelector('.right-nav');
 const burgerLine = document.querySelector('.nav__burger-line');
 const toggler = document.querySelector('#toggler');
+const close = document.querySelector('#close');
 
 toggler.addEventListener('click', () => {
   headerTitle.classList.toggle('header__title--active');
