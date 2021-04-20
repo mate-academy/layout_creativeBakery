@@ -61,26 +61,28 @@
     padding: 34px 59px;
     display: flex;
     justify-content: space-between;
-    transition: right 1s;
+    overflow: hidden;
 
     @media (max-width: 960px) {
       padding: 34px 25px;
     }
 
     @media (max-width: 900px) {
+      visibility: hidden;
+      width: 0;
+      padding: 34px 0;
       position: absolute;
-      right: -100%;
+      right: 0;
       height: 100vh;
       display: block;
       background-color: $croissant;
-    }
-
-    @media (max-width: 500px) {
-      padding: 34px 10px;
+      transition: width 1s;
     }
 
     &--active {
-      right: -50%;
+      visibility: visible;
+      padding: 34px 10px;
+      width: 50%;
     }
   }
 
