@@ -45,39 +45,46 @@ $cookieWidth: 15px;
       flex-direction: column;
     }
   }
-  &__cities,
-  &__adresses {
+  &__select-wrap {
     position: relative;
-    margin: 0;
-    padding: 0;
-    padding-top: 15px;
-    padding-left: 5px;
-    list-style: none;
-    border-bottom: 1px solid $main_darkColor;
+    display: flex;
+    align-items: center;
     &::before {
       content: "";
       position: absolute;
-      right: 0;
-      top: 60%;
+      right: -3%;
+      top: 35%;
+      z-index: 1;
+      padding: 5px;
       width: 11px;
       height: 6px;
       background-image: url("../images/icons/down-arrow.svg");
+      background-repeat: no-repeat;
+      cursor: pointer;
     }
   }
-  &__cities {
+  &__select {
+    position: relative;
+    padding-left: 5px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $main_darkColor;
+    background-color: $main_lightColor;
+    -webkit-appearance: none;
+  }
+  &__select-wrap:nth-of-type(1) {
     width: 173px;
     @include tablet() {
       width: 100%;
     }
   }
-  &__adresses {
+  &__select-wrap:nth-of-type(2) {
     width: 323px;
     @include tablet() {
       width: 100%;
     }
   }
-  &__city-default,
-  &__adress-default {
+  &__select-option {
     border: none;
     background-color: $main_lightColor;
     &,
