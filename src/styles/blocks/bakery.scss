@@ -1,0 +1,269 @@
+.bakery {
+  margin: 0 auto;
+  max-width: 1440px;
+
+  &__wrapper {
+    align-self: center;
+    padding: 40px 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $def-desktop-size) {
+      padding: 40px 59px 80px;
+      max-width: 1440px;
+    }
+  }
+
+  &__title {
+    align-self: center;
+    color: $c-light-brown;
+    padding-bottom: 20px;
+
+    @media (min-width: $def-desktop-size) {
+      padding-bottom: 27px;
+    }
+  }
+  
+  &__cookies,
+  &__croissants {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+
+    @media (min-width: $def-desktop-size) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 135px;
+    }
+  }
+
+  &__cakes,
+  &__cupcakes {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+
+    @media (min-width: $def-desktop-size) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      padding-bottom: 135px;
+    }
+  }
+
+  &__about {
+    max-width: 333px;
+  }
+
+  &__title-about {
+    color: $c-light-brown;
+    padding-bottom: 15px;
+
+    font-size: 35px;
+    line-height: 41px;
+    transition-duration: 0.5s;
+
+    @media (min-width: $def-desktop-size) {
+      padding-bottom: 43px;
+      font-size: 50px;
+      line-height: 59px;
+      transition-duration: 0.5s;
+    }
+  }
+
+  &__sub-title-about {
+    color: $c-dark-brown;
+    padding-bottom: 12px;
+
+    font-size: 20px;
+    line-height: 30px;
+    transition-duration: 0.5s;
+
+    @media (min-width: $def-desktop-size) {
+      font-size: 26px;
+      line-height: 39px;
+      transition-duration: 0.5s;
+    }
+
+  }
+
+  &__text {
+    color: $c-dark-brown;
+    padding-bottom: 19px;
+
+    @media (min-width: $def-desktop-size) {
+      padding-bottom: 32px;
+    }
+  }
+
+  &__price {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 65px;
+    width: 65px;
+    background: $c-cream;
+    border-radius: 50%;
+
+    @media (min-width: $def-desktop-size) {
+      height: 110px;
+      width: 110px;
+    }
+  }
+
+  &__cookies-price {
+    text-align: center;
+    @extend %price;
+
+    &:after {
+      content: " \A 100g";
+  
+      @media (min-width: $def-desktop-size) {
+        content: " / 100g";
+      }
+    }
+  }
+
+  &__cakes-price {
+    text-align: center;
+    @extend %price;
+
+    &:after {
+      content: " \A 100g";
+  
+      @media (min-width: $def-desktop-size) {
+        content: " / 100g";
+      }
+    }
+  }
+
+  &__croissants-price {
+    text-align: center;
+    @extend %price;
+
+    &:after {
+      content: " \A 2";
+  
+      @media (min-width: $def-desktop-size) {
+        content: " / 2";
+      }
+    }
+  }
+
+  &__cupcakes-price {
+    text-align: center;
+    @extend %price;
+
+    &:after {
+      white-space: pre-wrap;
+      content: " \A 3";
+  
+      @media (min-width: $def-desktop-size) {
+        content: " / 3";
+      }
+    }
+  }
+
+  &__img-container {
+    position: relative;
+
+    max-width: 900px;
+    width: 100%;
+    max-height: 514px;
+    height: 100%;
+    display: flex;
+
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  &__img {
+    z-index: -1;
+    object-fit: contain;
+    object-position: center;
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 0 25px;
+    transition-duration: 0.5s;
+
+    max-width: 600px;
+    margin-top: -40px;
+
+    @media (min-width: $def-desktop-size) {
+      margin-top: 0;
+      max-width: 800px;
+      transition-duration: 0.5s;
+    }
+  }
+
+  &__img-toggler-left {
+    position: absolute;
+    z-index: 1;
+
+    left: 0;
+    top: 40%;
+
+    height: 26px;
+    width: 16px;
+
+    background-image: url(../images/svg/img-toggler-left.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @media (min-width: $def-desktop-size) {
+      right: 15px;
+    }
+  }
+
+  &__img-toggler-right {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+
+    right: 0;
+    top: 40%;
+
+    height: 26px;
+    width: 16px;
+
+    background-image: url(../images/svg/img-toggler-right.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    transition-duration: 0.5s;
+
+    @media (min-width: $def-desktop-size) {
+      right: 15px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      transition-duration: 0.5s;
+    }
+  }
+
+  &__button {
+    align-self: center;
+    height: 40px;
+    width: 160px;
+
+    text-align: center;
+    line-height: 35px;
+
+    @extend %primary-button;
+  }
+
+  &__button:hover {
+    @extend %primary-button-hover;
+  }
+
+  &__button:active {
+    @extend %primary-button-active;
+  }
+}

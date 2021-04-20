@@ -1,0 +1,224 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+ 
+  &__background {
+    position: absolute;
+
+    display: grid;
+    grid-template-columns: 1fr 0fr;
+    grid-template-areas: "image" "color";
+
+    @media (min-width: $def-desktop-size) {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+    }
+
+    @media (min-width: 1300px) {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    @media (min-width: 1900px) {
+      grid-template-columns: 3fr 2fr;
+    }
+
+    height: 100%;
+    width: 100%;
+  }
+
+  &__background-one {
+    background: url(../images/header-low2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 100vh;
+
+    @media (min-width: $def-desktop-size) {
+      background: url(../images/header.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  &__background-two {
+    background: $c-light-brown;
+    height: 100vh;
+    left: 0;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100vh;
+
+    padding: 15px 16px 0;
+
+    @media (min-width: $def-desktop-size) {
+      max-width: 1440px;
+      width: 100%;
+      padding: 34px 59px 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    padding-bottom: 20px;
+  }
+
+  &__logo {
+    position: relative;
+    display: flex;
+    height: 60px;
+
+    @media (min-width: $def-desktop-size) {
+      height: 87px;
+    }
+  }
+
+  &__logo-link {
+    align-self: center;
+
+    padding: 15px 22px;
+
+    @media (min-width: $def-desktop-size) {
+      padding: 15px 31px;
+    }
+
+    @extend %logo;
+
+    color: $c-dark-brown;
+
+    &:hover {
+      color: $c-light-brown;
+      text-shadow: $def-text-shadow;
+    }
+  }
+
+  &__logo-img {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 0;
+
+    background: url(../images/svg/cookie.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    transition-duration: 0.5s;
+
+    @media (min-width: $def-desktop-size) {
+      top: 3px;
+      height: 41px;
+      width: 41px;
+
+      transition-duration: 0.5s;
+    }
+  }
+
+  &__nav-toggler {
+    z-index: 1;
+    display: flex;
+    align-self: center;
+    height: 20px;
+    width: 25px;
+    background: url(../images/svg/menu-burger.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    cursor: pointer;
+
+    transition-duration: 0.5s;
+
+    @media (min-width: $def-desktop-size) {
+      display: none;
+    }
+  }
+
+  &__nav-toggler:hover {
+    transform: rotate(180deg);
+    transition-duration: 0.5s;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__checkbox:checked + &__nav-toggler {
+    background: url(../images/svg/menu-close.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    
+    @media (min-width: $def-desktop-size) {
+      flex-direction: row;
+    }
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    color: $c-dark-brown;
+    padding-bottom: 29px;
+    padding-top: 35px;
+
+    @media (min-width: $def-desktop-size) {
+      padding-bottom: 20px;
+      padding-top: 0;
+    }
+  }
+
+  &__second-title {
+    color: $c-dark-brown;
+    padding-bottom: 25px;
+    font-size: 16px;
+    line-height: 24px;
+
+    @media (min-width: $def-desktop-size) {
+      font-size: 26px;
+      line-height: 39px;
+    }
+  }
+
+  &__button {
+    height: 40px;
+    width: 140px;
+
+    @extend %primary-button;
+  }
+
+  &__button:hover {
+    @extend %primary-button-hover;
+  }
+
+  &__button:active {
+    @extend %primary-button-active;
+  }
+}
