@@ -1,50 +1,40 @@
 .about {
-  @include main-block-position;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
 
-  &__content {
-    @include main-content-position;
+  padding: 30px $main-side-padding;
+  @media (max-width: $break-point-mobile) {
+    padding: 30px $mobile-side-padding;
   }
 
   &__title {
-    padding-top: 40px;
-    padding-bottom: 36px;
+    @extend %title;
   }
 
-  &__subtitle {
+  &__text {
     text-align: center;
-    max-width: 480px;
-    padding-bottom: 60px;
-  }
+    width: 480px;
+    margin: 0 auto 59px;
 
-  &__feedbacks {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    overflow: hidden;
-    
-    @media (min-width: 950px) and (max-width: 1250px) {
-      width: 600px;
-    }
-  }
-
-  &__feedback {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 40px;
-
-    &-img {
+    @media (max-width: $break-point-mobile) {
+      margin: 0 auto 20px;
       width: 100%;
     }
-    
-    &-title {
-      @extend %about-title;
-    }
+  }
 
-    &-subtitle {
-      @extend %p;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    width: 100%;
+    overflow-x: scroll;
+
+    @media (max-width: $break-point-mobile) {
+      gap: 27px;
     }
   }
 }

@@ -1,99 +1,98 @@
 .bakershops {
-  @include main-block-position;
-  padding-top: 80px;
-
-  &__content {
-    @include main-content-position;
-    text-align: center;
-    background-color: $cream;
-    padding-top: 40px;
-    padding-bottom: 57px;
-
-    @media (min-width: 320px) and (max-width: 1000px) {
-      padding-top: 0;
-      padding-bottom: 30px;
-
-      padding-left: 0;
-      padding-right: 0;
-    }
+  background-color: #f1cc9d;
+  padding: 27px 30px;
+  @media (max-width: $break-point-mobile) {
+    padding: 27px $mobile-side-padding;
   }
 
   &__title {
+    @extend %title;
+  }
 
-    text-align: center;
-    padding-bottom: 90px;
+  &__container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 87px;
 
-    @media (min-width: 320px) and (max-width: 1000px) {
-      font-size: 60px;
-      padding-bottom: 0;
+    @media (max-width: $break-point-tablet) {
+      margin-top: 20px;
     }
 
   }
 
-  &__form {
+  &__search {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    justify-content: center;
 
-    @media (min-width: 320px) and (max-width: 650px) {
-      padding-left: $pad-16;
-      padding-right: $pad-16;
+    @media (max-width: $break-point-tablet) {
+      flex-direction: column;
+      align-items: center;
     }
-
   }
 
-  &__select {
-    @include select-style;
-    @extend %p;
-    color: $d-grey;
-    border-bottom: 1px solid $d-grey;
+  &__list {
+    border-bottom: 1px solid $main-font-color;
+    opacity: 0.5;
 
     &--city {
-      width: 173px;
+      width: 175px;
 
-      @media (min-width: 320px) and (max-width: 1000px) {
-        width: 100%;
-        margin-bottom: 35px;
+      @media (max-width: $break-point-tablet) {
+        width: 80%;
       }
-
-      margin-right: 32px;
+      @media (max-width: $break-point-mobile) {
+        width: 100%;
+      }
     }
 
     &--address {
-      width: 323px;
+      width: 325px;
 
-      @media (min-width: 320px) and (max-width: 1000px) {
-        width: 100%;
-        margin-bottom: 35px;
+      @media (max-width: $break-point-tablet) {
+        width: 80%;
       }
-
-      margin-right: 32px;
+      @media (max-width: $break-point-mobile) {
+        width: 100%;
+      }
     }
   }
 
-  &__map {
-    padding-top: 55px;
+  &__button {
+    @extend %button;
 
-    @media (min-width: 320px) and (max-width: 650px) {
-      padding-top: 25px;
-      padding-left: $pad-16;
-      padding-right: $pad-16;
+    @media (max-width: $break-point-tablet) {
+      margin: 0 auto;
     }
+  }
 
-    &-img {
-      width: 100%;
+  &__image {
+    margin-top: 67px;
+    width: 90%;
+
+    @media (max-width: $break-point-tablet) {
+      margin-top: 25px;
     }
+  }
 
-    &-scale {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding-top: 20px;
-
-      @media (min-width: 320px) and (max-width: 650px) {
-        display: flex;
-      }
-
-      &-in {
-        padding-right: 40px;
-      }
+  &__zoom-map {
+    margin-top: 20px;
+    display: none;
+    justify-content: center;
+    @media (max-width: $break-point-tablet) {
+      display: flex;
+      gap: 40px;
     }
+  }
+
+  &__zoom-button {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
   }
 }

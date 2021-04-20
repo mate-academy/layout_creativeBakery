@@ -1,37 +1,29 @@
 .bakery {
-  @include main-block-position;
-   
-  &__content {
-    @include main-content-position;
+  display: flex;
+  flex-direction: column;
+  max-width: 1600px;
+  margin: 0 auto;
 
-    @media (min-width: 320px) and (max-width: 650px) {
-      padding-left: $pad-16;
-      padding-right: $pad-16;
-    }
-  }
-  
-  &__article {
-    display: flex;
-    justify-content: space-between;
-
-    &--reverse {
-      @media (min-width: 320px) and (max-width: 650px) {
-        flex-direction: column-reverse;
-      }
-    }
-
-    @media (min-width: 320px) and (max-width: 650px) {
-      flex-wrap: wrap;
-    }
+  padding: 30px $main-side-padding;
+  @media (max-width: $break-point-mobile) {
+    padding: 30px $mobile-side-padding;
   }
 
   &__title {
-    text-align: center;
-    padding-top: 40px;
-    padding-bottom: 27px;
+    @extend %title;
   }
-}
 
-.button-primary--margin-top-2 {
-  margin-top: 135px;
+  &__product {
+    margin-bottom: 135px;
+
+    @media (max-width: $break-point-tablet) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    @extend %button;
+    margin: 0 auto 80px;
+
+  }
 }

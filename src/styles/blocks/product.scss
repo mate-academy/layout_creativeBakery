@@ -1,0 +1,147 @@
+.product {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  justify-content: center;
+
+  @media (max-width: $break-point-tablet) {
+    grid-template-columns: 1fr;
+  }
+
+  &--revers {
+    grid-template-columns: 1fr 320px;
+
+    @media (max-width: $break-point-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__discription {
+    display: flex;
+    flex-direction: column;
+    margin-top: 27px;
+
+    @media (max-width: $break-point-tablet) {
+      align-items: center;
+    }
+
+    @media (max-width: $break-point-mobile) {
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    margin-bottom: 43px;
+    font-size: 50px;
+    line-height: 59px;
+    color: $main-page-color;
+
+    @media (max-width: $break-point-mobile) {
+      margin-bottom: 15px;
+      font-size: 35px;
+      line-height: 41px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 26px;
+    line-height: 39px;
+    color: $main-font-color;
+    margin-bottom: 12px;
+
+    @media (max-width: $break-point-mobile) {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 19px;
+
+    @media (max-width: $break-point-tablet) {
+      width: 50%;
+      text-align: center;
+    }
+
+    @media (max-width: $break-point-mobile) {
+      width: 100%;
+      text-align: start;
+    }
+  }
+
+  &__button-price {
+    display: flex;
+    @include square-container(110px);
+    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+    @extend %second-button;
+
+    @media (max-width: $break-point-mobile) {
+      @include square-container(65px);
+      flex-direction: column;
+    }
+  }
+
+  &__price {
+    &::after {
+      content: " /";
+    }
+
+    @media (max-width: $break-point-mobile) {
+      &::after {
+        content: "";
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 50px;
+
+    @media (max-width: $break-point-tablet) {
+      justify-content: center;
+    }
+
+    @media (max-width: $break-point-mobile) {
+      gap: 0;
+    }
+
+    &--revers {
+      order: -1;
+      justify-content: flex-start;
+
+      @media (max-width: $break-point-tablet) {
+        order: 0;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__switch {
+    height: 16px;
+    width: 26px;
+    background-image: url("./../images/passive.svg");
+    background-size: cover;
+    cursor: pointer;
+    transform: rotate(-90deg);
+
+    &--active {
+      background-image: url("./../images/active.svg");
+    }
+  }
+  &__image {
+    max-width: 60%;
+    transition: 0.3s transform linear;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+    @media (max-width: $break-point-mobile) {
+      min-width: 230px;
+    }
+  }
+
+}
