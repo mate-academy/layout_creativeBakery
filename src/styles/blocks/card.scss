@@ -1,0 +1,43 @@
+.card {
+  padding: 0 60px 0 50px;
+  display: grid;
+  grid-template-columns: repeat(6, 200px);
+  gap: 27px;
+  overflow: auto;
+  width: 1560px;
+
+  @media (min-width: 1440px) {
+    gap: 80px;
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: center;
+  }
+
+  &__image {
+    height: 200px;
+    width: 200px;
+
+    @for $index from 1 through 5 {
+      &--#{$index} {
+        background-image: url(../images/photo-#{$index}.png);
+      }
+    }
+  }
+
+  &__num {
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 71px;
+    text-align: center;
+    color: $dark-brown-color;
+    padding: 20px 0 7px;
+  }
+
+  &__subtitle {
+    padding-bottom: 10px ;
+  }
+}
