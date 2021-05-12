@@ -1,6 +1,12 @@
 .header {
-  height: 100vh;
-  display: flex;
+  &__content {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    max-width: 1440px;
+    max-height: 1056px;
+    margin: 0 auto;
+  }
 
   &__main {
     position: relative;
@@ -136,6 +142,10 @@
     position: absolute;
     left: 59px;
     top: 141px;
+
+    @media (max-width: 500px) {
+      left: 16px;
+    }
   }
 
   &__title {
@@ -195,49 +205,6 @@
 
     @media (max-width: 900px) {
       width: 0;
-    }
-  }
-
-  &__switch {
-    width: 187px;
-    height: 374px;
-    background-image: url(./../images/switch.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    right: 46px;
-    top: calc(50% - 374px / 2);
-    cursor: pointer;
-    transition: transform 1s;
-
-    &:hover {
-      box-shadow: 0 0 0 2px $chokolate;
-      transform: scale(1.1);
-    }
-
-    @media (max-width: 900px) {
-      display: none;
-    }
-  }
-
-  &__small-meter {
-    position: absolute;
-    width: 179px;
-    bottom: 28px;
-    left: calc(50% - 179px / 2);
-    cursor: pointer;
-    display: none;
-
-    transition: transform 1s;
-
-    &:hover {
-      box-shadow: 0 0 0 2px $chokolate;
-      transform: scale(1.1);
-    }
-
-    @media (max-width: 900px) {
-      display: block;
     }
   }
 }
