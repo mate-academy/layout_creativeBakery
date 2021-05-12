@@ -1,0 +1,131 @@
+.header {
+  position: relative;
+  height: 100%;
+  color: $c-chocolate;
+  padding: $mobPadding;
+
+  @media(min-width: 768px) {
+    padding: $paddingY $paddingX;
+  }
+
+  &__logo {
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__togglerNav {
+    position: absolute;
+    top: 31px;
+    right: $mobPadding;
+    z-index: 1;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    background-image: url(../images/burger.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.4s;
+
+    @media(min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__checkbox:checked ~ &__content > &__togglerNav {
+    background-image: url(../images/close.png);
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: 992px) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__number {
+    @media (min-width: 768px) {
+      position: absolute;
+      top: calc(50% - 374px / 2);
+      right: 35px;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    width: 60%;
+    font-family: "Cookie", cursive;
+    font-weight: normal;
+    font-size: 100px;
+    line-height: 80%;
+
+    @media (min-width: 768px) {
+      padding: 150px 0 20px;
+    }
+
+    @media (min-width: 1332px) {
+      padding: 100px 0 20px;
+      font-size: 160px;
+      line-height: 177px;
+    }
+  }
+
+  &__paragraph {
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    @media (min-width: 768px) {
+      font-size: 26px;
+      padding-bottom: 25px;
+    }
+  }
+
+  &__button {
+    width: 160px;
+    height: 45px;
+    font-size: 16px;
+    line-height: 41px;
+  }
+
+  &__nav {
+    position: absolute;
+    top: -200vh;
+    right: 0;
+    width: 60%;
+    height: 100vh;
+    padding: 85px 20px 50px;
+    background-color: $c-croissant;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-chocolate;
+    transition: transform 0.6s;
+
+    @media (max-height: 567px) {
+      height: 200vh;
+    }
+
+    @media (min-width: 768px) {
+      width: 33%;
+      transform: translateY(200vh);
+    }
+  }
+
+  &__checkbox:checked ~ &__content > &__nav {
+    transform: translateY(200vh);
+  }
+
+  &__static-nav {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}

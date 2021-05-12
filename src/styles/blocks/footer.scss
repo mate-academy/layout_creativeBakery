@@ -1,82 +1,84 @@
 .footer {
-  position: relative;
-  z-index: -3;
+  height: 100%;
+  color: $c-white;
+  padding: $mobPadding $mobPadding 25px;
   display: flex;
-  padding: 50px 58px 18px;
-  background-color: $main-font-color;
-  color: #fff;
   flex-direction: column;
+  justify-content: space-between;
 
-  @media (max-width: $break-point-tablet) {
-    padding: 40px 47px;
+  @media (min-width: 768px) {
+    justify-content: center;
   }
 
-  &__container {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 1600px;
+  @media (min-width: 992px) {
+    padding: 0 $paddingX 18px;
   }
 
-  &__top {
+  &__content {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 15px;
-    gap: 60px;
+    flex-grow: 1;
 
-    @media (max-width: $break-point-tablet) {
-      flex-direction: column;
+    @media (min-width: 768px) {
+      flex-direction: row;
       align-items: center;
-      margin-bottom: 47px;
-    }
-
-    @media (max-width: $break-point-mobile) {
-      align-items: flex-start;
     }
   }
 
   &__logo {
-    margin-left: -31px;
-    @media (max-width: $break-point-tablet) {
+    width: 112px;
+    height: 58px;
+    margin-bottom: 30px;
+
+    @media (min-width: 768px) {
+      margin: 16px 12px 0 0;
+    }
+
+    @media (min-width: 992px) {
+      margin: 0 12px 4px 0;
+    }
+  }
+
+  &__nav {
+    margin: 0 0 30px 30px;
+
+    @media (min-width: 768px) {
       margin: 0;
     }
   }
 
-  &__icons {
+  &__soc {
+    align-self: center;
+    width: 226px;
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-    @media (max-width: $break-point-mobile) {
-      max-width: 200px;
-      width: 100%;
+    margin: 0 0 30px;
+
+    @media (min-width: 768px) {
+      width: 133px;
+      margin: 16px 0 0;
     }
   }
 
-  &__icon-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @include square-container(31px);
+  &__icon {
+    width: 31px;
+    height: 31px;
     border-radius: 50%;
-    background-color: #fff;
-    transition: 0.2s background-color linear;
-    &:hover {
-      background-color: $main-page-color;
-    }
-  }
-
-  &__icon-image {
-    object-fit: fill;
+    object-fit: none;
     object-position: center;
+    background-color: $c-white;
+    @include hover (background-color, $c-croissant);
   }
 
-  &__bottom {
+  &__privacy {
+    align-self: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    width: 192px;
     font-size: 12px;
-    line-height: 17px;
+    line-height: 140.62%;
+    text-align: center;
     opacity: 0.7;
-    gap: 29px;
   }
 }

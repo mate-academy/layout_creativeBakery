@@ -1,40 +1,61 @@
 .about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  max-width: 1600px;
-  margin: 0 auto;
+  padding: 0 16px 70px;
 
-  padding: 30px $main-side-padding;
-  @media (max-width: $break-point-mobile) {
-    padding: 30px $mobile-side-padding;
+  @media (min-width: 992px) {
+    padding: 40px $paddingX 170px;
   }
 
-  &__title {
-    @extend %title;
+  &__wrapper {
+    @include wrapper;
   }
 
-  &__text {
+  &__info {
+    margin: 0 auto 20px;
+    max-width: 480px;
+    font-size: 16px;
+    line-height: 150%;
     text-align: center;
-    width: 480px;
-    margin: 0 auto 59px;
-
-    @media (max-width: $break-point-mobile) {
-      margin: 0 auto 20px;
-      width: 100%;
-    }
   }
 
-  &__container {
+  &__gallery {
+    padding: 0 56px;
     display: flex;
     justify-content: space-between;
-    gap: 80px;
-    width: 100%;
-    overflow-x: scroll;
+    overflow: hidden;
+    cursor: pointer;
+    @include hover (overflow, auto);
+  }
 
-    @media (max-width: $break-point-mobile) {
-      gap: 27px;
+  &__card {
+    width: 176px;
+  }
+
+  &__img {
+    margin: 20px 13px;
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @each $n, $background in $images {
+    &__card:nth-child(#{$n}) > &__img {
+      background-image: $background;
     }
+  }
+
+  &__amount {
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 71px;
+    text-align: center;
+    color: $c-chocolate;
+  }
+
+  &__caption {
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: $c-chocolate;
   }
 }

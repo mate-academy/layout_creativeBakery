@@ -1,127 +1,129 @@
 .contacts {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  background-color: $main-page-color;
-  &__container {
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-  }
-  &__title-wrapper {
-    width: 100%;
-    background-color: $c-gray;
-    margin-top: -1px;
+  color: $c-chocolate;
 
-    @media (max-width: $break-point-mobile) {
-      background-color: $main-page-color;
+  &__wrapper {
+    background-color: $c-croissant;
+    padding: 0 $mobPadding;
+
+    @media (min-width: 768px) {
+      &:first-child {
+        background-color: $c-white;
+      }
+    }
+
+    &__wrap {
+      @include wrapper;
+    }
+
+    @media (min-width: 992px) {
+      padding: 0 $paddingX;
     }
   }
 
   &__title {
-    @extend %title;
+    padding-bottom: 30px;
+    color: $c-white;
 
-    @media (max-width: $break-point-mobile) {
-      color: #fff;
+    @media (min-width: 768px) {
+      margin-bottom: 26px;
+      background-color: $c-white;
+      color: $c-croissant;
     }
   }
 
-  &__wrapper-info {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background-color: $main-page-color;
+  &__content {
+    margin-bottom: 20px;
 
-    @media (max-width: $break-point-tablet) {
-      flex-direction: column;
+    @media (min-width: 768px) {
+      margin: 40px 0 24px;
     }
   }
 
-  &__info {
-    padding-left: $main-side-padding;
-    padding-bottom: 40px;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
+  &__list {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+  }
 
-    @media (max-width: $break-point-tablet) {
-      width: 100%;
-      padding-left: $mobile-side-padding;
+  &__item {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: $c-chocolate;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+
+    &--bold {
+      margin-left: 46px;
+      font-weight: 700;
+    }
+
+    &--icon {
+      &::before {
+        position: absolute;
+        top: 8px;
+        left: -45px;
+        content: "";
+        display: block;
+        width: 31px;
+        height: 31px;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      @each $index, $background in $icons {
+        &:nth-of-type(#{$index}) {
+          &::before {
+            background-image: $background;
+          }
+        }
+      }
     }
   }
 
-  &__info-container {
-    padding-left: 40px;
+  &__content > &__item {
     margin-bottom: 9px;
   }
-  &__subtitle {
-    margin: 40px 40px 25px;
-    font-size: 26px;
-    line-height: 39px;
-    @media (max-width: $break-point-tablet) {
-      align-self: center;
+
+  &__grid {
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
     }
+
   }
 
-  &__selected-text {
+  &__iframeWrap {
     position: relative;
-    font-weight: 700;
+    height: 100vh;
 
-    &--place {
-      &::before {
-        position: absolute;
-        content: " ";
-        background-image: url(./../images/icon-place.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        @include square-container(20px);
-
-        left: -37px;
-        top: 5px;
-      }
-    }
-
-    &--phone {
-      &::before {
-        position: absolute;
-        content: " ";
-        background-image: url(./../images/icon-phone.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        @include square-container(20px);
-
-        left: -37px;
-        top: 5px;
-      }
-    }
-
-    &--letter {
-      &::before {
-        position: absolute;
-        content: " ";
-        background-image: url(./../images/icon-letter.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        @include square-container(20px);
-
-        left: -37px;
-        top: 5px;
-      }
+    @media (min-width: 768px) {
+      height: 507px;
+      grid-column: 2;
     }
   }
 
-  &__google-map {
-    width: 60%;
-    min-height: 500px;
-    @media (max-width: $break-point-tablet) {
+  &__iframe {
+    position: absolute;
+    left: -$mobPadding;
+    width: calc(100% + #{$mobPadding * 2});
+    border: none;
+    height: 100vh;
+    top: 4px;
+
+    @media (min-width: 768px) {
       width: 100%;
+      height: 507px;
+      top: 0;
+      left: $mobPadding;
+      
     }
-  }
 
-  &__map {
-    display: block;
-    width: 100%;
-    height: 500px;
+    @media (min-width: 992px) {
+      left: $paddingX;
+    }
   }
 }
