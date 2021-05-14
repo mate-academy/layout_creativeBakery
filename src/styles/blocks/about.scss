@@ -1,0 +1,65 @@
+.about {
+  padding: 0 16px 70px;
+
+  @media (min-width: 992px) {
+    padding: 40px $paddingX 170px;
+  }
+
+  &__wrapper {
+    @include wrapper;
+  }
+
+  &__info {
+    margin: 0 auto 20px;
+    max-width: 480px;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  &__gallery {
+    padding: 0 56px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    cursor: pointer;
+    @include hover (overflow, auto);
+    
+    @media (min-width: 320px) and (max-width: 1050px) {
+      overflow-x: scroll;
+    }
+  }
+
+  &__card {
+    width: 176px;
+  }
+
+  &__img {
+    margin: 20px 13px;
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @each $n, $background in $images {
+    &__card:nth-child(#{$n}) > &__img {
+      background-image: $background;
+    }
+  }
+
+  &__amount {
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 71px;
+    text-align: center;
+    color: $c-chocolate;
+  }
+
+  &__caption {
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: $c-chocolate;
+  }
+}

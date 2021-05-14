@@ -1,0 +1,41 @@
+.number {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    width: 187px;
+  }
+
+  &__item {
+    margin: 0 20px;
+    font-size: 16px;
+    line-height: 19px;
+    color: $c-croissant;
+    cursor: pointer;
+    @include hover(transform, scale(1.2));
+
+    @media (min-width: 768px) {
+      margin: 0 0 14px;
+      color: $c-cream;
+      font-size: 40px;
+      line-height: 47px;
+      &:nth-child(4) {
+        margin-bottom: 35px;
+      }
+    }
+
+    &--active {
+      font-size: 40px;
+      line-height: 47px;
+      color: $c-chocolate;
+
+      @media (min-width: 768px) {
+        font-size: 176px;
+        line-height: 209px;
+      }
+    }
+  }
+}

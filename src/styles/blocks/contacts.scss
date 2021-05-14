@@ -1,0 +1,129 @@
+.contacts {
+  color: $c-chocolate;
+
+  &__wrapper {
+    background-color: $c-croissant;
+    padding: 0 $mobPadding;
+
+    @media (min-width: 768px) {
+      &:first-child {
+        background-color: $c-white;
+      }
+    }
+
+    &__wrap {
+      @include wrapper;
+    }
+
+    @media (min-width: 992px) {
+      padding: 0 $paddingX;
+    }
+  }
+
+  &__title {
+    padding-bottom: 30px;
+    color: $c-white;
+
+    @media (min-width: 768px) {
+      margin-bottom: 26px;
+      background-color: $c-white;
+      color: $c-croissant;
+    }
+  }
+
+  &__content {
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      margin: 40px 0 24px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: $c-chocolate;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+
+    &--bold {
+      margin-left: 46px;
+      font-weight: 700;
+    }
+
+    &--icon {
+      &::before {
+        position: absolute;
+        top: 8px;
+        left: -45px;
+        content: "";
+        display: block;
+        width: 31px;
+        height: 31px;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      @each $index, $background in $icons {
+        &:nth-of-type(#{$index}) {
+          &::before {
+            background-image: $background;
+          }
+        }
+      }
+    }
+  }
+
+  &__content > &__item {
+    margin-bottom: 9px;
+  }
+
+  &__grid {
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+
+  }
+
+  &__iframeWrap {
+    position: relative;
+    height: 100vh;
+
+    @media (min-width: 768px) {
+      height: 507px;
+      grid-column: 2;
+    }
+  }
+
+  &__iframe {
+    position: absolute;
+    left: -$mobPadding;
+    width: calc(100% + #{$mobPadding * 2});
+    border: none;
+    height: 100vh;
+    top: 4px;
+
+    @media (min-width: 768px) {
+      width: 100%;
+      height: 507px;
+      top: 0;
+      left: $mobPadding;
+      
+    }
+
+    @media (min-width: 992px) {
+      left: $paddingX;
+    }
+  }
+}
