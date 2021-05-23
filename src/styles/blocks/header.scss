@@ -2,14 +2,20 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 100vw;
+  font-family: "Rubik", sans-serif;
   background-image: url("../images/bake-cream-puff-cup-1775045.png");
   background-repeat: no-repeat;
-  background-size: 70% contain;
+  background-size: cover;
+
+  @media (max-width: 700px) {
+    & {
+      background-position: 35% 75%;
+    }
+  }
 
   &-top {
     max-width: 840px;
-    width: 70%;
+    width: 70vw;
     margin: 50px 30px 25px 0;
     display: flex;
     flex-direction: row;
@@ -24,18 +30,30 @@
         position: absolute;
         width: 41px;
         height: 41px;
+
+        @media (max-width: 700px) {
+          & {
+            margin-left: 30px;
+          }
+        }
       }
 
       &-title {
         margin: 0 0 0 75px;
         display: flex;
-
+        font-family: "Cookie", sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 30px;
         line-height: 33px;
         color: #412d22;
         text-decoration: none;
+
+        @media (max-width: 700px) {
+          & {
+            margin: -10px 0 0 57px;
+          }
+        }
       }
     }
 
@@ -49,6 +67,11 @@
       font-weight: normal;
       font-size: 16px;
       line-height: 150%;
+      @media (max-width: 700px) {
+        & {
+          display: none;
+        }
+      }
 
       &-link {
         color: #412d22;
@@ -72,6 +95,12 @@
     text-decoration: none;
     color: #412d22;
     background: #e39a3b;
+
+    @media (max-width: 700px) {
+      & {
+        display: none;
+      }
+    }
 
     &-wrapper {
       margin-top: 44px;
@@ -124,6 +153,7 @@
         border: none;
         background: #e39a3b;
         opacity: 1;
+        cursor: pointer;
       }
     }
   }
@@ -133,17 +163,24 @@
     position: absolute;
     left: 59px;
     top: 141px;
+    font-family: "Cookie", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 160px;
     line-height: 177px;
     color: #412d22;
+
+    @media (max-width: 700px) {
+      & {
+        font-size: 100px;
+        line-height: 80%;
+        left: 30px;
+      }
+    }
   }
 
   &__about {
     position: absolute;
-    width: 420px;
-    height: 78px;
     left: 59px;
     top: 338px;
     font-style: normal;
@@ -151,6 +188,14 @@
     font-size: 26px;
     line-height: 150%;
     color: #412d22;
+
+    @media (max-width: 700px) {
+      & {
+        font-size: 16px;
+        line-height: 150%;
+        left: 30px;
+      }
+    }
   }
 
   &__button {
@@ -172,6 +217,13 @@
     border-radius: 40px;
     transition: 400ms;
 
+    @media (max-width: 700px) {
+      & {
+        height: 45px;
+        left: 30px;
+      }
+    }
+
     &:hover {
       background-color: #fff;
       border: 2px solid #e39a3b;
@@ -179,5 +231,4 @@
       border-radius: 40px;
     }
   }
-
 }

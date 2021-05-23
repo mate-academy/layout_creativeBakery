@@ -1,0 +1,103 @@
+.carousel {
+  position: absolute;
+  right: 46px;
+  bottom: calc(50% - 374px / 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  @media (max-width: 900px) {
+    flex-direction: row;
+    width: 179px;
+    bottom: 28px;
+    right: calc(50% - 179px / 2);
+  }
+
+  &__first {
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 176px;
+    line-height: 209px;
+    color: #412d22;
+    margin-right: -20px;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 900px) {
+      font-size: 40px;
+      line-height: 36px;
+      margin-right: 0;
+    }
+  }
+
+  &__numbers {
+    color: #f1cc9d;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 47px;
+    margin-bottom: 14px;
+    transition: transform 1s;
+    background-color: none;
+
+    &:hover {
+      box-shadow: 0 0 0 2px #412d22;
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 900px) {
+      margin-bottom: 0;
+      color: #f1cc9d;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  &__top {
+    background-image: url("../images/carousel/up.svg");
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 15px;
+    cursor: pointer;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+
+    @media (max-width: 900px) {
+      background-image: url("../images/carousel/left.svg");
+      background-repeat: no-repeat;
+      width: 12px;
+      height: 20px;
+      margin-bottom: 8px;
+      z-index: 1;
+    }
+  }
+
+  &__down {
+    background-image: url("../images/carousel/down.svg");
+    background-repeat: no-repeat;
+    margin-top: 27px;
+    width: 26px;
+    height: 15px;
+    cursor: pointer;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+
+    @media (max-width: 900px) {
+      background-image: url("../images/carousel/right.svg");
+      background-repeat: no-repeat;
+      width: 12px;
+      height: 20px;
+      margin-bottom: 8px;
+    }
+  }
+}
