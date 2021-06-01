@@ -1,0 +1,115 @@
+
+.header {
+  display: flex;
+  margin-bottom: 40px;
+  height: 100vh;
+  &__main-half {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 2;
+    background-image: url("../images/photos/bake-cream-puff-cup.png");
+    background-position: center;
+    background-size: cover;
+  }
+  &__main-box {
+    position: relative;
+    flex-grow: 1;
+    padding: 60px 0 0 59px;
+    max-width: $max_headerMainWidth;
+    @include contentMinWidth() {
+      padding: 33px 0 0 16px;
+    }
+  }
+  &__title {
+    margin-top: 50px;
+    @include h1();
+    color: $main_darkColor;
+    @include tablet() {
+      font-size: 100px;
+      line-height: 80%;
+    }
+  }
+  &__label {
+    margin-top: 20px;
+    @include h4();
+    @include tablet() {
+      margin-top: 5px;
+    }
+  }
+  &__button-link {
+    text-decoration: none;
+  }
+  &__button {
+    display: block;
+    margin-top: 25px;
+    @include primaryButton;
+    @include tablet() {
+      margin-top: 5px;
+    }
+  }
+  .roller--hor {
+    display: none;
+    position: absolute;
+    bottom: 10%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 0;
+    @include contentMinWidth() {
+      display: flex;
+    }
+    @include tablet() {
+      bottom: 0;
+    }
+    .roller__num-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+    }
+    .roller__num {
+      font-size: 16px;
+      line-height: 19px;
+      color: $main_mainColor;
+    }
+    .roller__num:first-of-type {
+      font-size: 40px;
+      line-height: 47px;
+      color: $main_darkColor;
+    }
+    .roller__up-arrow {
+      margin: 0;
+      margin-right: 17px;
+      transform: rotate(-90deg);
+    }
+    .roller__down-arrow {
+      margin: 0;
+      margin-left: 17px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__sub-half {
+    display: flex;
+    flex-grow: 1;
+    background-color: $main_mainColor;
+    @include contentMinWidth() {
+      display: none;
+    }
+  }
+  &__sub-box {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    flex-grow: 1;
+    padding: 60px 50px 0 10px;
+    max-width: $max_headerSubWidth;
+    min-width: $min_headerSubWidth;
+  }
+  &__roller {
+    position: absolute;
+    top: 20%;
+
+  }
+}

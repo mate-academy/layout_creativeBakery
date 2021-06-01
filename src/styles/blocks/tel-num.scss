@@ -1,0 +1,35 @@
+
+.tel-num {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  &__num {
+    position: relative;
+    right: -40%;
+
+    @include p();
+    text-decoration: none;
+    white-space: nowrap;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: 300ms;
+  }
+  &__checkbox {
+    position: absolute;
+    visibility: hidden;
+    &:checked ~ .tel-num__num {
+      visibility: visible;
+      opacity: 1;
+      right: 0;
+    }
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    z-index: 2;
+    @include secondaryButton;
+  }
+}
