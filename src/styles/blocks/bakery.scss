@@ -1,0 +1,170 @@
+.bakery {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 65px;
+
+  @media (max-width: 500px) {
+    padding: 40px 23px;
+  }
+
+  &__title {
+    margin-bottom: 27px;
+  }
+
+  &__sweets {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 135px;
+
+    @media (max-width: 950px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (max-width: 320px) {
+      align-items: flex-start;
+    }
+  }
+
+  &__sweets-reverse {
+    @media (max-width: 950px) {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    
+    @media (max-width: 320px) {
+      align-items: flex-start;
+    }
+  }
+
+  &__characteristic {
+    width: 302px;
+  }
+
+  &__type {
+    margin-bottom: 43px;
+  }
+
+  &__name {
+    margin-bottom: 12px;
+  }
+
+  &__description {
+    margin-bottom: 32px;
+  }
+
+  &__price {
+    display: block;
+    text-decoration: none;
+    width: 110px;
+    line-height: 110px;
+    border-radius: 50%;
+    background-color: $cream;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: $chokolate;
+    border: 2px solid $cream;
+    transition: background-color 1s;
+
+    &:hover {
+      background-color: $milk;
+      border: 2px solid $cream;
+    }
+
+    &:active {
+      background: $cream;
+      opacity: 0.8;
+    }
+
+    &:disabled {
+      color: #828282;
+      background-color: #e0e0e0;
+    }
+  }
+
+  &__image-box {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      margin-left: 20px;
+      cursor: pointer;
+      top: 50%;
+      content: url(./../images/bakery/Vector1.png);
+      height: 15px;
+      width: 25px;
+
+      @media (max-width: 500px) {
+        margin-left: 5px;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      margin-left: -40px;
+      cursor: pointer;
+      top: 50%;
+      content: url(./../images/bakery/Vector2.png);
+      height: 15px;
+      width: 25px;
+
+      @media (max-width: 500px) {
+        margin-left: -20px;
+      }
+    }
+  }
+
+  &__image {
+    width: 650px;
+    height: 500px;
+
+    @media (max-width: 1200px) {
+      width: 450px;
+      height: 300px;
+    }
+
+    @media (max-width: 600px) {
+      width: 272px;
+      height: 200px;
+    }
+  }
+
+  &__button-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__button {
+    display: block;
+    text-align: center;
+    margin-bottom: 47px;
+    color: $chokolate;
+    text-decoration: none;
+    width: 160px;
+    line-height: 36px;
+    border: 2px solid $croissant;
+    background-color: $croissant;
+    border-radius: 40px;
+    transition: background-color 1s;
+
+    &:hover {
+      background-color: $milk;
+      border: 2px solid $croissant;
+    }
+
+    &:active {
+      background-color: $croissant;
+      opacity: 0.8;
+    }
+
+    &:disabled {
+      color: #828282;
+      background: #e0e0e0;
+    }
+  }
+}
