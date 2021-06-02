@@ -1,12 +1,15 @@
 .bakery-component {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 0 65px;
   gap: 10%;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10px;
   }
 
   &__description {
@@ -31,15 +34,40 @@
     font-weight: 700;
     border-radius: 50%;
     background-color: $c-cream;
+
+    @media (max-width: 1024px) {
+      width: 65px;
+      height: 65px;
+    }
+  }
+
+  &__dark-vector {
+    @extend %dark-vector;
+    transform: rotate(-90deg);
+  }
+
+  &__pink-vector {
+    @extend %pink-vector;
+    transform: rotate(-90deg);
+  }
+
+  &__product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60vw;
+
+    @media (max-width: 1024px) {
+      align-self: center;
+      width: 95vw;
+    }
   }
 
   &__image {
-    display: flex;
-    align-items: center;
-  }
-}
+    width: 45vw;
 
-.bakery-vector {
-  @extend %dark-vector;
-  transform: rotate(-90deg);
+    @media (max-width: 1024px) {
+      width: 80vw;
+    }
+  }
 }
