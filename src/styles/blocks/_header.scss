@@ -6,5 +6,46 @@
   &__logo {
     width: 112px;
     height: 57.02px;
+
+    @media (max-width: 1150px) {
+      margin-top: 15px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    display: none;
+    top: 33px;
+    right: 16px;
+    width: 25px;
+    height: 18px;
+
+    background: url(../images/burger.svg) center no-repeat;
+    background-size: contain;
+
+    @media (max-width: 1150px) {
+      display: block;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked ~ nav {
+      display: flex !important;
+    }
+
+    &:checked + label {
+      background: url(../images/close-burger.svg) center no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__nav {
+    width: 70%;
+
+    @media (max-width: 1150px) {
+      display: none !important;
+    }
   }
 }
