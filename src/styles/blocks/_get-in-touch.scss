@@ -6,31 +6,51 @@
 
   background-color: $c-croissant;
 
+  @media (max-width: 1024px) {
+    padding-top: 20px;
+  }
+
   &__list {
     position: relative;
     display: flex;
     flex-direction: column;
     margin-top: 24px;
     gap: 9px;
+
+    @media (max-width: 1024px) {
+      margin-left: 20px;
+    }
   }
 
-  p:first-child::before {
+  &__link {
+    @include hover(color, $c-milk);
+
+    &:visited {
+      color: inherit;
+    }
+  }
+
+  a:first-child::before {
     @include get-in-touch-list-images;
+    top: 0;
+
     background: url(../images/Vector-position.svg) no-repeat;
+    background-position: center;
   }
 
-  p:nth-child(2)::before {
+  a:nth-child(2)::before {
     @include get-in-touch-list-images;
+    top: 57px;
+
     background: url(../images/Vector-phone.svg) no-repeat;
+    background-position: center;
   }
 
-  p:nth-child(3)::before {
+  a:nth-child(3)::before {
     @include get-in-touch-list-images;
-    background: url(../images/Group-mail.svg) no-repeat;
-  }
+    top: 114px;
 
-  @media (max-width: 1024px) {
-    padding: 0;
-    padding-left: 30px;
+    background: url(../images/Group-mail.svg) no-repeat;
+    background-position: center;
   }
 }

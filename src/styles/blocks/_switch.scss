@@ -7,11 +7,27 @@
 
   background-color: $c-croissant;
 
+  @media (max-width: 1150px) {
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: 28px;
+    padding: 0;
+
+    background: none;
+  }
+
   &__current-page {
     margin-top: 14px;
 
     font-size: 176px;
     line-height: 176px;
+
+    @media (max-width: 1150px) {
+      margin: 0 10px;
+
+      font-size: 40px;
+      line-height: 40px;
+    }
   }
 
   &__page {
@@ -20,50 +36,34 @@
     margin: 0 14px 14px;
 
     color: $c-cream;
-  }
 
-  &__pink-vector {
-    @include pink-vector;
-    margin-right: 25px;
-  }
-
-  &__dark-vector {
-    @include dark-vector;
-    margin: 27px 25px 0;
-  }
-
-  @media (max-width: 1150px) {
-    flex-direction: row;
-    align-items: baseline;
-    margin-bottom: 28px;
-    padding: 0;
-
-    background: none;
-
-    &__pink-vector {
-      transform: rotate(-90deg);
-      margin: 0;
-    }
-
-    &__dark-vector {
-      transform: rotate(-90deg);
-      margin: 0;
-    }
-
-    &__current-page {
-      margin: 0 10px;
-
-      font-size: 40px;
-      line-height: 40px;
-    }
-
-    &__page {
+    @media (max-width: 1150px) {
       margin: 0 10px;
 
       font-size: 16px;
       line-height: 25px;
 
       color: $c-croissant;
+    }
+  }
+
+  &__pink-vector {
+    @include pink-vector;
+    margin-right: 25px;
+
+    @media (max-width: 1150px) {
+      transform: rotate(-90deg);
+      margin: 0;
+    }
+  }
+
+  &__dark-vector {
+    @include dark-vector;
+    margin: 27px 25px 0;
+
+    @media (max-width: 1150px) {
+      transform: rotate(-90deg);
+      margin: 0;
     }
   }
 }
