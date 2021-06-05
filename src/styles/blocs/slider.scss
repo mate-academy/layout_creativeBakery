@@ -9,10 +9,6 @@
     align-items: center;
     transition: 0.3s;
 
-    &:nth-child(2) {
-      visibility: hidden;
-    }
-
     &:hover {
       transform: rotate(90deg) scale(1.25);
     }
@@ -24,6 +20,12 @@
     line-height: 47px;
     color: $cream-color;
     cursor: default;
+
+    &:first-child {
+      & > :nth-child(1) {
+        visibility: hidden;
+      }
+    }
 
     &--active {
       margin-right: 0;
@@ -46,10 +48,6 @@
       margin-right: 0;
       transform: rotate(0);
 
-      &:nth-child(2) {
-        visibility: visible;
-      }
-
       &:hover {
         transform: scale(1.25);
       }
@@ -62,8 +60,12 @@
       line-height: 45px;
 
       &:first-child {
-        &:nth-child(1) {
-          visibility: hidden;
+        & > :nth-child(1) {
+          visibility: visible;
+        }
+
+        & > :nth-child(2) {
+          display: none;
         }
       }
 
