@@ -1,0 +1,112 @@
+.bakershops {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 200px;
+  background: $cream-color;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &__form {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 71px;
+  }
+
+  &__select {
+    color: $secondary-color;
+    border-bottom: 1px solid $secondary-color;
+    opacity: 50%;
+
+    &:nth-child(1) {
+      width: 173px;
+    }
+
+    &:nth-child(2) {
+      width: 323px;
+    }
+  }
+
+  &__btn {
+    @include btn($btn-width, $btn-height, $primary-color);
+  }
+
+  &__map {
+    width: 75vw;
+  }
+
+  &__scale {
+    display: none;
+    font-size: 30px;
+    line-height: 45px;
+    color: $secondary-color;
+
+    & > :nth-child(n) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+}
+
+@media (max-width: 800px) {
+  .bakershops {
+    padding: 40px 16px;
+    &__form {
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    &__select {
+      &:nth-child(n) {
+        width: 288px;
+      }
+    }
+
+    &__map {
+      width: 80vw;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .bakershops {
+    &__title {
+      margin-bottom: 30px;
+      font-size: 60px;
+      line-height: 67px;
+    }
+
+    &__map {
+      width: 85vw;
+    }
+
+    &__scale {
+      display: flex;
+      gap: 40px;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 340px) {
+  .bakershops {
+    &__select {
+      &:nth-child(n) {
+        width: 260px;
+      }
+    }
+  }
+}
