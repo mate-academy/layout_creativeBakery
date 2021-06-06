@@ -14,3 +14,6 @@ const toggleMenu = () => {
 
 toggler.addEventListener('click', toggleMenu);
 menu.addEventListener('click', toggleMenu);
+
+document.getElementById('feedback-form__message').innerHTML
+  = document.getElementById('feedback-form__message').innerHTML.trim();
