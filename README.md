@@ -1,4 +1,4 @@
 # Creative Bakery landing
 
-- TECHNOLOGY
+- TECHNOLOGY /n
 HTML5/CSS3/JS, BEM, SCSS
