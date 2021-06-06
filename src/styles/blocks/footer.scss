@@ -8,6 +8,13 @@
     align-items: center;
     justify-content: space-between;
 
+    @include onPc {
+
+      & {
+        flex-direction: column;
+        display: block;
+      }
+    }
   }
 
   &__nav {
@@ -22,24 +29,18 @@
 
   &__soc {
     margin-right: 60px;
+
+    @include onPc {
+
+      .footer__soc {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 20px;
+      }
+    }
   }
 
   &__link {
     margin-right: 20px;
   }
-}
-
-@media (max-width: 800px) {
-
-  .footer__navbar {
-    flex-direction: column;
-    display: block;
-  }
-
-  .footer__soc {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 20px;
-  }
-
 }

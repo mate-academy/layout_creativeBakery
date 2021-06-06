@@ -2,11 +2,30 @@
 
   &__titel {
     margin-bottom: 86px;
+
+    @include onLap {
+      & {
+        margin-bottom: 20px;
+      }
+    }
   }
 
   &__form {
     margin-bottom: 74px;
     display: flex;
+
+    @include onPc {
+
+      & {
+        flex-direction: column;
+        align-items: center;
+        width: 300px;
+        margin: 0 15px 20px;
+      }
+      & > * {
+        margin: 10px 0;
+      }
+    }
   }
 
   &__map {
@@ -15,24 +34,5 @@
 
   &__map > img {
     max-width: 100%;
-  }
-}
-
-@media (max-width:1200px) {
-
-  .bakershops__form {
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    margin: 0 15px 20px;
-  }
-  .bakershops__form > * {
-    margin: 10px 0;
-  }
-}
-
-@media (max-width:500px) {
-  .bakershops__titel {
-    margin-bottom: 20px;
   }
 }

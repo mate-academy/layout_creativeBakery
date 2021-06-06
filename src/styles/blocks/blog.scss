@@ -15,37 +15,39 @@
     &--mob {
       display: none;
     }
+
+    @include onLap {
+
+      & {
+        display: none;
+      }
+
+      &--mob {
+        display: block;
+        max-width: 288px;
+        margin-bottom: 20px;
+      }
+    }
   }
 
   &__card-list {
     display: flex;
     justify-content: space-between;
     margin: 0 60px;
-  }
 
-}
+    @include onPc {
 
-@media (max-width:1200px) {
+      & {
+        overflow: auto;
+        flex-wrap: nowrap;
+      }
+    }
 
-  .blog__card-list {
-    overflow: auto;
-    flex-wrap: nowrap;
-  }
-}
+    @include onLap {
 
-@media (max-width:700px) {
-
-  .blog__card-list::-webkit-scrollbar {
-    height: 0;
-  }
-
-  .blog__info {
-    display: none;
-  }
-
-  .blog__info--mob {
-    display: block;
-    max-width: 288px;
-    margin-bottom: 20px;
+      .blog__card-list::-webkit-scrollbar {
+        height: 0;
+      }
+    }
   }
 }

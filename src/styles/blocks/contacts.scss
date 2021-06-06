@@ -3,6 +3,16 @@
   &__list {
     display: flex;
     align-items: center;
+
+    @include onPc {
+      & {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 12px 24px;
+      }
+    }
   }
 
   &__item {
@@ -10,6 +20,13 @@
 
     &:last-child {
       margin-right: 0;
+    }
+
+    @include onPc {
+
+      & {
+        margin-bottom: 30px;
+      }
     }
   }
 
@@ -35,19 +52,5 @@
     & > a {
       color: $Chocolate;
     }
-  }
-}
-
-@media (max-width:1200px) {
-  .contacts__list {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 12px 24px;
-
-  }
-  .contacts__item {
-    margin-bottom: 30px;
   }
 }
