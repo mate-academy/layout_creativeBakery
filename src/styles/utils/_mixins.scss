@@ -1,5 +1,5 @@
 @mixin hover($_property, $_toValue) {
-  transition: 0.3s;
+  transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue !important;
   }
@@ -16,18 +16,12 @@
   font-size: 16px;
   line-height: 24px;
 
-  border: none;
+  border: 2px solid $c-croissant;
   border-radius: 40px;
   background-color: $c-croissant;
   color: $c-chocolate;
 
-  transition: 0.3s;
-
-  &:hover {
-    border: 2px solid $c-croissant;
-
-    background-color: $c-milk;
-  }
+  @include hover(background-color, $c-milk);
 
   &:active {
     opacity: 0.8;
@@ -47,18 +41,12 @@
   font-size: 16px;
   line-height: 24px;
 
-  border: none;
+  border: 2px solid $c-cream;
   border-radius: 40px;
   background-color: $c-cream;
   color: $c-chocolate;
 
-  transition: 0.3s;
-
-  &:hover {
-    border: 2px solid $c-cream;
-
-    background-color: $c-milk;
-  }
+  @include hover(background-color, $c-milk);
 
   &:active {
     opacity: 0.8;
