@@ -82,11 +82,11 @@
           </h1>
           <p class="titel__text">We bake your fantasies: croissants cakes, cookies, and cupcakes.</p>
           <button class="titel__btn btn">
-            <a class="btn__link" href="#">Learn more</a>
+            <a class="btn__link" href="#bakery">Learn more</a>
           </button>
         </div>
         <div class="titel__number number">
-          <a href="#" class="number__btn_up">
+          <a href="#" class="number__btn_up" >
             <img src="./images/Vector.svg" alt="">
           </a>
           <div class="number__choose_1"><span>01</span></div>
@@ -119,32 +119,32 @@
             </div>
           </div>
           <div class="katalog__slider slider">
-            <a class="slider__btn" href="">
-              <img src="./images/Vector left.svg" alt="Next slid">
-            </a>
+            <button class="slider__btn" disabled>
+              <img src="./images/Vector left.svg" alt="Next slid" >
+            </button>
             <img
               class="slider__img"
               src="./images/coockie.svg"
               alt="Chocolat cookies"
             >
-            <a class="slider__btn" href="#">
+            <button class="slider__btn" disabled>
               <img src="./images/Vector right.svg" alt="Next slid">
-            </a>
+            </button>
           </div>
         </div>
         <div class="bakery__katalog katalog">
           <div class="katalog__slider slider">
-            <a class="slider__btn" href="">
+            <button class="slider__btn" disabled>
               <img src="./images/Vector left.svg" alt="Next slid">
-            </a>
+            </button>
             <img
               class="slider__img"
               src="./images/cakes.svg"
               alt="Cake Mint"
             >
-            <a class="slider__btn" href="#">
+            <button class="slider__btn" disabled>
               <img src="./images/Vector right.svg" alt="Next slid">
-            </a>
+            </button>
           </div>
           <div class="katalog__info">
             <h3 class="katalog__head">
@@ -182,33 +182,33 @@
             </div>
           </div>
           <div class="katalog__slider slider">
-            <a class="slider__btn" href="">
+            <button class="slider__btn" disabled>
               <img src="./images/Vector left.svg" alt="Next slid">
-            </a>
+            </button>
             <img
               class="slider__img"
               src="./images/croissan.svg"
               alt=" Almond Croissan"
             >
-            <a class="slider__btn" href="">
+            <button class="slider__btn" disabled>
               <img src="./images/Vector right.svg" alt="Next slid">
-            </a>
+            </button>
           </div>
         </div>
         </div>
         <div class="bakery__katalog katalog">
           <div class="katalog__slider slider">
-            <a class="slider__btn" href="">
+            <button class="slider__btn" disabled>
               <img src="./images/Vector left.svg" alt="Next slid">
-            </a>
+            </button>
             <img
               class="slider__img"
               src="./images/cupcakes.svg"
               alt="Triple cremy cupcakes"
             >
-            <a class="slider__btn" href="">
+            <button class="slider__btn" disabled>
               <img src="./images/Vector right.svg" alt="Next slid">
-            </a>
+            </button>
           </div>
           <div class="katalog__info">
             <h3 class="katalog__head">
@@ -228,9 +228,9 @@
           </div>
         </div>
       </div>
-        <div class="bakery__btn">
+        <div class="bakery__btn" >
           <button class="btn">
-            <a class="btn__link" href="#">All bakeries</a>
+            <a class="btn__link" href="#bakershops">All bakeries</a>
           </button>
         </div>
       </section>
@@ -238,44 +238,27 @@
         <div class="bakershops__titel heading">
           <h2 class="heading__bakery">Bakershops</h2>
         </div>
-        <form action="" class="bakershops__form forms">
-          <div class="forms__block forms__block--position">
-            <input
-              class="forms__input forms__input--margin"
-              type="text"
-              placeholder="City"
-              name="city"
-              id="city-form"
-              required
-            >
-            <label class="forms__label" for="city-form">
-              <img
-                class="forms__arow"
-                src="./images/Vector-1.svg"
-                alt="Vector"
-              >
-            </label>
-          </div>
-          <div class="forms__block forms__block--position">
-            <input
-              class="forms__input forms__input--size forms__input--margin"
-              type="text"
-              placeholder="Adress"
-              name="adress"
-              id="adress-form"
-              required
-            >
-            <label class="forms__label" for="adress-form">
-              <img
-                class="forms__arow"
-                src="./images/Vector-1.svg"
-                alt="Vector">
-            </label>
-          </div>
-          <button class="forms__btn btn" type="submit" >
-            <a class="btn__link" href="#">
+        <form action="" class="bakershops__select select-store">
+          <select class="select-store__city">
+            <option value=""></option>
+            <option value="">Kyiv</option>
+            <option value="">Lviv</option>
+            <option value="">Dnepr</option>
+          </select>
+          <select class="select-store__adress">
+            <option value=""></option>
+            <option value="">Kyiv</option>
+            <option value="">Lviv</option>
+            <option value="">Dnepr</option>
+          </select>
+
+
+          <button
+            class="select-store__btn btn"
+            type="submit"
+            disabled
+          >
               Search
-            </a>
           </button>
         </form>
         <div class="bakershops__map map">
@@ -500,7 +483,11 @@
             <img src="./images/feedback.svg" alt="">
           </div>
           <div  class="masseges__form">
-            <form action="" class="forms forms--feedback">
+            <form
+              action="http://localhost:8080"
+              method="POST"
+              class="forms forms--feedback"
+            >
               <h4>We’d love to hear your feedback</h4>
               <input
                 type="text"
@@ -509,7 +496,7 @@
                 required
               >
               <input
-                type="text"
+                type="email"
                 class="forms__input forms__input--dist"
                 placeholder="E-mail*"
                 required
@@ -526,7 +513,7 @@
                 required
               >
               <button class="forms__btn btn btn--colum btn--mt">
-                <a href="">Send</a>
+                Send
               </button>
             </form>
           </div>
@@ -540,38 +527,38 @@
             </a>
           </div>
           <nav class="footer__nav nav">
-            <ul class="nav__list nav__list--color">
+            <ul class="nav__list nav__list--color nav__list--footer">
               <li class="nav__items">
-                <a href="#" class="nav__link">
+                <a href="#bakery" class="nav__link">
                   Bakery
                 </a>
               </li>
               <li class="nav__items">
-                <a href="#" class="nav__link">
+                <a href="#bakershops" class="nav__link">
                   Bakershops
                 </a>
               </li>
               <li class="nav__items">
-                <a href="#" class="nav__link">
+                <a href="#about" class="nav__link">
                   About
                 </a>
               </li>
               <li class="nav__items">
-                <a href="#" class="nav__link">
+                <a href="#connaction" class="nav__link">
                   Contacts
                 </a>
               </li>
             </ul>
           </nav>
           <div class="footer__soc">
-            <a href="" class="footer__link">
-              <img src="./images/twitter.svg" alt="">
+            <a href="https://twitter.com/" class="footer__link">
+              <img src="./images/twitter.svg" alt="twiter logo">
             </a>
-            <a href="" class="footer__link">
-              <img src="./images/facebook.svg" alt="">
+            <a href="https://www.facebook.com/" class="footer__link">
+              <img src="./images/facebook.svg" alt="facebook logo">
             </a>
-            <a href="" class="footer__link">
-              <img src="./images/linkedin.svg" alt="">
+            <a href="https://linkedin.com/" class="footer__link">
+              <img src="./images/linkedin.svg" alt="linkedin logo">
             </a>
           </div>
         </div>
