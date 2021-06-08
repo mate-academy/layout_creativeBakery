@@ -1,0 +1,83 @@
+.navigation {
+  position: absolute;
+  top: 34px;
+  left: 59px;
+  right: 59px;
+
+  display: flex;
+  justify-content: space-between;
+  height: 87px;
+
+  &__toggler {
+    display: none;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 18px;
+    right: 0;
+    z-index: 2;
+    display: none;
+    width: 24px;
+    height: 16px;
+    background: url(../images/burger-icon.svg) no-repeat 50% / contain;
+    cursor: pointer;
+    transition-duration: 0.3s;
+
+    &:hover {
+      background: url(../images/burger-icon-hover.svg);
+    }
+  }
+
+  &__toggler:checked ~ &__icon {
+    background: url(../images/nav-active.svg) no-repeat 50% / contain;
+    transform: rotate(0.5turn);
+  }
+
+  &__toggler:checked ~ .nav,
+  &__toggler:checked ~ .call-back {
+    display: block;
+  }
+}
+
+@media (max-width: 1030px) {
+  .navigation {
+    justify-content: normal;
+
+    & > :nth-child(4) {
+      position: absolute;
+      z-index: 1;
+      top: -34px;
+      right: -59px;
+    }
+
+    & > :nth-child(5) {
+      position: absolute;
+      z-index: 1;
+      top: calc(70vh - 35px);
+      right: -59px;
+    }
+
+    &__icon {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .navigation {
+    top: 15px;
+    left: 16px;
+    right: 16px;
+
+    & > :nth-child(4) {
+      top: -15px;
+      right: -16px;
+    }
+
+    & > :nth-child(5) {
+      top: calc(70vh - 16px);
+      right: -16px;
+    }
+  }
+}

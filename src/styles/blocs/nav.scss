@@ -1,0 +1,41 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__list {
+    display: flex;
+    gap: 34px;
+  }
+
+  &__item {
+    transition: 0.1s;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+@media (max-width: 1030px) {
+  .nav {
+    display: none;
+    width: 60vw;
+
+    &__list {
+      display: block;
+      padding: 85px 0 147px 20px;
+      height: 70vh;
+      background: $primary-color;
+
+      & > :not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__item {
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

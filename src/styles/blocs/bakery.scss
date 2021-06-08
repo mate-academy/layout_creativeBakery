@@ -1,0 +1,162 @@
+.bakery {
+  padding: 40px 65px 80px;
+  cursor: default;
+
+  &__title {
+    margin-bottom: 27px;
+    text-align: center;
+  }
+
+  &__products {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 135px;
+
+    &:nth-child(3) {
+      flex-direction: row-reverse;
+    }
+
+    &:nth-child(5) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__info-title {
+    margin-top: 0;
+    margin-bottom: 43px;
+  }
+
+  &__sub-title {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 32px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 110px;
+    font-weight: 700;
+    background: $cream-color;
+    border-radius: 50%;
+  }
+
+  &__slider {
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+  }
+
+  &__slider-btn {
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.25);
+    }
+  }
+
+  &__img {
+    width: 45vw;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__btn {
+    @include btn($btn-width, $btn-height, $primary-color);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1050px) {
+  .bakery {
+    &__products {
+      gap: 15px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .bakery {
+    &__slider {
+      gap: 2vw;
+    }
+
+    &__img {
+      width: 40vw;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .bakery {
+    &__products {
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 40px;
+
+      &:nth-child(n) {
+        flex-direction: column;
+      }
+    }
+
+    &__slider {
+      align-self: center;
+    }
+
+    &__img {
+      width: 75vw;
+
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .bakery {
+    padding: 40px 16px;
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: 60px;
+      line-height: 67px;
+    }
+
+    &__products {
+      margin-bottom: 40px;
+    }
+
+    &__info-title {
+      margin-bottom: 15px;
+      font-size: 35px;
+      line-height: 41px;
+    }
+
+    &__sub-title {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    &__price {
+      width: 65px;
+      height: 65px;
+      text-align: center;
+    }
+
+    &__slider {
+      gap: 4vw;
+    }
+  }
+}
