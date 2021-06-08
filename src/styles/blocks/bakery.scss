@@ -1,0 +1,88 @@
+.bakery {
+  padding: 100px 0;
+  &__heading {
+    @extend %heading;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  &__container {
+    @extend %container;
+  }
+
+  &__product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+      @media (max-width: 900px) {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    font-size: 3.13rem;
+    line-height: 59px;
+    color: #e39a3b;
+    @media (max-width: 900px) {
+      font-size: 2.19rem;
+      line-height: 41.48px;
+    }
+  }
+
+  &__name {
+    margin-bottom: 12px;
+    font-size: 1.63rem;
+    line-height: 39px;
+    @media (max-width: 900px) {
+      font-size: 1.25rem;
+      line-height: 30px;
+    }
+  }
+
+  &__description {
+    max-width: 302px;
+  }
+
+  &__price {
+    @include circle(110px);
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f1cc9d;
+    font-weight: 700;
+    @media (max-width: 900px) {
+      @include circle(65px);
+      p {
+        width: 37px;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    max-width: 700px;
+    height: auto;
+  }
+
+  &__image {
+    width: 100%;
+    @media (max-width: 900px) {
+      width: 80vw;
+    }
+  }
+}
