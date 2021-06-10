@@ -1,0 +1,128 @@
+.table-header {
+  display: none;
+  height: 100vh;
+
+  grid-template-columns: 67% 1fr;
+  grid-template-areas: "background right";
+
+  @media (min-width:1024px) {
+    display: grid;
+  }
+
+  &__background {
+    grid-area: background;
+    background-image: url(./img/bake-cream-puff-cup-1775045.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__nav {
+    padding: 20px;
+    height: 105px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__logotip {
+    height: 42px;
+    width: 42px;
+  }
+
+  &__logo {
+    margin: 0;
+  }
+
+  &__mojo {
+    position: fixed;
+    top: 10px;
+    left: 50px;
+  }
+
+  &__anchors {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 30px;
+    gap: 30px;
+  }
+
+  &__content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__about {
+    max-width: 60%;
+  }
+
+  &__learn {
+    width: 160px;
+    height: 40px;
+    background-color: $orange;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__right {
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+    gap: 100px;
+    background-color: $orange;
+  }
+
+  &__numbers {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    // gap: 20px;
+  }
+
+  &__selector {
+    font-size: 20px;
+    border-color: transparent;
+    background-color: $orange;
+  }
+
+  &__back {
+    width: 100px;
+    height: 30px;
+    border-radius: 40px;
+    text-align: center;
+    line-height: 30px;
+    background-color: $cream;
+  }
+
+  &__scroll {
+    grid-area: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: $orange;
+    margin: 0;
+    padding: 40px;
+    line-height: 70%;
+    color: $cream;
+
+    & > :nth-child(2) {
+      font-size: 7rem;
+      line-height: 80%;
+      color: $brown;
+    }
+
+    & > :first-child {
+      line-height: 50px;
+      transform: rotate(90deg) translateY(20%);
+    }
+
+    & > :last-child {
+      transform: rotate(90deg) translateY(40%);
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.header {
+  padding: 20px;
+  display: grid;
+  height: 100vh;
+  max-width: 1023px;
+  gap: 25px;
+  grid-template-rows: 11% 38% 12% 10% 15%;
+  grid-template-areas: "nav"
+    "name"
+    "about"
+    "learn"
+    "scroll";
+  background-image: url(../images/bake-cream-puff-cup-1775045.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (min-width:1024px) {
+    display: none;
+  }
+
+  @media (min-width:768px) {
+    gap: 50px;
+  }
+
+  &__nav {
+    grid-area: nav;
+  }
+
+  &__name {
+    grid-area: name;
+
+    @media (min-width:768px) {
+      max-width: 70%;
+      padding-left: 30px;
+    }
+  }
+
+  &__about {
+    grid-area: about;
+    font-weight: normal;
+
+    @media (min-width:768px) {
+      max-width: 70%;
+      padding-left: 30px;
+    }
+  }
+
+  &__learn {
+    grid-area: learn;
+    display: flex;
+    width: 160px;
+    height: 45px;
+    background-color: $orange;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    @media (min-width:768px) {
+      transform: translateX(15%);
+    }
+  }
+
+  &__scroll {
+    grid-area: scroll;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    & > :not(:last-child) {
+      color: $orange;
+    }
+
+    & > :nth-child(2) {
+      color: $brown;
+      font-size: 40px;
+      font-weight: normal;
+      line-height: 10px;
+
+      @media (min-width:768px) {
+        transform: translateY(15%);
+      }
+    }
+  }
+}
