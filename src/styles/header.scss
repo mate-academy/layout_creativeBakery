@@ -1,0 +1,189 @@
+@import "./fonts";
+@import "./utils/vars";
+@import "./utils/mixins";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Rubik", sans-serif;
+}
+
+.header {
+  display: block;
+  height: 100vh;
+  z-index: -1;
+  background-image: url(../images/bake-cream-puff-cup-1775045.png);
+  background-size: cover;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 33px 0 0 38px;
+  }
+
+  &__burger,
+  &__burger::before,
+  &__burger::after {
+    position: relative;
+    z-index: 1;
+    width: 25px;
+    height: 1.5px;
+    margin-right: 16px;
+    align-self: center;
+    cursor: pointer;
+    background-color: #412d22;
+  }
+
+  &__burger::before {
+    @include burger(-8px);
+  }
+
+  &__burger::after {
+    @include burger(8px);
+  }
+
+  &__checkbox {
+    visibility: hidden;
+  }
+
+  &__nav {
+    position: absolute;
+    visibility: hidden;
+    padding-top: 85px;
+    height: 100vh;
+    width: 200px;
+    bottom: 5px;
+    right: 0;
+    display: flex;
+    gap: 147px;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $default-orange;
+  }
+
+  &__title {
+    margin: 97px 0 0 16px;
+    font-family: "Cookie", cursive;
+    font-size: 100px;
+    color: $text-color;
+  }
+
+  &__subject {
+    padding: 14px 0 0 16px;
+    font-family: inherit;
+    font-size: 16px;
+    color: $text-color;
+  }
+
+  &__info-button {
+    width: 160px;
+    height: 45px;
+    margin: 19px 0 0 16px;
+
+    font-family: inherit;
+    font-size: 16px;
+    background: $default-orange;
+    border: none;
+    border-radius: 40px;
+  }
+
+  &__switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+
+    & span:first-of-type {
+      font-size: 40px;
+    }
+
+    & span:not(:first-of-type) {
+      align-self: flex-end;
+      padding-bottom: 5px;
+      color: rgba(227, 154, 59, 1);
+    }
+  }
+}
+
+.logo {
+  position: relative;
+  display: flex;
+  font-family: "Cookie", cursive;
+  font-size: 23px;
+  color: $text-color;
+
+  &__img {
+    position: absolute;
+    bottom: 13px;
+    right: 55px;
+    height: $cookie-size;
+  }
+}
+
+.nav {
+  font-style: "Rubik", sans-serif;
+  font-size: 16px;
+  color: $text-color;
+  &__list {
+    padding: 0 $header-margin;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  &__number {
+    margin-left: 15px;
+  }
+
+  &__button {
+    width: 100px;
+    height: 30px;
+    margin-left: 15px;
+
+    font-size: 16px;
+    background: #f1cc9d;
+    border: none;
+    border-radius: 40px;
+  }
+
+  &__languages {
+    margin-left: 19px;
+  }
+}
+
+.img {
+  margin-left: 5px;
+  height: 6px;
+  width: 11px;
+
+  &--1 {
+    height: 12px;
+    width: 20px;
+    transform: rotate(90deg);
+  }
+
+  &--2 {
+    height: 12px;
+    width: 20px;
+    transform: rotate(-90deg);
+  }
+}
