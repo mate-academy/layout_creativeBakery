@@ -10,7 +10,11 @@
 
   &__heading {
     @extend %heading;
-    margin-bottom: 25px;
+    margin-bottom: 23px;
+    @media (max-width: 900px) {
+      margin: 0;
+      line-height: 103px;
+    }
   }
 
   &__description {
@@ -40,11 +44,39 @@
 
   &__image {
     @include circle(200px);
+    margin-bottom: 10px;
+    overflow: hidden;
+
+    @media (max-width: 900px) {
+      @include circle(150px);
+      margin-bottom: 20px;
+    }
+  }
+
+  &__item {
+    transform: scale(0.85);
+    position: relative;
+    top: -22%;
+    left: -15%;
+    &--small {
+      transform: scale(0.8);
+      top: -58%;
+      left: -17%;
+      @media (max-width: 900px) {
+        transform: scale(0.6);
+        top: -82%;
+        left: -39%;
+      }
+    }
   }
 
   &__statistics {
     font-size: 3.75rem;
     font-weight: 300;
     line-height: 71px;
+  }
+
+  @media (max-width: 900px) {
+    padding: 9px 0 38px;
   }
 }

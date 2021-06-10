@@ -17,21 +17,39 @@
   }
 
   .logo {
+    position: relative;
+    font-family: $CookieFamily;
+    font-size: 1.88rem;
     color: #fff;
+    z-index: 1;
     @media (max-width:975px) {
       &::before {
         left: -30px;
       }
+    }
+    &__image {
+      position: absolute;
+      bottom: -15%;
+      left: -27px;
+      z-index: -1;
     }
   }
   &__terms {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-right: 40px;
+    font-family: Roboto, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    line-height: 17px;
+
+    p {
+      min-width: 100px;
+    }
 
     .privacy {
       color: #fff;
+      min-width: 101px;
     }
   }
   .navbar {
@@ -43,12 +61,17 @@
         gap: 50px;
       }
     }
-  }
-  .navbar__link {
-    color: #fff;
 
-    &:hover {
-      color: #e39a3b;
+    &__link {
+      color: #fff;
+  
+      &:hover {
+        color: #e39a3b;
+      }
     }
+  }
+
+  @media (max-width:950px) {
+    padding: 50px 40px 18px;
   }
 }
