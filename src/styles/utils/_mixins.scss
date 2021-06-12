@@ -1,6 +1,42 @@
+@import "./vars";
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin create-obj($size1, $size2) {
+  width: $size1;
+  height: $size2;
+}
+
+@mixin burger($pos) {
+  position: absolute;
+  top: $pos;
+  content: "";
+}
+
+@mixin padding($p1, $p2, $p3, $p4) {
+  padding: $p1 $p2 $p3 $p4;
+}
+
+@mixin margin($p1, $p2, $p3, $p4) {
+  margin: $p1 $p2 $p3 $p4;
+}
+
+@mixin text-property($fsz) {
+  font-size: $fsz;
+  color: $text-color;
+}
+
+@mixin button1 {
+  @include create-obj(160px, 45px);
+  @include text-property(16px);
+
+  font-family: inherit;
+  background: $default-orange;
+  border: none;
+  border-radius: 40px;
 }
