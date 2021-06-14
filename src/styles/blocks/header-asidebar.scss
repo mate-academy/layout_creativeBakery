@@ -1,0 +1,142 @@
+.header-asidebar {
+  position: relative;
+  transition: 0.5s;
+
+  @media (min-width: 1000px) {
+    background-color: $light-brown-color;
+    height: 100vh;
+    padding: 30px 20px 0;
+    min-width: 425px;
+    flex-grow: 1;
+  }
+
+  &__right-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    right: 0;
+    z-index: 1;
+    visibility: hidden;
+    border-left: 3px solid $white-color;
+    @extend %p;
+
+    &--active {
+      background-color: $light-brown-color;
+      height: 100vh;
+      width: 60%;
+      visibility: visible;
+      transition: 0.5s;
+    }
+  }
+
+  &__wrapper {
+    display: none;
+
+    @media (min-width: 1000px) {
+      display: flex;
+      height: 60px;
+      gap: 10px;
+      align-items: flex-end;
+      justify-content: space-around;
+    }
+  }
+
+  &__phone {
+    text-decoration: none;
+    color: $dark-brown-color;
+    padding: 5px;
+
+    &:hover {
+      color: $white-color;
+    }
+  }
+
+  &__call-button {
+    @extend %p;
+    text-decoration: none;
+  }
+
+  &__language {
+    @extend %p;
+    height: 30px;
+    width: 60px;
+    padding: 0 5px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: 15px;
+    cursor: pointer;
+
+    &:focus > option {
+      background-color: $cream-color;
+    }
+
+    &:hover {
+      color: $white-color;
+    }
+  }
+}
+
+.right-menu {
+  padding: 85px 15px 0;
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    padding-bottom: 20px;
+  }
+
+  &__link {
+    @extend %p;
+    color: $dark-brown-color;
+    text-decoration: none;
+    padding: 5px;
+
+    &:hover {
+      color: $cream-color;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__phone {
+    @extend %p;
+    text-decoration: none;
+    color: $dark-brown-color;
+    margin-bottom: 30px;
+    padding: 5px;
+
+    &:hover {
+      color: $white-color;
+    }
+  }
+
+  &__call-button {
+    @extend %p;
+    text-decoration: none;
+    margin-bottom: 30px;
+  }
+
+  &__language {
+    @extend %p;
+    height: 30px;
+    width: 60px;
+    padding: 0 5px;
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 30px;
+
+    &:focus > option {
+      background-color: $cream-color;
+    }
+  }
+}
