@@ -156,16 +156,67 @@
 }
 
 .contacts {
+  padding-top: 40px;
+  padding-bottom: 40px;
   background-color: $c-orange;
-
-  @include section-padding;
 
   &__title {
     @include section-titles;
     color: $c-white;
   }
 
-  &__get-contacts {
+  &__info {
+    padding: 20px 25px 40px 62px;
+  }
+
+  &__sub-title {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: normal;
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    gap: 9px;
+
+    & > :hover {
+      color: #fff;
+      transition: 0.3s;
+    }
+
+  }
+
+  &__link:nth-child(1)::before {
+    position: absolute;
+    left: -34px;
+    content: url(../images/location.svg);
+  }
+
+  &__link:nth-child(2)::before {
+    position: absolute;
+    left: -34px;
+    content: url(../images/phone.svg);
+  }
+
+  &__link:nth-child(3)::before {
+    position: absolute;
+    left: -34px;
+    content: url(../images/mail.svg);
+  }
+}
+
+.location-map {
+  height: 95vh;
+  background-image: url(../images/location-on-map.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.feedback {
+  &__title-h4 {
     font-family: "Rubik", sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -175,8 +226,41 @@
     text-align: center;
   }
 
-  &__contacts-info {
+  &__form {
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+    & > :nth-child(4) {
+      margin-top: 65px;
+    }
+  }
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    width: 90vw;
+    margin-bottom: 22px;
+    border: none;
+    border-bottom: 1px solid rgba(65,45,34,0.5);
+    opacity: 0.5;
+  }
+
+  &__button {
+    @include big-orange-button;
+    margin: 10px auto;
+    border: 0;
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: $c-dark-brown;
+  }
+
+  &__img {
+    margin: 50px auto;
+    width: 90vw;
   }
 }
