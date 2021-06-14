@@ -1,0 +1,48 @@
+.feedback {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @media (max-width:1023px) {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  @media (max-width:767px) {
+    transform: scale(70%);
+    padding: 0, 20px;
+  }
+
+  @media (max-width:399px) {
+    transform: scale(50%);
+    padding: 0, 20px;
+  }
+
+  &__image {
+    width: 509px;
+    height: 417px;
+  }
+ 
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 388px;
+    height: 377px;
+    gap: 30px;
+
+    & > :not(:last-child) {
+      
+      border: transparent;
+      background-color: inherit;
+      border-bottom: 2px solid $brown;
+    }
+  }
+
+  &__button {
+    @include button;
+    margin: 0 auto;
+  }
+}
