@@ -2,15 +2,19 @@
   display: none;
   height: 100vh;
 
+  & a {
+    @include link;
+  }
+
   grid-template-columns: 67% 1fr;
-  grid-template-areas: "background right";
+  grid-template-areas: "left right";
 
   @media (min-width:1024px) {
     display: grid;
   }
 
-  &__background {
-    grid-area: background;
+  &__left {
+    grid-area: left;
     background-image: url(./img/bake-cream-puff-cup-1775045.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -35,7 +39,7 @@
 
   &__mojo {
     position: fixed;
-    top: 10px;
+    top: 50px;
     left: 50px;
   }
 
@@ -51,20 +55,16 @@
     padding: 40px;
     display: flex;
     flex-direction: column;
+    gap: 10px;
   }
 
   &__about {
-    max-width: 60%;
+    padding: 20px 0;
+    max-width: 500px;
   }
 
   &__learn {
-    width: 160px;
-    height: 40px;
-    background-color: $orange;
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include button;
   }
 
   &__right {
@@ -81,10 +81,10 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 10px;
-    // gap: 20px;
   }
 
   &__selector {
+    cursor: pointer;
     font-size: 20px;
     border-color: transparent;
     background-color: $orange;
@@ -117,11 +117,13 @@
     }
 
     & > :first-child {
+      cursor: pointer;
       line-height: 50px;
       transform: rotate(90deg) translateY(20%);
     }
 
     & > :last-child {
+      cursor: pointer;
       transform: rotate(90deg) translateY(40%);
     }
   }
