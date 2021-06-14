@@ -29,6 +29,21 @@
     color: #412d22;
     opacity: 0.5;
     margin-bottom: 20px;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      opacity: 0.5;
+      border-bottom: 1px solid #412d22;
+      position: absolute;
+      top: 20px;
+      left: 0;
+    }
+  }
+
+  &__message-label::after {
+    top: 60px;
   }
 
   &__name-input,
@@ -36,6 +51,8 @@
   &__phone-input,
   &__message-input {
     width: 100%;
+    border: none;
+    outline: none;
   }
 
   &__message-input {
@@ -50,9 +67,10 @@
     font-style: normal;
     font-weight: normal;
     line-height: 150%;
-    color: #412d22;
-    background: #e39a3b;
+    color: $brown-color;
+    background: $orange-color;
     align-self: center;
+    transition: transform 350ms;
     
     &:hover {
       transform: scale(1.1);

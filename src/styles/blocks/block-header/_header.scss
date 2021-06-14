@@ -9,6 +9,10 @@
   right: 0;
   padding: 0 59px;
 
+  &__logo {
+    transition: transform 150ms;
+  }
+
   &__logo:hover {
     transform: scale(1.1);
   }
@@ -18,9 +22,14 @@
     top: 0;
 
     &__logo {
-      padding-left: 16px;
+      padding-left: 59px;
     }
-
+    
+    @media (max-width: 850px) {
+      &__logo {
+        padding-left: 16px;
+      }
+    }
   }
 
   &__nav {
@@ -45,8 +54,13 @@
     height: 18px;
     z-index: 1;
 
+    @media (min-width: 850px) and (max-width: 1150px) {
+      right: 59px;
+    }
+
     background: url(../images/burger-open.svg) center no-repeat;
     background-size: contain;
+    transition: transform 200ms;
 
     &:hover {
       transform: scale(1.2);
