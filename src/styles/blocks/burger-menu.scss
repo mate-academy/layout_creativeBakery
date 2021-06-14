@@ -1,0 +1,49 @@
+.burger {
+  position: absolute;
+  top: 33px;
+  right: 16px;
+  width: 25px;
+  height: 20px;
+  z-index: 5;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__line {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    right: 0;
+    border: 1.5px solid $chocolate;
+    border-radius: 8px;
+    background-color: $chocolate;
+    transition: 0.5s;
+
+    &:first-child {
+      top: 0;
+    }
+
+    &:last-child {
+      top: 18px;
+    }
+  }
+}
+
+.rotate-plus {
+  transform: rotate(405deg) translate(0, 12.5px);
+}
+
+.rotate-minus {
+  transform: rotate(-405deg) translate(0, -12.5px);
+}
+
+@media (min-width: 1024px) {
+  .burger {
+    display: none;
+  }
+}

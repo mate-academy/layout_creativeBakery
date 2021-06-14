@@ -1,0 +1,78 @@
+.roller {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 20px;
+  width: fit-content;
+  left: 36%;
+  bottom: 28px;
+
+  &__item {
+    color: $croissant;
+    transition: background-color 0.6s ease;
+    &--selected {
+      font-size: 40px;
+      line-height: 47px;
+      color: $chocolate;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .roller {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: 29px;
+    margin: 10% 0 0;
+
+    &__item {
+      color: $cream;
+      font-size: 40px;
+      &--selected {
+        font-size: 176px;
+        line-height: 209px;
+        color: $chocolate;
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .roller {
+    right: 5%;
+  }
+}
+
+.toggler {
+  width: 12px;
+  height: 20px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-width: 1024px) {
+    width: 26px;
+    height: 16px;
+  }
+
+  &--left {
+    background-image: url("../images/arrow-crois-left-small.svg");
+
+    @media (min-width: 1024px) {
+      background-image: url("../images/arrow-up-light.svg");
+    }
+  }
+
+  &--right {
+    background-image: url("../images/arrow-choc-right-small.svg");
+  
+    @media (min-width: 1024px) {
+      background-image: url("../images/arrow-down-choc.svg");
+    }
+  }
+}

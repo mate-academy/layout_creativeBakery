@@ -1,0 +1,143 @@
+.feedback {
+  padding: 40px 16px 50px;
+  background-color: $milk;
+
+  &__title {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin: auto;
+    padding: 20px 0;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid grey;
+    line-height: 24px;
+    font-size: $font-size-small;
+    font-family: $rubic;
+    color: $chocolate;
+    opacity: 0.5;
+
+    &:hover {
+      transition-duration: 300ms;
+      font-weight: 500;
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid $croissant;
+      color: $chocolate;
+      opacity: 1;
+    }
+  }
+
+  &__input--textarea {
+    resize: vertical;
+  }
+
+  &__submit {
+    @include button-small;
+    margin: auto;
+
+    &:hover {
+      @include btn-hover;
+    }
+
+    &:active {
+      @include btn-active;
+    }
+  }
+
+  &__img {
+    height: 40vh;
+    width: 100%;
+    background-image: url("../images/feedback-img.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: $chocolate;
+  transition: background-color 5000s ease-in-out 0s;
+
+  outline: none;
+  border-bottom: 2px solid $croissant;
+}
+
+@media (min-width: 635px) {
+  .feedback {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__title {
+    letter-spacing: 0.9px;
+  }
+
+  &__form {
+    max-width: 378px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .feedback {
+    padding: 40px 16px;
+
+    &__form {
+      max-width: 378px;
+    }
+
+    &__img {
+      width: 55%;
+    }
+  }
+}
+
+@media (min-width: 1024px ) {
+  .feedback {
+    padding: 92px 24px;
+
+    &__form {
+      padding: 0;
+    }
+    &__title {
+      font-size: 24px;
+      letter-spacing: 0.9px;
+    }
+  }
+}
+
+@media (min-width: 1280px ) {
+  .feedback {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 0 140px;
+  }
+}

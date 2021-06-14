@@ -1,0 +1,66 @@
+.bakery {
+  padding: 40px 16px;
+ 
+  &-wrap {
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+  }
+
+  &__title {
+    @include title($title-fsz-mobile, $title-mb-mobile);
+    text-align: center;
+  }
+
+  &__item {
+    padding-bottom: 40px;
+
+    &:nth-child(5) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__all-bakeries-link {
+    @include button-small;
+    margin: auto;
+
+    &:hover {
+      @include btn-hover;
+    }
+
+    &:active {
+      @include btn-active;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .bakery {
+
+    &__item:nth-child(odd) > .gallery {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .bakery {
+    padding-bottom: 80px;
+    
+    &__title {
+      font-size: 120px;
+      margin-bottom: 27px;
+    }
+
+    &-wrap {
+      max-width: 1200px;
+    }
+    &__item {
+      margin-bottom: 135px;
+
+      &:nth-child(5) {
+        margin-bottom: 150px;
+      }
+    }
+  }
+}

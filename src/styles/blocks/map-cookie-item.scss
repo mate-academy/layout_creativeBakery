@@ -1,0 +1,80 @@
+.map-cookie-item {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+
+  &::after {
+    font-size: 8px;
+    line-height: 12px;
+    position: absolute;
+    bottom: -10px;
+    right: 3px;
+  }
+
+  &__cookie {
+    display: flex;
+    background: url("../images/cookie.svg") no-repeat;
+
+    background-size: cover;
+    width: 16.49px;
+    height: 16.49px;
+  }
+}
+
+$cities: (
+  0: "Lutsk",
+  1: "Lviv",
+  2: "Zhytomyr",
+  3: "Vinnytsya",
+  4: "Kyiv",
+  5: "Chernihiv",
+  6: "Poltava",
+  7: "Dnipro",
+  8: "Kherson",
+  9: "Kharkiv"
+);
+
+$bakeries: (
+  0: "4",
+  1: "6",
+  2: "3",
+  3: "4",
+  4: "9",
+  5: "4",
+  6: "2",
+  7: "4",
+  8: "2",
+  9: "5"
+);
+
+@each $num, $city in $cities {
+  .map-cookie-item:nth-child(n + #{$num + 1})::after {
+    content: $city;
+    font-size: 8px;
+    line-height: 12px;
+    position: absolute;
+    bottom: -10px;
+    right: 3px;
+  }
+
+  .map-cookie-item:nth-child(n + #{$num + 1}) {
+    left: #{$num * 35}px;
+  }
+}
+
+@each $val, $amount in $bakeries {
+
+  .map-cookie-item:nth-child(n + #{$val + 1}) > .map-cookie-item__num::after {
+    content: $amount;
+    position: absolute;
+    transform: translateX(-60%);
+    width: 8.16px;
+    height: 8.16px;
+    border-radius: 50%;
+    background-color: #d21925;
+    color: #fff;
+    text-align: center;
+    font-size: 6px;
+    line-height: 8.16px;
+  }
+}
