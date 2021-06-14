@@ -3,12 +3,10 @@
   justify-content: space-between;
   align-items: center;
   column-gap: 32px;
-  margin-bottom: 71px;
 
-  @media (max-width: 1150px) {
+  @media (max-width: $max-width-for-mobile) {
     flex-direction: column;
     row-gap: 25px;
-    margin-bottom: 25px;
   }
 
   &__city-label,
@@ -19,7 +17,7 @@
       content: "";
       width: 100%;
       opacity: 0.5;
-      border-bottom: 1px solid #412d22;
+      border-bottom: 1px solid $brown-color;
       position: absolute;
       top: 20px;
       left: 0;
@@ -28,37 +26,27 @@
 
   &__city-select {
     width: 12vw;
-    font-family: "Rubik", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
-    color: #412d22;
+    @include input-text;
     opacity: 0.5;
-    background-color: #f1cc9d;
+    background-color: $sand-color;
     border: none;
     cursor: pointer;
 
-    @media (max-width: 1150px) {
+    @media (max-width: $max-width-for-mobile) {
       width: 90vw;
     }
   }
 
   &__address-select {
     width: 23vw;
-    font-family: "Rubik", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
-    color: $brown-color;
+    @include input-text;
     opacity: 0.5;
     background-color: $sand-color;
     border: none;
     cursor: pointer;
     outline: none;
 
-    @media (max-width: 1150px) {
+    @media (max-width: $max-width-for-mobile) {
       width: 90vw;
     }
   }
@@ -67,14 +55,11 @@
     width: 160px;
     height: 40px;
     border-radius: 40px;
-    font-family: "Rubik", sans-serif;
+    @include input-text;
     font-weight: 400;
-    font-style: normal;
-    line-height: 150%;
-    color: #412d22;
     background-color: $orange-color;
     cursor: pointer;
-    transition: transform 350ms;
+    transition: transform $transition-time;
 
     &:hover {
       transform: scale(1.1);

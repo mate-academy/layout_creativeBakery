@@ -1,10 +1,11 @@
 .carousel {
+  max-width: 900px;
   width: 50vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 1150px) {
+  @media (max-width: $max-width-for-mobile) {
     width: 60vw;
   }
 
@@ -18,7 +19,7 @@
     background: url(../images/vector-light-horizontal.svg) center no-repeat;
     background-size: contain;
     opacity: 0.5;
-    transition: transform 350ms;
+    transition: transform $transition-time, opacity $transition-time;
 
     &:hover {
       transform: scale(1.8);
@@ -27,9 +28,10 @@
   }
 
   &__photo {
+    max-width: 700px;
     width: 45vw;
 
-    @media (max-width: 1150px) {
+    @media (max-width: $max-width-for-mobile) {
       width: 55vw;
     }
 
@@ -43,7 +45,7 @@
     height: 26px;
     background: url(../images/vector-heavy-horizontal.svg) center no-repeat;
     background-size: contain;
-    transition: transform 350ms;
+    transition: transform $transition-time;
 
     &:hover {
       transform: scale(1.8);

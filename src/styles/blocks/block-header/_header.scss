@@ -4,22 +4,21 @@
   justify-content: space-between;
   align-items: baseline;
   position: absolute;
-  top: 30px;
+  top: 0;
   left: 0;
   right: 0;
-  padding: 0 59px;
+  padding: 30px 59px 0;
 
   &__logo {
-    transition: transform 150ms;
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
-  &__logo:hover {
-    transform: scale(1.1);
-  }
-
-  @media (max-width: 1150px) {
+  @media (max-width: $max-width-for-mobile) {
     padding: 0;
-    top: 0;
 
     &__logo {
       padding-left: 59px;
@@ -37,9 +36,9 @@
     justify-content: space-between;
     align-items: center;
     width: 65%;
-    transition: transform 400ms;
+    transition: transform $transition-time;
 
-    @media (max-width: 1150px) {
+    @media (max-width: $max-width-for-mobile) {
       transform: scale(0, 0);
       transform-origin: top right;
     }
@@ -54,13 +53,13 @@
     height: 18px;
     z-index: 1;
 
-    @media (min-width: 850px) and (max-width: 1150px) {
+    @media (min-width: 850px) and (max-width: $max-width-for-mobile) {
       right: 59px;
     }
 
     background: url(../images/burger-open.svg) center no-repeat;
     background-size: contain;
-    transition: transform 200ms;
+    transition: transform $transition-time;
 
     &:hover {
       transform: scale(1.2);
@@ -74,11 +73,11 @@
   &__toggler {
     display: none;
 
-    &:checked ~ nav {
+    &:checked ~ .nav {
       transform: scale(1, 1);
     }
 
-    &:checked + label {
+    &:checked + .header__label {
       background: url(../images/burger-close.svg) center no-repeat;
       background-size: contain;
     }

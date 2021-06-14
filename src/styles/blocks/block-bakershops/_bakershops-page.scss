@@ -3,24 +3,21 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  row-gap: 40px;
 
   background-color: $sand-color;
 
-  &__title {
-    margin-top: 40px;
-    margin-bottom: 87px;
-    font-family: "Cookie", serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 120px;
-    line-height: 133px;
-    text-align: center;
-    color: $orange-color;
+  @media (max-width: $max-width-for-mobile) {
+    row-gap: 25px;
+  }
 
-    @media (max-width: 1150px) {
+  &__title {
+    padding-top: 40px;
+    @include h2-title;
+
+    @media (max-width: $max-width-for-mobile) {
       font-size: 60px;
       line-height: 67px;
-      margin-bottom: 30px;
     }
   }
 }

@@ -1,12 +1,14 @@
 .nav {
-  @media (max-width: 1150px) {
+  max-width: 1440px;
+  
+  @media (max-width: $max-width-for-mobile) {
     flex-direction: column;
     align-items: flex-start;
     height: 568px;
     width: 200px;
     padding: 40px 15px 60px;
     background-color: $orange-color;
-    border-left: 3px solid #fff;
+    border-left: 3px solid $white-color;
   }
 
   &__list {
@@ -14,7 +16,7 @@
     justify-content: space-between;
     align-items: baseline;
 
-    @media (max-width: 1150px) {
+    @media (max-width: $max-width-for-mobile) {
       flex-direction: column;
       align-items: flex-start;
       padding: 0;
@@ -25,7 +27,7 @@
 
   &__item {
     list-style: none;
-    transition: transform 400ms;
+    transition: transform $transition-time;
 
     &:hover {
       transform: scale(1.2);
