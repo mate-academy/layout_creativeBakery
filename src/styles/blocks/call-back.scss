@@ -1,0 +1,55 @@
+.call-back {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &__tel {
+    display: inline-block;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__btn {
+    @include btn(100px, 30px, $cream-color);
+  }
+
+  &__select {
+    background-color: $primary-color;
+    border: none;
+    outline: none;
+    & > :nth-child(n) {
+      color: $primary-color;
+    }
+  }
+}
+
+@media (max-width: 1030px) {
+  .call-back {
+    display: none;
+    width: 60vw;
+    height: 30vh;
+    padding: 0 0 30px 16px;
+
+    background: $primary-color;
+
+    & > :not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    &__tel {
+      &:hover {
+        transform: scale(1);
+        color: #fff;
+      }
+    }
+
+    & > :last-child {
+      & > :hover {
+        outline: 2px solid;
+      }
+    }
+  }
+}
