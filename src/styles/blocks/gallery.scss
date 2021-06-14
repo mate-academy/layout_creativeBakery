@@ -29,27 +29,17 @@
     border-radius: 50%;
     top: 20px;
     font-weight: 700;
+    transition: all 0.4s cubic-bezier(0.1, -0.6, 0.2, 0);
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__img-container {
     margin: auto;
     position: relative;
     width: 272px;
-
-    &::before {
-      content: url(../images/arrow-crois-left-small.svg);
-      position: absolute;
-      top: #{$gallery-picture-small / 2};
-      left: -5%;
-      opacity: 0.5;
-    }
-
-    &::after {
-      content: url(../images/arrow-choc-right-small.svg);
-      position: absolute;
-      top: #{$gallery-picture-small / 2};
-      right: -5%;
-    }
 
     &:last-child > .gallery__img-container {
       margin-top: 30px;
@@ -79,21 +69,6 @@
       margin: auto;
       position: relative;
       width: 400px;
-  
-      &::before {
-        content: url(../images/arrow-crois-left-small.svg);
-        position: absolute;
-        top: #{$gallery-picture-small / 2};
-        left: -7%;
-        opacity: 0.5;
-      }
-  
-      &::after {
-        content: url(../images/arrow-choc-right-small.svg);
-        position: absolute;
-        top: #{$gallery-picture-small / 2};
-        right: -7%;
-      }
     }
   
     &__picture {
@@ -135,16 +110,6 @@
 
     &__img-container {
       width: 600px;
-
-      &::before {
-        top: 166px;
-        left: -85px;
-      }
-
-      &::after {
-        top: 166px;
-        right: -85px;
-      }
     }
   }
 }

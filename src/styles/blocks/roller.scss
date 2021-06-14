@@ -10,25 +10,12 @@
 
   &__item {
     color: $croissant;
-    &:first-child {
+    transition: background-color 0.6s ease;
+    &--selected {
       font-size: 40px;
       line-height: 47px;
       color: $chocolate;
     }
-  }
-
-  &::before {
-    position: absolute;
-    content: url("../images/arrow-crois-left-small.svg");
-    bottom: 4px;
-    left: -29px;
-  }
-
-  &::after {
-    position: absolute;
-    content: url("../images/arrow-choc-right-small.svg");
-    bottom: 4px;
-    right: -29px;
   }
 }
 
@@ -46,27 +33,11 @@
     &__item {
       color: $cream;
       font-size: 40px;
-      &:first-child {
+      &--selected {
         font-size: 176px;
         line-height: 209px;
         color: $chocolate;
       }
-    }
-
-    &::before {
-      position: relative;
-      content: url("../images/arrow-up-light.svg");
-      width: 26px;
-      top: 0;
-      left: -61px;
-    }
-  
-    &::after {
-      position: relative;
-      content: url("../images/arrow-down-choc.svg");
-      width: 26px;
-      bottom: 0;
-      left: -61px;
     }
   }
 }
@@ -74,5 +45,34 @@
 @media (min-width: 1280px) {
   .roller {
     right: 5%;
+  }
+}
+
+.toggler {
+  width: 12px;
+  height: 20px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-width: 1024px) {
+    width: 26px;
+    height: 16px;
+  }
+
+  &--left {
+    background-image: url("../images/arrow-crois-left-small.svg");
+
+    @media (min-width: 1024px) {
+      background-image: url("../images/arrow-up-light.svg");
+    }
+  }
+
+  &--right {
+    background-image: url("../images/arrow-choc-right-small.svg");
+  
+    @media (min-width: 1024px) {
+      background-image: url("../images/arrow-down-choc.svg");
+    }
   }
 }
