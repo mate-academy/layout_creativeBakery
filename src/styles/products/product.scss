@@ -1,0 +1,136 @@
+.product {
+
+  &__description {
+    @media (min-width: 600px) {
+      max-width: 302px;
+    }
+  }
+
+  &__title {
+    font-size: 35px;
+    margin-bottom: 15px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+
+    @media (min-width: 1024px) {
+      font-size: 50px;
+    }
+  }
+
+  &__item {
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+
+    @media (min-width: 1024px) {
+      font-size: 26px;
+    }
+  }
+
+  &__desc {
+    margin-bottom: 27.5px;
+  }
+
+  &__price {
+    font-weight: 700;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-color-button;
+    border-radius: 50%;
+    transition: background-color 0.2s linear;
+
+    @media (min-width: 600px) {
+      width: 110px;
+      height: 110px;
+      flex-direction: row;
+    }
+  }
+
+  &__price-number::after {
+
+    @media (min-width: 600px) {
+      content: "/";
+    }
+  }
+
+  &__price:hover {
+    background-color: $base-color-button;
+  }
+
+  &__photo {
+    position: relative;
+    max-width: 699px;
+  }
+
+  &__image {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    transition: transform 0.2s linear;
+
+    @media (min-width: 1400px) {
+      width: 100%;
+    }
+  }
+
+  &__image:hover {
+    transform: scale(1.2);
+  }
+
+  &__photo::before {
+    content: url(../images/products/left-arrow.svg);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    @media (min-width: 1400px) {
+      left: -100px;
+    }
+  }
+
+  &__photo::after {
+    content: url(../images/products/right-arrow.svg);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    @media (min-width: 1400px) {
+      right: -100px;
+    }
+  }
+
+  &__photo--1 {
+    @media (min-width: 1400px) {
+      margin-right: 166px;
+    }
+  }
+
+  &__photo--2 {
+    @media (min-width: 1400px) {
+      margin-left: 112px;
+      max-width: 741px;
+    }
+  }
+
+  &__photo--3 {
+    @media (min-width: 1400px) {
+      margin-right: 195px;
+      max-width: 662px;
+    }
+  }
+
+  &__photo--4 {
+    @media (min-width: 1400px) {
+      margin-left: 185px;
+      max-width: 665px;
+    }
+  }
+}
