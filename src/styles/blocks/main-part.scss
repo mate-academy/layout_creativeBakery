@@ -5,9 +5,17 @@
     @include section-titles;
   }
 
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__all-about {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__product-type {
-    font-family: "Rubik", sans-serif;
-    font-style: normal;
     font-weight: normal;
     font-size: 35px;
     line-height: 41px;
@@ -15,8 +23,6 @@
   }
 
   &__product-name {
-    font-family: "Rubik", sans-serif;
-    font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 150%;
@@ -24,11 +30,6 @@
   }
 
   &__product-description {
-    font-family: "Rubik", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
     color: $c-dark-brown;
   }
   
@@ -40,17 +41,14 @@
     background: $c-orange-light;
     border-radius: 50%;
 
-    font-family: "Rubik", sans-serif;
-    font-style: normal;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
     text-align: center;
     color: $c-dark-brown;
   }
 
   &__photos {
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -60,6 +58,38 @@
 
   &__button {
     @include big-orange-button;
+  }
+
+  @media(min-width: 768px) {
+    & {
+      padding: 65px;
+
+      &__title {
+        @include section-titles;
+        font-size: 120px;
+      }
+
+      &__wrap {
+        flex-direction: row;
+        justify-content: space-between;
+        
+        &:nth-child(n) {
+          margin-top: 130px;
+        }
+
+        &:nth-child(odd) {
+          flex-direction: row-reverse;
+        }
+      }
+
+      &__all-about {
+        width: 27vw;
+      }
+
+      &__photo {
+        width: 55vw;
+      }
+    }
   }
 }
 
@@ -95,11 +125,6 @@
     @include big-orange-button;
     margin: 10px auto;
     border: 0;
-    font-family: "Rubik", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
     text-align: center;
     color: $c-dark-brown;
   }
@@ -116,49 +141,126 @@
     width: 120px;
   }
 
-  &__plus,
-  &__minus {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+  &__minus,
+  &__plus {
+    width: 45px;
+    height: 45px;
+    &:hover {
+      cursor: pointer;
+    }
   }
+
+  @media(min-width: 768px) {
+    & {
+      padding: 40px;
+
+      &__title {
+        @include section-titles;
+        font-size: 120px;
+        line-height: 133px;
+      }
+
+      &__form {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 32px;
+        margin: 0 auto;
+        width: 55vw;
+      }
+
+      &__select {
+        flex-grow: 1;
+      }
+
+      &__button {
+        margin: 0;
+      }
+    
+      &__map {
+        margin: 10px auto;
+        width: 80vw;
+      }
+    
+      &__plus-minus {
+        display: none;
+      }
+    }
+  }
+
 }
 
 .about {
-  height: 100vh;
-  @include section-padding;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
   &__title {
     @include section-titles;
   }
 
   &__description {
-    font-family: "Rubik", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
     color: $c-dark-brown;
     text-align: center;
+    margin-bottom: 30px;
   }
 
   &__photos {
-    display: flex;
-    justify-content: space-between;
+    margin: 0 auto;
+    width: 100vw;
+    overflow-x: scroll;
+
+    &-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      height: 270px;
+    }
   }
 
   &__photo {
-    margin: 0 auto;
-    height: 254px;
-    width: 201px;
+    height: 250px;
+    width: 167px;
   }
 
+  @media (min-width: 768px) {
+    & {
+      padding-bottom: 110px;
+
+      &__title {
+        margin: 0;
+        font-size: 120px;
+        line-height: 133px;
+      }
+    
+      &__description {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: 50vw;
+      }
+    
+      &__photos {
+        &-wrap {
+          display: flex;
+          height: 320px;
+        }
+      }
+    
+      &__photo {
+        height: 300px;
+        width: 200px;
+      }
+    }
+  }
 }
 
 .contacts {
+  display: flex;
+  flex-direction: column;
   padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: $c-orange;
+
+  &__wrap {
+    height: 90vh;
+    background-color: $c-orange;
+  }
 
   &__title {
     @include section-titles;
@@ -186,7 +288,6 @@
       color: #fff;
       transition: 0.3s;
     }
-
   }
 
   &__link:nth-child(1)::before {
@@ -206,19 +307,43 @@
     left: -34px;
     content: url(../images/mail.svg);
   }
-}
 
-.location-map {
-  height: 95vh;
-  background-image: url(../images/location-on-map.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  &__location-map {
+    height: 80vh;
+  }
+
+  @media (min-width: 768px) {
+    & {
+      flex-direction: row;
+    
+      &__wrap {
+        height: 90vh;
+        flex-grow: 1;
+      }
+    
+      &__title {
+        @include section-titles;
+        color: $c-white;
+      }
+
+      &__location-map {
+        flex-grow: 3;
+        height: 90vh;
+      }
+    }
+  }
 }
 
 .feedback {
+  display: flex;
+  flex-direction: column;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__title-h4 {
-    font-family: "Rubik", sans-serif;
-    font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 150%;
@@ -250,9 +375,6 @@
     @include big-orange-button;
     margin: 10px auto;
     border: 0;
-    font-family: "Rubik", sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
     line-height: 150%;
     text-align: center;
@@ -262,5 +384,33 @@
   &__img {
     margin: 50px auto;
     width: 90vw;
+  }
+
+  @media (min-width: 768px) {
+    & {
+      padding: 70px;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    
+      &__wrap {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+      }
+    
+      &__title-h4 {
+        margin: 0;
+        margin-bottom: 30px;
+      }
+
+      &__input {
+        width: 40vw;
+      }
+
+      &__img {
+        margin: 0;
+        width: 40vw;
+      }
+    }
   }
 }
