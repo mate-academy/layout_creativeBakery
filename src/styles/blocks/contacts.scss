@@ -1,0 +1,135 @@
+.contacts {
+  &__title {
+    text-align: center;
+    margin-bottom: 26px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__info {
+    width: 430px;
+    height: 507px;
+    padding: 40px 0 128px 120px;
+    background: $primary-color;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    gap: 9px;
+
+    & > :hover {
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    & > :nth-child(2) {
+      &::before {
+        position: absolute;
+        left: -44px;
+        content: url(../images/logos/phone.svg);
+      }
+    }
+
+    & > :nth-child(3) {
+      &::before {
+        position: absolute;
+        left: -44px;
+        content: url(../images/logos/mail.svg);
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    &:first-child {
+      &::before {
+        position: absolute;
+        left: -44px;
+        content: url(../images/logos/address.svg);
+      }
+    }
+  }
+
+  &__map {
+    width: 71.69%;
+    height: 507px;
+    border: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .contacts {
+    &__info {
+      padding: 40px 0 128px 62px;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .contacts {
+    &__title {
+      display: block;
+      margin-bottom: 0;
+      padding-top: 40px;
+      font-size: 60px;
+      line-height: 67px;
+      color: #fff;
+      background: $primary-color;
+    }
+
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__info {
+      width: 100%;
+      height: 493px;
+      padding: 20px 0 40px 62px;
+    }
+
+    &__sub-title {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    &__map {
+      width: 100%;
+      height: 504px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .contacts {
+    &__info {
+      padding: 20px 25px 40px 62px;
+    }
+
+    &__list {
+      & > :nth-child(2) {
+        &::before {
+          left: -34px;
+        }
+      }
+
+      & > :nth-child(3) {
+        &::before {
+          left: -34px;
+        }
+      }
+    }
+
+    &__link {
+      &:first-child {
+        &::before {
+          left: -34px;
+        }
+      }
+    }
+  }
+}
