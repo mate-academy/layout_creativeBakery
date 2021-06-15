@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>Creative bakery</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-      href="https://fonts.googleapis.com/css2?family=Cookie&family=Rubik:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    >
+      href="https://fonts.googleapis.com/css2?family=Cookie&family=Roboto:wght@300;400;700&family=Rubik:wght@300;400;700&display=swap"
+      rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.scss">
+    <link rel="icon" href="images/svg/favicon.svg">
     <script src="scripts/main.js" defer></script>
   </head>
   <body>
@@ -82,7 +81,7 @@
                 <a class="nav__link" href="#bakery">Bakery</a>
                 <a class="nav__link" href="#bakershops">Bakershops</a>
                 <a class="nav__link" href="#about">About</a>
-                <a class="nav__link" href="#">Contacts</a>
+                <a class="nav__link" href="#contacts">Contacts</a>
               </div>
 
               <div class="nav__list-2">
@@ -250,12 +249,13 @@
             <form
               class="bakershops__form"
               action="#"
-              method="POST"
+              method="GET"
+              onsubmit="setTimeout(function () { window.location.reload(); }, 10)"
             >
-              <select class="bakershops__city-selector">
+              <select class="bakershops__city-selector" required>
                 <option
                   class="bakershops__city-option"
-                  value="city-def"
+                  value="city"
                   selected
                   disabled
                 >
@@ -273,10 +273,10 @@
                 <option class="bakershops__city-option" value="zhytomyr">Zhytomyr</option>
               </select>
 
-              <select class="bakershops__adress-selector">
+              <select class="bakershops__adress-selector" required>
                 <option
                   class="bakershops__adress-option"
-                  value="address-def"
+                  value="adress"
                   selected
                   disabled
                 >
@@ -285,7 +285,7 @@
                 <option class="bakershops__adress-option" value="address-one">Address one</option>
                 <option class="bakershops__adress-option" value="address-two">Address two</option>
               </select>
-              <button class="bakershops__form-button">Search</button>
+              <button type="submit" class="bakershops__form-button">Search</button>
             </form>
           </div>
 
@@ -366,7 +366,187 @@
 
       </section>
 
+      <section class="content__contacts contacts" id="contacts">
+        <h2 class="contacts__title">Contacts</h2>
+
+        <div class="contacts__c-wrapper">
+
+          <div class="contacts__addresses">
+            <div class="contacts__list">
+              <h2 class="contacts__mob-title">Contacts</h2>
+              <h4 class="contacts__sub-title">Get in touch</h4>
+
+              <div class="contacts__links">
+                <a
+                  rel="noopener"
+                  target="_blank"
+                  class="contacts__link-addres"
+                  href="https://goo.gl/maps/m2VUeiyppSw6KVbcA"
+                >
+                  Bakerlab Head Office
+                </a>
+                <a
+                  class="contacts__link-phone"
+                  href="tel:+380663363636"
+                >
+                  Support 24/7
+                </a>
+                <a
+                  class="contacts__link-email-1"
+                  href="mailto:info@bakerlab.com"
+                >
+                  Support
+                </a>
+                <a
+                  class="contacts__link-email-2"
+                  href="mailto:max.yovenko@bakerlab.com"
+                >
+                  Cooperation
+                </a>
+                <a
+                  class="contacts__link-email-3"
+                  href="mailto:ihor.lukash@bakerlab.com"
+                >
+                  PR Manager
+                </a>
+              </div>
+
+            </div>
+
+            <iframe
+              class="contacts__g-map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543.3621856365294!2d30.51008881572945!3d50.397087379468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c8ca89299f11%3A0x4a4968e0ee2613b5!2z0YPQuy4g0JPQvtC70L7RgdC10LXQstGB0LrQsNGPLCA1Mywg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1618923897876!5m2!1sru!2sua"
+              max-width="1017"
+              max-height="507"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="content__feedback feedback" id="feedback">
+        <div class="feedback__wrapper">
+
+          <div class="feedback__container">
+            <img
+              class="feedback__image"
+              src="images/feedback.png"
+              alt="feedback-image"
+            >
+
+            <div class="feedback__form-wrapper">
+
+              <h4 class="feedback__form-title">We’d love to hear your feedback</h4>
+
+              <form
+                action="post"
+                onsubmit="setTimeout(function () { window.location.reload(); }, 10)"
+                class="feedback__form"
+                >
+
+                <input
+                  type="text"
+                  class="feedback__form-input"
+                  placeholder="Name*"
+                  required=""
+                >
+
+                <input
+                  type="email"
+                  class="feedback__form-input"
+                  placeholder="E-mail*"
+                  required=""
+                >
+
+                <input
+                  type="phone"
+                  class="feedback__form-input"
+                  placeholder="Phone*"
+                  maxlength="13"
+                  required=""
+                >
+
+                <textarea
+                  id="feedback__form-message"
+                  type="text" class="feedback__form-message"
+                  placeholder="Message*"
+                  required=""
+                  spellcheck="false"
+                  minlength="12"
+               ></textarea>
+
+                <button
+                  type="submit"
+                  class="feedback__form-button"
+                >
+                  Send
+                </button>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
     </main>
-    <footer class="footer"></footer>
+
+    <footer class="footer">
+      <div class="footer__wrapper">
+
+        <div class="footer__content">
+
+          <div class="footer__logo">
+            <div class="footer__logo-img"></div>
+            <a class="footer__logo-link" href="#index.html">Bakerlab</a>
+          </div>
+
+          <nav class="footer__nav">
+            <div class="footer__nav-list">
+
+              <a class="footer__nav-link" href="#bakery">Bakery</a>
+              <a class="footer__nav-link" href="#bakershops">Bakershops</a>
+              <a class="footer__nav-link" href="#about">About</a>
+              <a class="footer__nav-link" href="#contacts">Contacts</a>
+
+            </div>
+          </nav>
+
+          <div class="footer__soc">
+            <a class="footer__soc-link" href="#">
+              <img
+                class="footer__soc-icon"
+                src="./images/svg/f-twitter.svg"
+                alt="Twitter icon"
+              >
+            </a>
+            <a class="footer__soc-link" href="#">
+              <img
+                class="footer__soc-icon"
+                src="./images/svg/f-facebook.svg"
+                alt="Facebook icon"
+              >
+            </a>
+            <a class="footer__soc-link" href="#">
+              <img
+                class="footer__soc-icon"
+                src="./images/svg/f-linkedin.svg"
+                alt="Linkedin icon"
+              >
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__privacy">
+          <p class="footer__copyright">© 2015–2020</p>
+          <p class="footer__terms">Privacy — Terms</p>
+        </div>
+
+      </div>
+    </footer>
   </body>
 </html>
