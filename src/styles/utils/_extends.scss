@@ -46,10 +46,12 @@
   display: block;
   width: 160px;
   height: 40px;
+
   border-radius: 40px;
   color: $c-brown;
   border: 2px solid $c-light-brown;
   background-color: $c-light-brown;
+  cursor: pointer;
 
   &:hover {
     background-color: $c-milk;
@@ -70,9 +72,11 @@
   display: block;
   width: 100px;
   height: 30px;
+
   border-radius: 40px;
   border: 2px solid $c-cream;
   background-color: $c-cream;
+  cursor: pointer;
 
   &:hover {
     background-color: $c-milk;
@@ -85,5 +89,39 @@
   &:disabled {
     color: #828282;
     background-color: #e0e0e0;
+  }
+}
+
+%select-style {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  background: transparent;
+  border-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: 300ms;
+
+  &:hover {
+    background: inherit;
+  }
+
+  &:focus {
+    border-color: $c-light-brown;
+    opacity: 1;
+  }
+}
+
+%container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $padding;
+
+  @include onTablet {
+    padding: $paddingTablet;
+  }
+
+  @include onDesktop {
+    padding: 40px $paddingDesktop;
   }
 }

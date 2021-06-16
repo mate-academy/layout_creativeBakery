@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bakerlab</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" href="./images/logo-head.svg">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
   <body class="page__content">
-    <header class="header page__header">
+    <header class="header page__header" id="header">
       <div class="header__container">
         <section class="header__content">
           <nav class="nav">
@@ -121,7 +122,7 @@
     </header>
 
     <main class="main">
-      <section class="bakery main__container">
+      <section class="bakery main__container" id="bakery">
         <h2 class="bakery__title">Bakery</h2>
         <article class="bakery__product">
           <div class="bakery__info">
@@ -222,6 +223,56 @@
         <button class="bakery__button">
           All bakeries
         </button>
+      </section>
+
+      <section class="shops">
+        <div class="shops__container">
+          <h2 class="shops__title">Bakershops</h2>
+          <form
+            action="#header"
+            method="POST"
+            class="shops__form"
+          >
+            <select class="shops__city" required>
+              <option
+                class="shops__option"
+                value="city"
+                disabled
+                selected
+              >
+                City
+              </option>
+              <option class="shops__option" value="ternopil">Dnipro</option>
+              <option class="shops__option" value="lviv">Lviv</option>
+              <option class="shops__option" value="kyiv">Kyiv</option>
+            </select>
+            <select class="shops__adress" required>
+              <option
+                class="shops__option"
+                value="adress"
+                disabled
+                selected
+              >
+                Adress
+              </option>
+              <option class="shops__option" value="adress1">Руська, 19</option>
+              <option class="shops__option" value="adress2">Сербська, 3</option>
+              <option class="shops__option" value="adress3">Грушевського, 5</option>
+            </select>
+            <button class="shops__button" type="reset">Search</button>
+          </form>
+          <div class="shops__map">
+            <img
+              src="images/map.svg"
+              alt="Map of shops"
+              class="shops__image"
+            >
+          </div>
+          <div class="shops__buttons">
+            <button class="shops__buttons-btn">-</button>
+            <button class="shops__buttons-btn">+</button>
+          </div>
+        </div>
       </section>
     </main>
 
