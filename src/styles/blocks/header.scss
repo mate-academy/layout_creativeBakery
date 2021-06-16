@@ -1,0 +1,71 @@
+.header {
+  position: relative;
+  background: url(../images/bake-cream-puff-cup.png) no-repeat 50%/cover;
+  height: 100vh;
+
+  &__container {
+    position: relative;
+    display: flex;
+    max-width: $max-width;
+    margin: 0 auto;
+    height: 100vh;
+
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: $padding;
+
+    @include onTablet {
+      padding: $paddingTablet;
+    }
+
+    @include onDesktop {
+      padding: 40px $paddingDesktop;
+      justify-content: start;
+      gap: 5%;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+
+    @include onTablet {
+      margin-top: 90px;
+    }
+
+    @include onDesktop {
+      font-size: $h1-size-l;
+      line-height: $h1-line-height-l;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    @extend %h4;
+
+    @include onDesktop {
+      max-width: 40%;
+    }
+  }
+
+  &__button {
+    @extend %primary-button;
+    margin-bottom: 40px;
+  }
+
+  &__button-link {
+    padding: 0 30px;
+    color: $c-brown;
+  }
+
+  &__slider.slider {
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
