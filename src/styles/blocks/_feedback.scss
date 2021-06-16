@@ -34,15 +34,6 @@
     gap: 20px;
     order: 1;
 
-    & > :not(:first-child) {
-      outline: none;
-      font-size: 16px;
-    }
-
-    & > :nth-child(5) {
-      padding-top: 100px;
-    }
-
     @media (max-width:767px) {
       width: 80vw;
     }
@@ -50,20 +41,27 @@
     @media (max-width:374px) {
       width: 95vw;
     }
+  }
 
-    & input {
-      border: transparent;
-      background-color: inherit;
-      border-bottom: 2px solid rgba($color: $brown, $alpha: 0.2);
-    }
+  &__input {
+    outline: none;
+    font-size: 16px;
+    border: transparent;
+    background-color: inherit;
+    border-bottom: 2px solid rgba($color: $brown, $alpha: 0.2);
 
-    & input::placeholder {
-      opacity: 0.5;
+    &:nth-child(5) {
+      padding-top: 100px;
     }
+  }
+
+  &__input::placeholder {
+    opacity: 0.5;
   }
 
   &__button {
     @include button;
     margin: 0 auto;
+    border-color: transparent;
   }
 }
