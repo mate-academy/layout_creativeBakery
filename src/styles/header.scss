@@ -16,163 +16,305 @@ html {
 }
 
 .header {
-  display: block;
+  position: relative;
   height: 100vh;
-  z-index: -1;
-  background-image: url(../images/bake-cream-puff-cup-1775045.png);
-  background-size: cover;
+  display: flex;
+  overflow: hidden;
+  color: $dark-brown;
+
+  &__bg {
+    position: absolute;
+    @extend %background;
+    background-image: url("../images/bake-cream-puff-cup-1775045.png");
+    @include create-obj(100%, 100vh);
+
+    @include onDesktop {
+      flex-grow: 2.35;
+    }
+  }
+
+  &__orange {
+    @include onDesktop {
+      position: absolute;
+      left: 70%;
+      @include create-obj(100%, 100vh);
+      background-color: $default-orange;
+      flex-grow: 1;
+    }
+  }
 
   &__container {
-    display: flex;
-    justify-content: space-between;
-
-    @include padding(33px, 0, 0, 38px);
-  }
-
-  &__burger,
-  &__burger::before,
-  &__burger::after {
+    max-width: 1440px;
+    flex-grow: 1;
+    margin: 0 auto;
     position: relative;
-    z-index: 1;
-
-    @include create-obj(25px, 1.5px);
-
-    margin-right: 16px;
-    align-self: center;
-    cursor: pointer;
-    background-color: #412d22;
-  }
-
-  &__burger::before {
-    @include burger(-8px);
-  }
-
-  &__burger::after {
-    @include burger(8px);
-  }
-
-  &__checkbox {
-    visibility: hidden;
-  }
-
-  &__nav {
-    position: absolute;
-    visibility: hidden;
-    padding-top: 85px;
-
-    @include create-obj(200px, 100vh);
-
-    bottom: 5px;
-    right: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 147px;
-    background-color: $default-orange;
   }
 
-  &__title {
-    @include margin(97px, 0, 0, 16px);
-    @extend %cursive;
-    @include text-property(100px);
-    line-height: 80%;
-  }
-
-  &__subject {
-    @include padding(29px, 45px, 0, 16px);
-    @include text-property(16px);
-  }
-
-  &__info-button {
-    @include button1;
-    @include margin(19px, 0, 0, 16px);
-  }
-
-  &__switch {
+  &__head {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding-top: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-    & span:first-of-type {
-      @include text-property(40px);
-    }
-
-    & span:not(:first-of-type) {
-      align-self: flex-end;
-      padding-bottom: 5px;
-      color: $default-orange;
+  &__logo {
+    display: flex;
+    position: relative;
+    margin: 33px 38px 0;
+    @extend %cursive;
+    font-size: 23px;
+    line-height: 26px;
+    @include onDesktop {
+      font-size: 30px;
+      margin: 58px 90px 0;
+      flex-grow: 2;
     }
   }
-}
-
-.logo {
-  position: relative;
-  display: flex;
-  font-family: "Cookie", cursive;
-  @extend %cursive;
-  @include text-property(23px);
 
   &__img {
     position: absolute;
+    @include create-obj(29px, 29px);
     bottom: 13px;
-    right: 55px;
-    height: $cookie-size;
-  }
-}
+    left: -20px;
 
-.nav {
-  @include text-property(16px);
-  &__list {
-    @include padding(0, $header-margin, 0, $header-margin);
-    list-style: none;
+    @include onDesktop {
+      @include create-obj(41px, 41px);
+      left: -28px;
+    }
+  }
+
+  &__menu {
+    align-self: flex-end;
+    z-index: 2;
+    margin-right: 16px;
+    @include create-obj(25px, 25px);
+    @extend %background;
+    background-image: url("../images/menu.svg");
+    @extend %transition;
+
+    &--active {
+      background-image: url("../images/cross.svg");
+      @extend %transition;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background-color: $default-orange;
+    transform: translateX(110%);
+    @extend %transition;
+
+    &--active {
+      transform: translateX(0%);
+      @extend %transition;
+    }
+
+    &::before {
+      content: "";
+      @include create-obj(3px, 100vh);
+      position: absolute;
+      transform: translateX(-100%);
+      background-color: #fff;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    @include onDesktop {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      transform: translateX(0%);
+      height: min-content;
+      background: none;
+      align-self: flex-end;
+      justify-content: space-around;
+      flex-grow: 3;
+    }
+  }
+
+  &__nav-section {
+    &:first-child {
+      padding-top: 85px;
+      @include onDesktop {
+        padding: 0;
+      }
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 34px;
+    }
+  }
+
+  &__nav-option {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    align-items: center;
+    padding: 0 41px 0 19px;
+    margin-bottom: 30px;
+
+    &:nth-child(4) {
+      margin-bottom: 147px;
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onDesktop {
+      padding: 0;
+      margin: 0;
+    }
   }
 
-  &__link {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  &__contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-  }
-
-  &__number {
-    margin-left: 15px;
-  }
-
-  &__button {
+  &__nav-option-button {
     @include create-obj(100px, 30px);
-    @include text-property(16px);
-    margin-left: 15px;
-
-    background: $light-orange;
-    border: none;
-    border-radius: 40px;
   }
 
-  &__languages {
-    margin-left: 19px;
+  &__arrow {
+    @include create-obj(11px, 6px);
+    margin-left: 5px;
+  }
+
+  &__title {
+    margin: 97px $default-margin 0;
+    @extend %cursive;
+    font-size: 100px;
+    line-height: 80%;
+    @include onDesktop {
+      margin: 50px 59px 0;
+      font-size: 160px;
+      line-height: 177px;
+    }
+  }
+
+  &__main-text {
+    margin: 29px $default-margin 0;
+    line-height: 24px;
+    @include onDesktop {
+      margin: 20px 59px 0;
+      width: 420px;
+      font-size: 26px;
+      line-height: 150%;
+    }
+  }
+
+  &__main-button {
+    @include create-obj(160px, 45px);
+    margin: 19px $default-margin 0;
+    @include onDesktop {
+      margin: 25px 59px 0;
+    }
+  }
+
+  &__select {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 48px;
+    @include onDesktop {
+      height: 100vh;
+      position: absolute;
+      margin: 0;
+      top: 0;
+      left: 1000px;
+      right: 0;
+      flex-direction: column;
+      gap: 41px;
+    }
+  }
+
+  &__select-arrow {
+    @include create-obj(20px, 12px);
+    align-self: center;
+    @include onDesktop {
+      @include create-obj(26px, 15px);
+      align-self: flex-end;
+      margin-right: 60px;
+    }
+
+    &:first-child {
+      transform: rotate(90deg);
+      @include onDesktop {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:last-child {
+      transform: rotate(-90deg);
+      @include onDesktop {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &__select-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    @include onDesktop {
+      align-self: flex-end;
+      flex-direction: column;
+      padding-right: 46px;
+    }
+  }
+
+  &__select-item {
+    align-self: flex-end;
+    color: $default-orange;
+    @include onDesktop {
+      color: $light-orange;
+      font-size: 40px;
+      line-height: 47px;
+    }
+
+    &:first-of-type {
+      color: $dark-brown;
+      font-size: 40px;
+      line-height: 35px;
+      @include onDesktop {
+        font-size: 176px;
+        line-height: 209px;
+      }
+    }
   }
 }
 
 .img {
-  margin-left: 5px;
-  @include create-obj(11px, 6px);
-  &--left {
-    @include create-obj(20px, 12px);
-    transform: rotate(90deg);
-    color: $default-orange;
-  }
+  background-image: url("../images/Vector.svg");
+  @extend %background;
+}
 
-  &--right {
-    @include create-obj(20px, 12px);
-    transform: rotate(-90deg);
-  }
+.arrow {
+  @extend %background;
+  background-image: url("../images/arrow.svg");
+}
+
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: $dark-brown;
+  border-radius: 40px;
+  background-color: $default-orange;
+}
+
+.secondary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  background-color: $light-orange;
+  text-decoration: none;
+  color: $dark-brown;
 }

@@ -4,280 +4,220 @@
 @import "fonts";
 @import "typography";
 
-body {
-  @extend %normal;
-  background: $c-gray;
-  margin: 0;
+.body {
+  display: flex;
+  flex-direction: column;
 }
 
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &__container {
+    flex-grow: 1;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @include onDesktop {
+      width: 1024px;
+    }
+  }
+
   &__title {
     margin-top: 38px;
-    @extend %cursive;
-    color: $default-orange;
-    font-weight: 400;
+    align-self: center;
     font-size: 60px;
-    &--white {
-      color: #fff;
-    }
-  }
-
-  &__more-button {
-    @include button1;
-    @include margin(19px, 0, 40px, 0);
-  }
-
-  &__map {
-    @include create-obj(100%, auto);
-    background-color: $light-orange;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__map-search-button {
-    @include button1;
-    @include margin(35px, 0, 25px, 0);
-  }
-
-  &__map-img {
-    width: 295px;
-    border: none;
-  }
-
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    @include margin(20px, 0, 29px, 0);
-    width: 120px;
-  }
-
-  &__resize {
-    @include create-obj(40px, 40px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 50%;
-    @include text-property(30px);
-  }
-
-  &__about-description {
-    text-align: center;
-    @include margin(20px, 16px, 20px, 16px);
-  }
-
-  &__summary {
-    overflow-x: scroll;
-    padding: 20px 85px 40px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 100%;
-    gap: 27px;
-    
-  }
-
-  &__summary-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    & > div:first-of-type {
-      margin-top: 20px;
-      @include text-property(60px);
-      font-weight: 300;
-    }
-
-    & > div:last-of-type {
-      margin-top: 7px;
-      @include text-property(16px);
-      font-weight: 400;
-    }
-  }
-
-  &__summary-item-img {
-    @include create-obj(150px, 150px);
-  }
-
-  &__contacts {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: $default-orange;
-  }
-
-  &__title-after {
-    @include padding(20px, 0, 20px, 0);
-  }
-
-  &__contacts-container {
-    width: 100%;
-    padding: 0 0 40px 62px;
-  }
-
-  &__contacts-details {
-    position: relative;
-    & > div:first-of-type {
-      line-height: 24px;
-    }
-
-    & > div > div:first-of-type {
-      font-weight: 700;
-    }
-  }
-
-  &__contacts-img {
-    position: absolute;
-    &--1,
-    &--2 {
-      left: -38px;
-      top: 5px;
-    }
-
-    &--3 {
-      left: -46px;
-    }
-  }
-
-  &__feedback {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__feedback-title {
-    @include text-property(20px);
-    padding: 30px 14px 0;
-  }
-
-  &__feedback-send-button {
-    @include button1;
-    margin: 30px auto 50px;
-  }
-
-  &__feedback-img {
-    width: 250px;
-    margin-bottom: 50px;
-  }
-
-  &__input-block {
-    @include padding(20px, 16px, 0, 16px);
-  }
-}
-
-.products {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  color: $text-color;
-  &__name {
-    @include padding(0, 16px, 0, 16px);
-    @include text-property(35px);
+    line-height: 67px;
     color: $default-orange;
-  }
-
-  &__description {
-    & h4 {
-      @include padding(15px, 16px, 0, 16px);
-      @include text-property(20px);
-    }
-
-    & p {
-      @include padding(12px, 16px, 70px, 16px);
-      line-height: 24px;
+    font-weight: normal;
+    @extend %cursive;
+    @include onDesktop {
+      font-size: 120px;
+      line-height: 133px;
     }
   }
 
-  &__container {
+  &__item {
+    margin: 20px 16px 0;
     position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+
+    &:not(:first-child) {
+      margin-top: 40px;
+      @include onDesktop {
+        margin-top: 135px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 50px;
+      @include onDesktop {
+        margin-bottom: 160px;
+      }
+    }
+
+    @include onDesktop {
+      &:nth-child(2n) {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        grid-template-rows: 59px 59px 48px 140px ;
+        grid-template-areas: "img title"
+          "img namec"
+          "img description"
+          "img price";
+        align-items: top;
+      }
+
+      &:nth-child(2n-1) {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 59px 59px 48px 140px ;
+        grid-template-areas: "title img"
+          "namec img"
+          "description img"
+          "price img";
+        align-items: top;
+
+        & .arrow:nth-of-type(4) {
+          left: 520px;
+        }
+
+        & .arrow:nth-of-type(6) {
+          left: 1000px;
+        }
+      }
+    }
   }
 
-  &__price {
-    position: absolute;
+  &__item-title {
+    font-size: 35px;
+    line-height: 41px;
+    color: $default-orange;
+    font-weight: normal;
+    @include onDesktop {
+      grid-area: title;
+      font-size: 50px;
+      line-height: 59px;
+    }
+  }
+
+  &__item-name {
+    margin-top: 15px;
+    font-size: 20px;
+    line-height: 150%;
+    @include onDesktop {
+      margin-top: 20px;
+      grid-area: namec;
+      font-size: 26px;
+      line-height: 150%;
+    }
+  }
+
+  &__item-description {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 150%;
+    @include onDesktop {
+      margin-top: 0;
+      grid-area: description;
+    }
+  }
+
+  &__item-price {
+    @include create-obj(65px, 65px);
+    margin-top: 14px;
+    position: relative;
+    top: 5px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
-    top: -50px;
-    left: 7px;
-    @include create-obj(65px, 65px);
-    background-color: $light-orange;
-    font-weight: 700;
+    justify-content: center;
     border-radius: 50%;
-    word-wrap: wrap;
-  }
+    background-color: $light-orange;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: bold;
+    @include onDesktop {
+      margin-top: 30px;
+      @include create-obj(110px, 110px);
+      grid-area: price;
+      flex-direction: row;
 
-  &__img {
-    @include create-obj(238px, auto);
-    margin-bottom: 40px;
+      & div:first-child::after {
+        content: " /";
+      }
+
+      & div:last-child::before {
+        content: "\00a0 ";
+      }
+    }
   }
 
   &__arrow {
-    position: absolute;
     @include create-obj(20px, 12px);
-    &--left {
-      top: 50%;
-      left: 5px;
-      transform: rotate(90deg);
-      color: $light-orange;
-      opacity: 0.5;
+    position: absolute;
+    bottom: 90px;
+    &:nth-child(5) {
+      transform: rotate(90deg) translateY(5px);
+    }
+    &:nth-child(7) {
+      transform: rotate(-90deg) translateY(5px);
+      right: 0;
+      @include onDesktop {
+        left: 550px;
+      }
     }
 
-    &--right {
+    @include onDesktop {
+      @include create-obj(26px, 15px);
       top: 50%;
-      right: 10px;
-      transform: rotate(-90deg);
     }
   }
-}
 
-.location {
-  &__container {
-    position: relative;
+  &__item-img {
+    @extend %background;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @include create-obj(288px, 50px);
-    @include text-property(16px);
-    border-bottom: 1px solid rgba(1, 1, 1, 0.5);
-
-    &:not(:first-of-type) {
-      margin-top: 10px;
+    align-self: center;
+    @include onDesktop {
+      grid-area: img;
     }
-  }
-
-  &__city,
-  &__address {
-    padding-left: 10px;
-    opacity: 0.5;
-  }
-
-  &__img {
-    margin-right: 10px;
   }
 }
 
-.input {
-  &__obj {
-    width: 100%;
-    padding-bottom: 5px;
-    border: none;
-    background-color: rgba(1, 1, 1, 0);
-    border-bottom: 1px solid rgba(1, 1, 1, 0.5);
+.cookie {
+  @include create-obj(272px, 200px);
+  background-image: url("../images/cookie.png");
+  @include onDesktop {
+    @include create-obj(450px, 320px);
+    justify-self: end;
+  }
+}
 
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
+.cake {
+  @include create-obj(274px, 174px);
+  background-image: url("../images/cake.png");
+  @include onDesktop {
+    @include create-obj(500px, 300px);
+  }
+}
 
-    &:nth-of-type(3) {
-      margin-bottom: 90px;
-    }
+.croissant {
+  @include create-obj(237px, 192px);
+  background-image: url("../images/croissant.png");
+  @include onDesktop {
+    @include create-obj(400px, 310px);
+    justify-self: end;
+  }
+}
+
+.cupcake {
+  @include create-obj(238px, 164px);
+  background-image: url("../images/cupcake.png");
+  @include onDesktop {
+    @include create-obj(430px, 300px);
+    transform: translateX(20%);
   }
 }
