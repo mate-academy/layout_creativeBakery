@@ -1,20 +1,13 @@
 .menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-
+  background-color: $c-light-brown;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
 
   height: 100vh;
   width: $menu-mobile-width;
 
   transform: translateX($menu-mobile-width);
-  transition: transform 300ms;
-
-  padding: $padding;
-  background-color: $c-light-brown;
+  transition: transform $transition-duration;
 
   @include onTablet {
     padding: $paddingTablet;
@@ -23,17 +16,26 @@
   }
 
   @include onDesktop {
-    position: relative;
-    top: 0;
-    right: 0;
     transform: translateX(0);
     min-width: max-content;
     justify-content: start;
     padding: 40px $paddingDesktop;
   }
 
-  &__shown {
+  @include onLargeScreen {
+    width: auto;
+    grid-column: 3/-1;
+  }
+
+  &--shown {
     transform: translateX(0);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    padding-left: $padding;
   }
 
   &::before {
@@ -84,6 +86,8 @@
 
   &__tel {
     color: inherit;
+
+    @include hover(color, $c-cream);
   }
 
   &__lang {
@@ -91,15 +95,15 @@
     font-size: inherit;
     font-family: inherit;
     color: inherit;
-    background: transparent;
+    background-color: transparent;
     border-color: transparent;
     outline: none;
     cursor: pointer;
 
     &:hover {
       border-radius: 10px;
-      background: $c-light-brown;
-      transition: 400ms;
+      background-color: $c-light-brown;
+      transition: background-color 400ms;
     }
 
     &:focus {

@@ -3,13 +3,13 @@
   background: url(../images/bake-cream-puff-cup.png) no-repeat 50%/cover;
   height: 100vh;
 
-  &__container {
-    position: relative;
+  @include onDesktop {
     display: flex;
-    max-width: $max-width;
-    margin: 0 auto;
-    height: 100vh;
+  }
 
+  @include onLargeScreen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   &__content {
@@ -17,6 +17,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    height: 100vh;
     padding: $padding;
 
     @include onTablet {
@@ -24,9 +25,17 @@
     }
 
     @include onDesktop {
-      padding: 40px $paddingDesktop;
+      position: relative;
+      display: flex;
+      margin: 0 auto;
+      height: 100vh;
+      padding: 20px $paddingDesktop;
       justify-content: start;
       gap: 5%;
+    }
+
+    @include onLargeScreen {
+      grid-column: 2/3;
     }
   }
 
@@ -66,6 +75,18 @@
   &__slider.slider {
     @include onDesktop {
       display: none;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    @include onDesktop {
+      position: relative;
+      top: 0;
+      right: 0;
     }
   }
 }
