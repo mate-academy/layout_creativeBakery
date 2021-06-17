@@ -1,3 +1,73 @@
 .bakery-section {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 65px;
+  gap: 10%;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10px;
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__name {
+    margin-bottom: 31px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+
+    font-weight: 700;
+    border-radius: 50%;
+    background-color: $c-cream;
+
+    @media (max-width: 1024px) {
+      width: 65px;
+      height: 65px;
+    }
+  }
+
+  &__product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60vw;
+
+    @media (max-width: 1024px) {
+      align-self: center;
+      width: 95vw;
+    }
+  }
+
+  &__downscroll {
+    @include downscroll;
+    transform: rotate(-90deg);
+  }
+
+  &__image {
+    width: 45vw;
+
+    @media (max-width: 1024px) {
+      width: 80vw;
+    }
+  }
+
+  &__upscroll {
+    @include upscroll;
+    transform: rotate(-90deg);
+  }
 }
