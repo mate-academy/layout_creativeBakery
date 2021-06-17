@@ -185,6 +185,181 @@
       grid-area: img;
     }
   }
+
+  &__goods-button {
+    @include create-obj(160px, 40px);
+    align-self: center;
+    margin-bottom: 40px;
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__shop-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $light-orange;
+  }
+
+  &__map-select {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 35px auto;
+    @include onDesktop {
+      margin: 97px auto 70px;
+      flex-direction: row;
+      gap: 32px;
+    }
+  }
+
+  &__map-location {
+    width: 280px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    line-height: 150%;
+    padding: 10px;
+    border-bottom: 1px solid rgba(1, 1, 1, 0.5);
+    @include onDesktop {
+      padding-bottom: 2px;
+    }
+  }
+
+  &__map-item-container {
+    display: flex;
+    position: relative;
+  }
+
+  &__map-arrow {
+    @include create-obj(11px, 6px);
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__map-button {
+    @include create-obj(148px, 40px);
+    margin-top: 20px;
+    align-self: center;
+  }
+
+  &__map-urk {
+    @include create-obj(300px, 200px);
+    @extend %background;
+    background-image: url("../images/map2.png");
+    @include onDesktop {
+      @include create-obj(1020px, 680px);
+    }
+  }
+
+  &__resize-container {
+    display: flex;
+    gap: 40px;
+    margin: 25px 0 40px;
+  }
+
+  &__resize {
+    @include create-obj(40px, 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
+    font-size: 30px;
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__about-text-mobile {
+    margin-top: 20px;
+    line-height: 150%;
+    text-align: center;
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__about-text-desktop {
+    display: none;
+    margin-top: 20px;
+    line-height: 150%;
+    text-align: center;
+    @include onDesktop {
+      display: block;
+      width: 480px;
+    }
+  }
+
+  &__summary-wrapper {
+    margin: 20px 0 40px;
+    width: 90vw;
+    overflow: scroll;
+    @include onDesktop {
+      overflow: visible;
+      display: flex;
+      justify-content: center;
+      margin-top: 59px;
+      width: 100%;
+    }
+  }
+
+  &__summary {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 27px;
+    padding-left: 90px;
+    @include onDesktop {
+      gap: 80px;
+      padding: 0;
+    }
+  }
+
+  &__summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &:last-child {
+      padding-right: 90px;
+      @include onDesktop {
+        padding: 0;
+      }
+    }
+
+    & > div:first-of-type {
+      margin-top: 20px;
+      font-size: 60px;
+      line-height: 71px;
+      font-weight: 300;
+      @include onDesktop {
+        margin-top: 12px;
+      }
+    }
+
+    & > div:last-of-type {
+      margin-top: 7px;
+      font-weight: 400;
+    }
+  }
+
+  &__summary-item-img {
+    @include create-obj(150px, 150px);
+    @include onDesktop {
+      @include create-obj(200px, 200px);
+    }
+  }
 }
 
 .cookie {
@@ -219,5 +394,17 @@
   @include onDesktop {
     @include create-obj(430px, 300px);
     transform: translateX(20%);
+  }
+}
+
+.city {
+  @include onDesktop {
+    width: 173px;
+  }
+}
+
+.address {
+  @include onDesktop {
+    width: 320px;
   }
 }
