@@ -1,0 +1,37 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    position: relative;
+    @include title-font;
+    font-size: 30px;
+    margin-left: 25px;
+  }
+
+  &__logo a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__logo::before {
+    content: url(../images/header/logo.svg);
+    position: absolute;
+    top: -24px;
+    left: -31px;
+    z-index: 1;
+  }
+
+  &__logo::after {
+    content: "";
+    background-color: #412d22;
+    width: 31px;
+    height: 18px;
+    position: absolute;
+    top: -16px;
+    left: -30px;
+    transform: rotate(142deg);
+    border-radius: 5px;
+  }
+}
