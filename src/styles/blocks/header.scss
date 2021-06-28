@@ -6,17 +6,18 @@
   background-color: #e39a3b;
 
   background-size: cover;
-  background-position: -20vw 0;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
 
   &__container {
     display: flex;
+    //background-image: url(../../images/cup.png);
   }
 
   &__menu {
     width: 70%;
+    margin-bottom: 55px;
     padding-left: 3.2%;
-    margin-bottom: 42px;
     display: flex;
     justify-content: space-between;
   }
@@ -24,6 +25,11 @@
   &__content {
     width: 70vw;
     padding-left: 50px;
+
+    @media (max-width: 900px) {
+      padding-left: 15px;
+      width: 100vw;
+    }
   }
 
   &__title {
@@ -46,7 +52,9 @@
     line-height: 39px;
     @media (max-width: 900px) {
       max-width: 260px;
+      margin-bottom: 27px;
       font-size: 1rem;
+      line-height: 25px;
     }
   }
 
@@ -59,9 +67,10 @@
 
   &__info {
     height: 100vh;
-    width: 30vw;
+    min-width: 425px;
+    margin-left: auto;
     margin-top: -$header-height;
-    padding: $header-height 1.5% 0 ;
+    padding: $header-height 58px 0 32px;
     background-color: #e39a3b;
 
     @media (max-width: 1200px) {
@@ -75,10 +84,10 @@
     align-items: center;
     justify-content: space-between;
     line-height: 150%;
+    transform: translateY(-30%);
   }
 
   &__phone {
-    margin-right: 30px;
     transition: color 0.5s;
     &:hover {
       color: #fff;
@@ -86,8 +95,8 @@
   }
 
   &__callback {
-    margin-right: 30px;
-    padding: 5px 15px;
+    margin-left: 13px;
+    padding: 3px 15px;
     background-color: #f1cc9d;
     border: 1px solid #f1cc9d;
     border-radius: 40px;
@@ -95,20 +104,29 @@
     &:hover {
       background-color: lighten(#f1cc9d, 13%);
     }
-  }
-}
 
-.logo {
-  position: relative;
-  font-family: $CookieFamily;
-  font-size: 1.88rem;
-  &::before {
-    
+    @media (max-width: 1200px) {
+      margin: 0;
+    }
+  }
+
+  .navbar {
+    margin-left: 49.2%;
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
+  }
+
+  .logo {
     position: absolute;
-    top: -80%;
-    left: -35%;
-    width: 40px;
-    height: 40px;
+    top: 3.5%;
+    @media (max-width: 900px) {
+      top: 2%;
+      img {
+        height: 43px;
+      }
+    }
   }
 }
 
