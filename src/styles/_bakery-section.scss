@@ -20,6 +20,8 @@
 
   &__name {
     margin-bottom: 31px;
+
+    @include hover(cursor, pointer);
   }
 
   &__price {
@@ -34,6 +36,13 @@
     font-weight: 700;
     border-radius: 50%;
     background-color: $c-cream;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
 
     @media (max-width: 1024px) {
       width: 65px;
@@ -56,10 +65,21 @@
   &__downscroll {
     @include downscroll;
     transform: rotate(-90deg);
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__image {
     width: 45vw;
+
+    transition: transform 0.5s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
 
     @media (max-width: 1024px) {
       width: 80vw;
@@ -69,5 +89,9 @@
   &__upscroll {
     @include upscroll;
     transform: rotate(-90deg);
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
