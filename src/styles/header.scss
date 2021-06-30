@@ -33,6 +33,19 @@ html {
     }
   }
 
+  &__head-text {
+    transition-duration: 0.5s;
+    & a {
+      text-decoration: none;
+      color: $dark-brown;
+    }
+    &:hover {
+      text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+      cursor: pointer;
+      transition-duration: 0.5s;
+    }
+  }
+
   &__orange {
     @include onDesktop {
       position: absolute;
@@ -162,12 +175,23 @@ html {
     align-items: center;
     padding: 0 41px 0 19px;
     margin-bottom: 30px;
+    transition-duration: 0.5s;
+
+    &:hover {
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
+      transition-duration: 0.5s;
+    }
 
     &:nth-child(4) {
       margin-bottom: 147px;
       @include onDesktop {
         margin-bottom: 0;
       }
+    }
+
+    & a {
+      text-decoration: none;
+      color: $dark-brown;
     }
 
     @include onDesktop {
@@ -200,6 +224,7 @@ html {
   &__main-text {
     margin: 29px $default-margin 0;
     line-height: 24px;
+    width: 180px;
     @include onDesktop {
       margin: 20px 59px 0;
       width: 420px;
@@ -317,4 +342,15 @@ html {
   background-color: $light-orange;
   text-decoration: none;
   color: $dark-brown;
+}
+
+.language-select {
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  background: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
