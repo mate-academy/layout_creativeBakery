@@ -9,3 +9,14 @@ if (burger) {
     nav.classList.toggle('header__nav--active');
   });
 }
+
+const form = document.querySelector('.feedback');
+const inputs = document.querySelectorAll('.main__feedback-input');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  for (const input of inputs) {
+    input.value = '';
+  }
+});
