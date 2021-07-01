@@ -1,3 +1,103 @@
 @import "./utils/extends";
 @import "./utils/mixins";
 @import "./utils/vars";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: $dark-brown;
+  color: #fff;
+
+  &__container {
+    width: 100%;
+    flex-grow: 1;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @include onDesktop {
+      width: 1400px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: space-between;
+      position: relative;
+    }
+  }
+
+  &__head-text {
+    & a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: normal;
+    }
+  }
+
+  &__nav {
+    margin: 60px 0 60px 40px;
+  }
+
+  &__nav-section {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__nav-option {
+    & a {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  &__sn {
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-bottom: 50px;
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__sn-item {
+    @include create-obj(31px, 31px);
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__tos {
+    align-self: center;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    font-size: 12px;
+    opacity: 0.7;
+    @include onDesktop {
+      position: absolute;
+      left: 50%;
+      bottom: -15px;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.twitter {
+  @include create-obj(18px, 15px);
+  transform: translateY(2px);
+}

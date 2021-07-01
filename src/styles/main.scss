@@ -503,6 +503,71 @@ html {
       flex-grow: 1;
     }
   }
+
+  &__feedback {
+    display: flex;
+    flex-direction: column;
+    @include onDesktop {
+      flex-direction: row-reverse;
+      justify-content: space-around;
+      margin: 40px 0 170px;
+    }
+  }
+
+  &__feedback-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include onDesktop {
+      justify-content: center;
+    }
+  }
+
+  &__feedback-title {
+    @include onDesktop {
+      font-size: 26px;
+    }
+  }
+
+  &__feedback-input {
+    width: 280px;
+    font-size: 16px;
+    line-height: 150%;
+    border: none;
+    border-bottom: 1px solid rgba(1, 1, 1, 0.5);
+    padding: 5px;
+    @include onDesktop {
+      width: 370px;
+    }
+
+    &:first-child {
+      margin-top: 20px;
+    }
+
+    &:last-of-type {
+      margin-top: 90px;
+    }
+  }
+
+  &__feedback-button {
+    @include create-obj(160px, 40px);
+    align-self: center;
+    border: none;
+    @include onDesktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__feedback-image {
+    @include create-obj(250px, 205px);
+    margin: 50px 0;
+    @extend %background;
+    background-image: url("../images/feedback.svg");
+    align-self: center;
+    @include onDesktop {
+      @include create-obj(509px, 417px);
+    }
+  }
 }
 
 .cookie {
@@ -550,4 +615,10 @@ html {
   @include onDesktop {
     width: 320px;
   }
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
