@@ -4,14 +4,13 @@
   width: 100vw;
   padding-top: $header-height;
   background-color: #e39a3b;
-
+  background-image: url(../images/cup.png);
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
 
   &__container {
     display: flex;
-    //background-image: url(../../images/cup.png);
   }
 
   &__menu {
@@ -119,13 +118,23 @@
   }
 
   .logo {
-    position: absolute;
-    top: 3.5%;
-    @media (max-width: 900px) {
-      top: 2%;
-      img {
-        height: 43px;
+    z-index: 1;
+    position: relative;
+    font-family: $CookieFamily;
+    font-size: 1.88rem;
+    color: #fff;
+
+    @media (max-width:975px) {
+      &::before {
+        left: -30px;
       }
+    }
+
+    &__image {
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      z-index: 3;
     }
   }
 }
@@ -138,5 +147,4 @@
     font-size: 2.5rem;
     line-height: 47px;
   }
-
 }
