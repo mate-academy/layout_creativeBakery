@@ -1,0 +1,34 @@
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+
+  &__input {
+    padding: 5px 10px;
+    width: 378px;
+    height: 31px;
+    @include switch-item-params;
+
+    @media (max-width: 1024px) {
+      width: 288px;
+    }
+
+    &--message {
+      margin-top: 40px;
+      padding-top: 30px;
+      height: 61px;
+
+      resize: none;
+      border-width: 2px;
+      border-color: -internal-light-dark(
+        rgb(118, 118, 118), rgb(133, 133, 133)
+      );
+    }
+  }
+
+  &__button {
+    margin-top: 17px;
+    @include primary-button;
+  }
+}

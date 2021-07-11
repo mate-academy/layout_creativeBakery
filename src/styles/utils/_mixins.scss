@@ -1,6 +1,135 @@
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
-    #{$_property}: $_toValue;
+    #{$_property}: $_toValue !important;
+  }
+}
+
+@mixin primary-button {
+  text-align: center;
+  width: 160px;
+  height: 40px;
+  cursor: pointer;
+
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  border: 2px solid $c-croissant;
+  border-radius: 40px;
+  background-color: $c-croissant;
+  color: $c-chocolate;
+
+  @include hover(background-color, $c-milk);
+
+  &:active {
+    opacity: 0.8;
+    border: none;
+    background-color: $c-croissant;
+  }
+}
+
+@mixin secondary-button {
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  border: 2px solid $c-cream;
+  border-radius: 40px;
+  background-color: $c-cream;
+  color: $c-chocolate;
+
+  @include hover(background-color, $c-milk);
+
+  &:active {
+    opacity: 0.8;
+    border: none;
+    background-color: $c-cream;
+  }
+}
+
+@mixin switch-item-params {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  opacity: 0.5;
+
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  background-color: inherit;
+  color: $c-chocolate;
+}
+
+@mixin stuff-pictures {
+  width: 200px;
+  height: 200px;
+
+  background-size: contain;
+}
+
+@mixin get-in-touch-list-images {
+  content: "";
+  position: absolute;
+  left: -60px;
+  width: 31px;
+  height: 31px;
+
+  @media (max-width: 1150px) {
+    left: -46px;
+  }
+}
+
+@mixin dark-vector {
+  width: 26px;
+  height: 15px;
+
+  background: url(../images/Vector-dark.svg) no-repeat;
+  background-size: contain;
+
+  cursor: pointer;
+
+  @media (max-width: 900px) {
+    width: 20px;
+    height: 12px;
+  }
+}
+
+@mixin croissant-vector {
+  width: 15px;
+  height: 26px;
+
+  background: url(../images/Vector-croissant.svg) no-repeat;
+  background-size: contain;
+
+  cursor: pointer;
+
+  @media (max-width: 900px) {
+    width: 12px;
+    height: 20px;
+  }
+}
+
+@mixin pink-vector {
+  width: 26px;
+  height: 15px;
+
+  background: url(../images/Vector-pink.svg) no-repeat;
+  background-size: contain;
+
+  cursor: pointer;
+
+  @media (max-width: 900px) {
+    width: 20px;
+    height: 12px;
   }
 }

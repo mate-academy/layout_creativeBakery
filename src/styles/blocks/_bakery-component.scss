@@ -1,0 +1,82 @@
+.bakery-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 65px;
+  gap: 10%;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__title {
+    margin-bottom: 31px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+
+    font-weight: 700;
+
+    border-radius: 50%;
+    background-color: $c-cream;
+    cursor: pointer;
+
+    @include hover(background-color, $c-croissant);
+
+    @media (max-width: 1024px) {
+      width: 65px;
+      height: 65px;
+    }
+  }
+
+  &__dark-vector {
+    visibility: hidden;
+    @include dark-vector;
+    transform: rotate(-90deg);
+  }
+
+  &__croissant-vector {
+    visibility: hidden;
+    @include croissant-vector;
+  }
+
+  &__product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60vw;
+
+    @media (max-width: 1024px) {
+      align-self: center;
+      width: 95vw;
+    }
+  }
+
+  &__image {
+    width: 45vw;
+
+    cursor: zoom-in;
+
+    @include hover(transform, scale(1.05));
+
+    @media (max-width: 1024px) {
+      width: 80vw;
+    }
+  }
+}

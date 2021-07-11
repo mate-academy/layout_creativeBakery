@@ -1,0 +1,31 @@
+.homepage {
+  display: grid;
+
+  grid-template-columns: 1fr 425px;
+  grid-template-rows: 840px;
+
+  background: url(../images/decoration.jpg) center no-repeat;
+  background-size: cover;
+
+  @media (max-width: 1150px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 540px 1fr;
+  }
+
+  @media (max-width: 600px) {
+    background: url(../images/decoration-low-resolution.png) left top no-repeat;
+    background-size: cover;
+  }
+
+  &__info {
+    grid-area: 1 / 1;
+  }
+
+  &__switch {
+    grid-area: 1 / 2;
+
+    @media (max-width: 1150px) {
+      grid-area: 2 / 1;
+    }
+  }
+}
