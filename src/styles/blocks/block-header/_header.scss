@@ -1,0 +1,87 @@
+.header {
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 59px 0;
+
+  &__logo {
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  @media (max-width: $width-for-tablet) {
+    padding: 0;
+
+    &__logo {
+      padding-left: 59px;
+    }
+    
+    @media (max-width: $width-for-mobile) {
+      &__logo {
+        padding-left: 16px;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+    transition: transform $transition-time;
+
+    @media (max-width: $width-for-tablet) {
+      transform: scale(0, 0);
+      transform-origin: top right;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    display: none;
+    top: 33px;
+    right: 16px;
+    width: 20px;
+    height: 18px;
+    z-index: 1;
+
+    @media
+      (min-width: $width-for-mobile)
+      and (max-width: $width-for-tablet) {
+      right: 59px;
+    }
+
+    background: url(../images/burger-open.svg) center no-repeat;
+    background-size: contain;
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: $width-for-tablet) {
+      display: block;
+    }
+  }
+
+  &__toggler {
+    display: none;
+
+    &:checked ~ .nav {
+      transform: scale(1, 1);
+    }
+
+    &:checked + .header__label {
+      background: url(../images/burger-close.svg) center no-repeat;
+      background-size: contain;
+    }
+  }
+}

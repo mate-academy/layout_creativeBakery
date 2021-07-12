@@ -1,0 +1,56 @@
+.carousel {
+  max-width: 900px;
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: $width-for-tablet) {
+    width: 60vw;
+  }
+
+  @media (max-width: $width-for-ipad) {
+    width: 90vw;
+  }
+
+  &__left-arrow {
+    width: 15px;
+    height: 26px;
+    background: url(../images/vector-light-horizontal.svg) center no-repeat;
+    background-size: contain;
+    opacity: 0.5;
+    visibility: hidden;
+    transition: transform $transition-time, opacity $transition-time;
+
+    &:hover {
+      transform: scale(1.8);
+      opacity: 1;
+    }
+  }
+
+  &__photo {
+    max-width: 700px;
+    width: 45vw;
+
+    @media (max-width: $width-for-tablet) {
+      width: 55vw;
+    }
+
+    @media (max-width: $width-for-ipad) {
+      width: 75vw;
+    }
+  }
+
+  &__right-arrow {
+    width: 15px;
+    height: 26px;
+    background: url(../images/vector-heavy-horizontal.svg) center no-repeat;
+    background-size: contain;
+    visibility: hidden;
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.8);
+    }
+  }
+}

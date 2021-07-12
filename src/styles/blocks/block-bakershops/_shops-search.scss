@@ -1,0 +1,68 @@
+.bakershops-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 32px;
+
+  @media (max-width: $width-for-tablet) {
+    flex-direction: column;
+    row-gap: 25px;
+  }
+
+  &__city-label,
+  &__address-label {
+    position: relative;
+    
+    &::after {
+      content: "";
+      width: 100%;
+      opacity: 0.5;
+      border-bottom: 1px solid $brown-color;
+      position: absolute;
+      top: 20px;
+      left: 0;
+    }
+  }
+
+  &__city-select {
+    width: 12vw;
+    @include input-text;
+    opacity: 0.5;
+    background-color: $sand-color;
+    border: none;
+    cursor: pointer;
+
+    @media (max-width: $width-for-tablet) {
+      width: 90vw;
+    }
+  }
+
+  &__address-select {
+    width: 23vw;
+    @include input-text;
+    opacity: 0.5;
+    background-color: $sand-color;
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    @media (max-width: $width-for-tablet) {
+      width: 90vw;
+    }
+  }
+
+  &__button {
+    width: 160px;
+    height: 40px;
+    border-radius: 40px;
+    @include input-text;
+    font-weight: 400;
+    background-color: $orange-color;
+    cursor: pointer;
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

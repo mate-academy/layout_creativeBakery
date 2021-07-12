@@ -1,0 +1,51 @@
+.about-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 118px;
+
+  @media
+    (min-width: $min-width-for-tablets)
+    and (max-width: $max-width-for-smaller-tablets) {
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: $max-width-for-mobile) {
+    padding-bottom: 40px;
+  }
+
+  &__title {
+    margin-top: 54px;
+    margin-bottom: 22px;
+    @include h2-title;
+
+    @media (max-width: $width-for-tablet) {
+      font-size: 60px;
+      line-height: 67px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__description {
+    width: 33vw;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 60px;
+
+    &::after {
+      content: $large-content;
+    }
+
+    @media (max-width: $width-for-mobile) {
+      width: 90vw;
+      margin-bottom: 20px;
+
+      &::after {
+        content: $short-content;
+      }
+    }
+  }
+}

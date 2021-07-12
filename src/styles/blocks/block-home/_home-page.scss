@@ -1,0 +1,48 @@
+.home-page {
+  display: grid;
+  grid-template-columns: 1fr 425px;
+  grid-template-rows: 840px;
+  grid-template-areas: "left right";
+  
+  @media (max-width: $width-for-tablet) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 449px 119px;
+    grid-template-areas: "left" "right";
+    background: url(../images/bake-cream-puff-cup-1775045.png) 35% no-repeat;
+    background-size: cover;
+  }
+
+  &__left-section {
+    grid-area: left;
+    padding-top: 140px;
+    padding-left: 59px;
+    background: url(../images/bake-cream-puff-cup-1775045.png) 50% no-repeat;
+    background-size: cover;
+    
+    @media (max-width: $width-for-tablet) {
+      background: none;
+    }
+    
+    @media (max-width: $width-for-mobile) {
+      padding-left: 16px;
+    }
+  }
+
+  &__right-section {
+    grid-area: right;
+    background-color: $orange-color;
+    padding-right: 59px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    @media (max-width: $width-for-tablet) {
+      flex-direction: row;
+      align-items: center;
+      background: none;
+      padding: 0;
+    }
+  }
+}

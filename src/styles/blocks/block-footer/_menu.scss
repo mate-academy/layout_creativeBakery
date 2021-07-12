@@ -1,0 +1,30 @@
+.menu {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    @media (max-width: $width-for-tablet) {
+      flex-direction: column;
+      height: 216px;
+    }
+  }
+
+  &__item {
+    list-style: none;
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &:not(:last-child) {
+      margin-right: 34px;
+    }
+  }
+
+  &__link {
+    color: $white-color;
+    line-height: 24px;
+  }
+}

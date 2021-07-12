@@ -1,0 +1,71 @@
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @include input-text;
+    font-size: 26px;
+    margin-bottom: 25px;
+    border: none;
+
+    @media (max-width: $width-for-tablet) {
+      font-size: 20px;
+    }
+  }
+
+  &__name-label,
+  &__email-label,
+  &__phone-label,
+  &__message-label {
+    @include input-text;
+    opacity: 0.5;
+    margin-bottom: 20px;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      opacity: 0.5;
+      border-bottom: 1px solid $brown-color;
+      position: absolute;
+      top: 22px;
+      left: 0;
+    }
+  }
+
+  &__message-label::after {
+      top: 100px;
+  }
+  
+
+  &__name-input,
+  &__email-input,
+  &__phone-input,
+  &__message-input {
+    @include input-text;
+    width: 100%;
+    border: none;
+    outline: none;
+  }
+
+  &__message-input {
+    height: 100px;
+    max-height: 100px;
+    resize: none;
+  }
+
+  &__send-button {
+    width: 160px;
+    height: 40px;
+    border-radius: 40px;
+    @include input-text;
+    align-self: center;
+    cursor: pointer;
+    background: $orange-color;
+    transition: transform $transition-time;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
