@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./styles/main.scss">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Rubik&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <main class="main" id="mainTop">
@@ -110,30 +111,55 @@
           <h2 class="heading__bakery">Bakery</h2>
         </div>
         <div class="bakery__katalog katalog">
-          <div class="katalog__info">
-            <h3 class="katalog__head">
-              Cookies
-            </h3>
-            <h4 class="katalog__subhead">
-              Chocolate mix
-            </h4>
-            <p class="katalog__text">
-              Oatmeal cookies with golden raisins, orange zest and chocolate chips.
-            </p>
-            <div class="katalog__circle" >
-              <p>
-                $ 4 / 100 g
-              </p>
-            </div>
-          </div>
           <div class="katalog__slider slider">
-            <button class="slider__btn-l" disabled></button>
-            <img
+            <a class="previous" onclick="previousSlide()">&#10094;</a>
+            <div class="item">
+              <div class="katalog__info ">
+                <h3 class="katalog__head">
+                  Cookies
+                </h3>
+                <h4 class="katalog__subhead">
+                  Chocolate mix
+                </h4>
+                <p class="katalog__text">
+                  Oatmeal cookies with golden raisins, orange zest and chocolate chips.
+                </p>
+                <div class="katalog__circle" >
+                  <p>
+                    $ 4 / 100 g
+                  </p>
+                </div>
+              </div>
+              <img
               class="slider__img"
               src="./images/coockie.svg"
               alt="Chocolat cookies"
-            >
-            <button class="slider__btn-r" disabled></button>
+              >
+            </div>
+            <div class="item">
+              <div class="katalog__info ">
+                <h3 class="katalog__head">
+                  Cookies
+                </h3>
+                <h4 class="katalog__subhead">
+                  Oatmeal cookies
+                </h4>
+                <p class="katalog__text">
+                  Oatmeal cookies with golden raisins, orange zest and chocolate chips.
+                </p>
+                <div class="katalog__circle" >
+                  <p>
+                    $ 6 / 200 g
+                  </p>
+                </div>
+              </div>
+              <img
+              class="slider__img"
+              src="./images/cookie_PNG13677.png"
+              alt="Chocolat cookies"
+              >
+            </div>
+            <a class="next" onclick="nextSlide()">&#10095;</a>
           </div>
         </div>
         <div class="bakery__katalog katalog">
@@ -163,7 +189,6 @@
             </div>
           </div>
         </div>
-        </div>
         <div class="bakery__katalog katalog">
           <div class="katalog__info">
             <h3 class="katalog__head">
@@ -182,15 +207,14 @@
             </div>
           </div>
           <div class="katalog__slider slider">
-            <button class="slider__btn-l" disabled></button>
+            <button class="slider__btn-l" ></button>
             <img
               class="slider__img"
               src="./images/croissan.svg"
               alt="Almond Croissan"
             >
-            <button class="slider__btn-r" disabled></button>
+            <button class="slider__btn-r"></button>
           </div>
-        </div>
         </div>
         <div class="bakery__katalog katalog">
           <div class="katalog__slider slider">
@@ -492,12 +516,13 @@
                 class="forms__input forms__input--dist"
                 placeholder="Phone"
               >
-              <input
-                type="text"
-                class="forms__input forms__input--size forms__input--space"
+              <textarea
+                class="forms__input forms__input--size"
                 placeholder="Message*"
+                rows="10"
+                cols="25"
                 required
-              >
+             ></textarea>
               <button class="forms__btn btn btn--colum btn--mt">
                 Send
               </button>
@@ -571,5 +596,47 @@
     </main>
 
     <script type="text/javascript" src="scripts/main.js"></script>
+    <script>
+      let slideIndex = 1;
+/* Вызываем функцию, которая реализована ниже: */
+showSlides(slideIndex);
+
+/* Увеличиваем индекс на 1 — показываем следующий слайд: */
+function nextSlide() {
+    showSlides(slideIndex += 1);
+}
+
+/* Уменьшаем индекс на 1 — показываем предыдущий слайд: */
+function previousSlide() {
+    showSlides(slideIndex -= 1);
+}
+
+/* Устанавливаем текущий слайд: */
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+/* Функция перелистывания: */
+function showSlides(n) {
+    /* Обращаемся к элементам с названием класса "item", то есть к картинкам: */
+    let slides = document.getElementsByClassName("item");
+
+    /* Проверяем количество слайдов: */
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+
+    /* Проходим по каждому слайду в цикле for: */
+    for (let slide of slides) {
+        slide.style.display = "none";
+    }
+    /* Делаем элемент блочным: */
+    slides[slideIndex - 1].style.display = "flex";
+}
+
+    </script>
   </body>
 </html>
