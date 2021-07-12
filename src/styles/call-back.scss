@@ -1,0 +1,75 @@
+.call-back {
+  @extend %classic-text;
+
+  display: flex;
+
+  column-gap: 20px;
+
+  &__language {
+    border: 0;
+    background: transparent;
+    outline: none;
+
+  }
+
+  &__tel {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: $secondary-color;
+      transition-duration: 0.5s;
+    }
+  }
+
+  &__button {
+    @extend %ft-middle;
+    @extend %fs-classic;
+  
+    width: 100px;
+  
+    color: $border-bottom;
+  
+    box-sizing: border-box;
+  
+    border: 1px solid #f1cc9d;
+    background-color: #f1cc9d;
+    border-radius: 40px;
+  
+    cursor: pointer;
+    outline: none;
+
+    transition: background-color 0.2s ease-in-out;
+  
+    &:hover {
+      background-color: transparent;
+    }
+  
+    &:active {
+      background-color: $background-color;
+    }
+  
+    &:disabled {
+      background: #e0e0e0;
+      color: $disabled-button;
+    }
+  
+  }
+  
+}
+
+@media (max-width: $medium-screen) {
+  .call-back {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    align-items: end;
+    margin-left: 20px;
+    margin-top: 50px;
+    justify-items: start;
+    
+    &__language {
+      width: 40px;
+    }
+  }
+}

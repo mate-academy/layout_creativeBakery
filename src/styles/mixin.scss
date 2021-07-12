@@ -1,0 +1,100 @@
+
+$h-font-famiy: "Cookie", cursive;
+$text-color: #412d22;
+$h-color: #e39a3b;
+$light: #f1cc9d;
+$secondary-color: #f1cc9d;
+$disabled-button: #828282;
+$border-bottom: #412d22;
+$secondary-text-color: #fff;
+$background-color: #e39a3b;
+$medium-screen: 1024px;
+
+%classic-text {
+  font-family: Rubik, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+%secondary-btn {
+
+  @extend %classic-text;
+  
+  width: 160px;
+  text-align: center;
+
+  box-sizing: border-box;
+  background-color: $background-color;
+
+  border: 2px solid $background-color;
+  border-radius: 40px;
+  outline: none;
+
+  cursor: pointer;
+}
+
+%sec-btn-hover {
+  background-color: transparent;
+  border: 2px solid #e39a3b;
+  transition-duration: 0.5s;
+}
+
+%link-hover {
+  color: #f1cc9d;
+  transition-duration: 0.5s;
+}
+
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+%ft-middle {
+  font-style: normal;
+  font-weight: 400;
+}
+
+%carus-position-photo {
+  position: absolute;
+  
+  top: 50%;
+  
+  color: #412d22;
+  font-weight: bold;
+  font-size: 28px;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+
+%carus-position-numb {
+  position: absolute;
+  
+  color: #412d22;
+  font-weight: bold;
+  font-size: 28px;
+  border-radius: 0 3px 3px 0;
+  transform: rotate(270deg);
+  cursor: pointer;
+}
+
+%carus-hover {
+  color: #f1cc9d;
+  transition-duration: 0.2s;
+}
+
+%fs-classic {
+  font-size: 16px;
+}
+
+%active-btn {
+  border: 2px solid #e39a3b;
+  background-color: #e39a3b;
+}
+
+%disabled-btn {
+  background-color: #e0e0e0;
+}

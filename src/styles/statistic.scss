@@ -1,0 +1,52 @@
+
+.statistic {
+  display: flex;
+  
+  margin-bottom: 140px;
+  
+  flex-direction: row;
+  justify-content: space-around;
+
+  &__img {
+    margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__item {
+    display: grid;
+    justify-items: center;
+  }
+
+  &__numb {
+    width: 200px;
+    margin-bottom: 5px;
+
+    text-align: center;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 60px;
+  }
+
+  &__name {
+    @extend %fs-classic;
+    
+    font-style: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: $medium-screen) {
+  .statistic {
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+    overflow-x: auto;
+
+    &__item {
+      width: 230px;
+      flex-shrink: 0;
+      height: 100%;
+    }
+  }
+}
