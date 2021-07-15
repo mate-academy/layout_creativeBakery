@@ -1,6 +1,31 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin btn($w, $h, $c) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $w;
+  height: $h;
+
+  font-size: inherit;
+  font-family: inherit;
+
+  background: $c;
+  border: 2px solid $c;
+  border-radius: $btn-radius;
+  cursor: pointer;
+  transition: 0.3s;
+
   &:hover {
-    #{$_property}: $_toValue;
+    background: #fff;
+  }
+
+  &:active {
+    background: rgba($color: $c, $alpha: 0.8);
+    border: none;
+  }
+
+  &:disabled {
+    background: #e0e0e0;
+    border: none;
+    color: #828282;
   }
 }
