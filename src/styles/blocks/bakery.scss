@@ -95,13 +95,21 @@
       }
     }
   }
-
+  
   &__item {
     max-width: 700px;
-    height: auto;
+    height: 100%;
+    overflow: hidden;
   }
-
+  
+  &__slider-item {
+    width: 100%;
+    height: inherit;
+    flex-shrink: 0;
+  }
+  
   &__image {
+    height: 100%;
     width: 100%;
   }
 
@@ -114,6 +122,15 @@
     }
   }
 
+  &__line {
+    position: relative;
+    left: 0;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    transition: left ease 0.7s;
+  }
   &-btn {
     @extend %btn;
     display: block;
