@@ -29,6 +29,7 @@
   &__form {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 379px;
     height: 377px;
     gap: 20px;
@@ -41,6 +42,19 @@
     @media (max-width:374px) {
       width: 95vw;
     }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__bot {
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    gap: 10px;
   }
 
   &__input {
@@ -60,8 +74,20 @@
   }
 
   &__button {
+    flex-shrink: 0;
     @include button;
     margin: 0 auto;
     border-color: transparent;
+  }
+
+  &__message {
+    height: 30px;
+    resize: none;
+    font-size: 16px;
+    line-height: 22px;
+    border-color: transparent;
+    border-bottom: 2px solid rgba($color: $brown, $alpha: 0.2);
+    background-color: inherit;
+    outline: none;
   }
 }

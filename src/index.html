@@ -3,8 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Creative Bakery</title>
+    <link
+      rel="shortcut icon"
+      href="./images/nav/Vector.png"
+      type="image/x-icon"
+    >
     <link rel="stylesheet" href="./styles/main.scss">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    >
   </head>
   <body>
     <header>
@@ -134,22 +144,19 @@
               <p>$4 <br> 100 g</p>
             </div>
           </div>
-          <div class="product__slider">
-            <img
-              class="product__slider-left"
-              src="./images/left.svg"
-              alt="left"
-            >
-            <img
-              class="product__image"
-              src="./images/bakery1.png"
-              alt="image"
-            >
-            <img
-              class="product__slider-right"
-              src="./images/right.svg"
-              alt="right"
-            >
+          <div class="fade">
+            <div class="fade__element">
+              <img class="fade__image"
+                src="./images/bakery1.png"
+                alt="product"
+              >
+            </div>
+            <div class="fade__element">
+              <img class="fade__image"
+                src="./images/bakery2.png"
+                alt="product"
+              >
+            </div>
           </div>
         </div>
         <div class="bakery__product product">
@@ -161,22 +168,19 @@
               <p>$5 <br> 100 g</p>
             </div>
           </div>
-          <div class="product__slider">
-            <img
-              class="product__slider-left"
-              src="./images/left.svg"
-              alt="left"
-            >
-            <img
-              class="product__image"
-              src="./images/bakery2.png"
-              alt="product"
-            >
-            <img
-              class="product__slider-right"
-              src="./images/right.svg"
-              alt="right"
-            >
+          <div class="fade">
+            <div class="fade__element">
+              <img class="fade__image"
+                src="./images/bakery2.png"
+                alt="product"
+              >
+            </div>
+            <div class="fade__element">
+              <img class="fade__image"
+                src="./images/bakery3.png"
+                alt="product"
+              >
+            </div>
           </div>
         </div>
         <div class="bakery__product product">
@@ -188,22 +192,19 @@
               <p>$8.5 <br> 3</p>
             </div>
           </div>
-          <div class="product__slider">
-            <img
-              class="product__slider-left"
-              src="./images/left.svg"
-              alt="prew"
-            >
-            <img
-              class="product__image"
-              src="./images/bakery3.png"
-              alt="product"
-            >
-            <img
-              class="product__slider-right"
-              src="./images/right.svg"
-              alt="next"
-            >
+          <div class="fade">
+            <div class="fade__element">
+              <img class="fade__image"
+                src="./images/bakery3.png"
+                alt="product"
+              >
+            </div>
+            <div class="fade__element">
+              <img class="fade__image"
+                src="./images/bakery4.png"
+                alt="product"
+              >
+            </div>
           </div>
         </div>
         <div class="bakery__product product">
@@ -215,22 +216,19 @@
               <p>$6.6 <br> 3</p>
             </div>
           </div>
-          <div class="product__slider">
-            <img
-              class="product__slider-left"
-              src="./images/left.svg"
-              alt="left"
-            >
-            <img
-              class="product__image"
-              src="./images/bakery4.png"
-              alt="product"
-            >
-            <img
-              class="product__slider-right"
-              src="./images/right.svg"
-              alt="right"
-            >
+          <div class="fade">
+            <div class="fade__element">
+              <img class="fade__image"
+                src="./images/bakery4.png"
+                alt="product"
+              >
+            </div>
+            <div class="fade__element">
+              <img class="fade__image"
+                src="./images/bakery1.png"
+                alt="product"
+              >
+            </div>
           </div>
         </div>
         <div class="bakery__see-more">
@@ -448,34 +446,38 @@
           action="./index.html"
           method="GET"
         >
-          <h4>We’d love to hear your feedback</h4>
-          <input
-           type="text"
-           placeholder="Name*"
-           required
-           class="feedback__input"
-          >
-          <input
-            type="email"
-            required
-            class="feedback__input"
-            placeholder="E-mail*"
-          >
-          <input
-            type="tel"
-            required
-            class="feedback__input"
-            placeholder="Phone*"
-          >
-          <input
-            type="text"
-            required
-            class="feedback__input"
-            placeholder="Message*"
-          >
-          <button class="feedback__button" type="submit">
-            Send
-          </button>
+          <div class="feedback__top">
+            <h4>We’d love to hear your feedback</h4>
+            <input
+             type="text"
+             placeholder="Name*"
+             required
+             class="feedback__input"
+            >
+            <input
+              type="email"
+              required
+              class="feedback__input"
+              placeholder="E-mail*"
+            >
+            <input
+              type="tel"
+              required
+              class="feedback__input"
+              placeholder="Phone*"
+            >
+          </div>
+          <div class="feedback__bot">
+            <textarea
+              maxlength="500"
+              placeholder="Message*"
+              class="feedback__message"
+              >
+            </textarea>
+            <button class="feedback__button" type="submit">
+              Send
+            </button>
+          </div>
         </form>
       </div>
     </main>
@@ -522,6 +524,12 @@
         <div>Privacy — Terms</div>
       </div>
     </footer>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
