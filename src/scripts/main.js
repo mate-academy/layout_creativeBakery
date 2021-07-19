@@ -27,16 +27,20 @@ menuList.addEventListener('click', () => {
 let index = 0;
 
 const imagesArray = [
-  'url(bg-1.5b09dd35.png)',
-  'url(bg-2.1671c68f.jpg)',
-  'url(bg-3.ed7fd6f3.jpg)'];
+  'header--image-0',
+  'header--image-1',
+  'header--image-2'];
 
 const activeNumber = (n, array) => {
   for (const number of array) {
     number.classList.remove('number-active');
   }
   array[n].classList.add('number-active');
-  header.style.backgroundImage = imagesArray[n];
+
+  for (const image of imagesArray) {
+    header.classList.remove(image);
+  }
+  header.classList.add(imagesArray[n]);
 };
 
 const nextNumber = (array) => {
