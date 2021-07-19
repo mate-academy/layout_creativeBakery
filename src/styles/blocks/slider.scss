@@ -1,0 +1,74 @@
+.slider-header,
+.slider-menu {
+  display: flex;
+
+  @include onDesktop {
+    flex-direction: column;
+    align-self: flex-end;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid transparent;
+    @include hover(border-color, $c-brown);
+
+    @include onDesktop {
+      transform: rotate(90deg);
+    }
+
+    &--prev {
+      margin-right: 15px;
+
+      @include onDesktop {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+
+    &--next {
+      margin-left: 15px;
+
+      @include onDesktop {
+        margin-left: 0;
+        margin-top: 40px;
+      }
+    }
+
+    &:focus {
+      border: 1px solid $c-light-brown;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 20px;
+
+    @include onDesktop {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    color: $c-light-brown;
+
+    @include onDesktop {
+      align-self: flex-end;
+      color: $c-cream;
+      font-size: 40px;
+    }
+  }
+}
+
+.number-active {
+  font-size: 40px;
+  color: $c-brown;
+
+  @include onDesktop {
+    font-size: 176px;
+    line-height: 200px;
+  }
+}

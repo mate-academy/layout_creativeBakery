@@ -1,0 +1,134 @@
+.menu {
+  background-color: $c-light-brown;
+  display: flex;
+  justify-content: space-between;
+
+  height: 100vh;
+  width: $menu-mobile-width;
+
+  transform: translateX($menu-mobile-width);
+  transition: transform $transition-duration;
+
+  @include onTablet {
+    padding: $paddingTablet;
+    width: $menu-tablet-width;
+    transform: translateX($menu-tablet-width);
+  }
+
+  @include onDesktop {
+    transform: translateX(0);
+    min-width: max-content;
+    justify-content: start;
+    padding: 40px $paddingDesktop;
+  }
+
+  @include onLargeScreen {
+    width: auto;
+    grid-column: 3/-1;
+  }
+
+  &--shown {
+    transform: translateX(0);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    padding-left: $padding;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100vh;
+    background-color: $c-milk;
+
+    @include onDesktop {
+      opacity: 0;
+    }
+  }
+
+  &__slider.slider-menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+
+    @include onDesktop {
+      height: 80px;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__call-back {
+    @extend %secondary-button;
+  }
+
+  &__call-back-btn {
+    color: $c-brown;
+  }
+
+  &__tel {
+    color: inherit;
+
+    @include hover(color, $c-cream);
+  }
+
+  &__lang {
+    width: max-content;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    background-color: transparent;
+    border-color: transparent;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      border-radius: 10px;
+      background-color: $c-light-brown;
+      transition: background-color 400ms;
+    }
+
+    &:focus {
+      border-color: $c-light-brown;
+    }
+  }
+
+  &__option {
+    background-color: inherit;
+  }
+
+  &__nav {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 85px;
+  }
+
+  &__nav-link {
+    color: inherit;
+  }
+}

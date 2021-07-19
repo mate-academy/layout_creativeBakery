@@ -1,4 +1,184 @@
 %h1 {
-  font-family: "Roboto", sans-serif;
+  --title-size: 100px;
+  --line-height: 80px;
+
+  font-family: "Cookie", cursive;
+  font-size: var(--title-size);
+  line-height: var(--line-height);
   font-weight: 400;
+
+  @include onTablet {
+    --title-size: 160px;
+    --line-height: 170px;
+  }
+}
+
+%h2 {
+  --title-size: 60px;
+  --line-height: 66px;
+
+  font-family: "Cookie", cursive;
+  font-size: var(--title-size);
+  line-height: var(--line-height);
+  font-weight: 400;
+  color: $c-light-brown;
+
+  @include onTablet {
+    --title-size: 120px;
+    --line-height: 133px;
+  }
+}
+
+%h3 {
+  --title-size: 35px;
+  --line-height: 41px;
+
+  font-size: var(--title-size);
+  line-height: var(--line-height);
+  font-weight: 400;
+  color: $c-light-brown;
+
+  @include onTablet {
+    --title-size: 50px;
+    --line-height: 59px;
+  }
+}
+
+%h4 {
+  --title-size: 20px;
+  --line-height: 30px;
+
+  font-size: var(--title-size);
+  line-height: var(--line-height);
+  font-weight: 400;
+
+  @include onTablet {
+    --title-size: 26px;
+    --line-height: 29px;
+  }
+}
+
+%nums-style {
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 70px;
+}
+
+%primary-button {
+  display: block;
+  width: 160px;
+  height: 40px;
+
+  border-radius: 40px;
+  color: $c-brown;
+  border: 2px solid $c-light-brown;
+  background-color: $c-light-brown;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $c-milk;
+  }
+
+  &:focus {
+    opacity: 0.8;
+    outline: none;
+  }
+
+  &:disabled {
+    color: #828282;
+    background-color: #e0e0e0;
+  }
+}
+
+%secondary-button {
+  display: block;
+  width: 100px;
+  height: 30px;
+
+  border-radius: 40px;
+  border: 2px solid $c-cream;
+  background-color: $c-cream;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $c-milk;
+  }
+
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    color: $c-gray;
+    background-color: $c-light-gray;
+  }
+}
+
+%select-style {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  background: transparent;
+  border-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: $transition-duration;
+
+  &:hover {
+    background: inherit;
+  }
+
+  &:focus {
+    border-color: $c-light-brown;
+    opacity: 1;
+  }
+}
+
+%container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $padding;
+
+  @include onTablet {
+    padding: $paddingTablet;
+  }
+
+  @include onDesktop {
+    padding: 40px $paddingDesktop;
+  }
+}
+
+%contacts-before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translate(-40px, -50%);
+  width: 31px;
+  height: 31px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+%input-styles {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid $c-brown;
+  font-size: inherit;
+  font-family: inherit;
+  opacity: 0.5;
+
+  &:focus {
+    border: 1px solid $c-light-brown;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:valid {
+    opacity: 1;
+  }
 }

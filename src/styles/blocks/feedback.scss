@@ -1,0 +1,76 @@
+.feedback {
+  &__container {
+    @extend %container;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      justify-items: center;
+      gap: 10%;
+    }
+  }
+
+  &__block {
+    @include onTablet {
+      align-self: center;
+    }
+  }
+
+  &__title {
+    @extend %h4;
+    margin-bottom: 20px;
+  }
+
+  &__input,
+  &__message {
+    @extend %input-styles;
+  }
+
+  &__input {
+    padding: 0 0 10px;
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__message {
+    position: relative;
+    padding: 0;
+    resize: none;
+    margin-bottom: 30px;
+    height: 150px;
+
+    &::placeholder {
+      position: absolute;
+      top: 80%;
+    }
+  }
+
+  &__button {
+    @extend %primary-button;
+    margin: 0 auto 50px;
+  }
+
+  &__picture {
+    width: 100%;
+    height: 100%;
+
+    @include onTablet {
+      order: -1;
+    }
+  }
+
+  &__image {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
