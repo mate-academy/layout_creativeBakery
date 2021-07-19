@@ -27,9 +27,9 @@ menuList.addEventListener('click', () => {
 let index = 0;
 
 const imagesArray = [
-  'url("/bg-4.1c5965eb.jpg")',
-  'url("/bg-3.ed7fd6f3.jpg")',
-  'url("/bg-1.5b09dd35.png")'];
+  'url(bg-1.5b09dd35.png)',
+  'url(bg-2.1671c68f.jpg)',
+  'url(bg-3.ed7fd6f3.jpg)'];
 
 const activeNumber = (n, array) => {
   for (const number of array) {
