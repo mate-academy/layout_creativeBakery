@@ -1,0 +1,150 @@
+.header {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  padding-top: $header-height;
+  background-color: #e39a3b;
+  background-image: url(../images/cup.png);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  &__container {
+    display: flex;
+  }
+
+  &__menu {
+    width: 70%;
+    margin-bottom: 55px;
+    padding-left: 3.2%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    width: 70vw;
+    padding-left: 50px;
+
+    @media (max-width: 900px) {
+      padding-left: 15px;
+      width: 100vw;
+    }
+  }
+
+  &__title {
+    margin-bottom: 22px;
+    font-family: $CookieFamily;
+    font-weight: 500;
+    font-size: 10rem;
+    line-height: 177px;
+
+    @media (max-width: 900px) {
+      font-size: 6.25rem;
+      line-height: 80%;
+    }
+  }
+
+  &__slogan {
+    max-width: 420px;
+    margin-bottom: 34px;
+    font-size: 1.63rem;
+    line-height: 39px;
+    @media (max-width: 900px) {
+      max-width: 260px;
+      margin-bottom: 27px;
+      font-size: 1rem;
+      line-height: 25px;
+    }
+  }
+
+  &__link-info {
+    @extend %btn;
+    @media (max-width: 900px) {
+      padding: 14px 37px;
+    }
+  }
+
+  &__info {
+    height: 100vh;
+    min-width: 425px;
+    margin-left: auto;
+    margin-top: -$header-height;
+    padding: $header-height 58px 0 32px;
+    background-color: #e39a3b;
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
+  }
+
+  &__contacts {
+    margin: 0 15px 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 150%;
+    transform: translateY(-30%);
+  }
+
+  &__phone {
+    transition: color 0.5s;
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &__callback {
+    margin-left: 13px;
+    padding: 3px 15px;
+    background-color: #f1cc9d;
+    border: 1px solid #f1cc9d;
+    border-radius: 40px;
+
+    &:hover {
+      background-color: lighten(#f1cc9d, 13%);
+    }
+
+    @media (max-width: 1200px) {
+      margin: 0;
+    }
+  }
+
+  .navbar {
+    margin-left: 49.2%;
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
+  }
+
+  .logo {
+    z-index: 1;
+    position: relative;
+    font-family: $CookieFamily;
+    font-size: 1.88rem;
+    color: #fff;
+
+    @media (max-width:975px) {
+      &::before {
+        left: -30px;
+      }
+    }
+
+    &__image {
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      z-index: 3;
+    }
+  }
+}
+
+.nums {
+  color: #e39a3b;
+  word-spacing: 20px;
+  span {
+    color: #412d22;
+    font-size: 2.5rem;
+    line-height: 47px;
+  }
+}

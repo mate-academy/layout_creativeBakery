@@ -1,0 +1,73 @@
+.footer {
+  width: 100vw;
+  padding: 50px 59px 18px;
+  background-color: #412d22;
+  color: #fff;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width:975px) {
+      flex-direction: column;
+    }
+  }
+
+  .logo {
+    z-index: 1;
+    position: relative;
+    font-family: $CookieFamily;
+    font-size: 1.88rem;
+    color: #fff;
+
+    @media (max-width:975px) {
+      &::before {
+        left: -30px;
+      }
+    }
+  }
+
+  &__terms {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-family: Roboto, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    line-height: 17px;
+    opacity: 70%;
+
+    p {
+      min-width: 100px;
+    }
+
+    .privacy {
+      color: #fff;
+      min-width: 101px;
+    }
+  }
+  .navbar {
+    @media (max-width:975px) {
+      display: block;
+      &__list {
+        margin: 75px 0;
+        flex-direction: column;
+        gap: 50px;
+      }
+    }
+    &__link {
+      color: #fff;
+
+      &:hover {
+        color: #e39a3b;
+      }
+    }
+  }
+
+  @media (max-width:950px) {
+    padding: 50px 40px 18px;
+  }
+}

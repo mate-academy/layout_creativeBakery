@@ -1,0 +1,114 @@
+.hamburger {
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 2;
+
+    &-line {
+      position: relative;
+      display: block;
+      width: 30px;
+      height: 3px;
+      border-radius: 5px;
+      background-color: #000;
+      margin: 2px 0;
+      transition: all 0.1s linear 0.2s;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    padding: 100px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #e39a3b;
+    transition: right 0.4s;
+    z-index: 1;
+
+    &-link {
+      font-size: 1rem;
+      line-height: 20px;
+      margin-bottom: 30px;
+      padding: 5px 10px;
+      transition: transform 0.2s linear;
+
+      &:hover {
+        transform: translateX(20px);
+      }
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked {
+      & ~ .hamburger__menu {
+        right: 0;
+      }
+
+      & ~ .hamburger__button {
+        position: fixed;
+      }
+
+      & ~ .hamburger__button .hamburger__button-line {
+        &:nth-child(1) {
+          transform: rotate(45deg);
+          top: 8px;
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+          top: -6px;
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    @extend .header__contacts;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 0;
+
+    .header__phone {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__phone {
+    @extend .header__phone;
+  }
+
+  &__callback {
+    @extend .header__callback;
+  }
+
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}
