@@ -5,16 +5,26 @@
   border-radius: 40px;
   outline: none;
   border: none;
+  transition: border 0.3s, background-color 0.3s;
+
+  &:disabled {
+    color: #828282;
+    background-color: #e0e0e0;
+  }
   
   &--primary {
     width: 160px;
     height: 40px;
     background-color: $color-croissont;
+
+    @include button-hover-active ($color-croissont);
   }
 
   &--secondary {
     width: 100px;
     height: 30px;
     background-color: $color-cream;
+
+    @include button-hover-active ($color-cream);
   }
 }

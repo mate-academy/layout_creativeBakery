@@ -1,8 +1,13 @@
 .nav {
-  width: 66%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &--tablet {
+    @include onTablet {
+      display: none;
+    }
+  }
 
   &__list {
     display: flex;
@@ -16,46 +21,17 @@
     &:first-child {
       padding-left: 0;
     }
+
+    @include onTablet {
+      padding-left: 0;
+    }
   }
 
   &__link {
     text-decoration: none;
     font-size: 16px;
     color: $color-chocolate;
-  }
 
-  &__actives {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__lang {
-    margin-left: 20px;
-    border: none;
-    font-size: 16px;
-    color: $color-chocolate;
-    background: transparent;
-    outline: none;
-
-  }
-
-  &__call {
-    position: relative;
-    text-decoration: none;
-    color: $color-chocolate;
-
-    &::before {
-      content: "+38 066 336 36 36";
-      display: block;
-      position: absolute;
-      width: max-content;
-      right: 120px;
-      color: $color-chocolate;
-
-      @include onLaptop {
-        display: none;
-      }
-    }
+    @include hover (color, $color-croissont);
   }
 }

@@ -2,14 +2,42 @@
   &__content {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    max-height: 500px;
+    min-height: 500px;
+    grid-auto-rows: 500px;
     margin-bottom: 135px;
+
+    @include onTablet {
+      grid-template-columns: 1fr;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+      color: #fff;
+
+      @include onTablet {
+        display: block;
+      }
+    }
   }
 
   &__info {
     padding: 40px 75px 130px 120px;
     height: 100%;
     background-color: $color-croissont;
+
+    @include onTablet {
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__info-container {
@@ -23,6 +51,10 @@
     font-weight: 400;
     font-size: 26px;
     line-height: 150%;
+
+    @include onMobile {
+      font-size: 20px;
+    }
   }
 
   &__info-item {
@@ -45,17 +77,30 @@
     width: 20px;
     height: 20px;
     transform: translateX(-50px);
+
+    @include onMobile {
+      transform: translateX(-30px);
+    }
   }
 
   &__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
     gap: 100px;
     justify-items: center;
+
+    @include onTablet {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__picture {
     max-width: 490px;
+
+    @include onTablet {
+      grid-row: 2 / 3;
+    }
   }
 
   &__main-img {
@@ -67,6 +112,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include onMobile {
+      min-width: 295px;
+    }
   }
 
   &__form-title {
@@ -74,6 +123,10 @@
     font-size: 26px;
     line-height: 150%;
     margin-bottom: 27px;
+
+    @include onMobile {
+      font-size: 20px;
+    }
   }
 
   &__form-field {

@@ -1,54 +1,80 @@
 .header {
-  background: linear-gradient(90deg, transparent 66%, $color-croissont 33%);
+  --header-height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: var(--header-height);
+  background-size: cover;
+  background-image: url(../images/header-cookie.png);
+
+  @media (min-height: 1024px) {
+    --header-height: 1024px;
+  }
 
   @include onTablet {
-    background: linear-gradient(90deg, transparent 75%, $color-croissont 25%);
+    grid-template-columns: 1fr;
   }
 
-  &__background {
-    position: absolute;
-    width: 66%;
-    height: 100vh;
-    z-index: -1;
-    background-size: cover;
-    background-image: url(../images/header-cookie.png);
-
-    @include onTablet {
-      width: 75%;
-    }
-
-    @media (min-height: 960px) {
-      height: 960px;
-    }
+  @media (max-width: 425px) {
+    background-image: url(../images/mobile-header.png);
   }
 
-  &__content {
+  &__main {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-    padding: 34px 0 360px;
-
-    @media (min-height: 960px) {
-      height: 960px;
-    }
+    justify-content: center;
   }
 
   &__top {
     margin-bottom: 40px;
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include onLaptop {
+      width: 100%;
+    }
+
+    @include onMobile {
+      margin-bottom: 100px;
+    }
+
+    @media (max-height: 500px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__container {
+    max-width: $container-width * 0.67;
+    height: var(--header-height);
+    padding: 45px 0 350px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onTablet {
+      width: 100vw;
+      padding: 45px 60px 350px;
+    }
+
+    @include onMobile {
+      justify-content: start;
+      padding: 25px 16px 116px;
+    }
   }
 
   &__title {
     margin-bottom: 20px;
+    font-weight: 400;
     font-size: 150px;
     color: $color-chocolate;
 
     @include onLaptop {
-      font-size: 135px;
+      font-size: 120px;
+    }
+
+    @include onMobile {
+      font-size: 80px;
+      line-height: 80%;
     }
   }
 
@@ -57,15 +83,27 @@
     font-size: 26px;
     line-height: 150%;
     color: $color-chocolate;
+
+    @include onMobile {
+      font-size: 16px;
+    }
+
+    @media (max-height: 400px) {
+      display: none;
+    }
   }
 
-  &__button {
-    text-decoration: none;
-    color: $color-chocolate;
-  }
+  &__hamburger {
+    display: none;
+    width: $action-button-size;
+    height: $action-button-size;
+    background-image: url(../images/burger.svg);
+    cursor: pointer;
 
-  &__info-container {
-    display: flex;
-    justify-content: space-between;
+    @include hover (transform, scale(1.2));
+
+    @include onTablet {
+      display: block;
+    }
   }
 }

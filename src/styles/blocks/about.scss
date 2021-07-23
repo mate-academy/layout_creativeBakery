@@ -22,11 +22,15 @@
   }
 
   &__items {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 60px;
+    gap: 50px;
     margin-bottom: 120px;
-    overflow: hidden;
+
+    @include onLaptop {
+      overflow-x: scroll;
+    }
   }
 
   &__item {
@@ -37,11 +41,16 @@
   }
 
   &__picture {
-    max-width: 200px;
+    width: 180px;
     margin-bottom: 12px;
+
+    @include onMobile {
+      width: 150px;
+    }
   }
 
   &__img {
+    width: 100%;
     object-fit: contain;
     border-radius: 50%;
   }

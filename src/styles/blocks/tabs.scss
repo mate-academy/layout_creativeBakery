@@ -1,15 +1,27 @@
 .tabs {
-  position: relative;
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 
   &__nav {
-    position: absolute;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-end;
-    right: 0;
-    top: 20%;
     list-style: none;
+
+    @include onTablet {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   &__selector {
@@ -19,6 +31,19 @@
     color: $color-cream;
     text-align: right;
     cursor: pointer;
+
+    @include hover (transform, scale(1.2));
+
+    @include onTablet {
+      padding: 0 20px;
+      font-size: 24px;
+      color: $color-croissont;
+    }
+
+    @include onMobile {
+      padding: 0 10px;
+      font-size: 16px;
+    }
   }
 
   &__selector--active {
@@ -26,18 +51,20 @@
     font-size: 160px;
     line-height: 160px;
     color: $color-chocolate;
-  }
 
-  &__arrow {
-    padding-right: 25px;
-    cursor: pointer;
-
-    &--up {
-      margin-bottom: 9px;
+    &:hover {
+      transform: none;
     }
 
-    &--down {
-      margin-top: 40px;
+    @include onTablet {
+      padding-right: 20px;
+      font-size: 70px;
+    }
+
+    @include onMobile {
+      padding-right: 10px;
+      font-size: 40px;
+      line-height: 80px;
     }
   }
 }

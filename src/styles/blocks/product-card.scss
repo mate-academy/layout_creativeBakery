@@ -7,6 +7,14 @@
 
   &:nth-child(2n - 1) {
     flex-direction: row-reverse;
+
+    @include onTablet {
+      flex-direction: column;
+    }
+  }
+
+  @include onTablet {
+    flex-direction: column;
   }
 
   &__title {
@@ -15,6 +23,12 @@
     font-weight: 400;
     line-height: 59px;
     color: $color-croissont;
+
+    @include onMobile {
+      margin-bottom: 15px;
+      font-size: 35px;
+      line-height: 42px;
+    }
   }
 
   &__info {
@@ -26,6 +40,11 @@
     font-weight: 400;
     font-size: 26px;
     line-height: 150%;
+
+    @include onMobile {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 
   &__description {
@@ -43,6 +62,12 @@
     height: 110px;
     border-radius: 50%;
     background-color: $color-cream;
+
+    @include onMobile {
+      width: 65px;
+      height: 65px;
+      text-align: center;
+    }
   }
 
   &__price {
