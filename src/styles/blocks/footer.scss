@@ -1,14 +1,28 @@
 .footer {
   width: 100%;
-  min-height: 160px;
   padding: 50px 0 18px;
   background-color: $color-chocolate;
+
+  @include onMobile {
+    padding: 50px;
+  }
 
   &__container {
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 10px;
+
+    @include onMobile {
+      row-gap: 45px;
+    }
+  }
+
+  &__logo {
+    @include onMobile {
+      position: relative;
+      left: -30px;
+    }
   }
 
   &__info {
@@ -16,6 +30,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include onMobile {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 60px;
+    }
   }
 
   &__nav {
@@ -25,6 +45,12 @@
       column-gap: 30px;
       row-gap: 5px;
       justify-items: center;
+    }
+
+    @include onMobile {
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+      justify-items: start;
     }
   }
 
