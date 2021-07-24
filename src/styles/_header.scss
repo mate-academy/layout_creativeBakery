@@ -1,0 +1,62 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 87px;
+
+  &__logo {
+    width: 112px;
+    height: 56px;
+
+    @media (max-width: 1150px) {
+      margin-top: 15px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    display: none;
+    top: 33px;
+    right: 16px;
+    width: 25px;
+    height: 18px;
+    z-index: 1;
+
+    background: url(../images/burger.svg) center no-repeat;
+    background-size: contain;
+
+    @media (max-width: 1150px) {
+      display: block;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked ~ nav {
+      transform: translate(0, 0) scale(1, 1);
+    }
+
+    &:checked + label {
+      background: url(../images/close-burger.svg) center no-repeat;
+      background-size: contain;
+    }
+
+    &:checked + label::after {
+      content: "";
+      position: absolute;
+      top: -33px;
+      right: 184px;
+      width: 100vw;
+      height: 608px;
+    }
+  }
+
+  &__nav {
+    width: 70%;
+    transition: transform 0.5s;
+
+    @media (max-width: 1150px) {
+      transform: translate(300px, 0) scale(0, 1);
+    }
+  }
+}

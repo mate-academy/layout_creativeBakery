@@ -4,3 +4,92 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin secondary-button {
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+
+  border: 2px solid $c-cream;
+  border-radius: 40px;
+  background-color: $c-cream;
+  color: $c-chocolate;
+
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  @include hover(background-color, $c-milk);
+
+  &:active {
+    opacity: 0.8;
+    border: none;
+    background-color: $c-cream;
+  }
+}
+
+@mixin primary-button {
+  text-align: center;
+  width: 160px;
+  height: 40px;
+  cursor: pointer;
+
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  border: 2px solid $c-croissant;
+  border-radius: 40px;
+  background-color: $c-croissant;
+  color: $c-chocolate;
+
+  @include hover(background-color, $c-milk);
+
+  &:active {
+    opacity: 0.8;
+    border: none;
+    background-color: $c-croissant;
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin downscroll {
+  width: 26px;
+  height: 15px;
+
+  background: url(../images/Vector-down.png) no-repeat;
+  background-size: contain;
+
+  @media (max-width: 900px) {
+    width: 20px;
+    height: 12px;
+  }
+}
+
+@mixin upscroll {
+  width: 26px;
+  height: 15px;
+
+  background: url(../images/Vector.png) no-repeat;
+  background-size: contain;
+
+  @media (max-width: 900px) {
+    width: 20px;
+    height: 12px;
+  }
+}
+
+@mixin achieve-images {
+  width: 200px;
+  height: 200px;
+
+  background-size: cover;
+}

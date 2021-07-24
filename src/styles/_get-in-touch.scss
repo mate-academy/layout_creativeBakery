@@ -1,0 +1,76 @@
+.get-in-touch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+
+  background-color: $c-croissant;
+
+  @media (max-width: 1024px) {
+    padding-top: 20px;
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    gap: 9px;
+
+    @media (max-width: 1024px) {
+      margin-left: 20px;
+    }
+  }
+
+  &__link {
+    @include hover(color, $c-milk);
+  }
+
+  a:first-child::before {
+    content: "";
+    position: absolute;
+    left: -60px;
+    width: 31px;
+    height: 31px;
+    top: 2px;
+
+    background: url(../images/icon/location.png) no-repeat;
+    background-position: center;
+
+    @media (max-width: 1150px) {
+      left: -46px;
+    }
+  }
+
+  a:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    left: -60px;
+    width: 31px;
+    height: 31px;
+    top: 60px;
+
+    background: url(../images/icon/phone.png) no-repeat;
+    background-position: center;
+
+    @media (max-width: 1150px) {
+      left: -46px;
+    }
+  }
+
+  a:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    left: -60px;
+    width: 31px;
+    height: 31px;
+    top: 120px;
+
+    background: url(../images/icon/mail.png) no-repeat;
+    background-position: center;
+
+    @media (max-width: 1150px) {
+      left: -46px;
+    }
+  }
+}
