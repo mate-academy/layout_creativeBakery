@@ -1,0 +1,93 @@
+.feedback {
+  padding: 130px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @media (max-width:1023px) {
+    flex-direction: column;
+    gap: 50px;
+    padding: 60px 0;
+  }
+
+  &__image {
+    width: 509px;
+    height: 417px;
+
+    @media (max-width:1023px) {
+      order: 2;
+      width: 80vw;
+      height: 64vw;
+    }
+
+    @media (max-width:767px) {
+      width: 80vw;
+      height: 64vw;
+    }
+  }
+ 
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 379px;
+    height: 377px;
+    gap: 20px;
+    order: 1;
+
+    @media (max-width:767px) {
+      width: 80vw;
+    }
+
+    @media (max-width:374px) {
+      width: 95vw;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__bot {
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    gap: 10px;
+  }
+
+  &__input {
+    outline: none;
+    font-size: 16px;
+    border: transparent;
+    background-color: inherit;
+    border-bottom: 2px solid rgba($color: $brown, $alpha: 0.2);
+
+    &:nth-child(5) {
+      padding-top: 100px;
+    }
+  }
+
+  &__input::placeholder {
+    opacity: 0.5;
+  }
+
+  &__button {
+    flex-shrink: 0;
+    @include button;
+    margin: 0 auto;
+    border-color: transparent;
+  }
+
+  &__message {
+    height: 30px;
+    resize: none;
+    font-size: 16px;
+    line-height: 22px;
+    border-color: transparent;
+    border-bottom: 2px solid rgba($color: $brown, $alpha: 0.2);
+    background-color: inherit;
+    outline: none;
+  }
+}

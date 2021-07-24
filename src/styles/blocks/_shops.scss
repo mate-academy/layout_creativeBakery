@@ -1,0 +1,81 @@
+.shops {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  background-color: $cream;
+  gap: 30px;
+
+  @media (max-width:767px) {
+    gap: 10px;
+  }
+
+  &__location {
+    position: relative;
+    width: 80vw;
+    height: 60vw;
+    background-image: url(/images/table/map1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    @media (max-width:1024px) {
+      width: 95vw;
+      height: 70vw;
+    }
+  }
+
+  &__form {
+    width: 750px;
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+
+    @media (max-width:768px) {
+      width: 90vw;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  &__adress,
+  &__city {
+    cursor: pointer;
+    height: 40px;
+    width: 30%;
+    border-color: transparent;
+    background-color: $cream;
+    border-bottom-color: $brown;
+    outline-color: $cream;
+  }
+
+  &__adress {
+    width: 40%;
+  }
+
+  @media (max-width:768px) {
+    &__adress,
+    &__city {
+      width: 80%;
+    }
+  }
+
+  &__button {
+    @include button;
+    border-color: transparent;
+  }
+
+  &__option:checked {
+    outline: none;
+    background-color: $orange;
+  }
+  
+  &__option:hover {
+    outline: none;
+    background-color: $orange;
+  }
+}
