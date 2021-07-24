@@ -1,0 +1,50 @@
+.search {
+  display: flex;
+  gap: 32px;
+  max-width: 900px;
+  padding-bottom: 70px;
+
+  @include breakpoint($small-tablet-bp) {
+    flex-direction: column;
+  }
+
+  &__button {
+    @extend %main-button;
+
+    @include breakpoint($small-tablet-bp) {
+      align-self: center;
+    }
+  }
+
+  &__city,
+  &__address {
+    min-width: 290px;
+    position: relative;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: $dark-color;
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 1px;
+      background-color: $dark-color;
+      bottom: 15px;
+      right: 0;
+      left: 0;
+
+      @include breakpoint($small-tablet-bp) {
+        bottom: -10px;
+      }
+    }
+  }
+
+  &__city {
+    min-width: 150px;
+
+    @include breakpoint($small-tablet-bp) {
+      width: 100%;
+    }
+  }
+}

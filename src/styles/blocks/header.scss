@@ -1,0 +1,83 @@
+.header {
+
+  &__container {
+    position: relative;
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 100vh;
+
+    @media (min-height: 1200px) {
+      height: 850px;
+    }
+  }
+
+  &__img-container {
+    width: 100%;
+    padding: 34px 60px 0;
+
+    background-image: url(/images/bake1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include breakpoint($notebook-bp) {
+      padding: 34px 40px;
+    }
+
+    @include breakpoint($mobile-bp) {
+      padding: 34px 20px;
+    }
+  }
+
+  &__title {
+    margin: 50px 0;
+
+    @include breakpoint(1210px) {
+      font-size: 125px;
+      margin: 35px 0;
+    }
+
+    @include breakpoint($mobile-bp) {
+      font-size: 100px;
+      line-height: 80px;
+    }
+
+    &--active {
+      transition: 0.3s;
+
+      @include breakpoint($tablet-bp) {
+        width: 50%;
+        font-size: 100px;
+        line-height: 100px;
+      }
+
+      @include breakpoint(700px) {
+        width: 50%;
+        font-size: 100px;
+        line-height: 80px;
+      }
+    }
+  }
+
+  &__text {
+
+    @include breakpoint($mobile-bp) {
+      font-size: 16px;
+    }
+
+    &--active {
+      transition: 0.3s;
+      font-size: 16px;
+    }
+  }
+  &__learn-button {
+    @extend %main-button;
+  }
+
+  &__right-column {
+    width: 425px;
+    padding: 34px 60px 0 50px;
+    background-color: $main-color;
+  }
+}
