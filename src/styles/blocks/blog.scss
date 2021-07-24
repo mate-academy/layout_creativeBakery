@@ -1,0 +1,46 @@
+.blog {
+
+  &__text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__info {
+    max-width: 480px;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 60px;
+
+    &--mob {
+      display: none;
+    }
+
+    @include onLap {
+
+      & {
+        display: none;
+      }
+
+      &--mob {
+        display: block;
+        max-width: 288px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__card-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 50px;
+
+    @include onPc {
+
+      & {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  }
+}
