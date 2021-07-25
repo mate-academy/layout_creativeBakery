@@ -5,8 +5,9 @@
   gap: 20px;
 
   &__input {
-    width: 378px;
+    width: 500px;
     height: 31px;
+    flex-grow: 1;
     padding-left: 5px;
 
     font-family: "Rubik", sans-serif;
@@ -22,12 +23,20 @@
     background-color: inherit;
     color: $c-chocolate;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 600px) {
       width: 288px;
     }
 
     &--message {
-      margin-top: 70px;
+      position: relative;
+      resize: none;
+      height: 120px;
+      border-width: 2px;
+
+      &::placeholder {
+        position: absolute;
+        top: 75%;
+      }
     }
   }
 
