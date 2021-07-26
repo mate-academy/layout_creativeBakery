@@ -36,6 +36,9 @@
     width: 100%;
 
     overflow-x: auto;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
   }
 
   &__fact {
@@ -44,6 +47,10 @@
 
     &:first-child {
       margin-left: 69px;
+
+      @include onTablet {
+        margin-left: 0;
+      }
     }
   }
 
@@ -52,7 +59,7 @@
 
     margin-bottom: 20px;
 
-    @include onTablet {
+    @include onDesktop {
       @include square(200px);
     }
   }

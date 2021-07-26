@@ -1,0 +1,64 @@
+.feedback {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 14px 50px;
+
+  @include onDesktop {
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+  }
+
+  &__massage {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      max-width: 380px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__form {
+    width: 100%;
+    padding: 0 2px;
+
+    @include onTablet {
+      padding: 0 15px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+    }
+  }
+
+  &__input {
+    @extend %select-form;
+    padding: 2px 0;
+    margin-bottom: 20px;
+
+    &-area {
+      margin-bottom: 30px;
+
+      &::placeholder {
+        padding-top: 90px;
+      }
+    }
+  }
+
+  &__btn {
+    margin: 0 auto 50px;
+  }
+
+  &__img {
+    padding: 0 35px;
+    object-fit: contain;
+
+    @include onDesktop {
+      max-width: 510px;
+    }
+  }
+}
