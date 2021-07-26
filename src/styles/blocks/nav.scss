@@ -4,24 +4,59 @@
   align-items: baseline;
 
   &__list {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-
     list-style: none;
   }
 
   &__item {
     display: inline-block;
+    margin-right: 34px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__logo {
     margin-right: 260px;
   }
 
+  &__menu-image {
+    display: none;
+  }
+
   @include laptop {
     &__logo {
-      margin-right: 200px;
+      margin-right: 160px;
+    }
+
+    &__item {
+      margin-right: 20px;
+    }
+  }
+
+  @include tablet {
+    &__logo {
+      margin-right: 140px;
+    }
+
+    &__item {
+      margin-right: 18px;
+    }
+  }
+
+  @include phone {
+    &__menu-image {
+      display: block;
+      height: 18px;
+      width: 25px;
+    }
+
+    &__list {
+      display: none;
+    }
+
+    &__logo {
+      margin-left: 16px;
     }
   }
 }
