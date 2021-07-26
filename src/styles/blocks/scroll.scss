@@ -2,8 +2,10 @@
   display: none;
 
   &__big-number {
+    margin-right: -5%;
+    
     font-size: 176px;
-    line-height: 209px;
+    line-height: 120%;
     color: $dark-brown;
   }
 
@@ -11,7 +13,7 @@
     margin-bottom: 14px;
 
     font-size: 40px;
-    line-height: 47px;
+    line-height: 120%;
     color: $cream;
 
     &--last {
@@ -20,7 +22,7 @@
   }
 
   &__arrow {
-    margin-right: 12px;
+    margin-right: 5%;
     width: 26px;
     height: 15px;
 
@@ -29,14 +31,39 @@
     }
   }
 
-  @include phone {
-    & {
-      display: flex;
-      align-items: baseline;
-
-      margin-left: 50%;
-      transform: translateX(-50%);
+  @include fullHD {
+    &__big-number {
+      font-size: 194px;
     }
+
+    &__small-number {
+      font-size: 44px;
+    }
+
+    &__arrow {
+      width: 30px;
+      height: 18px;
+    }
+  }
+
+  @include large {
+    &__big-number {
+      font-size: 246px;
+    }
+
+    &__small-number {
+      font-size: 56px;
+    }
+
+    &__arrow {
+      width: 38px;
+      height: 24px;
+    }
+  }
+
+  @include phone {
+    display: flex;
+    align-items: baseline;
 
     &__arrow {
       height: 24px;

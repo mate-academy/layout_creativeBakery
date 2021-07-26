@@ -20,13 +20,21 @@
     margin-right: 260px;
   }
 
-  &__menu-image {
-    display: none;
+  @include fullHD {
+    &__link {
+      font-size: 32px;
+    }
+  }
+
+  @include large {
+    &__link {
+      font-size: 40px;
+    }
   }
 
   @include laptop {
     &__logo {
-      margin-right: 160px;
+      margin-right: 140px;
     }
 
     &__item {
@@ -34,29 +42,23 @@
     }
   }
 
-  @include tablet {
-    &__logo {
-      margin-right: 140px;
-    }
-
-    &__item {
-      margin-right: 18px;
-    }
-  }
-
   @include phone {
-    &__menu-image {
-      display: block;
-      height: 18px;
-      width: 25px;
-    }
-
     &__list {
       display: none;
     }
 
     &__logo {
       margin-left: 16px;
+    }
+  }
+
+  @media (max-width: 930px) {
+    &__logo {
+      margin-right: 10px;
+    }
+
+    &__item {
+      margin-right: 5px;
     }
   }
 }

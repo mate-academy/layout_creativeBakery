@@ -9,6 +9,8 @@
     width: 100%;
     height: 100vh;
 
+    position: relative;
+
     padding: 60px 20px 0 90px;
 
     background-image: url(../images/header-background-desktop.png);
@@ -26,6 +28,10 @@
     margin-bottom: 50px;
   }
 
+  &__menu-image {
+    display: none;
+  }
+
   &__title {
     margin-bottom: 20px;
   }
@@ -34,13 +40,57 @@
     margin-bottom: 24px;
   }
 
+  @include fullHD {
+    grid-template-columns: 1fr 500px;
+
+    &__main {
+      padding-right: 60px;
+    }
+
+    &__nav {
+      margin-bottom: 80px;
+    }
+
+    &__title {
+      font-size: 220px;
+    }
+
+    &__subtitle {
+      font-size: 44px;
+    }
+  }
+
+  @include large {
+    grid-template-columns: 1fr 700px;
+
+    &__main {
+      padding: 90px 90px 0 120px;
+    }
+
+    &__nav {
+      margin-bottom: 140px;
+    }
+
+    &__title {
+      margin-bottom: 32px;
+
+      font-size: 280px;
+    }
+
+    &__subtitle {
+      margin-bottom: 50px;
+
+      font-size: 56px;
+    }
+  }
+
   @include laptop {
     & {
       grid-template-columns: 1fr 380px;
 
       &__title {
-        font-size: 120px;
-        line-height: 132px;
+        font-size: 130px;
+        line-height: 110%;
       }
     }
   }
@@ -51,7 +101,6 @@
 
       &__title {
         font-size: 120px;
-        line-height: 132px;
       }
 
       &__subtitle {
@@ -78,11 +127,21 @@
       background-repeat: no-repeat;
       background-size: cover;
 
-      padding: 30px 16px;
+      padding: $mobile-vertical-padding $mobile-side-padding;
     }
 
     &__nav {
       margin-bottom: 100px;
+    }
+
+    &__menu-image {
+      position: absolute;
+      top: $mobile-vertical-padding;
+      right: $mobile-side-padding;
+
+      display: block;
+      height: 18px;
+      width: 25px;
     }
 
     &__title {
@@ -97,6 +156,14 @@
 
     &__button {
       margin-bottom: 40px;
+    }
+
+    &__scroll {
+      position: absolute;
+      bottom: $mobile-vertical-padding;
+
+      margin-left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
