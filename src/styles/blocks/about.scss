@@ -29,11 +29,12 @@
     margin-bottom: 120px;
 
     @include onLaptop {
-      overflow-x: scroll;
+      display: flex;
+      justify-content: space-between;
     }
 
     @include onMobile {
-      gap: 30px;
+      justify-content: center;
     }
   }
 
@@ -42,6 +43,18 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    &--onLaptop {
+      @include onLaptop {
+        display: none;
+      }
+    }
+
+    &--onMobile {
+      @media (max-width: 540px) {
+        display: none;
+      }
+    }
   }
 
   &__picture {
