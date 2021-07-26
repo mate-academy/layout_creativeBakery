@@ -1,0 +1,13 @@
+@function adaptivSize($min, $max, $minScreen, $maxScreen) {
+  @return $min + ($max - $min) * ((100vw - $minScreen)
+  / ($maxScreen - $minScreen));
+}
+
+@function get-vw($target) {
+  $vw-context: calc((#{$viewport} * 0.01) * 1px);
+  @return ($target/$vw-context) * 1vw;
+}
+
+// @function test($min, $max) {
+//   @return $max - $min;
+// }
