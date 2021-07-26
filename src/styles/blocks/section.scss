@@ -1,8 +1,7 @@
 .section {
   box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  display: flex;
+  flex-direction: column;
 
   &__about {
     margin: 0 auto;
@@ -20,5 +19,22 @@
     display: flex;
     justify-content: center;
     margin: 40px;
+  }
+
+  &__article {
+
+    &--left {
+      @include onDesktop {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+
+    &--right {
+      @include onDesktop {
+        display: flex;
+        flex-direction: row;
+      }
+    }
   }
 }
