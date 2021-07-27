@@ -8,6 +8,11 @@
 
   &__header {
     margin-bottom: 40px;
+    @include onDesktop {
+      position: absolute;
+      right: 33%;
+      left: 0;
+    }
   }
 
   &__footer {
@@ -22,12 +27,22 @@
     left: 30%;
     right: 0;
     top: 0;
+    box-sizing: border-box;
+    border-left: 2px solid $milk;
+    background-color: $croissant;
+    height: 100vh;
 
     transform: translateX(100%);
     transition: transform 0.5s;
 
     &:target {
       transform: translateX(0);
+    }
+
+    @include onDesktop {
+      position: absolute;
+      transform: none;
+      left: 67%;
     }
   }
 }

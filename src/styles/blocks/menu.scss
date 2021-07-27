@@ -1,15 +1,16 @@
 .menu {
-  box-sizing: border-box;
-  border-left: 2px solid $milk;
-  background-color: $croissant;
-  height: 100vh;
-
   &__content {
     display: flex;
     flex-direction: column;
     justify-content: start;
     padding: 16px;
     padding-bottom: 30px;
+
+    @include onDesktop {
+      padding-right: 56px;
+      padding-top: 44px;
+      padding-left: 32px;
+    }
   }
 
   &__top {
@@ -20,13 +21,26 @@
     list-style: none;
     padding: 0;
 
+    @include onDesktop {
+      display: flex;
+    }
+
     &--top {
       margin-bottom: 104px;
+
+      @include onDesktop {
+        display: none;
+      }
     }
   }
 
   &__item {
     margin-bottom: 30px;
+
+    @include onDesktop {
+      margin: 0;
+      margin-left: 34px;
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -42,14 +56,32 @@
     }
   }
 
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+  }
+
   &__call {
     text-decoration: none;
     color: $chocolate;
     margin-bottom: 30px;
+    @include onDesktop {
+      margin: 0;
+    }
   }
 
   &__button {
     margin-bottom: 30px;
+    @include onDesktop {
+      margin: 0;
+    }
   }
 
   &__select {

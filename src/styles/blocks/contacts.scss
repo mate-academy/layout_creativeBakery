@@ -1,13 +1,33 @@
 .contacts {
   background-color: $croissant;
+  @include  onDesktop {
+    background-color: $milk;
+  }
 
   &__title {
     color: $milk;
     margin: 40px 0 0;
+    @include onDesktop {
+      color: $croissant;
+    }
+  }
+
+  &__grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    @include onDesktop {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "contacts map map" "picture picture feedback";
+    }
   }
 
   &__content {
     padding: 0 16px 40px;
+    grid-area: contacts;
+    background-color: $croissant;
   }
 
   &__subtitle {
@@ -16,6 +36,10 @@
     font-weight: normal;
     font-size: 20px;
     line-height: 150%;
+
+    @include onDesktop {
+      font-size: 26px;
+    }
   }
 
   &__list {
@@ -63,6 +87,7 @@
 
   &__map {
     width: 100%;
+    grid-area: map;
   }
 
   &__google-map {
@@ -74,6 +99,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    grid-area: picture;
     width: 100%;
     background-color: $milk;
   }
@@ -89,5 +115,6 @@
 
   &__feedback {
     background-color: $milk;
+    grid-area: feedback;
   }
 }
