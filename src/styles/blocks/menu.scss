@@ -1,0 +1,80 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 62%;
+  padding: 30px 16px;
+  background-color: $light-brown;
+
+  @include tablet {
+    padding: 35px 45px;
+  }
+
+  @include notebook {
+    display: none;
+  }
+
+  &:target {
+    transform: translateX(0%);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__cross {
+    width: fit-content;
+    align-self: flex-end;
+    margin-bottom: 30px;
+  }
+
+  &__secondary-nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 24px;
+    color: $dark-brown;
+    text-decoration: none;
+
+    @include tablet {
+      font-size: 20px;
+      line-height: 28px;
+    }
+    
+    &--call-back {
+      background-color: #f1cc9d;
+      width: 100px;
+      height: 30px;
+      margin-top: 30px;
+
+      @include tablet {
+        width: 120px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__language {
+    border-color: transparent;
+    background-color: $light-brown;
+    font-size: 16px;
+    margin-top: 30px;
+
+    @include tablet {
+      font-size: 20px;
+      margin-top: 40px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
