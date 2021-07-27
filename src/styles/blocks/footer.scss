@@ -2,18 +2,42 @@
   padding: 60px 40px;
   background-color: #412d22;
 
+  @include onDesktop {
+    padding: 50px 55px 18px;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
+    @include onDesktop {
+      // align-items: center;
+    }
   }
 
-  // @include onDesktop {
+  &__container {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 
-  // }
+  &__nav {
+    @include onDesktop {
+      display: flex;
+      gap: 34px;
+    }
+  }
 
   &__socials {
     margin: 50px 0;
+
+    @include onDesktop {
+      gap: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__copyright {
@@ -31,4 +55,9 @@
 
 .footer-link {
   color: #fff;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #e39a3b;
+  }
 }
