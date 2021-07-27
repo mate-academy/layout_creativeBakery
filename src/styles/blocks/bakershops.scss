@@ -1,0 +1,98 @@
+.bakershops {
+  background-color: #f1cc9d;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__city,
+  &__adress {
+    height: 30px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    width: 100%;
+    opacity: 0.5;
+    border: none;
+    outline: none;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #412d22;
+    background-color: inherit;
+  }
+
+  &__city {
+    @include onDesktop {
+      width: 20%;
+    }
+  }
+
+  &__adress {
+    @include onDesktop {
+      width: 30%;
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    padding-bottom: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/bakershopsmap.svg);
+
+    // @include onDesktop {
+      
+    // }
+  }
+
+  &__map--scaler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    gap: 40px;
+    font-size: 30px;
+    line-height: 150%;
+    cursor: pointer;
+
+    &-minus {
+      text-align: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #fff;
+
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    &-plus {
+      text-align: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #fff;
+
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    @include onDesktop {
+      visibility: hidden;
+    }
+  }
+}
