@@ -1,0 +1,100 @@
+.header {
+  display: flex;
+  height: 840px;
+
+  @include to1024 {
+    height: 570px;
+    background-image: url(../images/header2.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__container {
+    width: 70%;
+    background-image: url(../images/header2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include to1024 {
+      background-image: none;
+    }
+  }
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 33px;
+    margin: 58px 17% 0 7%;
+    padding-bottom: 50px;
+
+    @include to1024 {
+      margin: 33px 5% 0 12%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 23% 0 5%;
+  }
+
+  &__middle-title {
+    margin-bottom: 20px;
+    font-family: "Cookie", sans-serif;
+    font-weight: 400;
+    font-size: 160px;
+    line-height: 130px;
+    color: $darkbrown;
+
+    @include to1024 {
+      margin-bottom: 29px;
+      font-family: "Cookie", sans-serif;
+      font-weight: 400;
+      font-size: 100px;
+      line-height: 80px;
+      color: $darkbrown;
+    }
+  }
+
+  &__middle-subtitle {
+    font-family: "Rubik", sans-serif;
+    margin-bottom: 19px;
+    font-size: 26px;
+    line-height: 39px;
+    font-weight: 400;
+    color: $darkbrown;
+
+    @include to1024 {
+      margin-bottom: 19px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      color: $darkbrown;
+    }
+  }
+
+  
+  &-burger {
+    position: fixed;
+    right: 5%;
+    top: 40px;
+
+    @include from1024 {
+      display: none;
+    }
+  }
+
+  &__middle-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+
+    @include from1024 {
+      display: none;
+    }
+    
+  }
+}
