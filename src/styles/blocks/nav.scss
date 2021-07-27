@@ -1,10 +1,10 @@
 .nav {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
 
   &__list {
     list-style: none;
+    transform: translateY(-10px);
   }
 
   &__item {
@@ -16,19 +16,39 @@
     }
   }
 
+  &__link {
+    transition: color 300ms;
+
+    &:hover {
+      color: $light-brown;
+    }
+  }
+
   &__logo {
     margin-right: 260px;
   }
 
+  &__menu-image {
+    display: none;
+  }
+
   @include fullHD {
     &__link {
-      font-size: 32px;
+      font-size: 26px;
+    }
+
+    &__list {
+      transform: translateY(-18px);
     }
   }
 
   @include large {
     &__link {
-      font-size: 40px;
+      font-size: 36px;
+    }
+
+    &__list {
+      transform: translateY(-22px);
     }
   }
 
@@ -42,23 +62,47 @@
     }
   }
 
-  @include phone {
+  @media (max-width: 1064px) {
+    &__logo {
+      margin-right: 100px;
+    }
+  }
+
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+
     &__list {
       display: none;
     }
 
-    &__logo {
-      margin-left: 16px;
+    &__menu-image {
+      display: inline-block;
+      height: 26px;
+      width: 36px;
+    }
+
+    &__menu-link {
+      transform: translateY(-6px);
     }
   }
 
-  @media (max-width: 930px) {
-    &__logo {
-      margin-right: 10px;
+  @include phone {
+    display: flex;
+    justify-content: space-between;
+
+    &__list {
+      display: none;
     }
 
-    &__item {
-      margin-right: 5px;
+    &__menu-image {
+      display: inline-block;
+      height: 18px;
+      width: 25px;
+    }
+
+    &__menu-link {
+      transform: translateY(-6px);
     }
   }
 }

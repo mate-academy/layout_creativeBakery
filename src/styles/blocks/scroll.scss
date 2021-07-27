@@ -3,7 +3,7 @@
 
   &__big-number {
     margin-right: -5%;
-    
+
     font-size: 176px;
     line-height: 120%;
     color: $dark-brown;
@@ -14,7 +14,19 @@
 
     font-size: 40px;
     line-height: 120%;
-    color: $cream;
+    color: $light-brown;
+
+    cursor: pointer;
+
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &--cream {
+      color: $cream;
+    }
 
     &--last {
       margin-bottom: 40px;
@@ -26,8 +38,26 @@
     width: 26px;
     height: 15px;
 
+    transition: transform 300ms;
+
     &--up {
       margin-bottom: 9px;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+
+    &--down:hover {
+      transform: translateY(5px);
+    }
+
+    &--left:hover {
+      transform: translateX(-5px);
+    }
+
+    &--right:hover {
+      transform: translateX(5px);
     }
   }
 
@@ -61,6 +91,38 @@
     }
   }
 
+  @include tablet {
+    display: flex;
+    align-items: baseline;
+
+    &__arrow {
+      height: 36px;
+      width: 18px;
+      align-self: center;
+
+      margin-right: 0;
+
+      &:first-child {
+        margin-right: 24px;
+      }
+    }
+
+    &__big-number {
+      font-size: 60px;
+      line-height: 120%;
+
+      margin-right: 30px;
+    }
+
+    &__small-number {
+      font-size: 24px;
+      line-height: 120%;
+
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
+  }
+
   @include phone {
     display: flex;
     align-items: baseline;
@@ -70,6 +132,8 @@
       width: 12px;
       align-self: center;
 
+      margin-right: 0;
+
       &:first-child {
         margin-right: 15px;
       }
@@ -77,14 +141,14 @@
 
     &__big-number {
       font-size: 40px;
-      line-height: 47px;
+      line-height: 120%;
 
       margin-right: 20px;
     }
 
     &__small-number {
       font-size: 16px;
-      line-height: 19px;
+      line-height: 120%;
 
       margin-bottom: 0;
       margin-right: 20px;

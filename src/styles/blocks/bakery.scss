@@ -1,0 +1,238 @@
+.bakery {
+  text-align: center;
+  padding: 0 20px;
+
+  &__section {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 135px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+
+    width: 300px;
+  }
+
+  &__subtitle {
+    color: $light-brown;
+    margin-bottom: 40px;
+  }
+
+  &__name {
+    margin-bottom: 12px;
+  }
+
+  &__description {
+    margin-bottom: 32px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 110px;
+    width: 110px;
+
+    background-color: $cream;
+    border-radius: 50%;
+
+    font-weight: bold;
+  }
+
+  &__price-number {
+    display: inline-block;
+    font-size: inherit;
+
+    &::after {
+      content: "/";
+    }
+  }
+
+  &__price-count {
+    display: inline-block;
+    font-size: inherit;
+  }
+
+  &__button {
+    margin-bottom: 80px;
+  }
+
+  &__image {
+    object-fit: contain;
+  }
+
+  @include fullHD {
+    &__title {
+      font-size: 132px;
+    }
+
+    &__subtitle {
+      font-size: 60px;
+    }
+
+    &__name {
+      font-size: 32px;
+    }
+
+    &__description {
+      font-size: 20px;
+    }
+
+    &__price {
+      height: 132px;
+      width: 132px;
+
+      font-size: 20px;
+    }
+
+    &__content {
+      width: 360px;
+    }
+
+    &__image {
+      width: 840px;
+    }
+  }
+
+  @include large {
+    &__title {
+      font-size: 160px;
+      margin-bottom: 50px;
+    }
+
+    &__subtitle {
+      font-size: 72px;
+      margin-bottom: 50px;
+    }
+
+    &__name {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    &__description {
+      font-size: 24px;
+      margin-bottom: 50px;
+    }
+
+    &__price {
+      height: 160px;
+      width: 160px;
+
+      font-size: 24px;
+    }
+
+    &__content {
+      width: 430px;
+    }
+
+    &__image {
+      width: 1000px;
+    }
+  }
+
+  @include tablet {
+    &__image {
+      width: 400px;
+    }
+
+    &__content {
+      width: 260px;
+    }
+
+    &__title {
+      font-size: 100px;
+    }
+
+    &__subtitle {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    &__price {
+      height: 90px;
+      width: 90px;
+
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 670px) {
+    padding: 0 30px;
+
+    &__section {
+      flex-direction: column;
+    }
+
+    &__content {
+      order: -1;
+
+      width: 100%;
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
+
+  @include phone {
+    &__section {
+      flex-direction: column;
+    }
+
+    &__title {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    &__content {
+      order: -1;
+      width: 100%;
+    }
+
+    &__subtitle {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    &__name {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    &__description {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    &__price {
+      flex-direction: column;
+      justify-content: center;
+
+      height: 66px;
+      width: 66px;
+      line-height: 24px;
+
+      font-size: 16px;
+    }
+
+    &__price-number {
+      &::after {
+        display: none;
+      }
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
+}
