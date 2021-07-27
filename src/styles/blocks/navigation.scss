@@ -1,0 +1,50 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  @include onDesktop {
+    align-items: center;
+  }
+  
+
+  &__list {
+    display: none;
+  
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 34px;
+    }
+  }
+
+  &__link {
+    @extend %primary-text;
+  }
+
+  &__call-back {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+    }
+  }
+
+  &__side-item {
+    @include onDesktop {
+      margin-right: 20px;
+    }
+  }
+}
+
+.call-link {
+  @extend %primary-text;
+}
