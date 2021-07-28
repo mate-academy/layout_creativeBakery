@@ -14,12 +14,14 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 33px 16px 33px 20px;
+    gap: 20px;
   }
 
   &__close {
     display: block;
     width: 22px;
     height: 22px;
+    flex-shrink: 0;
     align-self: flex-end;
 
     background: url(../images/close_menu.svg) center / contain no-repeat;
@@ -28,5 +30,9 @@
   &__info {
     display: grid;
     gap: 30px;
+
+    @include onLandscape {
+      gap: 10px;
+    }
   }
 }
