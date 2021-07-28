@@ -1,5 +1,9 @@
 .article {
-  margin: 0 10px;
+  margin-bottom: 40px;
+
+  @include onDesktop {
+    margin-bottom: 120px;
+  }
 
   &__title {
     margin: 0 0 16px;
@@ -52,31 +56,49 @@
     }
   }
 
-  &__image {
+  &__image-box {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
     height: 200px;
+  
+    @include onDesktop {
+      height: 514px;
+    }
+  }
 
-    
+  &__link {
+    display: flex;
+    width: 12px;
+    height: 100%;
+    @include onDesktop {
+      width: 16px;
+    }
 
-    &--on-desktop {
-      &::before {
-        content: "";
-        background-image: url(/images/arrow-left.svg);
-        width: 26px;
-        height: 26px;
-        background-repeat: no-repeat;
-      }
+    transition: all 500ms;
 
-      &::after {
-        content: "";
-        background-image: url(/images/arrow-right.svg);
-        width: 26px;
-        height: 26px;
-        background-repeat: no-repeat;
-      }
+    &:hover {
+      transform: scale(1.2);
+    }
 
-      @include onDesktop {
-        height: 514px;
-      }
+    &__left {
+      width: 26px;
+      height: 32px;
+    }
+
+    &__right {
+      width: 26px;
+      height: 32px;
+    }
+  }
+
+  &__image {
+    margin: 0;
+    display: block;
+    transition: all 500ms;
+
+    &:hover {
+      transform: scale(0.95);
     }
   }
 }
