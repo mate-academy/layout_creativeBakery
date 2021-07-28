@@ -1,0 +1,72 @@
+.number-list {
+  position: relative;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: space-evenly;
+
+  @include onDesktop {
+    position: absolute;
+    height: 60%;
+    top: 200px;
+    left: 120%;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    background-image: url(/images/arrow-left.svg);
+    width: 26px;
+    height: 26px;
+    background-repeat: no-repeat;
+
+    @include onDesktop {
+      background-image: url(/images/arrow-up.svg);
+    }
+  }
+
+  &::after {
+    content: "";
+    background-image: url(/images/arrow-right.svg);
+    width: 26px;
+    height: 26px;
+    background-repeat: no-repeat;
+
+    @include onDesktop {
+      background-image: url(/images/arrow-down.svg);
+    }
+  }
+
+  &__item {
+    font-size: 16px;
+    line-height: 19px;
+
+    @include onDesktop {
+      font-size: 40px;
+      line-height: 47px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $croissant;
+    @include onDesktop {
+      color: $cream;
+    }
+
+    &:focus {
+      font-size: 40px;
+      line-height: 47px;
+      color: $chocolate;
+      outline: none;
+      
+
+      @include onDesktop {
+        font-size: 176px;
+        line-height: 209px;
+      }
+    }
+  }
+}
