@@ -5,18 +5,120 @@
   justify-content: center;
   align-items: center;
 
+  &--last {
+    margin-bottom: 0;
+  }
+
+  &__description {
+    align-self: flex-start;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
+    padding: 0 16px;
+
+    @include tablet {
+      padding: 0 45px;
+    }
+  }
+
+  &__image {
+    display: block;
+
+    @media (min-width: 700px) {
+      width: 40%;
+    }
+
+    @include tablet {
+      width: 40%;
+    }
+
+    @include Design {
+      &--first {
+        width: 699px;
+        height: 514px;
+      }
+
+      &--second {
+        width: 741px;
+        height: 482px;
+      }
+
+      &--third {
+        width: 662px;
+        height: 535px;
+      }
+
+      &--fourth {
+        width: 665px;
+        height: 461px;
+      }
+    }
   }
 
   &__goods {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+
     @media (min-width: 600px) {
       flex-direction: row;
+      justify-content: flex-start;
+
+      &--end {
+        flex-direction: row-reverse;
+      }
+    }
+
+    @media (min-width: 700px) {
+      gap: 80px;
+
+      &--last {
+        margin-bottom: 0;
+      }
+    }
+
+    @include tablet {
+      gap: 120px;
+      margin-bottom: 80px;
+
+      &--last {
+        margin-bottom: 0;
+      }
+    }
+
+    @include Design {
+      gap: 215px;
+      margin-bottom: 120px;
+
+      &--last {
+        margin-bottom: 0;
+      }
     }
   }
 
   @include tablet {
     flex-direction: row;
+  }
+
+  &__button {
+    width: 160px;
+    align-self: center;
+
+    @media (min-width: 700px) {
+      margin-top: 80px;
+    }
+
+    @include tablet {
+      margin-top: 100px;
+    }
+
+    @include Design {
+      margin-top: 160px;
+    } 
   }
 }

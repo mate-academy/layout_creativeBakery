@@ -6,9 +6,17 @@
 
   @include tablet {
     background: url(../images/bake-cream-puff-cup.png);
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  @include notebook {
+    background-position-x: -50px;
+  }
+
+  @include Design {
+    background-size: contain;
+    background-position-x: 0;
   }
 
   &__right-side {
@@ -43,15 +51,15 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    padding-top: 15px;
+    padding: 15px 16px;
 
     @include tablet {
-      padding-top: 35px;
+      padding: 35px 45px;
     }
 
     @include notebook {
       display: grid;
-      grid-template-columns: 7fr 4fr;
+      grid-template-columns: 8fr 4fr;
       padding: 0;
     }
   }
@@ -164,18 +172,5 @@
     background-color: $light-brown;
     font-size: 16px;
     height: fit-content;
-  }
-
-  &__aside {
-    display: none;
-
-    @include notebook {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 400px;
-      height: 500px;
-      background-color: $light-brown;
-    }
   }
 }
