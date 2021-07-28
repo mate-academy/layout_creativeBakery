@@ -1,12 +1,30 @@
 .footer {
   padding: 40px 48px 50px;
   background-color: $chocolate;
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
 
   &__list {
     margin-bottom: 60px;
+    @include onDesktop {
+      margin-bottom: 0;
+    }
   }
 
   &__privacy {
+    align-self: center;
+    width: 196px;
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -15,5 +33,17 @@
     font-weight: normal;
     font-size: 12px;
     line-height: 140.62%;
+  }
+
+  &__extra {
+    display: flex;
+    justify-content: space-between;
+    width: 234px;
+    height: 32px;
+    align-self: center;
+
+    @include onDesktop {
+      width: 133px;
+    }
   }
 }
