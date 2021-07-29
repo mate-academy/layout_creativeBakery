@@ -1,10 +1,5 @@
 .about {
 
-  // &__image {
-  //   width: 100%;
-  //   min-width: 180px;
-  // }
-
   &__title {
     margin-bottom: 20px;
   }
@@ -21,6 +16,14 @@
     width: 100%;
     gap: 40px;
     margin-bottom: 100px;
+
+    @media (max-width: 960px) {
+      gap: 10px;
+    }
+
+    @media (max-width: 670px) {
+      justify-content: center;
+    }
   }
 
   &__text {
@@ -35,11 +38,35 @@
 
   &__achievment {
     text-align: center;
+
+    @include onTablet {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      &:nth-child(4) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 670px) {
+      &:nth-child(n + 3) {
+        display: none;
+      }
+    }
   }
 
   &__achievment-value {
     font-weight: 300;
     font-size: 60px;
     line-height: 71px;
+  }
+
+  &__image {
+    @media (max-width: 960px) {
+      width: 180px;
+    }
   }
 }
