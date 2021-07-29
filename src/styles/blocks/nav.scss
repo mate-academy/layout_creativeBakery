@@ -6,14 +6,27 @@
   &__list {
     display: flex;
     list-style: none;
+
+    @include onMobile {
+      display: none;
+    }
   }
 
   &__item {
     margin-right: 34px;
     transition: 0.3s;
-
+    
     &:hover {
       color: $colorLightBrown;
+    }
+
+    &--extra-menu-hover-color:hover {
+      color: $colorCream;
+    }
+    @include onMobile {
+      font-size: 18px;
+      line-height: 150%;
+      padding-bottom: 30px;
     }
   }
 }
