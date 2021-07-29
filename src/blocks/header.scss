@@ -1,9 +1,31 @@
 .header {
-  background: url(../images/header.jpg) center / cover no-repeat;
-
+  z-index: 2;
   @include onDesktop {
     display: grid;
     grid-template-columns: 1fr 425px;
+  }
+
+  &__wrapper {
+    background: url(../images/header.jpg) center / cover no-repeat;
+  }
+
+  &__left-wrap {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: 80%;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    background: $lightBrown;
+
+    @media (min-width: 3100px) {
+      left: 70%;
+    }
+    @media (max-width: 1920px) {
+      display: none;
+    }
   }
 
   &__content {
@@ -99,6 +121,7 @@
       padding: 66px 60px 0 40px;
 
       background-color: $lightBrown;
+      z-index: 2;
     }
   }
 
