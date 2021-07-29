@@ -29,7 +29,23 @@
   }
 
   &__menu-image {
+    object-fit: contain;
     display: none;
+  }
+
+  &__messengers {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__messenger-image {
+    object-fit: contain;
+
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   @include fullHD {
@@ -85,12 +101,30 @@
     &__menu-link {
       transform: translateY(-6px);
     }
+
+    &__messenger-image {
+      height: 26px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    &__messengers {
+      gap: 15px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__messengers {
+      width: 100%;
+      justify-content: space-around;
+    }
+
+    &__messenger-image {
+      height: 30px;
+    }
   }
 
   @include phone {
-    display: flex;
-    justify-content: space-between;
-
     &__list {
       display: none;
     }
@@ -104,9 +138,17 @@
     &__menu-link {
       transform: translateY(-6px);
     }
+
+    &__messengers {
+      justify-content: space-between;
+    }
   }
 
   @include phone-landscape {
-    margin-bottom: 20px;
+    margin-bottom: 8px;
+
+    &__menu-image {
+      height: 26px;
+    }
   }
 }
