@@ -1,11 +1,12 @@
 .header {
+  display: flex;
   background-image: url(../images/bake-cream-puff-cup-1775045.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   &__container {
-    max-width: 1024px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -13,7 +14,7 @@
     padding: 16px;
 
     @include onDesktop {
-      padding: 34px 59px;
+      padding: 34px 99px 200px;
     }
   }
 
@@ -45,6 +46,51 @@
   }
 
   &__dates {
-    // display: flex;
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__right-side {
+    width: 60%;
+    background-color: #e39a3b;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-top {
+      display: flex;
+      gap: 20px;
+      padding: 47px 27px 100px;
+    }
+
+    &-arrow-up {
+      width: 26px;
+      height: 15px;
+      margin-right: 20px;
+      background-image: url(../images/arrow-up.svg);
+    }
+
+    &-arrow-down {
+      width: 26px;
+      height: 15px;
+      margin-right: 20px;
+      background-image: url(../images/arrow-down.svg);
+    }
+  }
+
+  &__right-side-dates-wrapper {
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 }
