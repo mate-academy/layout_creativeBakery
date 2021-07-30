@@ -1,4 +1,10 @@
 .bakershops {
+  padding: 40px 16px 30px;
+
+  @include onDesktop {
+    padding: 40px 0 57px;
+  }
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,11 +14,121 @@
 
   &__title {
     @extend %h2;
+
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 97px;
+    }
+  }
+
+  &__form {
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 71px;
+    }
+  }
+
+  &__wrapper {
+    margin-bottom: 25px;
+
+    &:last-of-type {
+      margin-bottom: 35px;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    opacity: 0.5;
+    color: $chocolate-color;
+
+    @include onDesktop {
+      margin-right: 32px;
+
+      &:first-of-type {
+        width: 170px;
+      }
+
+      width: 320px;
+    }
+
+    &::after {
+      content: "";
+      border: 1px solid;
+    }
+  }
+
+  &__select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0 10px 10px;
+
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    outline: none;
+  }
+
+  &__option {
+    background-color: $cream-color;
+    color: $chocolate-color;
+    opacity: 0.5;
+    font-size: inherit;
+    cursor: pointer;
   }
 
   &__button {
-    margin: 0 auto;
+    margin: 0 auto 25px;
+
+    @include onDesktop {
+      margin: 0;
+    }
   }
 
-    
+  &__image {
+    &--wrapper {
+      margin-bottom: 20px;
+      width: 100%;
+
+      @include onDesktop {
+        margin: 0 auto;
+        width: 1020px;
+      }
+    }
+  }
+
+  &__map {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__scale {
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 30px;
+      line-height: 45px;
+      color: $chocolate-color;
+
+      height: 40px;
+      width: 40px;
+      background-color: $milk-color;
+      border-radius: 26px;
+    }
+  }
 }

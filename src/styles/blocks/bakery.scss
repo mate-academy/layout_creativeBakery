@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
 
-
   &__title {
     @extend %h2;
     margin-bottom: 20px;
@@ -76,7 +75,12 @@
     background-color: $cream-color;
 
     &-value {
-      
+      @include onDesktop {
+        &::after {
+          content: " /";
+        }
+      }
+
       font-weight: bold;
     }
 
@@ -94,6 +98,12 @@
 
   &__picture {
     margin-bottom: 45px;
+    transform-origin: 200px 300px;
+    transition: transform 3s;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
 
     @include onDesktop {
       margin-bottom: 150px;
@@ -101,7 +111,6 @@
 
     max-width: 700px;
     max-height: 500px;
-    overflow: hidden;
   }
 
   &__image {
@@ -109,10 +118,16 @@
     height: 100%;
     object-fit: contain;
     object-position: center;
+    transform-origin: 200px 200px;
+    transition: transform 3s;
+
+    &:hover {
+      transform: rotate(-360deg);
+    }
+
   }
 
   &__button {
     margin: 0 auto;
   }
 }
-

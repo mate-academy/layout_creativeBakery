@@ -5,7 +5,10 @@
   line-height: 24px;
 
   &__wrapper {
-    margin: 0 auto;
+    @include onDesktop {
+      display: flex;
+      height: 100%;
+    }
   }
 
   &__body {
@@ -27,19 +30,51 @@
   }
 
   &__main {
-      padding: 38px 16px 40px;
-      margin: 0 auto;
-
-      @include onDesktop {
-        padding: 40px $padding-desktop 80px;
-      }
-  }
-
-  &__bakershops {
-    padding: 40px 16px 30px;
+    padding: 38px 16px 40px;
+    margin: 0 auto;
 
     @include onDesktop {
-      padding: 40px 0 57px;
+      padding: 40px $padding-desktop 80px;
+    }
+  }
+
+  &__about {
+    margin: 0 auto;
+    padding: 40px 16px;
+
+    @include onDesktop {
+      padding: 54px 61px 139px;
+    }
+  }
+
+  &__contacts {
+    padding: 40px 0 0;
+
+    @include onDesktop {
+      padding: 0;
+    }
+  }
+
+  &__feedback {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+
+  &__footer {
+    padding: 40px 16px;
+
+    @include onDesktop {
+      padding: 50px 60px 18px;
+
+      display: flex;
+      flex-direction: column;
     }
   }
 }

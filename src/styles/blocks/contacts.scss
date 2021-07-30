@@ -1,0 +1,130 @@
+.contacts {
+  background-color: $croissant-color;
+
+  @include onDesktop {
+    background-color: inherit;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    color: $milk-color;
+    @extend %h2;
+
+    @include onDesktop {
+      color: $croissant-color;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__wrapper {
+    @include onDesktop {
+      background-color: $cream-color;
+      display: flex;
+    }
+  }
+
+  &__info {
+    @include onDesktop {
+      background-color: $croissant-color;
+      padding: 40px 70px 0;
+    }
+  }
+
+  &__subtitle {
+    width: max-content;
+    display: block;
+
+    margin: 0 auto 20px;
+    @extend %h4;
+
+    @include onDesktop {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    padding-left: 62px;
+    padding-bottom: 40px;
+    flex-direction: column;
+    
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+
+    &:nth-child(1) {
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+
+        top: 35%;
+        transform: translate(-40px,-50%);
+
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/location.svg);
+        background-repeat: no-repeat;
+      }
+    }
+
+    &:nth-child(2) {
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+
+        top: 35%;
+        transform: translate(-40px,-50%);
+
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/call.svg);
+        background-repeat: no-repeat;
+      }
+    }
+
+    &:nth-child(3) {
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+
+        top: 35%;
+        transform: translate(-40px,-50%);
+
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/mail.svg);
+        background-repeat: no-repeat;
+      }
+    }
+    
+    &:not(:last-of-type) {
+      margin-bottom: 9px;
+    }
+  }
+
+  &__name {
+    font-weight: bold;
+    color: $chocolate-color;
+  }
+
+  &__link {
+    color: $chocolate-color;
+  }
+
+  &__map {
+    height: 500px;
+
+    &--item {
+      border: none;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+}
