@@ -70,25 +70,48 @@
         <a href="#" class="button button--primary">
           learn more
         </a>
-
-        <ul class="number-list header__number-list">
-          <li class="number-list__item">
-            <a
-              href="#"
-              class="number-list__link"
-              autofocus
-            >
-              01
-            </a>
-          </li>
-          <li class="number-list__item">
-            <a href="#" class="number-list__link">02</a>
-          </li>
-          <li class="number-list__item">
-            <a href="#" class="number-list__link">03</a>
-          </li>
-        </ul>
       </div>
+      <ul class="number-list header__number-list">
+        <a
+          href="#"
+          class="number-list__nav number-list__nav--before"
+          target="_self"
+        >
+        </a>
+        <li class="number-list__item">
+          <a
+            href="#"
+            class="number-list__link number-list__link--active"
+            autofocus
+            id="one"
+          >
+            01
+          </a>
+        </li>
+        <li class="number-list__item">
+          <a
+            href="#"
+            class="number-list__link"
+            id="two"
+          >
+            02
+          </a>
+        </li>
+        <li class="number-list__item">
+          <a
+            href="#"
+            class="number-list__link"
+            id="three"
+          >
+            03
+          </a>
+        </li>
+        <a
+          href="#"
+          class="number-list__nav number-list__nav--after"
+          target="_self">
+        </a>
+      </ul>
     </header>
 
     <nav class="page__menu menu" id="menu">
@@ -132,7 +155,7 @@
     </nav>
 
     <main class="main page__main">
-      <section class="main__section section bakery" id="bakery">
+      <section class="main__section section  section__bakery bakery" id="bakery">
         <h2 class="section__title">
           Bakery
         </h2>
@@ -154,6 +177,7 @@
               100 g
             </span>
           </div>
+
           <div class="article__image-box">
             <a href="#cookies" class="article__link">
               <img
@@ -162,11 +186,15 @@
                 class="article__link--left"
               >
             </a>
-            <img
-              src="/images/Cookies.png"
-              alt="Cookies"
-              class="article__image"
-            >
+
+            <picture class="article__picture">
+              <img
+                src="/images/Cookies.png"
+                alt="Cookies"
+                class="article__image"
+              >
+            </picture>
+
             <a href="#cakes" class="article__link">
               <img
                 src="/images/arrow-right.svg"
@@ -206,11 +234,14 @@
                 class="article__link--left"
               >
             </a>
-            <img
-              src="/images/Cake.png"
-              alt="Cookies"
-              class="article__image"
-            >
+            <picture class="article__picture">
+              <img
+                src="/images/Cake.png"
+                alt="Cookies"
+                class="article__image"
+              >
+            </picture>
+
             <a href="#croissants" class="article__link">
               <img
                 src="/images/arrow-right.svg"
@@ -248,11 +279,14 @@
                 class="article__link--left"
               >
             </a>
-            <img
-              src="/images/Croisant.png"
-              alt="Cookies"
-              class="article__image"
-            >
+            <picture class="article__picture">
+              <img
+                src="/images/Croisant.png"
+                alt="Cookies"
+                class="article__image"
+              >
+            </picture>
+
             <a href="#cupcakes" class="article__link">
               <img
                 src="/images/arrow-right.svg"
@@ -277,7 +311,7 @@
 
             <span class="article__price">
               $ 6.5
-              <br>
+              <br class="article__price--space">
               3
             </span>
           </div>
@@ -290,11 +324,14 @@
                 class="article__link--left"
               >
             </a>
-            <img
-              src="/images/cupcakes.png"
-              alt="Cookies"
-              class="article__image"
-            >
+            <picture class="article__picture">
+              <img
+                src="/images/cupcakes.png"
+                alt="Cookies"
+                class="article__image"
+              >
+            </picture>
+
             <a href="#cupcakes" class="article__link">
               <img
                 src="/images/arrow-right.svg"
@@ -305,7 +342,7 @@
           </div>
         </article>
         <div class="section__button">
-          <a href="#bacery" class="button button--primary">All bakeries</a>
+          <a href="#bakery" class="button button--primary">All bakeries</a>
         </div>
       </section>
 
@@ -317,6 +354,7 @@
             <select
               name="city"
               class="search-form__select search-form__select--city"
+              required
             >
               <option
                 value=""
@@ -331,9 +369,18 @@
               <option value="Kharkiv" class="search-form__option">Kharkiv</option>
               <option value="Poltava" class="search-form__option">Poltava</option>
               <option value="Chernihiv" class="search-form__option">Chernihiv</option>
+              <option value="Lutsk" class="search-form__option">Lutsk</option>
+              <option value="Zhytomyr" class="search-form__option">Zhytomyr</option>
+              <option value="Vinnytsya" class="search-form__option">Vinnytsya</option>
+              <option value="Dnipro" class="search-form__option">Dnipro</option>
+              <option value="Kherson" class="search-form__option">Kherson</option>
             </select>
 
-            <select name="adress" class="search-form__select search-form__select--adress">
+            <select
+              name="adress"
+              class="search-form__select search-form__select--adress"
+              required
+            >
               <option
                 value=""
                 class="search-form__option search-form__option--placeholder"
@@ -348,14 +395,18 @@
               <option value="Shevchenka" class="search-form__option">Shevchenka</option>
               <option value="Shevchenka" class="search-form__option">Shevchenka</option>
             </select>
-            <button name="searh" class="button button--primary search-form__button search-form__button--on-desktop-3">
+            <button
+              type="submit"
+              name="searh"
+              class="button button--primary search-form__button search-form__button--on-desktop-3"
+            >
               Search
             </button>
           </div>
 
           <div class="search-form__map map">
             <img
-              src="/images/shops-in-ukraine.png"
+              src="/images/map-and-numbers.svg"
               alt="Ukraine map"
               class="map__image"
               id="map"
@@ -547,7 +598,7 @@
 
     <footer class="footer page__footer">
       <div class="footer__container">
-        <a href="#" class="logo">
+        <a href="#" class="footer__logo logo">
           <img
             src="/images/logo-milk.svg"
             alt="Bacerclub"

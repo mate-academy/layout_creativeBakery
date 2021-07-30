@@ -3,26 +3,43 @@
   background-color: $chocolate;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   &__container {
-    width: 100%;
     display: flex;
     flex-direction: column;
+    max-width: 1200px;
+
+    @include onTablet {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     @include onDesktop {
+      width: 100%;
       flex-direction: row;
       justify-content: space-between;
     }
   }
 
+  &__logo {
+    left: -24px;
+  }
+
   &__list {
     margin-bottom: 60px;
+
     @include onDesktop {
+      margin-bottom: 0;
+    }
+    @include onTablet {
       margin-bottom: 0;
     }
   }
 
   &__privacy {
+    margin-top: 8px;
     align-self: center;
     width: 196px;
     display: flex;
@@ -42,8 +59,14 @@
     height: 32px;
     align-self: center;
 
+    @include onTablet {
+      width: 133px;
+      margin: 0;
+    }
+
     @include onDesktop {
       width: 133px;
+      margin: 0;
     }
   }
 }

@@ -1,5 +1,7 @@
 .article {
+  box-sizing: border-box;
   margin-bottom: 40px;
+  width: 100%;
 
   @include onDesktop {
     margin-bottom: 120px;
@@ -50,9 +52,24 @@
     font-size: 16px;
     line-height: 150%;
 
+    @include onTablet {
+      width: 84px;
+      height: 84px;
+    }
+
     @include onDesktop {
       width: 110px;
       height: 110px;
+    }
+
+    br {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &:hover {
+      font-size: 18px;
     }
   }
 
@@ -60,16 +77,12 @@
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    height: 200px;
-  
-    @include onDesktop {
-      height: 514px;
-    }
+    align-items: center;
   }
 
   &__link {
     display: flex;
-    width: 12px;
+    width: 16px;
     height: 100%;
     margin: 0 16px;
     @include onDesktop {
@@ -93,9 +106,17 @@
     }
   }
 
+  &__picture {
+    max-width: 700px;
+    max-height: 500px;
+    overflow: hidden;
+  }
+
   &__image {
-    margin: 0;
-    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
     transition: all 500ms;
 
     &:hover {

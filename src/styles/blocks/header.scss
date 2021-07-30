@@ -3,6 +3,11 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 100vh;
 
   @include onDesktop {
     width: 67%;
@@ -12,14 +17,19 @@
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
+    padding: 16px;
+    padding-bottom: 0;
 
-    box-sizing: border-box;
-    height: 100vh;
-    padding: 16px 16px 28px;
+    @include onTablet {
+      padding: 24px 32px;
+      padding-bottom: 0;
+    }
 
     @include onDesktop {
-      padding: 34px 64px 320px;
+      padding: 34px 64px;
+      padding-right: 20%;
+      justify-content: start;
     }
   }
 
@@ -27,7 +37,15 @@
     margin: 96px 0 28px;
     color: $chocolate;
     font-size: 100px;
-    line-height: 80%;
+    line-height: 100%;
+
+    @media (max-height: 580px) {
+      margin: 20px 0;
+    }
+
+    @include onTablet {
+      font-size: 120px;
+    }
 
     @include onDesktop {
       font-size: 160px;
@@ -37,10 +55,19 @@
   }
 
   &__text {
+    margin-bottom: 24px;
     max-width: 420px;
     font-size: 16px;
     line-height: 150%;
     color: $chocolate;
+
+    @media (max-height: 580px) {
+      display: none;
+    }
+
+    @include onTablet {
+      font-size: 20px;
+    }
 
     @include onDesktop {
       font-size: 26px;
@@ -68,5 +95,9 @@
       display: flex;
       justify-content: space-between;
     }
+  }
+
+  &__number-list {
+    padding: 0;
   }
 }

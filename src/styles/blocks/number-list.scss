@@ -1,51 +1,93 @@
 .number-list {
   position: relative;
-  padding: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   list-style: none;
-  width: 100%;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+
+  @include onTablet {
+    font-size: 32px;
+  }
 
   @include onDesktop {
     position: absolute;
     height: 60%;
-    top: 200px;
-    left: 120%;
+    width: 100px;
+    top: 160px;
+    left: 140%;
     flex-direction: column;
     z-index: 1;
+    align-items: flex-end;
   }
 
-  &::before {
-    content: "";
-    background-image: url(/images/arrow-left.svg);
-    width: 26px;
-    height: 26px;
-    background-repeat: no-repeat;
+  &__nav {
+    height: 100%;
+    width: 16px;
+    padding: 0;
 
     @include onDesktop {
-      background-image: url(/images/arrow-up.svg);
+      margin-right: 30px;
     }
-  }
 
-  &::after {
-    content: "";
-    background-image: url(/images/arrow-right.svg);
-    width: 26px;
-    height: 26px;
-    background-repeat: no-repeat;
+    &--before {
+      width: 6px;
+      height: 16px;
+      background-image: url(/images/arrow-left.svg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
 
-    @include onDesktop {
-      background-image: url(/images/arrow-down.svg);
+      @include onTablet {
+        width: 16px;
+        height: 24px;
+      }
+      
+      @include onDesktop {
+        width: 26px;
+        height: 16px;
+        background-image: url(/images/arrow-up.svg);
+        color: $cream;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &--after {
+      width: 6px;
+      height: 16px;
+      background-image: url(/images/arrow-right.svg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include onTablet {
+        width: 16px;
+        height: 24px;
+      }
+
+      @include onDesktop {
+        background-image: url(/images/arrow-down.svg);
+        width: 26px;
+        height: 16px;
+      }
     }
   }
 
   &__item {
+    padding: 16px;
     font-size: 16px;
-    line-height: 19px;
+    line-height: 47px;
+
+    @include onTablet {
+      font-size: 24px;
+    }
 
     @include onDesktop {
       font-size: 40px;
-      line-height: 47px;
     }
   }
 
@@ -54,6 +96,31 @@
     color: $croissant;
     @include onDesktop {
       color: $cream;
+    }
+
+    &--active {
+      font-size: 40px;
+      line-height: 100%;
+      color: $chocolate;
+      outline: none;
+      @include onTablet {
+        font-size: 60px;
+      }
+
+      @include onDesktop {
+        font-size: 176px;
+      }
+    }
+
+    &:target {
+      font-size: 40px;
+      line-height: 208px;
+      color: $chocolate;
+      outline: none;
+
+      @include onDesktop {
+        font-size: 176px;
+      }
     }
 
     &:focus {
