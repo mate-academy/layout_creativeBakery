@@ -10,32 +10,102 @@
 
   background-image: url(../images/header_bg_mobile.png);
 
+  @include desktop {
+    flex-direction: row;
+    padding: 0;
+    background-image: url(../images/head_bg_big_screen.png);
+  }
+
+  &__main-container {
+    width: 100%;
+    flex-direction: column;
+    
+    @include desktop {
+      max-width: 1500px;
+      padding: 66px 99px;
+      margin: 0 auto;
+    }
+  }
+
+  &__link-more {
+    margin-bottom: 40px;
+  }
+
+  &__link-more a {
+    color: $color-chocolate;
+  }
+  
+  & a {
+    color: $color-chocolate;
+    transition: 400ms;
+    &:hover {
+      color: $color-croissant;
+    }
+  }
+
+  &__sidebar {
+
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      gap: 125px;
+      min-width: 455px;
+      padding: 66px 46px;
+      background-color: $color-croissant;
+    }
+
+    &-top {
+      display: none;
+
+      & a:hover {
+        color: $color-milk;
+      }
+      @include desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    &-mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  &__language-selector {
+    border: none;
+    background-color: transparent;
+    color: $color-chocolate;
+  }
+
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 97px;
+
   }
 
-  &__menu-line {
-    width: 25px;
-    height: 2px;
-    margin-bottom: 9px;
-    background-color: $color-chocolate;
-    transition: 400ms;
+  &__navigation {
+    display: none;
+    @include desktop {
+      display: block;
+    }
   }
 
   &__menu {
-    &--active .header__menu-line:nth-child(1) {
-      transform: rotate(-45deg) translate(-9px, 6px);
-    }
+    width: 25px;
+    height: 20px;
+    background-image: url(../images/burger.svg);
+    transition: 400ms;
 
-    &--active .header__menu-line:nth-child(2) {
-      opacity: 0;
+    &:hover {
+      transform: scale(1.15);
     }
-
-    &--active .header__menu-line:nth-child(3) {
-      transform: rotate(45deg) translate(-8px, -8px);
+    @media (min-width: 1024px) {
+      display: none;
     }
   }
 
@@ -43,38 +113,61 @@
     margin-bottom: 30px;
     font-family: $font-cookie;
     @include font(normal, 100px, 80%, $color-chocolate);
+
+    @include desktop {
+      @include font (normal, 160px, 177px, $color-chocolate);
+    }
   }
 
   &__desription {
     margin-bottom: 20px;
     @include font(normal, 16px, 24px, $color-chocolate);
-  }
 
-  &__link-more {
-    margin-bottom: 40px;
-    
-    & a {
-      color: $color-chocolate;
+    @include desktop {
+      width: 420px;
+      @include font (normal, 26px, 150%, $color-chocolate);
     }
   }
+
+ 
 
   &__pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: auto;
+    gap: 10px;
+
+    @include desktop {
+      flex-direction: column;
+      align-items: flex-end;
+    }
 
     &:before {
       content: "<";
       margin-right: 20px;
       font-size: 30px;
       animation: moveleft 1s infinite alternate;
+
+      @include desktop {
+        margin-right: 10px;
+        font-size: 45px;
+        transform: rotate(90deg);
+        animation: movetop 1s infinite alternate;
+      }
     }
 
     &:after {
+      
       content: ">";
       font-size: 30px;
       animation: moveright 1s infinite alternate;
+
+      @include desktop {
+        margin-right: 10px;
+        font-size: 45px;
+        transform: rotate(90deg);
+        animation: movedown 1s infinite alternate;
+      }
     }
 
     @keyframes moveleft {
@@ -89,6 +182,18 @@
       }
     }
 
+    @keyframes movetop {
+      100% {
+        transform: translateY(5px) rotate(90deg);
+      }
+    }
+
+    @keyframes movedown {
+      100% {
+        transform: translateY(-5px) rotate(90deg);
+      }
+    }
+
     @for $index from 1 through 3 {
       &--number:nth-child(#{$index}):after {
         content: "0#{$index}";
@@ -96,16 +201,23 @@
     }
 
     &--number {
-      margin-right: 20px;
       transition: 400ms;
 
       &:nth-child(1) {
         @include font(normal, 40px, 47px, $color-chocolate);
 
+        @include desktop {
+          @include font(normal, 176px, 209px, $color-chocolate);
+        }
+
       }
 
       &:nth-child(n+2) {
         @include font(normal, 16px, 19px, $color-croissant);
+
+        @include desktop {
+          @include font(normal, 40px, 47px, $color-cream);
+        }
       }
 
       &:nth-child(1):hover {
@@ -116,4 +228,38 @@
       }
     }
   }
+
+  &__mobile-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    padding: 30px 20px;
+    z-index: 1;
+    background-color: $color-croissant;
+    transition: 400ms;
+    transform: translateX(100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    &--close-button {
+      font-size: 32px;
+      text-align: right;
+    }
+
+    & a:hover {
+      color: $color-milk;
+    }
+  }
+
+  &__mobile-navigation {
+    margin-bottom: 145px;
+  }
+
 }

@@ -1,23 +1,58 @@
 .bakery {
   padding: 40px 16px;
 
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
   &_title {
     margin-bottom: 20px;
     text-align: center;
+
+    @include desktop {
+      margin-bottom: 30px;
+    }
   }
 
   &__content-block {
     margin-bottom: 40px;
+
+    
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      gap: 110px;
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__content-block-main {
+    @include desktop {
+      max-width: 300px;
+    }
   }
 
   &__product-group {
     margin-bottom: 15px;
     @include font(normal, 35px, 41px, $color-croissant);
+
+    @include desktop {
+      @include font (normal, 50px, 59px, $color-croissant);
+    }
   }
 
   &__product-title {
     margin-bottom: 12px;
     @include font(normal, 20px, 150%, $color-chocolate);
+
+    @include desktop {
+      @include font (normal, 26px, 150%, $color-chocolate);
+    }
   }
 
   &__content-description {
@@ -35,10 +70,24 @@
     padding: 8px 10px;
     border-radius: 50%;
     background-color: $color-cream;
+    
+    @include desktop {
+      flex-direction: row;
+      justify-content: center;
+      width: 110px;
+      height: 110px;
+    }
   }
 
   &__product-price {
     font-weight: 700;
+
+    @include desktop {
+      &::after {
+        content: "/";
+        margin: 0 5px;
+      }
+    }
   }
 
   /*   &__product-weight {

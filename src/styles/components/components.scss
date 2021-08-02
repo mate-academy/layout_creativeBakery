@@ -1,9 +1,13 @@
 h2 {
   font-family: $font-cookie;
   @include font(normal, 60px, 67px, $color-croissant);
+
+  @include desktop {
+    @include font (normal, 120px, 133px, $color-croissant);
+  }
 }
 
-button {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +21,23 @@ button {
 
   &:hover {
     background-color: $color-milk;
+    box-shadow: 0 5px 8px 1px rgba(34, 60, 80, 0.2);
+  }
+}
+
+.small-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  border: 2px solid $color-cream;
+  border-radius: 40px;
+  background-color: $color-cream;
+  @include font(normal, 16px, 24px, $color-chocolate);
+  transition: 400ms;
+
+  &:hover {
     box-shadow: 0 5px 8px 1px rgba(34, 60, 80, 0.2);
   }
 }

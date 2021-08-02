@@ -2,17 +2,49 @@
   display: flex;
   flex-direction: column;
 
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+    }
+  }
+
   &__info {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px 16px;
     background-color: $color-croissant;
+
+    @include desktop {
+      width: 500px;
+    }
   }
 
   &__title {
     margin-bottom: 20px;
-    color: $color-milk;
+
+    &--mobile {
+      color: $color-milk;
+
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__title--desktsop {
+    display: none;
+
+    @include desktop {
+      display: block;
+      margin: 55px auto 30px;
+      color: $color-croissant;
+    }
   }
 
   &__get-in-touch {
@@ -44,5 +76,9 @@
 
   &__map {
     height: 480px;
+
+    @include desktop {
+      width: 100%;
+    }
   }
 }
