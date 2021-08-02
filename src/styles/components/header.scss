@@ -10,7 +10,7 @@
 
   background-image: url(../images/header_bg_mobile.png);
 
-  @include desktop {
+  @include ipad {
     flex-direction: row;
     padding: 0;
     background-image: url(../images/head_bg_big_screen.png);
@@ -20,15 +20,11 @@
     width: 100%;
     flex-direction: column;
     
-    @include desktop {
+    @include ipad {
       max-width: 1500px;
       padding: 66px 99px;
       margin: 0 auto;
     }
-  }
-
-  &__link-more {
-    margin-bottom: 40px;
   }
 
   &__link-more a {
@@ -43,13 +39,21 @@
     }
   }
 
+  &__link-more {
+    margin-bottom: 40px;
+
+    & a:hover {
+      color: $color-chocolate;
+    }
+  }
+
   &__sidebar {
 
-    @include desktop {
+    @include ipad {
       display: flex;
       flex-direction: column;
       gap: 125px;
-      min-width: 455px;
+      min-width: 390px;
       padding: 66px 46px;
       background-color: $color-croissant;
     }
@@ -60,10 +64,11 @@
       & a:hover {
         color: $color-milk;
       }
-      @include desktop {
+      @include ipad {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        height: 57px;
       }
     }
 
@@ -90,7 +95,7 @@
 
   &__navigation {
     display: none;
-    @include desktop {
+    @include ipad {
       display: block;
     }
   }
@@ -104,7 +109,7 @@
     &:hover {
       transform: scale(1.15);
     }
-    @media (min-width: 1024px) {
+    @include ipad {
       display: none;
     }
   }
@@ -114,7 +119,7 @@
     font-family: $font-cookie;
     @include font(normal, 100px, 80%, $color-chocolate);
 
-    @include desktop {
+    @include ipad {
       @include font (normal, 160px, 177px, $color-chocolate);
     }
   }
@@ -123,7 +128,7 @@
     margin-bottom: 20px;
     @include font(normal, 16px, 24px, $color-chocolate);
 
-    @include desktop {
+    @include ipad {
       width: 420px;
       @include font (normal, 26px, 150%, $color-chocolate);
     }
@@ -137,7 +142,7 @@
     align-items: center;
     gap: 10px;
 
-    @include desktop {
+    @include ipad {
       flex-direction: column;
       align-items: flex-end;
     }
@@ -148,7 +153,7 @@
       font-size: 30px;
       animation: moveleft 1s infinite alternate;
 
-      @include desktop {
+      @include ipad {
         margin-right: 10px;
         font-size: 45px;
         transform: rotate(90deg);
@@ -162,7 +167,7 @@
       font-size: 30px;
       animation: moveright 1s infinite alternate;
 
-      @include desktop {
+      @include ipad {
         margin-right: 10px;
         font-size: 45px;
         transform: rotate(90deg);
@@ -206,7 +211,7 @@
       &:nth-child(1) {
         @include font(normal, 40px, 47px, $color-chocolate);
 
-        @include desktop {
+        @include ipad {
           @include font(normal, 176px, 209px, $color-chocolate);
         }
 
@@ -215,7 +220,7 @@
       &:nth-child(n+2) {
         @include font(normal, 16px, 19px, $color-croissant);
 
-        @include desktop {
+        @include ipad {
           @include font(normal, 40px, 47px, $color-cream);
         }
       }

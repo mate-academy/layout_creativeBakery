@@ -12,6 +12,7 @@
     @include desktop {
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
   }
 
@@ -29,11 +30,22 @@
 
   & a {
     @include font(normal, 16px, 150%, $color-milk);
+    &:hover {
+      color: $color-croissant;
+    }
   }
   &__socials-links {
     display: flex;
     justify-content: space-around;
     margin-bottom: 40px;
+    transition: 400ms;
+
+    & img {
+      transition: 400ms;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
     
     @include desktop {
       gap: 20px;
