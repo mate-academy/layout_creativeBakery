@@ -98,15 +98,21 @@
 
   &__picture {
     margin-bottom: 45px;
-    transform-origin: 200px 300px;
-    transition: transform 3s;
+    transition-duration: 1s;
 
     &:hover {
-      transform: rotate(360deg);
+      transform: scale(1.2);
     }
 
     @include onDesktop {
       margin-bottom: 150px;
+
+      transform-origin: 200px 300px;
+      transition: transform 3s;
+      &:hover {
+        transform: rotate(360deg);
+      }
+      
     }
 
     max-width: 700px;
@@ -118,11 +124,14 @@
     height: 100%;
     object-fit: contain;
     object-position: center;
-    transform-origin: 200px 200px;
-    transition: transform 3s;
 
-    &:hover {
-      transform: rotate(-360deg);
+    @include onDesktop {
+      transform-origin: 200px 200px;
+      transition: transform 3s;
+  
+      &:hover {
+        transform: rotate(-360deg);
+      }
     }
 
   }
