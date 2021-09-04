@@ -5,7 +5,7 @@ Implement landing page according to [Figma design](https://www.figma.com/file/dY
 - Full HD 1920px
 - The design 1600px
 - Notebook 1280px
-- Tablet 1024
+- Tablet 1024px
 - Mobile (> 320px)
 
 ## Instructions
