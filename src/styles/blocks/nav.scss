@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+
+  &--tablet {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style-type: none;
+  }
+
+  &__item {
+    margin-right: 34px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    @include onTablet {
+      padding-left: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    @include hover (color, $croissant-color);
+  }
+}
