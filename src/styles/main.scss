@@ -2,6 +2,132 @@
 @import "fonts";
 @import "typography";
 
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+a {
+  text-decoration: none;
+}
+
 body {
+  margin: 0 auto;
+  max-width: 1440px;
   background: $c-gray;
+  font-family: "Cookie", cursive;
+}
+
+.header {
+  height: 840px;
+  background-image: url(../images/cup-bolls.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header__block1 {
+  padding: 50px 59px;
+}
+
+.logo {
+  position: relative;
+
+  &__img {
+    position: absolute;
+    width: 41px;
+    height: auto;
+  }
+
+  &__text {
+    display: block;
+    padding: 25px 0 0 30px;
+    font-size: 30px;
+    line-height: 33px;
+    color: #412d22;
+
+  }
+
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.list__item {
+  padding: 15px 17px 0;
+}
+
+.list__link {
+  color: #412d22;
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+  line-height: 150%;
+  transition: 0.2s;
+
+  &:hover {
+    color: #e39a3b;
+  }
+
+}
+
+.container {
+  background-color: #e39a3b;
+  height: 840px;
+}
+
+.feet-back {
+  padding: 83px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+  line-height: 150%;
+  color: #412d22;
+
+  &__number {
+    margin-right: 20px;
+  }
+
+  &__call {
+    width: 100px;
+    border-radius: 40px;
+    border: 1px solid #f1cc9d;
+    background-color: #f1cc9d;
+  
+    margin-right: 20px;
+  }
+  &__call-elem {
+    text-align: center;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  column-gap: 44px;
+
+  &--phone {
+    display: block;
+  }
+
+  &__item {
+    margin-top: 32px;
+    @for $start from 1 through 9 {
+      @for $end from $start through 9 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end+ 1} ;
+        }
+
+        &--phone-#{$start}-#{$end} {
+          @media (max-width: 640px) {
+            grid-column: #{$start} / #{$end+ 1} ;
+          }
+        }
+      }
+    }
+  }
+
 }
