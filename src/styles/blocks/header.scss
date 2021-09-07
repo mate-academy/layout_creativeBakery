@@ -4,8 +4,9 @@
   background-size: cover;
 
   &__content {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
-    position: relative;
     height: 100vh;
     padding: 16px 15px;
 
@@ -15,16 +16,9 @@
   }
 
   &__title {
-    position: absolute;
-    top: 138px;
-
-    @include onDesktop {
-      top: 125px;
-    }
-
     &--main {
       display: block;
-      margin-bottom: 29px;
+      margin-top: 97px;
       @include styleCookie;
       font-size: 100px;
       line-height: 80%;
@@ -40,6 +34,34 @@
       @include onDesktop() {
         margin-bottom: 25px;
       }
+    }
+  }
+
+  &__numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: auto;
+    gap: 20px;
+    width: 123px;
+    height: 47px;
+  }
+
+  &__number {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: $colorCroissant;
+
+    &--active {
+      font-size: 40px;
+      line-height: 40px;
+      align-items: flex-end;
+      color: $colorChocolate;
     }
   }
 }
