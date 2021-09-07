@@ -1,7 +1,210 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "../styles/utils/reset.scss";
+@import "../styles/utils/values.scss";
+@import "../styles/blocks/header.scss";
+@import "../styles/blocks/logo.scss";
+@import "../styles/blocks/button.scss";
+@import "../styles/blocks/nav-icon.scss";
+@import "../styles/blocks/nav.scss";
+@import "../styles/blocks/page.scss";
+@import "../styles/blocks/bakery.scss";
 
-body {
-  background: $c-gray;
+.container {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  &__descriptions {
+    margin: auto;
+    width: 288px;
+  }
+}
+
+.section {
+  box-sizing: border-box;
+  padding: 40px 16px;
+
+  &--bakershop-color {
+    background-color: $colorCream;
+  }
+  
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__title {
+    text-align: center;
+    @include styleCookie;
+    color: $colorCroissant;
+    font-size: 60px;
+    line-height: 67px;
+
+    &--contacts {
+      color: #fff;
+    }
+  }
+}
+
+.bakershop {
+  &__search {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  &__mapa {
+    width: 100%;
+    border: none;
+  }
+
+  &__select {
+    display: block;
+    background-color: $colorCream;
+    border: none;
+    width: 288px;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorChocolate;
+    opacity: 0.5;
+    border-bottom: 1px solid $colorChocolate;
+  }
+
+  &__button {
+    width: 160px;
+    height: 45px;
+  }
+}
+
+.achievements {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+  }
+
+  &__image {
+    &-photo {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &__number {
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 71px;
+    text-align: center;
+    color: $colorChocolate;
+  }
+
+  &__name {
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: $colorChocolate;
+  }
+}
+
+.contacts {
+  background-color: $colorCroissant;
+  max-width: 430px;
+
+  &__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 150%;
+    color: $colorChocolate;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__name {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorChocolate;
+    text-decoration: none;
+  }
+
+  &__adress {
+    display: block;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorChocolate;
+    text-decoration: none;
+  }
+
+  &__logo {
+    width: 60px;
+    &--point {
+      width: 60px;
+      background-position: center;
+      background-image: url(../images/Vector-point.png);
+      background-repeat: no-repeat;
+    }
+
+    &--phone {
+      width: 60px;
+      background-position: center;
+      background-image: url(../images/Vector-phone.png);
+      background-repeat: no-repeat;
+    }
+
+    &--mail {
+      width: 60px;
+      background-position: center;
+      background-image: url(../images/mail2.png);
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  
+  &__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 150%;
+    color: $colorChocolate;
+  }
+  
+  &__item {
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorChocolate;
+    opacity: 0.5;
+    border: none;
+    border-bottom: 1px solid $colorChocolate;
+
+    &--message {
+      margin-top: 80px;
+      resize: none;
+    }
+  }
 }
