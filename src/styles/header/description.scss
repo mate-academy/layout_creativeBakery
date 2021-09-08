@@ -1,0 +1,54 @@
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  &__title {
+    margin: 0 0 20px 20px;
+
+    @extend %titleLarge;
+  }
+
+  &__text {
+    width: 450px;
+    margin-bottom: 25px;
+
+    @extend %textMiddle;
+  }
+
+  &__button {
+    @include buttonPri;
+  }
+}
+
+@media (max-width: $breakpoint-large) {
+  .description__title {
+    font-size: 120px;
+  }
+
+  .description__text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: $breakpoint-medium) {
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__title {
+      margin: 0;
+
+      font-size: 100px;
+    }
+
+    &__text {
+      width: 259px;
+      margin-top: 29px;
+
+      font-size: 16px;
+    }
+  }
+}

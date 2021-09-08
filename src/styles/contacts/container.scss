@@ -1,0 +1,42 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 0;
+  padding-bottom: 135px;
+
+  &__info {
+    position: relative;
+    background-color: #e39a3b;
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  &__map {
+    width: 100%;
+    height: 500px;
+    border: 0;
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .container {
+    display: block;
+    padding-bottom: 40px;
+
+    &__info {
+      height: 400px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+  .container {
+    &__map {
+      height: 500px;
+    }
+  }
+}

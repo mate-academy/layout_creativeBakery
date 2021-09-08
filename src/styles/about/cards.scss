@@ -1,0 +1,44 @@
+.cards {
+  @include flexRow;
+  justify-content: space-between;
+  width: calc(100vw - 120px);
+  margin-bottom: 140px;
+
+  &__card {
+    @include flexCol;
+    justify-content: center;
+  }
+
+  &__img {
+    margin-bottom: 12px;
+  }
+
+  &__count {
+    @extend %textLarge;
+    margin-bottom: 7px;
+  }
+
+  &__text {
+    @extend %textSmall;
+  }
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+  .cards {
+    width: 100%;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding-bottom: 40px;
+
+    &__card {
+      margin-left: 16px;
+      margin-right: 11px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-xlarge) {
+  .cards {
+    width: 1320px;
+  }
+}
