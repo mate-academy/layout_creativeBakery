@@ -1,0 +1,161 @@
+.bakery {
+  background: linear-gradient(
+    180deg, rgba(255,255,255,0) 80%, rgba(241,204,157,1) 100%
+  );
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 120px;
+
+    @include tablet {
+      justify-content: center;
+      flex-wrap: wrap;
+      padding-bottom: 64px;
+    }
+
+    @include tabletMini {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__image-block {
+    display: flex;
+    transition: color 0.5s;
+
+    &::after {
+      content: ">";
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+
+      font-size: 24px;
+      @include tablet {
+        margin-left: 50px;
+      }
+
+      @include tabletMini {
+        margin-left: 30px;
+      }
+
+      @include mobile {
+        margin-left: 15px;
+      }
+    }
+
+    &:hover {
+      color: $creamColor;
+    }
+
+    @include tablet {
+      justify-content: center;
+      flex: 0 0 100%;
+      order: 2;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include mobile {
+      &:hover {
+        transform: scale(1.1) translateX(10px);
+      }
+    }
+  }
+
+  &__text {
+    margin-left: 50px;
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 40px;
+    line-height: 59px;
+    font-weight: 400;
+    font-size: 50px;
+    color: $croissantColour;
+    @include tablet {
+      margin-bottom: 14px;
+
+      line-height: 50px;
+      font-size: 40px;
+    }
+
+    @include mobile {
+      line-height: 45px;
+      font-size: 35px;
+    }
+  }
+
+  &__name {
+    margin-bottom: 14px;
+
+    line-height: 39px;
+    font-weight: 400;
+    font-size: 26px;
+
+    @include tablet {
+      font-size: 24px;
+      line-height: 35px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 32px;
+    @include tablet {
+      margin-bottom: 24px;
+
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @include mobile {
+      margin-bottom: 16px;
+
+      font-size: 16px;
+    }
+  }
+
+  &__price {
+    width: 110px;
+    height: 110px;
+
+    line-height: 110px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 50%;
+    background-color: $creamColor;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(0.9,0.7);
+    }
+
+    @include tabletMini {
+      width: 65px;
+      height: 65px;
+      padding: 8px 10px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+  }
+}

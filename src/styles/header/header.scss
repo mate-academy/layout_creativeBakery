@@ -1,0 +1,88 @@
+.header {
+  position: relative;
+  z-index: 1;
+  height: 840px;
+  max-width: 100%;
+  background-color: $croissantColour;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 840px;
+    width: 65%;
+    background-image: url(../images/header.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    background-image: url(../images/header.png);
+    background-position: left center;
+  }
+
+  @include tabletMini {
+    background-position: center;
+  }
+
+  @include mobile {
+    height: 100vh;
+    padding: 0 15px;
+    background-position: top center;
+    background-color: #f9f3f5;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    height: 88px;
+    padding-top: 32px;
+    margin-bottom: 24px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include tabletMini {
+      display: block;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 160px;
+    line-height: 177px;
+    margin-bottom: 24px;
+
+    @include desktopMini {
+      font-size: 120px;
+      line-height: 140px;
+    }
+
+    @include mobile {
+      font-size: 100px;
+      line-height: 80px;
+    }
+  }
+
+  &__description {
+    font-size: 26px;
+    line-height: 39px;
+    margin-bottom: 24px;
+
+    @include tablet {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+}
