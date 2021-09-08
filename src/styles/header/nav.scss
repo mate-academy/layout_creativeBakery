@@ -1,0 +1,49 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+
+  &__toggler {
+    display: none;
+  }
+
+  &__toggler-label {
+    position: relative;
+    background: url(../images/burger.svg) no-repeat center;
+    width: 25px;
+    height: 25px;
+    z-index: 2;
+
+    @media (min-width: 1000px) {
+      & {
+        display: none;
+      }
+    }
+  }
+
+  &__toggler--menu:checked + &__toggler-label {
+    background-image: url(../images/exit.svg);
+    width: 22px;
+    height: 22px;
+  }
+
+  &__list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-200%);
+    transition: 0.5s;
+
+    @media (min-width: 1000px) {
+      & {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__toggler--menu:checked ~ &__list {
+    transform: translateY(0);
+  }
+}
