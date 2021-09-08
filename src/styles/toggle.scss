@@ -1,0 +1,49 @@
+.toggle {
+  width: 40px;
+  height: 40px;
+
+  &__line {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    background-color: $col-dark-brown;
+    border-radius: 2px;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+
+      width: 40px;
+      height: 5px;
+      background-color: $col-dark-brown;
+      border-radius: 2px;
+    }
+    &::before {
+      transform: translateY(-15px);
+    }
+    &::after {
+      transform: translateY(10px);
+    }
+  }
+  &--active {
+    .toggle__line {
+      height: 0;
+    }
+    .toggle__line::before {
+      transform: rotate(45deg) translatey(3px);
+    }
+    .toggle__line::after {
+      transform: rotate(-45deg) translateY(-3px);
+    }
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .toggle {
+    z-index: 2;
+  }
+}
