@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  column-gap: 30px;
+  
+  &--phone {
+    display: block;
+  }
+  
+  &__item {
+    margin-top: 32px;
+    @for $start from 1 through 11 {
+      @for $end from $start through 11 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end+ 1} ;
+        }
+  
+        &--phone-#{$start}-#{$end} {
+          @media (max-width: 640px) {
+            grid-column: #{$start} / #{$end+ 1} ;
+          }
+        }
+      }
+    }
+  }
+  
+}
