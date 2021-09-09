@@ -17,7 +17,7 @@ function step(shift) {
 
   position = (position + count) % count;
 
-  counter.textContent = `Current position is ${position + 1}`;
+  counter.textContent = ` ${position + 1}`;
 
   achievements.style.transform = `translateX(${-position * 100}%)`;
 }

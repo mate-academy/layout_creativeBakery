@@ -7,6 +7,11 @@
   &__container {
     width: 200px;
     overflow: hidden;
+
+    @include onDesktop {
+      width: 100%;
+      overflow: none;
+    }
   }
 
   &__title {
@@ -64,5 +69,38 @@
   &__achievemenst {
     height: 250px;
     display: flex;
+  }
+
+  &__buttons {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 150%;
+    color: $colorCroissant;
+    border: 1px solid $colorCroissant;
+  }
+
+  &__counter {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 150%;
+    color: $colorCroissant;
   }
 }
