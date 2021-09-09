@@ -1,0 +1,192 @@
+.bakershops {
+  height: 100vh;
+  background-color: $colorCream;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__form-select {
+    display: block;
+    width: 100%;
+    background-color: $colorCream;
+    font-size: 16px;
+    line-height: 24px;
+    border: none;
+    border-bottom: 1px solid $colorChocolate;
+    opacity: 0.5;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    margin-bottom: 25px;
+  }
+
+  &__map {
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__map-cookie {
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    background-image: url(../images/cookie-on-map.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 8px;
+    line-height: 12px;
+
+    &::before {
+      position: absolute;
+      right: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      color: #fff;
+      background-color: #d21925;
+      font-size: 6px;
+      line-height: 9px;
+    }
+
+    &::after {
+      text-transform: uppercase;
+      position: absolute;
+      top: 100%;
+    }
+
+    &--city {
+      font-size: 8px;
+      line-height: 12px;
+    }
+
+    @for $i from 1 through 9 {
+      &--#{$i}::before {
+        content: "#{$i}";
+      }
+    }
+
+    @each $city in $cities {
+      &--#{$city}::after {
+        content: "#{$city}";
+      }
+    }
+
+    &--1 {
+      height: 20px;
+      width: 20px;
+    }
+
+    &--2 {
+      height: 10px;
+      width: 10px;
+    }
+
+    &--3 {
+      height: 12px;
+      width: 12px;
+    }
+
+    &--4 {
+      height: 16px;
+      width: 16px;
+    }
+
+    &--6 {
+      height: 24px;
+      width: 24px;
+    }
+
+    &--9 {
+      height: 27px;
+      width: 27px;
+    }
+
+    &--lutsk {
+      top: 11%;
+      left: 15%;
+    }
+
+    &--lviv {
+      top: 27%;
+      left: 9%;
+    }
+
+    &--zhytomyr {
+      top: 17%;
+      left: 33%;
+    }
+
+    &--vinnytsya {
+      top: 37%;
+      left: 35%;
+    }
+
+    &--chernihiv {
+      top: 10%;
+      left: 52%;
+    }
+
+    &--kyiv {
+      top: 25%;
+      left: 50%;
+    }
+
+    &--poltava {
+      top: 28%;
+      left: 63%;
+    }
+
+    &--dnipro {
+      top: 43%;
+      left: 70%;
+    }
+
+    &--kherson {
+      top: 65%;
+      left: 65%;
+    }
+
+    &--kharkiv {
+      top: 30%;
+      left: 77%;
+    }
+  }
+
+  &__buttons {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+
+    &-plus {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+
+    &-minus {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      background-color: #fff;
+      border-radius: 50%;
+      margin-right: 40px;
+    }
+  }
+
+}
