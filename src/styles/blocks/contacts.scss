@@ -1,43 +1,53 @@
 .contacts {
   padding: 0;
   background-color: $croissant;
+
   &__title {
-    color: white;
+    color: $white;
   }
+
   &__list {
-    margin: 0 0 40px;
     list-style: none;
+
+    margin: 0 0 40px;
 
   }
   &__item {
     margin-bottom: 9px;
   }
+
   &__link {
+    position: relative;
+
     color: $chocolate;
     text-decoration: none;
-    position: relative;
+
     &::before {
+      display: block;
+      height: 20px;
+      width: 20px;
+
       content: "";
       position: absolute;
       top: 10px;
       left: -35px;
-      height: 20px;
-      width: 20px;
-      display: block;
-      //background-image: url('../../src/images/icons/telephone.svg');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
     }
+
     &--location::before {
       background-image: url("../../src/images/icons/location.svg");
     }
+
     &--tel::before {
       background-image: url("../../src/images/icons/telephone.svg");
     }
+
     &--mail::before {
       background-image: url("../../src/images/icons/mail.svg");
     }
+
     &:visited {
       color: $chocolate;
     }
@@ -46,17 +56,22 @@
       font-weight: bold;
     }
   }
+
   &__map {
     border: 0;
     position: relative;
     bottom: -8px;
   }
+
   &__feedback {
-    padding-top: 30px;
     background-color: #fff;
+
+    padding-top: 30px;
   }
+
   &__envelop {
     display: block;
+
     margin: 50px auto;
   }
 }
