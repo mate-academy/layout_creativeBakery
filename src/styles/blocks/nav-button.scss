@@ -1,0 +1,51 @@
+.nav-button {
+  display: block;
+  width: 26px;
+  height: 15px;
+  border: 0;
+  margin: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--up {
+    background-image: url("../images/arrow-down.svg");
+    transform: rotate(90deg);
+
+    @include onDesktop {
+      transform: rotate(-180deg);
+    }
+
+    &:disabled {
+      background-image: url("../images/arrow-up.svg");
+      transform: rotate(-90deg);
+
+      @include onDesktop {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  &--down {
+    background-image: url("../images/arrow-down.svg");
+    transform: rotate(-90deg);
+
+    @include onDesktop {
+      transform: rotate(0);
+    }
+
+    &:disabled {
+      background-image: url("../images/arrow-up.svg");
+      transform: rotate(90deg);
+
+      @include onDesktop {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
