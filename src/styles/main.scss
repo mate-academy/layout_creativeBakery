@@ -21,6 +21,10 @@ body {
   padding: 0;
 }
 
+.unscroll {
+  overflow: hidden;
+}
+
 .button {
   display: flex;
   justify-content: center;
@@ -31,7 +35,7 @@ body {
   border-radius: 40px;
   text-decoration: none;
   transition: background-color 0.3s,
-  opacity 0.3s;
+    opacity 0.3s;
 }
 
 .button:hover {
@@ -43,6 +47,131 @@ body {
   background-color: $colorCroissant;
   opacity: 0.8;
 }
+
+.city {
+  position: absolute;
+}
+
+.city__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.city--lutsk {
+  top: 10%;
+  left: 14%;
+}
+
+.city__wrapper--lutsk {
+  width: 60%;
+}
+
+.city--lviv {
+  top: 23%;
+  left: 6%;
+}
+
+.city__wrapper--lviv {
+  width: 95%;
+}
+
+.city--zhytomyr {
+  top: 18%;
+  left: 34%;
+}
+
+.city__wrapper--zhytomyr {
+  width: 50%;
+}
+
+.city--vinnytsya {
+  top: 39%;
+  left: 34%;
+}
+
+.city__wrapper--vinnytsya {
+  width: 60%;
+}
+
+.city--kyiv {
+  top: 19%;
+  left: 43%;
+}
+
+.city__wrapper--kyiv {
+  width: 100%;
+}
+
+.city--chernihiv {
+  top: 9%;
+  left: 53%;
+}
+
+.city__wrapper--chernihiv {
+  width: 60%;
+}
+
+.city--poltava {
+  top: 29%;
+  left: 64%;
+}
+
+.city__wrapper--poltava {
+  width: 40%;
+}
+
+.city--dnipro {
+  top: 45%;
+  left: 67%;
+}
+
+.city__wrapper--dnipro {
+  width: 60%;
+}
+
+.city--kherson {
+  top: 66%;
+  left: 64%;
+}
+
+.city__wrapper--kherson {
+  width: 40%;
+}
+
+.city--kharkiv {
+  top: 27%;
+  left: 77%;
+}
+
+.city__wrapper--kharkiv {
+  width: 75%;
+}
+
+.city__img {
+  width: 100%;
+  margin-bottom: 3px;
+}
+
+.city__nr {
+  position: absolute;
+  top: 0;
+  left: -7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  background-color: #d21925;
+  color: $colorMilk;
+  border-radius: 50%;
+}
+
+.city__name {
+  text-align: center;
+}
+
 /* #region header */
 
 .header__wrapper {
@@ -77,9 +206,9 @@ body {
 }
 
 .header__menu {
-  display: flex;
+  // display: flex;
   list-style: none;
-  display: none;  
+  display: none;
 }
 
 .header__menu-item {
@@ -90,8 +219,9 @@ body {
   text-decoration: none;
   color: $colorChocolate;
 }
+
 .header__menu-link:hover {
-  color: $colorCroissant
+  color: $colorCroissant;
 }
 
 .header__nav-btn {
@@ -152,108 +282,183 @@ body {
 
 .header__sidebar {
   display: none;
+  flex-direction: column;
+  // width: 35vw;
   width: 425px;
   background-color: $colorCroissant;
-  padding: 34px 60px;
+  padding: 34px 40px;
 }
- /* #endregion */
 
+.sidebar__contacts {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 57px;
+  margin-bottom: 90px;
+}
 
- /* #region top-menu */
+.sidebar__phone {
+  display: block;
+  text-decoration: none;
+  line-height: 24px;
+  color: $colorChocolate;
+}
 
- .top-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 10;
-    width: 60vw;
-    height: 100vh;
-    padding: 25px 16px;
-    border-left: 3px solid $colorMilk;
-    background-color: $colorCroissant;
- }
+.sidebar__phone-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: $colorChocolate;
+  background-color: $colorCream;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+}
 
- .top-menu--opened {
-   display: block;
- }
+.sidebar__phone-btn:hover {
+  background-color: transparent;
+  border: 2px solid $colorCream;
+}
 
- .top-menu__btn {
-   display: flex;
-   justify-content: flex-end;
-   width: 100%;
-   margin-bottom: 30px;
-   border: none;
-   background-color: transparent;
-   cursor: pointer;
- }
- .top-menu__img {
-   width: 22px;
-   height: 22px;
- }
+.sidebar__phone-btn:active {
+  background-color: $colorCream;
+  opacity: 0.8;
+}
 
- .top-menu__nav {
-   list-style: none;
-   margin: 0 0 145px;
-   padding: 0;
- }
- .top-menu__item {
-   margin-bottom: 30px;
- }
- .top-menu__item:hover {
-   transform: translateX(10px);
- }
- 
+.sidebar__language-select {
+  font-family: inherit;
+  font-size: 16px;
+  background-color: transparent;
+  color: $colorChocolate;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 
- .top-menu__link {
-   text-decoration: none;
-   color: $colorChocolate;
-   line-height: 24px;
- }
+.switch-large {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 400px;
+}
 
- .top-menu__phone {
-   display: block;
-   text-decoration: none;
-   line-height: 24px;
-   color: $colorChocolate;
-   margin-bottom: 30px;
- } 
+.switch-large__btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
 
- .top-menu__phone-btn {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   text-decoration: none;
-   color: $colorChocolate;
-   background-color: $colorCream;
-   width: 100px;
-   height: 30px;
-   border-radius: 40px;
-   margin-bottom: 30px;
- }
+.switch-large__number {
+  font-size: 40px;
+  line-height: 47px;
+  color: $colorCream;
+}
 
- .top-menu__phone-btn:hover {
-   background-color: transparent;
-   border: 2px solid $colorCream;
- }
+.switch-large__number--active {
+  font-size: 176px;
+  color: $colorChocolate;
+}
 
- .top-menu__phone-btn:active {
-    background-color: $colorCream;
-    opacity: 0.8;
- }
+/* #endregion */
 
- .top-menu__language-select {
-   font-family: inherit;
-   font-size: 16px;
-   background-color: transparent;
-   color: $colorChocolate;
-   border: none;
-   outline: none;
-   cursor: pointer;
- }
+/* #region top-menu */
 
- /* #endregion */
+.top-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: 60vw;
+  height: 100vh;
+  padding: 25px 16px;
+  border-left: 3px solid $colorMilk;
+  background-color: $colorCroissant;
+}
 
+.top-menu--opened {
+  display: block;
+}
+
+.top-menu__btn {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 30px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.top-menu__img {
+  width: 22px;
+  height: 22px;
+}
+
+.top-menu__nav {
+  list-style: none;
+  margin: 0 0 145px;
+  padding: 0;
+}
+
+.top-menu__item {
+  margin-bottom: 30px;
+}
+
+.top-menu__item:hover {
+  transform: translateX(10px);
+}
+
+.top-menu__link {
+  text-decoration: none;
+  color: $colorChocolate;
+  line-height: 24px;
+}
+
+.top-menu__phone {
+  display: block;
+  text-decoration: none;
+  line-height: 24px;
+  color: $colorChocolate;
+  margin-bottom: 30px;
+}
+
+.top-menu__phone-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: $colorChocolate;
+  background-color: $colorCream;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  margin-bottom: 30px;
+}
+
+.top-menu__phone-btn:hover {
+  background-color: transparent;
+  border: 2px solid $colorCream;
+}
+
+.top-menu__phone-btn:active {
+  background-color: $colorCream;
+  opacity: 0.8;
+}
+
+.top-menu__language-select {
+  font-family: inherit;
+  font-size: 16px;
+  background-color: transparent;
+  color: $colorChocolate;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* #endregion */
 
 /* #region bakery */
 .bakery {
@@ -314,14 +519,12 @@ body {
   margin-bottom: 40px;
 }
 
-
 .bakery__btn {
   margin: 0 auto;
   width: 160px;
   height: 40px;
 }
 /* #endregion */
-
 
 /* #region bakershops */
 
@@ -352,8 +555,14 @@ body {
   margin: 20px auto 25px;
 }
 
+.bakershops__wrapper {
+  overflow: hidden;
+}
+
 .bakershops__image {
+  position: relative;
   margin: 0 auto 20px;
+  cursor: pointer;
 }
 
 .bakershops__map {
@@ -385,7 +594,6 @@ body {
 }
 
 /* #endregion */
-
 
 /* #region about */
 
@@ -427,7 +635,6 @@ body {
 }
 
 /* #endregion */
-
 
 /* #region contacts */
 
@@ -493,7 +700,6 @@ body {
 
 /* #endregion */
 
-
 /* #region feedback */
 .feedback {
   padding: 40px 16px 50px;
@@ -547,7 +753,6 @@ body {
 }
 
 /* #endregion */
-
 
 /* #region footer */
 
@@ -611,6 +816,56 @@ body {
 
 /* #endregion */
 
+@media (min-width: 576px) {
+  .header__wrapper {
+    padding: 15px 60px 26px;
+  }
+  .bakery {
+    padding: 40px 60px;
+  }
+  .bakershops {
+    padding: 40px 60px 30px;
+  }
+  .about__description {
+    width: 500px;
+  }
+  .contacts {
+    padding: 40px 60px 0;
+  }
+  .contacts__map {
+    margin: 0 -60px;
+  }
+  .feedback {
+    padding: 40px 60px 50px;
+  }
+  .footer {
+    padding: 40px 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .article {
+    position: relative;
+    margin-bottom: 60px;
+  }
+
+  .article__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 350px;
+  }
+
+  .bakershops__form {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .feedback__form {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
 
 @media (min-width: 1024px) {
   .section__title {
@@ -618,7 +873,8 @@ body {
     line-height: 133px;
     margin-bottom: 30px;
   }
-  .header{
+
+  .header {
     display: flex;
   }
 
@@ -628,8 +884,9 @@ body {
     padding: 34px 60px;
     flex-grow: 1;
   }
+
   .header__nav {
-    margin-bottom: 20px;
+    margin-bottom: 100px;
   }
   
   .header__logo {
@@ -641,12 +898,6 @@ body {
     margin-top: -10px;
   }
 
-  .header__title {
-    font-size: 120px;
-    line-height: 170px;
-    width: auto;
-  }
-
   .header__description {
     font-size: 26px;
     line-height: 39px;
@@ -655,7 +906,6 @@ body {
 
   .header__sidebar {
     display: flex;
-    width: 30vw;
   }
 
   .header__nav-btn {
@@ -684,7 +934,6 @@ body {
   .article:nth-child(odd) {
     flex-direction: row-reverse;
   }
-
   
   .article__title {
     font-size: 50px;
@@ -716,10 +965,10 @@ body {
     background-color: $colorCream;
     font-weight: 700;
     line-height: 24px;
-
   }
 
   .article__image {
+    position: static;
     width: 550px;
     margin-bottom: 0;
   }
@@ -734,15 +983,19 @@ body {
     width: 750px;
     margin: 0 auto 70px;
   }
+
   .bakershops__form-select {
     margin-bottom: 0;
   }
+
   .bakershops__form-select--city {
     width: 173px;
   }
+
   .bakershops__form-select--address {
     width: 323px;
   }
+  
   .bakershops__form-btn {
     width: 160px;
     margin: 0;
@@ -755,13 +1008,16 @@ body {
   .bakershops__zoom {
     display: none;
   }
+
   .about {
     padding: 40px 0 135px;
   }
+
   .about__description {
-    width: 480px;
+    // width: 480px;
     margin: 0 auto 60px;
   }
+
   .about__facts {
     width: 100%;
     padding: 0 60px;
@@ -770,8 +1026,6 @@ body {
   }
 
   .fact__image {
-    // width: 200px;
-    // height: 200px;
     margin-bottom: 12px;
   }
 
@@ -812,6 +1066,11 @@ body {
   .feedback {
     padding: 0;
   }
+
+  .feedback__form {
+    width: 100%;
+  }
+
   .feedback__container {
     display: flex;
     flex-direction: row-reverse;
@@ -820,6 +1079,7 @@ body {
     padding: 135px 60px;
     margin: 0 auto;
   }
+
   .feedback__wrapper {
     min-width: 378px;
     width: 378px;
@@ -832,6 +1092,7 @@ body {
   .feedback__btn {
     margin-bottom: 0;
   }
+
   .feedback__img {
     width: 500px;
     margin: 0;
@@ -840,6 +1101,7 @@ body {
   .footer {
     padding: 50px 0 18px;
   }
+
   .footer__container {
     display: flex;
     justify-content: space-between;
@@ -848,6 +1110,7 @@ body {
     padding: 0 60px;
     margin: 0 auto 15px;
   }
+
   .footer__logo {
     margin-bottom: 0;
   }
@@ -857,6 +1120,7 @@ body {
     column-gap: 34px;
     margin: 0;
   }
+
   .footer__menu-item {
     margin-bottom: 0;
   }
@@ -864,5 +1128,22 @@ body {
   .footer__networks {
     column-gap: 20px;
     margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header__title {
+    font-size: 160px;
+    line-height: 177px;
+    width: auto;
+  }
+
+  .bakery {
+    padding: 40px 120px 80px;
+  }
+
+  .fact__image {
+    width: 200px;
+    height: 200px;
   }
 }
