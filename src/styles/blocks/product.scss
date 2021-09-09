@@ -1,4 +1,16 @@
 .product {
+  display: flex;
+  flex-direction: column;
+  @include onTablet {
+    flex-direction: row;
+    justify-content: space-between;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+  }
+
   &__title {
     font-style: normal;
     font-weight: normal;
@@ -6,6 +18,12 @@
     line-height: 41px;
     color: $colorCroissant;
     margin-bottom: 15px;
+
+    @include onDesktop {
+      font-size: 50px;
+      margin-bottom: 43px;
+
+    }
   }
   
   &__subitle {
@@ -22,6 +40,10 @@
     line-height: 150%;
     color: $colorChocolate;
     margin-bottom: 19px;
+    @include onDesktop {
+      margin-bottom: 32px;
+
+    }
   }
 
   &__price {
@@ -41,8 +63,14 @@
   }
 
   &__image {
-    object-fit: fill;
-    width: 100%;
     max-width: 750px;
+
+    @include onTablet {
+      max-width: 600px;
+    }
+    @include onDesktop {
+
+      max-width: 750px;
+    }
   }
 }

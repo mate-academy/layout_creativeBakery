@@ -1,13 +1,50 @@
 .header {
+  margin: auto;
   background-image: url(../images/bake-cream-puff-cup-1775045.png);
   background-position: center;
   background-size: cover;
+  position: relative;
+  max-height: 840px;
+  max-width: 1440px;
+
+  &__wrapper {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1fr 425px;
+  
+    }
+  }
+  
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__nav-menu {
+    margin-top: 17px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+    padding-top: 30px;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      gap: 34px;
+    }
+  }
 
   &__content {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    height: 100vh;
+    height: 840px;
     padding: 16px 15px;
 
     @include onDesktop {
@@ -23,15 +60,31 @@
       font-size: 100px;
       line-height: 80%;
 
+      @include onTablet() {
+        font-size: 130px;
+      }
+
       @include onDesktop() {
         margin-bottom: 20px;
+        font-size: 160px;
       }
     }
 
     &--text {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 150%;
       display: block;
       margin-bottom: 19px;
+      @include onTablet() {
+        font-size: 20px;
+
+      }
+
       @include onDesktop() {
+        font-size: 26px;
+
         margin-bottom: 25px;
       }
     }
@@ -46,6 +99,10 @@
     gap: 20px;
     width: 123px;
     height: 47px;
+
+    @include onDesktop {
+      display: none;
+    }
   }
 
   &__number {

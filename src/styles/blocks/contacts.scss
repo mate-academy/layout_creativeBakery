@@ -1,6 +1,38 @@
 .contacts {
-  padding: 40px 16px;
+  padding: 40px 0;
   background-color: $colorCroissant;
+  
+  @include onTablet {
+    background-color: $colorMilk;
+  }
+
+  &__container {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 330px 1fr;
+      height: 500px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: 430px 1fr;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 40px;
+
+    @include onTablet {
+      background-color: $colorCroissant;
+      padding: 40px 20px;
+    }
+
+    @include onDesktop {
+      background-color: $colorCroissant;
+      padding: 40px 66px;
+    }
+  }
 
   &__title {
     font-family: $Cookie;
@@ -11,6 +43,16 @@
     text-align: center;
     color: #fff;
     margin-bottom: 20px;
+
+    @include onTablet {
+      color: $colorCroissant;
+      font-size: 90px;
+    }
+
+    @include onDesktop {
+      color: $colorCroissant;
+      font-size: 120px;
+    }
   }
 
   &__subtitle {
@@ -46,5 +88,12 @@
     line-height: 150%;
     color: $colorChocolate;
     text-decoration: none;
+  }
+
+  &__mapa {
+    display: none;
+    @include onTablet {
+      display: contents;
+    }
   }
 }

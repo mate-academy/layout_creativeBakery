@@ -1,5 +1,14 @@
 .feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
   padding: 22px 15px;
+
+  @include onTablet {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    padding: 60px 15px;
+  }
 
   &__title {
     font-style: normal;
@@ -26,6 +35,7 @@
 
     &--message {
       margin-top: 80px;
+      margin-bottom: 35px;
       resize: none;
     }
   }
@@ -35,7 +45,13 @@
   }
 
   &__logo {
-    width: 100%;
     max-width: 510px;
+
+    @include onTablet {
+      width: 50%;
+    }
+    @include onDesktop {
+      width: 100%;
+    }
   }
 }

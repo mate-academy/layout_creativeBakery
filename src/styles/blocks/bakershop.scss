@@ -11,6 +11,14 @@
     font-family: $Cookie;
     color: $colorCroissant;
     margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 90px;
+    }
+
+    @include onDesktop {
+      font-size: 120px;
+    }
   }
 
   &__form {
@@ -19,6 +27,11 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
+
+    @include onTablet {
+      flex-direction: row;
+
+    }
 
     &-select {
       display: block;
@@ -30,6 +43,12 @@
       color: $colorChocolate;
       opacity: 0.5;
       border-bottom: 1px solid $colorChocolate;
+
+      @include onTablet {
+        &:first-child {
+          width: 173px;
+        }
+      }
     }
   }
 
@@ -38,21 +57,18 @@
     height: 45px;
     margin-bottom: 35px;
 
-    &-zoom--plus {
+    &-zoom {
       display: flex;
       justify-content: center;
-      align-items: center;
-      border: none;
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 30px;
-      line-height: 150%;
-      color: $colorChocolate;
+      gap: 40px;
+
+      @include onDesktop {
+        display: none;
+      }
+
     }
 
+    &-zoom--plus,
     &-zoom--minus {
       display: flex;
       justify-content: center;
@@ -69,8 +85,18 @@
     }
   }
 
+  &__box-mapa {
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 20px;
+    max-height: 687.95px;
+    max-width: 1020.87px;
+    width: 100%;
+    height: 100%;
+
+  }
+
   &__mapa {
     width: 100%;
-    margin-bottom: 20px;
   }
 }

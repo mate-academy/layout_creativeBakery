@@ -1,7 +1,20 @@
 .bakery {
-  display: flex;
-  flex-direction: column;
   padding: 40px 16px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 40px;
+
+    @include onDesktop {
+      padding: 27px 40px;
+    }
+    
+    @include onTablet {
+      gap: 135px;
+    }
+  }
 
   &__title {
     font-style: normal;
@@ -11,6 +24,14 @@
     text-align: center;
     font-family: $Cookie;
     color: $colorCroissant;
+
+    @include onTablet {
+      font-size: 90px;
+    }
+
+    @include onDesktop {
+      font-size: 120px;
+    }
   }
 
   &__button {
