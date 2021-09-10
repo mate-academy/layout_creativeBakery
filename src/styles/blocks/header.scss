@@ -5,33 +5,52 @@
   height: 100vh;
   max-height: 840px;
   max-width: 1440px;
+  overflow: hidden;
 
   &__images {
-    max-height: 840px;
-    height: 100vh;
     position: absolute;
-    overflow: hidden;
     z-index: -1;
+    min-width: 320px;
+    min-height: 568px;
+    height: 100vh;
+    width: 100vh;
+    max-width: 1015px;
+    max-height: 840px;
   }
 
   &__box {
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
     transform: translateY(0%);
   }
 
   &__image {
-    width: 100%;
+    flex-shrink: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center bottom;
+
+    &--bread {
+      background-image: url(/images/b.jpg);
+    }
+
+    &--cake {
+      background-image: url(/images/c.jpg);
+    }
+
+    &--cup {
+      background-image: url(/images/a.jpg);
+    }
   }
 
   &__wrapper {
     @include onDesktop {
       display: grid;
       grid-template-columns: 1fr 425px;
-  
     }
   }
-  
+
   &__top {
     display: flex;
     flex-direction: row;
@@ -95,12 +114,10 @@
       margin-bottom: 19px;
       @include onTablet() {
         font-size: 20px;
-
       }
 
       @include onDesktop() {
         font-size: 26px;
-
         margin-bottom: 25px;
       }
     }

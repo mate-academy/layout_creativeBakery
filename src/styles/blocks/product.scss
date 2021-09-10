@@ -1,6 +1,7 @@
 .product {
   display: flex;
   flex-direction: column;
+
   @include onTablet {
     flex-direction: row;
     justify-content: space-between;
@@ -8,7 +9,6 @@
     &:nth-child(even) {
       flex-direction: row-reverse;
     }
-
   }
 
   &__title {
@@ -48,6 +48,7 @@
 
   &__price {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -57,9 +58,18 @@
     border-radius: 50%;
     background-color: $colorCream;
     font-weight: bold;
-    font-size: 19px;
+    font-size: 16px;
     line-height: 150%;
     color: $colorChocolate;
+
+    @include onTablet {
+      flex-direction: row;
+      &--dollar {
+        &::after {
+          content: "/";
+        }
+      }
+    }
   }
 
   &__image {
@@ -68,8 +78,8 @@
     @include onTablet {
       max-width: 600px;
     }
+    
     @include onDesktop {
-
       max-width: 750px;
     }
   }
