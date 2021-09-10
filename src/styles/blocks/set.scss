@@ -3,10 +3,19 @@
   flex-direction: column;
   align-items: center;
 
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+
   &__map {
     width: 100%;
     height: 470px;
-    margin: 0 -20px;
+    border: 0;
+
+    @include onDesktop {
+      height: 507px;
+    }
   }
 
   &__contact-list {

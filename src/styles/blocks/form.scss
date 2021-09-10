@@ -1,4 +1,12 @@
 .form {
+  @include onDesktop {
+    max-width: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 32px;
+  }
+
   &__field {
     box-sizing: border-box;
     width: 100%;
@@ -8,9 +16,30 @@
     border-bottom-color: $Chocolate;
     background-color: transparent;
     opacity: 0.5;
+    outline: none;
 
     &:nth-child(2) {
       margin-bottom: 35px;
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+
+    &--city {
+      @include onDesktop {
+        width: 173px;
+      }
+    }
+
+    &--adress {
+      @include onDesktop {
+        width: 323px;
+      }
     }
   }
 }

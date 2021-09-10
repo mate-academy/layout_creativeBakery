@@ -1,6 +1,27 @@
 .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   &__text {
-    text-align: center;
-    margin: 20px 0;
+    &--mobile {
+      text-align: center;
+      margin: 20px 0;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      margin-bottom: 60px;
+      text-align: center;
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        width: 480px;
+      }
+    }
   }
 }
