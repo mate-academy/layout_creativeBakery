@@ -48,3 +48,28 @@ function zoom(shift) {
   add += shift;
   mapa.style.transform = `scale(${100 + add}%)`;
 }
+
+const box = document.querySelector('.header__box');
+const up = document.querySelector('.right-panel__vector--up');
+const down = document.querySelector('.right-panel__vector--down');
+
+up.addEventListener('click', function() {
+  go(-1);
+});
+
+down.addEventListener('click', function() {
+  go(1);
+});
+
+let pos = 0;
+
+function go(shift) {
+  const count = box.children.length;
+
+  pos += shift;
+
+  down.disabled = pos >= count - 1;
+  up.disabled = pos <= 0;
+
+  box.style.transform = `translateY(${-pos * 100}%)`;
+}

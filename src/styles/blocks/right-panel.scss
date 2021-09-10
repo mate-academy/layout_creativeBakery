@@ -10,7 +10,10 @@
   
 
   @include onDesktop {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 125px;
+
   }
 
   &__utils {
@@ -24,10 +27,9 @@
   &__numbers {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    justify-items: center;
-    align-items: baseline;
-    gap: 20px;
+    gap: 30px;
+    justify-content: end;
+    align-items: flex-end;
   }
 
   &__number {
@@ -37,5 +39,28 @@
     font-size: 40px;
     line-height: 47px;
     color: $colorCream;
+  }
+
+  &__vector {
+    height: 15px;
+    width: 26px;
+    border: none;
+    cursor: pointer;
+    background-color: none
+    ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition-duration: 0.2s;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+    &--up {
+      background-image: url(/images/up.svg);
+    }
+    &--down {
+      background-image: url(/images/Vect.png);
+    }
   }
 }
