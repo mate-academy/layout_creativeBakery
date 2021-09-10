@@ -1,0 +1,55 @@
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  @include onDesktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 46px;
+  }
+
+  &__prev,
+  &__next {
+    visibility: visible;
+    // visibility: hidden;
+    @include onDesktop {
+      visibility: visible;
+      padding: 0;
+      background-color: inherit;
+      border: none;
+      margin-right: 10px;
+
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-10px);
+
+        &:first-child {
+          margin-bottom: 9px;
+        }
+
+        &:last-child {
+          transform: translateY(10px);
+        }
+      }
+    }
+  }
+
+  &__item {
+    align-items: flex-end;
+    font-size: inherit;
+    line-height: 19px;
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+
+    &:first-of-type {
+      font-size: 40px;
+      line-height: 47px;
+      color: $darkBrown;
+    }
+  }
+}
