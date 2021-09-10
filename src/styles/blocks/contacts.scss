@@ -3,7 +3,34 @@
   background-color: $croissant;
 
   &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: $white;
+
+    @include onDesktop {
+      font-size: 80px;
+      margin-bottom: 0;
+      background-color: $white;
+      color: $croissant;
+    }
+  }
+
+  &__grid-map {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 430px 1fr;
+    }
+  }
+
+  &__grid-feedback {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-color: $white;
+
+      margin-bottom: 135px;
+    }
   }
 
   &__list {
@@ -61,17 +88,36 @@
     border: 0;
     position: relative;
     bottom: -8px;
+
+    @include onDesktop {
+      bottom: 0;
+    }
   }
 
   &__feedback {
     background-color: #fff;
 
     padding-top: 30px;
+
+    @include onDesktop {
+      grid-column: 2;
+    }
   }
 
   &__envelop {
-    display: block;
+    background-color: $white;
 
-    margin: 50px auto;
+    @include onDesktop {
+      grid-area: 1 / 1;
+      margin: 0;
+    }
+  }
+
+  &__envelop-img {
+    display: block;
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 50px 0;
   }
 }

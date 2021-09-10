@@ -1,6 +1,17 @@
 .bakershops {
   background-color: $cream;
 
+  &__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  &__btn {
+    margin: 0;
+  }
+
   &__img {
     width: 100%;
   }
@@ -28,6 +39,13 @@
       content: "";
       background-color: #d21925;
       border-radius: 50%;
+
+      @include onDesktop {
+        font-size: 16px;
+        width: 25px;
+        height: 25px;
+
+      }
     }
 
     &::after {
@@ -44,13 +62,20 @@
 
     @each $i, $size in $cookies {
       &--#{$i} {
-        width: #{$size}px ;
+        width: #{$size}px;
         height: #{$size}px;
+
         &::before {
           content: "#{$i}";
         }
+
+        @include onDesktop {
+          width: #{$size * 3}px;
+          height: #{$size * 3}px;
+        }
       }
     }
+
     @each $city, $top, $left in $position {
       &--#{$city} {
         top: #{$top};
@@ -63,6 +88,10 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    @include onDesktop {
+      display: none;
+    }
 
     &-item {
       display: flex;
@@ -78,4 +107,5 @@
       margin: 0 30px 20px;
     }
   }
+
 }
