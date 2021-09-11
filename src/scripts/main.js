@@ -1,31 +1,37 @@
 'use strict';
 
-const list = document.querySelector('.counter');
-const prev = document.querySelector('.nav-button--up');
-const next = document.querySelector('.nav-button--down');
+const slider = document.querySelector('.counter');
+const backgroundList = document.querySelector('.background-container');
+const up = document.querySelector('.nav-button--up');
+const down = document.querySelector('.nav-button--down');
 
-prev.disabled = true;
+up.disabled = true;
+
+down.addEventListener('click', function() {
+  move(1, '+');
+});
+
+up.addEventListener('click', function() {
+  move(-1, '-');
+});
 
 let position = 0;
 
-next.addEventListener('click', function() {
-  move(1);
-});
-
-prev.addEventListener('click', function() {
-  move(-1);
-});
-
-function move(shift) {
-  const count = list.children.length;
+function move(shift, direction) {
+  const count = slider.children.length;
 
   position += shift;
 
-  next.disabled = position >= count - 1;
-  prev.disabled = position <= 0;
+  down.disabled = position >= count - 1;
+  up.disabled = position <= 0;
 
   position = (position + count) % count;
-  list.children[position].classList.add('counter__item--active');
-  list.children[position - 1].classList.remove('counter__item--active');
-  list.children[position + 1].classList.remove('counter__item--active');
+  backgroundList.style.transform = `translateY(${-position * 101}%)`;
+  slider.children[position].classList.toggle('counter__item--active');
+
+  if (direction === '+') {
+    slider.children[position - 1].classList.toggle('counter__item--active');
+  } else {
+    slider.children[position + 1].classList.toggle('counter__item--active');
+  }
 }
