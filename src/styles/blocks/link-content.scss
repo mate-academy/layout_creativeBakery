@@ -1,5 +1,52 @@
 .link-content {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
+  &__item {
+    position: relative;
+
+    &--description {
+      font-weight: bold;
+    }
+
+    &--link {
+      text-decoration: none;
+      color: $Chocolate;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $Milk;
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &--map::before {
+      width: 15px;
+      height: 20px;
+      top: 5px;
+      left: -35px;
+      background-image: url("../images/map-icon.svg");
+    }
+
+    &--phone::before {
+      height: 18px;
+      width: 18px;
+      left: -35px;
+      top: 8px;
+      background-image: url("../images/phone-icon.svg");
+    }
+
+    &--mail::before {
+      width: 31px;
+      height: 31px;
+      left: -40px;
+      background-image: url("../images/mail-icon.svg");
+    }
+  }
 }

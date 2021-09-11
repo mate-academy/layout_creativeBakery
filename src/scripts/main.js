@@ -26,7 +26,8 @@ function move(shift, direction) {
   up.disabled = position <= 0;
 
   position = (position + count) % count;
-  backgroundList.style.transform = `translateY(${-position * 101}%)`;
+
+  backgroundList.style.transform = `translateY(${-position * 100}%)`;
   slider.children[position].classList.toggle('counter__item--active');
 
   if (direction === '+') {
