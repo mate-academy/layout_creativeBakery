@@ -1,7 +1,7 @@
 'use strict';
 
 const list = document.querySelector('.cards');
-const prev = document.querySelector('.about-buttons__item-prev');
+const prev = document.querySelector('.about-buttons__item--prev');
 const next = document.querySelector('.about-buttons__item--next');
 
 let position = 0;
