@@ -3,10 +3,11 @@
   font-weight: normal;
 
   &__body {
+    box-sizing: border-box;
+    overflow-x: hidden;
     padding: 0;
     margin: 0;
   }
-
   &__title {
     text-align: center;
     font-family: Cookie, sans-serif;
@@ -14,35 +15,42 @@
     font-weight: normal;
     font-size: 60px;
     line-height: 67px;
-    color: #e39a3b;
+    color: $orange;
     margin-bottom: 30px;
+  
+    @include onDesktop {
+      font-size: 120px;
+      line-height: 133px;
+    }
 
     &--contacts {
       color: #fff;
       margin-bottom: 20px;
+      background-color: $orange;
+      @include onDesktop {
+        background-color: transparent;
+        color: $orange;
+      }
 
     }
 
     &--feedback {
-      font-family: Rubik, sans-serif;
-      font-style: normal;
-      font-weight: normal;
+      font-family: Rubik, sans-serif ;
       font-size: 20px;
       line-height: 150%;
-      color: #412d22;
+      color: $brown;
     }
   }
 
   &__description {
-    font-family: Rubik, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
-    color: #412d22;
+    @extend %default-text;
     margin-bottom: 20px;
     &--about {
       text-align: center;
+      @include onDesktop {
+        margin: 0 auto 60px;
+        width: 480px;
+      }
     }
 
   }

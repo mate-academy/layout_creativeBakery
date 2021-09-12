@@ -5,13 +5,17 @@
     display: flex;
     gap: 27px;
     text-align: center;
-    color: #412d22;
+    color: $brown;
     font-family: Rubik, sans-serif;
     font-style: normal;
     font-weight: normal;
     padding: 0;
     transform: translateX(20%);
     transition: transform 0.3s;
+    @include onDesktop {
+      justify-content: space-between;
+      transform: translateX(0);
+    }
   }
 
   &__item {
@@ -29,8 +33,7 @@
   }
 
   &__image {
-    width: 200px;
-    height: 200px;
+    @include sizes(200px, 200px);
   }
   &__number {
     font-weight: 300;
@@ -47,5 +50,8 @@
     display: flex;
     justify-content: center;
     gap: 50px;
+    @include onDesktop {
+      display: none;
+    }
   }
 }

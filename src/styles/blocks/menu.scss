@@ -1,10 +1,10 @@
 .menu {
   width: 200px;
-  background-color: #e39a3b;
+  background-color: $orange;
 
   border-left: 3px solid #fff;
   &--footer {
-    background-color: #412d22;
+    background-color: $brown;
   }
   &__content {
     box-sizing: border-box;
@@ -27,33 +27,46 @@
 
     &:not(:last-child) {
       margin-bottom: 30px;
+      @include onDesktop {
+        margin-bottom: 0;
+      }
     }
     &:last-child {
       margin-bottom: 150px;
+      @include onDesktop {
+        margin-bottom: 0;
+      }
     }
-
   }
 
   &__link {
+    @extend %default-text;
     text-decoration: none;
-    font-family: Rubik, sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
-    color: #412d22;
+
+    &:hover {
+      color: $orange;
+    }
+
     &-footer {
       color: #fff;
     }
   }
 
   &__phone {
-    font-family: Rubik, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
-    color: #412d22;
+    @extend %default-text;
     margin-bottom: 30px;
   }
+  
+  @include onDesktop {
+    display: none;
+  }
+}
 
+.desktop {
+  display: none;
+  @include onDesktop {
+    display: flex;
+    gap: 34px;
+    // margin: 0 auto;
+  }
 }

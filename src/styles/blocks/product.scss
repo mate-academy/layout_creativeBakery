@@ -1,15 +1,46 @@
 .product {
-  padding: 40px 0;
+  &__content {
+    padding: 40px 0;
+    @include onDesktop {
+      padding: 40px 0 80px;
+    }
+  }
 
-  &__title {
-    display: block;
-    text-align: center;
-    font-family: Cookie, sans-serif;
-    font-weight: normal;
-    font-size: 60px;
-    line-height: 67px;
-    color: #e39a3b;
-    margin-bottom: 20px;
+  &__item {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      display: flex;
+      gap: 220px;
+      margin-bottom: 135px;
+    }
+  }
+
+  &__left-side {
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+    }
+    &--cakes {
+      @include onDesktop {
+        order: 2;
+      }
+    }
+    &--cupcakes {
+      @include onDesktop {
+        order: 2;
+      }
+    }
+  }
+
+  &__name {
+    @extend %default-text;
+    font-size: 20px;
+    margin-bottom: 12px;
+    @include onDesktop {
+      font-size: 26px;
+      line-height: 150%;
+    }
   }
 
   &__kind {
@@ -17,63 +48,54 @@
     font-weight: normal;
     font-size: 35px;
     line-height: 41px;
-    color: #e39a3b;
+    color: $orange;
     margin-bottom: 15px;
-
-  }
-  &__name {
-    font-family: Rubik, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 150%;
-    color: #412d22;
-    margin-bottom: 12px;
-
+    @include onDesktop {
+      font-size: 50px;
+      line-height: 59px;
+    }
   }
 
-  &__price-image {
-    margin-bottom: 40px;
-
-  }
   &__price {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Rubik, sans-serif;
+    @include flex(flex, center, center);
+    @include sizes(65px, 65px);
+    @extend %default-text;
     font-weight: bold;
     text-align: center;
-    width: 65px;
-    height: 65px;
-    font-size: 16px;
-    line-height: 150%;
-    color: #412d22;
     background-color: #f1cc9d;
     border-radius: 50%;
   }
   &__photo {
     margin: 0 auto;
     &--cookies {
-      width: 270px;
-      height: 200px;
+      @include sizes(270px, 200px);
       margin-top: -15px;
 
+      @include onDesktop {
+        @include sizes(700px, 515px);
+      }
     }
     &--cakes {
-      width: 275px;
-      height: 175px;
+      @include sizes(275px, 175px);
+      @include onDesktop {
+        @include sizes(740px, 480px);
+      }
+
     }
     &--croissants {
-      width: 240px;
-      height: 190px;
+      @include sizes(240px, 190px);
+      @include onDesktop {
+        @include sizes(660px, 535px);
+      }
     }
     &--cupcakes {
-      width: 240px;
-      height: 165px;
+      @include sizes(240px, 165px);
+      @include onDesktop {
+        @include sizes(665px, 460px);
+      }
     }
   }
   &__image {
-    width: 100%;
-    height: 100%;
+    @include sizes(100%, 100%);
   }
 }

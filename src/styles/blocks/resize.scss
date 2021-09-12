@@ -2,19 +2,17 @@
   display: flex;
   justify-content: center;
   gap: 40px;
+
+  @include onDesktop {
+    display: none;
+  }
   // width: 120px;
   &__item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    font-family: Rubik, sans-serif;
-    font-style: normal;
-    font-weight: normal;
+    @include flex(flex, center, center);
+    @include sizes(40px, 40px);
+    @include sizes(65px, 65px);
+    @extend %default-text;
     font-size: 30px;
-    line-height: 150%;
-    color: #412d22;
     background-color: #fff;
     border-radius: 26px;
   }

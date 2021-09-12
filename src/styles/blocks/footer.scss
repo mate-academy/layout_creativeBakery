@@ -1,13 +1,37 @@
 .footer {
-  padding: 40px 0;
-  background-color: #412d22;
+  background-color: $brown;
+  
+  &__content {
+    padding: 40px 0;
+  }
+
+  &__items {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // margin-bottom: 15px;
+    }
+  }
+
   &__logo {
     margin-bottom: 60px;
+    @include onDesktop {
+      margin-bottom: 0;
+    }
   }
 
   &__list {
+
     list-style: none;
     padding: 0;
+    margin: 0;
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      margin-bottom: 0;
+    }
   }
 
   &__item {
@@ -15,27 +39,40 @@
     &:last-child {
       margin-bottom: 60px;
     }
+    @include onDesktop {
+      margin-bottom: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__link {
     text-decoration: none;
     color: #fff;
-    font-family: Rubik, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
+    @extend %default-text;
+    &:hover {
+      color: $orange;
+    }
+    @include onDesktop {
+      font-size: 16px;
+      line-height: 150%;
+    }
   }
 
   &__socials {
     display: flex;
     justify-content: space-between;
+    
     margin-bottom: 50px;
+    @include onDesktop {
+      gap: 20px;
+      margin-bottom: 0;
+    }
   }
 
   &__socials-logo {
-    width: 30px;
-    height: 30px;
+    @include sizes(30px, 30px);
   }
 
   &__privacy {

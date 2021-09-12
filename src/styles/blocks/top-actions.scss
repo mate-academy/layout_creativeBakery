@@ -1,8 +1,19 @@
 .top-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  @include flex(flex, space-between, flex-start);
   margin-bottom: 100px;
+  &--header {
+    padding: 0 16px;
+
+    @include onDesktop {
+      padding: 0 60px;
+    }
+  }
+
+  @include onDesktop {
+    margin-bottom: 50px;
+    justify-content: space-between;
+    
+  }
   &--cross {
     justify-content: flex-end;
     margin-bottom: 30px;
