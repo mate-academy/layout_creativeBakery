@@ -1,6 +1,7 @@
 .menu {
   width: 62%;
   background-color: $colorCroissant;
+  z-index: 1;
 
   @include onDesktop {
     display: none;
@@ -52,10 +53,19 @@
   &__link {
     text-decoration: none;
     color: $colorChocolate;
+    transition: all 0.3s;
+    &:hover {
+      color: $colorMilk;
+    }
+
+    &--onDesktop:hover {
+      color: $colorCroissant;
+    }
 
     &--footer {
       color: $colorMilk;
     }
+
   }
 
 }

@@ -1,8 +1,12 @@
 .numbers {
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: end;
   gap: 20px;
+
+  @include onDesktop {
+    flex-direction: column;
+  }
 
   &__item {
     text-decoration: none;
@@ -10,11 +14,21 @@
     line-height: 19px;
     color: $colorCream;
 
+    @include onDesktop {
+      font-size: 40px;
+      line-height: 47px;
+
+    }
+
     &--first {
       font-size: 40px;
       line-height: 47px;
       color: $colorChocolate;
 
+      @include onDesktop {
+        font-size: 176px;
+        line-height: 209px;
+      }
     }
   }
 }
