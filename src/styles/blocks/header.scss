@@ -45,6 +45,7 @@
   }
 
   &__wrapper {
+    height: 100%;
     @include onDesktop {
       display: grid;
       grid-template-columns: 1fr 425px;
@@ -79,7 +80,9 @@
   &__content {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     box-sizing: border-box;
+    height: 100%;
     padding: 16px 15px;
 
     @include onDesktop {
@@ -128,10 +131,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    margin: auto;
+    margin: 0 auto;
     gap: 20px;
-    width: 123px;
-    height: 47px;
 
     @include onDesktop {
       display: none;
@@ -153,5 +154,18 @@
       align-items: flex-end;
       color: $colorChocolate;
     }
+  }
+
+  &__vector {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: $colorCroissant;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition-duration: 0.2s;
   }
 }
