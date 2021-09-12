@@ -10,6 +10,6 @@ prev.addEventListener('click', () => {
 });
 
 next.addEventListener('click', () => {
-  header.classList.add('header2');
-  header.classList.remove('header1');
+  header.classList.add('header1');
+  header.classList.remove('header');
 });
