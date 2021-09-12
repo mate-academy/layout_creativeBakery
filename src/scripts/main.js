@@ -27,7 +27,7 @@ function move(shift, direction) {
 
   position = (position + count) % count;
 
-  backgroundList.style.transform = `translateY(${-position * 100}%)`;
+  backgroundList.style.transform = `translateY(${-position * 33.3}%)`;
   slider.children[position].classList.toggle('counter__item--active');
 
   if (direction === '+') {
