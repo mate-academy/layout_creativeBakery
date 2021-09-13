@@ -1,7 +1,134 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Roboto&family=Rubik:wght@400;700&display=swap");
 
-body {
-  background: $c-gray;
+$choko: #412d22;
+$croissan: #e39a3b;
+$cream: #f1cc9d;
+$milk: #fff;
+
+@import "blocks/page.scss";
+@import "blocks/header.scss";
+@import "blocks/logo.scss";
+@import "blocks/menu.scss";
+@import "blocks/section.scss";
+@import "blocks/background-slider.scss";
+@import "blocks/container.scss";
+@import "blocks/buttons.scss";
+@import "blocks/footer.scss";
+
+/* font-family: 'Cookie', cursive; */
+/* font-family: 'Rubik', sans-serif */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: Rubik, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  zoom: 100%;
+  color: $choko;
+  text-decoration: none;
+  transition: 0.3s;
+  scroll-behavior: smooth;
+}
+
+.lang {
+  background-color: transparent;
+  &:focus {
+    background-color: transparent;
+  }
+  &:active {
+    background-color: transparent;
+  }
+}
+
+.wrapper {
+  padding-left: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-color: $milk;
+  border-radius: 50%;
+  background-position: center;
+  &-1 {
+    background-image: url(../images/logo/Twitter.svg);
+  }
+  &-2 {
+    background-image: url(../images/logo/Linkedin.svg);
+    overflow: hidden;
+  }
+  &-3 {
+    background-image: url(../images/logo/Facebook.svg);
+  }
+}
+
+.bakershops {
+  background-color: $cream;
+  overflow: hidden;
+}
+
+.form__select {
+  margin-top: 15px;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: $choko;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: transparent;
+  border-bottom: 1px solid $choko;
+  &__value {
+    color: $choko;
+  }
+}
+
+.search__button {
+  display: grid;
+  grid-column: auto;
+  align-content: center;
+  margin: 35px auto 25px;
+}
+
+.section__zoom {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px 0 30px;
+  &--up,
+  &--down {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: $milk;
+    border-radius: 50%;
+
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    :active,
+    :hover {
+      transform: scale(3.2);
+    }
+  }
+}
+
+.about__content {
+  text-align: center;
 }
