@@ -1,16 +1,31 @@
 .bakershops {
-  height: 100vh;
+  height: max-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 30px;
   background-color: $colorCream;
 
+  &__title {
+    @include onDesktop {
+      margin-bottom: 87px;
+    }
+  }
+
   &__form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      max-width: 750px;
+      margin: 0 auto 67px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
   }
 
   &__form-select {
@@ -19,20 +34,49 @@
     background-color: $colorCream;
     font-size: 16px;
     line-height: 24px;
+    outline: none;
     border: none;
     border-bottom: 1px solid $colorChocolate;
     opacity: 0.5;
     padding-bottom: 10px;
-    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-right: 32px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &--city {
+      @include onDesktop {
+        width: 173px;
+      }
+    }
+
+    &--address {
+      @include onDesktop {
+        width: 323px;
+      }
+    }
   }
 
   &__button {
     width: 148px;
-    margin-bottom: 25px;
+
+    @include onDesktop {
+      width: 160px;
+    }
   }
 
   &__map {
     position: relative;
+
+    @include onDesktop {
+      margin: 0 auto;
+      width: 1020px;
+      height: 688px;
+    }
   }
 
   &__image {
@@ -50,6 +94,11 @@
     font-size: 8px;
     line-height: 12px;
 
+    @include onDesktop {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
     &::before {
       position: absolute;
       right: 80%;
@@ -63,17 +112,19 @@
       background-color: #d21925;
       font-size: 6px;
       line-height: 9px;
+
+      @include onDesktop {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+        line-height: 24px;
+      }
     }
 
     &::after {
       text-transform: uppercase;
       position: absolute;
       top: 100%;
-    }
-
-    &--city {
-      font-size: 8px;
-      line-height: 12px;
     }
 
     @for $i from 1 through 9 {
@@ -91,31 +142,61 @@
     &--1 {
       height: 20px;
       width: 20px;
+
+      @include onDesktop {
+        height: 60px;
+        width: 60px;
+      }
     }
 
     &--2 {
       height: 10px;
       width: 10px;
+
+      @include onDesktop {
+        height: 30px;
+        width: 30px;
+      }
     }
 
     &--3 {
       height: 12px;
       width: 12px;
+
+      @include onDesktop {
+        height: 38px;
+        width: 38px;
+      }
     }
 
     &--4 {
       height: 16px;
       width: 16px;
+
+      @include onDesktop {
+        height: 50px;
+        width: 50px;
+      }
     }
 
     &--6 {
       height: 24px;
       width: 24px;
+
+      @include onDesktop {
+        height: 75px;
+        width: 75px;
+      }
     }
 
     &--9 {
       height: 27px;
       width: 27px;
+
+      @include onDesktop {
+        height: 82px;
+        width: 82px;
+      }
     }
 
     &--lutsk {
@@ -126,6 +207,11 @@
     &--lviv {
       top: 27%;
       left: 9%;
+
+      @include onDesktop {
+        top: 22%;
+        left: 7%;
+      }
     }
 
     &--zhytomyr {
@@ -146,6 +232,11 @@
     &--kyiv {
       top: 25%;
       left: 50%;
+
+      @include onDesktop {
+        top: 20%;
+        left: 45%;
+      }
     }
 
     &--poltava {
@@ -161,11 +252,21 @@
     &--kherson {
       top: 50%;
       left: 65%;
+
+      @include onDesktop {
+        top: 60%;
+        left: 65%;
+      }
     }
 
     &--kharkiv {
       top: 30%;
       left: 77%;
+
+      @include onDesktop {
+        top: 25%;
+        left: 77%;
+      }
     }
   }
 
@@ -173,6 +274,10 @@
     height: 40px;
     display: flex;
     justify-content: center;
+
+    @include onDesktop {
+      display: none;
+    }
 
     &-plus {
       display: flex;

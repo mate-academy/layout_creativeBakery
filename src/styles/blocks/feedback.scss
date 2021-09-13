@@ -1,5 +1,17 @@
 .feedback {
   padding-bottom: 50px;
+
+  @include onDesktop {
+    padding-bottom: 140px;
+  }
+
+  &__left-side {
+    margin-bottom: 50px;
+    
+    @include onDesktop {
+      order: 2;
+    }
+  }
   
   &__title {
     font-weight: 400;
@@ -7,6 +19,10 @@
     line-height: 30px;
     text-align: center;
     margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 27px;
+    }
   }
 
   &__form {
@@ -18,11 +34,23 @@
 
   &__container {
     width: 100%;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
   }
 
   &__image {
+    display: flex;
     margin: 0 auto;
     width: 250px;
     height: 205px;
+
+    @include onDesktop {
+      height: 420px;
+      width: 510px;
+    }
   }
 }
