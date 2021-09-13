@@ -1,59 +1,108 @@
 .bakery {
-  padding: 40px 0;
+  padding: 40px 16px;
+  background-color: #fff;
+
   &__heading {
     font-family: "Cookie", sans-serif;
     font-size: 60px;
     line-height: 67px;
     font-weight: 400;
     color: $lightBrown;
-    margin-bottom: 25px;
+    margin-bottom: 45px;
+    margin-top: 0;
     text-align: center;
+
+    @include onDesktop {
+      font-size: 120px;
+      line-height: 133px;
+    }
   }
-  background-color: #fff;
+
+  @include onDesktop {
+    margin-bottom: 15px;
+    line-height: 70px;
+  }
 }
 
 .bakery__product {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  &:nth-of-type(2n) {
-    flex-direction: row-reverse;
+  @include onTablet {
+    flex-direction: row;
+    justify-content: space-around;
+
+    &:nth-of-type(2n) {
+      flex-direction: row-reverse;
+      justify-content: space-around;
+    }
   }
 }
 
 .bakery__title {
-  margin-bottom: 45px;
+  margin-top: 0;
+  margin-bottom: 15px;
   @extend %h3;
+  color: $lightBrown;
 }
 
 .bakery__name {
+  margin-top: 0;
   margin-bottom: 10px;
   @extend %h4;
 }
 
 .bakery__descpirtion {
+  margin-top: 0;
   line-height: 24px;
   max-width: 288px;
 }
 
 .bakery__price {
- @include circle(110px);
+  @include circle(65px);
 
- display: flex;
- align-items: center;
- justify-content: center;
- text-align: center;
- background-color: #f1cc9d;
- margin-top: 35px;
- font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #f1cc9d;
+  margin-top: 35px;
+  font-size: 0.75em;
+  font-weight: 700;
+
+  @include onDesktop {
+    @include circle(110px);
+    font-size: 16px;
+    font-weight: 700;
+  }
 }
 
 .bakery__item {
-  max-width: 700px;
-  height: auto;
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
 }
 
 .bakery__image {
-  width: 80%;
+  max-width: 80%;
+}
+
+.bakery__botton {
+  display: block;
+  max-width: 170px;
+  margin: 40px auto 0;
+  line-height: 24px;
+  padding: 9px 37px 7px 38px;
+  background-color: $lightBrown;
+  border-radius: 40px;
+  border: 1px solid $lightBrown;
+  text-decoration: none;
+  color: #000;
+
+  &:hover {
+    border-color: $lightBrown;
+    background-color: #fff;
+  }
 }

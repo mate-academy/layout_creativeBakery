@@ -1,0 +1,135 @@
+$colorCream: #f1cc9d;
+
+.bakershops {
+  background-color: $colorCream;
+  display: flex;
+  flex-direction: column;
+}
+
+.bakershops__wrap {
+  padding-bottom: 75px;
+  // height: 100%;
+}
+
+.bakershops__heading {
+  font-family: "Cookie", sans-serif;
+  font-size: 60px;
+  line-height: 67px;
+  font-weight: 400;
+  color: $lightBrown;
+  margin: 40px auto 45px;
+  text-align: center;
+}
+
+.bakershops__form {
+  width: 288px;
+  margin: 0 auto 25px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+  @include onLaptop {
+    flex-direction: row;
+    justify-content: center;
+    width: 750px;
+  }
+}
+
+.bakershops__select {
+  &--city,
+  &--adress {
+    height: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    width: 100%;
+    opacity: 0.5;
+    max-width: 280px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $darkBrown;
+    background-color: #f1cc9d;
+    margin-bottom: 20px;
+  }
+
+  @include onLaptop {
+    flex-direction: row;
+    &--city {
+      width: 173px;
+      margin-right: 42px;
+    }
+
+    &--adress {
+      width: 323px;
+      margin-right: 52px;
+    }
+  }
+}
+
+.bakershops__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 160px;
+  background-color: $lightBrown;
+  border: 2px solid $lightBrown;
+
+  border-radius: 40px;
+  transition: 0.3s;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background-color: #fff;
+    border: $lightBrown;
+  }
+
+  @include onLaptop {
+    width: 160px;
+  }
+}
+
+.bakershops__photo {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto 50px;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid $colorCream;
+
+  @include onTablet {
+    width: 730px;
+    height: auto;
+  }
+
+  @include onLaptop {
+    width: 1000px;
+  }
+}
+
+.bakershops__buttons {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  line-height: 240%;
+  gap: 20px;
+
+  &--increase,
+  &--decrease {
+    @include circle (40px);
+    background-color: #fff;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  @include onLaptop {
+    visibility: hidden;
+  }
+}
