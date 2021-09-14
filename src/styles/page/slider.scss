@@ -1,38 +1,111 @@
-.slider {
-  height: 365px;
-  max-width: 186px;
+* {
+  box-sizing: border-box;
+}
+
+header {
   display: flex;
-  flex-direction: column;
-  margin-left: auto;
+  height: 80vh;
+  overflow: hidden;
+  margin: 0;
+  /* background-image: url(../images/img-1.jpg); */
+  background-position: center center;
+  background-size: cover;
+  transition: all 0.5s ease;
+}
 
-  &__arrow {
-    padding-left: 110px;
+.slider-box {
+  position: absolute;
+  overflow: hidden;
+  right: 1%;
+  top: 20%;
+}
+
+.slide {
+  opacity: 0;
+  width: 100vw;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: -15vh;
+  left: -15vw;
+  transition: 0.4s ease;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.arrow {
+  background: transparent;
+  padding: 20px;
+  font-size: 50px;
+  border: 0;
+  top: 50%;
+  color: #f1cc9d;
+  outline: 0;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  color: #412d22;
+  outline: 0;
+  cursor: pointer;
+}
+
+.prev {
+  left: calc(15vw - 70px);
+}
+
+.next {
+  right: calc(15vw - 70px);
+}
+
+.number {
+  font-size: 40px;
+  margin: 0;
+  line-height: 47px;
+  color: #f1cc9d;
+
+}
+
+.active-p {
+  margin: 0;
+  font-size: 176px;
+  line-height: 209px;
+  color: #412d22;
+}
+
+@media (max-width: 1024px) {
+
+  .slider-box {
+    position: absolute;
+    overflow: hidden;
+    left: 5%;
+    top: 80%;
   }
 
-  &__arrow-button {
-    font-size: 50px;
-    width: 50px;
-    height: 50px;
-    color: #f1cc9d;
-    background-color: #e39a3b;
-    border: 0;
-
-    &:hover {
-      color: #412d22;
-    }
+  .prev {
+    transform: rotate(-90deg);
   }
 
-  &__num {
+  .next {
+    transform: rotate(-90deg);
+  }
+  
+  .number {
+    display: inline;
     font-size: 40px;
+    margin: 0;
     line-height: 47px;
     color: #f1cc9d;
-    padding-left: 110px;
+  
   }
-
-  &__num--big::after {
-    content: "01";
-    font-size: 176px;
-    line-height: 209px;
+  
+  .active-p {
+    margin: 0;
+    font-size: 40px;
+    line-height: 47px;
     color: #412d22;
   }
 }

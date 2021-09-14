@@ -22,16 +22,16 @@
           <nav class="menu">
             <ul class="menu-list">
               <li class="menu-list__item">
-                <a href="" class="menu-list__link">Bakery</a>
+                <a  href="#bakery" class="menu-list__link">Bakery</a>
               </li>
               <li class="menu-list__item">
-                <a href="" class="menu-list__link">Bakershops</a>
+                <a  href="#bakershops" class="menu-list__link">Bakershops</a>
               </li>
               <li class="menu-list__item">
-                <a href="" class="menu-list__link">About</a>
+                <a  href="#about" class="menu-list__link">About</a>
               </li>
               <li class="menu-list__item">
-                <a href="" class="menu-list__link">Contacts</a>
+                <a  href="#contacts" class="menu-list__link">Contacts</a>
               </li>
             </ul>
           </nav>
@@ -49,44 +49,69 @@
           </button>
         </div>
       </div>
-      <div class="header__block2 grid__item--9-11">
-        <div class="container">
-          <div class="feet-back">
-            <div class="feet-back__number">
-              <a href="+38 066 336 36 36" class="feet-back__number__phone">
-                +38 066 336 36 36
-              </a>
-            </div>
-            <div class="feet-back__call">
-              <div class="feet-back__call-elem">
-                <a href="#" class="feet-back__call-elem__call">
-                  Call back
-                </a>
-              </div>
-            </div>
-            <div class="feet-back__language">
-              En
-            </div>
-          </div>
-          <div class="slider">
-            <div class="slider__arrow">
-              <button class="slider__arrow-button button--prev">˄</button>
-            </div>
-            <div class="wrapper">
-              <div class="list">
-                <div class="slider__num--big">
-                </div>
-              </div>
-            </div>
-            <div class="slider__arrow">
-              <button class="slider__arrow-button button--next">˅</button>
-            </div>
-          </div>
+      <div class="slider-box">
+        <div class="slide active"
+        style="background-image: url(images/cup-bolls.png);">
         </div>
+        <div class="slide"
+        style="background-image: url(images/bread-croissant-cup.jpg);">
+        </div>
+        <div class="slide"
+        style="background-image: url(images/pink-cake.jpg);">
+        </div>
+        <div class="button-position">
+          <button class="arrow prev" id="prev">
+            ^
+          </button>
+          <p class="number active-p">01</p>
+          <p class="number">02</p>
+          <p class="number">03</p>
+          <button class="arrow next" id="next">
+          ˅
+          </button>
+        </div>
+      </div>
+      <div class="header__block2 grid__item--9-11">
+        <div class="hamburger-menu">
+          <input id="menu__toggle" type="checkbox">
+          <label class="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
+          <ul class="menu__box">
+            <li><a class="menu__item" href="#bakery">Bakery</a></li>
+            <li><a class="menu__item" href="#bakershops">Bakershops</a></li>
+            <li><a class="menu__item" href="#about">About</a></li>
+            <li><a class="menu__item" href="#contacts">Contacts</a></li>
+            <div class="feet-back">
+              <li><a class="menu__item" href="+38 066 336 36 36">+38 066 336 36 36</a></li>
+              <li class="main-button2"><a href="+38 066 336 36 36">Call back</a></li>
+              <li class="menu__language">
+                <select name="select" class="menu__select">
+                  <option value="value1">UA</option>
+                  <option value="value2" selected>EN</option>
+                  <option value="value3">RU</option>
+                </select>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <ul class="menu4">
+          <div class="feet-back">
+            <li><a class="menu4__item" href="+38 066 336 36 36">+38 066 336 36 36</a></li>
+            <li class="main-button2"><a href="+38 066 336 36 36">Call back</a></li>
+            <li class="menu4__language">
+              <select name="select" class="menu4__select">
+                <option value="value1">UA</option>
+                <option value="value2" selected>EN</option>
+                <option value="value3">RU</option>
+              </select>
+            </li>
+          </div>
+        </ul>
       </div>
     </header>
     <main>
-      <section class="bakery">
+      <section class="bakery" id="bakery">
         <h2 class="special-h2">
           Bakery
         </h2>
@@ -183,7 +208,7 @@
           All bakeries
         </button>
       </section>
-      <section class="bakershops">
+      <section class="bakershops" id="bakershops">
         <h2 class="special-h2">
           Bakershops
         </h2>
@@ -217,7 +242,7 @@
           </div>
         </div>
       </section>
-      <section class="aboute">
+      <section class="aboute" id="about">
         <h2 class="special-h2">
           About
         </h2>
@@ -338,7 +363,7 @@
           </div>
         </div>
       </section>
-      <section class="contacts">
+      <section class="contacts" id="contacts">
         <h2 class="special-h2 contacts__media">
           Contacts
         </h2>
@@ -403,15 +428,26 @@
             <h4 class="special-h4">
               We’d love to hear your feedback
             </h4>
-            <div class="contacts__feet-back__form__input">
-              <input type="text" placeholder="Name*">
-              <input type="email" placeholder="E-mail*">
-              <input type="text" placeholder="Phone">
-              <input type="text" placeholder="Message*">
-            </div>
-            <button class="main-button contacts__feet-back__form__button">
-              Send
-            </button>
+            <form class="contacts__feet-back__form__input">
+              <input
+              type="text"
+              placeholder="Name*"
+              class="contacts__feet-back__form__input__el"
+              required>
+              <input type="email"
+              placeholder="E-mail*"
+              class="contacts__feet-back__form__input__el"
+              required>
+              <input type="text"
+              placeholder="Phone"
+              class="contacts__feet-back__form__input__el"
+              required>
+              <input type="text"
+              placeholder="Message*"
+              class="contacts__feet-back__form__input__el-last"
+              required>
+              <input id="input-button" type="submit" value="Send">
+            </form>
           </div>
 
         </div>
@@ -430,16 +466,16 @@
         <nav class="menu2">
           <ul class="menu2-list">
             <li class="menu2-list__item">
-              <a href="" class="menu2-list__link">Bakery</a>
+              <a href="#bakery" class="menu2-list__link">Bakery</a>
             </li>
             <li class="menu2-list__item">
-              <a href="" class="menu2-list__link">Bakershops</a>
+              <a href="#bakershops" class="menu2-list__link">Bakershops</a>
             </li>
             <li class="menu2-list__item">
-              <a href="" class="menu2-list__link">About</a>
+              <a href="#about" class="menu2-list__link">About</a>
             </li>
             <li class="menu2-list__item">
-              <a href="" class="menu2-list__link">Contacts</a>
+              <a href="#contacts" class="menu2-list__link">Contacts</a>
             </li>
           </ul>
         </nav>
