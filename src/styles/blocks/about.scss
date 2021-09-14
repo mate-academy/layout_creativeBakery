@@ -1,5 +1,5 @@
 .about {
-  height: 100vh;
+  height: max-content;
   box-sizing: border-box;
   padding-bottom: 30px;
   overflow: hidden;
@@ -25,6 +25,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+
+    @include onDesktop {
+      margin-bottom: 140px;
+    }
   }
 
   &__item {
@@ -83,6 +88,15 @@
       &:last-child {
         margin-right: 0;
       }
+    }
+  }
+
+  &__title--last {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 0;
     }
   }
 }

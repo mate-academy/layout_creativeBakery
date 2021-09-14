@@ -1,0 +1,73 @@
+.sidebar {
+  &-top {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 120px;
+    }
+
+    &__link {
+      @include onDesktop {
+        margin-bottom: 0;
+        text-decoration: none;
+        color: $colorChocolate;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__switcher--large {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+  }
+
+  &__switcher--button {
+    width: 26px;
+    height: 15px;
+    background-color: $colorCroissant;
+    border: none;
+
+    &-up {
+      background-image: url(../images/header__button-up.svg);
+      background-repeat: no-repeat;
+      margin-bottom: 9px;
+    }
+
+    &-down {
+      background-image: url(../images/header__button-down.svg);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__switcher--numbers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+  }
+
+  &__switcher-number {
+    font-size: 40px;
+    line-height: 47px;
+    color: #fff;
+    margin-bottom: 14px;
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+
+    &--active {
+      font-size: 176px;
+      line-height: 209px;
+      color: $colorChocolate;
+    }
+  }
+}

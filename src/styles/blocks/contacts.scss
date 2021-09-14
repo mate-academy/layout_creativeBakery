@@ -1,9 +1,34 @@
 .contacts {
   margin: 0 auto;
   background-color: $colorCroissant;
+  display: flex;
+  flex-direction: column;
+
+  @include onDesktop {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__left {
+    padding: 40px 70px;
+  }
+
+  &__right {
+    height: 500px;
+    width: 100%;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
 
   &__title {
     color: #fff;
+
+    @include onDesktop {
+      display: none;
+    }
   }
 
   &__subtitle {
@@ -18,6 +43,10 @@
     display: flex;
     flex-direction: column;
     list-style: none;
+
+    @include onDesktop {
+      padding: 0 68px 0;
+    }
   }
 
   &-list__title {
@@ -68,7 +97,14 @@
   }
 
   &__map {
+    display: none;
     box-sizing: border-box;
     overflow: hidden;
+
+    @include onDesktop {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
   }
 }

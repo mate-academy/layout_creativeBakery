@@ -1,12 +1,22 @@
 .footer {
-  height: 100vh;
+  height: max-content;
   box-sizing: border-box;
   background-color: $colorChocolate;
 
   @include onDesktop {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: max-content;
+    padding: 50px 58px 18px;
+  }
+
+  &__main-info {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
   }
 
   &__logo {
@@ -23,6 +33,16 @@
     text-decoration: none;
     color: #fff;
     margin-bottom: 40px;
+    transition: color 0.3s;
+
+    @include onDesktop {
+      margin-bottom: 0;
+      margin-right: 34px;
+
+      &:hover {
+        color: $colorCroissant;
+      }
+    }
 
     &-item {
       box-sizing: border-box;
@@ -33,7 +53,15 @@
       background-position: center;
       background-repeat: no-repeat;
       padding: 4px;
-      transition: background-image 0.3s;
+      transition: background-color 0.3s;
+
+      @include onDesktop {
+        margin-right: 20px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
 
       &-twitter {
         background-image: url(../images/twitter.svg);
@@ -54,6 +82,11 @@
 
     &:last-child {
       margin-bottom: 60px;
+
+      @include onDesktop {
+        margin-bottom: 0;
+        margin-right: 0;
+      }
     }
   }
 
@@ -84,5 +117,10 @@
     text-decoration: none;
     font-size: 12px;
     line-height: 17px;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $colorCroissant;
+    }
   }
 }

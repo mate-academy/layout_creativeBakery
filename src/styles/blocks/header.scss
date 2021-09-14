@@ -8,6 +8,20 @@
   background-color: rgba(255, 255, 255, 0.2);
   padding: 16px 16px 28px;
 
+  @include onDesktop {
+    display: flex;
+    padding: 0;
+  }
+
+  &__wrapper {
+    @include onDesktop {
+      box-sizing: border-box;
+      height: 100vh;
+      width: 70%;
+      padding: 34px 46px;
+    }
+  }
+
   &__nav {
     display: flex;
     justify-content: space-between;
@@ -16,6 +30,40 @@
 
     @include onDesktop {
       margin-bottom: 50px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+
+    @include onDesktop {
+      margin-bottom: 0;
+      margin-right: 34px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    @include onDesktop {
+      text-decoration: none;
+      color: $colorChocolate;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $colorCroissant;
+      }
     }
   }
 
@@ -31,6 +79,7 @@
     @include onDesktop {
       font-size: 160px;
       line-height: 177px;
+      margin-bottom: 20px;
     }
   }
 
@@ -41,13 +90,20 @@
     @include onDesktop {
       font-size: 26px;
       line-height: 39px;
+      margin-bottom: 25px;
     }
   }
 
   &__button {
     height: 45px;
-    width: 180px;
+    width: 160px;
     margin-bottom: 40px;
+
+    @include onDesktop {
+      height: 45px;
+      margin-bottom: 0;
+      float: left;
+    }
   }
 
   &__switcher {
@@ -57,5 +113,31 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__sidebar {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      box-sizing: border-box;
+      width: 425px;
+      height: 100vh;
+      padding: 50px 46px 0;
+      background-color: $colorCroissant;
+    }
+  }
+
+  &__number-slider {
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
   }
 }
