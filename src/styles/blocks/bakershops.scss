@@ -1,0 +1,115 @@
+.bakershops {
+  background-color: $cream;
+
+  &__form {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 32px;
+    }
+  }
+
+  &__btn {
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__map {
+    width: 100%;
+    position: relative;
+  }
+
+  &__map-cookie {
+    color: $white;
+    position: absolute;
+    background-image: url("../../src/images/icons/favicon-bread.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &::before {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 8px;
+      height: 8px;
+
+      font-size: 6px;
+      content: "";
+      background-color: #d21925;
+      border-radius: 50%;
+
+      @include onDesktop {
+        font-size: 16px;
+        width: 25px;
+        height: 25px;
+
+      }
+    }
+
+    &::after {
+      content: "";
+      color: $chocolate;
+      font-size: 8px;
+      line-height: 12px;
+      display: block;
+      position: relative;
+
+      //todo change maps labels
+      top: 10%;
+    }
+
+    @each $i, $size in $cookies {
+      &--#{$i} {
+        width: #{$size}px;
+        height: #{$size}px;
+
+        &::before {
+          content: "#{$i}";
+        }
+
+        @include onDesktop {
+          width: #{$size * 3}px;
+          height: #{$size * 3}px;
+        }
+      }
+    }
+
+    @each $city, $top, $left in $position {
+      &--#{$city} {
+        top: #{$top};
+        left: #{$left};
+      }
+    }
+  }
+
+  &__container-mult {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height: 40px;
+      width: 40px;
+      background-color: $white;
+      border-radius: 50%;
+      font-size: 30px;
+
+      margin: 0 30px 20px;
+    }
+  }
+
+}

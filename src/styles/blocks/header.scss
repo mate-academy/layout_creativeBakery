@@ -1,0 +1,75 @@
+.header {
+  box-sizing: border-box;
+  height: 568px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+
+  padding-top: 16px;
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  &__side {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      width: 33%;
+      background-color: $croissant;
+
+      padding-right: 40px;
+    }
+  }
+
+  &__side-top {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__top-content {
+    display: flex;
+  }
+
+  &__logo {
+    margin-top: 16px;
+    margin-bottom: 96px;
+  }
+
+  &__title {
+    margin: 0 0 30px;
+  }
+  &__text {
+    margin: 0 0 20px;
+  }
+  &__btn {
+    margin: 0 0 40px;
+  }
+  &__slide-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+  &__slide-num {
+    text-decoration: none;
+    color: $croissant;
+
+    &--active {
+      text-decoration: none;
+      font-size: 40px;
+      line-height: 47px;
+      color: $chocolate;
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.contacts {
+  padding: 0;
+  background-color: $croissant;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+
+    @include onDesktop {
+      font-size: 80px;
+      margin-bottom: 0;
+      background-color: $white;
+      color: $croissant;
+    }
+  }
+
+  &__grid-map {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 430px 1fr;
+    }
+  }
+
+  &__grid-feedback {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-color: $white;
+
+      margin-bottom: 135px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+
+    margin: 0 0 40px;
+
+  }
+  &__item {
+    margin-bottom: 9px;
+  }
+
+  &__link {
+    position: relative;
+
+    color: $chocolate;
+    text-decoration: none;
+
+    &::before {
+      display: block;
+      height: 20px;
+      width: 20px;
+
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: -35px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &--location::before {
+      background-image: url("../../src/images/icons/location.svg");
+    }
+
+    &--tel::before {
+      background-image: url("../../src/images/icons/telephone.svg");
+    }
+
+    &--mail::before {
+      background-image: url("../../src/images/icons/mail.svg");
+    }
+
+    &:visited {
+      color: $chocolate;
+    }
+
+    &--bold {
+      font-weight: bold;
+    }
+  }
+
+  &__map {
+    border: 0;
+    position: relative;
+    bottom: -8px;
+
+    @include onDesktop {
+      bottom: 0;
+    }
+  }
+
+  &__feedback {
+    background-color: #fff;
+
+    padding-top: 30px;
+
+    @include onDesktop {
+      grid-column: 2;
+    }
+  }
+
+  &__envelop {
+    background-color: $white;
+
+    @include onDesktop {
+      grid-area: 1 / 1;
+      margin: 0;
+    }
+  }
+
+  &__envelop-img {
+    display: block;
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 50px 0;
+  }
+}
