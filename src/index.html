@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative bakery</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
@@ -12,9 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
     <link rel="icon" href="./images/icons/favicon-bread.svg">
     <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <script defer src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   </head>
   <body class="page__body">
-    <nav class="navigation" id="navigation">
+
+    <nav  class=" navigation" id="navigation">
       <div class="container">
         <div class="navigation__actions">
           <a href="#"
@@ -70,39 +74,123 @@
       </div>
     </nav>
 
-    <header id="header" class="header">
-      <div class="container">
-        <a class="logo header__logo">
-          <img class="footer__logo-img" src="./images/icons/favicon-bread.svg" alt="logo">
-        </a>
-        <h1 class="header__title">
-          Creative bakery
-        </h1>
-        <p class="header__text">
-          We bake your fantasies: croissants
-          <br>
-          cakes, cookies, and cupcakes.
-        </p>
-        <a href="#" class="header__btn btn ">
-          Learn more
-        </a>
-        <div class="header__slide-numbers">
-          <a href="#" class="header__slide-num header__slide-num--active">
-            01
-          </a>
-          <a href="#" class="header__slide-num">
-            02
-          </a>
-          <a href="#" class="header__slide-num">
-            03
-          </a>
+
+
+    <div class="hero">
+      <div class="swiper hero__swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper hero__swiper-wrapper">
+          <!-- Slides -->
+          <div data-hash="slide-1" class="swiper-slide hero__swiper-slide">
+            <img src="./images/header-1.jpeg"
+                 alt="pic">
+          </div>
+          <div data-hash="slide-2" class="swiper-slide hero__swiper-slide">
+            <img src="./images/header-2.jpeg"
+                 alt="pic">
+          </div>
+          <div data-hash="slide-3" class="swiper-slide hero__swiper-slide">
+            <img src="./images/header-3.jpeg"
+                 alt="pic">
+          </div>
         </div>
       </div>
-    </header>
+      <div class="hero__wrapper">
+        <div class="container hero__left-side">
+          <div class="hero__top-container">
+            <a class="logo hero__logo">
+              <img class="footer__logo-img" src="./images/icons/favicon-bread.svg" alt="logo">
+            </a>
+
+            <ul class="menu hero__menu ">
+              <li class="menu__item hero__item">
+                <a href="#bakery" class="hero__link menu__link">
+                  Bakery
+                </a>
+              </li>
+              <li class="menu__item hero-item">
+                <a href="#bakershops" class="hero__link menu__link">
+                  Bakershops
+                </a>
+              </li>
+              <li class="menu__item hero-item">
+                <a href="#about" class="hero__link menu__link">
+                  About
+                </a>
+              </li>
+              <li class="menu__item hero-item">
+                <a href="#contacts" class="hero__link menu__link">
+                  Contacts
+                </a>
+              </li>
+            </ul>
+
+            <a href="#"
+               class="hero__toggle">
+              <img
+                class="hero__toggle-icon"
+                src="./images/icons/menu.svg"
+                alt="cross">
+            </a>
+          </div>
+          <h1 class="hero__title">
+            Creative bakery
+          </h1>
+          <p class="hero__text">
+            We bake your fantasies: croissants
+            <br>
+            cakes, cookies, and cupcakes.
+          </p>
+          <a href="#" class="hero__btn btn ">
+            Learn more
+          </a>
+          <div class="hero__slide-numbers">
+          </div>
+
+        </div>
+        <div class="hero__right-side right-side">
+          <div class="hero__top-container">
+            <a class="right-side__tel"
+               href="tel:+38 066 336 36 36">
+              +38 066 336 36 36
+            </a>
+
+            <a href="#"
+               class="btn-scnd right-side__btn">
+              Call back
+            </a>
+
+            <form action=""
+                  class="form right-side__form">
+              <label for="lang">
+                <select name="en"
+                        id="lang1"
+                        class="form__item right-side__form-item">
+                  <option value="en">En</option>
+                  <option value="ru">Ru</option>
+                </select>
+              </label>
+            </form>
+          </div>
+          <div class="right-side__slide-numbers">
+            <button type="button" class="right-side__arrow prev">
+              <i class="fas fa-chevron-up"></i>
+            </button>
+
+            <div class="hero__slide-num"></div>
+            <div class=".swiper-pagination"></div>
+            <button type="button" class="right-side__arrow next">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
     <main>
 
-      <section id="bakery" class="bakery page-section">
+      <section  id="bakery" class="bakery page-section">
         <h2 class="page__section-title">
           Bakery
         </h2>
@@ -111,7 +199,7 @@
           <div class="product-card">
             <div class="product-card__content">
               <h3 class="product-card__subtitle">
-              Cookies
+                Cookies
               </h3>
               <h4 class="product-card__name">
                 Chocolate mix
@@ -186,7 +274,7 @@
         </a>
       </section>
 
-      <section id="bakershops" class="bakershops page-section">
+      <section  id="bakershops" class="bakershops page-section">
         <h2 class="page__section-title">
           Bakershops
         </h2>
@@ -242,7 +330,7 @@
 
       </section>
 
-      <section id="about" class="about">
+      <section  id="about" class="about">
         <h2 class="page__section-title">
           About
         </h2>
@@ -313,7 +401,7 @@
         </div>
       </section>
 
-      <section id="contacts" class="contacts">
+      <section  id="contacts" class="contacts">
         <h2 class="contacts__title page__section-title">
           Contacts
         </h2>
@@ -449,7 +537,7 @@
 
     </main>
 
-    <footer id="footer" class="footer">
+    <footer  id="footer" class="footer">
       <div class="container footer__content">
         <a class="footer__logo logo">
           <img class="footer__logo-img" src="./images/icons/favicon-bread.svg" alt="logo">
@@ -494,7 +582,7 @@
       </div>
     </footer>
 
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>
 

@@ -1,6 +1,13 @@
 .product-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
+  &__content {
+    @include onDesktop {
+      width: 300px;
+    }
+  }
 
   &__subtitle {
     font-family: Rubik, sans-serif;
@@ -42,6 +49,11 @@
     margin: 0;
     padding-top: 5px;
 
+    @include onDesktop {
+      width: 65px;
+      height: 65px;
+    }
+
     &::after {
       position: absolute;
       content: "100g";
@@ -51,5 +63,9 @@
 
   &__image {
     width: 100%;
+
+    @include onDesktop {
+      width: 50%;
+    }
   }
 }
