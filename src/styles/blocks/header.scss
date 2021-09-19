@@ -1,9 +1,29 @@
 .header {
   height: 100vh;
-  background-image: url(../images/header/header-1.jpg);
+  max-height: 840px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: khaki;
+  @media (min-width: 1024px) {
+    border-right: 25rem solid $croissan;
+  }
+  &__main-img--1 {
+    background-image: url(../images/header/header-1.jpg);
+  }
+  &__main-img--2 {
+    background-image: url(../images/header/header-2.jpg);
+  }
+  &__main-img--3 {
+    background-image: url(../images/header/header-3.jpg);
+  }
+
+  &__background {
+    top: 0;
+    left: 0;
+    background-color: $croissan;
+    z-index: -1;
+  }
 
   &__title {
     margin-top: 100px;
@@ -54,6 +74,9 @@
     width: 25px;
     height: 18px;
     cursor: pointer;
+    @media (min-width: 1024px) {
+      display: none;
+    }
 
     & span,
     &::before,

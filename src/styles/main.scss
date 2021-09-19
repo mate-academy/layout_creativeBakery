@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cookie&family=Roboto&family=Rubik:wght@400;700&display=swap");
 
-$choko: #412d22;
-$croissan: #e39a3b;
-$cream: #f1cc9d;
-$milk: #fff;
+@import "blocks/_vars.scss";
 
 @import "blocks/page.scss";
 @import "blocks/header.scss";
@@ -12,8 +9,11 @@ $milk: #fff;
 @import "blocks/section.scss";
 @import "blocks/background-slider.scss";
 @import "blocks/container.scss";
+@import "blocks/contacts.scss";
 @import "blocks/buttons.scss";
 @import "blocks/footer.scss";
+@import "blocks/about.scss";
+@import "blocks/form.scss";
 
 /* font-family: 'Cookie', cursive; */
 /* font-family: 'Rubik', sans-serif */
@@ -49,6 +49,14 @@ $milk: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (min-width: 1024px) {
+    margin-top: 65px;
+    height: min-content;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 160px;
+    padding-right: 20px;
+  }
 }
 
 .icon {
@@ -75,13 +83,6 @@ $milk: #fff;
   overflow: hidden;
 }
 
-.form__select {
-  margin-top: 15px;
-  &:first-child {
-    margin-top: 0;
-  }
-}
-
 .select {
   display: block;
   width: 100%;
@@ -95,40 +96,38 @@ $milk: #fff;
   &__value {
     color: $choko;
   }
+  &-1 {
+    @media (min-width: 1024px) {
+      width: 50%;
+    }
+  }
 }
 
 .search__button {
   display: grid;
   grid-column: auto;
   align-content: center;
-  margin: 35px auto 25px;
 }
 
-.section__zoom {
+.feedback {
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin: 20px 0 30px;
-  &--up,
-  &--down {
-    display: flex;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    background-color: $milk;
-    border-radius: 50%;
-
-    font-size: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-    :active,
-    :hover {
-      transform: scale(3.2);
-    }
+  flex-direction: column;
+  align-items: center;
+  &__title {
+    width: 100%;
+    max-width: 380px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
   }
 }
 
-.about__content {
-  text-align: center;
+.maps {
+  width: 100%;
+  height: 540px;
+  @media (min-width: 1024px) {
+    height: 540px;
+  }
 }
