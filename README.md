@@ -9,21 +9,22 @@ Implement landing page according to [Figma design](https://www.figma.com/file/dY
 - Mobile (> 320px)
 
 ## HR important moments
-- Скорость анимаций на всем лендинге одинаковая (например увеличение при наведении или выезд блоков при скроле)
-- Placeholder в формах подсказывают что именно ввести, а если стоит валидация формы, то понятно в каком формате вводить номер телефона
-- Убедитесь, что с мобильных выглядит все аккуратно и без горизонтальной прокрутки
-- Добавьте favicon
-- Добавьте мягкий скролл при клике на меню до соответствующих блоков страницы
-- Кнопку learn more ведет на блок About us
-- Было бы реалистичней, если бы стрелки в разделе асортимента рядом с фото продукции были бы кликабельными (или скрыть эти стрелки, если нет других фото для слайдера)
-- Кнопка "all bakeries" ведет на блок BakerShops
-- В блоке "Bakershops" стоит добавить выпадающий список с перечнем городов и адресов, в которых есть данный магазин (а при попытке кликнуть на "Search" пусть форма просто очищается)
-- При попытке отправить форму поиска Bakershops нет 405 ошибки, нужно чтобы данные вносились, форма очищалась, а после отправки перекидывало на верх страницы или происходила перезагрузка страницы
-- Кнопки футер меню при нажатии должны вести на релевантные блоки лендинга
-- В форме в конце страницы не забудь добавить плейсхолдер для поля с сообщением
-- Важно, чтобы у пользователя была возможность удобно написать текст в 2-3 строки в поле message
-- Контактная форма не должна принимать некорректные данные в поле с номером телефона (например, номер с буквой и не было никакой ошибки), лучше предусмотреть так, чтобы форма отправлялась только тогда, когда все поля заполнены корректно
-
+- The speed of animations is the same throughout the landing page (for example, increasing when hovering or moving blocks when scrolling)
+- Placeholders in the forms suggest what to enter, and if there is a validation of the form, then it is clear in what format to enter the phone number
+- Make sure everything looks neat on mobile and without horizontal scrolling
+- Add favicon
+- Add a smooth scroll for the whole page
+- When you try to send the form there is no 405 error and the form is automatically cleared after submit and is scrolled to the top of the page or the page is reloaded
+- The “learn more” button leads to the “About us” block
+- It would be more realistic if the arrows in the hero section next to the product photo were clickable (or hide these arrows if there are no other photos for the slider)
+- The "all bakeries" button leads to the BakerShops block
+- In the "Bakershops" block, add a drop-down list with a list of cities and addresses in which this store is located (and when you try to click on "Search" let the form just be cleared)
+- When you try to send the Bakershops search form there is no 405 error and the form is automatically cleared after submit and is scrolled to the top of the page or the page is reloaded
+- Menu footer buttons when clicked should lead to the relevant blocks of the landing page
+- The contact form should be self-cleaned upon submission and submit without 404/405 errors
+- The user must have the opportunity to write 2-3 lines of text in the message field
+- In the form at the end of the page, do not forget to add a placeholder for the message field
+- The form should not accept incorrect data in a field with a phone number (for example, a number with a letter and there was no error), it is better to validate the input so that the form is sent only when all fields are filled incorrectly
 
 ## Github flow
 1. **Fork** the repo.
