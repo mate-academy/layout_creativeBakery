@@ -1,6 +1,17 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin mediaOnDtablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
   }
+}
+
+@mixin mediaOnDesktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin circle($radius) {
+  width: $radius;
+  height: $radius;
+  border-radius: 50%;
 }
