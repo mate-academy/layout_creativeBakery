@@ -1,8 +1,12 @@
 .header {
-  background-image: url(../images/header.jpg);
+  background-image: url(../images/headerphone.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @include onDesktop {
+    background-image: url(../images/header.jpg);
+  }
 
   @include onDesktop {
     margin: 0 425px 0 0;
@@ -11,7 +15,7 @@
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    padding: 15px 16px 34px;
 
     box-sizing: border-box;
     height: 100vh;
@@ -34,16 +38,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 
     text-decoration: none;
     border-radius: 40px;
     color: $c-darkBrown;
 
-    background-color: #e39a3b;
+    background-color: $c-lightBrown;
+    border: 2px solid $c-lightBrown;
     height: 44px;
     width: 160px;
 
     margin: 0 0 40px;
+
+    &:hover {
+      background-color: $c-white;
+      border: 2px solid $c-lightBrown;
+    }
+
+    &:active {
+      background-color: $c-lightBrown;
+      opacity: 0.8;
+    }
 
     @include onDesktop {
       height: 40px;
@@ -51,9 +67,28 @@
   }
 }
 
-.qwert {
+.header__num {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin: 0 0 28px;
+  justify-content: center;
+  gap: 20px;
+
+  @include onDesktop {
+    display: none;
+  }
+}
+
+.num {
+  color: $c-lightBrown;
+  text-decoration: none;
+
+  &--isActiv {
+    font-size: 40px;
+    color: $c-darkBrown;
+  }
+
+  &:hover {
+    font-size: 40px;
+    color: $c-darkBrown;
+  }
 }
