@@ -1,0 +1,162 @@
+.contacts {
+
+  @include onMobile {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+    background-color: $c-brown;
+  }
+
+  &__title {
+    margin: 0 0 24px;
+
+    @extend %h2;
+    color: $c-brown;
+    text-align: center;
+
+    @include onMobile {
+      color: $c-white;
+      margin: 40px auto 20px;
+    }
+  }
+
+  &__container {
+    @extend %flex-center;
+
+    @include onMobile {
+      flex-direction: column;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    width: 30vw;
+    height: $contacts-list-height;
+    background-color: $c-brown;
+
+    padding: 40px 40px 0 120px;
+
+    @include onMobile {
+      display: flex;
+
+      padding: 20px auto;
+      width: 100vw;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 24px;
+
+    @extend %h4;
+    color: $c-dark;
+  }
+
+  &__item {
+    position: relative;
+
+    margin-bottom: 8px;
+
+    &--adress {
+      &::before {
+        content: "";
+  
+        position: absolute;
+        left:-68px;
+
+        @include onMobile {
+          left:-40px;
+        }
+  
+        width: 31px;
+        height: 31px;
+  
+        background-image: url("../images/icon_adress.png");
+  
+        background-repeat: no-repeat;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    &--phone {
+      &::before {
+        content: "";
+  
+        position: absolute;
+        left:-68px;
+
+        @include onMobile {
+          left:-40px;
+        }
+  
+        width: 31px;
+        height: 31px;
+  
+        background-image: url("../images/icon_tel.png");
+  
+        background-repeat: no-repeat;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    &--mail {
+      &::before {
+        content: "";
+  
+        position: absolute;
+        left:-68px;
+
+        @include onMobile {
+          left:-40px;
+        }
+  
+        width: 31px;
+        height: 31px;
+  
+        background-image: url("../images/icon_mail.png");
+  
+        background-repeat: no-repeat;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+
+  &__paragraph {
+    @extend %page;
+    font-weight: bold;
+    color: $c-dark;
+
+    margin: 0;
+  }
+
+  &__link {
+    display: inline-block;
+    @extend %page;
+    text-decoration: none;
+    color: $c-dark;
+
+    margin-bottom: 8px;
+
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $c-light-brown;
+    }
+  }
+
+  &__map {
+    width: 70vw;
+    height: $contacts-list-height;
+
+    @include onMobile {
+      width: 100vw;
+    }
+  }
+}
