@@ -3,35 +3,53 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
 
   @include onDesktop {
     background-image: url(../images/header.jpg);
-  }
-
-  @include onDesktop {
-    margin: 0 425px 0 0;
+    width: 70%;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     padding: 15px 16px 34px;
 
     box-sizing: border-box;
     height: 100vh;
+
+    @include onDesktop {
+      padding: 34px 0 0 60px;
+    }
   }
 
   &__title {
     font-family: "Cookie", sans-serif;
     font-weight: normal;
+
     font-size: 100px;
     line-height: 80%;
-    color: $c-darkBrown;
     margin: 0 0 28px;
+    max-width: 260px;
+
+    color: $c-darkBrown;
+
+    @include onDesktop {
+      max-width: 100%;
+      font-size: 160px;
+      line-height: 177px;
+      margin: 0 0 28px;
+    }
   }
 
   &__text {
     margin: 0 0 20px;
+
+    @include onDesktop {
+      font-size: 26px;
+      margin: 0 0 24px;
+    }
   }
 
   &__button {
@@ -39,6 +57,8 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+
+    transition: $transition-duration;
 
     text-decoration: none;
     border-radius: 40px;
@@ -63,32 +83,117 @@
 
     @include onDesktop {
       height: 40px;
+      margin: 0;
+    }
+  }
+
+  &__num {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__number {
+    color: $c-lightBrown;
+    text-decoration: none;
+  
+    transition: $transition-duration;
+
+    &--isActiv {
+      font-size: 40px;
+      color: $c-darkBrown;
+    }
+  
+    &:hover {
+      font-size: 40px;
+      color: $c-darkBrown;
+    }
+  }
+
+  &__menu {
+    display: none;
+  }
+
+  @include onDesktop {
+    &__menu {
+      display: flex;
+      padding: 30px 0 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 34px;
     }
   }
 }
 
-.header__num {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px;
-
-  @include onDesktop {
-    display: none;
-  }
+.aside {
+  display: none;
 }
 
-.num {
-  color: $c-lightBrown;
-  text-decoration: none;
+@include onDesktop {
+  .aside {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 30%;
 
-  &--isActiv {
-    font-size: 40px;
-    color: $c-darkBrown;
-  }
+    background-color: $c-lightBrown;
+  
 
-  &:hover {
-    font-size: 40px;
-    color: $c-darkBrown;
+    &__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      margin: 64px 0 124px;
+    }
+
+    &__num {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    &__number {
+      display: flex;
+      justify-content: flex-end;
+
+      margin-right: 44px;
+
+      color: $c-cream;
+      text-decoration: none;
+      font-size: 40px;
+      line-height: 47px;
+
+      transition: $transition-duration;
+
+      &--isActiv {
+        font-size: 176px;
+        line-height: 209px;
+        color: $c-darkBrown;
+      }
+    
+      &:hover {
+        font-size: 176px;
+        line-height: 209px;
+        color: $c-darkBrown;
+      }
+    }
+
+    &__arrow {
+      margin-right: 72px;
+      height: 26px;
+      width: 15px;
+    }
   }
 }

@@ -5,6 +5,7 @@
 
   &__content {
     padding: 30px 16px 0;
+    border-left: 3px solid $c-white;
   }
 
   &__top {
@@ -26,11 +27,28 @@
 
   &__link {
     display: inline-block;
-    border-bottom: 1px solid transparent;
 
     text-decoration: none;
     color: $c-darkBrown;
     padding-left: 4px;
+
+    transition: transform $transition-duration;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onDesktop {
+      text-decoration: none;
+      color: $c-darkBrown;
+      padding: 0;
+
+      transition: transform $transition-duration;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
 
   &__call {
@@ -41,17 +59,38 @@
 
     &--phone {
       margin-bottom: 30px;
+
+      @include onDesktop {
+        margin: 0;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
     }
 
     &--button {
       display: flex;
       justify-content: center;
       align-items: center;
+      box-sizing: border-box;
 
       background-color: $c-cream;
+      border: 2px solid transparent;
+
       height: 30px;
       width: 100px;
       border-radius: 40px;
+
+      &:hover {
+        background-color: $c-white;
+        border-color: $c-cream;
+      }
+
+      &:active {
+        background-color: $c-cream;
+        opacity: 0.8;
+      }
     }
   }
 
@@ -59,6 +98,13 @@
     background-color: $c-lightBrown;
     border: transparent;
     padding-left: 4px;
+
+    transition: $transition-duration;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 
     &:active,
     &:focus {
