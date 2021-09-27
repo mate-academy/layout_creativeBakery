@@ -3,15 +3,42 @@
   justify-content: space-between;
   align-items: center;
 
+  &--place--footer {
+    @include onMobile {
+      flex-direction: column;
+      align-items: flex-start;
+  
+      margin-bottom: 48px;
+    }
+  }
+
+  &__logo {
+    &--place--footer {
+      @include onMobile {
+        margin-bottom: 56px;
+      }
+    }
+  }
+
   &__logo-image {
     width: 112px;
     height: 57px;
   }
 
   &__link {
-    margin-right: 34px;
+    margin-right: 32px;
     text-decoration: none;
     color: inherit;
+
+    @include onMobile {
+      display: block;
+
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 56px;
+      }
+    }
 
     transition: color $transition-duration;
 
@@ -28,48 +55,43 @@
     @extend %flex-center;
   }
 
-  &__social-media {
-    @extend %flex-center;
+  &__media {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 20px;
+
+    @include onMobile {
+      width: 100%;
+    }
   }
 
   &__icon {
-    &--twitter {
-      display: block;
+    display: block;
 
-      width: 31px;
-      height: 31px;
+    width: 31px;
+    height: 31px;
+
+    transition: all $transition-duration;
+
+    &--media--twitter {
       background-image: url("../images/twitter.svg");
-
-      transition: all $transition-duration;
 
       &:hover {
         background-image: url("../images/twitter_hover.svg");
       }
     }
 
-    &--facebook {
-      display: block;
-
-      width: 31px;
-      height: 31px;
+    &--media--facebook {
       background-image: url("../images/facebook.svg");
-
-      transition: all $transition-duration;
 
       &:hover {
         background-image: url("../images/facebook_hover.svg");
       }
     }
 
-    &--linkedin {
-      display: block;
-
-      width: 31px;
-      height: 31px;
+    &--media--linkedin {
       background-image: url("../images/linkedin.svg");
-
-      transition: all $transition-duration;
 
       &:hover {
         background-image: url("../images/linkedin_hover.svg");

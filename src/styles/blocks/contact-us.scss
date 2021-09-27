@@ -1,0 +1,84 @@
+.contact-us {
+  @extend %flex-center;
+
+  padding: 136px 0;
+
+  height: 100vh;
+
+  @include onMobile {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 52px 16px;
+
+    width: 100vw;
+  }
+
+  &__photo {
+    margin-right: 164px;
+
+    width: 500px;
+    height: 417px;
+
+    @include onMobile {
+      margin-right: 0;
+
+      width: 250px;
+      height: 205px;
+    }
+
+  }
+
+  &__title {
+    margin: 0 0 28px 0;
+
+    @extend %h4;
+    color: $c-dark;
+  }
+
+  &__form-field {
+    display: block;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 30px;
+
+    margin-bottom: 20px;
+
+    border: none;
+
+    border-bottom: 1px solid $c-dark;
+    opacity: 0.5;
+
+    transition: border-color $transition-duration, opacity $transition-duration;
+
+    &::placeholder {
+      @extend %page;
+    }
+
+    &:hover {
+      border-color: $c-dark;
+      opacity: 0.8;
+    }
+  
+    &:focus {
+      border-color: $c-brown;
+      outline: none;
+    }
+
+    &--textarea {
+      margin-top: 88px;
+      resize: none;
+
+      font-family: inherit;
+    }
+  }
+
+  &__button {
+    margin: 36px auto 0;
+
+    @include onMobile {
+      margin-bottom: 52px;
+    }
+  }
+}
