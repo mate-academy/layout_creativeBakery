@@ -1,0 +1,85 @@
+.contacts {
+  background-color: $color-croissant;
+
+  @include mediaOnTablet {
+    background-color: $color-milk;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+
+    @include mediaOnTablet {
+      margin: 0 0 26px;
+    }
+  }
+
+  &__top-wrapper {
+    
+  }
+
+  &__contacts {
+    display: block;
+    padding: 0 0 0 (46px + $padding-container-mobile);
+
+    @include mediaOnTablet {
+      padding: 0 0 0 (46px + $padding-container);
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 24px;
+
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: normal;
+    text-align: center;
+
+    @include mediaOnTablet {
+      margin: 0 0 24px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 9px;
+    position: relative;
+
+    &--icon {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -46px;
+  
+        @include squre(31px);
+  
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &--addres {
+      background-image: url(../images/contacts/pin.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  
+    &--phone {
+      background-image: url(../images/contacts/ph.svg);
+    }
+  
+    &---email {
+      background-image: url(../images/contacts/mail.svg);
+    }
+  }
+
+  &__minititle {
+    margin: 0;
+    font-weight: bold;
+  }
+
+  &__map {
+    width: 100%;
+  }
+}
