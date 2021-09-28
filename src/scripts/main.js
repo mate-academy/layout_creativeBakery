@@ -1,6 +1,6 @@
 'use strict';
 
-const form = document.querySelector('.form');
+const form = document.querySelector('.contact-us__form');
 
 form.addEventListener('submit', handleEvent);
 
