@@ -3,10 +3,12 @@
   flex-direction: column;
   box-sizing: border-box;
 
+  // height: 100%;
+
   height: 100vh;
   background-color: $c-darkBrown;
 
-  padding: 40px 0 40px 16px;
+  padding: 40px 0 0 16px;
 
   &__image {
     height: 56px;
@@ -22,7 +24,7 @@
   }
 
   &__item:not(:last-child) {
-    margin-bottom: 40px;
+    margin: 0 0 40px;
   }
 
   &__link {
@@ -65,11 +67,50 @@
   }
 
   @include onDesktop {
-    height: 156px;
+    display: block;
+  
     padding: 52px 60px 16px;
+    box-sizing: border-box;
+    height: 156px;
 
-    &__link {
-      color: black;
+    &__up {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      height: 56px;
+      margin-bottom: 16px;
+    }
+
+    &__image {
+      margin: 0;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__item:not(:last-child) {
+      margin: 0;
+    }
+
+    &__site {
+      display: flex;
+      align-items: center;
+
+      margin: 0;
+      gap: 20px;
+    }
+
+    &__info {
+      justify-content: center;
+      gap: 28px;
+      margin: 0;
     }
   }
 }
