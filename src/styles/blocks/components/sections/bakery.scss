@@ -1,3 +1,4 @@
+/* stylelint-disable */
 .bakery {
   &__inner {
     display: flex;
@@ -8,7 +9,7 @@
   &__title {
     margin: 0 0 20px;
 
-    @include mediaOnDesktop {
+    @include mediaOnTablet {
       margin: 0 0 27px;
     }
   }
@@ -23,6 +24,8 @@
     @include mediaOnTablet {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      gap: 103px;
 
       &:nth-child(5) {
         margin-bottom: 80px;
@@ -30,8 +33,7 @@
     }
 
     @include mediaOnDesktop {
-      display: flex;
-      justify-content: space-between;
+      gap: 206px;
 
       &:nth-child(5) {
         margin-bottom: 159px;
@@ -40,7 +42,17 @@
   }
 
   &__info {
-    max-width: 50%;
+    &:hover .bakery__price { 
+      transform: rotateX(360deg) scale(1.2);
+    }
+
+    @include mediaOnTablet {
+      max-width: 320px;
+    }
+
+    &--order--2 {
+      order: 2;
+    }
   }
 
   &__subtitle {
@@ -87,6 +99,8 @@
 
     font-weight: bold;
     background-color: $color-cream;
+    perspective: 1px;
+    transition: $transition-duration-bakery-price;
 
     @include mediaOnDesktop {
       flex-direction: row;
@@ -107,6 +121,7 @@
     max-width: 272px;
     max-height: 200px;
 
+    
     @include mediaOnDesktop {
       max-width: 699.42px;
       max-height: 514px;
@@ -115,7 +130,9 @@
 
   &__img {
     max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
     object-position: center;
   }
 }
+/* stylelint-enable */
