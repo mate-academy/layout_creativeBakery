@@ -1,11 +1,33 @@
 .contacts {
+  padding-top: 24px;
   text-align: center;
   background-color: $c-croissant;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 0;
+
+  }
 
   &__title {
     margin-bottom: 10px;
     text-align: center;
     color: $c-white;
+
+    &--tablet {
+      display: none;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    @include onTablet {
+      display: none;
+
+      &--tablet {
+        display: block;
+      }
+    }
   }
   
   &__span {
@@ -13,11 +35,19 @@
     margin-bottom: 20px;
     font-size: 20px;
     line-height: 30px;
+
+    @include onTablet {
+      margin-top: 24px;
+    }
   }
 
   &__wraper {
     margin-bottom: 40px;
     text-align: left;
+
+    @include onTablet {
+      grid-column: 1 / 2;
+    }
   }
 
   &__link {
@@ -27,5 +57,11 @@
 
   &__link-bold {
     font-weight: bold;
+  }
+
+  &__map {
+    @include onTablet {
+      grid-column: 2 / 3;
+    }
   }
 }
