@@ -1,17 +1,30 @@
 .menu {
+  @include mediaOnTablet {
+    margin: 0;
+  }
+
   &__list {
     display: flex;
+    flex-direction: column;
+
     margin: 0;
     padding: 0;
-  }
-  
-  // &__item {
 
-  // }
+    @include mediaOnTablet {
+      flex-direction: row;
+    }
+  }
 
   &__link {
     display: inline-block;
-    padding: 66px 16px;
+    width: 100%;
+    padding: 15px 31px;
     color: inherit;
+
+    transition: $transition-duration;
+
+    &:hover {
+      color: $color-croissant;
+    }
   }
 }
