@@ -1,43 +1,48 @@
 .contacts {
-  background-color: $color-croissant;
-
   @include mediaOnTablet {
+    padding: 40px 0;
     background-color: $color-milk;
   }
 
   &__title {
-    margin: 0 0 20px;
-
+    display: none;
     @include mediaOnTablet {
+      display: block;
       margin: 0 0 26px;
     }
   }
 
+  &__title-mobile {
+    color: $color-milk;
+    margin: 0 0 20px (-46px - $padding-container-mobile);
+
+    @include mediaOnTablet {
+      display: none;
+    }
+  }
+
   &__top-wrapper {
-    background-color: $color-croissant;
+    margin-bottom: 40px;
 
     @include mediaOnTablet {
       display: flex;
     }
   }
 
-  &__wrap-left {
-    padding: 40px 0;
-  }
-
   &__contacts {
     display: block;
-    margin-bottom: 40px;
-    padding: 0 0 0 (46px + $padding-container-mobile);
+    padding: 40px 0 40px (46px + $padding-container-mobile);
+
+    background-color: $color-croissant;
     
     @include mediaOnTablet {
       width: 430px;
-      padding: 0 0 0 (46px + $padding-container);
+      padding: 40px 0 40px (46px + $padding-container);
     }
   }
 
   &__subtitle {
-    margin: 0 0 24px;
+    margin: 0 0 24px (-46px - $padding-container-mobile);
 
     font-size: 20px;
     line-height: 30px;
@@ -45,7 +50,7 @@
     text-align: center;
 
     @include mediaOnTablet {
-      margin: 0 0 24px;
+      margin: 0 0 24px (-46px - $padding-container);
 
       font-size: 26px;
       line-height: 39px;
@@ -95,7 +100,11 @@
 
   &__map {
     width: 100%;
-    height: 504px;
+    min-height: 504px;
     border: none;
+  }
+
+  &__form {
+    background-color: $color-milk;
   }
 }
