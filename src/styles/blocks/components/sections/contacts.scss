@@ -22,8 +22,6 @@
   }
 
   &__top-wrapper {
-    margin-bottom: 40px;
-
     @include mediaOnTablet {
       display: flex;
     }
@@ -34,8 +32,13 @@
     padding: 40px 0 40px (46px + $padding-container-mobile);
 
     background-color: $color-croissant;
-    
+
     @include mediaOnTablet {
+      width: 430px;
+      padding: 40px 0 40px (30px + $padding-container);
+    }
+
+    @include mediaOnDesktop {
       width: 430px;
       padding: 40px 0 40px (46px + $padding-container);
     }
@@ -50,16 +53,33 @@
     text-align: center;
 
     @include mediaOnTablet {
-      margin: 0 0 24px (-46px - $padding-container);
+      margin: 0 0 24px (-30px - $padding-container);
 
       font-size: 26px;
       line-height: 39px;
     }
+
+    @include mediaOnDesktop {
+      margin: 0 0 24px (-46px - $padding-container);
+    }
   }
 
   &__item {
+    display: inline-block;
     position: relative;
     margin-bottom: 9px;
+
+    color: inherit;
+
+    transition: $transition-duration;
+
+    &:hover {
+      color: $color-milk;
+    }
+
+    &:active {
+      color: $color-cream;
+    }
     
     &::before {
       content: "";
@@ -104,7 +124,83 @@
     border: none;
   }
 
+  &__bottom-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+
+    @include mediaOnTablet {
+      margin: 95px 0 55px;
+    }
+
+    @include mediaOnTablet {
+      margin: 130px 0 70px;
+    }
+  }
+
+  &__bottom-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include mediaOnTablet {
+      flex-direction: row;
+    }
+  }
+
   &__form {
-    background-color: $color-milk;
+    display: flex;
+    flex-direction: column;
+    max-width: 378px;
+    width: 100%;
+
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__feedback {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  &__form-item {
+    margin-top: 20px;
+
+    border: none;
+    border-bottom: 1px solid rgba($color: $color-chocolate, $alpha: 0.5);
+    outline: none;
+    resize: none;
+
+    &::placeholder {
+      font-family: Rubik, Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: rgba($color: $color-chocolate, $alpha: 0.5);
+    }
+
+    &--textarea {
+      margin-top: 90px;
+      padding: 0;
+    }
+  }
+
+  &__button {
+    margin: 30px auto;
+  }
+
+  &__img-feedback {
+    max-width: 509px;
+    width: 100%;
+    max-height: 417px;
+
+    @include mediaOnTablet {
+      order: -1;
+      margin-right: 70px;
+    }
+
+    @include mediaOnDesktop {
+      order: -1;
+      margin-right: 180px;
+    }
   }
 }
