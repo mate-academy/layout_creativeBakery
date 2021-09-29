@@ -1,15 +1,42 @@
 .actions {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
+  height: 65px;
+
+  margin-bottom: 20px;
+
   &--place--footer {
+    justify-content: space-between;
+
     @include onMobile {
       flex-direction: column;
       align-items: flex-start;
+
+      height: max-content;
   
       margin-bottom: 48px;
     }
+  }
+
+  &--mobile {
+    display: none;
+
+      @include onMobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-bottom: 60px;
+      }
+
+      @include onTablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-bottom: 140px;
+      }
   }
 
   &__logo {
@@ -23,12 +50,30 @@
   &__logo-image {
     width: 112px;
     height: 57px;
+
+    &--mobile {
+      @include onMobile {
+        width: 84px;
+        height: 42px;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+
+    @include onMobile {
+      display: block;
+    }
   }
 
   &__link {
-    margin-right: 32px;
+    display: block;
+
     text-decoration: none;
     color: inherit;
+
+    margin-right: 32px;
 
     @include onMobile {
       display: block;
@@ -45,14 +90,10 @@
     &:last-child {
       margin-right: 0;
     }
-  
+
     &:hover {
       color: $c-brown;
     }
-  }
-
-  &__extra {
-    @extend %flex-center;
   }
 
   &__media {

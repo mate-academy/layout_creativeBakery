@@ -3,7 +3,7 @@
   align-items: center;
   flex-direction: column;
   box-sizing: border-box;
-  height: 100vh;
+  height: max-content;
 
   background-color: $c-light-brown;
 
@@ -11,6 +11,12 @@
 
   @include onMobile {
     padding: 40px 16px 32px;
+
+    height: max-content;
+  }
+
+  @include onTablet {
+    height: max-content
   }
 
   &__title {
@@ -57,8 +63,8 @@
   }
 
   &__map {
-    width: 45vw;
-    height: 60vh;
+    height: 50vw;
+    max-height: 500px;
 
     margin-bottom: 20px;
 
@@ -66,12 +72,21 @@
       width: 300px;
       height: 200px;
     }
+
+    @include onTablet {
+      width: 80vw;
+    }
   }
 
   &__buttons--mobile {
     @include onMobile {
       display: flex;
       gap: 20px;
+    }
+
+    @include onTablet {
+      display: flex;
+      gap: 40px;
     }
   }
 
@@ -89,6 +104,27 @@
       border-radius: 50%;
 
       background-color: $c-white;
+    }
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+
+      margin-bottom: 60px;
+
+      background-color: $c-white;
+
+      font-size: 40px;
+      color: $c-dark;
+
+      &:active {
+        background-color: $c-brown;
+      }
     }
   }
 }
