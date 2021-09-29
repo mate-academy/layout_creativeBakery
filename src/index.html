@@ -15,54 +15,55 @@
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
   <body class="html__body">
-    <header class="header">
+    <header class="header" id="header">
       <div class="header__content">
-        <div class="nav-bar">
-          <a href="index.html" class="nav-bar__logo">
-            <img
-              class="nav-bar__logo-image"
-              src="./images/logo.svg"
-              alt="Creative Bakery"
-            >
+        <div class="header__content-wrap">
+          <div class="nav-bar">
+            <a href="index.html" class="nav-bar__logo">
+              <img
+                class="nav-bar__logo-image"
+                src="./images/logo.svg"
+                alt="Creative Bakery"
+              >
+            </a>
+            <nav class="nav-bar__nav header__nav">
+              <a href="#bakery" class="nav-bar__link link">
+                Bakery
+              </a>
+              <a href="#bakershops" class="nav-bar__link link">
+                Bakershops
+              </a>
+              <a href="#about" class="nav-bar__link link">
+                About
+              </a>
+              <a href="#contacts" class="nav-bar__link link">
+                Contacts
+              </a>
+            </nav>
+          </div>
+          <h1 class="header__title title">
+            Creative bakery
+          </h1>
+          <p class="header__description">
+            We bake your fantasies: croissants
+            cakes, cookies, and cupcakes.
+          </p>
+          <a href="#about" class="header__button button link">
+            Learn more
           </a>
-          <nav class="nav-bar__nav header__nav">
-            <a href="#bakery" class="nav-bar__link link">
-              Bakery
-            </a>
-            <a href="#bakershops" class="nav-bar__link link">
-              Bakershops
-            </a>
-            <a href="#about" class="nav-bar__link link">
-              About
-            </a>
-            <a href="#contacts" class="nav-bar__link link">
-              Contacts
-            </a>
-          </nav>
         </div>
-        <h1 class="header__title title">
-          Creative bakery
-        </h1>
-        <p class="header__description">
-          We bake your fantasies: croissants
-          cakes, cookies, and cupcakes.
-        </p>
-        <a href="#about" class="header__button button link">
-          Learn more
-        </a>
       </div>
       <div class="side-bar">
         <div class="side-bar__extra">
-          <a href="tel:+38 066 336 36 36" class="side-bar__link link">
+          <a href="tel:+380663363636" class="side-bar__link link">
             +38 066 336 36 36
           </a>
 
-          <a href="tel:+38 066 336 36 36" class="side-bar__button button link">
+          <a href="tel:+380663363636" class="side-bar__button button link">
             Call back
           </a>
           <select
             name="language"
-            id="language"
             aria-placeholder="En"
             class="side-bar__select select"
           >
@@ -77,6 +78,41 @@
           <span class="side-bar__pagi-item">02</span>
           <span class="side-bar__pagi-item">03</span>
           <span class="side-bar__scroll side-bar__scroll-down"></span>
+        </div>
+      </div>
+      <div class="menu" id="menu">
+        <a href="#" class="menu__close"></a>
+        <nav class="nav-bar__nav header__nav">
+          <a href="#bakery" class="nav-bar__link link">
+            Bakery
+          </a>
+          <a href="#bakershops" class="nav-bar__link link">
+            Bakershops
+          </a>
+          <a href="#about" class="nav-bar__link link">
+            About
+          </a>
+          <a href="#contacts" class="nav-bar__link link">
+            Contacts
+          </a>
+        </nav>
+        <div class="side-bar__extra">
+          <a href="tel:+380663363636" class="side-bar__link link">
+            +38 066 336 36 36
+          </a>
+
+          <a href="tel:+380663363636" class="side-bar__button button link">
+            Call back
+          </a>
+          <select
+            name="language"
+            aria-placeholder="En"
+            class="side-bar__select select"
+          >
+            <option value="en" selected>En</option>
+            <option value="ru">Ru</option>
+            <option value="ua">Ua</option>
+          </select>
         </div>
       </div>
     </header>
@@ -180,7 +216,7 @@
           Bakershops
         </h2>
         <form
-          action="search"
+          action="index.html"
           method="GET"
           class="bakershops__form form"
         >
@@ -228,7 +264,11 @@
           <button type="submit" class="bakershops__button button">Search</button>
         </form>
         <div class="bakershops__map">
-          <img src="./images/map.png" alt="Bakers shop map">
+          <img
+            src="./images/map.png"
+            alt="Bakers shop map"
+            class="bakershops__img"
+          >
         </div>
       </section>
       <section class="about" id="about">
@@ -334,11 +374,58 @@
           </iframe>
         </div>
       </section>
+      <section class="feedback">
+        <div class="feedback__img-wrap">
+          <img
+            src="./images/feedback/pic.svg"
+            alt="Send email"
+            class="feedback__img"
+          >
+        </div>
+        <div class="feedback__form-wrap">
+          <h4 class="feedback__title subtitle">
+            We’d love to hear your feedback
+          </h4>
+          <form
+            action="index.html"
+            method="POST"
+            class="feedback__form form"
+            autocomplete="on"
+          >
+            <input
+              type="text"
+              class="feedback__form-item"
+              placeholder="Name*"
+              required
+            >
+            <input
+              type="email"
+              class="feedback__form-item"
+              placeholder="E-mail*"
+              required
+            >
+            <input
+              type="tel"
+              class="feedback__form-item"
+              placeholder="Phone"
+              required
+            >
+            <textarea
+              name="Message"
+              class="feedback__form-item feedback__textarea"
+              placeholder="Message*"
+           ></textarea>
+            <button type="submit" class="feedback__button button">
+              Send
+            </button>
+          </form>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="container">
         <div class="nav-bar">
-          <a href="index.html" class="nav-bar__logo">
+          <a href="#header" class="nav-bar__logo">
             <img
               class="nav-bar__logo-image"
               src="./images/footer-logo.svg"
@@ -346,7 +433,7 @@
             >
           </a>
           <nav class="nav-bar__nav">
-            <a href="index.html" class="nav-bar__link link">
+            <a href="#bakery" class="nav-bar__link link">
               Bakery
             </a>
             <a href="#bakershops" class="nav-bar__link link">
