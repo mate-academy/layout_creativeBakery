@@ -1,0 +1,127 @@
+.side-bar {
+  padding: 52px 46px 0;
+  min-width: 30vw;
+  background-color: $c-croissant;
+
+  @include to1366 {
+    padding: 52px 26px 0;
+  }
+
+  @include to1024 {
+    padding: 52px 15px 0;
+    min-width: 35vw;
+  }
+
+  @include to640 {
+    display: none;
+  }
+
+  &__extra {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+
+    @include to1024 {
+      gap: 15px;
+    }
+
+    @include to640 {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+    }
+  }
+
+  &__button {
+    height: 30px;
+    width: 100px;
+    background-color: $c-cream;
+    transition: background-color $transition;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $c-cream;
+    }
+  }
+
+  &__link {
+    transition: color $transition;
+    &:hover {
+      color: $c-cream;
+    }
+  }
+
+  &__select {
+    border: none;
+    border-radius: 40px;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    top: 45%;
+    transform: translateY(-50%);
+  }
+
+  &__pagi-item {
+    font-size: 40px;
+    line-height: 47px;
+    color: $c-cream;
+
+    &:nth-child(4) {
+      padding-bottom: 34px;
+    }
+  }
+
+  &__scroll {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 26px;
+    height: 15px;
+    cursor: pointer;
+
+    &:hover::before {
+      opacity: 0;
+    }
+
+    &-up {
+      background-image: url(../images/arrow-hover.svg);
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url(../images/arrow.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: inherit;
+        height: inherit;
+        transform: rotate(180deg);
+        transition: opacity $transition;
+      }
+    }
+
+    &-down {
+      background-image: url(../images/arrow-hover.svg);
+      transform: rotate(180deg);
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url(../images/arrow.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: inherit;
+        height: inherit;
+        transform: rotate(180deg);
+        transition: opacity $transition;
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.feedback {
+  padding: 135px 0;
+  display: flex;
+  justify-content: center;
+  gap: 165px;
+
+  @include to1024 {
+    gap: 60px;
+  }
+
+  @include to640 {
+    flex-direction: column-reverse;
+    gap: 50px;
+    padding: 40px 0 50px;
+    margin: 0 auto;
+  }
+
+  &__img {
+    @include to640 {
+      width: 250px;
+    }
+
+    &-wrap {
+      align-self: center;
+    }
+  }
+
+  &__title {
+    font-size: 26px;
+    line-height: 39px;
+    margin-bottom: 27px;
+
+    @include to640 {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include to640 {
+      width: 90vw;
+      margin: 0 auto;
+    }
+
+    &-item {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      height: 30px;
+      opacity: 0.5;
+      border: none;
+      border-bottom: 1px solid $c-chocolate;
+      outline: none;
+    }
+  }
+
+  &__textarea {
+    margin-top: 72px;
+    margin-bottom: 30px;
+    resize: none;
+  }
+
+  &__button {
+    align-self: center;
+    width: 160px;
+    background-color: $c-croissant;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $c-croissant;
+    }
+  }
+}

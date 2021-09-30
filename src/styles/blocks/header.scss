@@ -1,0 +1,86 @@
+.header {
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    padding: 34px 60px 0;
+    background: url(../images/header-img.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 70vw;
+
+    @include to640 {
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)),
+        url(../images/header-img.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100vw;
+      padding: 16px 16px 0;
+    }
+
+    &-wrap {
+      @include to640 {
+        width: 100%;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 160px;
+    line-height: 177px;
+    margin-top: 140px;
+
+    @include to1024 {
+      font-size: 120px;
+      line-height: 0.8em;
+    }
+
+    @include to640 {
+      font-size: 100px;
+      margin-top: 95px;
+    }
+  }
+
+  &__description {
+    width: 420px;
+    font-size: 26px;
+    margin-top: 20px;
+
+    @include to640 {
+      font-size: 16px;
+      width: 260px;
+    }
+  }
+
+  &__button {
+    margin-top: 25px;
+    width: 160px;
+    background-color: $c-croissant;
+
+    &:hover {
+      background-color: $c-milk;
+      border-color: $c-croissant;
+    }
+
+    @include to640 {
+      margin-top: 19px;
+    }
+  }
+
+  &__nav {
+    color: $c-chocolate;
+    display: flex;
+    gap: 34px;
+
+    @include to640 {
+      display: none;
+    }
+  }
+}
