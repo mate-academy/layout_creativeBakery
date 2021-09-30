@@ -8,40 +8,68 @@
   &__main {
     flex-grow: 1;
     height: 100vh;
-    padding: 34px 59px;
+    padding: 15px 16px;
 
     background-image: url(../images/header-bg.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include mediaOnTablet {
+      padding: 34px 59px;
+    }
   }
 
   &__top {
     display: flex;
-    justify-content: space-between;
+  }
+
+  &__menu {
+    margin: 0 auto;
   }
 
   &__title {
-    margin: 20px 0;
+
+    margin: 97px 0 29px;
 
     font-family: Cookie, Arial, Helvetica, sans-serif;
-    font-size: 160px;
-    line-height: 177px;
     font-weight: normal;
+    font-size: 100px;
+    line-height: 80px;
+
+    @include mediaOnTablet {
+      margin: 20px 0;
+
+      font-size: 160px;
+      line-height: 177px;
+    }
   }
 
   &__descr {
-    margin: 0 0 25px;
+    margin: 0 0 19px;
 
-    font-size: 26px;
-    line-height: 39px;
+    @include mediaOnTablet {
+      margin: 0 0 25px;
+
+      font-size: 26px;
+      line-height: 39px;
+    }
   }
 
   &__left {
-    flex-grow: 1;
+    display: none;
+    min-width: 440px;
     height: 100vh;
     padding: 34px 47px;
 
     background-color: $color-croissant;
+
+    @include mediaOnTablet {
+      display: block;
+    }
+  }
+
+  &__panel-slider {
+    margin-top: 90px;
   }
 }
