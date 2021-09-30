@@ -5,11 +5,6 @@
   background-repeat: no-repeat;
   position: relative;
 
-  @include onDesktop {
-    background-image: url(../images/header.jpg);
-    width: 70%;
-  }
-
   &__content {
     display: flex;
     flex-direction: column;
@@ -18,10 +13,6 @@
 
     box-sizing: border-box;
     height: 100vh;
-
-    @include onDesktop {
-      padding: 34px 0 0 60px;
-    }
   }
 
   &__title {
@@ -34,22 +25,10 @@
     max-width: 260px;
 
     color: $c-darkBrown;
-
-    @include onDesktop {
-      max-width: 100%;
-      font-size: 160px;
-      line-height: 177px;
-      margin: 0 0 28px;
-    }
   }
 
   &__text {
     margin: 0 0 20px;
-
-    @include onDesktop {
-      font-size: 26px;
-      margin: 0 0 24px;
-    }
   }
 
   &__button {
@@ -92,9 +71,9 @@
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-  
-    @include onDesktop {
-      display: none;
+
+    @include onTablet {
+      margin: 200px 0 0;
     }
   }
 
@@ -120,6 +99,29 @@
   }
 
   @include onDesktop {
+    background-image: url(../images/header.jpg);
+    width: 70%;
+
+    &__content {
+      padding: 34px 0 0 60px;
+    }
+
+    &__title {
+      max-width: 100%;
+      font-size: 160px;
+      line-height: 177px;
+      margin: 0 0 28px;
+    }
+
+    &__text {
+      font-size: 26px;
+      margin: 0 0 24px;
+    }
+
+    &__num {
+      display: none;
+    }
+
     &__menu {
       display: flex;
       padding: 30px 0 0;
