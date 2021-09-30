@@ -1,10 +1,18 @@
 'use strict';
 
-const form = document.querySelector('.contact-us__form');
+const formBakershop = document.querySelector('.bakershops__form');
+const formContactUs = document.querySelector('.contact-us__form');
 
-form.addEventListener('submit', handleEvent);
+formBakershop.addEventListener('submit', handleEventBakersop);
 
-function handleEvent(event) {
+formContactUs.addEventListener('submit', handleEventContactUs);
+
+function handleEventBakersop(event) {
   event.preventDefault();
-  form.reset();
+  formBakershop.reset();
+}
+
+function handleEventContactUs(event) {
+  event.preventDefault();
+  formContactUs.reset();
 }

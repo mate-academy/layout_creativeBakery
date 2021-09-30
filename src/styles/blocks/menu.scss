@@ -14,113 +14,117 @@
     padding: 28px 0 20px 16px;
 
     overflow-y: auto;
+  }
+
+  @include onTablet {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: $c-brown;
+
+    height: 100vh;
+
+    border-left: 4px solid $c-white;
+
+    box-sizing: border-box;
+    padding: 44px 0 20px 16px;
+
+    overflow-y: auto;
+  }
+
+  &__burger {
+    display: block;
+  
+    width: 25px;
+    height: 25px;
+  
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    background-image: url("../images/menu_burger.svg");
+
+    @include onTablet {
+      width: 50px;
+      height: 50px;
+    }
+  
+    &:hover {
+      background-image: url("../images/menu_burger_hover.svg");
+    }
+  
+    &--close {
+      margin-left: 40vw;
+
+      background-image: url("../images/menu_close.svg");
+
+      @include onTablet {
+        margin-left: 46vw;
+      }
+  
+      &:hover {
+        background-image: url("../images/menu_close_hover.svg");
+      }
+    }
+  }
+
+  &__extra {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  &__link {
+    display: block;
+
+    text-decoration: none;
+    color: inherit;
+
+    margin-bottom: 28px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--tel {
+      margin-bottom: 0;
     }
 
     @include onTablet {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      background-color: $c-brown;
+      font-family: "Rubik", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 26px;
+      line-height: 39px;
+    }
+  }
 
-      height: 100vh;
-
-      border-left: 4px solid $c-white;
-
-      box-sizing: border-box;
-      padding: 44px 0 20px 16px;
-
-      overflow-y: auto;
+  &__language {
+    height: 32px;
+  
+    background-color: $c-brown;
+    border: none;
+  
+    @extend %page;
+  
+    transition: color $transition-duration;
+  
+    &:hover {
+      color: $c-light-brown;
     }
 
-    &__burger {
-      display: block;
-  
-      width: 25px;
-      height: 25px;
-  
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-  
-      background-image: url("../images/menu_burger.svg");
-
-      @include onTablet {
-        width: 50px;
-        height: 50px;
-      }
-  
-      &:hover {
-        background-image: url("../images/menu_burger_hover.svg");
-      }
-  
-      &--close {
-        margin-left: 40vw;
-
-        background-image: url("../images/menu_close.svg");
-
-        @include onTablet {
-          margin-left: 46vw;
-        }
-  
-        &:hover {
-          background-image: url("../images/menu_close_hover.svg");
-        }
-      }
+    &:focus {
+      outline: none;
     }
 
-    &__extra {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
+    @include onTablet {
+      font-family: "Rubik", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 26px;
+      line-height: 39px;
     }
-
-    &__link {
-      display: block;
-
-      text-decoration: none;
-      color: inherit;
-
-      margin-bottom: 28px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      &--tel {
-        margin-bottom: 0;
-      }
-
-      @include onTablet {
-        font-family: "Rubik", sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 26px;
-        line-height: 39px;
-      }
-    }
-
-    &__language {
-      height: 32px;
-  
-      background-color: $c-brown;
-      border: none;
-  
-      @extend %page;
-  
-      transition: color $transition-duration;
-  
-      &:hover {
-        color: $c-light-brown;
-      }
-
-      @include onTablet {
-        font-family: "Rubik", sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 26px;
-        line-height: 39px;
-      }
-    }
+  }
 }
