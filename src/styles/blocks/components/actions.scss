@@ -1,9 +1,14 @@
 .actions {
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
   gap: 20px;
   padding: 33px 10px;
+
+  @include mediaOnTablet {
+    flex-direction: row;
+    align-items: center;
+  }
 
   &__phone {
     color: inherit;
@@ -15,6 +20,7 @@
   }
 
   &__lang {
+    width: max-content;
     font-size: inherit;
 
     background-color: $color-croissant;

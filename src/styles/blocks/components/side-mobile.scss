@@ -1,0 +1,27 @@
+.side-mobile {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+  transform: translateX(100%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 66%;
+  padding: 85px 16px 0;
+  
+  background-color: $color-croissant;
+  border-left: 3px solid $color-milk;
+
+  transition: $transition-duration;
+
+  @include mediaOnTablet {
+    display: none;
+  }
+
+  &--active {
+    transform: translateX(0);
+  }
+}
