@@ -1,8 +1,10 @@
 'use strict';
 
-const form = document.querySelector('.form');
+const forms = document.querySelectorAll('.form');
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  form.reset();
+forms.forEach(form => {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    form.reset();
+  });
 });
