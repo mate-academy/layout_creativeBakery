@@ -28,7 +28,8 @@
   }
 
   &__contacts {
-    display: block;
+    display: flex;
+    flex-direction: column;
     padding: 40px 0 40px (46px + $padding-container-mobile);
 
     background-color: $color-croissant;
@@ -65,7 +66,6 @@
   }
 
   &__item {
-    display: inline-block;
     position: relative;
     margin-bottom: 9px;
 
@@ -127,7 +127,7 @@
   &__bottom-wrapper {
     display: flex;
     justify-content: center;
-    margin: 40px;
+    margin: 40px 0;
 
     @include mediaOnTablet {
       margin: 95px 0 55px;
@@ -151,11 +151,14 @@
   &__form {
     display: flex;
     flex-direction: column;
-    max-width: 378px;
     width: 100%;
 
     text-align: center;
     margin: 0 auto;
+
+    @include mediaOnTablet {
+      width: 50%;
+    }
   }
 
   &__feedback {
@@ -192,9 +195,11 @@
     max-width: 509px;
     width: 100%;
     max-height: 417px;
+    object-fit: contain;
 
     @include mediaOnTablet {
       order: -1;
+      width: calc(50% - 70px);
       margin-right: 70px;
     }
 
