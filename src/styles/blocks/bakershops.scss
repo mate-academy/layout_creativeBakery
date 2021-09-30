@@ -10,7 +10,7 @@
     color: $c-croissant;
     margin-bottom: 87px;
 
-    @include to640 {
+    @include to800 {
       font-size: 60px;
       line-height: 67px;
     }
@@ -22,7 +22,7 @@
     gap: 32px;
     margin-bottom: 71px;
 
-    @include to640 {
+    @include to800 {
       flex-direction: column;
     }
   }
@@ -33,10 +33,14 @@
     opacity: 0.5;
     height: 24px;
 
+    &:hover {
+      opacity: 1;
+    }
+
     &:nth-child(1) {
       width: 173px;
 
-      @include to640 {
+      @include to800 {
         width: 95vw;
       }
     }
@@ -44,7 +48,7 @@
     &:nth-child(2) {
       width: 323px;
 
-      @include to640 {
+      @include to800 {
         width: 95vw;
       }
     }
@@ -64,6 +68,30 @@
     &:hover {
       background-color: transparent;
       border-color: $c-croissant;
+    }
+  }
+
+  &__scale-block {
+    display: none;
+
+    @include to800 {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__scale-item {
+    @extend %flex-center;
+    width: 40px;
+    height: 40px;
+    background-color: $c-milk;
+    border-radius: 50%;
+    font-size: 30px;
+    transition: transform $transition;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2);
     }
   }
 }

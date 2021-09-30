@@ -12,7 +12,7 @@
     min-width: 35vw;
   }
 
-  @include to640 {
+  @include to800 {
     display: none;
   }
 
@@ -26,7 +26,7 @@
       gap: 15px;
     }
 
-    @include to640 {
+    @include to800 {
       flex-direction: column;
       align-items: flex-start;
       gap: 30px;
@@ -78,9 +78,7 @@
 
   &__scroll {
     position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    @extend %img-center;
     width: 26px;
     height: 15px;
     cursor: pointer;
@@ -96,9 +94,7 @@
         content: "";
         position: absolute;
         background-image: url(../images/arrow.svg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        @extend %img-center;
         width: inherit;
         height: inherit;
         transform: rotate(180deg);
@@ -114,9 +110,7 @@
         content: "";
         position: absolute;
         background-image: url(../images/arrow.svg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        @extend %img-center;
         width: inherit;
         height: inherit;
         transform: rotate(180deg);
