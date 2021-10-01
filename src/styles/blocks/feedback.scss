@@ -1,0 +1,130 @@
+.feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+
+  padding: 40px 16px 52px;
+
+  &__text {
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+
+    margin: 0 0 20px;
+
+    &-desktop {
+      display: none;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 380px;
+
+    margin: 0 0 52px;
+  }
+
+  &__window {
+    height: 36px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 24px;
+
+    outline: none;
+    opacity: 0.5;
+
+    border: 1px solid transparent;
+    border-bottom: 1px solid $c-darkBrown;
+
+    transition: $transition-duration;
+
+    &:hover {
+      background-color: $c-cream;
+      border-radius: 40px;
+      color: $c-black;
+    }
+
+    &:focus {
+      color: $c-black;
+      opacity: 1;
+      border-color: $c-lightBrown;
+      border-radius: 40px;
+    }
+  }
+
+  &__message {
+    font-family: inherit;
+    resize: none;
+    height: 90px;
+
+    padding: 60px 0 0 24px;
+  }
+
+  &__position {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 40px;
+    width: 160px;
+
+    background-color: $c-lightBrown;
+    border-radius: 40px;
+    border: 2px solid transparent;
+    color: $c-darkBrown;
+    cursor: pointer;
+
+    transition: $transition-duration;
+
+    &:hover {
+      background-color: $c-white;
+      border-color: $c-lightBrown;
+    }
+
+    &:active {
+      background-color: $c-lightBrown;
+      opacity: 0.8;
+    }
+  
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  @include onDesktop {
+    flex-direction: row-reverse;
+    justify-content: center;
+    width: 100%;
+    padding: 136px 0;
+
+    &__form {
+      margin: 0 0 0 168px;
+    }
+
+    &__text {
+      display: none;
+
+      &-desktop {
+        display: block;
+        font-size: 26px;
+        line-height: 150%;
+        align-items: center;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      max-width: 509px;
+    }
+  }
+}

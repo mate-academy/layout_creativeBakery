@@ -1,0 +1,140 @@
+.header {
+  background-image: url(../images/headerphone.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 15px 16px 34px;
+
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+  &__title {
+    font-family: "Cookie", sans-serif;
+    font-weight: normal;
+
+    font-size: 100px;
+    line-height: 80%;
+    margin: 0 0 28px;
+    max-width: 260px;
+
+    color: $c-darkBrown;
+  }
+
+  &__text {
+    margin: 0 0 20px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    transition: $transition-duration;
+
+    text-decoration: none;
+    border-radius: 40px;
+    color: $c-darkBrown;
+
+    background-color: $c-lightBrown;
+    border: 2px solid $c-lightBrown;
+    height: 44px;
+    width: 160px;
+
+    margin: 0 0 40px;
+
+    &:hover {
+      background-color: $c-white;
+      border: 2px solid $c-lightBrown;
+    }
+
+    &:active {
+      background-color: $c-lightBrown;
+      opacity: 0.8;
+    }
+
+    @include onDesktop {
+      height: 40px;
+      margin: 0;
+    }
+  }
+
+  &__num {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+
+    margin: 10% 0 0;
+  
+
+    @include onTablet {
+      margin: 200px 0 0;
+    }
+  }
+
+  &__number {
+    color: $c-lightBrown;
+    text-decoration: none;
+  
+    transition: $transition-duration;
+
+    &--isActiv {
+      font-size: 40px;
+      color: $c-darkBrown;
+    }
+  
+    &:hover {
+      font-size: 40px;
+      color: $c-darkBrown;
+    }
+  }
+
+  &__menu {
+    display: none;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/header.jpg);
+    width: 70%;
+
+    &__content {
+      padding: 34px 0 0 60px;
+    }
+
+    &__title {
+      max-width: 100%;
+      font-size: 160px;
+      line-height: 177px;
+      margin: 0 0 28px;
+    }
+
+    &__text {
+      font-size: 26px;
+      margin: 0 0 24px;
+    }
+
+    &__num {
+      display: none;
+    }
+
+    &__menu {
+      display: flex;
+      padding: 30px 0 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 34px;
+    }
+  }
+}

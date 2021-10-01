@@ -1,0 +1,184 @@
+.bakery {
+  display: flex;
+  margin: 0;
+
+  &__title {
+    font-size: 60px;
+    line-height: 67px;
+    font-family: "Cookie", sans-serif;
+    color: $c-lightBrown;
+    font-weight: normal;
+    text-align: center;
+
+    margin: 0 0 20px;
+  }
+
+  &__name {
+    font-size: 35px;
+    line-height: 41px;
+
+    color: $c-lightBrown;
+
+    margin: 0 0 16px;
+  }
+
+  &__composition {
+    font-size: 20px;
+    line-height: 150%;
+
+    margin: 0 0 12px;
+  }
+
+  &__description {
+    margin: 0 0 20px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 66px;
+    height: 66px;
+    background-color: $c-cream;
+    border-radius: 50%;
+
+    transition: $transition-duration;
+
+    &:hover {
+      background-color: $c-lightBrown;
+    }
+  }
+
+  &__link {
+    text-align: center;
+    width: 48px;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $c-darkBrown;
+  }
+
+  &__product {
+    display: flex;
+    justify-content: center;
+
+    margin: 0 0 40px;
+
+    // &:not(:last-child) {
+    //   margin: 0 0 40px;
+    // }
+  }
+
+  &__photo {
+    width: 100%;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    border-radius: 40px;
+    background-color: $c-lightBrown;
+    height: 40px;
+    width: 160px;
+    border: 2px solid transparent;
+
+    transition: $transition-duration;
+
+    &:hover {
+      background-color: $c-white;
+      border-color: $c-lightBrown;
+    }
+
+    &:active {
+      background-color: $c-lightBrown;
+      opacity: 0.8;
+    }
+  }
+
+  &__buy {
+    color: $c-darkBrown;
+    text-decoration: none;
+  }
+
+  &__position {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__delimiter {
+    display: none;
+
+    @include onDesktop {
+      display: inline;
+    }
+  }
+
+  @include onDesktop {
+    justify-content: center;
+    flex-direction: column;
+
+    &__title {
+      font-size: 120px;
+      line-height: 133px;
+
+      margin: 0 0 28px;
+    }
+
+    &__cookies,
+    &__croissants {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      margin: 0 0 136px;
+    }
+
+    &__cakes,
+    &__cupcakes {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      margin: 0 0 136px;
+    }
+
+    &__name {
+      font-size: 50px;
+      line-height: 59px;
+
+      margin: 0 0 44px;
+    }
+
+    &__composition {
+      font-size: 26px;
+    }
+
+    &__text {
+      max-width: 304px;
+    }
+
+    &__description {
+      margin: 0 0 32px;
+    }
+
+    &__price {
+      width: 110px;
+      height: 110px;
+      // cursor: pointer;
+    }
+
+    &__link {
+      width: 86px;
+    }
+
+    &__photo {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

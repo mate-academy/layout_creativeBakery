@@ -1,0 +1,61 @@
+.aside {
+  display: none;
+}
+
+@include onDesktop {
+  .aside {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 30%;
+
+    background-color: $c-lightBrown;
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      margin: 64px 0 124px;
+    }
+
+    &__num {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    &__number {
+      display: flex;
+      justify-content: flex-end;
+
+      margin-right: 44px;
+
+      color: $c-cream;
+      text-decoration: none;
+      font-size: 40px;
+      line-height: 47px;
+
+      transition: $transition-duration;
+
+      &--isActiv {
+        font-size: 176px;
+        line-height: 209px;
+        color: $c-darkBrown;
+      }
+
+      &:hover {
+        color: $c-darkBrown;
+      }
+    }
+
+    &__arrow {
+      margin-right: 72px;
+      height: 26px;
+      width: 15px;
+    }
+  }
+}

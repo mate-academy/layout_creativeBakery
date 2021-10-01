@@ -1,0 +1,114 @@
+.menu {
+  background-color: $c-lightBrown;
+  box-sizing: border-box;
+  height: 100vh;
+  border-left: 3px solid #fff;
+
+  &__content {
+    padding: 30px 16px 0;
+  }
+
+  &__top {
+    display: flex;
+    margin: 0 0 32px;
+    justify-content: center;
+  
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+    margin: 0 0 144px;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    display: inline-block;
+
+    text-decoration: none;
+    color: $c-darkBrown;
+    padding-left: 4px;
+
+    transition: transform $transition-duration;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $c-cream;
+    }
+
+    @include onDesktop {
+      text-decoration: none;
+      color: $c-darkBrown;
+      padding: 0;
+
+      transition: transform $transition-duration;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__call {
+    display: block;
+
+    text-decoration: none;
+    color: $c-darkBrown;
+
+    &--phone {
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin: 0;
+      }
+
+      transition: $transition-duration;
+
+      &:hover {
+        color: $c-cream;
+      }
+    }
+
+    &--button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+
+      background-color: $c-cream;
+      border: 2px solid transparent;
+
+      height: 30px;
+      width: 100px;
+      border-radius: 40px;
+
+      &:hover {
+        background-color: $c-white;
+        border-color: $c-cream;
+        color: $c-darkBrown;
+      }
+
+      &:active {
+        background-color: $c-cream;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__lenguage {
+    background-color: $c-lightBrown;
+    border: transparent;
+    padding-left: 4px;
+
+    cursor: pointer;
+  
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+}
