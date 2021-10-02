@@ -20,4 +20,3 @@ function prevDefault(element) {
 
 prevDefault(formAddres);
 prevDefault(contactsForm);
-
