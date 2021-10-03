@@ -3,9 +3,14 @@
 const burger = document.querySelector('.burger');
 const side = document.querySelector('.side-mobile');
 
-burger.addEventListener('click', () => {
-  side.classList.toggle('side-mobile--active');
-  burger.classList.toggle('burger--active');
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#menu') {
+    side.classList.add('side-mobile--active');
+    burger.classList.add('burger--active');
+  } else {
+    side.classList.remove('side-mobile--active');
+    burger.classList.remove('burger--active');
+  }
 });
 
 const formAddres = document.querySelector('.form-addres');
