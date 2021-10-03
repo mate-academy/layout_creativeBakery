@@ -1,0 +1,109 @@
+.section {
+  padding: 40px 16px;
+
+  @include onDesktop {
+    padding: 40px 70px;
+  }
+
+  &__info {
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 10%;
+      width: 100%;
+
+      &:nth-of-type(2n) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 41px;
+    color: #e39a3b;
+
+    @include onDesktop {
+      font-size: 50px;
+      line-height: 59px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 12px;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 150%;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    line-height: 150%;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background-color: #f1cc9d;
+
+    @include onDesktop {
+      width: 110px;
+      height: 110px;
+    }
+  }
+
+  &__price-text {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  &__picture {
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:last-child {
+      margin-bottom: 48px;
+    }
+
+    @include onDesktop {
+      height: 414px;
+      width: 600px;
+    }
+
+    &-cookie {
+      background-image: url(../images/Cookie.svg);
+    }
+
+    &-cakes {
+      background-image: url(../images/Cakes.svg);
+    }
+
+    &-croissants {
+      background-image: url(../images/Croissants.svg);
+    }
+
+    &-cupcakes {
+      background-image: url(../images/Cupcakes.svg);
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+  }
+}
