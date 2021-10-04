@@ -1,6 +1,7 @@
 .about {
   @extend %flex-center;
   flex-direction: column;
+  overflow: hidden;
   padding-top: 54px;
 
   &__title {
@@ -32,12 +33,15 @@
     gap: 80px;
 
     @include to1366 {
-      gap: 40px;
-    }
-
-    @include to1024 {
       flex-wrap: wrap;
       gap: 27px;
+    }
+
+    @include to800 {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      width: 80%;
+      overflow: scroll;
     }
 
     &-item {
@@ -56,7 +60,13 @@
     }
 
     @include to800 {
+      width: 150px;
+      height: 150px;
       margin-bottom: 20px;
+
+      &:hover {
+        transform: none;
+      }
     }
   }
 
