@@ -1,0 +1,30 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0 auto;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 62%;
+    max-width: 424px;
+    transition: $transition-duration;
+
+    transform: translateX(100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}
