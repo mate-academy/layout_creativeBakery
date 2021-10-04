@@ -83,39 +83,28 @@
     height: 15px;
     cursor: pointer;
 
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url(../images/arrow.svg);
+      @extend %img-center;
+      width: inherit;
+      height: inherit;
+      transform: rotate(180deg);
+      transition: opacity $transition;
+    }
+
     &:hover::before {
       opacity: 0;
     }
 
     &-up {
       background-image: url(../images/arrow-hover.svg);
-
-      &::before {
-        content: "";
-        position: absolute;
-        background-image: url(../images/arrow.svg);
-        @extend %img-center;
-        width: inherit;
-        height: inherit;
-        transform: rotate(180deg);
-        transition: opacity $transition;
-      }
     }
 
     &-down {
       background-image: url(../images/arrow-hover.svg);
       transform: rotate(180deg);
-
-      &::before {
-        content: "";
-        position: absolute;
-        background-image: url(../images/arrow.svg);
-        @extend %img-center;
-        width: inherit;
-        height: inherit;
-        transform: rotate(180deg);
-        transition: opacity $transition;
-      }
     }
   }
 }
