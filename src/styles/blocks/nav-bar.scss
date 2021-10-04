@@ -1,0 +1,78 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo-image {
+    width: 112px;
+    height: 57px;
+  }
+  
+  &__link {
+    transition: color $transition;
+
+    &:hover {
+      color: $c-croissant;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    @include to800 {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__icon {
+    @extend %flex-center;
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    background-color: $c-milk;
+    transition: background-color $transition, transform 1s ease-in-out;
+
+    &-twitter::after {
+      content: "";
+      width: 18px;
+      height: 14px;
+      background-image: url("../images/twitter.svg");
+      @extend %img-center;
+    }
+
+    &-facebook::after {
+      content: "";
+      width: 9px;
+      height: 20px;
+      background-image: url("../images/facebook.svg");
+      @extend %img-center;
+    }
+
+    &-linkedin::after {
+      content: "";
+      width: 17px;
+      height: 17px;
+      background-image: url("../images/linkedin.svg");
+      @extend %img-center;
+    }
+
+    &:hover {
+      background-color: $c-croissant;
+      transform: rotate(360deg);
+    }
+  }
+
+  &__burger {
+    display: none;
+    background-image: url(../images/burger.svg);
+    @extend %img-center;
+    width: 22px;
+    height: 22px;
+
+    @include to800 {
+      display: block;
+    }
+  }
+}

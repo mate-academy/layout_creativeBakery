@@ -1,0 +1,140 @@
+.bakery {
+  @extend %flex-center;
+  flex-direction: column;
+  padding: 40px 0 80px;
+
+  @include to800 {
+    padding: 40px 0;
+  }
+
+  &__title {
+    color: $c-croissant;
+    font-size: 120px;
+    line-height: 133px;
+    margin: 0 0 27px;
+
+    @include to800 {
+      font-size: 60px;
+      line-height: 67px;
+      margin: 0 0 20px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 205px;
+    margin-bottom: 135px;
+
+    @include to1366 {
+      gap: 60px;
+    }
+
+    @include to1024 {
+      gap: 30px;
+    }
+
+    @include to800 {
+      flex-direction: column;
+      margin-bottom: 48px;
+    }
+
+    &-right {
+      flex-direction: row-reverse;
+
+      @include to800 {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__image {
+    width: 650px;
+    height: 500px;
+    transition: transform $transition ease-in-out;
+
+    &:hover {
+      transform: scale(1.3);
+
+      @include to1024 {
+        transform: scale(1.1);
+      }
+    }
+
+    @include to1024 {
+      width: 550px;
+      height: 400px;
+    }
+
+    @include to800 {
+      width: 270px;
+      height: 200px;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      color: $c-croissant;
+      font-size: 50px;
+      line-height: 59px;
+      margin-bottom: 43px;
+
+      @include to800 {
+        font-size: 35px;
+        line-height: 41px;
+        margin-bottom: 15px;
+      }
+    }
+
+    &-subtitle {
+      color: $c-chocolate;
+      font-size: 26px;
+      margin-bottom: 12px;
+
+      @include to800 {
+        font-size: 20px;
+      }
+    }
+
+    &-text {
+      margin-bottom: 32px;
+
+      @include to800 {
+        margin-bottom: 19px;
+      }
+    }
+  }
+
+  &__price {
+    @extend %flex-center;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: $c-cream;
+    font-weight: bold;
+    transition: transform $transition ease-in-out;
+
+    &:hover {
+      transform: rotateY(360deg);
+    }
+
+    @include to800 {
+      text-align: center;
+      width: 65px;
+      height: 65px;
+    }
+  }
+
+  &__button {
+    width: 160px;
+    background-color: $c-croissant;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $c-croissant;
+    }
+  }
+}

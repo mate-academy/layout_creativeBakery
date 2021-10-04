@@ -1,0 +1,122 @@
+.contacts {
+  @extend %flex-center;
+  flex-direction: column;
+  padding-top: 135px;
+
+  @include to800 {
+    padding-top: 40px;
+  }
+
+  &__title {
+    font-size: 120px;
+    line-height: 133px;
+    color: $c-croissant;
+    margin-bottom: 26px;
+
+    @include to800 {
+      display: none;
+
+      &--mobile {
+        display: block;
+        color: $c-milk;
+        text-align: center;
+        font-size: 60px;
+        line-height: 67px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+    height: 500px;
+    width: 100%;
+
+    @include to800 {
+      flex-direction: column;
+      height: unset;
+    }
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 70px 0;
+    background-color: $c-croissant;
+    gap: 9px;
+    width: 30%;
+
+    @include to800 {
+      width: 100%;
+      padding: 40px 24px 40px 48px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 26px;
+    margin-bottom: 15px;
+
+    @include to800 {
+      text-align: center;
+    }
+  }
+
+  &__data-item {
+    font-weight: bold;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      @extend %img-center;
+      left: -35px;
+      bottom: 50%;
+
+      @include to800 {
+        left: -24px;
+      }
+    }
+
+    &:nth-child(3)::before {
+      content: "";
+      background-image: url(../images/contacts/mark.svg);
+      width: 14px;
+      height: 20px;
+    }
+
+    &:nth-child(4)::before {
+      content: "";
+      background-image: url(../images/contacts/phone.svg);
+      width: 18px;
+      height: 18px;
+
+    }
+
+    &:nth-child(5)::before {
+      content: "";
+      background-image: url(../images/contacts/mail.svg);
+      width: 19px;
+      height: 11px;
+    }
+  }
+
+  &__data-link {
+    font-weight: normal;
+    transition: color $transition;
+
+    &:hover {
+      color: $c-cream;
+    }
+  }
+
+  &__map {
+    width: 70%;
+    height: 500px;
+    border: none;
+
+    @include to800 {
+      width: 100%;
+      height: 100vh;
+    }
+  }
+}
