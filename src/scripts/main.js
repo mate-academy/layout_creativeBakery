@@ -9,7 +9,6 @@ forms.forEach(form => {
   });
 });
 
-
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#menu-mobile') {
     document.body.classList.add('page__body--with-menu');
