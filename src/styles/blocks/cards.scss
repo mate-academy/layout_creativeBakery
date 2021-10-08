@@ -1,0 +1,54 @@
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 150px;
+  transition: all 0.3s;
+
+  @media (min-width: 800px) {
+    max-width: 100%;
+    height: 352px;
+  }
+
+  &__item {
+    max-height: 320px;
+    transform: translateX(0);
+
+    @include onDesktop {
+      transition: all 0.5s;
+
+      &:hover {
+        transition: all 0.8s;
+        transform: scale(1.1);
+      }
+    }
+
+    &--image {
+      border-radius: 50%;
+      object-position: center;
+      object-fit: cover;
+      height: 150px;
+      width: 150px;
+      margin: 0 0 20px;
+
+      @include onDesktop {
+        height: 200px;
+        width: 200px;
+        margin: 0 0 12px;
+      }
+    }
+
+    &--title {
+      font-weight: 300;
+      text-align: center;
+      font-size: 60px;
+      line-height: 71px;
+      color: $Chocolate;
+      margin: 0 0 7px;
+    }
+
+    &--subtitle {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.product {
+  @include onDesktop {
+    display: flex;
+    max-width: 1000px;
+    gap: 150px;
+  }
+
+  &__info {
+    &--title {
+      font-size: 35px;
+      line-height: 41px;
+      color: $Croissant;
+      margin: 0 0 15px;
+
+      @include onDesktop {
+        font-size: 50px;
+        line-height: 59px;
+      }
+    }
+
+    &--subtitle {
+      font-size: 20px;
+      line-height: 30px;
+      margin: 0 0 12px;
+
+      @include onDesktop {
+        font-size: 26px;
+        line-height: 39px;
+      }
+    }
+
+    &--about {
+      margin: 0 0 20px;
+    }
+
+    &--price {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 65px;
+      width: 65px;
+      box-sizing: border-box;
+      border: 2px solid transparent;
+      background-color: $Cream;
+      border-radius: 50%;
+      font-weight: 700;
+      margin-bottom: 20px;
+      transition: all 0.5s;
+
+      &:hover {
+        transform: scale(1.1);
+        border-color: $Croissant;
+      }
+
+      @include onDesktop {
+        height: 110px;
+        width: 110px;
+      }
+    }
+  }
+  &__image {
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s;
+
+    &:hover {
+      transition-delay: 0.3s;
+      transform: scale(1.05);
+    }
+
+    &--position_left {
+      order: -1;
+    }
+  }
+}
