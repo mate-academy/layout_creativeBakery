@@ -1,0 +1,48 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+
+  @include onDesktop {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 580px;
+    gap: 32px;
+    margin: 67px auto;
+  }
+
+  &__select {
+    padding: 10px;
+    width: 100%;
+    color: $colorChocolate;
+    background-color: transparent;
+    opacity: 0.5;
+    border: 1px solid transparent;
+    border-bottom-color: $colorChocolate;
+    outline: none;
+    transition: all 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:focus {
+      border-bottom-color: $colorMilk;
+      background-color: $colorCream;
+    }
+
+    &--first {
+      @include onDesktop {
+        width: 170px;
+      }
+    }
+
+    &--second {
+      @include onDesktop {
+        width: 320px;
+      }
+    }
+  }
+
+}

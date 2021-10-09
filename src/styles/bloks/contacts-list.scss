@@ -1,0 +1,64 @@
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  list-style: none;
+  margin: 0 0 40px;
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $colorChocolate;
+    position: relative;
+
+    transition: all 0.3s;
+
+    &:hover {
+      color: $colorMilk;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      display: block;
+      width: 15px;
+      height: 20px;
+      left: -29px;
+      top: 5px;
+      content: "";
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include onDesktop {
+        left: -40px;
+      }
+    }
+
+    &--map::before {
+      background-image: url("../images/place.svg");
+    }
+
+    &--call::before {
+      background-image: url("../images/call.svg");
+    }
+
+    &--mail::before {
+      width: 30px;
+      height: 30px;
+      left: -35px;
+      background-image: url("../images/mail.svg");
+
+      @include onDesktop {
+        left: -47px;
+      }
+    }
+
+  }
+}
