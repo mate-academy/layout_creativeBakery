@@ -1,0 +1,180 @@
+.header {
+  box-sizing: border-box;
+  position: relative;
+  margin: auto;
+  height: 100vh;
+  max-height: 840px;
+  max-width: 1440px;
+  overflow: hidden;
+
+  &__images {
+    position: absolute;
+    z-index: -1;
+    min-width: 320px;
+    min-height: 568px;
+    height: 100vh;
+    width: 100%;
+    max-width: 1015px;
+    max-height: 840px;
+  }
+
+  &__box {
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.5s;
+    transform: translateY(0%);
+  }
+
+  &__image {
+    flex-shrink: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center bottom;
+
+    &--bread {
+      background-image: url(/images/b.jpg);
+    }
+
+    &--cake {
+      background-image: url(/images/c.jpg);
+    }
+
+    &--cup {
+      background-image: url(/images/a.jpg);
+    }
+  }
+
+  &__wrapper {
+    height: 100%;
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1fr 425px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__nav-menu {
+    margin-top: 17px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+    padding-top: 30px;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      gap: 34px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 16px 15px;
+
+    @include onDesktop {
+      padding: 34px 59px;
+    }
+  }
+
+  &__title {
+    &--main {
+      display: block;
+      margin-top: 97px;
+      @include styleCookie;
+      font-size: 100px;
+      line-height: 80%;
+
+      @include onTablet() {
+        font-size: 130px;
+      }
+
+      @include onDesktop() {
+        margin-bottom: 20px;
+        font-size: 160px;
+      }
+    }
+
+    &--text {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 150%;
+      display: block;
+      margin-bottom: 19px;
+      @include onTablet() {
+        font-size: 20px;
+      }
+
+      @include onDesktop() {
+        font-size: 26px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 auto;
+    gap: 20px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 0 auto;
+      gap: 20px;
+    }
+  }
+
+  &__number {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: $colorCroissant;
+
+    &--active {
+      font-size: 40px;
+      line-height: 40px;
+      align-items: flex-end;
+      color: $colorChocolate;
+    }
+  }
+
+  &__vector {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: $colorCroissant;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition-duration: 0.2s;
+  }
+}

@@ -1,0 +1,109 @@
+.bakershop {
+  background-color: $colorCream;
+  padding: 40px 16px;
+
+  @include onTablet {
+    padding: 60px 100px;
+  }
+
+  @include onDesktop {
+    padding: 80px 150px;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 67px;
+    text-align: center;
+    font-family: $Cookie;
+    color: $colorCroissant;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 90px;
+    }
+
+    @include onDesktop {
+      font-size: 120px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    @include onTablet {
+      flex-direction: row;
+
+    }
+
+    &-select {
+      display: block;
+      background-color: $colorCream;
+      border: none;
+      width: 288px;
+      font-size: 16px;
+      line-height: 150%;
+      color: $colorChocolate;
+      opacity: 0.5;
+      border-bottom: 1px solid $colorChocolate;
+
+      @include onTablet {
+        &:first-child {
+          width: 173px;
+        }
+      }
+    }
+  }
+
+  &__button {
+    width: 160px;
+    height: 45px;
+    margin-bottom: 35px;
+
+    &-zoom {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+
+      @include onDesktop {
+        display: none;
+      }
+
+    }
+
+    &-zoom--plus,
+    &-zoom--minus {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 30px;
+      line-height: 150%;
+      color: $colorChocolate;
+    }
+  }
+
+  &__box-mapa {
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__mapa {
+    width: 100%;
+    transform: scale(100%);
+  }
+}

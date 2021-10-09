@@ -1,0 +1,62 @@
+.feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 22px 15px;
+
+  @include onTablet {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 60px 70px;
+  }
+
+  @include onDesktop {
+    padding: 60px 120px;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 150%;
+    color: $colorChocolate;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &__input {
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorChocolate;
+    opacity: 0.5;
+    border: none;
+    border-bottom: 1px solid $colorChocolate;
+
+    &--message {
+      margin-top: 80px;
+      margin-bottom: 35px;
+      resize: none;
+    }
+  }
+
+  &__button {
+    margin: auto;
+  }
+
+  &__logo {
+    max-width: 510px;
+
+    @include onTablet {
+      margin: 0 20px;
+      width: 60%;
+    }
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+}
