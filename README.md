@@ -4,4 +4,4 @@
 [DEMO LINK](https://Bohdan-Kochetov.github.io/layout_creativeBakery/).
 
 Technology stack: 
-HTML, SASS, JS.
+HTML, SCSS, JS.
