@@ -4,3 +4,20 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin sizes($_width, $_height) {
+  width: $_width;
+  height: $_height;
+}
+
+@mixin flex($_df, $_jc, $_ai) {
+  display: $_df;
+  justify-content: $_jc;
+  align-items: $_ai;
+}
+
+@mixin onDesktop {
+  @media (min-width:1024px) {
+    @content;
+  }
+}

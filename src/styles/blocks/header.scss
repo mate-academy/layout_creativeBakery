@@ -1,0 +1,120 @@
+.header {
+  background-image: url(../images/bake-cream-puff-cup-1775045.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  @include onDesktop {
+    background-image: none;
+  }
+  background-size: cover;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    // padding: 66px 0 0;
+    height: 100vh;
+  }
+  &__left-side {
+    // width: 70%;
+    flex-basis: 70%;
+    padding: 33px 0 0;
+
+    @include onDesktop {
+      padding: 66px 0 0;
+      background-image: url(../images/bake-cream-puff-cup-1775045.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    
+  }
+
+  &__right-side {
+    display: none;
+    @include onDesktop {
+      flex-basis: 25%;
+      display: block;
+    }
+    background-color: $orange;
+    padding: 66px 46px 250px;
+    // margin-right: -60px;
+  }
+
+  &__right-top {
+    
+    margin-bottom: 120px;
+ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__slider {
+    margin: 0 auto;
+    
+    width: 100%;
+    @include flex(flex, space-between, center);
+    font-family: Rubik, sans-serif;
+    font-weight: normal;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &-number {
+      font-size: 40px;
+      line-height: 47px;
+      color: #f1cc9d;
+      padding-bottom: 14px;
+      &--active {
+        font-size: 176px;
+        line-height: 209px;
+        color: $brown;
+      }
+    }
+  }
+
+  &__arrows {
+    // padding: 40px 0;
+    margin-right: 10px;
+
+  }
+  &__arrows-up,
+  &__arrows-down {
+    width: 26px;
+    height: 15px;
+    color: $brown;
+  }
+  
+  &__arrows-up {
+    margin-bottom: 40px;
+  }
+  &__arrows-down {
+    margin-top: 40px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 80%;
+    color: $brown;
+    margin-bottom: 30px;
+    @include onDesktop {
+      font-size: 160px;
+      line-height: 177px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subtitle {
+    @extend %default-text;
+    margin-bottom: 20px;
+    @include onDesktop {
+      width: 450px;
+      font-size: 26px;
+      line-height: 150%;
+      margin-bottom: 25px;
+    }
+  }
+}
