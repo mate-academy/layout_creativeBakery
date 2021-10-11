@@ -25,7 +25,8 @@ function go(shift) {
   pos = (pos + count) % count;
   box.style.transform = `translateY(${-pos * 100}%)`;
 
+  [...numbers.children]
+    .forEach(item => item.classList.remove('header__number--active'));
+
   numbers.children[pos].classList.add('header__number--active');
-  numbers.children[pos - 1].classList.remove('header__number--active');
-  numbers.children[pos + 1].classList.remove('header__number--active');
 }
