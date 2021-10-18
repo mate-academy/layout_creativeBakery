@@ -4,3 +4,34 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin button-hover-active ($color) {
+  &:hover {
+    background-color: #fff;
+    border: 2px solid $color;
+  }
+
+  &:active {
+    background-color: $color;
+    border: none;
+    opacity: 0.8;
+  }
+}
+
+@mixin onLaptop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
