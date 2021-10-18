@@ -1,0 +1,132 @@
+.bakershops {
+  background-color: $color-cream;
+  padding: 40px 0 55px;
+
+  @include onMobile {
+    padding: 30px 0;
+  }
+
+  &__content {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 92px;
+
+    @include onMobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 170px 320px 1fr;
+    align-items: center;
+    column-gap: 32px;
+    margin-bottom: 70px;
+
+    @include onMobile {
+      width: 100%;
+      grid-template-columns: 1fr;
+      row-gap: 35px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__field {
+    height: 30px;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $color-chocolate;
+    opacity: 0.5;
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 150%;
+      color: $color-chocolate;
+    }
+  }
+
+  &__button {
+    justify-self: center;
+  }
+
+  &__field-wrapper {
+    position: relative;
+
+    &::before {
+      content: "/";
+      display: block;
+      width: 15px;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      z-index: 1;
+      color: transparent;
+      background-image: url(../images/shevrone-down.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+  }
+
+  &__map {
+    max-width: 1000px;
+
+    @include onMobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__scale {
+    display: none;
+
+    @include onMobile {
+      display: flex;
+      width: $scale-button-size * 3;
+      justify-content: space-between;
+    }
+  }
+
+  &__scale-item {
+    position: relative;
+    width: $scale-button-size;
+    height: $scale-button-size;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      position: absolute;
+      font-size: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--plus {
+      &:before {
+        content: "+";
+      }
+    }
+
+    &--minus {
+      &:before {
+        content: "-";
+      }
+    }
+  }
+}

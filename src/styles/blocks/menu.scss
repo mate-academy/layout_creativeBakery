@@ -1,0 +1,92 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 200px 0 60px 20px;
+  height: 100vh;
+  width: 40vw;
+  background-color: $color-croissont;
+
+  @media (max-height: 650px) {
+    padding: 100px 0 60px 20px;
+  }
+
+  @include onMobile {
+    width: 58vw;
+    padding: 87px 0 30px 22px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 65px;
+    right: 85px;
+    width: $action-button-size;
+    height: $action-button-size;
+    background-image: url(../images/cross.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onMobile {
+      top: 45px;
+      right: 15px;
+    }
+  }
+
+  &__list {
+    flex-direction: column;
+    gap: 30px;
+
+    @media (max-height: 550px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__link {
+    font-size: 24px;
+    line-height: 150%;
+    display: block;
+    transition: padding-left 0.3s;
+
+    &:hover {
+      color: $color-chocolate;
+      padding-left: 20px;
+    }
+
+    @include onMobile {
+      font-size: 16px;
+    }
+  }
+
+  &__actives {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+
+    @media (max-height: 400px) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__call {
+    position: relative;
+
+    &::before {
+      content: "+38 066 336 36 36";
+      display: block;
+      position: absolute;
+      width: max-content;
+      bottom: 60px;
+      left: 0;
+      color: $color-chocolate;
+    }
+  }
+}

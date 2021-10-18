@@ -1,0 +1,65 @@
+.aside {
+  --aside-height: 100vh;
+  background-color: $color-croissont;
+
+  @media (min-height: 1024px) {
+    --aside-height: 1024px;
+  }
+
+  @include onTablet {
+    display: none;
+  }
+
+  &__container {
+    max-width: $container-width * 0.33;
+    height: var(--aside-height);
+    padding: 65px 60px 250px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__top {
+    width: 100%;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__actives {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__lang {
+    margin-left: 20px;
+    border: none;
+    font-size: 16px;
+    color: $color-chocolate;
+    background-color: $color-croissont;
+    outline: none;
+
+    @include onTablet {
+      margin-left: 0;
+    }
+  }
+
+  &__call {
+    position: relative;
+
+    &::before {
+      content: "+38 066 336 36 36";
+      display: block;
+      position: absolute;
+      width: max-content;
+      right: 120px;
+      color: $color-chocolate;
+
+      @include onLaptop {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.page {
+  font-family: "Rubic", sans-serif;
+  font-weight: 400;
+  scroll-behavior: smooth;
+
+  &__section {
+    margin-bottom: 40px;
+  }
+
+  &__section-title {
+    font-weight: 400;
+    font-size: 120px;
+    line-height: 133px;
+    text-align: center;
+    color: $color-croissont;
+
+    @include onTablet {
+      font-size: 100px;
+      line-height: 110px;
+    }
+
+    @include onMobile {
+      font-size: 60px;
+      line-height: 80px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

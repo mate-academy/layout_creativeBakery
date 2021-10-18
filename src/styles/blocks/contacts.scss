@@ -1,0 +1,165 @@
+.contacts {
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    min-height: 500px;
+    grid-auto-rows: 500px;
+    margin-bottom: 135px;
+    padding: 0;
+    // background-color: $color-croissont;
+
+    @include onTablet {
+      grid-template-columns: 1fr;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__background {
+    background-color: $color-croissont;
+  }
+
+  &__title {
+    @include onTablet {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+      color: #fff;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__info {
+    padding: 40px 75px 130px 120px;
+    height: 100%;
+    // background-color: $color-croissont;
+
+    @include onTablet {
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__info-container {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 9px;
+  }
+
+  &__info-title {
+    margin-bottom: 24px;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 150%;
+
+    @include onMobile {
+      font-size: 20px;
+    }
+  }
+
+  &__info-item {
+    position: relative;
+    width: max-content;
+  }
+
+  &__map-item {
+    border: none;
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  &__icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: translateX(-50px);
+
+    @include onMobile {
+      transform: translateX(-30px);
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 100px;
+    justify-items: center;
+
+    @include onTablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__picture {
+    max-width: 490px;
+
+    @include onTablet {
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__main-img {
+    width: 100%;
+  }
+
+  &__form {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onTablet {
+      width: 500px;
+    }
+
+    @include onMobile {
+      width: 295px;
+    }
+  }
+
+  &__form-title {
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 150%;
+    margin-bottom: 27px;
+
+    @include onMobile {
+      font-size: 20px;
+    }
+  }
+
+  &__form-field {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid $color-chocolate;
+    opacity: 0.5;
+    outline: none;
+
+    &:last-of-type {
+      margin-bottom: 35px;
+    }
+
+    &--textarea {
+      padding-top: calc(20% - 20px);
+      resize: none;
+      height: 80px;
+
+      @include onTablet {
+        padding-top: 55px;
+      }
+    }
+  }
+}

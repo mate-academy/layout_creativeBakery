@@ -1,0 +1,113 @@
+.header {
+  --header-height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: var(--header-height);
+  background-size: cover;
+  background-image: url(../images/header-cookie.png);
+
+  @media (min-height: 1024px) {
+    --header-height: 1024px;
+  }
+
+  @include onTablet {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 425px) {
+    background-image: url(../images/mobile-header.png);
+  }
+
+  &__main {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__top {
+    margin-bottom: 40px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onLaptop {
+      width: 100%;
+    }
+
+    @include onMobile {
+      margin-bottom: 100px;
+    }
+
+    @media (max-height: 500px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__container {
+    max-width: $container-width * 0.67;
+    height: var(--header-height);
+    padding: 45px 0 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onTablet {
+      width: 100vw;
+      padding: 45px 60px 350px;
+    }
+
+    @include onMobile {
+      justify-content: start;
+      padding: 25px 16px 116px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 150px;
+    color: $color-chocolate;
+
+    @include onLaptop {
+      font-size: 120px;
+    }
+
+    @include onMobile {
+      font-size: 80px;
+      line-height: 80%;
+    }
+
+    @media (max-height: 450px) {
+      font-size: 50px;
+    }
+  }
+
+  &__slogan {
+    margin-bottom: 25px;
+    font-size: 26px;
+    line-height: 150%;
+    color: $color-chocolate;
+
+    @include onMobile {
+      font-size: 16px;
+    }
+
+    @media (max-height: 550px) {
+      display: none;
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    width: $action-button-size;
+    height: $action-button-size;
+    background-image: url(../images/burger.svg);
+    cursor: pointer;
+
+    @include hover (transform, scale(1.2));
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}

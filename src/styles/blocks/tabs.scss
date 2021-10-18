@@ -1,0 +1,70 @@
+.tabs {
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__nav {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    list-style: none;
+
+    @include onTablet {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__selector {
+    display: block;
+    padding-right: 10px;
+    font-size: 40px;
+    color: $color-cream;
+    text-align: right;
+    cursor: pointer;
+
+    @include hover (transform, scale(1.2));
+
+    @include onTablet {
+      padding: 0 20px;
+      font-size: 24px;
+      color: $color-croissont;
+    }
+
+    @include onMobile {
+      padding: 0 10px;
+      font-size: 16px;
+    }
+  }
+
+  &__selector--active {
+    padding-right: 0;
+    font-size: 160px;
+    line-height: 160px;
+    color: $color-chocolate;
+
+    &:hover {
+      transform: none;
+    }
+
+    @include onTablet {
+      padding-right: 20px;
+      font-size: 70px;
+    }
+
+    @include onMobile {
+      padding-right: 10px;
+      font-size: 40px;
+      line-height: 80px;
+    }
+  }
+}
