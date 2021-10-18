@@ -1,0 +1,157 @@
+.scroll {
+  display: none;
+
+  &__big-number {
+    margin-right: -5%;
+
+    font-size: 176px;
+    line-height: 120%;
+    color: $dark-brown;
+  }
+
+  &__small-number {
+    margin-bottom: 14px;
+
+    font-size: 40px;
+    line-height: 120%;
+    color: $light-brown;
+
+    cursor: pointer;
+
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &--cream {
+      color: $cream;
+    }
+
+    &--last {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__arrow {
+    margin-right: 5%;
+    width: 26px;
+    height: 15px;
+
+    transition: transform 300ms;
+
+    &--up {
+      margin-bottom: 9px;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+
+    &--down:hover {
+      transform: translateY(5px);
+    }
+
+    &--left:hover {
+      transform: translateX(-5px);
+    }
+
+    &--right:hover {
+      transform: translateX(5px);
+    }
+  }
+
+  @include fullHD {
+    &__big-number {
+      font-size: 194px;
+    }
+
+    &__small-number {
+      font-size: 44px;
+    }
+
+    &__arrow {
+      width: 30px;
+      height: 18px;
+    }
+  }
+
+  @include large {
+    &__big-number {
+      font-size: 246px;
+    }
+
+    &__small-number {
+      font-size: 56px;
+    }
+
+    &__arrow {
+      width: 38px;
+      height: 24px;
+    }
+  }
+
+  @include tablet {
+    display: flex;
+    align-items: baseline;
+
+    &__arrow {
+      height: 36px;
+      width: 18px;
+      align-self: center;
+
+      margin-right: 0;
+
+      &:first-child {
+        margin-right: 24px;
+      }
+    }
+
+    &__big-number {
+      font-size: 60px;
+      line-height: 120%;
+
+      margin-right: 30px;
+    }
+
+    &__small-number {
+      font-size: 24px;
+      line-height: 120%;
+
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
+  }
+
+  @include phone {
+    display: flex;
+    align-items: baseline;
+
+    &__arrow {
+      height: 24px;
+      width: 12px;
+      align-self: center;
+
+      margin-right: 0;
+
+      &:first-child {
+        margin-right: 15px;
+      }
+    }
+
+    &__big-number {
+      font-size: 40px;
+      line-height: 120%;
+
+      margin-right: 20px;
+    }
+
+    &__small-number {
+      font-size: 16px;
+      line-height: 120%;
+
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
+}

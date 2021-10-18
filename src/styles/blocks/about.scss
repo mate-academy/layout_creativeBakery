@@ -1,0 +1,116 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__title {
+    margin: 40px 0 20px;
+  }
+
+  &__content {
+    margin-bottom: 60px;
+
+    &--mobile {
+      display: none;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 80px;
+    width: 100%;
+
+    padding: 0 60px;
+    margin-bottom: 80px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__image {
+    object-fit: contain;
+    width: 200px;
+
+    margin-bottom: 20px;
+  }
+
+  &__number {
+    font-size: 60px;
+    line-height: 100%;
+  }
+
+  @include fullHD {
+    &__image {
+      width: 220px;
+    }
+
+    &__grid {
+      margin-bottom: 100px;
+      padding: 0 260px;
+    }
+  }
+
+  @include large {
+    &__title {
+      margin: 80px 0 40px;
+    }
+
+    &__content {
+      margin-bottom: 80px;
+    }
+
+    &__image {
+      width: 260px;
+      margin-bottom: 40px;
+    }
+
+    &__number {
+      font-size: 70px;
+      margin-bottom: 10px;
+    }
+
+    &__grid {
+      margin-bottom: 120px;
+      padding: 0 300px;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    &__grid {
+      column-gap: 30px;
+    }
+  }
+
+  @include laptop {
+    &__grid {
+      overflow: hidden;
+      display: grid;
+    }
+  }
+
+  @media (max-width: 720px) {
+    &__grid {
+      overflow: hidden;
+    }
+  }
+
+  @include phone {
+    &__content {
+      display: none;
+
+      &--mobile {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__grid {
+      margin-bottom: 40px;
+    }
+  }
+}

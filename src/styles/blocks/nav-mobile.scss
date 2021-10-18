@@ -1,0 +1,64 @@
+.nav-mobile {
+  display: flex;
+  flex-direction: column;
+
+  &__close-image {
+    transform: translateX(-170%);
+    display: none;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    transition: color 300ms;
+
+    &:hover {
+      color: $cream;
+    }
+  }
+
+  @include tablet {
+    &__link {
+      font-size: 20px;
+    }
+
+    &__close-image {
+      display: block;
+
+      height: 30px;
+      width: 30px;
+
+      margin: 30px 0 30px 100%;
+    }
+  }
+
+  @include phone {
+    &__link {
+      font-size: 16px;
+    }
+
+    &__close-image {
+      display: block;
+
+      height: 20px;
+      width: 20px;
+
+      margin: 20px 0 30px 100%;
+    }
+  }
+
+  @include phone-landscape {
+    margin-bottom: 20px;
+
+    &__item {
+      display: inline;
+      margin-right: 20px;
+    }
+  }
+}

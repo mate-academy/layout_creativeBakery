@@ -1,0 +1,220 @@
+.bakershops {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: $cream;
+
+  &__title {
+    margin: 40px 0 80px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 70px;
+  }
+
+  &__button {
+    font-family: Rubik, sans-serif;
+    font-size: 16px;
+    color: $dark-brown;
+  }
+
+  &__select {
+    height: min-content;
+
+    background-color: $cream;
+    border-color: transparent;
+    border-bottom: solid 1px $dark-brown;
+    opacity: 0.5;
+
+    &--city {
+      width: 170px;
+    }
+
+    &--adress {
+      width: 320px;
+    }
+  }
+
+  &__image {
+    margin-bottom: 60px;
+    object-fit: contain;
+  }
+
+  &__size-changer {
+    display: none;
+    gap: 40px;
+
+    @include phone {
+      display: flex;
+    }
+  }
+
+  &__size-value {
+    margin-bottom: 30px;
+
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+
+    font-size: 30px;
+    color: $dark-brown;
+    background-color: $milk;
+    text-align: center;
+    border-radius: 50%;
+
+    transition: color 300ms;
+
+    &:hover {
+      color: $light-brown;
+    }
+  }
+
+  @include fullHD {
+    &__title {
+      margin: 60px 0 80px;
+    }
+
+    &__button {
+      font-size: 22px;
+    }
+
+    &__select {
+      font-size: 22px;
+
+      &--city {
+        width: 220px;
+      }
+
+      &--adress {
+        width: 400px;
+      }
+    }
+
+    &__actions {
+      margin-bottom: 90px;
+      gap: 40px;
+    }
+
+    &__image {
+      width: 1140px;
+    }
+  }
+
+  @include large {
+    &__title {
+      margin: 80px 0 100px;
+    }
+
+    &__button {
+      font-size: 28px;
+    }
+
+    &__select {
+      font-size: 28px;
+
+      &--city {
+        width: 265px;
+      }
+
+      &--adress {
+        width: 500px;
+      }
+    }
+
+    &__actions {
+      margin-bottom: 90px;
+      gap: 60px;
+    }
+
+    &__image {
+      width: 1440px;
+    }
+  }
+
+  @include laptop {
+    &__image {
+      width: 900px;
+    }
+  }
+
+  @include tablet {
+    &__title {
+      margin: 40px 0 50px;
+    }
+
+    &__button {
+      font-size: 20px;
+    }
+
+    &__select {
+      font-size: 20px;
+
+      &--city {
+        width: 140px;
+      }
+
+      &--adress {
+        width: 260px;
+      }
+    }
+
+    &__actions {
+      margin-bottom: 50px;
+      gap: 20px;
+    }
+
+    &__image {
+      width: 768px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__actions {
+      flex-direction: column;
+    }
+
+    &__image {
+      width: 500px;
+    }
+
+    &__select {
+      width: 400px;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    &__image {
+      width: 400px;
+    }
+  }
+
+  @include phone {
+    padding: 0 16px;
+    &__title {
+      margin: 40px 0 30px;
+    }
+
+    &__actions {
+      width: 100%;
+    }
+
+    &__select {
+      width: 100%;
+    }
+
+    &__image {
+      width: 300px;
+    }
+  }
+
+  @media (max-width: 280px) {
+    &__image {
+      width: 276px;
+    }
+  }
+}

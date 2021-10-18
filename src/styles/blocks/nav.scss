@@ -1,0 +1,154 @@
+.nav {
+  display: flex;
+  align-items: baseline;
+
+  &__list {
+    list-style: none;
+    transform: translateY(-10px);
+  }
+
+  &__item {
+    display: inline-block;
+    margin-right: 34px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    transition: color 300ms;
+
+    &:hover {
+      color: $light-brown;
+    }
+  }
+
+  &__logo {
+    margin-right: 260px;
+  }
+
+  &__menu-image {
+    object-fit: contain;
+    display: none;
+  }
+
+  &__messengers {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__messenger-image {
+    object-fit: contain;
+
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  @include fullHD {
+    &__link {
+      font-size: 26px;
+    }
+
+    &__list {
+      transform: translateY(-18px);
+    }
+  }
+
+  @include large {
+    &__link {
+      font-size: 36px;
+    }
+
+    &__list {
+      transform: translateY(-22px);
+    }
+  }
+
+  @include laptop {
+    &__logo {
+      margin-right: 140px;
+    }
+
+    &__item {
+      margin-right: 20px;
+    }
+  }
+
+  @media (max-width: 1064px) {
+    &__logo {
+      margin-right: 100px;
+    }
+  }
+
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+
+    &__list {
+      display: none;
+    }
+
+    &__menu-image {
+      display: inline-block;
+      height: 26px;
+      width: 36px;
+    }
+
+    &__menu-link {
+      transform: translateY(-6px);
+    }
+
+    &__messenger-image {
+      height: 26px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    &__messengers {
+      gap: 15px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__messengers {
+      width: 100%;
+      justify-content: space-around;
+    }
+
+    &__messenger-image {
+      height: 30px;
+    }
+  }
+
+  @include phone {
+    &__list {
+      display: none;
+    }
+
+    &__menu-image {
+      display: inline-block;
+      height: 18px;
+      width: 25px;
+    }
+
+    &__menu-link {
+      transform: translateY(-6px);
+    }
+
+    &__messengers {
+      justify-content: space-between;
+    }
+  }
+
+  @include phone-landscape {
+    margin-bottom: 8px;
+
+    &__menu-image {
+      height: 26px;
+    }
+  }
+}
