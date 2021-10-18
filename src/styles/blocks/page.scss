@@ -1,0 +1,44 @@
+.page {
+  margin: 0 auto;
+  max-width: 1440px;
+  min-width: 320px;
+  &__menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    max-width: 200px;
+    transform: translateX(100%);
+    background-color: $croissan;
+    border-left: 3px solid $milk;
+    z-index: 5;
+    @media (min-width: 1024px) {
+      position: absolute;
+      max-width: 1440px;
+      transform: translateX(0);
+      background: none;
+      border-left: none;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 5;
+      margin: 0 auto;
+    }
+    &::before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 100px;
+      color: $choko;
+    }
+  }
+  &__list {
+    margin-top: 85px;
+    gap: 30px;
+    @media (min-width: 1024px) {
+      margin-top: 0;
+    }
+  }
+  
+}
