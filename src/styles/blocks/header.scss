@@ -1,0 +1,202 @@
+.header {
+  height: 100vh;
+  box-sizing: border-box;
+  background: url(../images/bake-cream-puff-cup-mobile.png);
+  background-size: cover;
+
+  @include tablet {
+    background: url(../images/bake-cream-puff-cup.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @include notebook {
+    background-position-x: -50px;
+  }
+
+  @include Design {
+    background-position-x: -250px;
+  }
+
+  &__right-side {
+    display: none;
+
+    @include Design {
+      padding-left: 47px;
+    }
+
+    @include notebook {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 92px;
+      background-color: $light-brown;
+      padding-top: 35px;
+
+    }
+  }
+
+  &__right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 92px;
+
+    @include Design {
+      align-self: flex-start;
+    }
+  }
+
+  &__left-side {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include Design {
+      width: 100%;
+      max-width: 1000px;
+      justify-self: center;
+    }
+
+    @include notebook {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 35px 0 0 60px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 15px 16px;
+
+    @include tablet {
+      padding: 35px 45px;
+    }
+
+    @include notebook {
+      display: grid;
+      grid-template-columns: 8fr 4fr;
+      padding: 0;
+    }
+
+    @include Design {
+      justify-content: center;
+
+    }
+  }
+
+  &__top-actions {
+    display: grid;
+    grid-template-columns: 84px 25px;
+    justify-content: space-between;
+    margin-bottom: 97px;
+
+    @include tablet {
+      margin-bottom: 50px;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+    }
+
+    @include notebook {
+      margin-bottom: 20px;
+      grid-template-columns: 1fr 3fr;
+    }
+  }
+
+  &__opener-menu {
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      justify-self: flex-end;
+    }
+
+    @include notebook {
+      display: none;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 100px;
+    line-height: 80%;
+    margin: 0;
+    margin-bottom: 29px;
+
+    @include tablet {
+      font-size: 160px;
+      line-height: 177px;
+    }
+  }
+
+  &__paragraph {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 25px;
+
+    @include tablet {
+      font-size: 26px;
+      line-height: 39px;
+    }
+  }
+
+  &__button {
+    width: 160px;
+    margin-bottom: 40px;
+  }
+
+  &__bottom-slider {
+    align-self: center;
+    margin-bottom: 28px;
+  }
+
+  &__nav {
+    display: none;
+
+    @include notebook {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__secondary-nav {
+    display: none;
+
+    @include notebook {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      height: 61px;
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 24px;
+    color: $dark-brown;
+    text-decoration: none;
+    
+    &--call-back {
+      background-color: #f1cc9d;
+      width: 100px;
+      height: 30px;
+
+    }
+  }
+
+  &__language {
+    border-color: transparent;
+    background-color: $light-brown;
+    font-size: 16px;
+    height: fit-content;
+  }
+}
