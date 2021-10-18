@@ -1,0 +1,140 @@
+.number-list {
+  position: relative;
+  bottom: 0;
+  left: 25%;
+  transform: translateX(-75%);
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+
+  @include onTablet {
+    left: 20%;
+    font-size: 32px;
+  }
+
+  @include onDesktop {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 160px;
+    left: 140%;
+    flex-direction: column;
+    z-index: 1;
+    align-items: flex-end;
+  }
+
+  &__nav {
+    height: 100%;
+    width: 16px;
+    padding: 0;
+
+    @include onDesktop {
+      margin-right: 30px;
+    }
+
+    &--before {
+      width: 6px;
+      height: 16px;
+      background-image: url(/images/arrow-left.svg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include onTablet {
+        width: 16px;
+        height: 24px;
+      }
+      
+      @include onDesktop {
+        width: 26px;
+        height: 16px;
+        background-image: url(/images/arrow-up.svg);
+        color: $cream;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &--after {
+      width: 6px;
+      height: 16px;
+      background-image: url(/images/arrow-right.svg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include onTablet {
+        width: 16px;
+        height: 24px;
+      }
+
+      @include onDesktop {
+        background-image: url(/images/arrow-down.svg);
+        width: 26px;
+        height: 16px;
+      }
+    }
+  }
+
+  &__item {
+    padding: 16px;
+    font-size: 16px;
+    line-height: 47px;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    @include onDesktop {
+      font-size: 40px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $croissant;
+    @include onDesktop {
+      color: $cream;
+    }
+
+    &--active {
+      font-size: 40px;
+      line-height: 100%;
+      color: $chocolate;
+      outline: none;
+      @include onTablet {
+        font-size: 60px;
+      }
+
+      @include onDesktop {
+        font-size: 176px;
+      }
+    }
+
+    &:target {
+      font-size: 40px;
+      line-height: 208px;
+      color: $chocolate;
+      outline: none;
+
+      @include onDesktop {
+        font-size: 176px;
+      }
+    }
+
+    &:focus {
+      font-size: 40px;
+      line-height: 47px;
+      color: $chocolate;
+      outline: none;
+      
+
+      @include onDesktop {
+        font-size: 176px;
+        line-height: 209px;
+      }
+    }
+  }
+}

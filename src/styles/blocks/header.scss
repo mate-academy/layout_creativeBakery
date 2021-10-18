@@ -1,0 +1,120 @@
+.header {
+  background-image: url(/images/bakery-head.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100vh;
+
+  @media (min-height: 1024px) {
+    height: 1024px;
+  }
+
+  @include onDesktop {
+    width: 67%;
+    background-image: url(/images/bakery-head-big.png);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    padding-left: auto;
+
+    
+
+    @media (min-height: 680px) {
+      gap: 80px;
+    }
+
+    @media (min-height: 1024px) {
+      gap: 160px;
+    }
+
+    @include onTablet {
+      padding: 32px;
+    }
+    @include onDesktop {
+      padding: 32px 64px;
+      justify-content: space-between;
+    }
+  }
+
+  &__info {
+    margin: auto;
+  }
+
+  &__title {
+    margin: 96px 0 28px;
+    color: $chocolate;
+    font-size: 100px;
+    line-height: 100%;
+
+    @media (max-height: 580px) {
+      margin: 20px 0;
+    }
+
+    @include onTablet {
+      font-size: 120px;
+    }
+
+    @include onDesktop {
+      font-size: 160px;
+      line-height: 177px;
+      margin: 20px 0;
+    }
+  }
+
+  &__text {
+    margin-bottom: 24px;
+    max-width: 420px;
+    font-size: 16px;
+    line-height: 150%;
+    color: $chocolate;
+
+    @media (max-height: 580px) {
+      display: none;
+    }
+
+    @include onTablet {
+      font-size: 20px;
+    }
+
+    @include onDesktop {
+      font-size: 26px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__menu {
+    display: none;
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__top-action {
+    display: none;
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__list {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      margin: auto;
+    }
+  }
+
+  &__number-list {
+    margin: 0 auto;
+  }
+}

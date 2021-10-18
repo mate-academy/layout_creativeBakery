@@ -1,0 +1,51 @@
+.section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  &__about {
+    margin: 0 auto;
+  }
+
+  &__bakery {
+    max-width: 1200px;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    font-size: 60px;
+    line-height: 67px;
+    font-weight: normal;
+    text-align: center;
+
+    @include onDesktop {
+      font-size: 120px;
+      line-height: 133px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &--left {
+      @include onDesktop {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+
+    &--right {
+      @include onDesktop {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+.contacts {
+  background-color: $croissant;
+
+  @include  onTablet {
+    background-color: $milk;
+  }
+
+  @include  onDesktop {
+    background-color: $milk;
+  }
+
+  &__title {
+    color: $milk;
+    margin: 40px 0 0;
+    @include onTablet {
+      color: $croissant;
+    }
+
+    @include onDesktop {
+      color: $croissant;
+    }
+  }
+
+  &__grid-container {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6 1fr);
+      grid-template-rows: auto;
+      grid-template-areas: "c m m m" "p p f f";
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(6 1fr);
+      grid-template-rows: auto;
+      grid-template-areas: "c m m m" " p p f f ";
+    }
+  }
+
+  &__content {
+    padding: 0 16px 40px;
+    grid-area: c;
+    background-color: $croissant;
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 150%;
+
+    @include onDesktop {
+      font-size: 26px;
+    }
+  }
+
+  &__list {
+    margin: 0 0 8px;
+    list-style: none;
+    background-position: 6px 8px;
+
+    &--adress {
+      background-image: url(/images/place.svg);
+      background-repeat: no-repeat;
+    }
+
+    &--phone {
+      background-image: url(/images/phone.svg);
+      background-repeat: no-repeat;
+    }
+
+    &--email {
+      background-image: url(/images/clossed-mail.svg);
+      background-repeat: no-repeat;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: bold;
+    color: $chocolate;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-weight: normal;
+    text-decoration: none;
+    color: $chocolate;
+
+    &:hover {
+      transition: 500ms;
+      font-weight: normal;
+      color: $milk;
+    }
+  }
+
+  &__map {
+    margin: 0;
+    width: 100%;
+    grid-area: m;
+
+  }
+
+  &__google-map {
+    height: 518px;
+    width: 100%;
+
+    @include onTablet {
+      height: 100%;
+    }
+
+    @include onDesktop {
+      height: 100%;
+    }
+    
+    border: transparent;
+  }
+
+  &__image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: p;
+    width: 100%;
+    height: 100%;
+    background-color: $milk;
+  }
+
+  &__image {
+    margin-bottom: 50px;
+    height: 200px;
+
+    @include onDesktop {
+      height: 400px;
+    }
+  }
+
+  &__feedback {
+
+    background-color: $milk;
+    grid-area: f;
+  }
+
+}

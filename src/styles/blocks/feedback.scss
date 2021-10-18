@@ -1,0 +1,63 @@
+.feedback {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px;
+  text-align: center;
+  width: 100%;
+
+  &__form {
+    box-sizing: border-box;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    width: 280px;
+
+    @media  (min-width: 480px) and (max-width: 720px) {
+      min-width: 380px;
+      max-width: 460px;
+    }
+
+    @include onTablet {
+      width: 340px;
+    }
+
+    @include onDesktop {
+      width: 380px;
+    }
+  }
+
+  &__input {
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+    border: transparent;
+    border-bottom: 1px solid $chocolate;
+    outline: none;
+    border-color: $chocolate;
+    color: $chocolate;
+    font-size: 16px;
+    line-height: 150%;
+    vertical-align: bottom;
+
+    &--massege {
+      display: inline-block;
+      height: 30px;
+      font-family: inherit;
+      resize: none;
+      padding-top: calc(30% - 10px);
+
+    }
+  }
+
+  &__button {
+    margin: 30px auto 50px;
+  }
+}
