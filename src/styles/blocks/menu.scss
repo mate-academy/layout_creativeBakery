@@ -1,0 +1,80 @@
+.menu {
+  display: block;
+  flex-basis: 33.33%;
+  background-color: $colorLightBrown;
+
+  @include onMobile {
+    display: none;
+  }
+
+  &__contact-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0;
+    margin-bottom: 140px;
+
+    @include onMobile {
+      flex-direction: column;
+      margin-bottom: 30px;
+      gap: 30px 0;
+    }
+  }
+
+  &__language {
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    color: $colorDarkBrown;
+    border: none;
+    outline: none;
+    background-color: $colorLightBrown;
+  }
+
+  &__scroll-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &--mobile {
+      display: none;
+
+      @include onMobile {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  &__number {
+    display: inline-block;
+    font-size: 40px;
+    line-height: 47px;
+    color: $colorCream;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    @include onMobile {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &--active {
+      font-size: 178px;
+      line-height: 210px;
+      color: $colorDarkBrown;
+
+      @include onMobile {
+        font-size: 40px;
+        line-height: 47px;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
