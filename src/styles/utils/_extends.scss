@@ -1,4 +1,113 @@
 %h1 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Cookie", sans-serif;
+  font-size: 100px;
+  line-height: 80px;
   font-weight: 400;
+  color: $chocolate-color;
+
+  @include onDesktop {
+    font-size: $h1-size;
+    line-height: $h1-line-height;
+  }
+}
+
+%h2 {
+  font-family: "Cookie", sans-serif;
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 67px;
+  text-align: center;
+  color: $croissant-color;
+
+  @include onDesktop {
+    font-size: $h2-size;
+    line-height: $h2-line-height;
+  }
+}
+
+%h3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 35px;
+  line-height: 41px;
+  font-weight: normal;
+  color: $croissant-color;
+
+  @include onDesktop {
+    font-size: $h3-size;
+    line-height: $h3-line-height;
+  }
+}
+
+%h4 {
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 30px;
+  color: $chocolate-color;
+
+  @include onDesktop {
+    font-size: $h4-size;
+    line-height: $h4-line-height;
+  }
+}
+
+%primary-text {
+  color: $chocolate-color;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+%primary-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 40px;
+  @extend %primary-text;
+  
+  border: 2px solid $croissant-color;
+  border-radius: 40px;
+  background-color: $croissant-color;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $milk-color;
+  }
+
+  &:focus {
+    opacity: 0.8;
+    background-color: $croissant-color;
+  }
+
+  &:disabled {
+    color: #828282;
+    background-color: #e0e0e0;
+  }
+}
+
+%secondary-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+
+  border: 2px solid $cream-color;
+  border-radius: 40px;
+  background-color: $cream-color;
+  @extend %primary-text;
+
+  &:hover {
+    background-color: $milk-color;
+  }
+
+  &:focus {
+    opacity: 0.8;
+    background-color: $cream-color;
+  }
+
+  &:disabled {
+    color: #828282;
+    background-color: #e0e0e0;
+  }
 }

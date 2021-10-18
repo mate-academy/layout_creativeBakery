@@ -1,0 +1,99 @@
+
+.menu {
+  @include onDesktop {
+    display: none;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 3px;
+    height: 100vh;
+    content: "";
+
+    background-color: $milk-color;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+
+  @media (max-height: 567px) {
+    display: flex;
+    overflow: scroll;
+  }
+
+  height: 100vh;
+  width: 62%;
+  padding: 26px 16px 0 20px;
+
+  background-color: $croissant-color;
+
+  &__close {
+    align-self: flex-end;
+    height: 24px;
+    width: 24px;
+    margin-bottom: 30px;
+
+    background-image: url(../images/close.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media (max-height: 567px) {
+      position: absolute;
+    }
+  }
+
+  &__item {
+    margin-bottom: 30px;
+    
+    &:last-child {
+      margin-bottom: 146px;
+
+      @media (max-height: 567px) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__link {
+    @extend %primary-text;
+  }
+
+  &__call-link {
+    margin-bottom: 30px;
+  }
+
+  &__call-button {
+    margin-bottom: 30px;
+  }
+
+  &__lang {
+    width: max-content;
+    font-size: inherit;
+    font-family: inherit;
+    color: $chocolate-color;
+    background-color: transparent;
+    border-color: transparent;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      border-radius: 10px;
+      background-color: $croissant-color;
+      transition: background-color 400ms;
+    }
+
+    &:focus {
+      border-color: $croissant-color;
+    }
+  }
+
+  &__option {
+    background-color: $milk-color;
+    color: $croissant-color;
+  }
+}

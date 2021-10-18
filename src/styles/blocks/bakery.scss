@@ -1,0 +1,142 @@
+.bakery {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @extend %h2;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 27px;
+    }
+  }
+
+  &__product {
+    margin-bottom: 40px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 135px;
+
+      &:nth-of-type(2n) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__subtitle {
+    margin-bottom: 15px;
+    
+    @include onDesktop {
+      margin-bottom: 43px;
+    }
+
+    @extend %h3;
+  }
+
+  &__sub-subtitle {
+    margin-bottom: 12px;
+
+    @extend %h4;
+  }
+
+  &__text {
+    color: $chocolate-color;
+    margin-bottom: 19px;
+
+    @include onDesktop {
+      margin-bottom: 32px;
+    }
+
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 65px;
+    height: 65px;
+
+    color: $chocolate-color;
+
+    border-radius: 50%;
+    background-color: $cream-color;
+
+    &-value {
+      @include onDesktop {
+        &::after {
+          content: " /";
+        }
+      }
+
+      font-weight: bold;
+    }
+
+    &-info {
+      font-weight: bold;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+  
+      width: 110px;
+      height: 110px;
+    }
+  }
+
+  &__picture {
+    margin-bottom: 45px;
+    transition-duration: 1s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+
+      transform-origin: 200px 300px;
+      transition: transform 3s;
+      &:hover {
+        transform: rotate(360deg);
+      }
+      
+    }
+
+    max-width: 700px;
+    max-height: 500px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+
+    @include onDesktop {
+      transform-origin: 200px 200px;
+      transition: transform 3s;
+  
+      &:hover {
+        transform: rotate(-360deg);
+      }
+    }
+
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}

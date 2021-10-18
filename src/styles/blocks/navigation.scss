@@ -1,0 +1,55 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  @include onDesktop {
+    align-items: center;
+  }
+  
+
+  &__list {
+    display: none;
+  
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
+      padding-right: 215px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 34px;
+    }
+  }
+
+  &__link {
+    @extend %primary-text;
+    
+    &:hover {
+      color: $croissant-color;
+    }
+  }
+
+  &__call-back {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 122px;
+    }
+  }
+
+  &__call-link {
+    @extend %primary-text;
+  }
+
+  &__side-item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}

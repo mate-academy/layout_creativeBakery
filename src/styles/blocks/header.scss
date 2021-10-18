@@ -1,0 +1,96 @@
+.header {
+  padding: 15px $padding;
+  height: 100vh;
+
+  @media (max-height: 567px) {
+    height: 100%;
+  }
+
+  background-color: $croissant-color;
+  background-image: url(../images/bake-cream-puff-cup-1775045.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: -200px;
+
+  @include onDesktop {
+    background-position-x: -300px;
+    height: 100vh;
+    padding: 0;
+  }
+
+  &__left {
+    @include onDesktop {
+      padding: 34px 0 0 59px;
+      flex-basis: 70%;
+    }
+  }
+
+  &__right {
+    @include onDesktop {
+      flex-basis: 30%;
+      background-color: $croissant-color;
+      padding: 58px 0 0 47px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 97px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__menu-opener {
+    @include onDesktop {
+      display: none;
+    }
+
+    display: block;
+    height: 18px;
+    width: 24px;
+    margin-top: 10px;
+
+    background-image: url(../images/burger.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    margin-bottom: 29px;
+
+    @include onDesktop {
+      margin-bottom: 20px;
+      br {
+        display: none;
+      }
+    }
+
+    @extend %h1;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    @extend %h4;
+
+    margin-bottom: 19px;
+
+    @include onDesktop {
+      font-size: 26px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__sliders {
+    margin-top: auto;
+  }
+}

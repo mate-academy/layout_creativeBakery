@@ -1,0 +1,74 @@
+.about {
+  &__title {
+    @extend %h2;
+
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__info {
+    display: block;
+    margin: 0 auto 20px;
+
+    max-width: 480px;
+    text-align: center;
+
+    @include onDesktop {
+      margin-bottom: 59px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    overflow: scroll;
+
+    @include onDesktop {
+      overflow: unset;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover {
+      @include hover(transform, scale(1.2));
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 27px;
+
+      @include onDesktop {
+        margin-right: 4vw;
+      }
+    }
+  }
+
+  &__image {
+    margin-bottom: 20px;
+
+    &:hover {
+      @include hover(transform, rotate(1turn));
+    }
+
+    @include onDesktop {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__number {
+    margin-bottom: 7px;
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 71px;
+    color: $chocolate-color;
+  }
+
+  &__text {
+    color: $chocolate-color;
+  }
+}
