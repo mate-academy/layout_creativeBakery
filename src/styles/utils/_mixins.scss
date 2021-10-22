@@ -1,6 +1,17 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin font ($fontweight, $fontsize, $lineheight, $fontcolor) {
+  font-weight: $fontweight;
+  font-size: $fontsize;
+  line-height: $lineheight;
+  color: $fontcolor;
+}
+
+@mixin ipad {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
   }
 }
