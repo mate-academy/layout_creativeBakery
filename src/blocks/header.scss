@@ -1,0 +1,190 @@
+.header {
+  z-index: 2;
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: 1fr 425px;
+  }
+
+  &__wrapper {
+    background: url(../images/header.jpg) center / cover no-repeat;
+  }
+
+  &__left-wrap {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: 80%;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    background: $lightBrown;
+
+    @media (min-width: 3100px) {
+      left: 70%;
+    }
+    @media (max-width: 1920px) {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+
+    padding: 33px 16px;
+
+    @include onDesktop {
+      padding: 66px 60px 33px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 50px;
+
+    @include onSmallScreen319 {
+      margin-bottom: 20px;
+    }
+
+    @include onLandscape {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      align-items: center;
+      margin-bottom: 50px;
+      max-width: 740px;
+    }
+  }
+
+  &__list {
+    display: none;
+    
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__bottom {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+    @include onDesktop {
+      justify-content: flex-start;
+      gap: 40px;
+    }
+  }
+
+  &__slider {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 20px);
+    gap: 20px;
+    justify-content: center;
+    justify-items: center;
+    align-items: baseline;
+
+    color: $lightBrown;
+
+    @include onDesktop {
+      font-size: 40px;
+      line-height: 47px;
+      color: $colorCream;
+
+      grid-template-columns: repeat(1, 47px);
+      align-content: center;
+      justify-items: end;
+
+      & :nth-child(2) {
+        font-size: 176px;
+        line-height: 170px;
+        color: $darkBrawn;
+      }
+    }
+  }
+
+  &__sidebar {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 66px 60px 0 40px;
+
+      background-color: $lightBrown;
+      z-index: 2;
+    }
+  }
+
+  &__logo {
+    display: block;
+    position: relative;
+
+    @include onDesktop {
+      bottom: 30px;
+    }
+  }
+
+  &__info {
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+
+  &__burger {
+    display: block;
+    width: 25px;
+    height: 18px;
+    background: url(../images/burger.svg) center / contain no-repeat;
+
+    @include onDesktop {
+      & {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    @include onLandscape {
+      font-size: 100px;
+      line-height: 50px;
+    }
+  }
+
+  &__slogan {
+    @extend %fontText;
+
+    @include onDesktop {
+      font-size: 24px;
+    }
+  }
+
+  &__btn {
+    display: flex;
+  }
+
+  &__num-pages {
+    margin: 0 70px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    & :nth-child(2) {
+      font-size: 40px;
+      color: $darkBrawn;
+    }
+  }
+}

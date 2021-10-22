@@ -1,0 +1,135 @@
+.bakery {
+  padding: 40px 10px;
+  max-width: 1920px;
+
+  @include onTablet {
+    padding: 40px 30px;
+  }
+
+  @include onDesktop {
+    padding: 40px 60px 80px;
+  }
+
+  &__title {
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 27px;
+    }
+  }
+
+  &__subtitle {
+    @include onLargDesktop {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 48px;
+
+    @include onTablet {
+      gap: 50px;
+    }
+
+    @include onDesktop {
+      gap: 70px;
+    }
+
+    @include onLargDesktop {
+      gap: 130px;
+      margin-bottom: 135px;
+    }
+  }
+
+  &__products {
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+
+      &:nth-child(2n) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    @include onLargDesktop {
+      gap: 107px;
+    }
+
+    @media (min-width: 2000px) {
+      justify-content: space-evenly;
+    }
+  }
+
+  &__cookies {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 15px;
+    max-width: 302px;
+    padding: 0 6px;
+  }
+
+  &__price {
+    @include dispFlxCentr;
+    flex-direction: column;
+    width: 65px;
+    height: 65px;
+    position: relative;
+    top: 10px;
+
+    font-weight: bold;
+
+    border-radius: 50%;
+    background-color: $colorCream;
+
+    & :first-child::before {
+      content: "$ ";
+    }
+
+    @include onDesktop {
+      width: 110px;
+      height: 110px;
+      flex-direction: row;
+
+      & :first-child::after {
+        content: "/";
+        padding: 0 4px;
+      }
+    }
+  }
+
+  &__slide-img {
+    max-width: 1600px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 15px 1fr 15px;
+    justify-items: center;
+    gap: 2px;
+
+    @include onLargDesktop {
+      height: 514px;
+    }
+  }
+
+  &__img {
+    display: block;
+    min-height: 200px;
+    max-height: 514px;
+    width: 100%;
+
+    @each $index, $img in $images {
+      &--#{$index} {
+        background: url(#{$img}) center / contain no-repeat;
+      }
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+}

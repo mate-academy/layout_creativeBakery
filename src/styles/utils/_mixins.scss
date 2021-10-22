@@ -4,3 +4,45 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin dispFlxCentr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin onSmallScreen319 {
+  @media (max-height: 319px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onLandscape {
+  @media (orientation: landscape) and (min-height: 320px)
+    and (max-height: 700px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onLargDesktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}

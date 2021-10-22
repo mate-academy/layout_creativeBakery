@@ -1,0 +1,130 @@
+.bakershops {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  padding: 40px 10px 30px;
+
+  background: $colorCream;
+
+  @include onLargDesktop {
+    gap: 70px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    padding: 0 6px;
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__city {
+    @extend %select-form;
+    @include onDesktop {
+      width: 173px;
+    }
+  }
+
+  &__adress {
+    @extend %select-form;
+    @include onDesktop {
+      width: 323px;
+    }
+  }
+
+  &__btn {
+    align-self: center;
+  }
+
+  &__map {
+    max-width: 1020px;
+    max-height: 688px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    & :nth-child(n + 2) {
+      position: absolute;
+      padding: 0;
+    }
+  }
+
+  @each $number, $city, $size, $top, $left in $cityMap {
+    &__#{$city} {
+      @include square($size);
+      top: $top;
+      left: $left;
+
+      &::before {
+        content: "#{$number}";
+        position: absolute;
+        right: 70%;
+        @include dispFlxCentr;
+        @include square(8.16px);
+        background: #d21925;
+        color: #fff;
+        font-size: 6px;
+        border-radius: 50%;
+      }
+
+      &::after {
+        content: "#{$city}";
+        display: block;
+        position: absolute;
+        top: 72%;
+
+        font-family: Rubik, sans-serif;
+        font-size: 8px;
+        color: $darkBrawn;
+      }
+
+      @include onLandscape {
+        transform: scale(1.5);
+      }
+
+      @include onTablet {
+        transform: scale(1.5);
+      }
+
+      @include onDesktop {
+        transform: scale(2);
+      }
+
+      @include onLargDesktop {
+        transform: scale(2.5);
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__scale {
+    display: flex;
+    gap: 40px;
+
+    & :nth-child(n) {
+      @include dispFlxCentr;
+      @include square(40px);
+
+      background-color: #fff;
+      border-radius: 50%;
+
+      font-size: 30px;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}
