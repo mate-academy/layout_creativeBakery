@@ -49,15 +49,23 @@
 
   &__string {
     @include text;
-    opacity: 50%;
+    opacity: 0.5;
     border: none;
     border-bottom: 1px solid $chocolate;
     outline: none;
     padding-top: 22px;
 
     &--message {
-      padding-top: 90px;
+      position: relative;
       margin-bottom: 36px;
+
+      &::placeholder {
+        content: "Message*";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+      }
     }
   }
 
