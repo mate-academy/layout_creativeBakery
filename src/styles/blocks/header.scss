@@ -1,0 +1,111 @@
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  height: 120px;
+  width: 85%;
+
+  @include mobile {
+    right: 0;
+    transform: translateY(-100%);
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    width: 60%;
+    background-color: $croissant;
+    padding: 15px;
+    transition: transform 0.3s;
+    scroll-behavior: smooth;
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__call {
+    display: none;
+    background-image: url(../images/call.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include link;
+    height: 25px;
+    width: 25px;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      display: block;
+
+      &::before {
+        position: absolute;
+        bottom: 0;
+        right: auto;
+        display: block;
+        content: "+38 066 336 36 36";
+        width: max-content;
+        color: $chocolate;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &:hover::before {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__tel {
+    @include link;
+    @include text;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      display: none;
+    }
+  }
+
+  &__call-back {
+    @include link;
+    width: 100px;
+    height: 30px;
+    background-color: $cream;
+
+    &:hover {
+      border-color: $cream;
+    }
+  }
+
+  &__lang {
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  &__close {
+    display: none;
+
+    @include mobile {
+      display: block;
+      position: absolute;
+      top: 6vw;
+      right: 6vw;
+      height: 22px;
+      width: 22px;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.block-history {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @include iPad {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 20px;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__info {
+    @include flex-column;
+    justify-content: center;
+    gap: 10px;
+    max-width: 200px;
+    min-width: 150px;
+    padding-left: 20px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    @include mobile {
+      padding-left: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-position: center;
+  }
+
+  &__quantity {
+    @include block-title;
+    font-size: 60px;
+    font-weight: 300;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  &__text {
+    @include text;
+    text-align: center;
+  }
+}

@@ -1,0 +1,113 @@
+.bakery-block {
+  display: flex;
+  justify-content: space-between;
+  height: 514px;
+
+  @include tablet {
+    height: 480px;
+    width: auto;
+  }
+
+  @include iPad {
+    height: max-content;
+  }
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  /*_____info_____*/
+
+  &__info {
+    @include flex-column;
+
+    &--cakes {
+      order: 2;
+
+      @include mobile {
+        order: 1;
+      }
+    }
+
+    &--cupcakes {
+      order: 2;
+
+      @include mobile {
+        order: 1;
+      }
+    }
+  }
+
+  &__title {
+    @include block-title;
+    color: $croissant;
+    padding-bottom: 43px;
+
+    @include mobile {
+      padding-bottom: 15px;
+    }
+  }
+
+  &__assortment {
+    @include assortment;
+    padding-bottom: 12px;
+  }
+
+  &__description {
+    @include text;
+    width: 302px;
+    padding-bottom: 32px;
+
+    @include mobile {
+      width: 100%;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__price {
+    @include flex-center;
+    width: 110px;
+    height: 110px;
+    @include text;
+    font-weight: 700;
+    border-radius: 50%;
+    background-color: $cream;
+
+    @include mobile {
+      width: 65px;
+      height: 65px;
+      text-align: center;
+    }
+  }
+
+  /*_____image_____*/
+
+  &__image {
+    height: 100%;
+    width: 665px;
+    object-fit: contain;
+    object-position: center;
+
+    @include tablet {
+      width: 60%;
+    }
+
+    @include iPad {
+      width: 50%;
+      height: auto;
+    }
+
+    @include mobile {
+      width: 280px;
+      align-self: center;
+    }
+
+    &--cakes {
+      order: 1;
+    }
+
+    &--cupcakes {
+      order: 1;
+    }
+  }
+}
