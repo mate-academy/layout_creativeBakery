@@ -1,0 +1,76 @@
+.calendar {
+  position: absolute;
+  bottom: 50%;
+  right: 5vw;
+  @include flex-column;
+  align-items: flex-end;
+  height: 368px;
+  width: max-content;
+  z-index: 20;
+  gap: 14px;
+  transform: translateY(50%);
+
+  @include full {
+    right: 8vw;
+  }
+
+  @include mobile {
+    flex-direction: row;
+    bottom: 28px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  &__arrow {
+    width: 26px;
+    height: auto;
+    transform: translateX(-25%);
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__days {
+    @include flex-column;
+    align-items: flex-end;
+    gap: 14px;
+    height: 344px;
+    overflow: hidden;
+
+    @include mobile {
+      flex-direction: row;
+      width: 123px;
+      gap: 20px;
+    }
+  }
+
+  &__day {
+    font-size: 40px;
+    line-height: 100%;
+    color: $cream;
+
+    @include mobile {
+      font-size: 16px;
+    }
+
+    &:nth-child(1) {
+      font-size: 176px;
+      color: $chocolate;
+
+      @include mobile {
+        font-size: 40px;
+      }
+    }
+  }
+
+  &__radio {
+    display: none;
+  }
+}
+
+@for $index from 1 through 31 {
+  .calendar__day:nth-child(#{$index}):before {
+    content: "0#{$index}";
+  }
+}

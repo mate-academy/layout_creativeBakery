@@ -1,0 +1,98 @@
+.footer {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 157px;
+  width: 100%;
+
+  @include page-padding;
+  background-color: $chocolate;
+  overflow: hidden;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    height: max-content;
+    padding-top: 40px;
+  }
+
+  &__logo {
+    @include link;
+  }
+
+  &__nav {
+    flex-direction: column;
+
+    @include mobile {
+      padding-top: 0;
+      padding-bottom: 60px;
+    }
+  }
+
+  /*______networks______*/
+
+  &__networks {
+    display: flex;
+    gap: 20px;
+
+    @include mobile {
+      padding-bottom: 104px;
+      align-self: center;
+      gap: 66px;
+    }
+  }
+
+  &__link {
+    @include link;
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--instagram {
+      background-image: url(../images/instagram.png);
+    }
+
+    &--facebook {
+      background-image: url(../images/facebook.png);
+    }
+
+    &--in {
+      background-image: url(../images/in.png);
+    }
+
+    &:hover {
+      background-color: $croissant;
+    }
+  }
+
+  /*______copyright______*/
+
+  &__copyright {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 29px;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140.62%;
+    text-align: center;
+    color: #fff;
+    opacity: 0.7;
+
+    @include mobile {
+      width: 80%;
+      gap: 0;
+      justify-content: space-between;
+    }
+  }
+}

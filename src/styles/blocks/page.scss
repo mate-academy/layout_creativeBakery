@@ -1,0 +1,69 @@
+.page {
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  ul,
+  li {
+    margin: 0;
+  }
+
+  &__body {
+    width: 100%;
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  &__wrapper {
+    @include flex-column;
+    min-height: 100%;
+    max-height: max-content;
+    overflow: hidden;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+  }
+
+  &__section {
+    box-sizing: border-box;
+    @include page-padding;
+  }
+
+  &__title {
+    @include page-title;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    
+    @include mobile {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include mobile {
+      position: absolute;
+      right: 6vw;
+      top: 6vw;
+      background-image: url(../images/menu.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: block;
+      width: 25px;
+      height: 25px;
+      z-index: 100;
+    }
+  }
+}

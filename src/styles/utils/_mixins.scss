@@ -1,6 +1,132 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin page-padding {
+  padding-left: 5vw;
+  padding-right: 5vw;
+
+  @include full {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+
+  @include iPad {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  @include mobile {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+
+@mixin link {
+  text-decoration: none;
+  scroll-behavior: smooth;
+  cursor: pointer;
+}
+
+// fonts //
+@mixin page-title {
+  font-family: "Cookie", cursive;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 160px;
+  line-height: 110%;
+  color: $croissant;
+
+  @include mobile {
+    font-size: 60px;
+  }
+}
+
+@mixin section-title {
+  font-family: "Cookie", cursive;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 120px;
+  line-height: 110%;
+  text-align: center;
+  color: $croissant;
+  padding-top: 40px;
+  padding-bottom: 27px;
+
+  @include mobile {
+    font-size: 60px;
+    padding-top: 38px;
+    padding-bottom: 20px;
+  }
+}
+
+@mixin block-title {
+  font-size: 50px;
+  line-height: 118%;
+  font-weight: normal;
+  color: $chocolate;
+  padding-top: 27px;
+
+  @include mobile {
+    font-size: 35px;
+    padding-top: 20px;
+  }
+}
+
+@mixin assortment {
+  font-size: 26px;
+  line-height: 150%;
+  font-weight: normal;
+  color: $chocolate;
+
+  @include mobile {
+    font-size: 20px;
+  }
+}
+
+@mixin text {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: $chocolate;
+}
+
+// media //
+@mixin mobile {
+  @media (min-width: 320px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin iPad {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    @content;
+  }
+}
+
+@mixin full {
+  @media (min-width: 1920px) {
+    @content;
   }
 }
