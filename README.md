@@ -3,4 +3,4 @@
 
 [DEMO LINK](https://zhenia-verbitskaya.github.io/layout_creativeBakery/)
 
-Technologies: HTML5/CSS3 - Flexbox - SASS - BEM
+Used technologies: HTML5/CSS3 - Flexbox - SASS - BEM
