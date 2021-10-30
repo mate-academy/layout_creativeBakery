@@ -1,0 +1,131 @@
+.header {
+  display: flex;
+
+  height: 100vh;
+  max-height: 1300px;
+
+  &__main {
+    width: 75vw;
+    padding: 20px 56px;
+
+    background-image: url("../images/header_main.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media (max-height:450px) and (min-width: 751px) {
+      height: 600px;
+    }
+
+    @include onMobile {
+      width: 100vw;
+
+      padding: 16px 20px;
+
+      background-image: url("../images/header_main_mobile.png");
+    }
+
+    @include onTablet {
+      width: 100vw;
+    }
+  }
+
+  &__actions {
+    margin-bottom: 36px;
+
+    @include onMobile {
+      display: none;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__nav {
+    margin-left: 260px;
+
+    @include onMobile {
+      margin: 40px 0 80px;
+      height: max-content;
+    }
+
+    @include onTablet {
+      margin: 40px 0 80px;
+      height: max-content;
+    }
+  }
+
+  &__title {
+    margin: 0 0 16px;
+
+    @extend %h1;
+    color: $c-dark;
+
+    @include onMobile {
+      font-family: "Cookie", cursive;
+      font-weight: normal;
+      font-size: 100px;
+      line-height: 80px;
+    }
+
+    @include onTablet {
+      margin-bottom: 36px;
+
+      font-family: "Cookie", cursive;
+      font-weight: normal;
+      font-size: 120px;
+      line-height: 80px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0 0 24px;
+
+    @extend %h4;
+    color: $c-dark;
+
+    @include onMobile {
+      font-family: "Rubik", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+
+      color: $c-dark;
+    }
+
+    @include onTablet {
+      margin-bottom: 48px;
+
+      font-weight: 600;
+    }
+  }
+
+  &__aside {
+    width: 25vw;
+    background-color: $c-brown;
+    padding: 20px 56px 0 44px;
+
+    @include onMobile {
+      display: none;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform $transition-duration;
+
+    &:target {
+      transform: translateX(40%);
+    }
+  }
+}

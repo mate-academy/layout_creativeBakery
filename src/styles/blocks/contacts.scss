@@ -1,0 +1,205 @@
+.contacts {
+  padding: 88px 0 0;
+
+  @include onMobile {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+    background-color: $c-brown;
+
+    padding: 24px 0 0;
+  }
+
+  @include onTablet {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+    background-color: $c-brown;
+
+    padding: 24px 0 0;
+  }
+
+  &__title {
+    margin: 0 0 24px;
+
+    @extend %h2;
+    color: $c-brown;
+    text-align: center;
+
+    @include onMobile {
+      font-size: 60px;
+      line-height: 67px;
+      color: $c-white;
+      margin: 0;
+    }
+
+    @include onTablet {
+      font-size: 90px;
+      line-height: 67px;
+      color: $c-white;
+
+      margin: 0;
+    }
+  }
+
+  &__container {
+    @extend %flex-center;
+
+    @include onMobile {
+      flex-direction: column;
+    }
+
+    @include onTablet {
+      flex-direction: column;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    width: 30vw;
+    height: $contacts-list-height;
+    background-color: $c-brown;
+
+    padding: 30px 30px 0 100px;
+
+    @include onMobile {
+      display: flex;
+
+      padding: 20px 20px 20px 56px;
+      width: max-content;
+      height: max-content;
+    }
+
+    @include onTablet {
+      display: flex;
+
+      padding-bottom: 20px;
+      width: max-content;
+      height: max-content;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 16px 24px;
+
+    @extend %h4;
+    color: $c-dark;
+  }
+
+  &__item {
+    position: relative;
+
+    margin-bottom: 8px;
+
+    &--adress {
+      &::before {
+        content: "";
+  
+        position: absolute;
+        left: -68px;
+
+        @include onMobile {
+          left: -40px;
+        }
+  
+        width: 31px;
+        height: 31px;
+  
+        background-image: url("../images/icon_adress.png");
+  
+        background-repeat: no-repeat;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    &--phone {
+      &::before {
+        content: "";
+  
+        position: absolute;
+        left: -68px;
+
+        @include onMobile {
+          left: -40px;
+        }
+  
+        width: 31px;
+        height: 31px;
+  
+        background-image: url("../images/icon_tel.png");
+  
+        background-repeat: no-repeat;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    &--mail {
+      &::before {
+        content: "";
+  
+        position: absolute;
+        left: -68px;
+
+        @include onMobile {
+          left: -40px;
+        }
+  
+        width: 31px;
+        height: 31px;
+  
+        background-image: url("../images/icon_mail.png");
+  
+        background-repeat: no-repeat;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+
+  &__paragraph {
+    @extend %page;
+    font-weight: bold;
+    color: $c-dark;
+
+    margin: 0;
+  }
+
+  &__link {
+    display: inline-block;
+    @extend %page;
+    text-decoration: none;
+    color: $c-dark;
+
+    margin-bottom: 8px;
+
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $c-light-brown;
+    }
+  }
+
+  &__map {
+    width: 70vw;
+    height: $contacts-list-height;
+
+    border: none;
+
+    @include onMobile {
+      width: 100vw;
+    }
+
+    @include onTablet {
+      width: 100vw;
+    }
+  }
+}

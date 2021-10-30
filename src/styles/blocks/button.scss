@@ -1,0 +1,86 @@
+.button {
+  @extend %flex-center;
+
+  box-sizing: border-box;
+
+  height: 40px;
+  width: 160px;
+
+  border-radius: 40px;
+  border: 2px solid transparent;
+
+  background-color: $c-brown;
+
+  @extend %page;
+  text-decoration: none;
+  color: $c-dark;
+
+  cursor: pointer;
+  transition: all $transition-duration;
+
+  &:hover {
+    background-color: $c-white;
+    border: 2px solid $c-brown;
+  }
+
+  &:active {
+    background-color: $c-brown;
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    background-color: $c-disabled-button;
+    color: $c-disabled-text;
+  }
+
+  @include onTablet {
+    width: 200px;
+    height: 60px;
+
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  &--secondary {
+    @extend %flex-center;
+
+    box-sizing: border-box;
+
+    width: 100px;
+    height: 30px;
+
+    background-color: $c-light-brown;
+    border-radius: 40px;
+    border: 2px solid transparent;
+
+    @extend %page;
+    text-decoration: none;
+    color: $c-dark;
+
+    transition: all $transition-duration;
+
+    &:hover {
+      background-color: $c-white;
+      border: 2px solid $c-light-brown;
+    }
+  
+    &:active {
+      background-color: $c-light-brown;
+      opacity: 0.8;
+    }
+
+    @include onTablet {
+      width: 150px;
+      height: 45px;
+
+      font-family: "Rubik", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 26px;
+      line-height: 39px;
+    }
+  }
+}

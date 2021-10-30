@@ -1,0 +1,137 @@
+.scroller {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  padding-top: 80px;
+
+  &--mobile {
+    display: none;
+
+    @include onMobile {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media (max-height: 450px) {
+      position: relative;
+      padding-top: 5vh;
+    }
+  }
+
+  &__arrow {
+    width: 26px;
+    height: 15px;
+
+    margin-bottom: 20px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image $transition-duration;
+
+    &--position--up {
+      background-image: url("../images/arrowUp.png");
+
+      &:hover {
+        background-image: url("../images/arrowUp_hover.png");
+        cursor: pointer;
+      }
+    }
+
+    &--position--down {
+      background-image: url("../images/arrowDown.png");
+
+      &:hover {
+        background-image: url("../images/arrowDown_hover.png");
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__digit {
+    @extend %scroller-small;
+    color: $c-dark;
+
+    margin-bottom: 20px;
+
+    transition: color $transition-duration;
+
+    &--first {
+      @extend %scroller-big;
+      color: $c-dark;
+
+      @include onMobile {
+        font-family: "Rubik", sans-serif;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 47px;
+
+        margin-right: 20px;
+      }
+
+      @include onTablet {
+        font-family: "Rubik", sans-serif;
+        font-weight: normal;
+        font-size: 80px;
+        line-height: 92px;
+
+        margin-right: 20px;
+      }
+    }
+
+    &:hover {
+      color: $c-light-brown;
+      cursor: pointer;
+    }
+
+    @include onMobile {
+      font-family: "Rubik", sans-serif;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      color: $c-brown;
+
+      margin-right: 20px;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @include onTablet {
+      font-family: "Rubik", sans-serif;
+      font-weight: normal;
+      font-size: 32px;
+      line-height: 36px;
+      color: $c-brown;
+
+      margin-right: 20px;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.aside {
+
+  &__extra {
+    @extend %flex-center;
+    gap: 20px;
+
+    height: 65px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+
+    @include onMobile {
+      display: block;
+
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 56px;
+      }
+    }
+
+    transition: color $transition-duration;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  
+    &:hover {
+      color: $c-light-brown;
+    }
+  }
+
+  &__language {
+    height: 32px;
+
+    background-color: $c-brown;
+    border: none;
+
+    @extend %page;
+
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $c-light-brown;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

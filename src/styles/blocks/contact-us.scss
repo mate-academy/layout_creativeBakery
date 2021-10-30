@@ -1,0 +1,97 @@
+.contact-us {
+  @extend %flex-center;
+  padding: 88px 0;
+
+  @include onMobile {
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: center;
+    padding: 52px 16px;
+  }
+
+  @include onTablet {
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: center;
+    padding: 52px 16px;
+  }
+
+  &__photo {
+    margin-right: 164px;
+
+    width: 500px;
+    height: 417px;
+
+    @include onMobile {
+      margin-right: 0;
+      margin-bottom: 20px;
+
+      width: 250px;
+      height: 205px;
+    }
+
+    @include onTablet {
+      margin: 20px auto;
+    }
+
+  }
+
+  &__title {
+    margin: 0 0 28px;
+
+    @extend %h4;
+    color: $c-dark;
+  }
+
+  &__form-container {
+    @include onMobile {
+      width: 90vw;
+    }
+  }
+
+  &__form-field {
+    display: block;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 30px;
+
+    margin-bottom: 20px;
+
+    border: none;
+
+    border-bottom: 1px solid $c-dark;
+    opacity: 0.5;
+
+    transition: border-color $transition-duration, opacity $transition-duration;
+
+    &::placeholder {
+      @extend %page;
+    }
+
+    &:hover {
+      border-color: $c-dark;
+      opacity: 0.8;
+    }
+  
+    &:focus {
+      border-color: $c-brown;
+      outline: none;
+    }
+
+    &--textarea {
+      margin-top: 88px;
+      resize: none;
+
+      font-family: inherit;
+    }
+  }
+
+  &__button {
+    margin: 36px auto 0;
+
+    @include onMobile {
+      margin-bottom: 52px;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.bakery {
+  @extend %flex-center;
+  flex-direction: column;
+  padding: 40px 0 80px;
+
+  @include onMobile {
+    padding: 40px 0;
+  }
+
+  @include onTablet {
+    width: 100vw;
+  }
+
+  &__title {
+    @extend %h2;
+    color: $c-brown;
+
+    margin: 0 0 28px;
+
+    @include onMobile {
+      font-size: 60px;
+      line-height: 67px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 200px;
+
+    margin-bottom: 136px;
+
+    &--right {
+      flex-direction: row-reverse;
+    }
+
+    @include onMobile {
+      display: block;
+
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      display: block;
+
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    width: 600px;
+    height: 500px;
+
+    @include onMobile {
+      width: 250px;
+      height: 200px;
+    }
+  }
+}

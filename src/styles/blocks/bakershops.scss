@@ -1,0 +1,134 @@
+.bakershops {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100vh;
+
+  background-color: $c-light-brown;
+
+  overflow: hidden;
+
+  @include onMobile {
+    padding: 40px 16px 32px;
+
+    height: max-content;
+  }
+
+  @include onTablet {
+    height: max-content;
+  }
+
+  &__title {
+    @extend %h2;
+    color: $c-brown;
+    text-align: center;
+
+    margin: 0 0 52px;
+
+    @include onMobile {
+      font-size: 60px;
+      line-height: 67px;
+
+      margin-bottom: 36px;
+    }
+  }
+
+  &__form {
+    @extend %flex-center;
+    gap: 32px;
+
+    margin-bottom: 56px;
+
+    @include onMobile {
+      flex-direction: column;
+      gap: 20px;
+
+      margin-bottom: 24px;
+    }
+  }
+
+  &__form-item {
+    height: 32px;
+
+    @include onMobile {
+      width: 100%;
+    }
+
+    background-color: $c-light-brown;
+
+    border: none;
+    border-bottom: 1px solid $c-dark;
+    opacity: 0.5;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__map {
+    height: 50vh;
+    max-height: 500px;
+
+    margin-bottom: 20px;
+
+    @include onMobile {
+      width: 300px;
+      height: 200px;
+    }
+
+    @include onTablet {
+      width: 80vw;
+    }
+  }
+
+  &__buttons--mobile {
+    @include onMobile {
+      display: flex;
+      gap: 20px;
+    }
+
+    @include onTablet {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__button--mobile {
+
+    display: none;
+
+    @include onMobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 31px;
+      height: 31px;
+      border-radius: 50%;
+
+      background-color: $c-white;
+    }
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+
+      margin-bottom: 60px;
+
+      background-color: $c-white;
+
+      font-size: 40px;
+      color: $c-dark;
+
+      &:active {
+        background-color: $c-brown;
+      }
+    }
+  }
+}

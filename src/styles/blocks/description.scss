@@ -1,0 +1,74 @@
+.description {
+  @include onMobile {
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    @extend %h3;
+    color: $c-brown;
+
+    margin: 0 0 40px;
+
+    @include onMobile {
+      font-size: 35px;
+      line-height: 41px;
+
+      margin-bottom: 16px;
+    }
+  }
+
+  &__subtitle {
+    @extend %h4;
+
+    margin: 0 0 12px;
+
+    @include onMobile {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 32px;
+  }
+
+  &__price {
+    @extend %flex-center;
+
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+
+    background-color: $c-light-brown;
+
+    text-decoration: none;
+    color: $c-dark;
+    font-weight: bold;
+
+    transition: transform $transition-duration;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onMobile {
+      width: 65px;
+      height: 65px;
+
+      flex-direction: column;
+    }
+  }
+
+  &__price-slash {
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__price-new-line {
+    display: none;
+    @include onMobile {
+      display: block;
+    }
+  }
+}
