@@ -1,0 +1,117 @@
+.banners {
+  min-height: 80vh;
+  padding: 154px 16px 28px;
+  background-image: url("../images/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+
+  @include onDesktop {
+    padding: 154px 60px 28px;
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 100px;
+    line-height: 80%;
+    color: $chocolate;
+    max-width: 260px;
+    padding-bottom: 30px;
+
+    @include onDesktop {
+      font-size: 160px;
+      line-height: 177px;
+      max-width: max-content;
+    }
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 150%;
+    max-width: 260px;
+    padding-bottom: 20px;
+    color: $chocolate;
+
+    @include onDesktop {
+      font-size: 26px;
+      line-height: 150%;
+      max-width: 420px;
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: $chocolate;
+    background-color: $croissant;
+    padding: 10px 38px;
+    border-radius: 40px;
+    border: 2px solid $croissant;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    &:active {
+      border-color: #e39a3bcc;
+      background-color: #e39a3bcc;
+    }
+  }
+
+  &__slider {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+
+    @include onDesktop {
+      position: absolute;
+      height: 100%;
+      bottom: 0;
+      right: 0;
+      left: auto;
+      background-color: $croissant;
+      transform: translateX(0);
+      padding: 60px 45px 60px 200px;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &-btn {
+      font-size: 16px;
+      line-height: 19px;
+      color: $croissant;
+      transition: color 0.3s;
+
+      @include onDesktop {
+        color: $cream;
+        font-size: 40px;
+        line-height: 47px;
+        position: relative;
+      }
+
+      &:hover {
+        color: $chocolate;
+      }
+
+      &--active {
+        font-size: 40px;
+        line-height: 47px;
+        color: $chocolate;
+
+        @include onDesktop {
+          font-size: 176px;
+          line-height: 209px;
+        }
+      }
+    }
+  }
+}

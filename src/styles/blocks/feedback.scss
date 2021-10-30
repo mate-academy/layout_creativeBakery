@@ -1,0 +1,84 @@
+.feedback {
+  padding: 40px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include onDesktop {
+    padding: 135px 0;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 150px;
+  }
+  
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    @include onDesktop {
+      width: 380px;
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 150%;
+    color: $chocolate;
+  }
+
+  &__input {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $chocolate;
+    padding-bottom: 6px;
+    font-size: 16px;
+    line-height: 150%;
+    color: $chocolate;
+
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+
+  &__message {
+    resize: none;
+  }
+
+  &__button {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 150%;
+    color: $chocolate;
+    background-color: $croissant;
+    border-radius: 40px;
+    padding: 10px 60px;
+    border: 2px solid $croissant;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+  
+  &__image {
+    margin-top: 40px;
+    width: 80%;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+
+    @include onDesktop {
+      width: 500px;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px 16px;
+  z-index: 100;
+
+  @include onDesktop {
+    padding: 34px 60px;
+  }
+
+  &__logo {
+    width: 84px;
+    height: 42px;
+    background-image: url("../images/logo.svg");
+    background-size: cover;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onDesktop {
+      width: 112px;
+      height: 57px;
+    }
+  }
+
+  &__open-menu {
+    width: 25px;
+    height: 18px;
+    background-image: url("../images/menu-btn.svg");
+    background-size: contain;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 34px;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 150%;
+    color: $chocolate;
+    position: relative;
+    padding-bottom: 8px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: $chocolate;
+      left: 0;
+      bottom: 0;
+      transition: width 0.3s;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  &__contacts {
+    display: none;
+    align-items: center;
+    gap: 20px;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__phone {
+    font-size: 16px;
+    line-height: 150%;
+    color: $chocolate;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: $chocolate;
+      left: 0;
+      bottom: 0;
+      transition: width 0.3s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: $chocolate;
+      right: 0;
+      bottom: 0;
+      transition: width 0.3s;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      width: 50%;
+    }
+  }
+
+  &__callback {
+    font-size: 16px;
+    line-height: 150%;
+    color: $chocolate;
+    background-color: $cream;
+    border-radius: 40px;
+    padding: 5px 15px;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $croissant;
+      background-color: $chocolate;
+    }
+  }
+
+  &__chose {
+    font-size: 16px;
+    line-height: 150%;
+    color: $chocolate;
+    background-color: $croissant;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}
