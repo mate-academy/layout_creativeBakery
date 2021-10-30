@@ -1,0 +1,142 @@
+.products {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include onDesktop {
+    padding: 40px 66px 80px;
+  }
+
+  &__header {
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 67px;
+    text-align: center;
+    color: $croissant;
+    padding-bottom: 20px;
+
+    @include onDesktop {
+      font-size: 120px;
+      line-height: 133px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__item {
+    padding-bottom: 40px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      gap: 120px;
+      padding-bottom: 140px;
+
+      &:nth-child(2n) {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 41px;
+    color: $croissant;
+    padding-bottom: 15px;
+
+    @include onDesktop {
+      font-size: 50px;
+      line-height: 59px;
+      padding-bottom: 43px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 150%;
+    color: $chocolate;
+    padding-bottom: 12px;
+
+    @include onDesktop {
+      font-size: 26px;
+    }
+  }
+
+  &__about {
+    font-size: 16px;
+    line-height: 150%;
+    color: $chocolate;
+    padding-bottom: 20px;
+    max-width: 300px;
+
+    @include onDesktop {
+      padding-bottom: 32px;
+    }
+  }
+
+  &__price {
+    @include flex-center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    color: $chocolate;
+    width: 75px;
+    height: 75px;
+    background-color: $cream;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: relative;
+
+    @include onDesktop {
+      width: 110px;
+      height: 110px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s;
+
+    @include onDesktop {
+      width: 700px;
+    }
+    
+    &:hover {
+      transform: scale(0.95);
+    }
+  }
+
+  &__button {
+    font-size: 16px;
+    line-height: 150%;
+    color: $chocolate;
+    background: $croissant;
+    border-radius: 40px;
+    padding: 10px 38px;
+    border: 2px solid $croissant;
+    transition: background-color 0.3s;
+    margin-top: 30px;
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}
