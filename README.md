@@ -16,7 +16,7 @@ Bakerlab is a bakery network in Ukraine, specialising in creating unique pastry 
 
 **Local development**
 
-- Dependencies
+Dependencies
 - Node v12.16.3 and higher
 - NPM v6.14.4 and higher
 
