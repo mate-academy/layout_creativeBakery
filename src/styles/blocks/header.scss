@@ -1,0 +1,138 @@
+.header {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+
+  &__content-wrapper {
+    width: 100%;
+    background-image: url(../images/header_slider/slider-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__content-limiter {
+    padding-top: 34px;
+    margin-left: 60px;
+    max-width: 742px;
+  }
+
+  &__top-actions {
+    display: flex;
+    justify-content: space-between;
+
+    height: $height-top-actions;
+    margin-bottom: 20px;
+  }
+
+  &__logo {
+    margin-top: 0;
+  }
+
+  &__navigation {
+    margin: auto 0;
+  }
+
+  &__sidebar {
+    background-color: $color-croissant;
+  }
+}
+
+.logo {
+  display: block;
+  line-height: 0;
+
+  &__image {
+    width: 112px;
+    height: 58px;
+  }
+}
+
+.navigation {
+  &__list {
+    display: flex;
+  }
+  
+  &__list-item {
+    &:not(:last-child) {
+      margin-right: 34px;
+    }
+  }
+
+  &__link {
+    @include link;
+    @include hover(color, $color-croissant);
+  }
+}
+
+.creative-bakery {
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    margin-bottom: 25px;
+
+    font-size: 26px;
+    line-height: 150%;
+  }
+
+  &__learn-more {
+    @include button-primary;
+  }
+}
+
+.sidebar {
+  padding: 34px 60px 0 47px;
+
+  &__top-actions {
+    display: flex;
+    align-items: center;
+    margin-bottom: 148px;
+
+    height: $height-top-actions;
+  }
+
+  &__tel-number {
+    margin-right: 20px;
+    min-width: max-content;
+
+    @include link;
+  }
+
+  &__callback {
+    margin-right: 20px;
+
+    @include button-secondary;
+  }
+
+  &__language {
+    border: none;
+    font-size: inherit;
+    line-height: inherit;
+
+    color: inherit;
+
+    background-color: $color-croissant;
+  }
+
+  &__slider-switcher-list {
+    text-align: right;
+  }
+
+  &__slider-switcher-link {
+    @include link;
+
+    color: $color-cream;
+
+    font-size: 40px;
+    line-height: 47px;
+
+    &--active {
+      color: inherit;
+
+      font-size: 176px;
+      line-height: 209px;
+    }
+  }
+}

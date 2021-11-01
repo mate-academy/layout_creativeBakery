@@ -1,6 +1,58 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin link {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+@mixin hover($property, $to-value) {
+  transition: #{$property} 0.3s;
+
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $to-value;
   }
+}
+
+@mixin active(
+  $first-property,
+  $to-first-property-value,
+  $second-property,
+  $to-second-property-value
+) {
+  transition: #{$first-property} 0.3s,
+    #{$second-property} 0.3s;
+  
+  &:active {
+    #{$first-property}: $to-first-property-value;
+    #{$second-property}: $to-second-property-value;
+  }
+}
+
+@mixin button-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 160px;
+  height: 40px;
+
+  background-color: $color-croissant;
+  border-radius: 40px;
+
+  border: 2px solid $color-croissant;
+  
+  cursor: pointer;
+  
+  @include link;
+  @include hover(background-color, $color-milk);
+  @include active(background-color, $color-cream, border-color, $color-cream);
+}
+
+@mixin button-secondary {
+  @include button-primary;
+
+  width: 100px;
+  height: 30px;
+
+  background-color: $color-cream;
+  border-color: $color-cream;
 }
