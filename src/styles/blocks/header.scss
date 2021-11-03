@@ -88,7 +88,7 @@
   &__top-actions {
     display: flex;
     align-items: center;
-    margin-bottom: 148px;
+    margin-bottom: 122px;
 
     height: $height-top-actions;
   }
@@ -116,8 +116,30 @@
     background-color: $color-croissant;
   }
 
+  &__slider-switcher {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
   &__slider-switcher-list {
     text-align: right;
+
+    margin-bottom: 41px;
+  }
+
+  &__slider-switcher-button {
+    display: flex;
+    margin-right: 15px;
+
+    @include slider-switcher(
+      $color-croissant,
+      $duration-transform
+    );
+
+    &--previous {
+      margin-bottom: 10px;
+    }
   }
 
   &__slider-switcher-link {
@@ -133,6 +155,10 @@
 
       font-size: 176px;
       line-height: 209px;
+    }
+
+    &:not(&--active) {
+      padding-right: 10px;
     }
   }
 }

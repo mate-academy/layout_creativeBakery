@@ -56,3 +56,19 @@
   background-color: $color-cream;
   border-color: $color-cream;
 }
+
+@mixin slider-switcher($_color-background, $_duration-transform) {
+  background-color: $_color-background;
+  border: none;
+  cursor: pointer;
+
+  transition: transform $_duration-transform;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:active {
+    transform: scale(1);
+  }
+}
