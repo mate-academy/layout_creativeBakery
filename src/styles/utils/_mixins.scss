@@ -1,14 +1,40 @@
-@mixin large-screen {
-  @media (min-width: 2560px) {
-    max-width: 2560px;
-    margin: 0 auto;
+@mixin on-full-hd {
+  @media (min-width: 1921px) {
+    @content;
   }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1600px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin on-mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin text-adaptive ($_font-size, $_line-height) {
+  font-size: $_font-size * $factor-full-hd;
+  line-height: $_line-height * $factor-full-hd;
 }
 
 @mixin link {
   text-decoration: none;
 
   color: inherit;
+
+  @include on-full-hd {
+    @include text-adaptive($font-size-global, $line-height-global);
+  }
 }
 
 @mixin hover($property, $to-value) {
@@ -35,12 +61,15 @@
 }
 
 @mixin button-primary {
+  $width: 160px;
+  $height: 40px;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 160px;
-  height: 40px;
+  width: $width;
+  height: $height;
 
   background-color: $color-croissant;
   border-radius: 40px;
@@ -52,16 +81,29 @@
   @include link;
   @include hover(background-color, $color-milk);
   @include active(background-color, $color-cream, border-color, $color-cream);
+
+  @include on-full-hd {
+    width: $width * $factor-full-hd;
+    height: $height * $factor-full-hd;
+  }
 }
 
 @mixin button-secondary {
   @include button-primary;
 
-  width: 100px;
-  height: 30px;
+  $width: 100px;
+  $height: 30px;
+
+  width: $width;
+  height: $height;
 
   background-color: $color-cream;
   border-color: $color-cream;
+
+  @include on-full-hd {
+    width: $width * $factor-full-hd;
+    height: $height * $factor-full-hd;
+  }
 }
 
 @mixin slider-switcher($_color-background, $_duration-transform) {
@@ -78,4 +120,9 @@
   &:active {
     transform: scale(1);
   }
+}
+
+@mixin block-adaptive ($_width, $_height) {
+  width: $_width * $factor-full-hd;
+  height: $_height * $factor-full-hd;
 }

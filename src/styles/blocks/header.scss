@@ -6,21 +6,39 @@
   &__content-wrapper {
     width: 100%;
 
-    background: center / cover no-repeat url(../images/header_slider/slider-1.jpg);
+    background: center / cover
+      no-repeat url(../images/header_slider/slider-1.jpg);
   }
 
   &__content-limiter {
-    padding-top: 34px;
-    margin-left: 60px;
-    max-width: 742px;
+    $padding-top: 34px;
+    $margin-left: 60px;
+    $max-width: 742px;
+
+    padding-top: $padding-top;
+    margin-left: $margin-left;
+    max-width: $max-width;
+
+    @include on-full-hd {
+      padding-top: $padding-top * $factor-full-hd;
+      margin-left: $margin-left * $factor-full-hd;
+      max-width: $max-width * $factor-full-hd;
+    }
   }
 
   &__top-actions {
+    $margin-bottom: 20px;
+
     display: flex;
     justify-content: space-between;
 
     height: $height-top-actions;
-    margin-bottom: 20px;
+    margin-bottom: $margin-bottom;
+
+    @include on-full-hd {
+      height: $height-top-actions * $factor-full-hd;
+      margin-bottom: $margin-bottom * $factor-full-hd;
+    }
   }
 
   &__logo {
@@ -41,8 +59,15 @@
   line-height: 0;
 
   &__image {
-    width: 112px;
-    height: 58px;
+    $width: 112px;
+    $height: 58px;
+
+    width: $width;
+    height: $height;
+
+    @include on-full-hd {
+      @include block-adaptive ($width, $height);
+    }
   }
 }
 
@@ -53,7 +78,13 @@
   
   &__list-item {
     &:not(:last-child) {
-      margin-right: 34px;
+      $margin-right: 34px;
+
+      margin-right: $margin-right;
+
+      @include on-full-hd {
+        margin-right: $margin-right * $factor-full-hd;
+      }
     }
   }
 
@@ -65,14 +96,34 @@
 
 .creative-bakery {
   &__title {
-    margin-bottom: 20px;
+    $margin-bottom: 20px;
+
+    margin-bottom: $margin-bottom;
+
+    @include on-full-hd {
+      margin-bottom: $margin-bottom * $factor-full-hd;
+
+      @include text-adaptive(
+        $font-size-h1-global,
+        $line-height-h1-global
+      );
+    }
   }
 
   &__description {
-    margin-bottom: 25px;
+    $margin-bottom: 25px;
+    $font-size: 26px;
+    $line-height: 150%;
 
-    font-size: 26px;
-    line-height: 150%;
+    margin-bottom: $margin-bottom;
+    font-size: $font-size;
+    line-height: $line-height;
+
+    @include on-full-hd {
+      margin-bottom: $margin-bottom * $factor-full-hd;
+
+      @include text-adaptive($font-size, $line-height - 50%);
+    }
   }
 
   &__learn-more {
@@ -112,6 +163,10 @@
     color: inherit;
 
     background-color: $color-croissant;
+
+    @include on-full-hd {
+      font-size: $font-size-global * $factor-full-hd;
+    }
   }
 
   &__slider-switcher {
@@ -120,15 +175,24 @@
     align-items: flex-end;
   }
 
+  $padding-slider-switcher-button: 10px;
+  
   &__slider-switcher-list {
     text-align: right;
-
-    margin-bottom: 41px;
+    
+    margin-bottom: 41px - $padding-slider-switcher-button;
   }
-
+  
   &__slider-switcher-button {
+    $margin-right: 14px;
+    
     display: flex;
-    margin-right: 15px;
+    margin-right: $margin-right;
+    padding: $padding-slider-switcher-button;
+
+    @include on-full-hd {
+      margin-right: $margin-right + $padding-slider-switcher-button;
+    }
 
     @include slider-switcher(
       $color-croissant,
@@ -136,27 +200,67 @@
     );
 
     &--previous {
-      margin-bottom: 10px;
+      $margin-bottom: 10px;
+
+      margin-bottom: $margin-bottom;
+
+      @include on-full-hd {
+        margin-bottom: $margin-bottom 
+          * $factor-full-hd 
+          - $padding-slider-switcher-button;
+      }
+    }
+  }
+
+  &__slider-switcher-button-image {
+    $width: 24px;
+    $height: 15px;
+
+    width: $width;
+    height: $height;
+
+    @include on-full-hd {
+      @include block-adaptive ($width, $height);
     }
   }
 
   &__slider-switcher-link {
     @include link;
 
+    $font-size: 40px;
+    $line-height: 47px;
+
     color: $color-cream;
 
-    font-size: 40px;
-    line-height: 47px;
+    font-size: $font-size;
+    line-height: $line-height;
+
+    @include on-full-hd {
+      @include text-adaptive ($font-size, $line-height);
+    }
 
     &--active {
+      $font-size: 176px;
+      $line-height: 209px;
+      
       color: inherit;
 
-      font-size: 176px;
-      line-height: 209px;
+      font-size: $font-size;
+      line-height: $line-height;
+
+      @include on-full-hd {
+        @include text-adaptive($font-size, $line-height);
+      }
     }
 
     &:not(&--active) {
-      padding-right: 10px;
+      $padding-right: 10px;
+
+      padding-right: $padding-right;
+
+      @include on-full-hd {
+        padding-right: $padding-right * $factor-full-hd;
+      }
     }
   }
 }
