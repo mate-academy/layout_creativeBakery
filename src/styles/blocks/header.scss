@@ -15,6 +15,12 @@
     $margin-left: 60px;
     $max-width: 742px;
 
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    height: 100%;
+
     padding-top: $padding-top;
     margin-left: $margin-left;
     max-width: $max-width;
@@ -23,6 +29,27 @@
       padding-top: $padding-top * $factor-full-hd;
       margin-left: $margin-left * $factor-full-hd;
       max-width: $max-width * $factor-full-hd;
+    }
+
+    @include on-laptop {
+      padding-top: $padding-top * $factor-laptop;
+      margin-left: $margin-left * $factor-laptop;
+      max-width: $max-width * $factor-laptop;
+    }
+
+    @include on-tablet {
+      max-width: 100%;
+      margin: 0;
+      padding: $padding-top 60px 28px;
+    }
+  }
+
+  &__slider-switcher {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -39,14 +66,31 @@
       height: $height-top-actions * $factor-full-hd;
       margin-bottom: $margin-bottom * $factor-full-hd;
     }
+
+    @include on-laptop {
+      height: $height-top-actions * $factor-laptop;
+      margin-bottom: $margin-bottom * $factor-laptop;
+    }
   }
 
   &__logo {
     margin-top: 0;
   }
 
+  &__menu-open-button {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
   &__navigation {
     margin: auto 0;
+
+    @include on-tablet {
+      display: none;
+    }
   }
 
   &__sidebar {
@@ -66,7 +110,11 @@
     height: $height;
 
     @include on-full-hd {
-      @include block-adaptive ($width, $height);
+      @include block-adaptive-full-hd ($width, $height);
+    }
+
+    @include on-laptop {
+      @include block-adaptive-laptop ($width, $height);
     }
   }
 }
@@ -75,7 +123,7 @@
   &__list {
     display: flex;
   }
-  
+
   &__list-item {
     &:not(:last-child) {
       $margin-right: 34px;
@@ -84,6 +132,10 @@
 
       @include on-full-hd {
         margin-right: $margin-right * $factor-full-hd;
+      }
+
+      @include on-laptop {
+        margin-right: $margin-right * $factor-laptop;
       }
     }
   }
@@ -103,7 +155,20 @@
     @include on-full-hd {
       margin-bottom: $margin-bottom * $factor-full-hd;
 
-      @include text-adaptive(
+      @include text-adaptive-full-hd(
+        $font-size-h1-global,
+        $line-height-h1-global
+      );
+
+      @include on-tablet {
+        font-size: $font-size-h1-global * 0.9;
+      }
+    }
+
+    @include on-laptop {
+      margin-bottom: $margin-bottom * $factor-laptop;
+
+      @include text-adaptive-laptop(
         $font-size-h1-global,
         $line-height-h1-global
       );
@@ -122,7 +187,13 @@
     @include on-full-hd {
       margin-bottom: $margin-bottom * $factor-full-hd;
 
-      @include text-adaptive($font-size, $line-height - 50%);
+      @include text-adaptive-full-hd ($font-size, $line-height - 50%);
+    }
+
+    @include on-laptop {
+      margin-bottom: $margin-bottom * $factor-laptop;
+
+      @include text-adaptive-laptop ($font-size, $line-height + 40%);
     }
   }
 
@@ -131,8 +202,38 @@
   }
 }
 
+.slider-switcher {
+  &__list {
+    display: flex;
+    align-items: end;
+  }
+
+  &__list-item {
+    &:not(&:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    @include link;
+
+    color: $color-croissant;
+
+    &--active {
+      font-size: 40px;
+      line-height: 47px;
+
+      color: inherit;
+    }
+  }
+}
+
 .sidebar {
   padding: 34px 60px 0 47px;
+
+  @include on-tablet {
+    display: none;
+  }
 
   &__top-actions {
     display: flex;
@@ -167,6 +268,10 @@
     @include on-full-hd {
       font-size: $font-size-global * $factor-full-hd;
     }
+
+    @include on-laptop {
+      font-size: $font-size-global * $factor-laptop;
+    }
   }
 
   &__slider-switcher {
@@ -176,22 +281,31 @@
   }
 
   $padding-slider-switcher-button: 10px;
-  
+
   &__slider-switcher-list {
     text-align: right;
-    
+
     margin-bottom: 41px - $padding-slider-switcher-button;
+
+    @include on-laptop {
+      margin-bottom: (41px - $padding-slider-switcher-button)
+        * $factor-laptop;
+    }
   }
-  
+
   &__slider-switcher-button {
     $margin-right: 14px;
-    
+
     display: flex;
     margin-right: $margin-right;
     padding: $padding-slider-switcher-button;
 
     @include on-full-hd {
       margin-right: $margin-right + $padding-slider-switcher-button;
+    }
+
+    @include on-laptop {
+      margin-right: ($margin-right - 4px) * $factor-laptop;
     }
 
     @include slider-switcher(
@@ -209,6 +323,12 @@
           * $factor-full-hd 
           - $padding-slider-switcher-button;
       }
+
+      @include on-laptop {
+        margin-bottom: $margin-bottom 
+          * $factor-laptop 
+          - $padding-slider-switcher-button;
+      }
     }
   }
 
@@ -220,7 +340,11 @@
     height: $height;
 
     @include on-full-hd {
-      @include block-adaptive ($width, $height);
+      @include block-adaptive-full-hd ($width, $height);
+    }
+
+    @include on-laptop {
+      @include block-adaptive-laptop ($width, $height);
     }
   }
 
@@ -236,7 +360,11 @@
     line-height: $line-height;
 
     @include on-full-hd {
-      @include text-adaptive ($font-size, $line-height);
+      @include text-adaptive-full-hd ($font-size, $line-height);
+    }
+
+    @include on-laptop {
+      @include text-adaptive-laptop ($font-size, $line-height);
     }
 
     &--active {
@@ -249,7 +377,11 @@
       line-height: $line-height;
 
       @include on-full-hd {
-        @include text-adaptive($font-size, $line-height);
+        @include text-adaptive-full-hd($font-size, $line-height);
+      }
+
+      @include on-laptop {
+        @include text-adaptive-laptop($font-size, $line-height);
       }
     }
 
@@ -260,6 +392,10 @@
 
       @include on-full-hd {
         padding-right: $padding-right * $factor-full-hd;
+      }
+
+      @include on-laptop {
+        padding-right: $padding-right * $factor-laptop;
       }
     }
   }

@@ -4,8 +4,15 @@
   }
 }
 
+// useless in header
 @mixin on-desktop {
   @media (min-width: 1600px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin on-laptop {
+  @media(max-width: 1280px) {
     @content;
   }
 }
@@ -22,9 +29,14 @@
   }
 }
 
-@mixin text-adaptive ($_font-size, $_line-height) {
+@mixin text-adaptive-full-hd ($_font-size, $_line-height) {
   font-size: $_font-size * $factor-full-hd;
   line-height: $_line-height * $factor-full-hd;
+}
+
+@mixin text-adaptive-laptop ($_font-size, $_line-height) {
+  font-size: $_font-size * $factor-laptop;
+  line-height: $_line-height * $factor-laptop;
 }
 
 @mixin link {
@@ -33,7 +45,17 @@
   color: inherit;
 
   @include on-full-hd {
-    @include text-adaptive($font-size-global, $line-height-global);
+    @include text-adaptive-full-hd(
+      $font-size-global,
+      $line-height-global
+    );
+  }
+
+  @include on-laptop {
+    @include text-adaptive-laptop(
+      $font-size-global,
+      $line-height-global
+    );
   }
 }
 
@@ -60,6 +82,16 @@
   }
 }
 
+@mixin block-adaptive-full-hd ($_width, $_height) {
+  width: $_width * $factor-full-hd;
+  height: $_height * $factor-full-hd;
+}
+
+@mixin block-adaptive-laptop ($_width, $_height) {
+  width: $_width * $factor-laptop;
+  height: $_height * $factor-laptop;
+}
+
 @mixin button-primary {
   $width: 160px;
   $height: 40px;
@@ -83,8 +115,11 @@
   @include active(background-color, $color-cream, border-color, $color-cream);
 
   @include on-full-hd {
-    width: $width * $factor-full-hd;
-    height: $height * $factor-full-hd;
+    @include block-adaptive-full-hd($width, $height);
+  }
+
+  @include on-laptop {
+    @include block-adaptive-laptop($width, $height);
   }
 }
 
@@ -101,8 +136,11 @@
   border-color: $color-cream;
 
   @include on-full-hd {
-    width: $width * $factor-full-hd;
-    height: $height * $factor-full-hd;
+    @include block-adaptive-full-hd($width, $height);
+  }
+
+  @include on-laptop {
+    @include block-adaptive-laptop($width, $height);
   }
 }
 
@@ -120,9 +158,4 @@
   &:active {
     transform: scale(1);
   }
-}
-
-@mixin block-adaptive ($_width, $_height) {
-  width: $_width * $factor-full-hd;
-  height: $_height * $factor-full-hd;
 }
