@@ -5,6 +5,12 @@
 h1,
 h2 {
   font-family: Cookie, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
   font-weight: normal;
 }
 
@@ -21,13 +27,34 @@ h3 {
 h2 {
   font-size: $font-size-h2-global;
   line-height: $line-height-h2-global;
+
+  @include on-laptop {
+    @include text-adaptive-laptop (
+      $font-size-h2-global,
+      $line-height-h2-global
+    );
+  }
 }
 
 h3 {
   font-size: $font-size-h3-global;
   line-height: $line-height-h3-global;
+
+  @include on-laptop {
+    @include text-adaptive-laptop (
+      $font-size-h3-global,
+      $line-height-h3-global
+    );
+  }
 }
 
 h4 {
   font-size: $font-size-h4-global;
+
+  @include on-laptop {
+    @include text-adaptive-laptop (
+      $font-size-h4-global,
+      150%
+    );
+  }
 }

@@ -1,0 +1,191 @@
+.bakery {
+  padding: 40px 0 80px;
+
+  &__title {
+    $margin-bottom: 27px;
+
+    text-align: center;
+
+    margin-bottom: $margin-bottom;
+
+    @include on-laptop {
+      margin-bottom: $margin-bottom * $factor-laptop;
+    }
+  }
+
+  &__article {
+    $margin-bottom: 135px;
+
+    display: grid;
+
+    @include on-laptop {
+      margin-bottom: $margin-bottom * $factor-laptop;
+    }
+
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+      // align-items: flex-end;
+    }
+
+    &--cookies {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    &--cakes {
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas: "photo description";
+    }
+
+    &--croissants {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    &--cupcakes {
+      $margin-bottom: 160px;
+
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas: "photo description";
+
+      margin-bottom: $margin-bottom;
+
+      @include on-laptop {
+        margin-bottom: $margin-bottom * $factor-laptop;
+      }
+    }
+  }
+
+  &__article-description {
+    @include on-tablet {
+      // display: inline-block;
+
+    }
+
+    &--cakes {
+      $margin-left: 50px;
+      
+      grid-area: description;
+      
+      margin-left: $margin-left;
+
+      @include on-laptop {
+        margin-left: $margin-left * $factor-laptop;
+      }
+    }
+
+    &--cupcakes {
+      grid-area: description;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__article-image-container {
+    @include on-tablet {
+      text-align: right;
+    }
+
+    &--cakes {
+      grid-area: photo;
+    }
+
+    &--cupcakes {
+      grid-area: photo;
+    }
+  }
+
+  &__article-title {
+    $margin-bottom: 43px;
+
+    margin-bottom: $margin-bottom;
+
+    @include on-laptop {
+      margin-bottom: $margin-bottom * $factor-laptop;
+    }
+  }
+
+  &__article-subtitle {
+    $margin-bottom: 12px;
+
+    margin-bottom: $margin-bottom;
+
+    @include on-laptop {
+      margin-bottom: $margin-bottom * $factor-laptop;
+    }
+  }
+
+  &__article-text {
+    $margin-bottom: 32px;
+
+    margin-bottom: $margin-bottom;
+
+    @include on-laptop {
+      margin-bottom: $margin-bottom * $factor-laptop;
+    }
+  }
+
+  &__article-price-container {
+    $circle-diameter: 110px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include circle ($circle-diameter);
+    background-color: $color-cream;
+
+    @include on-laptop {
+      @include circle ($circle-diameter * $factor-laptop);
+    }
+  }
+
+  &__article-price {
+    font-weight: bold;
+  }
+
+  &__article-image {
+    &--cookies {
+      $width: 700px;
+      $height: 514px;
+
+      @include on-laptop {
+        @include block-adaptive-laptop ($width, $height);
+      }
+    }
+
+    &--cakes {
+      $width: 742px;
+      $height: 482px;
+
+      @include on-laptop {
+        @include block-adaptive-laptop ($width, $height);
+      }
+    }
+
+    &--croissants {
+      $width: 662px;
+      $height: 536px;
+
+      @include on-laptop {
+        @include block-adaptive-laptop ($width, $height);
+      }
+    }
+
+    &--cupcakes {
+      $width: 666px;
+      $height: 462px;
+
+      @include on-laptop {
+        @include block-adaptive-laptop ($width, $height);
+      }
+    }
+  }
+
+  &__button {
+    @include button-primary;
+
+    margin: 0 auto;
+  }
+}
