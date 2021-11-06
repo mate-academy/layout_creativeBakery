@@ -63,12 +63,20 @@
   }
 
   &__card {
+    $margin-right: 80px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 
     &:not(:last-child) {
-      margin-right: 80px;
+      margin-right: $margin-right;
+    }
+
+    @include on-laptop {
+      &:not(:last-child) {
+        margin-right: $margin-right * $factor-laptop;
+      }
     }
 
     @include on-mobile {
