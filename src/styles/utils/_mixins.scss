@@ -39,6 +39,11 @@
   line-height: $_line-height * $factor-laptop;
 }
 
+@mixin text-adaptive-tablet ($_font-size, $_line-height) {
+  font-size: $_font-size * $factor-tablet;
+  line-height: $_line-height * $factor-tablet;
+}
+
 @mixin link {
   text-decoration: none;
 
@@ -56,6 +61,11 @@
       $font-size-global,
       $line-height-global
     );
+  }
+
+  @include on-mobile {
+    font-size: $font-size-global;
+    line-height: $line-height-global;
   }
 }
 
@@ -92,6 +102,11 @@
   height: $_height * $factor-laptop;
 }
 
+@mixin block-adaptive-tablet ($_width, $_height) {
+  width: $_width * $factor-tablet;
+  height: $_height * $factor-tablet;
+}
+
 @mixin button-primary {
   $width: 160px;
   $height: 40px;
@@ -121,6 +136,11 @@
   @include on-laptop {
     @include block-adaptive-laptop($width, $height);
   }
+
+  @include on-mobile {
+    width: $width;
+    height: $height;
+  }
 }
 
 @mixin button-secondary {
@@ -141,6 +161,11 @@
 
   @include on-laptop {
     @include block-adaptive-laptop($width, $height);
+  }
+
+  @include on-mobile {
+    width: $width;
+    height: $height;
   }
 }
 

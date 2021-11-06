@@ -1,6 +1,19 @@
 .bakery {
   padding: 40px 0 80px;
 
+  width: 100%;
+  max-width: 1600px;
+
+  @include on-mobile {
+    padding: 38px 16px 40px;
+    max-width: 500px;
+
+    margin: 0 auto;
+    // if set display flex to the container and set center align
+    // blocks stop their flexible behavior and only media queries
+    // are working... That's why margin 0 auto here.
+  }
+
   &__title {
     $margin-bottom: 27px;
 
@@ -10,6 +23,10 @@
 
     @include on-laptop {
       margin-bottom: $margin-bottom * $factor-laptop;
+    }
+
+    @include on-mobile {
+      margin-bottom: 20px;
     }
   }
 
@@ -25,15 +42,18 @@
     @include on-tablet {
       display: flex;
       flex-direction: column;
-      // align-items: flex-end;
+    }
+
+    @include on-mobile {
+      margin-bottom: 40px;
     }
 
     &--cookies {
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 40% 60%;
     }
 
     &--cakes {
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 70% 30%;
       grid-template-areas: "photo description";
     }
 
@@ -44,7 +64,7 @@
     &--cupcakes {
       $margin-bottom: 160px;
 
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 70% 30%;
       grid-template-areas: "photo description";
 
       margin-bottom: $margin-bottom;
@@ -52,15 +72,14 @@
       @include on-laptop {
         margin-bottom: $margin-bottom * $factor-laptop;
       }
+
+      @include on-mobile {
+        margin-bottom: 48px;
+      }
     }
   }
 
   &__article-description {
-    @include on-tablet {
-      // display: inline-block;
-
-    }
-
     &--cakes {
       $margin-left: 50px;
       
@@ -70,6 +89,10 @@
 
       @include on-laptop {
         margin-left: $margin-left * $factor-laptop;
+      }
+
+      @include on-mobile {
+        margin-left: 0;
       }
     }
 
@@ -86,6 +109,8 @@
     @include on-tablet {
       text-align: right;
     }
+
+    text-align: center;
 
     &--cakes {
       grid-area: photo;
@@ -104,6 +129,10 @@
     @include on-laptop {
       margin-bottom: $margin-bottom * $factor-laptop;
     }
+
+    @include on-mobile {
+      margin-bottom: 15px;
+    }
   }
 
   &__article-subtitle {
@@ -114,6 +143,10 @@
     @include on-laptop {
       margin-bottom: $margin-bottom * $factor-laptop;
     }
+
+    @include on-mobile {
+      margin-bottom: 12px;
+    }
   }
 
   &__article-text {
@@ -123,6 +156,10 @@
 
     @include on-laptop {
       margin-bottom: $margin-bottom * $factor-laptop;
+    }
+
+    @include on-mobile {
+      margin-bottom: 19px;
     }
   }
 
@@ -139,10 +176,32 @@
     @include on-laptop {
       @include circle ($circle-diameter * $factor-laptop);
     }
+
+    @include on-tablet {
+      @include circle ($circle-diameter * $factor-tablet);
+    }
+
+    @include on-mobile {
+      @include circle (65px);
+    }
   }
 
   &__article-price {
     font-weight: bold;
+
+    @include on-mobile {
+      display: none;
+    }
+  
+    &--on-mobile {
+      display: none;
+  
+      @include on-mobile {
+        display: inline;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
   }
 
   &__article-image {
@@ -153,6 +212,11 @@
       @include on-laptop {
         @include block-adaptive-laptop ($width, $height);
       }
+
+      @include on-mobile {
+        width: 272px;
+        height: 200px;
+      }
     }
 
     &--cakes {
@@ -161,6 +225,11 @@
 
       @include on-laptop {
         @include block-adaptive-laptop ($width, $height);
+      }
+
+      @include on-mobile {
+        width: 274px;
+        height: 174px;
       }
     }
 
@@ -171,6 +240,11 @@
       @include on-laptop {
         @include block-adaptive-laptop ($width, $height);
       }
+
+      @include on-mobile {
+        width: 237px;
+        height: 192px;
+      }
     }
 
     &--cupcakes {
@@ -179,6 +253,11 @@
 
       @include on-laptop {
         @include block-adaptive-laptop ($width, $height);
+      }
+
+      @include on-mobile {
+        width: 238px;
+        height: 164px;
       }
     }
   }
