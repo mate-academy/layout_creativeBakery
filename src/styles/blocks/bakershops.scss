@@ -1,0 +1,61 @@
+.bakershops {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 40px 0 56px;
+
+  background-color: $color-cream;
+
+  &__title {
+    text-align: center;
+
+    margin-bottom: 88px;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 68px;
+
+    @include on-mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__city {
+    margin-right: 32px;
+
+    width: 174px;
+    @extend %select-bakershops;
+  }
+
+  &__adress {
+    margin-right: 32px;
+
+    width: 324px;
+    @extend %select-bakershops;
+  }
+
+  &__button {
+    display: inline-block;
+    @include button-primary;
+  }
+
+  &__map-diagram-image {
+    $width: 1020px;
+    $height: 688px;
+
+    width: $width;
+    height: $height;
+
+    @include on-laptop {
+      @include block-adaptive-laptop ($width, $height);
+    }
+
+    @include on-tablet {
+      @include block-adaptive-custom ($width, $height, 0.6);
+    }
+  }
+}
