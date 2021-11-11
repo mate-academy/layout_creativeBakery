@@ -2,6 +2,7 @@
   height: 100vh;
   display: flex;
   justify-content: space-between;
+  position: relative;
 
   &__content-wrapper {
     width: 100%;
@@ -95,6 +96,28 @@
 
   &__sidebar {
     background-color: $color-croissant;
+  }
+
+  &__menu {
+    display: none;
+    width: 200px;
+
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      position: fixed;
+      height: 100vh;
+      right: 0;
+
+      transform: translateX(200px);
+      transition: transform 0.3s;
+
+      &:target {
+        transform: translateX(0);
+      }
+    }
   }
 }
 
@@ -241,42 +264,9 @@
   }
 
   &__top-actions {
-    display: flex;
-    align-items: center;
     margin-bottom: 122px;
 
     height: $height-top-actions;
-  }
-
-  &__tel-number {
-    margin-right: 20px;
-    min-width: max-content;
-
-    @include link;
-  }
-
-  &__callback {
-    margin-right: 20px;
-
-    @include button-secondary;
-  }
-
-  &__language {
-    border: none;
-    font-size: inherit;
-    line-height: inherit;
-
-    color: inherit;
-
-    background-color: $color-croissant;
-
-    @include on-full-hd {
-      font-size: $font-size-global * $factor-full-hd;
-    }
-
-    @include on-laptop {
-      font-size: $font-size-global * $factor-laptop;
-    }
   }
 
   &__slider-switcher {
@@ -403,5 +393,82 @@
         padding-right: $padding-right * $factor-laptop;
       }
     }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+
+  &__tel-number {
+    margin-right: 20px;
+    min-width: max-content;
+
+    @include link;
+
+    @include hover (color, $color-cream);
+  }
+
+  &__callback {
+    margin-right: 20px;
+
+    @include button-secondary;
+  }
+
+  &__language {
+    border: none;
+    font-size: inherit;
+    line-height: inherit;
+
+    color: inherit;
+
+    background-color: $color-croissant;
+
+    @include on-full-hd {
+      font-size: $font-size-global * $factor-full-hd;
+    }
+
+    @include on-laptop {
+      font-size: $font-size-global * $factor-laptop;
+    }
+  }
+}
+
+.menu {
+  padding: 34px 16px;
+
+  background-color: $color-croissant;
+
+  border-left: 3px solid $color-milk;
+
+  &__close-button {
+    margin-bottom: 30px;
+
+    text-align: right;
+  }
+
+  &__navigation-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__navigation-list-item {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__bottom-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__tel-number {
+    margin-bottom: 30px;
+  }
+
+  &__callback {
+    margin-bottom: 30px;
   }
 }
