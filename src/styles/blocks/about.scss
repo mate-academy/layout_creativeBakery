@@ -42,8 +42,11 @@
     justify-content: space-between;
     
     width: 100%;
+    max-width: 1400px;
 
     overflow: scroll;
+
+    cursor: grab;
 
     &::-webkit-scrollbar {
       width: 0;
@@ -60,6 +63,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &:first-child {
+      $margin-left: 60px;
+
+      margin-left: $margin-left;
+
+      @include on-laptop {
+        margin-left: $margin-left * $factor-laptop;
+      }
+
+      @include on-tablet {
+        margin-left: 15px;
+      }
+    }
 
     &:not(:last-child) {
       margin-right: $margin-right;
