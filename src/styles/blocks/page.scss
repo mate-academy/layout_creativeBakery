@@ -1,0 +1,37 @@
+.page {
+  font-family: Rubic, sans-serif;
+  font-weight: normal;
+  font-size: $font-size-global;
+  line-height: $line-height-global;
+
+  color: $color-chocolate;
+
+  scroll-behavior: smooth;
+
+  @include on-laptop {
+    @include text-adaptive-laptop (
+      $font-size-global,
+      $line-height-global
+    );
+  }
+
+  @include on-tablet {
+    @include text-adaptive-tablet (
+      $font-size-global,
+      $line-height-global
+    );
+  }
+
+  background-color: $color-milk;
+
+  &__body {
+    @include on-full-hd {
+      max-width: 2560px;
+      margin: 0 auto;
+    }
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+}

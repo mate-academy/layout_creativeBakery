@@ -1,0 +1,111 @@
+.bakershops {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 40px 0 56px;
+
+  background-color: $color-cream;
+
+  @include on-mobile {
+    padding-bottom: 40px;
+  }
+
+  &__title {
+    text-align: center;
+
+    margin-bottom: 88px;
+
+    @include on-mobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    margin-bottom: 68px;
+
+    @include on-mobile {
+      flex-direction: column;
+      padding: 0 16px;
+    }
+  }
+
+  &__city {
+    margin-right: 32px;
+
+    width: 174px;
+    @extend %select-bakershops;
+
+    @include on-mobile {
+      margin: 0 0 25px;
+      width: 100%;
+    }
+  }
+
+  &__adress {
+    margin-right: 32px;
+
+    width: 324px;
+    @extend %select-bakershops;
+
+    @include on-mobile {
+      margin: 0 0 35px;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    @include button-primary;
+  }
+
+  &__map-diagram {
+    padding: 0 40px;
+
+    @include on-mobile {
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__map-diagram-image {
+    $width: 1020px;
+    $height: 688px;
+
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__resize-button {
+    display: none;
+
+    @include circle (40px);
+    @include hover (transform, scale(1.2));
+
+    border: none;
+    font-size: 30px;
+    color: inherit;
+    cursor: pointer;
+
+    line-height: 100%;
+
+    &:active {
+      transform: scale(1);
+    }
+
+    &--decrease {
+      margin-right: 40px;
+    }
+
+    @include on-mobile {
+      display: inline-block;
+    }
+  }
+}

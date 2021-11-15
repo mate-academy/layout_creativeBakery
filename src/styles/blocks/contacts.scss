@@ -1,0 +1,107 @@
+.contacts {
+  padding-top: 70px;
+
+  &__title {
+    margin-bottom: 26px;
+
+    text-align: center;
+
+    @include on-tablet {
+      padding-top: 40px;
+      margin-bottom: 0;
+
+      color: $color-milk;
+
+      background-color: $color-croissant;
+    }
+  }
+
+  &__content-wrapper {
+    display: flex;
+
+    @include on-tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    padding: 40px 76px 128px 66px;
+    // width: 40%;
+    min-width: min-content;
+
+    background-color: $color-croissant;
+
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include on-mobile {
+      padding: 20px 16px 66px;
+    }
+  }
+
+  $padding-left: 54px;
+
+  &__subtitle {
+    margin-bottom: 24px;
+    padding-left: $padding-left;
+
+    @include on-mobile {
+      padding-left: 0;
+    }
+  }
+
+  &__list-item {
+    font-size: $font-size-global;
+    line-height: $line-height-global;
+
+    padding-left: $padding-left;
+
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin-bottom: 9px;
+    }
+
+    &:nth-child(1) {
+      background-image: url(../images/contacts-list-markers/location-marker.svg);
+      background-repeat: no-repeat;
+      background-position: 0 6px;
+    }
+
+    &:nth-child(2) {
+      background-image: url(../images/contacts-list-markers/phone-marker.svg);
+      background-repeat: no-repeat;
+      background-position: 0 9px;
+    }
+
+    &:nth-child(3) {
+      background-image: url(../images/contacts-list-markers/envelope-marker.svg);
+      background-repeat: no-repeat;
+      background-position: 0 9px;
+    }
+  }
+
+  &__contact-description {
+    font-weight: bold;
+  }
+
+  &__link {
+    @include link;
+  }
+
+  &__map-container {
+    display: flex;
+    width: 100%;
+  }
+
+  &__map {
+    width: 100%;
+    min-height: 500px;
+
+    border: none;
+  }
+}

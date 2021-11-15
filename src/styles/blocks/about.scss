@@ -1,0 +1,113 @@
+.about {
+  $padding-top: 54px;
+  $padding-bottom: 70px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: $padding-top 0 $padding-bottom;
+
+  width: 100%;
+  max-width: 1600px;
+
+  &__title {
+    margin-bottom: 22px;
+  }
+
+  &__description {
+    margin-bottom: 60px;
+
+    max-width: 480px;
+    text-align: center;
+
+    &--full {
+      @include on-mobile {
+        display: none;
+      }
+    }
+
+    &--part {
+      display: none;
+
+      @include on-mobile {
+        display: inline-block;
+        padding: 0 16px;
+      }
+    }
+  }
+  
+  &__card-container {
+    display: flex;
+    justify-content: space-around;
+
+    overflow: scroll;
+    
+    width: 100%;
+    max-width: 1400px;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    @include on-laptop {
+      justify-content: space-between;
+
+      padding: 0 25px;
+    }
+
+    @include on-tablet {
+      padding: 0 15px;
+
+      cursor: grab;
+
+      &:active {
+        cursor: grabbing;
+      }
+    }
+
+    @include on-mobile {
+      padding: 0 85px;
+    }
+  }
+
+  &__card {
+    $margin-right: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include on-tablet {
+      &:not(:last-child) {
+        margin-right: $margin-right;
+      }
+    }
+
+    @include on-mobile {
+      &:not(:last-child) {
+        margin-right: 27px;
+      }
+    }
+  }
+
+  &__card-image {
+    margin-bottom: 20px;
+
+    @include on-laptop {
+      @include circle (200px * $factor-tablet);
+    }
+
+    @include on-mobile {
+      @include circle (150px);
+    }
+  }
+
+  &__card-number {
+    margin-bottom: 7px;
+
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 71px;
+  }
+}

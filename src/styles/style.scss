@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: Cookie, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: $font-size-h1-global;
+  line-height: $line-height-h1-global;
+}
+
+h2,
+h3 {
+  color: $color-croissant;
+}
+
+h2 {
+  font-size: $font-size-h2-global;
+  line-height: $line-height-h2-global;
+
+  @include on-laptop {
+    @include text-adaptive-laptop (
+      $font-size-h2-global,
+      $line-height-h2-global
+    );
+  }
+
+  @include on-tablet {
+    @include text-adaptive-tablet (
+      $font-size-h2-global,
+      $line-height-h2-global
+    );
+  }
+
+  @include on-mobile {
+    font-size: 60px;
+    line-height: 67px;
+  }
+}
+
+h3 {
+  font-size: $font-size-h3-global;
+  line-height: $line-height-h3-global;
+
+  @include on-laptop {
+    @include text-adaptive-laptop (
+      $font-size-h3-global,
+      $line-height-h3-global
+    );
+  }
+
+  @include on-tablet {
+    @include text-adaptive-tablet (
+      $font-size-h3-global,
+      $line-height-h3-global
+    );
+  }
+
+  @include on-mobile {
+    font-size: 35px;
+    line-height: 41px;
+  }
+}
+
+h4 {
+  font-size: $font-size-h4-global;
+
+  @include on-laptop {
+    @include text-adaptive-laptop (
+      $font-size-h4-global,
+      150%
+    );
+  }
+
+  @include on-tablet {
+    @include text-adaptive-tablet (
+      $font-size-h4-global,
+      150%
+    );
+  }
+
+  @include on-mobile {
+    font-size: 20px;
+    line-height: 150%;
+  }
+}
+
+p {
+  font-size: $font-size-global;
+  line-height: $line-height-global;
+}
+
+button {
+  font-family: Rubic, sans-serif;
+  font-weight: normal;
+
+  font-size: $font-size-global;
+  line-height: $line-height-global;
+}

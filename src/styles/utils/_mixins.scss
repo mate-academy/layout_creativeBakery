@@ -1,6 +1,205 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin on-full-hd {
+  @media (min-width: 1921px) {
+    @content;
+  }
+}
+
+// useless in header
+@mixin on-desktop {
+  @media (min-width: 1600px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin on-laptop {
+  @media(max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin on-mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin text-adaptive-full-hd ($_font-size, $_line-height) {
+  font-size: $_font-size * $factor-full-hd;
+  line-height: $_line-height * $factor-full-hd;
+}
+
+@mixin text-adaptive-laptop ($_font-size, $_line-height) {
+  font-size: $_font-size * $factor-laptop;
+  line-height: $_line-height * $factor-laptop;
+}
+
+@mixin text-adaptive-tablet ($_font-size, $_line-height) {
+  font-size: $_font-size * $factor-tablet;
+  line-height: $_line-height * $factor-tablet;
+}
+
+@mixin link {
+  text-decoration: none;
+
+  color: inherit;
+
+  @include on-full-hd {
+    @include text-adaptive-full-hd(
+      $font-size-global,
+      $line-height-global
+    );
+  }
+
+  @include on-laptop {
+    @include text-adaptive-laptop(
+      $font-size-global,
+      $line-height-global
+    );
+  }
+
+  @include on-mobile {
+    font-size: $font-size-global;
+    line-height: $line-height-global;
+  }
+}
+
+@mixin hover($property, $to-value) {
+  transition: #{$property} 0.3s;
+
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $to-value;
+  }
+}
+
+@mixin active(
+  $first-property,
+  $to-first-property-value,
+  $second-property,
+  $to-second-property-value
+) {
+  transition: #{$first-property} 0.3s,
+    #{$second-property} 0.3s;
+  
+  &:active {
+    #{$first-property}: $to-first-property-value;
+    #{$second-property}: $to-second-property-value;
+  }
+}
+
+@mixin block-adaptive-full-hd ($_width, $_height) {
+  width: $_width * $factor-full-hd;
+  height: $_height * $factor-full-hd;
+}
+
+@mixin block-adaptive-laptop ($_width, $_height) {
+  width: $_width * $factor-laptop;
+  height: $_height * $factor-laptop;
+}
+
+@mixin block-adaptive-tablet ($_width, $_height) {
+  width: $_width * $factor-tablet;
+  height: $_height * $factor-tablet;
+}
+
+@mixin block-adaptive-custom ($_width, $_height, $_factor) {
+  width: $_width * $_factor;
+  height: $_height * $_factor;
+}
+
+@mixin button-primary {
+  $width: 160px;
+  $height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $width;
+  height: $height;
+
+  background-color: $color-croissant;
+  border-radius: 40px;
+
+  border: 2px solid $color-croissant;
+  
+  cursor: pointer;
+  
+  @include link;
+  @include hover(background-color, $color-milk);
+  @include active(background-color, $color-cream, border-color, $color-cream);
+
+  @include on-full-hd {
+    @include block-adaptive-full-hd($width, $height);
+  }
+
+  @include on-laptop {
+    @include block-adaptive-laptop($width, $height);
+  }
+
+  @include on-mobile {
+    width: $width;
+    height: $height;
+  }
+}
+
+@mixin button-secondary {
+  @include button-primary;
+
+  $width: 100px;
+  $height: 30px;
+
+  width: $width;
+  height: $height;
+
+  background-color: $color-cream;
+  border-color: $color-cream;
+
+  @include on-full-hd {
+    @include block-adaptive-full-hd($width, $height);
+  }
+
+  @include on-laptop {
+    @include block-adaptive-laptop($width, $height);
+  }
+
+  @include on-mobile {
+    width: $width;
+    height: $height;
+  }
+}
+
+@mixin slider-switcher($_color-background, $_duration-transform) {
+  background-color: $_color-background;
+  border: none;
+  cursor: pointer;
+
+  transition: transform $_duration-transform;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:active {
+    transform: scale(1);
+  }
+}
+
+@mixin circle ($_diameter) {
+  width: $_diameter;
+  height: $_diameter;
+  border-radius: 50%;
+}
+
+@mixin custom-button-transformation ($_scale-coeficient) {
+  @include hover(transform, scale($_scale-coeficient));
+
+  &:active {
+    transform: scale(1);
   }
 }
