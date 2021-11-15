@@ -46,8 +46,6 @@
     width: 100%;
     max-width: 1400px;
 
-    cursor: grab;
-
     &::-webkit-scrollbar {
       width: 0;
     }
@@ -55,11 +53,17 @@
     @include on-laptop {
       justify-content: space-between;
 
-      padding: 0 30px;
+      padding: 0 25px;
     }
 
     @include on-tablet {
       padding: 0 15px;
+
+      cursor: grab;
+
+      &:active {
+        cursor: grabbing;
+      }
     }
 
     @include on-mobile {
