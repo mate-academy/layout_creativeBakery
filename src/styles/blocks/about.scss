@@ -1,0 +1,111 @@
+.about {
+  &__wrapper {
+    padding: 54px 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mobile {
+      padding: 40px 16px 0 40px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 22px;
+    font-size: 120px;
+    line-height: 133px;
+    text-align: center;
+    color: $orange;
+
+    @include mobile {
+      font-size: 60px;
+      line-height: 67px;
+    }
+  }
+
+  &__description--desktop {
+    margin-bottom: 60px;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__description--mobile {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__achievements {
+    display: flex;
+    gap: 60px;
+    overflow-x: auto;
+    max-width: 100%;
+
+    @media (max-width: 1280px) {
+      gap: 27px;
+    }
+
+    @include mobile {
+      gap: 27px;
+    }
+  }
+
+  &__achievement {
+    @media (max-width: 320px) {
+      &:first-child {
+        margin-left: 45px;
+      }
+    }
+  }
+
+  &__achievement-photo {
+    max-width: 180px;
+    max-height: 180px;
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(0.9, 0.9);
+    }
+
+    @media (max-width: 1300px) {
+      width: 150px;
+      height: 150px;
+    }
+
+    @include mobile {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &__achievement-numbers {
+    margin-bottom: 7px;
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 71px;
+    text-align: center;
+    color: $brown;
+  }
+
+  &__achievement-description {
+    margin-bottom: 140px;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: $brown;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+}

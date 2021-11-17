@@ -1,0 +1,102 @@
+.menu-mobile {
+  background-color: $orange;
+  border-left: 3px solid #fff;
+  transition: transform 1s;
+
+  &__wrapper {
+    box-sizing: border-box;
+    padding: 30px 20px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+  }
+
+  &__cross {
+    @include mobile {
+      margin: 0 0 30px auto;
+      display: block;
+      height: 22px;
+      width: 22px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(../images/cross.svg);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 150%;
+    color: $brown;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  @include desktop {
+    display: none;
+  }
+
+  &__call {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: auto;
+
+    &-link {
+      font-size: 16px;
+      line-height: 150%;
+      color: $brown;
+      text-decoration: none;
+    }
+  }
+
+  &__button {
+    width: 100px;
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $brown;
+    background: $lightorange;
+    border-radius: 40px;
+    border: 2px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fff;
+      border: 2px solid $lightorange;
+    }
+
+    &:active {
+      background-color: rgba(241, 204, 157, 0.8);
+      border: 2px solid transparent;
+    }
+  }
+
+  &__form {
+    &-select {
+      font-family: inherit;
+      font-size: 16px;
+      line-height: 150%;
+      color: $brown;
+      background-color: transparent;
+      border: 0;
+    }
+  }
+}
