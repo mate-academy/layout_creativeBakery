@@ -1,0 +1,87 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  background-color: $lightBrown;
+
+  @include onDesktop {
+    background-color: #fff;
+  }
+  &__content {
+    display: block;
+    background-color: $lightBrown;
+  }
+
+  &__wrap {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  &__grid {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  &__heading {
+    @extend %h2;
+    margin: 40px auto 20px;
+    text-align: center;
+    color: #fff;
+
+    @include onDesktop {
+      color: $lightBrown;
+    }
+  }
+  
+  &__title {
+    color: $darkBrown;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 30px;
+    text-align: center;
+    margin: 0 auto 5px;
+
+    @include onTablet {
+      margin: 20px auto 15px;
+    }
+
+    @include onDesktop {
+      margin: 40px auto 15px;
+    }
+  }
+}
+
+.contacts__item {
+  position: relative;
+  display: block;
+  margin: 0;
+}
+
+.contacts__icon {
+  position: absolute;
+  transform: translate(15px, 25px);
+}
+
+.contacts__name {
+  font-weight: bold;
+  display: block;
+  padding-left: 55px;
+  margin: 16px auto 0;
+}
+
+.contacts__link {
+  text-decoration: none;
+  color: $darkBrown;
+  padding-left: 55px;
+}
+
+.contacts__map {
+  height: 500px;
+}
+
+.contacts__location {
+  width: 100%;
+}

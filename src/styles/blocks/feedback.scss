@@ -1,0 +1,104 @@
+.feedback {
+  background-color: #fff;
+  padding: 40px 12px 50px;
+
+  &__title {
+    @extend %h4;
+    text-align: center;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include onTablet {
+      flex-direction: row-reverse;
+      justify-content: space-around;
+    }
+  }
+
+  &__content {
+    @include onDesktop {
+      margin-top: 50px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__input {
+    display: block;
+    width: 288px;
+    margin-bottom: 20px;
+    line-height: 150%;
+    border: none;
+    border-bottom: 1px solid $darkBrown;
+    opacity: 0.5;
+    outline: none;
+  
+    @include onDesktop {
+      font-size: 20px;
+      width: 440px;
+    }
+  }
+
+  &__input-textarea {
+    padding-top: 56px;
+    height: 80px;
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    margin: 0 auto 20px;
+    line-height: 24px;
+    background-color: $lightBrown;
+    border: 1px solid $lightBrown;
+    border-radius: 40px;
+    text-decoration: none;
+    color: $darkBrown;
+
+    &:hover {
+      border-color: $lightBrown;
+      background-color: #fff;
+    }
+  
+    &:active {
+      background-color: $lightBrown;
+    }
+  }
+
+  &__photo {
+    width: 250px;
+    height: 204px;
+    margin-left: 20px;
+    background-image: url(../images/OBJECTS.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include onTablet {
+      margin-top: 70px;
+    }
+
+    @include onLaptop {
+      width: 340px;
+      height: 290px;
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      width: 510px;
+      height: 420px;
+    }
+  }
+}

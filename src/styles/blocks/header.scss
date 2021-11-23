@@ -1,0 +1,94 @@
+
+$lightBrown: #e39a3b;
+
+.header {
+  position: relative;
+  padding: 15px 25px;
+  height: 100vh;
+
+  background-image: url(../images/main_1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include onLaptop {
+    background-position-x: -300px;
+    height: 100vh;
+    padding: 0;
+  }
+
+  &__left {
+    @include onLaptop {
+      padding: 34px 0 0 59px;
+      flex-basis: 66.66%;
+    }
+  }
+
+  &__side {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    @include onLaptop {
+      flex-basis: 34%;
+      background-color: $lightBrown;
+      padding-top: 58px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 0;
+  }
+
+  &__menu-opener {
+    @include onLaptop {
+      display: none;
+    }
+    display: block;
+    height: 18px;
+    width: 24px;
+    margin-top: 10px;
+
+    background-image: url(../images/burger.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    margin-bottom: 29px;
+    font-family: "Cookie", sans-serif;
+    font-size: 100px;
+    line-height: 80px;
+    font-weight: 400;
+    color: $darkBrown;
+  }
+
+  &__subtitle {
+    font-size: 26px;
+    font-family: "Rubik", sans-serif;
+    line-height: 30px;
+    font-style: normal;
+    font-weight: 400;
+    color: $darkBrown;
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  &__button {
+    margin-bottom: 40px;
+    display: block;
+    max-width: 170px;
+    line-height: 24px;
+    padding: 9px 37px 7px 38px;
+    background-color: $lightBrown;
+    border-radius: 40px;
+    border: 1px solid $lightBrown;
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+      border-color: $lightBrown;
+      background-color: #fff;
+    }
+  }
+}
