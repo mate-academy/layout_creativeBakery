@@ -1,0 +1,129 @@
+.header {
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 100vh;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 16px 28px;
+
+    background-image: url(../images/main-photo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include onDesktop {
+      padding: 46px;
+    }
+  }
+
+  &__right {
+    display: none;
+    background-color: $secondary-color;
+    justify-content: start;
+    padding: 60px 46px;
+    color: $main-color;
+    flex-direction: column;
+    gap: 120px;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-family: "Cookie", serif;
+    color: $main-color;
+    font-size: 23px;
+    line-height: 26px;
+
+    @include onDesktop {
+      font-size: 30px;
+      line-height: 33px;
+    }
+  }
+
+  &__logo-image {
+    width: 28px;
+    height: 28px;
+    position: relative;
+    top: -5px;
+    left: 15px;
+
+    @include onDesktop {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      gap: 34px;
+    }
+  }
+
+  &__nav-link {
+    color: $main-color;
+  }
+
+  &__title {
+    font-family: "Cookie", serif;
+    color: $main-color;
+    font-size: 100px;
+    line-height: 80%;
+    margin-top: 97px;
+  }
+
+  &__slogan {
+    font-size: 16px;
+    line-height: 150%;
+    margin-top: 29px;
+  }
+
+  &__button {
+    height: 45px;
+    width: 160px;
+    border-radius: 40px;
+    background-color: $secondary-color;
+    color: $main-color;
+    font-size: 16px;
+    line-height: 45px;
+    text-align: center;
+    margin-top: 19px;
+  }
+
+  &__gallery {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 40px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__gallery-item {
+    color: $secondary-color;
+    font-size: 16px;
+    margin: 20px;
+
+    &--active {
+      color: $main-color;
+      font-size: 40px;
+    }
+  }
+}
