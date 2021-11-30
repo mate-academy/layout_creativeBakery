@@ -2,6 +2,114 @@
 @import "fonts";
 @import "typography";
 
-body {
-  background: $c-gray;
+@import "utils/reset";
+
+$main-color: #412d22;
+$secondary-color: #e39a3b;
+
+.page {
+  font-family: "Rubik", sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 16px 28px;
+
+  background-image: url(../images/main-photo.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-family: "Cookie", serif;
+    color: $main-color;
+    font-size: 23px;
+    line-height: 26px;
+
+    @include onDesktop {
+      font-size: 30px;
+      line-height: 33px;
+    }
+  }
+
+  &__logo-image {
+    width: 28px;
+    height: 28px;
+    position: relative;
+    top: -5px;
+    left: 15px;
+
+    @include onDesktop {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__title {
+    font-family: "Cookie", serif;
+    color: $main-color;
+    font-size: 100px;
+    line-height: 80%;
+    margin-top: 97px;
+  }
+
+  &__slogan {
+    font-size: 16px;
+    line-height: 150%;
+    margin-top: 29px;
+  }
+
+  &__button {
+    height: 45px;
+    width: 160px;
+    border-radius: 40px;
+    background-color: $secondary-color;
+    color: $main-color;
+    font-size: 16px;
+    line-height: 45px;
+    text-align: center;
+    margin-top: 19px;
+  }
+
+  &__gallery {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 40px;
+  }
+
+  &__gallery-item {
+    color: $secondary-color;
+    font-size: 16px;
+    margin: 20px;
+
+    &--active {
+      color: $main-color;
+      font-size: 40px;
+    }
+  }
+}
+
+.menu__line {
+  display: block;
+  margin: 5px;
+  height: 1px;
+  width: 25px;
+  border: 1.5px solid $main-color;
+  background-color: $main-color;
+
+  @include onDesktop {
+    display: none;
+  }
+}
+
+.link {
+  text-decoration: none;
 }
