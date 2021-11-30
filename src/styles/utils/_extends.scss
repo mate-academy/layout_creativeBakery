@@ -2,3 +2,159 @@
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
+
+%sizeCity2 {
+  width: 3%;
+  height: 4%;
+}
+
+%sizeCity3 {
+  width: 4%;
+  height: 6%;
+}
+
+%sizeCity4 {
+  width: 5.5%;
+  height: 8%;
+}
+
+%sizeCity5 {
+  width: 7%;
+  height: 10%;
+}
+
+%sizeCity6 {
+  width: 8%;
+  height: 12%;
+}
+
+%sizeCity9 {
+  width: 10%;
+  height: 14%;
+}
+
+%btn-general {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 160px;
+  background-color: $colorCroissant;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  color: $colorChocolate;
+  transition: color, background-color, font-size, 0.3s;
+  
+  margin-bottom: 40px;
+
+  @include onDesktop {
+    height: 40px;
+  }
+
+  &:hover {
+    color: $colorMilk;
+    background-color: $colorChocolate;
+    font-size: 17px;
+    border: 1px solid $colorMilk;
+  }
+}
+
+%nav-menu-link {
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 150%;
+  color: $colorChocolate;
+
+  &:after {
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: $colorChocolate;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  &:hover:after {
+    width: 100%;
+    left: 0;
+  }
+}
+
+%nav-menu-tel {
+  position: relative;
+  text-decoration: none;
+  max-width: max-content;
+  font-size: 16px;
+  line-height: 150%;
+  color: $colorChocolate;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: $colorChocolate;
+    transition: width 0.3s;
+  }
+
+  &::after {
+    right: 0;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 50%;
+  }
+}
+
+%nav-menu-contact-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 100px;
+  border: none;
+  color: $colorChocolate;
+  border-radius: 40px;
+  background-color: $colorCream;
+  transition: color, background-color, 0.3s;
+
+  &:hover {
+    color: $colorMilk;
+    background-color: $colorChocolate;
+    border: 1px solid $colorMilk;
+  }
+}
+
+%contact-us-input {
+  width: 100%;
+  min-width: 288px;
+  border: none;
+  background-color: $c-gray;
+  border-bottom: 1px solid rgba(65,45,34, 0.5);
+  padding: 5px;
+
+  transition: all 0.3s;
+
+  &:hover {
+    border-bottom: 1px solid rgb(65,45,34);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &::placeholder {
+    opacity: 0.6;
+  }
+}
