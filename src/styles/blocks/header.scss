@@ -1,8 +1,10 @@
 .header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100vh;
+
   @include onDesktop {
-    display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 100vh;
   }
 
   &__left {
@@ -22,10 +24,10 @@
 
   &__right {
     display: none;
-    background-color: $secondary-color;
+    background-color: $croissant-color;
     justify-content: start;
     padding: 60px 46px;
-    color: $main-color;
+    color: $chocolate-color;
     flex-direction: column;
     gap: 120px;
 
@@ -42,7 +44,7 @@
 
   &__logo {
     font-family: "Cookie", serif;
-    color: $main-color;
+    color: $chocolate-color;
     font-size: 23px;
     line-height: 26px;
 
@@ -70,38 +72,50 @@
 
     @include onDesktop {
       display: flex;
-      justify-content: center;
-      gap: 34px;
     }
   }
 
-  &__nav-link {
-    color: $main-color;
+  &__nav-mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-100%);
+    height: 100%;
+    width: $mobile-menu-width;
+    background-color: $croissant-color;
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateY(0%);
+    }
   }
 
   &__title {
     font-family: "Cookie", serif;
-    color: $main-color;
+    font-weight: normal;
+    color: $chocolate-color;
     font-size: 100px;
     line-height: 80%;
+    width: min-content;
     margin-top: 97px;
+
+    @include onDesktop {
+      font-size: 160px;
+      width: max-content;
+    }
   }
 
   &__slogan {
     font-size: 16px;
     line-height: 150%;
     margin-top: 29px;
+
+    @include onDesktop {
+      font-size: 26px;
+    }
   }
 
   &__button {
-    height: 45px;
-    width: 160px;
-    border-radius: 40px;
-    background-color: $secondary-color;
-    color: $main-color;
-    font-size: 16px;
-    line-height: 45px;
-    text-align: center;
     margin-top: 19px;
   }
 
@@ -117,12 +131,12 @@
   }
 
   &__gallery-item {
-    color: $secondary-color;
+    color: $croissant-color;
     font-size: 16px;
     margin: 20px;
 
     &--active {
-      color: $main-color;
+      color: $chocolate-color;
       font-size: 40px;
     }
   }
