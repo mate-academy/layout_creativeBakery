@@ -1,0 +1,45 @@
+.menu {
+  display: none;
+
+  @include mediaOnTablet {
+    display: block;
+  }
+
+  &--visible {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+
+    @include mediaOnTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 31px;
+    color: inherit;
+
+    transition: $transition-duration;
+
+    
+    @include mediaOnTablet {
+      padding: 33px 17px;
+      
+      &:hover {
+        color: $color-croissant;
+      }
+    }
+
+    &--p--0 {
+      padding: 15px 0;
+    }
+  }
+}

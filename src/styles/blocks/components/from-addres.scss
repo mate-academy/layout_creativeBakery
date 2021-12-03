@@ -1,0 +1,95 @@
+.form-addres {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  @include mediaOnTablet {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 67px;
+  }
+
+  &__select-wrap {
+    position: relative;
+    width: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+
+      width: 11px;
+      height: 6px;
+
+      background-image: url(../images/arrow-form.svg);
+      pointer-events: none;
+    }
+
+    &--city {
+      margin: 0 0 15px;
+
+      @include mediaOnTablet {
+        max-width: 173px;
+        margin: 0 32px 0 0;
+      }
+    }
+
+    &--adress {
+      margin: 0 0 35px;
+      
+      @include mediaOnTablet {
+        max-width: 323px;
+        margin: 0 32px 0 0;
+      }
+    }
+  }
+
+  &__select {
+    width: inherit;
+    padding: 10px 26px 10px 10px;
+
+    color: rgba($color: $color-chocolate, $alpha: 0.5);
+
+    background-color: $color-cream;
+    border: none;
+    border-bottom: 1px solid rgba($color: $color-chocolate, $alpha: 0.5);
+    outline: none;
+
+    transition: $transition-duration;
+
+    cursor: pointer;
+    appearance: none;
+
+    @include mediaOnDesktop {
+      margin: 0 32px 0 0;
+    }
+
+    &:hover {
+      background-color: $color-milk;
+      border-bottom: 1px solid transparent;
+      border-radius: 40px;
+    }
+
+    &:focus {
+      color: $color-chocolate;
+      background-color: $color-croissant;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &__button {
+    margin-bottom: 26px;
+
+    @include mediaOnTablet {
+      margin-bottom: 0;
+    }
+  }
+}
