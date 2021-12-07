@@ -1,0 +1,237 @@
+.map {
+
+  display: flex;
+  flex-direction: column;
+
+  &__grid-container {
+    height: 256px;
+    width: 320px;
+    background-image: url(../images/image18.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+  }
+
+  &__item {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    font-size: 8px;
+    text-align: center;
+
+    &--lviv {
+      height: 25px;
+      width: 25px;
+      background-image: url(../images/icon.png);
+      grid-column: 2 / 4;
+      grid-row: 7 / 9;
+
+      &::before {
+        content: "6";
+        @include mapNumber;
+      }
+
+      &::after {
+        content: "Lviv";
+        display: block;
+        transform: translateY(220%);
+      }
+    }
+
+    &--lutsk {
+      height: 16px;
+      width: 16px;
+      background-image: url(../images/icon.png);
+      grid-column: 4;
+      grid-row: 4;
+
+      &::before {
+        content: "4";
+        @include mapNumber;
+      }
+
+      &::after {
+        content: "Lutsk";
+        display: block;
+        transform: translateY(120%);
+      }
+    }
+
+    &--zhytomyr {
+      height: 13px;
+      width: 13px;
+      background-image: url(../images/icon.png);
+      grid-column: 8;
+      grid-row: 5;
+
+      &::before {
+        content: "3";
+        @include mapNumber;
+      }
+
+      &::after {
+        content: "Zhytomyr";
+        display: block;
+        transform: translate(-120%, 100%);
+      }
+    }
+
+    &--vinnytsya {
+      height: 16px;
+      width: 16px;
+      background-image: url(../images/icon.png);
+      grid-column: 8;
+      grid-row: 9;
+
+      &::before {
+        content: "4";
+        @include mapNumber;
+      }
+
+      &::after {
+        content: "Vinnytsya";
+        display: block;
+        transform: translate(-80%, 100%);
+      }
+    }
+
+    &--kyiv {
+      height: 27px;
+      width: 27px;
+      background-image: url(../images/icon.png);
+      grid-column: 9 / 11;
+      grid-row: 6 / 8;
+      transform: translateX(30%);
+
+      &::before {
+        content: "9";
+        @include mapNumber;
+      }
+
+      &::after {
+        content: "Kyiv";
+        display: block;
+        transform: translateY(250%);
+      }
+    }
+
+    &--chernihiv {
+      height: 16px;
+      width: 16px;
+      background-image: url(../images/icon.png);
+      grid-column: 11;
+      grid-row: 4;
+
+      &::before {
+        content: "4";
+        @include mapNumber;
+      }
+
+      &::after {
+        content: "Chernihiv";
+        display: block;
+        transform: translate(-80%, 120%);
+      }
+    }
+
+    &--poltava {
+      height: 10px;
+      width: 10px;
+      background-image: url(../images/icon.png);
+      grid-column: 14;
+      grid-row: 7;
+
+      &::before {
+        content: "2";
+        @include mapNumber;
+        transform: translate(-50%, -50%);
+      }
+
+      &::after {
+        content: "Poltava";
+        display: block;
+        transform: translate(-80%, 50%);
+      }
+    }
+
+    &--kharkiv {
+      height: 20px;
+      width: 20px;
+      background-image: url(../images/icon.png);
+      grid-column: 16 / 18;
+      grid-row: 7 / 9;
+
+      &::before {
+        content: "5";
+        @include mapNumber;
+      }
+
+      &::after {
+        content: "Kharkiv";
+        display: block;
+        transform: translate(-10%, 150%);
+      }
+    }
+
+    &--dnipro {
+      height: 16px;
+      width: 16px;
+      background-image: url(../images/icon.png);
+      grid-column: 15;
+      grid-row: 9;
+      transform: translateY(50%);
+
+      &::before {
+        content: "4";
+        @include mapNumber;
+      }
+
+      &::after {
+        content: "Dnipro";
+        display: block;
+        transform: translate(-100%, 120%);
+      }
+    }
+
+    &--kherson {
+      height: 10px;
+      width: 10px;
+      background-image: url(../images/icon.png);
+      grid-column: 14;
+      grid-row: 13;
+
+      &::before {
+        content: "2";
+        @include mapNumber;
+        transform: translate(-50%, -50%);
+      }
+
+      &::after {
+        content: "Kherson";
+        display: block;
+        transform: translate(-100%, 60%);
+      }
+    }
+  }
+
+  &__buttons {
+    align-self: center;
+    display: flex;
+    gap: 40px;
+    z-index: 1;
+  }
+
+  &__button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: $milk-color;
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+  }
+}
