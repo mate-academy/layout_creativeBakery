@@ -1,0 +1,78 @@
+.menu {
+  &__list {
+    list-style: none;
+
+    @include onNotebook {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      position: relative;
+      top: -10px;
+      left: -20px;
+
+      width: 100%;
+    }
+
+    &--nav {
+      text-align: center;
+    }
+  }
+
+  &__item {
+    &--nav {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    margin-left: 0;
+    width: max-content;
+    text-decoration: none;
+    color: $blueText;
+
+    @include onNotebook {
+      position: absolute;
+      top: 0;
+    }
+
+    &--cookie {
+      &:hover {
+        color: $pinkText;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+
+        &::before {
+          content: url(../images/symbol.png);
+          position: absolute;
+          top: 0;
+          left: -25px;
+        }
+      }
+    }
+
+    &--phone {
+      &:hover {
+        color: $pinkText;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 0.02em;
+
+        text-transform: uppercase;
+
+        &::before {
+          content: url(../images/phone.png);
+          position: absolute;
+          top: 0;
+          left: -25px;
+        }
+      }
+    }
+  }
+}
