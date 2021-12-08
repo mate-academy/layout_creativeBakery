@@ -9,18 +9,47 @@
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #f9512e;
-  border: 1px solid #f9512e;
+  color: $c-orange;
+  border: 1px solid $c-orange;
   border-radius: 30px;
   align-self: top;
 
   grid-column-start: 1;
   grid-column-end: 3;
-
   grid-row-start: 4;
   grid-row-end: -1;
 
-  @media (min-width:768px) {
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    color: $c-white;
+    background-color: $c-orange;
+  }
+
+  &:hover &__img {
+    filter: brightness(0) invert(1);
+  }
+
+  &:focus {
+    color: $c-white;
+    background-color: #b2341a;
+  }
+
+  &:focus &__img {
+    filter: brightness(0) invert(1);
+  }
+
+  &:disabled {
+    color: #fba28f;
+    background-color: $c-white;
+  }
+
+  &:disabled &__img {
+    filter: invert(92%) sepia(70%) saturate(4900%)
+      hue-rotate(297deg) brightness(100%) contrast(97%);
+  }
+
+  @include onTablet {
     grid-column-start: 3;
     grid-column-end: 7;
 
@@ -29,7 +58,7 @@
     grid-row-end: -1;
   }
 
-  @media (min-width:1200px) {
+  @include onDesktop {
     align-self: center;
     grid-column-start: 1;
     grid-column-end: 3;
@@ -43,13 +72,11 @@
     gap: 8px;
     text-decoration: none;
     text-transform: uppercase;
-    // font-size: 16px;
     font-weight: 500;
-
     line-height: 100%;
 
     letter-spacing: 0.02em;
-    color: #f9512e;
+    color: $c-orange;
   }
 
   &__description {
@@ -57,14 +84,3 @@
     grid-column-end: -1;
   }
 }
-
-// @media (min-width:1200px) {
-//   .button {
-//     align-self: center;
-//     grid-column-start: 1;
-//     grid-column-end: 3;
-
-//     grid-row-start: 3;
-//     grid-row-end: 4;
-//   }
-// }

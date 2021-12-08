@@ -6,3 +6,10 @@ $(document).ready(function() {
     $('.page__body').toggleClass('lock');
   });
 });
+
+$(document).ready(function() {
+  $('.header__link').click(function(event) {
+    $('.header__burger,.header__menu').removeClass('active');
+    $('.page__body').removeClass('lock');
+  });
+});

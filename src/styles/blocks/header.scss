@@ -1,5 +1,4 @@
 .header {
-  // position: fixed;
   width: 100%;
   top: 0;
   left: 0;
@@ -9,17 +8,15 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 70%;
-  // height: 100vh;
   grid-area: header;
 
-  @media (min-width:768px) {
+  @include onTablet {
     background-size: 50%;
     background-position: 50% 45%;
   }
 
-  @media (min-width:1200px) {
+  @include onDesktop {
     background-size: 45%;
-    // background-position: 50% 75%;
   }
 }
 
@@ -41,7 +38,7 @@
   align-items: center;
   margin-bottom: 32px;
 
-  @media (min-width:768px) {
+  @include onTablet {
     margin-bottom: 80px;
   }
 }
@@ -63,12 +60,12 @@
 }
 
 .header__link {
-  color: #1c1a26;
+  color: $c-black;
   text-decoration: none;
 }
 
 .header__link--call {
-  color: #f9512e;
+  color: $c-orange;
   text-transform: uppercase;
 }
 
@@ -92,17 +89,16 @@
   font-size: 16px;
   line-height: 150%;
   letter-spacing: -0.01em;
-  color: #1c1a26;
   align-self: start;
   grid-column-start: 1;
   grid-column-end: 3;
 
-  @media (min-width:768px) {
+  @include onTablet {
     grid-column-start: 1;
     grid-column-end: 5;
   }
 
-  @media (min-width:1200px) {
+  @include onDesktop {
     align-self: end;
     grid-column-start: 1;
     grid-column-end: 3;
@@ -115,7 +111,7 @@
   text-align: center;
   letter-spacing: -0.05em;
   text-transform: uppercase;
-  color: #f9512e;
+  color: $c-orange;
   align-self: center;
 
   grid-column-start: 1;
@@ -124,13 +120,13 @@
   grid-row-start: 2;
   grid-row-end: 3;
 
-  @media (min-width:768px) {
+  @include onTablet {
     grid-column-start: 1;
     grid-column-end: -1;
     font-size: 80px;
   }
 
-  @media (min-width:1200px) {
+  @include onDesktop {
     font-size: 136px;
   }
 }
@@ -166,9 +162,9 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: #ffeefc;
+    background-color: $c-pink;
     padding: 70px 0 0 30px;
-    transition: top 0.4s;
+    transition: top 0.3s;
   }
 
   .header__menu.active {
