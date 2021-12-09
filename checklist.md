@@ -3,6 +3,7 @@
 
 1. Don’t forget to add a title for the whole web page (it could be the name of your landing)
 2. A landing page is implemented strictly according to the design in Figma
+3. Logos in header and footer should be links to home page
 4. Links in the header and footer menus should lead to the corresponding blocks of the landing page
 5. The speed of animations is the same throughout the landing page (for example, increasing when hovering or moving blocks when scrolling)
 6. Placeholders in the forms suggest what to enter, and if there is a validation of the form, then it is clear in what format to enter the phone number
