@@ -1,0 +1,198 @@
+@import "../utils/mixins";
+
+.header {
+
+  &__nav {
+    height: 64px;
+    margin: 0 0 32px;
+    
+    @include onTablet() {
+      margin-bottom: 80px;
+    }
+    
+    @include onDesktop() {
+      height: 88px;
+      margin-bottom: 0;
+    }
+    
+    @include onBiggerDesktop() {
+      height: 88px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__tagline {
+    letter-spacing: -0.01em;
+    text-align: center;
+    margin-bottom: 32px;
+    position: relative;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      margin-top: 135px;
+      margin-bottom: 8px;
+    }
+
+    @include onBiggerDesktop {
+      text-align: left;
+      margin-top: 144px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 55px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    position: relative;
+
+    @include onTablet {
+      font-size: 63px;
+      line-height: 68px;
+      margin-bottom: 210px;
+    }
+
+    @include onDesktop {
+      font-size: 107px;
+      line-height: 116px;
+      margin-bottom: 64px;
+    }
+
+    @include onBiggerDesktop {
+      letter-spacing: -0.07em;
+      font-size: 114px;
+      line-height: 132px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__cookie {
+    display: flex;
+    margin-bottom: 0;
+    right: 0;
+    left: 0;
+    pointer-events: none;
+
+    @include onTablet {
+      position: absolute;
+      top: 60px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      top: -10px;
+    }
+
+    @include onBiggerDesktop {
+      position: absolute;
+      top: 10px;
+    }
+  }
+
+  &__cookie-image {
+    width: 288px;
+    height: 290px;
+    z-index: -1;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 326px;
+      height: 328px;
+    }
+
+    @include onDesktop {
+      width: 544px;
+      height: 546px;
+    }
+
+    @include onBiggerDesktop {
+      width: 584px;
+      height: 586px;
+    }
+  }
+
+  &__learn-more {
+    border: 2px solid #f9512e;
+    border-radius: 32px;
+    background-color: #eef7ff;
+    width: 288px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    margin: 0 auto;
+    transition: 0.3s;
+
+    @include onTablet {
+      width: 326px;
+    }
+
+    @include onDesktop {
+      width: 260px;
+    }
+    
+    @include onBiggerDesktop {
+      width: 280px;
+    }
+
+    &:hover {
+      background-color: #f9512e;
+    }
+
+    &:focus {
+      background-color: #b2341a;
+      border-color: #b2341a;
+    }
+
+    &-text {
+      line-height: 56px;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #f9512e;
+      text-decoration: none;
+    }
+
+    &-icon {
+      right: 80px;
+      z-index: 1;
+      align-self: center;
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/pece1.png);
+      padding-right: 6px;
+      background-repeat: no-repeat;
+    }
+
+    &:hover .header__learn-more-text {
+      color: #fff;
+    }
+
+    &:focus .header__learn-more-text {
+      color: #fff;
+    }
+
+    &:hover .header__learn-more-icon {
+      background-image: url(../images/pece2.png);
+    }
+
+    &:focus .header__learn-more-icon {
+      background-image: url(../images/pece2.png);
+    }
+  }
+}
