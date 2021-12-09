@@ -1,0 +1,45 @@
+.icon {
+  width: 20px;
+  height: 8px;
+  align-self: center;
+  display: block;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--menu {
+    background-image: url(../images/Vector.png);
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+
+  @include onBiggerDesktop {
+    display: none;
+  }
+
+  &--cross {
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/Icon-close.png);
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &:focus {
+      transform: scale(1.2);
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  
+    @include onBiggerDesktop {
+      display: block;
+    }
+  }
+}

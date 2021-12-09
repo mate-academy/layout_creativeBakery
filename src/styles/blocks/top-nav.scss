@@ -1,0 +1,108 @@
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    align-self: center;
+
+    @include onDesktop() {
+      margin-right: 64px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @include onBiggerDesktop() {
+      margin-right: 64px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &--call-margin {
+      margin-right: 0;
+    }
+
+    &-toggle {
+      @include onDesktop {
+        display: none;
+      }
+    
+      @include onBiggerDesktop {
+        display: none;
+      }
+    
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -1%;
+    text-decoration: none;
+    color: #1c1a26;
+    display: none;
+    transition: 0.3s;
+
+    @include onDesktop() {
+      display: block;
+    }
+
+    @include onBiggerDesktop() {
+      display: block;
+    }
+
+    &:hover {
+      color: #f9512e;
+      transform: scale(1.2);
+    }
+
+    &:focus {
+      color: #f9512e;
+    }
+
+    &--call {
+      color: #f9512e;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      padding: 4px 0;
+      display: none;
+
+      @include onDesktop() {
+        display: flex;
+      }
+
+      @include onBiggerDesktop() {
+        display: flex;
+      }
+    }
+  }
+
+  &__call {
+    height: 18px;
+    width: 18px;
+    margin-right: 7px;
+
+    &--icon {
+      background-image: url(../images/Phone.png);
+    }
+  }
+
+  &__contact {
+    text-decoration: none;
+    color: #f9512e;
+    font-weight: 500;
+    tab-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  }
+}
