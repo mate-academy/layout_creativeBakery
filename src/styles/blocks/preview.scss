@@ -1,0 +1,143 @@
+.preview {
+  padding: 32px 0;
+  &__image {
+    width: 100%;
+    max-width: 288px;
+    display: block;
+    margin: 0 auto;
+
+    @media (min-width:640px) {
+      max-width: 326px;
+    }
+
+    @media (min-width:1024px) {
+      max-width: 544px;
+    }
+
+    @media (min-width:1200px) {
+      max-width: 584px;
+    }
+  }
+
+  &__tagline {
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    @media (min-width:640px) {
+      text-align: start;
+      position: absolute;
+      width: 280px;
+    }
+
+    @media (min-width:1024px) {
+      top: 140px;
+      width: 260px;
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__title {
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    margin-top: 32px;
+
+    @media (min-width:640px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      right: -50%;
+      transform: translate(-50%, -75%);
+
+      margin: 0;
+
+      font-size: 66px;
+    }
+
+    @media (min-width:1024px) {
+      transform: translate(-50%, -50%);
+      font-size: 112px;
+    }
+
+    @media (min-width:1200px) {
+      font-size: 136px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    text-decoration: none;
+    padding: 20px 64px;
+    border: 2px solid #f9512e;
+    border-radius: 32px;
+    max-width: 280px;
+
+    transition: background-color 0.3s, border-color 0.3s;
+
+    &-text {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #f9512e;
+
+      transition: color 0.3s;
+    }
+
+    &-icon {
+      background-image: url("../images/icons/cookie.svg");
+      height: 20px;
+      width: 20px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      margin-right: 10px;
+
+      transition: background-image 0.3s;
+    }
+
+    &:hover {
+      background-color: #f9512e;
+    }
+
+    &:hover &-text{
+      color: white;
+    }
+
+    &:hover &-icon{
+      background-image: url("../images/icons/cookie-white.svg");
+    }
+
+    &:focus {
+      background-color: #b2341a;
+      border-color: #b2341a;
+    }
+
+    &:focus &-text{
+      color: white;
+    }
+
+    &:focus &-icon{
+      background-image: url("../images/icons/cookie-white.svg");
+    }
+
+    @media (min-width:1024px) {
+      position: absolute;
+      top: 65%;
+    }
+  }
+}
