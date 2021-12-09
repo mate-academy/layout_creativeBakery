@@ -1,4 +1,9 @@
 .contact {
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
   &__us {
     position: relative;
     margin-left: 0;
@@ -26,6 +31,85 @@
         top: 0;
         left: -30px;
       }
+    }
+  }
+
+  &__subtitle {
+    @include title_h2;
+    color: #fff;
+
+    max-width: 285px;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 5 / 8;
+      margin-top: -400px;
+    }
+
+    @include onNotebook {
+      grid-column: 5 / 8;
+      margin-top: -355px;
+      max-width: 400px;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 40px;
+
+    &--call {
+      @include onTablet {
+        grid-column: 5 / 8;
+        margin-top: -255px;
+      }
+
+      @include onNotebook {
+        grid-column: 5 / 8;
+        margin-top: -255px;
+      }
+    }
+
+    &--email {
+      @include onTablet {
+        grid-column: 5 / 8;
+        margin-top: -55px;
+      }
+
+      @include onNotebook {
+        grid-column: 7 / 8;
+        margin-top: -255px;
+      }
+    }
+  }
+
+  &__media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
+
+    width: 150px;
+
+    margin-left: -10px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-top: -15px;
+    }
+  }
+
+  &__copyright {
+    display: inline-block;
+
+    width: 100%;
+    height: 24px;
+    text-align: left;
+    color: #7f8096;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      grid-column: 5 / 8;
     }
   }
 }

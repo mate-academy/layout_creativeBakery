@@ -7,19 +7,27 @@
     max-width: 430px;
   }
 
+  &__frame {
+    display: inline-block;
+    overflow: hidden;
+  }
+
   &__image {
     width: 100%;
 
     border-radius: 8px;
 
     margin-bottom: 16px;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   &__name {
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    @include title_h3;
     color: #7f8096;
 
     margin-bottom: 8px;
@@ -37,13 +45,10 @@
     display: inline-block;
     position: relative;
 
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: 0.02em;
+    @include title_h3;
     color: $pinkText;
 
     text-decoration: none;
-    text-transform: uppercase;
 
     margin-left: 44px;
     margin-bottom: 64px;

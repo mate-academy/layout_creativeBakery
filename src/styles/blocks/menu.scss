@@ -1,22 +1,38 @@
 .menu {
+  &__title {
+    @include title_h3;
+    color: #7f8096;
+
+    &--footer {
+      margin-bottom: 16px;
+    }
+  }
+
   &__list {
     list-style: none;
 
-    @include onNotebook {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    &--header {
+      @include onNotebook {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
 
-      position: relative;
-      top: -10px;
-      left: -20px;
+        position: relative;
+        top: -10px;
+        left: -20px;
 
-      width: 100%;
+        width: 100%;
+      }
     }
 
     &--nav {
       text-align: center;
+    }
+
+    &--footer {
+      text-align: left;
+      line-height: 24px;
     }
   }
 
@@ -24,54 +40,48 @@
     &--nav {
       margin-bottom: 24px;
     }
+
+    &--footer {
+      margin-bottom: 16px;
+    }
   }
 
   &__link {
-    position: relative;
     margin-left: 0;
     width: max-content;
     text-decoration: none;
     color: $blueText;
 
-    @include onNotebook {
-      position: absolute;
-      top: 0;
-    }
-
-    &--cookie {
-      &:hover {
-        color: $pinkText;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 16px;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-
-        &::before {
-          content: url(../images/symbol.png);
-          position: absolute;
-          top: 0;
-          left: -25px;
-        }
+    &--header {
+      @include onNotebook {
+        position: absolute;
+        top: 0;
       }
     }
 
-    &--phone {
+    &--nav {
+      @include onNotebook {
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    &--footer {
+      color: #fff;
+      margin-left: -40px;
+
       &:hover {
-        color: $pinkText;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 16px;
-        letter-spacing: 0.02em;
+        @include pageHover;
+      }
+    }
 
-        text-transform: uppercase;
+    &--contact {
+      color: #fff;
+      margin-left: -40px;
 
-        &::before {
-          content: url(../images/phone.png);
-          position: absolute;
-          top: 0;
-          left: -25px;
-        }
+      &:hover {
+        @include pageHover;
+        text-transform: lowercase;
       }
     }
   }

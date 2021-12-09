@@ -6,24 +6,50 @@
   color: #1c1a26;
 
   scroll-behavior: smooth;
-}
 
-.page-color {
-  &--blue {
-    color: #1c1a26;
+  &__color {
+    &--blue {
+      color: #1c1a26;
+    }
+
+    &--pink {
+      color: #f9512e;
+    }
   }
 
-  &--pink {
-    color: #f9512e;
-  }
-}
+  &__background-color {
+    &--blue {
+      background-color: #eef7ff;
+    }
 
-.page-background-color {
-  &--blue {
-    background-color: #eef7ff;
+    &--pink {
+      background-color: #ffeefc;
+    }
   }
 
-  &--pink {
-    background-color: #ffeefc;
+  &__cookie {
+    position: relative;
+
+    &:hover {
+      @include pageHover;
+
+      &::before {
+        content: url(../images/symbol.png);
+        @include pageBefore;
+      }
+    }
+  }
+
+  &__phone {
+    position: relative;
+
+    &:hover {
+      @include pageHover;
+
+      &::before {
+        content: url(../images/phone.png);
+        @include pageBefore;
+      }
+    }
   }
 }
