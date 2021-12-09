@@ -62,18 +62,28 @@
 .header__link {
   color: $c-black;
   text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $c-orange;
+  }
 }
 
 .header__link--call {
   color: $c-orange;
   text-transform: uppercase;
-}
 
-.header__link--call:before {
-  content: url("/images/call.svg");
-  position: relative;
-  left: -7px;
-  top: 3px;
+  &:before {
+    content: url("/images/call.svg");
+    position: relative;
+    left: -7px;
+    top: 3px;
+  }
+
+  &:hover {
+    filter: invert(20%) sepia(62%) saturate(2746%)
+      hue-rotate(353deg) brightness(100%) contrast(89%);
+  }
 }
 
 .content {
