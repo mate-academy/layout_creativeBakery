@@ -1,19 +1,20 @@
 .preview {
+  padding: 32px 0 32px;
   &__image {
     width: 100%;
     max-width: 288px;
     display: block;
     margin: 0 auto;
 
-    @media (min-width:760px) {
+    @media (min-width:640px) {
       max-width: 326px;
     }
 
-    @media (min-width:1200px) {
+    @media (min-width:1024px) {
       max-width: 544px;
     }
 
-    @media (min-width:1440px) {
+    @media (min-width:1200px) {
       max-width: 584px;
     }
   }
@@ -23,11 +24,18 @@
     line-height: 150%;
     text-align: center;
     letter-spacing: -0.01em;
-    padding-top: 32px;
+    // padding-top: 32px;
 
-    // @media (min-width:760px) {
-    //   position: absolute;
-    // }
+    @media (min-width:640px) {
+      text-align: start;
+      position: absolute;
+      width: 280px;
+    }
+
+    @media (min-width:1024px) {
+      top: 140px;
+      width: 260px;
+    }
   }
 
   &__container {
@@ -43,28 +51,25 @@
 
     margin-top: 32px;
 
-    @media (min-width:760px) {
+    @media (min-width:640px) {
       position: absolute;
       top: 50%;
       left: 50%;
       right: -50%;
       transform: translate(-50%, -75%);
 
-      font-size: 80px;
+      margin: 0;
+
+      font-size: 66px;
+    }
+
+    @media (min-width:1024px) {
+      transform: translate(-50%, -50%);
+      font-size: 114px;
     }
 
     @media (min-width:1200px) {
-      // position: absolute;
-      // top: 50%;
-      // left: 50%;
-      // right: -50%;
-      // transform: translate(-50%, -50%);
-
       font-size: 136px;
-    }
-
-    @media (min-width:1440px) {
-      font-size: 144px;
     }
   }
 
@@ -72,7 +77,7 @@
     display: block;
     margin: 0 auto;
     padding: 20px 64px;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 16px;
     line-height: 100%;
     letter-spacing: 0.02em;
@@ -83,6 +88,32 @@
     max-width: 280px;
     text-align: center;
     text-decoration: none;
+
+    transition: background-color 0.3s, color 0.3s, background-image 0.3s, border-color 0.3s;
+
+    &:hover {
+      background-color: #F9512E;
+      color: white;
+
+      &::before {
+        background-image: url("../images/icons/cookie-white.svg");
+      }
+    }
+
+    &:focus {
+      background-color: #B2341A;
+      border-color: #B2341A;
+      color: white;
+
+      &::before {
+        background-image: url("../images/icons/cookie-white.svg");
+      }
+    }
+
+    @media (min-width:1024px) {
+      position: absolute;
+      top: 65%;
+    }
 
     &::before {
       content: "";
