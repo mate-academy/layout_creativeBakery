@@ -1,12 +1,51 @@
 .footer {
-  padding: 61px 16px 56px;
+  padding: 61px 0 56px;
   background-color: $colorBlack;
+
+  &__content {
+    height: 100%;
+    display: block;
+
+    @media (min-width: 640px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+      grid-template-rows: 136px 176px 104px 24px;
+    }
+
+    @media (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      column-gap: 24px;
+      grid-template-rows: 100px 226px 24px;
+    }
+  }
 
   &__actions {
     margin: 0 0 44px 5px;
 
     @media (min-width: 640px) {
-      margin: 32px 0 92px 5px;
+      margin: 0;
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    @media (min-width: 1024px) {
+      margin: 0;
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
+  &__menu {
+    @media (min-width: 640px) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 1;
+      grid-row: 2;
     }
   }
 
@@ -42,8 +81,9 @@
     margin: 0;
   }
 
-  &__title-link {
+  &__title {
     @extend %grey-upper;
+    margin-bottom: 16px;
   }
 
   &__link {
@@ -75,11 +115,29 @@
     color: #fff;
 
     @media (min-width: 640px) {
-      margin: 32px 0 40px;
+      margin: 0;
+      grid-column: 2;
+      grid-row: 1;
+      font-size: 56px;
     }
 
     @media (min-width: 1024px) {
-      margin: 32px 0 0;
+      margin: 0;
+      grid-column: 2 / -1;
+      grid-row: 1;
+      font-size: 72px;
+    }
+  }
+
+  &__call {
+    @media (min-width: 640px) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 2;
+      grid-row: 2;
     }
   }
 
@@ -87,7 +145,14 @@
     margin: 40px 0 42px;
 
     @media (min-width: 640px) {
-      margin: 0 0 48px;
+      margin: 0;
+      grid-column: 2;
+      grid-row: 3;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 3;
+      grid-row: 2;
     }
   }
 
@@ -97,7 +162,14 @@
     flex-direction: row;
 
     @media (min-width: 640px) {
-      margin: 2px 0 0;
+      // margin: 2px 0 0;
+      grid-column: 1;
+      grid-row: 4;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 1;
+      grid-row: 3;
     }
   }
 
@@ -152,7 +224,13 @@
     color: $colorGrey;
 
     @media (min-width: 640px) {
-      margin: 0 0 32px;
+      grid-column: 2;
+      grid-row: 4;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 2;
+      grid-row: 3;
     }
   }
 }
