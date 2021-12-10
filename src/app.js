@@ -19,4 +19,3 @@ window.addEventListener('hashchange', () => {
     document.getElementById('header__slider').classList.remove('header__left3');
   }
 });
-
