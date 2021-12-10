@@ -13,6 +13,7 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 3;
 
     transform: translateX(100%);
     transition: transform 0.3s;
@@ -26,8 +27,61 @@
     }
   }
 
-  &__section {
+  &__section-products {
     margin-bottom: 80px;
+
+    @media (min-width: 640px) {
+      margin-bottom: 72px;
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: 98px;
+    }
+  }
+
+  &__section-about {
+    margin-bottom: 72px;
+    position: relative;
+
+    @media (min-width: 640px) {
+      margin-bottom: 104px;
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: 300px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -75%);
+      content: "";
+      display: block;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url(../images/photo/Crumbs.png);
+      height: 300px;
+      width: 320px;
+      z-index: -1;
+
+      @media (min-width: 640px) {
+        height: 450px;
+        width: 480px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+      }
+
+      @media (min-width: 1024px) {
+        height: 500px;
+        width: 532px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+      }
+    }
   }
 
   &__section-title1 {
