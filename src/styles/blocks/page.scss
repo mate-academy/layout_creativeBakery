@@ -1,0 +1,59 @@
+.page {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: -0.01em;
+  color: #1c1a26;
+
+  scroll-behavior: smooth;
+
+  &__color {
+    &--blue {
+      color: #1c1a26;
+    }
+
+    &--pink {
+      color: #f9512e;
+    }
+  }
+
+  &__background-color {
+    &--blue {
+      background-color: #eef7ff;
+    }
+
+    &--pink {
+      background-color: #ffeefc;
+    }
+  }
+
+  &__cookie {
+    position: relative;
+
+    transition: color 0.3s;
+
+    &:hover {
+      @include pageHover;
+
+      &::before {
+        content: url(../images/symbol.png);
+        @include pageBefore;
+      }
+    }
+  }
+
+  &__phone {
+    position: relative;
+
+    transition: color 0.3s;
+
+    &:hover {
+      @include pageHover;
+
+      &::before {
+        content: url(../images/phone.png);
+        @include pageBefore;
+      }
+    }
+  }
+}

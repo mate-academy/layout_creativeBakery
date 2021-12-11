@@ -1,0 +1,112 @@
+.header {
+  height: 100vh;
+  min-width: 335px;
+  box-sizing: border-box;
+
+  &__content {
+    display: box;
+    box-sizing: border-box;
+
+    height: 100%;
+  }
+
+  &__top-actions {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__menu {
+    height: 0;
+    visibility: hidden;
+
+    @include onNotebook {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 430px;
+      margin-right: 75px;
+      height: 100%;
+      visibility: visible;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+
+      padding-left: 40px;
+      padding-right: 40px;
+
+      max-width: 560px;
+      margin: auto;
+    }
+
+    @include onNotebook {
+      max-width: 944px;
+      margin: auto;
+    }
+
+    @include onDesktop {
+      max-width: 1120px;
+      margin: auto;
+    }
+  }
+
+  &__motto {
+    margin-bottom: 32px;
+
+    @include onNotebook {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 175px;
+    }
+  }
+
+  &__title {
+    background-image: url(../images/cookie.png);
+    background-size: contain;
+    background-position: (50% 100%);
+    background-repeat: no-repeat;
+
+    width: 300px;
+    padding-bottom: 300px;
+    
+    @include onTablet {
+      padding-bottom: 0;
+      padding-top: 150px;
+      margin-bottom: 100px;
+    }
+
+    @include onNotebook {
+      padding-bottom: 0;
+      padding-top: 0;
+      margin-top: -230px;
+      margin-bottom: -165px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 0;
+      padding-top: 0;
+      margin-top: -270px;
+      margin-bottom: -165px;
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      margin-top: -40px;
+    }
+  }
+}
