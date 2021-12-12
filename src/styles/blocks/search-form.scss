@@ -1,0 +1,58 @@
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  @include onDesktop {
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    gap: 32px;
+  }
+
+  &__input {
+    position: relative;
+    display: block;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $chocolate-color;
+    color: $chocolate-color;
+    background-color: $cream-color;
+    font-size: 16px;
+    line-height: 150%;
+    height: 30px;
+    padding: 35px 10px 20px;
+  }
+
+  &__input--city {
+    @include onDesktop {
+      width: 173px;
+    }
+  }
+
+  &__input--address {
+    @include onDesktop {
+      width: 323px;
+    }
+  }
+
+  &__input-icon {
+    position: relative;
+    right: -48%;
+    transform: translateY(-25px);
+    background-image: url(../images/Vector.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 10px;
+    width: 10px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__button {
+    margin-top: 36px;
+  }
+}

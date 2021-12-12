@@ -1,0 +1,178 @@
+.bakery {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+
+  @include onDesktop {
+    padding-bottom: 80px;
+  }
+
+  &__title {
+    margin-top: 20px;
+    align-self: center;
+    color: $croissant-color;
+    font-family: "Cookie", serif;
+    font-size: 60px;
+    line-height: 67px;
+    font-weight: normal;
+
+    @include onDesktop {
+      font-size: 120px;
+      line-height: 133px;
+    }
+  }
+
+  &__product-list {
+    @include onDesktop {
+      margin-top: 27px;
+    }
+  }
+
+  &__product-list-item-container {
+    @include onDesktop {
+      margin-top: 135px;
+      display: flex;
+      gap: 200px;
+    }
+  }
+
+  &__product-type {
+    margin-top: 40px;
+    color: $croissant-color;
+    font-size: 35px;
+    line-height: 41px;
+    font-weight: normal;
+
+    @include onDesktop {
+      margin-top: 0;
+      font-size: 50px;
+      line-height: 59px;
+    }
+  }
+
+  &__product-type-item {
+    margin-top: 15px;
+    font-size: 20px;
+    line-height: 150%;
+
+    @include onDesktop {
+      font-size: 26px;
+    }
+  }
+
+  &__product-type-description {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onDesktop {
+      width: 302px;
+    }
+  }
+
+  &__product-price {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    background-color: $cream-color;
+
+    @include onDesktop {
+      height: 110px;
+      width: 110px;
+      flex-direction: row;
+    }
+
+    &--on-desktop {
+      display: none;
+
+      @include onDesktop {
+        display: inline;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    padding-top: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s;
+
+    @include onDesktop {
+      width: 700px;
+      padding-top: 30%;
+    }
+
+    &--1 {
+      background-image: url(../images/image7.png);
+
+      @include onDesktop {
+        background-image: url(../images/image7_big.png);
+      }
+    }
+
+    &--2 {
+      background-image: url(../images/image16.png);
+
+      @include onDesktop {
+        background-image: url(../images/image16_big.png);
+      }
+    }
+
+    &--3 {
+      background-image: url(../images/image12.png);
+
+      @include onDesktop {
+        background-image: url(../images/image12_big.png);
+      }
+    }
+
+    &--4 {
+      background-image: url(../images/image10.png);
+
+      @include onDesktop {
+        background-image: url(../images/image10_big.png);
+      }
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__image--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__image--no-desktop {
+    display: block;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__button {
+    align-self: center;
+    margin-top: 40px;
+
+    @include onDesktop {
+      margin-top: 150px;
+    }
+  }
+}
