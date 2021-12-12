@@ -16,6 +16,12 @@
     font-family: "Cookie", serif;
     font-size: 60px;
     line-height: 67px;
+    font-weight: normal;
+
+    @include onDesktop {
+      font-size: 120px;
+      line-height: 133px;
+    }
   }
 
   &__product-list {
@@ -37,9 +43,12 @@
     color: $croissant-color;
     font-size: 35px;
     line-height: 41px;
+    font-weight: normal;
 
     @include onDesktop {
       margin-top: 0;
+      font-size: 50px;
+      line-height: 59px;
     }
   }
 
@@ -47,6 +56,10 @@
     margin-top: 15px;
     font-size: 20px;
     line-height: 150%;
+
+    @include onDesktop {
+      font-size: 26px;
+    }
   }
 
   &__product-type-description {
@@ -72,6 +85,20 @@
     font-size: 16px;
     line-height: 150%;
     background-color: $cream-color;
+
+    @include onDesktop {
+      height: 110px;
+      width: 110px;
+      flex-direction: row;
+    }
+
+    &--on-desktop {
+      display: none;
+
+      @include onDesktop {
+        display: inline;
+      }
+    }
   }
 
   &__image {
