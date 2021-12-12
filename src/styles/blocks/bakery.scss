@@ -2,7 +2,12 @@
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 25px;
+
+  @include onDesktop {
+    padding-bottom: 80px;
+  }
 
   &__title {
     margin-top: 20px;
@@ -13,11 +18,29 @@
     line-height: 67px;
   }
 
+  &__product-list {
+    @include onDesktop {
+      margin-top: 27px;
+    }
+  }
+
+  &__product-list-item-container {
+    @include onDesktop {
+      margin-top: 135px;
+      display: flex;
+      gap: 200px;
+    }
+  }
+
   &__product-type {
     margin-top: 40px;
     color: $croissant-color;
     font-size: 35px;
     line-height: 41px;
+
+    @include onDesktop {
+      margin-top: 0;
+    }
   }
 
   &__product-type-item {
@@ -30,6 +53,10 @@
     margin-top: 12px;
     font-size: 16px;
     line-height: 150%;
+
+    @include onDesktop {
+      width: 302px;
+    }
   }
 
   &__product-price {
@@ -53,26 +80,72 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    transition: transform 0.3s;
+
+    @include onDesktop {
+      width: 700px;
+      padding-top: 30%;
+    }
 
     &--1 {
       background-image: url(../images/image7.png);
+
+      @include onDesktop {
+        background-image: url(../images/image7_big.png);
+      }
     }
 
     &--2 {
       background-image: url(../images/image16.png);
+
+      @include onDesktop {
+        background-image: url(../images/image16_big.png);
+      }
     }
 
     &--3 {
       background-image: url(../images/image12.png);
+
+      @include onDesktop {
+        background-image: url(../images/image12_big.png);
+      }
     }
 
     &--4 {
       background-image: url(../images/image10.png);
+
+      @include onDesktop {
+        background-image: url(../images/image10_big.png);
+      }
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__image--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__image--no-desktop {
+    display: block;
+
+    @include onDesktop {
+      display: none;
     }
   }
 
   &__button {
     align-self: center;
     margin-top: 40px;
+
+    @include onDesktop {
+      margin-top: 150px;
+    }
   }
 }
