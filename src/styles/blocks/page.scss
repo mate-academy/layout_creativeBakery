@@ -1,0 +1,133 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $colorBlue;
+    margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__section-products {
+    margin-bottom: 80px;
+
+    @media (min-width: 640px) {
+      margin-bottom: 72px;
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: 98px;
+    }
+  }
+
+  &__section-about {
+    margin-bottom: 72px;
+    position: relative;
+
+    @media (min-width: 640px) {
+      margin-bottom: 104px;
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: 300px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -75%);
+      content: "";
+      display: block;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url(../images/photo/Crumbs.png);
+      height: 300px;
+      width: 320px;
+      z-index: -1;
+
+      @media (min-width: 640px) {
+        height: 450px;
+        width: 480px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+      }
+
+      @media (min-width: 1024px) {
+        height: 500px;
+        width: 532px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+      }
+    }
+  }
+
+  &__section-title1 {
+    margin: 104px 0 24px;
+    @extend %title;
+
+    @media (min-width: 640px) {
+      display: none;
+    }
+  }
+
+  &__section-title2 {
+    margin: 258px 0 24px;
+    @extend %title;
+
+    @media (max-width: 639px) {
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      margin: 254px 0 24px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 56px;
+    @extend %paragraph;
+
+    @media (min-width: 640px) {
+      display: none;
+    }
+  }
+
+  &__paragraph1 {
+    margin: 0 0 80px;
+    @extend %paragraph;
+
+    @media (max-width: 639px) {
+      display: none;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}

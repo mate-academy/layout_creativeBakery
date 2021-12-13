@@ -1,0 +1,127 @@
+.header {
+  &__content {
+    position: relative;
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: #eef7ff;
+    padding: $headerTopPadding 0 0;
+  }
+
+  &__paragraph {
+    @extend %paragraph;
+    margin: 100px 0 146px;
+
+    @media (max-width: 639px) {
+      margin: 52px 0 32px;
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      margin: 166px 0 8px;
+    }
+
+    @media (min-width: 1200px) {
+      margin: 175px 0 40px;
+    }
+  }
+
+  &__title1 {
+    font-size: 64px;
+    line-height: 85%;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #1c1a26;
+
+    @media (min-width: 640px) {
+      display: none;
+    }
+  }
+
+  &__title2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 210px;
+    font-size: 68px;
+    line-height: 85%;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #1c1a26;
+    white-space: nowrap;
+
+    @media (max-width: 639px) {
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 116px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 126px;
+    }
+  }
+
+  &__cookie {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 288px;
+    height: 290px;
+
+    @media (min-width: 640px) {
+      transform: translate(-50%, -40%);
+      width: 326px;
+      height: 328px;
+    }
+
+    @media (min-width: 1024px) {
+      transform: translate(-50%, -40%);
+      width: 544px;
+      height: 546px;
+    }
+
+    @media (min-width: 1200px) {
+      transform: translate(-50%, -40%);
+      width: 584px;
+      height: 586px;
+    }
+  }
+
+  &__learn-more {
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 290px;
+    color: $colorOrange;
+    gap: 6px;
+
+    @extend %orange-upper;
+
+    background-color: $colorBlue;
+    border: 2px solid $colorOrange;
+    border-radius: 32px;
+
+    transition: color 0.5s, background-color 0.5s;
+
+    @media (min-width: 1024px) {
+      margin-top: 164px;
+    }
+
+    &:hover {
+      color: $colorWhite;
+      background-color: $colorOrange;
+    }
+
+    &:focus {
+      color: $colorWhite;
+      background-color: $colorDarkOrange;
+      border: 2px solid $colorDarkOrange;
+    }
+  }
+}
