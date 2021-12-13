@@ -1,4 +1,5 @@
 'use strict';
+
 /* eslint-env jquery */
 
 $(document).ready(function() {
