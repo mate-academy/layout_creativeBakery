@@ -1,0 +1,108 @@
+.slide-numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+
+  @media (max-width: 800px) {
+    flex-direction: row;
+    width: 123px;
+    justify-content: space-between;
+  }
+}
+
+.slide-number {
+  cursor: pointer;
+  color: $cream;
+  font-size: 60px;
+  line-height: 73px;
+  @extend %transition;
+
+  @media (max-width: 2000px) {
+    font-size: 40px;
+    line-height: 47px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 16px;
+    margin-bottom: -16px;
+  }
+
+  &__active {
+    font-size: 206px;
+    line-height: 206px;
+    color: $dark-brown;
+    margin-right: -30px;
+
+    @media (max-width: 2000px) {
+      font-size: 176px;
+      line-height: 176px;
+      margin-right: -25px;
+    }
+
+    @media (max-width: 800px) {
+      margin-right: 0;
+      margin-bottom: -8px;
+      font-size: 40px;
+      line-height: 47px;
+    }
+  }
+}
+
+.switch__arrow {
+  margin-right: 10px;
+  width: 36px;
+  height: 23px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+  @extend %transition;
+
+  @media (max-width: 2000px) {
+    margin-right: 7px;
+    width: 26px;
+    height: 15px;
+  }
+
+  @media (max-width: 800px) {
+    margin-right: 0;
+    width: 12px;
+    height: 21px;
+  }
+
+  &--down {
+    background-image: url(../images/switch_arrow_down_dark.png);
+
+    @media (max-width: 800px) {
+      background-image: url(../images/right_dark.png);
+    }
+
+    &--passive {
+      background-image: url(../images/switch_arrow_down.png);
+      cursor: default;
+      @extend %transition;
+
+      @media (max-width: 800px) {
+        background-image: url(../images/right_light.png);
+      }
+    }
+  }
+
+  &--up {
+    background-image: url(../images/switch_arrow_up_dark.png);
+
+    @media (max-width: 800px) {
+      background-image: url(../images/left_dark.png);
+    }
+
+    &--passive {
+      background-image: url(../images/switch_arrow_up.png);
+      cursor: default;
+      @extend %transition;
+
+      @media (max-width: 800px) {
+        background-image: url(../images/left_light.png);
+      }
+    }
+  }
+}
