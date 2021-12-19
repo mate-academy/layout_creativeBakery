@@ -2,14 +2,38 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+
+  @include notebook {
+    padding: 28px 32px 0;
+  }
+
+  &__nav {
+    display: none;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include notebook {
+      display: flex;
+    }
+  }
 }
 
 .logo {
   padding: 16px 0 0 16px;
+
+  @include notebook {
+    padding: unset;
+  }
 }
 
 .open {
   padding: 20px 16px 0 0;
+
+  @include notebook {
+    display: none;
+  }
 }
 
 .close {

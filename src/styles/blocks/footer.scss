@@ -1,6 +1,30 @@
 .footer {
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 24px;
+  }
+
+  &__container-menu {
+    padding: 0 16px;
+
+    @include tablet {
+      grid-column: 1 / 4;
+      margin-top: 88px;
+      padding: 0 0 0 44px;
+    }
+
+    @include largescreens {
+      padding: 0 0 0 124px;
+    }
+  }
+
   &__image {
-    padding: 56px 0 0 16px;
+    margin-top: 56px;
+
+    @include tablet {
+      margin-top: unset;
+    }
   }
 
   &__menu {
@@ -8,7 +32,10 @@
     flex-direction: column;
 
     margin-top: 40px;
-    padding: 0 16px;
+
+    @include tablet {
+      margin-top: 55px;
+    }
 
     &--title {
       margin: 0;
@@ -34,12 +61,30 @@
       letter-spacing: -0.01em;
 
       color: #fff;
+
+      &:hover {
+        color: #f9512e;
+      }
     }
   }
 
-  &__contact-us {
-    margin: 64px 0 0;
+  &__contacts {
     padding: 0 16px;
+    margin-top: 64px;
+
+    @include tablet {
+      margin-top: 88px;
+      padding: 0 44px 0 0;
+      grid-column: 5 / -1;
+    }
+
+    @include largescreens {
+      padding: 0 124px 0 0;
+    }
+  }
+
+  &__title {
+    margin: 0;
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
@@ -49,6 +94,20 @@
     text-transform: uppercase;
 
     color: #fff;
+
+    @include tablet {
+      font-size: 56px;
+    }
+
+    @include notebook {
+      font-size: 72px;
+    }
+  }
+
+  &__call-email {
+    @include notebook {
+      display: flex;
+    }
   }
 
   &__call-us {
@@ -56,7 +115,15 @@
     flex-direction: column;
 
     margin: 40px 0 0;
-    padding: 0 16px;
+
+    @include tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include notebook {
+      margin-right: 170px;
+      grid-column: 5 / 7;
+    }
 
     &--title {
       margin: 0;
@@ -87,7 +154,14 @@
 
   &__email-us {
     margin-top: 40px;
-    padding: 0 16px;
+
+    @include notebook {
+      grid-column: 7 / -1;
+    }
+
+    @include notebook {
+      grid-column: 7 / -1;
+    }
 
     &--title {
       margin: 0 0 16px;
@@ -120,6 +194,20 @@
     margin-top: 40px;
     padding: 0 16px;
 
+    @include tablet {
+      margin-top: 55px;
+      padding: 0 0 88px 44px;
+      grid-column: 1 / 4;
+    }
+
+    @include notebook {
+      margin-top: 48px;
+    }
+
+    @include largescreens {
+      padding: 0 0 88px 124px;
+    }
+
     &--network {
       margin-right: 32px;
 
@@ -141,6 +229,18 @@
     letter-spacing: -0.01em;
 
     color: #7f8096;
+
+    @include tablet {
+      margin: 48px 0 0;
+      padding: 0 44px 80px 0;
+      grid-column: 5 / -1;
+    }
+
+    @include notebook {
+      margin: 40px 0 0;
+      grid-column: 5 / 7;
+      padding: 0 0 88px;
+    }
   }
 }
 
