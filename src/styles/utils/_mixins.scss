@@ -1,6 +1,44 @@
+@import "./vars";
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $animation-time;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) and (min-height: 640px) {
+    @content;
+  }
+}
+
+@mixin icon($_url, $_size) {
+  display: inline-block;
+  width: $_size;
+  height: $_size;
+  background-image: url($_url);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+@mixin linkWithIcon($_url, $_size) {
+  display: flex;
+  align-items: center;
+
+  @extend %uppercase-text;
+  color: $c-accent-orange;
+
+  &::before {
+    content: "";
+    margin-right: 7px;
+    @include icon($_url, $_size);
   }
 }

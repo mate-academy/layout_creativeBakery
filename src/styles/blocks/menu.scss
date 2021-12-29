@@ -1,0 +1,52 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $c-light-blue;
+  transition-duration: $animation-time;
+  transform: translateX(100%);
+
+  &--active {
+    transform: translateX(0);
+  }
+
+  @include onDesktop() {
+    flex-direction: row;
+    height: auto;
+    transform: translateX(0);
+  }
+
+  &__list {
+    @include onDesktop() {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    margin-bottom: 24px;
+    text-align: center;
+
+    &:last-child {
+      margin-bottom: 32px;
+    }
+
+    @include onDesktop() {
+      margin: 0 64px 0 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    color: $c-black;
+  }
+
+  &__call {
+    @include linkWithIcon("../images/icon_call.svg", 18px);
+  }
+}

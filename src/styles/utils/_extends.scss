@@ -1,4 +1,49 @@
+@import "./mixins";
+
 %h1 {
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
+  font-size: clamp(64px, calc(
+    64px + (144 - 64) * ((100vw - 640px) / (1288 - 640))
+  ), 144px);
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+%h2 {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include onTablet() {
+    font-size: 56px;
+  }
+
+  @include onDesktop() {
+    font-size: 72px;
+  }
+}
+
+%big-text {
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+%body-text {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+%uppercase-text {
+  font-family: "Inter-Medium", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }

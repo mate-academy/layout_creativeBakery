@@ -1,0 +1,71 @@
+.header {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-height-mobile;
+  padding: 0 18px;
+  background-color: $c-light-blue;
+
+  @include onDesktop() {
+    height: $header-height-desctop;
+    padding: 0 32px;
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    @include onDesktop() {
+      position: static;
+    }
+  }
+
+  &__menu-opener {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20px;
+    height: 8px;
+    border: none;
+    background-color: transparent;
+
+    @include onDesktop() {
+      display: none;
+    }
+  }
+
+  &__menu-opener-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $c-black;
+    transition: transform $animation-time;
+
+    &--active {
+      &:first-child {
+        transform: translateY(3px) rotate(45deg);
+      }
+
+      &:last-child {
+        transform: translateY(-3px) rotate(-45deg);
+      }
+    }
+  }
+
+  &__hero {
+    margin-bottom: 104px;
+  }
+}
