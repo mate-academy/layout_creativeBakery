@@ -1,7 +1,58 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "utils/mixins";
+@import "utils/variables";
 
-body {
-  background: $c-gray;
+@import "blocks/grid.scss";
+@import "blocks/icon.scss";
+@import "blocks/button.scss";
+@import "blocks/page.scss";
+@import "blocks/container.scss";
+
+.header {
+  &__content {
+    height: 100vh;
+  }
+
+  &__menu-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 167px;
+    background-color: rgba($color: red, $alpha: 0.5);
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    // &--open {
+    // }
+  }
+
+  &__menu-list-container {
+    width: 100%;
+  }
+}
+
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+
+  @include onDesktop {
+    padding-top: 28px;
+  }
+}
+
+.logo {
+  display: block;
+  height: 2rem;
+  width: 8.5rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../images/logo.png);
 }
