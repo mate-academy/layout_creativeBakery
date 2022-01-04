@@ -6,6 +6,7 @@
 @import "blocks/button.scss";
 @import "blocks/page.scss";
 @import "blocks/container.scss";
+@import "blocks/menu.scss";
 
 .header {
   &__content {
@@ -14,25 +15,46 @@
 
   &__menu-list {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 167px;
-    background-color: rgba($color: red, $alpha: 0.5);
-    position: absolute;
-    left: 0;
-    width: 100%;
 
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 11rem;
     margin: 0;
     padding: 0;
     list-style: none;
-
-    // &--open {
-    // }
   }
 
   &__menu-list-container {
+    box-sizing: border-box;
+    position: absolute;
+    display: flex;
     width: 100%;
+    // z-index: -1;
+    justify-content: center;
+    margin-top: 9.5rem;
+    left: 0;
+    height: 100vh;
+    background-color: $light-pink;
+    transform: scale(0);
+    transition: 0.3s transform, 0.3s border-radius;
+    border-radius: 50%;
+    transform-origin: top right;
+    padding: 0 16px;
+
+    &--open {
+      transform: scale(1);
+      border-radius: 0;
+    }
+  }
+
+  &__menu-link {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.01rem;
+    text-decoration: none;
+    color: $black;
   }
 }
 
