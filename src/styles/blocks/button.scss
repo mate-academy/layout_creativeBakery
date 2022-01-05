@@ -9,49 +9,30 @@
   border: 2px solid $accent-orange;
   border-radius: 2rem;
   text-decoration: none;
+  transition: background-color 0.3s;
 
   &__word {
     font-weight: 500;
     text-transform: uppercase;
     line-height: 1rem;
     color: $accent-orange;
-
-    &:active {
-      color: $dark-orange;
-    }
   }
 
   &:hover {
     background-color: $accent-orange;
+    border: none;
 
     & .button__word {
       color: $white;
     }
-    
+
     & .icon {
       background-color: $white;
     }
   }
 
-  &--noborder {
-    position: relative;
-    height: 2rem;
+  &:active {
+    background-color: $dark-orange;
     border: none;
-
-    &:hover {
-      &::after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        bottom: 0;
-        border: 1px solid $light-orange;
-      }
-    }
-
-    &:active {
-      &::after {
-        border-color: $dark-orange;
-      }
-    }
   }
 }
