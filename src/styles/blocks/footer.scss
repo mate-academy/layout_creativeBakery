@@ -8,68 +8,65 @@
     }
   }
 
-  &__brake {
-    display: block;
+  // #region grid
+  &__grid-rows {
+    @include onTablet {
+      display: grid;
+      row-gap: 2.5rem;
+      grid-template-rows: 6rem auto 1.5rem;
+    }
+  }
 
-    @include onDesktop {
-      display: inline;
+  &__grid-rows-item {
+    @include onTablet {
+      @for $start from 1 through 3 {
+        @for $end from $start through 3 {
+          &--#{$start}-#{$end} {
+            grid-row: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  // #endregion
+
+  &__logo {
+    margin-bottom: 2.5rem;
+
+    @include onTablet {
+      margin: 0;
     }
   }
 
   &__menu {
-    margin-bottom: 4rem;
+    margin-bottom: 1.5rem;
 
     @include onTablet {
-      margin-bottom: 3rem;
+      margin-bottom: 0;
     }
   }
 
-  &__section-logo {
+  &__title-container {
     margin-bottom: 2.5rem;
 
     @include onTablet {
-      margin-bottom: 6rem;
+      margin: 0;
     }
-
-    @include onDesktop {
-      margin-bottom: 4rem;
-    }
-  }
-
-  &__info {
-    margin-bottom: 2.5rem;
-  }
-
-  &__info-title {
-    color: $grey;
-    @include textUppercase;
-    margin-bottom: 1rem;
   }
 
   &__title {
-    margin-bottom: 2.5rem;
     @include headingsH2;
     color: $white;
   }
 
-  &__list-item {
-    &:not(:last-child) {
-      margin-bottom: 1rem;
-    }
+  &__social {
+    margin-bottom: 2.5rem;
+    display: flex;
+    gap: 2rem;
   }
 
-  &__list-link {
-    @include textBody;
-    color: $white;
-  }
-
-  &__icons {
-    & :not(:last-child) {
-      margin-right: 2rem;
-    }
-  }
-
-  &__text {
+  &__privacy {
     @include textBody;
     color: $grey;
   }
