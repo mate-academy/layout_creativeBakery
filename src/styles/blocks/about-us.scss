@@ -1,4 +1,17 @@
 .about-us {
+  position: relative;
+  &__container {
+    margin-bottom: 4.5rem;
+
+    @include onTablet {
+      margin-bottom: 9.5rem;
+    }
+
+    @include onDesktop {
+      margin-bottom: 21.5rem;
+    }
+  }
+
   &__section {
     &:not(:last-child) {
       margin-bottom: 4rem;
@@ -31,6 +44,10 @@
   &__stat {
     &:not(:last-child) {
       margin-bottom: 3rem;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
     }
 
     @include onTablet {
@@ -38,16 +55,35 @@
 
       &:nth-child(-n + 2) {
         margin-bottom: 5rem;
-      }
-    }
 
-    @include onDesktop {
-      margin-bottom: 0;
+        @include onDesktop {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 
   &__stat-number {
     @include textBig;
     margin-bottom: 0.5rem;
+  }
+
+  &__background-image {
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: clamp(320px, 100vw, 526px);
+    height: auto;
+    object-fit: contain;
+
+    @include onTablet {
+      width: clamp(526px, 60.84vw, 718px);
+    }
+
+    @include onDesktop {
+      top: 102%;
+    }
   }
 }
