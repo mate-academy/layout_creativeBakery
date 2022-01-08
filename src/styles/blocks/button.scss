@@ -1,38 +1,89 @@
-.button {
-  display: flex;
-  gap: 6px;
-  box-sizing: border-box;
+.box {
+  display: block;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  margin: 0 auto;
+  height: 300px;
+  width: 500px;
+  background-color: #00ff0050;
+}
+
+.button {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  box-sizing: border-box;
   height: 3.5rem;
-  border: 2px solid $accent-orange;
+  width: 100%;
   border-radius: 2rem;
-  text-decoration: none;
-  transition: background-color 0.3s;
+  @include textBody;
+  line-height: 1.25rem;
+  color: $accent-orange;
+  border: 2px solid $accent-orange;
+  text-transform: uppercase;
+  transition: background-color $transition-time, color $transition-time;
 
-  &__word {
-    font-weight: 500;
-    text-transform: uppercase;
-    line-height: 1rem;
-    color: $accent-orange;
-  }
-
+  // #region main styles
   &:hover {
     background-color: $accent-orange;
-    border: none;
-
-    & .button__word {
-      color: $white;
-    }
-
-    & .icon {
-      background-color: $white;
-    }
+    color: $white;
   }
 
   &:active {
     background-color: $dark-orange;
     border: none;
+    color: $white;
+  }
+
+  &__content {
+    display: flex;
+    gap: 4px;
+    height: $icon-size;
+  }
+
+  &__icon {
+    font-size: $icon-size;
+    display: inline;
+  }
+
+  &__word {
+    display: inline;
+  }
+  // #endregion
+
+  &--inline {
+    position: relative;
+    width: max-content;
+    height: 2rem;
+    border: none;
+    background: none;
+
+    &:hover {
+      background: none;
+      color: $accent-orange;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        width: 100%;
+        height: 1px;
+        background-color: $accent-orange;
+      }
+    }
+
+    &:active {
+      background: none;
+      color: $dark-orange;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        width: 100%;
+        height: 1px;
+        background-color: $dark-orange;
+      }
+    }
   }
 }
