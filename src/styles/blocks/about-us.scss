@@ -1,0 +1,53 @@
+.about-us {
+  &__section {
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+
+    @include onTablet {
+      &:not(:last-child) {
+        margin-bottom: clamp(4.5rem, 9.38vw, 9rem);
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title-word {
+    @include headingsH2;
+    color: $accent-orange;
+  }
+
+  &__text {
+    @include textBody;
+  }
+
+  &__stat {
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+
+      &:nth-child(-n + 2) {
+        margin-bottom: 5rem;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__stat-number {
+    @include textBig;
+    margin-bottom: 0.5rem;
+  }
+}
