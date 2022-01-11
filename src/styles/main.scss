@@ -8,3 +8,181 @@
 @import "blocks/header";
 @import "blocks/menu";
 @import "blocks/contact-link";
+
+.container {
+  box-sizing: border-box;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 0 16px;
+
+  @include onTablet {
+    padding: 0 44px;
+  }
+}
+
+.main {
+  padding: 32px 0 72px;
+
+  @include onTablet {
+    padding-top: 80px;
+  }
+
+  @include onDesktop {
+    padding-top: 0;
+  }
+
+  &__creative-bakery {
+    margin-bottom: 104px;
+
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      position: relative;
+
+      margin-bottom: 218px;
+    }
+
+    @include onLargeDesktop {
+      margin-bottom: 178px;
+    }
+  }
+}
+
+.creative-bakery {
+  text-align: center;
+
+  &__text {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      width: 284px;
+      margin-bottom: 16px;
+
+      text-align: left;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      top: 15%;
+
+      width: 260px;
+    }
+
+    @include onLargeDesktop {
+      top: 25%;
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $largeTextColor;
+
+    @include onTablet {
+      position: absolute;
+
+      font-size: 80px;
+      line-height: 85%;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      line-height: 85%;
+    }
+  }
+
+  &__image-container {
+    @include onTablet {
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 326px;
+      height: auto;
+    }
+
+    @include onDesktop {
+      width: 544px;
+    }
+  }
+
+  &__logo {
+    margin-right: 6px;
+  }
+
+  &__link {
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 326px;
+    padding: 18px 0;
+    margin: 0 auto;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $largeTextColor;
+
+    border: 2px solid $largeTextColor;
+    border-radius: 32px;
+
+    transition: all, 0.3s;
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 15%;
+
+      width: 260px;
+    }
+
+    &:hover {
+      color: #fff;
+
+      background-color: $largeTextColor;
+      border-color: transparent;
+    }
+
+    &:hover .creative-bakery__logo,
+    &:focus .creative-bakery__logo {
+      filter: brightness(0) invert(1);
+    }
+
+    &:focus {
+      color: #fff;
+
+      background-color: $learnMoreFocusColor;
+      border-color: transparent;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}
