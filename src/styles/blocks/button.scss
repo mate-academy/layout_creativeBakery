@@ -1,0 +1,78 @@
+.button {
+  @include textBody;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  height: 3.5rem;
+  width: 100%;
+  line-height: 1.25rem;
+  color: $accent-orange;
+  text-transform: uppercase;
+  border-radius: 2rem;
+  border: 2px solid $accent-orange;
+  transition: background-color $transition-time, color $transition-time;
+
+  // #region main styles
+  &:hover {
+    background-color: $accent-orange;
+    color: $white;
+  }
+
+  &:active {
+    background-color: $dark-orange;
+    border: none;
+    color: $white;
+  }
+
+  &__content {
+    display: flex;
+    gap: 4px;
+    height: $icon-size;
+  }
+
+  &__icon {
+    font-size: $icon-size;
+    display: inline;
+  }
+
+  &__word {
+    display: inline;
+  }
+  // #endregion
+
+  &--inline {
+    position: relative;
+    width: max-content;
+    height: 2rem;
+    border: none;
+    background: none;
+
+    &:hover {
+      background: none;
+      color: $accent-orange;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        width: 100%;
+        height: 1px;
+        background-color: $accent-orange;
+      }
+    }
+
+    &:active {
+      background: none;
+      color: $dark-orange;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        width: 100%;
+        height: 1px;
+        background-color: $dark-orange;
+      }
+    }
+  }
+}

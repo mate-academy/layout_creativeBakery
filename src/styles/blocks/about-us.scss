@@ -1,0 +1,90 @@
+.about-us {
+  position: relative;
+  &__container {
+    margin-bottom: 4.5rem;
+
+    @include onTablet {
+      margin-bottom: 9.5rem;
+    }
+
+    @include onDesktop {
+      margin-bottom: 21.5rem;
+    }
+  }
+
+  &__section {
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+
+    @include onTablet {
+      &:not(:last-child) {
+        margin-bottom: clamp(4.5rem, 9.38vw, 9rem);
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title-word {
+    @include headingsH2;
+    color: $accent-orange;
+  }
+
+  &__text {
+    @include textBody;
+  }
+
+  &__stat {
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+
+      &:nth-child(-n + 2) {
+        margin-bottom: 5rem;
+
+        @include onDesktop {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__stat-number {
+    @include textBig;
+    margin-bottom: 0.5rem;
+  }
+
+  &__background-image {
+    // did made positioning manually from the mockup
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    z-index: -1;
+    height: auto;
+    width: clamp(320px, 100vw, 526px);
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+
+    @include onTablet {
+      width: clamp(526px, 60.84vw, 718px);
+    }
+
+    @include onDesktop {
+      top: 102%;
+    }
+  }
+}

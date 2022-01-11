@@ -1,6 +1,69 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
   }
 }
+
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+// #region fonts
+@mixin textBody {
+  font-style: normal;
+  font-weight: 400;
+  color: $black;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+@mixin textBig {
+  color: $accent-orange;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 6rem;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@mixin textUppercase {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@mixin headingsH1 {
+  color: $accent-orange;
+  font-weight: 400;
+  font-size: clamp(4rem, 10vw, 8rem);
+  text-transform: uppercase;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-decoration: none;
+}
+
+@mixin headingsH2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(3rem, 7.29vw, 4.5rem);
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@mixin linkDecorationNone {
+  text-decoration: none;
+  color: $black;
+}
+
+// #endregion

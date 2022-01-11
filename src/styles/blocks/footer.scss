@@ -1,0 +1,73 @@
+.footer {
+  background-color: $black;
+  &__content {
+    padding: 3.5rem 0;
+
+    @include onTablet {
+      padding: 5.5rem 0;
+    }
+  }
+
+  // #region grid
+  &__grid-rows {
+    @include onTablet {
+      display: grid;
+      row-gap: 2.5rem;
+      grid-template-rows: repeat(3, auto);
+    }
+  }
+
+  &__grid-rows-item {
+    @include onTablet {
+      @for $start from 1 through 3 {
+        @for $end from $start through 3 {
+          &--#{$start}-#{$end} {
+            grid-row: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  // #endregion
+
+  &__logo {
+    margin-bottom: 2.5rem;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 1.5rem;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title-container {
+    margin-bottom: 2.5rem;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    @include headingsH2;
+    color: $white;
+  }
+
+  &__social {
+    margin-bottom: 2.5rem;
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__privacy {
+    @include textBody;
+    color: $grey;
+  }
+}

@@ -1,6 +1,8 @@
 # Creative Bakery landing page (HARD)
 
-**⚠️ Attention: this is a hard landing page for development. We highly recommend choosing this landing page only if you didn't have a lot of troubles with previous homework tasks and if you sent all homework in time (didn't miss deadlines).** 
+**⚠️ Attention: this is a hard landing page for development. We highly recommend choosing this landing page only if you didn't have a lot of troubles with previous homework tasks and if you sent all homework in time (didn't miss deadlines).**
+
+- [DEMO](https://mtctxd.github.io/layout_creativeBakery/)
 
 Implement landing page according to [Figma design](https://www.figma.com/file/dY3izAm0Vspsmra4lQWQIP/Bakerlab-FE-students?node-id=0%3A1) - Use BEM and SCSS
 
