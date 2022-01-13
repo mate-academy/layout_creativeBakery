@@ -1,0 +1,59 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1;
+
+  background-color: $c-pink-light;
+  @include onDesktop {
+    height: 100%;
+  }
+
+  &__top {
+    margin-bottom: -64px;
+
+    @include onTablet {
+      margin: 0 -28px -64px;
+    }
+
+    @include onDesktop {
+      margin: 0 -12px;
+    }
+
+    @include onDesktopXL {
+      margin: 0 -92px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 24px;
+    @include onDesktop {
+      margin: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    @extend %bodyText;
+  }
+}
