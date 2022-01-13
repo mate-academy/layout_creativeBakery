@@ -1,0 +1,71 @@
+.button {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 248px;
+  height: 56px;
+  color: #f9512e;
+  border: 2px solid #f9512e;
+  background-color: #eef7ff;
+  border-radius: 32px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 180px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/button.svg);
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    background-color: #f9512e;
+    color: #fff;
+
+    &::before {
+      content: "";
+      position: relative;
+      right: 180px;
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/hover-button.svg);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &:focus {
+    background-color: #b2341a;
+    color: #fff;
+
+    &::before {
+      content: "";
+      position: relative;
+      right: 6px;
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/hover-button.svg);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &:disabled {
+    color: #fba28f;
+    border-color: #fba28f;
+    background-color: #fff;
+
+    &::before {
+      content: "";
+      position: relative;
+      right: 6px;
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/disabled-button.svg);
+      background-repeat: no-repeat;
+    }
+  }
+}
