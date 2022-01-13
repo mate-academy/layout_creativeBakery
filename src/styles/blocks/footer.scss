@@ -35,7 +35,11 @@
     line-height: 100%;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: #7f8096;
+    color: $productCategoryColor;
+
+    &--uppercase-none {
+      text-transform: none;
+    }
   }
 
   &__subtitle,
@@ -66,7 +70,7 @@
   &__contacts-title {
     margin-bottom: 40px;
 
-    color: #fff;
+    color: $footerTextColor;
   }
 
   &__list {
@@ -80,10 +84,16 @@
   }
 
   &__link {
+    width: max-content;
+
     font-size: 16px;
     line-height: 150%;
     letter-spacing: -0.01em;
-    color: #fff;
+    color: $footerTextColor;
+
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-bottom, 1px solid $footerTextColor);
   }
 
   &__socials {
@@ -95,7 +105,11 @@
     }
   }
 
-  &__icon {
+  &__social-link {
     margin-right: 40px;
+  }
+
+  &__icon {
+    @include hover(filter, invert(75%));
   }
 }
