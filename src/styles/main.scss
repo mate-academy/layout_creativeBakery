@@ -1,7 +1,152 @@
+@import "normalize.scss";
 @import "utils";
 @import "fonts";
-@import "typography";
 
-body {
-  background: $c-gray;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+
+  padding: 0 20px;
+
+  @include onNotebook {
+    height: 88px;
+    padding: 0 36px;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+
+  height: calc(100vh - 64px);
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+    text-align: center;
+    list-style: none;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+
+    @include hover (color, $colorOrange);
+
+    &:hover {
+      color: $colorOrange;
+    }
+
+    &--active {
+      display: flex;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $colorOrange;
+
+      &::before {
+        content: url(../images/Vector-call.png);
+        margin-right: 7px;
+      }
+    }
+  }
+}
+
+.about {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px;
+
+  @include onTablet {
+    padding: 80px 32px;
+  }
+
+  &__description {
+    margin-bottom: 32px;
+
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    @include onTablet {
+      width: 280px;
+      align-self: start;
+      text-align: start;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    font-weight: normal;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $colorOrange;
+
+    @include onTablet {
+      font-size: 80px;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__img {
+    z-index: -1;
+    background-image: url(../images/Cookie.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 300px;
+    height: 288px;
+
+    @include onTablet {
+      position: absolute;
+      font-size: 80px;
+    }
+  }
+
+  &__btn {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 288px;
+    height: $btnSize;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $colorOrange;
+
+    border: 2px solid $colorOrange;
+    border-radius: $btnSize / 2;
+
+    @include onTablet {
+      // align-self: start;
+    }
+
+    &::before {
+      content: url(../images/Vector-cookie.png);
+      margin-right: 7px;
+    }
+  }
 }
