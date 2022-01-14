@@ -2,11 +2,11 @@
   position: relative;
   padding-top: 32px;
 
-  @media onTablet {
+  @include onTablet {
     padding-top: 80px;
   }
 
-  @media onDesktop {
+  @include onDesktop {
     padding-top: 135px;
   }
 
@@ -20,17 +20,18 @@
     margin-bottom: 32px;
 
     @include onTablet {
-      margin-bottom: 16px;
+      text-align: left;
+      margin-bottom: 146px;
     }
 
     @include onDesktop {
       text-align: left;
       margin-bottom: 8px;
     }
-  }
 
-  &__heading-container {
-    // position: relative;
+    @include onDesktopLarge {
+      margin-bottom: 40px;
+    }
   }
 
   &__heading {
@@ -43,18 +44,26 @@
     color: $accentOrange;
 
     @include onTablet {
+      margin-bottom: 210px;
       font-size: 80px;
       line-height: 68px;
     }
 
     @include onDesktop {
+      margin-bottom: 64px;
       font-size: 136px;
       line-height: 116px;
     }
 
+    @include onDesktopLarge {
+      font-size: 144px;
+      line-height: 122px;
+    }
+
+
     &::after {
-      content: "";
       display: block;
+      content: "";
       width: 100%;
       padding-top: 100%;
       background-image: url(../images/Cookie.png);
@@ -62,9 +71,29 @@
       background-position: center;
       background-repeat: no-repeat;
 
-      // @include onTablet {
+      @include onTablet {
+        position: absolute;
+        padding-top: 48%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+      }
+    }
+  }
 
-      // }
+  &__button {
+    margin-bottom: 104px;
+
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 312px;
+    }
+
+    @include onDesktopLarge {
+      margin-bottom: 290px;
     }
   }
 }

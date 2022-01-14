@@ -1,6 +1,6 @@
 .products {
   display: block;
- 
+
   &__title {
     font-size: 48px;
     line-height: 41px;
@@ -20,11 +20,19 @@
     margin-bottom: 56px;
   }
 
-  &__content {
-    row-gap: 64px;
+  &__card {
+    margin-bottom: 64px;
 
-    @media onTablet {
-      row-gap: 88px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 88px;
+
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
     }
   }
 }

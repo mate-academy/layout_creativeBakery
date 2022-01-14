@@ -2,11 +2,15 @@
   background-color: #1c1a26;
   padding: 60px 0;
 
+  @include onDesktop {
+    padding: 88px 0;
+  }
+
   &__content {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
 
     @include onTablet {
-      display: grid;
       grid-template-columns: repeat(8, 1fr);
       column-gap: 24px;
       row-gap: 0;
@@ -16,12 +20,19 @@
         ". . . . email email email email"
         "icon icon icon icon cop cop cop cop";
     }
+
+    @include onDesktop {
+      grid-template-areas: "logo logo logo logo contact contact contact contact"
+        "menu menu menu menu call call email email"
+        "icon icon icon icon cop cop cop cop";
+    }
   }
 
   &__logo {
     margin-bottom: 44px;
 
     @include onTablet {
+      margin-bottom: 0;
       grid-area: logo;
     }
   }
@@ -30,7 +41,12 @@
     margin-bottom: 64px;
 
     @include onTablet {
+      margin-bottom: 0;
       grid-area: menu;
+    }
+
+    @include onDesktop {
+      margin-bottom: 48px;
     }
   }
 
@@ -87,6 +103,7 @@
     margin-bottom: 40px;
 
     @include onTablet {
+      margin-bottom: 0;
       grid-area: call;
     }
   }
