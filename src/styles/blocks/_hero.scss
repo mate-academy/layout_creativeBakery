@@ -1,0 +1,99 @@
+.hero {
+  position: relative;
+  padding-top: 32px;
+
+  @include onTablet {
+    padding-top: 80px;
+  }
+
+  @include onDesktop {
+    padding-top: 135px;
+  }
+
+  &__description {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $black;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      margin-bottom: 8px;
+    }
+
+    @include onDesktopLarge {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__heading {
+    position: relative;
+    font-size: 64px;
+    line-height: 54px;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $accentOrange;
+
+    @include onTablet {
+      margin-bottom: 210px;
+      font-size: 80px;
+      line-height: 68px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+      font-size: 136px;
+      line-height: 116px;
+    }
+
+    @include onDesktopLarge {
+      font-size: 144px;
+      line-height: 122px;
+    }
+
+
+    &::after {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: 100%;
+      background-image: url(../images/Cookie.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include onTablet {
+        position: absolute;
+        padding-top: 48%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 104px;
+
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 312px;
+    }
+
+    @include onDesktopLarge {
+      margin-bottom: 290px;
+    }
+  }
+}

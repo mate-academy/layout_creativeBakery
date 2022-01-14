@@ -1,0 +1,148 @@
+.footer {
+  background-color: #1c1a26;
+  padding: 60px 0;
+
+  @include onDesktop {
+    padding: 88px 0;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @include onTablet {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+      row-gap: 0;
+
+      grid-template-areas: "logo logo logo logo contact contact contact contact"
+        "menu menu menu menu call call call call"
+        ". . . . email email email email"
+        "icon icon icon icon cop cop cop cop";
+    }
+
+    @include onDesktop {
+      grid-template-areas: "logo logo logo logo contact contact contact contact"
+        "menu menu menu menu call call email email"
+        "icon icon icon icon cop cop cop cop";
+    }
+  }
+
+  &__logo {
+    margin-bottom: 44px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      grid-area: logo;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      grid-area: menu;
+    }
+
+    @include onDesktop {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__list-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    /* Grey */
+    color: #7f8096;
+
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    /* White */
+    color: #fff;
+  }
+
+  &__heading {
+    display: inline-block;
+    font-size: 48px;
+    line-height: 41px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    /* White */
+    color: #fff;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-area: contact;
+    }
+  }
+
+  &__contacts-call {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      grid-area: call;
+    }
+  }
+
+  &__contacts-email {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-area: email;
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-area: icon;
+    }
+  }
+
+  &__icon {
+    margin-right: 36px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__copyright {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    /* Grey */
+    color: #7f8096;
+
+    @include onTablet {
+      grid-area: cop;
+    }
+  }
+}

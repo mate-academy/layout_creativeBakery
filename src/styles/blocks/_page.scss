@@ -1,0 +1,55 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+
+  &__body {
+    margin: 0;
+    background: $lightBlue;
+  }
+
+  // &__header {
+  //   position: sticky;
+  //   top: 0;
+  // }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__products {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 186px;
+    }
+  }
+
+  &__about {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 56px;
+    }
+  }
+}
