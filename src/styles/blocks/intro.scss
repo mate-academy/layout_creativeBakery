@@ -1,0 +1,136 @@
+.intro {
+  text-align: center;
+
+  @include onTablet {
+    background-image: url(../images/Cookie.png);
+    background-repeat: no-repeat;
+    background-size: 326px;
+    background-position: center 68px;
+  }
+
+  @include onDesktop {
+    padding-top: 135px;
+    padding-bottom: 56px;
+    background-image: url(../images/Cookie.png);
+    background-repeat: no-repeat;
+    background-size: 546px;
+    background-position: top center ;
+  }
+
+  &__text {
+    margin: 0 auto;
+    width: 288px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin: 0;
+      width: 280px;
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      width: 260px;
+      margin-bottom: 8px;
+    }
+
+    @include onLargeDesktop {
+      width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 288px;
+    margin: 0 auto;
+
+    font-size: 64px;
+    line-height: 85%;
+    font-weight: normal;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      width: 100%;
+      font-size: 80px;
+      line-height: 85%;
+      margin-bottom: 210px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      line-height: 85%;
+      margin-bottom: 64px;
+    }
+
+    @include onLargeDesktop {
+      font-size: 144px;
+      line-height: 85%;
+      letter-spacing: -0.08em;
+    }
+  }
+
+  &__image {
+    width: 288px;
+    height: 290px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__logo {
+    margin-right: 6px;
+  }
+
+  &__link {
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 248px;
+    height: 56px;
+    margin: 0 auto;
+
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-hover;
+
+    border: 2px solid $color-hover;
+    border-radius: 32px;
+
+    transition: all, $time-transition;
+
+    &:hover {
+      color: #fff;
+      background-color: $color-hover;
+      border-color: transparent;
+    }
+
+    &:hover .intro__logo {
+      filter: brightness(0) invert(1);
+    }
+
+    &:focus {
+      color: #fff;
+      background-color: $color-focus;
+      border-color: transparent;
+    }
+
+    &:focus .intro__logo {
+      filter: brightness(0) invert(1);
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+}
