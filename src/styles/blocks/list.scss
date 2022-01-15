@@ -25,10 +25,35 @@
     @include linkDecorationNone;
 
     &--color-white {
+      position: relative;
       color: $white;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: $white;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform $transition-time,
+          color $transition-time,
+          background-color $transition-time;
+      }
 
       &:visited {
         color: $white;
+      }
+
+      &:hover {
+        color: $accent-orange;
+
+        &:after {
+          background-color: $accent-orange;
+          transform: scaleX(100%);
+        }
       }
     }
   }
