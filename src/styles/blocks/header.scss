@@ -57,17 +57,38 @@
     width: 288px;
     height: 56px;
 
+    color: #f9512e;
     text-decoration: none;
     box-sizing: border-box;
     border: 2px solid #f9512e;
     border-radius: 32px;
-  }
 
-  &__button-logo {
-    height: 20px;
-    width: 20px;
-    background-image: url(../images/Button-logo.png);
-    background-size: cover;
+    transition: color 0.3s, background-color 0.3s;
+
+    &--icon svg {
+      fill: #f9512e;
+      transition: fill 0.3s;
+    }
+
+    &--icon:hover svg {
+      fill: #fff;
+    }
+
+    &--icon:focus svg {
+      fill: #fff;
+    }
+
+    &:hover {
+      background-color: #f9512e;
+      border-color: #f9512e;
+      color: #fff;
+    }
+
+    &:focus {
+      background-color: #b2341a;
+      border-color: #b2341a;
+      color: #fff;
+    }
   }
 
   &__button-text {
@@ -76,7 +97,6 @@
     line-height: 16px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: #f9512f;
   }
 
   @media (min-width: 768px) {
