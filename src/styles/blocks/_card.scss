@@ -1,44 +1,54 @@
 .card {
 
   &__image {
-    display: block;
     max-width: 100%;
     border-radius: 8px;
-
     margin-bottom: 16px;
+    transition: transform $transitionTime;
+  }
+
+  &:hover &__image {
+    transform: scale(1.05);
+
+    @include onTablet {
+      transform: scale(1.07);
+    }
+
+    @include onTablet {
+      transform: scale(1.08);
+    }
   }
 
   &__type {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 16px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    @include uppercaseText;
 
     margin-bottom: 8px;
-    color: #7f8096;
+    color: $grey;
   }
 
   &__description {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    color: #1c1a26;
+    color: $black;
     margin-bottom: 24px;
   }
 
   &__order-link {
     position: relative;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 16px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    box-sizing: border-box;
+
+    @include uppercaseText;
+
     text-decoration: none;
-    /* Accent Orange */
-    color: #f9512e;
+    border-bottom: 1px solid transparent;
+    transition: border-color $transitionTime;
+
+    color: $accentOrange;
 
     padding-left: 28px;
+    padding-bottom: 4px;
+
+    &:hover {
+      border-color: $accentOrange;
+    }
 
     &::before {
       position: absolute;
@@ -47,10 +57,8 @@
       width: 16px;
       left: 0;
       background-image: url(../images/icons/arrow.svg);
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
+      @include bgiFormat;
+      margin-top: -2px;
     }
   }
-
 }

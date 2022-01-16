@@ -1,5 +1,5 @@
 .footer {
-  background-color: #1c1a26;
+  background-color: $black;
   padding: 60px 0;
 
   @include onDesktop {
@@ -7,14 +7,8 @@
   }
 
   &__content {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
 
     @include onTablet {
-      grid-template-columns: repeat(8, 1fr);
-      column-gap: 24px;
-      row-gap: 0;
-
       grid-template-areas: "logo logo logo logo contact contact contact contact"
         "menu menu menu menu call call call call"
         ". . . . email email email email"
@@ -53,11 +47,10 @@
   &__list-title {
     font-weight: 500;
     font-size: 16px;
-    line-height: 16px;
+    line-height: 100%;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    /* Grey */
-    color: #7f8096;
+    color: $grey;
 
     margin-bottom: 16px;
   }
@@ -67,7 +60,7 @@
   }
 
   &__item {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 
     &:last-child {
       margin-bottom: 0;
@@ -75,27 +68,26 @@
   }
 
   &__link {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    text-decoration: none;
-    /* White */
-    color: #fff;
+    color: $white;
+
+    &:hover {
+      border-color: $white;
+    }
   }
 
   &__heading {
-    display: inline-block;
     font-size: 48px;
-    line-height: 41px;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-    /* White */
-    color: #fff;
+    color: $white;
 
     margin-bottom: 40px;
 
     @include onTablet {
+      font-size: 56px;
       grid-area: contact;
+    }
+
+    @include onTablet {
+      font-size: 72px;
     }
   }
 
@@ -109,7 +101,7 @@
   }
 
   &__contacts-email {
-    margin-bottom: 40px;
+    margin-bottom: 42px;
 
     @include onTablet {
       grid-area: email;
@@ -123,6 +115,7 @@
 
     @include onTablet {
       grid-area: icon;
+      margin-bottom: 0;
     }
   }
 
@@ -135,11 +128,7 @@
   }
 
   &__copyright {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    /* Grey */
-    color: #7f8096;
+    color: $grey;
 
     @include onTablet {
       grid-area: cop;

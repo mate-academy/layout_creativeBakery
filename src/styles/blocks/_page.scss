@@ -1,6 +1,16 @@
 .page {
   font-family: "Inter", sans-serif;
+  font-style: normal;
   font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+
+  scroll-behavior: smooth;
+
+  .page__body--with-menu {
+    overflow: hidden;
+  }
 
   &__body {
     margin: 0;
@@ -18,14 +28,15 @@
     left: 0;
     right: 0;
 
-    transform: translateX(-100%);
+    transition: transform $transitionTime;
+    transform: translateY(-100%);
 
     @include onDesktop {
       display: none;
     }
 
     &:target {
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
 

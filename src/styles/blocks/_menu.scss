@@ -1,14 +1,21 @@
 .menu {
   background-color: $lightBlue;
   z-index: 1;
-  overflow: hidden;
 
-  &__container {
+  &__top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    padding-right: 36px;
+  }
+
+  &__nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    padding-top: -60px;
+    margin-top: -60px;
   }
 
   &__list {
@@ -23,7 +30,11 @@
     margin-bottom: 24px;
 
     &:nth-child(3) {
-      margin-bottom: 31px;
+      margin-bottom: 28px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
 
     &--contact-us {
@@ -32,21 +43,24 @@
   }
 
   &__link {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.01em;
-    text-decoration: none;
-    color: #1c1a26;
+    color: $black;
+
+    &:hover {
+      border-color: $black;
+    }
 
     &--contact-us {
-      box-sizing: border-box;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 16px;
       padding-left: 25px;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: #f9512e;
+      color: $accentOrange;
+
+      &:hover {
+        border-color: $accentOrange;
+      }
+
+      &:focus {
+        color: $darkOrange;
+        border-color: $darkOrange;
+      }
 
       &::before {
         position: absolute;
@@ -58,6 +72,10 @@
         background-position: center;
         background-repeat: no-repeat;
         background-image: url(../images/icons/phone.svg);
+      }
+
+      &:focus &::before {
+        background-image: url(../images/icons/phone-dark.svg);
       }
     }
   }
