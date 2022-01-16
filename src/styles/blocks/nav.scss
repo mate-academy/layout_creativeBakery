@@ -17,13 +17,25 @@
   }
 
   &__link {
+    position: relative;
     letter-spacing: -0.01em;
     color: $color-text;
     text-decoration: none;
-    transition: color $time-transition;
+    transition: all, $time-transition;
 
     &:hover {
       color: $color-hover;
+      transition: all, 0.5s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        height: 2px;
+        width: 100%;
+        background-color: $color-hover;
+      }
     }
 
     &--contact {
