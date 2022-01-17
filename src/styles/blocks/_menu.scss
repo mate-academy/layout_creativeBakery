@@ -1,7 +1,8 @@
 .menu {
   background-color: #eef7ff;
 
-  &__link {
+  &__link,
+  &__link--mob {
     display: flex;
     padding-bottom: 8px;
     font-size: 16px;
@@ -9,10 +10,27 @@
     text-align: center;
     letter-spacing: -0.01em;
     color: #1c1a26;
+
+    // &--mob {
+    // }
+  }
+
+  &__desktop {
+    @include onTablet {
+      display: none;
+    }
   }
 
   &__list {
     display: flex;
+
+    &--mob {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 152px;
+    }
   }
 
   &__item {

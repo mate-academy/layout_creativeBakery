@@ -1,17 +1,34 @@
 .page {
   scroll-behavior: smooth;
 
-  // &__menu {
-  //   position: fixed;
-  //   top: 0;
-  //   right: 0;
-  //   right: 0;
+  &__body {
+    margin: 0;
+    min-width: 320px;
 
-  //   transform: translateX(-100%);
-  //   transition: transform 0.3s;
+    &--with-menu {
+      margin: 0;
+      overflow: hidden;
+    }
+  }
 
-  //   &:target {
-  //     transform: translateX(0);
-  //   }
-  // }
+  &__menu {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    z-index: 1;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
 }

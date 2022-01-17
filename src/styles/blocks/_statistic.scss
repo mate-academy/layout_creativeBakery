@@ -1,8 +1,13 @@
 .statistic {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
   padding-bottom: 178px;
+
+  @include onTablet {
+    padding-bottom: 152px;
+  }
 
   &__value {
     font-weight: normal;
@@ -11,6 +16,10 @@
     letter-spacing: -0.05em;
     text-transform: uppercase;
     margin-bottom: 8px;
+
+    @include onBeforeTablet {
+      font-size: 80px;
+    }
   }
 
   &__name {
@@ -19,5 +28,11 @@
     line-height: 150%;
     letter-spacing: -0.01em;
     color: #7f8096;
+  }
+
+  &__data {
+    @include onTablet {
+      width: 40%;
+    }
   }
 }

@@ -1,5 +1,4 @@
 .button {
-  position: relative;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -8,16 +7,25 @@
   height: 56px;
   color: #f9512e;
   border: 2px solid #f9512e;
-  background-color: #eef7ff;
+  background-color: transparent;
   border-radius: 32px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   transition: all 0.7s;
 
-  &__icon svg {
-    fill: #f9512e;
-    transition: all 0.7s;
-    margin-right: 6px;
+  &__icon {
+    svg {
+      fill: #f9512e;
+      transition: all 0.7s;
+      margin-right: 6px;
+    }
+
+    &--wrap {
+      @include onTablet {
+        width: max-content;
+        margin: 0 auto;
+      }
+    }
   }
 
   &__icon:hover svg {
