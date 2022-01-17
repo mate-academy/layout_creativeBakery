@@ -1,0 +1,112 @@
+.promo {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__description {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      width: 280px;
+      align-self: start;
+      text-align: start;
+    }
+
+    @include onNotebook {
+      position: absolute;
+      top: 15%;
+    }
+  }
+
+  &__title-img {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    @include onTablet {
+      margin-bottom: 100px ;
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      position: absolute;
+    }
+  }
+
+  &__img {
+    background-image: url(../images/background-images/Cookie.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 300px;
+    height: 288px;
+
+    @include onNotebook {
+      width: 544px;
+      height: 546px;
+    }
+
+    @include onDesktop {
+      width: 584px;
+      height: 586px;
+    }
+  }
+
+  &__btn {
+    $btnSize: 56px;
+
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 288px;
+    height: $btnSize;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $colorOrange;
+
+    border: 2px solid $colorOrange;
+    border-radius: $btnSize / 2;
+
+    transition: all 0.3s;
+
+    @include onNotebook {
+      position: absolute;
+      bottom: 30%;
+      align-self: flex-start;
+    }
+
+    &:hover {
+      background-color: $colorOrange;
+      color: $colorWhite;
+    }
+
+    &:focus {
+      background-color: $colorDarkOrange;
+      color: $colorWhite;
+    }
+
+    &::before {
+      content: url(../images/favicons/Vector-cookie.svg);
+      margin-right: 7px;
+    }
+
+    &:focus::before,
+    &:hover::before {
+      filter: brightness(1000%);
+    }
+  }
+}
