@@ -15,12 +15,20 @@
   }
 
   &__card {
+
+    @include onTablet {
+      margin: 0;
+      max-width: 402px;
+      max-height: 648px;
+    }
+
+    @include onDesktop {
+      max-width: unset;
+      max-height: unset;
+    }
+
     &:not(:last-child) {
       margin-bottom: clamp(3.5rem, 17.5vw, 5rem);
-
-      @include onTablet {
-        margin: 0;
-      }
     }
   }
 
