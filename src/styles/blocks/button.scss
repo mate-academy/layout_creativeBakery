@@ -1,0 +1,91 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 56px;
+
+  border: 2px solid $accentOrange;
+  border-radius: 32px;
+  outline: none;
+
+  @include textUppercase;
+  text-decoration: none;
+  color: $accentOrange;
+
+  transition: color 0.3s, background-color 0.3s;
+
+  &:hover {
+    color: $white;
+    background-color: $accentOrange;
+  }
+
+  &:focus {
+    color: $white;
+    background-color: $darkOrange;
+    border-color: $darkOrange;
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+
+    background-image: url(../images/cookie_default.png);
+  }
+
+  &:hover::before {
+    background-image: url(../images/cookie_hover.png);
+  }
+
+  &:focus::before {
+    background-image: url(../images/cookie_hover.png);
+  }
+
+  &__link {
+    width: fit-content;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    background-color: transparent;
+
+    transition: border-bottom 0.3s;
+
+    &::before {
+      background-image: url(../images/Phone.png);
+    }
+
+    &:hover {
+      color: $accentOrange;
+      background-color: transparent;
+      border-bottom: 1px solid $accentOrange;
+    }
+
+    &:focus {
+      color: $darkOrange;
+      background-color: transparent;
+    }
+
+    &:hover::before {
+      background-image: url(../images/Phone.png);
+      border-bottom-color: $accentOrange;
+    }
+
+    &:focus::before {
+      background-image: url(../images/Phone.png);
+      border-bottom-color: $darkOrange;
+    }
+  }
+
+  &__simple {
+    &::before {
+      display: none;
+    }
+  }
+}

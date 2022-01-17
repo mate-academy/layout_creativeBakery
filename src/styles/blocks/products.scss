@@ -7,10 +7,15 @@
     margin-bottom: 0;
   }
 
+  @include onTablet {
+    padding-top: 88px;
+  }
+
   &__image {
     display: block;
     width: 100%;
     margin-bottom: 16px;
+    border-radius: 8px;
   }
 
   &__title {
@@ -29,7 +34,18 @@
     @include textUppercase;
     color: $accentOrange;
     text-decoration: none;
-    //   &::before {
-    //   }
+    background-repeat: no-repeat;
+
+    &::before {
+      background-image: url(../images/arrow_orange.svg);
+    }
+
+    &:hover::before {
+      background-image: url(../images/arrow_dark_orange.svg);
+    }
+
+    &:focus::before {
+      background-image: url(../images/arrow_dark_orange.svg);
+    }
   }
 }

@@ -2,26 +2,68 @@
   background: url(../images/Cookie.png), $lightPink;
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position-x: center;
-  background-position-y: 120%;
+  background-position: center 80%;
+
+  @include onTablet {
+    background-position: center 50%;
+  }
+
+  @include onDesktop {
+    background-position: center 50%;
+    background-size: 544px;
+  }
 
   &__content {
-    padding: 20px 20px 120px;
+    padding-bottom: 120px;
 
     @include onTablet {
-      padding: 32px 32px 240px;
+      padding-bottom: 240px;
+      background-position: center 50%;
     }
 
     @include onDesktop {
-      padding: 32px 32px 302px;
+      padding-bottom: 302px;
+      background-size: 544px;
+      background-position: center 50%;
+    }
+  }
+
+  &__top {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin: 0 -28px 80px;
+    }
+
+    @include onDesktop {
+      margin: 0 -12px 135px;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: block;
     }
   }
 
   &__description {
-    text-align: center;
+    margin-bottom: 32px;
     @include textDescription;
     color: $black;
-    margin-bottom: 24px;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 146px;
+      text-align: left;
+
+    }
+
+    @include onDesktop {
+      max-width: 260px;
+      margin: 0 0 8px;
+    }
   }
 
   &__title {
@@ -29,5 +71,27 @@
     @include MobileHeadingsH1;
     color: $accentOrange;
     margin-bottom: 288px;
+
+    @include onTablet {
+      display: block;
+      margin-bottom: 210px;
+      @include TabletHeadingsH1;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+      @include DesktopHeadingsH1;
+    }
+  }
+
+  &__button {
+    max-width: 326px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      max-width: 260px;
+      margin: 0;
+    }
   }
 }
