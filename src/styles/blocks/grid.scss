@@ -1,0 +1,14 @@
+.grid {
+  @include onDesktop {
+    grid-template-columns: repeat(8, 1fr);
+    // column-gap: 24px;
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start}/ #{$end + 1};
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@mixin onLargeDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin hover($property, $value) {
+  transition: $property $transitionTime;
+  &:hover {
+    #{$property}: $value;
+  }
+}
