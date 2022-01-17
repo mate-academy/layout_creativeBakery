@@ -1,4 +1,5 @@
 'use strict';
+
 const toggler = document.querySelector('#toggler');
 const menu = document.querySelector('.menu');
 
