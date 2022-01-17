@@ -1,6 +1,50 @@
 .header {
   max-width: 2560px;
   padding: 32px 32px 0;
+  height: 100vh;
+  background-size: clamp(328px, 42vw, 588px);
+  background-position: 50%, 30%;
+  background-repeat: no-repeat;
+  background-image: url(../images/background-cookie.png);
+
+  .main {
+    &__screen {
+      &-wrap {
+        padding-top: 144px;
+
+        @include onTablet {
+          padding-top: 100px;
+        }
+      }
+    }
+
+    &__paragraph {
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      color: #1c1a26;
+      margin-bottom: 40px;
+      width: 280px;
+
+      @include onTablet {
+        margin-bottom: 146px;
+      }
+    }
+
+    &__title {
+      font-size: clamp(4rem, 10vw, 8rem);
+      line-height: 85%;
+      text-align: center;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #1c1a26;
+      margin-bottom: 84px;
+
+      @include onTablet {
+        margin-bottom: 140px;
+      }
+    }
+  }
 
   &__container {
     display: flex;
