@@ -1,4 +1,7 @@
 .navigation {
+  &__checkbox {
+    opacity: 0;
+  }
   &__link {
     display: block;
     transition: color 0.3s;
@@ -19,19 +22,22 @@
     align-items: baseline;
     gap: 64px;
     list-style: none;
+    padding-inline-start: 0;
 
-    @include onTablet {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      column-gap: 24px;
-      padding: 0 16px;
+    &--mobile {
+      @include onTablet {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+
+      }
     }
   }
 
   &__item {
     padding: 0;
+
     &--call {
       display: flex;
       justify-content: space-between;
@@ -76,10 +82,39 @@
         display: block;
       }
 
-      &:focus {
+      &:active {
         background-image: url(../images/menu--opened.svg);
         background-size: cover;
         background-position: center;
+      }
+    }
+
+    &--mobile {
+      @include onTablet {
+        display: block;
+      }
+
+      @include onMobile {
+        display: block;
+      }
+
+      &--call {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include uppercase;
+        color: $accentOrange;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          padding-right: 7px;
+          width: 18px;
+          height: 18px;
+          background-image: url(../images/phone-icon.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
       }
     }
   }
