@@ -65,6 +65,7 @@
   }
 
   &__order {
+    position: relative;
     display: flex;
     align-items: center;
     height: 32px;
@@ -78,9 +79,25 @@
     text-decoration: none;
     border-bottom: 3px solid transparent;
     color: $color-hover;
+    transition: all, 0.5s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      height: 2px;
+      width: 100%;
+      transform: scaleX(0);
+      background-color: $color-hover;
+      transition: all, 0.5s;
+    }
 
     &:hover {
-      border-bottom-color: $color-hover;
+      color: $color-hover;
+      &::after {
+        transform: scaleX(100%);
+      }
     }
   }
 }
