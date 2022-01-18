@@ -32,4 +32,3 @@ nav4.addEventListener('click', function() {
   menu.classList.toggle('menu__content--hidden');
   toggler.classList.toggle('header__burgerMenu--hidden');
 });
-
