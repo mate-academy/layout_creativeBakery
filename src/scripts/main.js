@@ -1,11 +1,35 @@
 'use strict';
 
-// Ищем нужные элементы во всём документе
 const toggler = document.querySelector('#toggler');
-const menu = document.querySelector('.menu');
+const nav1 = document.querySelector('.toggler1');
+const nav2 = document.querySelector('.toggler2');
+const nav3 = document.querySelector('.toggler3');
+const nav4 = document.querySelector('.toggler4');
 
-// ждём клики на toggler
+const menu = document.querySelector('.menu__content');
+
 toggler.addEventListener('click', function() {
-  // переключаем класс menu--hidden (если есть - убираем, если нет - добавляем)
-  menu.classList.toggle('menu--hidden');
+  menu.classList.toggle('menu__content--hidden');
+  toggler.classList.toggle('header__burgerMenu--hidden');
 });
+
+nav1.addEventListener('click', function() {
+  menu.classList.toggle('menu__content--hidden');
+  toggler.classList.toggle('header__burgerMenu--hidden');
+});
+
+nav2.addEventListener('click', function() {
+  menu.classList.toggle('menu__content--hidden');
+  toggler.classList.toggle('header__burgerMenu--hidden');
+});
+
+nav3.addEventListener('click', function() {
+  menu.classList.toggle('menu__content--hidden');
+  toggler.classList.toggle('header__burgerMenu--hidden');
+});
+
+nav4.addEventListener('click', function() {
+  menu.classList.toggle('menu__content--hidden');
+  toggler.classList.toggle('header__burgerMenu--hidden');
+});
+
