@@ -1,31 +1,28 @@
 .page {
+  font-family: "Inter", sans-serif;
+  min-width: 320px;
   scroll-behavior: smooth;
 
   &__body {
-    margin: 0;
-    min-width: 320px;
+    background-color: $light-blue;
+
+    @include onDesktop {
+      margin: 0 auto;
+    }
 
     &--with-menu {
-      margin: 0;
       overflow: hidden;
     }
   }
 
   &__menu {
-    width: 100%;
-    height: 100vh;
     position: fixed;
     top: 0;
+    left: 0;
     right: 0;
-    display: none;
-    z-index: 1;
 
-    transform: translateX(100%);
+    transform: translateX(200%);
     transition: transform 0.3s;
-
-    @include onTablet {
-      display: block;
-    }
 
     &:target {
       transform: translateX(0);

@@ -1,60 +1,82 @@
 .menu {
-  background-color: #eef7ff;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1;
+  background-color: $light-blue;
 
-  &__link,
-  &__link--mob {
+  &__nav {
     display: flex;
-    padding-bottom: 8px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 132px;
+    padding: 0 18px 0 20px;
+    height: 64px;
+  }
+
+  &__modal {
+    margin-right: 4px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__link {
+    margin-bottom: 24px;
     font-size: 16px;
-    line-height: 150%;
-    text-align: center;
+    line-height: 24px;
     letter-spacing: -0.01em;
-    color: #1c1a26;
+    text-decoration: none;
+    color: $main-black;
+    transition: color 0.3s;
 
-    // &--mob {
-    // }
-  }
-
-  &__desktop {
     @include onTablet {
-      display: none;
+      font-size: 30px;
+      line-height: 50px;
+    }
+
+    &:hover {
+      color: $main-orange;
     }
   }
 
-  &__list {
+  &__link-container {
     display: flex;
-
-    &--mob {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-top: 152px;
-    }
+    align-items: center;
   }
 
-  &__item {
-    margin-left: 64px;
+  &__phone-img {
+    width: 18px;
+    height: 18px;
+    margin-right: 7px;
+
+    background-image: url(../images/Phone.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
-  &__call {
-    position: relative;
+  &__link-mod {
     font-weight: 500;
     font-size: 16px;
-    line-height: 100%;
+    line-height: 16px;
     letter-spacing: 0.02em;
+    text-decoration: none;
     text-transform: uppercase;
-    color: #f9512e;
+    color: $main-orange;
 
-    &::before {
-      content: "";
-      position: absolute;
-      right: 105px;
-      top: 2px;
-      width: 18px;
-      height: 18px;
-      background-image: url(../images/Phone.svg);
-      background-repeat: no-repeat;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s;
+
+    @include onTablet {
+      font-size: 30px;
+      line-height: 120px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $main-orange;
     }
   }
 }
