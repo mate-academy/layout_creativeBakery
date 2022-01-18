@@ -7,10 +7,24 @@
   &__image {
     border-radius: 8px;
     width: 100%;
+    max-height: 356px;
+    object-fit: cover;
     transition: transform 0.3s;
 
+    @include onTablet {
+      max-height: 424px;
+    }
+
+    @include onDesktop {
+      max-height: 512px;
+    }
+
+    @include onDesktopXL {
+      max-height: 560px;
+    }
+
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
   }
 
