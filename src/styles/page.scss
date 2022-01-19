@@ -1,9 +1,32 @@
 .page {
-  font-family: Inter, sans-serif;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  scroll-behavior: smooth;
+  color: $c-black;
+  background-color: $c-pink-light;
 
-  &__content {
-    background: $c-gray;
-    margin: 0;
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__section-about {
+    background-image: url(../images/Crumbs.png);
+    background-size: contain;
+    background-position: center 76%;
+    background-repeat: no-repeat;
+    padding-bottom: 150px;
+
+    @include onTablet {
+      background-size: 526px;
+      background-position: center;
+    }
+
+    @include onNarrowDesktop {
+      background-size: 718px;
+      background-position: center;
+    }
   }
 
   &__menu {
@@ -11,9 +34,8 @@
     top: 0;
     left: 0;
     right: 0;
-
-    transform: translateX(100%);
-    transition: transform 500ms;
+    transform: translateX(200%);
+    transition: transform 0.3s;
 
     &:target {
       transform: translateX(0);

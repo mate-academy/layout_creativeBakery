@@ -1,57 +1,59 @@
 .menu {
   box-sizing: border-box;
-  background-color: $c-gray;
-  &__container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1;
+
+  background-color: $c-pink-light;
+  @include onNarrowDesktop {
+    height: 100%;
   }
 
-  &__header {
-    display: flex;
-    flex-grow: 0;
-    justify-content: space-between;
-    align-items: center;
-  }
+  &__top {
+    margin-bottom: -64px;
 
-  &__title {
-    padding: 32px 0 32px 36px;
-  }
+    @include onTablet {
+      margin: 0 -28px -64px;
+    }
 
-  &__close {
-    margin-right: 18px;
+    @include onNarrowDesktop {
+      margin: 0 -12px;
+    }
+
+    @include onWideDesktop {
+      margin: 0 -92px;
+    }
   }
 
   &__list {
     display: flex;
-    flex-grow: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
+
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
+
+    @include onNarrowDesktop {
+      flex-direction: row;
+      gap: 64px;
+    }
   }
 
   &__item {
     margin-bottom: 24px;
-    text-align: center;
-    align-self: stretch;
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: -0.01em;
-    color: #{$colorText};
+    @include onNarrowDesktop {
+      margin: 0;
+    }
 
     &:last-child {
-      transform: translateY(20%);
-
-      &::after {
-        display: inline-block;
-        content: "CONTACT US";
-        transform: translateY(-20%);
-        font-weight: 500;
-        color: $colorOrange;
-      }
+      margin-bottom: 0;
     }
+  }
+
+  &__link {
+    @extend %bodyText;
   }
 }
