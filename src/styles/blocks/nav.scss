@@ -10,18 +10,18 @@
     display: none;
   }
 
-  &__menu-desktop {
+  &__menu-list {
     text-decoration: none;
     list-style: none;
     display: block;
   }
 
-  &__menu-desktop-items {
+  &__menu-items {
     display: flex;
     gap: 64px;
   }
 
-  &__menu-desktop-link {
+  &__menu-link {
     font-size: 16px;
     line-height: 150%;
 
@@ -101,5 +101,15 @@
     background-image: url(../images/menu-opener.svg);
     background-repeat: no-repeat;
     background-size: contain;
+
+    @include onTablet {
+      transform: scale(1.5);
+    }
+
+    &--close {
+      background-image: url(../images/menu-close.svg);
+      width: 13px;
+      height: 13px;
+    }
   }
 }
