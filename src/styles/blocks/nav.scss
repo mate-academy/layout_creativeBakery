@@ -3,12 +3,11 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 32px 0;
+  padding: 0 0 24px;
   width: 100%;
 
   &__menu {
     display: none;
-
   }
 
   &__menu-desktop {
@@ -27,6 +26,13 @@
     line-height: 150%;
 
     letter-spacing: -0.01em;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-a-orange;
+
+    }
 
     &--hot {
       text-transform: uppercase;
@@ -51,6 +57,7 @@
   }
 
   @include onDesktop {
+    padding: 0 0 32px;
     max-width: 1200px;
 
     &__icon {
@@ -72,6 +79,11 @@
     background-repeat: no-repeat;
     background-size: contain;
 
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__link {
