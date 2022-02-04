@@ -24,4 +24,42 @@
   &__logo {
     width: 100%;
   }
+
+  &__button {
+    height: 56px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid $c-accentOrange;
+    border-radius: 32px;
+    color: $c-accentOrange;
+
+    transition: color 0.3s,
+      background-color 0.3s,
+      transform 0.3s;
+
+    &::before {
+      display: block;
+      margin-right: 6px;
+      content: url(../images/coocie-logo.svg);
+      transition: content 0.3s;
+    }
+
+    &:hover {
+      background-color: $c-accentOrange;
+      color: $c-white;
+
+      &::before {
+        content: url(../images/white-coocie-icon.svg);
+      }
+    }
+
+    &:active {
+      background-color: $c-darkOrange;
+      border-color: $c-darkOrange;
+      transform: scale(1.1);
+    }
+  }
 }
