@@ -14,8 +14,12 @@
     padding-bottom: 32px;
 
     @include onTablet {
-      padding-bottom: 16px;
+      padding-bottom: 146px;
       text-align: left;
+    }
+
+    @include onDesktop {
+      padding-bottom: 40px;
     }
   }
 
@@ -33,10 +37,71 @@
       line-height: 85%;
       letter-spacing: -0.05em;
 
-      position: absolute;
-      top: 30%;
-      left: 0;
-      right: 0;
+      position: relative;
+      padding-bottom: 210px;
     }
+
+    @include onDesktop {
+      font-weight: 400;
+      font-size: 136px;
+      line-height: 85%;
+      text-align: center;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #1c1a26;
+
+      position: relative;
+      padding-bottom: 64px;
+    }
+  }
+
+  &__desktop-menu {
+    display: none;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__desktop-list {
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__desktop-item {
+    margin: 0 64px 0 0;
+  }
+
+  &__desktop-link {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+  }
+
+  &__desktop-call {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #f9512e;
+  }
+
+  &__desktop-phone {
+    margin-right: 7px;
   }
 }
