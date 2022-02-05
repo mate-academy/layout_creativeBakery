@@ -11,18 +11,68 @@
     @include onTablet {
       margin-bottom: 100px;
     }
+
+    @include onDesktop {
+      margin-bottom: 166px;
+    }
   }
 
   &__content {
     text-align: center;
+    position: relative;
   }
 
   &__description {
     margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 146px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-bottom: 8px;
+    }
+
+    @include onLargeDesctop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__tittle {
+    margin: 0 auto;
+
+    @include onTablet {
+      margin-bottom: 200px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
   }
 
   &__logo {
     width: 100%;
+
+    @include onTablet {
+      position: absolute;
+      width: 326px;
+      height: 328px;
+      left: 50%;
+      top: 10%;
+
+      transform: translate(-50%, 5%);
+
+      z-index: -1;
+    }
+
+    @include onDesktop {
+      width: 544px;
+      height: 546px;
+      top: 0;
+
+      transform: translate(-50%, -25%);
+    }
   }
 
   &__button {
@@ -31,6 +81,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    grid-row: 3 / 4;
 
     border: 2px solid $c-accentOrange;
     border-radius: 32px;
