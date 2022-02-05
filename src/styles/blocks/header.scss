@@ -4,6 +4,16 @@
     justify-content: space-between;
     align-items: center;
     height: 88px;
+    margin-bottom: 135px;
+
+    @include onTablet {
+      height: 64px;
+      margin-bottom: 80px;
+    }
+
+    @include onPhone {
+      margin-bottom: 32px;
+    }
   }
 
   &__menu {
@@ -56,6 +66,66 @@
 
     @include onTablet {
       display: block;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__text {
+    margin-bottom: 8px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    @include onTablet {
+      margin-bottom: 146px;
+    }
+
+    @include onPhone {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: 80px;
+    font-weight: normal;
+    font-size: 136px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-bottom: 230px;
+      font-size: 80px;
+      text-align: center;
+    }
+
+    @include onPhone {
+      margin-bottom: 0;
+      font-size: 64px;
+    }
+  }
+
+  &__cookie {
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-49%, -54%);
+
+    @include onTablet {
+      width: 326px;
+      height: 328px;
+      transform: translate(-49%, -64%);
+    }
+
+    @include onPhone {
+      width: 288px;
+      height: 290px;
+      position: static;
+      transform: translate(0);
     }
   }
 }
