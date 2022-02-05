@@ -1,0 +1,70 @@
+.about {
+  &__title {
+    color: $c-accent-orange;
+
+    margin-bottom: 32px;
+  }
+
+  &__text {
+    @extend %main-text;
+    color: $c-black;
+
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 42%;
+    transform: translateY(42%);
+
+    z-index: -1;
+
+    display: block;
+    max-width: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    @include onTablet {
+      top: 4%;
+      left: 10%;
+      width: 70%;
+      transform: translate(10%, 4%);
+    }
+  }
+
+  &__numbers-item {
+    margin-bottom: 48px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__number {
+    @extend %big-text;
+    color: $c-accent-orange;
+
+    margin-bottom: 8px;
+  }
+
+  &__number-description {
+    @extend %main-text;
+    color: $c-black;
+  }
+
+  &__info {
+    margin-bottom: 64px;
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+}

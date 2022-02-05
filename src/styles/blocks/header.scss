@@ -1,0 +1,129 @@
+.header {
+  height: 100vh;
+
+  @include onTablet {
+    position: relative;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  &__text {
+    @extend %main-text;
+    text-align: center;
+
+    margin-bottom: 32px;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 8px;
+    }
+
+    @include onXLDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    @extend h1;
+
+    color: $c-accent-orange;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 200px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      margin-bottom: 70px;
+    }
+
+    @include onXLDesktop {
+      font-size: 144px;
+    }
+
+  }
+
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    height: 290px;
+    object-fit: contain;
+
+    @include onTablet {
+      position: absolute;
+      height: 328px;
+
+      left: 50%;
+      top: 80%;
+      transform: translate(-50%, -80%);
+      z-index: -1;
+    }
+
+    @include onDesktop {
+      height: 546px;
+
+      top: 60%;
+      transform: translate(-50%, -50%);
+
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+
+  &__icon {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__desktop-menu {
+    @extend %flex-default;
+
+    @media (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  &__desktop-list {
+    @extend %flex-default;
+
+    padding: 0;
+    list-style: none;
+  }
+
+  &__desktop-item {
+    margin: 0 64px 0 0;
+  }
+
+  &__desktop-link {
+    @extend %main-text;
+
+    text-decoration: none;
+    color: $c-black;
+  }
+
+  &__desktop-contact-us {
+    @extend %upper-text;
+    @extend %flex-default;
+
+    text-decoration: none;
+    color: $c-accent-orange;
+  }
+
+  &__desktop-phone {
+    margin-right: 7px;
+  }
+}
