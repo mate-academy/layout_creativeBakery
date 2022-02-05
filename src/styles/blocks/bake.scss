@@ -1,4 +1,14 @@
 .bake {
+  margin-bottom: 186px;
+
+  @include onTablet {
+    margin-bottom: 160px;
+  }
+
+  @include onPhone {
+    margin-bottom: 80px;
+  }
+
   &__title {
     margin-bottom: 24px;
     font-weight: normal;
@@ -24,6 +34,18 @@
 
     @include onPhone {
       margin-bottom: 56px;
+    }
+  }
+
+  &__row {
+    &:not(:nth-last-child(-n+2)) {
+      margin-bottom: 88px;
+    }
+
+    @include onPhone {
+      &:not(:last-child) {
+        margin-bottom: 64px;
+      }
     }
   }
 }
