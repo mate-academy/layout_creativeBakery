@@ -1,13 +1,19 @@
 .container {
   display: flex;
+  margin-bottom: 54px;
+  flex-direction: column;
+  align-items: center;
 
-  &__left {
-    display: flex;
-    justify-content: start;
+  @include onTablet {
+    flex-direction: row;
+    margin-bottom: 78px;
+    justify-content: center;
   }
+  @include onDesktop {
+    justify-content: start;
 
-  &__right {
-    display: flex;
-    justify-content: end;
+    &:nth-child(2n) {
+      justify-content: end;
+    }
   }
 }
