@@ -1,0 +1,101 @@
+.products {
+  &__pair {
+    &:not(:last-child) {
+      margin-bottom: 88px;
+    }
+  }
+
+  &__card {
+    display: grid;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden;
+
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+  &__photo-frame {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  &__photo {
+    display: block;
+
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    cursor: grab;
+
+    transition: transform $defDur;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__category {
+    @extend %uppercase;
+    color: $cGrey;
+    padding-top: 16px;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    margin-bottom: 24px;
+  }
+
+  &__buy {
+    display: inline-block;
+    max-width: max-content;
+
+    padding-bottom: 10px;
+
+    @extend %uppercase;
+    color: $cOrange;
+    text-decoration: none;
+
+    transition-property: color, transform;
+    transition-duration: $defDur;
+
+    &::before {
+      display: inline-block;
+      content: "";
+      background-image: url(/images/arrow_icon.svg);
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      position: relative;
+      transform: translateY(15%);
+    }
+
+    &::after {
+      position: absolute;
+      background-color: $cOrange;
+      content: "";
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      border-radius: 50%;
+      transition: opacity $defDur;
+      opacity: 0;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &:hover {
+      transform: translateX(5px);
+    }
+
+    &:focus {
+      color: $cDarkOrange;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.button {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 56px;
+  background-color: $cLightBlue;
+  border: 2px solid $cOrange;
+  border-radius: 32px;
+
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 27px;
+  color: $cOrange;
+
+  cursor: pointer;
+
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+
+  &:before {
+    display: inline-block;
+    content: "";
+    background-image: url(/images/cookie_icon.svg);
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    position: relative;
+    transform: translateY(-5%);
+    transition: background-image 0.3s;
+  }
+
+  &:hover {
+    background-color: $cOrange;
+    color: $cWhite;
+    &::before {
+      background-image: url(/images/cookie_white_icon.svg);
+    }
+  }
+
+  &:focus {
+    background-color: $cDarkOrange;
+    border-color: $cDarkOrange;
+    color: $cWhite;
+    &::before {
+      background-image: url(/images/cookie_white_icon.svg);
+    }
+  }
+}

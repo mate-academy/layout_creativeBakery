@@ -17,10 +17,36 @@
 
     transform: translate(100%, -100%);
 
-    transition: transform 0.3s;
+    transition: transform $defDur;
 
     &:target {
       transform: translate(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 48px;
+  }
+
+  &__section-title {
+    @extend %h2_mobile;
+    padding: 24px 0;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__section-description {
+    @extend %body_text;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
     }
   }
 }

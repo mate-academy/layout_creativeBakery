@@ -27,9 +27,37 @@
     @extend %body_text;
     color: $cBlack;
 
+    padding-bottom: 10px;
+
+    transition: color $defDur;
+
+    &:hover,
+    &:focus {
+      color: $cDarkOrange;
+    }
+
+    &::after {
+      position: absolute;
+      background-color: $cOrange;
+      content: "";
+      width: 100%;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      border-radius: 50%;
+      transition: opacity $defDur;
+      opacity: 0;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
     &--special {
       @extend %uppercase;
       color: $cOrange;
+
+      padding-bottom: 7px;
 
       &:before {
         display: inline-block;
