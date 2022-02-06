@@ -1,37 +1,52 @@
 .about {
   &__description {
     position: relative;
-  }
 
-  &__image {
-    height: 300px;
-    position: absolute;
-    top: 54%;
-    left: 0;
-    right: 0;
-    z-index: -1;
+    margin-bottom: 72px;
 
     @include onTablet {
-      height: 493px;
-      position: absolute;
-      top: 10%;
-      left: 10%;
-      right: 0;
+      margin-bottom: 152px;
     }
 
     @include onDesktop {
-      height: 673px;
-      position: absolute;
-      top: 0;
-      left: 25%;
+      margin-bottom: 349px;
     }
 
     @include onPlazma {
+      margin-bottom: 349px;
+    }
+  }
+
+  &__image {
+    display: block;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+    transform: translate(-5%, 25%);
+
+    @include onTablet {
+      display: block;
+      height: 493px;
+      position: absolute;
+      top: 0;
+      transform: translate(15%, 10%);
+    }
+
+    @include onDesktop {
+      display: block;
       height: 673px;
       position: absolute;
       top: 0;
-      left: 25%;
-      right: 0;
+      transform: translate(40%, 1%);
+    }
+
+    @include onPlazma {
+      display: block;
+      height: 673px;
+      position: absolute;
+      top: 0;
+      transform: translate(40%, 2%);
     }
   }
 
@@ -58,7 +73,7 @@
     }
 
     @include onPlazma {
-      font-size: 72px;
+      font-size: 87px;
     }
   }
 
@@ -69,6 +84,10 @@
     line-height: 150%;
     letter-spacing: -0.01em;
     color: #1c1a26;
+
+    @include onPlazma {
+      font-size: 20px;
+    }
   }
 
   &__date {
