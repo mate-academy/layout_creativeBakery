@@ -24,13 +24,51 @@
     }
   }
 
+  &__header {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 24px;
+    }
+  }
+
   &__section {
+    padding-top: 24px;
     margin-bottom: 48px;
+
+    &:nth-child(1) {
+      @include onTablet {
+        margin-bottom: 128px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 154px;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 72px;
+
+      @include onTablet {
+        margin-bottom: 152px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 349px;
+      }
+    }
   }
 
   &__section-title {
     @extend %h2_mobile;
-    padding: 24px 0;
+
+    &:nth-child(1) {
+      margin-bottom: 32px;
+
+      @include onTablet {
+        margin-bottom: 24px;
+      }
+    }
 
     @include onTablet {
       font-size: 48px;
@@ -45,8 +83,16 @@
     @extend %body_text;
     margin-bottom: 56px;
 
+    &:last-child {
+      margin-bottom: 64px;
+    }
+
     @include onTablet {
       margin-bottom: 80px;
+
+      &:last-child {
+        margin-bottom: 72px;
+      }
     }
   }
 }

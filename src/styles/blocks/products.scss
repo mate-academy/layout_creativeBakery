@@ -6,11 +6,11 @@
   }
 
   &__card {
-    display: grid;
     box-sizing: border-box;
     height: 100%;
     overflow: hidden;
-
+    
+    padding-bottom: 8px;
     margin-bottom: 64px;
 
     @include onTablet {
@@ -77,17 +77,16 @@
       position: absolute;
       background-color: $cOrange;
       content: "";
-      width: 100%;
+      width: 0;
       height: 2px;
       bottom: 0;
       left: 0;
       border-radius: 50%;
-      transition: opacity $defDur;
-      opacity: 0;
+      transition: width $defDur;
     }
 
     &:hover::after {
-      opacity: 1;
+      width: 100%;
     }
 
     &:hover {
