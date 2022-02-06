@@ -1,0 +1,96 @@
+.link {
+  position: relative;
+
+  transition: color 0.3s,
+    transform 0.3s;
+
+  &::after {
+    display: block;
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    top: 24px;
+
+    content: "";
+
+    background-color: $c-accentOrange;
+
+    transition: width 0.3s,
+      color 0.3s;
+  }
+
+  &:hover {
+    color: $c-accentOrange;
+    transform: scale(1.2);
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &:active {
+    color: $c-darkOrange;
+
+    &::after {
+      background-color: $c-darkOrange;
+    }
+  }
+
+  &--menu {
+    width: 100%;
+    display: block;
+
+    transition: transform 0.3s,
+      color 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+      color: $c-accentOrange;
+    }
+
+    &:active {
+      color: $c-darkOrange;
+    }
+  }
+
+  &--phone {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $c-accentOrange;
+
+    transition: transform 0.3s;
+
+    &::before {
+      display: block;
+      margin-right: 6px;
+      content: url(../images/Vector-phone.svg);
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+
+      &::before {
+        transform: scale(1.2);
+        animation: rotate 0.3s linear 0.5s infinite alternate;
+      }
+    }
+
+    &:active {
+      color: $c-darkOrange;
+    }
+  }
+
+  &--header {
+    display: block;
+  }
+
+  &--footer {
+    color: $c-white;
+    width: max-content;
+  }
+}
