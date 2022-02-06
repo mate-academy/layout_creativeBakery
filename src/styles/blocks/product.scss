@@ -9,6 +9,14 @@
     object-position: center;
 
     margin-bottom: 16px;
+
+    transition: transform 0.3s linear;
+
+    &:hover {
+      cursor: zoom-in;
+
+      transform: scale(1.05);
+    }
   }
 
   &__name {
@@ -30,11 +38,14 @@
     display: flex;
     justify-content: left;
     align-items: center;
+    width: max-content;
 
     @extend %upper-text;
     color: $c-accent-orange;
 
     text-decoration: none;
+
+    @extend %hover-accent-orange;
   }
 
   &__order-arrow {

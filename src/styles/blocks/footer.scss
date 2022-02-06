@@ -55,6 +55,8 @@
 
     text-decoration: none;
     color: $c-white;
+
+    @extend %hover-white;
   }
 
   &__title {
@@ -85,7 +87,18 @@
     }
   }
 
-  &__icon:not(:last-child) {
-    margin-right: 36px;
+  &__soc {
+    transition: fill 0.3s linear;
   }
+
+  &__icon {
+    &:not(:last-child) {
+      margin-right: 36px;
+    }
+
+    &:hover .footer__soc {
+      fill: $c-white;
+    }
+  }
+
 }
