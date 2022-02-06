@@ -9,6 +9,12 @@
     background-repeat: no-repeat;
     background-position: center 40vh;
     background-size: contain;
+
+    @include onTablet {
+      background-position: center;
+      background-size: 60%;
+      padding-bottom: 150px;
+    }
   }
 
   &__button {
@@ -17,6 +23,10 @@
 
   &__menu {
     margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
   }
 
   &__link {
@@ -32,12 +42,26 @@
     @extend %text-body;
     margin-bottom: 32px;
     text-align: center;
+
+    @include onTablet {
+      text-align: left;
+      max-width: 300px;
+    }
   }
 
   &__title {
     @extend %h1-mobile;
     text-align: center;
     word-wrap: break-word;
-    // text-shadow: 2px 2px $color-light-blue;
+
+    @include onTablet {
+      @include h1-tablet;
+
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      left: 0;
+      right: 0;
+    }
   }
 }
