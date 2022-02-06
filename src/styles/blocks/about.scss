@@ -1,4 +1,5 @@
 .about {
+  position: relative;
   margin-bottom: 348px;
 
   @include onTablet {
@@ -58,10 +59,46 @@
   }
 
   &__grid {
-    row-gap: 80px;
 
-    &--phone:not(:last-child) {
-      margin-bottom: 60px;
+    @include onTablet {
+      &:not(:nth-last-child(-n+2)) {
+        margin-bottom: 80px;
+      }
+    }
+
+    @include onPhone {
+      &:not(:last-child) {
+        margin-bottom: 48px;
+      }
+    }
+  }
+
+  &__background {
+    position: absolute;
+    width: 718px;
+    height: 673px;
+
+    background-image: url("images/Crumbs.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    left: 50%;
+    transform: translateX(-40%);
+    z-index: -1;
+
+    @include onTablet {
+      width: 526px;
+      height: 493px;
+
+      top: 7%;
+      transform: translateX(-50%);
+    }
+
+    @include onPhone {
+      width: 320px;
+      height: 300px;
+      top: 55%;
     }
   }
 }
