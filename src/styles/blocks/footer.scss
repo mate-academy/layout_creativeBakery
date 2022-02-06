@@ -1,0 +1,115 @@
+.footer {
+  min-height: 100vh;
+  background-color: #1c1a26;
+
+  &__title {
+    padding-top: 60px;
+    margin-bottom: 40px;
+
+    @extend %h2_mobile;
+    color: $cWhite;
+    text-shadow: 0 2px 6px $cDarkOrange;
+
+    @include onTablet {
+      padding-top: 88px;
+      font-size: 48px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__logo {
+    padding-top: 60px;
+    margin-bottom: 44px;
+
+    @include onTablet {
+      padding-top: 88px;
+      margin-bottom: 82px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__contacts-list {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 16px;
+
+    @include onTablet {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__list-name {
+    margin-bottom: 16px;
+
+    @extend %uppercase;
+    color: $cGrey;
+  }
+
+  &__item {
+    position: relative;
+    list-style: none;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+
+    color: $cWhite;
+
+    transition: color $defDur;
+
+    &:hover,
+    &:focus {
+      color: $cDarkOrange;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__socials-icon {
+    display: block;
+    margin-bottom: 42px;
+
+    &--color {
+      transition: fill $defDur;
+
+      &:hover,
+      &:focus {
+        fill: $cWhite;
+
+        animation: rotation $defDur 1 linear;
+
+        @keyframes rotation {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    color: $cGrey;
+    padding-bottom: 52px;
+  }
+}

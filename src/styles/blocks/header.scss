@@ -49,8 +49,10 @@
   }
 
   &__title {
-    text-align: center;
     @extend %h1_mobile;
+    text-align: center;
+
+    text-shadow: 0 8px 12px $cDarkOrange;
 
     @include onTablet {
       margin-bottom: 210px;
@@ -74,6 +76,13 @@
     margin: 0 auto;
     width: 288px;
     height: 290px;
+    animation: rotation 30s infinite linear reverse;
+
+    @keyframes rotation {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
     @include onTablet {
       position: absolute;
