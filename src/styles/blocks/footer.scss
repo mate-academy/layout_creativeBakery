@@ -1,6 +1,10 @@
 .footer {
   background-color: $c-black;
 
+  &__main {
+    margin-bottom: 45px;
+  }
+
   &__content {
     padding: 60px 0;
 
@@ -14,12 +18,12 @@
 
     margin-bottom: 45px;
 
-    @include onTablet {
-      margin-bottom: 100px;
+    @media (min-width: 640px) and (max-width:780px) {
+      margin-bottom: 95px;
     }
 
     @include onDesktop {
-      margin-bottom: 65px;
+      margin-bottom: 61px;
     }
   }
 
@@ -31,7 +35,7 @@
 
     margin-bottom: 40px;
 
-    @include onTablet {
+    &--last {
       margin-bottom: 0;
     }
   }
@@ -51,5 +55,37 @@
 
     text-decoration: none;
     color: $c-white;
+  }
+
+  &__title {
+    color: $c-white;
+
+    margin-bottom: 40px;
+  }
+
+  &__contact {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__copyright {
+    @extend %main-text;
+
+    color: $c-gray;
+  }
+
+  &__social {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon:not(:last-child) {
+    margin-right: 36px;
   }
 }
