@@ -19,9 +19,15 @@
     height: 356px;
     border-radius: 8px;
     margin-bottom: 16px;
+    transition: transform 300ms ease;
+    cursor: zoom-in;
     @include onDesktop {
       width: 402px;
       height: 512px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
     }
   }
 
@@ -52,7 +58,12 @@
     text-transform: uppercase;
     color: $c-a-orange;
     text-decoration: none;
-    padding: 10px;
+    padding: 9px;
+    border-bottom: 1px solid transparent;
+    transition: all 300ms ease;
+    &:hover {
+      border-bottom: 1px solid $c-a-orange;
+    }
 
     &::before {
       content: "";
