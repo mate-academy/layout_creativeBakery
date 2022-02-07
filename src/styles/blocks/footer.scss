@@ -2,16 +2,24 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-
-  padding-bottom: 56px;
+  justify-content: center;
+  align-items: center;
 
   background-color: $c-black;
 
-  @include onTablet {
-    flex-direction: row;
-    flex-wrap: wrap;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    padding-bottom: 90px;
+    padding-bottom: 56px;
+
+    @include onTablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      padding-bottom: 90px;
+    }
   }
 
   &__block {
@@ -64,6 +72,16 @@
     @include onDesktop {
       flex-basis: 50%;
     }
+
+    &--menu {
+      @include onTablet {
+        margin-top: 68px;
+      }
+
+      @include onDesktop {
+        margin-top: 120px;
+      }
+    }
   }
 
   &__items {
@@ -114,6 +132,10 @@
 
   &__social-logo {
     height: 20px;
+
+    &:hover {
+      filter: brightness(0) invert(1);
+    }
   }
 
   &__copyright {
