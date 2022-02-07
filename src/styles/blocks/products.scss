@@ -7,7 +7,6 @@
   width: 100%;
 
   &__group {
-
     @include onTablet {
       display: flex;
       gap: 24px;
@@ -36,6 +35,13 @@
 
     @include onDesktop {
       max-width: 402px;
+
+      transition: all 0.3s;
+
+      &:hover {
+        cursor: zoom-in;
+        transform: scale(1.08);
+      }
     }
   }
 
@@ -71,6 +77,7 @@
   &__link {
     display: inline-block;
     margin-top: 24px;
+    padding-bottom: 9px;
 
     font-weight: 500;
     font-size: 16px;
@@ -80,6 +87,9 @@
     text-transform: uppercase;
 
     color: $c-a-orange;
+    border-bottom: 1px solid transparent;
+
+    transition: all 0.3s;
 
     &::before {
       content: "";
@@ -92,6 +102,21 @@
       background-image: url(../images/buy-arrow.svg);
 
       transform: translateY(15%);
+    }
+
+    &:hover {
+      border-color: $c-a-orange;
+    }
+
+    &:active {
+      color: $c-d-orange;
+      border-color: $c-d-orange;
+
+      &::before {
+        filter: invert(22%) sepia(65%)
+          saturate(2860%) hue-rotate(355deg)
+          brightness(86%) contrast(86%);
+      }
     }
   }
 }
