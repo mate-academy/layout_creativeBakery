@@ -1,19 +1,25 @@
 .section__product {
+
   @include onTablet {
     display: flex;
+    align-self: flex-end;
   }
 
   &--start {
-    align-items: flex-start;
-  }
-
-  &--end {
-    align-items: flex-end;
+    @include onTablet {
+      display: flex;
+      align-self: flex-start;
+    }
   }
 
   &__card {
     margin: 0;
     width: 288px;
+    margin-top: 80px;
+
+    &:first-child {
+      margin-right: 24px;
+    }
 
     @include onTablet {
       width: 328px;
@@ -55,6 +61,21 @@
       background-repeat: no-repeat;
       background-size: cover;
       margin-top: 64px;
+
+      @include onTablet {
+        width: 328px;
+        height: 424px;
+      }
+
+      @include onDesktop {
+        width: 402px;
+        height: 512px;
+      }
+
+      @include onDesktopLarge {
+        width: 432px;
+        height: 560px;
+      }
 
       &--1 {
         background-image: url(../images/Photo1.png);
