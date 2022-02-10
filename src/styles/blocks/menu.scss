@@ -1,0 +1,75 @@
+
+.menu {
+  height: 100vh;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__top {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 132px;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+    list-style-type: none;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include Desctop {
+      margin-bottom: 0;
+      margin-right: 64px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: $black;
+    border-bottom: 1px solid transparent;
+    transition: all, 0.3s;
+
+    &:hover {
+      color: $orange_accent;
+      border-color: $orange_accent;
+    }
+  }
+
+  &__link--button {
+    display: flex;
+    align-items: center;
+    color: $orange_accent;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 24px;
+      width: 24px;
+      background-image: url(../images/icon/Icon-phone.svg);
+    }
+  }
+}

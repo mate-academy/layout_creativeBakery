@@ -7,7 +7,7 @@ Implement landing page according to [Figma design](https://www.figma.com/file/dY
 - The design 1600px
 - Notebook 1280px
 - Tablet 1024
-- Mobile (> 320px)
+- Mobile (> 320px)3
 
 
 ## Github flow
