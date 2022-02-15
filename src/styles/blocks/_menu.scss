@@ -43,24 +43,37 @@
   }
 
   &__link {
+    position: relative;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding-bottom: 4px;
     color: $black;
+    transition: all, $transitionTime;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 1px;
+      width: 100%;
+      transform: scaleX(0);
+      background-color: $accentOrange;
+      transition: all, $transitionTime;
+    }
 
     &:hover {
-      border-color: $black;
+      color: $accentOrange;
+      &::after {
+        transform: scaleX(100%);
+      }
     }
 
     &--contact-us {
       padding-left: 25px;
+      @include uppercaseText;
       color: $accentOrange;
-
-      &:hover {
-        border-color: $accentOrange;
-      }
-
-      &:focus {
-        color: $darkOrange;
-        border-color: $darkOrange;
-      }
+      transition: all, $transitionTime;
 
       &::before {
         position: absolute;
@@ -72,10 +85,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-image: url(../images/icons/phone.svg);
-      }
-
-      &:focus &::before {
-        background-image: url(../images/icons/phone-dark.svg);
+        transition: all, $transitionTime;
       }
     }
   }

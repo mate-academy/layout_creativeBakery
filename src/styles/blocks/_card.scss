@@ -33,21 +33,11 @@
   &__order-link {
     position: relative;
     box-sizing: border-box;
-
     @include uppercaseText;
-
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color $transitionTime;
-
     color: $accentOrange;
-
     padding-left: 28px;
     padding-bottom: 4px;
-
-    &:hover {
-      border-color: $accentOrange;
-    }
 
     &::before {
       position: absolute;
@@ -56,8 +46,27 @@
       width: 16px;
       left: 0;
       background-image: url(../images/icons/arrow.svg);
+
       @include bgiFormat;
-      margin-top: -2px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 1px;
+      width: 100%;
+      transform: scaleX(0);
+      background-color: $accentOrange;
+      transition: all, $transitionTime;
+    }
+
+    &:hover {
+      border-color: $accentOrange;
+      &::after {
+        transform: scaleX(100%);
+      }
     }
   }
 }

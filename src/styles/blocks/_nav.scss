@@ -29,10 +29,31 @@
   }
 
   &__link {
+    position: relative;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding-bottom: 4px;
+    @include uppercaseText;
     color: $black;
+    transition: all, $transitionTime;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 1px;
+      width: 100%;
+      transform: scaleX(0);
+      background-color: $accentOrange;
+      transition: all, $transitionTime;
+    }
 
     &:hover {
-      border-color: $black;
+      color: $accentOrange;
+      &::after {
+        transform: scaleX(100%);
+      }
     }
 
     &--contact-us {
