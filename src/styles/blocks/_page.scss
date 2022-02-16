@@ -1,0 +1,31 @@
+.page {
+  font-family: "Inter", sans-serif;
+  min-width: 320px;
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $light-blue;
+
+    @include onDesktop {
+      margin: 0 auto;
+    }
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(200%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
