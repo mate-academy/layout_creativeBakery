@@ -1,0 +1,186 @@
+.header {
+  background-image: url(../images/Cookie.png);
+  background-position: center 88px;
+  background-repeat: no-repeat;
+  background-size: fill;
+
+  @include oniPad {
+    background-position: center 45%;
+    background-size: 50%;
+
+  }
+
+  @include onMobile {
+    background-position: center 60%;
+    background-size: 300px;
+  }
+
+  &__content {
+    padding-bottom: 117px;
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    margin-top: 144px;
+    margin-bottom: 40px;
+
+    @include oniPad {
+      margin-top: 100px;
+      margin-bottom: 146px;
+    }
+
+    @include onMobile {
+      margin: 32px 0;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 144px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+
+    @include oniPad {
+      font-size: 80px;
+      margin-bottom: 220px;
+    }
+
+    @include onMobile {
+      font-size: 64px;
+      text-align: center;
+      margin-bottom: 290px;
+    }
+
+  }
+
+  &__link {
+    width: 280px;
+    border: 2px solid $orange;
+    border-radius: 50px;
+    padding: 20px 0;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 300ms;
+
+    &:hover {
+      background-color: $orange;
+      color: white;
+    }
+
+    @include oniPad {
+      margin: 0 auto;
+    }
+
+    &::before {
+      display: block;
+      content: "";
+      background-image: url(..//images/cookie-icon.png);
+      height: 20px;
+      width: 20px;
+      margin-right: 6px;
+    }
+
+    &:hover::before {
+      background-image: url(..//images/coockie-hover.png);
+    }
+  }
+}
+
+.nav {
+  padding: 32px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  @include oniPad {
+    padding: 20px;
+  }
+
+  &__menu-opener {
+    display: none;
+
+    @include oniPad {
+      display: block;
+    }
+  }
+
+  &__menu {
+    display: flex;
+  }
+
+  &__list {
+    display: flex;
+
+    @include oniPad {
+      display: none;
+    }
+  }
+
+  &__item {
+    list-style: none;
+    margin-right: 64px;
+
+    &:last-child {
+      margin-right: 67px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black;
+
+    &--extra {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__contact {
+    text-decoration: none;
+    color: $orange;
+
+    display: flex;
+    align-items: center;
+
+    &::before {
+      display: block;
+      content: "";
+      background-image: url(../images/phone.png);
+      height: 18px;
+      width: 18px;
+      margin-right: 7px;
+    }
+
+    @include oniPad {
+      display: none;
+    }
+  }
+
+  &--extra {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+  }
+
+  &__cross {
+    display: block;
+    width: 13px;
+    height: 13px;
+  }
+}
