@@ -1,0 +1,91 @@
+.product-card {
+  &__photo {
+    max-height: 356px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    transition: all 0.3s;
+
+    @include onTablet {
+      max-height: 424px;
+    }
+
+    @include onDesktop {
+      max-height: 512px;
+    }
+
+    @include onDesktopQHD {
+      max-height: 560px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__type-name {
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+    margin: 0 0 8px;
+  }
+
+  &__description {
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $colorOrange;
+    text-decoration: none;
+    margin-bottom: 64px;
+    overflow-y: hidden;
+    width: max-content;
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+
+    @include onTablet {
+      margin-bottom: 88px;
+
+      &--penult {
+        margin-bottom: 0;
+      }
+    }
+    
+    &--last {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      background-image: url(../images/arrow.svg);
+      height: 16px;
+      width: 16px;
+      margin-right: 8px;
+    }
+
+    &:hover {
+      border-color: $colorOrange;
+    }
+
+    &:active {
+      border-color: #b2341a;
+      color: #b2341a;
+
+      &::before {
+        background-image: url(../images/arrow-active.svg);
+      }
+    }
+  }
+}
