@@ -1,0 +1,153 @@
+.contacts-page {
+  &__header {
+    padding: 33px 59px;
+  }
+
+  &__section-contacts {
+    margin-top: 14px;
+  }
+}
+
+.section-contacts {
+  &__our-contacts {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: 430px 1fr;
+
+    @media (max-width: 750px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    box-sizing: border-box;
+    padding: 40px 67px 128px;
+    grid-column: 1;
+    background-color: $light-brown;
+
+    @media (max-width: 750px) {
+      padding: 40px 100px;
+    }
+
+    @media (max-width: 400px) {
+      padding: 40px 60px;
+    }
+  }
+
+  &__list {
+    height: 100%;
+    margin-top: 24px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__item {
+    position: relative;
+
+    &--office::before {
+      @extend %item-befor;
+      left: -53px;
+      width: 15px;
+      height: 20px;
+      background-image: url(../images/pin.png);
+    }
+
+    &--full-support::before {
+      @extend %item-befor;
+      left: -53px;
+      width: 18px;
+      height: 18px;
+      background-image: url(../images/ph.png);
+    }
+
+    &--support::before {
+      @extend %item-befor;
+      left: -61px;
+      width: 31px;
+      height: 31px;
+      background-image: url(../images/mail.png);
+    }
+
+    &-title {
+      font-weight: bold;
+    }
+
+    &-info {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+  }
+
+  &__google-map {
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: 750px) {
+      height: 450px;
+    }
+  }
+}
+
+.section-feedback {
+  padding: 134px 15% 92px;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 1440px) {
+    padding: 134px 156px 92px;
+  }
+
+  @media (max-width: 1260px) {
+    padding: 80px 20px;
+    flex-direction: column-reverse;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    max-width: 70%;
+    margin: 0 auto;
+
+    @media (max-width: 1260px) {
+      width: 90%;
+    }
+  }
+
+  &__form {
+    height: 338px;
+    margin-top: 27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__input {
+    @extend %input;
+    padding: 7px;
+
+    &::placeholder {
+      color: $dark-brown;
+    }
+  }
+
+  &__textarea {
+    @extend %input;
+    width: 100%;
+    height: 90px;
+    resize: none;
+
+    &::placeholder {
+      color: $dark-brown;
+      transform: translateY(70px);
+    }
+  }
+
+  &__img {
+    @media (max-width: 1260px) {
+      margin-top: 30px;
+    }
+  }
+}
