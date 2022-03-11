@@ -1,0 +1,136 @@
+.button {
+  width: 100%;
+  padding: 20px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  text-decoration: none;
+  color: $accentOrange;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 100%;
+
+  background-color: transparent;
+  border: 2px solid $accentOrange;
+  border-radius: 32px;
+
+  transition-property: color, background-color, border-color;
+  transition-duration: $animation-duration;
+
+  &:hover {
+    color: #fff;
+
+    background-color: $accentOrange;
+  }
+
+  &:hover &__icon {
+    @include modifyIcons(_white);
+  }
+
+  &:focus,
+  &:active {
+    color: #fff;
+
+    background-color: $darkOrange;
+    border-color: $darkOrange;
+  }
+
+  &:focus &__icon,
+  &:active &__icon {
+    @include modifyIcons(_white);
+  }
+
+  &:disabled {
+    color: $lightOrange;
+
+    background-color: $lightOrange;
+  }
+
+  &:disabled &__icon,
+  &--light:disabled &__icon {
+    @include modifyIcons(_pale);
+  }
+
+  &--light {
+    position: relative;
+
+    width: max-content;
+    padding: 0;
+
+    border: none;
+
+    &:hover {
+      color: $accentOrange;
+
+      background-color: transparent;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 0;
+
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding-bottom: 8px;
+
+      border-bottom: 1px solid transparent;
+
+      transition-property: color, border-bottom;
+      transition-duration: $animation-duration;
+    }
+
+    &:hover::after {
+      border-bottom: 1px solid $accentOrange;
+    }
+
+    &:focus,
+    &:active {
+      color: $darkOrange;
+
+      background-color: transparent;
+
+      &:after {
+        border-bottom: 1px solid $darkOrange;
+      }
+    }
+
+    &:disabled {
+      color: $lightOrange;
+    }
+  }
+
+  &--light:hover &__icon {
+    @include setIcons();
+  }
+
+  &--ultra-light {
+    width: max-content;
+    padding: 0;
+
+    border: none;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:disabled {
+      background-color: transparent;
+    }
+  }
+
+  &--inversed:hover &__icon,
+  &--inversed:focus &__icon,
+  &--inversed:active &__icon {
+    @include modifyIcons(_white);
+  }
+
+  &--light:focus &__icon,
+  &--light:active &__icon {
+    @include modifyIcons(_dark);
+  }
+}
