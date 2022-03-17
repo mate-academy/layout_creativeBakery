@@ -1,0 +1,87 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1;
+  background-color: $light-blue;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 132px;
+    padding: 0 18px 0 20px;
+    height: 64px;
+  }
+
+  &__modal {
+    margin-right: 4px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__link {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    color: $main-black;
+    transition: color 0.3s;
+
+    @include onTablet {
+      font-size: 30px;
+      line-height: 50px;
+    }
+
+    &:hover {
+      color: $main-orange;
+    }
+  }
+
+  &__link-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__phone-img {
+    width: 18px;
+    height: 18px;
+    margin-right: 7px;
+
+    background-image: url(../images/phone.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include onTablet {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &__link-mod {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $main-orange;
+
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s;
+
+    @include onTablet {
+      font-size: 30px;
+      line-height: 120px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $main-orange;
+    }
+  }
+}
