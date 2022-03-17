@@ -4,7 +4,8 @@
 
 [DEMO LINK](https://jursylian.github.io/layout_creativeBakery/)
 
-Implementeated technologies
+# Implementeated technologies
+
 HTML5, SCSS, Flex-box, Grid, JavaScript
 BEM, Gulp
 Responsive design
