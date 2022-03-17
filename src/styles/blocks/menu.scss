@@ -1,0 +1,54 @@
+.menu {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+
+    &__list {
+      padding: 0;
+      display: flex;
+      list-style-type: none;
+      color: $black;
+    }
+
+    &__item:not(:first-child) {
+      margin-left: 65px;
+
+      &:last-child {
+        position: relative;
+        text-transform: uppercase;
+        color: $accentOrange;
+
+        &::after {
+          position: absolute;
+          content: "";
+          display: block;
+          left: 17%;
+          bottom: 3%;
+          width: 83%;
+          border-bottom: 1px solid $accentOrange;
+          transform: scale(0);
+          transition: transform 0.3s;
+        }
+
+        &:hover::after {
+          transform: scale(1);
+        }
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $accentOrange;
+      }
+    }
+  }
+}
+
+.fa-phone {
+  padding-right: 7px;
+}
