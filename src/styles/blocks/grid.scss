@@ -18,26 +18,38 @@
   }
 
   &__item {
-    @for $start from 1 through 8 {
-      @for $end from $start through 8 {
+    @for $start from 1 through 2 {
+      @for $end from $start through 2 {
         &--#{$start}-#{$end} {
           grid-column: #{$start} / #{$end + 1};
         }
+      }
+    }
 
-        &--tablet-#{$start}-#{$end} {
-          @include onTablet {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        @include onTablet {
+          &--tablet-#{$start}-#{$end} {
             grid-column: #{$start} / #{$end + 1};
           }
         }
+      }
+    }
 
-        &--desktop-#{$start}-#{$end} {
-          @include onDesktop {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        @include onDesktop {
+          &--desktop-#{$start}-#{$end} {
             grid-column: #{$start} / #{$end + 1};
           }
         }
+      }
+    }
 
-        &--large-#{$start}-#{$end} {
-          @include onLarge {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        @include onLarge {
+          &--large-#{$start}-#{$end} {
             grid-column: #{$start} / #{$end + 1};
           }
         }
