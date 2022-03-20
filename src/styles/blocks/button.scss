@@ -1,0 +1,65 @@
+.button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 71px;
+  height: 56px;
+  width: 280px;
+  background-color: transparent;
+  border: 2px solid $color-main;
+  border-radius: 32px;
+
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color-main;
+  cursor: pointer;
+
+  transition: border-color, background-color, color 0.5s;
+
+  @include mediaTablet {
+    width: 326px;
+    margin-top: 230px;
+  }
+
+  @include mediaLaptop {
+    width: 270px;
+    margin: 64px 0 0;
+  }
+
+  @include mediaDesktop {
+    width: 280px;
+    margin: 84px 0 0;
+  }
+
+  &::after {
+    content: "Learn more";
+  }
+
+  &:hover {
+    background-color: $color-main;
+    color: $color-white;
+
+    transition: background-color, color 0.5s;
+  }
+
+  &:active {
+    background-color: #b2341a;
+    border-color: transparent;
+    color: $color-white;
+
+    transition: border-color, background-color, color 0.5s;
+  }
+
+  &__icon {
+    padding-right: 8px;
+    width: 18px;
+    height: 18px;
+    background-position: center;
+  }
+}

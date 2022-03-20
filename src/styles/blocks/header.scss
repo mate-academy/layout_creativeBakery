@@ -1,0 +1,34 @@
+.header {
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include mediaTablet {
+    padding: 0;
+  }
+
+  &__navigation {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #ffeefc;
+
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+
+    &:target {
+      display: block;
+      transform: translateX(0);
+    }
+
+    @include mediaLaptop {
+      transform: translateX(0);
+      padding: 32px 0;
+      position: static;
+    }
+  }
+}
