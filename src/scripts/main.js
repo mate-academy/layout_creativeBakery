@@ -24,6 +24,7 @@ const productCard3 = document.querySelector('.product__card--3');
 const productCard4 = document.querySelector('.product__card--4');
 const productCard5 = document.querySelector('.product__card--5');
 const productCard6 = document.querySelector('.product__card--6');
+const about = document.querySelector('.about-us');
 
 function scrolling(e) {
   if (isPartiallyVisible(description)) {
@@ -56,6 +57,10 @@ function scrolling(e) {
 
   if (isFullyVisible(productCard6)) {
     productCard6.classList.add('_active');
+  }
+
+  if (isFullyVisible(about)) {
+    about.classList.add('_active');
   }
 }
 
