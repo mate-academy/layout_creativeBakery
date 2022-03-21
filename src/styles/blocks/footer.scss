@@ -15,6 +15,10 @@
     padding: 0 124px;
   }
 
+  @media (min-width: 2000px) {
+    padding: 0 350px;
+  }
+
   &-nav {
     list-style: none;
   }
@@ -80,6 +84,12 @@
 
   &__logo {
     margin-right: 40px;
+
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   &__text-last {
@@ -147,7 +157,10 @@
   }
 
   &__top {
-    margin: 73px 0 50px;
+
+    @include onTablet {
+      margin: 73px 0 50px;
+    }
   }
 
   &__links {
@@ -163,5 +176,13 @@
   &__links-media {
     display: flex;
     align-items: center;
+  }
+}
+
+.image-icon {
+  color: $c-orange;
+
+  &:hover {
+    color: #fff;
   }
 }

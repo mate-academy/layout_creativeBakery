@@ -18,14 +18,16 @@
   text-align: center;
   background-color: #ffeefc;
   box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
-  height: 560px;
   z-index: 2;
-  cursor: pointer;
 
   @include onSmallScreen {
     visibility: visible;
+    height: auto;
+    width: auto;
     z-index: 0;
     left: 0;
+    top: 0;
+    right: 0;
     padding: 0;
     flex-direction: row;
     box-shadow: none;
@@ -70,10 +72,12 @@
   transform: rotate(45deg);
   top: 12px;
 }
+
 #menu__toggle:checked ~ .menu__btn > span::after {
   top: 0;
   transform: rotate(90deg);
 }
+
 #menu__toggle:checked ~ .nav__list {
   visibility: visible;
   left: 0;
