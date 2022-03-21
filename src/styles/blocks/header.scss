@@ -14,17 +14,25 @@
   }
 
   &__image {
-    background-image: url(../images/Cookie123.png);
-    background-repeat: no-repeat;
-    background-position: center;
+    background: center no-repeat url(../images/Cookie123.png);
     background-size: cover;
     width: 288px;
     height: 290px;
+    margin: auto;
 
     @include onTablet {
       width: 326px;
       height: 328px;
       margin: auto;
+
+      position: relative;
+    }
+
+    @include onSmallScreen {
+      width: 544px;
+      height: 546px;
+
+      margin: 0 auto;
 
       position: relative;
     }
@@ -40,22 +48,41 @@
   }
 
   &__head {
-    font-family: "Inter", sans-serif;
+    font-family: $mainfont;
     font-weight: 400;
     font-size: 64px;
     line-height: 85%;
     text-align: center;
     letter-spacing: -0.05em;
     text-transform: uppercase;
-    color: #f9512e;
+    color: $c-orange;
 
     @include onTablet {
+      width: 100%;
       position: absolute;
-      top: 230px;
-      left: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 280px;
 
       font-size: 80px;
       z-index: 1;
+    }
+
+    @include onSmallScreen {
+      font-size: 126px;
+      top: 200px;
+    }
+  }
+
+  &__text-first {
+
+    @include onTablet {
+      margin-top: 80px;
+    }
+
+    @include onSmallScreen {
+      width: 260px;
+      position: absolute;
     }
   }
 }
