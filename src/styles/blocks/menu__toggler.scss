@@ -1,0 +1,85 @@
+#menu__toggle {
+  opacity: 0;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0 550px;
+  text-align: center;
+  background-color: #ffeefc;
+  box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
+  height: 560px;
+  z-index: 2;
+  cursor: pointer;
+
+  @include onSmallScreen {
+    visibility: visible;
+    z-index: 0;
+    left: 0;
+    padding: 0;
+    flex-direction: row;
+    box-shadow: none;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 64px;
+  }
+}
+
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 16px;
+  top: 20px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 3;
+
+  @include onSmallScreen {
+    visibility: hidden;
+  }
+}
+
+.menu__btn > span,
+.menu__btn > span::after {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  z-index: 3;
+}
+
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+  top: 12px;
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .nav__list {
+  visibility: visible;
+  left: 0;
+}
+
+.bakery {
+  position: absolute;
+  z-index: 3;
+}

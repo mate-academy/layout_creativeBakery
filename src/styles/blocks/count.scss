@@ -1,0 +1,33 @@
+.count {
+  display: flex;
+  flex-direction: column;
+
+  @include onTablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px 72px;
+
+    @include onSmallScreen {
+      gap: 8px;
+      justify-content: flex-start;
+    }
+  }
+
+  &__img {
+    margin: 48px 0 8px;
+  }
+
+  &__number {
+    width: 280px;
+
+    @include onSmallScreen {
+      width: 240px;
+    }
+
+    @include onWideScreen {
+      width: 280px;
+    }
+  }
+}
+
