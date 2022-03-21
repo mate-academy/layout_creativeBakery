@@ -7,15 +7,6 @@
   background-position: center bottom;
   background-size: contain;
 
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity, transform, 1s ease;
-
-  &._active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
   @include onTablet {
     margin-top: 160px;
     padding-bottom: 152px;
@@ -24,6 +15,15 @@
   @include onDesktop {
     margin-top: 186px;
     padding-bottom: 349px;
+
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity, transform, 0.7s ease;
+
+    &._active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   &__description {

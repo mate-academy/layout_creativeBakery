@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', scrolling, false);
 
 const description = document.querySelector('#description');
 const title = document.querySelector('#title');
+const button = document.querySelector('.header__button');
 const productCard1 = document.querySelector('.product__card--1');
 const productCard2 = document.querySelector('.product__card--2');
 const productCard3 = document.querySelector('.product__card--3');
@@ -33,6 +34,10 @@ function scrolling(e) {
 
   if (isFullyVisible(title)) {
     title.classList.add('_active');
+  }
+
+  if (isFullyVisible(button)) {
+    button.classList.add('_active');
   }
 
   if (isFullyVisible(productCard1)) {
