@@ -1,0 +1,83 @@
+.header {
+  height: 100vh;
+
+  &__nav {
+    padding: 20px 20px 51px;
+
+    @include onTablet {
+      padding-bottom: 100px;
+    }
+
+    @include onDesktop {
+      padding: 32px 36px 175px;
+    }
+  }
+
+  &__about {
+    margin: 0 0 32px;
+    text-align: center;
+
+    @include onTablet {
+      margin: 0 0 146px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    position: relative;
+
+    @include onTablet {
+      margin: 0 0 210px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 64px;
+    }
+
+    text-align: center;
+
+    @media (min-width: 1024px) {
+      font-size: 136px;
+      line-height: 115.6px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 144px;
+      line-height: 122px;
+    }
+
+    &::after {
+      display: block;
+      width: 100%;
+      height: 288px;
+
+      content: "";
+      background-image: url(../images/cookie_background.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include onTablet {
+        z-index: -1;
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+
+        height: 328px;
+      }
+
+      @media (min-width: 1024) {
+        height: 546px;
+      }
+
+      @include onDesktop {
+        height: 586px;
+      }
+    }
+  }
+}

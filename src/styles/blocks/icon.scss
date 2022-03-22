@@ -1,0 +1,109 @@
+.icon {
+  --icon-size: 20px;
+
+  display: block;
+
+  width: var(--icon-size);
+  height: var(--icon-size);
+
+  text-decoration: none;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: all 0.3s;
+
+  &--menu {
+    background-image: url(../images/icons/menu.svg);
+
+    @include hover(background-image,url(../images/icons/menu_hover.svg));
+  }
+
+  &--call {
+    display: flex;
+    align-items: center;
+    width: max-content;
+
+    @extend %uppercase-text;
+    color: $color-accent-orange;
+
+    &::before {
+      margin-right: 7px;
+
+      width: var(--icon-size);
+      height: var(--icon-size);
+
+      content: "";
+      background-image: url(../images/icons/call.svg);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &--cookie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+
+    @extend %uppercase-text;
+
+    &::before {
+      margin-right: 6px;
+
+      width: var(--icon-size);
+      height: var(--icon-size);
+
+      content: "";
+      background-image: url(../images/icons/cookie.svg);
+      background-repeat: no-repeat;
+
+      transition: all 0.3s;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-white;
+
+      &::before {
+        background: url(../images/icons/cookie_hover.svg);
+      }
+    }
+  }
+
+  &--cross {
+    background-image: url(../images/icons/cross.svg);
+
+    @include hover(background-image,url(../images/icons/cross_hover.svg));
+  }
+
+  &--arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+
+    @extend %uppercase-text;
+
+    color: $color-accent-orange;
+
+    &::before {
+      margin-right: 8px;
+
+      width: var(--icon-size);
+      height: var(--icon-size);
+
+      content: "";
+      background-image: url(../images/icons/arrow.svg);
+      background-repeat: no-repeat;
+
+      transition: all 0.3s;
+    }
+  }
+
+  &--non-visible-desktop {
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
