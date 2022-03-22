@@ -35,7 +35,7 @@ function scrolling(e) {
     title.classList.remove('_active');
   }
 
-  if (isFullyVisible(button)) {
+  if (isPartiallyVisible(button)) {
     button.classList.add('_active');
   } else {
     button.classList.remove('_active');
