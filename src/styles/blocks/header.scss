@@ -13,7 +13,7 @@
   }
 
   @include onDesktop {
-    background-position: center;
+    background-position: center 30%;
     background-size: 545px;
   }
 
@@ -27,6 +27,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    margin: 0 auto;
+    max-width: 1440px;
   }
 
   &__logo {
@@ -115,10 +117,12 @@
     color: $accentOrange;
 
     opacity: 0;
-    transition: opacity 1s ease;
+    transform: scaleY(0);
+    transition: opacity, transform, 1s ease;
 
     &._active {
       opacity: 1;
+      transform: scaleY(1);
     }
 
     @include onMidTab {
@@ -132,12 +136,12 @@
 
     @include onDesktop {
       margin-top: 8px;
-      font-size: 136px;
+      font-size: 112px;
     }
 
     @include onLarge {
       margin-top: 40px;
-      font-size: 144px;
+      font-size: 134px;
     }
   }
 
@@ -158,7 +162,7 @@
 
   &__button {
     transform: scale(0);
-    transition: transform 0.5s linear;
+    transition: transform 0.7s ease;
 
     &._active {
       transform: scale(1);

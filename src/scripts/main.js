@@ -19,53 +19,40 @@ document.addEventListener('DOMContentLoaded', scrolling, false);
 const description = document.querySelector('#description');
 const title = document.querySelector('#title');
 const button = document.querySelector('.header__button');
-const productCard1 = document.querySelector('.product__card--1');
-const productCard2 = document.querySelector('.product__card--2');
-const productCard3 = document.querySelector('.product__card--3');
-const productCard4 = document.querySelector('.product__card--4');
-const productCard5 = document.querySelector('.product__card--5');
-const productCard6 = document.querySelector('.product__card--6');
+const productCard = document.querySelectorAll('.product__card');
 const about = document.querySelector('.about-us');
 
 function scrolling(e) {
-  if (isPartiallyVisible(description)) {
+  if (isFullyVisible(description)) {
     description.classList.add('_active');
+  } else {
+    description.classList.remove('_active');
   }
 
   if (isFullyVisible(title)) {
     title.classList.add('_active');
+  } else {
+    title.classList.remove('_active');
   }
 
   if (isFullyVisible(button)) {
     button.classList.add('_active');
+  } else {
+    button.classList.remove('_active');
   }
 
-  if (isFullyVisible(productCard1)) {
-    productCard1.classList.add('_active');
+  for (let i = 0; i < productCard.length; i++) {
+    if (isPartiallyVisible(productCard[i])) {
+      productCard[i].classList.add('_active');
+    } else {
+      productCard[i].classList.remove('_active');
+    }
   }
 
-  if (isFullyVisible(productCard2)) {
-    productCard2.classList.add('_active');
-  }
-
-  if (isFullyVisible(productCard3)) {
-    productCard3.classList.add('_active');
-  }
-
-  if (isFullyVisible(productCard4)) {
-    productCard4.classList.add('_active');
-  }
-
-  if (isFullyVisible(productCard5)) {
-    productCard5.classList.add('_active');
-  }
-
-  if (isFullyVisible(productCard6)) {
-    productCard6.classList.add('_active');
-  }
-
-  if (isFullyVisible(about)) {
+  if (isPartiallyVisible(about)) {
     about.classList.add('_active');
+  } else {
+    about.classList.remove('_active');
   }
 }
 
