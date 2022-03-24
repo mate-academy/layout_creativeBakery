@@ -1,0 +1,79 @@
+.about {
+  position: relative;
+
+  &::after {
+    --y-transform: -174px;
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    transform: translateY(var(--y-transform));
+
+    display: block;
+    width: 100%;
+    height: 300px;
+
+    background-image: url(../images/Crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include onTablet {
+      --y-transform: -52px;
+
+      height: 496px;
+    }
+
+    @include onDesktop {
+      --y-transform: 0;
+
+      top: 0;
+      height: 674px;
+
+      @media (max-width: 1023px) {
+        right: 156px;
+
+        width: 718px;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 32px;
+  }
+
+  &__text {
+    margin: 0 0 64px;
+
+    color: $colorBlack;
+  }
+
+  &__stats-section {
+    margin: 0 0 48px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &__stats-value {
+    margin: 0 0 8px;
+
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 85%;
+
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $colorOrange;
+  }
+
+  &__stats-label {
+    margin: 0;
+
+    color: $colorBlack;
+  }
+
+}
