@@ -8,9 +8,23 @@
     column-gap: 24px;
   }
 
+  @for $start from 1 through 8 {
+    &--#{$start} {
+      grid-template-columns: repeat(#{$start}, 1fr);
+    }
+  }
+
+  &--desktop {
+    display: block;
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
   &__item {
-    @for $start from 1 through 2 {
-      @for $end from 1 through 2 {
+    @for $start from 1 through 8 {
+      @for $end from 1 through 8 {
         &--#{$start}-#{$end} {
           grid-column: #{$start} / #{$end + 1};
         }

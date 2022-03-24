@@ -6,11 +6,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &--footer {
+      justify-content: left;
+    }
   }
 
   &__link {
     color: $color-black;
     text-decoration: none;
+
+    &--footer {
+      color: $color-white;
+    }
+
+    @include hover (color,$color-accent-orange);
   }
 
   &--visible-on-desktop {
@@ -22,7 +32,21 @@
   }
 
   &--in-nav-menu {
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 24px;
+    height: calc(100vh - 44px);
+  }
+
+  &--footer {
+    flex-direction: column;
+
+    gap: 16px;
+  }
+
+  &__list-name {
+    color: $color-name-text-color;
+    @extend %uppercase-text;
   }
 }
