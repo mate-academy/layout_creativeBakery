@@ -1,4 +1,22 @@
 .product {
+  margin-bottom: 16px;
+
+  @include onTablet {
+    margin-bottom: 72px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 98px;
+  }
+
+  &__card {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 88px;
+    }
+  }
+
   &__title {
     margin-bottom: 24px;
     font-weight: 400;
@@ -40,6 +58,12 @@
 
     width: 100%;
     border-radius: 8px;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(105%);
+    }
   }
 
   &__name {
@@ -68,12 +92,6 @@
   }
 
   &__order {
-    margin-bottom: 64px;
-
-    @include onTablet {
-      margin-bottom: 88px;
-    }
-
     display: flex;
 
     font-weight: 500;
