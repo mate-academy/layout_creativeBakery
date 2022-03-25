@@ -1,6 +1,29 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onDesktopXL {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin flex-center-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between-center() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -1,0 +1,55 @@
+.button {
+  @include flex-center-center();
+  width: 280px;
+  height: 56px;
+
+  background-color: transparent;
+  border: 1px solid $color-orange;
+  border-radius: 32px;
+  cursor: pointer;
+
+  transition: all $transition-time ease-in-out;
+
+  &:hover {
+    background-color: $color-orange;
+  }
+
+  &:active {
+    background-color: #b3341a;
+  }
+
+  &__text {
+    @include flex-center-center();
+
+    font-family: $main-font;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    color: $color-orange;
+    text-transform: uppercase;
+    transition: all $transition-time ease-in-out;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+
+      background-image: url(../images/cookie-icon.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: all $transition-time ease-in-out;
+    }
+  }
+
+  &:hover &__text,
+  &:active &__text {
+    color: #fff;
+  }
+
+  &:hover &__text::before {
+    background-image: url(../images/cookie-icon-hover.png);
+  }
+}

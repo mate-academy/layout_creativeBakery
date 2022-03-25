@@ -1,0 +1,57 @@
+.nav {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+  }
+
+  &__list {
+    @include flex-center-center();
+    list-style-type: none;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 64px;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 15px 0;
+
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $main-color;
+
+    &:hover {
+      color: $color-orange;
+    }
+
+    &--contact-us {
+      display: flex;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      color: $color-orange;
+      text-transform: uppercase;
+
+      &:hover {
+        color: #b3341a;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 18px;
+        height: 18px;
+        margin-right: 7px;
+        background-image: url(../images/phone.png);
+      }
+    }
+  }
+}
