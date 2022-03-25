@@ -31,7 +31,7 @@
 
   &__title {
     font-weight: 400;
-    font-size: 64px;
+    font-size: 60px;
     line-height: 85%;
 
     text-align: center;
@@ -45,12 +45,12 @@
     @include onTablet {
       position: relative;
       top: 350%;
-      font-size: 60px;
+      font-size: 64px;
     }
 
     @include onDesktop {
       top: 50%;
-      font-size: 113px;
+      font-size: 110px;
     }
   }
 
@@ -71,6 +71,15 @@
   }
 
   &__button {
+    &::before {
+      content: url(../images/cookie-small-red.svg);
+      margin-right: 6px;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     cursor: pointer;
     font-weight: 500;
     font-size: 16px;
@@ -87,14 +96,25 @@
     box-sizing: border-box;
     border-radius: 32px;
 
-    &-label {
-      position: relative;
-      top: 10%;
-    }
-
     @include onDesktop {
       position: relative;
       top: -850%;
+    }
+
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #f9512e;
+      color: #fff;
+
+      &::before {
+        content: url(../images/cookie-small-white.svg);
+        margin-right: 6px;
+      }
+    }
+
+    &:active {
+      background-color: #b3341a;
     }
   }
 }
