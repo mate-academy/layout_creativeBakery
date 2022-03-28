@@ -16,6 +16,14 @@
     }
   }
 
+  &__svg {
+    margin-right: 7px;
+
+    & path {
+      transition: all $transition-time ease-in-out;
+    }
+  }
+
   &__link {
     display: block;
     padding: 15px 0;
@@ -32,6 +40,10 @@
       color: $color-orange;
     }
 
+    &:active {
+      color: $color-active;
+    }
+
     &--contact-us {
       display: flex;
       font-weight: 500;
@@ -41,16 +53,11 @@
       text-transform: uppercase;
 
       &:hover {
-        color: #b3341a;
+        color: $color-active;
       }
 
-      &::before {
-        content: "";
-        display: block;
-        width: 18px;
-        height: 18px;
-        margin-right: 7px;
-        background-image: url(../images/phone.png);
+      &:hover .nav__svg path {
+        fill: $color-active;
       }
     }
   }
