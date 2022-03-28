@@ -1,0 +1,113 @@
+.products {
+  background-color: $pink;
+  padding: 0 16px;
+
+  @include onTab {
+    padding: 0;
+  }
+
+  &__top {
+    padding-top: 104px;
+    margin-bottom: 56px;
+
+    @include onTab {
+      padding-top: 0;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $orange;
+    margin-bottom: 24px;
+
+    @include onTab {
+      font-size: 56px;
+    }
+
+    @include onDesk {
+      font-size: 72px;
+    }
+  }
+
+  &__photo {
+    height: 356px;
+    width: 100%;
+    margin-bottom: 16px;
+
+    transition: transform 0.3s;
+
+    @include onTab {
+      height: 424px;
+    }
+
+    @include onDesk {
+      height: 512px;
+    }
+
+    @include onDeskXL {
+      height: 560px;
+    }
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__name {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $gray;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    margin-bottom: 24px;
+  }
+
+  &__action {
+    display: flex;
+    width: max-content;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $orange;
+    margin-bottom: 64px;
+    transition: all 0.3s;
+
+    @include onTab {
+      margin-bottom: 88px;
+    }
+
+    &:hover {
+      color: #ab3820;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-image: url("../images/arrow.svg");
+      margin-right: 10px;
+    }
+
+    &:hover::before {
+      background-image: url("../images/arrow-hover.svg");
+    }
+  }
+}
