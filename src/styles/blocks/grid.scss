@@ -1,0 +1,179 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include onTablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  &--tablet {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__item {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+
+    &--tablet {
+      @for $start from 1 through 9 {
+        @for $end from $start through 9 {
+          &-#{$start}-#{$end} {
+            @include onTablet() {
+              @include onUnderDesktop() {
+                grid-column: #{$start} / #{$end + 1};
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &--desktop {
+      @for $start from 1 through 9 {
+        @for $end from $start through 9 {
+          &--#{$start}-#{$end} {
+            @include onDesktop {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+    }
+
+    &--card1 {
+      grid-column: 1 / 5;
+
+      @include onDesktop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--card2 {
+      grid-column: 5 / 9;
+
+      @include onDesktop {
+        grid-column: 4 / 7;
+      }
+    }
+
+    &--card3 {
+      grid-column: 1 / 5;
+
+      @include onDesktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--card4 {
+      grid-column: 5 / 9;
+
+      @include onDesktop {
+        grid-column: 6 / 9;
+      }
+    }
+
+    &--card5 {
+      grid-column: 1 / 5;
+
+      @include onDesktop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--card6 {
+      grid-column: 5 / 9;
+
+      @include onDesktop {
+        grid-column: 4 / 7;
+      }
+    }
+
+    &--about-us {
+      grid-column: 1 / 5;
+    }
+
+    &--about-text {
+      grid-column: 5 / 9;
+    }
+
+    &--year {
+      grid-column: 1 / 5;
+
+      @include onDesktop {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &--stores {
+      grid-column: 5 / 9;
+
+      @include onDesktop {
+        grid-column: 3 / 5;
+      }
+    }
+
+    &--companies {
+      grid-column: 1 / 5;
+
+      @include onDesktop {
+        grid-column: 5 / 7;
+      }
+    }
+
+    &--clients {
+      grid-column: 5 / 9;
+
+      @include onDesktop {
+        grid-column: 7 / 9;
+      }
+    }
+
+    &--footer-menu {
+      grid-column: 1 / 4;
+      grid-row: 1 / 4;
+
+      @include onDesktop {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &--footer-title {
+      grid-column: 5 / 9;
+    }
+
+    &--call-us {
+      grid-column: 5 / 7;
+    }
+
+    &--email-us {
+      grid-column: 5 / 8;
+
+      @include onDesktop {
+        grid-column: 7 / 9;
+      }
+    }
+
+    &--footer-blog {
+      grid-column: 1 / 4;
+
+      @include onDesktop {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &--copyright {
+      grid-column: 5 / 7;
+    }
+  }
+}
