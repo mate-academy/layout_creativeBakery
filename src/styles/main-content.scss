@@ -1,0 +1,78 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: auto;
+  padding: 0 44px;
+}
+
+// .main__heading {
+//   grid-area: intro-heading;
+// }
+
+// .main__text {
+//   grid-area: intro-text;
+// }
+
+.main__section--intro {
+  display: grid;
+  grid-area: intro;
+  // grid-template-areas:
+  // " intro-heading  intro-heading  intro-heading
+  // intro-heading  intro-heading  intro-heading  intro-heading  intro-heading"
+  // "intro-text intro-text intro-text intro-text
+  // intro-text intro-text intro-text intro-text";
+}
+
+@for $prod from 1 through 6 {
+  .main__product:nth-child(#{$prod}) {
+    background-image: url("../images/photo-product-0#{$prod}.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 402px;
+    height: 512px;
+    grid-area: prod-#{$prod};
+  }
+}
+
+.main__section--products {
+  grid-area: products;
+}
+
+.main__heading--about {
+  grid-area: about-heading;
+}
+
+.main__text--about {
+  grid-area: about-text;
+}
+
+.main__section--about {
+  display: grid;
+  grid-area: about;
+  background-image: url("../images/Crumbs.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 518px;
+  height: 473px;
+}
+
+.main--content {
+  grid-template-areas: "intro intro intro intro intro intro intro intro"
+    "products products products products products products products products"
+    "about about about about about about about about"
+  ;
+}
+
+.main__section {
+  display: grid;
+  grid-template-areas: "prod-1 prod-1 prod-1 prod-2 prod-2 prod-2 . ."
+    ". . prod-3 prod-3 prod-3 prod-4 prod-4 prod-4"
+    "prod-5 prod-5 prod-5 prod-6 prod-6 prod-6 . .";
+  $gap: 24px;
+}
+
+.footer {
+  background-color: #1c1a26;
+  color: #fff;
+  padding: 44px;
+}
