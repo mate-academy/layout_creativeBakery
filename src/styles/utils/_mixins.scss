@@ -4,3 +4,35 @@
     #{$_property}: $_toValue;
   }
 }
+
+/*Content layout*/
+@mixin limitContentWidth () {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+@mixin gridColumns($numberOfCols) {
+  @for $start from 1 through $numberOfCols {
+    @for $end from $start through $numberOfCols {
+      &--cols--#{$start}-#{$end} {
+        grid-column: #{$start} / #{$end + 1};
+      }
+    }
+  }
+  // @include forMobile {
+  //   grid-column: unset;
+  // }
+}
+
+/*Media Queries*/
+@mixin forTablet () {
+  @media (min-width: 321px) {
+    @content;
+  }
+}
+
+@mixin forDesktop () {
+  @media (min-width: 761px) {
+    @content;
+  }
+}

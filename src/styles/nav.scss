@@ -1,0 +1,41 @@
+.nav {
+  display: none;
+
+  @include forDesktop() {
+    display: inline-block;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+  }
+
+  &__item {
+    justify-self: center;
+    margin-right: 64px;
+    white-space: nowrap;
+  }
+
+  &__item:last-child {
+    color: $c-accentOrangeColor;
+    font-weight: 500;
+    line-height: 100%;
+    margin-right: 0;
+  }
+
+  &__item:last-child &__link::before {
+    content: url("../images/svg/Icon-phone.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 18px;
+    width: 18px;
+    align-self: center;
+    transform: translateY(-50%);
+  }
+
+  &__link {
+    padding: 32px 0;
+  }
+}
