@@ -3,7 +3,7 @@
   height: 100vh;
 
   &__content-wraper {
-    @include limitContentWidth();
+    @include limitContentWidth($maxContentWidthMobile);
     padding: $paddingMobile;
     display: grid;
     grid-template-columns: 1fr;
@@ -14,10 +14,12 @@
     row-gap: 32px;
 
     @include forTablet() {
+      @include limitContentWidth($maxContentWidthTablet);
       padding: $paddingTablet;
     }
 
     @include forDesktop() {
+      @include limitContentWidth($maxContentWidthDesktop);
       padding: $paddingDesktopLG;
     }
   }
@@ -56,22 +58,23 @@
 
   &__hero {
     display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     grid-template-columns: 1fr;
     grid-template-areas: "headerText"
       "headerTitle"
       "cookie"
       "headerBtn";
-
-    justify-content: center;
-    align-items: center;
-    text-align: center;
   }
 
   &__text {
     grid-area: headerText;
     margin-bottom: 32px;
+
     @include forTablet() {
       text-align: left;
+      margin-bottom: 16px;
     }
   }
 
@@ -81,20 +84,40 @@
     letter-spacing: -0.05em;
     line-height: 85%;
     text-transform: uppercase;
-    margin-bottom: 32px;
 
     @include forTablet() {
+      transform: translate(0, ($imgHeight + $tabletXLTitleFontSize) / 2);
+      z-index: 1;
       font-size: $tabletXLTitleFontSize;
+    }
+
+    @include forDesktop() {
+      transform: translate(0, -($desktopCookieHeight) / 136);
+      z-index: 1;
+      font-size: $desktopXLTitleFontSize;
     }
   }
 
   &__cookie {
     grid-area: cookie;
     justify-self: center;
+
+    @include forTablet() {
+      transform: translate(0);
+      margin-bottom: 80px;
+    }
+
+    @include forDesktop() {
+      width: 544px;
+      height: 546px;
+      transform: translate(0, -($desktopCookieHeight / 2));
+      margin-bottom: 0;
+    }
   }
 
   &__btn {
     display: flex;
+    justify-content: center;
     justify-self: center;
     white-space: nowrap;
     grid-area: headerBtn;
@@ -109,6 +132,11 @@
 
     @include forTablet() {
       width: 324px;
+    }
+
+    @include forDesktop() {
+      justify-self: left;
+      transform: translate(0, -750%);
     }
 
     &::before {
