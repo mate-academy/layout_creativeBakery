@@ -1,0 +1,46 @@
+.product {
+  @include limitContentWidth($maxContentWidthMobile);
+  padding: $paddingMobile;
+
+  @include forTablet() {
+    @include limitContentWidth($maxContentWidthTablet);
+  }
+
+  &__title {
+    margin-bottom: 24px;
+
+    @include forTablet() {
+      font-size: 56px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 56px;
+
+    @include forTablet() {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__card-wraper {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 64px;
+
+    @include forTablet() {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      align-items: center;
+      row-gap: 88px;
+      column-gap: 24px;
+    }
+
+    @include forDesktop() {
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      align-items: center;
+      row-gap: 88px;
+      column-gap: 24px;
+    }
+  }
+}

@@ -3,15 +3,15 @@
   height: 100vh;
 
   &__content-wraper {
-    @include limitContentWidth($maxContentWidthMobile);
     padding: $paddingMobile;
+    @include limitContentWidth($maxContentWidthMobile);
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
     line-height: 150%;
     letter-spacing: -0.01em;
-    row-gap: 32px;
+    row-gap: $headerContentWrapRowGap;
 
     @include forTablet() {
       @include limitContentWidth($maxContentWidthTablet);
@@ -31,7 +31,15 @@
     align-items: center;
 
     @include forTablet() {
-      margin-bottom: 48px;
+      margin-bottom: ($controlWraperMBTab - $headerContentWrapRowGap);
+    }
+
+    @include forDesktop() {
+      margin-bottom: ($controlWraperMBDeskLG - $headerContentWrapRowGap);
+    }
+
+    @include forDesktopXL() {
+      margin-bottom: ($controlWraperMBDeskXLG - $headerContentWrapRowGap);
     }
   }
 
@@ -81,20 +89,44 @@
   &__title {
     grid-area: headerTitle;
     font-size: $mobileXLTitleFontSize;
-    letter-spacing: -0.05em;
-    line-height: 85%;
-    text-transform: uppercase;
 
     @include forTablet() {
-      transform: translate(0, ($imgHeight + $tabletXLTitleFontSize) / 2);
+      position: absolute;
       z-index: 1;
       font-size: $tabletXLTitleFontSize;
     }
 
     @include forDesktop() {
-      transform: translate(0, -($desktopCookieHeight) / 136);
+      position: absolute;
+      top: ($controlWraperHeightDesk
+      + $desktopXLTitleFontSize
+      + $controlWraperMBDeskLG
+      + $headerTextMB);
       z-index: 1;
       font-size: $desktopXLTitleFontSize;
+    }
+  }
+
+  &__photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    background-image: url("../images/Cookie.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 288px;
+    height: 290px;
+
+    @include forDesktop() {
+      width: 544px;
+      height: 546px;
+      position: absolute;
+      top: ($paddingTopDesk
+      + $controlWraperHeightDesk
+      + ($headerContentWrapRowGap));
+      margin-bottom: 0;
     }
   }
 
@@ -110,7 +142,6 @@
     @include forDesktop() {
       width: 544px;
       height: 546px;
-      transform: translate(0, -($desktopCookieHeight / 2));
       margin-bottom: 0;
     }
   }
@@ -135,8 +166,11 @@
     }
 
     @include forDesktop() {
+      width: 256px;
       justify-self: left;
-      transform: translate(0, -750%);
+      position: absolute;
+      top: 546px - 32px;
+      margin-right: 24px;
     }
 
     &::before {
