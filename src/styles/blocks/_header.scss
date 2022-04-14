@@ -1,6 +1,105 @@
 .header {
+  $number-of-cols: 8;
+
+  height: 100vh;
+
+  &__content {
+    display: grid;
+    @include custom-cols($number-of-cols);
+    column-gap: $grid-gap-desktop;
+
+    padding: 0 $desktop-paddingX;
+    @include limit-content-width;
+
+    @include for-tablet {
+      padding: 0 $tablet-paddingX;
+    }
+
+    @include for-mobile {
+      padding: $desktop-paddingX;
+      column-gap: $grid-gap-mobile;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 108px;
+    height: 16px;
+    padding: 32px 36px;
+  }
+
+  &__subtitle {
+    margin-top: 135px;
+    @include body-text;
+  }
 
   &__title {
+    margin-top: 8px;
+    @include text-h1;
+    font-size: 136px;
     color: $accent-orange;
+  }
+
+  &__background-image {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-self: center;
+
+    background-image: url(/images/photos/Cookie.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 584px;
+    height: 586px;
+
+    z-index: -1;
+
+    @include for-tablet {
+      width: 326px;
+      height: 328px;
+    }
+
+    @include for-mobile {
+      width: 288px;
+      height: 290px;
+
+      position: relative;
+    }
+  }
+
+  &__button {
+    display: flex;
+    @include text-uppercase;
+
+    justify-items: center;
+    align-items: center;
+    background-position: center;
+
+    padding-left: 6px;
+
+    height: 56px;
+    color: $accent-orange;
+
+    border: 1px solid $accent-orange;
+    border-radius: 32px;
+
+    &:hover {
+      background-color: $accent-orange;
+    }
+
+    &:focus {
+      background-color: $dark-orange;
+    }
+  }
+
+  &__button-image {
+    background-image: url(/images/icons/cookie.png);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
