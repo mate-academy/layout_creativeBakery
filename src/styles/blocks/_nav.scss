@@ -17,14 +17,40 @@
   }
 
   &__link {
+    border-bottom: 1px solid transparent;
 
     &--contact {
       color: $accent-orange;
+    }
 
-      &::before {
-        background-image: url(/images/icons/phone.png);
-        background-repeat: no-repeat;
-        transform: translateX(-100%);
+    &:hover {
+      color: $accent-orange;
+      border-color: $accent-orange;
+    }
+
+    &:focus {
+      color: $dark-orange;
+      border-color: $dark-orange;
+    }
+  }
+
+  &__call-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__phone-image {
+    width: 18px;
+    height: 18px;
+
+    padding-right: 8px;
+
+    cursor: pointer;
+
+    &:focus {
+      img {
+        filter: invert(24%) sepia(30%) saturate(4692%)
+          brightness(920%) contrast(92%);
       }
     }
   }

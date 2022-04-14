@@ -73,12 +73,12 @@
   }
 
   &__button {
+    margin-top: 64px;
     display: flex;
     @include text-uppercase;
 
-    justify-items: center;
+    justify-content: center;
     align-items: center;
-    background-position: center;
 
     padding-left: 6px;
 
@@ -88,18 +88,24 @@
     border: 1px solid $accent-orange;
     border-radius: 32px;
 
+    background-color: transparent;
+
     &:hover {
       background-color: $accent-orange;
+      color: #fff;
+      img {
+        filter: invert(100%) sepia(0%) saturate(0%)
+          brightness(1110%) contrast(100%);
+      }
     }
 
     &:focus {
       background-color: $dark-orange;
+      color: #fff;
     }
   }
 
   &__button-image {
-    background-image: url(/images/icons/cookie.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    padding-right: 6px;
   }
 }
