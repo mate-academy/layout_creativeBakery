@@ -1,0 +1,54 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.header {
+  padding: 0 124px;
+
+  &__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__bg-img {
+    position: relative;
+    width: 584px;
+    height: 584px;
+    background-image: url("/images/Cookie.png");
+    margin: 0 auto;
+  }
+
+  &__content-wrapper {
+    position: relative;
+  }
+
+  &__content-text {
+    position: absolute;
+    top: 144px;
+    width: 280px;
+    @include fontParams(16px, 24px, 400);
+  }
+
+  &__name {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $accentOrange;
+  }
+
+  &__btn {
+    @include fontParams (16px, 100%, 500);
+    font-family: $fontFamily;
+    width: 250px;
+    padding: 20px 95px;
+    justify-content: center;
+    border: 2px solid $accentOrange;
+    border-radius: 32px;
+    letter-spacing: 2px;
+    color: $accentOrange;
+  }
+
+  &__btn::before {
+    content: url("/images/Vector-btn.svg");
+  }
+}
