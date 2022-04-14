@@ -33,15 +33,36 @@
   }
 
   &__content-wrapper {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     padding: 32px 16px 0;
-    text-align: center;
+    @include limitContentWidth;
+
+    @include tabletBreakpoint {
+      padding: 80px 44px 0;
+    }
+
+    @include desktopBreakpoint {
+      grid-template-columns: repeat(8, 1fr);
+      padding: 0 44px;
+    }
   }
 
   &__description {
     font-size: 16px;
     letter-spacing: -0.01em;
+    text-align: center;
+    line-height: 24px;
+
+    @include tabletBreakpoint {
+      text-align: initial;
+      width: 280px;
+    }
+
+    @include desktopBreakpoint {
+      @include customColumns(8);
+      margin-top: 135px;
+      width: 260px;
+    }
   }
 
   &__title {
@@ -50,20 +71,52 @@
     text-transform: uppercase;
     color: $accent-orange;
     letter-spacing: -0.05em;
+    text-align: center;
+    line-height: 85%;
+
+    @include tabletBreakpoint {
+      position: absolute;
+      top: 310px;
+      left: 0;
+      right: 0;
+      font-size: 80px;
+    }
+
+    @include desktopBreakpoint {
+      @include customColumns(8);
+      margin-top: 0;
+      font-size: 136px;
+    }
   }
 
   &__img {
+    place-self: center;
     height: 290px;
+    width: 288px;
+
+    @include tabletBreakpoint {
+      margin-top: 16px;
+      height: 328px;
+      width: 326px;
+    }
+
+    @include desktopBreakpoint {
+      @include customColumns(8);
+      margin-top: 0;
+      height: 546px;
+      width: 544px;
+    }
   }
 
   &__button {
     display: flex;
-    justify-self: center;
+    place-self: center;
     justify-content: center;
     align-items: center;
     border: 2px solid $accent-orange;
     border-radius: 32px;
     height: 56px;
+    width: 288px;
     text-transform: uppercase;
     color: $accent-orange;
     font-weight: 500;
@@ -75,6 +128,18 @@
       transform: translate(-450%, -15%);
       width: 16px;
       height: 16px;
+    }
+
+    @include tabletBreakpoint {
+      margin-top: 80px;
+      width: 326px;
+    }
+
+    @include desktopBreakpoint {
+      @include customColumns(8);
+      place-self: initial;
+      margin-top: 0;
+      width: 260px;
     }
   }
 }

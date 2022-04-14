@@ -16,3 +16,23 @@
     @content;
   }
 }
+
+@mixin limitContentWidth() {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@mixin limitContentWidthNav() {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@mixin customColumns($numberOfCols) {
+  @for $start from 1 through $numberOfCols {
+    @for $end from $start through $numberOfCols {
+      &--cols--#{$start}-#{$end} {
+        grid-column: #{$start} / #{$end + 1};
+      }
+    }
+  }
+}
