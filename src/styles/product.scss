@@ -1,14 +1,24 @@
 .product {
   &__details-wraper {
-    padding: $paddingMobile;
+    padding: $paddingXMobile;
+
+    @include forTablet() {
+      padding: $paddingXTablet;
+    }
+
+    @include forDesktop() {
+      padding: $paddingXLGDestop;
+      @include limitContentWidth();
+    }
+
+    @include forDesktopXL() {
+      padding: $paddingXXLGDesktop;
+    }
+
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
-
-    @include forDesktop() {
-      @include limitContentWidth();
-    }
   }
 
   &__title {

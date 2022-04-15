@@ -1,0 +1,41 @@
+.about-us {
+  &__wraper {
+    @include limitContentWidth();
+    padding: $paddingXMobile;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 24px;
+
+    @include forTablet() {
+      padding: $paddingXTablet;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include forDesktop() {
+      padding: $paddingXLGDestop;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    &--stats {
+      font-size: 96px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 64px;
+
+    &--stats {
+      margin-bottom: 48px;
+      color: #7f8096;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
