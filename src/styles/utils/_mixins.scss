@@ -11,7 +11,8 @@
 }
 
 /*Content layout*/
-@mixin limitContentWidth ($maxContentWidth) {
+$maxContentWidth: 1200px;
+@mixin limitContentWidth ($maxContentWidth: $maxContentWidth) {
   margin: 0 auto;
   max-width: $maxContentWidth;
 }
@@ -19,7 +20,7 @@
 @mixin gridColumns($numberOfCols) {
   @for $start from 1 through $numberOfCols {
     @for $end from $start through $numberOfCols {
-      &--cols--#{$start}-#{$end} {
+      &__cols--#{$start}-#{$end} {
         grid-column: #{$start} / #{$end + 1};
       }
     }

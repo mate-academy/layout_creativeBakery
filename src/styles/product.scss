@@ -1,9 +1,14 @@
 .product {
-  @include limitContentWidth($maxContentWidthMobile);
-  padding: $paddingMobile;
+  &__details-wraper {
+    padding: $paddingMobile;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
 
-  @include forTablet() {
-    @include limitContentWidth($maxContentWidthTablet);
+    @include forDesktop() {
+      @include limitContentWidth();
+    }
   }
 
   &__title {
@@ -36,7 +41,7 @@
     }
 
     @include forDesktop() {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       justify-content: center;
       align-items: center;
       row-gap: 88px;

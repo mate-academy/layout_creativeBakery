@@ -4,7 +4,6 @@
 
   &__content-wraper {
     padding: $paddingMobile;
-    @include limitContentWidth($maxContentWidthMobile);
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
@@ -14,12 +13,11 @@
     row-gap: $headerContentWrapRowGap;
 
     @include forTablet() {
-      @include limitContentWidth($maxContentWidthTablet);
       padding: $paddingTablet;
     }
 
     @include forDesktop() {
-      @include limitContentWidth($maxContentWidthDesktop);
+      @include limitContentWidth();
       padding: $paddingDesktopLG;
     }
   }

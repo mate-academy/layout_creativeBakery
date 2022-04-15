@@ -1,18 +1,17 @@
 .card {
+  @include gridColumns(1);
+
+  @include forDesktop() {
+    @include gridColumns(6);
+    width: 100%;
+    height: auto;
+    flex-shrink: 1;
+  }
+
   &__image {
     width: 100%;
     margin-bottom: 16px;
     border-radius: 8px;
-
-    @include forTablet() {
-      flex-shrink: 1;
-    }
-
-    @include forDesktop() {
-      width: 100%;
-      height: auto;
-      flex-shrink: 1;
-    }
   }
 
   &__name {
