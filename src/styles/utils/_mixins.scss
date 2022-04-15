@@ -25,9 +25,26 @@ $maxContentWidth: 1200px;
       }
     }
   }
-  // @include forMobile {
-  //   grid-column: unset;
-  // }
+}
+
+/*Social Icons*/
+
+@mixin socialIcons() {
+  $icons: (
+    "icon1": "facebook",
+    "icon2": "instagram",
+    "icon3": "twitter"
+  );
+
+  @each $icon, $name in $icons {
+    &__link--#{$icon} {
+      background-image: url("../images/svg/Icon-#{$name}.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+    }
+  }
 }
 
 /*Media Queries*/
