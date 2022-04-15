@@ -1,5 +1,9 @@
 .about-us {
   &__wraper {
+    background-image: url("../images/Crumbs.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
     @include limitContentWidth();
     padding: $paddingXMobile;
     display: grid;
@@ -13,8 +17,16 @@
 
     @include forDesktop() {
       padding: $paddingXLGDestop;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
+
+    @include forDesktopXL() {
+      padding: $paddingXXLGDesktop;
+    }
+  }
+
+  @include forDesktop() {
+    @include gridColumns(4);
   }
 
   &__title {
@@ -33,7 +45,7 @@
       margin-bottom: 48px;
       color: #7f8096;
 
-      &:last-child {
+      &:last-child() {
         margin-bottom: 0;
       }
     }
