@@ -4,11 +4,72 @@
   width: 100vw;
 
   &__wraper {
-    @include limitContentWidth();
+    @include forTablet() {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include forDesktop() {
+      @include limitContentWidth();
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
   }
 
   &__menu {
     margin-bottom: 64px;
+
+    @include forTablet() {
+      grid-row-start: 2;
+    }
+
+    @include forDesktop() {
+      @include gridColumns(6);
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    @include forDesktop() {
+      &--break {
+        display: none;
+      }
+
+      @include gridColumns(6);
+      grid-row-start: 1;
+    }
+  }
+
+  &__call {
+    @include forDesktop() {
+      @include gridColumns(6);
+      grid-row-start: 2;
+    }
+  }
+
+  &__phones {
+    margin-bottom: 40px;
+  }
+
+  &__email {
+    margin-bottom: 42px;
+
+    &--desktop {
+      display: none;
+    }
+
+    @include forDesktop() {
+      @include gridColumns(6);
+
+      &--tab {
+        display: none;
+      }
+
+      &--desktop {
+        display: block;
+      }
+    }
   }
 
   &__logo {
@@ -16,7 +77,20 @@
     margin-bottom: 44px;
   }
 
+  &__icons {
+    margin-bottom: 44px;
+
+    @include forTablet() {
+      grid-row-start: 3;
+    }
+
+    @include forDesktop() {
+      @include gridColumns(6);
+    }
+  }
+
   &__copy {
-    color: #7f8096;
+    color: $c-grayColor;
+    grid-row-start: 3;
   }
 }

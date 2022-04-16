@@ -2,12 +2,8 @@
   width: 100vw;
   height: 100vh;
 
-  @include forDesktop() {
-    height: 57vh;
-  }
-
   &__content-wraper {
-    padding: $paddingMobile;
+    padding: $paddingMobileHeader;
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
@@ -17,12 +13,16 @@
     row-gap: $headerContentWrapRowGap;
 
     @include forTablet() {
-      padding: $paddingTablet;
+      padding: $paddingTabletHeader;
     }
 
     @include forDesktop() {
       @include limitContentWidth();
-      padding: $paddingDesktopLG;
+      padding: $paddingDesktopLGHeader;
+    }
+
+    @include forDesktopXL() {
+      padding: $paddingDesktopXLGHeader;
     }
   }
 
@@ -97,12 +97,14 @@
     font-size: $mobileXLTitleFontSize;
 
     @include forTablet() {
+      text-align: left;
       position: absolute;
       z-index: 1;
       font-size: $tabletXLTitleFontSize;
     }
 
     @include forDesktop() {
+      text-align: left;
       position: absolute;
       top: ($controlWraperHeightDesk
       + $desktopXLTitleFontSize
@@ -122,8 +124,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 288px;
-    height: 290px;
+    min-width: 288px;
+    min-height: 290px;
 
     @include forDesktop() {
       width: 544px;
@@ -165,14 +167,14 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: $c-accentOrangeColor;
-    width: 100%;
+    max-width: 160px;
 
     @include forTablet() {
-      width: 324px;
+      max-width: 324px;
     }
 
     @include forDesktop() {
-      width: 256px;
+      max-width: 256px;
       justify-self: left;
       position: absolute;
       top: 546px - 32px;

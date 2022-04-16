@@ -20,7 +20,7 @@ $maxContentWidth: 1200px;
 @mixin gridColumns($numberOfCols) {
   @for $start from 1 through $numberOfCols {
     @for $end from $start through $numberOfCols {
-      &__cols--#{$start}-#{$end} {
+      &--cols--#{$start}-#{$end} {
         grid-column: #{$start} / #{$end + 1};
       }
     }
@@ -28,7 +28,6 @@ $maxContentWidth: 1200px;
 }
 
 /*Social Icons*/
-
 @mixin socialIcons() {
   $icons: (
     "icon1": "facebook",
@@ -43,6 +42,12 @@ $maxContentWidth: 1200px;
       background-size: cover;
       width: 20px;
       height: 20px;
+      transition: background-image ease-in-out $transitionDuration;
+    }
+
+    &__link--#{$icon}:hover,
+    &__link--#{$icon}:focus {
+      background-image: url("../images/svg/Icon-#{$name}-white.svg");
     }
   }
 }
