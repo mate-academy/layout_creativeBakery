@@ -52,6 +52,32 @@ $maxContentWidth: 1200px;
   }
 }
 
+@mixin btnStates() {
+  &::before {
+    content: url("../images/svg/btn_icon.svg");
+    margin-right: 6px;
+  }
+
+  &:hover {
+    background-color: $c-accentOrangeColor;
+    color: $c-white;
+
+    &::before {
+      content: url("../images/svg/btn_icon_white.svg");
+    }
+  }
+
+  &:focus {
+    background-color: $c-darkOrange;
+    border-color: $c-darkOrange;
+    color: $c-white;
+
+    &::before {
+      content: url("../images/svg/btn_icon_white.svg");
+    }
+  }
+}
+
 /*Media Queries*/
 @mixin forTablet () {
   @media (min-width: 321px) {

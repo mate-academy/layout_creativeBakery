@@ -3,51 +3,32 @@
   height: 100vh;
 
   &__content-wraper {
-    padding: $paddingMobileHeader;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-items: center;
-    line-height: 150%;
-    letter-spacing: -0.01em;
-    row-gap: $headerContentWrapRowGap;
-
-    @include forTablet() {
-      padding: $paddingTabletHeader;
-    }
-
     @include forDesktop() {
       @include limitContentWidth();
-      padding: $paddingDesktopLGHeader;
-    }
-
-    @include forDesktopXL() {
-      padding: $paddingDesktopXLGHeader;
     }
   }
 
   &__control-wraper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: $padControlWrapMobileHeader;
 
     @include forTablet() {
-      margin-bottom: ($controlWraperMBTab - $headerContentWrapRowGap);
+      padding: $padControlWrapTabHeader;
     }
 
     @include forDesktop() {
-      margin-bottom: ($controlWraperMBDeskLG - $headerContentWrapRowGap);
+      margin-bottom: 0;
+      padding: $padControlWrapDeskHeader;
     }
 
     @include forDesktopXL() {
-      margin-bottom: ($controlWraperMBDeskXLG - $headerContentWrapRowGap);
+      margin-bottom: 0;
     }
   }
 
   &__menu-toggler {
-    display: flex;
-    justify-self: right;
     border: none;
     background-image: url("../images/svg/menu_mobile.svg");
     background-repeat: no-repeat;
@@ -61,16 +42,6 @@
   }
 
   &__hero {
-    padding: $paddingXMobile;
-
-    @include forDesktop() {
-      padding: $paddingXLGDestop;
-    }
-
-    @include forDesktopXL() {
-      padding: $paddingXXLGDesktop;
-    }
-
     display: grid;
     justify-content: center;
     align-items: center;
@@ -80,15 +51,41 @@
       "headerTitle"
       "cookie"
       "headerBtn";
+
+    padding: $paddingXMobile;
+
+    @include forTablet() {
+      padding: $paddingXTablet;
+    }
+
+    @include forDesktop() {
+      @include limitContentWidth();
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto;
+    }
+
+    @include forDesktopXL() {
+      padding: $paddingXXLGDesktop;
+    }
   }
 
   &__text {
     grid-area: headerText;
     margin-bottom: 32px;
-
     @include forTablet() {
       text-align: left;
-      margin-bottom: 16px;
+    }
+
+    @include forDesktop() {
+      text-align: left;
+      transform: translateY((-223px) + 78px);
+      @include gridColumns(6);
+    }
+
+    @include forDesktopXL() {
+      text-align: left;
+      transform: translateY((-223px) + 78px);
+      @include gridColumns(6);
     }
   }
 
@@ -97,21 +94,19 @@
     font-size: $mobileXLTitleFontSize;
 
     @include forTablet() {
-      text-align: left;
       position: absolute;
-      z-index: 1;
       font-size: $tabletXLTitleFontSize;
+      white-space: nowrap;
     }
 
     @include forDesktop() {
-      text-align: left;
-      position: absolute;
-      top: ($controlWraperHeightDesk
-      + $desktopXLTitleFontSize
-      + $controlWraperMBDeskLG
-      + $headerTextMB);
-      z-index: 1;
+      text-align: center;
+      @include gridColumns(6);
       font-size: $desktopXLTitleFontSize;
+    }
+
+    @include forDesktopXL() {
+      font-size: $desktopXXLTitleFontSize;
     }
   }
 
@@ -124,17 +119,20 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    min-width: 288px;
-    min-height: 290px;
+    object-fit: cover;
+    object-position: center;
+    width: 288px;
+    height: 290px;
+
+    @include forTablet() {
+      width: 326px;
+      height: 328px;
+    }
 
     @include forDesktop() {
+      @include gridColumns(6);
       width: 544px;
       height: 546px;
-      position: absolute;
-      top: ($paddingTopDesk
-      + $controlWraperHeightDesk
-      + ($headerContentWrapRowGap));
-      margin-bottom: 0;
     }
   }
 
@@ -145,12 +143,6 @@
     @include forTablet() {
       transform: translate(0);
       margin-bottom: 80px;
-    }
-
-    @include forDesktop() {
-      width: 544px;
-      height: 546px;
-      margin-bottom: 0;
     }
   }
 
@@ -167,23 +159,24 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: $c-accentOrangeColor;
-    max-width: 160px;
+    width: 100%;
+    transition: background-color ease-in-out $transitionDuration,
+      color ease-in-out $transitionDuration,
+      content ease-in-out $transitionDuration;
 
     @include forTablet() {
-      max-width: 324px;
+      width: 326px;
     }
 
     @include forDesktop() {
-      max-width: 256px;
+      @include gridColumns(6);
+      width: 260px;
       justify-self: left;
       position: absolute;
       top: 546px - 32px;
       margin-right: 24px;
     }
 
-    &::before {
-      content: url("../images/svg/btn_icon.svg");
-      margin-right: 6px;
-    }
+    @include btnStates();
   }
 }

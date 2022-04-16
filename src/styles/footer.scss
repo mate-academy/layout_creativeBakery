@@ -1,19 +1,27 @@
 .footer {
   background-color: $c-mainBlackColor;
-  color: #fff;
+  color: $c-white;
   width: 100vw;
 
   &__wraper {
+    padding: $paddingMobileFooter;
+
     @include forTablet() {
+      padding: $paddingTabletFooter;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-column-gap: 24px;
     }
 
     @include forDesktop() {
+      padding: $paddingDesktopLGFooter;
       @include limitContentWidth();
       display: grid;
       grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include forDesktopXL() {
+      padding: $paddingDesktopXLGFooter;
     }
   }
 
@@ -74,7 +82,7 @@
   }
 
   &__logo {
-    display: inline-block;
+    display: inline-flex;
     margin-bottom: 44px;
   }
 
@@ -87,6 +95,17 @@
 
     @include forDesktop() {
       @include gridColumns(6);
+    }
+  }
+
+  &__link {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color ease-in-out $transitionDuration,
+      color ease-in-out $transitionDuration;
+
+    &:hover {
+      border-bottom-color: $c-accentOrangeColor;
+      color: $c-accentOrangeColor;
     }
   }
 
