@@ -1,0 +1,51 @@
+.promo {
+  $number-of-cols: 8;
+
+  &__content {
+    padding: 0 $desktop-paddingX;
+    @include limit-content-width;
+
+    display: grid;
+    @include custom-cols($number-of-cols);
+    column-gap: $grid-gap-desktop;
+
+    @include for-tablet {
+      padding: 0 $tablet-paddingX;
+    }
+
+    @include for-mobile {
+      padding: $desktop-paddingX;
+      column-gap: $grid-gap-mobile;
+    }
+  }
+
+  &__title {
+    @include text-h2;
+    color: $accent-orange;
+    margin-bottom: 24px;
+  }
+
+  &__subtitle {
+    @include body-text;
+    margin-bottom: 80px;
+  }
+
+  &__row {
+    display: grid;
+    margin-bottom: 80px;
+    @include grid-width-columns($number-of-cols, 2);
+  }
+
+  &__card {
+    position: relative;
+    @include custom-cols($number-of-cols);
+
+    @include for-tablet {
+      @include custom-cols(4);
+    }
+
+    @include for-mobile {
+      grid-column: unset;
+    }
+  }
+}

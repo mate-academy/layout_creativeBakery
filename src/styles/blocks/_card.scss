@@ -1,0 +1,58 @@
+.card {
+  width: 402px;
+
+  @include hover(transform, scale(1.1));
+  z-index: 1;
+
+  &__photo {
+    margin-bottom: 16px;
+  }
+
+  &__image {
+    height: 512px;
+    width: 402px;
+
+    border-radius: 8px;
+  }
+
+  &__title {
+    @include text-uppercase;
+    color: $grey;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    @include body-text;
+    margin-bottom: 24px;
+  }
+
+  &__link {
+    display: flex;
+
+    @include text-uppercase;
+    color: $accent-orange;
+
+    border-bottom: 1px solid transparent;
+
+    background-image: url(/images/icons/arrow.png);
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+
+    &::after {
+      content: "order";
+      padding-left: 24px;
+    }
+
+    &:hover {
+      color: $accent-orange;
+      border-color: $accent-orange;
+    }
+
+    &:focus {
+      color: $dark-orange;
+      border-color: $dark-orange;
+      // background-image: url(/images/icons/arrow-dark-orange.png);
+    }
+  }
+}

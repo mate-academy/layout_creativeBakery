@@ -2,6 +2,7 @@
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+    @content;
   }
 }
 
@@ -12,6 +13,11 @@
   line-height: 122px;
   text-transform: uppercase;
   letter-spacing: -0.05em;
+
+  @media (max-width: 1199px) {
+    font-size: 136px;
+    line-height: 116px;
+  }
 
   @media (max-width: $tablet-breakpoint) {
     font-size: 80px;
