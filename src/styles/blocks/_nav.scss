@@ -7,6 +7,7 @@
   justify-content: space-between;
   align-items: center;
   height: 88px;
+  margin: 0 35px;
 
   &__links {
     display: flex;
@@ -25,6 +26,16 @@
     }
   }
 
+  &__humburger {
+    display: none;
+    background-image: url("/images/humburger.svg");
+    background-position: 50% center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    height: 24px;
+    width: 24px;
+  }
+
   &__item:last-child &__link {
     color: $accentOrange;
   }
@@ -34,5 +45,15 @@
     align-items: center;
     padding-right: 7px;
     content: url("/images/Vector.svg");
+  }
+
+  @media (max-width: $tabletMaxWidth) {
+    &__links {
+      display: none;
+    }
+
+    &__humburger {
+      display: block;
+    }
   }
 }

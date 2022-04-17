@@ -1,0 +1,65 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.menu {
+  background-color: $lightBlue;
+
+  &__top-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 88px;
+    margin: 0 35px;
+  }
+
+  &__toggler {
+    display: inline-block;
+    background-image: url("/images/x-button.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__navbar {
+    margin-top: 132px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+  }
+
+  &__link {
+    @include fontParams(16px, 150%, 400);
+    color: $black;
+  }
+
+  &__link:hover {
+    color: $accentOrange;
+  }
+
+
+  &__item:last-child &__link {
+    @include fontParams (16px, 150%, 500);
+    color: $accentOrange;
+  }
+
+  &__item:last-child &__link:before {
+    justify-content: center;
+    align-items: center;
+    padding-right: 7px;
+    content: url("/images/Vector.svg");
+  }
+
+  @media (min-width: 800px) {
+    display: none;
+  }
+}
