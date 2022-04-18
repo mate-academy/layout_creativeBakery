@@ -3,11 +3,13 @@
 @import "../utils/extends";
 
 .product {
+
   &__wrapper {
     max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     column-gap: $gridGapDesktop;
+    margin: 0 auto;
   }
 
   &__title {
@@ -52,5 +54,79 @@
   &__card-cookies-2 {
     grid-column: 4/7;
     margin-top: 88px;
+  }
+
+  @include tablet {
+    &__title {
+      @include fontParams (56px, 85%, 400);
+    }
+
+    &__text {
+      grid-column: 1/-1;
+    }
+
+    &__card-cakes-1 {
+      grid-column: 1/5;
+    }
+
+    &__card-cakes-2 {
+      grid-column: 5/-1;
+    }
+
+    &__card-donuts-1 {
+      grid-column: 1/5;
+    }
+
+    &__card-donuts-2 {
+      grid-column: 5/-1;
+    }
+
+    &__card-cookies-1 {
+      grid-column: 1/5;
+    }
+
+    &__card-cookies-2 {
+      grid-column: 5/-1;
+    }
+  }
+
+  @include mobile {
+
+    &__wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: $gridGapMobile;
+    }
+
+    &__title {
+      @include fontParams (48px, 85%, 400);
+    }
+
+    &__text {
+      grid-column: 1/-1;
+    }
+
+    &__card-cakes-1 {
+      grid-column: 1/-1;
+    }
+
+    &__card-cakes-2 {
+      grid-column: 1/-1;
+    }
+
+    &__card-donuts-1 {
+      grid-column: 1/-1;
+    }
+
+    &__card-donuts-2 {
+      grid-column: 1/-1;
+    }
+
+    &__card-cookies-1 {
+      grid-column: 1/-1;
+    }
+
+    &__card-cookies-2 {
+      grid-column: 1/-1;
+    }
   }
 }
