@@ -64,20 +64,24 @@
     top: 0;
     left: 0;
 
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
+    transform: translatex(100%);
 
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     background-color: #eef7ff;
 
+    transition: transform 0.4s;
+
     @include onDesktop {
       position: relative;
       width: max-content;
       height: max-content;
+      transform: translatex(0);
 
       display: flex;
       flex-direction: row;
@@ -85,8 +89,7 @@
   }
 
   &__checkbox:checked ~ .nav__list {
-    display: flex;
-
+    transform: translatex(0);
   }
 
   &__item {
