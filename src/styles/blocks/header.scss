@@ -114,6 +114,7 @@
     place-self: center;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.5s ease-in-out;
     border: 2px solid $accent-orange;
     border-radius: 32px;
     height: 56px;
@@ -129,6 +130,21 @@
       margin-right: 6px;
       width: 16px;
       height: 16px;
+    }
+
+    &:hover {
+      background-color: $accent-orange;
+      color: $white;
+    }
+
+    &:active {
+      background-color: $button-active-orange;
+      color: $white;
+    }
+
+    &:active::before,
+    &:hover::before {
+      content: url("/images/button-icon-hover.svg");
     }
 
     @include tabletBreakpoint {
