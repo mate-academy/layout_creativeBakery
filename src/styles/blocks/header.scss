@@ -2,53 +2,69 @@
 @import "../utils/mixins";
 
 .header {
-  &__menu {
-    margin-bottom: $headerMarginBottom;
-  }
 
-  &__info {
-    text-align: center;
-    margin-bottom: $headerMarginBottom;
+  &__nav {
+    height: 64px;
+    margin-bottom: 32px;
 
     @include onTablet() {
-      text-align: start;
+      margin-bottom: 80px;
     }
-  }
 
-  &__title {
-    font-weight: 400;
-    font-size: 64px;
-    line-height: 85%;
-    text-align: center;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-    color: $accentOrange;
-  }
+    @include onDesktop() {
+      height: 88px;
+      margin-bottom: 135px;
+    }
 
-  &__background-image {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  &__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: $accentOrange;
-
-    border: 2px solid $accentOrange;
-    box-sizing: border-box;
-    border-radius: 32px;
-
-    &--icon {
-      margin-right: 4px;
+    @include onDesktopBig() {
+      height: 88px;
+      margin-bottom: 144px;
     }
   }
 }
+
+&__info {
+  text-align: center;
+  margin-bottom: $headerMarginBottom;
+
+  @include onTablet() {
+    text-align: start;
+  }
+}
+
+// &__title {
+//   font-weight: 400;
+//   font-size: 64px;
+//   line-height: 85%;
+//   text-align: center;
+//   letter-spacing: -0.05em;
+//   text-transform: uppercase;
+//   color: $accentOrange;
+// }
+
+// &__background-image {
+//   display: block;
+//   margin: 0 auto;
+//   width: 100%;
+// }
+
+// &__link {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 20px 0;
+
+//   font-weight: 500;
+//   letter-spacing: 0.02em;
+//   text-transform: uppercase;
+//   text-decoration: none;
+//   color: $accentOrange;
+
+//   border: 2px solid $accentOrange;
+//   box-sizing: border-box;
+//   border-radius: 32px;
+
+//   &--icon {
+//     margin-right: 4px;
+//   }
+// }
