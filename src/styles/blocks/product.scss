@@ -1,0 +1,101 @@
+.product {
+  &__content {
+    padding: 40px 0;
+    @include onDesktop {
+      padding: 40px 0 80px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      display: flex;
+      gap: 220px;
+      margin-bottom: 135px;
+    }
+  }
+
+  &__left-side {
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+    }
+    &--cakes {
+      @include onDesktop {
+        order: 2;
+      }
+    }
+    &--cupcakes {
+      @include onDesktop {
+        order: 2;
+      }
+    }
+  }
+
+  &__name {
+    @extend %default-text;
+    font-size: 20px;
+    margin-bottom: 12px;
+    @include onDesktop {
+      font-size: 26px;
+      line-height: 150%;
+    }
+  }
+
+  &__kind {
+    font-family: Rubik, sans-serif;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 41px;
+    color: $orange;
+    margin-bottom: 15px;
+    @include onDesktop {
+      font-size: 50px;
+      line-height: 59px;
+    }
+  }
+
+  &__price {
+    @include flex(flex, center, center);
+    @include sizes(65px, 65px);
+    @extend %default-text;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f1cc9d;
+    border-radius: 50%;
+  }
+  &__photo {
+    margin: 0 auto;
+    &--cookies {
+      @include sizes(270px, 200px);
+      margin-top: -15px;
+
+      @include onDesktop {
+        @include sizes(700px, 515px);
+      }
+    }
+    &--cakes {
+      @include sizes(275px, 175px);
+      @include onDesktop {
+        @include sizes(740px, 480px);
+      }
+
+    }
+    &--croissants {
+      @include sizes(240px, 190px);
+      @include onDesktop {
+        @include sizes(660px, 535px);
+      }
+    }
+    &--cupcakes {
+      @include sizes(240px, 165px);
+      @include onDesktop {
+        @include sizes(665px, 460px);
+      }
+    }
+  }
+  &__image {
+    @include sizes(100%, 100%);
+  }
+}

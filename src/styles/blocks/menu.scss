@@ -1,0 +1,72 @@
+.menu {
+  width: 200px;
+  background-color: $orange;
+
+  border-left: 3px solid #fff;
+  &--footer {
+    background-color: $brown;
+  }
+  &__content {
+    box-sizing: border-box;
+    padding: 33px 0;
+    height: 100vh;
+    &--footer {
+      height: 570px;
+    }
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__item-footer {
+    margin-bottom: 400px;
+  }
+  
+  &__item {
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+    &:last-child {
+      margin-bottom: 150px;
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    @extend %default-text;
+    text-decoration: none;
+
+    &:hover {
+      color: $orange;
+    }
+
+    &-footer {
+      color: #fff;
+    }
+  }
+
+  &__phone {
+    @extend %default-text;
+    margin-bottom: 30px;
+  }
+  
+  @include onDesktop {
+    display: none;
+  }
+}
+
+.desktop {
+  display: none;
+  @include onDesktop {
+    display: flex;
+    gap: 34px;
+    // margin: 0 auto;
+  }
+}
