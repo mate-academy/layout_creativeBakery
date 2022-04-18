@@ -1,0 +1,159 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo-link {
+    z-index: 2;
+  }
+
+  &__logo {
+    display: block;
+    width: 128px;
+    height: 24px;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__menu-opener {
+    display: block;
+    cursor: pointer;
+
+    z-index: 2;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 8px;
+
+      background: url(../images/icons/menu-opener.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:hover::before {
+      background-image: url(../images/icons/menu-opener-hover.svg);
+    }
+  }
+
+  &__checkbox:checked ~ &__menu-opener::before {
+    background-image: url(../images/icons/menu-closer.svg);
+    width: 12px;
+    height: 12px;
+
+    position: relative;
+    right: 4px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__checkbox:checked ~ &__menu-opener:hover::before {
+    background-image: url(../images/icons/menu-closer-hover.svg);
+  }
+
+  &__list {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #eef7ff;
+
+    @include onDesktop {
+      position: relative;
+      width: max-content;
+      height: max-content;
+
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__checkbox:checked ~ .nav__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      margin-right: 64px;
+
+      &:last-child {
+        padding-left: 25px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+
+    transition: color 0.4s, text-shadow 0.4s;
+
+    &:hover {
+      color: #f9512e;
+      border-bottom: 1px solid #f9512e;
+      text-shadow: 0.5px 0.5px 10px;
+    }
+
+    &:active {
+      color: #b2341a;
+      border-bottom: 1px solid #b2341a;
+      text-shadow: 0.5px 0.5px 10px;
+    }
+  }
+
+  &__link--contact {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #f9512e;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-image: url(../images/icons/call.svg);
+      display: block;
+      position: absolute;
+      top: 0;
+
+      transform: translatex(-100%);
+      padding-right: 7px;
+
+      width: 18px;
+      height: 18px;
+
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:active::after {
+      background-image: url(../images/icons/call-hover.svg);
+    }
+  }
+}
