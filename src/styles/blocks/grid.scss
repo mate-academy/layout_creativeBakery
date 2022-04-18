@@ -1,5 +1,6 @@
 .grid {
   display: grid;
+  justify-content: center;
   grid-template-columns: 1fr;
 
   @include onTablet {
@@ -10,13 +11,13 @@
 
   @include onDesktop {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(8, minmax(min-content, 128px));
     column-gap: 24px;
   }
 
   @include onBigDesktop {
     display: grid;
-    grid-template-columns: repeat(8, minmax(1fr, 128px));
+    grid-template-columns: repeat(8, 128px);
     column-gap: 24px;
   }
 
@@ -28,7 +29,11 @@
             grid-column: #{$start} / #{$end + 1};
           }
         }
+      }
+    }
 
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
         &--desktop-#{$start}-#{$end} {
           @include onDesktop {
             grid-column: #{$start} / #{$end + 1};
@@ -37,4 +42,10 @@
       }
     }
   }
+
+  // &--desktop-#{$start}-#{$end} {
+  //   @include onDesktop {
+  //     grid-column: #{$start} / #{$end + 1};
+  //   }
+  // }
 }
