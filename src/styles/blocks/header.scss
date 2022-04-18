@@ -1,0 +1,159 @@
+.header {
+  height: 100vh;
+  box-sizing: border-box;
+
+  &__label {
+    background-image: url(../images/Vector/Burg-opener.svg);
+
+    height: 8px;
+    width: 20px;
+
+    @include l {
+      display: none;
+    }
+
+    &:hover {
+      background-image: url(../images/Vector/Burg-opener-hover.svg);
+    }
+  }
+
+  &__toggler {
+    display: none;
+  }
+
+  &__kredo {
+
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+
+
+    @include onTablet {
+      align-self: flex-start;
+      text-align: start;
+      margin-bottom: 146px;
+      width: 280px;
+    }
+
+    @include l {
+      margin-bottom: 8px;
+      width: 260px;
+    }
+
+    @include xL {
+      margin-bottom: 40px;
+      width: 280px;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__title {
+    font-size: 64px;
+    line-height: 85%;
+
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: #F9512E;
+
+    @include onTablet {
+      font-size: 80px;
+    }
+
+    @include l {
+      font-size: 136px;
+    }
+
+    @include xL {
+      font-size: 144px;
+    }
+  }
+
+  &__coockie {
+    display: block;
+
+    margin: 0 auto;
+    width: 288px;
+    height: 288px;
+    object-fit: contain;
+    object-position: center;
+    z-index: -1;
+
+    @include onTablet {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -59%);
+      width: 326px;
+      height: 326px;
+    }
+
+    @include l {
+      width: 544px;
+      height: 544px;
+    }
+
+    @include xL {
+      width: 584px;
+      height: 584px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    color: #F9512E;
+    letter-spacing: 0.02em;
+
+    border: 2px solid #F9512E;
+    border-radius: 32px;
+    padding: 16px 0;
+
+    height: 52px;
+    width: 100%;
+
+    transition: all 0.3s;
+
+    &::before {
+      content: '';
+      display: block;
+      background-image: url(../images/Vector/Coockie.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 20px;
+      width: 20px;
+      margin-right: 6px;
+
+      position: absolute;
+      transform: translate(-300%, 0);
+    }
+
+    &:hover {
+      background-color: #F9512E;
+      color: #fff;
+
+      &::before {
+        background-image: url(../images/Vector/Сoockie-white.svg);
+      }
+
+    }
+
+    &:active {
+      background-color: #B2341A;
+      border-color: #B2341A;
+    }
+  }
+}
+
+
+
