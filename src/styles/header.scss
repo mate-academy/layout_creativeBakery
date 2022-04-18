@@ -1,10 +1,16 @@
 .header {
+  $coordinateLeftDesktop: 44px;
+  $coordinateLeftXLDesktop: 126px;
+  $imgHeightXLDesktop: 546px;
   width: 100vw;
   height: 100vh;
+  position: relative;
 
   &__content-wraper {
     @include forDesktop() {
       @include limitContentWidth();
+      height: 100%;
+      width: 100%;
     }
   }
 
@@ -13,9 +19,12 @@
     justify-content: space-between;
     align-items: center;
     padding: $padControlWrapMobileHeader;
+    margin-bottom: 32px;
+    width: 100%;
 
     @include forTablet() {
       padding: $padControlWrapTabHeader;
+      margin-bottom: 80px;
     }
 
     @include forDesktop() {
@@ -42,26 +51,21 @@
   }
 
   &__hero {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    grid-template-columns: 1fr;
-    grid-template-areas: "headerText"
-      "headerTitle"
-      "cookie"
-      "headerBtn";
-
     padding: $paddingXMobile;
+    position: relative;
+    height: 100%;
 
     @include forTablet() {
       padding: $paddingXTablet;
     }
 
     @include forDesktop() {
-      @include limitContentWidth();
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: auto;
+      padding: $paddingXTablet;
     }
 
     @include forDesktopXL() {
@@ -70,57 +74,75 @@
   }
 
   &__text {
-    grid-area: headerText;
     margin-bottom: 32px;
+
+    &--break {
+      display: none;
+    }
+
     @include forTablet() {
+      align-self: flex-start;
       text-align: left;
     }
 
     @include forDesktop() {
-      text-align: left;
-      transform: translateY((-223px) + 78px);
-      @include gridColumns(6);
+      position: absolute;
+      left: $coordinateLeftDesktop;
+      transform: translateY(-136px);
+
+      margin-right: 24px;
+
+      &--break {
+        display: block;
+      }
     }
 
     @include forDesktopXL() {
-      text-align: left;
-      transform: translateY((-223px) + 78px);
-      @include gridColumns(6);
+      left: $coordinateLeftXLDesktop;
+      transform: translateY(-144px);
+
+      &--break {
+        display: none;
+      }
     }
   }
 
   &__title {
-    grid-area: headerTitle;
     font-size: $mobileXLTitleFontSize;
-
+    text-align: center;
     @include forTablet() {
       position: absolute;
+      left: $coordinateLeftDesktop;
       font-size: $tabletXLTitleFontSize;
       white-space: nowrap;
     }
 
     @include forDesktop() {
-      text-align: center;
-      @include gridColumns(6);
+      left: $coordinateLeftDesktop;
+
       font-size: $desktopXLTitleFontSize;
     }
 
     @include forDesktopXL() {
+      left: $coordinateLeftXLDesktop;
       font-size: $desktopXXLTitleFontSize;
     }
   }
 
   &__photo {
     display: flex;
-    justify-content: center;
-    align-items: center;
     justify-self: center;
-    background-image: url("../images/Cookie.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    object-fit: cover;
-    object-position: center;
+
+    @include forDesktop() {
+      @include gridColumns(6);
+      justify-content: center;
+      align-items: center;
+      grid-row-start: 1;
+    }
+  }
+
+  &__cookie {
+    display: block;
     width: 288px;
     height: 290px;
 
@@ -130,28 +152,22 @@
     }
 
     @include forDesktop() {
-      @include gridColumns(6);
       width: 544px;
       height: 546px;
     }
-  }
 
-  &__cookie {
-    grid-area: cookie;
-    justify-self: center;
-
-    @include forTablet() {
-      transform: translate(0);
-      margin-bottom: 80px;
+    @include forDesktopXL() {
+      width: 584px;
+      height: 586px;
     }
   }
 
   &__btn {
+    @include btnIcon();
     display: flex;
     justify-content: center;
     justify-self: center;
     white-space: nowrap;
-    grid-area: headerBtn;
     padding: 20px 0;
     border-radius: 32px;
     border: 2px solid $c-accentOrangeColor;
@@ -169,14 +185,14 @@
     }
 
     @include forDesktop() {
-      @include gridColumns(6);
-      width: 260px;
-      justify-self: left;
       position: absolute;
-      top: 546px - 32px;
-      margin-right: 24px;
+      left: $coordinateLeftDesktop;
+      transform: translateY($desktopLTitleFontSize + 64px);
     }
 
-    @include btnStates();
+    @include forDesktopXL() {
+      left: $coordinateLeftXLDesktop;
+      transform: translateY($desktopXLTitleFontSize + 64px);
+    }
   }
 }
