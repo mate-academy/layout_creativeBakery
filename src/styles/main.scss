@@ -1,5 +1,23 @@
 $page-background: #eef7ee;
 
+@mixin onDesktop {
+  @media(min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onNotebook {
+  @media(min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media(min-width: 768px) {
+    @content;
+  }
+}
+
 body,
 h1,
 h2,
@@ -31,32 +49,87 @@ body {
   }
 
   &__nav {
-    display: none; // for desktop display!
+    display: none;
+
+    @include onNotebook {
+      display: block;
+    }
   }
 
   &__menu-opener {
     padding: 28px 18px;
+
+    @include onNotebook {
+      display: none;
+    }
   }
 }
 
-.nav__list {
-  display: flex;
-  list-style: none;
-  gap: 64px;
+.nav {
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    height: 88px;
+    list-style: none;
+    gap: 64px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__link--phone {
+    margin-right: 32px;
+    padding: 0 20px;
+    font-weight: 500;
+    color: #f9512e;
+    text-transform: uppercase;
+
+    &::before {
+      content: url(../images/phone.svg);
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+
+    }
+  }
 }
 
 .info {
 
   &__container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
   }
 
+  &__container-cookieButton {
+    margin: 0 124px;
+  }
+
+  &__cookie-text {
+    position: relative;
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
   &__paragraph {
     width: 288px;
     margin: 32px auto 0;
+
+    @include onTablet {
+      margin: 32px 0 0 44px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
   }
 
   &__title {
@@ -65,6 +138,50 @@ body {
     font-size: 64px;
     line-height: 54px;
     text-transform: uppercase;
+
+    @include onTablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      margin: 0 auto;
+
+      font-size: 80px;
+      line-height: 68px;
+    }
+
+    @include onNotebook {
+      width: 1112px;
+      font-size: 136px;
+      line-height: 116px;
+    }
+
+    @include onDesktop {
+      width: 1192px;
+      font-size: 144px;
+      line-height: 122px;
+    }
+  }
+
+  &__main-cookie {
+    width: 288px;
+    height: 290px;
+
+    @include onTablet {
+      width: 326px;
+      height: 328px;
+    }
+
+    @include onNotebook {
+      width: 544px;
+      height: 546px;
+    }
+
+    @include onDesktop() {
+      width: 584px;
+      height: 586px;
+    }
   }
 
   &__button {
@@ -84,11 +201,30 @@ body {
     &::before {
       content: url(../images/mini-cookie.svg);
       position: absolute;
-      left: 65px;
+      left: 63px;
       display: block;
       width: 20px;
       height: 20px;
 
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: #f9512e;
+    }
+
+    &:hover::before {
+      content: url(../images/mini-white-cookie.svg);
+    }
+
+    &:focus {
+      background-color: #b2341a;
+    }
+
+    @include onNotebook {
+      position: absolute;
+      left: 135px;
+      top: 315px;
     }
   }
 }
