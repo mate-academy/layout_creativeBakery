@@ -1,13 +1,29 @@
 .place {
 
+  &__card {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &--last {
+      margin-bottom: 0;
+    }
+  }
+
   &__photo {
+    margin: 0 auto;
     display: block;
     margin-bottom: 16px;
-    width: 100%;
+    max-width: 288px;
     border-radius: 8px;
 
     transition: transform 0.4s;
+
     @include onTablet {
+
+      max-width: 100%;
       &:hover {
         transform: scale(1.06);
       }
@@ -30,7 +46,6 @@
 
   &__link {
     display: block;
-    margin-bottom: 64px;
     padding-left: 24px;
     font-weight: 500;
     line-height: 100%;
