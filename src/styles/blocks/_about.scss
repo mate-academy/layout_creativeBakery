@@ -2,7 +2,16 @@
   $number-of-cols: 8;
 
   &__content {
+    padding: 180px $desktop-paddingX;
     @include limit-content-width;
+  }
+
+  &__row {
+    @include grid-width-columns(8, 2);
+    margin-bottom: 140px;
+  }
+
+  &__wrapper {
     display: grid;
     @include custom-cols($number-of-cols);
   }
@@ -14,5 +23,42 @@
 
   &__description {
     @include body-text;
+  }
+
+  &__amount {
+    @include big-text;
+    color: $accent-orange;
+  }
+
+  &__rank-name {
+    @include body-text;
+  }
+
+  &__background-image {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-self: right;
+
+    background-image: url(/images/photos/Crumbs.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 718px;
+    height: 673px;
+
+    z-index: -2;
+
+    @include for-tablet {
+      width: 526px;
+      height: 493px;
+    }
+
+    @include for-mobile {
+      width: 320px;
+      height: 300px;
+
+      position: relative;
+    }
   }
 }
