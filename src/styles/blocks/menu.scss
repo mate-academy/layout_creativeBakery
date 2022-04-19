@@ -1,10 +1,31 @@
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.menu {
+background-color: #eef7ff;
 
-  &__logo-link {
-    // z-index: 2;
+  @include onDesktop {
+    display: none;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 64px;
+    // margin-bottom: 32px;
+
+    @include onTablet {
+      // margin-bottom: 80px;
+    }
+
+    // @include onDesktop {
+    //   height: 88px;
+    //   margin-bottom: 135px;
+    // }
+
+    // @include onBigDesktop {
+    //   height: 88px;
+    //   margin-bottom: 144px;
+    // }
   }
 
   &__logo {
@@ -18,84 +39,37 @@
     }
   }
 
-  // &__checkbox {
-  //   display: none;
-  // }
+  &__menu-closer {
+    background-image: url(../images/icons/menu-closer.svg);
+    width: 12px;
+    height: 12px;
 
-  &__menu-opener {
-    display: block;
-    cursor: pointer;
+    position: relative;
+    right: 4px;
 
-    // z-index: 2;
+    background-size: contain;
+    background-repeat: no-repeat;
 
-    @include onDesktop {
-      display: none;
-    }
+    transition: background-image 0.4s;
 
-    &::before {
-      content: "";
-      display: block;
-      width: 20px;
-      height: 8px;
-
-      background: url(../images/icons/menu-opener.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-
-    &:hover::before {
-      background-image: url(../images/icons/menu-opener-hover.svg);
+    &:hover {
+      background-image: url(../images/icons/menu-closer-hover.svg);
     }
   }
 
-  // &__checkbox:checked ~ &__menu-opener::before {
-  //   background-image: url(../images/icons/menu-closer.svg);
-  //   width: 12px;
-  //   height: 12px;
-
-  //   position: relative;
-  //   right: 4px;
-
-  //   background-size: contain;
-  //   background-repeat: no-repeat;
-  // }
-
-  &__checkbox:checked ~ &__menu-opener:hover::before {
-    background-image: url(../images/icons/menu-closer-hover.svg);
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 93%;
   }
 
   &__list {
-    z-index: 1;
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    height: 100vh;
-    width: 100vw;
-    transform: translatex(-100%);
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    background-color: #eef7ff;
-
-    transition: transform 0.4s;
-
-    @include onDesktop {
-      position: relative;
-      width: max-content;
-      height: max-content;
-      transform: translatex(0);
-
-      display: flex;
-      flex-direction: row;
-    }
-  }
-
-  &__checkbox:checked ~ .nav__list {
-    transform: translatex(0);
   }
 
   &__item {
