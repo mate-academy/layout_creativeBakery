@@ -1,22 +1,35 @@
 .button {
+  $blockName: &;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  margin: 0 auto;
+  width: 288px;
   height: 56px;
-
+  text-decoration: none;
   border: 2px solid $accentOrange;
   box-sizing: border-box;
   border-radius: 32px;
+  transition: all 0.3s;
+
+  @include onTablet {
+    width: 326px;
+  }
+  @include onDesktop {
+    width: 260px;
+  }
+  @include onWideScreen {
+    width: 280px;
+  }
 
   &__name {
+    display: block;
     position: relative;
     font-weight: 500;
     font-size: 16px;
     line-height: 16px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    text-decoration: none;
     color: $accentOrange;
   }
 
@@ -32,5 +45,21 @@
     background-image: url(../images/favicon.svg);
     background-size: contain;
     background-repeat: no-repeat;
+  }
+
+  &:hover {
+    background-color: $accentOrange;
+    & ::before {
+      background-image: url(../images/favicon_white.svg);
+    }
+
+    & #{$blockName}__name {
+      color: #fff;
+    }
+  }
+
+  &:active {
+    border: 2px solid $darkOrange;
+    background-color: $darkOrange;
   }
 }

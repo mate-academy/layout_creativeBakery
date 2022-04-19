@@ -1,7 +1,7 @@
 .header {
 
   &__container {
-
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -10,15 +10,28 @@
     height: 100vh;
 
     @include onDesktop {
-      padding: 32px 32px 32px 36px;
+      padding: 20px 32px 0 36px;
     }
   }
 
   &__top {
     margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+
+    @include onWideScreen {
+      margin-bottom: 144px;
+    }
   }
 
   &__text {
+    position: relative;
     margin-bottom: 32px;
     font-weight: 400;
     font-size: 16px;
@@ -26,6 +39,20 @@
     text-align: center;
     letter-spacing: -0.01em;
     color: $black;
+
+    @include onTablet {
+      text-align: left;
+      width: 280px;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 8px;
+    }
+
+    @include onWideScreen {
+      margin-bottom: 40px;
+    }
   }
 
   &__title {
@@ -40,16 +67,50 @@
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: $accentOrange;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 68px;
+      margin-bottom: 210px;
+
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      line-height: 116px;
+      margin-bottom: 64px;
+    }
+
+    @include onWideScreen {
+      font-size: 144px;
+      line-height: 122px;
+    }
   }
 
-  &__photo-container {
-    margin-bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 288px;
-  }
   &__photo {
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+
     height: 288px;
+    z-index: -1;
+
+    @include onTablet {
+      height: 326px;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 27%);
+    }
+
+    @include onDesktop {
+      height: 544px;
+      transform: translate(-50%, -24%);
+    }
+
+    @include onWideScreen {
+      height: 584px;
+      transform: translate(-50%, -20%);
+    }
   }
 }

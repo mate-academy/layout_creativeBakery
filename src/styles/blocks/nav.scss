@@ -15,18 +15,14 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+  }
 
-      & .nav__item {
-        margin: 0 0 24px;
-      }
+  &__item--menu {
+    margin: 0 0 24px;
 
-      & .nav__item:nth-of-type(3) {
-        margin: 0 0 32px;
-      }
-
-      // & .nav__link {
-      //   margin: 0;
-      // }
+    &:nth-of-type(3) {
+      margin: 0 0 32px;
     }
   }
 
@@ -38,9 +34,18 @@
     color: $black;
     margin-right: 64px;
     text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $accentOrange;
+    }
 
     &--last {
       position: relative;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.02em;
       text-transform: uppercase;
       color: $accentOrange;
       padding-left: 28px;
@@ -55,6 +60,21 @@
         width: 18px;
         content: "";
         background-image: url(../images/phone.svg);
+      }
+
+      &:hover {
+        color: $darkOrange;
+        &::before {
+          background-image: url(../images/phone_hover.svg);
+        }
+      }
+    }
+
+    &--menu {
+      margin: 0;
+      &:hover:not(.nav__link--last) {
+        border-bottom: 1px solid $accentOrange;
+        padding-bottom: 1px;
       }
     }
   }

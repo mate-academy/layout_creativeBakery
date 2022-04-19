@@ -1,0 +1,32 @@
+.grid {
+
+  @include onTablet {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(8, minmax(64px, 1fr));
+    column-gap: 24px;
+    &__item {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--tablet-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(8, minmax(118px, 1fr));
+
+      &__item {
+        @for $start from 1 through 8 {
+          @for $end from $start through 8 {
+            &--desktop-#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+    }
+  }
+}
