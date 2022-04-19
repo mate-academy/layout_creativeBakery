@@ -33,13 +33,21 @@
         &--#{$str}-#{$end} {
           grid-column: #{$str} / #{$end + 1};
         }
+      }
+    }
 
+    @for $str from 1 through 8 {
+      @for $end from $str through 8 {
         &--desktop-#{$str}-#{$end} {
           @include onDesktop {
             grid-column: #{$str} / #{$end + 1};
           }
         }
+      }
+    }
 
+    @for $str from 1 through 8 {
+      @for $end from $str through 8 {
         &--tablet-#{$str}-#{$end} {
           @include onTablet {
             grid-column: #{$str} / #{$end + 1};
