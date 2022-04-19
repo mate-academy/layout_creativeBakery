@@ -1,6 +1,7 @@
 .gallery {
 
   &__title {
+    color: #f9512e;
     margin-bottom: 24px;
     margin-top: 108px;
 
@@ -26,11 +27,18 @@
   }
 
   &__img {
-    width: 100%;
-    margin-bottom: 16px;
+    width: 288px;
+    height: 356px;
+    max-width: fit-content;
+    margin: 0 auto 16px;
     border-radius: 8px;
 
     transition: transform 0.3s;
+
+    @include onTablet {
+      width: 100%;
+      height: auto;
+    }
 
     &:hover {
       transform: scale(1.05);
