@@ -3,6 +3,12 @@
 @import "../utils/extends";
 
 .card {
+    transition: transform 0.5s;
+
+  &:hover {
+      transform: scale(1.05);
+  }
+
   &__photo-cakes-1 {
     background-image: url("/images/Photo.png");
     background-repeat: no-repeat;
@@ -28,6 +34,12 @@
     @include fontParams(16px, 100%, 500);
     color: $accentOrange;
     text-transform: uppercase;
+
+    &:hover {
+      color: $accentOrange;
+      border-bottom: 1px solid $accentOrange;
+      transition: $transitionDuration;
+    }
   }
 
   &__order-btn::before {

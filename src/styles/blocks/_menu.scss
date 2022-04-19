@@ -20,10 +20,18 @@
     background-repeat: no-repeat;
     width: 24px;
     height: 24px;
+    transition: transform $transitionDuration;
+
+    &:hover {
+      transform: rotate(-180deg);
+    }
   }
 
   &__navbar {
-    margin-top: 132px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 
   &__list {
@@ -40,10 +48,12 @@
   &__link {
     @include fontParams(16px, 150%, 400);
     color: $black;
-  }
 
-  &__link:hover {
-    color: $accentOrange;
+    &:hover {
+      color: $accentOrange;
+      border-bottom: 1px solid $accentOrange;
+      transition: $transitionDuration;
+    }
   }
 
   &__item:last-child &__link {
