@@ -1,0 +1,46 @@
+.button {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $activeColor;
+  transition: all 0.3s linear;
+  width: 100%;
+  height: 56px;
+  border: 2px solid $activeColor ;
+  border-radius: 32px;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: $iconWidth;
+    height: 20px;
+    padding-right: 10px;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/cookiebutdefault.svg);
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: $activeColor;
+
+    &::before {
+      background-image: url(../images/cookiebuthover.svg);
+    }
+  }
+
+  &:active {
+    background-color: $focusColor;
+    border-color: $focusColor;
+  }
+}
