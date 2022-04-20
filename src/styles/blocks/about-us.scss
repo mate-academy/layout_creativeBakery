@@ -1,0 +1,96 @@
+.about-us {
+  &__background {
+    background-image: url(../images/crumbs.png);
+    background-repeat: no-repeat;
+    background-position-y: 544px;
+
+    @include onTablet {
+      background-image: url(../images/crumbs_tablet.png);
+      background-position: 130px 60px;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/crumbs_desktop.png);
+      background-position: 330px 0;
+    }
+  }
+
+  &__story {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__title {
+    @include title;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      width: 328px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 544px;
+    }
+  }
+
+  &__text {
+    @include main-text;
+
+    @include onTablet {
+      width: 328px;
+    }
+
+    @include onDesktop {
+      width: 544px;
+    }
+  }
+
+  &__achievements {
+    padding-bottom: 72px;
+
+    @include onTablet {
+      grid-template-rows: repeat(2, 1fr);
+      gap: 80px 0;
+      padding-bottom: 152px;
+    }
+
+    @include onDesktop {
+      grid-template-rows: 1fr;
+      gap: 0 24px;
+      padding-bottom: 350px;
+    }
+  }
+
+  &__achievements-item {
+    &:not(:last-child) {
+      margin-bottom: 48px;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__achievements-number {
+    margin-bottom: 8px;
+    font-size: 96px;
+    line-height: 82px;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    color: $orange-color;
+  }
+
+  &__achievements-text {
+    @include main-text;
+  }
+}
