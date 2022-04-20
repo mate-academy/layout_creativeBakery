@@ -2,7 +2,7 @@
 @import "../utils/vars";
 
 .footer {
-  background-color: $lightOrange;
+  background-color: $black;
   padding: 56px 0;
 
   @include onTablet {
@@ -76,5 +76,76 @@
     @include onDesktopBig {
       font-size: 72px;
     }
+  }
+
+  &__grid {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 48px;
+    }
+
+    @include onDesktopBig {
+      margin-bottom: 48px;
+    }
+  }
+
+  @include onTablet {
+    &__grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @include onDesktop {
+    &__grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @include onDesktopBig {
+    &__grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+
+    @include onDesktopBig {
+      margin-bottom: 0;
+    }
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+      color: $accentOrange;
+
+      transition: color 0.3s;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  &__copyright {
+    color: $grey;
+    line-height: 150%;
   }
 }
