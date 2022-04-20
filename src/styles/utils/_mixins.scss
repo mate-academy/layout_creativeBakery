@@ -103,10 +103,16 @@
 
 /* GRID */
 
-@mixin grid-width-columns($number-of-cols-desktop, $number-of-cols-mobile) {
+@mixin grid-width-columns($number-of-cols-desktop,
+$number-of-cols-tablet, $number-of-cols-mobile) {
   display: grid;
   grid-template-columns: repeat($number-of-cols-desktop, 1fr);
   column-gap: $grid-gap-desktop;
+
+  @include for-tablet {
+    grid-template-columns: repeat($number-of-cols-tablet, 1fr);
+    column-gap: $grid-gap-tablet;
+  }
 
   @include for-mobile {
     grid-template-columns: repeat($number-of-cols-mobile, 1fr);

@@ -7,13 +7,26 @@
   }
 
   &__row {
-    @include grid-width-columns(8, 2);
+    @include grid-width-columns(8, 2, 1);
     margin-bottom: 140px;
+
+    @include for-mobile {
+      grid-column: unset;
+    }
   }
 
   &__wrapper {
     display: grid;
     @include custom-cols($number-of-cols);
+
+    @include for-tablet {
+      margin-bottom: 80px;
+    }
+
+    @include for-mobile {
+      grid-column: unset;
+      margin-bottom: 48px;
+    }
   }
 
   &__title {

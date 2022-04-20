@@ -23,6 +23,20 @@
   &__wrapper {
     display: grid;
     @include custom-cols($number-of-cols);
+
+    &--desktop {
+      @include for-mobile {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include for-mobile {
+        display: grid;
+      }
+    }
   }
 
   &__logo-link {
@@ -39,6 +53,7 @@
   &__contact-title {
     @include text-h2;
     color: #fff;
+    margin-bottom: 40px;
   }
 
   &__item {
@@ -61,6 +76,10 @@
     &--last-contact {
       margin-bottom: 88px;
     }
+  }
+
+  &__social {
+    margin-bottom: 42px;
   }
 
   &__social-link {

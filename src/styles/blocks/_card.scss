@@ -1,5 +1,14 @@
 .card {
   width: 402px;
+  margin-bottom: 64px;
+
+  @include for-tablet {
+    width: 328px;
+  }
+
+  @include for-mobile {
+    width: 288px;
+  }
 
   @include hover(transform, scale(1.1));
   z-index: 1;
@@ -13,6 +22,16 @@
     width: 402px;
 
     border-radius: 8px;
+
+    @include for-tablet {
+      height: 424px;
+      width: 328px;
+    }
+
+    @include for-mobile {
+      height: 356px;
+      width: 288px;
+    }
   }
 
   &__title {
@@ -32,6 +51,7 @@
     @include text-uppercase;
     color: $accent-orange;
 
+    padding-bottom: 8px;
     border-bottom: 1px solid transparent;
 
     background-image: url(/images/icons/arrow.png);
@@ -39,8 +59,11 @@
     width: 16px;
     height: 16px;
 
+    // margin-bottom: 64px;
+
     &::after {
       content: "order";
+      padding-bottom: 8px;
       padding-left: 24px;
     }
 
