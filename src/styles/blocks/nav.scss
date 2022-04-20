@@ -2,48 +2,57 @@
 @import "../utils/vars";
 
 .nav {
+  height: 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 16px;
-
   @include onDesktop {
-    padding: 0 32px;
+    height: 88px;
   }
 
   @include onDesktopBig {
-    padding: 0 32px;
+    height: 88px;
   }
 
-  &__menu {
-    position: fixed;
-    background-color: $lightPink;
-    width: 60%;
-    height: 100%;
-    top: 0;
-    right: -100%;
-    box-shadow: -2px 0 4px hsla(152, 24%, 15%, 0.1);
-    border-radius: 16px 0 0 16px;
-    padding: 64px 0 0 48px;
-    z-index: 100;
-
-    transition: 0.3s;
+  @include menuMobile {
+    &__menu {
+      position: fixed;
+      background-color: $lightPink;
+      width: 70%;
+      height: 100%;
+      top: 0;
+      right: -100%;
+      box-shadow: -2px 0 4px hsla(152, 24%, 15%, 0.1);
+      padding-top: 132px;
+      border-radius: 16px 0 0 16px;
+      transition: all 0.3s;
+      z-index: 100;
+    }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
+    text-align: center;
     row-gap: 24px;
+
+    @include onDesktop {
+      flex-direction: row;
+      column-gap: 64px;
+    }
+
+    @include onDesktopBig {
+      flex-direction: row;
+      column-gap: 64px;
+    }
   }
 
   &__link {
+    display: flex;
+    justify-content: center;
     color: $black;
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: -0.01em;
     text-decoration: none;
-
     transition: color 0.3s;
 
     &:hover {
@@ -52,6 +61,7 @@
 
     &-call {
       display: flex;
+      justify-content: center;
 
       color: $accentOrange;
       font-weight: 500;
@@ -70,6 +80,14 @@
 
     transition: color 0.3s;
 
+    @include onDesktop {
+      display: none;
+    }
+
+    @include onDesktopBig {
+      display: none;
+    }
+
     &:hover {
       color: $accentOrange;
       cursor: pointer;
@@ -84,6 +102,14 @@
     right: 16px;
 
     transition: color 0.3s;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    @include onDesktopBig {
+      display: none;
+    }
 
     &:hover {
       color: $accentOrange;

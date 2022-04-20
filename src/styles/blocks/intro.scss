@@ -4,54 +4,87 @@
 .intro {
 
   &__subtitle {
-    text-align: center;
-    line-height: 150%;
+    position: relative;
     margin-bottom: 32px;
 
+    color: $black;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: -0.01em;
+
     @include onTablet {
-      text-align: start;
+      text-align: left;
+      width: 280px;
+      margin-bottom: 146px;
     }
 
     @include onDesktop {
-      text-align: start;
+      margin-bottom: 8px;
     }
 
     @include onDesktopBig {
-      text-align: start;
+      margin-bottom: 40px;
     }
   }
 
   &__title {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    color: $accentOrange;
     font-weight: 400;
     font-size: 64px;
-    line-height: 85%;
+    line-height: 54px;
     text-align: center;
     letter-spacing: -0.05em;
     text-transform: uppercase;
-    color: $accentOrange;
 
     @include onTablet {
-      font-size: 80px;
+      font-size: 66px;
+      line-height: 68px;
+      margin-bottom: 210px;
+
     }
 
     @include onDesktop {
-      font-size: 136px;
+      font-size: 118px;
+      line-height: 116px;
+      margin-bottom: 64px;
     }
 
     @include onDesktopBig {
       font-size: 144px;
+      line-height: 122px;
     }
   }
 
   &__image {
-    display: inline-block;
-    width: 100%;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+
+    height: 288px;
     z-index: -1;
 
     @include onTablet {
-      margin-bottom: 80px;
+      height: 326px;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 20%);
+    }
+
+    @include onDesktop {
+      height: 544px;
+      transform: translate(-50%, -25%);
+    }
+
+    @include onDesktopBig {
+      height: 584px;
+      transform: translate(-50%, -25%);
     }
   }
 
@@ -94,7 +127,19 @@
 
     transition: color 0.3s;
 
-    &--icon {
+    @include onTablet {
+      padding: 20px 64px;
+    }
+
+    @include onDesktop {
+      padding: 20px 32px;
+    }
+
+    @include onDesktopBig {
+      padding: 20px 60px;
+    }
+
+    &-icon {
       margin-right: 4px;
     }
 

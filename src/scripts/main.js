@@ -33,3 +33,32 @@ function linkAction() {
   navMenuMobile.classList.remove('show-menu');
 }
 navLink.forEach(n => n.addEventListener('click', linkAction));
+
+/* ========== CHANGE BACKGROUND HEADER ========== */
+
+function scrollHeader() {
+  const header = document.getElementById('header');
+  // When the scroll is greater than 80 viewport height,
+  // add the scroll-header class to the header tag
+
+  if (this.scrollY >= 80) {
+    header.classList.add('scroll-header');
+  } else {
+    header.classList.remove('scroll-header');
+  }
+}
+window.addEventListener('scroll', scrollHeader);
+
+/* ========== SHOW SCROLL UP ========= */
+function scrollUp() {
+  const scroll = document.getElementById('scroll-up');
+  // When the scroll is higher than 400 viewport height,
+  // add the show-scroll class to the a tag with the scroll-top class
+
+  if (this.scrollY >= 400) {
+    scroll.classList.add('show-scroll');
+  } else {
+    scroll.classList.remove('show-scroll');
+  }
+}
+window.addEventListener('scroll', scrollUp);
