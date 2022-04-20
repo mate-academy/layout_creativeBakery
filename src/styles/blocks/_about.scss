@@ -1,22 +1,21 @@
 .about {
   $number-of-cols: 8;
+  padding: 180px $desktop-paddingX 0;
 
   &__content {
-    padding: 180px $desktop-paddingX;
     @include limit-content-width;
+    @include grid-width-columns(8, 2, 1);
   }
 
   &__row {
-    @include grid-width-columns(8, 2, 1);
     margin-bottom: 140px;
 
     @include for-mobile {
-      grid-column: unset;
+      margin-bottom: 72px;
     }
   }
 
   &__wrapper {
-    display: grid;
     @include custom-cols($number-of-cols);
 
     @include for-tablet {
@@ -24,7 +23,6 @@
     }
 
     @include for-mobile {
-      grid-column: unset;
       margin-bottom: 48px;
     }
   }
@@ -71,8 +69,9 @@
     @include for-mobile {
       width: 320px;
       height: 300px;
+      grid-column: unset;
 
-      position: relative;
+      // position: relative;
     }
   }
 }
