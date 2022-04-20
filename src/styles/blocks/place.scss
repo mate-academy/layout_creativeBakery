@@ -50,7 +50,7 @@
     line-height: 100%;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: #f9512e;
+    color: $main-color-orange;
     position: relative;
 
     @include onTablet {
@@ -67,12 +67,23 @@
       transform: translateY(-50%);
       width: 16px;
       height: 16px;
+
+      transition: background-image 0.4s;
+    }
+
+    &:active::before {
+      background-image: url(../images/icons/arrow-focus.svg);
     }
 
     transition: text-shadow 0.4s;
 
     &:hover {
-      color: #f9512e;
+      color: $main-color-orange;
+      text-shadow: 0.5px 0.5px 10px;
+    }
+
+    &:active {
+      color: $main-color-orange-active;
       text-shadow: 0.5px 0.5px 10px;
     }
   }
