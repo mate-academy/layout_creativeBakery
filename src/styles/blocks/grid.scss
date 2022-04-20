@@ -5,6 +5,7 @@
     justify-content: center;
     grid-template-columns: repeat(8, minmax(64px, 1fr));
     column-gap: 24px;
+
     &__item {
       @for $start from 1 through 8 {
         @for $end from $start through 8 {
@@ -27,6 +28,10 @@
           }
         }
       }
+    }
+
+    @include onWideScreen {
+      grid-template-columns: repeat(8, minmax(128px, 1fr));
     }
   }
 }
