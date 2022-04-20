@@ -1,0 +1,93 @@
+.products {
+
+  &__card {
+    margin-top: 56px;
+
+    @include onDesktop {
+      margin-top: 80px;
+
+    }
+
+  }
+  // .products__title
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  // .products__subtitle
+
+  &__subtitle {
+    display: block;
+  }
+
+  // .products__image
+
+  &__image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: all 0.3s linear;
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  // .products__name
+
+  &__name {
+    //styleName: Uppercase;
+    margin: 0 0 8px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: uppercase;
+    color: #7f8096;
+
+  }
+
+  &__descript {
+    display: block;
+    height: 48px;
+    margin-bottom: 24px;
+  }
+
+  // .products__order
+
+  &__order {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    box-sizing: content-box;
+    width: 84px;
+    text-transform: uppercase;
+    color: $activeColor;
+    line-height: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s linear;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-image: url(../images/arrow.svg);
+    }
+
+    &:hover {
+      color: $focusColor;
+
+      &::before {
+        background-image: url(../images/arrow-hover.svg);
+      }
+    }
+
+  }
+}
