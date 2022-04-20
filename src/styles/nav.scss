@@ -24,6 +24,12 @@
   &__item {
     white-space: nowrap;
 
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $c-accentOrangeColor;
+      color: $c-darkOrange;
+    }
+
     &:last-child {
       color: $c-accentOrangeColor;
       font-weight: 500;
@@ -33,23 +39,17 @@
   }
 
   &__item:last-child &__link::before {
-    display: inline;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     content: url("../images/svg/Icon-phone.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     margin-right: 7px;
-    transform: translate(-100%, 50%);
   }
 
   &__link {
     padding: 32px 0;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom-color ease-in-out $transitionDuration,
-      color ease-in-out $transitionDuration;
-
-    &:hover {
-      border-bottom-color: $c-accentOrangeColor;
-      color: $c-darkOrange;
-    }
   }
 }
