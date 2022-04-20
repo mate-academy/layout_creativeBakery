@@ -1,6 +1,12 @@
 .page {
+  scroll-behavior: smooth;
+
   &__body {
     background-color: $body-bg;
+  }
+
+  &__body--with-menu {
+    overflow: hidden;
   }
 
   &__menu {
@@ -14,6 +20,10 @@
 
     &:target {
       transform: translateX(0);
+    }
+
+    @include onDesktop {
+      display: none;
     }
   }
 }
