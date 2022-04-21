@@ -1,7 +1,9 @@
 .grid {
+  box-sizing: content-box;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 16px;
+  width: 100%;
 
   @include onDesktop {
     grid-template-columns: repeat(8, minmax(64px, 118px));
@@ -12,8 +14,11 @@
     grid-template-columns: repeat(8, minmax(118px, 128px));
   }
 
+  &--desktop {
+    width: 100%;
+  }
+
   &__item {
-    display: inline-block;
     margin: 0;
     @for $start from 1 through 2 {
       @for $end from $start through 2 {
