@@ -37,24 +37,14 @@
     letter-spacing: -0.01em;
   }
 
-  &__year {
-    grid-column: 1/3;
-  }
-
-  &__stores {
-    grid-column: 3/5;
-  }
-
-  &__company {
-    grid-column: 5/7;
-  }
-
-  &__clients {
-    grid-column: 7/-1;
+  .wrapper-static {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center
   }
 
   &__statistic-num {
-    @include fontParams (80px, 150%, 500);
+    @include fontParams (96px, 150%, 400);
     margin-top: 144px;
   }
 
@@ -74,20 +64,10 @@
       @include fontParams (56px, 85%, 400);
     }
 
-    &__year {
-      grid-column: 1/5;
-    }
-
-    &__stores {
-      grid-column: 6/-1;
-    }
-
-    &__company {
-      grid-column: 1/5;
-    }
-
-    &__clients {
-      grid-column: 6/-1;
+    .wrapper-static {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      text-align: center
     }
   }
 
@@ -97,6 +77,12 @@
       column-gap: $gridGapMobile;
       max-width: $desktopMaxWidth;
       margin-top: 80px;
+    }
+
+    .wrapper-static {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      text-align: start;
     }
 
     &__bg-img {
@@ -113,22 +99,6 @@
     &__text {
       grid-column: 1/-1;
       margin-top: 32px;
-    }
-
-    &__year {
-      grid-column: 1/-1;
-    }
-
-    &__stores {
-      grid-column: 1/-1;
-    }
-
-    &__company {
-      grid-column: 1/-1;
-    }
-
-    &__clients {
-      grid-column: 1/-1;
     }
 
     &__statistic-num {
