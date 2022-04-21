@@ -5,17 +5,13 @@
     padding: 0 $desktop-paddingX;
     @include limit-content-width;
 
-    display: grid;
-    @include custom-cols($number-of-cols);
-    column-gap: $grid-gap-desktop;
-
     @include for-tablet {
       padding: 0 $tablet-paddingX;
     }
 
     @include for-mobile {
       padding: $desktop-paddingX;
-      column-gap: $grid-gap-mobile;
+      grid-column: unset;
     }
   }
 
@@ -31,9 +27,8 @@
   }
 
   &__row {
-    // display: grid;
     margin-bottom: 80px;
-    @include grid-width-columns($number-of-cols, 4, 1);
+    @include grid-width-columns($number-of-cols, 2, 1);
 
     @include for-mobile {
       margin-bottom: 0;

@@ -4,21 +4,21 @@
   height: 100vh;
 
   &__content {
-    display: grid;
-    @include custom-cols($number-of-cols);
-    column-gap: $grid-gap-desktop;
+    @include limit-content-width;
 
     padding: 0 $desktop-paddingX;
-    @include limit-content-width;
+
+    // display: grid;
+    @include custom-cols($number-of-cols);
+    // column-gap: $grid-gap-desktop;
 
     @include for-tablet {
       padding: 0 $tablet-paddingX;
     }
 
     @include for-mobile {
-      padding: 0 $desktop-paddingX;
-      column-gap: $grid-gap-mobile;
-      grid-column: unset;
+      padding: 0 $mobile-paddingX;
+      // column-gap: $grid-gap-mobile;
     }
   }
 
@@ -27,8 +27,33 @@
     justify-content: space-between;
   }
 
+  // &__content-wrapper {
+  //   padding: 0 $desktop-paddingX;
+
+  //   display: grid;
+  //   @include custom-cols($number-of-cols);
+  //   column-gap: $grid-gap-desktop;
+
+  //   @include for-tablet {
+  //     padding: 0 $tablet-paddingX;
+  //   }
+
+  //   @include for-mobile {
+  //     padding: 0 $mobile-paddingX;
+  //     column-gap: $grid-gap-mobile;
+  //   }
+  // }
+
+  // &__row {
+  //   // @include grid-width-columns(8, 8, 1);
+  // }
+
   &__logo-wrapper {
     padding: 32px 36px;
+
+    @include for-tablet {
+      padding: 20px;
+    }
   }
 
   &__logo {
@@ -50,8 +75,8 @@
   &__title {
     margin-top: 8px;
     @include text-h1;
-    font-size: 136px;
     color: $accent-orange;
+    width: 100%;
 
     @include for-mobile {
       margin-top: 32px;
@@ -135,5 +160,36 @@
 
   &__button-image {
     padding-right: 6px;
+  }
+
+  &__menu-wrapper {
+    height: 8px;
+
+    @include for-tablet {
+      padding: 28px $tablet-paddingX;
+    }
+
+    @include for-mobile {
+      padding: 28px $mobile-paddingX;
+    }
+  }
+
+  &__menu-toggler {
+    display: block;
+    width: 20px;
+    height: 8px;
+
+    border: none;
+
+    background-color: transparent;
+    background-image: url(/images/icons/burger.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
   }
 }

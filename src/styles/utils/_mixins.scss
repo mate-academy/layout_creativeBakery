@@ -9,15 +9,10 @@
 /* text params */
 
 @mixin text-h1 {
-  font-size: 144px;
-  line-height: 122px;
+  font-size: 136px;
+  line-height: 116px;
   text-transform: uppercase;
   letter-spacing: -0.05em;
-
-  @media (max-width: 1199px) {
-    font-size: 136px;
-    line-height: 116px;
-  }
 
   @media (max-width: $tablet-breakpoint) {
     font-size: 80px;
@@ -123,14 +118,14 @@ $number-of-cols-tablet, $number-of-cols-mobile) {
 @mixin custom-cols($number-of-cols) {
   @for $start from 1 through $number-of-cols {
     @for $end from $start through $number-of-cols {
-      &--cols--#{$start}-#{$end} {
+      &--#{$start}-#{$end} {
         grid-column: #{$start} / #{$end + 1};
       }
     }
-  }
 
-  @include for-mobile {
-    grid-column: unset;
+    // @include for-mobile {
+    //   grid-column: unset;
+    // }
   }
 }
 

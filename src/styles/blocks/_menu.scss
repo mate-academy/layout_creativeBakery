@@ -1,30 +1,29 @@
 .menu {
   height: 100vh;
 
-  padding: 32px $desktop-paddingX;
-
-  background-color: $main-accent;
-
-  @include for-mobile {
-    padding-left: $mobile-paddingX;
-    padding-right: $mobile-paddingX;
+  @include for-tablet {
+    padding: 28px $tablet-paddingX;
   }
 
-  &__content-wrapper {
+  @include for-mobile {
+    padding: 20px $mobile-paddingX;
+  }
+
+  &__content {
     @include limit-content-width;
   }
 
   &__top-wrapper {
-    @include grid-width-columns(2, 2, 2);
-    align-items: center;
-    margin-bottom: 55px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
   }
 
   &__toggler {
     width: 14px;
     height: 14px;
 
-    justify-self: right;
+    // justify-self: right;
 
     border: none;
 
@@ -36,28 +35,30 @@
     cursor: pointer;
   }
 
-  &__logo-link {
-    justify-self: left;
+  &__logo {
+    width: 130px;
+    height: 25px;
   }
 
   &__link {
     display: block;
     width: max-content;
 
-    margin-bottom: 8px;
-
     padding: 8px, 0;
     border-bottom: 1px solid transparent;
 
-    @include font-param(16px, 27px, 700);
-    text-transform: uppercase;
-
-    &--border {
-      border-bottom-color: #fff;
-    }
+    @include body-text;
 
     &:last-child {
-      margin-top: 16px;
+      margin-top: 32px;
+    }
+  }
+
+  &__nav {
+    padding: 0 $tablet-paddingX;
+
+    @include for-mobile {
+      padding: 0 $mobile-paddingX;
     }
   }
 }
