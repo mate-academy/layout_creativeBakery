@@ -2,37 +2,34 @@
   padding: 180px $desktop-paddingX 0;
 
   background-image: url(/images/photos/Crumbs.png);
-  background-size: 60%;
+  background-size: 50%;
   background-repeat: no-repeat;
-  background-position: bottom 10% right 10%;
+  background-position: bottom 10% right 20%;
 
   @include for-tablet {
     background-position: center;
+    background-size: 70%;
+    padding: 160px $tablet-paddingX 0;
   }
 
   @include for-mobile {
     background-position: center;
+    background-size: 100%;
+    padding: 80px $mobile-paddingX 0;
   }
 
   &__content {
     @include limit-content-width;
   }
 
-  &__wrapper {
-    @include for-tablet {
-      margin-bottom: 80px;
-    }
-
-    @include for-mobile {
-      margin-bottom: 48px;
-      // grid-column: unset;
-    }
-  }
-
   &__title {
     @include text-h2;
     color: $accent-orange;
     margin-bottom: 140px;
+
+    @include for-tablet {
+      margin-bottom: 192px;
+    }
 
     @include for-mobile {
       margin-bottom: 72px;
@@ -41,6 +38,10 @@
 
   &__description {
     @include body-text;
+
+    @include for-mobile {
+      margin-bottom: 64px;
+    }
   }
 
   &__amount {
@@ -55,16 +56,17 @@
 
     @include for-tablet {
       margin-bottom: 80px;
+
+      &--last {
+        margin-bottom: 152px;
+      }
     }
 
-    &:last-child {
-      @include for-tablet {
-        margin-bottom: 150px;
-      }
+    @include for-mobile {
+      margin-bottom: 48px;
 
-      @include for-mobile {
-        margin-bottom: 48px;
-        grid-column: unset;
+      &--last {
+        margin-bottom: 72px;
       }
     }
   }

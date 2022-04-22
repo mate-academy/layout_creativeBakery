@@ -1,6 +1,4 @@
 .header {
-  $number-of-cols: 8;
-
   height: 100vh;
 
   background-image: url(/images/photos/Cookie.png);
@@ -13,14 +11,15 @@
     background-size: 40%;
   }
 
+  @include for-mobile {
+    background-position: top 284px center;
+    background-size: 80%;
+  }
+
   &__content {
     @include limit-content-width;
 
     padding: 0 $desktop-paddingX;
-
-    // display: grid;
-    @include custom-cols($number-of-cols);
-    // column-gap: $grid-gap-desktop;
 
     @include for-tablet {
       padding: 0 $tablet-paddingX;
@@ -28,7 +27,6 @@
 
     @include for-mobile {
       padding: 0 $mobile-paddingX;
-      // column-gap: $grid-gap-mobile;
     }
   }
 
@@ -36,27 +34,6 @@
     display: flex;
     justify-content: space-between;
   }
-
-  // &__content-wrapper {
-  //   padding: 0 $desktop-paddingX;
-
-  //   display: grid;
-  //   @include custom-cols($number-of-cols);
-  //   column-gap: $grid-gap-desktop;
-
-  //   @include for-tablet {
-  //     padding: 0 $tablet-paddingX;
-  //   }
-
-  //   @include for-mobile {
-  //     padding: 0 $mobile-paddingX;
-  //     column-gap: $grid-gap-mobile;
-  //   }
-  // }
-
-  // &__row {
-  //   // @include grid-width-columns(8, 8, 1);
-  // }
 
   &__logo-wrapper {
     padding: 32px 36px;
@@ -92,41 +69,12 @@
     margin-top: 8px;
     @include text-h1;
     color: $accent-orange;
-    width: 100%;
+    text-align: center;
 
     @include for-mobile {
-      // margin-top: 32px;
       text-align: center;
     }
   }
-
-  // &__background-image {
-  //   display: flex;
-  //   flex-direction: row;
-  //   position: absolute;
-  //   justify-self: center;
-
-  //   background-image: url(/images/photos/Cookie.png);
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-
-  //   width: 584px;
-  //   height: 586px;
-
-  //   z-index: -1;
-
-  //   @include for-tablet {
-  //     width: 326px;
-  //     height: 328px;
-  //   }
-
-  //   @include for-mobile {
-  //     width: 288px;
-  //     height: 290px;
-
-  //     position: relative;
-  //   }
-  // }
 
   &__button {
     margin-top: 64px;
@@ -149,7 +97,11 @@
     cursor: pointer;
 
     @include for-tablet {
-      margin-top: 210px;
+      margin-top: 75%;
+    }
+
+    @include for-mobile {
+      margin-top: 90%;
     }
 
     &:hover {
@@ -171,10 +123,14 @@
 
     }
 
-    &:disabled {
+    &:visited {
       background-color: transparent;
       color: $light-orange;
       border-color: $light-orange;
+      img {
+        filter: invert(75%) sepia(39%) saturate(1155%)
+          brightness(113%) contrast(97%);
+      }
     }
   }
 

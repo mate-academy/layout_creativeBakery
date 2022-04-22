@@ -1,5 +1,4 @@
 .promo {
-  $number-of-cols: 8;
 
   &__content {
     padding: 0 $desktop-paddingX;
@@ -11,7 +10,6 @@
 
     @include for-mobile {
       padding: $desktop-paddingX;
-      grid-column: unset;
     }
   }
 
@@ -28,23 +26,18 @@
 
   &__row {
     margin-bottom: 80px;
-    @include grid-width-columns($number-of-cols, 2, 1);
 
     @include for-mobile {
       margin-bottom: 0;
+      justify-items: center;
     }
   }
 
   &__card {
     position: relative;
-    @include custom-cols($number-of-cols);
-
-    @include for-tablet {
-      @include custom-cols(4);
-    }
 
     @include for-mobile {
-      grid-column: unset;
+      justify-content: center;
     }
   }
 }
