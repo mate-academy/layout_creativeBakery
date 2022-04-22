@@ -3,6 +3,16 @@
 
   height: 100vh;
 
+  background-image: url(/images/photos/Cookie.png);
+  background-size: 30%;
+  background-position: top 88px center;
+  background-repeat: no-repeat;
+
+  @include for-tablet {
+    background-position: top 208px center;
+    background-size: 40%;
+  }
+
   &__content {
     @include limit-content-width;
 
@@ -66,7 +76,13 @@
     margin-top: 135px;
     @include body-text;
 
+    @include for-tablet {
+      margin-top: 80px;
+      margin-bottom: 140px;
+    }
+
     @include for-mobile {
+      margin-bottom: 32px;
       margin-top: 32px;
       text-align: center;
     }
@@ -79,38 +95,38 @@
     width: 100%;
 
     @include for-mobile {
-      margin-top: 32px;
+      // margin-top: 32px;
       text-align: center;
     }
   }
 
-  &__background-image {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    justify-self: center;
+  // &__background-image {
+  //   display: flex;
+  //   flex-direction: row;
+  //   position: absolute;
+  //   justify-self: center;
 
-    background-image: url(/images/photos/Cookie.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+  //   background-image: url(/images/photos/Cookie.png);
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
 
-    width: 584px;
-    height: 586px;
+  //   width: 584px;
+  //   height: 586px;
 
-    z-index: -1;
+  //   z-index: -1;
 
-    @include for-tablet {
-      width: 326px;
-      height: 328px;
-    }
+  //   @include for-tablet {
+  //     width: 326px;
+  //     height: 328px;
+  //   }
 
-    @include for-mobile {
-      width: 288px;
-      height: 290px;
+  //   @include for-mobile {
+  //     width: 288px;
+  //     height: 290px;
 
-      position: relative;
-    }
-  }
+  //     position: relative;
+  //   }
+  // }
 
   &__button {
     margin-top: 64px;
@@ -131,6 +147,10 @@
     background-color: transparent;
 
     cursor: pointer;
+
+    @include for-tablet {
+      margin-top: 210px;
+    }
 
     &:hover {
       background-color: $accent-orange;
@@ -164,12 +184,15 @@
 
   &__menu-wrapper {
     height: 8px;
+    display: none;
 
     @include for-tablet {
+      display: block;
       padding: 28px $tablet-paddingX;
     }
 
     @include for-mobile {
+      display: block;
       padding: 28px $mobile-paddingX;
     }
   }

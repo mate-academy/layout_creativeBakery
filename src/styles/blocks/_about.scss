@@ -1,6 +1,18 @@
 .about {
-  $number-of-cols: 8;
   padding: 180px $desktop-paddingX 0;
+
+  background-image: url(/images/photos/Crumbs.png);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: bottom 10% right 10%;
+
+  @include for-tablet {
+    background-position: center;
+  }
+
+  @include for-mobile {
+    background-position: center;
+  }
 
   &__content {
     @include limit-content-width;
@@ -13,7 +25,7 @@
 
     @include for-mobile {
       margin-bottom: 48px;
-      grid-column: unset;
+      // grid-column: unset;
     }
   }
 
@@ -42,42 +54,18 @@
     margin-bottom: 350px;
 
     @include for-tablet {
-      margin-bottom: 150px;
+      margin-bottom: 80px;
     }
 
     &:last-child {
-      @include for-mobile {
-        margin-bottom: 72px;
+      @include for-tablet {
+        margin-bottom: 150px;
       }
-    }
-  }
 
-  &__background-image {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    justify-self: right;
-
-    background-image: url(/images/photos/Crumbs.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    width: 718px;
-    height: 673px;
-
-    z-index: -2;
-
-    @include for-tablet {
-      width: 526px;
-      height: 493px;
-    }
-
-    @include for-mobile {
-      width: 320px;
-      height: 300px;
-      grid-column: unset;
-
-      // position: relative;
+      @include for-mobile {
+        margin-bottom: 48px;
+        grid-column: unset;
+      }
     }
   }
 }
