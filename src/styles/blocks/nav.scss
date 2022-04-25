@@ -1,0 +1,124 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    display: block;
+    width: 128px;
+    height: 24px;
+    transition: transform 0.4s;
+
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+
+  &__menu-opener {
+    display: block;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &:hover {
+      transform: scale(1.07);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 8px;
+
+      background: url(../images/icons/menu-opener.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      transition: transform 0.4s;
+    }
+
+    &:hover::before {
+      background-image: url(../images/icons/menu-opener-hover.svg);
+      transform: scale(1.08);
+    }
+  }
+
+  &__list {
+    display: none;
+
+    background-color: #eef7ff;
+
+    transition: transform 0.4s;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      margin-right: 64px;
+
+      &:last-child {
+        padding-left: 25px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: $color-black;
+
+    transition: color 0.4s, text-shadow 0.4s;
+
+    &:hover {
+      color: $main-color-orange;
+      text-shadow: 0.5px 0.5px 10px;
+    }
+
+    &:active {
+      color: $main-color-orange-active;
+      text-shadow: 0.5px 0.5px 10px;
+    }
+  }
+
+  &__link--contact {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $main-color-orange;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-image: url(../images/icons/call.svg);
+      display: block;
+      position: absolute;
+      top: 0;
+      transition: background-image 0.4s;
+      transform: translatex(-100%);
+      padding-right: 7px;
+
+      width: 18px;
+      height: 18px;
+
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:active::after {
+      background-image: url(../images/icons/call-hover.svg);
+    }
+  }
+}
