@@ -1,0 +1,139 @@
+@import "../utils/mixins.scss";
+@import "../utils/vars.scss";
+
+.header {
+  padding: 232px 124px 178px;
+  background-image: url(../images/Cookie.png);
+  background-repeat: no-repeat;
+  background-position: center top 88px;
+
+  @include laptop {
+    padding: 223px 44px 218px;
+  }
+
+  @include tablet {
+    padding: 144px 44px 100px;
+    background-position: center top 208px;
+    background-size: 326px 328px;
+  }
+
+  @include mobile {
+    padding: 96px 16px 120px;
+    background-position: center top 284px;
+    background-size: 288px 290px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    // width: 109%;
+    margin: 0 auto;
+    max-width: 1440px;
+    margin-bottom: 144px;
+    position: absolute;
+    left: 36px;
+    top: 32px;
+    right: 32px;
+
+    @include tablet {
+      left: 20px;
+      right: 18px;
+      top: 20px;
+    }
+
+    @include tablet {
+      left: 20px;
+      right: 18px;
+      top: 20px;
+    }
+
+    @include mobile {
+      left: 20px;
+      right: 20px;
+      top: 20px;
+    }
+
+  }
+
+  &__logo {
+    z-index: 11;
+
+  }
+
+  &__nav {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__link {
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: $transition;
+    justify-content: center;
+
+    &--active {
+      color: $orange;
+    }
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  &__suptitle {
+    margin-bottom: 40px;
+
+    @include tablet {
+      grid-column: 1 / 5;
+      margin-bottom: 146px;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__title {
+    color: $orange;
+    text-align: center;
+    margin-bottom: 80px;
+
+    @include laptop {
+      font-size: 115px;
+    }
+
+    @include tablet {
+      font-size: 80px;
+      margin-bottom: 200px;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      font-size: 64px;
+      margin-bottom: 300px;
+    }
+  }
+
+  &__button {
+
+    @include tablet {
+      grid-column: 3 / 7;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+    }
+  }
+}
