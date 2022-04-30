@@ -1,0 +1,84 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88px;
+  padding: 0 32px;
+
+  @include iPad {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  @include iPhone {
+    height: 64px;
+    padding: 0 20px 0 16px;
+  }
+
+  &__list {
+    display: flex;
+
+    @include iPad {
+      display: none;
+    }
+
+    @include iPhone {
+      display: none;
+    }
+  }
+
+  &__item {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+    margin-left: 64px;
+    text-decoration: none;
+
+    &:last-child {
+      text-transform: uppercase;
+      font-weight: 500;
+      position: relative;
+      color: #f9512e;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image: url(../images/Icon-phone.svg);
+        position: absolute;
+        left: -25px;
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include iPad {
+      display: block;
+    }
+
+    @include iPhone {
+      display: block;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #1c1a26;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 2px;
+      margin-top: 4px;
+      background-color: #1c1a26;
+    }
+  }
+}
