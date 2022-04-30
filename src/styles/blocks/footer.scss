@@ -1,0 +1,136 @@
+@import "../utils/mixins.scss";
+@import "../utils/vars.scss";
+
+.footer {
+  background: $black;
+  padding: 90px 124px;
+
+  @include laptop {
+    padding: 90px 44px;
+  }
+
+  @include tablet {
+    padding: 90px 44px;
+  }
+
+  @include mobile {
+    padding: 61px 16px;
+  }
+
+  &__logo {
+    margin-bottom: 65px;
+
+    @include mobile {
+      grid-column: 1 / 3;
+      margin-bottom: 45px;
+    }
+  }
+
+  &__title {
+    color: $white;
+    margin-bottom: 40px;
+
+    @include tablet {
+      font-size: 56px;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      grid-row: 3 / 4;
+      margin-bottom: 40px;
+      font-size: 48px;
+    }
+  }
+
+  &__subtitle {
+    color: $gray;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 50px;
+
+    @include tablet {
+      margin-bottom: 24px;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__call {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include mobile {
+      grid-column: 1 / 3;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__mail {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include tablet {
+      grid-column: 5 / 9;
+      margin-bottom: 48px;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      margin-bottom: 42px;
+    }
+  }
+
+  &__link {
+    color: $white;
+    transition: $transition;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      grid-column: 1 / 3;
+      align-self: end;
+      grid-row: 4 / 5;
+    }
+
+    @include mobile {
+      grid-column: 1 / 2;
+      margin-bottom: 42px;
+    }
+  }
+
+  &__path {
+    transition: $transition;
+  }
+
+  &__svg {
+
+    &:hover .footer__path {
+      fill: $white;
+    }
+  }
+
+  &__copyright {
+    color: $gray;
+
+    @include mobile {
+      grid-column: 1 / 3;
+    }
+  }
+}
