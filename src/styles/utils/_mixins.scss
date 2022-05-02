@@ -4,3 +4,93 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onMobile {
+  @media (max-width: $maxMobileWidth) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $minTabletWidth) and (max-width: $maxTabletWidth) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $minDesktopWidth) and (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin onLargeDesktop {
+  @media (min-width: $desktop-plus) {
+    @content;
+  }
+}
+
+@mixin header ($_font-size) {
+  font-style: normal;
+  font-weight: 400;
+  font-size: $_font-size;
+  line-height: 85%;
+  // text-align: center;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  letter-spacing: -0.01em;
+
+  color: $black;
+}
+
+@mixin button-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: $accent-orange;
+  text-decoration: none;
+}
+
+@mixin about-us-size--tablet {
+  @include onTablet {
+    width: $about-us-card-size--tablet;
+  }
+}
+
+@mixin hover {
+  &:hover {
+    background-color: $accent-orange;
+  }
+
+  &:hover .button__text {
+    color: $white;
+  }
+
+  &:hover .button__svg {
+    background-image: url(../images/favicon-white.png);
+  }
+}
+
+@mixin focus {
+  &:focus {
+    background-color: $dark-orange;
+  }
+
+  &:focus .button__text {
+    color: $white;
+  }
+
+  &:focus .button__svg {
+    background-image: url(../images/favicon-white.png);
+  }
+}
