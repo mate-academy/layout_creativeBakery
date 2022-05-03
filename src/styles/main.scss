@@ -15,23 +15,20 @@ a {
 .page {
   &__menu {
     position: fixed;
-    top: 0;
-    left: 0;
+    @include poz-0;
     right: 0;
 
     transform: translateY(-100%);
 
     @include onDesktop {
       position: absolute;
-      top: 0;
-      left: 0;
+      @include poz-0;
       transform: translateY(0);
     }
 
     @include onLargeDesktop {
       position: absolute;
-      top: 0;
-      left: 0;
+      @include poz-0;
       transform: translateY(0);
     }
 
@@ -114,7 +111,7 @@ a {
   align-items: center;
 
   @include onTablet {
-    padding: 0 16px 0 20px;
+    padding: 0 16px;
   }
 
   @include onLargeDesktop {
@@ -222,6 +219,7 @@ a {
       display: flex;
       justify-content: center;
       align-items: center;
+
       margin: 146px 0 210px;
 
       width: 680px;
@@ -242,8 +240,9 @@ a {
     }
 
     @include onLargeDesktop {
-      @include header (130px);
       width: 100%;
+
+      @include header (130px);
       margin: 0 0 64px;
       white-space: nowrap;
     }
@@ -323,8 +322,7 @@ a {
   @include focus;
 
   &__svg {
-    width: 20px;
-    height: 20px;
+    @include square (20px);
 
     background-image: url(../images/favicon.png);
     background-repeat: no-repeat;
@@ -344,19 +342,13 @@ a {
   &__text {
     @include button-text;
     white-space: nowrap;
-
-    // &:hover {
-    //   color: $white;
-    // }
   }
 }
 
 .logo {
   &__image {
-    // display: block;
     height: 24px;
     width: 128px;
-    // padding-bottom: 100%;
 
     &--menu {
       @include onDesktop {
@@ -433,7 +425,6 @@ a {
 
     @include onDesktop {
       top: 0;
-      // right: 0;
     }
 
     @include onLargeDesktop {
@@ -457,7 +448,6 @@ a {
       display: flex;
       flex-direction: row;
 
-      // padding: 28px 32px;
     }
   }
 
@@ -477,6 +467,7 @@ a {
 
     @include onDesktop {
       margin: 0;
+
       &:nth-child(-n + 3) {
         margin-right: 64px;
       }
@@ -484,6 +475,7 @@ a {
 
     @include onLargeDesktop {
       margin: 0;
+
       &:nth-child(-n + 3) {
         margin-right: 64px;
       }
@@ -499,22 +491,15 @@ a {
   }
 
   &__li-link {
-    text-decoration: none;
-    text-align: center;
+    @include button-text;
 
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: $accent-orange;
+    text-align: center;
   }
 }
 
 .products {
   height: max-content;
   margin-top: 64px;
-  // margin: 0 16px;
 
   @include onTablet {
     margin: 0 0 152px;
@@ -529,7 +514,7 @@ a {
   }
 
   &__title {
-    @include header (48px);
+    @include header ($mobile-header-size);
     color: $accent-orange;
 
     margin-bottom: 24px;
@@ -554,10 +539,6 @@ a {
     @include onMobile {
       margin-bottom: 56px;
     }
-
-    // @include onTablet {
-    //   margin-bottom: 80px;
-    // }
   }
 
 }
@@ -571,19 +552,19 @@ a {
     @include onTablet {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px 24px;
+      gap: $gap-horizontal $gap;
     }
 
     @include onDesktop {
       display: grid;
       grid-template-columns: repeat(8, 118px);
-      gap: 80px 24px;
+      gap: $gap-horizontal $gap;
     }
 
     @include onLargeDesktop {
       display: grid;
       grid-template-columns: repeat(8, 128px);
-      gap: 80px 24px;
+      gap: $gap-horizontal $gap;
     }
   }
 
@@ -595,7 +576,6 @@ a {
       height: 560px;
       width: 328px;
       margin-bottom: 0;
-      // margin-bottom: 88px;
     }
 
     @include onDesktop {
@@ -627,41 +607,7 @@ a {
         }
       }
     }
-
   }
-
-  /*
-  // @include onDesktop {
-  //   &__item--1 {
-  //     grid-column: 1 / 3;
-  //     grid-row: 1 / 2;
-  //   }
-  
-  //   &__item--2 {
-  //     grid-column: 4 / 6;
-  //     grid-row: 1 / 2;
-  //   }
-  
-  //   &__item--3 {
-  //     grid-column: 3 / 5;
-  //     grid-row: 2 / 3;
-  //   }
-  
-  //   &__item--4 {
-  //     grid-column: 6 / 8;
-  //     grid-row: 2 / 3;
-  //   }
-  
-  //   &__item--5 {
-  //     grid-column: 1 / 3;
-  //     grid-row: 3 / 4;
-  //   }
-  
-  //   &__item--6 {
-  //     grid-column: 4 / 6;
-  //     grid-row: 3 / 4;
-  //   }
-  // }*/
 
   &__item-img-container {
     height: 356px;
@@ -712,8 +658,7 @@ a {
 
   &__item-button-arrow {
     display: flex;
-    height: 16px;
-    width: 16px;
+    @include square (16px);
 
     padding: 4px;
   }
@@ -721,7 +666,6 @@ a {
   &__buttom-container {
     display: flex;
     align-items: center;
-    // justify-content: center;
   }
 
   &__item-button {
@@ -729,7 +673,6 @@ a {
     padding: 8px 0;
 
     align-items: center;
-    // justify-content: center;
 
     @include button-text;
   }
@@ -754,48 +697,48 @@ a {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 72px 24px;
+    gap: 72px $gap;
   }
 
   @include onDesktop {
-    background-size: auto;
+    background-size: contain;
     background-position: 332px 0;
   }
 
   @include onLargeDesktop {
-    background-size: auto;
+    background-size: contain;
   }
 
   &__inner-container {
     @include onTablet {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: $gap;
     }
 
     @include onDesktop {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: $gap;
     }
 
     @include onLargeDesktop {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: $gap;
     }
   }
 
   &__title {
     margin-bottom: 32px;
 
-    @include header (48px);
+    @include header ($mobile-header-size);
     color: $accent-orange;
 
     @include onTablet {
       @include about-us-size--tablet;
       margin: 0;
-      @include header (56px);
+      @include header ($tablet-header);
     }
 
     @include onDesktop {
@@ -848,16 +791,16 @@ a {
       margin-top: 36px;
 
       &:last-child {
-        margin-bottom: 72px;
+        margin-bottom: $aboutUs-margin-mob;
       }
     }
 
     @include onTablet {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: $gap;
 
-      margin-top: 72px;
+      margin-top: $aboutUs-margin-mob;
 
       &:nth-child(-n + 2) {
         padding-bottom: 0;
@@ -867,7 +810,7 @@ a {
     @include onDesktop {
       display: grid;
       grid-template-columns: repeat(8, 118px);
-      gap: 24px;
+      gap: $gap;
 
       @for $start from 1 to 8 {
         @for $end from $start through 8 {
@@ -883,7 +826,7 @@ a {
     @include onLargeDesktop {
       display: grid;
       grid-template-columns: repeat(8, 128px);
-      gap: 24px;
+      gap: $gap;
 
       @for $start from 1 to 8 {
         @for $end from $start through 8 {
@@ -966,10 +909,6 @@ a {
     @include onDesktop {
       padding-top: 88px;
     }
-
-    // @include onLargeDesktop {
-    //   padding-left: 124px;
-    // }
   }
 
   &__logo {
@@ -1013,18 +952,11 @@ a {
     &:last-child {
       padding-bottom: 0;
     }
-
-    // @include onTablet {
-    //   padding-bottom: 0;
-    //   margin-bottom: 16px;
-    // }
   }
 
   &__contact-us-container {
-    padding-bottom: 40px;
-
     @include onTablet {
-      padding-top: 88px;
+      padding: 88px 0;
     }
 
     @include onDesktop {
@@ -1040,34 +972,34 @@ a {
     @include onDesktop {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: $gap;
     }
 
     @include onLargeDesktop {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: $gap;
     }
   }
 
   &__contact-us-title {
     margin: 0;
 
-    @include header (48px);
+    @include header ($mobile-header-size);
     color: $white;
 
     @include onTablet {
-      @include header (56px);
+      @include header ($tablet-header);
       width: 328px;
     }
 
     @include onDesktop {
-      @include header (72px);
+      @include header ($desktop-font-size);
       width: 544px;
     }
 
     @include onLargeDesktop {
-      @include header (72px);
+      @include header ($desktop-font-size);
       width: 544px;
     }
   }
@@ -1146,8 +1078,7 @@ a {
     text-decoration: none;
     background-repeat: no-repeat;
 
-    width: 20px;
-    height: 20px;
+    @include square (20px);
 
     display: inline-block;
 
@@ -1163,6 +1094,9 @@ a {
       &:hover {
         background-image: url(../images/facebook-white.png);
       }
+      &:focus {
+        background-image: url(../images/facebook-white.png);
+      }
     }
 
     &--2 {
@@ -1171,12 +1105,18 @@ a {
       &:hover {
         background-image: url(../images/instagram-white.png);
       }
+      &:focus {
+        background-image: url(../images/instagram-white.png);
+      }
     }
 
     &--3 {
       background-image: url(../images/twitter.png);
 
       &:hover {
+        background-image: url(../images/twitter-white.png);
+      }
+      &:focus {
         background-image: url(../images/twitter-white.png);
       }
     }
