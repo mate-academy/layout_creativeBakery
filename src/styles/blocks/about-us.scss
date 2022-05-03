@@ -1,0 +1,185 @@
+.about-us {
+  background-image: url(../images/Crumbs.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  @include onTablet {
+    background-position: 68px 46px;
+    background-size: cover;
+    margin: 0 0 152px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px $gap;
+  }
+
+  @include onDesktop {
+    background-size: contain;
+    background-position: 332px 0;
+  }
+
+  @include onLargeDesktop {
+    background-size: contain;
+  }
+
+  &__inner-container {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $gap;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $gap;
+    }
+
+    @include onLargeDesktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $gap;
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @include header ($mobile-header-size);
+    color: $accent-orange;
+
+    @include onTablet {
+      @include about-us-size--tablet;
+      margin: 0;
+      @include header ($tablet-header);
+    }
+
+    @include onDesktop {
+      @include header ($desktop-font-size);
+
+      width: 544px;
+      height: 120px;
+
+      margin: 0;
+    }
+
+    @include onLargeDesktop {
+      @include header ($desktop-font-size);
+      width: 584px;
+      height: 122px;
+
+      margin: 0;
+    }
+  }
+
+  &__paragraph {
+    margin: 0;
+
+    @include onMobile {
+      margin-bottom: 64px;
+    }
+
+    @include text;
+    @include about-us-size--tablet;
+
+    @include onDesktop {
+      width: 544px;
+      height: 120px;
+
+      margin-bottom: 144px;
+    }
+
+    @include onLargeDesktop {
+      width: 584px;
+      height: 120px;
+
+      margin-bottom: 144px;
+    }
+  }
+
+  &__container {
+    margin: 0;
+
+    @include onMobile {
+      margin-top: 36px;
+
+      &:last-child {
+        margin-bottom: $aboutUs-margin-mob;
+      }
+    }
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: $gap;
+
+      margin-top: $aboutUs-margin-mob;
+
+      &:nth-child(-n + 2) {
+        padding-bottom: 0;
+      }
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(8, 118px);
+      gap: $gap;
+
+      @for $start from 1 to 8 {
+        @for $end from $start through 8 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end};
+          }
+        }
+      }
+
+      margin-bottom: 348px;
+    }
+
+    @include onLargeDesktop {
+      display: grid;
+      grid-template-columns: repeat(8, 128px);
+      gap: $gap;
+
+      @for $start from 1 to 8 {
+        @for $end from $start through 8 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end};
+          }
+        }
+      }
+
+      margin-bottom: 348px;
+    }
+  }
+
+  &__numbers-box {
+    padding-bottom: 48px;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    @include onTablet {
+      padding-bottom: 80px;
+
+      &:nth-of-type(3) {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__numbers {
+    margin: 0 0 8px;
+
+    @include header (96px);
+    color: $accent-orange;
+  }
+
+  &__numbers-title {
+    margin: 0;
+
+    @include text;
+  }
+}
