@@ -1,0 +1,109 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__menu-opener {
+    display: block;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &:hover {
+      transform: scale(1.07);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 8px;
+
+      background: url(../images/Menu_Opener.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      transition: transform 0.3s;
+    }
+
+    &:hover::before {
+      background-image: url(../images/Menu_Opener_Hover.svg);
+      transform: scale(1.07);
+    }
+  }
+
+  &__list {
+    display: none;
+
+    background-color: $color-pageBackGround;
+
+    transition: transform 0.3s;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      margin-right: 64px;
+
+      &:last-child {
+        padding-left: 25px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: $color-black;
+
+    &:hover {
+      color: $color-orange;
+    }
+
+    &:active {
+      color: $color-Dark_orange;
+    }
+  }
+
+  &__link--contact {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-orange;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-image: url(../images/Contact_phone.svg);
+      display: block;
+      position: absolute;
+      top: 0;
+      transition: background-image 0.4s;
+      transform: translatex(-100%);
+      padding-right: 7px;
+
+      width: 18px;
+      height: 18px;
+
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:active::after {
+      background-image: url(../images/Contact_phone_hover.svg);
+    }
+  }
+}
