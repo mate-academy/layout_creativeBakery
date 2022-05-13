@@ -1,0 +1,45 @@
+.page {
+  @extend %main-text;
+  background-color: $color-background;
+  scroll-behavior: smooth;
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(+100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+      overflow: hidden;
+    }
+  }
+
+  &__section-title {
+    @extend %mobile-h2;
+    margin: 0 0 24px;
+    color: $color-secondary;
+
+    &--footer {
+      margin: 0 0 40px;
+      color: #fff;
+    }
+  }
+
+  &__section-subtitle {
+    margin: 0 0 56px;
+
+    @include onTablet {
+      margin: 0 0 80px;
+    }
+  }
+}
