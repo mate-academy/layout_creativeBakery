@@ -1,0 +1,142 @@
+.header {
+  &__content {
+    box-sizing: border-box;
+    // height: 100vh;
+    margin: 0 16px;
+    background-image: url(../images/cookie_s.svg);
+    background-repeat: no-repeat;
+    background-position: center 220px;
+
+    @include onTablet {
+      margin: 0 44px;
+      background-image: url(../images/cookie_m.svg);
+      background-position: center 144px;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/cookie_l.svg);
+      background-position: center top;
+    }
+
+    @include onLargeDesktop {
+      margin: 0 124px;
+      background-image: url(../images/cookie_xl.svg);
+      background-position: center top;
+    }
+  }
+
+  &__top {
+    margin: 0 16px;
+
+    @include onTablet {
+      margin: 0 16px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    padding-top: 32px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: $textColor;
+
+    @include onTablet {
+      width: 280px;
+      margin-bottom: 146px;
+      padding-top: 80px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      width: 260px;
+      margin-bottom: 8px;
+      padding-top: 135px;
+    }
+
+    @include onLargeDesktop {
+      width: 280px;
+      margin-bottom: 40px;
+      padding-top: 144px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 290px;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 54px;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $textColor;
+
+    @include onTablet {
+      margin-bottom: 210px;
+      font-size: 80px;
+      line-height: 68px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+      font-size: 136px;
+      line-height: 116px;
+    }
+
+    @include onLargeDesktop {
+      font-size: 144px;
+      line-height: 122px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 56px;
+    margin-bottom: 104px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: $orangeColor;
+    border: 2px solid $orangeColor;
+    border-radius: 32px;
+
+    transition: all 0.3s;
+
+    &::before {
+      content: "";
+      height: 24px;
+      width: 24px;
+      margin-right: 4px;
+      background-image: url(../images/icon-cookie.svg);
+    }
+
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 313px;
+    }
+
+    @include onLargeDesktop {
+      margin-bottom: 290px;
+    }
+
+    &:hover {
+      background-color: $orangeColor;
+      color: #fff;
+
+      &::before {
+        background-image: url(../images/icon-cookie_white.svg);
+      }
+    }
+  }
+}
