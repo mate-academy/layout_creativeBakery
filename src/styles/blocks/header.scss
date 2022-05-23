@@ -1,0 +1,101 @@
+.header {
+  &__top {
+    padding: 20px;
+
+    @include onDesktop {
+      padding: 32px ;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  &__body {
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+
+  &__text {
+    width: 100%;
+    @include onTablet {
+      width: 280px;
+    }
+    margin-bottom: 32px;
+    @include content-text;
+  }
+
+  &__title {
+    @include title;
+    text-align: center;
+    font-size: 64px;
+
+    @include onTablet {
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      transform: translate(-50%, 50%);
+
+      font-size: 80px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 280px;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 50%;
+      padding-bottom: 50%;
+    }
+
+    @include bg-center(contain);
+    background-image: url("../images/photo/Cookie.png");
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}
+
+.logo {
+  width: 128px;
+  height: 24px;
+
+  @include bg-center(contain);
+  background-image: url("../images/icons/logo.svg");
+}
+
+.menu-icon {
+  width: 20px;
+  height: 8px;
+
+  @include bg-center(contain);
+  background-image: url("../images/icons/menu.svg");
+}
+
+.button {
+  display: block;
+  height: 56px;
+  width: 100%;
+
+  @include onTablet {
+    width: 248px;
+  }
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 56px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $red;
+
+  border: 2px solid $red;
+  border-radius: 50px;
+}
