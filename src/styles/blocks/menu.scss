@@ -1,0 +1,64 @@
+.menu {
+  &__list {
+    display: none;
+
+    @include onDesk {
+      display: flex;
+    }
+  }
+
+  &__item {
+    list-style-type: none;
+    margin-right: 64px;
+
+    &--right-margin {
+      margin-right: 92px;
+    }
+
+    &--last-element {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $orange;
+    }
+
+    &--contact {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $orange;
+      margin-left: 7px;
+      position: relative;
+
+      &:hover {
+        color: #ab3820;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 18px;
+        height: 18px;
+        background-image: url("../images/phone.svg");
+
+        position: absolute;
+        top: 50%;
+        transform: translate(-100%, -50%);
+      }
+
+      &:hover::before {
+        background-image: url("../images/phone-hover.svg");
+      }
+    }
+  }
+}
