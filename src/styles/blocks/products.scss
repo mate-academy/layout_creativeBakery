@@ -1,0 +1,74 @@
+.products {
+
+  &__title {
+    margin-bottom: 24px;
+    @include title;
+  }
+
+  &__text {
+    margin-bottom: 56px;
+    @include content-text;
+
+    @include onTablet {
+      margin-bottom: 88px;
+    }
+  }
+
+  &__card {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+  }
+
+  &__img {
+    width: 100%;
+    margin-bottom: 16px;
+
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px;
+  }
+
+  &__paragraph {
+    margin-bottom: 24px;
+    @include content-text;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $red;
+
+    &::before {
+      content: "";
+      display: inline-block;
+
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+
+      background-image: url("../images/icons/arrow.svg");
+      @include bg-center(contain);
+    }
+  }
+}
