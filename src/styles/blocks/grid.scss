@@ -3,15 +3,17 @@
   grid-template-columns: repeat(8, 1fr);
   column-gap: 16px;
 
-  @include onDesktop {
+  @include onTablet {
+    display: grid;
     column-gap: 24px;
   }
 
   &--desktop {
     display: block;
 
-    @include onTablet {
+    @include onDesktop {
       display: grid;
+      column-gap: 24px;
     }
   }
 
@@ -24,6 +26,12 @@
 
         &--desktop-#{$start}-#{$end} {
           @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+
+        &--tablet-#{$start}-#{$end} {
+          @include onTablet {
             grid-column: #{$start} / #{$end + 1};
           }
         }
