@@ -12,4 +12,4 @@ Implement landing page according to [Figma design](https://www.figma.com/file/dY
 - Tablet 1024
 - Mobile (> 320px)
 
-- Click the link to see [DEMO](https://kkiirill.github.io/layout_creativeBakery/)
+Click the link to see [DEMO](https://kkiirill.github.io/layout_creativeBakery/)
