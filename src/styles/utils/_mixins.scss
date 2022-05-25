@@ -22,6 +22,11 @@
   align-items: center;
 }
 
+@mixin adaptive-property($property, $min-size, $max-size, $max-width ) {
+  #{$property}: calc(#{min-size + px} + (#{$max-size} - #{$min-size}) *
+  ((100vw - 320px) / #{$max-width - 320}));
+}
+
 @mixin title {
   font-size: 48px;
   font-weight: 400;
