@@ -1,6 +1,38 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin header-padding {
+  padding: 20px;
+
+  @include desktop {
+    padding: 20px 32px;
+  }
+}
+
+@mixin menu-active-translate {
+  transform: translateY(0);
+}
+
+@mixin header-link-hover {
+  transition: all $smooth-duration linear;
+
   &:hover {
-    #{$_property}: $_toValue;
+    transform: scale(1.2);
+    text-shadow: 0 1px 2px $color-black;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: 1200px) {
+    @content;
   }
 }
