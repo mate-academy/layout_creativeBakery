@@ -1,0 +1,72 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 492px;
+
+  @include onTablet {
+    height: 560px;
+  }
+
+  @include onDesktop {
+    height: 648px;
+  }
+
+  @include onLargeScreen {
+    height: 696px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 356px;
+    margin-bottom: 16px;
+
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+
+    @include hover(transform, scale(1.05));
+
+    @include onTablet {
+      height: 424px;
+    }
+
+    @include onDesktop {
+      height: 512px;
+    }
+
+    @include onLargeScreen {
+      height: 560px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 8px;
+
+    @extend %uppercase;
+    color: $colorGrey;
+  }
+
+  &__description {
+    margin: 0 0 24px;
+
+    @extend %mainText;
+    color: $colorBlack;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    @extend %uppercase;
+    text-decoration: none;
+    color: $colorOrange;
+
+    @include hover(transform, scale(1.05));
+
+    &::before {
+      content: url(../images/Icon-arrow.svg);
+      margin-right: 8px;
+    }
+  }
+}
