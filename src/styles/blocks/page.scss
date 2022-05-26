@@ -7,10 +7,25 @@
   &__body {
     margin: 0;
     padding: 0 24px;
-    background-color: #ffeefc;
+    background-color: $bgColor;
 
     @include onDesktop {
       padding: 0 32px;
+    }
+  }
+
+  &__menu {
+    padding: 0 24px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
     }
   }
 }
