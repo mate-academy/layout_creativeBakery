@@ -2,28 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include header-padding;
+  height: 64px;
+  padding: 0 20px;
   background-color: $color-light-blue;
 
-  &__actions {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    @include header-padding;
-    width: 100%;
-
-    background-color: $color-light-blue;
-
-    @include desktop {
-      position: relative;
-      width: max-content;
-    }
+  @include desktop {
+    height: auto;
+    padding: 0 32px;
   }
 
   &__logo {
@@ -54,8 +39,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 2;
-    transform: translateY(-100%);
+    z-index: -1;
+    transform: translateX(100%);
 
     transition: transform $smooth-duration linear;
 
@@ -69,10 +54,7 @@
     @include desktop {
       position: relative;
       @include menu-active-translate;
-
-      display: flex;
       flex-direction: row;
-      align-items: center;
     }
 
     &--active {
@@ -95,7 +77,6 @@
     }
 
     @include desktop {
-      display: flex;
 
       &:not(:first-child) {
         margin-top: 0;
@@ -106,13 +87,15 @@
 
   &__link {
     display: block;
-    padding: 8px 32px;
+    width: 200px;
+    padding: 8px 0;
     text-align: center;
     color: $color-black;
 
     @include desktop {
-      padding: 12px 16px;
-      @include header-link-hover;
+      @include header-menu-link;
+      width: max-content;
+      padding: 0 16px;
     }
   }
 
@@ -140,11 +123,9 @@
     }
 
     @include desktop {
-      margin-top: 0;
-      margin-left: 60px;
-      padding: 12px 0 12px 25px;
-      height: 100%;
-      @include header-link-hover;
+      @include header-menu-link;
+      margin: 0 0 0 60px;
+      padding: 0 0 0 25px;
     }
   }
 }
