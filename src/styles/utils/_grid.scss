@@ -1,0 +1,35 @@
+@mixin grid {
+  display: grid !important;
+  column-gap: 24px;
+  margin: 0 auto;
+}
+
+.grid {
+  justify-content: center;
+  @include on768px {
+    @include grid;
+    grid-template-columns: repeat(8, 64px);
+  }
+
+  @include on1200px {
+    // @include grid;
+    grid-template-columns: repeat(8, 118px);
+    // width: 916px;
+  }
+
+  @include on1440px {
+    // @include grid;
+    grid-template-columns: repeat(8, 128px);
+    // width: 1146px;
+  }
+
+  &__item {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+}
