@@ -1,0 +1,198 @@
+.header {
+
+  &__content {
+    flex-direction: column;
+    box-sizing: border-box;
+    // height: 100vh;
+    padding: 20px 0 0;
+
+    @include onPad {
+      padding: 32px 0 0;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 52px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onPad {
+      margin-bottom: 166px;
+    }
+
+    @include onPad {
+      margin-bottom: 175px;
+    }
+  }
+
+  &__nav-list {
+    display: none;
+    list-style: none;
+
+    @include onPad {
+      display: flex;
+    }
+  }
+
+  &__nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:not(:first-child) {
+      margin-left: 64px;
+    }
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+
+    &--call {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #f9512e;
+
+      &::before {
+        content: url(../images/header-call.png);
+        margin-right: 7px;
+      }
+    }
+  }
+
+  &__paragraph {
+    // display: block;
+    // width: 100%;
+    margin-bottom: 32px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__title {
+    display: block;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #f9512e;
+
+    @include onTablet {
+      transform: translateY(150%);
+      font-size: 74px;
+
+    }
+
+    @include onPad {
+      transform: translateY(20%);
+      font-size: 120px;
+    }
+
+    @include onDesktop {
+      transform: translateY(20%);
+      font-size: 130px;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto;
+    width: 288px;
+    height: 290px;
+
+    @include onTablet {
+      margin: 0 auto 80px;
+      width: 328px;
+      height: 328px;
+      transform: translateY(-30%);
+    }
+
+    @include onPad {
+      transform: translateY(-55%);
+      width: 544px;
+      height: 546px;
+    }
+
+    @include onDesktop {
+      width: 584px;
+      height: 586px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 56px;
+    margin-bottom: 124px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid #f9512e;
+    border-radius: 40px;
+    color: #f9512e;
+
+    @include onTablet {
+      transform: translateY(-124px);
+    }
+
+    &::before {
+      content: url(../images/button_befor.png);
+      margin-right: 6px;
+    }
+
+    &:hover {
+      background-color: #f9512e;
+      color: #fff;
+    }
+
+    &:hover::before {
+      content: url(../images/button_befor-white.png);
+      margin-right: 6px;
+    }
+
+    &:focus {
+      background-color: #b2341a;
+      color: #fff;
+    }
+
+    &:focus::before {
+      content: url(../images/button_befor-white.png);
+      margin-right: 6px;
+    }
+  }
+
+  &__button-befor {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+  }
+}
