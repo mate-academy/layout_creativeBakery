@@ -10,6 +10,12 @@
   }
 }
 
+@mixin onPhone {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
 @mixin bg-center($size) {
   background-repeat: no-repeat;
   background-position: center;
@@ -28,7 +34,8 @@
 }
 
 @mixin title {
-  font-size: 48px;
+  // font-size: 48px;
+  @include adaptive-property(font-size, 48, 56, 767);
   font-weight: 400;
   line-height: 85%;
   letter-spacing: -0.05em;
@@ -42,4 +49,8 @@
   @include onDesktop {
     font-size: 72px;
   }
+}
+
+@mixin transition {
+  transition: all 0.4s;
 }

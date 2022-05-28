@@ -6,8 +6,8 @@
 
   width: 100%;
   height: 56px;
-  @media (min-width: 500px) {
-    width: 248px;
+  @media (min-width: 500px) and (max-width: 767px) {
+    max-width: 400px;
   }
 
   font-weight: 500;
@@ -20,10 +20,12 @@
 
   border: 2px solid $red;
   border-radius: 32px;
+  @include transition;
 
   &:hover {
     color: #fff;
     background-color: #f9512e;
+    transform: scale(1.2);
 
     img {
       filter: brightness(10);
@@ -53,5 +55,6 @@
     height: 20px;
     object-fit: contain;
     object-position: center;
+    @include transition;
   }
 }
