@@ -1,0 +1,156 @@
+.footer {
+  padding: 56px 0;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  background-color: $black;
+  color: #fff;
+
+  &__contact-us {
+    grid-column: 4 / -1;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__content {
+    grid-column: 1 / 5;
+
+    @include onPhone {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__logo {
+    grid-column: 1 / 3;
+    display: inline-block;
+    margin-bottom: 44px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__logo-img {
+    grid-column: 1 / 2;
+    filter: brightness(10);
+  }
+
+  &__subtitle {
+    margin-bottom: 16px;
+
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 400;
+    color: #fff;
+    @include transition;
+
+    &:hover {
+      color: $red;
+      transform: scale(1.5);
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 64px;
+    margin-bottom: 40px;
+
+    @include onPhone {
+      margin-top: 0;
+    }
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    @include title;
+    color: #fff;
+  }
+
+  &__call {
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__social {
+    display: flex;
+    height: 20px;
+    gap: 0 40px;
+
+    margin-top: 42px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+  }
+
+  &__social-link {
+    display: inline-block;
+    height: 100%;
+  }
+
+  &__social-img {
+    object-fit: contain;
+    object-position: center;
+    @include transition;
+
+    &:hover {
+      filter: brightness(10);
+    }
+  }
+
+  &__copyright {
+    margin-top: 42px;
+    color: #7f8096;
+
+    @include onPhone {
+      grid-column: 4 / -1;
+    }
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      margin-top: 48px;
+    }
+  }
+
+  &__email {
+    margin-top: 40px;
+
+    @include onDesktop {
+      grid-column: 3 / -1;
+      margin-top: 0;
+    }
+  }
+}
