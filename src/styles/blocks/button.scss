@@ -1,0 +1,60 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 6px;
+
+  width: 100%;
+  height: 56px;
+  @media (min-width: 500px) and (max-width: 767px) {
+    max-width: 400px;
+  }
+
+  font-weight: 500;
+  line-height: 56px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $red;
+
+  border: 2px solid $red;
+  border-radius: 32px;
+  @include transition;
+
+  &:hover {
+    color: #fff;
+    background-color: #f9512e;
+    transform: scale(1.2);
+
+    img {
+      filter: brightness(10);
+    }
+  }
+
+  &:focus {
+    color: #fff;
+    background-color: #b2341a;
+
+    img {
+      filter: brightness(10);
+    }
+  }
+
+  &:disabled {
+    color: rgb(251, 162, 143);
+    background-color: #fba28f;
+
+    img {
+      filter: hue-rotate(8deg);
+    }
+  }
+
+  &__img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    object-position: center;
+    @include transition;
+  }
+}
