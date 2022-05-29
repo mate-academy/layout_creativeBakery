@@ -1,0 +1,103 @@
+.about-us {
+  position: relative;
+
+  padding-bottom: 70px;
+
+  @include laptop {
+    padding-bottom: 350px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+
+    background: url(../images/about-us/about.png) center / contain no-repeat;
+
+    @include tablet {
+      top: 45%;
+      width: 526px;
+    }
+
+    @include laptop {
+      top: 50%;
+      left: 57%;
+      width: 718px;
+    }
+
+    @include desktop {
+      top: 53%;
+      left: 45%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+    font-size: 48px;
+    letter-spacing: -0.05em;
+
+    @include tablet {
+      margin-bottom: 0;
+      font-size: 56px;
+    }
+
+    @include laptop {
+      font-size: 72px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 64px;
+
+    @include tablet {
+      margin-bottom: 70px;
+    }
+
+    @include laptop {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__achievements {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__achievement {
+    flex-basis: 100%;
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include tablet {
+      flex-basis: 50%;
+      margin-bottom: 80px;
+    }
+
+    @include laptop {
+      flex-basis: 25%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__achievement-number {
+    margin-bottom: 8px;
+
+    font-size: 96px;
+    letter-spacing: -0.05em;
+  }
+
+  &__achievement-name {
+    color: $color-grey;
+  }
+}

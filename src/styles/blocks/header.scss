@@ -72,49 +72,40 @@
   }
 
   &__list-item {
+    margin-bottom: 8px;
 
-    &:not(:first-child) {
-      margin-top: 8px;
+    &:last-child {
+      margin-bottom: 0;
     }
 
     @include laptop {
+      margin-bottom: 0;
+      margin-left: 32px;
 
-      &:not(:first-child) {
-        margin-top: 0;
-        margin-left: 32px;
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-left: 50px;
       }
     }
   }
 
   &__link {
-    display: block;
-    width: 200px;
-    padding: 8px 0;
-    text-align: center;
-    color: $color-black;
 
-    @include laptop {
-      @include header-menu-link;
-      width: max-content;
+    @include desktop {
       padding: 0 16px;
     }
   }
 
-  &__btn {
-    margin-top: 16px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+  &__phone {
 
     &:before {
+      padding-right: 7px;
       width: 18px;
       height: 18px;
       background-image: url("../images/icons/phone.svg");
-    }
-
-    @include laptop {
-      @include header-menu-link;
-      margin: 0 0 0 60px;
-      padding: 0 0 0 25px;
     }
   }
 }

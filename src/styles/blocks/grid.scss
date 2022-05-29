@@ -1,5 +1,4 @@
 .grid {
-  position: relative;
 
   @include tablet {
     display: grid;
@@ -21,6 +20,16 @@
       @for $start from 1 through 8 {
         @for $end from $start through 8 {
           @include laptop {
+            &--laptop-#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          @include desktop {
             &--desktop-#{$start}-#{$end} {
               grid-column: #{$start} / #{$end + 1};
             }

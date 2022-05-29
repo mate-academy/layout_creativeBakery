@@ -1,0 +1,28 @@
+.link {
+  display: block;
+  width: 300px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  text-align: center;
+  color: $color-black;
+
+  @include laptop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 0;
+    padding-bottom: 0;
+    width: max-content;
+    height: $header-height-desktop;
+
+    transition: transform, text-shadow;
+    @include transition-smooth-duration;
+
+    &:hover {
+      transform: scale(1.2);
+      text-shadow: 0 1px 2px $color-black;
+    }
+  }
+}
