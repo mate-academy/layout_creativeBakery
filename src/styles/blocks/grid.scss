@@ -2,10 +2,13 @@
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 24px;
+  align-content: top;
+  align-items: top;
 
   @include onDesktop1200 {
     grid-template-columns: repeat(8, 128px);
   }
+
   &--tablet {
     display: block;
 
@@ -19,6 +22,57 @@
 
     @include onDesktop {
       display: grid;
+    }
+  }
+
+  &--contacts {
+
+    @include onTablet {
+      grid-template-rows: repeat(4, auto);
+      row-gap: 40px;
+      grid-template-areas: "logo logo logo logo conts conts conts conts"
+        "menu menu menu menu call-us call-us call-us call-us"
+        "menu menu menu menu email email email email"
+        "social social social social copyrigth copyrigth copyrigth copyrigth";
+
+    }
+
+    @include onDesktop {
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas: "logo logo logo logo conts conts conts conts"
+        "menu menu menu menu call-us call-us email email"
+        "menu menu menu menu call-us call-us email email"
+        "social social social social copyrigth copyrigth copyrigth copyrigth";
+    }
+  }
+
+  &__item {
+    &--footer-logo {
+      grid-area: logo;
+    }
+
+    &--footer-menu {
+      grid-area: menu;
+    }
+
+    &--footer-contacts {
+      grid-area: conts;
+    }
+
+    &--footer-call-us {
+      grid-area: call-us;
+    }
+
+    &--footer-email {
+      grid-area: email;
+    }
+
+    &--footer-social {
+      grid-area: social;
+    }
+
+    &--footer-copyrigth {
+      grid-area: copyrigth;
     }
   }
 
