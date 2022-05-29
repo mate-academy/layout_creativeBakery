@@ -1,0 +1,28 @@
+.menu-bottom {
+  display: flex;
+  flex-direction: column;
+
+  &__link {
+    margin-bottom: 16px;
+
+    @extend %font400;
+    color: $whiteColor;
+    transition: border-bottom 1s;
+
+    &:hover {
+      color: $orangeColor;
+    }
+
+    &:last-child {
+      margin-bottom: 64px;
+
+      @include onTablets() {
+        margin-bottom: 106px;
+      }
+
+      @include onDesktop() {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
