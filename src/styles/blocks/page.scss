@@ -3,7 +3,10 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
+  letter-spacing: -0.01em;
   color: $color-black;
+
+  scroll-behavior: smooth;
 
   &__body {
     background-color: $color-light-blue;
@@ -19,5 +22,26 @@
     left: 0;
     right: 0;
     z-index: 5;
+  }
+
+  &__section {
+    padding-top: $header-height-mobile;
+    margin-bottom: 20px;
+
+    &:first-child {
+      margin-bottom: 40px;
+    }
+
+    @include tablet {
+      margin-bottom: 0;
+
+      &:first-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include desktop {
+      padding-top: $header-height-desktop;
+    }
   }
 }
