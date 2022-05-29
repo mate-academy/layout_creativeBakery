@@ -1,20 +1,89 @@
 .page {
-  --backgroundColor: #eef7ff;
+  --theme-1-background-color: #{$colorLightBlue};
+  --theme-1-font-color: #{$colorBlack};
+  --theme-2-background-color: #{$colorLightPink};
+  --theme-2-font-color: #{$colorAccentOrange};
 
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: -0.01em;
-  color: $colorBlack;
+  color: var(--theme-1-font-color);
 
-  background-color: var(--backgroundColor);
+  background-color: var(--theme-1-background-color);
 
-  &__header {
-    padding: 20px 20px 0;
+  scroll-behavior: smooth;
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+    z-index: 2;
+
+    transition: transform 0.2s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__menu-container {
+    height: 100vh;
+
+    background-color: var(--theme-1-background-color);
+  }
+
+  &__menu-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  &__section-header {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      height: 900px;
+    }
 
     @include onDesktop {
-      padding: 32px 32px 0;
+      margin-bottom: 152px;
+      height: 700px;
+    }
+
+    @include onDesktopLarge {
+      margin-bottom: 176px;
+      height: auto;
+    }
+  }
+
+  &__section-bakery {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 176px;
+    }
+  }
+
+  &__section-about-us {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 56px;
     }
   }
 }
