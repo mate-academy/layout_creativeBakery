@@ -1,0 +1,133 @@
+.products {
+  
+  &__header {
+    font-size: 72px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $main-black;
+
+    margin-bottom: 24px;
+  }
+
+  &__photo {
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: all 0.3s;
+
+    &-1-1 {
+      background-image: url(../images/1.1.png);
+    }
+    &-1-2 {
+      background-image: url(../images/1.2.png);
+    }
+    &-2-1 {
+      background-image: url(../images/2.1.png);
+    }
+    &-2-2 {
+      background-image: url(../images/2.2.png);
+    }
+    &-3-1 {
+      background-image: url(../images/3.1.png);
+    }
+    &-3-2 {
+      background-image: url(../images/3.2.png);
+    }
+
+    @include size (100%, 288px);
+
+    @include onTablet {
+      height: 424px;
+    }
+
+    @include onDesktop {
+      height: 512px;
+    }
+
+    @include onBigScreen {
+      height: 560px;
+
+      &--height {
+        height: 584px;
+      }
+    }
+  }
+
+  &__name {
+    margin-bottom: 8px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+  }
+
+  &__description {
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+    color: $main-black;
+
+    &--margin {
+      margin-bottom: 56px;
+
+      @include onTablet {
+        margin-bottom: 80px;
+      }
+  
+      @include onDesktop {
+        margin-bottom: 80px;
+      }
+  
+      @include onBigScreen {
+        margin-bottom: 80px;
+      }
+    }
+
+    &-card {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__button {
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 64px;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $c-orange;
+    text-decoration: none;
+
+    @include onTablet {
+      margin-bottom: 88px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 88px;
+    }
+
+    @include onBigScreen {
+      margin-bottom: 88px;
+    }
+
+    &::before {
+      content: "";
+      @include size (16px, 16px);
+      background-image: url(../images/arrow-right.svg);
+      position: relative;
+
+    }
+
+    &:hover::before {
+      left: 8px;
+    }
+  }
+}

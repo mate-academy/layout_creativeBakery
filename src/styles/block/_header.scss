@@ -1,5 +1,22 @@
 .header {
 
+  height: 100vh;
+
+  @include onTablet {
+
+    background-size: 327px;
+  }
+
+  @include onDesktop {
+
+    background-size: 545px;
+  }
+
+  @include onBigScreen {
+
+    background-size: 585px;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
@@ -81,6 +98,15 @@
     color: $c-orange;
   }
 
+  &__menu {
+    @include size (20px, 8px);
+    background-image: url(../images/menu-close.svg);
+
+    &:target {
+      background-image: url(../images/menu-open.svg);
+    }
+  }
+
   &__description {
     width: 280px;
     height: 48px;
@@ -123,6 +149,7 @@
 
     @include onDesktop {
       font-size: 136px;
+      margin-bottom: 64px;
     }
 
     @include onBigScreen {
@@ -142,6 +169,7 @@
     border-radius: 32px;
     background-color: #fff;
     transition: 0.3s;
+    margin-bottom: 104px;
 
     font-weight: bold;
 
@@ -149,6 +177,18 @@
     text-transform: uppercase;
     text-decoration: none;
     color: $c-orange;
+
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+  
+    @include onDesktop {
+      margin-bottom: 313px;
+    }
+  
+    @include onBigScreen {
+      margin-bottom: 290px;
+    }
 
     &::before {
       content: "";
