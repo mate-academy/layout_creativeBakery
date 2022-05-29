@@ -1,15 +1,24 @@
 .grid {
   display: block;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 20px;
-  // padding: 0 16px;
+  column-gap: 16px;
 
   @include onTablet {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(4, ifr);
-
+    grid-template-columns: repeat(8, minmax(64px, 1fr));
+    grid-template-rows: repeat(3, ifr);
     column-gap: 24px;
+    padding: 0 26px;
+
+  }
+
+  @include onPad {
+    grid-template-columns: repeat(8, minmax(118px, 1fr));
+    padding: 0 12px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(8, minmax(128px, 1fr));
+    padding: 0 92px;
   }
 
   &__item {
