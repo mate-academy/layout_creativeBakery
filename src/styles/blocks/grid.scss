@@ -26,7 +26,6 @@
   }
 
   &--contacts {
-
     @include onTablet {
       grid-template-rows: repeat(4, auto);
       row-gap: 40px;
@@ -46,34 +45,78 @@
     }
   }
 
+  &--about-us {
+    @include onTablet {
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas: "title title title title intro intro intro intro"
+        "year year year year store store store store"
+        "comp comp comp comp clients clients clients clients";
+    }
+
+    @include onDesktop {
+      grid-template-rows: repeat(2, auto);
+      grid-template-areas: "title title title title intro intro intro intro"
+        "year year store store comp comp clients clients";
+    }
+  }
+
   &__item {
-    &--footer-logo {
-      grid-area: logo;
+    &--footer {
+      &-logo {
+        grid-area: logo;
+      }
+
+      &-menu {
+        grid-area: menu;
+      }
+
+      &-contacts {
+        grid-area: conts;
+      }
+
+      &-call-us {
+        grid-area: call-us;
+      }
+
+      &-email {
+        grid-area: email;
+      }
+
+      &-social {
+        grid-area: social;
+      }
+
+      &-copyrigth {
+        grid-area: copyrigth;
+      }
     }
 
-    &--footer-menu {
-      grid-area: menu;
+    &--about-us {
+      &-title {
+        grid-area: title;
+      }
+
+      &-intro {
+        grid-area: intro;
+      }
+
+      &-year {
+        grid-area: year;
+      }
+
+      &-store {
+        grid-area: store;
+      }
+
+      &-comp {
+        grid-area: comp;
+      }
+
+      &-clients {
+        grid-area: clients;
+      }
     }
 
-    &--footer-contacts {
-      grid-area: conts;
-    }
-
-    &--footer-call-us {
-      grid-area: call-us;
-    }
-
-    &--footer-email {
-      grid-area: email;
-    }
-
-    &--footer-social {
-      grid-area: social;
-    }
-
-    &--footer-copyrigth {
-      grid-area: copyrigth;
-    }
   }
 
   @include onTablet {
