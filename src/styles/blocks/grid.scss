@@ -1,7 +1,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  gap: 24px;
+  gap: 0 24px;
   align-content: top;
   align-items: top;
 
@@ -28,7 +28,6 @@
   &--contacts {
     @include onTablet {
       grid-template-rows: repeat(4, auto);
-      row-gap: 40px;
       grid-template-areas: "logo logo logo logo conts conts conts conts"
         "menu menu menu menu call-us call-us call-us call-us"
         "menu menu menu menu email email email email"
@@ -37,7 +36,7 @@
     }
 
     @include onDesktop {
-      grid-template-rows: repeat(4, 1fr);
+      grid-template-rows: repeat(4, auto);
       grid-template-areas: "logo logo logo logo conts conts conts conts"
         "menu menu menu menu call-us call-us email email"
         "menu menu menu menu call-us call-us email email"
@@ -57,6 +56,22 @@
       grid-template-rows: repeat(2, auto);
       grid-template-areas: "title title title title intro intro intro intro"
         "year year store store comp comp clients clients";
+    }
+  }
+
+  &--header {
+    @include onTablet {
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas: "desc desc desc desc . . . ."
+        "title title title title title title title title"
+        ". . button button button button . .";
+    }
+
+    @include onDesktop {
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas: "desc desc . . . . . ."
+        "title title title title title title title title"
+        "button button . . . . . .";
     }
   }
 
@@ -117,6 +132,19 @@
       }
     }
 
+    &--header {
+      &-description {
+        grid-area: desc;
+      }
+
+      &-title {
+        grid-area: title;
+      }
+
+      &-button {
+        grid-area: button;
+      }
+    }
   }
 
   @include onTablet {
