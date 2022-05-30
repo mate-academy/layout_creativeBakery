@@ -2,6 +2,10 @@
 .product__type {
   margin: 0 0 64px;
 
+  @include onTablet {
+    margin: 0 0 88px;
+  }
+
   &--img {
     margin-bottom: 16px;
     height: 356px;
@@ -11,19 +15,21 @@
     object-position: center;
 
     border-radius: 8px;
+    transition: transform 0.3s;
 
-    @media (min-width: 768px) {
-      height: 424px;
-      width: 328px;
+    &:hover {
+      transform: scale(1.1);
     }
-    @media (min-width: 1024px) {
-      width: 402px;
+
+    @include onTablet {
+      height: 424px;
+    }
+
+    @include onDesktop {
       height: 512px;
     }
-    @media (min-width: 1200px) {
-      height: 560px;
-    }
   }
+
   &--name {
     display: block;
     margin: 0 0 8px;
@@ -46,11 +52,11 @@
 
     letter-spacing: -0.01em;
 
-    color: #1c1a26;
+    color: $color-general;
   }
 
   &--link {
-    margin-bottom: 8px;
+    margin: 0;
     text-decoration: none;
     font-weight: 500;
     font-size: 16px;
@@ -59,7 +65,7 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
 
-    color: #f9512e;
+    color: $color-other;
 
   }
 }

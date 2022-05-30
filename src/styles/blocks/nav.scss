@@ -1,0 +1,98 @@
+.menu {
+  height: 100vh;
+  background-color: $color-background;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  transform: translateX(-100%);
+
+  &:target {
+    transform: translateX(0);
+    transition: transform 0.3s;
+  }
+
+  &__head {
+    margin-bottom: 140px;
+    display: flex;
+    justify-content: space-between;
+
+    &--menu {
+      width: 13px;
+      content: "";
+      background-image: url(../images/icons/close_black.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+
+    @include onDesktop {
+      width: 400px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    margin: 0 0 24px;
+
+  }
+
+  &__phone {
+    @include onDesktop {
+      height: 18px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    color: $color-general;
+
+    &:hover {
+      color: $color-other;
+    }
+  }
+}
+
+.call {
+  padding: 0 0 0 7px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: $color-other;
+
+}
+
+.last {
+  display: flex;
+  justify-content: center;
+
+  @include onDesktop {
+    @include onDesktop {
+      height: 24px;
+    }
+  }
+}
+
+.blog {
+  margin-bottom: 50px;
+}

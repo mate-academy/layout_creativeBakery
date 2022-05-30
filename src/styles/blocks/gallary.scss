@@ -1,43 +1,63 @@
 .gallary {
-  display: grid;
-  grid-template-columns: repeat(8, 128px);
-  grid-template-rows: repeat(3, 700px);
-  column-gap: 24px;
-  row-gap: 80px;
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(8, 64px);
+    column-gap: 24px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(8, 118px);
+  }
+
+  @include onTv {
+    grid-template-columns: repeat(8, 128px);
+  }
 }
 
 .type1 {
-  display: grid;
-  grid-column: 1 / 4;
-  grid-row: 1;
+  grid-column: 1 / 5;
+
+  @include onDesktop {
+    grid-column: 1 / 4;
+  }
 }
 
 .type2 {
-  display: grid;
-  grid-column: 4 / 7;
-  grid-row: 1;
+  grid-column: 5 / 9;
+
+  @include onDesktop {
+    grid-column: 4 / 7;
+  }
 }
 
 .type3 {
-  display: grid;
-  grid-column: 3 / 6;
-  grid-row: 2;
+  grid-column: 1 / 5;
+
+  @include onDesktop {
+    grid-column: 3 / 6;
+  }
 }
 
 .type4 {
-  display: grid;
-  grid-column: 6 / 9;
-  grid-row: 2;
+  grid-column: 5 / 9;
+
+  @include onDesktop {
+    grid-column: 6 / 9;
+  }
 }
 
 .type5 {
-  display: grid;
-  grid-column: 1 / 4;
-  grid-row: 3;
+  grid-column: 1 / 5;
+
+  @include onDesktop {
+    grid-column: 1 / 4;
+  }
 }
 
 .type6 {
-  display: grid;
-  grid-column: 4 / 7;
-  grid-row: 3;
+  grid-column: 5 / 9;
+
+  @include onDesktop {
+    grid-column: 4 / 7;
+  }
 }
