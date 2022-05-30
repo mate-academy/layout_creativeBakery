@@ -23,28 +23,41 @@
     }
   }
 
-  &__menu-logo {
+  &__logo {
+    display: block;
     margin-bottom: 45px;
-    display: inline-block;
+  }
+
+  &__logo-img {
 
     @include laptop {
       @include logo-behavior;
     }
   }
 
-  &__menu-title {
+  &__item-title {
     margin-bottom: 16px;
   }
 
-  &__menu-item {
+  &__list-item {
     margin-top: 16px;
   }
 
-  &__menu-link {
+  &__link {
+    display: inline-block;
     color: $color-white;
+    border-bottom: 2px solid transparent;
+
+    transition-property: border;
+    @include transition-smooth-duration;
+
+    &:focus,
+    &:hover {
+      border-bottom: 2px solid $color-white;
+    }
   }
 
-  &__contacts {
+  &__contact-us {
     padding: $header-height-mobile 0 42px;
 
     @include tablet {
@@ -52,7 +65,7 @@
     }
   }
 
-  &__contacts-title {
+  &__contact-us-title {
     margin-bottom: 40px;
 
     @include section-title;
@@ -60,14 +73,14 @@
     color: $color-white;
   }
 
-  &__contacts-items {
+  &__contacts-container {
 
     @include laptop {
       display: flex;
     }
   }
 
-  &__contacts-item {
+  &__contacts {
 
     &:not(:last-child) {
       margin-bottom: 40px;
@@ -76,19 +89,6 @@
     @include laptop {
       margin-bottom: 0;
       flex-basis: 50%;
-    }
-  }
-
-  &__contacts-item-title {
-    margin-bottom: 16px;
-  }
-
-  &__contacts-item-link {
-    display: block;
-    color: $color-white;
-
-    &:not(:last-child) {
-      margin-bottom: 16px;
     }
   }
 
