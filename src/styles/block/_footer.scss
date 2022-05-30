@@ -42,6 +42,15 @@
     line-height: 150%;
     letter-spacing: -0.01em;
     color: #fff;
+    width: max-content;
+    border-bottom: 2px solid transparent;
+    border-radius: 1px;
+    transition: 0.3s;
+
+    &:hover {
+      border-color: $c-orange;
+      
+    }
   }
 
   &__social {
@@ -53,5 +62,40 @@
     line-height: 150%;
     letter-spacing: -0.01em;
     color: #7f8096;
+  }
+
+  &__icon {
+    @include size (20px, 20px);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media (max-width: 762px) {
+      margin-bottom: 42px;
+    }
+
+    &--fb {
+      background-image: url(../images/meta-logo.svg);
+
+      &:hover {
+        background-image: url(../images/meta-logo-white.svg);
+      }
+    }
+
+    &--in {
+      background-image: url(../images/inst-logo.svg);
+
+      &:hover {
+        background-image: url(../images/inst-logo-white.svg);
+      }
+    }
+
+    &--tw {
+      background-image: url(../images/twitter-logo.svg);
+
+      &:hover {
+        background-image: url(../images/twitter-logo-white.svg);
+      }
+    }
   }
 }

@@ -32,33 +32,51 @@
   }
 
   &__photo {
-    height: 356px;
+    @include size (100%, 356px);
     background-position: center;
     background-size: cover;
     border-radius: 8px;
     margin-bottom: 16px;
     transition: all 0.3s;
+    
 
     &-1-1 {
       background-image: url(../images/1.1.png);
+
+      &:hover {
+        transform: scale(1.05);
+      }
     }
     &-1-2 {
       background-image: url(../images/1.2.png);
+      &:hover {
+        transform: scale(1.05);
+      }
     }
     &-2-1 {
       background-image: url(../images/2.1.png);
+      &:hover {
+        transform: scale(1.05);
+      }
     }
     &-2-2 {
       background-image: url(../images/2.2.png);
+      &:hover {
+        transform: scale(1.05);
+      }
     }
     &-3-1 {
       background-image: url(../images/3.1.png);
+      &:hover {
+        transform: scale(1.05);
+      }
     }
     &-3-2 {
       background-image: url(../images/3.2.png);
+      &:hover {
+        transform: scale(1.05);
+      }
     }
-
-    @include size (100%, 288px);
 
     @include onTablet {
       height: 424px;
@@ -148,11 +166,20 @@
       @include size (16px, 16px);
       background-image: url(../images/arrow-right.svg);
       position: relative;
+      @keyframes arrow {
+        0%,
+        100% {
+          left: 0;
+        }
 
+        50% {
+          left: 7px;
+        }
+      }
     }
 
     &:hover::before {
-      left: 8px;
+      animation: arrow 0.7s infinite;
     }
 
     &--mb {

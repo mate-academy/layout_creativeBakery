@@ -1,7 +1,6 @@
 .header {
 
   height: 100vh;
-
   @include onTablet {
     background-size: 327px;
   }
@@ -14,45 +13,40 @@
     background-size: 585px;
   }
 
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 32px;
-
-    @include onTablet {
-      margin: 0 -24px 80px ;
-    }
-
-    @include onDesktop {
-      margin: 0 -8px 135px;
-    }
-
-    @include onBigScreen {
-      margin: 0 -70px 144px;
-    }
-  }
-
-  &__logo {
-    @include size(128px, 25px);
-  }
-
   &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 64px;
+
+    &--hidden {
+      @media (max-width: 1199px) {
+        display: none;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 64px;
+    }
+
+    @include onBigScreen {
+      flex-direction: row;
+      gap: 64px;
+    }
   }
 
   &__item {
-    display: inline-block;
+    list-style: none;
 
-    &:not(:last-child) {
-      margin-right: 64px;
-    }
-
-    &:last-child {
-      margin-right: 67px;
-    }
   }
 
   &__link {
@@ -61,12 +55,12 @@
     letter-spacing: -0.01em;
 
     color: $main-black;
-
-    transition: 0.1s;
+    border-bottom: 2px solid transparent;
+    border-radius: 1px;
+    transition: 0.3s;
 
     &:hover {
-      border-bottom: 2px solid $c-orange ;
-      border-radius: 1px;
+      border-color: $c-orange ;
     }
   }
 
@@ -77,8 +71,14 @@
     gap: 7px;
     letter-spacing: -0.02em;
     font-weight: 500;
-    line-height: 100%;
+    transition: 0.3s;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid transparent;
     
+    &:hover {
+      border: 1px solid $main-black;
+    }
   }
 
   &__call {
@@ -94,22 +94,24 @@
     color: $c-orange;
   }
 
-  &__menu {
-    @include size (20px, 8px);
-    background-image: url(../images/menu-close.svg);
+  &__menu-button {
 
-    &:target {
-      background-image: url(../images/menu-open.svg);
+    @include onDesktop {
+      display: none;
+    }
+
+    @include onBigScreen {
+      display: none;
     }
   }
 
   &__description {
-    width: 280px;
     height: 48px;
     text-align: center;
     margin-bottom: 32px;
     letter-spacing: -0.01em;
     color: $main-black;
+ 
 
     @include onTablet {
       text-align: start;
@@ -133,6 +135,7 @@
     font-size: 65px;
     line-height: 85%;
     font-weight: 400;
+    margin-bottom: 290px;
 
     text-align: center;
     letter-spacing: -0.05em;
@@ -141,6 +144,7 @@
 
     @include onTablet {
       font-size: 80px;
+      margin-bottom: 210px;
     }
 
     @include onDesktop {
