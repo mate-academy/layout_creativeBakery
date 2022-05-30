@@ -1,5 +1,4 @@
 .intro {
-  padding-top: $header-height-mobile;
   padding-bottom: 40px;
 
   @include tablet {
@@ -21,9 +20,11 @@
   &__describe {
     padding-top: 32px;
     margin-bottom: 32px;
+    text-align: center;
 
     @include tablet {
       margin-bottom: 146px;
+      text-align: left;
     }
 
     @include laptop {
@@ -38,7 +39,6 @@
   &__title {
     font-size: 64px;
     text-align: center;
-    letter-spacing: -0.05em;
 
     @include tablet {
       margin-bottom: 208px;
@@ -90,9 +90,7 @@
     }
   }
 
-  &__btn {
-    position: relative;
-
+  &__button {
     display: flex;
     justify-content: center;
 
@@ -112,12 +110,12 @@
       height: 20px;
       padding-right: 6px;
 
-      @include intro-btn-icon($intro-btn-icon);
+      @include intro-button-icon($intro-button-icon);
 
       transition: background $smooth-duration linear;
     }
 
-    @include intro-btn-disabled;
+    @include intro-button-disabled;
 
     @include laptop {
       transition-property: background, color;
@@ -131,7 +129,7 @@
       }
 
       &:focus::before {
-        @include intro-btn-icon($intro-btn-icon-behavior);
+        @include intro-button-icon($intro-button-icon-behavior);
       }
 
       &:hover {
@@ -140,10 +138,10 @@
       }
 
       &:hover::before {
-        @include intro-btn-icon($intro-btn-icon-behavior);
+        @include intro-button-icon($intro-button-icon-behavior);
       }
 
-      @include intro-btn-disabled;
+      @include intro-button-disabled;
     }
   }
 }

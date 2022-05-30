@@ -4,20 +4,12 @@
   align-items: center;
   height: $header-height-mobile;
   padding: 0 20px;
-  background-color: $color-light-blue;
 
   @include laptop {
-    height: auto;
-    padding: 0 32px;
+    display: none;
   }
 
-  &__logo {
-    display: block;
-    width: 128px;
-    height: 24px;
-  }
-
-  &__menu-btn {
+  &__button {
     width: 20px;
     height: 8px;
     background: url("../images/icons/menu.svg") center no-repeat;
@@ -30,82 +22,6 @@
       width: 16px;
       height: 16px;
       background: url("../images/icons/cross.svg") center / cover no-repeat;
-    }
-  }
-
-  &__menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    transform: translateX(100%);
-
-    transition-property: transform;
-    @include transition-smooth-duration;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    background-color: $color-light-blue;
-
-    @include laptop {
-      position: relative;
-      @include menu-active-translate;
-      flex-direction: row;
-    }
-
-    &--active {
-      @include menu-active-translate;
-    }
-  }
-
-  &__list {
-
-    @include laptop {
-      display: flex;
-      justify-content: center;
-    }
-  }
-
-  &__list-item {
-    margin-bottom: 8px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @include laptop {
-      margin-bottom: 0;
-      margin-left: 32px;
-
-      &:first-child {
-        margin-left: 0;
-      }
-
-      &:last-child {
-        margin-left: 50px;
-      }
-    }
-  }
-
-  &__link {
-
-    @include desktop {
-      padding: 0 16px;
-    }
-  }
-
-  &__phone {
-
-    &:before {
-      padding-right: 7px;
-      width: 18px;
-      height: 18px;
-      background-image: url("../images/icons/phone.svg");
     }
   }
 }

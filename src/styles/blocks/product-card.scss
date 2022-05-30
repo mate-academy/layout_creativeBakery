@@ -6,7 +6,7 @@
   @include laptop {
 
     &:hover &__photo {
-      transform: scale(1.01);
+      transform: scale(1.02);
       box-shadow: 0 1px 4px $color-black;
     }
   }
@@ -23,12 +23,6 @@
 
   &__title {
     margin-bottom: 8px;
-
-    font-weight: 500;
-    line-height: 1;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: $color-grey;
   }
 
   &__describe {
@@ -37,22 +31,24 @@
   }
 
   &__action {
+    @include action-link;
     width: max-content;
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
 
-    transition-property: border-bottom;
+    transition-property: border-bottom, color;
     @include transition-smooth-duration;
 
     &:before {
-      padding-right: 8px;
       width: 16px;
       height: 16px;
       background-image: url("../images/icons/arrow.svg");
     }
 
     @include laptop {
+      &:focus,
       &:hover {
-        border-bottom: 1px solid $color-orange;
+        color: $color-orange;
+        border-bottom: 2px solid $color-orange;
       }
     }
   }
