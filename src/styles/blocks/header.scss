@@ -9,6 +9,10 @@
     }
   }
 
+  &__logo {
+    @include hover(transform, scale(110%));
+  }
+
   &__hidden {
     display: none;
 
@@ -17,7 +21,8 @@
     }
 
     &__element {
-      display: inline;
+      display: inline-block;
+      @include hover(transform, scale(130%));
 
       &:not(:last-child) {
         margin-right: 64px;
@@ -38,6 +43,7 @@
   }
 
   &__menu {
+    @include hover(transform, scale(120%));
     @include on1200px {
       display: none;
     }
@@ -62,7 +68,6 @@
   }
 
   &__info {
-    // display: block;
     padding: 32px 16px;
     @include body-text;
     text-align: center;
@@ -115,7 +120,6 @@
     @include on1440px {
       width: 584px;
       left: calc(50% - 584px / 2);
-      // top: 100px;
     }
   }
 
@@ -128,6 +132,8 @@
     padding: 20px 0;
     margin: 0 16px 104px;
     border-radius: 35px;
+    transition: 0.3s;
+    @include hover(transform, scale(110%));
 
     @include on768px {
       grid-column: 3 / 7;

@@ -1,0 +1,126 @@
+.footer {
+  background-color: $c-black;
+  padding: 60px 16px 56px;
+  grid-template-rows: 140px;
+  grid-template-areas: "logo logo logo logo contact contact contact contact"
+    "left left left left center center center center"
+    ". . . . right right right right"
+    "social social social social copyright copyright copyright copyright";
+
+  @include on1200px {
+    grid-template-areas: "logo logo logo logo contact contact contact contact"
+      "left left left left center center right right"
+      ". . . . . . . ."
+      "social social social social copyright copyright copyright copyright";
+  }
+
+  &__logo {
+    padding-left: 4px;
+    margin-bottom: 44px;
+    grid-area: logo;
+
+    @include on768px {
+      margin-bottom: 105px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 64px;
+    min-width: 150px;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      @include hover(transform, scale(115%));
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__upper {
+    @include uppercase;
+    color: $c-gray;
+  }
+
+  &__link {
+    @include body-text;
+    color: #fff;
+  }
+
+  &__contact {
+    color: #fff;
+    margin-bottom: 40px;
+    grid-area: contact;
+  }
+
+  &__social {
+    display: flex;
+    gap: 35px;
+    margin-bottom: 42px;
+    grid-area: social;
+
+    @include on1200px {
+      padding-top: 20px;
+    }
+
+    &__link {
+      display: block;
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  &__copyright {
+    @include body-text;
+    color: $c-gray;
+    grid-area: copyright;
+
+    @include on1200px {
+      padding-top: 20px;
+    }
+  }
+
+  &__left {
+    grid-area: left;
+  }
+
+  &__center {
+    grid-area: center;
+  }
+
+  &__right {
+    grid-area: right;
+  }
+}
+
+.facebook {
+  background-image: url(../images/icons/facebook.svg);
+  @include img-link;
+
+  &:hover,
+  &:focus {
+    background-image: url(../images/icons/facebook-white.png);
+  }
+}
+
+.insta {
+  background-image: url(../images/icons/instagram.svg);
+  @include img-link;
+
+  &:hover,
+  &:focus {
+    background-image: url(../images/icons/instagram-white.png);
+  }
+}
+
+.twitter {
+  background-image: url(../images/icons/twitter.svg);
+  @include img-link;
+
+  &:hover,
+  &:focus {
+    background-image: url(../images/icons/twitter-white.png);
+  }
+}
