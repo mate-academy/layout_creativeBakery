@@ -1,0 +1,50 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 50px;
+
+  @include onTablet {
+    padding-bottom: 100px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 166px;
+  }
+
+  &__menu {
+    display: block;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__items {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 64px;
+    }
+  }
+
+  &__item {
+    &--link {
+      color: #1c1a26;
+      text-decoration: none;
+    }
+
+    &--call {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    &--call-link {
+      text-transform: uppercase;
+      color: $c-red;
+    }
+  }
+}
