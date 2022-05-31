@@ -1,0 +1,145 @@
+.footer {
+  padding-top: 61px;
+  background-color: $black;
+
+  @include onDesktop {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 93px;
+  }
+
+  &__container {
+    @include onDesktop {
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 1200px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 16px;
+  }
+
+  &__logo {
+    margin-bottom: 44px;
+
+    @include onDesktop {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__blog {
+    margin: 0 auto;
+    width: 288px;
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 64px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.7s;
+
+    &:hover {
+      transition: all 0.5s;
+      transform: translateX(12px) scale(110%);
+      color: $accentOrange;
+    }
+
+    &--phone {
+      &:hover {
+        transform: translateX(12px) scale(110%);
+
+        @include onDesktop {
+          transform: translateX(26px) scale(110%);
+        }
+      }
+    }
+  }
+
+  &__about-us {
+    margin: 0 auto;
+    width: 288px;
+
+    @include onDesktop {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      width: 584px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 40px;
+    font-size: 72px;
+    color: #fff;
+  }
+
+  &__phones {
+    margin-bottom: 40px;
+  }
+
+  &__mail {
+    padding-bottom: 42px;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.social-networks {
+  padding-bottom: 42px;
+  display: flex;
+  align-items: baseline;
+  gap: 44px;
+
+  &__logo {
+    padding: 10px;
+    border-radius: 25%;
+    transition: all 1s;
+
+    &:hover {
+      transition: all 0.5s;
+      transform: scale(1.1);
+      background-color: rgba(100%, 100%, 100%, 0.7);
+      box-shadow: 1px 4px 16px rgba(232, 232, 240, 0.64);
+    }
+  }
+
+  &--mobile {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+}
+
+.copyright {
+  padding-bottom: 56px;
+  text-transform: none;
+  line-height: 24px;
+}
