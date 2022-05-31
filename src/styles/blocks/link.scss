@@ -7,7 +7,7 @@
   align-items: center;
   gap: 4px;
 
-  color: $colorAccentOrange;
+  color: inherit;
   text-decoration: none;
 
   &::before {
@@ -24,7 +24,7 @@
     height: 1px;
     margin-top: 4px;
 
-    background-color: $colorAccentOrange;
+    background-color: $colorBlack;
 
     transition: all 0.2s;
   }
@@ -40,8 +40,6 @@
   }
 
   &__text {
-    @extend %uppercase;
-
     transition: all 0.2s;
   }
 
@@ -49,26 +47,36 @@
     transform: scaleX(1);
   }
 
-  &:focus::before {
-    background-color: $colorDarkOrange;
-  }
-
-  &:focus {
-    color: $colorDarkOrange;
-  }
-
   &:focus &__icon-svg {
     fill: $colorDarkOrange;
   }
 
-  &:disabled::before {
-    background-color: $colorLightOrange;
-  }
+  &--with-icon {
+    @extend %uppercase;
 
-  &:disabled {
-    color: $colorLightOrange;
-  }
-  &:disabled &__icon-svg {
-    fill: $colorDarkOrange;
+    color: $colorAccentOrange;
+
+    &::before {
+      background-color: $colorAccentOrange;
+    }
+
+    &:focus::before {
+      background-color: $colorDarkOrange;
+    }
+
+    &:focus {
+      color: $colorDarkOrange;
+    }
+
+    &:disabled::before {
+      background-color: $colorLightOrange;
+    }
+
+    &:disabled {
+      color: $colorLightOrange;
+    }
+    &:disabled &__icon-svg {
+      fill: $colorDarkOrange;
+    }
   }
 }
