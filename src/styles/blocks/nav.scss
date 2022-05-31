@@ -21,6 +21,10 @@
       display: none;
     }
 
+    &:hover {
+      transform: scale(1.07);
+    }
+
     &::before {
       content: "";
       display: block;
@@ -35,7 +39,7 @@
     }
 
     &:hover::before {
-      background-image: url(../images/icon-lines.png);
+      background-image: url(../images/icon-lines-h.svg);
       transform: scale(1.08);
     }
   }
@@ -75,7 +79,7 @@
     letter-spacing: -0.01em;
     color: $black;
 
-    transition: color 0.4s;
+    transition: color 0.4s, text-shadow 0.4s;
 
     &:hover {
       color: $accent-orange;
@@ -94,11 +98,7 @@
     color: $accent-orange;
     position: relative;
 
-    &:hover {
-      text-shadow: 0 0 10px;
-    }
-
-    &::before {
+    &::after {
       content: "";
       background-image: url(../images/icon-phone.png);
       display: block;
@@ -115,8 +115,8 @@
       background-repeat: no-repeat;
     }
 
-    &:active::before {
-      background-image: url(../images/icon-phone.png);
+    &:active::after {
+      background-image: url(../images/icon-phone-h.svg);
     }
   }
 }

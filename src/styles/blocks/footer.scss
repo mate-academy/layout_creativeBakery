@@ -1,21 +1,30 @@
 .footer {
-  padding-top: 60px;
+  padding-top: 61px;
   padding-bottom: 56px;
-  background-color: $black;
 
   @include onTablet {
     padding-top: 94px;
     padding-bottom: 90px;
   }
 
+  background-color: $black;
+
   &__logo-link {
     display: block;
 
     margin-bottom: 44px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+    }
   }
 
   &__logo {
-    width: 160px;
+    width: 158px;
     height: 30px;
     display: block;
     transition: transform 0.4s;
@@ -27,6 +36,10 @@
 
   &__blog-list {
     margin-bottom: 64px;
+
+    &--second {
+      margin-bottom: 40px;
+    }
   }
 
   &__blog-title {
@@ -41,6 +54,10 @@
 
   &__blog-item {
     margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__blog-link {
@@ -54,6 +71,7 @@
 
     &:active {
       color: $dark-orange;
+      text-shadow: 0.5px 0.5px 10px;
     }
 
     &--mail {
@@ -80,11 +98,11 @@
       grid-template-columns: 1fr 1fr;
     }
 
-    &__grid-first {
+    &__grid__first {
       grid-column: 1/2;
     }
 
-    &__grid-second {
+    &__grid__second {
       grid-column: 1/2;
 
       @include onDesktop {
