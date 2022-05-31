@@ -1,0 +1,62 @@
+.card {
+  &__image {
+    border-radius: 8px;
+    height: 356px;
+    width: 100%;
+    margin-top: 40px;
+    object-fit: fill;
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      margin-top: 64px;
+      height: 424px;
+    }
+
+    @include onDesktop {
+      margin-top: 64px;
+      height: 512px;
+    }
+
+    @include onScreen {
+      margin-top: 64px;
+      height: 560px;
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    margin-top: 10px;
+    color: $grey;
+    letter-spacing: 0.02em;
+  }
+  &__description {
+    margin-top: -10px;
+    letter-spacing: -0.01em;
+    line-height: 24px;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $accentOrange;
+    text-transform: uppercase;
+    position: relative;
+    margin: 22px 0;
+    letter-spacing: 0.02em;
+    &::before {
+      content: "";
+      background-image: url(../images/icons/arrow.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 16px;
+      width: 16px;
+      display: block;
+      margin: 0 8px 0 4px;
+    }
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

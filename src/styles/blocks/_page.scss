@@ -1,0 +1,26 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: $lightBlue;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    padding: 0;
+  }
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    @include hover (transition, 0.3s);
+
+    &:target {
+      transform: translate(0);
+      @include hover (transition, 5s);
+    }
+  }
+}
