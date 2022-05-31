@@ -1,4 +1,10 @@
 .header {
+
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100vh;
+
   &__tagline {
     margin-bottom: 32px;
 
@@ -20,6 +26,9 @@
 
     @include onTablet {
       position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
       font-size: 80px;
       line-height: 68px;
@@ -46,9 +55,9 @@
   &__button {
     margin-bottom: 32px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
+    box-sizing: border-box;
+    bottom: 0;
 
     height: 56px;
     width: 100%;
@@ -57,12 +66,17 @@
     line-height: 16px;
     letter-spacing: 0.02em;
 
+    text-align: center;
     text-decoration: none;
     text-transform: uppercase;
 
     color: $cakeColor;
     border: 1px solid $cakeColor;
     border-radius: 32px;
+
+    &-text {
+      line-height: 56px;
+    }
   }
 }
 
