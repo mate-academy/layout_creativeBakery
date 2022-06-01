@@ -71,6 +71,14 @@
 
     @include hover-img;
 
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 100%;
+    }
+
     @include onTablet {
       height: 424px;
       width: 328px;
@@ -93,6 +101,10 @@
 
   &__item-title {
     margin: 0;
+
+    @include onMobile {
+      text-align: center;
+    }
 
     @include button-text;
     color: $grey;
@@ -138,5 +150,9 @@
     object-fit: fill;
     width: 100%;
     height: 100%;
+
+    @include onMobile {
+      width: 288px;
+    }
   }
 }
