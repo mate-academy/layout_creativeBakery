@@ -1,21 +1,29 @@
 .footer {
-  padding-top: 61px;
+  display: flex;
   background-color: $black;
 
   @include onDesktop {
     margin: 0 auto;
-    display: flex;
     flex-direction: column;
 
     padding-top: 93px;
   }
 
   &__container {
-    @include onDesktop {
+    margin: 0 auto;
+    padding-top: 61px;
+
+    background-color: $black;
+
+    @include onTablet {
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      width: 768px;
+    }
+
+    @include onDesktop {
       width: 1200px;
     }
   }
@@ -26,10 +34,20 @@
   }
 
   &__logo {
-    margin-bottom: 44px;
+    margin-bottom: 46px;
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(105%);
+    }
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
 
     @include onDesktop {
-      margin-bottom: 64px;
+      margin-top: 30px;
+      margin-bottom: 46px;
     }
   }
 
@@ -46,7 +64,7 @@
     margin-bottom: 64px;
 
     @include onDesktop {
-      margin-bottom: 50px;
+      margin-bottom: 15px;
     }
   }
 
@@ -64,10 +82,6 @@
     &--phone {
       &:hover {
         transform: translateX(12px) scale(110%);
-
-        @include onDesktop {
-          transform: translateX(26px) scale(110%);
-        }
       }
     }
   }
@@ -85,13 +99,29 @@
   }
 
   &__title {
+    width: 220px;
     padding-bottom: 40px;
-    font-size: 72px;
+    font-size: 48px;
     color: #fff;
+
+    @include onTablet {
+      font-size: 56px;
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 544px;
+      font-size: 72px;
+      padding-bottom: 14px;
+    }
   }
 
   &__phones {
     margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 22px;
+    }
   }
 
   &__mail {
@@ -124,7 +154,7 @@
   }
 
   &--mobile {
-    @include onDesktop {
+    @include onTablet {
       display: none;
     }
   }
@@ -132,8 +162,16 @@
   &--desktop {
     display: none;
 
-    @include onDesktop {
+    @include onTablet {
       display: flex;
+      margin-left: -7px;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      padding-top: 40px;
+      padding-bottom: 50px;
     }
   }
 }
@@ -142,4 +180,15 @@
   padding-bottom: 56px;
   text-transform: none;
   line-height: 24px;
+
+  @include onDesktop {
+    line-height: 12px;
+    padding-top: 80px;
+  }
+}
+
+.container-info {
+  @include onDesktop {
+    display: flex;
+  }
 }

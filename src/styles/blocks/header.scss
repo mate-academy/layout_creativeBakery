@@ -1,7 +1,7 @@
 .header {
   max-width: 1400px;
   margin: 0 auto;
-  height: 100vh;
+  min-height: 100vh;
   margin-bottom: 100px;
 
   @include onDesktop {
@@ -29,8 +29,8 @@
       left: 0;
       right: 0;
 
-      padding: 18px 42px;
-      padding-right: 44px;
+      padding: 18px 46px;
+      padding-right: 54px;
       display: flex;
       justify-content: space-between;
 
@@ -52,6 +52,12 @@
   &__logo {
     &--hidden {
       width: 15px;
+    }
+
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(105%);
     }
   }
 
@@ -102,6 +108,10 @@
     flex-direction: column;
     align-content: center;
 
+    @include onTablet {
+      width: 768px;
+    }
+
     @include onDesktop {
       width: auto;
       padding: 0 44px;
@@ -112,7 +122,15 @@
     width: 288px;
     text-align: center;
 
+    @include onTablet {
+      text-align: start;
+      width: 290px;
+      margin-bottom: 146px;
+      margin-left: 44px;
+    }
+
     @include onDesktop {
+      margin-bottom: 12px;
       text-align: start;
       width: 260px;
       padding: 114px 10px 0;
@@ -125,8 +143,17 @@
     height: 290px;
     z-index: -1;
 
+    @include onTablet {
+      position: absolute;
+      top: calc(50% - 140px);
+      left: calc(50% - 164px);
+      width: 326px;
+      height: 328px;
+    }
+
     @include onDesktop {
       position: absolute;
+      top: auto;
       left: calc(50% - 280px);
       width: 544px;
       height: 544px;
@@ -142,6 +169,13 @@
     text-align: center;
     font-weight: normal;
     color: $accentOrange;
+
+    @include onTablet {
+      margin: 0 auto 230px;
+      width: 680px;
+      line-height: 68px;
+      font-style: 80px;
+    }
 
     @include onDesktop {
       margin: 0 auto 40px;
@@ -169,7 +203,15 @@
       display: block;
       width: 20px;
       height: 20px;
-      background-image: url(../images/cookie.png);
+      background-image: url(../images/cookie.svg);
+    }
+
+    @include onTablet {
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      margin: 0;
     }
   }
 }
@@ -177,11 +219,17 @@
 .contact-us--transform {
   @include onDesktop {
     display: inline-block;
-    transition: all 0.9s;
+    transition: all 0.7s;
 
     &:hover {
-      transition: all 0.3s;
-      transform: scale(108%) translateX(5px);
+      transform: scale(105%);
+
+      a:first-child {
+        transition: all 0.7s;
+        transform: translateX(11px) rotate(42deg);
+        border-radius: 2px;
+      }
+
     }
   }
 }
@@ -199,12 +247,6 @@
 
   @include onDesktop {
     transition: all 0.7s;
-
-    &:hover {
-      transition: all 0.3s;
-      transform: scale(110%) translateX(-2px) rotate(42deg);
-      border-radius: 2px;
-    }
   }
 
   &--hidden {

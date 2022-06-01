@@ -2,9 +2,13 @@
   width: 288px;
   margin: 0 auto 80px;
 
+  @include onTablet {
+    width: 680px;
+  }
+
   @include onDesktop {
     margin-left: 54px;
-    width: auto;
+    // width: auto;
   }
 }
 
@@ -24,7 +28,14 @@
     text-transform: uppercase;
     color: $accentOrange;
 
+    @include onTablet {
+      display: block;
+      width: 328px;
+      font-size: 56px;
+    }
+
     @include onDesktop {
+      width: auto;
       font-size: 72px;
     }
 
@@ -39,6 +50,14 @@
     display: block;
     line-height: 150%;
     letter-spacing: -0.01em;
+
+    @include onTablet {
+      width: 328px;
+    }
+
+    @include onDesktop {
+      width: auto;
+    }
   }
 
   &__photo {
@@ -62,9 +81,15 @@
     margin-bottom: 14px;
   }
 
-  @include onDesktop {
-    width: 950px;
+  @include onTablet {
     flex-direction: row;
+    margin: 0 auto;
+    width: 680px;
+  }
+
+  @include onDesktop {
+    margin-left: 0;
+    width: 950px;
     margin-bottom: 88px;
 
     &:last-child {
@@ -90,7 +115,12 @@
   transition: all 0.5s;
 
   &:hover {
-    transform: scale(102%);
+    transform: scale(105%) translateY(-8px);
+  }
+
+  @include onTablet {
+    width: 328px;
+    height: 424px;
   }
 
   @include onDesktop {
