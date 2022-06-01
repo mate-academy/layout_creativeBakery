@@ -1,6 +1,7 @@
 .place {
 
   &__card {
+
     margin-bottom: 64px;
 
     @include onTablet {
@@ -15,18 +16,29 @@
   &__photo {
     margin: 0 auto 16px;
     display: block;
-    max-width: 288px;
+    width: 288px;
+    height: 356px;
     border-radius: 8px;
 
     transition: transform 0.4s;
 
+    &:hover {
+      transform: scale(1.03);
+    }
+
     @include onTablet {
+      width: 328px;
+      height: 424px;
+    }
 
-      max-width: 100%;
+    @include onDesktop {
+      width: 402px;
+      height: 512px;
+    }
 
-      &:hover {
-        transform: scale(1.03);
-      }
+    @include onBigDesktop {
+      width: 432px;
+      height: 560px;
     }
   }
 
