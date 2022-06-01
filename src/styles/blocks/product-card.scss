@@ -3,14 +3,6 @@
   flex-direction: column;
   height: 100%;
 
-  @include laptop {
-
-    &:hover &__photo {
-      transform: scale(1.02);
-      box-shadow: 0 1px 4px $color-black;
-    }
-  }
-
   &__photo {
     display: block;
     margin-bottom: 16px;
@@ -19,6 +11,11 @@
 
     transition-property: transform, box-shadow;
     @include transition-smooth-duration;
+  }
+
+  &:hover &__photo {
+    transform: scale(1.02);
+    box-shadow: 0 1px 4px $color-black;
   }
 
   &__title {
@@ -44,12 +41,28 @@
       background-image: url("../images/icons/arrow.svg");
     }
 
-    @include laptop {
-      &:focus,
-      &:hover {
-        color: $color-orange;
-        border-bottom: 2px solid $color-orange;
-      }
+    &:focus,
+    &:hover {
+      color: $color-orange;
+      border-bottom: 2px solid $color-orange;
+    }
+  }
+
+  &:hover &__action:before {
+    animation: move-arrow 1s linear infinite;
+  }
+
+  @keyframes move-arrow {
+    0% {
+      transform: translateX(-50%);
+    }
+
+    50% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
     }
   }
 }

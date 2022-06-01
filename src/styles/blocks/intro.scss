@@ -115,33 +115,28 @@
       transition: background $smooth-duration linear;
     }
 
-    @include intro-button-disabled;
+    transition-property: background, color;
+    @include transition-smooth-duration;
 
-    @include laptop {
-      transition-property: background, color;
-      transition-duration: $smooth-duration;
-      transition-timing-function: linear;
-
-      &:focus {
-        background: $color-dark-orange;
-        color: $color-white;
-        outline: none;
-      }
-
-      &:focus::before {
-        @include intro-button-icon($intro-button-icon-behavior);
-      }
-
-      &:hover {
-        background: $color-orange;
-        color: $color-white;
-      }
-
-      &:hover::before {
-        @include intro-button-icon($intro-button-icon-behavior);
-      }
-
-      @include intro-button-disabled;
+    &:focus {
+      background: $color-dark-orange;
+      color: $color-white;
+      outline: none;
     }
+
+    &:focus::before {
+      @include intro-button-icon($intro-button-icon-behavior);
+    }
+
+    &:hover {
+      background: $color-orange;
+      color: $color-white;
+    }
+
+    &:hover::before {
+      @include intro-button-icon($intro-button-icon-behavior);
+    }
+
+    @include intro-button-disabled;
   }
 }

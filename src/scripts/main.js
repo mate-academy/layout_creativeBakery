@@ -2,16 +2,16 @@
 
 function doHeaderMenu() {
   const menu = document.querySelector('.page__menu');
-  const menuButton = document.querySelector('.header__button');
+  const btnMenu = document.querySelector('.btn-menu');
   const pageBody = document.querySelector('.page__body');
 
   function menuToggler() {
     menu.classList.toggle('page__menu--active');
-    menuButton.classList.toggle('header__button--active');
+    btnMenu.classList.toggle('btn-menu--active');
     pageBody.classList.toggle('page__body--stop-scroll');
   };
 
-  menuButton.addEventListener('click', menuToggler);
+  btnMenu.addEventListener('click', menuToggler);
 
   menu.addEventListener('click', e => {
     if (document.querySelector('.page__menu--active')) {

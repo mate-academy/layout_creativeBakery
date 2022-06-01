@@ -9,6 +9,15 @@
   padding-bottom: 8px;
   text-align: center;
 
+  transition-property: transform, text-shadow;
+  @include transition-smooth-duration;
+
+  &:focus,
+  &:hover {
+    transform: scale(1.2);
+    text-shadow: 0 1px 2px $color-black;
+  }
+
   @include laptop {
     display: flex;
     justify-content: center;
@@ -18,15 +27,6 @@
     padding-bottom: 0;
     width: max-content;
     height: $header-height-desktop;
-
-    transition: transform, text-shadow;
-    @include transition-smooth-duration;
-
-    &:focus,
-    &:hover {
-      transform: scale(1.2);
-      text-shadow: 0 1px 2px $color-black;
-    }
   }
 
   &--active {
