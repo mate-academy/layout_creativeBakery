@@ -1,0 +1,29 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+
+  &__wraper {
+    width: 280px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-bottom: 72px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,
+      minmax(280px, 1fr));
+      column-gap: 23px;
+    }
+
+    &__top-wraper {
+      @include onTablet {
+      display: grid;
+      }
+    }
+  }
+}
