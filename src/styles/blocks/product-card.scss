@@ -1,0 +1,68 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__photo {
+    display: block;
+    margin-bottom: 16px;
+    width: 100%;
+    object-fit: contain;
+
+    transition-property: transform, box-shadow;
+    @include transition-smooth-duration;
+  }
+
+  &:hover &__photo {
+    transform: scale(1.02);
+    box-shadow: 0 1px 4px $color-black;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  &__describe {
+    flex-basis: 100%;
+    margin-bottom: 24px;
+  }
+
+  &__action {
+    @include action-link;
+    width: max-content;
+    border-bottom: 2px solid transparent;
+
+    transition-property: border-bottom, color;
+    @include transition-smooth-duration;
+
+    &:before {
+      width: 16px;
+      height: 16px;
+      background-image: url("../images/icons/arrow.svg");
+    }
+
+    &:focus,
+    &:hover {
+      color: $color-orange;
+      border-bottom: 2px solid $color-orange;
+    }
+  }
+
+  &:hover &__action:before {
+    animation: move-arrow 1s linear infinite;
+  }
+
+  @keyframes move-arrow {
+    0% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(-50%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+}

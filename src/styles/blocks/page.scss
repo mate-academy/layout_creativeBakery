@@ -1,0 +1,59 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: $color-black;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $color-light-blue;
+
+    &--stop-scroll {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+
+    background-color: $color-light-blue;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    transform: translateX(100%);
+
+    transition-property: transform;
+    @include transition-smooth-duration;
+
+    background-color: $color-light-blue;
+
+    @include laptop {
+      @include menu-active-position;
+    }
+
+    &--active {
+      @include menu-active-position;
+    }
+  }
+
+  &__section {
+    @include section-padding-top;
+  }
+
+  &__section-title {
+    @include section-title;
+    color: $color-black;
+  }
+}

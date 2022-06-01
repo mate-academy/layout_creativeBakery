@@ -1,0 +1,142 @@
+.intro {
+  padding-bottom: 40px;
+
+  @include tablet {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__content {
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 100vh;
+    }
+  }
+
+  &__describe {
+    padding-top: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+
+    @include tablet {
+      margin-bottom: 146px;
+      text-align: left;
+    }
+
+    @include laptop {
+      margin-bottom: 8px;
+    }
+
+    @include desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    text-align: center;
+
+    @include tablet {
+      margin-bottom: 208px;
+      font-size: 80px;
+    }
+
+    @include laptop {
+      margin-bottom: 62px;
+      font-size: 136px;
+    }
+
+    @include desktop {
+      font-size: 144px;
+    }
+
+    &::after {
+      content: "";
+      position: relative;
+
+      display: block;
+      margin: 0 auto;
+      width: 288px;
+      height: 290px;
+
+      background: url("../images/intro/intro.png") center / cover no-repeat;
+
+      @include tablet {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -57%);
+        z-index: -1;
+
+        width: 326px;
+        height: 328px;
+      }
+
+      @include laptop {
+        transform: translate(-50%, -52%);
+        width: 544px;
+        height: 546px;
+      }
+
+      @include desktop {
+        transform: translate(-50%, -51%);
+        width: 584px;
+        height: 586px;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    padding: 20px 0;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-orange;
+    border: 1px solid $color-orange;
+    border-radius: 32px;
+    background-color: $color-white;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      padding-right: 6px;
+
+      @include intro-button-icon($intro-button-icon);
+
+      transition: background $smooth-duration linear;
+    }
+
+    transition-property: background, color;
+    @include transition-smooth-duration;
+
+    &:focus {
+      background: $color-dark-orange;
+      color: $color-white;
+      outline: none;
+    }
+
+    &:focus::before {
+      @include intro-button-icon($intro-button-icon-behavior);
+    }
+
+    &:hover {
+      background: $color-orange;
+      color: $color-white;
+    }
+
+    &:hover::before {
+      @include intro-button-icon($intro-button-icon-behavior);
+    }
+
+    @include intro-button-disabled;
+  }
+}

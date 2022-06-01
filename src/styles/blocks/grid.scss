@@ -1,0 +1,41 @@
+.grid {
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+
+    &__item {
+
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          @include tablet {
+            &--tablet-#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          @include laptop {
+            &--laptop-#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          @include desktop {
+            &--desktop-#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+.footer {
+  padding: $header-height-mobile 0 60px;
+  background-color: $color-black;
+
+  @include tablet {
+    padding: $header-height-desktop 0 80px;
+  }
+
+  &__menu {
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      height: 100%;
+
+      padding-bottom: 104px;
+    }
+
+    @include laptop {
+      padding-bottom: 48px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 45px;
+  }
+
+  &__item-title {
+    margin-bottom: 16px;
+  }
+
+  &__list-item {
+    margin-top: 16px;
+  }
+
+  &__link {
+    display: inline-block;
+    color: $color-white;
+    border-bottom: 2px solid transparent;
+
+    transition-property: border;
+    @include transition-smooth-duration;
+
+    &:focus,
+    &:hover {
+      border-bottom: 2px solid $color-white;
+    }
+  }
+
+  &__contact-us {
+    padding: $header-height-mobile 0 42px;
+
+    @include tablet {
+      padding: 0 0 48px;
+    }
+  }
+
+  &__contact-us-title {
+    margin-bottom: 40px;
+
+    @include section-title;
+    font-size: 48px;
+    color: $color-white;
+  }
+
+  &__contacts-container {
+
+    @include laptop {
+      display: flex;
+    }
+  }
+
+  &__contacts {
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    @include laptop {
+      margin-bottom: 0;
+      flex-basis: 50%;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+
+    margin: -10px -10px 32px;
+  }
+
+  &__social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+
+    fill: $color-orange;
+
+    &:focus,
+    &:hover {
+      fill: $color-white;
+    }
+  }
+
+  &__social-icon {
+    fill: inherit;
+
+    transition-property: fill;
+    @include transition-smooth-duration;
+  }
+
+  &__copyright {
+    color: $color-grey;
+  }
+}
