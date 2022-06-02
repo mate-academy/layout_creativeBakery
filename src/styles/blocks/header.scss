@@ -1,92 +1,171 @@
 .header {
-  height: 100vh;
-  position: relative;
-  background-image: url(../images/cookieHeader.png);
-  background-size: 288px;
-  background-position: center 63%;
-  background-repeat: no-repeat;
-
-  @include onTablet {
-    background-position: center 45%;
+  &__top {
+    margin-bottom: 52px;
   }
 
-  @include onDesktop {
-    background-position: center 20%;
-    background-size: 544px;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    height: 100vh;
+    padding: $headerTopPadding 0;
   }
-
-  // @include onTablet {
-  //   min-height: 750px;
-  // }
-  // @include onDesktop {
-  //   min-height: 700px;
-  // }
-
-  // &__top {
-  //   margin-bottom: 32px;
-
-  //   @include onTablet {
-  //     margin: 0 -28px 80px;
-  //   }
-
-  //   @include onDesktop {
-  //     margin: 0 -12px 135px;
-  //   }
-  // }
 
   &__subtitle {
-    margin: 0;
-    padding-bottom: 32px;
-    font-family: "Inter", Arial, Helvetica, sans-serif;
+    margin: 0 0 32px;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     letter-spacing: -0.01em;
-    text-align: center;
     color: #1c1a26;
+    text-align: center;
 
     @include onTablet {
-      padding-bottom: 146px;
-      text-align: left;
-    }
-
-    @include onDesktop {
-      padding-bottom: 8px;
-      text-align: left;
+      text-align: start;
     }
   }
 
   &__title {
     margin: 0;
-    padding-bottom: 310px;
-
-    font-family: "Inter", Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 64px;
     line-height: 85%;
     letter-spacing: -0.05em;
     text-transform: uppercase;
-    text-align: center;
     color: $c-red;
+    text-align: center;
 
     @include onTablet {
+      position: absolute;
+      top: 50%;
+      z-index: 1;
       font-size: 80px;
-      padding-bottom: 228px;
     }
 
     @include onDesktop {
       font-size: 136px;
-      padding-bottom: 82px;
     }
+
+    @include onDesktopPlus {
+      font-size: 144px;
+    }
+  }
+
+  &__img {
+    position: relative;
+    max-width: 320px;
   }
 
   &__button {
     display: flex;
-    gap: 6px;
+    align-items: center;
     justify-content: center;
+    gap: 6px;
+    padding: 20px 0;
+    width: 320px;
+    margin: 0 auto;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
     color: $c-red;
-    text-decoration: none;
+    background-color: #ffeefc;
+
     border-radius: 40px;
     border: 2px solid $c-red;
   }
+  // height: 100vh;
+  // position: relative;
+  // background-image: url(../images/cookieHeader.png);
+  // background-size: 288px;
+  // background-position: center 63%;
+  // background-repeat: no-repeat;
+
+  // @include onTablet {
+  //   background-position: center 45%;
+  // }
+
+  // @include onDesktop {
+  //   background-position: center 20%;
+  //   background-size: 544px;
+  // }
+
+  // // @include onTablet {
+  // //   min-height: 750px;
+  // // }
+  // // @include onDesktop {
+  // //   min-height: 700px;
+  // // }
+
+  // // &__top {
+  // //   margin-bottom: 32px;
+
+  // //   @include onTablet {
+  // //     margin: 0 -28px 80px;
+  // //   }
+
+  // //   @include onDesktop {
+  // //     margin: 0 -12px 135px;
+  // //   }
+  // // }
+
+  // &__subtitle {
+  //   margin: 0;
+  //   padding-bottom: 32px;
+  //   font-family: "Inter", Arial, Helvetica, sans-serif;
+  //   font-weight: 400;
+  //   font-size: 16px;
+  //   line-height: 150%;
+  //   letter-spacing: -0.01em;
+  //   text-align: center;
+  //   color: #1c1a26;
+
+  //   @include onTablet {
+  //     padding-bottom: 146px;
+  //     text-align: left;
+  //   }
+
+  //   @include onDesktop {
+  //     padding-bottom: 8px;
+  //     text-align: left;
+  //   }
+  // }
+
+  // &__title {
+  //   margin: 0;
+  //   padding-bottom: 310px;
+
+  //   font-family: "Inter", Arial, Helvetica, sans-serif;
+  //   font-weight: 400;
+  //   font-size: 64px;
+  //   line-height: 85%;
+  //   letter-spacing: -0.05em;
+  //   text-transform: uppercase;
+  //   text-align: center;
+  //   color: $c-red;
+
+  //   @include onTablet {
+  //     font-size: 80px;
+  //     padding-bottom: 228px;
+  //   }
+
+  //   @include onDesktop {
+  //     font-size: 136px;
+  //     padding-bottom: 82px;
+  //   }
+  // }
+
+  // &__button {
+  //   display: flex;
+  //   gap: 6px;
+  //   justify-content: center;
+  //   color: $c-red;
+  //   text-decoration: none;
+  //   border-radius: 40px;
+  //   border: 2px solid $c-red;
+  // }
 }

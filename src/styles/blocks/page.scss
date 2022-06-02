@@ -1,20 +1,13 @@
 .page {
   font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
+
+  scroll-behavior: smooth;
+  // font-weight: 400;
+  // font-size: 16px;
 
   &__body {
     margin: 0;
-    padding: 20px 16px;
-    background-color: #ffeefc;
-
-    @include onTablet {
-      padding: 20px 44px;
-    }
-
-    @include onTablet {
-      padding: 32px 44px;
-    }
+    background-color: $c-lightPink;
   }
 
   &__menu {
@@ -22,12 +15,56 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: #ffeefc;
 
-    transform: translateX(-100%);
+    transform: translateX(200%);
+    transition: transform 0.3s;
 
     &:target {
-      transform: translateX(0%);
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__section-title {
+    padding-top: 20px;
+    margin: 0 0 24px;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $c-red;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__section-subtitle {
+    margin-bottom: 56px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+
+    @include onTablet {
+      margin-bottom: 80px;
     }
   }
 }
