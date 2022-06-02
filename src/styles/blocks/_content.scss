@@ -4,7 +4,7 @@
   padding: 0 16px;
 
   &__wraper {
-    width: 280px;
+    width: 255px;
   }
 
   &__container {
@@ -15,15 +15,25 @@
 
     @include onTablet {
       display: grid;
-      grid-template-columns: repeat(auto-fill,
-      minmax(280px, 1fr));
-      column-gap: 23px;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 150px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 4px;
+      margin-bottom: 350px;
     }
 
     &__top-wraper {
       @include onTablet {
-      display: grid;
+        display: grid;
       }
     }
   }
 }
+.background {
+  background-image: url(../images/crumbs.png);
+  background-position: center;
+  background-size: cover;
+ }
