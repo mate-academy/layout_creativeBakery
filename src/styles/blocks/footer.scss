@@ -1,9 +1,18 @@
 .footer {
-  padding: 60px 16px;
   background-color: $mainColor;
+  margin: 0 auto;
+  width: 100%;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  &__container {
+    margin: 0 auto;
+    padding: 60px 16px;
+
+    @include onDesktop {
+      max-width: 1024px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 
   &__menu {
     margin-bottom: 64px;
@@ -64,6 +73,13 @@
       text-transform: uppercase;
 
       color: #fff;
+    }
+
+    &-list {
+      @include onDesktop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
     }
   }
 }
