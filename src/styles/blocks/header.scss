@@ -1,13 +1,67 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  padding: 0 20px;
+  &__nav {
+    padding: 0 0 20px;
+    margin: 20px 0 32px;
+  }
+
+  &__menu--phone {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto;
+
+    padding: 20px 16px;
+    margin: 0 0 32px;
+
+    @include onTablets {
+      padding: 0 48px 20px;
+    }
+
+    background-color: $pinkColor;
+    transform: translateX(100%);
+    transition: transform 1s;
+
+    &:target {
+      transform: translate(0);
+    }
+  }
+
+  &__content {
+    position: relative;
+    background-image: url(../images/Cookie.png);
+    background-size: 288px;
+    background-position: center 65%;
+    background-repeat: no-repeat;
+    min-height: 670px;
+
+    @include onTablets {
+      background-size: 326px;
+      background-position: center 30%;
+    }
+
+    @include onDesktop {
+      background-position: center 40%;
+      background-size: 544px;
+    }
+
+    @include onFullDesktop {
+      background-position: center 70%;
+      background-size: 584px;
+    }
+  }
 
   &__button {
-    width: 20px;
-    height: 8px;
-    background: url("../images/menu.png");
+    margin: 250px 0 120px;
+
+    @include onTablets {
+      margin: 0 0 240px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 330px;
+    }
   }
 }
