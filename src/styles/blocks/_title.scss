@@ -1,0 +1,74 @@
+.title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $colorBigText;
+  margin-bottom: 24px;
+
+  @include onTablet {
+    display: grid;
+  }
+
+  &__cont {
+    margin-bottom: 24px;
+
+    @include onTablet {
+      display: grid;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__count {
+    font-size: 96px;
+  }
+  &__head {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $colorBigText;
+
+    &::before {
+      content: "We bake your fantasies — croissants, "
+        "cakes, cookies, and cupcakes.";
+      display: none;
+      width: 250px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: left;
+      letter-spacing: -0.01em;
+      color: $mainColor;
+      text-transform: none;
+    }
+
+    @include onTablet {
+      position: absolute;
+      font-size: 75px;
+      line-height: 85%;
+      transform: translateY(-250%);
+
+      z-index: 1;
+    }
+    @include onDesktop {
+      font-size: 120px;
+      transform: translateY(-80%);
+      &::before {
+        display: block;
+      }
+    }
+    @include onBigScreen {
+      font-size: 136px;
+
+      &::before {
+        width: 300px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

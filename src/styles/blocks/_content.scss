@@ -1,0 +1,47 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+
+  @include onTablet {
+    padding: 0 44px;
+  }
+  @include onBigScreen {
+    padding: 0 100px;
+  }
+
+  &__wraper {
+    width: 255px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-bottom: 72px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 150px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 4px;
+      margin-bottom: 350px;
+    }
+
+    &__top-wraper {
+      @include onTablet {
+        display: grid;
+      }
+    }
+  }
+}
+
+.background {
+  background-image: url(../images/crumbs.png);
+  background-position: center;
+  background-size: cover;
+}

@@ -1,0 +1,88 @@
+.gallary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+
+  @include onTablet {
+    padding: 0 44px;
+  }
+  @include onBigScreen {
+    padding: 0 100px;
+
+  }
+
+  &__container {
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__pic {
+    cursor: pointer;
+    width: 100%;
+    height: 356px;
+    object-fit: cover;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(110%);
+    }
+
+    @include onTablet {
+      height: 424px;
+    }
+    @include onDesktop {
+      height: 512px;
+    }
+    @include onBigScreen {
+      height: 560px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    gap: 7px;
+  }
+
+  &__arrow {
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+
+  &__order {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $colorBigText;
+    margin-bottom: 64px;
+  }
+
+  &__sub-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $greyColor;
+    margin-bottom: 8px;
+  }
+
+  &__main {
+    margin-bottom: 24px;
+  }
+}
+
+.photo {
+  line-height: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}

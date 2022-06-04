@@ -1,0 +1,56 @@
+.button {
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 326px;
+  height: 56px;
+  gap: 6px;
+  background-color: #ffeefc;
+  border: 2px solid $colorBigText;
+  border-radius: 32px;
+  margin-bottom: 124px;
+  text-decoration: none;
+  transition: 0.3s;
+  text-transform: uppercase;
+  color: $colorBigText;
+  @include onTablet {
+    margin-bottom: 248px;
+  }
+  @include onDesktop {
+    position: absolute;
+    transform: translate(-175%, -700%);
+
+    width: 280px;
+  }
+  @include onBigScreen {
+    position: absolute;
+    transform: translate(-200%, -700%);
+
+    width: 280px;
+  }
+  &::before {
+    content: "";
+    height: 18px;
+    width: 18px;
+    display: block;
+    background-image: url(../images/svgs/cookie.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+  &:hover {
+    color: white;
+    background-color: #f9512e;
+
+    &::before {
+      background-image: url(../images/svgs/whiteCookie.svg);
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &:focus {
+    background-color: #b3341a;
+  }
+}
