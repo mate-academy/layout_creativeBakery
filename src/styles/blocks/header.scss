@@ -1,4 +1,5 @@
 .header {
+
   &__top {
     margin-bottom: 52px;
   }
@@ -6,15 +7,18 @@
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
 
     box-sizing: border-box;
     height: 100vh;
-    padding: $headerTopPadding 0;
+    padding: $headerTopPadding 0 84px;
+
+    @include onTablet {
+      padding: $headerTopPadding 0 208px;
+    }
   }
 
   &__subtitle {
-    margin: 0 0 32px;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
@@ -24,6 +28,13 @@
 
     @include onTablet {
       text-align: start;
+      max-width: 280px;
+      margin: 0 0 146px;
+    }
+
+    @include onDesktop {
+      max-width: 260px;
+      margin-bottom: 8px;
     }
   }
 
@@ -38,14 +49,14 @@
     text-align: center;
 
     @include onTablet {
-      position: absolute;
-      top: 50%;
-      z-index: 1;
+      margin-bottom: 210px;
       font-size: 80px;
+      white-space: nowrap;
     }
 
     @include onDesktop {
       font-size: 136px;
+      margin-bottom: 64px;
     }
 
     @include onDesktopPlus {
@@ -55,7 +66,21 @@
 
   &__img {
     position: relative;
-    max-width: 320px;
+    margin: 0 auto;
+    width: 288px;
+
+    @include onTablet {
+      position: absolute;
+      width: 326px;
+      top: 43%;
+      left: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+    }
+
+    @include onDesktop {
+      width: 544px;
+    }
   }
 
   &__button {
@@ -64,7 +89,7 @@
     justify-content: center;
     gap: 6px;
     padding: 20px 0;
-    width: 320px;
+    width: 288px;
     margin: 0 auto;
 
     font-weight: 500;
@@ -72,11 +97,27 @@
     line-height: 100%;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    text-decoration: none;
     color: $c-red;
     background-color: #ffeefc;
 
     border-radius: 40px;
     border: 2px solid $c-red;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onTablet {
+      margin: 0 auto;
+      width: 326px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
   }
   // height: 100vh;
   // position: relative;
@@ -168,4 +209,20 @@
   //   border-radius: 40px;
   //   border: 2px solid $c-red;
   // }
+
+  &__test {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    @include onTablet {
+      height: auto;
+    }
+
+    @include onDesktop {
+      margin-top: 180px;
+    }
+  }
 }
