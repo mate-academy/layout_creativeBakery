@@ -1,0 +1,68 @@
+.nav {
+
+  display: none;
+
+  @include On1200 {
+    display: flex;
+  }
+
+  &__right {
+    position: relative;
+
+    &::before {
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -25px;
+      content: "";
+      display: block;
+      background-image: url(../images/vectors/phone.svg);
+      width: 18px;
+      height: 18px;
+      @extend .bg-img;
+      transition: filter 0.2s linear;
+    }
+
+    &:hover::before {
+      filter: invert(0%) sepia(43%) saturate(7500%)
+        hue-rotate(79deg) brightness(96%) contrast(105%);
+    }
+
+    &-link {
+      letter-spacing: 0.02em;
+      color: $red;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: 0.2s color;
+
+      &:hover {
+        color: $main-col;
+      }
+    }
+  }
+
+  &__left {
+    margin-right: 67px;
+
+    &-link {
+      color: inherit;
+      letter-spacing: -0.01em;
+      margin-right: 64px;
+      transition: 0.2s color;
+
+      &:hover {
+        color: $red;
+      }
+    }
+
+    &--menu {
+      flex-direction: column;
+    }
+  }
+
+  &--menu {
+    display: flex;
+    flex-direction: column;
+  }
+}

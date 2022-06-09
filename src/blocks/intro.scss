@@ -1,0 +1,102 @@
+.intro {
+
+  &__suptitle {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 32px;
+
+    @include On768 {
+      max-width: 280px;
+      margin-bottom: 0;
+    }
+    @include On1200 {
+      max-width: 260px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    font-size: 50px;
+    line-height: 85%;
+
+    @media (min-width: 320px) {
+      font-size: 64px;
+    }
+
+    @include On768 {
+      position: absolute;
+      font-size: 80px;
+      top: 50%;
+      left: 50%;
+      width: max-content;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    @include On1200 {
+      font-size: 130px;
+    }
+    @include On1440 {
+      font-size: 144px;
+    }
+
+    &--shown-On768 {
+      display: none;
+
+      @include On768 {
+        display: flex;
+      }
+    }
+
+    &--hidden-On768 {
+      display: flex;
+
+      @include On768 {
+        display: none;
+      }
+    }
+  }
+
+  &__pict {
+    position: relative;
+    width: 100%;
+    max-width: 290px;
+    max-height: 290px;
+    margin: 0 auto;
+
+    @include On768 {
+      max-width: 328px;
+      max-height: 328px;
+      margin-bottom: 60px;
+    }
+    @include On1200 {
+      max-width: 546px;
+      max-height: 546px;
+      margin-top: -200px;
+      margin-bottom: 0;
+    }
+    @include On1440 {
+      max-width: 586px;
+      max-height: 586px;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s linear, rotate 0.5s linear;
+
+    &:hover {
+      transform: scale(1.2) rotate(360deg);
+    }
+  }
+}

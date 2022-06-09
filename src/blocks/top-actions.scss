@@ -1,0 +1,60 @@
+.top-actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__right {
+    display: none;
+    align-items: center;
+
+    @include On1200 {
+      display: flex;
+    }
+  }
+
+  &__menu {
+    transition: filter 0.2s linear;
+
+    @include On1200 {
+      display: none;
+    }
+
+    &--shown {
+      width: 13px;
+      height: 13px;
+
+      @include On768 {
+        width: 18px;
+        height: 18px;
+      }
+      @include On1200 {
+        width: 24px;
+        height: 24px;
+      }
+
+      @include On1200 {
+        display: flex;
+      }
+
+      & img {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    & img {
+      transition: transform 0.2s linear;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &:hover {
+      filter: invert(39%) sepia(28%) saturate(4640%)
+        hue-rotate(344deg) brightness(101%) contrast(95%);
+    }
+  }
+}
