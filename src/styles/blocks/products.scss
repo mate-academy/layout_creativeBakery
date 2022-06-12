@@ -1,0 +1,197 @@
+.products {
+
+  &__header {
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $main-black;
+
+    margin-bottom: 40px;
+
+    &--style-footer {
+      color: #fff;
+      width: 60px;
+
+      @include onDesktop {
+        width: max-content;
+      }
+
+      @include onBigScreen {
+        width: max-content;
+      }
+
+    }
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+
+    @include onBigScreen {
+      font-size: 72px;
+    }
+
+    &--mb {
+      margin-bottom: 186px;
+    }
+  }
+
+  &__photo {
+    @include size (100%, 356px);
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: all 0.3s;
+
+    &-1-1 {
+      background-image: url(../images/dessert1.png);
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    &-1-2 {
+      background-image: url(../images/dessert2.png);
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    &-2-1 {
+      background-image: url(../images/dessert3.png);
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    &-2-2 {
+      background-image: url(../images/dessert4.png);
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    &-3-1 {
+      background-image: url(../images/dessert5.png);
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    &-3-2 {
+      background-image: url(../images/dessert6.png);
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    @include onTablet {
+      height: 424px;
+    }
+
+    @include onDesktop {
+      height: 512px;
+    }
+
+    @include onBigScreen {
+      height: 560px;
+
+      &--height {
+        height: 584px;
+      }
+
+      &--mb {
+        margin-bottom: 144px;
+      }
+    }
+  }
+
+  &__name {
+    margin-bottom: 8px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+  }
+
+  &__description {
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+    color: $main-black;
+
+    &--margin {
+      margin-bottom: 56px;
+
+      @include onTablet {
+        margin-bottom: 80px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 80px;
+      }
+
+      @include onBigScreen {
+        margin-bottom: 80px;
+      }
+    }
+
+    &-card {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__button {
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 64px;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $c-orange;
+    text-decoration: none;
+
+    @include onTablet {
+      margin-bottom: 88px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 88px;
+    }
+
+    @include onBigScreen {
+      margin-bottom: 88px;
+    }
+
+    &::before {
+      content: "";
+      @include size (16px, 16px);
+      background-image: url(../images/pointer.svg);
+      position: relative;
+      @keyframes arrow {
+        0%,
+        100% {
+          left: 0;
+        }
+
+        50% {
+          left: 7px;
+        }
+      }
+    }
+
+    &:hover::before {
+      animation: arrow 0.7s;
+    }
+
+    &--mb {
+      margin-bottom: 186px;
+    }
+  }
+}

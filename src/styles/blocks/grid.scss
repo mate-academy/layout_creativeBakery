@@ -3,16 +3,7 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: 16px;
 
-  @include onTablet {
-    grid-template-columns: repeat(8, 1fr);
-    column-gap: 24px;
-  }
-
-  @include onDesktop {
-    grid-template-columns: repeat(8, 1fr);
-    column-gap: 24px;
-  }
-
+  &--Tablet,
   &--desktop {
     display: block;
 
@@ -25,23 +16,30 @@
     }
   }
 
-  &__item-tablet {
+  @include onTablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  &__item {
     @include onTablet {
       @for $start from 1 through 8 {
         @for $end from $start through 8 {
-          &--#{$start}-#{$end} {
+          &-Tablet--#{$start}-#{$end} {
             grid-column: #{$start} / #{$end + 1};
           }
         }
       }
     }
-  }
-
-  &__item-desktop {
     @include onDesktop {
       @for $start from 1 through 8 {
         @for $end from $start through 8 {
-          &--#{$start}-#{$end} {
+          &-desktop--#{$start}-#{$end} {
             grid-column: #{$start} / #{$end + 1};
           }
         }

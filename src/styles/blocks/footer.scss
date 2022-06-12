@@ -1,128 +1,103 @@
 .footer {
-  box-sizing: border-box;
-  height: 915px;
-  padding-top: 60px;
-  background-color: #1c1a26;
+  padding-top: 61px;
+  padding-bottom: 58px;
+  background-color: $main-black;
 
   @include onTablet {
-    height: 616px;
-    padding-top: 90px;
+    padding-top: 88px;
+    padding-bottom: 88px;
   }
 
   @include onDesktop {
-    height: 525px;
+    padding-top: 88px;
+    padding-bottom: 88px;
   }
 
-  &__backerlab {
-    padding-top: 5px;
+  @include onBigScreen {
+    padding-top: 88px;
+    padding-bottom: 88px;
   }
 
   &__menu {
-    margin-top: 65px;
-    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 16px;
-    color: #7f8096;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0.02em;
+
+    &:last-child {
+      margin-bottom: 50px;
+    }
+
+    &--style {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #7f8096;
+      width: max-content;
+    }
   }
 
-  &__menu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-transform: capitalize;
-    font-weight: 400;
+  &__link--style {
+    text-decoration: none;
     line-height: 150%;
     letter-spacing: -0.01em;
-  }
-
-  &__menu-item {
-    text-decoration: none;
     color: #fff;
+    width: max-content;
+    border-bottom: 2px solid transparent;
+    border-radius: 1px;
+    transition: 0.3s;
+
+    &:hover {
+      border-color: $c-orange;
+
+    }
   }
 
   &__social {
     display: flex;
-    gap: 35px;
+    gap: 34px;
   }
 
-  &__contact-title {
-    color: #fff;
-  }
-
-  &__call-us {
-    padding-top: 40px;
-    padding-bottom: 16px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: #7f8096;
-  }
-
-  &__list-numbers {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin: 0;
-    padding: 0;
-  }
-
-  &__number {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: -0.01em;
-    text-decoration: none;
-    color: #fff;
-  }
-
-  &__email {
-    padding-top: 40px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: #7f8096;
-  }
-
-  &__email-item {
-    padding-top: 16px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: -0.01em;
-    text-decoration: none;
-    text-transform: lowercase;
-    color: #fff;
-  }
-
-  &__privacy {
-    padding-top: 48px;
-    font-weight: 400;
-    font-size: 16px;
+  &__security {
     line-height: 150%;
     letter-spacing: -0.01em;
     color: #7f8096;
   }
 
-  &__flex {
-    display: flex;
-    flex-direction: column;
-  }
+  &__icon {
+    @include size (20px, 20px);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s;
 
-  &__flex-item {
-    display: flex;
-    flex-direction: column;
+    @media (max-width: 762px) {
+      margin-bottom: 42px;
+    }
+
+    &--fb {
+      background-image: url(../images/facebook.svg);
+
+      &:hover {
+        background-image: url(../images/facebookLight.svg);
+      }
+    }
+
+    &--in {
+      background-image: url(../images/insta.svg);
+
+      &:hover {
+        background-image: url(../images/instaLight.svg);
+      }
+    }
+
+    &--tw {
+      background-image: url(../images/twitter.svg);
+
+      &:hover {
+        background-image: url(../images/twittetLight.svg);
+      }
+    }
   }
 }

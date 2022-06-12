@@ -1,19 +1,25 @@
 .menu {
-  background-color: $c-lightPink;
+  position: fixed;
+  background-color: #fff;
+  height: 100vh;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.3s;
 
-  &__top {
-    margin-bottom: (100vh / 100% * 30%);
+  transform: translate(100%);
+
+  &:target {
+    transform: translate(0);
+
   }
 
   &__content {
-    box-sizing: border-box;
-    height: 100vh;
-    padding: $headerTopPadding 0;
-  }
-
-  &__list {
-    @include onDesktop {
-      display: none;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
   }
 }
