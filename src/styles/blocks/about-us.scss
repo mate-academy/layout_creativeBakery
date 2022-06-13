@@ -1,18 +1,31 @@
 .about-us {
-  max-width: 1024px;
   margin: 0 auto;
-  padding: 0 24px;
+  margin-bottom: 72px;
+  padding: 0 16px;
+
+  background-image: url(../images/about-bg-img.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    padding: 0 44px;
+    margin-bottom: 152px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 350px;
+  }
+
+  @include onDesktop-MD {
+    padding: 0 124px;
+  }
 
   &__benefits {
     display: grid;
 
-    background-image: url(../images/about-bg-img.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-
     @include onTablet {
-      grid-template: 1fr 1fr / 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 80px;
     }
 
@@ -23,6 +36,18 @@
 
   &__description {
     margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+
+      display: grid;
+      column-gap: 24px;
+      grid-template-columns: 4fr 4fr;
+    }
+
+    @include onDesktop {
+      margin-bottom: 146px;
+    }
   }
 
   &__title {
@@ -30,19 +55,22 @@
     margin-bottom: 32px;
 
     font-weight: 400;
-    font-size: 48px;
-    line-height: 85%;
-
+    font-size: 46px;
+    line-height: 41px;
     letter-spacing: -0.05em;
     text-transform: uppercase;
 
     color: $cakeColor;
+
+    @include onDesktop {
+      font-size: 72px;
+      line-height: 61px;
+    }
   }
 
   &__text {
-    margin-bottom: 48px;
-
-    letter-spacing: -0.01em;
+    margin: 0;
+    bottom: 0;
   }
 
   &__benefit-title {
@@ -50,7 +78,6 @@
 
     font-size: 96px;
     line-height: 82px;
-    letter-spacing: -0.05em;
     text-transform: uppercase;
 
     color: $cakeColor;

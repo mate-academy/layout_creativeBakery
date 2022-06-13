@@ -1,15 +1,60 @@
 .header {
-  box-sizing: border-box;
-  max-width: 1024px;
   margin: 0 auto;
-  margin-bottom: 200px;
-  padding: 0 24px;
+  margin-bottom: 100px;
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  &__main-container {
+    @include onTablet {
+      padding: 0 44px;
+    }
+
+    @include onDesktop-MD {
+      padding: 0 124px;
+    }
+  }
+
+  &__img-container {
+    @include onTablet {
+      margin-bottom: 240px;
+
+      height: 328px;
+      width: 100%;
+      background-image: url(../images/header-image.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 546px;
+    }
+
+    @include onDesktop-MD {
+      height: 586px;
+    }
+  }
 
   &__tagline {
     margin-bottom: 32px;
-
-    letter-spacing: -0.01em;
     text-align: center;
+
+    @include onTablet {
+      margin-bottom: 90px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop-MD {
+      margin-bottom: 80px;
+    }
   }
 
   &__title {
@@ -25,69 +70,36 @@
     color: $cakeColor;
 
     @include onTablet {
-      font-size: 80px;
-      line-height: 68px;
-    }
-
-    @include onDesktop {
-      font-size: 136px;
-      line-height: 116px;
-    }
-
-    @include onBigDesktop {
-      font-size: 144px;
-      line-height: 122px;
-    }
-  }
-
-  &__image {
-    margin: 0 auto;
-    width: 50%;
-    height: 400px;
-    background-image: url(../images/header-image.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  &__button {
-    margin-bottom: 32px;
-
-    display: inline-block;
-    box-sizing: border-box;
-    bottom: 0;
-
-    height: 56px;
-    width: 100%;
-
-    font-weight: 500;
-    line-height: 16px;
-    letter-spacing: 0.02em;
-
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-
-    color: $cakeColor;
-    border: 1px solid $cakeColor;
-    border-radius: 32px;
-
-    &-text {
-      line-height: 56px;
-    }
-
-    @include onTablet {
-      margin: auto;
-
-      display: flex;
-      justify-content: center;
-
-      width: 50%;
-    }
-
-    @include onDesktop {
       margin-bottom: 200px;
-      width: 50%;
+    }
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+
+    &::after {
+      display: block;
+      margin: 0 auto;
+      content: "";
+      height: 290px;
+      width: 290px;
+      background-image: url(../images/header-image.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    @include onDesktop {
+      font-size: 110px;
+      line-height: 94px;
+    }
+
+    @include onDesktop-MD {
+      font-size: 113px;
+      line-height: 96px;
     }
   }
 }
@@ -95,6 +107,12 @@
 .logo__image {
   width: 120px;
   height: 24px;
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .icon-menu {
