@@ -1,0 +1,188 @@
+.products {
+  margin: 0 auto;
+  margin-bottom: 80px;
+  padding: 0 16px;
+
+  @include onTablet {
+    margin-bottom: 160px;
+    padding: 0 44px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 186px;
+  }
+
+  @include onDesktop-MD {
+    padding: 0 124px;
+  }
+
+  &__title {
+    margin: 0 0 24px;
+    font-weight: 400;
+    font-size: 46px;
+    line-height: 41px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $cakeColor;
+
+    @include onDesktop {
+      font-size: 72px;
+      line-height: 61px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 56px;
+    letter-spacing: -0.01em;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__container {
+    margin-bottom: 64px;
+    display: grid;
+
+    @include onTablet {
+      row-gap: 88px;
+    }
+
+    @include onDesktop {
+      row-gap: 88px;
+    }
+  }
+
+  &__wrapper-1,
+  &__wrapper-3 {
+    display: grid;
+    column-gap: 24px;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, 4fr);
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(8, 1fr);
+
+      & :nth-child(1) {
+        grid-column: 1 / 4;
+      }
+
+      & :nth-child(2) {
+        grid-column: 4 / 7;
+      }
+    }
+  }
+
+  &__wrapper-3 :last-child {
+    margin-bottom: 0;
+  }
+
+  &__wrapper-2 {
+    display: grid;
+    column-gap: 24px;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, 4fr);
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(8, 1fr);
+
+      & :nth-child(1) {
+        grid-column: 3 / 6;
+      }
+
+      & :nth-child(2) {
+        grid-column: 6 / 9;
+      }
+    }
+  }
+}
+
+.product {
+  margin-bottom: 64px;
+
+  @include onDesktop {
+    margin-bottom: 0;
+  }
+
+  @include onTablet {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    margin-bottom: 16px;
+    width: 100%;
+    height: 360px;
+    border-radius: 8px;
+
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 8px;
+
+    display: block;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+  }
+
+  &__text {
+    margin-bottom: 24px;
+
+    letter-spacing: -0.01em;
+  }
+
+  &__order {
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: transform 150ms;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &-icon {
+      margin-right: 8px;
+
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      background-image: url(../images/arrow-order.svg);
+      background-repeat: no-repeat;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+
+      text-decoration: none;
+      text-transform: uppercase;
+
+      color: $cakeColor;
+    }
+  }
+}

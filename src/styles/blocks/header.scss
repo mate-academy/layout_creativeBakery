@@ -1,0 +1,136 @@
+.header {
+  margin: 0 auto;
+  margin-bottom: 100px;
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  &__main-container {
+    @include onTablet {
+      padding: 0 44px;
+    }
+
+    @include onDesktop-MD {
+      padding: 0 124px;
+    }
+  }
+
+  &__img-container {
+    @include onTablet {
+      margin-bottom: 240px;
+
+      height: 328px;
+      width: 100%;
+      background-image: url(../images/header-image.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 546px;
+    }
+
+    @include onDesktop-MD {
+      height: 586px;
+    }
+  }
+
+  &__tagline {
+    margin-bottom: 32px;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 90px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop-MD {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 54px;
+    letter-spacing: -0.05em;
+
+    text-align: center;
+    text-transform: uppercase;
+    color: $cakeColor;
+
+    @include onTablet {
+      margin-bottom: 200px;
+    }
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+
+    &::after {
+      display: block;
+      margin: 0 auto;
+      content: "";
+      height: 290px;
+      width: 290px;
+      background-image: url(../images/header-image.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    @include onDesktop {
+      font-size: 110px;
+      line-height: 94px;
+    }
+
+    @include onDesktop-MD {
+      font-size: 113px;
+      line-height: 96px;
+    }
+  }
+}
+
+.logo__image {
+  width: 120px;
+  height: 24px;
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.icon-menu {
+  display: block;
+  height: 8px;
+  width: 20px;
+  background-image: url(../images/menu-icon.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.icon-cross {
+  display: block;
+  height: 12px;
+  width: 12px;
+  background-image: url(../images/menu-cross.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
