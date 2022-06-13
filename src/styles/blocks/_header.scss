@@ -1,0 +1,174 @@
+.header {
+  height: 100vh;
+
+  background-image: url(/images/photos/Cookie.png);
+  background-size: 30%;
+  background-position: top 88px center;
+  background-repeat: no-repeat;
+
+  @include for-tablet {
+    background-position: top 208px center;
+    background-size: 40%;
+  }
+
+  @include for-mobile {
+    background-position: top 284px center;
+    background-size: 80%;
+  }
+
+  &__content {
+    @include limit-content-width;
+
+    padding: 0 $desktop-paddingX;
+
+    @include for-tablet {
+      padding: 0 $tablet-paddingX;
+    }
+
+    @include for-mobile {
+      padding: 0 $mobile-paddingX;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo-wrapper {
+    padding: 32px 36px;
+
+    @include for-tablet {
+      padding: 20px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 108px;
+    height: 16px;
+  }
+
+  &__subtitle {
+    margin-top: 135px;
+    @include body-text;
+
+    @include for-tablet {
+      margin-top: 80px;
+      margin-bottom: 140px;
+    }
+
+    @include for-mobile {
+      margin-bottom: 32px;
+      margin-top: 32px;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    margin-top: 8px;
+    @include text-h1;
+    color: $accent-orange;
+    text-align: center;
+
+    @include for-mobile {
+      text-align: center;
+    }
+  }
+
+  &__button {
+    margin-top: 64px;
+    display: flex;
+    @include text-uppercase;
+
+    justify-content: center;
+    align-items: center;
+
+    padding-left: 6px;
+
+    height: 56px;
+    color: $accent-orange;
+
+    border: 1px solid $accent-orange;
+    border-radius: 32px;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    @include for-tablet {
+      margin-top: 75%;
+    }
+
+    @include for-mobile {
+      margin-top: 90%;
+    }
+
+    &:visited {
+      background-color: transparent;
+      color: $light-orange;
+      border-color: $light-orange;
+      img {
+        filter: invert(75%) sepia(39%) saturate(1155%)
+          brightness(113%) contrast(97%);
+      }
+    }
+
+    &:hover {
+      background-color: $accent-orange;
+      color: #fff;
+      img {
+        filter: invert(100%) sepia(0%) saturate(0%)
+          brightness(1110%) contrast(100%);
+      }
+    }
+
+    &:focus {
+      background-color: $dark-orange;
+      color: #fff;
+      img {
+        filter: invert(100%) sepia(0%) saturate(0%)
+          brightness(1110%) contrast(100%);
+      }
+
+    }
+  }
+
+  &__button-image {
+    padding-right: 6px;
+  }
+
+  &__menu-wrapper {
+    height: 8px;
+    display: none;
+
+    @include for-tablet {
+      display: block;
+      padding: 28px $tablet-paddingX;
+    }
+
+    @include for-mobile {
+      display: block;
+      padding: 28px $mobile-paddingX;
+    }
+  }
+
+  &__menu-toggler {
+    display: block;
+    width: 20px;
+    height: 8px;
+
+    border: none;
+
+    background-color: transparent;
+    background-image: url(/images/icons/burger.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+}

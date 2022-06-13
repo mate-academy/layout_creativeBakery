@@ -1,0 +1,63 @@
+.menu {
+  height: 100vh;
+  background-color: $light-pink;
+
+  @include for-tablet {
+    padding: 28px $tablet-paddingX;
+  }
+
+  @include for-mobile {
+    padding: 20px $mobile-paddingX;
+  }
+
+  &__content {
+    @include limit-content-width;
+  }
+
+  &__top-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+  }
+
+  &__toggler {
+    width: 14px;
+    height: 14px;
+
+    border: none;
+
+    background-color: transparent;
+    background-image: url(/images/icons/x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+  }
+
+  &__logo {
+    width: 130px;
+    height: 25px;
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+
+    padding: 8px, 0;
+    border-bottom: 1px solid transparent;
+
+    @include body-text;
+
+    &:last-child {
+      margin-top: 32px;
+    }
+  }
+
+  &__nav {
+    padding: 0 $tablet-paddingX;
+
+    @include for-mobile {
+      padding: 0 $mobile-paddingX;
+    }
+  }
+}

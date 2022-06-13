@@ -1,0 +1,80 @@
+.card {
+  width: 402px;
+  margin-bottom: 64px;
+
+  @include for-tablet {
+    width: 328px;
+  }
+
+  @include for-mobile {
+    width: 288px;
+  }
+
+  @include hover(transform, scale(1.1));
+  z-index: 1;
+
+  &__photo {
+    margin-bottom: 16px;
+  }
+
+  &__image {
+    height: 512px;
+
+    border-radius: 8px;
+
+    @include for-tablet {
+      height: 424px;
+      width: 328px;
+    }
+
+    @include for-mobile {
+      height: 356px;
+      width: 288px;
+    }
+  }
+
+  &__title {
+    @include text-uppercase;
+    color: $grey;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    @include body-text;
+    margin-bottom: 24px;
+  }
+
+  &__link {
+    display: inline-block;
+
+    @include text-uppercase;
+    color: $accent-orange;
+
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+
+    background-image: url(/images/icons/arrow.png);
+    background-repeat: no-repeat;
+
+    &::after {
+      content: "order";
+      padding-left: 24px;
+    }
+
+    &:visited {
+      color: $light-orange;
+      border-color: $light-orange;
+      background-image: url(/images/icons/arrow-light-orange.png);
+    }
+
+    &:hover {
+      border-color: $accent-orange;
+    }
+
+    &:focus {
+      color: $dark-orange;
+      border-color: $dark-orange;
+      background-image: url(/images/icons/arrow-dark-orange.png);
+    }
+  }
+}

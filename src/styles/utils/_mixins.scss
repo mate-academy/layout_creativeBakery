@@ -2,5 +2,127 @@
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+    @content;
   }
 }
+
+/* text params */
+
+@mixin text-h1 {
+  font-size: 136px;
+  line-height: 116px;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 80px;
+    line-height: 68px;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 64px;
+    line-height: 54px;
+  }
+}
+
+@mixin text-h2 {
+  font-size: 72px;
+  line-height: 61px;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 56px;
+    line-height: 48px;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 48px;
+    line-height: 41px;
+  }
+}
+
+@mixin big-text {
+  font-size: 96px;
+  line-height: 82px;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+@mixin body-text {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+
+@mixin text-uppercase {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+@mixin font-param($font-size, $line-height, $font-weight) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+
+/* end of text params */
+
+/* breakpoints */
+
+@mixin for-tablet {
+  @media (max-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin for-mobile {
+  @media (max-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+/* end of breakpoints */
+
+/* limits */
+
+@mixin limit-content-width {
+  max-width: $max-content-width;
+  margin: 0 auto;
+}
+
+/* end of limits */
+
+/* GRID */
+
+@mixin grid-width-columns($number-of-cols-desktop,
+$number-of-cols-tablet, $number-of-cols-mobile) {
+  display: grid;
+  grid-template-columns: repeat($number-of-cols-desktop, 1fr);
+  column-gap: $grid-gap-desktop;
+
+  @include for-tablet {
+    grid-template-columns: repeat($number-of-cols-tablet, 1fr);
+    column-gap: $grid-gap-tablet;
+  }
+
+  @include for-mobile {
+    grid-template-columns: repeat($number-of-cols-mobile, 1fr);
+    column-gap: $grid-gap-mobile;
+  }
+}
+
+@mixin custom-cols($number-of-cols) {
+  @for $start from 1 through $number-of-cols {
+    @for $end from $start through $number-of-cols {
+      &--#{$start}-#{$end} {
+        grid-column: #{$start} / #{$end + 1};
+      }
+    }
+  }
+}
+
+/* end of GRID */

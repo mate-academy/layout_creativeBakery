@@ -1,0 +1,19 @@
+.grid {
+  @include grid-width-columns(8, 8, 2);
+
+  &--cols {
+    @include custom-cols(8);
+
+    &--tablet {
+      @include for-tablet {
+        @include custom-cols(8);
+      }
+    }
+
+    &--mobile {
+      @include for-mobile {
+        @include custom-cols(2);
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+.nav {
+  padding: 32px 36px;
+
+  &__header-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__menu-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    padding-right: 64px;
+
+    &:last-child {
+      padding-right: 0;
+      color: $accent-orange;
+    }
+  }
+
+  &__menu-item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      padding-top: 32px;
+    }
+  }
+
+  &__link {
+    border-bottom: 1px solid transparent;
+
+    &--contact {
+      color: $accent-orange;
+
+      background-image: url(/images/icons/phone.png);
+      background-repeat: no-repeat;
+
+      &::after {
+        content: "Contact us";
+        padding-left: 25px;
+      }
+
+      &:visited {
+        background-image: url(/images/icons/phone-light-orange.png);
+      }
+
+      &:focus {
+        background-image: url(/images/icons/phone-dark-orange.png);
+      }
+    }
+
+    &:visited {
+      color: $light-orange;
+      border-color: $light-orange;
+    }
+    
+    &:hover {
+      color: $accent-orange;
+      border-color: $accent-orange;
+    }
+
+    &:focus {
+      color: $dark-orange;
+      border-color: $dark-orange;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .nav__header-list {
+      display: none;
+    }
+  }
+}
