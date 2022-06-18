@@ -1,0 +1,63 @@
+.button {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+
+  border: 2px solid $c-accentOrange;
+  border-radius: 32px;
+  transition: all 0.3s ease-in-out;
+  &__icon {
+    width: 24px;
+    height: 24px;
+    background-color: $c-accentOrange;
+    -webkit-mask-image: url(../images/Icon-cookie.svg);
+    mask-image: url(../images/Icon-cookie.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &__text {
+    padding-left: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: $c-accentOrange;
+  }
+  &:hover {
+    // color: $c-white;
+    background-color: $c-accentOrange;
+    border: 2px solid transparent;
+  }
+  &:hover .button__text {
+    color: $c-white;
+  }
+  &:hover .button__icon {
+    background-color: $c-white;
+    -webkit-mask-image: url(../images/Icon-cookie.svg);
+    mask-image: url(../images/Icon-cookie.svg);
+  }
+  &:focus-within {
+    color: $c-white;
+    background-color: $c-darkOrange;
+    border: 2px solid transparent;
+  }
+  &:focus .button__text {
+    color: $c-white;
+  }
+  &:focus .button__icon {
+    background-color: $c-white;
+    -webkit-mask-image: url(../images/Icon-cookie.svg);
+    mask-image: url(../images/Icon-cookie.svg);
+  }
+  &--last {
+    margin-bottom: 32px;
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+}

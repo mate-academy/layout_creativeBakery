@@ -1,0 +1,138 @@
+.footer {
+  height: fit-content;
+  background-color: $c-black;
+  color: $c-white;
+  &__container {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    @include onTablet {
+      padding-top: 88px;
+      padding-bottom: 88px;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 40px;
+    display: block;
+    width: 168px;
+    height: 40px;
+    background-color: $c-white;
+    -webkit-mask-image: url(../images/Logo.svg);
+    mask-image: url(../images/Logo.svg);
+    @include onTablet {
+      margin-bottom: 96px;
+    }
+    @include onLaptop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__list {
+    justify-items: flex-start;
+    align-items: flex-start;
+  }
+  &__item:not(:last-child) {
+
+    margin-bottom: 8px;
+  }
+  &__link {
+    margin-bottom: 0;
+    padding: 0;
+    padding-bottom: 8px;
+    &:hover {
+      color: $c-white;
+      background: none;
+      filter: none;
+      border-bottom: 1px solid $c-white;
+    }
+    &:focus {
+      color: $c-white;
+      background: none;
+      filter: none;
+      border-bottom: 1px solid $c-white;
+    }
+    &--last {
+      margin-bottom: 64px;
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__contact {
+    display: grid;
+    // grid-template-columns: subgrid;
+    column-gap: 24px;
+    margin-bottom: 40px;
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+    @include onLaptop {
+      margin-bottom: 88px;
+    }
+  }
+  &__title {
+    margin-bottom: 40px;
+    color: $c-white;
+  }
+  &__subtitle {
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $c-grey;
+  }
+  &__discr {
+    margin-bottom: 8px;
+    width: max-content;
+    padding-bottom: 8px;
+    border: 1px solid transparent;
+    display: block;
+
+    &--last {
+      margin-bottom: 40px;
+    }
+  }
+  &__social--card {
+    display: flex;
+    margin-bottom: 40px;
+    height: 24px;
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+  &__social {
+    width: 24px;
+    height: 24px;
+    margin-right: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $c-accentOrange;
+    &--fb {
+      -webkit-mask-image: url(../images/Icon-facebook.svg);
+      mask-image: url(../images/Icon-facebook.svg);
+    }
+    &--inst {
+      -webkit-mask-image: url(../images/Icon-instagram.svg);
+      mask-image: url(../images/Icon-instagram.svg);
+    }
+    &--tw {
+      -webkit-mask-image: url(../images/Icon-twitter.svg);
+      mask-image: url(../images/Icon-twitter.svg);
+    }
+    &:hover,
+    &:focus {
+      background-color: $c-white;
+    }
+  }
+  &__copywrite {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $c-grey;
+  }
+}

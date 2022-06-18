@@ -4,3 +4,46 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin onDecktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onLaptop {
+  @media (min-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin grid {
+  @for $start from 1 through 8 {
+    @for $end from $start through 8 {
+      &--#{$start}-#{$end} {
+        grid-column: #{$start} / #{$end + 1};
+      }
+    }
+  }
+}
+
+@mixin gridRow {
+  @for $start from 1 through 5 {
+    @for $end from $start through 5 {
+      &--#{$start}-#{$end} {
+        grid-row: #{$start} / #{$end + 1};
+      }
+    }
+  }
+}
