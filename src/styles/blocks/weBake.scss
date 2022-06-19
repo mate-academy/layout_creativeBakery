@@ -1,0 +1,126 @@
+.weBake {
+
+  &__wrapper-title {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    margin: 0 0 56px;
+
+    @include onTablets {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $orangeColor;
+
+    @include onTablets() {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+
+  }
+
+  &__subtitle {
+    @extend %font400;
+  }
+
+  &__part {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+
+    @include onPhone() {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+
+    }
+
+    @include onTablets() {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+
+    }
+
+    @include onDesktop() {
+      justify-content: flex-start;
+
+      &--central {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__card {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+
+    margin-bottom: 64px;
+
+    @include width() {
+      width: 100%;
+    }
+
+
+    &-img {
+      width: 328px;
+      max-height: 356px;
+      object-fit: cover;
+
+      @include onTablets() {
+        max-height: 424px;
+        width: 100%;
+      }
+
+      @include onDesktop {
+        max-height: 512px;
+      }
+
+      @include onPhone() {
+        width: 100%;
+      }
+
+      padding: 0 0 16px;
+
+      border-radius: 10px;
+
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &-title {
+      margin-bottom: 8px;
+
+      @extend %font500;
+      color: $greyColor;
+    }
+
+    &-subtitle {
+      margin-bottom: 2px;
+      height: 70px;
+
+      @extend %font400;
+    }
+  }
+}
