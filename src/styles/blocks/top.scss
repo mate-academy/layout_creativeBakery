@@ -1,0 +1,77 @@
+.top {
+  width: 100%;
+  height: 64px;
+  box-sizing: border-box;
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onDesktop {
+    padding: 36px 32px;
+    height: 88px;
+  }
+
+  &__nav {
+    display: none;
+    height: inherit;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 44px;
+
+    height: inherit;
+  }
+
+  &__item {
+    height: inherit;
+  }
+
+  &__nav-link {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+    border: 1px solid $c-light-pink;
+    transition: color 0.3s,
+      border-color 0.3s,
+      transform 0.3s,
+      box-shadow 0.3s;
+
+    &:hover {
+      color: $c-accent-orange;
+      border-color: $c-accent-orange;
+      transform: scale(0.9);
+      box-shadow: 2px 2px 4px $c-grey;
+    }
+
+    &--contact {
+      gap: 7px;
+
+      &:hover {
+        filter: invert(23%)
+          sepia(76%)
+          saturate(1784%)
+          hue-rotate(348deg)
+          brightness(93%)
+          contrast(94%);
+        border-color: $c-dark-orange;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
