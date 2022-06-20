@@ -45,3 +45,48 @@
   letter-spacing: -0.05em;
   text-transform: uppercase;
 }
+
+@mixin textHoverEffect {
+  & {
+    color: #0000;
+    background: linear-gradient(90deg, #{$c-main-focused} 50%,#000 0)
+      var(--pos,100%)/200% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: color 0.4s, background 0.4s;
+  }
+
+  &:hover {
+    --pos: 0%;
+  }
+}
+
+@mixin linksHoverEffect {
+  & {
+    position: relative;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: $c-main-focused;
+    height: 2px;
+    transition-property: left, right;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &:before {
+      z-index: 1;
+      left: 0;
+      right: 0;
+    }
+  }
+}

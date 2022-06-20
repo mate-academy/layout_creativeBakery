@@ -12,7 +12,22 @@
   text-transform: uppercase;
   color: $c-main;
 
+  @include hover(color, #fff, background-color, $c-main);
+
   svg {
+    transition: fill 0.4s;
     fill: $c-main;
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      fill: #fff;
+    }
+  }
+
+  &:focus {
+    background-color: $c-main-focused;
+    border-color: $c-main-focused;
   }
 }

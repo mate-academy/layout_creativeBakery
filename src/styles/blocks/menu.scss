@@ -8,6 +8,10 @@
   transition: transform 0.4s;
   background-color: $c-bg-page;
 
+  @include onTablet {
+    height: calc(25vh - #{var(--logo-block-height)});
+  }
+
   @include onDesktop {
     height: var(--logo-block-height);
     transform: initial;
@@ -24,8 +28,10 @@
     align-items: center;
     list-style-type: none;
 
-    @include onDesktop {
+    @include onTablet {
       flex-direction: row;
+      width: 100%;
+      justify-content: space-evenly;
     }
   }
 
@@ -38,6 +44,9 @@
 
     @include onDesktop {
       padding: 20px;
+
+      @include textHoverEffect;
+      @include linksHoverEffect;
     }
 
     &--phone {
