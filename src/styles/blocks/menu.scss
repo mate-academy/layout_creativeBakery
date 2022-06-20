@@ -1,0 +1,58 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - #{var(--logo-block-height)});
+  padding-bottom: var(--logo-block-height);
+  transform: translateY(-100vh);
+  transition: transform 0.4s;
+  background-color: $c-bg-page;
+
+  @include onDesktop {
+    height: var(--logo-block-height);
+    transform: initial;
+    padding-bottom: 0;
+  }
+
+  &--active {
+    transform: translateY(0);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    padding: 12px;
+  }
+
+  &__link {
+    width: 100%;
+
+    @include onDesktop {
+      padding: 20px;
+    }
+
+    &--phone {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $c-main;
+
+      svg {
+        fill: $c-main;
+      }
+    }
+  }
+}
