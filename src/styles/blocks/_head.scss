@@ -1,0 +1,107 @@
+.head {
+  box-sizing: border-box;
+
+  &__text {
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      text-align: start;
+    }
+
+    @include onDesktop {
+      text-align: start;
+    }
+
+    @include onDesktopXL {
+      text-align: start;
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    text-align: center;
+    color: $colAccentOrange;
+    margin: 0 auto;
+
+    @include onTablet {
+      font-size: 80px;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto;
+    width: 290px;
+    height: 290px;
+    object-position: center;
+    object-fit: cover;
+
+    @include onTablet {
+      height: 328px;
+      width: 328px;
+    }
+
+    @include onDesktop {
+      height: 546px;
+      width: 546px;
+    }
+
+    @include onDesktopXL {
+      height: 586px;
+      width: 586px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 56px;
+    border: 2px solid $colAccentOrange;
+    border-radius: 32px;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $colAccentOrange;
+
+   cursor: pointer;
+   transition: all 0.5s;
+
+    &::before {
+      content: "";
+      display: block;
+      background-image: url(/images/icons/cookie.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+    }
+
+    &:hover {
+      background-color: $colAccentOrange;
+      color: $colWhite;
+
+      &::before {
+        background-image: url(/images/icons/cookie_hover.svg);
+      }
+    }
+
+    &:focus {
+      background-color: $colDarkOrange;
+      color: $colWhite;
+      border-color: $colDarkOrange;
+
+      &::before {
+        background-image: url(/images/icons/cookie_hover.svg);
+      }
+    }
+  }
+}
