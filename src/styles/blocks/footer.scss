@@ -1,0 +1,143 @@
+.footer {
+  &__wrapper {
+    background-color: $color-text;
+  }
+
+  padding: 60px 0 56px ;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__wrapper__lists {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px 24px;
+    }
+  }
+
+  &__logo__image {
+    width: 158px;
+    height: 30px;
+    margin-bottom: 45px;
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+
+    margin-bottom: 16px;
+  }
+
+  &__subtitle--lower {
+    text-transform: none;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__contactus {
+    margin-bottom: 42px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__contacts__lists {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 24px;
+    }
+  }
+
+  &__contactus__title {
+    font-size: 72px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $color-main-white;
+
+    margin-bottom: 40px;
+  }
+
+  &__list__margin {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 5px;
+    color: $color-main-white;
+
+    transition: border-color 0.5s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      height: 2px;
+      width: 100%;
+      transform: scaleX(0);
+      background-color: $color-main-white;
+      transition: all, 0.5s;
+    }
+
+    &:hover {
+      color: $color-main-white;
+      &::after {
+        transform: scaleX(100%);
+      }
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 42px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    fill: $color-hover;
+    transition: fill $time-transition;
+    &:hover {
+      fill: $color-main-white;
+    }
+  }
+}
