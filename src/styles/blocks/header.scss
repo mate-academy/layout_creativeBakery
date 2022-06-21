@@ -1,0 +1,121 @@
+.header {
+  &__top-section {
+    margin-bottom: 32px;
+
+    @include onTablet() {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop() {
+      margin-bottom: 136px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 32px;
+
+    text-align: center;
+
+    @include onTablet() {
+      margin-bottom: 148px;
+
+      text-align: left;
+    }
+
+    @include onDesktop() {
+      margin-bottom: 8px;
+    }
+
+    @include onWide() {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__banner {
+    --font-size: 64px;
+    --line-height: 0.85;
+
+    position: relative;
+    z-index: -2;
+
+    margin: 0;
+
+    font-weight: 400;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet() {
+      --font-size: 80px;
+
+      margin-bottom: 210px;
+    }
+
+    @include onDesktop() {
+      --font-size: 136px;
+
+      margin-bottom: 64px;
+    }
+
+    @include onWide() {
+      --font-size: 144px;
+    }
+
+    &::after {
+      content: "";
+
+      display: block;
+
+      width: 100%;
+      height: 290px;
+
+      background-image: url(../images/coockie_s.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include onTablet() {
+        position: absolute;
+        z-index: -1;
+        transform: translateY(
+          calc(-50% - var(--font-size) * var(--line-height) / 2)
+        );
+
+        height: 328px;
+
+        //when banner text takes on 2 lines
+        @media (max-width:737px) {
+          transform: translateY(
+            calc(-50% - var(--font-size) * var(--line-height))
+          );
+        }
+      }
+
+      @include onDesktop() {
+        height: 544px;
+
+        background-image: url(../images/coockie_l.png);
+
+        //when banner text takes on 2 lines
+        @media (max-width:1192px) {
+          transform: translateY(
+            calc(-50% - var(--font-size) * var(--line-height))
+          );
+        }
+      }
+
+      @include onWide() {
+        height: 580px;
+
+        //when banner text takes on 2 lines
+        @media (max-width:1257px) {
+          transform: translateY(
+            calc(-50% - var(--font-size) * var(--line-height))
+          );
+        }
+      }
+    }
+  }
+}
