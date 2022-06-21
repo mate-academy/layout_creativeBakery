@@ -58,17 +58,32 @@
   }
 
   &__order {
+    position: relative;
+
+    transform: translateY(10%);
+
+    padding: 6px;
+
     @include uppercase;
     color: $c-accent-orange;
     text-decoration: none;
 
-    border-bottom: 1px solid transparent;
+    &::after {
+      content: "";
 
-    transition: color $transition-time, border-color $transition-time;
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      height: 1px;
+      background-color: $c-accent-orange;
+    }
 
     &:hover {
-      color: $c-dark-orange;
-      border-color: $c-dark-orange;
+      &::after {
+        animation: link-order $transition-time linear forwards;
+      }
     }
   }
 

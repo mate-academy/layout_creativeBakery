@@ -8,8 +8,18 @@
 
   &__logo {
     display: block;
-    margin-bottom: 44px;
     grid-row: 1;
+
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(105%);
+    }
+
+    &-link {
+      width: max-content;
+      margin-bottom: 44px;
+    }
   }
 
   &__menu {
@@ -27,6 +37,8 @@
     }
 
     &-link {
+      position: relative;
+
       @include body-text;
       color: $c-white;
       text-decoration: none;
@@ -34,16 +46,25 @@
       padding: 10px 0;
       border-bottom: 2px solid transparent;
 
-      transition: color $transition-time, border-color $transition-time;
+      transition: color $transition-time;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+
+        bottom: 0;
+        left: 0;
+
+        height: 1px;
+        background-color: $c-accent-orange;
+      }
 
       &:hover {
         color: $c-accent-orange;
-        border-color: $c-accent-orange;
-      }
-
-      &:focus {
-        color: $c-dark-orange;
-        border-color: $c-dark-orange;
+        &::after {
+          animation: link-order $transition-time linear forwards;
+        }
       }
     }
   }
@@ -70,23 +91,32 @@
     }
 
     &-link {
+      position: relative;
       @include body-text;
       color: $c-white;
       text-decoration: none;
 
       padding: 10px 0;
-      border-bottom: 2px solid transparent;
 
-      transition: color $transition-time, border-color $transition-time;
+      transition: color $transition-time;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+
+        bottom: 0;
+        left: 0;
+
+        height: 1px;
+        background-color: $c-accent-orange;
+      }
 
       &:hover {
         color: $c-accent-orange;
-        border-color: $c-accent-orange;
-      }
-
-      &:focus {
-        color: $c-dark-orange;
-        border-color: $c-dark-orange;
+        &::after {
+          animation: link-order $transition-time linear forwards;
+        }
       }
     }
   }
@@ -98,6 +128,7 @@
   }
 
   &__email {
+    position: relative;
     display: inline;
     @include body-text;
     color: $c-white;
@@ -106,16 +137,25 @@
     padding: 10px 0;
     border-bottom: 2px solid transparent;
 
-    transition: color $transition-time, border-color $transition-time;
+    transition: color $transition-time;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      height: 1px;
+      background-color: $c-accent-orange;
+    }
 
     &:hover {
       color: $c-accent-orange;
-      border-color: $c-accent-orange;
-    }
-
-    &:focus {
-      color: $c-dark-orange;
-      border-color: $c-dark-orange;
+      &::after {
+        animation: link-order $transition-time linear forwards;
+      }
     }
 
     @include onDesktop {

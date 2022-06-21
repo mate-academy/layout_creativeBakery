@@ -1,6 +1,4 @@
 .nav {
-  $link-padding: 32px;
-
   align-items: center;
 
   position: absolute;
@@ -68,17 +66,17 @@
 
       @include onDesktop {
         padding-right: 20px;
+        margin-right: 0;
       }
 
       &::after {
-        @include onDesktop {
-          right: 20px;
-        }
-        background-color: $c-dark-orange;
+        background-color: $c-accent-orange;
       }
 
+      transition: transform $transition-time;
+
       &:hover {
-        color: $c-dark-orange;
+        transform: scale(105%);
       }
     }
   }
@@ -90,10 +88,12 @@
     justify-content: center;
 
     height: 64px;
-    padding: 0 16px;
+    padding: 0 8px;
+    margin: 0 8px;
 
     @include onDesktop {
       padding: 0 $link-padding;
+      margin: 0 $link-padding;
     }
 
     @include hightScreen {
@@ -112,18 +112,11 @@
 
       position: absolute;
 
-      @include onDesktop {
-        left: $link-padding;
-        right: $link-padding;
-      }
-
       bottom: 20%;
+      left: 0;
 
       height: 1px;
       background-color: $c-accent-orange;
-      opacity: 0;
-
-      transition: opacity $transition-time;
     }
 
     transition: color $transition-time;
@@ -132,7 +125,7 @@
       color: $c-accent-orange;
 
       &::after {
-        opacity: 1;
+        animation: link-after $transition-time linear forwards;
       }
     }
 
