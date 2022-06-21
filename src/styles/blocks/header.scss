@@ -32,18 +32,20 @@
 
   &__title {
     @include textTitle(64px);
+    z-index: 1;
+
+    animation: bounceInDown 1.5s cubic-bezier(0.21, 0.61, 0.35, 1);
 
     @include onTablet {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 46%;
       width: 100%;
       font-size: 80px;
     }
 
     @include onDesktop {
       font-size: 136px;
-      top: 43%;
+      top: 35%;
     }
 
     @include onBigDesktop {
@@ -53,6 +55,8 @@
 
   &__image {
     width: 100%;
+
+    animation: rotateIn 1.5s cubic-bezier(0.75, 0.17, 0.53,1.9);
 
     @include onTablet {
       margin-bottom: 80px;
