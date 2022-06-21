@@ -1,0 +1,63 @@
+.card {
+  cursor: zoom-in;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  display: grid;
+  height: 100%;
+  &__image {
+    width: 100%;
+    object-fit: cover;
+
+    padding-bottom: 16px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+
+  &__name {
+    padding-bottom: 8px;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $col-gray;
+  }
+
+  &__info {
+    padding-bottom: 24px;
+
+    color: $col-black;
+
+    @include onPlazma {
+      &-probil::before {
+        content: "\a";
+        white-space: pre;
+      }
+    }
+  }
+
+  &__bye {
+    padding-bottom: 64px;
+
+    @include onTablet {
+      padding-bottom: 80px;
+    }
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $col-orange;
+
+    &-arrow {
+      margin-right: 8px;
+    }
+  }
+}
