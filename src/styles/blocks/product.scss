@@ -1,0 +1,100 @@
+.product {
+  margin: 0;
+
+  &__card {
+    width: 100%;
+    margin: 64px 0 0;
+
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: transform, opacity, 1.1s ease;
+
+    &._active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @include onTablet {
+      margin-top: 80px;
+    }
+  }
+
+  &__photo-container {
+    width: 100%;
+    height: 356px;
+    border-radius: 8px;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      height: 424px;
+    }
+
+    @include onDesktop {
+      height: 512px;
+    }
+
+    @include onLarge {
+      height: 560px;
+    }
+  }
+
+  &__name {
+    margin: 16px 0 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey;
+  }
+
+  &__description {
+    margin: 8px 0 0;
+  }
+
+  &__order-container {
+    margin: 24px 0 0;
+  }
+
+  &__order-link {
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $accentOrange;
+    transition: color 0.3s linear;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      border-bottom: 1px solid $accentOrange;
+      transition: transform, color, 0.3s linear;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &:focus::after {
+      color: $darkOrange;
+    }
+
+    &:focus {
+      color: $darkOrange;
+    }
+  }
+}
+
+.fa-arrow-right {
+  padding-right: 8px;
+}

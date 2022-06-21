@@ -1,0 +1,138 @@
+.menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $lightPink;
+  transform: translateX(-100%);
+  transition: transform 0.3s linear;
+
+  z-index: 9999;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__list {
+    margin: 150px 0 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  &__item {
+    margin: 0 0 24px;
+
+    &:last-child {
+      position: relative;
+      text-transform: uppercase;
+      color: $accentOrange;
+
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        left: 17%;
+        bottom: 3%;
+        width: 83%;
+        border-bottom: 1px solid $accentOrange;
+        transform: scale(0);
+        transition: transform 0.3s;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__link {
+    font-size: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $accentOrange;
+    }
+  }
+
+  &__top {
+    display: flex;
+    margin: 20px 0 0;
+    padding: 0 20px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__cross {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../images/icons/Icon-close.svg);
+  }
+
+  @include onDesktop {
+    width: auto;
+    position: relative;
+    transform: translateX(0);
+
+    &__list {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      color: $black;
+    }
+
+    &__item {
+      margin: 0;
+    }
+
+    &__item:not(:first-child) {
+      margin-left: 65px;
+
+      &:last-child {
+        position: relative;
+        text-transform: uppercase;
+        color: $accentOrange;
+
+        &::after {
+          position: absolute;
+          content: "";
+          display: block;
+          left: 17%;
+          bottom: 3%;
+          width: 83%;
+          border-bottom: 1px solid $accentOrange;
+          transform: scale(0);
+          transition: transform 0.3s;
+        }
+
+        &:hover::after {
+          transform: scale(1);
+        }
+      }
+    }
+
+    &__link {
+      font-size: 16px;
+    }
+
+    &__top {
+      display: none;
+    }
+  }
+}
+
+.fa-phone {
+  padding-right: 7px;
+}

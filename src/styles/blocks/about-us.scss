@@ -1,0 +1,58 @@
+.about-us {
+  margin: 80px 0 0;
+  padding-bottom: 72px;
+
+  background-image: url(../images/about_image.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity, transform, 1s linear;
+
+  &._active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @include onTablet {
+    margin-top: 160px;
+    padding-bottom: 152px;
+  }
+
+  @include onDesktop {
+    margin-top: 186px;
+    padding-bottom: 349px;
+  }
+
+  &__description {
+    margin: 32px 0 0;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__subtitle {
+    margin: 48px 0 0;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $accentOrange;
+
+    @include onTablet {
+      margin-top: 80px;
+    }
+
+    @include onDesktop {
+      margin-top: 144px;
+    }
+  }
+
+  &__second-description {
+    margin: 8px 0 0;
+  }
+}
