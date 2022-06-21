@@ -7,6 +7,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 2;
 
   height: 100vh;
 
@@ -39,6 +40,11 @@
     list-style: none;
     display: block;
 
+    @include hightScreen {
+      height: 600px;
+      margin-top: 50px;
+    }
+
     @include onDesktop {
       position: static;
       display: flex;
@@ -49,6 +55,10 @@
   &__item {
     @include onDesktop {
       margin-right: -20px;
+    }
+
+    @include hightScreen {
+      margin-bottom: 50px;
     }
 
     &:last-child > a {
@@ -86,6 +96,10 @@
       padding: 0 $link-padding;
     }
 
+    @include hightScreen {
+      font-size: 24px;
+    }
+
     line-height: 64px;
 
     @include body-text;
@@ -119,6 +133,12 @@
 
       &::after {
         opacity: 1;
+      }
+    }
+
+    &-icon {
+      @include hightScreen {
+        @include squere(20px);
       }
     }
   }
