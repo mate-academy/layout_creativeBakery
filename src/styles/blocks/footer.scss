@@ -1,0 +1,167 @@
+.footer {
+  background-color: $c-black;
+  padding: 61px 0 56px;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__subblock {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 166px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+
+    &--first {
+      margin-bottom: 64px;
+
+      @include onTablet {
+        margin-bottom: 106px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--second {
+      margin-bottom: 42px;
+
+      @include onTablet {
+        margin-bottom: 48px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 88px;
+      }
+    }
+
+    &-logo {
+      width: 158px;
+      height: 30px;
+      display: block;
+      content: "";
+      background-image: url(../images/Bakerlab-white.svg);
+      background-repeat: no-repeat;
+
+      margin-bottom: 45px;
+
+      @include onTablet {
+        margin-bottom: 91px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 48px;
+      }
+    }
+
+    &-title {
+      color: $c-white;
+      width: 286px;
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        width: 200px;
+      }
+
+      @include onDesktop {
+        width: max-content;
+      }
+
+    }
+
+    &-subtitle {
+      @extend %uppercase;
+      color: $c-grey;
+
+      margin-bottom: 16px;
+
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-white;
+    @extend %body-text;
+
+    &:hover {
+      color: $c-accentOrange;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+
+    &-link {
+      display: block;
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      &--fb {
+        background-image: url(../images/icons/fb.svg);
+
+        &:hover,
+        :focus {
+          background-image: url(../images/icons/fb-w.svg);
+        }
+      }
+
+      &--inst {
+        background-image: url(../images/icons/inst.svg);
+
+        &:hover,
+        :focus {
+          background-image: url(../images/icons/inst-w.svg);
+        }
+      }
+
+      &--tw {
+        background-image: url(../images/icons/twit.svg);
+
+        &:hover,
+        :focus {
+          background-image: url(../images/icons/twit-w.svg);
+        }
+      }
+    }
+  }
+
+  &__copywrite {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $c-grey;
+  }
+}
