@@ -1,0 +1,25 @@
+.grid-footer {
+  @include onTablet {
+    display: grid;
+    column-gap: 24px;
+    grid-template-areas: "logo logo logo logo title title title title"
+      "menu menu menu menu call  call   call  call"
+      ".   .   .   .    email  email  email  email"
+      "link  link  link  link   tm   tm   tm   tm";
+    grid-template-columns: repeat(8, 1fr);
+  }
+  
+  @include onNotebook {
+    grid-template-areas: "logo logo logo logo title title title   ."
+      "menu menu menu menu call call email email"
+      "link  link  link  link   tm   tm    .   .";
+  }
+
+  &__item {
+    @each $name, $itemModifier in $gridFooterItems {
+      &--#{$name} {
+        grid-area: $itemModifier;
+      }
+    }
+  }
+}
