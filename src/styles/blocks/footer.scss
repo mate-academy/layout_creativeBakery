@@ -32,13 +32,17 @@
     align-items: flex-start;
   }
   &__item:not(:last-child) {
-
     margin-bottom: 8px;
   }
   &__link {
-    margin-bottom: 0;
     padding: 0;
     padding-bottom: 8px;
+    &--last {
+      margin-bottom: 64px;
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
     &:hover {
       color: $c-white;
       background: none;
@@ -50,12 +54,6 @@
       background: none;
       filter: none;
       border-bottom: 1px solid $c-white;
-    }
-    &--last {
-      margin-bottom: 64px;
-      @include onTablet {
-        margin-bottom: 0;
-      }
     }
   }
 
