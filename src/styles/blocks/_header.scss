@@ -1,0 +1,56 @@
+.header {
+  box-sizing: border-box;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-link {
+      margin-right: 64px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__menu-opener {
+    display: block;
+    width: 20px;
+    height: 8px;
+    background-image: url(/images/icons/menu-black.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+    @include onDesktopXL {
+      display: none;
+    }
+
+    &:hover {
+      background-image: url(/images/icons/menu_orange.svg);
+    }
+  }
+
+  &__menu-cross {
+    display: block;
+    width: 13px;
+    height: 13px;
+    background-image: url(/images/icons/cross-black.svg);
+
+    &:hover {
+      background-image: url(/images/icons/cross_orange.svg);
+    }
+  }
+}

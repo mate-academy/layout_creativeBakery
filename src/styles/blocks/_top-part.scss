@@ -1,0 +1,157 @@
+.top-part {
+  margin-top: 32px;
+
+  @include onTablet {
+    margin-top: 0;
+  }
+  @include onDesktop {
+    height: 650px;
+  }
+  @include onDesktopXL {
+    height: 650px;
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    text-align: center;
+
+    @include onTablet {
+      margin-top: 80px;
+      margin-bottom: 16px;
+      text-align: left;
+      position: relative;
+    }
+  }
+
+  &__title {
+
+      animation-duration: 0.5s;
+      animation-name: animate-fade;
+      animation-delay: 0.5s;
+      animation-fill-mode: backwards;
+
+    @keyframes animate-fade {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    font-weight: 400;
+    font-size: 64px;
+    // line-height: 85%;
+
+    text-align: center;
+    // letter-spacing: -0.05em;
+    // text-transform: uppercase;
+
+    color: $col_AccentOrange;
+
+    z-index: 1;
+
+    @include onTablet {
+      position: relative;
+      top: 350%;
+      font-size: 64px;
+    }
+
+    @include onDesktop {
+      top: 50%;
+      font-size: 110px;
+    }
+
+    @include onDesktopXL {
+      top: 50%;
+      font-size: 144px;
+    }
+  }
+
+  &__image {
+
+    margin: 0 auto;
+    height: 290px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+      height: 328px;
+    }
+    @include onDesktop {
+      position: relative;
+      top: -45%;
+      height: 546px;
+    }
+    @include onDesktopXL {
+      position: relative;
+      top: -45%;
+      height: 586px;
+    }
+
+
+    animation:
+    // spin 2s linear 0s,
+     drop 0.7s linear 0s;
+  }
+
+  @keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+@keyframes drop {
+  from {transform: translateY(-600px);}
+  to {transform: translateY(0);}
+}
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 56px;
+    border: 2px solid $col_AccentOrange;
+    border-radius: 32px;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $col_AccentOrange;
+
+    transition: all 0.5s;
+
+    @include onDesktop {
+      position: relative;
+      top: -850%;
+    }
+
+    @include onDesktopXL {
+      position: relative;
+      top: -850%;
+    }
+
+    &::before {
+      content: url(/images/icons/cookie.svg);
+      margin-right: 6px;
+    }
+
+    &:hover {
+      background-color: $col_AccentOrange;
+      color: $col_White;
+
+      &::before {
+        content: url(/images/icons/cookie_hover.svg);
+      }
+    }
+
+    &:focus {
+      background-color: $col_DarkOrange;
+      border-color: $col_DarkOrange;
+      color: $col_White;
+
+      &::before {
+        content: url(/images/icons/cookie_hover.svg);
+      }
+    }
+  }
+}
