@@ -1,11 +1,13 @@
 .grid {
-  display: grid;
+  display: block;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 24px;
 
   @include onTablet {
-    grid-template-columns: repeat(8, 1fr);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
     column-gap: 24px;
+    row-gap: 80px;
   }
 
   @include onDesktop {
