@@ -1,7 +1,296 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+// @import "reset";
+// @import "utils";
+// @import "fonts";
+// @import "typography";
 
-body {
-  background: $c-gray;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onLargeScreen {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+$c-dark-orange: #b2341a;
+$c-accent-orange: #f9512e;
+$c-light-orange: #fba28f;
+$c-light-pink: #ffeefc;
+$c-light-blue: #eef7ff;
+$c-black: #1c1a26;
+$c-gray: #7f8096;
+$c-white: #fff;
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include onTablet {
+    font-size: 80px;
+  }
+
+  @include onDesktop {
+    font-size: 144px;
+  }
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include onTablet {
+    font-size: 56px;
+  }
+
+  @include onDesktop {
+    font-size: 72px;
+  }
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+.p-big-text {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.p-uppercase {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.page {
+  background-color: $c-light-blue;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include onTablet {
+    padding: 0 44px;
+  }
+
+  &__nav {
+    @include onTablet {
+      padding: 0 16px;
+    }
+
+    @include onDesktop {
+      padding: 0 32px;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  column-gap: 16px;
+
+  @include onTablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(8, 124px);
+    column-gap: 24px;
+  }
+
+  &--tablet {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__item {
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        @include onTablet {
+          &--tablet-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1} ;
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        @include onDesktop {
+          &--desktop-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1} ;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header {
+  text-align: center;
+
+  &__nav {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+
+    @include onLargeScreen {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 8px;
+    }
+
+    @include onLargeScreen {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__img {
+    width: 288px;
+    height: 290px;
+    line-height: 0;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+
+  @include onDesktop {
+    padding: 28px 0;
+  }
+}
+
+.logo {
+  line-height: 0;
+
+  &__image {
+    height: 32px;
+    width: 136px;
+  }
+}
+
+.icon {
+  display: block;
+  @include square(24px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &--menu {
+    background-image: url(../images/Icon-menu.svg);
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  box-sizing: border-box;
+  border: 2px solid $c-accent-orange;
+  border-radius: 32px;
+  cursor: pointer;
+  text-decoration: none;
+  color: $c-accent-orange;
+
+  &:hover {
+    background-color: $c-accent-orange;
+    color: $c-white;
+  }
+
+  &:focus {
+    background-color: $c-dark-orange;
+    border-color: $c-dark-orange;
+    color: $c-white;
+  }
+
+  &:disabled {
+    background-color: $c-white;
+    border-color: $c-light-orange;
+    color: $c-light-orange;
+  }
 }
