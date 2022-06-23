@@ -24,28 +24,17 @@
   }
 
   &__title {
-
-      animation-duration: 0.5s;
-      animation-name: animate-fade;
-      animation-delay: 0.5s;
-      animation-fill-mode: backwards;
-
-    @keyframes animate-fade {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
     font-weight: 400;
     font-size: 64px;
-    // line-height: 85%;
-
     text-align: center;
-    // letter-spacing: -0.05em;
-    // text-transform: uppercase;
-
     color: $col_AccentOrange;
 
     z-index: 1;
+
+    animation-name: animate-fade;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+    animation-delay: 1s;
 
     @include onTablet {
       position: relative;
@@ -65,7 +54,6 @@
   }
 
   &__image {
-
     margin: 0 auto;
     height: 290px;
 
@@ -83,22 +71,9 @@
       top: -45%;
       height: 586px;
     }
-
-
     animation:
-    // spin 2s linear 0s,
      drop 0.7s linear 0s;
   }
-
-  @keyframes spin {
-    from {transform:rotate(0deg);}
-    to {transform:rotate(360deg);}
-}
-
-@keyframes drop {
-  from {transform: translateY(-600px);}
-  to {transform: translateY(0);}
-}
 
   &__button {
     display: flex;
