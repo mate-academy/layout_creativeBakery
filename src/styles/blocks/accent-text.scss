@@ -1,4 +1,6 @@
 .accent-text {
+  position: relative;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 100%;
@@ -7,4 +9,19 @@
   text-transform: uppercase;
 
   color: $c-accent-orange;
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+
+  &--phone {
+    &::before {
+      background: url("../images/phone.svg") center center / cover no-repeat;
+    }
+  }
 }

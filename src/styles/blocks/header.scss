@@ -1,6 +1,18 @@
 .header {
+  position: relative;
+
   &__header-top {
-    margin: 20px 20px 52px;
+    padding: 20px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      padding: 32px;
+      margin-bottom: 0;
+    }
   }
 
   &__description {
@@ -39,6 +51,10 @@
       font-size: 80px;
       line-height: 85%;
     }
+
+    @include onDesktop {
+      font-size: 136px;
+    }
   }
 
   &__image-container {
@@ -57,6 +73,10 @@
 
     @include onTablet {
       @include image-size(328px);
+    }
+
+    @include onDesktop {
+      @include image-size(544px);
     }
   }
 
