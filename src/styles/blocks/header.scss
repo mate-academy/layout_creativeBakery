@@ -1,0 +1,109 @@
+.header {
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 32px 16px;
+
+    @include onTablet {
+      padding: 80px 44px;
+      background-image: url("../images/cookie.png");
+      background-repeat: no-repeat;
+      background-position: center 40%;
+      background-size: 326px 328px;
+    }
+
+    @include onDesktop {
+      height: 600px;
+      padding: 135px 44px;
+      background-position: center 10%;
+      background-size: 544px 546px;
+    }
+
+    @include onDesktopPlus {
+      padding: 144px;
+      background-size: 584px 586px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      width: 280px;
+      margin-bottom: 146px;
+
+      align-self: flex-start;
+      text-align: start;
+    }
+
+    @include onDesktop {
+      width: 260px;
+      margin-bottom: 6px;
+    }
+
+    @include onDesktopPlus {
+      width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    animation: slideRight 1s ease-out;
+
+    @include onTablet {
+      margin-bottom: 230px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__cookie {
+    max-width: 290px;
+    height: 288px;
+    margin: 0 auto;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    min-width: 250px;
+    max-width: 328px;
+    height: 48px;
+
+    border: 1px solid $c-accent-orange;
+    border-radius: 32px;
+
+    @include hover(background-color, $c-accent-orange);
+
+    @include onDesktop {
+      max-width: 260px;
+      align-self: flex-start;
+    }
+  }
+
+  &__button-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    height: 100%;
+    line-height: 48px;
+
+    border-radius: 32px;
+
+    transition: color 0.3s;
+
+    &:hover {
+      filter: brightness(0) invert(1);
+    }
+  }
+}
