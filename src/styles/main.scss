@@ -35,7 +35,7 @@ li {
 }
 
 @mixin onLargeScreen {
-  @media (min-width: 1200px) {
+  @media (min-width: 1440px) {
     @content;
   }
 }
@@ -47,6 +47,8 @@ li {
   }
 }
 
+$padding-menu-links: 16px;
+
 $c-dark-orange: #b2341a;
 $c-accent-orange: #f9512e;
 $c-light-orange: #fba28f;
@@ -56,7 +58,7 @@ $c-black: #1c1a26;
 $c-gray: #7f8096;
 $c-white: #fff;
 
-h1 {
+.h1 {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -70,11 +72,19 @@ h1 {
   }
 
   @include onDesktop {
+    font-size: 114px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 136px;
+  }
+
+  @include onLargeScreen {
     font-size: 144px;
   }
 }
 
-h2 {
+.h2 {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -92,13 +102,14 @@ h2 {
   }
 }
 
-p {
+.p-body-text {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 150%;
   letter-spacing: -0.01em;
+  color: $c-black;
 }
 
 .p-big-text {
@@ -118,6 +129,7 @@ p {
   line-height: 100%;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  color: $c-accent-orange;
 }
 
 .page {
@@ -125,7 +137,7 @@ p {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 16px;
 
@@ -133,43 +145,36 @@ p {
     padding: 0 44px;
   }
 
-  &__nav {
+  &__header {
     @include onTablet {
-      padding: 0 16px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 210px;
     }
 
     @include onDesktop {
-      padding: 0 32px;
+      margin-bottom: 64px;
     }
   }
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 2fr);
-  column-gap: 16px;
-
   @include onTablet {
+    display: grid;
     grid-template-columns: repeat(8, 1fr);
     column-gap: 24px;
+    justify-content: center;
   }
 
-  @include onDesktop {
-    grid-template-columns: repeat(8, 124px);
-    column-gap: 24px;
-  }
-
-  &--tablet {
-    display: block;
-
-    @include onTablet {
-      display: grid;
-    }
+  @include onLargeScreen() {
+    grid-template-columns: repeat(8, 128px);
   }
 
   &__item {
-    @for $start from 1 through 12 {
-      @for $end from $start through 12 {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
         @include onTablet {
           &--tablet-#{$start}-#{$end} {
             grid-column: #{$start} / #{$end + 1} ;
@@ -178,8 +183,8 @@ p {
       }
     }
 
-    @for $start from 1 through 12 {
-      @for $end from $start through 12 {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
         @include onDesktop {
           &--desktop-#{$start}-#{$end} {
             grid-column: #{$start} / #{$end + 1} ;
@@ -192,6 +197,10 @@ p {
 
 .header {
   text-align: center;
+
+  @include onTablet {
+    text-align: left;
+  }
 
   &__nav {
     margin-bottom: 32px;
@@ -207,6 +216,10 @@ p {
     @include onLargeScreen {
       margin-bottom: 144px;
     }
+  }
+
+  &__title {
+    z-index: 1;
   }
 
   &__text {
@@ -227,23 +240,31 @@ p {
 
   &__img {
     width: 288px;
-    height: 290px;
     line-height: 0;
-  }
-}
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 0;
+    @include onTablet {
+      position: absolute;
+      z-index: 0;
+      width: 326px;
+    }
 
-  @include onDesktop {
-    padding: 28px 0;
+    @include onDesktop {
+      position: absolute;
+      z-index: 0;
+      width: 544px;
+    }
+
+    @include onLargeScreen {
+      position: absolute;
+      z-index: 0;
+      width: 584px;
+    }
   }
 }
 
 .logo {
+  display: flex;
+  align-items: center;
   line-height: 0;
 
   &__image {
@@ -258,9 +279,72 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 
   &--menu {
     background-image: url(../images/Icon-menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--cross {
+    background-image: url(../images/Icon-close.svg);
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+
+  @include onDesktop {
+    padding: 16px 32px;
+  }
+}
+
+.menu {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    // display: flex;
+    // flex-direction: column;
+    // gap: 24px;
+    // align-items: center;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    @include onDesktop {
+      padding: $padding-menu-links $padding-menu-links;
+    }
+  }
+
+  &__link--btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    @include onDesktop {
+      margin-right: -$padding-menu-links;
+    }
   }
 }
 
@@ -268,6 +352,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 4px;
   width: 100%;
   height: 56px;
   box-sizing: border-box;
@@ -275,7 +360,8 @@ p {
   border-radius: 32px;
   cursor: pointer;
   text-decoration: none;
-  color: $c-accent-orange;
+  outline: none;
+  transition: 0.3s;
 
   &:hover {
     background-color: $c-accent-orange;
