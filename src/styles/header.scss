@@ -1,0 +1,190 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+    padding: 0 20px;
+
+    @include desctop1024 {
+      padding: 0 32px;
+    }
+
+    @media (min-width: 1500px) {
+      width: 1400px;
+      margin: 0 auto;
+    }
+  }
+
+  &__menu {
+    @include desctop768 {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+    gap: 64px;
+    @include desctop768 {
+      display: flex;
+    }
+  }
+
+  &__title {
+    color: rgb(249, 81, 46);
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    justify-content: center;
+    z-index: 2;
+
+    @include desctop768 {
+      white-space: nowrap;
+      font-size: 11.2vw;
+    }
+
+    @include desctop1024 {
+      font-size: 11vw;
+      align-self: center;
+      line-height: 150%;
+    }
+
+    @include desctop1224 {
+      font-size: 144px;
+      align-self: center;
+    }
+  }
+
+  &__img {
+    height: 288px;
+    width: 290px;
+    @include desctop768 {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @include desctop1024 {
+      height: 584px;
+      width: 586px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+
+    @include desctop768 {
+      justify-content: space-between;
+    }
+
+    @include desctop1024 {
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+
+  &__phone {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: rgb(249, 81, 46);
+
+    cursor: pointer;
+    &:hover {
+      .header__svg {
+        animation-name: rotate;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+      }
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      45%,
+      55% {
+        transform: rotate(270deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &__buton-svg {
+    margin-right: 7px;
+    width: 20px;
+    height: 20px;
+
+    & path {
+      transition: all 0.5s;
+    }
+  }
+
+  &__button {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: rgb(249, 81, 46);
+    border: 2px solid rgb(249, 81, 46);
+    border-radius: 32px;
+    width: 280px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background: rgb(255, 238, 252);
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      color: rgb(255, 238, 252);
+      border-color: rgb(255, 238, 252);
+      background-color: rgb(249, 81, 46);
+
+      .header__buton-svg path {
+        fill: rgb(255, 238, 252);
+      }
+    }
+  }
+
+  &__text {
+    width: 280px;
+    text-align: center;
+    margin-bottom: 30px;
+    z-index: 2;
+
+    @include desctop768 {
+      align-self: flex-start;
+      margin-bottom: 0;
+    }
+  }
+}
