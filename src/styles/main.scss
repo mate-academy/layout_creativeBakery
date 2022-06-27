@@ -151,18 +151,19 @@ $c-white: #fff;
     }
   }
 
-  // &__mob-menu {
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
+  &__mob-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
-  //   transform: rotateX(-100%);
+    transform: translateY(-100%);
+    transition: transform 0.3s;
 
-  //   &:target {
-  //     transform: rotateX(0);
-  //   }
-  // }
+    &:target {
+      transform: translateY(0);
+    }
+  }
 
   &__catalog {
     margin-bottom: 72px;
@@ -375,6 +376,7 @@ $c-white: #fff;
 
   &--menu {
     background-image: url(../images/Icon-menu.svg);
+    @include hover(transform, rotate(0.5turn));
 
     @include onDesktop {
       display: none;
@@ -383,14 +385,12 @@ $c-white: #fff;
 
   &--cross {
     background-image: url(../images/Icon-close-black.svg);
-
-    @include onDesktop {
-      display: none;
-    }
+    @include hover(transform, rotate(0.5turn));
   }
 
   &--social-links {
     fill: $c-accent-orange;
+    overflow: hidden;
 
     &:hover,
     &:focus {
@@ -420,6 +420,7 @@ $c-white: #fff;
   &__list {
     display: flex;
     align-items: center;
+    gap: 64px;
   }
 
   &__item {
@@ -428,6 +429,12 @@ $c-white: #fff;
 
   &__link {
     text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+
+    &:hover {
+      color: $c-accent-orange;
+      transform: scale(0.9);
+    }
 
     @include onDesktop {
       padding: $padding-menu-links $padding-menu-links;
@@ -443,6 +450,52 @@ $c-white: #fff;
     @include onDesktop {
       margin-right: -$padding-menu-links;
     }
+  }
+}
+
+.mob-nav {
+  z-index: 2;
+  height: 100vh;
+  background-color: $c-light-blue;
+
+  &__top-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+  }
+
+  &__mob-menu {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translateY(-50%) translateX(50%);
+  }
+}
+
+.mob-menu {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  &__link--btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $c-accent-orange;
+    margin-bottom: -10px;
   }
 }
 
