@@ -1,4 +1,14 @@
 .card {
+  padding-bottom: 64px;
+
+  @include onTablet {
+    padding-bottom: 88px;
+
+    &:nth-child(n + 5) {
+      padding-bottom: 0;
+    }
+  }
+
   &:last-child {
     padding-bottom: 80px;
 
@@ -11,12 +21,9 @@
     }
   }
 
-  @include onTablet {
-    padding-bottom: 88px;
-  }
-
   &__image {
     display: block;
+    width: 100%;
     margin-bottom: 16px;
   }
 
@@ -38,25 +45,22 @@
     margin-bottom: 24px;
   }
 
+  &__order {
+    display: flex;
+    align-items: center;
+  }
+
+  &__order-image {
+    margin-right: 8px;
+  }
+
   &__button {
     font-weight: 500;
-    position: relative;
     font-size: 16px;
     line-height: 100%;
 
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: $c-orange;
-    margin-bottom: 64px;
-
-    &::before {
-      content: "";
-      background-image: url(../images/icon/arrow.svg);
-      background-repeat: no-repeat;
-      width: 16px;
-      height: 16px;
-      position: absolute;
-      padding-right: 8px;
-    }
   }
 }
