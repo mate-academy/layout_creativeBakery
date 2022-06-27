@@ -23,7 +23,7 @@ li {
 }
 
 @mixin onTablet {
-  @media (min-width: 768px) {
+  @media (min-width: 640px) {
     @content;
   }
 }
@@ -137,6 +137,18 @@ $c-white: #fff;
 
   &__header {
     margin-bottom: 104px;
+
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 313px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 290px;
+    }
   }
 
   // &__mob-menu {
@@ -152,16 +164,29 @@ $c-white: #fff;
   //   }
   // }
 
-  &__section {
-    margin-bottom: 80px;
+  &__catalog {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 178px;
+    }
   }
 
-  &__section-title {
-    margin-bottom: 24px;
-  }
+  &__about-us {
+    margin-bottom: 72px;
 
-  &__section-description {
-    margin-bottom: 64px;
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      padding-bottom: 349px;
+    }
   }
 
   &__card {
@@ -169,6 +194,14 @@ $c-white: #fff;
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 80px;
+
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -198,6 +231,23 @@ $c-white: #fff;
 }
 
 .grid {
+  &--footer {
+    align-items: start;
+
+    @include onTablet {
+      grid-template-areas: "logo logo logo logo title title title title"
+        "menu menu menu menu phone phone phone phone"
+        ". . . . email email email email"
+        "socials socials socials socials date date date date";
+    }
+
+    @include onDesktop {
+      grid-template-areas: "logo logo logo logo title title title title"
+        "menu menu menu menu phone phone email email"
+        "socials socials socials socials date date date date";
+    }
+  }
+
   @include onTablet {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -205,7 +255,7 @@ $c-white: #fff;
     justify-content: center;
   }
 
-  @include onLargeScreen() {
+  @include onLargeScreen {
     grid-template-columns: repeat(8, 128px);
   }
 
@@ -305,8 +355,13 @@ $c-white: #fff;
   line-height: 0;
 
   &__image {
-    height: 32px;
     width: 136px;
+    height: 32px;
+
+    &--footer {
+      width: 168px;
+      height: 40px;
+    }
   }
 }
 
@@ -331,6 +386,15 @@ $c-white: #fff;
 
     @include onDesktop {
       display: none;
+    }
+  }
+
+  &--social-links {
+    fill: $c-accent-orange;
+
+    &:hover,
+    &:focus {
+      fill: $c-white;
     }
   }
 }
@@ -416,6 +480,16 @@ $c-white: #fff;
   }
 }
 
+.catalog {
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    margin-bottom: 80px;
+  }
+}
+
 .card {
   &__photo {
     width: 100%;
@@ -443,24 +517,58 @@ $c-white: #fff;
   }
 }
 
-.statistics {
+.about-us {
   background-image: url(../images/Photos/Crumbs.png);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: center 75%;
 
-  &__value {
-    margin-bottom: 8px;
+  &__title {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
   }
 
   &__description {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__block {
     margin-bottom: 48px;
 
     &:last-child {
       margin-bottom: 0;
     }
+
+    @include onTablet {
+      margin-bottom: 80;
+
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__value {
+    margin-bottom: 8px;
   }
 }
+
+$footer-title-mar-bottom: 40px;
 
 .footer {
   box-sizing: border-box;
@@ -468,35 +576,82 @@ $c-white: #fff;
   background-color: $c-black;
 
   &__logo {
+    grid-area: logo;
     margin-top: 56px;
-    margin-bottom: 40px;
+    margin-bottom: $footer-title-mar-bottom;
     width: min-content;
+
+    @include onTablet {
+      margin-top: 88px;
+    }
   }
 
   &__menu {
+    grid-area: menu;
     margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 48px;
+    }
   }
 
   &__title {
+    grid-area: title;
     color: $c-white;
-    margin-bottom: 40px;
+    margin-bottom: $footer-title-mar-bottom;
+
+    @include onTablet {
+      margin-top: 88px;
+    }
+
+    @include onDesktop {
+      margin-top: 88px;
+    }
   }
 
   &__call-us {
+    grid-area: phone;
     margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
   }
 
   &__email-us {
+    grid-area: email;
     margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
   }
 
   &__socials {
+    grid-area: socials;
     margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 88px;
+    }
   }
 
   &__date {
+    grid-area: date;
     color: $c-gray;
     margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 88px;
+    }
   }
 }
 
