@@ -1,0 +1,44 @@
+.header {
+  padding: 20px;
+
+  @include onDesktop {
+    padding: 32px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__link {
+      margin-right: 64px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-opener {
+      display: block;
+      width: 20px;
+      height: 8px;
+      background-image: url(/images/menu.svg);
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+  }
+
+}
