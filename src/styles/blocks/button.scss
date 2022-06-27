@@ -1,0 +1,64 @@
+.button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 71px;
+  height: 56px;
+  width: 280px;
+  background-color: transparent;
+  border: 2px solid $orange-color;
+  border-radius: 32px;
+
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 2%;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $orange-color;
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  @include onTablet {
+    width: 326px;
+    margin-top: 230px;
+  }
+
+  @include onDesktop {
+    position: relative;
+    top: 130px;
+    width: 300px;
+    margin: 64px 0 0;
+  }
+
+  &::before {
+    content: url(../images/favicon.png);
+    padding-right: 6px;
+  }
+
+  &:hover {
+    background-color: $orange-color;
+    color: $white-color;
+
+    &::before {
+      content: url(../images/white_cookie.svg);
+    }
+  }
+
+  &:active {
+    background-color: #b2341a;
+    border-color: transparent;
+    color: $white-color;
+
+    transition: border-color, background-color, color 0.3s;
+  }
+
+  &__icon {
+    padding-right: 8px;
+    width: 18px;
+    height: 18px;
+    background-position: center;
+  }
+}
