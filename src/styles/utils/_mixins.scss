@@ -1,6 +1,58 @@
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onLargeScreen {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin hoverLink {
+  transition: transform 0.3s, color 0.3s;
+
+  &:hover {
+    color: $c-accent-orange;
+    transform: scale(1.1);
+  }
+}
+
+@mixin hoverLinkBtn {
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  border: 1px solid $c-light-blue;
+
+  &:hover {
+    transform: scale(1.1);
+    border-color: $c-accent-orange;
+    box-shadow: 2px 2px 4px #7f8096;
+  }
+}
+
+@mixin hoverLogoSvg {
+  transition: fill 0.3s, transform 0.3s;
+
+  &:hover {
+    fill: $c-accent-orange;
+    transform: scale(1.1);
   }
 }
