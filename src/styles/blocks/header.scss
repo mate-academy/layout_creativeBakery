@@ -20,6 +20,11 @@
   &__subtitle {
     line-height: 150%;
     text-align: center;
+
+    @include onTablet {
+      text-align: start;
+    }
+
     letter-spacing: -0.01em;
     color: $c-black;
     margin-bottom: 32px;
@@ -41,12 +46,22 @@
     font-size: 64px;
 
     z-index: 1;
+    animation: slidein 2s;
 
     @include onTablet {
       position: absolute;
       top: 45%;
+
+      @include onTablet {
+        top: 42%;
+      }
+
+      @include onDesktop {
+        top: 47%;
+      }
+
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -100%);
       width: 100%;
       font-size: 80px;
     }
@@ -92,8 +107,20 @@
 
   &__button {
     @include onDesktop {
-      transform: translateY(-389px);
+      transform: translateY(-390px);
     }
 
+  }
+
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
   }
 }
