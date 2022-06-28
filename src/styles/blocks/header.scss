@@ -1,5 +1,62 @@
 .header {
   // height: 100vh;
+  &__menu {
+    display: none;
+    transition: 0.3s;
+    @include onTablet {
+      display: none;
+    }
+    @include onDesktop {
+      display: flex;
+    }
+    @include onDesktopPlus {
+      display: flex;
+    }
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 64px;
+
+      padding: 0;
+      list-style: none;
+    }
+    &-link {
+      display: inline-block;
+      padding-bottom: 8px;
+      
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      text-align: center;
+      color: #1c1a26;
+      
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+      &:hover {
+        border-color: #1d1d1d;
+      }
+    }
+  }
+  &__contact-link {
+    display: block;
+    padding-left: 25px;
+    padding-bottom: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    border-bottom: 1px solid transparent;
+    color: #f9512e;
+
+    transition: border-color 0.3s;
+    background-image: url(/images/icons/phone.svg);
+    background-repeat: no-repeat;
+    &:hover {
+      border-color: #f9512e;
+    }
+  }
   &__title {
     position: relative;
   }
@@ -48,29 +105,13 @@
     align-items: center;
     margin-bottom: 104px;
     transition: all 0.3s;
-
-    @include onTablet {
-      margin-bottom: 228px;
-    }
-
-    @include onDesktop {
-      margin-bottom: 312px;
-    }
-    @include onDesktopPlus {
-      margin-bottom: 290px;
-    }
-
     height: 56px;
-
     font-weight: 500;
-
     letter-spacing: 0.02em;
     text-transform: uppercase;
-
     color: #f9512e;
     border: 2px solid #f9512e;
     border-radius: 32px;
-    
     &::before {
       content: "";
       display: block;
@@ -93,6 +134,16 @@
     }
     &:focus {
       background-color: #b3341a;
+    }
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 312px;
+    }
+    @include onDesktopPlus {
+      margin-bottom: 290px;
     }
   }
 }
