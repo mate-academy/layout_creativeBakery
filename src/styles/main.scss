@@ -30,6 +30,18 @@
   }
 }
 
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onDesktopXL {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
 .grid {
   position: relative;
   display: grid;
@@ -41,8 +53,25 @@
     column-gap: 24px;
   }
 
+  @include onDesktop {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
   &__item-tablet {
     @include onTablet {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  &__item-desktop {
+    @include onDesktop {
       @for $start from 1 through 8 {
         @for $end from $start through 8 {
           &--#{$start}-#{$end} {
@@ -79,6 +108,14 @@
   align-items: center;
   text-align: center;
 
+  @include onDesktop {
+    height: 650px;
+  }
+  
+  @include onDesktopXL {
+    height: 650px;
+  }
+
   &--info {
     font-weight: 400;
     font-size: 16px;
@@ -88,8 +125,17 @@
     color: #1c1a26;
     margin-bottom: 32px;
 
-    @media (min-width: 640px) {
+    @include onTablet {
       text-align: left;
+      width: 280px;
+      height: 48px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: 40%;
+      width: 260px;
+      height: 72px;
     }
   }
 
@@ -105,11 +151,16 @@
 
     z-index: 1;
 
-    @media (min-width: 640px) {
+    @include onTablet {
       position: absolute;
       top: 194px;
       font-size: 80px;
       line-height: 68px;
+    }
+
+    @include onDesktop {
+      top: 50%;
+      font-size: 110px;
     }
   }
 
@@ -117,10 +168,22 @@
     height: 290px;
     margin: 0 auto;
 
-    @media (min-width: 640px) {
+    @include onTablet {
       height: 328px;
       margin-bottom: 80px;
     }
+
+    @include onDesktop {
+      position: relative;
+      top: 80px;
+      height: 546px;
+    }
+
+    // @include onDesktopXL {
+    //   position: relative;
+    //   top: 80px;
+    //   height: 586px;
+    // }
   }
 
   &--button {
@@ -142,6 +205,11 @@
     line-height: 100%;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+
+    @include onDesktop {
+      position: relative;
+      top: -150px;
+    }
   }
 
   &--little {
