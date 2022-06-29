@@ -45,6 +45,8 @@
     text-transform: uppercase;
     color: #1c1a26;
 
+    animation: text 1.5s ease 0.1s;
+
     @include onTablet {
       font-size: 80px;
       font-weight: 400;
@@ -66,6 +68,8 @@
   &__img {
     width: 100%;
 
+    animation: cookieAnimation 2s linear, cookieRotate 1s linear 1s;
+
     @include onTablet {
       grid-column: 3 / 7;
       grid-row: 2 / 3;
@@ -86,5 +90,54 @@
       grid-row: 6 / 7;
       margin-top: 60px;
     }
+  }
+}
+
+@keyframes text {
+  0% {
+    transform: translateX(-200%);
+    color: #f00;
+  }
+  50% {
+    transform: translateX(50%);
+    color: #ff0;
+  }
+  90% {
+    transform: translateX(-20%);
+    color: #fffff0;
+  }
+  100% {
+    transform: translateX(0);
+    color: #1c1a26;
+  }
+}
+
+@keyframes cookieAnimation {
+  0% {
+    // width: 0;
+    transform: translateY(-200%);
+
+  }
+  50% {
+    // width: 120%;
+    transform: translateY(10%);
+
+  }
+  100% {
+    transform: translateY(0);
+    // width: 100%;
+  }
+}
+
+@keyframes cookieRotate {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  50% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

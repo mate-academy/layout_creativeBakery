@@ -34,7 +34,21 @@
   &__link {
     color: #fff;
     text-decoration: none;
-    display: block;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 0;
+      background-color: #fff;
+    }
+
+    &:hover::after {
+      animation: lineAfter 0.3s linear;
+
+      width: 100%;
+    }
   }
 
   &__menu-list {
@@ -97,5 +111,14 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+}
+
+@keyframes lineAfter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
