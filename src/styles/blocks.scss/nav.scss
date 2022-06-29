@@ -1,7 +1,4 @@
 .nav {
-  display: flex;
-  align-items: center;
-
   &__list {
     display: flex;
     justify-content: space-between;
@@ -12,16 +9,17 @@
     margin: 0 22px;
 
     &:last-child {
-      // position: relative;
+      position: relative;
       margin-right: 0;
       display: flex;
       align-items: center;
+      margin-left: 45px;
 
       font-weight: 500;
       line-height: 100%;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      color: #f9512e;
+      color: $c-red;
     }
   }
 
@@ -29,9 +27,31 @@
     padding: 10px;
   }
 
-  // &__phone {
+  // &__span {
   //   position: relative;
-  //   top: 50%;
-  //   transform: translateY(-50%);
+  //   // display: block;
   // }
+
+  // &__phone {
+  //   position: absolute;
+  //   // display: block;
+  //   // top: 50%;
+  //   // transform: translateY(-50%);
+  //   // right: 10%;
+  //   left: -14px;
+  // }
+
+  &__span {
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: -14px;
+      height: 18px;
+      width: 18px;
+      background-image: url(../images/icons/phone.svg);
+      background-repeat: no-repeat;
+      padding-right: 7px;
+    }
+  }
 }
