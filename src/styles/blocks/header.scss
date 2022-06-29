@@ -1,0 +1,80 @@
+.header {
+  height: max-content;
+  padding: 0 16px;
+  text-align: center;
+
+  @include onTablet {
+    padding: 0 44px;
+    text-align: start;
+  }
+
+  &__nav {
+    margin-bottom: 32px;
+  }
+
+  &__text {
+    @extend %body-text;
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    @extend %h1--mobile;
+    color: $c-black;
+
+    @include onTablet {
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      font-size: 144px;
+    }
+  }
+
+  &__cookie {
+    height: 288px;
+    width: 290px;
+
+    @include onTablet {
+      height: 326px;
+      width: 328px;
+    }
+
+    @include onDesktop {
+      height: 544px;
+      width: 546px;
+    }
+
+    @include onBigDesktop {
+      height: 584px;
+      width: 586px;
+    }
+  }
+
+  &__button {
+    @extend %uppercase-text;
+    height: 56px;
+    width: 100%;
+    margin-bottom: 40px;
+    background-color: transparent;
+    color: $c-accent-orange;
+    border: 2px solid $c-accent-orange;
+    border-radius: 32px;
+
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+
+    &:hover {
+      background-color: $c-accent-orange;
+      color: $c-white;
+    }
+
+    &:focus {
+      background-color: $c-dark-orange;
+      color: $c-white;
+      border: 2px solid $c-dark-orange;
+    }
+
+    &:disabled {
+      color: $c-light-orange;
+    }
+  }
+}
