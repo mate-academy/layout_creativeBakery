@@ -1,18 +1,29 @@
 .header {
   height: 100vh;
 
+  @include onTablet {
+    height: max-content;
+    padding-bottom: 200px;
+  }
+
+  @include onDesktop {
+    height: max-content;
+    padding-bottom: 0;
+  }
+
   &__nav {
     margin-bottom: 32px;
-
     padding: 20px 20px 0;
 
     @include onDesktop {
       display: flex;
       justify-content: space-between;
       margin-bottom: 135px;
+      padding: 20px 40px 0;
     }
 
     @include onBigDesktop {
+      padding: 20px 0 0;
       margin-bottom: 100px;
     }
   }
@@ -50,25 +61,16 @@
 
     @include onTablet {
       position: absolute;
-      top: 45%;
-
-      @include onTablet {
-        top: 42%;
-      }
-
-      @include onDesktop {
-        top: 47%;
-      }
-
+      top: 57%;
       left: 50%;
       transform: translate(-50%, -100%);
       width: 100%;
       font-size: 80px;
-    }
 
-    @include onDesktop {
-      font-size: 136px;
-
+      @include onDesktop {
+        top: 28%;
+        font-size: 115px;
+      }
     }
     
     line-height: 85%;
@@ -103,6 +105,7 @@
 
   &__content {
     padding: 0 44px;
+    position: relative;
   }
 
   &__button {
