@@ -1,4 +1,9 @@
 'use strict';
 
-// const burger = document.querySelector('.icon__menu-opener');
-// const menu = document.querySelector('.nav__menu');
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#separate-menu') {
+    document.body.classList.add('page__body--with-menu');
+  } else {
+    document.body.classList.remove('page__body--with-menu');
+  }
+});
