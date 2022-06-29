@@ -1,0 +1,54 @@
+.product {
+  &__img {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $c-grey;
+  }
+
+  &__text {
+    display: inline-block;
+    max-width: 432px;
+    margin-bottom: 24px;
+  }
+
+  &__order-button {
+    display: flex;
+    margin-bottom: 64px;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $c-red;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 16px;
+      width: 16px;
+      padding-right: 8px;
+      background: url(../images/icons/arrow.svg) no-repeat;
+    }
+
+    @include onTablet {
+      margin-bottom: 88px;
+    }
+  }
+
+  @include onTablet {
+    grid-column: span 4;
+  }
+
+  @include onDesktop {
+    grid-column: span 3;
+  }
+}
