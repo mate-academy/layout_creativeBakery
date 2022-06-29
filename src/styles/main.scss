@@ -1,7 +1,28 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content
+  }
+};
 
-body {
-  background: $c-gray;
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content
+  }
+};
+
+@mixin onDesktopBig {
+  @media (min-width: 1200px) {
+    @content
+  }
+};
+
+.page {
+  font-family: "Inter", sans-serif;
+
+  &__body {
+    background-color: #eef7ff;
+  }
 }
+
+
+
