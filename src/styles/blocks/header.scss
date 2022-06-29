@@ -1,5 +1,10 @@
 .header {
-  position: relative;
+  min-height: 100vh;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
 
   &__header-top {
     padding: 20px;
@@ -28,14 +33,18 @@
     color: $c-black;
 
     @include onTablet {
-      margin-bottom: 148px;
+      margin-bottom: 146px;
       max-width: 280px;
       text-align: left;
     }
 
     @include onDesktop {
       margin-top: 135px;
-      margin-bottom: 0;
+      margin-bottom: 8px;
+    }
+
+    @include onDesktopPlus {
+      margin-bottom: 40px;
     }
   }
 
@@ -60,11 +69,16 @@
       font-size: 106px;
       margin-bottom: 64px;
     }
+
+    @include onDesktopPlus {
+      font-size: 136px;
+    }
   }
 
   &__img {
     display: block;
     margin: 0 auto;
+    @include image-size(290px);
 
     animation: image-fader 3s linear;
 
