@@ -1,18 +1,56 @@
 .header {
-  height: max-content;
+  min-width: 320px;
+  position: relative;
   
   &__nav {
     padding: 20px 0 50px;
+    width: 100%;
   }
 
   &__description {
     text-align: center;
 
     margin-bottom: 32px;
+
+    @include tableSize {
+      text-align: left;
+    }
   }
 
   &__title {
     text-align: center;
+    z-index: 1;
+
+    text-shadow: -0 -1px 0 $c-lightPink,
+      0 -1px 0 $c-lightPink,
+      -0 1px 0 $c-lightPink,
+      0 1px 0 $c-lightPink,
+      -1px -0 0 $c-lightPink,
+      1px -0 0 $c-lightPink,
+      -1px 0 0 $c-lightPink,
+      1px 0 0 $c-lightPink,
+      -1px -1px 0 $c-lightPink,
+      1px -1px 0 $c-lightPink,
+      -1px 1px 0 $c-lightPink,
+      1px 1px 0 $c-lightPink,
+      -1px -1px 0 $c-lightPink,
+      1px -1px 0 $c-lightPink,
+      -1px 1px 0 $c-lightPink,
+      1px 1px 0 $c-lightPink;
+
+    
+
+    @include tableSize {
+      position: absolute;
+      width: max-content;
+      top: 58%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include pcSize {
+      top: 54%;
+    }
   }
 
   &__img {
