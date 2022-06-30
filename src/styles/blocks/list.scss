@@ -29,15 +29,44 @@
     letter-spacing: -0.01em;
     color: #1c1a26;
 
-    transition: font-weight 0.3s linear, scale 0.3s linear;
+    transition: scale 0.4s ease;
 
     &:hover {
-      font-weight: 800;
-      transform: scale(1.04);
+      transform: scale(1.06);
+      animation: changeColor 2s linear infinite;
+    }
+
+    @keyframes changeColor {
+      0% {
+        color: #f9512e;
+      }
+      25% {
+        color: rgb(128, 0, 255);
+      }
+      50% {
+        color: rgb(255, 0, 170);
+      }
+      100% {
+        color: rgb(255, 0, 68);
+      }
     }
 
     &--menu {
       margin-left: 0;
+      padding: 5px;
+
+      @include onTablet {
+        font-size: 36px;
+      }
+
+      &.list__link--last::before {
+        @include onTablet {
+          width: 30px;
+          height: 30px;
+          background-size: contain;
+
+        }
+      }
     }
 
     &--last {
