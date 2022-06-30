@@ -3,8 +3,12 @@
   position: relative;
 
   &__nav {
-    padding: 20px 0 50px;
-    width: 100%;
+    display: block;
+    margin: 20px 20px 50px;
+
+    @include pcSize {
+      margin: 20px 32px 50px;
+    }
   }
 
   &__description {
@@ -78,5 +82,54 @@
 
   &__content {
     padding-bottom: 40px;
+  }
+
+  &__menu {
+
+    text-align: right;
+
+    &-list {
+      display: none;
+      align-items: right;
+      justify-content: end;
+      gap: 64px;
+
+      padding: 0;
+      list-style: none;
+
+      @include pcSize {
+        display: flex;
+      }
+    }
+
+    &-link {
+      width: max-content;
+      display: inline-block;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+
+      &:hover {
+        border-color: $c-black;
+      }
+    }
+  }
+
+  &__contact-link {
+
+    &::before {
+      content: "";
+      background-image: url("../images/icon/phone.svg");
+      background-repeat: no-repeat;
+      @include square(20px);
+      padding-right: 27px;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+      
+    }
+
+    &:hover {
+      border-color: $c-accentOrange;
+    }
+    
   }
 }

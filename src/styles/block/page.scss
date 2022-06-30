@@ -6,10 +6,30 @@
   &__body {
     margin: 0;
     background-color: $c-lightPink;
+  
+    &--with-menu {
+      overflow: hidden;
+  
+      @include pcSize {
+        overflow: auto;
+      }
+  
+      @include tvSize {
+        overflow: auto;
+      }
+    }
   }
 
   &__section {
     margin-bottom: 80px;
+
+    @include tableSize {
+      margin-bottom: 120px;
+    }
+
+    @include pcSize {
+      margin-bottom: 180px;
+    }
 
     &-title {
       padding-bottom: 24px;
@@ -18,14 +38,6 @@
 
     &-paragraph {
       width: 100%;
-    }
-
-    @include tableSize {
-      margin-bottom: 120px;
-    }
-
-    @include pcSize {
-      margin-bottom: 180px;
     }
   }
 }

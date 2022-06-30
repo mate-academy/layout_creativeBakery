@@ -1,5 +1,48 @@
 .footer {
+  background-color: $c-black;
+  padding: 60px 0;
+
+  @include tableSize {
+    padding: 90px 0;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__paragraph {
+    margin-bottom: 40px;
+  }
+
   &__subtitle {
     display: block;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+    color: $c-white;
+    margin-bottom: 16px;
+    border-bottom: 1px solid transparent;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: $c-accentOrange;
+      border-bottom: 1px solid $c-accentOrange;
+    }
+
+    &:focus {
+      color: $c-darkOrange;
+      border-bottom: 1px solid $c-darkOrange;
+    }
+  }
+
+  &__icon {
+    @include square (20px);
+    margin-right: 36px;
   }
 }
