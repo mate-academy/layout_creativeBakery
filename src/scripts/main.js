@@ -8,6 +8,7 @@ window.addEventListener('hashchange', () => {
   }
 });
 
+// eslint-disable-next-line no-undef
 AOS.init({
   disable: false,
   startEvent: 'DOMContentLoaded',
