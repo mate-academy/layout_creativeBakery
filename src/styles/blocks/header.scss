@@ -1,0 +1,60 @@
+.header {
+  overflow: hidden;
+  
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+  }
+
+  &__menu-opener {
+    display: block;
+    width: 20px;
+    height: 8px;
+    background-image: url(/images/menu-button.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+    @include onDesktopLarge {
+      display: none;
+    }
+
+    &:hover {
+      background-image: url(/images/menu__hover-button.svg);
+    }
+  }
+
+  &__menu-cross {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(/images/cross.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:hover {
+      background-image: url(/images/cross--hover.svg);
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-link {
+      margin-right: 64px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
