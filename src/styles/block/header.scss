@@ -58,6 +58,7 @@
   }
 
   &__img {
+    position: relative;
     background-image: url("../images/swit.png");
     @include square(290px);
 
@@ -66,6 +67,22 @@
     background-size: cover;
 
     margin: 0 auto;
+
+    animation: slidein 1000ms ease-in-out;
+
+    @keyframes slidein {
+      0% {
+        left: -100%;
+      }
+
+      70% {
+        left: 15%;
+      }
+      
+      100% {
+        left: 0;
+      }
+    }
 
     @include tableSize {
       @include square(330px);
