@@ -1,0 +1,59 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  height: 64px;
+
+  @include onTablet {
+    padding: 0 44px;
+  }
+
+  &__opener {
+    display: block;
+    width: 20px;
+    height: 8px;
+    color: $c-black;
+    background-image: url(../images/icons/menu-black.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__close {
+    display: block;
+    @include square(13px);
+    padding-right: 20px;
+    color: $c-black;
+    background-image: url(../images/icons/close-black.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &--small {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--big {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+}

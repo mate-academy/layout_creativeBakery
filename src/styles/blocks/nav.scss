@@ -1,49 +1,28 @@
 .nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 64px;
+  gap: 64px;
 
   &__link {
+    display: inline-block;
     @extend %body-text;
     color: $c-black;
-    margin-right: 64px;
+    border-bottom: 1px solid transparent;
 
-    &:last-child {
+    transition: color 0.3s, transform 0.3s, border-color 0.3s;
+
+    &-phone {
+      display: flex;
+      gap: 8px;
       @extend %uppercase-text;
       color: $c-accent-orange;
       margin-right: 0;
+      line-height: 150%;
     }
-  }
-
-  &__opener {
-    display: block;
-    width: 20px;
-    height: 8px;
-    color: $c-black;
-    background-image: url(../images/icons/menu.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-
-    transition: transform 0.3s;
 
     &:hover {
+      color: $c-accent-orange;
       transform: scale(1.2);
-    }
-  }
-
-  &--small {
-    @include onDesktop {
-      display: none;
-    }
-  }
-
-  &--big {
-    display: none;
-
-    @include onDesktop {
-      display: flex;
+      border-color: $c-accent-orange;
     }
   }
 }
