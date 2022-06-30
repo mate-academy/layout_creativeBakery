@@ -1,5 +1,4 @@
 .nav {
-  height: 100%;
   display: none;
   justify-content: space-between;
   align-items: center;
@@ -10,15 +9,22 @@
     display: flex;
   }
 
+  &--horizont {
+    height: 100%;
+  }
+
   &--vertical {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    gap: 24px;
+    gap: 0;
   }
 
   &__item {
-    //height: inherit;
+    height: inherit;
+
+    &--vertical {
+      height: 48px;
+    }
   }
 
   &__link {
@@ -28,6 +34,12 @@
     height: inherit;
     text-decoration: none;
     color: $c-dark;
+    transition: transform 0.5s, color 0.5s;
+
+    &:hover {
+      color: $c-accent-orange;
+      transform: scale(1.2);
+    }
   }
 
   &__link--contact {
