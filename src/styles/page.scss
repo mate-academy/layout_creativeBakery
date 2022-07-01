@@ -3,8 +3,29 @@
   font-family: Inter, sans-serif;
 
   scroll-behavior: smooth;
-  
+
   &__body {
     margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-color: #eef7ff;
+
+    transform: translateY(-100%);
+
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateY(0%);
+    }
   }
 }
