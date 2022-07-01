@@ -145,14 +145,33 @@
     border: 2px solid $c-orange;
     border-radius: 32px;
 
-    &::before {
-      content: "";
-      background-image: url(../images/cookie-icon.svg);
-      background-repeat: no-repeat;
-      height: 20px;
-      width: 20px;
-      padding-right: 6px;
+    &--icon {
+      margin-right: 6px;
     }
+
+    transition: background-color 0.3s linear,
+      color 0.3s linear,
+      filter 0.3s linear;
+
+    &:hover {
+      background-color: $c-orange;
+      color: #fff;
+    }
+
+    &:hover &--icon {
+      filter: brightness(0) invert(1);
+    }
+
+    &:focus {
+      background-color: #b3341a;
+      border-color: #b3341a;
+      color: #fff;
+    }
+
+    &:focus &--icon {
+      filter: brightness(0) invert(1);
+    }
+
   }
 
   &__menu {
