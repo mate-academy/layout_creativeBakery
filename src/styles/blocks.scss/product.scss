@@ -1,7 +1,23 @@
 .product {
   &__img {
     margin-bottom: 16px;
+    border-radius: 8px;
     width: 100%;
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02) translateY(-18px);
+      box-shadow: 2px 2px 10px $c-grey;
+    }
+
+    @include onMobile {
+      width: 100%;
+      max-height: 356px;
+      object-fit: cover;
+      object-position: center;
+    }
   }
 
   &__title {
@@ -16,27 +32,42 @@
 
   &__text {
     display: inline-block;
-    max-width: 432px;
-    margin-bottom: 24px;
+    margin-bottom: 17px;
+  }
+
+  &__order-arrow {
+    fill: $c-red;
   }
 
   &__order-button {
-    display: flex;
-    margin-bottom: 64px;
+    display: inline-flex;
+    padding: 7px 0;
+    margin-bottom: 57px;
+    border-bottom: 1px solid transparent;
 
     font-weight: 500;
     line-height: 100%;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: $c-red;
+    transition: all 0.3s ease;
 
-    &::before {
-      content: "";
-      display: block;
-      height: 16px;
-      width: 16px;
+    & svg {
+      box-sizing: content-box;
       padding-right: 8px;
-      background: url(../images/icons/arrow.svg) no-repeat;
+    }
+
+    &:hover {
+      border-color: $c-red;
+    }
+
+    &:active {
+      color: $c-darkRed;
+      border-color: $c-darkRed;
+
+      & .product__order-arrow {
+        fill: $c-darkRed;
+      }
     }
 
     @include onTablet {
@@ -46,9 +77,11 @@
 
   @include onTablet {
     grid-column: span 4;
+    max-width: 402px;
   }
 
   @include onDesktop {
     grid-column: span 3;
+    max-width: 432px;
   }
 }
