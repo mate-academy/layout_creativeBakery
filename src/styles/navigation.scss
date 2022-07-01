@@ -1,18 +1,35 @@
 .nav {
   display: none;
 
+  @include onDesktop {
+    display: block;
+  }
+
   &__list {
     list-style: none;
     display: flex;
     align-items: center;
-  }
-
-  &__item {
-    margin-right: 64px;
+    justify-content: center;
+    gap: 44px;
   }
 
   &__link {
     text-decoration: none;
     color: #1c1a26;
+
+    &--phone {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+
+      color: #f9512e;
+    }
+  }
+
+  &__phone-icon {
+    transform: translateY(25%);
   }
 }
