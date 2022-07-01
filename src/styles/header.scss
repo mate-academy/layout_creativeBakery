@@ -1,23 +1,148 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  &__menu {
+    display: none;
+    transition: 0.3s;
+    @include onTablet {
+      display: none;
+    }
+    @include onDesktop {
+      display: flex;
+    }
+    @include onLargeDesktop {
+      display: flex;
+    }
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 64px;
 
-  padding: 0 20px;
+      padding: 0;
+      list-style: none;
+    }
+    &-link {
+      display: inline-block;
+      padding-bottom: 8px;
 
-  @include onDesktop {
-    padding: 0 36px;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      text-align: center;
+      color: #1c1a26;
+
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+      &:hover {
+        border-color: #1d1d1d;
+      }
+    }
   }
+  &__contact-link {
+    display: block;
+    padding-left: 25px;
+    padding-bottom: 8px;
 
-  &__logo {
-    width: 128px;
-    height: 25px;
+    font-weight: 500;
 
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 
-    transition: transform 0.3s;
+    border-bottom: 1px solid transparent;
+    color: #f9512e;
 
+    transition: border-color 0.3s;
+    background-image: url(../images/phone.svg);
+    background-repeat: no-repeat;
     &:hover {
-      transform: scale(105%);
+      border-color: #f9512e;
+    }
+  }
+  &__title {
+    position: relative;
+  }
+  &__img {
+    display: block;
+    width: 290px;
+    margin: 0 auto;
+    transition: all 1s;
+
+    @include onTablet {
+      transform: translate3d(-50%, -50%, 0);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      width: 320px;
+    }
+
+    @include onDesktop {
+      transform: translate3d(-50%, -50%, 0);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      width: 540px;
+    }
+
+    @include onLargeDesktop {
+      transform: translate3d(-50%, -50%, 0);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      width: 580px;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__button-link {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 104px;
+    transition: all 0.3s;
+    height: 56px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #f9512e;
+    border: 2px solid #f9512e;
+    border-radius: 32px;
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+      background-image: url(../images/favicon.svg);
+    }
+    &:hover {
+      background-color: #f9512e;
+      color: #fff;
+      &::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
+        background-image: url(../images/favicon.svg);
+      }
+    }
+    &:focus {
+      background-color: #b3341a;
+    }
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 312px;
+    }
+    @include onLargeDesktop {
+      margin-bottom: 290px;
     }
   }
 }

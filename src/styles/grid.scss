@@ -1,23 +1,62 @@
 .grid {
-  @include onTablet {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 24px;
-  }
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
 
-  &__item {
-    @for $start from 1 through 8 {
-      @for $end from $start through 8 {
-        &--#{$start}-#{$end} {
-          grid-column: #{$start} / #{$end + 1};
-        }
+    @include onTablet {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
 
-        &--desktop-#{$start}-#{$end} {
-          @include onDesktop {
+    @include onDesktop {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onLargeDesktop {
+      grid-template-columns: repeat(8, 128px);
+      column-gap: 24px;
+    }
+
+    &--block-of {
+      display: block;
+
+      @include onTablet {
+        display: grid;
+      }
+      @include onDesktop {
+        display: grid;
+      }
+
+      @include onLargeDesktop {
+        display: grid;
+      }
+    }
+
+    &__item {
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &--#{$start}-#{$end} {
             grid-column: #{$start} / #{$end + 1};
+          }
+
+          &--tab-#{$start}-#{$end} {
+            @include onTablet {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+
+          &--desk-#{$start}-#{$end} {
+            @include onDesktop {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+          &--largdes-#{$start}-#{$end} {
+            @include onLargeDesktop {
+              grid-column: #{$start} / #{$end + 1};
+            }
           }
         }
       }
     }
-  }
 }
