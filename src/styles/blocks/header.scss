@@ -1,5 +1,4 @@
 .header {
-  height: max-content;
   text-align: center;
 
   @include onTablet {
@@ -7,48 +6,73 @@
   }
 
   &__content {
+    height: 100vh;
     padding: 0 16px;
+
     @include onTablet {
       display: flex;
       align-items: center;
       flex-direction: column;
 
       padding: 0 44px;
+
+      background: url(../images/photos/Cookie.png) center no-repeat;
+      background-position: center 65px;
+      background-size: 326px 328px;
+    }
+
+    @include onDesktop {
+      padding-top: 135px;
+      background-position: center top;
+      background-size: 544px 546px;
+    }
+
+    @include onBigDesktop {
+      padding: 144px 124px 0;
+      background-size: 584px 586px;
     }
   }
 
   &__top-actions {
     margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
   }
 
   &__text {
     align-self: flex-start;
     @extend %body-text;
     margin-bottom: 32px;
-  }
-
-  &__cookie {
-    z-index: -1;
-    @include square(288px);
 
     @include onTablet {
-      @include square(326px);
+      width: 280px;
+      margin-bottom: 146px;
     }
 
     @include onDesktop {
-      @include square(544px);
+      width: 260px;
+      margin-bottom: 0;
     }
 
     @include onBigDesktop {
-      @include square(584px);
+      width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__cookie {
+    @include square(288px);
+
+    @include onTablet {
+      display: none;
     }
 
-    &-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
   }
 
   &__title {
@@ -57,30 +81,50 @@
     text-align: center;
 
     @include onTablet {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
       font-size: 80px;
+      margin-bottom: 210px;
     }
 
     @include onDesktop {
+      font-size: 136px;
+      margin-bottom: 64px;
+    }
+
+    @include onBigDesktop {
       font-size: 144px;
+      margin-bottom: 64px;
     }
   }
 
   &__button {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 0 96px;
+    justify-content: center;
+    gap: 5px;
     @extend %uppercase-text;
     height: 56px;
+    padding: 0 75px;
     margin-bottom: 40px;
     background-color: transparent;
     color: $c-accent-orange;
     border: 2px solid $c-accent-orange;
     border-radius: 32px;
     cursor: pointer;
+
+    @include onTablet {
+      padding: 0 96px;
+      margin-bottom: 76px;
+    }
+
+    @include onDesktop {
+      padding: 0 60px;
+      align-self: flex-start;
+      width: 260px;
+    }
+
+    @include onBigDesktop {
+      width: 280px;
+    }
 
     transition: background-color 0.3s, color 0.3s, border 0.3s;
 

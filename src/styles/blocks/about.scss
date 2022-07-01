@@ -1,0 +1,59 @@
+.about {
+  background: url(../images/photos/Crumbs.png) no-repeat;
+  background-size: contain;
+  background-position: center bottom 174px;
+
+  @include onTablet {
+    height: 600px;
+    background-position: center bottom 100px;
+    background-size: 526px 493px;
+  }
+
+  @include onDesktop {
+    height: 673px;
+    background-size: 718px 673px;
+    background-position: center bottom;
+  }
+
+
+  &__title {
+    @extend %h2--mobile;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      font-size: 56px
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__text {
+    @extend %body-text;
+    margin-bottom: 64px;
+  }
+
+  &__info {
+
+    &-block {
+      @include onTablet {
+        display: flex;
+        flex-basis: 100px;
+        justify-content: space-between;
+      }
+    }
+
+    &-number {
+      @extend %big-text;
+      margin-bottom: 8px;
+    }
+
+    &-subtext {
+      @extend %body-text;
+      color: $c-grey;
+      margin-bottom: 48px;
+    }
+  }
+
+}
