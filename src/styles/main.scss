@@ -2,143 +2,117 @@
 @import "./blocks/container.scss";
 @import "./blocks/grid.scss";
 @import "./blocks/button.scss";
+@import "./blocks/header.scss";
+@import "./blocks/topActions.scss";
+@import "./blocks/icon.scss";
+@import "./blocks/logo.scss";
+@import "./blocks/nav.scss";
 
-.header {
-  position: relative;
-  width: 100%;
+.page {
 
-  &__cookie {
-    width: 100%;
+  &__baking {
+    margin-bottom: 80px;
 
     @include onTablet {
-      grid-row: 1;
-      margin-top: -140px;
+      margin-bottom: 152px;
     }
   }
+}
 
-  &__top-actions {
-    margin-bottom: 32px;
+.baking {
 
-    @include onTablet {
-      margin-bottom: 80px;
-    }
-
-    @include onDesktop {
-      margin-bottom: 140px;
-    }
+  &__title {
+    margin-bottom: 24px;
   }
 
   &__subtitle {
-    margin-bottom: 32px;
+    margin-bottom: 56px;
 
     @extend %body-text;
 
-    @include onTablet {
-      margin-bottom: 16px;
-    }
-    
-    @media (max-width: 740px) {
-      text-align: center;
-    }
   }
 
-  &__title-wrapper {
-    position: relative;
+  &__card {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 56px;
+    }
+
+  }
+
+}
+
+.card {
+
+  &__image {
+    display: block;
+    width: 100%;
+
+    margin-bottom: 16px;
   }
 
   &__title {
-    margin: 0 -10px;
+    margin-bottom: 8px;
 
-    display: block;
-    text-align: center;
-
-    color: $c-accent-orange;
-
-    @media (min-width: 1200px) {
-      white-space: nowrap;
-    }
-    
-    @include onDesktop {
-      position: absolute;
-      left: 0;
-    }
-  }
-}
-
-.top-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  &__nav {
-    display: none;
-
-    @include onDesktop {
-      display: flex;
-    }
+    @extend %uppercase;
+    color: $c-gray;
   }
 
-  &__menu-opener {
-    margin-right: 16px;
-    
-    @include onDesktop {
-      display: none;
-    }
-  }
-
-  &__logo {
-
-    margin: 16px;
-
-    @include onDesktop {
-      margin: 28px 32px;
-    }
-  }
-}
-
-.icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  height: 32px;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
-.nav {
-  
-  &__list {
-    margin: 0 32px;
-    padding: 0;
-    
-    display: flex;
-    gap: 42px;
+  &__description {
+    margin-bottom: 16px;
 
     @extend %body-text;
-
-    list-style: none;
   }
 
-  &__link {
-    box-sizing: border-box;
-    padding: 10px 8px;
-    display: flex;
-    color: $c-black;
-    text-decoration: none;
+  &__order-but {
+    position: relative;
 
-    &--tel {
-      color: $c-accent-orange;
+    display: inline-block;
+
+    text-decoration: none;
+    color: $c-accent-orange;
+
+    transition: color 0.4s;
+
+    &::before {
+      
+      @include square(20px);
+
+      display: inline-block;
+      padding-right: 4px;
+      content: "";
+      background-image: url(../images/icons/Icon-arrow.svg);
+      transition: background-image 0.4s;
+    }
+
+    &::after {
+      width: 0;
+      height: 1px;
+      padding-right: 100%;
+
+      display: block;
+      content: "";
+      background-color: inherit;
+      transition: background-color 0.4s;
+
+    }
+
+    &:hover {
+      &::after {
+        background-color: $c-accent-orange;
+      }
+    }
+
+    &:active {
+      color: $c-dark-orange;
+
+      &::after {
+        background-color: $c-dark-orange;
+      }
 
       &::before {
-        @include square(24px);
-
-        display: inline-block;
-        content: "";
-        background-image: url(../images/icons/Icon-phone.svg);
+        background-image: url(../images/icons/Icon-arrow--dark.svg);
       }
     }
   }
