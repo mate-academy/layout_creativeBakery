@@ -5,6 +5,11 @@
     gap: 64px;
 
     list-style-type: none;
+
+    &--column {
+      flex-direction: column;
+      gap: 24px;
+    }
   }
 
   &__item {
@@ -16,28 +21,16 @@
   &__link {
 
     &--uppercase {
-      // position: relative;
+      position: relative;
       @extend %font-uppercase;
       color: $c-accent-orange;
       padding-left: 7px;
 
-      // &::before {
-      //   content: '';
-      //   position: absolute;
-      //   left: 0;
-      //   top: 50%;
+      @include icon(18px, 18px);
 
-      //   height: 18px;
-      //   width: 18px;
-      //   padding-right: 7px;
-
-      //   background-image: url(../images/icons/phone.svg);
-      //   object-fit: contain;
-      //   background-repeat: no-repeat;
-      //   object-position: center;
-
-      //   transform: translate(-100%, -50%);
-      // }
+      &::before {
+        background-image: url(../images/icons/phone.svg);
+      }
     }
   }
 }

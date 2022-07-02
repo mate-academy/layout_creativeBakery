@@ -1,14 +1,8 @@
 .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  display: block;
 
-  &--tablet-desktop {
-    display: block;
-
-    @include onTablet {
-      display: grid;
-    }
+  @include onTablet {
+    display: grid;
   }
 
   @include onTablet {
@@ -16,23 +10,29 @@
     gap: 20px;
   }
 
-  @include onDesktop {
+  @media (min-width: 1200px) {
     grid-template-columns: repeat(8, 128px);
     gap: 20px;
   }
 
-  @for $dStart from 1 through 12 {
-    @for $dEnd from $dStart through 12 {
-      @for $tStart from 1 through 6 {
-        @for $tEnd from $tStart through 6 {
-          &__item--t-#{$tStart}-#{$tEnd}-d-#{$dStart}-#{$dEnd} {
-            @include onTablet {
-              grid-column: #{$tStart} / #{$tEnd + 1};
-            }
+  &__item-tablet {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        @include onTablet {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
 
-            @include onDesktop {
-              grid-column: #{$dStart} / #{$dEnd + 1};
-            }
+  &__item-desktop {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        @include onDesktop {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
           }
         }
       }

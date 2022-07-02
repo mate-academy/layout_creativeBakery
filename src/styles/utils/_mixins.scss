@@ -5,6 +5,21 @@
   }
 }
 
+@mixin icon($_width, $_height) {
+  &::before {
+    content: "";
+    padding-right: 4px;
+
+    display: inline-block;
+    height: $_height;
+    width: $_width;
+
+    object-fit: contain;
+    background-repeat: no-repeat;
+    object-position: center;
+  }
+}
+
 @mixin onTablet() {
   @media (min-width: 640px) {
     @content;
