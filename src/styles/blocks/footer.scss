@@ -14,10 +14,54 @@
     padding: 88px 124px;
   }
 
+  &__blocks {
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__block {
+    flex-basis: 50%;
+
+    &-contacts {
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+
+    &-call {
+      flex-basis: 50%;
+    }
+  }
+
+  &__socials-and-mark {
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__nav {
+    flex-basis: 50%;
+
+    @include onTablet {
+      display: flex;
+      gap: 41px;
+    }
+  }
+
   &__logo {
     display: block;
     margin-bottom: 45px;
     background-image: url(../images/logo-white.svg);
+
+    @include onTablet {
+      margin-bottom: 65px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 75px;
+    }
   }
 
   &__title {
@@ -61,16 +105,16 @@
   &__link {
     @extend %body-text;
     color: $c-white;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-accent-orange;
+    }
   }
 
   &__text {
     @extend %body-text;
     color: $c-grey;
-  }
-
-  &__nav {
-    display: flex;
-    gap: 41px;
-    margin-bottom: 40px;
   }
 }
