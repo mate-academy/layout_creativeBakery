@@ -98,20 +98,19 @@
 
   &__button {
     display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 288px;
+    height: 56px;
+    background-color: transparent;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    @extend %uppercase-text;
-    height: 56px;
-    padding: 0 75px;
     margin-bottom: 40px;
-    background-color: transparent;
-    color: $c-accent-orange;
     border: 2px solid $c-accent-orange;
     border-radius: 32px;
-    cursor: pointer;
 
     @include onTablet {
+      width: 326px;
       padding: 0 96px;
       margin-bottom: 76px;
     }
@@ -130,13 +129,31 @@
 
     &:hover {
       background-color: $c-accent-orange;
-      color: $c-white;
     }
 
-    &:focus {
+    &:active {
       background-color: $c-dark-orange;
       color: $c-white;
       border: 2px solid $c-dark-orange;
+    }
+  }
+
+  &__link {
+    width: inherit;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 32px;
+
+    gap: 5px;
+    @extend %uppercase-text;
+    color: $c-accent-orange;
+
+    transition: filter 0.3s;
+
+    &:hover {
+      filter: brightness(0) invert(1);
     }
 
     &:disabled {
