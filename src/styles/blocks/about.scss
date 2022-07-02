@@ -15,13 +15,28 @@
     background-position: center bottom;
   }
 
+  &__pair {
+    @include onTablet {
+      display: flex;
+    }
+
+    &-title {
+      margin-bottom: 64px;
+    }
+
+    &-numbers {
+      flex-basis: 50%;
+    }
+  }
 
   &__title {
     @extend %h2--mobile;
     margin-bottom: 32px;
 
     @include onTablet {
-      font-size: 56px
+      flex-basis: 50%;
+      font-size: 56px;
+      height: max-content;
     }
 
     @include onDesktop {
@@ -32,18 +47,32 @@
   &__text {
     @extend %body-text;
     margin-bottom: 64px;
+
+    @include onTablet {
+      flex-basis: 50%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__numbers {
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__number {
+    flex-basis: 50%;
   }
 
   &__info {
-
-    &-block {
-      @include onTablet {
-        display: flex;
-        flex-basis: 100px;
-        justify-content: space-between;
-      }
-    }
-
     &-number {
       @extend %big-text;
       margin-bottom: 8px;
@@ -53,7 +82,10 @@
       @extend %body-text;
       color: $c-grey;
       margin-bottom: 48px;
+
+      @include onTablet {
+        margin-bottom: 80px;
+      }
     }
   }
-
 }
