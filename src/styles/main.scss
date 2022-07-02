@@ -1,119 +1,13 @@
 @import "utils";
 @import "./blocks/container.scss";
 @import "./blocks/grid.scss";
+@import "./blocks/page.scss";
 @import "./blocks/button.scss";
 @import "./blocks/header.scss";
 @import "./blocks/topActions.scss";
 @import "./blocks/icon.scss";
 @import "./blocks/logo.scss";
 @import "./blocks/nav.scss";
-
-.page {
-
-  &__baking {
-    margin-bottom: 80px;
-
-    @include onTablet {
-      margin-bottom: 152px;
-    }
-  }
-}
-
-.baking {
-
-  &__title {
-    margin-bottom: 24px;
-  }
-
-  &__subtitle {
-    margin-bottom: 56px;
-
-    @extend %body-text;
-
-  }
-
-  &__card {
-    margin-bottom: 56px;
-
-    @include onTablet {
-      margin-bottom: 56px;
-    }
-
-  }
-
-}
-
-.card {
-
-  &__image {
-    display: block;
-    width: 100%;
-
-    margin-bottom: 16px;
-  }
-
-  &__title {
-    margin-bottom: 8px;
-
-    @extend %uppercase;
-    color: $c-gray;
-  }
-
-  &__description {
-    margin-bottom: 16px;
-
-    @extend %body-text;
-  }
-
-  &__order-but {
-    position: relative;
-
-    display: inline-block;
-
-    text-decoration: none;
-    color: $c-accent-orange;
-
-    transition: color 0.4s;
-
-    &::before {
-      
-      @include square(20px);
-
-      display: inline-block;
-      padding-right: 4px;
-      content: "";
-      background-image: url(../images/icons/Icon-arrow.svg);
-      transition: background-image 0.4s;
-    }
-
-    &::after {
-      width: 0;
-      height: 1px;
-      padding-right: 100%;
-
-      display: block;
-      content: "";
-      background-color: inherit;
-      transition: background-color 0.4s;
-
-    }
-
-    &:hover {
-      &::after {
-        background-color: $c-accent-orange;
-      }
-    }
-
-    &:active {
-      color: $c-dark-orange;
-
-      &::after {
-        background-color: $c-dark-orange;
-      }
-
-      &::before {
-        background-image: url(../images/icons/Icon-arrow--dark.svg);
-      }
-    }
-  }
-}
+@import "./blocks/baking.scss";
+@import "./blocks/card.scss";
+@import "./blocks/aboutUs.scss";
