@@ -1,8 +1,15 @@
 .grid {
-  display: block;
 
   @include onTablet {
     display: grid;
+  }
+
+  &--flex {
+    display: flex;
+
+    @include onTablet {
+      display: grid;
+    }
   }
 
   @include onTablet {
@@ -15,23 +22,21 @@
     gap: 20px;
   }
 
-  &__item-tablet {
+  &__item {
     @for $start from 1 through 8 {
       @for $end from $start through 8 {
         @include onTablet {
-          &--#{$start}-#{$end} {
+          &--tablet-#{$start}-#{$end} {
             grid-column: #{$start} / #{$end + 1};
           }
         }
       }
     }
-  }
 
-  &__item-desktop {
     @for $start from 1 through 8 {
       @for $end from $start through 8 {
         @include onDesktop {
-          &--#{$start}-#{$end} {
+          &--desktop-#{$start}-#{$end} {
             grid-column: #{$start} / #{$end + 1};
           }
         }
