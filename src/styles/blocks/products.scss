@@ -19,6 +19,7 @@
       justify-content: flex-end;
     }
   }
+
   &__card {
     margin: 0 auto;
     width: 288px;
@@ -40,6 +41,12 @@
   &__image {
     width: 100%;
     margin-bottom: 16px;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__type {
@@ -56,8 +63,18 @@
   &__order {
     display: flex;
     gap: 8px;
+    width: max-content;
     color: $c-accent-orange;
     @extend %uppercase-text;
     margin-bottom: 64px;
+    border-bottom: 1px solid transparent;
+    line-height: 150%;
+
+    transition: gap 0.3s, border-color 0.3s;
+
+    &:hover {
+      border-color: $c-accent-orange;
+      gap: 1px;
+    }
   }
 }
