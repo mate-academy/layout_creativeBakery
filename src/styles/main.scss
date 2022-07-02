@@ -1,3 +1,145 @@
 @import "utils";
 @import "./blocks/container.scss";
-@import "./blocks/grid.scss"
+@import "./blocks/grid.scss";
+@import "./blocks/button.scss";
+
+.header {
+  position: relative;
+  width: 100%;
+
+  &__cookie {
+    width: 100%;
+
+    @include onTablet {
+      grid-row: 1;
+      margin-top: -140px;
+    }
+  }
+
+  &__top-actions {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 140px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+
+    @extend %body-text;
+
+    @include onTablet {
+      margin-bottom: 16px;
+    }
+    
+    @media (max-width: 740px) {
+      text-align: center;
+    }
+  }
+
+  &__title-wrapper {
+    position: relative;
+  }
+
+  &__title {
+    margin: 0 -10px;
+
+    display: block;
+    text-align: center;
+
+    color: $c-accent-orange;
+
+    @media (min-width: 1200px) {
+      white-space: nowrap;
+    }
+    
+    @include onDesktop {
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__menu-opener {
+    margin-right: 16px;
+    
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__logo {
+
+    margin: 16px;
+
+    @include onDesktop {
+      margin: 28px 32px;
+    }
+  }
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 32px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.nav {
+  
+  &__list {
+    margin: 0 32px;
+    padding: 0;
+    
+    display: flex;
+    gap: 42px;
+
+    @extend %body-text;
+
+    list-style: none;
+  }
+
+  &__link {
+    box-sizing: border-box;
+    padding: 10px 8px;
+    display: flex;
+    color: $c-black;
+    text-decoration: none;
+
+    &--tel {
+      color: $c-accent-orange;
+
+      &::before {
+        @include square(24px);
+
+        display: inline-block;
+        content: "";
+        background-image: url(../images/icons/Icon-phone.svg);
+      }
+    }
+  }
+}
