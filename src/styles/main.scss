@@ -11,3 +11,81 @@
 @import "./blocks/baking.scss";
 @import "./blocks/card.scss";
 @import "./blocks/aboutUs.scss";
+
+.footer {
+  background-color: $c-black;
+
+  &__content {
+    padding: 56px 0;
+
+    @include onTablet {
+      padding: 88px 0;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    &--menu {
+      margin-bottom: 64px;
+    }
+
+    &--call-us,
+    &--email-us {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__links-title {
+    @extend %uppercase;
+    color: $c-grey;
+  }
+
+  &__link {
+    display: inline;
+    width: max-content;
+
+    @extend %body-text;
+    text-decoration: none;
+    color: $c-white;
+
+  }
+
+  &__contact-us-title {
+    margin-bottom: 40px;
+
+    color: $c-white;
+  }
+
+  &__socials {
+    margin-bottom: 40px;
+
+    display: flex;
+    flex-direction: row;
+    column-gap: 32px;
+  }
+
+  &__socials-link {
+    display: block;
+    text-decoration: none;
+  }
+
+  &__logo {
+    @include square(24px);
+
+    &--bakery {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 61px;
+      }
+    }
+  }
+
+  &__signature {
+    @extend %body-text;
+    color: $c-grey;
+  }
+}
