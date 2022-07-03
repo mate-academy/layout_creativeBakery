@@ -92,20 +92,18 @@
 
     @include onBigDesktop {
       font-size: 144px;
-      margin-bottom: 64px;
     }
   }
 
   &__button {
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
     width: 288px;
     height: 56px;
-    background-color: transparent;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 40px;
+
+    background-color: transparent;
     border: 2px solid $c-accent-orange;
     border-radius: 32px;
 
@@ -125,9 +123,9 @@
       width: 280px;
     }
 
-    transition: background-color $transition-time,
-      color $transition-time,
-      border $transition-time;
+    transition: background-color $default-transition-time,
+      color $default-transition-time,
+      border $default-transition-time;
 
     &:hover {
       background-color: $c-accent-orange;
@@ -141,18 +139,18 @@
   }
 
   &__link {
-    width: inherit;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 32px;
+    width: inherit;
+    height: 100%;
+    gap: 6px;
 
-    gap: 5px;
+    border-radius: 32px;
     @extend %uppercase-text;
     color: $c-accent-orange;
 
-    transition: filter $transition-time;
+    transition: filter $default-transition-time;
 
     &:hover {
       filter: brightness(0) invert(1);

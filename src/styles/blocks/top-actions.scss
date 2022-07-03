@@ -6,7 +6,7 @@
   height: 64px;
 
   @include onTablet {
-    padding: 0 44px;
+    padding: 0 $horizontal-margin;
   }
 
   @include onDesktop {
@@ -15,18 +15,18 @@
 
   &__opener {
     display: block;
-    width: 20px;
-    height: 8px;
+    @include square(20px);
+
     color: $c-black;
     background-image: url(../images/icons/menu-black.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 
-    transition: transform $transition-time;
+    transition: transform $default-transition-time;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale($scale-size);
     }
   }
 
@@ -34,16 +34,17 @@
     display: block;
     @include square(13px);
     padding-right: 20px;
+
     color: $c-black;
     background-image: url(../images/icons/close-black.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 
-    transition: transform $transition-time;
+    transition: transform $default-transition-time;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale($scale-size);
     }
   }
 

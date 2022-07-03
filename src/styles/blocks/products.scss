@@ -42,10 +42,10 @@
     width: 100%;
     margin-bottom: 16px;
 
-    transition: transform $transition-time;
+    transition: transform $default-transition-time;
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale($scale-size);
     }
   }
 
@@ -62,15 +62,17 @@
 
   &__order {
     display: flex;
-    gap: 8px;
     width: max-content;
-    color: $c-accent-orange;
-    @extend %uppercase-text;
     margin-bottom: 64px;
-    border-bottom: 1px solid transparent;
-    line-height: 150%;
+    gap: 8px;
 
-    transition: gap $transition-time, border-color $transition-time;
+    @extend %uppercase-text;
+    color: $c-accent-orange;
+    line-height: 150%;
+    border-bottom: 1px solid transparent;
+
+    transition: gap $default-transition-time,
+      border-color $default-transition-time;
 
     &:hover {
       border-color: $c-accent-orange;
