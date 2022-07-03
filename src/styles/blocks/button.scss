@@ -7,12 +7,38 @@
   @extend %font-uppercase;
   color: $c-accent-orange;
 
+  transition: transform 0.3s;
+
   &--icon {
+    position: relative;
+
     @include icon(24px, 24px);
+
+    &::after {
+      position: absolute;
+      height: 1px;
+      bottom: 0;
+      left: 50%;
+      right: 50%;
+
+      display: block;
+      content: "";
+
+      background-color: $c-accent-orange;
+      transition: left 0.4s, right 0.4s;
+    }
 
     &-cookie {
       &::before {
         background-image: url(../images/icons/cookie.svg);
+
+        transition: background-image 0.3s;
+      }
+
+      &:hover {
+        &::before {
+          background-image: url(../images/icons/cookieWhite.svg);
+        }
       }
     }
 
@@ -27,6 +53,13 @@
         background-image: url(../images/icons/arrowRight.svg);
       }
     }
+
+    &:hover {
+      &::after {
+        left: 5%;
+        right: 0;
+      }
+    }
   }
 
   &--border {
@@ -34,5 +67,12 @@
 
     border: 2px solid $c-accent-orange;
     border-radius: 32px;
+
+    @include hover(background-color, $c-accent-orange);
+    @include hover(color, #fff);
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 }
