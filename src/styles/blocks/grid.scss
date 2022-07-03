@@ -58,6 +58,18 @@
     }
   }
 
+  &__item-row-desktop {
+    @for $start from 1 through 4 {
+      @for $end from $start through 4 {
+        @include onDesktop {
+          &--#{$start}-#{$end} {
+            grid-row: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
   &--mobile-block {
     display: block;
 

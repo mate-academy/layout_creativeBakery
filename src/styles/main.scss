@@ -30,11 +30,26 @@
 
     &--menu {
       margin-bottom: 64px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        margin-bottom: 48px;
+      }
     }
 
-    &--call-us,
+    &--call-us {
+      margin-bottom: 40px;
+    }
+
     &--email-us {
       margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 48px;
+      }
     }
   }
 
@@ -68,12 +83,13 @@
   }
 
   &__socials-link {
-    display: block;
+    display: flex;
     text-decoration: none;
   }
 
   &__logo {
     @include square(24px);
+    display: block;
 
     &--bakery {
       margin-bottom: 40px;
