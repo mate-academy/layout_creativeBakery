@@ -1,0 +1,66 @@
+.font {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: rem(16);
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $g-color-dark;
+
+  &--title-style--primary {
+    @include adaptiveValue("font-size", 115, 64, 640, 320, 1);
+
+    @include md-device {
+      @include adaptiveValue("font-size", 115, 67, 1024, 640, 1);
+    }
+
+    @include lg-device {
+      @include adaptiveValue("font-size", 136, 115, 1200, 1024, 1);
+    }
+
+    @include xl-device {
+      @include adaptiveValue("font-size", 144, 136, 1440, 1200, 1);
+    }
+  }
+
+  &--title-style--second {
+    font-size: rem(48);
+
+    @include md-device {
+      font-size: rem(56);
+    }
+
+    @include lg-device {
+      font-size: rem(72);
+    }
+  }
+
+  &--about--title {
+    font-size: rem(48);
+
+    @include md-device {
+      @include adaptiveValue("font-size", 72, 46, 1024, 640, 1);
+    }
+
+    @include lg-device {
+      font-size: rem(72);
+    }
+  }
+
+  &--text-style--big-digits {
+    font-size: rem(96);
+  }
+
+  &--text-style--main {
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    text-transform: none;
+  }
+
+  &--text-style--uppercase {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+  }
+}

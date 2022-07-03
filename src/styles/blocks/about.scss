@@ -1,0 +1,59 @@
+.about {
+  background-image: url(../images/about/Crumbs.png);
+  background-repeat: no-repeat;
+  background-position: bottom percent(174, 718) center;
+  background-size: contain;
+
+  @include md-device {
+    background-position: center;
+    @include adaptiveValue("background-size", 718, 526, 1024, 640, 1);
+  }
+
+  @include lg-device {
+    background-size: contain;
+    padding-bottom: rem(293);
+  }
+
+  &__title {
+    margin: 0 0 rem(32);
+
+    @include md-device {
+      margin: 0;
+    }
+  }
+
+  &__description {
+    margin: 0 0 rem(64);
+
+    @include md-device {
+      margin: 0;
+    }
+  }
+
+  &__stat {
+
+    &:not(:last-child) {
+      margin-bottom: rem(48);
+    }
+
+    @include md-device {
+      margin: 0;
+    }
+  }
+
+  &__stat-number {
+    display: block;
+    margin-bottom: rem(8);
+
+    &--text {
+      &::after {
+        content: "K+";
+      }
+    }
+  }
+
+  &__stat-title {
+    margin: 0;
+    color: $g-color-gray;
+  }
+}

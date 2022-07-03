@@ -1,0 +1,294 @@
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &--burger {
+    z-index: 999;
+  }
+
+  &--footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__burger-button {
+    position: relative;
+    width: 20px;
+    height: 8px;
+
+    transition: all 0.9s;
+    z-index: 1;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      background-color: $g-color-dark;
+    }
+
+    &::before {
+      animation: 0.3s ease-in-out top-back forwards;
+    }
+
+    &::after {
+      animation: 0.3s ease-in-out bottom-back forwards;
+    }
+
+    &--is-active {
+      right: 0;
+
+      &::before {
+        animation: 0.3s ease-in-out top-start forwards;
+      }
+
+      &::after {
+        animation: 0.3s ease-in-out bottom-start forwards;
+      }
+    }
+
+    @include lg-device {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+
+    &--burger {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $g-color-background;
+
+      transition: top 0.6s ease-in-out;
+      z-index: 1;
+
+      @include lg-device {
+        position: relative;
+        flex-direction: row;
+        width: max-content;
+        background-color: transparent;
+      }
+    }
+
+    &--is-open {
+      overflow: auto;
+      top: 0;
+    }
+
+    @include lg-device {
+      display: flex;
+      align-items: center;
+      gap: rem(67);
+    }
+  }
+
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    &--burger {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: rem(36);
+      gap: rem(24);
+      font-size: rem(18);
+
+      @include lg-device {
+        flex-direction: row;
+        margin-bottom: 0;
+        gap: rem(64);
+        font-size: inherit;
+      }
+    }
+
+    &--footer {
+      flex-direction: column;
+      gap: rem(16);
+      color: $g-color-light;
+    }
+
+    &--is-hidden {
+      opacity: 0;
+      animation: 0.3s ease opacity-end forwards;
+    }
+
+    &--is-visible {
+      animation: 0.3s ease 0.3s opacity-start forwards;
+    }
+
+    @include lg-device {
+      opacity: 1;
+      animation: none;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    &--call-action {
+      display: flex;
+      align-items: center;
+      font-size: rem(18);
+      color: $g-color-accent;
+      gap: rem(4);
+
+      transition: color 0.3s;
+  
+      @include lg-device {
+        font-size: inherit;
+      }
+    }
+
+    &--footer {
+      transition: color 0.3s;
+      &::after {
+        display: none;
+      }
+    }
+
+    &--is-hidden {
+      opacity: 0;
+      animation: 0.3s ease opacity-end forwards;
+    }
+
+    &--is-visible {
+      animation: 0.3s ease 0.3s opacity-start forwards;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 4px;
+      background-color: $g-color-accent;
+
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      color: $g-color-accent;
+      
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &:active {
+      color: $g-color-accent-s-hover;
+
+      &::after {
+        background-color: $g-color-accent-s-hover;
+      }
+
+      svg {
+        fill: $g-color-accent-s-hover;
+      }
+    }
+
+    @include lg-device {
+      opacity: 1;
+      animation: none;
+    }
+  }
+}
+
+$top: 3px;
+@keyframes top-start {
+  0% {
+    top: 0;
+    transform: rotate(0);
+  }
+
+  50% {
+    top: $top;
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes top-back {
+  0% {
+    top: $top;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    top: $top;
+    transform: rotate(0);
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes bottom-start {
+  0% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+
+  50% {
+    bottom: $top;
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(135deg);
+  }
+}
+
+@keyframes bottom-back {
+  0% {
+    bottom: $top;
+    transform: rotate(135deg);
+  }
+
+  50% {
+    bottom: $top;
+    transform: rotate(0);
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes opacity-start {
+  0% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity-end {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

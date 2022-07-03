@@ -1,0 +1,85 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  column-gap: rem(16);
+
+  transition: all 0.3s;
+
+  @include md-device {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: rem(24);
+
+    &--footer {
+
+      @include md-device {
+        grid-template-rows: (auto 40px auto auto 48px auto);
+        grid-template-areas: "lg lg . . tl tl tl tl"
+          ". . . . . . . ."
+          "mn mn . . cl cl cl cl"
+          ". . . . el el el el"
+          ". . . . . . . ."
+          "sc sc . . cp cp cp cp";
+      }
+
+      @include lg-device {
+        grid-template-rows: (auto 40px auto 48px auto);
+        grid-template-areas: "lg lg . . tl tl tl tl"
+          ". . . . . . . ."
+          "mn mn . . cl cl el el"
+          ". . . . . . . ."
+          "sc sc . . cp cp cp cp";
+      }
+    }
+
+    &--products {
+      row-gap: rem(80);
+    }
+
+    &--about {
+      row-gap: rem(72);
+    }
+  }
+
+  @include lg-device {
+
+    &--about {
+      row-gap: rem(144);
+    }
+  }
+
+  &--md-device {
+    display: block;
+
+    @include md-device {
+      display: grid;
+    }
+  }
+
+  &__item {
+    transition: all 0.3s;
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--md-device--#{$start}-#{$end} {
+          @include md-device {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+
+        &--lg-device--#{$start}-#{$end} {
+          @include lg-device {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}

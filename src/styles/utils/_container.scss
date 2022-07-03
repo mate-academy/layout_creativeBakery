@@ -1,0 +1,14 @@
+[class*="__container"] {
+  @if ($maxWidthContainer > 0) {
+    max-width: rem($maxWidthContainer);
+    box-sizing: content-box;
+    margin: 0 auto;
+  }
+  @if ($containerMaxPadding > 0) {
+    padding: 0 rem($containerMinPadding / 2);
+
+    @include md-device {
+      padding: 0 rem($containerMaxPadding / 2);
+    }
+  }
+}
