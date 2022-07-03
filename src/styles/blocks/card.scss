@@ -1,10 +1,14 @@
 .card {
+  transition: transform 0.4s;
 
   &__image {
     display: block;
     width: 100%;
-
     margin-bottom: 16px;
+    box-shadow: 1px 3px 9px 0 transparent;
+    
+
+    transition: transform 0.4s, box-shadow 0.4s;
   }
 
   &__title {
@@ -37,6 +41,7 @@
       display: inline-block;
       padding-right: 4px;
       content: "";
+      
       background-image: url(../images/icons/Icon-arrow.svg);
       transition: background-image 0.4s;
     }
@@ -69,6 +74,15 @@
       &::before {
         background-image: url(../images/icons/Icon-arrow--dark.svg);
       }
+    }
+  }
+
+  &:hover {
+    transform: scale(1.02);
+
+    .card__image {
+      transform: scale(1.1);
+      box-shadow: 1px 3px 9px 0 $c-light-orange;
     }
   }
 }

@@ -1,33 +1,87 @@
 .nav {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+  }
+
+  &--menu {
+    display: block;
+
+  }
   
   &__list {
     margin: 0 32px;
     padding: 0;
-    
+
     display: flex;
     gap: 42px;
-
+    
     @extend %body-text;
-
+    
     list-style: none;
+
+    &--column {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+    }
   }
 
   &__link {
-    box-sizing: border-box;
+    position: relative;
     padding: 10px 8px;
-    display: flex;
+
+    display: inline-block;
+
     color: $c-black;
+    line-height: 30px;
     text-decoration: none;
+    text-align: center;
+    align-items: center;
+    
+    box-sizing: border-box;
 
     &--tel {
+      padding-left: 28px;
+
       color: $c-accent-orange;
-
+ 
       &::before {
+        position: absolute;
         @include square(24px);
-
-        display: inline-block;
+        left: 0;
+        top: 25%;
+  
+        display: block;
         content: "";
+
         background-image: url(../images/icons/Icon-phone.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+
+        transition: background-image 0.4s;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      height: 1px;
+      left: 50%;
+      right: 50%;
+
+      display: block;
+      content: "";
+
+      background-color: $c-accent-orange;
+      transition: left 0.4s, right 0.4s;
+    }
+
+    &:hover {
+      &::after {
+        left: 5%;
+        right: 5%;
       }
     }
   }
