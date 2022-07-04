@@ -1,0 +1,98 @@
+.intro {
+  padding-top: 32px;
+
+  @include onTablet {
+    padding-top: 80px;
+  }
+
+  @include onDesktop {
+    padding-top: 135px;
+  }
+
+  @include onLargeScreen {
+    padding-top: 144px;
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      text-align: left;
+    }
+  }
+
+  &__cookie-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+
+      transition: transform 0.3s;
+
+      &:hover > .intro__cookie {
+        transition: transform 0.3s;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    color: $c-accentOrange;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 85%;
+      text-align: center;
+      letter-spacing: -0.05em;
+      z-index: 1;
+      padding-top: 146px;
+      padding-bottom: 200px;
+    }
+
+    @include onDesktop {
+      padding: 8px 0 84px;
+
+      font-size: 115px;
+      line-height: 85%;
+      text-align: center;
+      letter-spacing: -0.05em;
+
+      @media (min-width: 1199px) {
+        font-size: 136px;
+      }
+    }
+
+    @include onLargeScreen {
+      font-size: 117px;
+      padding: 40px 0 84px;
+    }
+  }
+
+  &__cookie {
+    width: 290px;
+    height: 290px;
+
+    @include onTablet {
+      width: 326px;
+      height: 328px;
+      position: absolute;
+      top: 16px;
+      z-index: -1;
+    }
+
+    @include onDesktop {
+      width: 544px;
+      height: 546px;
+      top: -200px;
+    }
+  }
+}

@@ -1,0 +1,113 @@
+.product {
+
+  padding-top: 100px;
+  padding-bottom: 80px;
+
+  @include onTablet {
+    padding-top: 220px;
+    padding-bottom: 160px;
+  }
+
+  @include onDesktop {
+    padding-top: 310px;
+    padding-bottom: 186px;
+  }
+
+  &__info {
+
+    &-title {
+      color: $c-accentOrange;
+      margin-bottom: 24px;
+
+      @include onTablet {
+        font-size: 56px;
+      }
+
+      @include onDesktop {
+        font-size: 72px;
+      }
+    }
+
+    &-text {
+      margin-bottom: 56px;
+
+      @include onTablet {
+        margin-bottom: 80px;
+      }
+
+    }
+  }
+
+  &__card {
+
+    &:hover {
+      transition: transform 0.3s;
+      transform: scale(1.05);
+    }
+
+    margin-bottom: 64px;
+
+    &:last-child {
+      margin-bottom: 80px;
+    }
+
+    @include onTablet {
+      margin-bottom: 88px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
+    }
+
+    &-image {
+      width: 100%;
+      height: 356px;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border-radius: 10px;
+
+      @include onTablet {
+        height: 424px;
+      }
+
+      @include onDesktop {
+        height: 512px;
+      }
+
+      @include onLargeScreen {
+        height: 560px;
+      }
+    }
+
+    &-title {
+      @extend %uppercase;
+      color: $c-grey;
+      margin-bottom: 8px;
+    }
+
+    &-text {
+      color: $c-black;
+      margin-bottom: 24px;
+    }
+
+    &-link {
+      text-decoration: none;
+      @extend %uppercase;
+      color: $c-accentOrange;
+      display: flex;
+      gap: 8px;
+
+      &::before {
+        content: "";
+        display: block;
+        background-image: url(../images/icons/arrow.svg);
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
