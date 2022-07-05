@@ -1,0 +1,46 @@
+$orange-color: #f9512e;
+$light-pink-color: #ffeefc;
+$black-color: #1c1a26;
+$dark-orange: #b2341a;
+$grey-color: #7f8096;
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onLargeDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onDesktop-onLargeDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet-onLargeDesktop {
+  @media (min-width:640px) {
+    @content;
+  }
+}
+
+@mixin top-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 52px;
+
+  @include onTablet-onLargeDesktop() {
+    margin-bottom: 0;
+  }
+}

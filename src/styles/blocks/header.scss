@@ -1,0 +1,159 @@
+.header {
+  &__top {
+    @include top-block;
+  }
+
+  &__logo {
+    height: 24px;
+    width: 128px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__call {
+    &::before {
+      content: "";
+      background-image: url(/images/call.png);
+    }
+
+    &:focus::before {
+      content: "";
+      background-image: url(/images/call_dark-orange.png);
+    }
+  }
+
+  &__desktop-nav {
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+
+    @include onDesktop-onLargeDesktop {
+      display: flex;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 64px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black-color;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__text {
+    @include simple-black-text;
+    margin-bottom: 32px;
+    text-align: center;
+
+    @include onTablet-onLargeDesktop {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    color: $orange-color;
+    font-size: 64px;
+    line-height: 54px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: -0.05em;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 68px;
+      margin-bottom: 210px;
+    }
+  
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 90px;
+      margin-bottom: 64px;
+    }
+  
+    @include onLargeDesktop {
+      font-size: 105px;
+      line-height: 100px;
+      margin-bottom: 84px;
+    }
+  }
+
+  &__main-part {
+    @include onTablet {
+      background: url(/images/Cookie.png) no-repeat;
+      background-size: 326px 328px;
+      height: 330px;
+      background-position: center 40%;
+      padding: 100px 0;
+      margin-bottom: 100px; //220-100
+    }
+
+    @include onDesktop {
+      background-size: 544px 546px;
+      background-position: center 10%;
+      height: 550px;
+      padding: 166px 0;
+      margin-bottom: -100px;
+    }
+
+    @include onLargeDesktop {
+      background-size: 584px 586px;
+      height: 600px;
+      padding: 176px 0;
+      margin-bottom: -100px;
+    }
+  }
+
+  &__cokie {
+    display: flex;
+    max-width: 290px;
+    height: 288px;
+    margin: 0 auto;
+
+    @include onTablet-onLargeDesktop {
+      display: none;
+    }
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include onTablet {
+    padding: 0 44px;
+  }
+
+  @include onDesktop {
+    padding: 0 44px;
+  }
+    
+  @include onLargeDesktop {
+    padding: 0 124px;
+  }
+}
+
+.content {
+  padding-top: 20px;
+
+  @include onDesktop-onLargeDesktop {
+    padding-top: 32px;
+  }
+}
+
+.desktop-hidden {
+  @include onDesktop-onLargeDesktop {
+    display: none;
+  }
+}

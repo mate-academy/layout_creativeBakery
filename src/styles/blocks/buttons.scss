@@ -1,0 +1,87 @@
+.buttom {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 56px;
+  box-sizing: border-box;
+  border: 2px solid $orange-color;
+  border-radius: 32px;
+  background-color: transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $orange-color;
+  font-size: 16px;
+  line-height: 56px;
+  transition: all 0.2s;
+  text-align: center;
+  margin-bottom: 104px;
+
+  @include onTablet-onLargeDesktop {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: "";
+    background: url(/images/buttom_picture.png) no-repeat;
+    background-position: center;
+    background-size: 20px;
+    position: relative;
+    display: inline-block;
+    left: -6px;
+    top: 3px;
+    height: 20px;
+    width: 20px;
+  }
+
+  &:hover {
+    background-color: $orange-color;
+    color: #fff;
+    border-color: transparent;
+
+    &::before {
+      background-image: url(/images/buttom_picture_white.png);
+    }
+  }
+
+  &:focus {
+    background: $dark-orange;
+    color: #fff;
+    border-color: transparent;
+
+    &::before {
+      background-image: url(/images/buttom_picture_white.png);
+    }
+  }
+}
+
+.simple-buttom {
+  font-size: 16px;
+  line-height: 16px;
+  color: $orange-color;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+
+  &::before {
+    content: "";
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin-right: 8px;
+  }
+
+  &:hover {
+    border-color: $orange-color;
+  }
+
+  &:focus {
+    border-color: $dark-orange;
+    color: $dark-orange;
+  }
+}
