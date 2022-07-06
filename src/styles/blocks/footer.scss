@@ -1,0 +1,145 @@
+.footer {
+  background-color: $colorBlack;
+  padding-top: 61px;
+
+  &__body {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+    margin: 0 0 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__logo-link {
+    height: 40px;
+    width: 168px;
+    display: inline-block;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../images/logo.svg");
+  }
+
+  &__menu {
+    padding: 0;
+    margin: 0 0 64px;
+
+    grid-area: navigation;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__call-us {
+    margin-bottom: 40px;
+
+    grid-area: call-us;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__email {
+    margin-bottom: 40px;
+
+    grid-area: email;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    margin: 0 0 16px;
+    height: 24px;
+
+    &:first-of-type {
+      @extend %upperTxt;
+      color: $colorGrey;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    @extend %bodyTxt;
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+      border-bottom: 1px solid #fff;
+      color: #fff;
+    }
+
+    &:focus {
+      border-color: $colorGrey;
+      color: $colorGrey;
+    }
+  }
+
+  &__title {
+    color: #fff;
+    margin-bottom: 40px;
+
+    grid-area: title;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 24px;
+    margin-bottom: 40px;
+
+    grid-area: social;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__copyrights {
+    @extend %bodyTxt;
+    color: $colorGrey;
+    padding-bottom: 56px;
+
+    grid-area: cprts;
+
+    @include onTablet {
+      padding-bottom: 88px;
+    }
+  }
+}

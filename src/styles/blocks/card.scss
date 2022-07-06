@@ -1,0 +1,56 @@
+.card {
+  --card-gap: 56px;
+
+  @include onTablet {
+    --card-gap: 80px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 var(--card-gap);
+
+  &__img {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
+
+  &__type {
+    @extend %upperTxt;
+    color: $colorGrey;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    @extend %bodyTxt;
+    margin-bottom: 16px;
+  }
+
+  &__order {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 32px;
+    width: 84px;
+
+    @extend %upperTxt;
+    text-decoration: none;
+    color: $colorAccentOrange;
+
+    fill: currentColor;
+    gap: 4px;
+
+    &:hover {
+      border-bottom: 1px solid currentColor;
+    }
+
+    &:focus {
+      color: $colorDarkOrange;
+    }
+
+    &:disabled {
+      color: $colorLightOrange;
+    }
+  }
+}

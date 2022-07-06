@@ -1,0 +1,99 @@
+.header {
+  &__content {
+    box-sizing: border-box;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 20px;
+    margin: 0 0 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      height: 88px;
+      padding: 0 32px;
+      margin: 0 auto;
+      max-width: 1440px;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      flex-direction: row;
+      list-style: none;
+      gap: 64px;
+    }
+  }
+
+  &__quote {
+    @extend %bodyTxt;
+    text-align: center;
+    margin: 0 0 32px;
+
+    @include onTablet {
+      text-align: start;
+      margin-bottom: 16px;
+    }
+
+    @include onDesktop {
+      height: 0;
+      position: relative;
+      top: 140px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+    text-align: center;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("../images/Cookie.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 390px;
+
+      @media screen and (min-width: 768px) {
+        white-space: nowrap;
+        font-size: 10vw;
+      }
+    }
+
+    @include onDesktop {
+      height: 550px;
+    }
+
+    @include maxView {
+      font-size: 144px;
+      height: 590px;
+    }
+  }
+
+  &__pic {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 326px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}
