@@ -1,5 +1,4 @@
 .product {
-  transition: transform 0.3s ease;
 
   &__img {
     margin-bottom: 16px;
@@ -7,6 +6,12 @@
     width: 100%;
 
     cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02) ;
+      box-shadow: 2px 2px 10px $c-grey;
+    }
 
     @include onMobile {
       width: 100%;
@@ -68,13 +73,6 @@
 
     @include onTablet {
       margin-bottom: 88px;
-    }
-  }
-
-  &:hover {
-    transform: scale(1.03) ;
-    & .product__img {
-      box-shadow: 2px 2px 10px $c-grey;
     }
   }
 
