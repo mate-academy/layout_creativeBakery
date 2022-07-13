@@ -1,0 +1,73 @@
+.menu {
+  background-color: $light-blue;
+
+  &__content {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+
+    @include onDesktop {
+      height: 24px;
+      justify-content: end;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 64px;
+      flex-direction: row;
+    }
+
+    &-footer {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    margin: 0 0 24px;
+    &:last-child {
+      margin: 0;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black-colour;
+
+    &--contact {
+      position: relative;
+      color: $orange-color;
+      &::before {
+        position: absolute;
+        content: "";
+        top: 10%;
+        left: -30%;
+        display: block;
+        width: 18px;
+        height: 18px;
+        background-image: url(../images/phone.svg);
+        background-repeat: no-repeat;
+        background-size:contain;
+      }
+    }
+
+    &-footer {
+      color: $footer-primary-color;
+    }
+  }
+}
