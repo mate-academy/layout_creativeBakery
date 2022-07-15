@@ -1,0 +1,109 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.about-us {
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: $gridGapDesktop;
+    max-width: $desktopMaxWidth;
+    margin: 186px auto 0;
+  }
+
+  &__bg-img {
+    position: absolute;
+    display: flex;
+    justify-self: center;
+    width: 718px;
+    height: 673px;
+    background-image: url("/images/Crumbs.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+  }
+
+  &__title {
+    @include fontParams (72px, 85%, 400);
+    grid-column: 1/5;
+    letter-spacing: -0.05em;
+  }
+
+  &__text {
+    @include fontParams (16px, 150%, 400);
+    grid-column: 5/-1;
+    letter-spacing: -0.01em;
+  }
+
+  .wrapper-static {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center
+  }
+
+  &__statistic-num {
+    @include fontParams (96px, 150%, 400);
+    margin-top: 144px;
+  }
+
+  &__statistic-text {
+    @include fontParams (16px, 150%, 400);
+    color: $grey;
+    margin-top: 5px;
+  }
+
+  @include tablet {
+    &__bg-img {
+      width: 100%;
+      height: 493px;
+    }
+
+    &__title {
+      @include fontParams (56px, 85%, 400);
+    }
+
+    .wrapper-static {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      text-align: center
+    }
+  }
+
+  @include mobile {
+    &__wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: $gridGapMobile;
+      max-width: $desktopMaxWidth;
+      margin-top: 80px;
+    }
+
+    .wrapper-static {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      text-align: start;
+    }
+
+    &__bg-img {
+      margin-top: 462px;
+      width: 320px;
+      height: 300px;
+    }
+
+    &__title {
+      @include fontParams (48px, 85%, 400);
+      grid-column: 1/-1;
+    }
+
+    &__text {
+      grid-column: 1/-1;
+      margin-top: 32px;
+    }
+
+    &__statistic-num {
+      @include fontParams (48px, 100%, 400);
+      margin-top: 48px;
+    }
+  }
+}

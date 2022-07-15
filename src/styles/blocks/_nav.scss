@@ -1,0 +1,66 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88px;
+  margin: 0 35px;
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+  }
+
+  &__link {
+    @include fontParams(16px, 150%, 400);
+    font-family: $fontFamily;
+    letter-spacing: -0.01em;
+    color: $black;
+
+    &:hover {
+      color: $accentOrange;
+      border-bottom: 1px solid $accentOrange;
+      transition: $transitionDuration;
+    }
+
+    &:active {
+      color: $darkOrange;
+      border-bottom-color: $darkOrange;
+    }
+  }
+
+  &__humburger {
+    display: none;
+    background-image: url("/images/humburger.svg");
+    background-position: 50% center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    height: 24px;
+    width: 24px;
+  }
+
+  &__item:last-child &__link {
+    color: $accentOrange;
+  }
+
+  &__item:last-child &__link:before {
+    justify-content: center;
+    align-items: center;
+    padding-right: 7px;
+    content: url("/images/Vector.svg");
+  }
+
+  @include tablet {
+    &__links {
+      display: none;
+    }
+
+    &__humburger {
+      display: block;
+    }
+  }
+}

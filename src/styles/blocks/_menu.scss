@@ -1,0 +1,74 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.menu {
+  background-color: $lightBlue;
+
+  &__top-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 88px;
+    margin: 0 35px;
+  }
+
+  &__toggler {
+    display: inline-block;
+    background-image: url("/images/x-button.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    transition: transform $transitionDuration;
+
+    &:hover {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+  }
+
+  &__link {
+    @include fontParams(28px, 150%, 400);
+    color: $black;
+
+    &:hover {
+      color: $accentOrange;
+      border-bottom: 1px solid $accentOrange;
+      transition: $transitionDuration;
+    }
+  }
+
+  &__item:last-child &__link {
+    @include fontParams (28px, 150%, 500);
+    color: $accentOrange;
+  }
+
+  &__item:last-child &__link:before {
+    justify-content: center;
+    align-items: center;
+    padding-right: 7px;
+    content: url("/images/Vector.svg");
+  }
+
+  @media (min-width: $tabletMaxWidth) {
+    display: none;
+  }
+}

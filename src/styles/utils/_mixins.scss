@@ -4,3 +4,27 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin fontParams ($size, $height, $weight) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+}
+
+@mixin desktop {
+  @media (max-width: $desktopMaxWidth) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tabletMaxWidth) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobileMaxWidth) {
+    @content;
+  }
+}

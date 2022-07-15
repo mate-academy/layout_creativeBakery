@@ -1,0 +1,181 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.footer {
+  width: 100%;
+  background-color: $black;
+  margin-top: 349px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: $gridGapDesktop;
+    max-width: $max-content-width;
+    margin: 0 auto;
+    padding: 88px $desktopPadding;
+  }
+
+  &__menu {
+    grid-column: 1/5;
+  }
+
+  &__menu-title {
+    @include fontParams (16px, 85%, 500);
+    color: $grey;
+    margin-top: 65px;
+    text-transform: uppercase;
+  }
+
+  &__menu-items {
+    margin-top: 16px;
+  }
+
+  &__menu-item {
+    margin-top: 16px;
+  }
+
+  &__contact {
+    grid-column: 5/-1;
+  }
+
+  &__contact-title {
+    @include fontParams (72px, 85%, 400);
+    color: $white;
+  }
+
+  &__calls-emails-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+
+  &__call-title {
+    @include fontParams (16px, 85%, 500);
+    color: $grey;
+    text-transform: uppercase;
+  }
+  &__call-items {
+    margin-top: 16px;
+  }
+
+  &__call-item {
+    margin-top: 16px;
+  }
+
+  &__email-title {
+    @include fontParams (16px, 85%, 500);
+    color: $grey;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  &__link-style {
+    @include fontParams (16px, 150%, 400);
+    color: $white;
+
+    &:hover {
+      color: $accentOrange;
+      border-bottom: 1px solid $accentOrange;
+      transition: $transitionDuration;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 48px;
+    grid-column: 1/2;
+  }
+
+  &__copy-writer {
+    @include fontParams (16px, 150%, 400);
+    grid-column: 5/-1;
+    color: $grey;
+    margin-top: 48px;
+  }
+
+  &__facebook-link::before {
+    content: url("/images/facebook.svg");
+    height: 20px;
+    width: 20px;
+    transition: $transitionDuration;
+  }
+
+  &__facebook-link:hover::before {
+    filter: brightness(0) invert(1);
+  }
+
+  &__insta-link::before {
+    content: url("/images/insta.svg");
+    height: 20px;
+    width: 20px;
+    transition: $transitionDuration;
+  }
+
+  &__insta-link:hover::before {
+    filter: brightness(0) invert(1);
+  }
+
+  &__twitter-link::before {
+    content: url("/images/twitter.svg");
+    height: 20px;
+    width: 20px;
+    transition: $transitionDuration;
+  }
+
+  &__twitter-link:hover::before {
+    filter: brightness(0) invert(1);
+  }
+
+  @include tablet {
+    margin-top: 152px;
+
+    &__contact-title {
+      @include fontParams (48px, 85%, 400);
+    }
+
+    &__calls-emails-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+    }
+
+    &__email {
+      margin-top: 40px;
+    }
+
+    &__icons {
+      margin-top: 48px;
+      grid-column: 1/3;
+    }
+  }
+
+  @include mobile {
+    margin-top: 72px;
+
+    &__wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: $gridGapMobile;
+      padding: 56px $mobilePadding;
+    }
+
+    &__menu {
+      grid-column: 1/-1;
+    }
+
+    &__contact {
+      grid-column: 1/-1;
+      margin-top: 64px;
+    }
+
+    &__icons {
+      margin-top: 48px;
+      grid-column: 1/2;
+    }
+
+    &__copy-writer {
+      grid-column: 1/-1;
+    }
+  }
+}
