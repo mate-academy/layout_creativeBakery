@@ -39,6 +39,13 @@
     &:last-child {
       margin: 0;
     }
+    
+    &:nth-child(3) {
+      
+      @include onDesktop {
+        margin-right: 28px;
+      }
+    }
 
     @include onDesktop {
       margin: 0;
@@ -46,12 +53,33 @@
   }
 
   &__link {
+    position: relative;
     text-decoration: none;
     color: $black-colour;
+
+    @include onDesktop {
+      
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        background-color: $black-colour;
+        width: 0;
+        height: 2px;
+        transition: width 0.3s;
+      }
+  
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
 
     &--contact {
       position: relative;
       color: $orange-color;
+
       &::before {
         position: absolute;
         content: "";
@@ -63,6 +91,10 @@
         background-image: url(../images/phone.svg);
         background-repeat: no-repeat;
         background-size: contain;
+      }
+
+      &::after {
+        background-color: $orange-color;
       }
     }
 
