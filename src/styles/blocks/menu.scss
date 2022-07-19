@@ -1,0 +1,62 @@
+.menu {
+  background-color: $color_LightBlue;
+
+  &__indent {
+    margin-bottom: 20vh;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      font-size: 24px;
+      margin-bottom: 36px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $color_Black;
+    text-decoration: none;
+
+    transition: color 0.5s, transform 0.5s;
+
+    &:hover {
+      color: $color_AccentOrange;
+      transform: scale(1.2);
+    }
+
+    &:active {
+      color: $color_Black;
+      transform: scale(0.9);
+    }
+
+    &--phone {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $color_AccentOrange;
+
+      &::before {
+        content: url(/images/phone_logo.svg);
+        margin-right: 7px;
+      }
+    }
+  }
+}
