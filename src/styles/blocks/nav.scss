@@ -1,0 +1,105 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  @include onMobile {
+    &__center {
+      display: none;
+      
+      &--menu {
+        display: flex;
+        margin: auto;
+      }
+    }
+  }
+
+  @include onDesktop {
+    &__center {
+      display: flex;
+    }
+
+    &__right-end {
+      display: none;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+
+    &--menu {
+      margin: auto;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+    }
+
+    &-item {
+      margin-right: 64px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:nth-child(3) {
+        margin-right: 67px;
+      }
+      
+      &--menu {
+        margin-right: 0;
+        margin-bottom: 24px;
+
+        &:last-child {
+          margin-right: 0;
+          margin-bottom: 0;
+        }
+
+        &:nth-child(3) {
+          margin-right: 0;
+          margin-bottom: 32px;
+        }
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    margin: 0;
+    text-decoration: none;
+    color: $font-color;
+    transition: text-shadow 0.3s;
+
+    &:hover {
+      text-shadow: 1px 1px 30px;
+    }
+
+    &--contacts {
+      padding-left: 25px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $main-red-color;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background-image: url("../images/icon-phone.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        top: 50%;
+        transform: translate(-100%, -50%);
+        left: 18px;
+      }
+    }
+  }
+}
