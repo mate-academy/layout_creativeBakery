@@ -1,0 +1,42 @@
+.button {
+  &::before {
+    content: url(../images/favicon.svg);
+    margin-right: 6px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $mainOrange;
+  height: 56px;
+  border: 2px solid $mainOrange;
+  border-radius: 32px;
+
+  @include onDesktop {
+    position: relative;
+    top: -850%;
+  }
+
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $mainOrange;
+    color: $white;
+
+    &::before {
+      content: url(../images/favicon.svg);
+      margin-right: 6px;
+    }
+  }
+
+  &:active {
+    background-color: $darkOrange;
+  }
+}
