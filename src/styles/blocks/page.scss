@@ -1,0 +1,49 @@
+.page {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  &__body {
+    font-family: "Inter", sans-serif;
+    background: $c-lightPink;
+    color: $c-black;
+    @extend %text;
+  }
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+
+    &:target {
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 72px;
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+    &-title {
+      font-size: 48px;
+      margin-bottom: 24px;
+      text-align: center;
+      color: $c-accentOrange;
+      @include onTablet {
+        font-size: 56px;
+        line-height: 48px;
+      }
+      @include onLaptop {
+        font-size: 72px;
+        line-height: 64px;
+      }
+      @include onDecktop {
+        font-size: 72px;
+        line-height: 62px;
+      }
+    }
+  }
+}

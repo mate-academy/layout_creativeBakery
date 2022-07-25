@@ -1,0 +1,77 @@
+.nav {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: -0.01em;
+
+  &__link {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 6px;
+    padding: 16px 0 8px;
+    width: fit-content;
+    border: 1px solid transparent;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: left center;
+    transition: all 0.3s;
+
+    &-icon {
+      margin-right: 4px;
+      width: 24px;
+      height: 24px;
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: cover;
+    }
+    &--disabled {
+      pointer-events: none;
+      cursor: default;
+    }
+    &--disabled .nav__link-text {
+      color: $c-lightOrange;
+    }
+    &:hover {
+      text-transform: uppercase;
+      border-bottom: 2px solid $c-accentOrange;
+    }
+    &:hover .nav__link-text {
+      color: $c-accentOrange;
+    }
+    &:hover .nav__link-icon {
+      background-color: $c-accentOrange;
+      -webkit-mask-image: url(../images/Icon-cookie.svg);
+      mask-image: url(../images/Icon-cookie.svg);
+    }
+    &:hover .nav__link-icon--phone {
+      -webkit-mask-image: url(../images/Icon-phone.svg);
+      mask-image: url(../images/Icon-phone.svg);
+    }
+    &:focus {
+      text-transform: uppercase;
+      border-bottom: 2px solid $c-darkOrange;
+    }
+    &:focus .nav__link-text {
+      color: $c-darkOrange;
+    }
+    &:focus .nav__link-icon {
+      background-color: $c-darkOrange;
+      -webkit-mask-image: url(../images/Icon-cookie.svg);
+      mask-image: url(../images/Icon-cookie.svg);
+    }
+    &:focus .nav__link-icon--phone {
+      -webkit-mask-image: url(../images/Icon-phone.svg);
+      mask-image: url(../images/Icon-phone.svg);
+    }
+  }
+
+  @include onLaptop {
+    display: flex;
+  }
+}
