@@ -1,0 +1,55 @@
+.products {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 64px;
+    }
+    
+    @include onTablet {
+      margin-bottom: 88px;
+    }
+  }
+}
+
+.product {
+  &__photo {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 8px;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey;
+    margin-bottom: 8px;
+  }
+
+  &__info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $darkGrey;
+    margin-bottom: 24px;
+  }
+
+  &__order {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $mainOrange;
+    text-decoration: none;
+
+    &::before {
+      margin-right: 8px;
+      content: url(../images/arrow.svg);
+    }
+  }
+}
