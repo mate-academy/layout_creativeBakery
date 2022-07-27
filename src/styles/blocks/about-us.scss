@@ -3,14 +3,26 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  &__number {
+  &__title {
     font-weight: 400;
-    font-size: 96px;
-    line-height: 82px;
+    font-size: 48px;
+    line-height: 41px;
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: $darkGrey;
-    margin-bottom: 8px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      font-size: 56px;
+      line-height: 48px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      line-height: 61px;
+      margin-bottom: 0;
+    }
   }
 
   &__info {
@@ -18,15 +30,50 @@
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.01em;
-    color: $grey;
-    margin-bottom: 72px;
+    color: $darkGrey;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__number {
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 82px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $darkGrey;
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 72px;
+    }
 
     @include onTablet {
       margin-bottom: 80px;
+
+      &:nth-last-child(-n + 2) {
+        margin-bottom: 152px;
+      }
     }
 
     @include onDesktop {
       margin-bottom: 350px;
     }
+  }
+
+  &__number-info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $grey;
+    margin-top: 8px;
   }
 }
