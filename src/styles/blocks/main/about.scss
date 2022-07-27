@@ -1,0 +1,77 @@
+.about {
+  background-image: url(../images/crumbs.png);
+  background-position: 35% 70%;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 48px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+
+  &__title {
+    @include title-h2;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+
+    @media (min-width: 1024px) {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  }
+
+  &__text {
+    padding-bottom: 16px;
+    @media (min-width: 1024px) {
+      grid-area: 1 / 4 / 2 / 9;
+      text-align: justify;
+    }
+  }
+
+  &__info {
+    &-number {
+      padding-bottom: 8px;
+      font-size: 96px;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: $orange;
+    }
+
+    &-text {
+      color: $black;
+    }
+
+    &-1 {
+      @media (min-width: 1024px) {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+    }
+    &-2 {
+      @media (min-width: 1024px) {
+        grid-area: 2 / 3 / 3 / 4;
+      }
+    }
+    &-3 {
+      @media (min-width: 1024px) {
+        grid-area: 2 / 5 / 3 / 6;
+      }
+    }
+    &-4 {
+      @media (min-width: 1024px) {
+        grid-area: 2 / 7 / 3 / 8;
+      }
+    }
+  }
+}
