@@ -7,12 +7,9 @@
   }
 
   &__list {
-    //margin: 0;
-    //padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    //list-style: none;
   }
 
   &__item {
@@ -33,9 +30,14 @@
     line-height: 24px;
     text-align: center;
     letter-spacing: -0.01em;
-    color: #1c1a26;
-    //text-decoration: none;
+    color: $darkGrey;
     cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $mainOrange;
+      transform: scale(1.1);
+    }
 
     &--contact-us {
       font-weight: 500;
@@ -47,6 +49,22 @@
       &::before {
         content: url(../images/phone.svg);
         margin-right: 7px;
+      }
+
+      &:hover {
+        color: $darkOrange;
+        transform: scale(1.1);
+      }
+
+      &:hover::before {
+        filter: brightness(0)
+          saturate(100%)
+          invert(35%)
+          sepia(31%)
+          saturate(3913%)
+          hue-rotate(346deg)
+          brightness(70%)
+          contrast(98%);
       }
     }
   }
