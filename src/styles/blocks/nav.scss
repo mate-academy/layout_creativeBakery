@@ -1,0 +1,55 @@
+.nav {
+  display: flex;
+  align-items: center;
+
+  &--menu {
+    flex-direction: column;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-right: 64px;
+
+    &--menu {
+      display: block;
+      margin-right: 0;
+      margin-bottom: 24px;
+
+      text-align: center;
+    }
+  }
+  &__link {
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    color: $black-color;
+
+    @include onTablet {
+      position: relative;
+
+      @include itemsHover(-4px, $black-color);
+    }
+  }
+  &__contact-us {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: $accent-orange-color;
+
+    img {
+      height: 24px;
+      width: 24px;
+      margin-right: 7px;
+    }
+
+    @include onTablet {
+      position: relative;
+
+      @include itemsHover(-4px, $accent-orange-color);
+    }
+  }
+}
