@@ -1,0 +1,74 @@
+.menu {
+  background-color: $light-blue;
+  height: 100vh;
+  z-index: 1;
+
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(100%);
+
+  transition: transform $transition-duration + 0.3s;
+
+  &:target {
+    transform: translateX(0%);
+  }
+
+  &__link {
+    text-decoration: none;
+    @extend %body-text;
+    transition: $transition-duration;
+
+    @include onTablet {
+      font-size: 34px;
+    }
+
+    &:hover {
+      color: $accent-orange;
+    }
+
+    &:active {
+      color: $dark-orange;
+    }
+
+
+    &--contact {
+
+      position: relative;
+      &::before {
+        position: absolute;
+        left: -25px;
+        background-position: center;
+        background-size: cover;
+        bottom: 0;
+        width: 20px;
+        height: 20px;
+        content: '';
+        background-image: url("../images/phone.svg");
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    transform: translateY(75%);
+    list-style: none;
+
+    @include onTablet {
+      transform: translateY(50%);
+    }
+
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 24px;
+    &:nth-child(3) {
+      margin-bottom: 32px;
+    }
+  }
+}

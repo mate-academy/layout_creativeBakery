@@ -1,0 +1,44 @@
+.button {
+  @extend %body-text;
+  text-decoration: none;
+
+  &::before {
+    content: url(../images/icon__orange.svg);
+    margin-right: 6px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $accent-orange;
+  height: 56px;
+  border: 2px solid $accent-orange;
+  border-radius: 32px;
+
+  transition: all 0.3s;
+
+  @include onTablet{
+    position: relative;
+    top: -200%;
+  }
+
+  &:hover {
+    background-color: $accent-orange;
+    color: #fff;
+
+    &::before {
+      content: url(../images/icon__white.svg);
+      margin-right: 6px;
+    }
+  }
+
+  &:active {
+    background-color: $dark-orange;
+    border-color: $dark-orange;
+  }
+}
