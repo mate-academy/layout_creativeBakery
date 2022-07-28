@@ -20,9 +20,14 @@
     text-decoration: none;
     @extend %body-text;
     transition: $transition-duration;
+    font-weight: 500;
 
     @include onTablet {
-      font-size: 34px;
+      font-size: calc(16px + 1vw);
+    }
+
+    @include onDesktop {
+      font-size: 16px;
     }
 
     &:hover {
@@ -33,35 +38,42 @@
       color: $dark-orange;
     }
 
-
     &--contact {
 
       position: relative;
       &::before {
         position: absolute;
-        left: -25px;
+        left: calc(-25px - 0.5vw);
         background-position: center;
-        background-size: cover;
+        background-size: 100%;
         bottom: 0;
-        width: 20px;
-        height: 20px;
-        content: '';
+        width: calc(20px + 0.9vw);
+        height: calc(20px + 0.9vw);
+        content: "";
         background-image: url("../images/phone.svg");
+
+        @include onTablet {
+          width: calc(20px + 0.9vw);
+          height: calc(20px + 0.9vw);
+          left: calc(-25px - 0.5vw);
+        }
+
+        @include onDesktop {
+          width: 20px;
+          height: 20px;
+          left: -25px;
+        }
       }
     }
   }
+
   &__list {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
-    transform: translateY(75%);
+    transform: translateY(60%);
     list-style: none;
-
-    @include onTablet {
-      transform: translateY(50%);
-    }
-
   }
 
   &__item {
