@@ -1,11 +1,21 @@
 .bake {
-  padding-top: 110px;
+  margin-top: 104px;
+  padding-top: 16px;
+  
   &__title {
     @extend %mobile-heading;
     text-align: left;
     font-size: 48px;
     margin-bottom: 24px;
     font-weight: 400;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
   }
 
   &__greeter {
@@ -32,7 +42,7 @@
 
     @include onDesktop {
       &:hover {
-        transform: scale(1.05)
+        transform: scale(1.05);
       }
     }
   }
@@ -87,6 +97,10 @@
 
     @include onTablet {
       margin-bottom: 88px;
+    }
+
+    &:active {
+      color: $dark-orange;
     }
 
     &::before {
