@@ -52,22 +52,22 @@
     }
   }
   &__image {
-    max-width: 288px;
+    max-width: 270px;
+
+    @include customRes(551px) {
+      flex: 1 0 auto;
+      object-fit: cover;
+    }
 
     @include onTablet {
       position: absolute;
       top: 50%;
       left: 50%;
+      height: 100%;
+      max-width: 50%;
 
       transform: translate(-50%, -50%);
-      height: 100%;
-      max-width: 326px;
-      width: 100%;
       object-fit: contain;
-    }
-
-    @include onDesktop {
-      max-width: 100%;
     }
   }
   &__button {
