@@ -5,7 +5,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 
-    @media (min-width: 768px) {
+    @include onTablet {
       grid-template-columns: repeat(8, 128px);
     }
   }
@@ -16,7 +16,7 @@
     padding-bottom: 32px;
     text-align: center;
 
-    @media (min-width: 768px) {
+    @include onTablet {
       grid-area: 1 / 1 / 2 / 3;
       padding-bottom: 16px;
       text-align: left;
@@ -32,12 +32,12 @@
     text-align: center;
     color: $orange;
 
-    @media (min-width: 768px) {
+    @include onTablet {
       grid-area: 2 / 1 / 3 / 4;
       text-align: left;
     }
 
-    @media (min-width: 1024px) {
+    @include onLaptop {
       grid-area: 1 / 4 / 2 / 9;
       text-align: left;
       justify-self: start;
@@ -49,7 +49,7 @@
     width: 288px;
     height: 290px;
 
-    @media (min-width: 768px) {
+    @include onTablet {
       grid-area: 2 / 3 / 3 / 7;
       width: 326px;
       height: 328px;
@@ -76,7 +76,7 @@
     }
 
     &:hover {
-      color: #fff;
+      color: $white;
       background-color: $orange;
 
       &::before {
@@ -85,16 +85,16 @@
     }
 
     &:active {
-      background-color: #b2341a;
-      border-color: #b2341a;
+      background-color: $orange;
+      border-color: $orange;
     }
 
-    @media (min-width: 768px) {
+    @include onTablet {
       grid-area: 3 / 2 / 4 / 7;
       padding: 20px 100px;
     }
 
-    @media (min-width: 1024px) {
+    @include onLaptop {
       grid-area: 3 / 1 / 4 / 4;
     }
   }
