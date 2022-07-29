@@ -1,0 +1,116 @@
+.footer {
+  background-color: #1c1a26;
+
+  &__container {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 60px 16px 56px;
+
+    @include onTablet {
+      padding: 92px 44px 90px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onDesign {
+      padding: 92px 130px 90px;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 44px;
+
+    @include onTablet {
+      grid-column: 1/5;
+    }
+
+    &--2 {
+      margin-bottom: 44px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 16px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+  }
+
+  &__link {
+    margin-bottom: 16px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #fff;
+    text-decoration: none;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      transition: all 0.5s;
+
+      &:hover {
+        color: #f9512e;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #fff;
+
+    @include onTablet {
+      order: 1;
+      grid-column: 5/9;
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      order: 1;
+      grid-column: 5/9;
+      font-size: 72px;
+    }
+  }
+
+  &__social {
+    display: inline-block;
+
+    @include onDesktop {
+      transition: filter 0.5s;
+
+      &:hover {
+        filter: invert(99%) sepia(98%) saturate(25%) 
+          hue-rotate(128deg) brightness(1007%) contrast(100%);
+      }
+    }
+  }
+
+  &__rights {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #7f8096;
+
+    @include onTablet {
+      order: 6;
+      grid-column: 5/9;
+    }
+  }
+}
