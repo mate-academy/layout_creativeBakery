@@ -1,0 +1,51 @@
+.grid {
+  &--footer {
+    align-items: start;
+
+    @include onTablet {
+      grid-template-areas: "logo logo logo logo title title title title"
+        "menu menu menu menu phone phone phone phone"
+        ". . . . email email email email"
+        "socials socials socials socials date date date date";
+    }
+
+    @include onDesktop {
+      grid-template-areas: "logo logo logo logo title title title title"
+        "menu menu menu menu phone phone email email"
+        "socials socials socials socials date date date date";
+    }
+  }
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+    justify-content: center;
+  }
+
+  @include onLargeScreen {
+    grid-template-columns: repeat(8, 128px);
+  }
+
+  &__item {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        @include onTablet {
+          &--tablet-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1} ;
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        @include onDesktop {
+          &--desktop-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1} ;
+          }
+        }
+      }
+    }
+  }
+}

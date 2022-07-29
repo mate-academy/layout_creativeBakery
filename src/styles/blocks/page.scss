@@ -1,0 +1,81 @@
+.page {
+  background-color: $c-light-blue;
+  scroll-behavior: smooth;
+
+  &__header {
+    margin-bottom: 104px;
+
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 313px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 290px;
+    }
+  }
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__mob-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
+
+  &__catalog {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 178px;
+    }
+  }
+
+  &__about-us {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      padding-bottom: 349px;
+    }
+  }
+
+  &__card {
+    margin-bottom: 64px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 80px;
+
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

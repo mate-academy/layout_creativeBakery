@@ -1,0 +1,33 @@
+.icon {
+  display: block;
+  @include square(24px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+
+  &--menu {
+    background-image: url(../images/Icon-menu.svg);
+    @include hover(transform, rotate(0.5turn));
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--cross {
+    background-image: url(../images/Icon-close-black.svg);
+    @include hover(transform, rotate(0.5turn));
+  }
+
+  &--social-links {
+    fill: $c-accent-orange;
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+      fill: $c-white;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.menu {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    @include hoverLink;
+
+    @include onDesktop {
+      padding: $padding-menu-links $padding-menu-links;
+    }
+  }
+
+  &__link--btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $c-accent-orange;
+
+    @include onDesktop {
+      margin-right: -$padding-menu-links;
+      @include hoverLinkBtn;
+    }
+  }
+}
