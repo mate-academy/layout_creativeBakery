@@ -1,0 +1,25 @@
+.page {
+  &__body {
+    width: 100%;
+    overflow-x: hidden;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+
+    transition: transform $transition-duration + 0.3s;
+
+    &:target {
+      transform: translateX(0%);
+    }
+  }
+}
