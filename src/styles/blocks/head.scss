@@ -33,11 +33,14 @@
   }
 
   &__cookie {
-    transform: translateX(-100%);
     width: 100%;
     height: 290px;
     z-index: -1;
-    -webkit-animation: rotation 5s ease-in-out alternate forwards;
+
+    @include onDesktop {
+      transform: translateX(-100%);
+      -webkit-animation: rotation 7s ease-in-out alternate forwards;
+    }
 
     @include onTablet {
       height: 330px;
@@ -53,16 +56,16 @@
 
   @-webkit-keyframes rotation {
     25% {
-      transform: translateX(70%)rotate(360deg);
+      transform: translateX(80%)rotate(360deg);
     }
     50% {
-      transform: translateX(-50%)rotate(100deg);
+      transform: translateX(-40%)rotate(120deg);
     }
     75% {
-      transform: translateX(30%)rotate(280deg);
+      transform: translateX(30%)rotate(260deg);
     }
     100% {
-      transform: translateX(0%)rotate(190deg);
+      transform: translateX(0%)rotate(200deg);
     }
   }
 }
