@@ -1,0 +1,68 @@
+.product-card {
+  display: grid;
+  grid-auto-flow: row;
+
+  grid-template: auto 1fr minmax(24px, auto) / minmax(auto, 432px);
+
+  gap: 16px;
+
+  margin-bottom: 56px;
+
+  @include onTablet {
+    margin-bottom: 0;
+
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+  }
+  &__image {
+    position: relative;
+    padding-bottom: 130%;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+
+      border-radius: 8px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  &__order-btn {
+    max-width: max-content;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: $accent-orange-color;
+
+    @include itemsHover(-4px, $accent-orange-color);
+  }
+  &__order-btn-img {
+    margin-right: 4px;
+    height: 24px;
+    width: 24px;
+
+    background-image: url("../images/icons/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
