@@ -1,0 +1,50 @@
+.grid {
+
+  @include onTablet {
+    display: grid;
+  }
+
+  &--flex {
+    display: flex;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  @include onTablet {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(8, 128px);
+    gap: 20px;
+  }
+
+  &__item {
+    &--tablet-row-1 {
+      grid-row: 1;
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        @include onTablet {
+          &--tablet-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        @include onDesktop {
+          &--desktop-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}

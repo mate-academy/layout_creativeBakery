@@ -1,0 +1,70 @@
+.footer {
+  padding: 56px 0;
+
+  background-color: $c-black;
+
+  @extend %font-body-text;
+  color: $c-white;
+
+  &__grid {
+    row-gap: 0;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 40px;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+
+    &--menu {
+      margin-bottom: 64px;
+    }
+
+    &--socials {
+      flex-direction: row;
+      gap: 32px;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+
+      &--email-us {
+        margin-bottom: 48px;
+      }
+    }
+
+    @include onDesktop {
+      &--menu {
+        margin-bottom: 48px;
+      }
+    }
+  }
+
+  &__section-name {
+    @extend %font-uppercase;
+    color: $c-grey;
+  }
+
+  &__section-link {
+    display: flex;
+    align-items: center;
+    width: max-content;
+
+    @include hover(color, $c-accent-orange);
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    color: $c-white;
+  }
+
+  &__signature {
+    color: $c-grey;
+  }
+}

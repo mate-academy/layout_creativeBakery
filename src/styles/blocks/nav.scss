@@ -1,0 +1,45 @@
+.nav {
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+    list-style-type: none;
+
+    &--column {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &--footer {
+      color: $c-white;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
+
+  &__item {
+    &--contact-us {
+      display: flex;
+    }
+  }
+
+  &__link {
+
+    @include hover(color, $c-accent-orange);
+
+    &--uppercase {
+      position: relative;
+      @extend %font-uppercase;
+      color: $c-accent-orange;
+      padding-left: 7px;
+
+      @include icon(18px, 18px);
+
+      &::before {
+        background-image: url(../images/icons/phone.svg);
+      }
+    }
+  }
+}

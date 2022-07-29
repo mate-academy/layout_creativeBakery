@@ -1,0 +1,84 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  @extend %font-uppercase;
+  color: $c-accent-orange;
+
+  &--icon {
+    position: relative;
+
+    @include icon(24px, 24px);
+
+    transition: color 0.3s;
+
+    &::after {
+      position: absolute;
+      height: 1px;
+      bottom: 0;
+      left: 50%;
+      right: 50%;
+
+      display: block;
+      content: "";
+
+      background-color: $c-accent-orange;
+      transition: left 0.4s, right 0.4s;
+    }
+
+    &:hover {
+      &::after {
+        left: 5%;
+        right: 0;
+      }
+    }
+
+    &:focus {
+      color: $c-dark-orange;
+    }
+
+    &-phone {
+      &::before {
+        background-image: url(../images/icons/phone.svg);
+      }
+    }
+
+    &-arrow {
+      &::before {
+        background-image: url(../images/icons/arrowRight.svg);
+      }
+    }
+  }
+
+  &--border {
+    height: 56px;
+
+    border: 2px solid $c-accent-orange;
+    border-radius: 32px;
+
+    @include icon(24px, 24px);
+
+    @include hover(background-color, $c-accent-orange);
+    @include hover(color, #fff);
+    @include hover(border-color, transparent);
+
+    &::before {
+      background-image: url(../images/icons/cookie.svg);
+
+      transition: background-image 0.3s;
+    }
+
+    &:hover {
+      &::before {
+        background-image: url(../images/icons/cookieWhite.svg);
+      }
+    }
+
+    &:focus {
+      background-color: $c-dark-orange;
+      border-color: transparent;
+    }
+  }
+}
