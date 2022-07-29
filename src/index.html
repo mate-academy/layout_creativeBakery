@@ -1,13 +1,585 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Bakerlab</title>
     <link rel="stylesheet" href="./styles/main.scss">
+    <link
+      rel="shortcut icon"
+      href="./images/icons/cookies.svg"
+      type="image/x-icon"
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
+  <body class="page__body">
+    <header class="header">
+      <div class="header__container">
+        <a href="#" class="header__logo-link logo"></a>
+
+        <a href="#menu">
+          <img
+            src="./images/icons/menu.svg"
+            alt="menu"
+            class="header__menu-icon"
+          >
+        </a>
+
+        <div class="header__nav">
+          <div class=" nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#products" class="nav__link">
+                  Products
+                </a>
+              </li>
+
+              <li class="nav__item">
+                <a href="#details" class="nav__link">
+                  About Us
+                </a>
+              </li>
+
+              <li class="nav__item">
+                <a href="#" class="nav__link">
+                  Blog
+                </a>
+              </li>
+
+              <li class="nav__item">
+                <a href="#contacts" class="nav__link">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="nav__phone"
+                  >
+                    <path d="M18 13.42V16.956C18.0001 17.2092 17.9042 17.453 17.7316 17.6382C17.559 17.8234 17.3226 17.9363 17.07 17.954C16.633 17.984 16.276 18 16 18C7.163 18 0 10.837 0 2C0 1.724 0.015 1.367 0.046 0.93C0.0637224 0.677444 0.176581 0.441011 0.361804 0.268409C0.547026 0.0958068 0.790823 -0.000114433 1.044 2.56579e-07H4.58C4.70404 -0.000125334 4.8237 0.045859 4.91573 0.12902C5.00776 0.212182 5.0656 0.326583 5.078 0.45C5.101 0.68 5.122 0.863 5.142 1.002C5.34073 2.38892 5.748 3.73783 6.35 5.003C6.445 5.203 6.383 5.442 6.203 5.57L4.045 7.112C5.36445 10.1865 7.81455 12.6365 10.889 13.956L12.429 11.802C12.4919 11.714 12.5838 11.6509 12.6885 11.6237C12.7932 11.5964 12.9042 11.6068 13.002 11.653C14.267 12.2539 15.6156 12.6601 17.002 12.858C17.141 12.878 17.324 12.9 17.552 12.922C17.6752 12.9346 17.7894 12.9926 17.8724 13.0846C17.9553 13.1766 18.0012 13.2961 18.001 13.42H18Z">
+                  </svg>
+
+                  <span class="nav__span">Contact us</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="page__menu menu" id="menu">
+      <div class="menu__header">
+        <a href="#" class="menu__logo-link logo"></a>
+
+        <a href="#" class="menu__cross-link">
+          <img
+            src="./images/icons/cross.svg"
+            alt="cross"
+            class="menu__cross-icon"
+          >
+        </a>
+      </div>
+      <div class="nav nav--mobile">
+        <ul class="nav__list nav__list--mobile">
+          <li class="nav__item">
+            <a href="#products" class="nav__link">
+              Products
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#details" class="nav__link">
+              About Us
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              Blog
+            </a>
+          </li>
+
+          <li class="nav__item">
+            <a href="#contacts" class="nav__link">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="nav__phone"
+              >
+                <path d="M18 13.42V16.956C18.0001 17.2092 17.9042 17.453 17.7316 17.6382C17.559 17.8234 17.3226 17.9363 17.07 17.954C16.633 17.984 16.276 18 16 18C7.163 18 0 10.837 0 2C0 1.724 0.015 1.367 0.046 0.93C0.0637224 0.677444 0.176581 0.441011 0.361804 0.268409C0.547026 0.0958068 0.790823 -0.000114433 1.044 2.56579e-07H4.58C4.70404 -0.000125334 4.8237 0.045859 4.91573 0.12902C5.00776 0.212182 5.0656 0.326583 5.078 0.45C5.101 0.68 5.122 0.863 5.142 1.002C5.34073 2.38892 5.748 3.73783 6.35 5.003C6.445 5.203 6.383 5.442 6.203 5.57L4.045 7.112C5.36445 10.1865 7.81455 12.6365 10.889 13.956L12.429 11.802C12.4919 11.714 12.5838 11.6509 12.6885 11.6237C12.7932 11.5964 12.9042 11.6068 13.002 11.653C14.267 12.2539 15.6156 12.6601 17.002 12.858C17.141 12.878 17.324 12.9 17.552 12.922C17.6752 12.9346 17.7894 12.9926 17.8724 13.0846C17.9553 13.1766 18.0012 13.2961 18.001 13.42H18Z">
+              </svg>
+
+              <span class="nav__span">Contact us</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <main class="page__main">
+      <div class="page__container">
+        <section class="about-us">
+          <p class="about-us__text">
+            We bake your fantasies — croissants, cakes, cookies, and cupcakes.
+          </p>
+
+          <div class="about-us__title-container  animate__animated animate__slideInDown">
+            <h1 class="about-us__title">
+              Creative bakery
+            </h1>
+
+            <div class="about-us__img-container  animate__animated animate__rotateIn">
+              <img
+                src="./images/single-cookie.png"
+                alt="cookie"
+                class="about-us__cookie"
+              >
+            </div>
+          </div>
+
+          <a href="#details" class="about-us__learn-more animate__animated animate__slideInLeft">
+            Learn more
+          </a>
+        </section>
+
+        <section class="we-bake" id="products">
+          <h2 class="we-bake__title">
+            What we bake
+          </h2>
+
+          <p class="we-bake__subtitle">
+            We can customize our cookies right for your needs. Just imagine it
+          </p>
+
+          <div class="we-bake__card-container">
+
+            <div class="we-bake__section we-bake__section--left">
+              <article
+                class="product"
+                data-aos="fade-right"
+                data-aos-duration="1100"
+                data-aos-delay="300"
+              >
+                <img
+                  src="./images/1.png"
+                  alt="img-1"
+                  class="product__img"
+                >
+
+                <h3 class="product__title">
+                  Cakes
+                </h3>
+
+                <p class="product__text">
+                  Oatmeal cookies with golden raisins, orange zest and chocolate chips
+                </p>
+
+                <div class="product__order">
+                  <a href="#" class="product__order-button">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="product__order-arrow"
+                    >
+                      <path d="M12.172 6.99998L6.808 1.63598L8.222 0.221985L16 7.99998L8.222 15.778L6.808 14.364L12.172 8.99998H0V6.99998H12.172Z" fill="currentColor">
+                    </svg>
+                    Order
+                  </a>
+                </div>
+              </article>
+
+              <article
+                class="product"
+                data-aos="fade-right"
+                data-aos-duration="1100"
+              >
+                <img
+                  src="./images/2.png"
+                  alt="img-2"
+                  class="product__img"
+                >
+
+                <h3 class="product__title">
+                  Cakes
+                </h3>
+
+                <p class="product__text">
+                  Chocolate biscuit coffee cake topped with a buttercream and powder
+                </p>
+
+                <div class="product__order">
+                  <a href="#" class="product__order-button">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="product__order-arrow"
+                    >
+                      <path d="M12.172 6.99998L6.808 1.63598L8.222 0.221985L16 7.99998L8.222 15.778L6.808 14.364L12.172 8.99998H0V6.99998H12.172Z" fill="currentColor">
+                    </svg>
+                    Order
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="we-bake__section we-bake__section--right">
+              <article
+                class="product"
+                data-aos="fade-left"
+                data-aos-duration="1100"
+              >
+                <img
+                  src="./images/3.png"
+                  alt="img-3"
+                  class="product__img"
+                >
+
+                <h3 class="product__title">
+                  Donuts
+                </h3>
+
+                <p class="product__text">
+                  Light multi-layered croissant strewn with coconut and nuts
+                </p>
+
+                <div class="product__order">
+                  <a href="#" class="product__order-button">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="product__order-arrow"
+                    >
+                      <path d="M12.172 6.99998L6.808 1.63598L8.222 0.221985L16 7.99998L8.222 15.778L6.808 14.364L12.172 8.99998H0V6.99998H12.172Z" fill="currentColor">
+                    </svg>
+                    Order
+                  </a>
+                </div>
+              </article>
+
+              <article
+                class="product"
+                data-aos="fade-left"
+                data-aos-duration="1100"
+                data-aos-delay="300"
+                >
+                <img
+                  src="./images/4.png"
+                  alt="img-4"
+                  class="product__img"
+                >
+
+                <h3 class="product__title">
+                  Donuts
+                </h3>
+
+                <p class="product__text">
+                  Light multi-layered croissant strewn with coconut and nuts
+                </p>
+
+                <div class="product__order">
+                  <a href="#" class="product__order-button">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="product__order-arrow"
+                    >
+                      <path d="M12.172 6.99998L6.808 1.63598L8.222 0.221985L16 7.99998L8.222 15.778L6.808 14.364L12.172 8.99998H0V6.99998H12.172Z" fill="currentColor">
+                    </svg>
+                    Order
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="we-bake__section we-bake__section--left">
+              <article
+                class="product"
+                data-aos="fade-right"
+                data-aos-duration="1100"
+                data-aos-delay="300"
+              >
+                <img
+                  src="./images/5.png"
+                  alt="img-5"
+                  class="product__img"
+                >
+
+                <h3 class="product__title">
+                  Cookies
+                </h3>
+
+                <p class="product__text">
+                  Oatmeal cookies with golden raisins, orange zest and chocolate chips
+                </p>
+
+                <div class="product__order">
+                  <a href="#" class="product__order-button">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="product__order-arrow"
+                    >
+                      <path d="M12.172 6.99998L6.808 1.63598L8.222 0.221985L16 7.99998L8.222 15.778L6.808 14.364L12.172 8.99998H0V6.99998H12.172Z" fill="currentColor">
+                    </svg>
+                    Order
+                  </a>
+                </div>
+              </article>
+
+              <article
+                class="product"
+                data-aos="fade-right"
+                data-aos-duration="1100"
+              >
+                <img
+                  src="./images/6.png"
+                  alt="img-6"
+                  class="product__img"
+                >
+
+                <h3 class="product__title" >
+                  Cookies
+                </h3>
+
+                <p class="product__text">
+                  Oatmeal cookies with golden raisins, orange zest and chocolate chips
+                </p>
+
+                <div class="product__order">
+                  <a href="#" class="product__order-button">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="product__order-arrow"
+                    >
+                      <path d="M12.172 6.99998L6.808 1.63598L8.222 0.221985L16 7.99998L8.222 15.778L6.808 14.364L12.172 8.99998H0V6.99998H12.172Z" fill="currentColor">
+                    </svg>
+                    Order
+                  </a>
+                </div>
+              </article>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="details" id="details">
+          <div
+            class="details__header"
+            data-aos="fade-up"
+            data-aos-duration="1100"
+          >
+            <h2 class="details__title">
+              Few words About us
+            </h2>
+
+            <p class="details__text">
+              Like many design teams, Onfido made the transition from Abstract + Sketch, to Figma in the last couple of years. One of the common resistance points internally before making that switch, was Figma’s lack of Git-style branching that Abstract enabled. The design team had come to rely on branching and had built a lot of our processes around it.
+            </p>
+          </div>
+
+          <div
+            class="details__counter"
+            data-aos="fade-up"
+            data-aos-duration="1100"
+          >
+            <div class="counter">
+              <p class="counter__number">
+                2015
+              </p>
+
+              <p class="counter__text">
+                Foundation year
+              </p>
+            </div>
+
+            <div class="counter">
+              <p class="counter__number">
+                23
+              </p>
+
+              <p class="counter__text">
+                Stores
+              </p>
+            </div>
+
+            <div class="counter">
+              <p class="counter__number">
+                155
+              </p>
+
+              <p class="counter__text">
+                Companies
+              </p>
+            </div>
+
+            <div class="counter">
+              <p class="counter__number">
+                10k+
+              </p>
+
+              <p class="counter__text">
+                Clients
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer" id="contacts">
+      <div class="page__container">
+        <div class="footer__main">
+          <div class="footer__menu">
+            <a href="#" class="footer__logo-link">
+              <img
+                src="./images/icons/logo-white.svg"
+                alt="logo"
+                >
+            </a>
+
+            <h3 class="footer__title">Menu</h3>
+
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item">
+                <a href="#" class="footer__menu-link">
+                  Products
+                </a>
+              </li>
+
+              <li class="footer__menu-item">
+                <a href="#" class="footer__menu-link">
+                  About Us
+                </a>
+              </li>
+
+              <li class="footer__menu-item">
+                <a href="#" class="footer__menu-link">
+                  Blog
+                </a>
+              </li>
+
+              <li class="footer__menu-item">
+                <a href="#" class="footer__menu-link">
+                  Terms & Privacy
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__contacts">
+            <h2 class="footer__contacts-title">
+              Contact us
+            </h2>
+
+            <div class="footer__container-box">
+              <div class="footer__call-us">
+                <h3 class="footer__title">
+                  Call us
+                </h3>
+
+                <a href="tel:(629) 555-0129" class="footer__phones">
+                  (629) 555-0129
+                </a>
+
+                <a href="tel:(603) 555-0123" class="footer__phones">
+                  (603) 555-0123
+                </a>
+
+                <a href="tel:(704) 555-0127" class="footer__phones">
+                  (704) 555-0127
+                </a>
+              </div>
+
+              <div class="footer__email-us">
+                <div class="footer__title">
+                  Email us
+                </div>
+
+                <a href="mailto:bakerlab@example.com" class="footer__email">
+                  bakerlab@example.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <div class="footer__icons">
+            <a
+              href="https://www.facebook.com/"
+              class="footer__icon-link"
+              target="_blank"
+            >
+              <img
+                src="./images/icons/fb-icon.svg"
+                alt="fb-icon"
+                class="footer__icon"
+              >
+            </a>
+
+            <a
+              href="https://www.instagram.com/"
+              class="footer__icon-link"
+              target="_blank"
+            >
+              <img
+                src="./images/icons/ig-icon.svg"
+                alt="ig-icon"
+                class="footer__icon"
+              >
+            </a>
+
+            <a
+              href="https://twitter.com/"
+              class="footer__icon-link"
+              target="_blank"
+            >
+              <img
+                src="./images/icons/tw-icon.svg"
+                alt="tw-icon"
+                class="footer__icon"
+              >
+            </a>
+          </div>
+
+          <p class="footer__copyright">
+            © Bakerlab 2022
+          </p>
+        </div>
+      </div>
+    </footer>
+
     <script type="text/javascript" src="scripts/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
