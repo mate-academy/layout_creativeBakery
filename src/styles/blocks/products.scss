@@ -1,6 +1,12 @@
 .products {
+  margin-bottom: 80px;
+
+  @include onTable {
+    margin-bottom: 160px;
+  }
 
   &__title {
+    font-weight: 400;
     font-size: 48px;
     line-height: 85%;
 
@@ -26,6 +32,12 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @include onTable {
+      &:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+      }
     }
   }
 }
