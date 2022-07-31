@@ -1,0 +1,194 @@
+.footer {
+  display: flex;
+  background-color: $black;
+
+  @include onDesktop {
+    margin: 0 auto;
+    flex-direction: column;
+
+    padding-top: 93px;
+  }
+
+  &__container {
+    margin: 0 auto;
+    padding-top: 61px;
+
+    background-color: $black;
+
+    @include onTablet {
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 768px;
+    }
+
+    @include onDesktop {
+      width: 1200px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 16px;
+  }
+
+  &__logo {
+    margin-bottom: 46px;
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(105%);
+    }
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+      margin-bottom: 46px;
+    }
+  }
+
+  &__blog {
+    margin: 0 auto;
+    width: 288px;
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 64px;
+
+    @include onDesktop {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.7s;
+
+    &:hover {
+      transition: all 0.5s;
+      transform: translateX(12px) scale(110%);
+      color: $accentOrange;
+    }
+
+    &--phone {
+      &:hover {
+        transform: translateX(12px) scale(110%);
+      }
+    }
+  }
+
+  &__about-us {
+    margin: 0 auto;
+    width: 288px;
+
+    @include onDesktop {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      width: 584px;
+    }
+  }
+
+  &__title {
+    width: 220px;
+    padding-bottom: 40px;
+    font-size: 48px;
+    color: #fff;
+
+    @include onTablet {
+      font-size: 56px;
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 544px;
+      font-size: 72px;
+      padding-bottom: 14px;
+    }
+  }
+
+  &__phones {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__mail {
+    padding-bottom: 42px;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.social-networks {
+  padding-bottom: 42px;
+  display: flex;
+  align-items: baseline;
+  gap: 44px;
+
+  &__logo {
+    padding: 10px;
+    border-radius: 25%;
+    transition: all 1s;
+
+    &:hover {
+      transition: all 0.5s;
+      transform: scale(1.1);
+      background-color: rgba(100%, 100%, 100%, 0.7);
+      box-shadow: 1px 4px 16px rgba(232, 232, 240, 0.64);
+    }
+  }
+
+  &--mobile {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      margin-left: -7px;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      padding-top: 40px;
+      padding-bottom: 50px;
+    }
+  }
+}
+
+.copyright {
+  padding-bottom: 56px;
+  text-transform: none;
+  line-height: 24px;
+
+  @include onDesktop {
+    line-height: 12px;
+    padding-top: 80px;
+  }
+}
+
+.container-info {
+  @include onDesktop {
+    display: flex;
+  }
+}

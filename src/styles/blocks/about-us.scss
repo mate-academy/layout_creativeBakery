@@ -1,0 +1,79 @@
+.container {
+  position: relative;
+  width: 288px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 24px;
+
+  @include onTablet {
+    width: 680px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 24px;
+  }
+
+  @include onDesktop {
+    width: 1150px;
+    margin: 0 12px 190px 46px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    grid-template-areas: "title title text text"
+      "year stores companies clients";
+  }
+}
+
+.background-image {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: calc(50% - 160px);
+  width: 320px;
+  height: 300px;
+  transform: rotate(180deg) scale(-1, 1);
+
+  @include onDesktop {
+    top: 0;
+    left: calc(50% - 340px);
+    width: 718px;
+    height: 673px;
+  }
+}
+
+.grid {
+  &-title {
+    grid-area: title;
+  }
+
+  &-text {
+    grid-area: text;
+    margin-bottom: 64px;
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &-year {
+    grid-area: year;
+  }
+
+  &-stores {
+    grid-area: stores;
+  }
+
+  &-companies {
+    grid-area: companies;
+  }
+
+  &-clients {
+    grid-area: clients;
+  }
+}
+
+.statistic {
+  margin-bottom: 48px;
+}
