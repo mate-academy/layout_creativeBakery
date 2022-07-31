@@ -1,0 +1,64 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  &__item {
+    display: none;
+    margin-right: 64px;
+
+    @include onDesktop {
+      display: flex;
+    }
+
+    &--phone {
+      margin-right: 95px;
+    }
+  }
+
+  &__link {
+    color: $c-black;
+    text-decoration: none;
+    transition: color, 0.3s;
+
+    &:hover {
+      color: $c-accent-orange;
+    }
+  }
+
+  &__icon {
+    height: 18px;
+    width: 18px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &--phone {
+      background-image: url(../images/phone.svg);
+      text-decoration: none;
+
+      &::after {
+        content: "Contact us";
+        position: relative;
+        top: 50%;
+        transform: translate(25%, -50%);
+        display: block;
+        width: max-content;
+        color: $c-accent-orange;
+      }
+    }
+
+    &--menu {
+      background-image: url(../images/menu.svg);
+      display: block;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+}

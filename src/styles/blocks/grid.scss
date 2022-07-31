@@ -1,0 +1,173 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0 24px;
+  align-content: top;
+  align-items: top;
+
+  @include onDesktop1200 {
+    grid-template-columns: repeat(8, 128px);
+  }
+
+  &--tablet {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &--desktop {
+    display: block;
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &--contacts {
+    @include onTablet {
+      grid-template-rows: repeat(4, auto);
+      grid-template-areas: "logo logo logo logo conts conts conts conts"
+        "menu menu menu menu call-us call-us call-us call-us"
+        "menu menu menu menu email email email email"
+        "social social social social copyrigth copyrigth copyrigth copyrigth";
+
+    }
+
+    @include onDesktop {
+      grid-template-rows: repeat(4, auto);
+      grid-template-areas: "logo logo logo logo conts conts conts conts"
+        "menu menu menu menu call-us call-us email email"
+        "menu menu menu menu call-us call-us email email"
+        "social social social social copyrigth copyrigth copyrigth copyrigth";
+    }
+  }
+
+  &--about-us {
+    @include onTablet {
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas: "title title title title intro intro intro intro"
+        "year year year year store store store store"
+        "comp comp comp comp clients clients clients clients";
+    }
+
+    @include onDesktop {
+      grid-template-rows: repeat(2, auto);
+      grid-template-areas: "title title title title intro intro intro intro"
+        "year year store store comp comp clients clients";
+    }
+  }
+
+  &--header {
+    @include onTablet {
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas: "desc desc desc desc . . . ."
+        "title title title title title title title title"
+        ". . button button button button . .";
+    }
+
+    @include onDesktop {
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas: "desc desc . . . . . ."
+        "title title title title title title title title"
+        "button button . . . . . .";
+    }
+  }
+
+  &__item {
+    &--footer {
+      &-logo {
+        grid-area: logo;
+      }
+
+      &-menu {
+        grid-area: menu;
+      }
+
+      &-contacts {
+        grid-area: conts;
+      }
+
+      &-call-us {
+        grid-area: call-us;
+      }
+
+      &-email {
+        grid-area: email;
+      }
+
+      &-social {
+        grid-area: social;
+      }
+
+      &-copyrigth {
+        grid-area: copyrigth;
+      }
+    }
+
+    &--about-us {
+      &-title {
+        grid-area: title;
+      }
+
+      &-intro {
+        grid-area: intro;
+      }
+
+      &-year {
+        grid-area: year;
+      }
+
+      &-store {
+        grid-area: store;
+      }
+
+      &-comp {
+        grid-area: comp;
+      }
+
+      &-clients {
+        grid-area: clients;
+      }
+    }
+
+    &--header {
+      &-description {
+        grid-area: desc;
+      }
+
+      &-title {
+        grid-area: title;
+      }
+
+      &-button {
+        grid-area: button;
+      }
+    }
+  }
+
+  @include onTablet {
+    &__item {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--tablet-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  @include onDesktop {
+    &__item {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--desktop-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}
