@@ -1,0 +1,57 @@
+.top-menu {
+  width: 100%;
+  display: flex;
+  height: 84px;
+  justify-content: space-between;
+  padding: 20px 20px 0;
+  align-items: baseline;
+
+  &__menu {
+    @include onDesctop {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: none;
+    list-style: none;
+    padding: 0;
+    height: 100%;
+
+    @include onDesctop {
+      display: flex;
+      align-items: baseline;
+      width: 45%;
+      justify-content: space-between;
+    }
+  }
+  
+  &__link {
+    @extend %link-style;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: color 0.3s , transform 0.3s;
+    &:hover {
+      color: $main-color;
+      transform: scale(1.1);
+    }
+
+    &--phone {
+      color: #F9512E;
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+
+  &__item {
+    height: 100%;
+    width: fit-content;
+    cursor: pointer;
+  }
+
+  &__phone-icon {
+    display: inline-block;
+    padding-top: 2px;
+  }
+}
