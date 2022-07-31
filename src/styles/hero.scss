@@ -1,0 +1,107 @@
+.hero {
+  position: relative;
+  text-align: center;
+
+  &__container {
+    @include onDeskBig {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    color: $dark-color;
+    margin-bottom: 32px;
+    padding-top: 20px;
+
+    @include onTab {
+      text-align: left;
+      margin-bottom: 16px;
+      padding-top: 80px;
+    }
+
+    @include onDesk {
+      padding-top: 0;
+      margin-bottom: 0;
+      position: relative;
+      top: 250%;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 55px;
+    color: $dark-color;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+
+    @include onTab {
+      font-size: 70px;
+      line-height: 60px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include onDesk {
+      font-size: 130px;
+      line-height: 115px;
+    }
+
+    @include onDeskBig {
+      font-size: 130px;
+    }
+  }
+
+  &__image-container {
+    text-align: center;
+    height: 290px;
+
+    @include onTab {
+      height: 350px;
+    }
+
+    @include onDesk {
+      height: 400px;
+    }
+  }
+
+  &__image {
+    height: 100%;
+  }
+
+  &__button {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid $dark-red-color;
+    border-radius: 32px;
+    color: $dark-red-color;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    @include onDesk {
+      position: relative;
+      bottom: 100%;
+    }
+  }
+
+  &__button-text {
+    &::before {
+      content: "";
+      display: inline-block;
+      background: url(../images/button-cookie-back.svg);
+      height: 20px;
+      width: 20px;
+      margin-right: 7px;
+      transform: translateY(20%);
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.header {
+  &__logo-image {
+    height: 25px;
+    transition: scale, 1s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__content {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesk {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      padding-right: 64px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 20px 0;
+    color: $dark-color;
+    line-height: 24px;
+    letter-spacing: -1%;
+    transition: transform, 1s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &--color {
+      color: $dark-red-color;
+      text-transform: uppercase;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url(../images/tell.svg);
+        width: 18px;
+        height: 18px;
+        margin-right: 7px;
+      }
+    }
+  }
+
+  &__burger {
+    background-image: url(../images/burger.svg);
+    @extend %background;
+    display: block;
+    width: 20px;
+    height: 8px;
+
+    @include onDesk {
+      display: none;
+    }
+  }
+}
