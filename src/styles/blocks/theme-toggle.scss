@@ -1,0 +1,31 @@
+.theme-toggle {
+  padding: 4px;
+
+  border: 1.5px solid $black;
+  border-radius: 14px;
+
+  font-size: 10px;
+  background-color: $light-blue;
+
+  cursor: pointer;
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @include onMobile {
+    font-size: 8px;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked {
+      & + .theme-toggle {
+        background-color: $light-pink;
+      }
+    }
+  }
+}
