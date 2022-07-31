@@ -1,0 +1,45 @@
+.button {
+  @extend %button-text-style;
+  color: $accent-orange;
+
+  width: 100%;
+  height: 56px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid $accent-orange;
+  border-radius: 32px;
+
+  transition: all 0.3s;
+
+  &::before {
+    content: "";
+
+    width: 24px;
+    height: 24px;
+
+    margin-right: 8px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/bake-logo.svg);
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $accent-orange;
+
+    &::before {
+      background-image: url(../images/bake-logo--hover.svg);
+    }
+  }
+
+  &:focus {
+    border-color: $dark-orange;
+
+    background-color: $dark-orange;
+  }
+}
