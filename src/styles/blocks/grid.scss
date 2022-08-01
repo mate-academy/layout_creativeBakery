@@ -1,0 +1,25 @@
+.grid {
+
+  display: block;
+  justify-content: center;
+  @include screenUp720() {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  @include screenUp1024() {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+
+    &__item {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--#{$start}--#{$end} {
+            grid-column: #{$start} / #{$end+1};
+          }
+        }
+      }
+    }
+  }
+}

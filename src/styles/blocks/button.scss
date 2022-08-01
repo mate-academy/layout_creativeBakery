@@ -1,0 +1,66 @@
+.button {
+  text-align: center;
+
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $color-main-red;
+  background-color: transparent;
+  border: 2px solid $color-main-red;
+  border-radius: 32px;
+  height: 56px;
+  width: 288px;
+  position: absolute;
+  z-index: 2;
+  bottom: -346px;
+  left: 50%;
+  transform: translateX(-50%);
+  @include screenUp720() {
+    bottom: -208px;
+  }
+
+  @include screenUp1024() {
+    left: 0;
+    transform: translateX(0%);
+    bottom: -140px;
+    width: 260px;
+  }
+  @include screenUp1200() {
+    bottom: -110px;
+    width: 280px;
+  }
+  &__title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  &__image {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-right: 6px;
+    background-image: url(../images/icon_learn_more.svg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  &:hover {
+    background-color: $color-main-red;
+    color: #fff;
+    .button__image {
+      background-image: url(../images/icon_learn_more_hover.svg);
+    }
+  }
+  &:focus {
+    background-color: $color-main-focus;
+    color: #fff;
+    .button__image {
+      background-image: url(../images/icon_learn_more_hover.svg);
+    }
+  }
+}

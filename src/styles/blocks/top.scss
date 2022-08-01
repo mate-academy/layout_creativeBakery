@@ -1,0 +1,49 @@
+.top {
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  &__logo {
+    width: 128px;
+    padding-left: 2px;
+    @include screenUp720() {
+      padding-left: 4px;
+    }
+  }
+  &__link {
+    position: relative;
+    &--desktop {
+      position: fixed;
+      opacity: 0;
+      transform: translateX(-150%);
+      z-index: -1;
+    }
+    &--mob {
+      position: absolute;
+      right: 0;
+    }
+    @include screenUp720() {
+      &--desktop {
+        position: absolute;
+        opacity: 1;
+        transform: translateX(-100%);
+        z-index: 0;
+      }
+      &--mob {
+        position: fixed;
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      &--item {
+        margin-right: 64px;
+      }
+      &--contact {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  &__nav {
+    width: 100% ;
+    text-align: end;
+  }
+}
