@@ -1,0 +1,52 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 52px;
+  border: 2px solid $Accent-Orange;
+  border-radius: 32px;
+
+  text-decoration: none;
+  @extend %body-text-uppercase;
+  color: $Accent-Orange;
+  transition: background-color 0.3s;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding-right: 5px;
+
+    background-image: url(../images/Icon-cookie-r.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__image {
+    height: 20px;
+    width: 20px;
+  }
+  &:hover {
+    background-color: $Accent-Orange;
+    color: #fff;
+    &::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      padding-right: 5px;
+
+      background-image: url(../images/Icon-cookie-w.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+
+    }
+  }
+
+  &:active {
+    background-color: #b2341a;
+  }
+}
