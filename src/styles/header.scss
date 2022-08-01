@@ -1,4 +1,6 @@
 .header {
+  position: relative;
+
   &__logo-image {
     height: 25px;
     transition: scale, 1s;
@@ -9,15 +11,16 @@
   }
 
   &__content {
-    padding: 10px 0;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 2px;
   }
 
   &__nav {
     display: none;
+    height: 60px;
 
     @include onDesk {
       display: block;
@@ -55,9 +58,12 @@
         content: "";
         display: inline-block;
         background-image: url(../images/tell.svg);
-        width: 18px;
-        height: 18px;
+        @extend %background;
+        width: 20px;
+        height: 20px;
         margin-right: 7px;
+        position: relative;
+        top: 50%;
       }
     }
   }

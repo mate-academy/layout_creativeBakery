@@ -2,9 +2,26 @@
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 14px;
-  overflow: hidden;
+  min-height: 100%;
+  scroll-behavior: smooth;
 
   &__body {
     background-color: $light-blue;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__menu {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform, 1s;
+
+    &:target {
+      transform: translateX(0%);
+    }
   }
 }

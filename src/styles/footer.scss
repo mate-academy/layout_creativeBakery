@@ -1,0 +1,80 @@
+.footer {
+  background-color: $dark-color;
+  padding: 60px 0;
+
+  &__social-item {
+    margin-bottom: 40px;
+    @include onTab {
+      align-self: center;
+
+    }
+  }
+
+  &__social-facebook {
+    background-image: url(../images/face.svg);
+    @extend %background;
+    display: inline-block;
+    width: 11px;
+    height: 20px;
+    margin-right: 20px;
+
+    @include onDesk {
+      &:hover {
+        background-image: url(../images/icons8-facebook-fwhite.svg);
+        width: 11px;
+      }
+    }
+  }
+
+  &__social-instagram {
+    background-image: url(../images/insta.svg);
+    @extend %background;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+
+    @include onDesk {
+      &:hover {
+        background-image: url(../images/icons8-instagramwhite.svg);
+      }
+    }
+  }
+
+  &__social-twitter {
+    background-image: url(../images/twitter.svg);
+    @extend %background;
+    display: inline-block;
+    width: 21px;
+    height: 20px;
+
+    @include onDesk {
+      &:hover {
+        background-image: url(../images/tw-white.svg);
+        transform: scale(0.8);
+      }
+
+    }
+  }
+
+  &__terms {
+    margin-top: 20px;
+    font-size: 16px;
+    color: $grey-color;
+
+    &::before {
+      content: "©";
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+    }
+
+    @include onTab {
+      margin: 0;
+    }
+  }
+
+  @include onTab {
+    width: 100%;
+  }
+}
