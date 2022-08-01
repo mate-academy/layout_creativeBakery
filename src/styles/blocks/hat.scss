@@ -1,0 +1,137 @@
+.hat {
+  height: 800px;
+
+  &__text {
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    @include onTablet {
+      margin: 90px 0 16px;
+      text-align: left;
+      position: relative;
+    }
+
+    @include onDesktop {
+      margin: 100px 0 16px;
+      text-align: left;
+      position: relative;
+    }
+
+    @include onDesktopBig {
+      margin: 100px 0 16px;
+      text-align: left;
+      position: relative;
+    }
+  }
+
+  &__logo {
+    z-index: -1;
+    width: 100%;
+    border-radius: 50%;
+    animation: rotation 20s linear 0.3s infinite;
+
+    @include onTablet {
+      position: relative;
+      top: -20%;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: -55%;
+    }
+
+    @include onDesktopBig {
+      position: relative;
+      top: -55%;
+    }
+  }
+
+  &__title {
+    z-index: 1;
+    font-size: 64px;
+    color: #f9512e;
+    font-weight: 400;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 70px;
+      position: relative;
+      top: 250%;
+    }
+
+    @include onDesktop {
+      font-size: 106px;
+      position: relative;
+      top: 0;
+    }
+
+    @include onDesktopBig {
+      font-size: 124px;
+      position: relative;
+      top: 0;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-transform: uppercase;
+    color: #f9512e;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+
+    border: 2px solid #f9512e;
+    border-radius: 32px;
+    height: 56px;
+    margin-bottom: 100px;
+
+    transition: color 0.5s ease,
+      background-color 0.5s ease;
+
+    &::before {
+      content: url(../images/Vector.svg);
+      margin-right: 6px;
+    }
+
+    &:hover {
+      background-color: #f9512e;
+      color: #fff;
+
+      &::before {
+        content: url(../images/white.svg);
+      }
+    }
+
+    &:focus {
+      color: #fff;
+      background-color: #b2341a;
+
+      &::before {
+        content: url(../images/white.svg);
+      }
+    }
+
+    @include onDesktop {
+      position: relative;
+      bottom: 200%;
+    }
+  
+    @include onDesktopBig {
+      position: relative;
+      bottom: 200%;
+    }
+  }
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
