@@ -1,6 +1,19 @@
 .footer {
-  --list--margin: 16px;
   $root: &;
+
+  --list-margin: 16px;
+  --elements-mb: 40px;
+  --grid-areas-onTablet: "logo logo . . title title title title"
+    "menu menu . . call-us call-us call-us call-us"
+    ". . . . email-us email-us email-us email-us"
+    "social social . . credits credits . .";
+
+  --grid-areas-onDesktop: "logo logo . . title title title title"
+    "menu menu . . call-us call-us email-us email-us"
+    "social social . . credits credits . .";
+
+  --grid-rows-count: 3;
+
   padding: 56px 0;
 
   background-color: $black-color;
@@ -14,37 +27,32 @@
     @include onTablet {
       display: grid;
       grid-template-columns: repeat(8, 1fr);
-      grid-template-rows: repeat(4, auto);
+      grid-template-rows: repeat(--grid-rows-count, auto);
       gap: 0 24px;
-      grid-template-areas: "logo logo . . title title title title"
-        "menu menu . . call-us call-us call-us call-us"
-        ". . . . email-us email-us email-us email-us"
-        "social social . . credits credits . .";
+      grid-template-areas: var(--grid-areas-onTablet);
 
       #{$root}__email-us {
-        margin-top: -40px;
-        margin-bottom: 48px;
+        margin-top: calc(0px - var(--elements-mb));
+        margin-bottom: calc(var(--elements-mb) + 8px);
       }
       #{$root}__social {
         margin-bottom: 0;
       }
     }
     @include onDesktop {
-      grid-template-rows: repeat(3, auto);
-      grid-template-areas: "logo logo . . title title title title"
-        "menu menu . . call-us call-us email-us email-us"
-        "social social . . credits credits . .";
+      --grid-rows-count: 4;
+      grid-template-areas: var(--grid-areas-onDesktop);
       #{$root}__email-us {
         margin-top: 0;
       }
 
       #{$root}__menu {
-        margin-bottom: 48px;
+        margin-bottom: calc(var(--elements-mb) + 8px);
       }
     }
   }
   &__logo {
-    margin-bottom: 40px;
+    margin-bottom: var(--elements-mb);
 
     grid-area: logo;
     display: block;
@@ -52,26 +60,26 @@
     height: 40px;
   }
   &__title {
-    margin-bottom: 64px;
+    margin-bottom: calc(var(--elements-mb) + 24px);
     grid-area: title;
 
     color: $white-color;
     @include onTablet {
-      margin-bottom: 40px;
+      margin-bottom: var(--elements-mb);
 
     }
   }
   &__menu {
-    margin-bottom: 40px;
+    margin-bottom: var(--elements-mb);
     grid-area: menu;
 
   }
   &__subtitle {
-    margin-bottom: var(--list--margin);
+    margin-bottom: var(--list-margin);
   }
 
   &__list-item {
-    margin-bottom: var(--list--margin);
+    margin-bottom: var(--list-margin);
   }
   &__link {
     color: $white-color;
@@ -82,16 +90,16 @@
     }
   }
   &__call-us {
-    margin-bottom: 40px;
+    margin-bottom: var(--elements-mb);
     grid-area: call-us;
   }
 
   &__email-us {
-    margin-bottom: 40px;
+    margin-bottom: var(--elements-mb);
     grid-area: email-us;
   }
   &__social {
-    margin-bottom: 40px;
+    margin-bottom: var(--elements-mb);
     grid-area: social;
     display: flex;
   }
