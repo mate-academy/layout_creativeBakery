@@ -1,0 +1,70 @@
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+  
+  @include onTablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onScreen {
+    grid-template-columns: repeat(8, 128px);
+    column-gap: 24px;
+  }
+
+  &--tablet {
+    display: flex;
+    flex-direction: column;
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &--desktop {
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &--screen {
+    @include onScreen {
+      display: grid;
+    }
+  }
+
+  &__item {
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+        
+        &--tablet-#{$start}-#{$end} {
+          @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+
+        &--desktop-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+
+        &--screen-#{$start}-#{$end} {
+          @include onScreen {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+
+      }
+    }
+  }
+}
