@@ -2,54 +2,95 @@
   height: 914px;
   width: 100%;
   background-color: $color-black;
+  @include onTablet {
+    height: 616px;
+  }
+  @include onDesKtop {
+    height: 525px;
+  }
+  &__menu {
+    background-color: $color-black;
+    height: max-content;
+    padding-bottom: 64px;
 
+  }
   &__logo {
     padding-top: 50px;
-  }
-  .footer-menu {
-    &__list {
-      list-style-type: none;
-      display: flex;
-      flex-direction: column;
-      box-sizing: border-box;
-
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-
-      padding-top: 151px;
-    }
-
-    &__item {
-      padding-bottom: 24px;
-      &:nth-child(3) {
-        padding-bottom: 32px;
-      }
-      &:last-child {
-        padding-bottom: 0;
-      }
-    }
-
-    &__link {
-      display: inline-block;
-
-      border-bottom: 1px solid transparent;
-      @extend %body-text;
-      text-decoration: none;
-      align-items: center;
-      color: #fff;
-      transition: all 0.3s;
-
-      &--last {
-        @extend %body-text-uppercase;
-        color: $Accent-Orange;
-        padding-left: 7px;
-      }
-
-      &:hover {
-        border-color: $Accent-Orange;
-        transform: scale(1.2);
-      }
+    @include onTablet {
+      padding-top: 93px;
     }
   }
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    justify-content: start;
+    align-items: flex-start;
+    text-align: center;
+
+    padding-top: 44px;
+
+    @include onTablet {
+      padding-top: 125px;
+    }
+
+    @include onDesKtop {
+      padding-top: 66px;
+    }
+  }
+
+  &__item {
+    padding-bottom: 16px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+    &:first-child {
+      @extend %body-text-uppercase;
+      color: #7f8096;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+
+    border-bottom: 1px solid transparent;
+    @extend %body-text;
+    text-decoration: none;
+    align-items: center;
+    color: #fff;
+    transition: all 0.3s;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:hover {
+      border-color: #fff;
+      transform: scale(1.2);
+    }
+  }
+
+  &__about-as {
+    padding-bottom: 40px;
+    @include onTablet {
+      padding-bottom: 48px;
+    }
+
+    @include onDesKtop {
+      padding-bottom: 48px;
+    }
+  }
+
+  &__social-icons {
+    padding-bottom: 42px;
+  }
+
+  &__copirate {
+    @extend %body-text;
+    color: #7f8096;
+  }
+
 }
