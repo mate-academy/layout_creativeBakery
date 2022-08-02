@@ -1,6 +1,11 @@
 .menu {
   background-color: #ffeefc;
   height: 100vh;
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 0;
+  }
 
   &__close {
     display: block;
@@ -24,6 +29,7 @@
 
   &__item {
     padding-bottom: 24px;
+    transition: transform 0.3s;
     &:nth-child(3) {
       padding-bottom: 32px;
     }
@@ -41,7 +47,10 @@
         background-size: contain;
         background-repeat: no-repeat;
       }
-
+    }
+    &:hover {
+      border-color: $Accent-Orange;
+      transform: scale(1.2);
     }
   }
 
@@ -52,7 +61,6 @@
     text-decoration: none;
     align-items: center;
     color: $color-black;
-    transition: all 0.3s;
 
     &--last {
       @extend %body-text-uppercase;
@@ -62,7 +70,6 @@
 
     &:hover {
       border-color: $Accent-Orange;
-      transform: scale(1.2);
     }
   }
 }
