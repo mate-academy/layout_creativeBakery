@@ -25,6 +25,26 @@
   }
 
   &__item {
+    &--firstRow {
+      @include onTablet {
+        grid-row: 1/2;
+      }
+
+      @include onDesKtop {
+        grid-row: 1/2;
+
+      }
+    }
+
+    &--secondtRow {
+      @include onTablet {
+        grid-row: 2/3;
+      }
+      @include onDesKtop {
+        grid-row: 1/2;
+      }
+    }
+
     @for $start from 1 through 8 {
       @for $end from $start through 8 {
         &--onTablet--#{$start}-#{$end} {
@@ -43,6 +63,20 @@
           }
         }
       }
+    }
+  }
+
+  &__footer {
+    @include onTablet {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+      row-gap: 0;
+      grid-template-rows: repeat(3, 1fr);
+    }
+    @include onDesKtop {
+      grid-template-columns: repeat(8, 1fr);
+      row-gap: 0;
+      grid-template-rows: repeat(3, 1fr);
     }
   }
 }
