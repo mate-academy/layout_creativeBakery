@@ -1,0 +1,140 @@
+.contact-us {
+  color: #fff;
+  background-color: #1c1a26;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
+    @include onPhone {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__nav {
+    @include onPhone {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 60px;
+  }
+
+  &__name {
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7F8096;
+  }
+
+  &__menu {
+    margin-bottom: 48px;
+  }
+
+  &__name,
+  &__menu-item,
+  &__list {
+    margin-bottom: 16px;
+  }
+
+  &__menu-link {
+    letter-spacing: -0.01em;
+    transition: color 0.4s ease-in-out;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 55px;
+
+    @include onPhone {
+      grid-template-columns: repeat(1, 1fr);
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    @extend %title-h2;
+    margin-bottom: 40px;
+
+    @include onPhone {
+      flex-basis: 288px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__link,
+  &__email-link {
+    transition: color 0.4s ease-in-out;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+
+  &__email {
+    @include onPhone {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include onPhone {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__socialMedia {
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+  }
+
+  &__social {
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include icons-size;
+
+    transition: filter 0.3s ease-in;
+
+    &--fb {
+      background-image: url(../images/icon/icon-facebook.svg);
+    }
+
+    &--inst {
+      background-image: url(../images/icon/icon-instagram.svg);
+    }
+
+    &--tw {
+      background-image: url(../images/icon/icon-twitter.svg);
+    }
+
+    &:hover {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &__copyright {
+    letter-spacing: -0.01em;
+    color: #7F8096;
+  }
+}
