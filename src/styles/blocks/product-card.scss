@@ -4,36 +4,42 @@
   &__img {
     display: block;
     width: 100%;
-    margin: 0 0 16px 0;
+    margin: 0 0 16px;
     border-radius: 8px;
+    cursor: pointer;
+
+    transition: transform 0.5s;
+
+    &:hover {
+      @include scale();
+    }
   }
 
   &__title {
     @include text(16px, 0.02em, 500);
     text-transform: uppercase;
-    color: #7F8096;
-    margin: 0 0 8px 0;
+    color: #7f8096;
+    margin: 0 0 8px;
   }
 
   &__subtitle {
-    margin: 0 0 24px 0;
+    margin: 0 0 24px;
   }
 
   &__link {
     display: inline-block;
     @include text(16px, 0.02em, 500);
     text-transform: uppercase;
-    color: #F9512E;
+    color: #f9512e;
     padding: 0 0 0 28px;
     background-image: url(../images/arrow.svg);
     background-repeat: no-repeat;
     background-position: 0 50%;
 
-    transition: all 8ms;
+    transition: transform 0.5s;
 
     &:hover {
-      font-size: 18px;
-      line-height: 18px;
+      @include scale();
     }
   }
 }
