@@ -2,19 +2,12 @@
   position: relative;
 
   &__content {
-    @include onTablet {
-      grid-template-columns: repeat(8, 1fr);
-    }
-
     flex-direction: column;
     box-sizing: border-box;
     padding: 0 0 114px;
   }
 
   &__top {
-    @include onTablet {
-      margin-bottom: 80px;
-    }
     padding: 32px 0 0;
     margin-bottom: 32px;
   }
@@ -23,9 +16,6 @@
     display: grid;
 
     @include onDesktop {
-      grid-template-columns: repeat(8, 1fr);
-    }
-    @include onTablet{
       grid-template-columns: repeat(8, 1fr);
     }
   }
@@ -41,7 +31,7 @@
   }
 
   &__link {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     letter-spacing: -0.01em;
 
     color: #1c1a26;
@@ -53,7 +43,7 @@
       display: flex;
       justify-content: center;
       text-transform: uppercase;
-      color: #F9512E;
+      color: #f9512e;
       letter-spacing: 0.02em;
 
       &::before {
@@ -75,15 +65,8 @@
       top: 30%;
       text-align: left;
     }
-    @include onTablet {
-      grid-column: 1 / 5;
-      position: absolute;
-      top: 20%;
-      text-align: left;
-      margin-bottom: 0;
-    }
 
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     text-align: center;
     letter-spacing: -0.01em;
 
@@ -93,18 +76,10 @@
   }
 
   &__title {
-    @include onTablet {
-      grid-column: 1 / 9;
-      position: absolute;
-      top: 40%;
-      font-size: 80px;
-      line-height: 68px;
-    }
-
     @include onDesktop {
       position: absolute;
       top: 40%;
-      font-family: 'Inter';
+      font-family: "Inter", sans-serif;
       font-size: 120px;
       line-height: 85%;
 
@@ -114,7 +89,7 @@
       text-transform: uppercase;
     }
 
-    font-family: 'Inter';
+    font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 64px;
     line-height: 85%;
@@ -127,12 +102,6 @@
   }
 
   &__img {
-    @include onTablet {
-      width: 326px;
-      height: 328px;
-      grid-column: 3 / 7
-    }
-
     @include onDesktop {
       height: 546px;
       width: 544px;
@@ -149,10 +118,6 @@
   }
 
   &__button {
-    @include onTablet {
-      grid-column: 3 / 7;
-    }
-
     @include onDesktop {
       grid-column: 1 / 4;
     }
@@ -166,7 +131,7 @@
     border-radius: 32px;
 
     padding: 20px 30px;
-    font-family: 'Inter';
+    font-family: "Inter", sans-serif;
     font-weight: 500;
 
     letter-spacing: 0.02em;
@@ -188,11 +153,21 @@
         content: url(images/cookie-in-button-hover.svg);
       }
     }
+
+    &:focus {
+      background-color: #b2341a;
+      border-color: #b2341a;
+      color: white;
+
+      &::before {
+        content: url(images/cookie-in-button-hover.svg);
+      }
+    }
   }
 }
 
 .header__top,
-.header__content{
+.header__content {
   display: flex;
   justify-content: space-between;
 }
