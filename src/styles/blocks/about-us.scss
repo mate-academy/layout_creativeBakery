@@ -1,0 +1,70 @@
+.about-us {
+  background-image: url("../images/about_us.png");
+  background-position: top 70% center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include onTablet {
+    background-position: top 51px center;
+    background-size: 526px auto;
+  }
+
+  @include onDesktop {
+    background-position: top 0 left 325px;
+    background-size: 718px auto;
+  }
+
+  @include onLargeDesktop {
+    background-position: top 0 center;
+  }
+
+  &__main {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__achievement {
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 80px;
+
+      &:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__achievement-text {
+    margin-bottom: 8px;
+    @extend %main-big-text;
+  }
+
+  &__achievement-title {
+    @extend %main-text;
+    color: $gray;
+  }
+}
