@@ -11,6 +11,7 @@
   &__list {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     gap: 24px;
     padding-top: 130px;
@@ -24,24 +25,20 @@
 
   &__item {
     display: inline-block;
+    width: max-content;
   }
 
   &__link {
     color: $black;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom $default-hover-time;
+
+    &:hover {
+      border-color: $black;
+    }
 
     &-contact {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 500;
-      line-height: 100%;
-      color: $orange;
-      text-transform: uppercase;
-
-      &::before {
-        content: url(../images/phone-icon.svg);
-        padding-right: 7px;
-      }
+      @include contact;
     }
   }
 }
