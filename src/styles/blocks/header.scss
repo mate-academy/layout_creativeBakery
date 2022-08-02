@@ -1,15 +1,55 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  padding: 32px 32px 32px 36px;
+    @include onMobile {
+      padding: 20px 28px 20px 20px;
+    }
 
-  @include onMobile {
-    padding: 20px 18px 20px 20px;
+    @include onDesktop {
+      padding: 32px 32px 32px 36px;
+    }
   }
 
-  @include onTablet {
-    padding: 20px 28px 20px 20px;
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__menu-link {
+    padding-right: 64px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__menu-opener {
+    display: block;
+
+    width: 20px;
+    height: 8px;
+
+    background-image: url(../icons/icon-menu--open.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu-cross {
+    display: block;
+
+    width: 13px;
+    height: 13px;
+
+    background-image: url(../icons/icon-menu--close.svg);
   }
 }
