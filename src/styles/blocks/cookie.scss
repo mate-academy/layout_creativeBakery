@@ -1,162 +1,127 @@
 .cookie {
-  display: flex;
-  flex-direction: column;
-  padding-top: 32px;
-  margin-bottom: 110px;
-
   @include onTablet {
-    padding-top: 80px;
-    margin-bottom: 178px;
+    margin-top: 0;
   }
 
   @include onDesktop {
-    padding-top: 0;
-    position: relative;
+    height: 650px;
   }
 
   &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    margin-top: 32px;
     margin-bottom: 32px;
+
+    color: #1c1a26;
     text-align: center;
 
     @include onTablet {
-      width: 50%;
-      text-align: left;
-      margin-bottom: 16px;
-    }
-
-    @include onDesktop {
-      position: absolute;
-      top: 135px;
-      grid-column: 1 / 3;
-      margin-bottom: 40px;
-      width: 25%;
-    }
-  }
-
-  &__title-container {
-    @include onTablet {
-      grid-column: 1 / 9;
       position: relative;
-      margin-bottom: 80px;
-    }
-
-    @include onDesktop {
-      margin-bottom: 0;
-      top: 0;
+      margin: 80px 0 16px;
+      text-align: left;
     }
   }
 
   &__title {
     font-weight: 400;
-    font-size: 64px;
+    font-size: 60px;
     line-height: 85%;
-    letter-spacing: -0.05em;
+
     text-align: center;
+    letter-spacing: -0.05em;
     text-transform: uppercase;
+
     color: #1c1a26;
+
     z-index: 1;
 
     @include onTablet {
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      font-size: 80px;
-      transform: translate(-50%, -50%);
+      position: relative;
+      top: 300%;
+      font-size: 64px;
     }
 
     @include onDesktop {
+      top: 50%;
       font-size: 136px;
     }
-  }
 
-  &__image-container {
-    position: relative;
-    width: 290px;
-    height: 290px;
-    margin: 0 auto;
-    background: url(../images/сrumbs.png) no-repeat center;
-
-    &::after {
-      content: "";
-      display: block;
-      padding-bottom: 100%;
-    }
-
-    @include onTablet {
-      height: 328px;
-      width: 328px;
-      padding-bottom: 0;
-    }
-
-    @include onDesktop {
-      width: 544px;
-      height: 544px;
+    @include onBigDesktop {
+      font-size: 144px;
     }
   }
 
   &__image {
     display: block;
-    position: absolute;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    object-position: center;
+    margin: 0 auto;
+    height: 290px;
 
+    background: url(../images/сrumbs.png) no-repeat center;
+
+    @include onTablet {
+      height: 328px;
+      width: 328px;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      height: 544px;
+      width: 544px;
+      top: -45%;
+    }
   }
 
   &__learn-more {
     display: flex;
-    align-items: center;
     justify-content: center;
-
-    padding: 15px;
-    width: 80%;
-    margin: 0 auto;
-
-    border-radius: 50px;
-    border: 2px solid #f9512e;
+    align-items: center;
+    height: 56px;
 
     font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
     letter-spacing: 0.02em;
-    text-transform: uppercase;
     text-decoration: none;
+    text-transform: uppercase;
+
+    border: 2px solid #f9512e;
+    box-sizing: border-box;
+    border-radius: 32px;
+
+    background-color: transparent;
     color: #f9512e;
-    transition: all 0.3s ease;
-
-    &::before {
-      content: "";
-      display: block;
-      width: 20px;
-      height: 20px;
-      padding-right: 6px;
-      background-image: url(../images/cookie-icon-orange.svg) no-repeat;
-    }
-
-    &:hover {
-      color: #fff;
-      background-color: #f9512e;
-
-      &::before {
-        background-image: url(../images/small-cookie-white.svg);
-      }
-    }
-
-    &:active {
-      border-color: #b2341a;
-      background-color: #b2341a;
-    }
 
     @include onTablet {
-      width: 50%;
+      width: auto;
     }
 
     @include onDesktop {
-      position: absolute;
-      width: 25%;
-      bottom: 100px;
-      margin-bottom: 0;
+      position: relative;
+      top: -850%;
+    }
+
+    &::before {
+      content: " ";
+      background-image: url(../images/cookie-icon-orange.svg);
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+    }
+
+    &:hover {
+      background-color: #f9512e;
+      color: #fff;
+
+      &::before {
+        content: url(../images/small-cookie-white.svg);
+        margin-right: 6px;
+      }
     }
   }
 }
