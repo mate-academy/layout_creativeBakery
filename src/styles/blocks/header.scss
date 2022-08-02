@@ -1,36 +1,83 @@
 .header {
   background-color: #eef7ff;
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-    padding: $HeaderTopPadding 0;
+  @include onDesktop {
     height: 100vh;
   }
 
+  &__logo {
+    @include onDesktop {
+      margin-top: 32px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    box-sizing: border-box;
+    padding: $HeaderTopPadding 0;
+    height: 100vh;
+
+    &-plus {
+      padding: $HeaderTopPadding 0;
+      height: 100vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      box-sizing: border-box;
+    }
+  }
+
   &__button {
-    font-family: "Inter", sans-serif;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    height: 70px;
-    width: 100%;
     color: $Main-color;
-    border: 2px solid $Main-color;
-    padding: 20px 0;
-    border-radius: 30px;
-    background-image: url(../images/icon/Icon-cookie.svg);
+    padding-left: 24px;
+    text-decoration: none;
     background-repeat: no-repeat;
-    background-position: center left 25%;
+    background-position: left;
+    border: 2px solid $Main-color;
+    border-radius: 30px;
+    margin: 0 auto;
+  }
 
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__list {
+      flex-direction: row;
+      gap: 65px;
+    }
+
+    &__item {
+      margin: 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
   }
 
   &__top {
     @include top-actions;
+
+    @include onDesktop {
+      margin-top: 32px;
+    }
   }
 
   &__title {
@@ -51,6 +98,7 @@
     @include onDesktop {
       font-size: 136px;
       line-height: 85%;
+      margin-top: 215px;
     }
 
     &-small {
@@ -60,7 +108,7 @@
       line-height: 24px;
       letter-spacing: -0.01em;
       text-align: center;
-      margin: 32px 0;
+      margin: 51px 0 32px;
     }
   }
 }

@@ -1,17 +1,18 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 20px;
+  column-gap: 16px;
 
   @include onDesktop {
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     column-gap: 24px;
   }
 
-  // @include onTablet {
-  //   grid-template-columns: repeat(12, 1fr);
-  //   column-gap: 24px;
-  // }
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
 
   // &--tablet {
   //   @include onTablet {
@@ -27,16 +28,11 @@
     @include onDesktop {
       display: grid;
     }
-
-    // @include onTablet {
-    //   display: grid;
-    // }
-
   }
 
   &__item {
-    @for $start from 1 through 12 {
-      @for $end from $start through 12 {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
         &--desktop-#{$start}-#{$end} {
           @include onDesktop {
             grid-column: #{$start} / #{$end + 1};
@@ -45,15 +41,32 @@
       }
 
     }
+    @for $start from 1 through 7 {
+      @for $end from $start through 7 {
+        &--tablet-#{$start}-#{$end} {
+          @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
 
-    // @for $start from 1 through 12 {
-    //   @for $end from $start through 12 {
-    //     &--tablet-#{$start}-#{$end} {
-    //       @include onTablet {
-    //         grid-column: #{$start} / #{$end + 1};
-    //       }
-    //     }
-    //   }
-    // }
+  &__row {
+    &-about {
+      grid-row: 1;
+    }
+
+    &-call {
+      grid-row: 2;
+    }
+
+    &-email {
+      grid-row: 2;
+    }
+
+    &-copyright {
+      grid-row: 4;
+    }
   }
 }
