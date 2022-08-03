@@ -1,7 +1,6 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  // align-items: center;
 
   padding: 20px 0 52px;
 
@@ -20,7 +19,6 @@
   }
   &__item {
     padding-right: 64px;
-    transition: transform 0.3s;
     &:last-child {
       padding-right: 0;
     }
@@ -36,10 +34,6 @@
         background-repeat: no-repeat;
       }
     }
-
-    &:hover {
-      transform: scale(1.2);
-    }
   }
 
   &__link {
@@ -48,11 +42,18 @@
     display: flex;
     align-items: center;
     color: $color-black;
+
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s;
+
     &--last {
       @extend %body-text-uppercase;
       color: $Accent-Orange;
       padding-left: 7px;
     }
-  }
 
+    &:hover {
+      border-bottom: 1px solid $Accent-Orange;
+    }
+  }
 }

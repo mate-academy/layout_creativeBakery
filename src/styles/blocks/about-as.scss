@@ -34,16 +34,16 @@
   &__link {
     display: inline-block;
 
-    border-bottom: 1px solid transparent;
     @extend %body-text;
     text-decoration: none;
     align-items: center;
     color: #fff;
-    transition: transform 0.3s;
+
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
 
     &:hover {
       border-color: #fff;
-      transform: scale(1.2);
     }
   }
 
@@ -52,21 +52,64 @@
     @extend %body-text-uppercase;
     color: #7f8096;
     padding-bottom: 16px;
+
+    @include onDesKtop {
+      padding-top: 0;
+    }
   }
 
   &__link-email {
     display: inline-block;
 
-    border-bottom: 1px solid transparent;
-
     @extend %body-text;
     text-decoration: none;
     color: #fff;
-    transition: all 0.3s;
+
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
 
     &:hover {
       border-color: #fff;
-      transform: scale(1.2);
     }
   }
+}
+
+.footer__contant {
+  @include onTablet {
+    display: flex;
+    justify-content: space-between;
+
+  }
+  &--second {
+    max-width: 330px;
+    @include onTablet {
+      // padding-left: 30%;
+      // padding-left: 70px;
+      justify-content: space-between;
+
+    }
+    @include onDesKtop {
+      max-width: 544px;
+      // padding-left: 200px;
+      // justify-content: space-between;
+
+    }
+
+  }
+}
+
+.second-child {
+  @include onDesKtop {
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
+
+.footer__copirate {
+  @include onTablet {
+    display: flex;
+    // justify-content: space-between;
+  }
+
 }
