@@ -6,7 +6,7 @@
   &__icons {
     display: flex;
     gap: 35px;
-    margin: 42px 0;
+    padding: 42px 0;
   }
 
   &__link {
@@ -15,6 +15,18 @@
     font-size: 16px;
     line-height: 150%;
     color: #fff;
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, color 0.3s;
+
+    &:hover {
+      color: $Main-color;
+      border-color: $Main-color;
+    }
+    &:active {
+      color: #b3341a;
+      border-color: #b3341a;
+    }
   }
 
   &__logo {
@@ -31,7 +43,7 @@
     color: $Seconddark;
 
     @include onDesktop {
-      margin: 40px 0 0;
+      padding: 40px 0 0;
     }
 
     &-big {
@@ -43,9 +55,14 @@
       text-transform: uppercase;
       color: #fff;
 
+      @include onTablet {
+        margin: 0;
+      }
+
       @include onDesktop {
         font-size: 72px;
         margin: 0;
+        white-space: nowrap;
       }
     }
 
@@ -57,8 +74,12 @@
       letter-spacing: -0.01em;
       color: $Seconddark;
 
+      @include onTablet {
+        padding: 42px 0;
+      }
+
       @include onDesktop {
-        margin: 42px 0;
+        padding: 42px 0;
       }
     }
   }
@@ -67,6 +88,10 @@
     list-style: none;
     padding: 0;
     margin: 16px 0 0;
+
+    @include onDesktop {
+      white-space: nowrap;
+    }
   }
 
   &__item {

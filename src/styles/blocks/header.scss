@@ -6,6 +6,11 @@
   }
 
   &__logo {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 20px;
+
     @include onDesktop {
       margin-top: 32px;
     }
@@ -13,11 +18,8 @@
 
   &__content {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: flex-start;
+    flex-direction: column;
     box-sizing: border-box;
-    padding: $HeaderTopPadding 0;
     height: 100vh;
 
     &-plus {
@@ -48,6 +50,21 @@
     border: 2px solid $Main-color;
     border-radius: 30px;
     margin: 0 auto;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-image 0.3s, background-color 0.3s, border-color 0.3s;
+
+    &:hover {
+      color: #fff;
+      background-image: url(../images/icon/Icon-cookie-light.svg);
+      background-color: $Main-color;
+      border-color: transparent;
+    }
+
+    &:active {
+      background-color: #b3341a;
+      border-color: transparent;
+    }
   }
 
   &__menu {
@@ -77,6 +94,8 @@
 
     @include onDesktop {
       margin-top: 32px;
+      white-space: nowrap;
+      justify-content: flex-end;
     }
   }
 
@@ -91,14 +110,22 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    height: 65%;
+    height: 100%;
     text-align: center;
     margin: 0;
 
     @include onDesktop {
+      height: 90%;
       font-size: 136px;
       line-height: 85%;
-      margin-top: 215px;
+      padding-top: 215px;
+      white-space: nowrap;
+      contain: content;
+    }
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 85%;
     }
 
     &-small {
@@ -109,6 +136,11 @@
       letter-spacing: -0.01em;
       text-align: center;
       margin: 51px 0 32px;
+
+      @include onDesktop {
+        margin: 0;
+        text-align: left;
+      }
     }
   }
 }
