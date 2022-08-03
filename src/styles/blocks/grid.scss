@@ -35,6 +35,13 @@
   }
 
   &__item {
+
+    &--tablet-row {
+      @include onTablet {
+        grid-row: 1;
+      }
+    }
+
     @for $start from 1 through 8 {
       @for $end from $start through 8 {
         &--desktop-#{$start}-#{$end} {
@@ -91,6 +98,12 @@
   &__row {
 
     &-header-button {
+
+      @include onTablet {
+        grid-row: 4;
+        align-self: flex-end;
+      }
+
       @include onDesktop {
         grid-row: 3;
         z-index: 1;
@@ -99,9 +112,18 @@
 
     &-header-title {
       grid-row: 2;
+
+      @include onTablet {
+        grid-row: 2 / 4;
+      }
+
       &-small {
         grid-row: 2;
         align-self: center;
+
+        @include onTablet {
+          grid-row: 1 / 2;
+        }
 
         @include onDesktop {
           padding-bottom: 120px;
