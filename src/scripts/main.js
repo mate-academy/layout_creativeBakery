@@ -8,13 +8,14 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-// a bit of experimenting, just for fun
+// theme-toggle
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('theme').addEventListener('change', function() {
-    if (this.checked) {
-      document.body.classList.add('page--change-theme');
-    } else {
-      document.body.classList.remove('page--change-theme');
-    }
-  }, false);
+  document.getElementById('theme', 'menu-theme').addEventListener('change',
+    function() {
+      if (this.checked) {
+        document.body.classList.add('page--change-theme');
+      } else {
+        document.body.classList.remove('page--change-theme');
+      }
+    }, false);
 });
