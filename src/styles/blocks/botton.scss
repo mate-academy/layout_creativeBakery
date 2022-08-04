@@ -1,0 +1,52 @@
+.button {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $colorOrange;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 56px;
+  border: 2px solid $colorOrange;
+  border-radius: 32px;
+
+  transition: all 0.3s;
+
+  &::before {
+    content: url(../icons/orange.svg);
+    margin-right: 6px;
+  }
+
+
+
+  @include onTablet {
+    position: relative;
+    top: 30%;
+  }
+
+  @include onDesktop {
+    top: -650%;
+  }
+
+  &:hover {
+    background-color: $colorOrange;
+    color: $colorWhite;
+
+    &::before {
+      content: url(../icons/white.svg);
+      margin-right: 6px;
+    }
+  }
+
+  &:active {
+    background-color: $darkOrange;
+    border-color: $darkOrange;
+  }
+}
+
