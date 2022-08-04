@@ -1,0 +1,84 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 56px;
+
+  border: 2px solid $orange;
+  border-radius: 32px;
+  outline: none;
+
+  @extend %upperCaseText;
+  text-decoration: none;
+  color: $orange;
+
+  transition: color 0.3s, background-color 0.3s;
+
+  &:hover {
+    color: $white;
+    background-color: $orange;
+  }
+
+  &:focus {
+    color: $white;
+    background-color: $orange-dark;
+    border-color: $orange-dark;
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+
+    background-image: url(../images/icons/icon__cookie.svg);
+    background-repeat: no-repeat;
+  }
+
+  &:hover::before {
+    background-image: url(../images/icons/icon__cookie-hover.svg);
+  }
+
+  &:focus::before {
+    background-image: url(../images/icons/icon__cookie-focus.svg);
+  }
+
+  &__link {
+    width: fit-content;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    background-color: transparent;
+
+    transition: border-bottom 0.3s;
+
+    &::before {
+      background-image: url(../images/icons/call.svg);
+    }
+
+    &:hover {
+      color: $orange;
+      background-color: transparent;
+      border-bottom: 1px solid $orange;
+    }
+
+    &:focus {
+      color: $orange-dark;
+      background-color: transparent;
+    }
+
+    &:hover::before {
+      background-image: url(../images/icons/call.svg);
+    }
+
+    &:focus::before {
+      background-image: url(../images/icons/call-focus.svg);
+      border-bottom-color: $orange-dark;
+    }
+  }
+}
