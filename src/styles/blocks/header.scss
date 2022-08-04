@@ -26,15 +26,23 @@
   }
 
   &__link {
+    display: block;
     letter-spacing: -0.01em;
-    transition: color 0.4s ease-in-out;
+    transition: color 0.4s ease-in-out, transform 0.4s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $accent-color;
+    }
 
     &--contact-us {
       @extend %contact-us-styles;
-    }
 
-    &:hover {
-      color: $accent-color;
+      &:hover,
+      &:hover::before {
+        color: #b2341a;
+        filter: brightness(0) saturate(100%) invert(19%) sepia(90%) saturate(2244%) hue-rotate(356deg) brightness(93%) contrast(85%);
+      }
     }
   }
 }

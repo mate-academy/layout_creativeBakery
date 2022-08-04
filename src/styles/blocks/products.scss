@@ -16,6 +16,10 @@
 
     @include onPhone {
       flex-wrap: wrap;
+
+      &:nth-child(2) {
+        justify-content: center;
+      }
     }
   }
 
@@ -31,8 +35,14 @@
     }
 
     @include onPhone {
+      margin-right: 0;
+
       &:not(:last-child) {
         margin-bottom: 56px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 0;
       }
     }
   }
@@ -68,6 +78,12 @@
 
   &__img {
     margin-bottom: 16px;
+    border-radius: 8px;
+    transition: transform 0.4s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
 
     @include onTablet {
       width: $products-width;
@@ -92,10 +108,18 @@
     padding-left: 25px;
     color: $accent-color;
 
+    transition: color 0.3s ease-in-out;
+
     &::before {
       content: url(../images/icon/icon-arrow.svg);
       position: absolute;
       left: 0;
+    }
+
+    &:hover,
+    &:hover::before {
+      color: #B2341A;
+      filter: brightness(0) saturate(100%) invert(19%) sepia(90%) saturate(2244%) hue-rotate(356deg) brightness(93%) contrast(85%);
     }
   }
 }
