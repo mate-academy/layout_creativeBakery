@@ -1,0 +1,92 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $c-l-blue;
+  margin-bottom: 32px;
+  width: 100%;
+
+  @include onTablet {
+    margin-bottom: 80px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 135px;
+  }
+
+  &__logo {
+    padding: 20px;
+  }
+
+  &__desktop {
+    display: flex;
+    color: $c-black;
+    list-style: none;
+    font-size: 16px;
+    line-height: 150%;
+    cursor: pointer;
+    gap: 64px;
+    letter-spacing: -0.01em;
+
+    &-link {
+      text-decoration: none;
+      color: $c-black;
+      padding: 10px;
+      &-last {
+        color: $c-a-orange;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__burger {
+    padding: 20px;
+  }
+
+  &__desktop-item {
+    padding: 10px;
+    border-bottom: 1px solid transparent;
+    transition: all 300ms ease;
+
+    &:last-child {
+      color: $c-a-orange;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+
+      &::before {
+        content: "";
+        background-image: url(../images/phohe.svg);
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        margin-right: 8px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &:hover {
+      color: $c-a-orange;
+      border-bottom: 1px solid $c-a-orange;
+    }
+  }
+
+  &__hiden {
+    display: none;
+  }
+
+  @include onDesktop {
+    max-width: 1200px;
+
+    &__visible {
+      display: none;
+    }
+
+    &__hiden {
+      display: block;
+    }
+  }
+}
