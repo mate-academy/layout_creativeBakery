@@ -1,0 +1,106 @@
+.menu {
+  background-color: $colorBlue;
+  
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: $headerTopPadding 0;
+  }
+
+  &__top {
+    margin-bottom: 132px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+    color: $colorBlack;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $colorBlack;
+    }
+
+    &--contact {
+      padding-top: 8px;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $colorRed;
+
+      &:hover {
+        border-color: $colorRed;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        top: 50%;
+        width: 18px;
+        height: 18px;
+        padding-right: 5px;
+        transform: translate(-25%, 25%);
+
+        background-image: url(../images/Vector-3.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+
+  &__desktop {
+    height: 100%;
+    align-items: center;
+    display: none;
+
+    @include onDasktop {
+      display: inline-flex;
+    }
+
+    &-list {
+      flex-direction: row;
+    }
+
+    &-item {
+      margin-bottom: unset;
+      margin-right: 64px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-link--contact {
+      padding-top: unset;
+    }
+  }
+}

@@ -1,0 +1,136 @@
+.places {
+  margin-bottom: 64px;
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  @include onTablet {
+    margin-bottom: 88px;
+  }
+
+  &__desktop {
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  
+    @include onDasktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__row {
+    @include onTablet {
+      grid-column: 5 / 9;
+    }
+
+    @include onDasktop {
+      grid-column: 4 / 7;
+    }
+  }
+
+  &__end {
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDasktop {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &__ends {
+    @include onTablet {
+      grid-column: 5 / 9;
+    }
+
+    @include onDasktop {
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 356px;
+    border-radius: 8px;
+
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 16px;
+
+    @include onTablet {
+      height: 424px;
+    }
+
+    @include onDasktop {
+      height: 512px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0 0 24px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $colorBlack;
+    width: 100%;
+  }
+
+  &__link {
+    margin: 0 0 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $colorGrey;
+    border-bottom: 1px solid transparent;
+
+    &-all {
+      margin: 0;
+      text-decoration: none;
+      color: $colorGrey;
+      transition: 0.3s;
+
+      &:hover {
+        color: $colorBlack;
+      }
+    }
+
+    &-red {
+      margin: 0;
+      text-decoration: none;
+      color: $colorRed;
+      transition: 0.3s;
+
+      &:hover {
+        border-color: $colorRed;
+      }
+
+      &:active {
+        color: #B2341A;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        top: 50%;
+        transform: translate(25%, 15%);
+        margin-right: 8px;
+
+        height: 15px;
+        width: 15px;
+        background-image: url(../images/Vector-8.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}
