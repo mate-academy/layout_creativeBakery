@@ -1,0 +1,57 @@
+.menu {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $c-lightBlue;
+  z-index: 1;
+  transform: translateY(-100%);
+  transition: transform ease-in-out $transitionDuration;
+
+  @include forDesktop() {
+    display: none;
+  }
+
+  &__wraper {
+    padding: $padControlWrapMobileHeader;
+    display: flex;
+    flex-direction: column;
+    row-gap: 132px;
+    height: 100%;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__hide {
+    display: flex;
+    justify-self: right;
+    background-image: url("../images/svg/close_cross.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    width: 22px;
+    height: 22px;
+    border: none;
+    cursor: pointer;
+    transition: transform ease-in-out $transitionDuration;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+
+  &--is-active {
+    transform: translate(0);
+  }
+}

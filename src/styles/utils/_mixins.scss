@@ -1,6 +1,98 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin titleFontProperties(
+  $fontSize: 48px,
+  $fontWeight: 400,
+  $lineHeight: 85%,
+  $letterSpace: -0.05em
+) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpace;
+}
+
+/*Content layout*/
+$maxContentWidth: 1200px;
+@mixin limitContentWidth ($maxContentWidth: $maxContentWidth) {
+  max-width: $maxContentWidth;
+  margin: 0 auto;
+}
+
+@mixin gridColumns($numberOfCols) {
+  @for $start from 1 through $numberOfCols {
+    @for $end from $start through $numberOfCols {
+      &--cols--#{$start}-#{$end} {
+        grid-column: #{$start} / #{$end + 1};
+      }
+    }
+  }
+}
+
+/*Social Icons*/
+@mixin socialIcons() {
+  $icons: (
+    "icon1": "facebook",
+    "icon2": "instagram",
+    "icon3": "twitter"
+  );
+
+  @each $icon, $name in $icons {
+    &__link--#{$icon} {
+      background-image: url("../images/svg/Icon-#{$name}.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+      transition: background-image ease-in-out $transitionDuration;
+    }
+
+    &__link--#{$icon}:hover,
+    &__link--#{$icon}:focus {
+      background-image: url("../images/svg/Icon-#{$name}-white.svg");
+    }
+  }
+}
+
+@mixin btnIcon() {
+  &::before {
+    content: url("../images/svg/btn_icon.svg");
+    margin-right: 6px;
+  }
+
   &:hover {
-    #{$_property}: $_toValue;
+    background-color: $c-accentOrangeColor;
+    color: $c-white;
+
+    &::before {
+      content: url("../images/svg/btn_icon_white.svg");
+    }
+  }
+
+  &:focus {
+    background-color: $c-darkOrange;
+    border-color: $c-darkOrange;
+    color: $c-white;
+
+    &::before {
+      content: url("../images/svg/btn_icon_white.svg");
+    }
+  }
+}
+
+/*Media Queries*/
+@mixin forTablet () {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin forDesktop () {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin forDesktopXL () {
+  @media (min-width: 1200px) {
+    @content;
   }
 }

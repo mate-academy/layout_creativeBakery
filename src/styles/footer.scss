@@ -1,0 +1,123 @@
+.footer {
+  background-color: $c-mainBlackColor;
+  color: $c-white;
+  width: 100vw;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 14px;
+
+  &__wraper {
+    padding: $paddingMobileFooter;
+    width: 100%;
+
+    @include forTablet() {
+      padding: $paddingTabletFooter;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 24px;
+    }
+
+    @include forDesktop() {
+      padding: $paddingDesktopLGFooter;
+      @include limitContentWidth();
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include forDesktopXL() {
+      padding: $paddingDesktopXLGFooter;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+
+    @include forTablet() {
+      grid-row-start: 2;
+    }
+
+    @include forDesktop() {
+      @include gridColumns(6);
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    margin-bottom: 40px;
+
+    @include forDesktop() {
+      &--break {
+        display: none;
+      }
+
+      @include gridColumns(6);
+      grid-row-start: 1;
+    }
+  }
+
+  &__call {
+    @include forDesktop() {
+      @include gridColumns(6);
+      grid-row-start: 2;
+    }
+  }
+
+  &__phones {
+    margin-bottom: 40px;
+  }
+
+  &__email {
+    margin-bottom: 42px;
+
+    &--desktop {
+      display: none;
+    }
+
+    @include forDesktop() {
+      @include gridColumns(6);
+
+      &--tab {
+        display: none;
+      }
+
+      &--desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 44px;
+  }
+
+  &__icons {
+    margin-bottom: 44px;
+
+    @include forTablet() {
+      grid-row-start: 3;
+    }
+
+    @include forDesktop() {
+      @include gridColumns(6);
+    }
+  }
+
+  &__link {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color ease-in-out $transitionDuration,
+      color ease-in-out $transitionDuration;
+
+    &:hover {
+      border-bottom-color: $c-accentOrangeColor;
+      color: $c-accentOrangeColor;
+    }
+  }
+
+  &__copy {
+    color: $c-grayColor;
+    grid-row-start: 3;
+  }
+}

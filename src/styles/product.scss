@@ -1,0 +1,70 @@
+.product {
+  &__details-wraper {
+    padding: $paddingXMobile;
+    margin-bottom: $marginBottomMobileProd;
+
+    @include forTablet() {
+      padding: $paddingXTablet;
+      margin-bottom: $marginBottomTabProd;
+    }
+
+    @include forDesktop() {
+      @include limitContentWidth();
+      margin-bottom: $marginBottomDeskLGProd;
+    }
+
+    @include forDesktopXL() {
+      margin-bottom: $marginBottomDeskXLGProd;
+      padding: $paddingXXLGDesktop;
+    }
+
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    align-self: left;
+
+    @include forTablet() {
+      font-size: 56px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 56px;
+    align-self: left;
+
+    @include forTablet() {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__card-wraper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    row-gap: 64px;
+
+    @include forTablet() {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 88px;
+      column-gap: 24px;
+    }
+
+    @include forDesktop() {
+      grid-template-columns: repeat(6, 1fr);
+      row-gap: 88px;
+      column-gap: 24px;
+    }
+
+    @include forDesktopXL() {
+      grid-template-columns: repeat(6, 1fr);
+      row-gap: 88px;
+      column-gap: 24px;
+    }
+  }
+}

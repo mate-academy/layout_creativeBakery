@@ -1,0 +1,207 @@
+.header {
+  $coordinateLeftDesktop: 44px;
+  $coordinateLeftXLDesktop: 126px;
+  $imgHeightXLDesktop: 546px;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  &__content-wraper {
+    @include forDesktop() {
+      @include limitContentWidth();
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__control-wraper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $padControlWrapMobileHeader;
+    margin-bottom: 32px;
+    width: 100%;
+
+    @include forTablet() {
+      padding: $padControlWrapTabHeader;
+      margin-bottom: 80px;
+    }
+
+    @include forDesktop() {
+      margin-bottom: 0;
+      padding: $padControlWrapDeskHeader;
+    }
+
+    @include forDesktopXL() {
+      margin-bottom: 0;
+    }
+  }
+
+  &__menu-toggler {
+    border: none;
+    background-image: url("../images/svg/menu_mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    width: 20px;
+    height: 8px;
+    transition: transform ease-in-out $transitionDuration;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+    @include forDesktop() {
+      display: none;
+    }
+  }
+
+  &__hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: $paddingXMobile;
+    position: relative;
+    height: 100%;
+
+    @include forTablet() {
+      padding: $paddingXTablet;
+    }
+
+    @include forDesktop() {
+      padding: $paddingXTablet;
+    }
+
+    @include forDesktopXL() {
+      padding: $paddingXXLGDesktop;
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+
+    &--break {
+      display: none;
+    }
+
+    @include forTablet() {
+      align-self: flex-start;
+      text-align: left;
+    }
+
+    @include forDesktop() {
+      position: absolute;
+      left: $coordinateLeftDesktop;
+      transform: translateY(-136px);
+
+      margin-right: 24px;
+
+      &--break {
+        display: block;
+      }
+    }
+
+    @include forDesktopXL() {
+      left: $coordinateLeftXLDesktop;
+      transform: translateY(-144px);
+
+      &--break {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    font-size: $mobileLTitleFontSize;
+    text-align: center;
+
+    @include forTablet() {
+      position: absolute;
+      left: $coordinateLeftDesktop;
+      right: $coordinateLeftDesktop;
+      font-size: $tabletLTitleFontSize;
+      white-space: nowrap;
+    }
+
+    @include forDesktop() {
+      left: $coordinateLeftDesktop;
+
+      font-size: $desktopXLTitleFontSize;
+    }
+
+    @include forDesktopXL() {
+      left: $coordinateLeftXLDesktop;
+      font-size: $desktopXXLTitleFontSize;
+    }
+  }
+
+  &__photo {
+    display: flex;
+    justify-self: center;
+
+    @include forDesktop() {
+      @include gridColumns(6);
+      justify-content: center;
+      align-items: center;
+      grid-row-start: 1;
+    }
+  }
+
+  &__cookie {
+    display: block;
+    width: 288px;
+    height: 290px;
+
+    @include forTablet() {
+      width: 326px;
+      height: 328px;
+    }
+
+    @include forDesktop() {
+      width: 544px;
+      height: 546px;
+    }
+
+    @include forDesktopXL() {
+      width: 584px;
+      height: 586px;
+    }
+  }
+
+  &__btn {
+    @include btnIcon();
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    white-space: nowrap;
+    padding: 20px 0;
+    border-radius: 32px;
+    border: 2px solid $c-accentOrangeColor;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $c-accentOrangeColor;
+    width: 100%;
+    transition: background-color ease-in-out $transitionDuration,
+      color ease-in-out $transitionDuration,
+      content ease-in-out $transitionDuration;
+
+    @include forTablet() {
+      width: 326px;
+    }
+
+    @include forDesktop() {
+      position: absolute;
+      left: $coordinateLeftDesktop;
+      transform: translateY($desktopLTitleFontSize + 64px);
+    }
+
+    @include forDesktopXL() {
+      left: $coordinateLeftXLDesktop;
+      transform: translateY($desktopXLTitleFontSize + 64px);
+    }
+  }
+}

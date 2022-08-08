@@ -1,0 +1,34 @@
+.btn {
+  display: inline-block;
+  align-items: center;
+  color: $c-accentOrangeColor;
+  font-weight: 500;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom ease-in-out $transitionDuration;
+
+  &::before {
+    content: url("../images/svg/card_btn_arrow.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    margin-right: 8px;
+
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    border-bottom-color: $c-accentOrangeColor;
+  }
+
+  &:focus {
+    border-bottom-color: $c-darkOrange;
+    color: $c-darkOrange;
+
+    &::before {
+      content: url("../images/svg/card_btn_arrow-dark.svg");
+    }
+  }
+}

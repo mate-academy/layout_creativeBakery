@@ -1,0 +1,35 @@
+.card {
+  @include gridColumns(1);
+
+  &__item {
+    @include forDesktop() {
+      @include gridColumns(6);
+      width: 100%;
+      height: auto;
+      flex-shrink: 1;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    transition: transform ease-in-out $transitionDuration;
+
+    &:hover {
+      transform: scale(1.05);
+      z-index: 1;
+    }
+  }
+
+  &__name {
+    margin-bottom: 8px;
+    font-weight: 500;
+    line-height: 100%;
+    color: #7f8096;
+  }
+
+  &__desc {
+    margin-bottom: 24px;
+  }
+}
