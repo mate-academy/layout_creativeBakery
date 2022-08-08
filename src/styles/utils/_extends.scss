@@ -31,6 +31,24 @@
   color: $headings-color;
 }
 
+%links-decoration {
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    border-bottom: 1px solid currentColor;
+    transition: width 0.3s;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
 %top-actions {
   display: flex;
   justify-content: space-between;
