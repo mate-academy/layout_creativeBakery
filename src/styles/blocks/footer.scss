@@ -1,5 +1,6 @@
 .contact-us {
   background-color: rgba(28, 26, 38, 1);
+  box-sizing: border-box;
   
   .container {
     padding: 60px 20px 50px;
@@ -20,6 +21,10 @@
       margin-bottom: 64px;
     }
 
+    @include onTablet-extra {
+      margin-bottom: 115px;
+    }
+
     @include onDesktop {
       margin-bottom: 64px;
     }
@@ -37,7 +42,14 @@
   &__list {
     display: flex;
     flex-direction: column;
-    margin-bottom: 64px;
+    margin-bottom: 106px;
+
+    // @include onTablet-extra {
+    //   margin-bottom: 60px;
+    // }
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
   }
 
   &__item {
@@ -101,23 +113,27 @@
     }
   }
 
+  &__title-cont {
+    margin-bottom: 54px;
+  }
+
   &__title {
     font-weight: 400;
     font-size: 56px;
     line-height: 85%;
     color: $white-color;
-    margin-bottom: 54px;
     text-transform: uppercase;
   }
 
   &__info {
     @include onTablet {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
     }
 
     @include onDesktop {
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
     }
     
@@ -145,11 +161,11 @@
       margin-bottom: 40px;
 
       @include onTablet {
-        margin-bottom: 90px;
+        margin-bottom: 40px;
       }
 
-      @include onTablet {
-        margin-bottom: 90px;
+      @include onDesktop {
+        margin-bottom: 70px;
       }
       
     }
@@ -158,6 +174,14 @@
 
   &__email {
     margin-bottom: 40px;
+  }
+
+  &__licen-cont {
+    display: block;
+
+    @include onDesktop {
+      display: none;
+    }
   }
 
   &__licen {
@@ -184,6 +208,15 @@
 
       @include onDesktop {
         display: none;
+      }
+    }
+
+    &--unvis {
+      @include onTablet {
+        display: none;
+      }
+      @include onDesktop {
+        display: block;
       }
     }
   }
