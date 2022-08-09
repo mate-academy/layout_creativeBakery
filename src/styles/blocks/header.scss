@@ -1,7 +1,33 @@
+@keyframes start-mob {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: top center;
+  }
+}
+
+@keyframes start {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  50% {
+    transform: rotate(150deg);
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+
 .header {
 
   box-sizing: border-box;
   height: 100vh;
+  perspective: 400px;
 
   &--background {
     &--blue {
@@ -46,6 +72,10 @@
 
   &__image {
     position: relative;
+    animation: start-mob 1s linear;
+    @include screenUp720() {
+      animation: start 1s linear;
+    }
 
     &--size {
       position: absolute;
