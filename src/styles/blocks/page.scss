@@ -1,0 +1,47 @@
+.page {
+  font-family: "Inter", sans-serif;
+  color: $black;
+  scroll-behavior: smooth;
+
+  &__body {
+    position: relative;
+    margin: 0;
+    background-color: $light-blue;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin-bottom: 135px;
+
+    @include onBigDesktop {
+      margin-bottom: 144px;
+    }
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+    @include onMobile {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: all 350ms;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__footer {
+    position: relative;
+  }
+}

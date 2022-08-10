@@ -1,0 +1,45 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 24px;
+
+  @include onMobile {
+    display: block;
+  }
+
+  &__item {
+    &--grid {
+      display: grid;
+      justify-items: center;
+    }
+
+    &--2-7-big {
+      @include onBigDesktop {
+        justify-items: center;
+        grid-column: 2 / 8;
+      }
+
+      @include onTablet {
+        justify-items: center;
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--#{$start}-#{$end}-tab {
+          @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}

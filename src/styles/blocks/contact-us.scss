@@ -1,0 +1,56 @@
+.contact-us {
+  color: $white;
+  font-size: 72px;
+  @include font-400-title;
+
+  @include onTablet {
+    font-size: 56px;
+  }
+
+  @include onMobile {
+    font-size: 48px;
+  }
+
+  &__call-us {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    color: $grey;
+    @include font-500;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+    color: $white;
+    @include font-400;
+    text-decoration: none;
+    transition: all 300ms;
+
+    &:hover {
+      @include onHover;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+    }
+
+    &--email {
+      &:last-child {
+        @include onTablet {
+          margin-bottom: 48px;
+        }
+
+        @include onMobile {
+          margin-bottom: 42px;
+        }
+      }
+    }
+  }
+}
