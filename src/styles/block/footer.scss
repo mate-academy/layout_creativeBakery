@@ -1,0 +1,147 @@
+.footer {
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: $colorBlack;
+
+  padding: 60px 0;
+
+  @include onTab {
+    padding: 90px 0;
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 85%;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $colorWhite;
+    margin-bottom: 24px;
+    padding: 64px 0 9px;
+
+    @include onTab {
+      font-size: 56px;
+      padding: 0 0 9px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+
+    &-flex {
+      display: flex;
+      justify-content: space-between;
+      min-width: max-content;
+      gap: 40px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    gap: 16px;
+
+    &-email {
+      margin-left: 20px;
+      margin-top: 40px;
+
+      @include onTab {
+        margin-top: 40px;
+      }
+
+      @include onDesktop {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__item {
+    &--start {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $colorGray;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $colorWhite;
+
+    transition: color $transitionTime;
+
+    &:hover {
+      color: $colorOrange;
+    }
+  }
+
+  &__blog {
+    display: flex;
+    gap: 40px;
+    padding-top: 40px;
+
+    @include onTab {
+      padding-top: 48px;
+    }
+
+    &-icon {
+      display: block;
+      width: 24px;
+      height: 20px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      &-fb {
+        background-image: url(../images/facebook.svg);
+        transition: background-image $transitionTime;
+
+        &:hover {
+          color: $colorWhite;
+        }
+
+        &:focus {
+          color: $colorWhite;
+        }
+      }
+
+      &-ig {
+        background-image: url(../images/instagram.svg);
+        transition: background-image $transitionTime;
+
+        &:hover {
+          color: $colorWhite;
+        }
+
+        &:focus {
+          color: $colorWhite;
+        }
+      }
+
+      &-tw {
+        background-image: url(../images/Twitter.svg);
+        transition: background-image $transitionTime;
+
+        &:hover {
+          background-image: url(../images/Vector.svg);
+        }
+
+        &:focus {
+          background-image: url(../images/Vector.svg);
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    color: $colorGray;
+
+    padding-top: 40px;
+
+    @include onTab {
+      padding-top: 48px;
+    }
+  }
+}

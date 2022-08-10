@@ -1,0 +1,53 @@
+.nav {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    gap: 64px;
+
+    list-style: none;
+  }
+
+  &__item {
+    &:last-child {
+      font-weight: 500;
+      line-height: 100%;
+
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+
+      &::before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+        background-image: url(/images/phone.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: translate(-3px, 3px);
+      }
+    }
+
+    transition: all $transitionTime;
+
+    &:hover {
+      transform: scale(115%);
+    }
+  }
+  
+  &__link {
+    text-decoration: none;
+    color: $colorBlack;
+    padding: 30px 0;
+
+    &--last {
+      text-decoration: none;
+      color: $colorOrange;
+    }
+  }
+}
