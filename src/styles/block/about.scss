@@ -1,4 +1,8 @@
 .about {
+  @include onTablet {
+    height: 100vh;
+  }
+
   &__content {
     @include onTablet {
       display: grid;
@@ -8,6 +12,9 @@
   }
 
   &__title {
+    margin: 0;
+    padding: 0;
+    width: 300px;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
@@ -17,8 +24,11 @@
 
   &__section-titles {
     z-index: 1;
+    position: relative;
+
     @include onTablet {
-      grid-column: 1 / 5;
+      position: absolute;
+      grid-column: 1 / 4;
       font-size: 56px;
     }
 

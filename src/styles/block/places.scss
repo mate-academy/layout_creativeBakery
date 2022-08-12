@@ -53,21 +53,52 @@
     }
   }
 
-  &__photo {
+  &__photo-container {
     width: 100%;
     height: 356px;
     border-radius: 8px;
-
-    object-fit: cover;
-    object-position: center;
     margin-bottom: 16px;
+
+    transition: 0.3s ease;
+    overflow: hidden;
+
+    &:hover {
+      transition: 0.3s ease;
+      box-shadow: 0 6px 33px rgba(185, 46, 155, 0.66);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
 
     @include onTablet {
       height: 424px;
     }
 
     @include onDasktop {
+      padding-bottom: 0;
       height: 512px;
+    }
+
+    @include onDesign {
+      height: 560px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s ease;
+
+    &:hover {
+      transition: 0.3s ease;
+      transform: scale(1.2);
     }
   }
 
@@ -79,7 +110,6 @@
     line-height: 150%;
     letter-spacing: -0.01em;
     color: $colorBlack;
-    width: 100%;
   }
 
   &__link {
@@ -96,7 +126,7 @@
       margin: 0;
       text-decoration: none;
       color: $colorGrey;
-      transition: 0.3s;
+      transition: 0.3s ease;
 
       &:hover {
         color: $colorBlack;
@@ -107,7 +137,7 @@
       margin: 0;
       text-decoration: none;
       color: $colorRed;
-      transition: 0.3s;
+      transition: 0.3s ease;
 
       &:hover {
         border-color: $colorRed;
