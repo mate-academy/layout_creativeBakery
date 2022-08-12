@@ -1,0 +1,120 @@
+.footer {
+  padding: 61px 0 56px;
+  background-color: $c-text-default;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__block:not(:last-child) {
+    margin-bottom: $m-default * 7;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__logo {
+    @include onTablet {
+      margin-bottom: 76px;
+    }
+
+    @include onDesktop {
+      @include hover(transform, scale(1.1),
+      filter, brightness(0) saturate(100%) invert(34%) sepia(22%)
+      saturate(4683%) hue-rotate(343deg) brightness(115%) contrast(95%));
+    }
+  }
+
+  &__title {
+    @include textTitle(48px);
+    text-align-last: left;
+    color: #fff;
+
+    @include onTablet {
+      margin-bottom: 16px;
+    }
+
+    @include onDesktop {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__list,
+  &__copiright {
+    margin-top: $m-default * 4;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__item {
+    &--text {
+      margin-bottom: 8px;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $c-text-light;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 8px 0;
+    letter-spacing: -0.01em;
+    color: #fff;
+
+    @include onDesktop {
+      max-width: max-content;
+      @include linksHoverEffect;
+    }
+  }
+
+  &__social-block {
+    margin-top: 42px;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+
+    &--desktop {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+
+    &--mobile {
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__social-link {
+    svg {
+      transform: fill 0.4s;
+      fill: $c-main;
+    }
+
+    &:hover,
+    &:focus {
+      svg {
+        fill: #fff;
+      }
+    }
+  }
+
+  &__copiright {
+    letter-spacing: -0.01em;
+    color: $c-text-light;
+
+    @include onDesktop {
+      align-self: end;
+    }
+  }
+}

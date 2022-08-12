@@ -1,0 +1,55 @@
+.nav {
+  $padding-nav: 16px;
+  padding: 0 $padding-nav;
+
+  @include onDesktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+  }
+
+  &__logo-block {
+    height: var(--logo-block-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    max-width: 128px;
+
+    animation: bounceInLeft 1.5s cubic-bezier(0.21, 0.61, 0.35, 1);
+
+    @include onDesktop {
+      @include hover(transform, scale(1.1),
+      filter, brightness(0) saturate(100%) invert(34%) sepia(22%)
+      saturate(4683%) hue-rotate(343deg) brightness(115%) contrast(95%));
+    }
+  }
+
+  &__burger {
+    @include square(20px);
+    background: url("/icons/burger.svg") center / contain no-repeat;
+
+    &--active {
+      background: url("/icons/cross.svg") center / contain no-repeat;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: var(--logo-block-height);
+    width: calc(100% - #{$padding-nav} * 2);
+    z-index: 1;
+
+    @include onDesktop {
+      position: initial;
+      width: initial;
+    }
+  }
+}

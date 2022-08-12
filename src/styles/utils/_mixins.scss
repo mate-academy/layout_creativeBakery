@@ -1,6 +1,92 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover($_property, $_toValue, $_property2: 0, $_toValue2: 0) {
+  cursor: pointer;
+  transition: #{$_property} 0.4s;
+
   &:hover {
     #{$_property}: $_toValue;
+  }
+
+  @if $_property2 != 0 {
+    transition: #{$_property} 0.4s, #{$_property2} 0.4s;
+    &:hover {
+      #{$_property2}: $_toValue2;
+    }
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 667px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onBigDesktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin square($width) {
+  width: $width;
+  height: $width;
+}
+
+@mixin textTitle($fz) {
+  font-weight: 400;
+  font-size: $fz;
+  line-height: 85%;
+  text-align: center;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin textHoverEffect {
+  & {
+    color: #0000;
+    background: linear-gradient(90deg, #{$c-main-focused} 50%,#000 0)
+      var(--pos,100%)/200% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: color 0.4s, background 0.4s;
+  }
+
+  &:hover {
+    --pos: 0%;
+  }
+}
+
+@mixin linksHoverEffect {
+  & {
+    position: relative;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: $c-main-focused;
+    height: 2px;
+    transition-property: left, right;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &:before {
+      z-index: 1;
+      left: 0;
+      right: 0;
+    }
   }
 }
