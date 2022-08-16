@@ -65,10 +65,6 @@
     }
     
     transition: transform $transitionTime;
-
-    &:hover {
-      transform: translateX(12%) scale(125%);
-    }
   }
 
   &__link {
@@ -90,52 +86,38 @@
     @include onTab {
       padding-top: 48px;
     }
-
+    
     &-icon {
-      display: block;
-      width: 24px;
-      height: 20px;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-
+      background-color: $colorOrange;
+      transition: all $transitionTime;
+  
+      &:hover {
+        background-color: $colorWhite;
+      }
+  
+      &:focus {
+        background-color: $colorWhite;
+      }
+  
       &-fb {
-        background-image: url(../images/facebook.svg);
-        transition: background-image $transitionTime;
-
-        &:hover {
-          color: $colorWhite;
-        }
-
-        &:focus {
-          color: $colorWhite;
-        }
+        -webkit-mask: url(../images/facebook.svg) no-repeat center;
+        mask: url(../images/facebook.svg) no-repeat center;
+        width: 15px;
+        height: 20px;
       }
-
+  
       &-ig {
-        background-image: url(../images/instagram.svg);
-        transition: background-image $transitionTime;
-
-        &:hover {
-          color: $colorWhite;
-        }
-
-        &:focus {
-          color: $colorWhite;
-        }
+        -webkit-mask: url(../images/instagram.svg) no-repeat center;
+        mask: url(../images/instagram.svg) no-repeat center;
+        width: 24px;
+        height: 20px;
       }
-
+  
       &-tw {
-        background-image: url(../images/Twitter.svg);
-        transition: background-image $transitionTime;
-
-        &:hover {
-          background-image: url(../images/Vector.svg);
-        }
-
-        &:focus {
-          background-image: url(../images/Vector.svg);
-        }
+        -webkit-mask: url(../images/Twitter.svg) no-repeat center;
+        mask: url(../images/Twitter.svg) no-repeat center;
+        width: 21px;
+        height: 20px;
       }
     }
   }
