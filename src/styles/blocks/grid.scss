@@ -1,0 +1,48 @@
+.grid {
+  display: block;
+  align-items: center;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onDesktopQHD {
+    grid-template-columns: repeat(8, 128px);
+  }
+
+  &__item {
+    align-self: start;
+    
+    @include onTablet {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--tablet-column-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @include onDesktop {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--desktop-column-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @include onTablet {
+      @for $start from 1 through 4 {
+        @for $end from $start through 4 {
+          &--row-#{$start}-#{$end} {
+            grid-row: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}
