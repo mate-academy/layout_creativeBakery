@@ -1,0 +1,76 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__top {
+    padding: 0 0 100px;
+    background-color: #ffeefc;
+
+    @include onTablet {
+      padding: 0 0 228px;
+    }
+
+    @include onDesktop {
+      padding: 0 0 312px;
+
+      background-size: 544px 546px;
+      background-position: 372px 0;
+      background-repeat: no-repeat;
+      background-image: url(../images/Cookie.svg);
+    }
+
+    @include onDesign {
+      padding: 0 0 290px;
+      background-size: 584px 586px;
+      background-position: 432px 0;
+    }
+  }
+
+  &__products {
+    padding: 0 0 80px;
+    background-color: #ffeefc;
+
+    @include onTablet {
+      padding: 0 0 160px;
+    }
+
+    @include onDesktop {
+      padding: 0 0 186px;
+    }
+  }
+
+  &__about {
+    padding: 0 0 72px;
+    background-color: #ffeefc;
+
+    @include onTablet {
+      padding: 0 0 152px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+    }
+  }
+
+}

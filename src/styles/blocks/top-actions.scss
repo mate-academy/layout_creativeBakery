@@ -1,0 +1,73 @@
+.top-actions {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 64px;
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+    text-decoration: none;
+    transition: all 0.5s;
+    
+    &:hover {
+      color: #f9512e;
+
+      &::after {
+        position: absolute;
+        display: block;
+        height: 1px;
+        content: "";
+        width: 100%;
+        background: #f9512e;
+        bottom: 0;
+      }
+    }
+  }
+
+  &__call {
+    margin-left: 28px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #f9512e;
+    text-decoration: none;
+    transition: all 0.5s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      padding-right: 7px;
+      
+      width: 18px;
+      height: 18px;
+      transform: translate(-100%);
+
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    
+      background-image: url(../images/phone.svg);
+    }
+
+    &:hover {
+      filter: invert(0%) sepia(5%) saturate(0%) 
+        hue-rotate(44deg) brightness(50%) contrast(102%);
+    }
+  }
+}
