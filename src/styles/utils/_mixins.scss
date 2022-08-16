@@ -1,6 +1,52 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin onBigDesktop {
+  @media (min-width: 1201px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: 639px) {
+    @content;
+  }
+}
+
+@mixin font-400 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+@mixin font-500 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+@mixin font-400-title {
+  font-weight: 400;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin onHover {
+  transform: scale(1.1);
+  text-decoration-line: underline;
+}
+
+@mixin onHover-logo {
+  transition: transform 350ms;
+
   &:hover {
-    #{$_property}: $_toValue;
+    transform: scale(1.2);
   }
 }
