@@ -26,3 +26,5 @@ Implement landing page according to [Figma design](https://www.figma.com/file/dY
 14. Copy `DEMO LINK` to the PR description.
 
 > To update you PR repeat steps 7-11.
+
+15. Check yourself using the [CHECKLIST](https://github.com/mate-academy/layout_creativeBakery/blob/master/checklist.md) when finished;
