@@ -1,0 +1,70 @@
+.our-achievement {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include onDasktop {
+    flex-direction: row;
+    margin: 265px 0 359px;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 0 80px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    @include onDasktop {
+      margin: 0;
+    }
+  }
+
+  &__item {
+    width: 280px;
+    transition: 0.3s ease;
+
+    &:hover {
+      transition: 0.3s ease;
+      transform: scale(1.2);
+    }
+
+    @include onDasktop {
+      padding-right: 4px;
+    }
+
+    @include onDesign {
+      padding-right: 24px;
+    }
+  }
+
+  &__number {
+    margin: 0 0 8px;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $colorBlack;
+  }
+
+  &__subtitle {
+    margin: 0 0 48px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $colorGrey;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+}

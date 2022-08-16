@@ -1,0 +1,166 @@
+.places {
+  margin-bottom: 64px;
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  @include onTablet {
+    margin-bottom: 88px;
+  }
+
+  &__desktop {
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  
+    @include onDasktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__row {
+    @include onTablet {
+      grid-column: 5 / 9;
+    }
+
+    @include onDasktop {
+      grid-column: 4 / 7;
+    }
+  }
+
+  &__end {
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDasktop {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &__ends {
+    @include onTablet {
+      grid-column: 5 / 9;
+    }
+
+    @include onDasktop {
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__photo-container {
+    width: 100%;
+    height: 356px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+
+    transition: 0.3s ease;
+    overflow: hidden;
+
+    &:hover {
+      transition: 0.3s ease;
+      box-shadow: 0 6px 33px rgba(185, 46, 155, 0.66);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      height: 424px;
+    }
+
+    @include onDasktop {
+      padding-bottom: 0;
+      height: 512px;
+    }
+
+    @include onDesign {
+      height: 560px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s ease;
+
+    &:hover {
+      transition: 0.3s ease;
+      transform: scale(1.2);
+    }
+  }
+
+  &__paragraph {
+    margin: 0 0 24px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $colorBlack;
+  }
+
+  &__link {
+    margin: 0 0 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $colorGrey;
+    border-bottom: 1px solid transparent;
+
+    &-all {
+      margin: 0;
+      text-decoration: none;
+      color: $colorGrey;
+      transition: 0.3s ease;
+
+      &:hover {
+        color: $colorBlack;
+      }
+    }
+
+    &-red {
+      margin: 0;
+      text-decoration: none;
+      color: $colorRed;
+      transition: 0.3s ease;
+
+      &:hover {
+        border-color: $colorRed;
+      }
+
+      &:active {
+        color: #b2341a;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        top: 50%;
+        transform: translate(25%, 15%);
+        margin-right: 8px;
+
+        height: 15px;
+        width: 15px;
+        background-image: url(../images/Vector-8.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}
