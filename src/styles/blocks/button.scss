@@ -1,0 +1,44 @@
+.button {
+  border: 2px solid #f9512e;
+  border-radius: 32px;
+  background-color: #ffeefc;
+
+  transition: all 8ms;
+
+  &__text {
+    font-family: "Inter", sans-serif;
+    @include text(16px, 0.02em, 500);
+    text-transform: uppercase;
+    line-height: 16px;
+    color: #f9512e;
+
+    background-image: url(../images/minicookie.svg);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+  }
+
+  &:hover {
+    background-color: #f9512e;
+  }
+
+  &:hover .button__text {
+    cursor: pointer;
+    background-image: url(../images/white-minicookie.svg);
+    color: #fff;
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid #b2341a;
+    background-color: #b2341a;
+  }
+
+  &:focus .button__text {
+    background-image: url(../images/white-minicookie.svg);
+    color: #fff;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}

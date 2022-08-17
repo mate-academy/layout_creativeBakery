@@ -1,0 +1,132 @@
+.footer {
+  background-color: #1c1a26;
+
+  &__main-content {
+    padding: 61px 0 56px;
+
+    @include mini-tablet {
+      padding: 93px 0 91px;
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 0 44px;
+
+    @include mini-tablet {
+      margin: 0 0 100px;
+    }
+
+    transition: transform 0.5s;
+
+    &:hover {
+      @include scale();
+    }
+  }
+
+  &__logo {
+    width: 157px;
+  }
+
+  &__menu {
+    @include footer-flex();
+    margin: 0 0 64px;
+
+    @include mini-tablet {
+      margin: 0;
+    }
+
+    @include desktop {
+      margin: 0 0 50px;
+    }
+  }
+
+  &__title {
+    @include text(49px, -0.05em, 400);
+    text-transform: uppercase;
+    line-height: 41px;
+    color: #fff;
+    padding: 0 0 40px;
+    grid-row-start: 1;
+  }
+
+  &__call {
+    @include footer-flex();
+    margin: 0 0 40px;
+
+    @include desktop {
+      grid-row-start: 2;
+    }
+  }
+
+  &__email {
+    @include footer-flex();
+    margin: 0 0 42px;
+
+    @include mini-tablet {
+      margin: 0 0 48px;
+    }
+
+    @include desktop {
+      grid-row-start: 2;
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 0 0 42px;
+
+    &--facebook {
+      display: block;
+      width: 10px;
+      height: 20px;
+      background-image: url(../images/facebook.svg);
+
+      transition: all 0.2s;
+
+      &:hover,
+      &:focus {
+        transform: scale(1.2);
+        background-image: url(../images/white-facebook.svg);
+      }
+    }
+
+    &--instagram {
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/instagram.svg);
+
+      transition: all 0.2s;
+
+      &:hover,
+      &:focus {
+        transform: scale(1.2);
+        background-image: url(../images/white-instagram.svg);
+      }
+    }
+
+    &--twitter {
+      display: block;
+      width: 20px;
+      height: 16px;
+      background-image: url(../images/twitter.svg);
+
+      transition: all 0.2s;
+
+      &:hover,
+      &:focus {
+        transform: scale(1.2);
+        background-image: url(../images/white-twitter.svg);
+      }
+    }
+  }
+
+  &__license {
+    @include text(16px, -0.01em, 400);
+    line-height: 24px;
+    color: #7f8096;
+  }
+}

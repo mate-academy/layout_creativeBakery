@@ -1,0 +1,145 @@
+.header {
+  &__menu {
+    display: none;
+
+    @include middle-tablet() {
+      display: block;
+      @include flexible();
+      gap: 67px;
+    }
+  }
+
+  &__list {
+    @include flexible();
+    gap: 64px;
+  }
+
+  &__link {
+    @include text(16px, -0.01em, 400);
+    color: #1c1a26;
+
+    &:hover {
+      color: #f9512e;
+    }
+  }
+
+  &__main-content {
+    padding: 32px 0 80px;
+
+    @include mini-tablet() {
+      padding: 80px 0;
+    }
+
+    @include desktop() {
+      position: relative;
+      padding: 0;
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+    padding-bottom: 32px;
+    max-width: 288px;
+    margin: 0 auto;
+
+    @include mini-tablet() {
+      margin: 0;
+      text-align: left;
+      padding-bottom: 16px;
+      width: 100%;
+    }
+
+    @include desktop() {
+      position: absolute;
+      top: 135px;
+    }
+
+    @include large-screen() {
+      top: 144px;
+    }
+  }
+
+  &__title {
+    @include text(64px, -0.05em, 400);
+    text-transform: uppercase;
+    color: #f9512e;
+    text-align: center;
+    line-height: 54px;
+    @include mini-tablet() {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+
+    @include middle-tablet {
+      font-size: 80px;
+      line-height: 68px;
+    }
+
+    @include desktop() {
+      font-size: 115px;
+      line-height: 116px;
+      width: 100%;
+    }
+
+    @include large-screen() {
+      font-size: 136px;
+      line-height: 122px;
+    }
+  }
+
+  &__img-container {
+    text-align: center;
+  }
+
+  &__img {
+    width: 288px;
+
+    @include mini-tablet() {
+      width: 326px;
+    }
+
+    @include desktop() {
+      width: 544px;
+    }
+
+    @include large-screen() {
+      width: 584px;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 326px;
+
+    @include middle-tablet() {
+      margin-top: 80px;
+    }
+
+    @include mini-tablet {
+      display: block;
+      width: 100%;
+    }
+
+    @include desktop() {
+      margin-top: 0;
+      position: absolute;
+      top: 395px;
+    }
+
+    @include large-screen() {
+      top: 418px;
+    }
+  }
+
+  &__button-text {
+    display: inline-block;
+
+    padding: 18px 0 18px 26px;
+    text-align: center;
+  }
+}

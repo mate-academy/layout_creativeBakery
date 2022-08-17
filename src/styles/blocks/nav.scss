@@ -1,0 +1,40 @@
+.nav {
+  @include flexible();
+  padding: 20px;
+
+  @include desktop() {
+    padding: 32px 36px;
+  }
+
+  &__logo {
+    display: block;
+
+    transition: transform 0.5s;
+
+    &:hover {
+      @include scale();
+    }
+  }
+
+  &__logo-img {
+    max-width: 128px;
+  }
+
+  &__menu-opener {
+    display: block;
+    width: 20px;
+    height: 8px;
+    background-image: url(../images/menu.svg);
+
+    @include middle-tablet() {
+      display: none;
+    }
+  }
+
+  &__menu-closer {
+    display: block;
+    width: 13px;
+    height: 13px;
+    background-image: url(../images/cross.svg);
+  }
+}
