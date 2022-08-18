@@ -1,0 +1,122 @@
+.nav {
+
+  &-link {
+    @include BodyText;
+    text-decoration: none;
+    color: $black;
+
+    &:nth-of-type(4) {
+      text-decoration: none;
+      @include UpperText;
+      color: $accent-orange;
+      position: relative;
+      pointer-events: all;
+
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 24px;
+        height: 24px;
+        left: -29px;
+        top: -4px;
+        background-image: url(../images/Icon-phone.svg);
+        background-repeat: no-repeat;
+      }
+    }
+
+  }
+
+  &--header {
+    display: none;
+
+    @include Desktop1200 {
+      display: flex;
+      align-items: center;
+    }
+
+    &-link {
+      margin-right: 64px;
+
+      &:nth-of-type(3) {
+        margin-right: 92px;
+      }
+
+      &:nth-of-type(4) {
+        margin-right: 0;
+      }
+
+      &:hover {
+        color: $accent-orange;
+        border-bottom: 1px solid $accent-orange;
+
+        &:nth-of-type(4) {
+          color: $black;
+          border-bottom: 1px solid $black;
+        }
+      }
+    }
+  }
+
+  &--menu {
+    margin: 0 auto;
+    margin-top: 132px;
+    width: 288px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-link {
+      margin-bottom: 24px;
+
+      &:hover {
+        color: $accent-orange;
+      }
+
+      &:nth-of-type(3) {
+        margin-bottom: 32px;
+      }
+
+      &:nth-of-type(4) {
+        margin-left: 24px;
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+
+  &--footer {
+    grid-column: 1/-1;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+  
+    @include Tablet {
+      grid-column: 1/3;
+    }
+  
+    &-link {
+      color: $white;
+      margin-bottom: 16px;
+  
+      &:first-child {
+        @include UpperText;
+        color: $grey;
+      }
+  
+      &:last-child {
+        color: $white;
+        @include BodyText;
+        text-transform: capitalize;
+        margin-bottom: 0;
+        position: unset;
+      }
+
+      &:hover {
+        color: $accent-orange;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.menu {
+  background-color: $light-blue;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+  overflow-y: auto;
+  z-index: 1;
+
+  &:target {
+    overflow: hidden;
+    transform: translateX(0);
+  }
+
+  @include Desktop1200 {
+    display: none;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px 0;
+    align-items: center;
+  
+    &--cross {
+      display: block;
+      width: 24px;
+      height: 24px;
+    
+      background-image: url(../images/Icon-close.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
