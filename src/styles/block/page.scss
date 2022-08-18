@@ -1,0 +1,60 @@
+.page {
+  box-sizing: border-box;
+  min-width: 320px;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background-color: $c-lightPink;
+  
+    &--with-menu {
+      overflow: hidden;
+  
+      @include pcSize {
+        overflow: auto;
+      }
+  
+      @include tvSize {
+        overflow: auto;
+      }
+    }
+  }
+
+  &__menu {
+    height: 100vh;
+    background-color: $c-lightPink;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transform: translateX(110%);
+    transition: all 300ms ease-in-out;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 80px;
+
+    @include tableSize {
+      margin-bottom: 120px;
+    }
+
+    @include pcSize {
+      margin-bottom: 180px;
+    }
+
+    &-title {
+      padding-bottom: 24px;
+      width: 100%;
+    }
+
+    &-paragraph {
+      width: 100%;
+    }
+  }
+}
