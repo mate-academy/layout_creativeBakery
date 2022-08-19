@@ -28,10 +28,13 @@
     }
 
     &-flex {
-      display: flex;
-      justify-content: space-between;
-      min-width: max-content;
-      gap: 40px;
+      @include onDesktop {
+        display: flex;
+        justify-content: space-between;
+        min-width: max-content;
+        gap: 40px;
+      }
+
     }
   }
 
@@ -40,6 +43,7 @@
     list-style: none;
     flex-direction: column;
     gap: 16px;
+    margin-top: 40px;
 
     &-email {
       margin-left: 20px;
@@ -76,6 +80,10 @@
     &:hover {
       color: $colorOrange;
     }
+
+    // &:last-child{
+    //   margin-bottom: 40px;
+    // }
   }
 
   &__blog {
