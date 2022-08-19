@@ -2,11 +2,19 @@
 @import "fonts";
 @import "typography";
 @import "blocks/nav";
+@import "blocks/header";
+@import "blocks/products";
+@import "blocks/product";
+@import "blocks/mobile-menu";
+@import "blocks/about-us";
+@import "blocks/footer";
+@import "blocks/icon-link";
 
 body {
-  background: $c-gray;
+  background: $c-light-blue;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.01em;
+  color: $c-black;
 }
 
 * {
@@ -14,5 +22,26 @@ body {
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  outline: none;
+}
+
+a {
   color: $c-black;
+}
+
+.content {
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @include devices("tablet") {
+    padding: 0 3rem;
+  }
+  
+  @include devices("desktop-xl") {
+    padding: 0 8rem;
+  }
+
+  &__paragraph {
+    padding-top: 1.5rem;
+  }
 }

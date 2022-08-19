@@ -1,0 +1,80 @@
+.product {
+  width: 288px;
+  
+  @include devices("tablet") {
+    width: 328px;
+  }
+    
+  @include devices("desktop") {
+    width: 402px;
+  }
+  
+  @include devices("desktop-xl") {
+    width: 432px;
+  }
+
+  @include devices("tablet") {
+    margin: 5rem 0 0.5rem;
+  }
+
+  &:nth-of-type(1) {
+    grid-area: cake1;
+  }
+
+  &:nth-of-type(2) {
+    grid-area: cake2;
+  }
+  
+  &:nth-of-type(3) {
+    grid-area: donut1;
+  }
+  
+  &:nth-of-type(4) {
+    grid-area: donut2;
+  }
+  
+  &:nth-of-type(5) {
+    grid-area: cake3;
+  }
+  
+  &:nth-of-type(6) {
+    grid-area: cookie;
+  }
+  
+  &__image-wrapper {
+    max-width: 100%;
+  }
+  
+  &__image {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__name {
+    padding: 1rem 0 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  &__description {
+    padding-bottom: 1.5rem;
+  }
+
+  &__order {
+    font-family: "InterMedium", sans-serif;
+    position: relative;
+    padding-left: 26px;
+    color: $c-orange;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    &::before {
+      content: url("../images/arrow.png");
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+}

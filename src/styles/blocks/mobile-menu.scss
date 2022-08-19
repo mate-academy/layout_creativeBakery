@@ -1,0 +1,88 @@
+.mobile-menu {
+  // display: none;
+  // visibility: hidden;
+
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: $c-light-blue;
+  transform: translateX(-100%);
+
+  &__top-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    padding: 0 1.5rem 0 1.2rem;
+
+  }
+
+  &__x {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+  }
+
+  @include devices("tablet") {
+    display: none;
+  }
+
+  &__links {
+    margin-top: 8.3rem;
+  }
+
+  &__link-wrapper {
+    list-style: none;
+    text-align: center;
+    padding-top: 1.5rem;
+  }
+
+  &__link {
+    &--call {
+      position: relative;
+      text-transform: uppercase;
+      color: $c-orange;
+      padding-left: 20px;
+    }
+
+    &--call::before {
+      content: url("../images/call.png");
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.show-menu {
+  animation: sliding linear 1s forwards;
+}
+
+.hide-menu {
+  animation: hiding linear 1s forwards;
+}
+
+@keyframes sliding {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hiding {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

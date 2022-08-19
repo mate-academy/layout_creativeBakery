@@ -4,11 +4,13 @@
   align-items: center;
   height: 5.5rem;
   margin: 0 2rem 0 2.5rem;
-
   &__menu {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 4rem;
+    @include devices("tablet") {
+      display: flex;
+    }
   }
 
   &__link-wrapper {
@@ -16,8 +18,6 @@
   }
 
   &__link {
-    position: relative;
-
     &--call {
       position: relative;
       text-transform: uppercase;
@@ -33,5 +33,11 @@
       width: 18px;
       height: 18px;
     }
+  }
+  @include devices("tablet") {
+    &__mobile-btn-link {
+      display: none;
+    }
+
   }
 }
