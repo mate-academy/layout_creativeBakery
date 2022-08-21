@@ -3,29 +3,58 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+
   @include devices("desktop") {
     background-size: 718px 673px;
   }
+
   @include devices("tablet") {
     &__few-words {
       display: flex;
       justify-content: space-between;
+      gap: 1.5rem;
     }
-
-    &__text {
+  }
+  
+  &__text {
+    &--header {
+      padding-bottom: 2rem;
+      flex-basis: 288px;
+      flex-shrink: 0;
+      
+      @include devices("tablet") {
+        flex-basis: 370px;
+      }
+      
+      @include devices("desktop") {
+        flex-basis: auto;
+      }
+    }
+    @include devices("desktop") {
       width: 50%;
     }
   }
 
   &__achievements {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    @include devices("tablet") {
+      padding-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include devices("desktop") {
+      grid-template-columns: repeat(4, 1fr);
+      padding-top: 9rem;
+    }
+    
   }
 
   &__achievement {
     display: flex;
     flex-direction: column;
+    @include devices("tablet") {
+      padding-bottom: 5rem;
+    }
   }
 
   &__big-font {
@@ -34,7 +63,6 @@
 
   @include devices("desktop-xl") {
     padding-bottom: 18.3rem;
-    margin-top: 11.5rem;
     &__few-words {
       padding-bottom: 9rem;
     }

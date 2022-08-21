@@ -1,24 +1,40 @@
 .header {
-  height: 586px;
+  height: 606px;
   background: url("../images/cookie.png") no-repeat;
-
-  background-position: 50%;
+  background-position: 50% 70%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-
+  justify-content: flex-start;
+  align-items: center;
   background-size: 288px;
-  @include devices("tablet") {
-    background-size: 326px;
+ 
+  &__fantasies {
+    padding: 32px 0;
+    text-align: center;
+    @include devices("tablet") {
+      padding: 0;
+      text-align: left;
+      max-width: 280px;
+    }
+    @include devices("desktop") {
+      max-width: 260px;
+    }
+    @include devices("desktop-xl") {
+      max-width: 280px;
+    }
   }
-  @include devices("desktop") {
-    background-size: 544px;
+
+  &__big {
+    max-width: 18rem;
+    margin: 0 auto;
+    @include devices("tablet") {
+      margin: 0;
+      max-width: none;
+    }
   }
-  @include devices("desktop-xl") {
-    background-size: 586px;
-  }
+
   &__button {
+    margin-top: 19.3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,6 +48,10 @@
     width: 280px;
     height: 56px;
     cursor: pointer;
+
+    @include devices("tablet") {
+      margin: 0;
+    }
 
     &::before {
       content: url("../images/smallCrumb.png");
@@ -51,17 +71,18 @@
     }
   }
 
-  &__fantasies {
-    text-align: center;
-    @include devices("tablet") {
-      text-align: left;
-      max-width: 280px;
-    }
-    @include devices("desktop") {
-      max-width: 260px;
-    }
-    @include devices("desktop-xl") {
-      max-width: 280px;
-    }
+  @include devices("tablet") {
+    justify-content: space-around;
+    height: 586px;
+    padding: 0;
+    align-items: flex-start;
+    background-size: 326px;
+    background-position: 50%;
+  }
+  @include devices("desktop") {
+    background-size: 544px;
+  }
+  @include devices("desktop-xl") {
+    background-size: 586px;
   }
 }

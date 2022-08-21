@@ -10,6 +10,12 @@ menuBtn.addEventListener('click', () => {
 });
 
 closeMenu.addEventListener('click', () => {
-  menu.classList.add('hide-menu');
   menu.classList.remove('show-menu');
+  menu.classList.add('hide-menu');
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 767) {
+    menu.classList.remove('show-menu');
+  }
 });
