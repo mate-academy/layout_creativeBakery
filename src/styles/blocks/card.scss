@@ -1,0 +1,88 @@
+.card {
+  transition: transform 0.4s;
+
+  &__image {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    box-shadow: 1px 3px 9px 0 transparent;
+    
+
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+
+    @extend %uppercase;
+    color: $c-grey;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+
+    @extend %body-text;
+  }
+
+  &__order-but {
+    position: relative;
+
+    display: inline-block;
+
+    text-decoration: none;
+    color: $c-accent-orange;
+
+    transition: color 0.4s;
+
+    &::before {
+      
+      @include square(20px);
+
+      display: inline-block;
+      padding-right: 4px;
+      content: "";
+      
+      background-image: url(../images/icons/Icon-arrow.svg);
+      transition: background-image 0.4s;
+    }
+
+    &::after {
+      width: 0;
+      height: 1px;
+      padding-right: 100%;
+
+      display: block;
+      content: "";
+      background-color: inherit;
+      transition: background-color 0.4s;
+
+    }
+
+    &:hover {
+      &::after {
+        background-color: $c-accent-orange;
+      }
+    }
+
+    &:active {
+      color: $c-dark-orange;
+
+      &::after {
+        background-color: $c-dark-orange;
+      }
+
+      &::before {
+        background-image: url(../images/icons/Icon-arrow--dark.svg);
+      }
+    }
+  }
+
+  &:hover {
+    transform: scale(1.02);
+
+    .card__image {
+      transform: scale(1.05);
+      box-shadow: 1px 3px 9px 0 $c-light-orange;
+    }
+  }
+}
