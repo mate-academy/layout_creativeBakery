@@ -1,0 +1,214 @@
+@import "../utils/mixins.scss";
+@import "../utils/vars.scss";
+
+.bake {
+  padding: 0 124px 186px;
+
+  @include laptop {
+    padding: 0 44px 186px;
+  }
+
+  @include tablet {
+    padding: 0 44px 160px;
+  }
+
+  @include mobile {
+    padding: 0 16px 80px;
+  }
+
+  &__title {
+    color: $orange;
+    margin-bottom: 24px;
+
+    @include tablet {
+      grid-column: 1 / 9;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 80px;
+
+    @include tablet {
+      grid-column: 1 / 9;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__card-title {
+    margin-bottom: 8px;
+    color: $gray;
+    transition: $transition;
+  }
+
+  &__card {
+    margin-bottom: 88px;
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:hover .bake__card-title {
+      color: $orange;
+    }
+
+    &--4 {
+      grid-row: 4 / 5;
+    }
+
+    &--5 {
+      margin-bottom: 0;
+    }
+
+    &--6 {
+      margin-bottom: 0;
+    }
+
+    @include tablet {
+      
+      &:nth-child(3) {
+        grid-column: 1 / 5;
+      }
+
+      &:nth-child(4) {
+        grid-column: 5 / 9;
+      }
+      
+      &:nth-child(5) {
+        grid-column: 1 / 5;
+      }
+
+      &:nth-child(6) {
+        grid-column: 5 / 9;
+      }
+      
+      &:nth-child(7) {
+        grid-column: 1 / 5;
+      }
+
+      &:nth-child(8) {
+        grid-column: 5 / 9;
+      }
+
+      &:hover {
+        transform: scale(1);
+      }
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      margin-bottom: 64px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__img {
+    margin-bottom: 16px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__text {
+    margin-bottom: 24px;
+  }
+
+  &__button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.08, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    line-height: 1.6;
+    color: $orange;
+  }
+
+  &__icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.08, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: $white;
+  }
+
+  &__circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.08, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: $orange;
+    border-radius: 1.63rem;
+  }
+
+  &__arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.08, 1);
+    left: 0.63rem;
+    width: 1.13rem;
+    height: 0.13rem;
+    background: none;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: -0.29rem;
+      right: 0.06rem;
+      width: 0.63rem;
+      height: 0.63rem;
+      border-top: 0.13rem solid #fff;
+      border-right: 0.13rem solid #fff;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+
+    &:hover .bake__circle {
+      width: 100%;
+    }
+
+    &:hover .bake__circle .bake__arrow {
+      background: #fff;
+      transform: translate(1rem, 0);
+    }
+
+    &:hover .bake__button-text {
+      color: #fff;
+    }
+  }
+
+  &__learn-more {
+    width: 12rem;
+    height: auto;
+  }
+
+}
