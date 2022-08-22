@@ -6,7 +6,7 @@
       justify-content: space-between;
       align-items: center;
 
-      @media (max-width: 1020px) {
+      @include onTablet {
         display: none;
       }
     }
@@ -29,11 +29,11 @@
       height: 176px;
       margin-bottom: 50px;
 
-      @media (max-width: 1020px) {
+      @include onTablet {
         margin-bottom: 106px;
       }
 
-      @media (max-width: 640px) {
+      @include onMobile {
         margin-bottom: 64px;
       }
     }
@@ -41,20 +41,26 @@
 
   &__item {
     text-decoration: none;
-    color: #1c1a26;
+    color: $colorBlack;
     letter-spacing: -0.01em;
     
     &--footer {
       text-decoration: none;
       letter-spacing: -0.01em;
-      color: #fff;
+      color: $colorWhite;
+    }
+
+    transition: transform 0.4s;
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 
   &__title {
     &--footer {
       text-transform: uppercase;
-      color: #7f8096;
+      color: $colorGray;
     }
   }
 }

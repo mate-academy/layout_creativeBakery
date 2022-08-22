@@ -3,26 +3,26 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  background-color: #1c1a26;
-  padding: 88px 120px;
+  background-color: $colorBlack;
+  padding: 88px $bigSidePadding;
 
-  @media (max-width: 1200px) {
-    padding: 88px 44px;
+  @include onDesktop {
+    padding: 88px $standartSidePadding;
   }
         
-  @media (max-width: 1020px) {
+  @include onTablet {
     height: 616px;
   }
   
-  @media (max-width: 640px) {
+  @include onMobile {
     height: 914px;
-    padding: 61px 16px 56px;
+    padding: 61px $smallSidePadding 56px;
   }
   
   &__content {
     display: flex;
 
-    @media (max-width: 640px) {
+    @include onMobile {
       flex-direction: column;
     }
   }
@@ -32,7 +32,7 @@
     width: 100%;
     justify-content: space-between;
 
-    @media (max-width: 640px) {
+    @include onMobile {
       flex-direction: column;
     }
   }
@@ -54,7 +54,7 @@
     justify-content: space-between;
     width: 138px;
 
-    @media (max-width: 640px) {
+    @include onMobile {
       margin-bottom: 42px;
     }
   }
