@@ -1,0 +1,73 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: $black-colour;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  box-sizing: border-box;
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__section-title {
+    margin: 0 0 24px;
+    font-weight: 400;
+    font-size: 48px;
+    text-transform: uppercase;
+    color: $black-colour;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+  }
+
+  &__section-description {
+    margin: 0 0 56px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+
+  &__section-products {
+    
+    @include onTablet {
+      margin-bottom: 96px;
+    }
+    @include onDesktop {
+      margin-bottom: 122px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onDesktop {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      left: unset;
+      bottom: unset;
+      padding: 0;
+      transform: translateX(0);
+      background-color: none;
+    }
+  }
+
+  &__menu-top {
+    margin-bottom: 132px;
+  }
+
+  &__footer-section {
+    margin: 0 0 40px;
+  }
+}
