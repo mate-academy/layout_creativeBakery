@@ -1,0 +1,123 @@
+.products {
+  &__cards {
+    display: flex;
+
+    &:not(:nth-last-child(-n+1)) {
+      margin-bottom: 80px;
+    }
+
+    &:nth-child(2) {
+      justify-content: end;
+    }
+
+    @include onTablet {
+      justify-content: center;
+    }
+
+    @include onPhone {
+      flex-wrap: wrap;
+
+      &:nth-child(2) {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__card {
+    flex-basis: 400px;
+
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+
+    @include onTablet {
+      flex-basis: $products-width;
+    }
+
+    @include onPhone {
+      margin-right: 0;
+
+      &:not(:last-child) {
+        margin: 0 0 56px;
+      }
+    }
+  }
+
+  &__title {
+    @extend %title-h2;
+    margin-bottom: 24px;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onPhone {
+      font-size: 48px;
+      line-height: 41px;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__subtitle {
+    letter-spacing: -0.01em;
+    margin-bottom: 80px;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onPhone {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 16px;
+    border-radius: 8px;
+    transition: transform 0.4s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      width: $products-width;
+    }
+  }
+
+  &__name {
+    @extend %products-styles;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #7f8096;
+  }
+
+  &__text {
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+
+  &__order {
+    @extend %products-styles;
+    position: relative;
+    padding-left: 25px;
+    color: $accent-color;
+
+    transition: color 0.3s ease-in-out;
+
+    &::before {
+      content: url(../images/icon/icon-arrow.svg);
+      position: absolute;
+      left: 0;
+    }
+
+    &:hover,
+    &:hover::before {
+      color: #b2341a;
+      filter: brightness(0) saturate(100%)
+        invert(19%) sepia(90%) saturate(2244%)
+        hue-rotate(356deg) brightness(93%) contrast(85%);
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.header {
+  &__top {
+    @extend %display-flex-styles;
+    padding: 28px 0;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: end;
+    flex-grow: 1;
+
+    @include onTablet {
+      display: none;
+
+      &-opener {
+        background-image: url(../images/icon/icon-menu.svg);
+        @include icons-size;
+      }
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 64px;
+    }
+  }
+
+  &__link {
+    display: block;
+    letter-spacing: -0.01em;
+    transition: color 0.4s ease-in-out, transform 0.4s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $accent-color;
+    }
+
+    &--contact-us {
+      @extend %contact-us-styles;
+
+      &:hover,
+      &:hover::before {
+        color: #b2341a;
+        filter: brightness(0) saturate(100%)
+          invert(19%) sepia(90%) saturate(2244%)
+          hue-rotate(356deg) brightness(93%) contrast(85%);
+      }
+    }
+  }
+}

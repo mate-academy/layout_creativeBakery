@@ -1,0 +1,116 @@
+.top {
+  &__inner {
+    position: relative;
+  }
+
+  &__subtitle {
+    width: 260px;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+
+    @include onTablet {
+      margin-bottom: 140px;
+      width: 280px;
+    }
+
+    @include onPhone {
+      text-align: center;
+      margin: 0 auto 32px;
+    }
+
+    @include smallPhone {
+      margin: 0 auto 10px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 64px;
+    font-size: 136px;
+    line-height: 116px;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 68px;
+      text-align: center;
+    }
+
+    @include onPhone {
+      font-size: 64px;
+      line-height: 68px;
+    }
+  }
+
+  &__img {
+    position: relative;
+    z-index: -1;
+    transform: translateY(-90%);
+    margin: 0 auto;
+
+    @include onTablet {
+      height: 326px;
+      transform: translateY(-75%);
+    }
+
+    @include onPhone {
+      transform: translateY(-30%);
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 280px;
+    height: 56px;
+    border: 2px solid $accent-color;
+    border-radius: 32px;
+
+    color: $accent-color;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+    &::before {
+      content: url(../images/icon/icon-cookie.svg);
+      position: relative;
+      top: 2px;
+      right: 4px;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: $accent-color;
+    }
+
+    &:hover::before {
+      filter: brightness(0) invert(1);
+    }
+
+    &:active {
+      background-color: #b2341a;
+      border-color: #b2341a;
+    }
+
+    @include onTablet {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 30%;
+
+      width: 326px;
+      margin: 0 auto;
+    }
+
+    @include onPhone {
+      bottom: 12%;
+      width: 288px;
+    }
+  }
+
+}
