@@ -1,0 +1,121 @@
+.header {
+  &__icon {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__nav-list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__nav-item {
+    margin-right: 64px;
+    height: 100%;
+    transition: color 0.3s;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $color-orange-accent;
+    }
+  }
+
+  &__nav-link {
+    padding: 0;
+    border: none;
+
+    &:hover .button__icon {
+      transform: rotate(36deg);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0 0 20px;
+    position: relative;
+
+    background-image: url(../images/header-cookie.png);
+    background-repeat: no-repeat;
+    background-position: center 40vh;
+    background-size: contain;
+
+    @include onTablet {
+      background-position: center;
+      background-size: 60%;
+      padding-bottom: 160px;
+    }
+
+    @include onDesktop {
+      background-size: 50%;
+    }
+  }
+
+  &__button {
+    margin-top: auto;
+  }
+
+  &__btn {
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__logo {
+    height: 24px;
+  }
+
+  &__link {
+    display: block;
+    line-height: 0;
+  }
+
+  &__text {
+    @extend %text-body;
+    margin-bottom: 32px;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+      max-width: 300px;
+    }
+  }
+
+  &__title {
+    @extend %h1-mobile;
+    text-align: center;
+    word-wrap: break-word;
+
+    @include onTablet {
+      @include h1-tablet;
+
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      left: 0;
+      right: 0;
+    }
+
+    @include onDesktop {
+      @include h1-decktop;
+      font-size: 136px;
+    }
+  }
+}

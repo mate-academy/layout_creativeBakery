@@ -1,6 +1,49 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onLargeScreen {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin h1-tablet {
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin h2-tablet {
+  font-weight: normal;
+  font-size: 56px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin h1-decktop {
+  font-weight: normal;
+  font-size: 144px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin h2-decktop {
+  font-weight: normal;
+  font-size: 72px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
 }
