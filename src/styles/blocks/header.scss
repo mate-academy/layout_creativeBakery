@@ -1,0 +1,120 @@
+.header {
+  padding: $headerPadding 0;
+
+  @include onDesktop {
+    padding: 32px 0;
+  }
+
+  &__nav {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 166px;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    position: relative;
+  }
+
+  &__description {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 146px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-bottom: 8px;
+    }
+
+    @include onLargeDesctop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__tittle {
+    margin: 0 auto;
+
+    @include onTablet {
+      margin-bottom: 200px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+
+    @include onTablet {
+      position: absolute;
+      width: 326px;
+      height: 328px;
+      left: 50%;
+      top: 10%;
+
+      transform: translate(-50%, 5%);
+
+      z-index: -1;
+    }
+
+    @include onDesktop {
+      width: 544px;
+      height: 546px;
+      top: 0;
+
+      transform: translate(-50%, -25%);
+    }
+
+    @include onLargeDesctop {
+      width: 584px;
+      height: 586px;
+    }
+  }
+
+  &__button {
+    height: 56px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid $c-accentOrange;
+    border-radius: 32px;
+    color: $c-accentOrange;
+
+    transition: color 0.3s,
+      background-color 0.3s,
+      transform 0.3s;
+
+    &::before {
+      display: block;
+      margin-right: 6px;
+      content: url(../images/coocie-logo.svg);
+      transition: content 0.3s;
+    }
+
+    &:hover {
+      background-color: $c-accentOrange;
+      color: $c-white;
+
+      &::before {
+        content: url(../images/white-coocie-icon.svg);
+      }
+    }
+
+    &:active {
+      background-color: $c-darkOrange;
+      border-color: $c-darkOrange;
+      transform: scale(1.1);
+    }
+  }
+}
