@@ -1,0 +1,59 @@
+.menu--phone {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 132px;
+
+    gap: 24px;
+  }
+
+  &__link {
+    @extend %font400;
+    text-align: center;
+
+    border-bottom: 1px solid transparent;
+
+    transition: all 1s;
+
+    @include onTablets {
+      font-size: 24px;
+    }
+
+    &:hover {
+      color: $orangeColor;
+      border-color: $orangeColor;
+    }
+
+    &--last {
+      padding-top: 5px;
+
+      @extend %font500;
+      color: $orangeColor;
+
+      &::before {
+        content: "";
+
+        display: block;
+        position: absolute;
+        top: 1;
+        transition: background-image 0.4s;
+        transform: translatex(-100%);
+        padding-right: 7px;
+
+        width: 18px;
+        height: 18px;
+
+        background-image: url(../images/call.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

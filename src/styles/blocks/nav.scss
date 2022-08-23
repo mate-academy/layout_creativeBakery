@@ -1,0 +1,61 @@
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__menu-icon {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu {
+    @include onPhone {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 64px;
+    }
+
+    &-link {
+      @extend %font400;
+
+      border-bottom: 1px solid transparent;
+
+      transition: all 1s;
+
+      &:hover {
+        border-color: $orangeColor;
+        color: $orangeColor;
+      }
+
+      &--last {
+        padding-top: 5px;
+
+        @extend %font500;
+        color: $orangeColor;
+
+        &::before {
+          content: "";
+
+          display: block;
+          position: absolute;
+          top: 1;
+          transition: background-image 1s;
+          transform: translatex(-100%);
+          padding-right: 7px;
+
+          width: 18px;
+          height: 18px;
+
+          background-image: url(../images/call.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+}
