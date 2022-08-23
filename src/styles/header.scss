@@ -1,0 +1,175 @@
+.header {
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 52px;
+    padding: 20px;
+
+    @include onTablet {
+      margin: 0 0 100px;
+    }
+  }
+
+  &__logo {
+    width: 128px;
+    height: 24px;
+  }
+
+  &__menu-icon {
+    width: 20px;
+    height: 8px;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    text-align: center;
+
+    @include onTablet {
+      max-width: 280px;
+      text-align: left;
+      align-self: flex-start;
+      margin-bottom: 16px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      max-width: 280px;
+      text-align: left;
+      align-self: flex-start;
+      margin-bottom: 16px;
+
+      top: 100px;
+    }
+    color: $c-black;
+
+    margin: 0 0 32px;
+    padding: 0;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $c-black;
+
+    margin: 0;
+    padding: 0;
+
+    @include onTablet {
+      position: relative;
+      top: 200px;
+      font-size: 80px;
+      margin-top: -100px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: 320px;
+      font-size: 117px;
+      margin-top: -210px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 100px;
+  }
+
+  &__container-image {
+    width: 288px;
+    height: 290px;
+
+    @include onTablet {
+      width: 326px;
+      height: 328px;
+      margin-bottom: 120px;
+    }
+
+    @include onDesktop {
+      width: 544px;
+      height: 546px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: $c-orange;
+
+    text-decoration: none;
+
+    height: 56px;
+    width: 100%;
+
+    @include onTablet {
+      max-width: 320px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      max-width: 320px;
+      bottom: 300px;
+      align-self: flex-start;
+    }
+
+    border: 2px solid $c-orange;
+    border-radius: 32px;
+
+    &--icon {
+      margin-right: 6px;
+    }
+
+    transition: background-color 0.3s linear,
+      color 0.3s linear,
+      filter 0.3s linear;
+
+    &:hover {
+      background-color: $c-orange;
+      color: #fff;
+    }
+
+    &:hover &--icon {
+      filter: brightness(0) invert(1);
+    }
+
+    &:focus {
+      background-color: #b3341a;
+      border-color: #b3341a;
+      color: #fff;
+    }
+
+    &:focus &--icon {
+      filter: brightness(0) invert(1);
+    }
+
+  }
+
+  &__menu {
+    display: block;
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
