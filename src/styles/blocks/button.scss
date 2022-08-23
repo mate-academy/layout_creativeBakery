@@ -1,0 +1,50 @@
+.button {
+  @extend %uppercase;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  height: 56px;
+
+  color: $colorAccentOrange;
+  text-decoration: none;
+
+  border: 2px solid $colorAccentOrange;
+  border-radius: 32px;
+
+  transition: all 0.2s;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__icon-svg {
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    color: $colorWhite;
+    background-color: $colorAccentOrange;
+  }
+
+  &:hover &__icon-svg {
+    fill: $colorWhite;
+  }
+
+  &:focus {
+    border-color: $colorDarkOrange;
+    background-color: $colorDarkOrange;
+  }
+
+  &:disabled {
+    color: $colorLightOrange;
+    border-color: $colorLightOrange;
+  }
+  &:disabled &__icon-svg {
+    fill: $colorLightOrange;
+  }
+}
