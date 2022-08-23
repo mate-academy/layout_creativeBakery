@@ -1,0 +1,147 @@
+.header {
+  padding-top: 20px;
+  background-image: url(../images/cookie.png);
+  background-position: center 75%;
+  background-repeat: no-repeat;
+  background-size: 288px;
+  min-height: 670px;
+
+  @include onTablet {
+    background-position: center 60%;
+  }
+
+  @include onDesktop {
+    background-size: 545px;
+  }
+
+  @include onTv {
+    background-size: 585px;
+  }
+
+  &__head {
+    margin-bottom: 52px;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    &--menu {
+      width: 20px;
+      content: "";
+      background-image: url(../images/icons/equal-black.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: inline;
+    }
+
+  }
+
+  &__description {
+    margin: 0 0 32px;
+
+    @include forText (400, 16px, 150%);
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: $color-general;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 8px;
+    }
+  }
+
+  &__content {
+    margin: 0 0 300px;
+
+    @include forText (400, 64px, 85%);
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $color-general;
+
+    @include onTablet {
+      margin-bottom: 200px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      margin-bottom: 80px;
+    }
+
+    @include onTv {
+      font-size: 144px;
+    }
+  }
+
+  &__img {
+    height: 290px;
+  }
+
+  &__btn {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 248px;
+    height: 56px;
+    border: 2px solid $color-other;
+    border-radius: 32px;
+    cursor: pointer;
+
+    transition: all 0.3s;
+
+    @include forText (500, 16px, 100%);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-other;
+
+    &::before {
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      padding: 0 0 0 6px;
+
+      content: "";
+      background-image: url(../images/icons/cookie-1.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      background-color: $color-other;
+      color: $color-background;
+
+      &::before {
+        background-image: url(../images/icons/cookie-1W.svg);
+      }
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+}

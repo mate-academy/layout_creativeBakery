@@ -1,0 +1,253 @@
+.footer {
+  height: 100%;
+  box-sizing: border-box;
+  background-color: $color-general;
+
+  @include onDesktop {
+    max-height: 525px;
+  }
+
+  &__wrapper {
+    padding: 61px 5px 0;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    &--logo {
+      display: block;
+      margin: 0 0 45px;
+
+      @include onTablet {
+        margin: 0 0 101px;
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        margin-bottom: 64px;
+      }
+    }
+
+    &--list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &--name {
+      margin: 0 0 16px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 100%;
+
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+
+      color: $color-menu;
+    }
+
+    &--item {
+      margin-bottom: 16px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #fff;
+    }
+
+    &--link {
+      display: block;
+      text-decoration: none;
+      transition: all 0.3s;
+
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+
+      letter-spacing: -0.01em;
+
+      color: #fff;
+
+      &:hover {
+        color: $color-other;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 2;
+        grid-row: 2 / 4;
+
+      }
+    }
+  }
+
+  &__contact {
+    @include onTablet {
+      grid-column: 5 / 9;
+    }
+
+    &--title {
+      margin: 0 0 40px;
+
+      @include forText (400, 48px, 85%);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #fff;
+
+      @include onTablet {
+        font-size: 56px;
+        margin-bottom: 40px;
+      }
+
+      @include onDesktop {
+        font-size: 72px;
+        letter-spacing: -0.05em;
+
+      }
+    }
+
+    &--contacts {
+      @include onDesktop {
+        display: flex;
+        flex-direction: row;
+        gap: 166px;
+      }
+    }
+
+    &--list {
+      margin: 0 0 40px;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    &--name {
+      margin: 0 0 16px;
+
+      @include forText (500, 16px, 100%);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $color-menu;
+    }
+
+    &--item {
+      margin: 0 0 16px;
+    }
+
+    &--phone {
+      text-decoration: none;
+      @include forText (400, 16px, 150%);
+      letter-spacing: -0.01em;
+      color: #fff;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $color-other;
+      }
+    }
+
+    &--mail {
+      margin: 0 0 42px;
+    }
+
+    &--email {
+      margin: 0 0 16px;
+
+      @include forText (500, 16px, 100%);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $color-menu;
+    }
+
+    &--link {
+      text-decoration: none;
+      @include forText (400, 16px, 150%);
+      letter-spacing: -0.01em;
+      color: #fff;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $color-other;
+      }
+    }
+  }
+
+  &__social {
+    margin-bottom: 42px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    &--item {
+      margin-right: 40px;
+      padding: 0 20px 0 0;
+      height: 20px;
+      width: 20px;
+      text-decoration: none;
+    }
+
+    &--name {
+      @include forText (400, 16px, 150%);
+      letter-spacing: -0.01em;
+      color: $color-menu;
+    }
+  }
+
+  &__name {
+    @include onTablet {
+      grid-column: 5 / 8;
+    }
+
+    &--text {
+      margin: 0;
+
+      @include forText (400, 16px, 150%);
+      letter-spacing: -0.01em;
+      color: $color-menu;
+    }
+  }
+}
+
+.facebook {
+  background-image: url(../images/icons/facebook.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s;
+
+  &:hover,
+  :focus {
+    background-image: url(../images/icons/facebookW.svg);
+  }
+}
+
+.instagram {
+  background-image: url(../images/icons/instagram.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s;
+
+  &:hover,
+  :focus {
+    background-image: url(../images/icons/instagramW.svg);
+  }
+}
+
+.twitter {
+  background-image: url(../images/icons/twitter.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s;
+
+  &:hover,
+  :focus {
+    background-image: url(../images/icons/twitterW.svg);
+  }
+}

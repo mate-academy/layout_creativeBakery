@@ -1,0 +1,124 @@
+.about__us {
+  background-image: url(../images/background.png);
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--text {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &--few {
+    margin: 0 0 32px ;
+
+    @include forText (400, 48px, 85%);
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      margin: 0 0 144px ;
+    }
+  }
+
+  &--discription {
+    margin: 0 0 64px;
+
+    @include forText (400, 16px, 150%);
+    letter-spacing: -0.01em;
+
+    @include onTablet {
+      grid-column: 5 / 9;
+    }
+  }
+}
+
+.stat {
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, 120px);
+    column-gap: 24px;
+    row-gap: 80px;
+
+    .year {
+      grid-column: 1 / 4;
+      grid-row: 1;
+    }
+
+    .stores {
+      grid-column: 5 / 9;
+      grid-row: 1;
+    }
+
+    .companies {
+      grid-column: 1 / 4;
+      grid-row: 2;
+    }
+
+    .clients {
+      grid-column: 5 / 9;
+      grid-row: 2;
+    }
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(8, 1fr);
+
+    .year {
+      grid-column: 1 / 4;
+      grid-row: 1;
+    }
+
+    .stores {
+      grid-column: 3 / 4;
+      grid-row: 1;
+    }
+
+    .companies {
+      grid-column: 5 / 6;
+      grid-row: 1;
+    }
+
+    .clients {
+      grid-column: 7 / 9;
+      grid-row: 1;
+    }
+  }
+
+  @include onTv {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  &__item {
+    margin-bottom: 48px;
+  }
+
+  &__num {
+    margin: 0 0 8px;
+
+    @include forText (400, 96px, 85%);
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+  }
+
+  &__des {
+    margin: 0;
+
+    @include forText (400, 16px, 150%);
+    letter-spacing: -0.01em;
+    color: $color-menu;
+  }
+}

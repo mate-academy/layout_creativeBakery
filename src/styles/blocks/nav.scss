@@ -1,0 +1,105 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  padding-top: 20px;
+  background-color: $color-background;
+  transition: transform 0.3s;
+
+  transform: translateX(-100%);
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 140px;
+
+    &--menu {
+      width: 13px;
+      content: "";
+      background-image: url(../images/icons/close_black.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__list {
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 400px;
+    }
+  }
+
+  &__item {
+    margin: 0 0 24px;
+
+  }
+
+  &__phone {
+    @include onDesktop {
+      height: 18px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    transition: all 0.3s;
+
+    @include forText (400, 16px, 150%);
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    color: $color-general;
+
+    &:hover {
+      color: $color-other;
+    }
+  }
+}
+
+.call {
+  padding: 0 0 0 7px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+
+  @include forText (500, 16px, 100%);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $color-other;
+
+  &:hover {
+    border-color: $color-other;
+  }
+
+}
+
+.last {
+  display: flex;
+  justify-content: center;
+
+  @include onDesktop {
+    @include onDesktop {
+      height: 24px;
+    }
+  }
+}
+
+.blog {
+  margin-bottom: 50px;
+}
