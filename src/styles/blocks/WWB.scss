@@ -1,0 +1,122 @@
+.WWB {
+  margin-bottom: 80px;
+  padding: 0 16px;
+
+  @include onTablet {
+    margin-bottom: 160px;
+    padding: 0 44px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 0;
+    padding: 0 124px;
+  }
+
+  &__title-main {
+
+    margin-bottom: 56px;
+
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    color: $colorRed;
+    text-transform: uppercase;
+  }
+
+  &__title-small {
+    margin-top: 24px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    text-transform: none;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__container--last {
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+
+      border-radius: 5%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+  }
+
+  &__text {
+    margin-bottom: 24px;
+
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+
+  &__order {
+    // margin-bottom: 64px;
+
+    text-decoration: none;
+
+    // @include onTablet {
+    //   margin-bottom: 78px;
+    // }
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #f9512e;
+
+    &::before {
+      display: inline-block;
+      content: "";
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+
+      // transform: translateY(10%);
+
+      background-image: url(../images/WWB__order-img.svg);
+      @include bgi;
+    }
+
+    &:hover {
+      &::before {
+        animation: translate 0.3s steps(10, end) infinite;
+
+        @keyframes translate {
+          from {
+            transform: translateX(0);
+          }
+
+          to {
+            transform: translateX(35%);
+          }
+        }
+      }
+    }
+  }
+
+  &__br {
+    @include onTablet {
+      display: none;
+    }
+  }
+}

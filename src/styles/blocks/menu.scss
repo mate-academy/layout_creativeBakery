@@ -1,0 +1,141 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100vh;
+  padding: 16px;
+
+  background-color: $colorPink;
+
+  @include onTablet {
+    padding: 44px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // gap: 134px;
+
+    width: 282px;
+    margin-bottom: 152px;
+
+    @include onTablet {
+      width: 100%;
+      margin-top: -16px;
+      // margin-bottom: 100px;
+    }
+  }
+
+  &__logo {
+    width: 128px;
+    height: 24px;
+
+    background-image: url(../images/header__logo.svg);
+    @include bgi;
+
+    // @include onTablet {
+    //   transform: scale(1.2);
+    // }
+
+    // @include onDesktop {
+    //   transform: scale(1.4);
+    // }
+
+    @include onTablet {
+      margin-left: -26px;
+    }
+  }
+
+  &__cross {
+    width: 12px;
+    height: 12px;
+
+    background-image: url(../images/menu__cross.svg);
+    @include bgi;
+
+    &:hover {
+      background-image: url(../images/menu__cross--hover.svg);
+    }
+
+    // @include onTablet {
+    //   transform: scale(1.2);
+    // }
+
+    // @include onDesktop {
+    //   transform: scale(1.4);
+    // }
+
+    @include onTablet {
+      margin-right: -26px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+
+  }
+
+  &__list-item {
+    margin-bottom: 24px;
+
+    font-size: 16px;
+    text-decoration: none;
+
+    &:hover {
+      color: $colorRed;
+    }
+
+    // @include onTablet {
+    //   transform: scale(1.2);
+    // }
+
+    // @include onDesktop {
+    //   transform: scale(1.4);
+    // }
+
+    &:last-child {
+      display: flex;
+      align-items: center;
+      color: red;
+      text-transform: uppercase;
+      
+      &:last-child::before {
+        display: inline-block;
+        content: "";
+
+        width: 18px;
+        height: 18px;
+        margin-right: 7px;
+
+        background-image: url(../images/header__menu-itemTel.svg);
+
+        @include bgi;
+      }
+
+      &:hover {
+        &::before {
+          animation: rotate 0.3s steps(360, end) infinite;
+
+          @keyframes rotate {
+            from {
+              transform: rotate(0deg);
+            }
+
+            to {
+              transform: rotate(360deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// .menu--with-menu {
+//   overflow: hidden;
+// }
