@@ -1,15 +1,46 @@
 .footer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   padding: 3.5rem 1rem;
-
-  &__menu {
-    padding: 2.5rem 0 4rem;
-  }
-
   background-color: #000;
   color: #fff;
+
+  @include devices("tablet") {
+    display: grid;
+    justify-content: space-between;
+    grid-template-areas: "logo tagHeader"
+      "fMenu call"
+      ". email"
+      "icons copyright";
+    padding: 5.5rem 2.8rem;
+  }
+
+  @include devices("desktop") {
+    grid-template-areas: "logo tagHeader tagHeader"
+      "fMenu call email"
+      "icons copyright .";
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  &__logo-wrapper {
+    grid-area: logo;
+  }
+
+  &__menu {
+    grid-area: fMenu;
+    padding: 2.5rem 0 4rem;
+    @include devices("tablet") {
+      padding: 0;
+    }
+  }
+
+  &__call-us {
+    grid-area: call;
+    list-style: none;
+  }
+
+  &__icons {
+    grid-area: icons;
+    padding-top: 4rem;
+  }
 
   &__link-wrapper {
     list-style: none;
@@ -19,15 +50,9 @@
   &__link {
     color: inherit;
   }
-  
-  &__left {
-    width: 100%;
-    @include devices("tablet") {
-      width: 50%;
-    }
-  }
 
   &__header {
+    grid-area: tagHeader;
     width: 100%;
     padding-bottom: 2.5rem;
     display: flex;
@@ -39,29 +64,24 @@
   }
 
   &__copyright {
+    grid-area: copyright;
     padding-top: 4rem;
+    // @include devices("tablet") {
+    //   padding: 0;
+    // }
   }
-
-  &__right {
-    width: 100%;
-    @include devices("tablet") {
-      width: 50%;
-    }
-    display: flex;
-    flex-wrap: wrap;
-  }
-
   
   &__email-us {
+    grid-area: email;
     padding: 4rem 0;
-    width: 100%;
     @include devices("tablet") {
-      width: 50%;
+      padding: 0;
     }
   }
 
   &__link-wrapper--menu,
-  &__copyright {
+  &__copyright,
+  &__text {
     color: $c-grey;
   }
 
