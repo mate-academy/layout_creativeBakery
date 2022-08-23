@@ -1,0 +1,68 @@
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 21px;
+
+  @include onTablet {
+    margin-bottom: 69px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 124px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    @include onDesktop {
+      padding-top: 32px;
+    }
+  }
+
+  &__menu {
+    display: none;
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+
+      &-link {
+        margin-left: 64px;
+        cursor: pointer;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-left: 67px;
+        }
+      }
+    }
+
+    &-cross {
+      display: block;
+      background-image: url("../images/cross.svg");
+      height: 20px;
+      width: 20px;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+
+  &__menu-opener {
+    display: block;
+    background-image: url("../images/menu.svg");
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

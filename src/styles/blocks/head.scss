@@ -1,0 +1,71 @@
+.head {
+  &__greeter {
+    @extend %body-text;
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 8px;
+    }
+
+    @media (min-width: 1267px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    @extend %mobile-heading;
+    text-align: center;
+    color: $accent-orange;
+
+    @include onTablet {
+      font-size: calc(60px + 1vw);
+    }
+
+    @include onDesktop {
+      font-size: calc(80px + 3vw);
+    }
+  }
+
+  &__cookie {
+    width: 100%;
+    height: 290px;
+    z-index: -1;
+
+    @include onDesktop {
+      transform: translateX(-100%);
+      -webkit-animation: rotation 7s ease-in-out alternate forwards;
+    }
+
+    @include onTablet {
+      height: 330px;
+      position: relative;
+      top: -58%;
+    }
+
+    @include onDesktop {
+      height: 570px;
+      top: -55%;
+    }
+  }
+
+  @-webkit-keyframes rotation {
+    25% {
+      transform: translateX(80%)rotate(360deg);
+    }
+    50% {
+      transform: translateX(-40%)rotate(120deg);
+    }
+    75% {
+      transform: translateX(30%)rotate(260deg);
+    }
+    100% {
+      transform: translateX(0%)rotate(200deg);
+    }
+  }
+}

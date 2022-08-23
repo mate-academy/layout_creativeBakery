@@ -1,0 +1,93 @@
+.about-us {
+  position: relative;
+  padding-top: 16px;
+  margin-bottom: 32px;
+
+  @include onTablet {
+    padding-top: 72px;
+  }
+
+  @include onDesktop {
+    padding-top: 98px;
+  }
+
+  &__description {
+    @extend %body-text;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    @include onDesktop {
+      margin-bottom: 144px;
+
+    }
+  }
+
+  &__fact {
+    display: flex;
+    width: max-content;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    transition: transform $transition-duration;
+
+    @include onDesktop {
+      &:hover {
+        transform: scale(1.1);
+        cursor: default;
+      }
+      height: 110px;
+      margin-bottom: 340px;
+    }
+  }
+
+  @include onDesktop {
+    &__fact:hover &__text::after {
+      @include textUnderline;
+      width: 100%;
+      background-color: $accent-orange;
+      bottom: -10px;
+    }
+  }
+
+  &__text {
+    @extend %body-text;
+    margin-bottom: 48px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+
+      &:last-child {
+        margin-bottom: 52px;
+
+        @include onTablet {
+          margin-bottom: 132px;
+        }
+
+        @include onDesktop {
+          margin-bottom: 330px;
+        }
+      }
+    }
+  }
+
+  &__number {
+    @extend %big-text;
+  }
+}
+
+.about-us__background {
+  position: absolute;
+  bottom: -10%;
+  width: 85vw;
+  height: 100%;
+  z-index: -1;
+}
