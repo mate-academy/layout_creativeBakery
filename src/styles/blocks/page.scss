@@ -1,0 +1,54 @@
+.page {
+  background-color: #ffeefc;
+  margin: 0;
+
+  &--with-menu {
+    overflow: hidden;
+
+    @include l {
+      overflow: scroll;
+    }
+  }
+
+  &__slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: transform 0.4s;
+    transform: translateX(100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include l {
+      display: none;
+    }
+  }
+
+  &__gallery {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include l {
+      margin-bottom: 186px;
+    }
+  }
+
+  &__about-us {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include l {
+      margin-bottom: 349px;
+    }
+  }
+}

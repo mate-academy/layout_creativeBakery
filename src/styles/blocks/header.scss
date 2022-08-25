@@ -1,0 +1,164 @@
+.header {
+  height: 100vh;
+  box-sizing: border-box;
+
+  &__label {
+    background-image: url(../images/Vector/Burg-opener.svg);
+
+    height: 8px;
+    width: 20px;
+
+    @include l {
+      display: none;
+    }
+
+    &:hover {
+      background-image: url(../images/Vector/Burg-opener-hover.svg);
+    }
+  }
+
+  &__toggler {
+    display: none;
+  }
+
+  &__kredo {
+
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      align-self: flex-start;
+      text-align: start;
+      margin-bottom: 146px;
+      width: 280px;
+    }
+
+    @include l {
+      margin-bottom: 8px;
+      width: 260px;
+    }
+
+    @include xL {
+      margin-bottom: 40px;
+      width: 280px;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__title {
+    font-size: 64px;
+    line-height: 85%;
+
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: #f9512e;
+
+    margin-bottom: 0;
+
+    @include onTablet {
+      font-size: 80px;
+      margin-bottom: 214px;
+    }
+
+    @include l {
+      font-size: 136px;
+      margin-bottom: 68px;
+    }
+
+    @include xL {
+      font-size: 144px;
+    }
+  }
+
+  &__coockie {
+    display: block;
+
+    margin: 0 auto;
+    width: 288px;
+    height: 288px;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+
+    @include onTablet {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -125%);
+      width: 326px;
+      height: 326px;
+    }
+
+    @include l {
+      transform: translate(-50%, -75%);
+      width: 544px;
+      height: 544px;
+    }
+
+    @include xL {
+      width: 584px;
+      height: 584px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 26px;
+
+    text-decoration: none;
+    font-weight: 500;
+    color: $mainColor;
+    letter-spacing: 0.02em;
+
+    border: 2px solid $mainColor;
+    border-radius: 32px;
+
+    height: 52px;
+    width: 288px;
+
+    @include onTablet {
+      width: 100%;
+    }
+
+    transition: all 0.3s;
+
+    &::before {
+      content: "";
+      display: block;
+      background-image: url(../images/Vector/Coockie.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 20px;
+      width: 20px;
+      margin-right: 6px;
+
+      position: absolute;
+      transform: translate(-300%, 0);
+      transition: 0.3s;
+    }
+
+    &:hover {
+      background-color: $mainColor;
+      color: #fff;
+
+      &::before {
+        background-image: url(../images/Vector/Сoockie-white.svg);
+      }
+
+    }
+
+    &:active {
+      background-color: $hoverColor;
+      border-color: $hoverColor;
+    }
+  }
+}
