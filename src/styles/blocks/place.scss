@@ -1,0 +1,104 @@
+.place {
+
+  &__card {
+
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &--last {
+      margin-bottom: 0;
+    }
+  }
+
+  &__photo {
+    margin: 0 auto 16px;
+    display: block;
+    object-fit: cover;
+    width: 288px;
+    height: 356px;
+    border-radius: 8px;
+
+    transition: transform 0.4s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    @include onTablet {
+      width: 328px;
+      height: 424px;
+    }
+
+    @include onDesktop {
+      width: 402px;
+      height: 512px;
+    }
+
+    @include onBigDesktop {
+      width: 432px;
+      height: 560px;
+    }
+  }
+
+  &__card-name {
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+  }
+
+  &__card-description {
+    margin-bottom: 24px;
+  }
+
+  &__link {
+    display: block;
+    padding-left: 24px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $accent-orange;
+    position: relative;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: "";
+      background-image: url(../images/icon-arrow.svg);
+      position: absolute;
+      top: 50%;
+      left: 0;
+
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+
+      transition: background-image 0.4s;
+    }
+
+    &:active::before {
+      background-image: url(../images/icon-arrow-h.svg);
+    }
+
+    transition: text-shadow 0.4s;
+
+    &:hover {
+      color: $accent-orange;
+      text-shadow: 0.5px 0.5px 10px;
+    }
+
+    &:active {
+      color: $dark-orange;
+      text-shadow: 0.5px 0.5px 10px;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.button {
+  border: 2px solid $accent-orange;
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accent-orange;
+  }
+
+  &:active {
+    background-color: $dark-orange;
+    border-color: $dark-orange;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    transform: translatex(13px);
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $accent-orange;
+
+    &::before {
+      content: "";
+      background-image: url(../images/icon-cookies.svg);
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      padding-right: 6px;
+      transform: translate(-100%, -12%);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &:hover &__text {
+    color: #fff;
+  }
+
+  &:hover &__text::before {
+    background-image: url(../images/icon-cookies-h.svg);
+  }
+}
