@@ -1,0 +1,152 @@
+.head {
+  //height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 104px;
+
+  @include onTablet {
+    padding-bottom: 228px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 300px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+
+    letter-spacing: -0.01em;
+    color: $darktext;
+
+    text-align: center;
+    margin-top: 32px;
+
+    @include onTablet {
+      text-align: start;
+      margin-top: 80px;
+    }
+
+    @include onDesktop {
+      text-align: start;
+      margin-top: 100px;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__photo {
+    display: block;
+    margin: 0 auto;
+
+    height: 290px;
+    width: 290px;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+
+    @include onTablet {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -55%);
+
+      height: 330px;
+      width: 330px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      height: 545px;
+      width: 545px;
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    line-height: 85%;
+
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $darktext;
+    margin: 0 auto;
+
+    @include onTablet {
+      font-size: 80px;
+      padding-top: 126px;
+    }
+
+    @include onDesktop {
+      letter-spacing: -0.01em;
+      font-size: 130px;
+      padding-top: 8px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    height: 52px;
+    width: 288px;
+
+    text-decoration: none;
+    font-weight: 500;
+    color: $orange;
+    letter-spacing: 0.02em;
+
+    border: 2px solid $orange;
+    border-radius: 32px;
+    transition: all 0.3s;
+
+    &::before {
+      content: "";
+      display: block;
+      background-image: url(../images/logo-cookie.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 20px;
+      width: 20px;
+      margin-right: 6px;
+
+      position: absolute;
+      transform: translate(-300%, 0);
+      transition: 0.3s;
+    }
+
+    @include onTablet {
+      margin-top: 200px;
+      width: 100%;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
+
+    &:hover {
+      background-color: $orange;
+      color: #fff;
+
+      &::before {
+        content: url(../images/logowhite.svg);
+      }
+    }
+
+    &:focus {
+      background-color: #b3341a;
+      border-color: #b3341a;
+      color: #fff;
+
+      &::before {
+        content: url(../images/logowhite.svg);
+      }
+    }
+  }
+}

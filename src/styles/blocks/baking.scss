@@ -1,0 +1,112 @@
+.baking {
+  // &__photos {
+  //   margin: 0;
+  //   padding: 0;
+  // }
+
+  &__photo--container {
+    overflow: hidden;
+    position: relative;
+    max-height: 512px;
+    max-width: 100%;
+    // width: 288px;
+    height: 356px;
+
+    margin-top: 80px;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      // width: 328px;
+      height: 454px;
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      // width: 404px;
+      height: 512px;
+      padding-bottom: 0;
+    }
+
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    border-radius: 8px;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  // &__description {
+  //   margin: 0 auto;
+  // }
+
+  &__short-description {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #7f8096;
+    margin-bottom: 8px;
+  }
+
+  &__long-description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $darktext;
+
+    margin-bottom: 24px;
+  }
+
+  &__order {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: $orange;
+
+    position: relative;
+    padding-left: 24px;
+    transition: all 0.3s;
+
+    &::before {
+      content: url(../images/order-orange.svg);
+      height: 16px;
+      width: 16px;
+
+      position: absolute;
+      left: 0;
+      right: 8px;
+    }
+
+    &:hover {
+      color: #b3341a;
+
+      &::before {
+        content: url(../images/order-dark.svg);
+      }
+    }
+  }
+}
