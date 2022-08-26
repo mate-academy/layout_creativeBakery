@@ -1,0 +1,40 @@
+.page {
+  @include bodyText;
+  background-color: $lightPink;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px;
+
+    @include onTablet {
+      padding: 20px;
+    }
+
+    @include onMobile {
+      padding: 20px;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include onTablet {
+        display: none;
+        
+        &:target {
+          display: block;
+          margin-bottom: 132px;
+        }
+      }
+    }
+  }
+}
