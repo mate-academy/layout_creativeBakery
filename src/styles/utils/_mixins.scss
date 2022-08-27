@@ -6,6 +6,12 @@
 }
 
 @mixin devices($_device) {
+  @if ($_device == "mobile-xl") {
+    @media only screen and (min-width: 550px) {
+      @content;
+    }
+  }
+
   @if ($_device == "tablet") {
     @media only screen and (min-width: 768px) {
       @content;

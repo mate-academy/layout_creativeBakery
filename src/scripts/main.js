@@ -28,6 +28,7 @@ closeMenu.addEventListener('click', () => {
 window.addEventListener('resize', () => {
   if (window.innerWidth > 767) {
     menu.classList.remove('show-menu');
+    menu.classList.remove('hide-menu');
   }
 });
 

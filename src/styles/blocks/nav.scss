@@ -12,7 +12,8 @@
     display: none;
     align-items: center;
     gap: 4rem;
-    @include devices("tablet") {
+
+    @include devices("desktop") {
       display: flex;
     }
   }
@@ -22,10 +23,21 @@
   }
 
   &__link {
+    &:hover {
+      color: $c-orange;
+    }
+
+    &:focus {
+      color: $c-darkOrange;
+    }
+
     &--call {
       position: relative;
       text-transform: uppercase;
       color: $c-orange;
+      &:focus {
+        color: $c-orange;
+      }
     }
 
     &--call::before {
@@ -38,10 +50,9 @@
       transform: translateY(-50%);
     }
   }
-  @include devices("tablet") {
+  @include devices("desktop") {
     &__mobile-btn-link {
       display: none;
     }
-
   }
 }

@@ -1,10 +1,8 @@
 .mobile-menu {
-  z-index: 1;
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-  min-height: 100vh;
   transform: translateX(-100%);
   overflow-y: auto;
   background-color: $c-light-blue;
@@ -23,10 +21,6 @@
     height: 12px;
   }
 
-  @include devices("tablet") {
-    display: none;
-  }
-
   &__links {
     margin-top: 8.3rem;
   }
@@ -41,11 +35,22 @@
   }
 
   &__link {
+    &:hover {
+      color: $c-orange;
+    }
+
+    &:focus {
+      color: $c-darkOrange;
+    }
+
     &--call {
       position: relative;
       padding-left: 20px;
       text-transform: uppercase;
       color: $c-orange;
+      &:focus {
+        color: $c-orange;
+      }
     }
 
     &--call::before {
