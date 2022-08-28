@@ -1,0 +1,70 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffeefc;
+  height: 100vh;
+  z-index: 3;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+  }
+
+  &__item {
+    display: flex;
+
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    text-decoration: none;
+    color: #1c1a26;
+    font-size: 22px;
+
+    &--contact {
+      display: flex;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 16px;
+      color: #f9512e;
+      gap: 7px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 110px;
+
+    @include onTablet {
+      padding: 30px;
+    }
+  }
+
+  &__opener {
+    display: block;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: flex;
+  }
+}
