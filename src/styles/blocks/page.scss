@@ -1,0 +1,126 @@
+.page {
+  scroll-behavior: smooth;
+  
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  
+  color: #1c1a26;
+  &__body--with-menu {
+    overflow: hidden;
+    @include onDesktop {
+      overflow: auto;
+    }
+    @include onDesktopPlus {
+      overflow: auto;
+    }
+  }
+  &__menu {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    transform: translateX(100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    line-height: 85%;
+
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: #f9512e;
+    cursor: default;
+
+    transition: all 1s;
+
+    @include onTablet {
+      font-size: 80px;
+      margin-bottom: 210px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      margin-bottom: 64px;
+    }
+
+    @include onDesktopPlus {
+      font-size: 144px;
+      margin-bottom: 64px;
+    }
+  }
+  &__sub-title {
+    text-align: center;
+    margin-bottom: 32px;
+    cursor: default;
+    transition: all 1s;
+
+    @include onTablet {
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktopPlus {
+      margin-bottom: 40px;
+    }
+  }
+  &__section {
+    &-title {
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 85%;
+  
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+  
+      color: #f9512e;
+      cursor: default;
+  
+      @include onTablet {
+        font-size: 56px;
+      }
+  
+      @include onDesktop {
+        font-size: 72px;
+      }
+  
+      @include onDesktopPlus {
+        font-size: 72px;
+      }
+    }
+    &-article {
+      margin-bottom: 56px;
+      line-height: 150%;
+
+      letter-spacing: -0.01em;
+
+      color: #1c1a26;
+      cursor: default;
+
+      transition: margin-bottom 1s;
+      @include onTablet {
+        margin-bottom: 80px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 80px;
+      }
+
+      @include onDesktopPlus {
+        margin-bottom: 80px;
+      }
+    }
+  }
+}
