@@ -1,0 +1,72 @@
+.card {
+  height: fit-content;
+  margin-bottom: 56px;
+
+  &__photo {
+    margin: 0 auto 20px;
+    border-radius: 8px;
+    height: 434px;
+    position: relative;
+    width: 100%;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onDesctop {
+      height: 500px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__photo-img {
+    position: absolute;
+    height: 434px;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+
+    @include onDesctop {
+      height: 500px;
+    }
+  }
+
+  &__baking {
+    @extend %gray-text;
+  }
+
+  &__order {
+    position: relative;
+    width: 74px;
+    height: 32px;
+    line-height: 32px;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: right;
+    border-bottom: 1px solid transparent;
+    color: $main-color;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    
+    &:hover {
+      border-color: $main-color;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 24px;
+      height: 100%;
+      background-image: url(../images/Vector.svg);
+      background-repeat: no-repeat;
+      background-position-y: center;
+    }
+  }
+}

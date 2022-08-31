@@ -1,0 +1,50 @@
+.button {
+  display: flex;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  border: 2px solid $main-color;
+  border-radius: 32px;
+  position: relative;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: $main-color;
+  text-transform: uppercase;
+  transition: color 0.3s, background-color 0.3s, display 0.3s;
+
+  &:hover {
+    color: white;
+    background-color: #f9512e;
+  }
+
+  &:hover &__cookie {
+    filter: brightness(0) invert(1);
+  }
+
+  &:focus {
+    color: white;
+    border-color: #b2341a ;
+    background-color: #b2341a;
+  }
+
+  &:focus &__cookie {
+    filter: brightness(0) invert(1);
+  }
+
+  @include onTablet {
+    margin: 0 auto;
+    width: 326px;
+  }
+
+  @include onDesctop {
+
+    margin: 0;
+    width: 260px;
+  }
+}

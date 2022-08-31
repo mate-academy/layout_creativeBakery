@@ -1,0 +1,49 @@
+.opener-menu {
+  height: 100vh;
+  width: 100%;
+  background-color: $page-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: transform 1s ;
+  z-index: 2;
+  transform: translateX(-100%);
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__content {
+    padding-top: 132px;
+    width: 100%;
+    list-style: none;
+  }
+
+  &__content-item {
+    margin: auto;
+    width: 50%;
+    height: 64px;
+  }
+
+  &__link {
+    display: flex;
+    position: relative;
+    width: 120px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    @extend %link-style;
+    cursor: pointer;
+    transition: color 0.3s , transform 0.3s;
+
+    &:hover {
+      color: $main-color;
+      transform: scale(1.1);
+    }
+  }
+
+  .phone-icon {
+    left: -6px;
+  }
+}
