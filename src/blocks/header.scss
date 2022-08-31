@@ -1,0 +1,179 @@
+.header {
+  position: relative;
+
+  &__content {
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 0 114px;
+  }
+
+  &__top {
+    padding: 32px 0 0;
+    margin-bottom: 32px;
+  }
+
+  &__list {
+    display: none;
+    list-style: none;
+
+    @include onDesktop {
+      display: flex;
+      gap: 64px;
+    }
+  }
+
+  &__link {
+    font-family: "Inter", sans-serif;
+    letter-spacing: -0.01em;
+
+    color: #1c1a26;
+
+    text-decoration: none;
+    transition-duration: 0.5s;
+
+    &-contact {
+      display: flex;
+      justify-content: center;
+      text-transform: uppercase;
+      color: #f9512e;
+      letter-spacing: 0.02em;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &::before {
+        content: url(images/call-in-menu.svg);
+        padding-right: 7px;
+      }
+    }
+
+    &:hover {
+      color: #f9512e;
+      transition-duration: 0.5s;
+    }
+  }
+
+  &__description {
+    @include onDesktop {
+      margin-top: 150px;
+      text-align: left;
+      width: max-content;
+    }
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    margin-bottom: 32px;
+
+    color: #1c1a26;
+  }
+
+  &__title {
+    // @include onTablet {
+    //   // position: relative;
+    //   // top: 30%;
+    //   // margin-top: 1%;
+    // }
+
+    @include onDesktop {
+      position: absolute;
+      top: 40%;
+      font-family: "Inter", sans-serif;
+      font-size: 120px;
+      line-height: 85%;
+
+      text-align: center;
+      cursor: default;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      // transform: translateX(0);
+    }
+
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $color-orange;
+  }
+
+  &__img {
+    @include onDesktop {
+      height: 546px;
+      width: 544px;
+      // grid-column: 3 / 7;
+    }
+
+    width: 288px;
+    height: 290px;
+
+    background-image: url(images/Cookie.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  &__button-link {
+    @include onDesktop {
+      transform: translateY(-200%);
+    }
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $color-orange;
+    background-color: #ffeefc;
+    border-radius: 32px;
+
+    padding: 20px 30px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    transition-duration: 0.5s;
+    text-decoration: none;
+
+    color: $color-orange;
+
+    &:before {
+      content: url(images/cookie-in-button.svg);
+      padding-right: 6px;
+    }
+
+    &:hover{
+      background-color: $color-orange;
+      color: #fff;
+
+      &::before {
+        content: url(images/cookie-in-button-hover.svg);
+      }
+    }
+
+    &:focus {
+      background-color: #b2341a;
+      border-color: #b2341a;
+      color: white;
+
+      &::before {
+        content: url(images/cookie-in-button-hover.svg);
+      }
+    }
+  }
+}
+
+.header__top,
+.header__content {
+  display: flex;
+  justify-content: space-between;
+}

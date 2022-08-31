@@ -1,0 +1,30 @@
+.icon {
+  --icon-width: 20px;
+
+  display: block;
+  position: relative;
+  width: var(--icon-width);
+  height: var(--icon-width);
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  text-decoration: none;
+
+  &--burger {
+    background-image: url(/images/burger-img.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--cross {
+    background-image: url(images/cross.svg);
+    transition: transform 1s;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+}
