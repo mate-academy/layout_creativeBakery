@@ -1,0 +1,72 @@
+.header {
+
+  &__nav {
+    margin-bottom: 32px;
+    padding: 20px 20px 0;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 135px;
+      padding: 20px 40px 0;
+    }
+
+    @include onDesktopXL {
+      padding: 20px 0 0;
+      margin-bottom: 100px;
+    }
+    //display: flex;
+    //justify-content: space-between;
+    //align-items: center;
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__link {
+      margin-right: 64px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-opener {
+      display: block;
+      width: 20px;
+      height: 8px;
+      background-image: url(/images/menu.svg);
+
+      &:hover {
+        background-image: url(/images/menu-hover.svg);
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &-cross {
+      display: block;
+      width: 13px;
+      height: 13px;
+      background-image: url(/images/cross.svg);
+
+      &:hover {
+        background-image: url(/images/cross-hover.svg);
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+  }
+
+}

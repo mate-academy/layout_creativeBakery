@@ -1,0 +1,148 @@
+.cover {
+  max-height: 100vh;
+  /*margin-bottom: -10%;
+  padding-bottom: 130px;
+
+  @include onTablet {
+    height: max-content;
+    // padding-bottom: 200px;
+    margin-bottom: 5%;
+  }
+
+  @include onDesktop {
+    height: max-content;
+    padding-bottom: 200px;
+    margin-bottom: 5%;
+  } */
+
+  &__title {
+    font-weight: 400;
+    font-size: 64px;
+    color: $c-black;
+    text-transform: uppercase;
+
+    text-align: center;
+
+    z-index: 1;
+
+    @include onTablet {
+      position: relative;
+      top: 10%;
+      font-size: 64px;
+    }
+
+    @include onDesktop {
+      font-size: 100px;
+    }
+
+    @include onDesktopXL {
+      font-size: 120px;
+    }
+
+    animation: squeezeRight 1s ease-out 1;
+  }
+
+  &__image {
+    margin: 0 auto;
+    height: 290px;
+
+    @include onTablet {
+      position: relative;
+      top: -60%;
+      height: 328px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      height: 546px;
+    }
+
+    @include onDesktopXL {
+      height: 586px;
+      top: -60%;
+    }
+
+    //animation: drop 0.7s linear 0s;
+    animation: bonce 0.7s ease-in-out 0s;
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    text-align: center;
+
+    @include onTablet {
+      margin-top: 80px;
+      margin-bottom: 75px;
+      position: relative;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      top: 25%;
+      left: 32%;
+    }
+
+    @include onDesktopXL {
+      top: 30%;
+      left: 45%;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 56px;
+    border: 2px solid $c-accent-orange;
+    border-radius: 32px;
+    top: -50%;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $c-accent-orange;
+
+    cursor: pointer;
+
+    @include onTablet {
+      margin-top: -140px;
+      //width: 300px;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+      position: relative;
+      top: -900%;
+      left: 40%;
+    }
+
+    &::before {
+      margin-right: 6px;
+      content: url(/images/icon-cookie.svg);
+    }
+
+    &:hover {
+      background-color: $c-accent-orange;
+      color: white;
+
+      &::before {
+        margin-right: 6px;
+        content: url(/images/icon-cookie-hover.svg);
+      }
+    }
+
+    &:focus {
+      background-color: $c-dark-orange;
+      border-color: $c-dark-orange;
+      color: white;
+
+      &::before {
+        margin-right: 6px;
+        content: url(/images/icon-cookie-hover.svg);
+      }
+    }
+  }
+}
