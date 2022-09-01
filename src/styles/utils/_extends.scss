@@ -1,4 +1,66 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
+%main-text {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
   font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: $text-color;
+}
+
+%main-big-text {
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+%main-uppercase-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+%headings-text {
+  font-weight: 400;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $headings-color;
+}
+
+%links-decoration {
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    border-bottom: 1px solid currentColor;
+    transition: width 0.3s;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+%top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 18px 20px 20px;
+}
+
+%container {
+  padding: 0 16px;
+
+  @include onTablet {
+    padding: 0 44px;
+  }
 }

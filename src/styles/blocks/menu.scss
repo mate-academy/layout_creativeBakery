@@ -1,0 +1,64 @@
+.menu {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+
+    &--top {
+      flex-direction: row;
+    }
+
+    &--footer {
+      align-items: flex-start;
+    }
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-right: 64px;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &--footer {
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+
+    @extend %main-text;
+    text-decoration: none;
+
+    @extend %links-decoration;
+
+    &:active {
+      color: $dark-orange;
+    }
+
+    &--contact-us {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      color: $accent-orange;
+    }
+
+    &--footer {
+      color: #fff;
+    }
+  }
+}

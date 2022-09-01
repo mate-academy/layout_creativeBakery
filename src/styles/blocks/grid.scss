@@ -1,0 +1,96 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include onTablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onLargeDesktop {
+    grid-template-columns: repeat(8, 128px);
+    justify-content: center;
+  }
+
+  &--tablet-desktop {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &--footer {
+    @include onTablet {
+      grid-template-rows: repeat(4, auto);
+      row-gap: 40px;
+
+      grid-template-areas: "logo logo logo logo title title title title"
+        "menu menu menu menu call call call call"
+        "menu menu menu menu email email email email"
+        "icons icons icons icons copy copy copy copy";
+    }
+
+    @include onDesktop {
+      grid-template-rows: repeat(3, auto);
+
+      grid-template-areas: "logo logo logo logo title title title title"
+        "menu menu menu menu call call email email"
+        "icons icons icons icons copy copy copy copy";
+    }
+  }
+
+  &__item {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--tablet-#{$start}-#{$end} {
+          @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--desktop-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  &__area {
+    &--logo {
+      grid-area: logo;
+    }
+
+    &--title {
+      grid-area: title;
+    }
+
+    &--menu {
+      grid-area: menu;
+    }
+
+    &--call {
+      grid-area: call;
+    }
+
+    &--email {
+      grid-area: email;
+    }
+
+    &--icons {
+      grid-area: icons;
+      align-self: center;
+    }
+
+    &--copy {
+      grid-area: copy;
+    }
+  }
+}
