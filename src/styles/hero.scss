@@ -1,0 +1,121 @@
+.hero {
+  text-align: center;
+  color: $dark-color;
+
+  &__container {
+    margin-bottom: 90px;
+  }
+
+  &__text {
+    font-size: 16px;
+    margin-bottom: 32px;
+    padding-top: 20px;
+
+    @include onTab {
+      text-align: left;
+      margin-bottom: 16px;
+      padding-top: 80px;
+    }
+
+    @include onDesk {
+      padding-top: 0;
+      margin-bottom: 0;
+      position: relative;
+      top: 150%;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 55px;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+
+    @include onTab {
+      font-size: 70px;
+      line-height: 60px;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translateX(-50%);
+    }
+
+    @include onDesk {
+      top: 35%;
+      font-size: 130px;
+      line-height: 115px;
+    }
+  }
+
+  &__image-container {
+    text-align: center;
+    height: 290px;
+
+    @include onTab {
+      height: 350px;
+    }
+
+    @include onDesk {
+      height: 550px;
+      position: relative;
+      bottom: 50%;
+      transform: translateY(40%);
+      z-index: -1;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    @include onDesk {
+      height: 550px;
+      animation: rotation 5s ease-in-out alternate;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+    height: 60px;
+    border: 2px solid $dark-red-color;
+    border-radius: 32px;
+    text-transform: uppercase;
+    color: $dark-red-color;
+    transition: color 1s, background-color 1s, border-color 1s;
+
+    &::before {
+      content: "";
+      display: block;
+      background: url(../images/button-cookie-back.svg);
+      @extend %background;
+      height: 20px;
+      width: 20px;
+      margin-right: 7px;
+      transition: background-image 1s;
+    }
+
+    @include onDesk {
+      position: relative;
+      bottom: 200%;
+
+      &:hover {
+        background-color: $dark-red-color;
+        color: $color-white;
+        border-color: transparent;
+      }
+
+      &:hover::before {
+        background-image: url(../images/cookie-hover.svg);
+      }
+
+      &:focus {
+        background-color: $dark-orange;
+        border-color: transparent;
+      }
+    }
+  }
+}
