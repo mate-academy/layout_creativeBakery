@@ -15,10 +15,13 @@
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #FFEEFC;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFEEFC;
+  }
 
 
   &__logo {
@@ -28,6 +31,30 @@
 
 .nav {
 
+  &__list-link {
+    text-decoration: none;
+
+    &--style {
+      font-weight: 500;
+      font-size: 16px;
+
+      letter-spacing: 0.02em;
+
+      color: #F9512E;
+
+      &::before {
+        content: url("../images/Vector.svg");
+        position: relative;
+        top: 15%;
+        right: 5%;
+      }
+    }
+    
+    &:hover {
+      color: #F9512E;
+    }
+  }
+
   &__list {
     display: flex;
     flex-direction: rows;
@@ -36,30 +63,82 @@
     margin-right: 32px;
   }
 
-  &__phone-img {
-    position: absolute;
-    margin-left: -27px;
-    left: 0%;
-    top:50%;
-    transform: translateY(-50%);
-  }
-
   &__link {
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     letter-spacing: -0.01em;
     color: #1C1A26;
+  }
 
-    &--style {
+}
+
+.main {
+  padding-left: 124px;
+  padding-right: 124px;
+  background-color: #FFEEFC;
+}
+
+.container-start {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__p {
+    width: 280px;
+    height: 48px;
+    margin-top: 144px;
+  }
+
+  &__h1 {
+    font-weight: 400;
+    font-size: 144px;
+    line-height: 85%;
+
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: #F9512E;
+    z-index: 1;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-decoration: none;
+    border: 2px solid #F9512E;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 32px;
+
+    width: 280px;
+    height: 56px;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #F9512E;
+
+    &::before {
+      content: url("../images/cook.svg");
       position: relative;
-      font-weight: 500;
-      font-size: 16px;
-
-      letter-spacing: 0.02em;
-
-      color: #F9512E;
+      transform: translate(-15% ,10%);
     }
   }
 
+  &__cook {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 584px;
+    height: 586px;
+    margin: 0 auto;
+    z-index: 0;
+  }
 }
