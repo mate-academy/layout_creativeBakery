@@ -1,0 +1,60 @@
+.page {
+  &--style {
+    &--blue {
+      background-color: $color-style-blue;
+    }
+    &--pink {
+      background-color: $color-style-pink;
+    }
+  }
+  scroll-behavior: smooth;
+  min-width: 320px;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  margin: 0 auto;
+  --header-padd-top: 20px;
+  --header-padd-left-right: 18px;
+  @include screenUp1024() {
+    --header-padd-top: 32px;
+    --header-padd-left-right: 32px;
+  }
+
+  &__body {
+    margin: 0;
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+  &__header {
+    padding-top: var(--header-padd-top);
+    padding-left: var(--header-padd-left-right);
+    padding-right: var(--header-padd-left-right);
+  }
+
+  &__menu {
+    padding-top: var(--header-padd-top);
+    padding-left: var(--header-padd-left-right);
+    padding-right: var(--header-padd-left-right);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform 0.5s;
+    transform: translateX(-100%);
+    &:target {
+      transform: translateX(0);
+    }
+  }
+  &__main {
+    padding-left: var(--header-padd-left-right);
+    padding-right: var(--header-padd-left-right);
+    padding-top: 40px;
+  }
+  &__footer {
+    padding-left: var(--header-padd-left-right);
+    padding-right: var(--header-padd-left-right);
+    padding-top: 61px;
+    padding-bottom: 56px;
+    background-color: $color-main-dark;
+  }
+}

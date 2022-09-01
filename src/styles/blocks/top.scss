@@ -1,0 +1,48 @@
+.top {
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  &__logo {
+    width: 128px;
+    padding-left: 2px;
+    @include screenUp720() {
+      padding-left: 4px;
+    }
+  }
+  &__link {
+    &--desktop {
+      position: absolute;
+      visibility: hidden;
+      transform: translateX(-150%);
+    }
+    &--mob {
+      position: absolute;
+      left: 95%;
+      top: 30%;
+    }
+    @include screenUp720() {
+      &--desktop {
+        position: absolute;
+        visibility: visible;
+        transform: translateX(-100%);
+      }
+      &--mob {
+        position: absolute;
+        visibility: hidden;
+        transform: translateX(100%);
+      }
+      &--item {
+        margin-right: 64px;
+      }
+      &--contact {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  &__nav {
+    width: 100% ;
+    text-align: end;
+  }
+}

@@ -1,0 +1,111 @@
+@keyframes start-mob {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: top center;
+  }
+}
+
+@keyframes start {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  50% {
+    transform: rotate(150deg);
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+
+.header {
+
+  box-sizing: border-box;
+  height: 100vh;
+  perspective: 400px;
+
+  &--background {
+    &--blue {
+      background-color: #eef7ff;
+    }
+    &--pink {
+      background-color: #ffeefc;
+    }
+  }
+  &__top {
+    margin-bottom: 52px;
+    @include screenUp720() {
+      margin-bottom: 100px;
+    }
+    @include screenUp1024() {
+      margin-bottom: 165px;
+    }
+    @include screenUp1200() {
+      margin-bottom: 175px;
+    }
+  }
+  &__field {
+    margin: 0 auto;
+    max-width: max-content;
+  }
+
+  &__slogan {
+    text-align: center;
+    margin-bottom: 32px;
+    @include screenUp720() {
+      text-align: start;
+      margin-bottom: 146px;
+    }
+    @include screenUp1024() {
+      margin-bottom: 8px;
+    }
+
+    @include screenUp1200() {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    animation: start-mob 1s linear;
+    @include screenUp720() {
+      animation: start 1s linear;
+    }
+
+    &--size {
+      position: absolute;
+      height: 290px;
+      left: 50%;
+      transform: translateX(-50%);
+      @include screenUp720() {
+        bottom: -140px;
+        height: 328px;
+
+      }
+      @include screenUp1024() {
+        bottom: -220px;
+        height: 546px;
+      }
+
+      @include screenUp1200() {
+        bottom: -200px;
+        height: 586px;
+      }
+    }
+  }
+  &__title {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 100%;
+  }
+  &__button {
+    position: relative;
+    width: 100%;
+  }
+}
