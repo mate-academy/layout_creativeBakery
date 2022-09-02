@@ -1,0 +1,187 @@
+.footer {
+  padding: 56px 0;
+  @include onTablet {
+    padding: 92px 0;
+  }
+
+  background-color: $c-black;
+
+  &__logo {
+    display: block;
+    grid-row: 1;
+
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(105%);
+    }
+
+    &-link {
+      width: max-content;
+      margin-bottom: 44px;
+    }
+  }
+
+  &__menu {
+    list-style: none;
+    margin-bottom: 64px;
+
+    &-title {
+      color: $c-grey;
+      @include uppercase;
+      margin-bottom: 16px;
+    }
+
+    &-item:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &-link {
+      position: relative;
+
+      @include body-text;
+      color: $c-white;
+      text-decoration: none;
+
+      padding: 10px 0;
+      border-bottom: 2px solid transparent;
+
+      transition: color $transition-time;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+
+        bottom: 0;
+        left: 0;
+
+        height: 1px;
+        background-color: $c-accent-orange;
+      }
+
+      &:hover {
+        color: $c-accent-orange;
+        &::after {
+          animation: link $transition-time linear forwards;
+        }
+      }
+    }
+  }
+
+  &__contact {
+    color: $c-white;
+    margin-bottom: 40px;
+
+    grid-row: 1;
+  }
+
+  &__call-us {
+    list-style: none;
+    margin-bottom: 64px;
+
+    &-title {
+      color: $c-grey;
+      @include uppercase;
+      margin-bottom: 16px;
+    }
+
+    &-item:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &-link {
+      position: relative;
+      @include body-text;
+      color: $c-white;
+      text-decoration: none;
+
+      padding: 10px 0;
+
+      transition: color $transition-time;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+
+        bottom: 0;
+        left: 0;
+
+        height: 1px;
+        background-color: $c-accent-orange;
+      }
+
+      &:hover {
+        color: $c-accent-orange;
+        &::after {
+          animation: link $transition-time linear forwards;
+        }
+      }
+    }
+  }
+
+  &__email-us {
+    color: $c-grey;
+    @include uppercase;
+    margin-bottom: 16px;
+  }
+
+  &__email {
+    position: relative;
+    display: inline;
+    @include body-text;
+    color: $c-white;
+    text-decoration: none;
+
+    padding: 10px 0;
+    border-bottom: 2px solid transparent;
+
+    transition: color $transition-time;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      height: 1px;
+      background-color: $c-accent-orange;
+    }
+
+    &:hover {
+      color: $c-accent-orange;
+      &::after {
+        animation: link $transition-time linear forwards;
+      }
+    }
+
+    @include onDesktop {
+      grid-row: 2;
+    }
+
+    &-wrapper {
+      margin-bottom: 42px;
+    }
+  }
+
+  &__icon-wrapper {
+    margin-bottom: 42px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link-svg {
+    margin-right: 40px;
+    text-decoration: none;
+  }
+
+  &__copyright {
+    color: $c-grey;
+    @include body-text;
+  }
+}
