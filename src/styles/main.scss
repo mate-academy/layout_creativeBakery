@@ -32,6 +32,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 88px;
     background-color: #FFEEFC;
   }
 
@@ -98,7 +99,7 @@ h2 {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 1192px;
+  max-width: 1192px;
 
   &__p {
     width: 280px;
@@ -166,6 +167,15 @@ h2 {
   justify-content: center;
   position: relative;
 
+  &__texttitle--3-4 {
+    grid-column: 3 / 5;
+    grid-row: 8 / 9;
+  }
+
+  &__texttitle--4-5 {
+    grid-column: 5 / 7;
+    grid-row: 8 / 9;
+  }
 
   &__subtitle--1-5 {
     grid-column: 1 / 5;
@@ -177,14 +187,17 @@ h2 {
 
   &__subtitle--3-4 {
     grid-column: 3 / 5;
+    grid-row: 7 / 8;
   }
 
   &__subtitle--4-5 {
     grid-column: 5 / 7;
+    grid-row: 7 / 8;
   }
 
   &__subtitle--5-6 {
     grid-column: 7 / 9;
+    grid-row: 7 / 8;
   }
 
   &__crumbs {
@@ -381,7 +394,7 @@ h2 {
     letter-spacing: -0.01em;
     color: #7F8096;
     grid-column: 5 / 7;
-    
+
   }
 
   &__text {
@@ -455,5 +468,42 @@ svg path {
     line-height: 150%;
     letter-spacing: -0.01em;
     color: #FFFFFF;
+  }
+}
+
+@media (max-width: 767px) {
+  .container-content {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .container-start {
+    display: block;
+    width: 100%;
+
+    &__h1 {
+      font-size: 64px;
+      word-wrap: normal;
+    }
+
+    &__p {
+      width: 100%;
+    }
+
+    &__cook {
+      display: none;
+      position: static;
+      left: 0;
+      right: 0;
+    }
+
+    &__link {
+      margin: 0 auto;
+    }
+  }
+
+  .main {
+    padding: 16px;
   }
 }
