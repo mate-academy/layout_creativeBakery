@@ -1,6 +1,154 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin on320 {
+  @media (max-width: 639px) {
+    @content;
   }
+}
+
+@mixin on640 {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin on1024 {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin on1192 {
+  @media (min-width: 1192px) {
+    @content;
+  }
+}
+
+@mixin headerTitle {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 85%;
+  text-align: center;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  margin: 0;
+
+  color: $color-black;
+
+  @include on640 {
+    font-size: 80px;
+  }
+
+  @include on1024 {
+    font-size: 136px;
+  }
+
+  @include on1192 {
+    font-size: 144px;
+  }
+}
+
+@mixin headerSubtitle {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: -0.01em;
+
+  @include on640 {
+    text-align: start;
+  }
+}
+
+@mixin buttonText {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: $color-accent-orange;
+}
+
+@mixin sectionTitle {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  color: $color-black;
+
+  @include on640 {
+    font-size: 56px;
+  }
+
+  @include on1024 {
+    font-size: 72px;
+  }
+}
+
+@mixin mainText {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+
+  color: $color-black;
+}
+
+@mixin photoTitletext {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: $color-grey;
+}
+
+@mixin contactsLinkTitleText {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  
+  color: $color-grey;
+}
+
+@mixin contactsLinkText {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+
+  color: $color-white;
+}
+
+@mixin amountNumber {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  color: $color-black;
+}
+
+@mixin amountSubtitle {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+
+  color: $color-grey;
 }

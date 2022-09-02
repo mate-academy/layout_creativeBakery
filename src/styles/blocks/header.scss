@@ -1,0 +1,196 @@
+.header {
+
+  &__nav-content {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 32px;
+
+    @include on640 {
+      margin-bottom: 80px;
+    }
+
+    @include on1024 {
+      display: flex;
+      margin-bottom: 135px;
+    }
+  }
+
+  &__nav-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu {
+
+    &-icon {
+      cursor: pointer;
+      transition: 300ms;
+    }
+
+    &-icon:hover {
+      fill: $color-accent-orange;
+    }
+
+    @include on1024 {
+      display: none;
+    }
+  }
+
+  &__list-block {
+    display: none;
+    align-items: center;
+
+    @include on1024 {
+      display: flex;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-right: 64px;
+    transition: transform 300ms;
+
+    &:last-child {
+      margin-right: 92px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @include mainText;
+
+    &--tel {
+      position: relative;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $color-accent-orange;
+      transition: transform 300ms;
+      padding: 0;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -100%;
+        left: -5px;
+        transform: translate(-100%, 50%);
+        background-image: url("../images/svg/Icon-phone.svg");
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__content {
+
+    &--mob-tab {
+      display: block;
+      @include on640 {
+        display: grid;
+      }
+
+      @include on1024 {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include on1024 {
+        display: grid;
+      }
+    }
+  }
+
+  &__subtitle {
+    @include headerSubtitle;
+
+    margin-bottom: 32px;
+
+    @include on640 {
+      margin-bottom: 16px;
+    }
+
+    @include on1024 {
+      margin-bottom: 188px;
+    }
+
+    @include on1192 {
+      margin-bottom: 226px;
+    }
+  }
+
+  &__title-photo-block {
+    position: relative;
+  }
+
+  &__title {
+    @include headerTitle;
+
+    @include on640 {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 130px;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include on1024 {
+        display: block;
+        top: 303px;
+      }
+    }
+  }
+
+  &__photo {
+    width: 288px;
+    height: 290px;
+    background-image: url("../images/Cookie.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    margin: 0 auto;
+
+    @include on640 {
+      width: 100%;
+      height: 328px;
+      background-size: contain;
+
+      margin-bottom: 80px;
+    }
+
+    @include on1024 {
+      height: 546px;
+
+      margin-top: -135px;
+      margin-bottom: 0;
+    }
+
+    @include on1192 {
+      height: 586px;
+    }
+  }
+}
