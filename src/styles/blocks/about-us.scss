@@ -42,15 +42,14 @@
   }
 
   &__achievements {
+    padding-top: 1rem;
     @include devices("tablet") {
-      padding-top: 4rem;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
     
     @include devices("desktop") {
       grid-template-columns: repeat(4, 1fr);
-      padding-top: 9rem;
     }
     
   }
@@ -58,7 +57,20 @@
   &__achievement {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 3rem;
+
     @include devices("tablet") {
+      padding-bottom: 5rem;
+    }
+  }
+
+  &__achievement:nth-of-type(3),
+  &__achievement:nth-of-type(4) {
+    @include devices("tablet") {
+      padding-bottom: 0;
+    }
+    @include devices("desktop") {
       padding-bottom: 5rem;
     }
   }
