@@ -1,0 +1,68 @@
+.about {
+  
+  &__content {
+    display: block;
+    background-image: url("../images/Crumbs.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include on640 {
+      display: grid;
+    }
+  }
+
+  &__title {
+    @include sectionTitle;
+
+    margin-bottom: 32px;
+
+    @include on640 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__paragraph {
+    @include mainText;
+
+    margin-bottom: 64px;
+
+    @include on640 {
+      margin-bottom: 72px;
+    }
+
+    @include on1024 {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__amount {
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include on640 {
+      margin-bottom: 80px;
+
+      &:nth-child(n + 5) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include on1024 {
+      margin-bottom: 293px;
+    }
+  }
+
+  &__amount-number {
+    @include amountNumber;
+
+    margin-bottom: 8px;
+  }
+
+  &__amount-subtitle {
+    @include amountSubtitle;
+  }
+}

@@ -1,0 +1,43 @@
+.grid {
+  display: grid;
+  justify-content: space-between;
+
+  @include on320 {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+
+    @for $start from 1 through 2 {
+      @for $end from $start through 2 {
+        &__item--320-#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+
+  @include on640 {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &__item--640-#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+
+  @include on1024 {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &__item--1024-#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+}
