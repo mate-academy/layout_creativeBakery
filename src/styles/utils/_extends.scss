@@ -1,4 +1,60 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+%place__content {
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+%nav__location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  margin-bottom: 32px;
+
+  @include onTablet {
+    margin-bottom: 80px;
+  }
+
+  @include onDesktop {
+    height: 88px;
+    margin-bottom: 135px;
+  }
+}
+
+%link {
+  color: $color-font;
+  padding: 8px 0;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $color-hover;
+  }
+}
+
+%link__active {
+  position: relative;
+  padding-left: 28px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $color-hover;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 18px;
+    height: 18px;
+    background-position: center;
+    background-image: url(../images/phone.svg);
+  }
+
+  &:hover {
+    color: $color-active;
+
+    &::before {
+      filter: brightness(75%);
+    }
+  }
 }
