@@ -1,0 +1,30 @@
+.page {
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+
+  &__container {
+    box-sizing: content-box;
+    max-width: 1200px;
+    padding: 0 16px;
+    margin: 0 auto;
+
+    @include onTablet {
+      padding: 0 44px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

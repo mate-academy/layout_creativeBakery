@@ -1,0 +1,137 @@
+.cookie {
+  @include onTablet {
+    margin-top: 0;
+  }
+
+  @include onDesktop {
+    height: 650px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    color: #1c1a26;
+    text-align: center;
+
+    @include onTablet {
+      position: relative;
+      margin: 80px 0 16px;
+      text-align: left;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 85%;
+
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: #1c1a26;
+
+    z-index: 1;
+
+    @include onTablet {
+      position: relative;
+      top: 300%;
+      font-size: 64px;
+    }
+
+    @include onDesktop {
+      top: 50%;
+      font-size: 136px;
+    }
+
+    @include onBigDesktop {
+      font-size: 144px;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto;
+    height: 290px;
+
+    background: url(../images/сrumbs.png) no-repeat center;
+
+    @include onTablet {
+      height: 328px;
+      width: 328px;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      height: 544px;
+      width: 544px;
+      top: -45%;
+    }
+  }
+
+  &__learn-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    border: 2px solid #f9512e;
+    box-sizing: border-box;
+    border-radius: 32px;
+
+    background-color: transparent;
+    color: #f9512e;
+
+    @include onTablet {
+      width: auto;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: -850%;
+    }
+
+    &::before {
+      content: " ";
+      background-image: url(../images/cookie-icon-orange.svg);
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+    }
+
+    &:hover {
+      background-color: #f9512e;
+      color: #fff;
+
+      &::before {
+        content: url(../images/small-cookie-white.svg);
+
+      }
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: #b3341a;
+      color: #b3341a;
+
+      &::before {
+        content: url(../images/small-cookie-red.svg);
+      }
+    }
+  }
+}
