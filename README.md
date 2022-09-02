@@ -1,4 +1,4 @@
 # Creative Bakery landing page
 ### Technologies used: CSS, HTML, BEM
 
-[DEMO LINK](https://github.com/mate-academy/layout_creativeBakery/pull/200)
+[DEMO LINK](https://oleksandr-kotliarov.github.io/layout_creativeBakery/)
