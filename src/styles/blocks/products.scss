@@ -1,0 +1,53 @@
+.product {
+  &__title {
+    @include orange-top-text;
+    margin-bottom: 24px;
+  }
+
+  &__main-text {
+    @include simple-black-text;
+    margin-bottom: 56px;
+
+    @include onTablet-onLargeDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__card {
+    margin-bottom: 64px;
+
+    @include onTablet-onLargeDesktop {
+      margin-bottom: 88px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    margin-bottom: 16px;
+    transition: all 0.2s;
+
+    &:hover {
+      @include onTablet-onLargeDesktop {
+        transform: scale(1.02);
+        z-index: 1;
+      }
+    }
+  }
+
+  &__text {
+    @include simple-black-text;
+    margin-bottom: 24px;
+  }
+
+  &__text-grey {
+    @include grey-upper-text;
+    margin-bottom: 8px;
+  }
+
+  &__order {
+    &::before {
+      content: "";
+      background-image: url(/images/arrow.png);
+    }
+  }
+}
