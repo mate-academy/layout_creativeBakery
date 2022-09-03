@@ -1,5 +1,10 @@
 .header {
-  min-height: 100vh;
+  // remove height of top nav
+  min-height: calc(100vh - 4rem);
+  @include devices("desktop") {
+    min-height: calc(100vh - 5.5rem);
+  }
+
   background: url("../images/cookie.png") no-repeat;
   background-position: 50% 220px;
   display: flex;
@@ -74,7 +79,7 @@
 
   @include devices("tablet") {
     background-position: 50% 50%;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 0;
     background-size: 326px;
   }
