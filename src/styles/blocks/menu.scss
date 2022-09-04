@@ -1,0 +1,96 @@
+.menu {
+  background-color: #fff;
+
+  &__content {
+    position: relative;
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 20px;
+    margin: 0;
+  }
+
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $colorBlack;
+    height: 32px;
+  }
+
+
+  &__item {
+    margin: 0 0 16px;
+    height: 32px;
+    box-sizing: border-box;
+    display: inline-block;
+
+    @include onDesktop {
+      margin: 0;
+    }
+
+    &:nth-child(4) a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 32px;
+      width: 136px;
+      margin-bottom: 0;
+      gap: 4px;
+      color: $colorAccentOrange;
+
+      @extend %upperTxt;
+      fill: currentColor;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 1px;
+      background: $colorBlack;
+      transition: width .3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+
+    &:nth-child(4) {
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background: $colorAccentOrange;
+        transition: width .3s;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}

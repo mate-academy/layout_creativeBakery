@@ -1,0 +1,73 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include onTablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+
+    &--footer {
+
+      @include onTablet {
+        grid-template-rows: (auto 40px auto auto 48px auto);
+        grid-template-areas: "logo logo logo . title title title title"
+          ". . . . . . . ."
+          "navigation navigation navigation . call-us call-us call-us call-us"
+          ". . . . email email email email"
+          ". . . . . . . ."
+          "social social social social cprts cprts cprts cprts";
+      }
+
+      @include onDesktop {
+        grid-template-rows: (auto 40px auto 48px auto);
+        grid-template-areas: "logo logo . . title title title title"
+          ". . . . . . . ."
+          "navigation navigation . . call-us call-us email email"
+          ". . . . . . . ."
+          "social social . . cprts cprts . .";
+      }
+    }
+  }
+
+  &--tablet {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &--relative {
+    @include onTablet {
+      position: relative;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__item {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--tablet-#{$start}-#{$end} {
+          @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+
+        &--desktop-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}
