@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: $grid-gap;
+
+  &__item {
+    @for $start from 1 to 9 {
+      @for $end from $start to 9 {
+        &--#{$start}-#{$end} {
+          grid-template: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+}
