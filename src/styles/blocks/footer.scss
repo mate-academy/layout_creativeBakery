@@ -1,0 +1,103 @@
+.footer {
+  padding-top: 61px;
+  padding-bottom: 58px;
+  background-color: $main-black;
+
+  @include onTablet {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  @include onDesktop {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  @include onBigScreen {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+
+    &:last-child {
+      margin-bottom: 50px;
+    }
+
+    &--style {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #7f8096;
+      width: max-content;
+    }
+  }
+
+  &__link--style {
+    text-decoration: none;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #fff;
+    width: max-content;
+    border-bottom: 2px solid transparent;
+    border-radius: 1px;
+    transition: 0.3s;
+
+    &:hover {
+      border-color: $c-orange;
+
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 34px;
+  }
+
+  &__security {
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #7f8096;
+  }
+
+  &__icon {
+    @include size (20px, 20px);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s;
+
+    @media (max-width: 762px) {
+      margin-bottom: 42px;
+    }
+
+    &--fb {
+      background-image: url(../images/facebook.svg);
+
+      &:hover {
+        background-image: url(../images/facebookLight.svg);
+      }
+    }
+
+    &--in {
+      background-image: url(../images/insta.svg);
+
+      &:hover {
+        background-image: url(../images/instaLight.svg);
+      }
+    }
+
+    &--tw {
+      background-image: url(../images/twitter.svg);
+
+      &:hover {
+        background-image: url(../images/twittetLight.svg);
+      }
+    }
+  }
+}
