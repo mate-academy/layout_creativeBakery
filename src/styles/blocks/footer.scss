@@ -1,0 +1,141 @@
+.footer {
+  padding: 61px 0;
+  background-color: $color-font;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 24px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 64px;
+    width: 328px;
+
+    @include onDesktop {
+      width: 544px;
+    }
+
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  &__menu-menu {
+    margin: 0;
+    margin-bottom: 8px;
+    font-weight: 500;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #7f8096;
+  }
+
+  &__link {
+    text-decoration: none;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: white;
+    font-weight: 500;
+
+    &:hover {
+      color: $color-hover;
+    }
+  }
+
+  &__contacts {
+
+    @include onTablet {
+      width: 328px;
+    }
+
+    @include onDesktop {
+      width: 544px;
+    }
+  }
+
+  &__title {
+    @include title-fonts;
+    margin-bottom: 40px;
+    color: white;
+  }
+
+  &__contacts-phones {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__email {
+    @extend .footer__menu;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-top: 0;
+      width: 260px;
+    }
+  }
+
+  &__networks {
+    display: flex;
+    gap: 35px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__networks-link {
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s;
+  }
+
+  &__networks--fb {
+    background-image: url(../images/fb.svg);
+
+    &:hover,
+    &:focus {
+      background-image: url(../images/fb_hover.svg);
+    }
+  }
+
+  &__networks--insta {
+    background-image: url(../images/insta.svg);
+
+    &:hover,
+    &:focus {
+      background-image: url(../images/insta_hover.svg);
+    }
+  }
+
+  &__networks--twit {
+    background-image: url(../images/twit.svg);
+
+    &:hover,
+    &:focus {
+      background-image: url(../images/twit_hover.svg);
+    }
+  }
+
+  &__copyright {
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #7f8096;
+  }
+}
