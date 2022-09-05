@@ -1,15 +1,18 @@
 .menu {
+  $root:&;
+
   height: 100vh;
+  background-color: $c-lightPing;
 
   &__top-action {
     @extend %top-position;
-    margin-bottom: 152px;
+    margin-bottom: 132px;
   }
 
   &__content {
     display: flex;
     justify-content: center;
-     text-align: center;
+    text-align: center;
   }
 
   &__list {
@@ -29,8 +32,26 @@
     text-decoration: none;
 
     &--call {
+      display: flex;
+      align-items: center;
+
       @extend %uppercase;
       color: $c-accentOrange;
     }
+
+    @include hover(color, $c-accentOrange);
+
+    &:active  {
+      color: $c-darkOrange;
+
+      #{$root}__icon-call {
+        fill: $c-darkOrange;
+      }
+    }
+  }
+
+  &__icon-call {
+    margin-right: 7px;
+    fill: $c-accentOrange;
   }
 }

@@ -1,29 +1,31 @@
 .icon {
-  display: block;
+  --standart-size: 20px;
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-decoration: none;
+  height: var(--standart-size);
+  width: var(--standart-size);
+  fill: $c-black;
+
+  @include hover(fill, $c-accentOrange);
+  @include active(fill, $c-darkOrange);
+
+  &--logo {
+    height: 24px;
+    width: 128px;
+  }
 
   &--menu {
     height: 8px;
-    width: 20px;
-
-    background-image: url(../images/icon/menu.svg);
-
-    @include hover(background-image, url(../images/icon/menu-hover.svg));
   }
 
   &--cross {
-    --size-cross: 12px;
+    --size-cross: 14px;
 
     height: var(--size-cross);
     width: var(--size-cross);
+  }
 
-    background-image: url(../images/icon/cross.svg);
-
-    @include hover(transform, rotate(90deg));
-    @include hover(background-image, url(../images/icon/cross-hover.svg));
+  &--color-orange {
+    fill: $c-accentOrange;
+    @include hover(fill, $c-white);
   }
 }
