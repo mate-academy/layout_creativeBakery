@@ -30,6 +30,12 @@
     }
   }
 
+  &__logo-image {
+    display: block;
+    width: 128px;
+    height: 25px;
+  }
+
   &__menu {
     list-style: none;
     align-items: baseline;
@@ -68,7 +74,6 @@
       grid-template-rows: repeat(4, 1fr);
       column-gap: 24px;
       justify-content: center;
-      // align-items: center;
     }
   }
 
@@ -97,20 +102,20 @@
   }
 
   &__title {
-    background-image: url(../images/Cookie.png);
-    background-repeat: no-repeat;
-    height: 290px;
-    background-size: contain;
-    background-position: bottom;
-    padding-bottom: 150px;
     margin-top: 30px;
+    padding-bottom: 150px;
+    grid-area: 1 / 1 / 5 / 9;
+    height: 290px;
     font-size: 64px;
     font-weight: inherit;
     line-height: 85%;
     text-align: center;
     letter-spacing: -0.05em;
+    background-image: url(../images/Cookie.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
     text-transform: uppercase;
-    grid-area: 1 / 1 / 5 / 9;
 
     @include onTablet {
       font-size: 80px;
@@ -148,37 +153,6 @@
   }
 
   &__button {
-    height: 60px;
-    text-align: center;
-    padding: 20px 80px;
-    grid-column: 1 / 8;
-
-    background-color: inherit;
-    border: 2px solid $orange;
-    border-radius: 30px;
-
-    &__content {
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 100%;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: $orange;
-
-      &::before {
-        @include iconBefore;
-        background-image: url(../images/icon_cake.png);
-      }
-    }
-
-    @include onTablet {
-      padding: 20px 110px;
-      margin-top: 80px;
-    }
-    @include onDesktop {
-      margin-top: 0;
-      grid-area: 3 / 1 / 5 / 3;
-    }
+    grid-area: 3 / 1 / 5 / 3;
   }
 }

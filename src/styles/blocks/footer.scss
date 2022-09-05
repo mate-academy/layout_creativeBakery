@@ -1,18 +1,24 @@
 .footer {
   padding: 60px 0;
   background-color: $black;
+
   &__content {
     @include onTablet {
       display: grid;
       grid-template-columns: repeat(8, 1fr);
     }
-
   }
+
   &__menu {
     display: flex;
     flex-direction: column;
     grid-column: 1 / 5;
+  }
 
+  &__logo-image {
+    display: block;
+    width: 160px;
+    height: 30px;
   }
 
   &__menu-title {
@@ -93,13 +99,21 @@
 
   &__trademark {
     margin-top: 42px;
+    grid-column: 5 / 7;
     color: $grey;
     line-height: 150%;
     letter-spacing: -0.01em;
-    grid-column: 5 / 7;
 
     @include onTablet {
       margin-top: 48px;
     }
+  }
+}
+
+svg {
+  color: $orange;
+
+  &:hover {
+    color: $white;
   }
 }
