@@ -27,3 +27,51 @@ svg path {
     fill: #fff;
   }
 }
+
+.mob-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  background-color: #FFEEFC;
+  width: 100%;
+  z-index: 1;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__link {
+    display: block;
+  }
+}
+
+.menu {
+  position: relative;
+  &__btn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+  }
+}
+
+#menu__toggle {
+  opacity: 0;
+
+  &:checked + .mob-menu {
+      visibility: visible;
+      left: 0;
+
+  }
+}
