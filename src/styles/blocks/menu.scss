@@ -1,0 +1,116 @@
+.menu {
+  background-color: $mainColor;
+
+  &__top {
+    margin-bottom: 132px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+      display: flex;
+    }
+  }
+
+  &__content {
+    height: 100vh;
+    margin: 0 16px;
+    box-sizing: border-box;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: min-content;
+      margin: 0 32px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include onDesktop {
+      display: inline-flex;
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+
+  &__item {
+    transition: transform 0.3s;
+
+    &:not(:last-child) {
+      padding-bottom: 24px;
+
+      @include onDesktop {
+        padding-bottom: 0;
+      }
+    }
+
+    &:nth-child(3) {
+      padding-bottom: 32px;
+
+      @include onDesktop {
+        padding-bottom: 0;
+      }
+    }
+
+    &:hover {
+      transform: scale(110%);
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: $textColor;
+    transition: all 0.3s;
+
+    @include onTablet {
+      font-size: 20px;
+    }
+
+    @include onDesktop {
+      font-size: 16px;
+    }
+
+    &:hover {
+      font-weight: 500;
+      color: $orangeColor;
+    }
+
+    &--contact {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $orangeColor;
+
+      @include onTablet {
+        font-size: 20px;
+      }
+      
+      @include onDesktop {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__contact-call {
+    display: inline-block;
+
+    height: 24px;
+    width: 24px;
+    margin-right: 4px;
+    background-image: url(../images/icon-phone.svg);
+  }
+
+  &__contacts-item {
+    display: flex;
+  }
+}
