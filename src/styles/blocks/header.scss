@@ -1,11 +1,4 @@
 .header {
-  height: 100vh;
-
-  background-image: url(../images/photo/Cookie.png);
-  background-size: contain;
-  background-position: bottom;
-  background-repeat: no-repeat;
-
   text-align: center;
 
   &__top-action {
@@ -51,13 +44,14 @@
   &__title {
     --mb-title: 290px;
 
+    position: relative;
     margin-bottom: var(--mb-title);
 
     @include text($h1-mobile,$h1-tablet,$h1-desktop);
     color: $c-accentOrange;
 
     @include onHuge {
-      font-size: 144px;;
+      font-size: 144px;
     }
 
     @include onTablet {
@@ -66,6 +60,26 @@
 
     @include onBig {
       --mb-title: 64px;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    z-index: -1;
+    bottom: -270%;
+
+    width: 100%;
+    padding-top: 100%;
+
+    background-image: url(../images/photo/cookie.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include notMobile {
+      width: 50%;
+      bottom: 0;
+      transform: translate(50%, 45%);
     }
   }
 }
