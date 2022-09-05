@@ -1,0 +1,43 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: #eef7ff;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu-cross {
+    display: block;
+    @include squareIcon(13px);
+
+    background: url(../images/icons/menu-cross.svg);
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-top: 32px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    @extend %style-link;
+
+    &--primary {
+      @extend %style-link-primary;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin-top: 150px;
+  }
+}

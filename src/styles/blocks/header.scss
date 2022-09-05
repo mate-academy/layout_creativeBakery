@@ -1,0 +1,50 @@
+.header {
+  box-sizing: border-box;
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__menu-link {
+    @extend %style-link;
+
+    margin-left: 64px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-left: 67px;
+    }
+
+    &--primary {
+      @extend %style-link-primary;
+    }
+  }
+
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu-opener {
+    display: block;
+    width: 20px;
+    height: 8px;
+
+    background: url(../images/icons/menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
