@@ -1,0 +1,57 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+
+  background-color: $colorLightPink;
+
+  @include onDesktop {
+    padding: 28px 32px;
+  }
+
+  &__icon {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__bar {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 64px;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__item {
+    &--call {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+    }
+  }
+
+  &__link {
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    color: inherit;
+
+    &--call {
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $colorOrange;
+    }
+  }
+}
