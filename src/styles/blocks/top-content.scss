@@ -1,0 +1,93 @@
+.top-content {
+  height: 650px;
+  padding-top: 32px;
+
+  &__text {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-top: 80px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    z-index: 1;
+
+    @include onTablet {
+      position: relative;
+      top: 350%;
+      font-size: 64px;
+    }
+
+    @include onDesktop {
+      top: 50%;
+      font-size: 110px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 290px;
+
+    @include onTablet {
+      height: 328px;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: -45%;
+      height: 546px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+
+    cursor: pointer;
+
+    text-decoration: none;
+    @extend %style-link-primary;
+    border: 2px solid $second-main-color;
+    border-radius: 32px;
+
+    &::before {
+      content: url(../images/icons/cookie-small.svg);
+      margin-right: 4px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: -850%;
+    }
+
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $second-main-color;
+      color: #fff;
+
+      &::before {
+        content: url(../images/icons/white-cookie.svg);
+        margin-right: 6px;
+      }
+    }
+
+    &:active {
+      background-color: #b2341a;
+      border: 2px solid transparent;
+    }
+  }
+}
