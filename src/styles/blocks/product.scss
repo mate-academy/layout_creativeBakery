@@ -1,0 +1,38 @@
+.product {
+
+  &__title {
+    @extend %h2;
+
+    margin-bottom: 24px;
+  }
+
+  &__info {
+    margin-bottom: 60px;
+  }
+
+  &__catalog {
+    @extend %grid;
+
+  }
+
+  &__item {
+    margin-bottom: 64px;
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        @include onTablet {
+          &--tablet-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+
+        &--desktop-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+
+      }
+    }
+  }
+}

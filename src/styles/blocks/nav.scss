@@ -9,11 +9,21 @@
   }
 
   &__link {
+    @include onDesktop {
+      padding: 32px 0;
+    }
+
     text-decoration: none;
     font-weight: 500;
     line-height: 150%;
     letter-spacing: -0.01em;
     color: $black;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $orange;
+    }
 
     &--contact-us {
       color: $orange;
@@ -23,7 +33,9 @@
 
       text-transform: uppercase;
 
-      &::after {
+      &::before {
+        box-sizing: content-box;
+
         position: absolute;
         top: 50%;
         transform: translate(-100%, -50%);
@@ -36,8 +48,18 @@
         height: 18px;
         background-image: url(../images/icons/Phone.svg);
         background-repeat: no-repeat;
+        background-position: center;
         background-size: contain;
+
+        transition: transform 0.3s;
+
+        transform-origin: 0;
       }
+
+      &:hover::before {
+        transform: rotate(45deg) translate(-130%, 0) scale(1.2);
+      }
+
     }
   }
 }

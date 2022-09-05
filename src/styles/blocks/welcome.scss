@@ -1,11 +1,16 @@
 .welcome {
-  position: relative;
+  // position: relative;
+  height: 546px;
 
-  overflow: hidden;
-
-  height: 100%;
+  @include onTablet {
+    background-image: url(../images/header_cookie.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+  }
 
   @extend %grid;
+  align-content: center;
 
   &__info {
     margin-bottom: 32px;
@@ -14,8 +19,8 @@
     @include onTablet {
 
       text-align: left;
-      position: absolute;
-      grid-column: 1 / 4;
+      // position: absolute;
+      grid-column: 1 / 5;
     }
 
     @include onDesktop {
@@ -29,7 +34,7 @@
     text-align: center;
 
     @include onTablet {
-      position: absolute;
+      // position: absolute;
       top: 50%;
       transform: translateY(-50%);
       grid-column: 1 / -1;
@@ -43,20 +48,34 @@
     height: 290px;
 
     @include onTablet {
-      width: 326px;
-      height: 328px;
-      z-index: -1;
+      display: none;
+    }
+
+    // @include onTablet {
+    //   width: 326px;
+    //   height: 328px;
+    //   z-index: -1;
+    //   grid-column: 3 / 7;
+    // }
+
+    // @include onDesktop {
+    //   width: 544px;
+    //   height: 546px;
+    // }
+
+    // @include onBigDesktop {
+    //   width: 584px;
+    //   height: 586px;
+    // }
+  }
+
+  &__button {
+    @include onTablet {
       grid-column: 3 / 7;
     }
 
     @include onDesktop {
-      width: 544px;
-      height: 546px;
-    }
-
-    @include onBigDesktop {
-      width: 584px;
-      height: 586px;
+      grid-column: 1 / 3;
     }
   }
 }
