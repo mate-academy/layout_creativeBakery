@@ -1,8 +1,5 @@
 .icon {
-  --standart-size: 20px;
-
-  height: var(--standart-size);
-  width: var(--standart-size);
+  @include square(20px);
   fill: $c-black;
 
   @include hover(fill, $c-accentOrange);
@@ -18,10 +15,18 @@
   }
 
   &--cross {
-    --size-cross: 14px;
+    @include square(18px);
+      fill: $c-black;
+  }
 
-    height: var(--size-cross);
-    width: var(--size-cross);
+  &--call {
+    fill: $c-accentOrange;
+  }
+
+  &--big {
+    @include onTablet {
+      @include square(40px);
+    }
   }
 
   &--color-orange {
