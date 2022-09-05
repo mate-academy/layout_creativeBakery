@@ -1,0 +1,73 @@
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onBigDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+@mixin iconBefore {
+  content: "";
+  position: absolute;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  align-items: center;
+  @include square($iconSize);
+  padding-right: $iconSize / 2;
+  top: 50%;
+  transform: translate(-100%, -50%);
+}
+
+@mixin iconProperties {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include square($iconSize);
+}
+
+@mixin contactInHeader {
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: $orange;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  &::before {
+    @include iconBefore;
+    background-image: url(../images/icon-phone.png);
+  }
+}
+@mixin linkInHeader {
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
