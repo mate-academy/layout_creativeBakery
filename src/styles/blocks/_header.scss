@@ -47,6 +47,11 @@
 
       @include uppercaseText();
 
+      transition: color $transition-delay;
+
+      &:hover {
+        color: $c-black;
+      }
     }
 
     &:last-child::before {
@@ -68,6 +73,13 @@
 
   &__burger {
     background-image: url("../images/burger.svg");
+
+    transition: background-image $transition-delay;
+
+    &:hover {
+      background-image: url("../images/burger_hover.svg");
+    }
+
     @include onDesktop {
       display: none;
     }
@@ -96,6 +108,9 @@
       top: 100px;
       margin: 0;
       max-width: 260px;
+    }
+    @include onBigDesktop {
+      max-width: 280px;
     }
   }
 
@@ -150,6 +165,24 @@
       margin: -170px 0;
 
       max-width: 260px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 20px;
+      width: 20px;
+      background-image: url("../images/cookie.svg");
+
+      transition: background-image $transition-delay;
+    }
+
+    &:hover::before {
+      background-image: url("../images/cookie_hover.svg");
+    }
+
+    &:focus::before {
+      background-image: url("../images/cookie_hover.svg");
     }
   }
 }
