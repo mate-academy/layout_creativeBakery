@@ -9,18 +9,63 @@
   text-align: center;
 
   &__top-action {
+    --margin-bottom-top: 32px;
+
     @extend %top-position;
-    margin-bottom: 32px;
+    margin-bottom: var(--margin-bottom-top);
+
+    @include onTablet {
+      --margin-bottom-top: 80px;
+    }
+
+    @include onDesktop {
+      --margin-bottom-top: 136px;
+    }
+
+    @include onHuge {
+      --margin-bottom-top: 144px;
+    }
   }
 
   &__text {
-    margin-bottom: 32px;
+    --mb-text: 32px;
+    margin-bottom: var(--mb-text);
+
+    @include notMobile {
+      text-align: start;
+    }
+
+    @include onTablet {
+      --mb-text: 146px;
+    }
+
+    @include onDesktop {
+      --mb-text: 8px;
+    }
+
+    @include onHuge {
+      --mb-text: 40px;
+    }
   }
 
   &__title {
-    margin-bottom: 290px;
+    --mb-title: 290px;
+
+    margin-bottom: var(--mb-title);
 
     @include text($h1-mobile,$h1-tablet,$h1-desktop);
     color: $c-accentOrange;
+
+    @include onHuge {
+      font-size: 144px;;
+    }
+
+    @include onTablet {
+      --mb-title: 210px;
+    }
+
+    @include onBig {
+      --mb-title: 64px;
+    }
   }
 }

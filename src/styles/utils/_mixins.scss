@@ -20,7 +20,7 @@
   letter-spacing: -0.05em;
   text-transform: uppercase;
 
-  @media (min-width: 640px) and (max-width:1023px) {
+  @media (min-width: 640px) and (max-width:1024px) {
     font-size: $tablet-size;
   }
 
@@ -42,7 +42,19 @@
 }
 
 @mixin onDesktop {
+  @media (min-width: 1024px) and(max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onBig {
   @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onHuge {
+  @media (min-width: 1200px) {
     @content;
   }
 }
