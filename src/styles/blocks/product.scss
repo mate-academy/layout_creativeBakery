@@ -1,4 +1,6 @@
 .product {
+  $root: &;
+
   &__photo {
     margin-bottom: 16px;
     width: 100%;
@@ -18,14 +20,29 @@
 
   &__order {
     display: flex;
+    transition: color $transition-speed;
+    color: $c-accentOrange;
+
+    &:hover {
+      #{$root}__arrow {
+        animation: bounce 2s infinite;
+      }
+    }
+
+    &:active {
+      color: $c-darkOrange;
+
+      #{$root}__arrow {
+        fill: $c-darkOrange;
+      }
+    }
+
+    &-text {
+      @extend %uppercase;
+    }
   }
 
   &__arrow {
     margin-right: 8px;
-  }
-
-  &__link {
-    @extend %uppercase;
-    color: $c-accentOrange;
   }
 }
