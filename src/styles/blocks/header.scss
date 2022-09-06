@@ -1,6 +1,13 @@
 .header {
+  display: flex;
+  flex-direction: column;
+
   height: 100vh;
+
   &__nav {
+    flex: 0 0 auto;
+    width: 100%;
+
     margin: auto;
     padding: 20px;
     min-width: 288px;
@@ -85,86 +92,101 @@
   }
 
   &__content {
-    margin: auto;
+    flex: 1 1 auto;
 
-    @include onTablet {
-      max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    margin: 0 auto;
+
+    @include onDesktop {
+      width: 100%;
     }
   }
 
   &__text {
-    margin-top: 32px;
+    align-self: center;
+    margin-bottom: 32px;
+
     text-align: center;
 
     @include onTablet {
-      margin-top: 80px;
-      text-align: left;
       max-width: 280px;
+      margin-bottom: 146px;
+
+      align-self: flex-start;
+      text-align: left;
     }
 
     @include onDesktop {
-      position: relative;
-      top: 100px;
-      margin: 0;
       max-width: 260px;
+
+      margin-bottom: 8px;
     }
+
     @include onDesktopLarge {
       max-width: 280px;
+      margin-bottom: 40px;
     }
   }
 
   &__title {
-    margin-top: 32px;
+    align-self: center;
+    text-align: center;
+  }
+
+  &__title-wrapper {
+    position: relative;
+
+    width: 100%;
 
     @include onTablet {
-      position: relative;
-      top: 200px;
-      margin-top: -48px;
+      margin-bottom: 210px;
     }
 
     @include onDesktop {
-      margin-top: -96px;
-    }
-
-    @include onDesktopLarge {
-      margin-top: -70px;
+      margin-bottom: 64px;
     }
   }
 
   &__image {
-    width: 288px;
-    margin: 0 auto;
     display: block;
 
+    width: 100%;
+    max-width: 326px;
+    margin: 0 auto;
+
+    object-fit: contain;
+
     @include onTablet {
-      width: 326px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+
+      transform: translate(-50%, -50%);
     }
+
     @include onDesktop {
-      margin-top: -96px;
-      width: 544px;
+      max-width: 465px;
     }
 
     @include onDesktopLarge {
-      margin-top: -120px;
-      width: 584px;
+      max-width: 584px;
     }
   }
+
   &__link {
+    align-self: center;
+    max-width: 280px;
+    width: 100%;
+
     color: $color-orange;
 
     border: 2px solid $color-orange;
     border-radius: 32px;
-
-    @include onTablet {
-      margin: 80px auto;
-      max-width: 326px;
-    }
-
-    @include onDesktop {
-      margin: -170px 0;
-
-      max-width: 260px;
-    }
 
     &::before {
       content: "";
@@ -180,6 +202,10 @@
     }
     &:focus::before {
       background-image: url("../images/cake_icon_hover.svg");
+    }
+
+    @include onDesktop {
+      align-self: flex-start;
     }
   }
 }
