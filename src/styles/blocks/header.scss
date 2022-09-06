@@ -1,0 +1,185 @@
+.header {
+  height: 100vh;
+  &__nav {
+    margin: auto;
+    padding: 20px;
+    min-width: 288px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onDesktop {
+      padding: 32px 32px 0 36px;
+      min-width: 680px;
+    }
+  }
+
+  &__logo {
+    width: 128px;
+  }
+
+  &__nav-links {
+    display: none;
+    gap: 64px;
+    align-items: center;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__nav-link {
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-black;
+
+    letter-spacing: -0.01em;
+    text-decoration: none;
+
+    &:last-child {
+      color: $color-orange;
+
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+
+      transition: color $transition-delay;
+
+      &:hover {
+        color: $color-black;
+      }
+    }
+
+    &:last-child::before {
+      content: "";
+      position: relative;
+      top: 50%;
+      transform: translateY(20%);
+      padding-right: 5px;
+
+      height: 18px;
+      width: 18px;
+
+      display: inline-block;
+
+      background-image: url("../images/phone.svg");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__menu-opener {
+    background-image: url("../images/menu.svg");
+
+    transition: background-image $transition-delay;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__content {
+    margin: auto;
+
+    @include onTablet {
+      max-width: 680px;
+    }
+  }
+
+  &__text {
+    margin-top: 32px;
+    text-align: center;
+
+    @include onTablet {
+      margin-top: 80px;
+      text-align: left;
+      max-width: 280px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: 100px;
+      margin: 0;
+      max-width: 260px;
+    }
+    @include onDesktopLarge {
+      max-width: 280px;
+    }
+  }
+
+  &__title {
+    margin-top: 32px;
+
+    @include onTablet {
+      position: relative;
+      top: 200px;
+      margin-top: -48px;
+    }
+
+    @include onDesktop {
+      margin-top: -96px;
+    }
+
+    @include onDesktopLarge {
+      margin-top: -70px;
+    }
+  }
+
+  &__image {
+    width: 288px;
+    margin: 0 auto;
+    display: block;
+
+    @include onTablet {
+      width: 326px;
+    }
+    @include onDesktop {
+      margin-top: -96px;
+      width: 544px;
+    }
+
+    @include onDesktopLarge {
+      margin-top: -120px;
+      width: 584px;
+    }
+  }
+  &__link {
+    color: $color-orange;
+
+    border: 2px solid $color-orange;
+    border-radius: 32px;
+
+    @include onTablet {
+      margin: 80px auto;
+      max-width: 326px;
+    }
+
+    @include onDesktop {
+      margin: -170px 0;
+
+      max-width: 260px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 20px;
+      width: 20px;
+      background-image: url("../images/cake_icon.svg");
+
+      transition: background-image $transition-delay;
+    }
+    &:hover::before {
+      background-image: url("../images/cake_icon_hover.svg");
+    }
+    &:focus::before {
+      background-image: url("../images/cake_icon_hover.svg");
+    }
+  }
+}
