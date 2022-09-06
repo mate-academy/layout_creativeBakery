@@ -12,6 +12,10 @@
     }
   }
 
+  &__header {
+    margin-bottom: 160px;
+  }
+
   &__menu {
     position: fixed;
     top: 0;
@@ -27,6 +31,25 @@
 
     &:target {
       transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: $section-gapMobile;
+
+    &-title {
+      margin-bottom: $text-gap;
+
+      @include text($h2-mobile, $h2-tablet, $h2-desktop);
+      color: $c-accentOrange;
+    }
+
+    &-description {
+      margin-bottom: 56px;
+
+      @include notMobile {
+        margin-bottom: 80px;
+      }
     }
   }
 }
