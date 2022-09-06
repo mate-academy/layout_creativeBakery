@@ -1,0 +1,61 @@
+.button-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $colorOrange;
+
+  border-bottom: 2px solid transparent;
+
+  transition: all 0.3s;
+
+  &:hover {
+    color: $colorOrange;
+    border-color: $colorOrange;
+  }
+
+  &:active {
+    color: $colorDarkOrange;
+    border-color: $colorDarkOrange;
+  }
+
+  &--icon {
+    &::before {
+      content: url(../images/call.svg);
+      display: block;
+      @include square(24px);
+      padding-right: 5px;
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:active::before {
+      content: url(../images/call_d.svg);
+    }
+  }
+
+  &--arrow {
+    &::before {
+      content: url(../images/arrow.svg);
+      display: block;
+      @include square(24px);
+      padding-right: 5px;
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:active::before {
+      content: url(../images/arrow_d.svg);
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.button-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  box-sizing: border-box;
+  padding: 20px 0;
+  width: 100%;
+  height: 56px;
+
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $colorOrange;
+
+  border: 2px solid $colorOrange;
+  border-radius: 32px;
+
+  transition: all 0.3s;
+
+  &:hover {
+    color: $colorWhite;
+    background-color: $colorOrange;
+  }
+
+  &:active {
+    color: $colorWhite;
+    background-color: $colorDarkOrange;
+    border-color: $colorDarkOrange;
+  }
+
+  &--icon {
+    &::before {
+      content: url(../images/button.svg);
+      display: block;
+      @include square(24px);
+      padding-right: 5px;
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:hover::before,
+    &:active::before {
+      content: url(../images/button_w.svg);
+    }
+  }
+}
