@@ -1,0 +1,150 @@
+.header {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 0 0 40px;
+
+    @include onTablet {
+      padding: 0 0 228px;
+    }
+
+    @include onDesktop {
+      padding: 0 0 218px;
+    }
+  }
+
+  &__menu {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu-icon {
+    width: 20px;
+    height: 8px;
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-main;
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.5s;
+
+    &:hover {
+      border-color: $color-secondary;
+      color: $color-secondary;
+    }
+
+    @include onDesktop {
+      margin-left: 64px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__link-icon {
+    @extend %main-text-uppercase;
+    display: inline-flex;
+    color: $color-secondary;
+    text-transform: uppercase;
+
+    &--call {
+      &::before {
+        content: url(../images/icons/phone.svg);
+        @include iconSize(18px);
+        padding-right: 7px;
+      }
+    }
+
+    &--cookie {
+      &::before {
+        content: url(../images/icons/cookie.svg);
+        @include iconSize(20px);
+        padding-right: 6px;
+      }
+
+      &:hover::before {
+        content: url(../images/icons/cookie-hover.svg);
+      }
+    }
+  }
+
+  &__slogan {
+    text-align: center;
+    padding: 0 0 32px;
+
+    @include onTablet {
+      padding: 80px 0 146px;
+      text-align: start;
+    }
+
+    @include onDesktop {
+      padding: 135px 0 8px;
+    }
+  }
+
+  &__title {
+    @extend %mobile-h1;
+    color: $color-secondary;
+
+    @include onTablet {
+      place-content: center;
+      padding-bottom: calc(33.3vh / 2 - #{$button-height});
+
+      font-size: 80px;
+      line-height: 68px;
+    }
+
+    @include onDesktop {
+      padding: 0 0 64px;
+
+      font-size: 136px;
+      line-height: 116px;
+    }
+
+    @include onDesktopWide {
+      font-size: 144px;
+      line-height: 122px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    margin: 0 auto;
+    height: 290px;
+
+    @include onTablet {
+      position: absolute;
+      top: 144px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+      height: 328px;
+    }
+
+    @include onDesktop {
+      top: 0;
+      height: 546px;
+    }
+
+    @include onDesktopWide {
+      height: 586px;
+    }
+  }
+}
