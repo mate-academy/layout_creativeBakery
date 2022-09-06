@@ -1,16 +1,16 @@
 .welcome {
-  // position: relative;
   height: 546px;
 
-  @include onTablet {
-    background-image: url(../images/header_cookie.png);
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: center;
-  }
+  // @include onTablet {
+  //   background-image: url(../images/header_cookie.png);
+  //   background-repeat: no-repeat;
+  //   background-size: 50%;
+  //   background-position: center;
+  // }
 
   @extend %grid;
   align-content: center;
+  grid-template-rows: auto auto auto;
 
   &__info {
     margin-bottom: 32px;
@@ -19,8 +19,8 @@
     @include onTablet {
 
       text-align: left;
-      // position: absolute;
       grid-column: 1 / 5;
+      grid-row: 1 / 2;
     }
 
     @include onDesktop {
@@ -29,13 +29,29 @@
     }
   }
 
+  &__title-cookie-container {
+    position: relative;
+
+    margin-bottom: 80px;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+    }
+  }
+
   &__title {
     color: #f9512e;
     text-align: center;
 
     @include onTablet {
-      // position: absolute;
+      position: absolute;
       top: 50%;
+      width: 100%;
       transform: translateY(-50%);
       grid-column: 1 / -1;
 
@@ -43,20 +59,15 @@
   }
 
   &__cookie-image {
-
     width: 288px;
     height: 290px;
 
     @include onTablet {
-      display: none;
+      width: 326px;
+      height: 328px;
+      z-index: -1;
+      grid-column: 3 / 7;
     }
-
-    // @include onTablet {
-    //   width: 326px;
-    //   height: 328px;
-    //   z-index: -1;
-    //   grid-column: 3 / 7;
-    // }
 
     // @include onDesktop {
     //   width: 544px;
@@ -72,6 +83,7 @@
   &__button {
     @include onTablet {
       grid-column: 3 / 7;
+      grid-row: 3 / -1;
     }
 
     @include onDesktop {
