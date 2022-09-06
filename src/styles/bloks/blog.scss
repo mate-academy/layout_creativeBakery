@@ -1,24 +1,38 @@
 .blog {
-    height: 100%;
-    padding-bottom: 32px;
+  height: 100%;
+  padding: 32px 0;
 
-    &-description {
-      text-align: start;
-    }
+  background-image: url(../images/Cookie.png);
+  background-repeat: no-repeat;
+  background-size: calc(min(500px, 100%));
+  background-position-x: center;
+  background-position-y: calc(100% - 96px);
+
+  @media (min-width: 640px) {
+    background-position: center;
+  }
+
+  &-description {
+    text-align: start;
+  }
 
   &__img {
     min-width: 288px;
     max-width: 584px;
     width: 100%;
+
   }
 
   &__bottun {
     display: block;
-    margin: auto;
     max-width: 288px;
     text-align: center;
     padding: 20px 72px;
     border: 1px solid #{$special-color};
     border-radius: 32px;
+
+    @media (max-width: 640px) {
+      margin: 0 auto 32px auto;
+    }
   }
 }
