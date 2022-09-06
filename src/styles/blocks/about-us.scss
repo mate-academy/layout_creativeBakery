@@ -1,0 +1,108 @@
+.about-us {
+
+  position: relative;
+
+  &__grid {
+    @extend %grid;
+    grid-template-rows: auto auto;
+
+    @include onTablet {
+      background-image: url(../images/Crumbs.png);
+      background-repeat: no-repeat;
+      background-position: 50% 50px;
+      background-size: 80%;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/Crumbs.png);
+      background-repeat: no-repeat;
+      background-position: 85% 0;
+      background-size: 720px;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+
+    margin-bottom: 32px;
+
+    @include onTablet {
+      grid-area: 1 / 1 / 2 / 5;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 1 / 2 / 5;
+    }
+  }
+
+  &__info {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+
+      grid-area: 1 / 5 / 2 / -1;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+
+      line-height: 150%;
+
+      grid-area: 1 / 5 / 2 / -1;
+    }
+  }
+
+  &__stats {
+    width: 100%;
+
+    @include onTablet {
+      grid-area: 2 / 1 / -1 / -1;
+    }
+
+    @include onDesktop {
+      margin-bottom: 300px;
+
+      grid-area: 2 / 1 / -1 / -1;
+    }
+
+    @extend %grid;
+    grid-template-columns: repeat(4, 1fr) ;
+    justify-items: flex-start;
+
+    background-image: url(../images/Crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include onTablet {
+      background-image: none;
+    }
+
+    @include onDesktop {
+      background-image: none;
+    }
+  }
+
+  &__stat {
+    margin-bottom: 48px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    &-value {
+      font-size: 96px;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: $orange;
+
+      margin-bottom: 8px;
+    }
+
+    &-name {
+      line-height: 150%;
+    }
+  }
+}
