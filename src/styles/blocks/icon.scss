@@ -9,7 +9,7 @@
     height: 24px;
     width: 128px;
 
-    &-white {
+    &--white {
       height: 30px;
       width: 158px;
 
@@ -27,6 +27,12 @@
 
   &--call {
     fill: $c-accentOrange;
+
+    &--big {
+      @include onTablet {
+        @include square(30px);
+      }
+    }
   }
 
   &--arrow {
@@ -34,14 +40,9 @@
     fill: $c-accentOrange;
   }
 
-  &--big {
-    @include onTablet {
-      @include square(30px);
-    }
-  }
-
-  &--cookie {
+  &--color-orange {
     fill: $c-accentOrange;
     @include hover(fill, $c-white);
+    @include active(fill, $c-white);
   }
 }

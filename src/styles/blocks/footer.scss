@@ -1,12 +1,12 @@
 .footer {
   padding: 56px 0;
 
+  background-color: $c-black;
+  color: $c-white;
+
   @include notMobile {
     padding: 88px 0;
   }
-
-  background-color: $c-black;
-  color: $c-white;
 
   &__logo {
     display: block;
@@ -29,12 +29,16 @@
     color: $c-gray;
   }
 
-  &__nav-list {
+  &__list {
     display: flex;
     flex-direction: column;
+
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
   }
 
-  &__nav-item {
+  &__list-item {
     &:not(:last-child) {
       margin-bottom: 16px;
     }
@@ -42,9 +46,31 @@
 
   &__link {
     color: inherit;
+  }
 
-    &:not(:last-child) {
-      margin-bottom: 16px;
+  &__contact {
+    margin-bottom: 48px;
+
+    @include onBig {
+      margin-bottom: 88px;
     }
+  }
+  &__title {
+    margin-bottom: 40px;
+
+    @include text($h2-mobile, $h2-tablet, $h2-desktop);
+  }
+
+  &__social {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    justify-content: center;
+    margin-bottom: 42px;
+    width: 45%;
+  }
+
+  &__copyright {
+    color: $c-gray;
   }
 }
