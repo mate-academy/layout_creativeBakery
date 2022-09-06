@@ -1,0 +1,50 @@
+.footer {
+  padding: 56px 0;
+
+  @include notMobile {
+    padding: 88px 0;
+  }
+
+  background-color: $c-black;
+  color: $c-white;
+
+  &__logo {
+    display: block;
+    margin-bottom: 44px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onBig {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    margin-bottom: 16px;
+
+    @extend %uppercase;
+    color: $c-gray;
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__nav-item {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__link {
+    color: inherit;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}
