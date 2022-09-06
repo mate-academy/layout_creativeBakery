@@ -1,9 +1,11 @@
 'use strict';
 
-const chbox = document.getElementById('menu__toggle');
+const chbox = document.querySelector('#menu__toggle');
 
-if (chbox.checked) {
-  document.body.classList.add('body--with-menu');
-} else {
-  document.body.classList.remove('body--with-menu');
-}
+chbox.addEventListener('change', () => {
+  if (chbox.checked) {
+    document.body.classList.add('body--with-menu');
+  } else {
+    document.body.classList.remove('body--with-menu');
+  }
+});
