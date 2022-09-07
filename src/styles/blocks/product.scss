@@ -1,8 +1,23 @@
 .product {
   display: flex;
   flex-direction: column;
+  min-height: 486px;
+
+  @include onTablet {
+    min-height: 578px;
+  }
+
+  @include onDesktop {
+    min-height: 642px;
+  }
+
+  @include onDesktopXL {
+    min-height: 690px;
+  }
 
   &__photo-container {
+    flex: none;
+
     position: relative;
     box-sizing: border-box;
     width: 100%;
@@ -46,6 +61,8 @@
   }
 
   &__title {
+    flex: none;
+
     font-weight: 500;
     line-height: 16px;
     letter-spacing: 0.02em;
@@ -56,6 +73,8 @@
   }
 
   &__description {
+    flex: 1 0 auto;
+
     letter-spacing: -0.01em;
 
     margin-bottom: 16px;
@@ -63,6 +82,7 @@
   }
 
   &__redirect {
+    flex: none;
     display: flex;
     align-items: center;
     gap: 4px;
