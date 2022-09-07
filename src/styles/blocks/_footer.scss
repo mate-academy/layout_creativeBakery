@@ -2,11 +2,29 @@
   padding: 60px 16px 56px;
   background-color: $c-black;
 
+  @include onTablet {
+    padding: 88px 40px;
+  }
+
   &__content {
     margin: 0 auto;
     max-width: 288px;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+
+    @include onTablet {
+      max-width: 680px;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 24px;
+    }
+
+    @include onDesktop {
+      max-width: 1112px;
+    }
+
+    @include onBigDesktop {
+      max-width: 1192px;
+    }
   }
 
   &__logo-link {
@@ -15,6 +33,18 @@
     display: inline-block;
 
     width: max-content;
+
+    @include onTablet {
+      grid-row: 1;
+      grid-column: 1/4;
+    }
+  }
+
+  &__link-list {
+    @include onTablet {
+      margin-top: 16px;
+      grid-column: 1/4;
+    }
   }
 
   &__nav-link-item {
@@ -39,6 +69,20 @@
   &__title {
     margin: 64px 0 40px;
     color: $c-white;
+
+    @include onTablet {
+      margin: 0;
+      grid-row: 1;
+      grid-column: 5/9;
+    }
+  }
+
+  &__phone-links {
+    @include onTablet {
+      margin-top: 16px;
+      grid-row: 2;
+      grid-column: 5/8;
+    }
   }
 
   &__phone-link-item {
@@ -60,15 +104,37 @@
     }
   }
 
+  &__email-container {
+    @include onTablet {
+      grid-column: 5/8;
+    }
+
+    @include onDesktop {
+      grid-row: 2;
+      margin-top: 16px;
+      grid-column: 7/8;
+    }
+  }
+
   &__email-text {
     margin: 40px 0 16px;
 
     @include uppercaseText;
     color: $c-grey;
+
+    @include onTablet {
+      margin-top: -24px;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+    }
   }
 
   &__email {
     color: $c-white;
+
+    transition: color $transition-delay;
 
     &:hover {
       color: $c-dark-orange;
@@ -80,10 +146,24 @@
 
     display: flex;
     gap: 36px;
+
+    @include onTablet {
+      margin-top: 24px;
+      grid-column: 1/4;
+    }
+
+    @include onDesktop {
+      margin-top: 26px;
+    }
   }
 
   &__copyright {
     margin-top: 42px;
     color: $c-grey;
+
+    @include onTablet {
+      margin-top: 24px;
+      grid-column: 5/8;
+    }
   }
 }
