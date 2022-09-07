@@ -1,7 +1,223 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "blocks/title-grey";
+@import "blocks/footer";
 
 body {
   background: $c-gray;
+}
+
+@mixin onTablet {
+  @media (min-width: 768px){
+      @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1200px){
+      @content;
+  }
+}
+
+@mixin bigDesktop {
+  @media (min-width: 1440px){
+      @content;
+  }
+}
+
+body {
+  margin: 0;
+}
+.container {
+  padding: 0 16px;
+  margin: 0 auto;
+  // width: 100%;
+
+  @include onTablet {
+      margin: 0 44px;
+  }
+
+  @include bigDesktop {
+      margin: 0 124px;
+  }
+}
+
+.button {
+  width: 300px;
+  border-radius: 32px;
+  border: #f9512e 1px solid;
+  text-align: center;
+
+  @include onTablet {
+      width: 250px;
+      margin-top: 210px;
+  }
+
+  @include onDesktop() {
+      width: 250px;
+      margin-top: 64px;
+      // transform: translateY(-50%);
+  }
+
+
+  &__text {
+      color: #f9512e; //create var
+      line-height: 56px;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+  }
+}
+
+.header {
+  position: relative;
+
+  height: 100vh;
+  background: #eef7ff;
+
+  color: #1c1a26; //do var
+  letter-spacing: -0.05em;
+  font-family: 'Inter', sans-serif;
+
+  .top-actions {
+      display: flex;
+      height: 64px;
+      justify-content: space-between;
+      align-items: center;
+
+      // .link__logo {
+      //     // display: block;
+      // }
+
+      .burger {
+          text-decoration: none;
+          // display: block;
+      }
+  }
+
+  &__content {
+      display: flex;
+      flex-direction: column;
+      // justify-content: center;
+      align-items: center;
+      // text-align: center;
+
+      @include onDesktop {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          // justify-content: stretch;
+      }
+  }
+
+  &__description {
+    margin: 32px  auto;
+    width: 290px;
+
+      @include onTablet {
+          margin: 80px 0;
+          // align-content: flex-start;
+          align-self: start;
+          text-align: left;
+      }
+
+      @include onDesktop {
+          width: 260px;
+          margin: 135px 0 8px;
+      }
+
+      @include bigDesktop {
+          width: 280px;
+          margin: 144px 0 40px;
+
+      }
+  }
+
+  &__title {
+      position: relative;
+      // z-index: 2;
+      color: #f9512e;
+      margin: 0;//normalize-reset???
+
+      text-transform: uppercase;
+      font-size: 64px;
+      line-height: 85%;
+      width: 290px;
+      font-weight: 400;
+
+
+      @include onTablet {
+          width: auto;
+          // transform: translateY(50%);
+          z-index: 1;
+
+          &::before {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              z-index: -1;
+              transform: translate(-50%, -50%);
+              content: '';
+              background-image: url(../images/cookie.png);
+              background-size: cover;
+              width: 326px;
+              height: 328px;
+          }
+      }
+
+      @include onDesktop {
+          white-space: nowrap;
+          font-size: 136px;
+          // width: 1112px;
+      //     line-height: 546px;
+      &::before {
+          width: 544px;
+          height: 546px;
+      }
+      }
+
+      @include bigDesktop {
+          font-size: 144px;
+      //     line-height: 586px;
+          // background-image: url(/coockie.svg);
+          &::before {
+              width: 584px;
+              height: 586px;
+          }
+
+      }
+
+  }
+
+
+  &__image {
+      // display: block;
+      max-width: 290px;
+      height: auto;
+      // width: 100%;
+
+  @include onTablet {
+      display: none;
+      top: -50%;
+      left: 0;
+      // transform: translateY(-50%);
+      max-width: 326px;
+      }
+
+  @include onDesktop {
+      max-width: 544px;
+      }
+
+
+  @include bigDesktop {
+      max-width: 584px;
+      }
+
+  // &__button {
+  // }
+
+  }
 }
