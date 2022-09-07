@@ -1,4 +1,5 @@
 .icon {
+  display: block;
   width: 24px;
   height: 24px;
 
@@ -16,5 +17,16 @@
 
   &--menu-closer {
     background-image: url(../images/icons/cross-menu_icon.svg);
+  }
+
+  $socials:
+    "instagram" url(../images/icons/instagram_icon.svg),
+    "facebook" url(../images/icons/facebook_icon.svg),
+    "twitter" url(../images/icons/twitter_icon.svg);
+
+  @each $name, $link in $socials {
+    &--#{$name} {
+      background-image: $link;
+    }
   }
 }
