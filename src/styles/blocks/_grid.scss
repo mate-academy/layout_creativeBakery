@@ -26,5 +26,15 @@
         }
       }
     }
+
+    @include onDesktop {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--desctop-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
   }
 }

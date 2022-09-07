@@ -23,9 +23,14 @@
 
   &__order-link {
     @extend %body-text-uppercase;
+    display: inline-block;
     color: $c-accent-orange;
     text-decoration: none;
     cursor: pointer;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: border-color $transition-duration,
+      color $transition-duration;
 
     &::before {
       content: url("../images/icons/Icon-arrow.svg");
@@ -34,6 +39,19 @@
       height: 16px;
       transform: translateY(30%);
       margin-right: 8px;
+    }
+
+    &:hover {
+      border-color: $c-accent-orange;
+    }
+
+    &:active {
+      color: $c-dark-orange;
+      border-color: $c-dark-orange;
+
+      &::before {
+        content: url("../images/icons/Icon-arrow-focused.svg");
+      }
     }
   }
 }
