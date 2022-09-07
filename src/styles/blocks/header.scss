@@ -25,8 +25,11 @@
     }
 
     &--primary {
-      @extend %style-link-primary-before;
-      @include hover(filter, brightness(0%));
+      &::before {
+        @extend %style-link-primary-before;
+      }
+
+      @include hover(filter, contrast(160%));
       @extend %style-link-primary;
     }
   }

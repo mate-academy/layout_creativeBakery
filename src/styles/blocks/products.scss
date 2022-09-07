@@ -1,0 +1,76 @@
+.products {
+  padding-top: 100px;
+
+  &__title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 46px;
+    }
+
+    @include onDesktop {
+      font-size: 62px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 76px;
+  }
+
+  &__description {
+    margin-top: 24px;
+    margin-bottom: 56px;
+  }
+
+  &__item {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 88px;
+    }
+  }
+
+  &__image {
+    margin-bottom: 16px;
+
+    width: 100%;
+    border-radius: 8px;
+
+    @include hover(transform, scale(105%));
+
+    @include onDesktop {
+      &--defect {
+        width: 95%;
+      }
+    }
+  }
+
+  &__name {
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $item-name-color;
+  }
+
+  &__about {
+    margin-bottom: 24px;
+  }
+
+  &__order {
+    @extend %style-link-primary;
+    @include hover(filter, contrast(160%));
+
+    &::before {
+      @extend %style-link-primary-before;
+      background: url(../images/icons/arrow.svg) no-repeat;
+      margin-right: 8px;
+    }
+  }
+}
