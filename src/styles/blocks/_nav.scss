@@ -1,0 +1,55 @@
+.nav {
+  &__content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+
+    list-style-type: none;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 64px;
+      padding: 4px 0;
+      align-items: baseline;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__link {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: $c-black;
+    display: block;
+
+    @extend %body-text;
+
+    &--contact {
+      @extend %body-text-uppercase;
+
+      color: $c-accent-orange;
+      align-self: center;
+
+      &::before {
+        content: url("../images/icons/Icon-phone.svg");
+        display: inline-block;
+        transform: translateY(25%);
+      }
+    }
+  }
+}
