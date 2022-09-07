@@ -2,10 +2,16 @@
   background-color: $black;
 
   &__content {
-    padding-top: 80px;
+    padding-top: 60px;
 
     @include onTablet {
+      padding-top: 90px;
       padding-bottom: 80px;
+    }
+
+    @include onDesktop {
+      padding-top: 90px;
+      padding-bottom: 90px;
     }
 
     @extend %grid;
@@ -21,6 +27,11 @@
       grid-area: 1 / 1 / 2 / 5;
       margin-bottom: 0;
     }
+
+    @include onDesktop {
+      grid-area: 1 / 1 / 2 / 5;
+      margin-bottom: 0;
+    }
   }
 
   &__nav {
@@ -30,10 +41,26 @@
         grid-area: 2 / 5 / 3 / -1;
         margin-bottom: 0;
       }
+
+      @include onDesktop {
+        width: 100%;
+
+        grid-area: 2 / 5 / 3 / -1;
+        margin-bottom: 0;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
     }
 
     &--menu {
       @include onTablet {
+        grid-area: 2 / 1 / 3 / 5;
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
         grid-area: 2 / 1 / 3 / 5;
         margin-bottom: 0;
       }
@@ -48,6 +75,8 @@
     }
 
     &--email {
+      justify-content: flex-start;
+
       @include onTablet {
         margin-bottom: 0;
       }
@@ -68,6 +97,13 @@
       grid-area: 1 / 5 / 2 / -1;
       margin-bottom: 0;
     }
+
+    @include onDesktop {
+      width: 100%;
+
+      grid-area: 1 / 5 / 2 / -1;
+      margin-bottom: 0;
+    }
   }
 
   &__socials-wrapper {
@@ -82,6 +118,11 @@
       grid-area: 3 / 1 / -1 / 5;
       margin-bottom: 0;
     }
+
+    @include onDesktop {
+      grid-area: 3 / 1 / -1 / 5;
+      margin-bottom: 0;
+    }
   }
 
   &__copyright {
@@ -92,6 +133,11 @@
     margin-bottom: 52px;
 
     @include onTablet {
+      grid-area: 3 / 5 / -1 / -1;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
       grid-area: 3 / 5 / -1 / -1;
       margin-bottom: 0;
     }
