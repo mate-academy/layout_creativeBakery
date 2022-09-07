@@ -1,0 +1,33 @@
+.button {
+  $root: &;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  background-color: transparent;
+  border: 2px solid $c-accentOrange;
+  border-radius: 32px;
+
+  @extend %uppercase;
+  color: $c-accentOrange;
+
+  transition: background-color $transition-speed, color $transition-speed, ;
+
+  &:hover {
+    background-color: $c-accentOrange;
+    color: $c-white;
+    border-color: transparent;
+
+    #{$root}__icon {
+      fill: $c-white;
+    }
+  }
+
+  @include active(background-color, $c-darkOrange);
+
+  &__icon {
+    margin-right: 6px;
+  }
+}

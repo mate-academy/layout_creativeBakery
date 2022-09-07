@@ -1,0 +1,90 @@
+.footer {
+  padding: 56px 0;
+
+  background-color: $c-black;
+  color: $c-white;
+
+  @include notMobile {
+    padding: 88px 0;
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 44px;
+
+    @include onTablet {
+      margin-bottom: 104px;
+    }
+
+    @include onBig {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    margin-bottom: 16px;
+
+    @extend %uppercase;
+    color: $c-gray;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list-item {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__link {
+    color: inherit;
+
+    @include hover(color, $c-accentOrange);
+    @include active(color, $c-darkOrange);
+  }
+
+  &__contact {
+    margin-bottom: 48px;
+
+    @include onBig {
+      margin-bottom: 88px;
+
+      &-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+  }
+  &__title {
+    margin-bottom: 40px;
+    width: min-content;
+
+    @include text($h2-mobile, $h2-tablet, $h2-desktop);
+
+    @include onBig {
+      width: auto;
+    }
+  }
+
+  &__social {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    justify-content: center;
+    margin-bottom: 42px;
+    width: 45%;
+  }
+
+  &__copyright {
+    color: $c-gray;
+  }
+}

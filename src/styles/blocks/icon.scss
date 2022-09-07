@@ -1,0 +1,48 @@
+.icon {
+  @include square(20px);
+  fill: $c-black;
+
+  @include hover(fill, $c-accentOrange);
+  @include active(fill, $c-darkOrange);
+
+  &--logo {
+    height: 24px;
+    width: 128px;
+
+    &--white {
+      height: 30px;
+      width: 158px;
+
+      fill: $c-white;
+    }
+  }
+
+  &--menu {
+    height: 8px;
+  }
+
+  &--cross {
+    @include square(18px);
+  }
+
+  &--call {
+    fill: $c-accentOrange;
+
+    &--big {
+      @include onTablet {
+        @include square(30px);
+      }
+    }
+  }
+
+  &--arrow {
+    @include square(16px);
+    fill: $c-accentOrange;
+  }
+
+  &--color-orange {
+    fill: $c-accentOrange;
+    @include hover(fill, $c-white);
+    @include active(fill, $c-white);
+  }
+}

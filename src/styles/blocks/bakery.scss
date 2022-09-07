@@ -1,0 +1,27 @@
+.bakery {
+  &__title {
+    margin-bottom: $text-gap;
+
+    @include text($h2-mobile, $h2-tablet, $h2-desktop);
+    color: $c-accentOrange;
+  }
+
+  &__description {
+    margin-bottom: 56px;
+
+    @include notMobile {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__article {
+    &:not(:last-child) {
+      margin-bottom: $article-gapMobile;
+    }
+    @include notMobile {
+      &:not(:last-child) {
+        margin-bottom: $article-gap;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.about {
+  background-image: url(../images/photo/crumbs.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    background-size: 70%;
+  }
+
+  @include onBig {
+    padding-bottom: 270px;
+    background-size: 55%;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @include text($h2-mobile, $h2-tablet, $h2-desktop);
+    color: $c-accentOrange;
+  }
+
+  &__text {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+    }
+
+    @include onBig {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__achievement {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin-bottom: 48px;
+    }
+
+    @include onTablet {
+      &:nth-of-type(-n + 2) {
+        margin-bottom: 80px;
+      }
+    }
+
+    &-number {
+      margin-bottom: 8px;
+
+      line-height: 86px;
+      font-size: 96px;
+      color: $c-accentOrange;
+    }
+  }
+}

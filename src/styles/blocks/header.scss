@@ -1,0 +1,100 @@
+.header {
+  height: 100vh;
+  max-width: 1600px;
+  text-align: center;
+
+  &__top-action {
+    --margin-bottom-top: 32px;
+
+    @extend %top-position;
+
+    margin-bottom: var(--margin-bottom-top);
+
+    @include onTablet {
+      --margin-bottom-top: 80px;
+    }
+
+    @include onDesktop {
+      --margin-bottom-top: 136px;
+    }
+
+    @include onHuge {
+      --margin-bottom-top: 144px;
+    }
+  }
+
+  &__menu-icon {
+    @include onBig {
+      display: none;
+    }
+  }
+
+  &__nav {
+    @media (min-width: 100px) and (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  &__text {
+    --mb-text: 32px;
+    margin-bottom: var(--mb-text);
+
+    @include notMobile {
+      text-align: start;
+    }
+
+    @include onTablet {
+      --mb-text: 146px;
+    }
+
+    @include onDesktop {
+      --mb-text: 8px;
+    }
+
+    @include onHuge {
+      --mb-text: 40px;
+    }
+  }
+
+  &__title {
+    --mb-title: 290px;
+
+    position: relative;
+    margin-bottom: var(--mb-title);
+
+    @include text($h1-mobile,$h1-tablet,$h1-desktop);
+    color: $c-accentOrange;
+
+    @include onHuge {
+      font-size: 144px;
+    }
+
+    @include onTablet {
+      --mb-title: 210px;
+    }
+
+    @include onBig {
+      --mb-title: 64px;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    z-index: -1;
+    bottom: -270%;
+
+    width: 100%;
+    padding-top: 100%;
+
+    background-image: url(../images/photo/cookie.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include notMobile {
+      width: 50%;
+      bottom: 0;
+      transform: translate(50%, 45%);
+    }
+  }
+}
