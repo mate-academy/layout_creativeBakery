@@ -1,0 +1,76 @@
+.menu {
+  background-color: #ffeefc;
+  height: 100vh;
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 0;
+  }
+
+  &__close {
+    display: block;
+    margin: auto 0;
+    width: 12px;
+    height: 12px;
+    background-image: url(../images/Icon-close.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding-top: 151px;
+  }
+
+  &__item {
+    padding-bottom: 24px;
+    transition: border-color 0.3s;
+    &:nth-child(3) {
+      padding-bottom: 32px;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+    &--last {
+      display: flex;
+      &::before {
+        content: "";
+        height: 18px;
+        width: 18px;
+
+        background-image: url(../images/Icon-phone.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+    &:hover {
+      border-color: $Accent-Orange;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    @extend %body-text;
+    text-decoration: none;
+    align-items: center;
+    color: $color-black;
+
+    &--last {
+      @extend %body-text-uppercase;
+      color: $Accent-Orange;
+      padding-left: 7px;
+    }
+
+    &:hover {
+      border-color: $Accent-Orange;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.page {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  background-color: #ffeefc;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    box-sizing: border-box;
+    justify-content: center;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    &:target {
+      transform: translateX(0);
+    }
+
+  }
+
+  &__section {
+    padding-bottom: 80px;
+    &--about {
+      padding-bottom: 72px;
+      @include onTablet {
+        padding-bottom: 152px;
+      }
+      @include onTablet {
+        padding-bottom: 349px;
+      }
+    }
+  }
+
+  &__section-title {
+    padding-bottom: 32px;
+    @extend %mobile-h2;
+    color: $Accent-Orange;
+    @include onTablet {
+      font-size: 56px;
+    }
+    @include onDesKtop {
+      font-size: 72px;
+    }
+  }
+
+  &__section-subTitle {
+    padding-bottom: 64px;
+    @extend %body-text;
+    color: $color-black;
+  }
+  &__main {
+    padding-top: 120px;
+  }
+}

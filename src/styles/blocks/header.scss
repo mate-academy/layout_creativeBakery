@@ -1,0 +1,77 @@
+.header {
+  box-sizing: border-box;
+  height: 100vh;
+
+  &__nav {
+    max-width: 1280px;
+  }
+
+  &__image {
+    height: 290px;
+    width: 100%;
+    object-fit: contain;
+
+    @include onTablet {
+      position: absolute;
+      top: 30%;
+      z-index: -1;
+      height: 328px;
+      left: 50%;
+      transform: translatex(-50%);
+    }
+    @include onDesKtop {
+      position: absolute;
+      top: 10%;
+      z-index: -1;
+      height: 546px;
+      left: 50%;
+      transform: translatex(-50%);
+
+    }
+
+  }
+
+  &__menu-opener {
+    display: block;
+    margin: auto 0;
+    width: 20px;
+    height: 8px;
+    background-image: url(../images/Icon-menu.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include onDesKtop {
+      display: none;
+    }
+  }
+
+  &__about {
+    @extend %body-text;
+    color: $color-black;
+    text-align: center;
+    padding-bottom: 32px;
+    @include onTablet {
+      text-align: left;
+      padding-bottom: 146px;
+    }
+    @include onDesKtop {
+      text-align: left;
+      padding-bottom: 8px;
+    }
+  }
+
+  &__title {
+    @extend %mobile-h1;
+    color: $Accent-Orange;
+    text-align: center;
+    @include onTablet {
+      font-size: 70px;
+      padding: 0 0 210px;
+
+    }
+    @include onDesKtop {
+      font-size: 110px;
+      padding-bottom: 64px;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 20px 0 52px;
+
+  &--menu {
+    padding: 20px 0 0;
+  }
+  @include onTablet {
+    padding-bottom: 100px;
+  }
+  @include onDesKtop {
+    padding-bottom: 166px;
+  }
+  &__menu {
+    list-style-type: none;
+    display: flex;
+  }
+  &__item {
+    padding-right: 64px;
+    &:last-child {
+      padding-right: 0;
+    }
+    &--last {
+      display: flex;
+
+      &::before {
+        content: "";
+        display: block;
+        height: 18px;
+        width: 18px;
+
+        background-image: url(../images/Icon-phone.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: auto;
+      }
+    }
+  }
+  &__link {
+    @extend %body-text;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: $color-black;
+
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s;
+
+    &--last {
+      @extend %body-text-uppercase;
+      color: $Accent-Orange;
+      padding-left: 7px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $Accent-Orange;
+    }
+  }
+}

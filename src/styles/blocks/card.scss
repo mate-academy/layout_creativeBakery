@@ -1,0 +1,56 @@
+.card {
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 64px;
+
+  @include onTablet {
+    max-width: 328px;
+  }
+  @include onDesKtop {
+    max-width: 402px;
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 8px;
+    padding-bottom: 16px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__name {
+    @extend %body-text-uppercase;
+    color: $color-gray;
+    padding-bottom: 24px;
+  }
+
+  &__about {
+    @extend %body-text;
+    color: $color-black;
+    padding-bottom: 24px;
+  }
+  
+  &__link {
+    display: flex;
+    text-decoration: none;
+    @extend %body-text-uppercase;
+    color: $Accent-Orange;
+
+    &::before {
+      display: flex;
+      content: "";
+      width: 16px;
+      height: 16px;
+      background-image: url(../images/Icon-arrow.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      color: #b2341a;
+    }
+  }
+}
