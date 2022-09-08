@@ -1,0 +1,61 @@
+.card {
+
+  @include onDesktop {
+    width: 402px;
+  }
+
+  @include onBigDesktop {
+    width: 432px;
+  }
+  &__image-container {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 8px;
+
+    transition: transform $transition-delay;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__title {
+    margin-top: 16px;
+
+    color: $c-grey;
+    @include uppercaseText;
+  }
+
+  &__text {
+    margin: 8px 0 24px;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-left: 24px;
+
+    @include uppercaseText;
+    color: $c-accent-orange;
+
+    transition: color $transition-delay;
+
+    &:hover {
+      color: $c-dark-orange;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      margin-left: -24px;
+      display: block;
+      height: 16px;
+      width: 16px;
+
+      background-image: url("../images/arrow.svg");
+    }
+  }
+}

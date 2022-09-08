@@ -1,0 +1,87 @@
+.menu {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: $c-light-pink;
+
+  transform: translateX(-100%);
+  transition: transform $transition-delay;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__cross {
+    background-image: url("../images/cross.svg");
+
+    transition: background-image $transition-delay;
+
+    &:hover {
+      background-image: url("../images/cross_hover.svg");
+    }
+  }
+
+  &__list {
+    margin-top: 196px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+
+    list-style: none;
+  }
+
+  &__item {
+
+    &:last-child {
+      color: $c-accent-orange;
+      @include uppercaseText();
+
+      transition: color $transition-delay;
+
+      &:hover {
+        color: $c-black;
+      }
+    }
+
+    &:last-child::before {
+      content: "";
+      position: relative;
+      top: 50%;
+      transform: translateY(20%);
+      padding-right: 5px;
+
+      height: 18px;
+      width: 18px;
+
+      display: inline-block;
+
+      background-image: url("../images/phone.svg");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__link {
+    color: $c-black;
+
+    transition: color $transition-delay;
+
+    &:hover {
+      color: $c-accent-orange;
+    }
+
+    &--color--orange {
+      color: $c-accent-orange;
+
+      &:hover {
+        color: $c-dark-orange;
+      }
+    }
+  }
+
+}

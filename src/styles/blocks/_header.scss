@@ -1,0 +1,192 @@
+.header {
+  height: 100vh;
+  &__top {
+    margin: auto;
+    padding: 20px;
+    min-width: 288px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onDesktop {
+      padding: 32px 32px 0 36px;
+      min-width: 680px;
+    }
+  }
+
+  &__logo {
+    width: 128px;
+  }
+
+  &__top-links {
+    display: none;
+    gap: 64px;
+    align-items: center;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__top-link {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-black;
+
+    letter-spacing: -0.01em;
+
+    transition: color $transition-delay;
+
+    &:hover {
+      color: $c-accent-orange;
+    }
+
+    &:last-child {
+      color: $c-accent-orange;
+
+      @include uppercaseText();
+      transition: background-image 0.3;
+
+      &:hover {
+        color: $c-dark-orange;
+      }
+    }
+
+    &:last-child::before {
+      content: "";
+      position: relative;
+      top: 50%;
+      transform: translateY(20%);
+      padding-right: 5px;
+
+      height: 18px;
+      width: 18px;
+
+      display: inline-block;
+
+      background-image: url("../images/phone.svg");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__burger {
+    background-image: url("../images/burger.svg");
+
+    transition: background-image $transition-delay;
+
+    &:hover {
+      background-image: url("../images/burger_hover.svg");
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__content {
+    margin: auto;
+
+    @include onTablet {
+      max-width: 680px;
+    }
+  }
+
+  &__text {
+    margin-top: 32px;
+    text-align: center;
+
+    @include onTablet {
+      margin-top: 80px;
+      text-align: left;
+      max-width: 280px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: 100px;
+      margin: 0;
+      max-width: 260px;
+    }
+    @include onBigDesktop {
+      max-width: 280px;
+    }
+  }
+
+  &__title {
+    margin-top: 32px;
+
+    @include onTablet {
+      position: relative;
+      top: 200px;
+      margin-top: -48px;
+    }
+
+    @include onDesktop {
+      margin-top: -96px;
+    }
+
+    @include onBigDesktop {
+      margin-top: -70px;
+    }
+  }
+
+  &__image {
+    width: 288px;
+    margin: 0 auto;
+    display: block;
+
+    @include onTablet {
+      width: 326px;
+    }
+    @include onDesktop {
+      margin-top: -96px;
+      width: 544px;
+    }
+
+    @include onBigDesktop {
+      margin-top: -120px;
+      width: 584px;
+    }
+  }
+  &__link {
+    color: $c-accent-orange;
+
+    border: 2px solid $c-accent-orange;
+    border-radius: 32px;
+
+    @include onTablet {
+      margin: 80px auto;
+      max-width: 326px;
+    }
+
+    @include onDesktop {
+      margin: -170px 0;
+
+      max-width: 260px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 20px;
+      width: 20px;
+      background-image: url("../images/cookie.svg");
+
+      transition: background-image $transition-delay;
+    }
+
+    &:hover::before {
+      background-image: url("../images/cookie_hover.svg");
+    }
+
+    &:focus::before {
+      background-image: url("../images/cookie_hover.svg");
+    }
+  }
+}
