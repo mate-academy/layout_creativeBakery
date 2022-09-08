@@ -4,3 +4,29 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin devices($_device) {
+  @if ($_device == "mobile-xl") {
+    @media only screen and (min-width: 550px) {
+      @content;
+    }
+  }
+
+  @if ($_device == "tablet") {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if ($_device == "desktop") {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if ($_device == "desktop-xl") {
+    @media only screen and (min-width: 1440px) {
+      @content;
+    }
+  }
+}

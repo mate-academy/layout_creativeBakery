@@ -1,0 +1,60 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+
+  @include devices("desktop") {
+    padding: 2rem;
+  }
+
+  &__menu {
+    display: none;
+    align-items: center;
+    gap: 4rem;
+
+    @include devices("desktop") {
+      display: flex;
+    }
+  }
+
+  &__link-wrapper {
+    list-style: none;
+  }
+
+  &__link {
+    &:hover {
+      color: $c-orange;
+    }
+
+    &:focus {
+      color: $c-darkOrange;
+    }
+
+    &--call {
+      position: relative;
+      text-transform: uppercase;
+      color: $c-orange;
+
+      &:focus {
+        color: $c-orange;
+      }
+    }
+
+    &--call::before {
+      content: url("../images/call.png");
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      transform: translateY(-50%);
+    }
+  }
+
+  @include devices("desktop") {
+    &__mobile-btn-link {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  background: url("../images/cookie.png") no-repeat;
+  background-position: 50% 220px;
+  background-size: 288px;
+ 
+  &__fantasies {
+    padding: 2rem 0;
+    text-align: center;
+
+    @include devices("tablet") {
+      padding: 5rem 0 0;
+      text-align: left;
+      max-width: 280px;
+      margin-right: auto;
+    }
+
+    @include devices("desktop") {
+      padding: 0;
+      max-width: 260px;
+    }
+
+    @include devices("desktop-xl") {
+      max-width: 280px;
+    }
+  }
+
+  &__big {
+    max-width: 18rem;
+    margin: 0 auto;
+    padding-bottom: 19.3rem;
+
+    @include devices("tablet") {
+      margin: 0;
+      padding: 9.1rem 0 13.1rem;
+      max-width: none;
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 70px 0 100px;
+    width: 280px;
+    height: 56px;
+    border: 2px solid $c-orange;
+    color: $c-orange;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+
+    @include devices("tablet") {
+      margin: 0;
+    }
+
+    &::before {
+      content: url("../images/smallCrumb.png");
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 75px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      background-color: $c-orange;
+      color: #fff;
+
+      &::before {
+        content: url("../images/whiteSmallCrumb.png");
+      }
+    }
+  }
+
+  @include devices("tablet") {
+    padding: 9rem 0 13.1rem;
+    background-position: 50% 9rem;
+    background-size: 326px;
+  }
+
+  @include devices("desktop") {
+    align-items: flex-start;
+    justify-content: center;
+    background-position: 50% 50%;
+    background-size: 544px;
+    
+    &__big {
+      padding: 0.5rem 0 4rem;
+    }
+  }
+
+  @include devices("desktop-xl") {
+    background-size: 586px;
+
+    &__big {
+      padding: 2.5rem 0 4rem;
+    }
+  }
+}

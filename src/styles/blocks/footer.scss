@@ -1,0 +1,112 @@
+.footer {
+  padding: 3.5rem 1rem;
+  background-color: #000;
+  color: #fff;
+
+  @include devices("tablet") {
+    display: grid;
+    justify-content: space-between;
+    grid-template-areas: "logo tagHeader"
+      "fMenu call"
+      ". email"
+      "icons copyright";
+    padding: 5.5rem 2.8rem;
+  }
+
+  @include devices("desktop") {
+    grid-template-areas: "logo tagHeader tagHeader"
+      "fMenu call email"
+      "icons copyright .";
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  &__logo-wrapper {
+    grid-area: logo;
+  }
+
+  &__menu {
+    grid-area: fMenu;
+    padding: 2.5rem 0 4rem;
+    text-transform: uppercase;
+
+    @include devices("tablet") {
+      padding: 0;
+    }
+  }
+
+  &__call-us {
+    grid-area: call;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  &__icons {
+    grid-area: icons;
+    padding-top: 4rem;
+  }
+
+  &__link-wrapper {
+    list-style: none;
+    padding: 0.5rem 0;
+  }
+
+  &__link {
+    color: inherit;
+
+    &:hover {
+      color: $c-orange;
+    }
+
+    &:focus {
+      color: $c-darkOrange;
+    }
+  }
+
+  &__header {
+    grid-area: tagHeader;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2.5rem;
+
+    @include devices("desktop") {
+      display: block;
+    }
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    padding-top: 4rem;
+  }
+  
+  &__email-us {
+    grid-area: email;
+    padding: 4rem 0;
+    @include devices("tablet") {
+      padding: 0;
+    }
+  }
+
+  &__phone-number {
+    color: #fff;
+  }
+
+  &__link-wrapper--menu,
+  &__copyright,
+  &__text {
+    color: $c-grey;
+  }
+
+  &__phone-number,
+  &__email-address {
+    padding-top: 1rem;
+  }
+
+  @include devices("desktop") {
+    padding: 5.5rem 2.7rem;
+  }
+
+  @include devices("desktop-xl") {
+    padding: 5.5rem 7.7rem;
+  }
+}

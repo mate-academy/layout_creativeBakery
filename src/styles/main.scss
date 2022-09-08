@@ -1,7 +1,85 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "blocks/nav";
+@import "blocks/header";
+@import "blocks/products";
+@import "blocks/product";
+@import "blocks/mobile-menu";
+@import "blocks/about-us";
+@import "blocks/footer";
+@import "blocks/icon-link";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  background: $c-light-blue;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.01em;
+  color: $c-black;
+}
+
+a {
+  color: $c-black;
+}
+
+.content {
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @include devices("tablet") {
+    padding: 0 2.8rem;
+  }
+  
+  @include devices("desktop-xl") {
+    padding: 0 8rem;
+  }
+}
+
+.main-container {
+  padding-bottom: 4.5rem;
+  padding-top: 6.5rem;
+  @include devices("tablet") {
+    padding-top: 0;
+  }
+
+  @include devices("desktop") {
+    padding-top: 9.5rem;
+  }
+
+  @include devices("desktop-xl") {
+    padding-top: 11.1rem;
+  }
+}
+
+.main-container__paragraph {
+  padding-top: 1.5rem;
+  padding-bottom: 3.5rem;
+
+  @include devices("tablet") {
+    padding-bottom: 5rem;
+  }
+}
+
+.page__body--with-menu {
+  overflow: hidden;
+}
+
+.hero {
+  @include devices("tablet") {
+    min-height: 100vh;
+  }
+
+  display: flex;
+  flex-direction: column;
 }

@@ -1,0 +1,90 @@
+.about-us {
+  background: url("../images/crumbs.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 320px;
+
+  @include devices("tablet") {
+    background-size: 526px;
+    background-position: 60% 30%;
+  }
+
+  @include devices("desktop") {
+    background-size: 718px;
+  }
+
+  @include devices("tablet") {
+    &__few-words {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+  }
+  
+  &__text {
+    &--header {
+      padding-bottom: 2rem;
+      flex-basis: 288px;
+      flex-shrink: 0;
+      
+      @include devices("tablet") {
+        flex-basis: 370px;
+      }
+      
+      @include devices("desktop") {
+        flex-basis: auto;
+      }
+    }
+
+    @include devices("desktop") {
+      width: 50%;
+    }
+  }
+
+  &__achievements {
+    padding-top: 1rem;
+
+    @include devices("tablet") {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include devices("desktop") {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    
+  }
+
+  &__achievement {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 3rem;
+
+    @include devices("tablet") {
+      padding-bottom: 5rem;
+    }
+  }
+
+  &__achievement:nth-of-type(3),
+  &__achievement:nth-of-type(4) {
+    @include devices("tablet") {
+      padding-bottom: 0;
+    }
+    @include devices("desktop") {
+      padding-bottom: 5rem;
+    }
+  }
+
+  &__big-font {
+    font-size: 6rem;
+  }
+
+  @include devices("desktop-xl") {
+    padding-bottom: 18.3rem;
+
+    &__few-words {
+      padding-bottom: 9rem;
+    }
+  }
+}
