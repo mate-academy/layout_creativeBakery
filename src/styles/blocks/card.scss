@@ -5,6 +5,7 @@
 
     border-radius: 8px;
     overflow: hidden;
+    transition: transform $d-transition;
 
     @include md-device {
       max-height: 424px;
@@ -16,6 +17,10 @@
 
     @include xl-device {
       max-height: 560px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
     }
   }
 
@@ -33,7 +38,7 @@
     line-height: 100%;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: #7f8096;
+    color: $c-grey;
   }
 
   &__description {
@@ -51,6 +56,12 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     text-decoration: none;
-    color: #f9512e;
+    color: $c-accent-orange;
+
+    transition: color $d-transition;
+
+    &:hover {
+      color: $c-dark-orange;
+    }
   }
 }
