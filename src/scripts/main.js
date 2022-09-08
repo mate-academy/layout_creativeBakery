@@ -5,9 +5,9 @@ const chbox = document.querySelector('#menu__toggle');
 chbox.addEventListener('change', () => {
   if (chbox.checked) {
     document.body.classList.add('body--with-menu');
-    document.querySelector('.menu__logo').src = '../images/cross.svg';
+    document.querySelector('.menu__logo').src = 'https://raw.githubusercontent.com/vladimir-dublya/layout_creativeBakery/bc8eab8d695a2e911be04083298ba6a73952d543/src/images/cross.svg';
   } else {
     document.body.classList.remove('body--with-menu');
-    document.querySelector('.menu__logo').src = '../images/menulogo.svg';
+    document.querySelector('.menu__logo').src = 'https://raw.githubusercontent.com/vladimir-dublya/layout_creativeBakery/bc8eab8d695a2e911be04083298ba6a73952d543/src/images/menulogo.svg';
   }
 });
