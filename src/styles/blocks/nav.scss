@@ -92,13 +92,36 @@
   }
 
   &--footer &__link {
+    position: relative;
     color: #fff;
 
     padding: 6px 0;
     margin-bottom: 10px;
 
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+
+      width: 0;
+
+      left: 50%;
+      height: 1px;
+
+      background-color: $orange;
+
+      opacity: 1;
+      transition: all 0.3s;
+    }
+
     &:hover {
       color: $grey;
+    }
+
+    &:hover::after {
+      left: 0;
+      width: 100%;
+      opacity: 1;
     }
   }
 }
