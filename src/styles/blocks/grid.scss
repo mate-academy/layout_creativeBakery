@@ -1,0 +1,76 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  @include md-device {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include lg-device {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  &__item {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--md-device-#{$start}-#{$end} {
+          @include md-device {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--lg-device-#{$start}-#{$end} {
+          @include lg-device {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  &--about {
+    @include md-device {
+      row-gap: 80px;
+    }
+
+    @include lg-device {
+      row-gap: 146px;
+    }
+  }
+
+  &--menu {
+    @include md-device {
+      order: 1;
+    }
+  }
+
+  &--call-us {
+    @include md-device {
+      order: 2;
+    }
+  }
+
+  &--email {
+    @include md-device {
+      order: 3;
+    }
+  }
+
+  &--socials {
+    @include md-device {
+      order: 4;
+    }
+  }
+
+  &--copyright {
+    @include md-device {
+      order: 5;
+    }
+  }
+}
