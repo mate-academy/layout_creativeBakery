@@ -3,9 +3,12 @@
 @import "typography";
 @import "blocks/title-grey";
 @import "blocks/footer";
+@import "blocks/card";
+@import "blocks/content";
+@import "blocks/description";
 
 body {
-  background: $c-gray;
+  background: $color-blue-light;
   margin: 0;
 }
 
@@ -26,7 +29,7 @@ body {
 .button {
   width: 300px;
   border-radius: 32px;
-  border: #f9512e 1px solid;
+  border: 1px solid $color-orange;
   text-align: center;
 
   @include onTablet {
@@ -39,7 +42,7 @@ body {
     margin-top: 64px;
   }
 
-  color: #f9512e;
+  color: $color-orange;
   line-height: 56px;
   text-transform: uppercase;
   font-weight: 500;
@@ -50,9 +53,9 @@ body {
   position: relative;
 
   height: 100vh;
-  background: #eef7ff;
+  background: $color-blue-light;
 
-  color: #1c1a26;
+  color: $color-black;
   letter-spacing: -0.05em;
   font-family: "Inter", sans-serif;
 
@@ -89,32 +92,10 @@ body {
     }
   }
 
-  &__description {
-    margin: 32px  auto;
-    width: 290px;
-
-    @include onTablet {
-      margin: 80px 0;
-      // align-content: flex-start;
-      align-self: start;
-      text-align: left;
-    }
-
-    @include onDesktop {
-      width: 260px;
-      margin: 135px 0 8px;
-    }
-
-    @include bigDesktop {
-      width: 280px;
-      margin: 144px 0 40px;
-    }
-  }
-
   &__title {
     position: relative;
     // z-index: 2;
-    color: #f9512e;
+    color: $color-orange;
     margin: 0;
 
     text-transform: uppercase;
