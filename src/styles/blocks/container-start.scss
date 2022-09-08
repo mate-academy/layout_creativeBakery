@@ -38,7 +38,8 @@
     text-align: center;
     border-radius: 32px;
     transition: color $transition-time,
-      background-color $transition-time;
+      background-color $transition-time,
+      fill $transition-time;
 
     width: 280px;
     height: 56px;
@@ -48,21 +49,25 @@
 
     color: $colorOrange;
 
-    &::before {
-      content: url("../images/cook.svg");
-      position: relative;
-      transform: translate(-15% ,10%);
+    &-cook {
+      margin-right: 10px;
     }
 
     &:focus {
       background: #B3341A;
       border-color: #B3341A;
       color: $colorWhite;
+      svg path {
+        fill: $colorWhite;
+      }
     }
 
     &:hover {
       background: #F9512E;
       color: $colorWhite;
+      svg path {
+        fill: $colorWhite;
+      }
     }
   }
 
