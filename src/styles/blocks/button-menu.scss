@@ -1,0 +1,58 @@
+.button-menu {
+  @include buttonStyle;
+  
+  transition: border-bottom-color 0.3s, color 0.3s;
+
+  border: 2px solid $colorLightPink;
+
+  &:hover {
+    border-bottom-color: $colorOrange;
+
+    color: $colorOrange;
+  }
+
+  &:active {
+    border-bottom-color: $colorDarkOrange;
+
+    color: $colorDarkOrange;
+  }
+
+  &--icon {
+    &::before {
+      @include square(24px);
+
+      content: url(../images/call.svg);
+
+      display: block;
+
+      padding-right: 5px;
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:active::before {
+      content: url(../images/call_d.svg);
+    }
+  }
+
+  &--arrow {
+    &::before {
+      @include square(24px);
+
+      content: url(../images/arrow.svg);
+
+      display: block;
+      padding-right: 5px;
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:active::before {
+      content: url(../images/arrow_d.svg);
+    }
+  }
+}

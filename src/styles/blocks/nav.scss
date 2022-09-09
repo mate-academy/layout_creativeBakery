@@ -1,0 +1,52 @@
+.nav {
+  @include navigationStyle;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px;
+
+  @include onDesktop {
+    padding: 28px 32px;
+  }
+
+  &__icon {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__bar {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 64px;
+
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__item {
+    @include itemStyle;
+  }
+
+  &__link {
+    @include linkStyle;
+
+    &--call {
+      font-weight: 500;
+      line-height: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: $colorOrange;
+    }
+  }
+}
