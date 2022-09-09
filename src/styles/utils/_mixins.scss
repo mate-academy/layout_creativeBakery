@@ -4,3 +4,60 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin product-cards($width, $height) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+
+  //padding: 0;
+  width: $width;
+  height: $height;
+}
+
+@mixin product-cards-image($image, $height) {
+  //think these are default, was inside product cards image styles on figma, just in case its needed later
+  /* flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1; */
+  border-radius: 8px;
+  height: $height;
+  background: {
+    image: $image;
+    object-fit: fil;
+    //any extra styles?
+  }
+}
+
+//H1 AND H2 FOR ALL RESOLUTIONS, ADD AFTER EXTEND
+@mixin h1-desktop {
+  font-size: 144px;
+  line-height: 122px;
+}
+
+@mixin h1-tablet {
+  font-size: 80px;
+  line-height: 68px;
+}
+
+@mixin h1-mobile {
+  font-size: 64px;
+  line-height: 54px;
+}
+
+@mixin h2-desktop {
+  font-size: 72px;
+  line-height: 61px;
+}
+
+@mixin h1-tablet {
+  font-size: 56px;
+  line-height: 48px;
+}
+
+@mixin h1-mobile {
+  font-size: 48px;
+  line-height: 41px;
+}
