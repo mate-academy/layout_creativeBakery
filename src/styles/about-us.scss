@@ -1,47 +1,46 @@
 .about-us {
-  margin: 0 auto 56px;
-  max-width: 1192px;
-  padding-bottom: 292px;
+  margin: 0 auto 72px;
+  max-width: 288px;
 
   background-image: url(../images/Crumbs.png);
   background-size: contain;
-  background-position: center;
+  background-position: 0 74%;
   background-repeat: no-repeat;
 
-  @include smallDesktop {
-    max-width: 1112px;
-  }
-
   @include tablet {
-    padding-bottom: 152px;
+    margin-bottom: 152px;
     max-width: 680px;
+
+    background-position: center;
   }
 
-  @include mobile {
-    margin-bottom: 72px;
-    max-width: 288px;
-    padding-bottom: 0;
-
-    background-image: none;
+  @include desktop {
+    margin-bottom: 56px;
+    max-width: 1112px;
+    padding-bottom: 292px;
   }
 
-  &__header {
+  @include bigDesktop {
+    max-width: 1192px;
+  }
+
+  &__title {
     font-weight: 400;
-    font-size: 72px;
+    font-size: 48px;
     line-height: 85%;
     letter-spacing: -0.05em;
     text-transform: uppercase;
 
-    margin: 0 0 144px;
+    margin: 0 0 32px;
 
     @include tablet {
       font-size: 56px;
       margin-bottom: 192px;
     }
 
-    @include mobile {
-      font-size: 48px;
-      margin-bottom: 32px;
+    @include desktop {
+      font-size: 72px;
+      margin-bottom: 144px;
     }
   }
 
@@ -51,10 +50,28 @@
     line-height: 150%;
     letter-spacing: -0.01em;
 
-    margin: 0 0 144px;
+    margin: 0 0 64px;
 
-    @include mobile {
-      margin-bottom: 64px;
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include tablet {
+      &:nth-child(5) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include desktop {
+      margin-bottom: 0;
     }
   }
 
@@ -66,12 +83,6 @@
     text-transform: uppercase;
 
     margin-bottom: 8px;
-
-    @include mobile {
-      &:nth-last-child(2) {
-        margin-top: 48px;
-      }
-    }
   }
 
   &__info-description {
@@ -80,37 +91,5 @@
     line-height: 150%;
     letter-spacing: -0.01em;
     color: $grey;
-
-    @include tablet {
-      &:nth-child(5) {
-        margin-bottom: 80px;
-      }
-    }
-  }
-
-  &__img {
-    @include mobile {
-      margin-bottom: 48px;
-      padding-top: 48px;
-
-      background-image: url(../images/Crumbs.png);
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-  }
-
-  &--tablet {
-    @include mobile {
-      display: none;
-    }
-  }
-
-  &--mobile {
-    display: none;
-
-    @include mobile {
-      display: block;
-    }
   }
 }

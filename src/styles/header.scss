@@ -1,39 +1,41 @@
 .header {
   &__nav {
-    padding: 28px 32px;
+    margin-bottom: 32px;
 
     @include tablet {
-      padding: 16px;
+      margin-bottom: 80px;
+    }
+
+    @include desktop {
+      margin-bottom: 0;
     }
   }
 
   &__main {
-    margin: 0 auto 178px;
-    max-width: 1192px;
-    padding: 144px 0 104px;
-
-    background-image: url(../images/Cookie.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    @include smallDesktop {
-      max-width: 1112px;
-      padding: 80px 0;
-      margin-bottom: 218px;
-    }
+    margin: 0 auto 104px;
+    max-width: 288px;
+    padding: 0;
 
     @include tablet {
-      max-width: 680px;
-      padding: 80px 0 0;
       margin-bottom: 228px;
-      background-image: none;
+      max-width: 680px;
     }
 
-    @include mobile {
-      max-width: 288px;
-      padding: 32px 0 0;
-      margin-bottom: 104px;
+    @include desktop {
+      margin-bottom: 218px;
+      max-width: 1112px;
+      padding: 134px 0 96px;
+
+      background-image: url(../images/Cookie.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @include bigDesktop {
+      margin-bottom: 178px;
+      max-width: 1192px;
+      padding: 144px 0 112px;
     }
   }
 
@@ -43,43 +45,41 @@
     line-height: 150%;
     letter-spacing: -0.01em;
 
-    margin: 0 0 40px;
+    margin: 0 0 32px;
     padding: 0;
 
-    @include smallDesktop {
-      margin-bottom: 8px;
-      white-space: normal;
-    }
+    text-align: center;
 
     @include tablet {
       margin-bottom: 16px;
+      text-align: left;
     }
 
-    @include mobile {
-      margin-bottom: 32px;
-      text-align: center;
+    @include desktop {
+      margin-bottom: 8px;
+    }
+
+    @include bigDesktop {
+      margin-bottom: 40px;
     }
   }
 
-  &__name {
-    margin: 0 0 64px;
+  &__title {
+    margin: 0;
 
     font-weight: 400;
-    font-size: 144px;
+    font-size: 64px;
     line-height: 85%;
     text-align: center;
     letter-spacing: -0.05em;
     text-transform: uppercase;
 
-    white-space: nowrap;
-
-    @include smallDesktop {
-      font-size: 136px;
-    }
-
     @include tablet {
       font-size: 80px;
       padding: 130px 0;
+      margin-bottom: 80px;
+
+      white-space: nowrap;
 
       background-image: url(../images/Cookie.png);
       background-size: contain;
@@ -87,28 +87,29 @@
       background-repeat: no-repeat;
     }
 
-    @include mobile {
-      color: transparent;
-      font-size: 64px;
-      margin-bottom: 0;
+    @include desktop {
+      font-size: 136px;
+      padding: 0;
+      margin-bottom: 64px;
 
-      white-space: normal;
+      background-image: none;
     }
+
+    @include bigDesktop {
+      font-size: 144px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    padding: 50% 0;
+    background-image: url(../images/Cookie.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     
-    &--mobile {
-      @include tablet {
-        display: none;
-      }
-
-      @include mobile {
-        display: block;
-        color: $black;
-
-        white-space: normal;
-
-        background-image: none;
-        padding: 0;
-      }
+    @include tablet {
+      display: none;
     }
   }
 }

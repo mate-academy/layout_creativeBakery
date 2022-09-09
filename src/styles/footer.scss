@@ -1,98 +1,91 @@
 .footer {
   background-color: $black;
-  padding: 88px 124px;
+  padding: 56px 16px;
 
   @include tablet {
     padding: 88px 44px;
   }
 
-  @include mobile {
-    padding: 56px 44px;
-  }
-
   &__container {
-    max-width: 1192px;
+    max-width: 288px;
     margin: 0 auto;
-
-    @include smallDesktop {
-      max-width: 1112px;
-    }
 
     @include tablet {
       max-width: 680px;
     }
 
-    @include mobile {
-      max-width: 288px;
+    @include desktop {
+      max-width: 1112px;
+    }
+
+    @include bigDesktop {
+      max-width: 1192px;
     }
   }
 
   &__logo {
+    display: flex;
     height: 40px;
+    margin-bottom: 40px;
 
-    @include mobile {
-      margin-bottom: 40px;
+    @include tablet {
+      margin-bottom: 96px;
+    }
+
+    @include desktop {
+      margin-bottom: 60px;
     }
   }
 
-  &__header {
+  &__title {
     margin: 0 0 40px;
 
     font-weight: 400;
-    font-size: 72px;
+    font-size: 48px;
     line-height: 85%;
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: #fff;
 
-    @include mobile {
-      display: none;
+    @include tablet {
+      margin-bottom: 0;
+      font-size: 56px;
+
+      grid-row-start: 1;
     }
 
-    &--mobile {
-      display: none;
-
-      @include mobile {
-        display: block;
-
-        font-size: 48px;
-      }
+    @include desktop {
+      font-size: 72px;
     }
   }
 
-  &__menu {
-    margin: 0 0 48px;
+  &__list {
+    margin: 0 0 40px;
     padding: 0;
     list-style-type: none;
 
+    &--menu {
+      margin-bottom: 64px;
+    }
+
     @include tablet {
-      &:nth-child(3) {
-        margin-bottom: 16px;
+      margin-bottom: 0;
 
-        @include mobile {
-          margin-bottom: 64px;
-        }
-      }
-
-      &:nth-child(5) {
+      &--email {
         margin-bottom: 48px;
-
-        @include mobile {
-          margin-bottom: 40px;
-        }
       }
     }
 
-    @include mobile {
-      margin-bottom: 40px;
+    @include desktop {
+      margin-bottom: 48px;
     }
   }
 
-  &__menu-item:not(:last-child) {
+  &__list-item:not(:last-child) {
     margin-bottom: 16px;
   }
 
-  &__menu-item:first-child {
+  &__list-item:first-child {
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
@@ -101,7 +94,7 @@
     color: $grey;
   }
 
-  &__menu-link {
+  &__list-link {
     text-decoration: none;
     font-weight: 400;
     font-size: 16px;
@@ -121,8 +114,10 @@
     gap: 32px;
     cursor: pointer;
 
-    @include mobile {
-      margin-bottom: 40px;
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 0;
     }
   }
 
