@@ -1,13 +1,47 @@
 .few-words {
-  &__title {
-    margin-bottom: 32px;
+  position: relative;
+
+  &__card {
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 72px;
+    }
 
     @include onTablet {
-      margin-bottom: 192px;
+      margin-bottom: 80px;
+
+      & > :nth-child(n+2) {
+        margin-bottom: 152px;
+      }
     }
 
     @include onDesktop {
-      margin-bottom: 144px;
+      margin-bottom: 350px;
+    }
+  }
+
+  &__image {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 55%;
+    height: 290px;
+    z-index: -1;
+
+    @include onTablet {
+      position: absolute;
+      top: 4%;
+      left: 15%;
+      height: 493px;
+      width: 526px;
+    }
+
+    @include onDesktop {
+      left: 30%;
+
+      height: 673px;
+      width: 718px;
     }
   }
 
@@ -49,7 +83,5 @@
     line-height: 150%;
     letter-spacing: -0.01em;
     color: #7f8096;
-
-    margin-bottom: 48px;
   }
 }

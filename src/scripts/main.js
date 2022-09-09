@@ -2,8 +2,8 @@
 
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#menu') {
-    document.body.classList.add('nav__header');
+    document.body.classList.add('page__body--with-menu');
   } else {
-    document.body.classList.remove('nav__header');
+    document.body.classList.remove('page__body--with-menu');
   }
 });
