@@ -1,7 +1,41 @@
-@import "utils";
-@import "fonts";
-@import "typography";
-
-body {
-  background: $c-gray;
+@mixin onMobile {
+  @media (min-width: 320px) {
+    @content;
+  }
 }
+
+@mixin onTablet {
+  @media (min-width: 744px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1260px) {
+    @content;
+  }
+}
+
+@mixin onLarge {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+.none {
+  display: none;
+}
+
+@import "utils";
+@import "utils/mixins";
+@import "utils/reset";
+
+@import "blocks/page";
+@import "blocks/container";
+@import "blocks/grid";
+@import "blocks/header";
+@import "blocks/logo";
+@import "blocks/button";
+@import "blocks/bake";
+@import "blocks/nav";
+@import "blocks/menu";
