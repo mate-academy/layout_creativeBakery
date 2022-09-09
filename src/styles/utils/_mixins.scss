@@ -3,6 +3,53 @@
   height: $size;
 }
 
+@mixin buttonStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  background-color: $colorLightPink;
+
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  color: $colorOrange;
+}
+
+@mixin navigationStyle {
+  z-index: 10;
+
+  background-color: $colorLightPink;
+}
+
+@mixin itemStyle {
+  transition: border-color 0.3s;
+
+  border-bottom: 2px solid $colorLightPink;
+
+  &:hover {
+    border-color: $colorBlack;
+  }
+}
+
+@mixin linkStyle {
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  color: inherit;
+}
+
+@mixin h3Style {
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: $colorGrey;
+}
+
 @mixin onTablet {
   @media (min-width: 640px) {
     @content;

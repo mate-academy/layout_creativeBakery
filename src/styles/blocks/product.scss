@@ -1,6 +1,7 @@
 .product {
   display: flex;
   flex-direction: column;
+
   min-height: 486px;
 
   @include onTablet {
@@ -16,22 +17,23 @@
   }
 
   &__photo-container {
-    flex: none;
-
     position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    height: 356px;
+    flex: none;
     overflow: hidden;
-    margin-bottom: 16px;
-
-    border-radius: 8px;
 
     transition: transform 0.3s;
 
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 356px;
+
     &::after {
       content: "";
+
       display: block;
+
       padding-bottom: 100%;
     }
 
@@ -53,21 +55,17 @@
   }
 
   &__photo {
+    @include square(100%);
+
     position: absolute;
-    width: 100%;
-    height: 100%;
 
     object-fit: cover;
   }
 
   &__title {
-    flex: none;
+    @include h3Style;
 
-    font-weight: 500;
-    line-height: 16px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: $colorGrey;
+    flex: none;
 
     margin-bottom: 8px;
   }
@@ -75,15 +73,12 @@
   &__description {
     flex: 1 0 auto;
 
-    letter-spacing: -0.01em;
-
     margin-bottom: 16px;
-
   }
 
   &__redirect {
-    flex: none;
     display: flex;
+    flex: none;
     align-items: center;
     gap: 4px;
   }

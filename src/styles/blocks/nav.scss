@@ -1,11 +1,11 @@
 .nav {
+  @include navigationStyle;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
-  z-index: 10;
 
-  background-color: $colorLightPink;
+  padding: 16px;
 
   @include onDesktop {
     padding: 28px 32px;
@@ -28,31 +28,24 @@
   &__list {
     display: flex;
     gap: 64px;
+
     padding: 0;
 
     list-style: none;
   }
 
   &__item {
-    border-bottom: 2px solid $colorLightPink;
-
-    transition: border-color 0.3s;
-
-    &:hover {
-      border-color: $colorBlack;
-    }
+    @include itemStyle;
   }
 
   &__link {
-    letter-spacing: -0.01em;
-    text-decoration: none;
-    color: inherit;
+    @include linkStyle;
 
     &--call {
       font-weight: 500;
       line-height: 16px;
-      letter-spacing: 0.02em;
       text-transform: uppercase;
+      letter-spacing: 0.02em;
       color: $colorOrange;
     }
   }

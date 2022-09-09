@@ -1,35 +1,30 @@
 .button-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
+  @include buttonStyle;
+  
+  transition: border-bottom-color 0.3s, color 0.3s;
 
-  font-weight: 500;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: $colorOrange;
-
-  border-bottom: 2px solid $colorLightPink;
-
-  transition: all 0.3s;
+  border: 2px solid $colorLightPink;
 
   &:hover {
+    border-bottom-color: $colorOrange;
+
     color: $colorOrange;
-    border-color: $colorOrange;
   }
 
   &:active {
+    border-bottom-color: $colorDarkOrange;
+
     color: $colorDarkOrange;
-    border-color: $colorDarkOrange;
   }
 
   &--icon {
     &::before {
-      content: url(../images/call.svg);
-      display: block;
       @include square(24px);
+
+      content: url(../images/call.svg);
+
+      display: block;
+
       padding-right: 5px;
 
       background-size: cover;
@@ -44,9 +39,11 @@
 
   &--arrow {
     &::before {
-      content: url(../images/arrow.svg);
-      display: block;
       @include square(24px);
+
+      content: url(../images/arrow.svg);
+
+      display: block;
       padding-right: 5px;
 
       background-size: cover;

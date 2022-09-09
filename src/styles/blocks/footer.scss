@@ -15,11 +15,7 @@
   }
 
   &__subtitle {
-    font-weight: 500;
-    line-height: 16px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: $colorGrey;
+    @include h3Style;
 
     margin-bottom: 16px;
   }
@@ -28,6 +24,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+
     padding: 0;
 
     list-style: none;
@@ -58,11 +55,10 @@
   }
 
   &__link {
-    letter-spacing: -0.01em;
+    transition: color 0.3s;
+
     text-decoration: none;
     color: $colorWhite;
-
-    transition: all 0.3s;
 
     &:hover {
       color: $colorOrange;
@@ -70,20 +66,20 @@
   }
 
   &__title {
+    margin-bottom: 40px;
+
     font-weight: 400;
     font-size: 48px;
     line-height: 41px;
-    letter-spacing: -0.05em;
     text-transform: uppercase;
+    letter-spacing: -0.05em;
     color: $colorWhite;
 
-    margin-bottom: 40px;
-
     @include onTablet {
+      margin-bottom: 0;
+
       font-size: 56px;
       line-height: 48px;
-
-      margin-bottom: 0;
     }
 
     @include onDesktop {
@@ -101,7 +97,6 @@
   }
 
   &__copyright {
-    letter-spacing: -0.01em;
     color: $colorGrey;
   }
 }
