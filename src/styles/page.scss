@@ -1,0 +1,42 @@
+.page {
+  font-family: "Inter", sans-serif;
+  color: $black;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background: $backgraund-color;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__desktop {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__tablet {
+    display: none;
+
+    @include tablet {
+      display: initial;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform $transition-time;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
