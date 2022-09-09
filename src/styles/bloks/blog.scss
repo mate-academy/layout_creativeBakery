@@ -1,12 +1,25 @@
+@keyframes cookie {
+  0% {
+    background-image: url(../images/Cookie-1.png);
+  }
+  95% {
+    background-image: url(../images/Cookie-1.png);
+  }
+  100% {
+    background-image: url(../images/Cookie.png);
+  }
+}
 .blog {
   height: 100%;
   padding: 32px 0;
-
+  animation: cookie 1s;
   background-image: url(../images/Cookie.png);
   background-repeat: no-repeat;
   background-size: calc(min(500px, 100%));
   background-position-x: center;
   background-position-y: calc(100% - 96px);
+
+  
 
   @media (min-width: 640px) {
     background-position: center;
@@ -23,13 +36,30 @@
 
   }
 
-  &__bottun {  
-    display: block;
+  &__bottun {
+    display: flex;
     max-width: 288px;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     padding: 20px 72px;
     border: 1px solid #{$special-color};
     border-radius: 32px;
+    transition: 
+      background-color 1s,
+      filter 1s;
+   
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      padding-right: 10px;
+      background-image: url("../images/cookie-icon.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+        
+    }
 
     @media (min-width: 1199px) {
       padding: 20px 0;
@@ -37,6 +67,9 @@
 
     &:hover {
       background-color: #{$special-color};
+      &::before {
+        filter: grayscale(1) brightness(5);
+      }
     }
 
     &:focus {
@@ -47,14 +80,5 @@
       filter: contrast(0.8);
     }
     
-    &-img {
-      &:hover {
-        filter: grayscale(1) brightness(5);
-      }
-
-      &:visited {
-        filter: contrast(0.8);
-      }
-    }
   }
 }

@@ -15,12 +15,21 @@
 
   &__link {
     color: #{$color};
+    transition: 
+      color 1s,
+      border-bottom 10s,
+      border-color 2s;
 
     &:hover {
       color: #{$special-color};
       padding-bottom: 3px;
       border-bottom: 1px solid;
       border-color: #{$special-color};
+
+      transition: 
+      color 5ms,
+      border-bottom 5ms,
+      border-color 5ms;
     }
     
     &:focus {
@@ -34,7 +43,7 @@
       color: white;
 
       &:hover {
-        color: #{$special-color};
+        color: #7f8096;
       }
       
       &:focus {
@@ -42,12 +51,25 @@
         padding-bottom: 3px;
         border-bottom: 1px solid;
         border-color: #{$focused-color};
-      }      
+      }
     }
 
     &--special {
       color: #{$special-color};
       text-transform: uppercase;
+
+      &-nav {
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          padding-right: 10px;
+          background-image: url("../images/phone.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
 
       &-blog:hover {
         color: white;
