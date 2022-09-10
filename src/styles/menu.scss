@@ -1,0 +1,77 @@
+.menu-is-open {
+  background-image: url("../icons/Icon-close.svg");
+}
+
+.menu-is-closed {
+  background-image: url("../icons/Icon-menu.svg");
+}
+
+.theme-is-pink {
+  background-image: url("../images/macaron-blue.png");
+}
+
+.theme-is-blue {
+  background-image: url("../images/macaron-pink.png");
+}
+
+.menu {
+  display: none;
+  z-index: -1;
+
+  @include medium() {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    padding: 132px 16px 196px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    transform: translateY(-495px);
+  }
+
+  @media (min-width: 500px) {
+    padding-bottom: 178px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    @media (min-width: 500px) {
+      gap: 30px;
+    }
+  }
+
+  &__products {
+    @media (min-width: 500px) {
+      font-size: 21px;
+    }
+  }
+
+  &__about {
+    @media (min-width: 500px) {
+      font-size: 21px;
+    }
+  }
+
+  &__blog {
+    @media (min-width: 500px) {
+      font-size: 21px;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__phone {
+    @extend %uppercase-text;
+    color: $accent-orange;
+    @media (min-width: 500px) {
+      font-size: 21px;
+    }
+  }
+}

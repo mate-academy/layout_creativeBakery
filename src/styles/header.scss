@@ -2,6 +2,74 @@
   @extend %btn-default;
 } */
 
-.header {
+.wrapper {
+  display: flex;
+  align-items: center;
+}
 
+.theme-toggler {
+  width: 50px;
+  height: 50px;
+  margin-left: 50px;
+  cursor: pointer;
+  background-image: url("../images/macaron-pink.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+}
+
+.header {
+  background-color: $light-blue;
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid blue; */
+    align-items: center;
+
+    //changes at tablet, TABLET + MOBILE 20 (on all sides,
+    // removed height)
+    // SLIDING MENU AS WELL
+    padding: 32px;
+
+    @include medium() {
+      padding: 20px;
+    }
+  }
+
+  &__menu-toggler {
+    display: none;
+
+    @include medium() {
+      display: initial;
+      width: 24px;
+      height: 24px;
+      background-image: url("../icons/Icon-menu.svg");
+      border: none;
+      background-color: $light-blue;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+    @include medium() {
+      display: none;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__phone {
+    @extend %uppercase-text;
+    color: $accent-orange;
+  }
 }

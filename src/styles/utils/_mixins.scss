@@ -5,6 +5,24 @@
   }
 }
 
+@mixin large {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: 639px) {
+    @content;
+  }
+}
+
 @mixin product-cards($width, $height) {
   display: flex;
   flex-direction: column;
@@ -17,7 +35,8 @@
 }
 
 @mixin product-cards-image($image, $height) {
-  //think these are default, was inside product cards image styles on figma, just in case its needed later
+  //think these are default, was inside product cards image styles on figma,
+  //just in case its needed later
   /* flex: none;
   order: 0;
   align-self: stretch;
