@@ -18,7 +18,7 @@ function dropdownMenu() {
   menu.style.opacity = '0';
 
   if (isOpen === true) {
-    menu.style.transform = 'translateY(-495px)';
+    menu.style.transform = 'translateY(-100%)';
     menuIcon.classList.remove('menu--is-open');
     menuIcon.classList.add('menu--is-closed');
     cookie.style.opacity = '1';

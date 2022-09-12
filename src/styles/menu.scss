@@ -10,17 +10,24 @@
   z-index: 1;
   display: none;
   cursor: pointer;
+  opacity: 1;
+  right: 0;
+  height: 500px;
+  justify-content: center;
 
   @include medium() {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 132px 16px 180px;
     position: absolute;
     top: 80px;
     left: 0;
     right: 0;
-    transform: translateY(-450px);
+    transform: translateY(-750px);
+  }
+
+  @media (max-width: 400px) {
+    right: -100px;
   }
 
   &__links {
@@ -35,6 +42,7 @@
 
   &__link {
     cursor: pointer;
+    line-height: 50px;
     text-shadow: 0 0 10px rgb(250, 246, 246),
       0 0 10px rgb(231, 215, 215);
     &:hover {
