@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  position: relative;
+  scroll-behavior: smooth;
+  
+  &_body {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: $background;
+
+    @include on640() {
+      // padding: 20px 44px 0;
+    }
+  }
+
+  &_menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateY(-100%);
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
+
+  &_body-with-menu {
+    overflow: hidden;
+  }
+}

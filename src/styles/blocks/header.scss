@@ -1,0 +1,180 @@
+.header {
+  margin-bottom: 50px;
+  padding: 0 20px;
+
+  @include on640() {
+    margin-bottom: 230px;
+    padding: 0 44px;
+  }
+
+  @include on1024() {
+    margin-bottom: 320px;
+  }
+
+  @include on1200() {
+    margin-bottom: 300px;
+  }
+
+  &_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include on640() {
+      align-items: flex-start;
+    }
+
+    &_text {
+      width: 280px;
+      margin: 0 auto 32px;
+
+      display: block;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      color: $black;
+      text-align: center;
+
+      @include on640() {
+        margin-bottom: 146px;
+        text-align: start;
+        
+      }
+
+      @include on1024() {
+        margin-bottom: 8px;
+      }
+
+      @include on1200() {
+        margin-bottom: 40px;
+      }
+    }
+
+    &_title {
+      margin: 0 auto;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 85%;
+      text-align: center;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: $black;
+      z-index: 1;
+
+      @include on640() {
+        font-size: 80px;
+      }
+
+      @include on1024() {
+        font-size: 136px;
+      }
+    }
+
+    &_image {
+      margin: 0 auto;
+      width: 288px;
+      height: 290px;
+
+      @include on640() {
+        width: 326px;
+        height: 328px;
+        position: absolute;
+        left: 50%;
+        top: 55px;
+        transform: translateX(-50%);
+        z-index: -1;
+      }
+
+      @include on1024() {
+        width: 544px;
+        height: 546px;
+        top: -150px;
+      }
+
+      &_img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &_link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+
+      margin: 0 auto;
+      min-width: 250px;
+      width: 100%;
+      height: 60px;
+
+      border-radius: 32px;
+      border: 2px solid $orange;
+
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $orange;
+      text-decoration: none;
+
+      transition: 1s;
+
+      &::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/link.svg);
+        transition: 1s;
+      }
+
+      &:hover {
+        color: $white;
+        background-color: $orange;
+
+        &::before {
+          content: "";
+          width: 20px;
+          height: 20px;
+          background-image: url(../images/link_hover.svg);
+        }
+      }
+
+      &:focus {
+        color: $white;
+        background-color: #b3341a;
+        border-color: #b3341a;
+
+        &::before {
+          content: "";
+          width: 20px;
+          height: 20px;
+          background-image: url(../images/link_hover.svg);
+        }
+      }
+
+      &:disabled {
+        color: #fba28f;
+        border-color: #fba28f;
+
+        &::before {
+          content: "";
+          width: 20px;
+          height: 20px;
+          background-image: url(../images/link_visited.svg);
+        }
+      }
+
+      @include on640() {
+        margin: 200px 0 0;
+      }
+
+      @include on1024() {
+        margin: 70px 0 0;
+      }
+    }
+  }
+}

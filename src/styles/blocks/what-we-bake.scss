@@ -1,0 +1,122 @@
+.what-we-bake {
+  padding: 0 20px;
+  margin-bottom: 20px;
+
+  @include on640() {
+    padding: 0 44px;
+  }
+
+  &_title {
+    margin-bottom: 24px;
+
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $orange;
+
+    @include on640() {
+      font-size: 56px;
+    }
+
+    @include on1024() {
+      font-size: 72px;
+    }
+  }
+
+  &_text {
+    margin-bottom: 56px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $black;
+
+    @include on640() {
+      margin-bottom: 80px;
+    }
+  }
+
+  &_conteiner {
+    &_card {
+      margin-bottom: 64px;
+
+      @include on640() {
+        margin-bottom: 88px;
+      }
+
+      &_img {
+        margin-bottom: 16px;
+        height: 356px;
+        width: 100%;
+
+        object-fit: cover;
+        object-position: center;
+
+        transition: 1s;
+
+        &:hover {
+          transform: scale(0.95);
+        }
+
+        @include on640() {
+          height: 424px;
+        }
+
+        @include on1024() {
+          height: 512px;
+        }
+      }
+
+      &_name {
+        margin-bottom: 8px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $grey;
+      }
+
+      &_about {
+        margin-bottom: 24px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.01em;
+        color: $black;
+      }
+
+      &_link {
+        display: flex;
+        gap: 8px;
+        width: max-content;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $orange;
+        text-decoration: none;
+        padding-bottom: 5px;
+
+        border-bottom: 1px solid transparent;
+        transition: 1s;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 16px;
+          height: 16px;
+          background-image: url(../images/what_we_bake/link.svg);
+        }
+
+        &:hover {
+          border-color: $orange;
+        }
+      }
+    }
+  }
+}
