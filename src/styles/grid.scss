@@ -1,14 +1,327 @@
 .grid {
-  //default 1200px+
   display: grid;
   grid-template-columns: repeat(8, 128px);
+  grid-template-rows: auto;
   column-gap: 24px;
+  row-gap: 80px;
+  position: relative;
   justify-content: center;
 
-  //grid system on mobile is redundant,
-  //apply media queries to change grid system
-  // on large and medium
+  padding: 378px 44px;
+
+  @include large() {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  @include medium() {
+    grid-template-columns: repeat(8, 64px);
+  }
+
   @include small() {
     display: block;
+    padding-top: 70px;
+  }
+
+  &__order-link {
+    display: flex;
+    color: $accent-orange;
+    transition: transform 200ms linear;
+    @include small() {
+      padding-bottom: 80px;
+    }
+    &:hover {
+      transform: scale3d(0.9, 0.9, 1.5);
+    }
+  }
+
+  &__image {
+    margin-bottom: 16px;
+  }
+
+  &__image-1 {
+    @include large() {
+      content: url("../images/orange-oatmeal-l.jpg");
+    }
+    @include medium() {
+      content: url("../images/orange-oatmeal-m.jpg");
+    }
+  }
+
+  &__image-2 {
+    @include large() {
+      content: url("../images/chocolate-biscuit-l.jpg");
+    }
+    @include medium() {
+      content: url("../images/chocolate-biscuit-m.jpg");
+    }
+  }
+  &__image-3 {
+    @include large() {
+      content: url("../images/donut-l.jpg");
+    }
+    @include medium() {
+      content: url("../images/donut-m.jpg");
+    }
+  }
+  &__image-4 {
+    @include large() {
+      content: url("../images/donut2-l.jpg");
+    }
+    @include medium() {
+      content: url("../images/donut2-m.jpg");
+    }
+  }
+  &__image-5 {
+    height: 560px;
+    margin-bottom: 16px;
+    @include large() {
+      height: auto;
+      content: url("../images/salted-caramel-l.jpg");
+    }
+    @include medium() {
+      height: auto;
+      content: url("../images/salted-caramel-m.jpg");
+    }
+  }
+  &__image-6 {
+    @include large() {
+      content: url("../images/raisin-oatmeal-l.jpg");
+    }
+    @include medium() {
+      content: url("../images/raisin-oatmeal-m.jpg");
+    }
+  }
+
+  &__type {
+    display: block;
+    color: $grey;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    margin-bottom: 24px;
+    width: 432px;
+    @include medium() {
+      width: 288px;
+    }
+  }
+
+  &__section-two-intro {
+    grid-column: 1/5;
+    @include medium() {
+      grid-column: 1/6;
+      margin-top: -200px;
+    }
+    @media (max-width: 700px) {
+      margin-left: 40px;
+    }
+    @include small() {
+      width: 350px;
+      margin: 0 auto;
+      margin-bottom: 56px;
+      padding-left: 30px;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__section-two-title {
+    font-size: 72px;
+    line-height: 85%;
+    margin-bottom: 24px;
+  }
+
+  &__product-card-1 {
+    grid-column: 1/4;
+    @include medium() {
+      grid-column: 1/5;
+    }
+    @media (max-width: 700px) {
+      margin-left: 40px;
+    }
+    @include small() {
+      width: 288px;
+      margin: 0 auto;
+    }
+  }
+  &__product-card-2 {
+    grid-column: 4/7;
+
+    @include large() {
+      grid-column: 5/8;
+      margin-left: -50px;
+    }
+    @include medium() {
+      grid-column: 6/9;
+    }
+    @include small() {
+      width: 288px;
+      margin: 0 auto;
+    }
+  }
+  &__product-card-3 {
+    grid-column: 3/6;
+    @include large() {
+      grid-column: 2/5;
+    }
+    @media (max-width: 1023px) {
+      grid-column: 1/5;
+    }
+    @media (max-width: 700px) {
+      margin-left: 40px;
+    }
+    @include small() {
+      width: 288px;
+      margin: 0 auto;
+    }
+  }
+  &__product-card-4 {
+    grid-column: 6/9;
+    @include large() {
+      margin-left: -50px;
+    }
+    @include small() {
+      width: 288px;
+      margin: 0 auto;
+    }
+  }
+  &__product-card-5 {
+    grid-column: 1/4;
+    @include medium() {
+      grid-column: 1/5;
+    }
+    @media (max-width: 700px) {
+      margin-left: 40px;
+    }
+    @include small() {
+      width: 288px;
+      margin: 0 auto;
+    }
+  }
+  &__product-card-6 {
+    grid-column: 4/7;
+    @include large() {
+      grid-column: 5/8;
+      margin-left: -50px;
+    }
+    @include medium() {
+      grid-column: 6/9;
+    }
+    @include small() {
+      width: 288px;
+      margin: 0 auto;
+    }
+  }
+
+  &__about-intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space between;
+    grid-column: 1/9;
+    margin-bottom: 100px;
+    @include small() {
+      flex-direction: column;
+    }
+  }
+
+  &__about-title {
+    font-size: 72px;
+    line-height: 61px;
+    width: 580px;
+    @include small() {
+      padding-bottom: 32px;
+    }
+    @media (min-width: 639px) and (max-width: 700px) {
+      margin-left: 30px;
+    }
+    @include medium() {
+      grid-column: 1/5;
+      font-size: 56px;
+      line-height: 48px;
+      width: 328px;
+    }
+  }
+
+  &__about-description {
+    width: 584px;
+    @include small() {
+      width: 288px;
+    }
+    @media (min-width: 639px) and (max-width: 700px) {
+      margin-left: 30px;
+    }
+    @include medium() {
+      grid-column: 5/9;
+      width: 328px;
+    }
+  }
+
+  &__info-1 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/3;
+    @media (min-width: 639px) and (max-width: 700px) {
+      margin-left: 30px;
+    }
+    @include medium() {
+      grid-column: 1/4;
+    }
+  }
+
+  &__info-2 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 3/5;
+    @include medium() {
+      grid-column: 5/7;
+    }
+  }
+
+  &__info-3 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 5/7;
+
+    @media (min-width: 639px) and (max-width: 700px) {
+      margin-left: 30px;
+    }
+    @include medium() {
+      grid-column: 1/3;
+    }
+  }
+
+  &__info-4 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 7/9;
+    @include medium() {
+      grid-column: 5/8;
+    }
+  }
+
+  &__info-title {
+    font-size: 96px;
+    line-height: 82px;
+    margin-bottom: 8px;
+  }
+
+  &__info-detail {
+    color: $grey;
+    @include small() {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__crumbs {
+    z-index: -1;
+    position: absolute;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include medium() {
+      content: url("../images/crumbs-m.svg");
+    }
+    @include medium() {
+      content: url("../images/crumbs-s.svg");
+    }
   }
 }

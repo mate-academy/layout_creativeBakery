@@ -1,35 +1,14 @@
-/* button {
-  @extend %btn-default;
-} */
-
-.wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.theme-toggler {
-  width: 50px;
-  height: 50px;
-  margin-left: 50px;
-  cursor: pointer;
-  background-image: url("../images/macaron-pink.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border: none;
-}
-
 .header {
-  background-color: $light-blue;
+  @include medium() {
+    margin-bottom: 80px;
+  }
+
+  background-color: transparent;
   &__nav {
     display: flex;
     justify-content: space-between;
-    /* border: 2px solid blue; */
     align-items: center;
 
-    //changes at tablet, TABLET + MOBILE 20 (on all sides,
-    // removed height)
-    // SLIDING MENU AS WELL
     padding: 32px;
 
     @include medium() {
@@ -37,7 +16,25 @@
     }
   }
 
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__theme-toggler {
+    width: 40px;
+    height: 40px;
+    margin-left: 50px;
+    cursor: pointer;
+    background-image: url("../images/macaron-pink.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+  }
+
   &__menu-toggler {
+    z-index: 3;
     display: none;
 
     @include medium() {
@@ -63,13 +60,33 @@
     }
   }
 
+  &__link {
+    text-shadow: 0 0 10px rgb(250, 246, 246),
+      0 0 10px rgb(231, 215, 215);
+    &:hover {
+      transform: scale(110%);
+    }
+  }
+
   &__contact {
     display: flex;
     gap: 4px;
+  }
+
+  &__number {
+    display: flex;
   }
 
   &__phone {
     @extend %uppercase-text;
     color: $accent-orange;
   }
+}
+
+.theme--is-pink {
+  background-image: url("../images/macaron-blue.png");
+}
+
+.theme--is-blue {
+  background-image: url("../images/macaron-pink.png");
 }

@@ -1,37 +1,26 @@
-.menu-is-open {
+.menu--is-open {
   background-image: url("../icons/Icon-close.svg");
 }
 
-.menu-is-closed {
+.menu--is-closed {
   background-image: url("../icons/Icon-menu.svg");
 }
 
-.theme-is-pink {
-  background-image: url("../images/macaron-blue.png");
-}
-
-.theme-is-blue {
-  background-image: url("../images/macaron-pink.png");
-}
-
 .menu {
+  z-index: 1;
   display: none;
-  z-index: -1;
+  cursor: pointer;
 
   @include medium() {
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* border: 2px solid red; */
-    padding: 132px 16px 196px;
-    position: fixed;
+    padding: 132px 16px 180px;
+    position: absolute;
+    top: 80px;
     left: 0;
     right: 0;
-    transform: translateY(-495px);
-  }
-
-  @media (min-width: 500px) {
-    padding-bottom: 178px;
+    transform: translateY(-450px);
   }
 
   &__links {
@@ -39,25 +28,34 @@
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    @media (min-width: 500px) {
+    @media (max-width: 1023px) {
       gap: 30px;
     }
   }
 
+  &__link {
+    cursor: pointer;
+    text-shadow: 0 0 10px rgb(250, 246, 246),
+      0 0 10px rgb(231, 215, 215);
+    &:hover {
+      transform: scale(110%);
+    }
+  }
+
   &__products {
-    @media (min-width: 500px) {
+    @media (max-width: 1023px) {
       font-size: 21px;
     }
   }
 
   &__about {
-    @media (min-width: 500px) {
+    @media (max-width: 1023px) {
       font-size: 21px;
     }
   }
 
   &__blog {
-    @media (min-width: 500px) {
+    @media (max-width: 1023px) {
       font-size: 21px;
     }
   }
@@ -70,7 +68,7 @@
   &__phone {
     @extend %uppercase-text;
     color: $accent-orange;
-    @media (min-width: 500px) {
+    @media (min-width: 320px) {
       font-size: 21px;
     }
   }

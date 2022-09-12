@@ -1,0 +1,196 @@
+.content {
+
+  &__section-one {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    width: max-content;
+    padding: 0 44px;
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    @media (min-width: 1023px) {
+      transform: translateY(50%);
+    }
+    @media (min-width: 1023px) {
+      z-index: 3;
+    }
+  }
+
+  &__intro-text {
+    width: 280px;
+    white-space: initial;
+    margin-bottom: 40px;
+    @include large() {
+      width: 260px;
+    }
+    @include medium() {
+      width: 280px;
+      margin-bottom: 146px;
+    }
+    @include small() {
+      width: 288px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-size: 135px;
+    line-height: 85%;
+    margin-bottom: 64px;
+    @include large() {
+      font-size: 115px;
+    }
+    @include medium() {
+      font-size: 80px;
+      margin-bottom: 210px;
+    }
+    @include small() {
+      font-size: 64px;
+      width: 288px;
+      text-align: center;
+      margin-bottom: 290px;
+      white-space: break-spaces;
+      margin-top: -60px;
+    }
+
+    animation-name: scale;
+    animation-duration: 2000ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+
+    @keyframes scale {
+      0% {
+        transform: scale(100%);
+      }
+      50% {
+        transform: scale(101%);
+      }
+      100% {
+        transform: scale(100%);
+      }
+    }
+  }
+
+  &__cookie {
+    z-index: -1;
+    @include square(584px);
+    position: absolute;
+    top: 0;
+    left: 29%;
+    transform: translateX(-50%);
+
+    @media (max-width:638px) {
+      left: 12%;
+    }
+    @include large() {
+      @include square(544px);
+      top: 70px;
+    }
+    @include medium() {
+      @include square(328px);
+      top: 60px;
+    }
+    @include small() {
+      @include square(288px);
+      top: 35%;
+    }
+    transform-origin: center;
+    animation-name: rotate;
+    animation-duration: 1350ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__button {
+    @extend %btn-default;
+    width: 280px;
+    display: flex;
+    gap: 4px;
+
+    @include small() {
+      width: 288px;
+    }
+    @include medium() {
+      width: 326px;
+      margin: 0 auto;
+    }
+    @include large() {
+      width: 260px;
+    }
+
+    &:hover {
+      @extend %btn-hover;
+      width: 280px;
+
+      @include small() {
+        width: 288px;
+      }
+      @include medium() {
+        width: 326px;
+        margin: 0 auto;
+      }
+      @include large() {
+        width: 260px;
+      }
+    }
+
+    &:focus {
+      @include small() {
+        width: 288px;
+      }
+      @include medium() {
+        width: 326px;
+        margin: 0 auto;
+      }
+      @include large() {
+        width: 260px;
+      }
+      @extend %btn-focus;
+      width: 280px;
+    }
+
+    &:disabled {
+      @extend %btn-disabled;
+      width: 280px;
+      @include large() {
+        width: 260px;
+      }
+      @include medium() {
+        width: 326px;
+        margin: 0 auto;
+      }
+      @include small() {
+        width: 288px;
+      }
+    }
+  }
+
+  &__button-text {
+    white-space: nowrap;
+  }
+}
+
+.content__button:hover > .content__cookie-icon {
+  content: url("../icons/Icon-cookie-white.svg");
+}
+
+.content__button:focus > .content__cookie-icon {
+  content: url("../icons/Icon-cookie-white.svg");
+}

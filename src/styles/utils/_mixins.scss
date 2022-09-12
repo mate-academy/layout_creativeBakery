@@ -23,34 +23,30 @@
   }
 }
 
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
 @mixin product-cards($width, $height) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
 
-  //padding: 0;
   width: $width;
   height: $height;
 }
 
 @mixin product-cards-image($image, $height) {
-  //think these are default, was inside product cards image styles on figma,
-  //just in case its needed later
-  /* flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 1; */
   border-radius: 8px;
   height: $height;
   background: {
     image: $image;
     object-fit: fil;
-    //any extra styles?
   }
 }
 
-//H1 AND H2 FOR ALL RESOLUTIONS, ADD AFTER EXTEND
 @mixin h1-desktop {
   font-size: 144px;
   line-height: 122px;
