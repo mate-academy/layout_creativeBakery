@@ -1,0 +1,76 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  @include onTablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  &__item {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--on-tablet-#{$start}-#{$end} {
+          @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--on-desktop-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  &--about {
+    @include onTablet {
+      row-gap: 80px;
+    }
+
+    @include onDesktop {
+      row-gap: 146px;
+    }
+  }
+
+  &--listmenu {
+    @include onTablet {
+      order: 1;
+    }
+  }
+
+  &--call {
+    @include onTablet {
+      order: 2;
+    }
+  }
+
+  &--email {
+    @include onTablet {
+      order: 3;
+    }
+  }
+
+  &--socials {
+    @include onTablet {
+      order: 4;
+    }
+  }
+
+  &--trademark {
+    @include onTablet {
+      order: 5;
+    }
+  }
+}
