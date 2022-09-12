@@ -1,0 +1,65 @@
+.products {
+  padding-top: 100px;
+
+  &__title {
+    @extend %style-title;
+  }
+
+  &__text {
+    margin-bottom: 76px;
+  }
+
+  &__description {
+    margin-top: 24px;
+    margin-bottom: 56px;
+  }
+
+  &__item {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 88px;
+    }
+  }
+
+  &__image {
+    margin-bottom: 16px;
+
+    max-width: 288px;
+
+    border-radius: 8px;
+
+    @include hover(transform, scale(105%));
+    @include onTablet {
+      width: 100%;
+      height: auto;
+    }
+
+    @include onDesktop {
+      &--defect {
+        width: 95%;
+      }
+    }
+  }
+
+  &__name {
+    margin-bottom: 8px;
+    @extend %style-item-title;
+  }
+
+  &__about {
+    margin-bottom: 24px;
+  }
+
+  &__order {
+    @extend %style-link-primary;
+    @include hover(filter, contrast(900%)
+    drop-shadow(0 0 1.3rem $second-main-color));
+
+    &::before {
+      @extend %style-link-primary-before;
+      background: url(../images/icons/arrow.svg) no-repeat;
+      margin-right: 8px;
+    }
+  }
+}

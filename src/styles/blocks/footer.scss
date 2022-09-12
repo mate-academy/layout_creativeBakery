@@ -1,0 +1,82 @@
+.footer {
+  background-color: $main-text-color;
+
+  &__list {
+    margin-top: 80px;
+
+    @include onTablet {
+      margin-top: 90px;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 45px;
+  }
+
+  &__title {
+    @extend %style-item-title;
+  }
+
+  &__email-title {
+    margin-bottom: 16px;
+  }
+
+  &__email {
+    @include onTablet {
+      transform: translateY(-100%);
+    }
+
+    @include onDesktop {
+      transform: translateY(-325%);
+    }
+  }
+
+  &__list-title {
+    margin-bottom: 40px;
+    color: $footer-text-color;
+    @extend %style-title;
+  }
+
+  &__item {
+    margin-top: 16px;
+    &:last-child {
+      margin-bottom: 64px;
+    }
+
+    @include onDesktop {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    color: $footer-text-color;
+    text-decoration: none;
+
+    @include hover(color, $second-main-color);
+  }
+
+  &__icon {
+    text-decoration: none;
+  }
+
+  &__social {
+    display: flex;
+    padding-top: 42px;
+    gap: 35px;
+
+    @include onTablet {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__social-hover {
+    @include hover(filter, brightness(0) invert(1));
+  }
+
+  &__copyright {
+    margin: 42px 0 56px;
+    color: $item-name-color;
+  }
+}
