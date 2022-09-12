@@ -1,0 +1,50 @@
+.nav {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  gap: 64px;
+
+  @include onDestop {
+    display: flex;
+  }
+
+  &--horizont {
+    height: 100%;
+  }
+
+  &--vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__item {
+    height: inherit;
+
+    &--vertical {
+      height: 48px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height: inherit;
+    text-decoration: none;
+    color: $c-dark;
+    transition: transform 0.5s, color 0.5s;
+
+    &:hover {
+      color: $c-accent-orange;
+      transform: scale(1.2);
+    }
+  }
+
+  &__link--contact {
+    display: flex;
+    gap: 7px;
+    color: $c-accent-orange;
+  }
+}

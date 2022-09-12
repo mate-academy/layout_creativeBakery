@@ -1,6 +1,17 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onDestopXL {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin onDestop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 667px) {
+    @content;
   }
 }
