@@ -25,10 +25,15 @@
   &__image {
     margin-bottom: 16px;
 
-    width: 100%;
+    max-width: 288px;
+
     border-radius: 8px;
 
     @include hover(transform, scale(105%));
+    @include onTablet {
+      width: 100%;
+      height: auto;
+    }
 
     @include onDesktop {
       &--defect {
@@ -48,7 +53,8 @@
 
   &__order {
     @extend %style-link-primary;
-    @include hover(filter, contrast(900%) drop-shadow(0 0 1.3rem $second-main-color));
+    @include hover(filter, contrast(900%)
+    drop-shadow(0 0 1.3rem $second-main-color));
 
     &::before {
       @extend %style-link-primary-before;
