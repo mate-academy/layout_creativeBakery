@@ -1,0 +1,42 @@
+.button {
+  width: 288px;
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color $transition-duration,
+    border-color $transition-duration;
+
+  border: 2px solid $c-accent-orange;
+  border-radius: 32px;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+  }
+
+  &__text {
+    @extend %body-text-uppercase;
+    color: $c-accent-orange;
+  }
+
+  &:hover {
+    background-color: $c-accent-orange;
+
+    & .button__text {
+      color: $c-white;
+    }
+
+    & > .button__icon path {
+      fill: $c-white;
+    }
+  }
+
+  &:active {
+    background-color: $c-dark-orange;
+    border-color: $c-dark-orange;
+  }
+}

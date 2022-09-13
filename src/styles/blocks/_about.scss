@@ -1,0 +1,66 @@
+.about {
+  position: relative;
+  &__title {
+    @extend %h2-mob-style;
+    display: inline-block;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      @include h2-tabl-style;
+      margin-bottom: 144px;
+    }
+
+    @include onDesktop {
+      @include h2-desk-style;
+    }
+  }
+
+  &__descr {
+    display: inline-block;
+    @extend %body-text;
+    margin-bottom: 64px;
+  }
+
+  &__content {
+    position: relative;
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 350px;
+    }
+  }
+
+  &__info {
+    @extend %body-text;
+    &:not(:last-child) {
+      margin-bottom: 48px;
+    }
+  }
+  &__highlighted {
+    @include bigText;
+  }
+
+  &__bg {
+    display: block;
+    position: absolute;
+    width: 320px;
+    height: 300px;
+    z-index: -1;
+    bottom: 15%;
+
+    @include onTablet {
+      width: 526px;
+      height: 493px;
+      left: 13%;
+      bottom: 10%;
+    }
+
+    @include onDesktop {
+      width: 718px;
+      height: 673px;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

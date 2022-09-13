@@ -1,0 +1,109 @@
+.footer {
+  background-color: $c-black;
+  padding: 56px 0;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+
+    @include onDesktop {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 96px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 61px;
+    }
+  }
+
+  &__menu-title {
+    @extend %body-text-uppercase;
+    color: $c-grey;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  &__contacts-wraper {
+    @include onDesktop {
+      display: flex;
+      gap: 160px;
+    }
+  }
+
+  &__contacts-title {
+    @extend %h2-mob-style;
+    color: $c-white;
+    display: block;
+    margin-right: 10px;
+
+    @include onTablet {
+      @include h2-tabl-style;
+    }
+    @include onDesktop {
+      display: inline-block;
+      @include h2-desk-style;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__contacts-subtitle {
+    @extend %body-text-uppercase;
+    color: $c-grey;
+    display: block;
+  }
+
+  &__phones {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  &__contact-link {
+    text-decoration: none;
+    color: $c-white;
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $c-accent-orange;
+    }
+
+  }
+
+  &__email {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  &__svg {
+    &:hover > path {
+      fill: $c-white;
+    }
+  }
+
+  &__copyrights {
+    @extend %body-text;
+    color: $c-grey;
+  }
+}
