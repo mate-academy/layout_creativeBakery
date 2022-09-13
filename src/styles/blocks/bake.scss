@@ -41,6 +41,14 @@
 
   &-photo {
     border-radius: 8px;
+
+    &:hover {
+      border-radius: 8px;
+      background: linear-gradient(145deg, #f0f0f0, #cacaca);
+      box-shadow: 25px 25px 50px #9d9d9d, -25px -25px 50px #fff;
+      scale: 1.05;
+      transition: all 0.3s;
+    }
   }
 
   &__card {
@@ -68,6 +76,8 @@
     }
 
     &-button {
+      display: inline-block;
+      position: relative;
       font-style: normal;
       font-weight: 500;
       font-size: 16px;
@@ -83,6 +93,25 @@
         height: 16px;
         background-image: url("../images/icon/arrow.svg");
         transform: translateY(15%);
+      }
+
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 40px;
+        bottom: -8px;
+        width: 0;
+        height: 2px;
+        background-color: $accent-orange;
+        -webkit-transition: width 0.3s ease-out;
+        -moz-transition: width 0.3s ease-out;
+        transition: width 0.3s ease-in-out;
+        transform: translateX(-50%);
+      }
+
+      &:hover:after {
+        width: 100%;
       }
     }
   }
