@@ -1,30 +1,36 @@
 .grid {
+  transform: translateY(250px);
   display: grid;
-  grid-template-columns: repeat(8, 128px);
+  grid-template-columns: repeat(8, 1fr);
   grid-template-rows: auto;
   column-gap: 24px;
   row-gap: 80px;
   position: relative;
   justify-content: center;
 
-  padding: 378px 44px;
+  @media (min-width: 1900px) {
+    grid-template-columns: repeat(8, 150px);
+  }
 
   @include large() {
     grid-template-columns: repeat(8, 1fr);
   }
   @include medium() {
-    grid-template-columns: repeat(8, 64px);
+    grid-template-columns: repeat(8, 1fr);
+    transform: translateY(150px);
   }
 
   @include small() {
     display: block;
     padding-top: 70px;
+    transform: translateY(50px);
   }
 
   &__order-link {
     display: flex;
     color: $accent-orange;
     transition: transform 200ms linear;
+    margin-left: 20px;
     @include small() {
       padding-bottom: 80px;
     }
@@ -40,8 +46,9 @@
       transform: scale(1.01);
       border-radius: 3%;
     }
-    margin-bottom: 16px;
     transition: all 200ms linear;
+    display: block;
+    margin: 0 auto 16px;
   }
 
   &__image-1 {
@@ -101,11 +108,12 @@
   &__type {
     display: block;
     color: $grey;
-    margin-bottom: 8px;
+    margin: 0 auto 8px;
+    margin-left: 20px;
   }
 
   &__description {
-    margin-bottom: 24px;
+    margin: 0 auto 8px;
     width: 432px;
     @include medium() {
       width: 288px;
@@ -113,20 +121,25 @@
   }
 
   &__section-two-intro {
-    grid-column: 1/5;
+    @include large() {
+      margin: 50px 0;
+      padding-bottom: 100px;
+    }
     @include medium() {
       grid-column: 1/6;
-      margin-top: -200px;
-    }
-    @media (max-width: 700px) {
-      margin-left: 40px;
+      margin: 0 auto;
+      transform: translateY(0);
     }
     @include small() {
       width: 288px;
       margin: 0 auto;
-      margin-bottom: 56px;
-      padding-bottom: 50px;
+      transform: translateY(0);
     }
+
+    grid-column: 1/5;
+    margin: 50px 0;
+    transform: translateY(200px);
+    padding-bottom: 100px;
   }
 
   &__section-two-title {
@@ -140,13 +153,6 @@
     @include medium() {
       grid-column: 1/5;
     }
-    @media (max-width: 700px) {
-      margin-left: 40px;
-    }
-    @include small() {
-      width: 288px;
-      margin: 0 auto;
-    }
     &:hover {
       transform: perspective(800px);
     }
@@ -154,42 +160,20 @@
   &__product-card-2 {
     grid-column: 4/7;
 
-    @include large() {
-      grid-column: 5/8;
-      margin-left: -50px;
-    }
     @include medium() {
-      grid-column: 6/9;
-    }
-    @include small() {
-      width: 288px;
-      margin: 0 auto;
+      grid-column: 5/9;
     }
   }
   &__product-card-3 {
     grid-column: 3/6;
-    @include large() {
-      grid-column: 2/5;
-    }
     @media (max-width: 1023px) {
       grid-column: 1/5;
-    }
-    @media (max-width: 700px) {
-      margin-left: 40px;
-    }
-    @include small() {
-      width: 288px;
-      margin: 0 auto;
     }
   }
   &__product-card-4 {
     grid-column: 6/9;
-    @include large() {
-      margin-left: -50px;
-    }
-    @include small() {
-      width: 288px;
-      margin: 0 auto;
+    @include medium {
+      grid-column: 5/9;
     }
   }
   &__product-card-5 {
@@ -197,26 +181,11 @@
     @include medium() {
       grid-column: 1/5;
     }
-    @media (max-width: 700px) {
-      margin-left: 40px;
-    }
-    @include small() {
-      width: 288px;
-      margin: 0 auto;
-    }
   }
   &__product-card-6 {
     grid-column: 4/7;
-    @include large() {
-      grid-column: 5/8;
-      margin-left: -50px;
-    }
     @include medium() {
-      grid-column: 6/9;
-    }
-    @include small() {
-      width: 288px;
-      margin: 0 auto;
+      grid-column: 5/9;
     }
   }
 
@@ -235,11 +204,9 @@
     font-size: 72px;
     line-height: 61px;
     width: 580px;
+    margin: 0 auto;
     @include small() {
       padding-bottom: 32px;
-    }
-    @media (min-width: 639px) and (max-width: 700px) {
-      margin-left: 30px;
     }
     @include medium() {
       grid-column: 1/5;
@@ -251,11 +218,9 @@
 
   &__about-description {
     width: 584px;
+    margin: 0 auto;
     @include small() {
       width: 288px;
-    }
-    @media (min-width: 639px) and (max-width: 700px) {
-      margin-left: 30px;
     }
     @include medium() {
       grid-column: 5/9;
@@ -267,9 +232,6 @@
     display: flex;
     flex-direction: column;
     grid-column: 1/3;
-    @media (min-width: 639px) and (max-width: 700px) {
-      margin-left: 30px;
-    }
     @include medium() {
       grid-column: 1/4;
     }
@@ -288,10 +250,6 @@
     display: flex;
     flex-direction: column;
     grid-column: 5/7;
-
-    @media (min-width: 639px) and (max-width: 700px) {
-      margin-left: 30px;
-    }
     @include medium() {
       grid-column: 1/3;
     }
@@ -322,7 +280,7 @@
   &__crumbs {
     z-index: -1;
     position: absolute;
-    bottom: 110px;
+    bottom: 610px;
     left: 50%;
     transform: translateX(-50%);
 
