@@ -13,9 +13,33 @@
     margin: 100px 0 24px;
   }
 
+  &__num {
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $color-orange;
+    margin-top: 60px;
+  }
+
+  &__numbers {
+    background-image: url(/images/crumbs.png);
+    background-repeat: no-repeat;
+    background-position: 0%;
+    background-size: 100%;
+  }
+
   @include onTablet {
+    &--tablet {
+      margin: 160px auto;
+      background-image: url(/images/crumbs.png);
+      background-repeat: no-repeat;
+    }
+
     max-width: 680px;
     margin: 0 auto;
+
     &__two {
       display: flex;
       gap: 24px;
@@ -28,10 +52,32 @@
     &__title {
       font-size: 56px;
       line-height: 85%;
+      min-width: 326px;
+      margin: 0;
+
+      &--top {
+        margin-bottom: 24px;
+      }
+    }
+
+    &__number {
+      min-width: 328px;
+    }
+
+    &__numbers {
+      background-image: none;
     }
   }
 
   @include onDesktop {
+    &--tablet {
+      margin-top: 186px;
+      margin-bottom: 0;
+      // background-image: url(/images/crumbs.png);
+      // background-repeat: no-repeat;
+      background-position: 60% 0%;
+    }
+
     max-width: 1112px;
     display: flex;
     flex-direction: column;
@@ -40,6 +86,16 @@
       font-size: 72px;
       line-height: 85%;
       letter-spacing: -0.05em;
+
+      &--end {
+        font-size: 72px;
+        line-height: 85%;
+        width: 544px;
+      }
+
+      &--top {
+        margin: 220px 0 24px;
+      }
     }
 
     &__card {
@@ -49,12 +105,24 @@
     &__two--desktop {
       justify-content: end;
     }
+
+    &__number {
+      min-width: 280px;
+      // margin-right: 0;
+    }
+
+    &__numbers {
+      // max-width: 1112px;
+      display: flex;
+      margin: 84px 0 350px;
+      background-image: none;
+    }
   }
 
   @include bigDesktop {
     &__card {
       max-width: 432px;
     }
-    padding: 124px;
+    padding: 0 124px;
   }
 }
