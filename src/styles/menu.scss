@@ -14,6 +14,9 @@
   right: 0;
   height: 500px;
   justify-content: center;
+  text-transform: uppercase;
+  background-image: url("../images/crumbs-s.svg");
+  background-color: $light-blue;
 
   @include medium() {
     display: flex;
@@ -43,8 +46,6 @@
   &__link {
     cursor: pointer;
     line-height: 50px;
-    text-shadow: 0 0 10px rgb(250, 246, 246),
-      0 0 10px rgb(231, 215, 215);
     &:hover {
       transform: scale(110%);
     }
@@ -52,19 +53,19 @@
 
   &__products {
     @media (max-width: 1023px) {
-      font-size: 21px;
+      font-size: 25px;
     }
   }
 
   &__about {
     @media (max-width: 1023px) {
-      font-size: 21px;
+      font-size: 25px;
     }
   }
 
   &__blog {
     @media (max-width: 1023px) {
-      font-size: 21px;
+      font-size: 25px;
     }
   }
 
@@ -74,10 +75,16 @@
   }
 
   &__phone {
+    margin-left: -20px;
     @extend %uppercase-text;
     color: $accent-orange;
     @media (min-width: 320px) {
-      font-size: 21px;
+      font-size: 25px;
     }
+  }
+  &__phone-icon {
+    transform: scale(1.5);
+    padding-right: 20px;
+    margin-left: -15px;
   }
 }
