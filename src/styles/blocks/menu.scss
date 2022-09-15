@@ -33,6 +33,7 @@
   }
 
   &__item {
+    position: relative;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -40,6 +41,11 @@
     text-align: center;
     letter-spacing: -0.01em;
     color: $black;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $dark-oarnge;
+    }
 
     &-last {
       display: flex;
@@ -50,24 +56,30 @@
       line-height: 100%;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      color: $dark-oarnge;
+      color: $accent-orange;
 
       &::before {
         display: inline-block;
         position: relative;
         content: "";
         background-image: url(../images/icon/call.svg);
-        width: 18px;
-        height: 18px;
+        width: $width-icon;
+        height: $height-icon;
         margin-right: 7px;
         align-items: center;
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
+        transition: all 0.3s;
       }
 
       &:hover {
         color: $dark-oarnge;
+
+        &::before {
+          background-image: url(../images/icon/call_hover.svg);
+          transition: all 0.3s;
+        }
       }
     }
   }

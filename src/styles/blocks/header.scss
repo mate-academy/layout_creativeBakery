@@ -70,6 +70,11 @@
     line-height: 150%;
     letter-spacing: -0.01em;
     color: #1c1a26;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $dark-oarnge;
+    }
 
     &-last {
       display: flex;
@@ -87,8 +92,8 @@
         position: relative;
         content: "";
         background-image: url(../images/icon/call.svg);
-        width: 18px;
-        height: 18px;
+        width: $width-icon;
+        height: $height-icon;
         margin-right: 7px;
         align-items: center;
         background-position: center;
@@ -98,6 +103,11 @@
 
       &:hover {
         color: $dark-oarnge;
+
+        &::before {
+          background-image: url(../images/icon/call_hover.svg);
+          transition: all 0.3s;
+        }
       }
     }
   }
@@ -160,6 +170,7 @@
     border-radius: 32px;
     padding: 20px;
     margin: 0 auto 104px;
+    transition: all 0.3s;
 
     @include onTablet {
       margin: 0 auto 228px;
