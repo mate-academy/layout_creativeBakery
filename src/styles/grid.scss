@@ -1,0 +1,301 @@
+.grid {
+  transform: translateY(250px);
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: auto;
+  column-gap: 24px;
+  row-gap: 80px;
+  position: relative;
+  justify-content: center;
+
+  @media (min-width: 1900px) {
+    grid-template-columns: repeat(8, 150px);
+  }
+
+  @include large() {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  @include medium() {
+    grid-template-columns: repeat(8, 1fr);
+    transform: translateY(150px);
+    column-gap: 16px;
+  }
+
+  @include small() {
+    display: block;
+    padding-top: 70px;
+    transform: translateY(50px);
+  }
+
+  &__order-link {
+    display: flex;
+    color: $accent-orange;
+    transition: transform 200ms linear;
+    margin-left: 20px;
+    @include small() {
+      padding-bottom: 80px;
+    }
+    &:hover {
+      transform: scale3d(0.9, 0.9, 1.5);
+    }
+  }
+
+  &__image {
+    &:hover {
+      filter: contrast(110%);
+      box-shadow: 0 1px 10px 1px rgba(0,0,0,0.5);
+      transform: scale(1.01);
+      border-radius: 3%;
+    }
+    transition: all 200ms linear;
+    display: block;
+    margin: 0 auto 16px;
+  }
+
+  &__image-1 {
+    @include large() {
+      content: url("../images/orange-oatmeal-l.jpg");
+    }
+    @include medium() {
+      content: url("../images/orange-oatmeal-m.jpg");
+    }
+  }
+
+  &__image-2 {
+    @include large() {
+      content: url("../images/chocolate-biscuit-l.jpg");
+    }
+    @include medium() {
+      content: url("../images/chocolate-biscuit-m.jpg");
+    }
+  }
+  &__image-3 {
+    @include large() {
+      content: url("../images/donut-l.jpg");
+    }
+    @include medium() {
+      content: url("../images/donut-m.jpg");
+    }
+  }
+  &__image-4 {
+    @include large() {
+      content: url("../images/donut2-l.jpg");
+    }
+    @include medium() {
+      content: url("../images/donut2-m.jpg");
+    }
+  }
+  &__image-5 {
+    height: 560px;
+    margin-bottom: 16px;
+    @include large() {
+      height: auto;
+      content: url("../images/salted-caramel-l.jpg");
+    }
+    @include medium() {
+      height: auto;
+      content: url("../images/salted-caramel-m.jpg");
+    }
+  }
+  &__image-6 {
+    @include large() {
+      content: url("../images/raisin-oatmeal-l.jpg");
+    }
+    @include medium() {
+      content: url("../images/raisin-oatmeal-m.jpg");
+    }
+  }
+
+  &__type {
+    display: block;
+    color: $grey;
+    margin: 0 auto 8px;
+    margin-left: 20px;
+  }
+
+  &__description {
+    margin: 0 auto 8px;
+    width: 432px;
+    @include medium() {
+      width: 288px;
+    }
+  }
+
+  &__section-two-intro {
+    @include large() {
+      margin: 50px 0;
+      padding-bottom: 100px;
+    }
+    @include medium() {
+      grid-column: 1/6;
+      margin: 0 auto;
+      transform: translateY(0) translateX(30px);
+    }
+    @include small() {
+      width: 288px;
+      margin: 0 auto;
+      transform: translateY(0);
+
+    }
+
+    grid-column: 1/5;
+    margin: 50px 0;
+    transform: translateY(200px);
+    padding-bottom: 100px;
+  }
+
+  &__section-two-title {
+    font-size: 72px;
+    line-height: 85%;
+    margin-bottom: 24px;
+  }
+
+  &__product-card-1 {
+    grid-column: 1/4;
+    @include medium() {
+      grid-column: 1/5;
+    }
+  }
+  &__product-card-2 {
+    grid-column: 4/7;
+
+    @include medium() {
+      grid-column: 5/9;
+    }
+  }
+  &__product-card-3 {
+    grid-column: 3/6;
+    @media (max-width: 1023px) {
+      grid-column: 1/5;
+    }
+  }
+  &__product-card-4 {
+    grid-column: 6/9;
+    @include medium {
+      grid-column: 5/9;
+    }
+  }
+  &__product-card-5 {
+    grid-column: 1/4;
+    @include medium() {
+      grid-column: 1/5;
+    }
+  }
+  &__product-card-6 {
+    grid-column: 4/7;
+    @include medium() {
+      grid-column: 5/9;
+    }
+  }
+
+  &__about-intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space between;
+    grid-column: 1/9;
+    margin-bottom: 100px;
+    @include small() {
+      flex-direction: column;
+    }
+  }
+
+  &__about-title {
+    font-size: 72px;
+    line-height: 61px;
+    width: 580px;
+    margin: 0 auto;
+    @include small() {
+      padding-bottom: 32px;
+    }
+    @include medium() {
+      grid-column: 1/5;
+      font-size: 56px;
+      line-height: 48px;
+      width: 328px;
+    }
+  }
+
+  &__about-description {
+    width: 584px;
+    margin: 0 auto;
+    @include small() {
+      width: 288px;
+    }
+    @include medium() {
+      grid-column: 5/9;
+      width: 328px;
+    }
+  }
+
+  &__info {
+    padding-left: 30px;
+  }
+
+  &__info-1 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/3;
+    @include medium() {
+      grid-column: 1/4;
+    }
+  }
+
+  &__info-2 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 3/5;
+    @include medium() {
+      grid-column: 5/7;
+    }
+  }
+
+  &__info-3 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 5/7;
+    @include medium() {
+      grid-column: 1/3;
+    }
+  }
+
+  &__info-4 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 7/9;
+    @include medium() {
+      grid-column: 5/8;
+    }
+  }
+
+  &__info-title {
+    font-size: 96px;
+    line-height: 82px;
+    margin-bottom: 8px;
+  }
+
+  &__info-detail {
+    color: $grey;
+    @include small() {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__crumbs {
+    z-index: -1;
+    position: absolute;
+    bottom: 650px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include large() {
+      top: 2600px;
+    }
+    @include medium() {
+      content: url("../images/crumbs-m.svg");
+    }
+    @include small() {
+      content: url("../images/crumbs-s.svg");
+      top: 5000px;
+      width: 300px;
+    }
+  }
+}

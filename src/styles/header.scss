@@ -1,0 +1,95 @@
+.header {
+  @include medium() {
+    margin-bottom: 80px;
+    background-color: transparent;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 32px;
+
+    @include medium() {
+      padding: 20px;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+  }
+
+  &__theme-toggler {
+    width: 40px;
+    height: 40px;
+    margin-left: 50px;
+    cursor: pointer;
+    background-image: url("../images/macaron-pink.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__menu-toggler {
+    z-index: 3;
+    display: none;
+
+    @include medium() {
+      position: absolute;
+      right: 30px;
+      display: initial;
+      width: 24px;
+      height: 24px;
+      background-image: url("../icons/Icon-menu.svg");
+      border: none;
+      background-color: $light-blue;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+    @include medium() {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-shadow: 0 0 10px rgb(250, 246, 246),
+      0 0 10px rgb(231, 215, 215);
+    &:hover {
+      transform: scale(110%);
+    }
+  }
+
+  &__contact {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__number {
+    display: flex;
+  }
+
+  &__phone {
+    @extend %uppercase-text;
+    color: $accent-orange;
+  }
+}
+
+.theme--is-pink {
+  background-image: url("../images/macaron-blue.png");
+}
+
+.theme--is-blue {
+  background-image: url("../images/macaron-pink.png");
+}
