@@ -1,4 +1,8 @@
 .content {
+  &__cookie-icon {
+    transition: all 200ms linear;
+  }
+
   &__section-one {
     display: flex;
     gap: 24px;
@@ -117,9 +121,12 @@
 
   &__button {
     @extend %btn-default;
+
     width: 280px;
     display: flex;
     gap: 4px;
+    cursor: pointer;
+    transition: all 200ms linear;
 
     @include small() {
       width: 288px;
@@ -149,6 +156,8 @@
     }
 
     &:focus {
+      @extend %btn-focus;
+      width: 280px;
       @include small() {
         width: 288px;
       }
@@ -159,8 +168,6 @@
       @include large() {
         width: 260px;
       }
-      @extend %btn-focus;
-      width: 280px;
     }
 
     &:disabled {
@@ -185,9 +192,9 @@
 }
 
 .content__button:hover > .content__cookie-icon {
-  content: url("../icons/Icon-cookie-white.svg");
+  filter: brightness(0) invert(1);
 }
 
 .content__button:focus > .content__cookie-icon {
-  content: url("../icons/Icon-cookie-white.svg");
+  filter: brightness(0) invert(1);
 }

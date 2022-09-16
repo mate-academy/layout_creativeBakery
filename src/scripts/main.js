@@ -7,6 +7,7 @@ const cookie = document.getElementById('cookie');
 const intro = document.getElementById('intro');
 const title = document.getElementById('title');
 const menu = document.getElementById('menu');
+const paragraphs = document.getElementsByClassName('maroon');
 
 menu.style.transition = 'all 200ms ease-out';
 cookie.style.transition = 'all 200ms ease-out';
@@ -42,25 +43,35 @@ function changeTheme() {
   if (isPink === true) {
     themeIcon.classList.remove('theme--is-pink');
     themeIcon.classList.add('theme--is-blue');
-    document.querySelector('body').style.backgroundColor = '#eef7ff';
-    document.querySelector('header').style.backgroundColor = '#eef7ff';
+    document.querySelector('body').classList.remove('bg');
+    document.querySelector('body').classList.add('invert-bg');
+    document.querySelector('header').backgroundColor = '#eef7ff';
     menuIcon.style.backgroundColor = '#eef7ff';
     menu.style.backgroundColor = '#eef7ff';
 
     for (let i = 0; i < headings.length; i++) {
       headings[i].style.color = '#1c1a26';
     }
+
+    for (let i = 0; i < paragraphs.length; i++) {
+      paragraphs[i].style.color = '#1c1a26';
+    }
     isPink = false;
   } else {
     themeIcon.classList.remove('theme--is-blue');
     themeIcon.classList.add('theme--is-pink');
-    document.querySelector('body').style.backgroundColor = '#ffeefc';
-    document.querySelector('header').style.backgroundColor = '#ffeefc';
+    document.querySelector('body').classList.remove('invert-bg');
+    document.querySelector('body').classList.add('bg');
     menuIcon.style.backgroundColor = '#ffeefc';
     menu.style.backgroundColor = '#ffeefc';
+    document.querySelector('header').backgroundColor = '#ffeefc';
 
     for (let i = 0; i < headings.length; i++) {
       headings[i].style.color = '#f9512e';
+    }
+
+    for (let i = 0; i < paragraphs.length; i++) {
+      paragraphs[i].style.color = '#45150c';
     }
     isPink = true;
   }

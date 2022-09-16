@@ -18,6 +18,7 @@
   @include medium() {
     grid-template-columns: repeat(8, 1fr);
     transform: translateY(150px);
+    column-gap: 16px;
   }
 
   @include small() {
@@ -128,12 +129,13 @@
     @include medium() {
       grid-column: 1/6;
       margin: 0 auto;
-      transform: translateY(0);
+      transform: translateY(0) translateX(30px);
     }
     @include small() {
       width: 288px;
       margin: 0 auto;
       transform: translateY(0);
+
     }
 
     grid-column: 1/5;
@@ -152,9 +154,6 @@
     grid-column: 1/4;
     @include medium() {
       grid-column: 1/5;
-    }
-    &:hover {
-      transform: perspective(800px);
     }
   }
   &__product-card-2 {
@@ -228,6 +227,10 @@
     }
   }
 
+  &__info {
+    padding-left: 30px;
+  }
+
   &__info-1 {
     display: flex;
     flex-direction: column;
@@ -280,15 +283,19 @@
   &__crumbs {
     z-index: -1;
     position: absolute;
-    bottom: 610px;
+    bottom: 650px;
     left: 50%;
     transform: translateX(-50%);
-
+    @include large() {
+      top: 2600px;
+    }
     @include medium() {
       content: url("../images/crumbs-m.svg");
     }
-    @include medium() {
+    @include small() {
       content: url("../images/crumbs-s.svg");
+      top: 5000px;
+      width: 300px;
     }
   }
 }
