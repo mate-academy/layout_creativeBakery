@@ -1,0 +1,37 @@
+.catalog {
+  &__title {
+    margin-bottom: 24px;
+
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    letter-spacing: -0.01em;
+    margin-bottom: 56px;
+  }
+
+  &__card {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.grid:last-child .catalog__card:last-of-type {
+  margin-bottom: 0;
+}
+
+@include onTablet {
+  .grid:last-child .catalog__card:nth-last-of-type(-n + 2) {
+    margin-bottom: 0;
+  }
+}
+
+// .grid:last-child .catalog__card:nth-last-child(-n + 2) {
+//   margin-bottom: 0;
+// }
