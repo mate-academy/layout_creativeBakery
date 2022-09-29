@@ -1,0 +1,239 @@
+.header {
+  min-height: 100vh;
+
+  background-image: url(../images/Cookie_mob.svg);
+  background-repeat: no-repeat;
+  background-position: top 274px right 50%;
+
+  @include onTablet {
+    margin: 0 44px;
+    background-image: url(../images/Cookie_tablet.svg);
+    background-position: top 208px right 50%;
+  }
+  @include onDesktop {
+    background-image: url(../images/Cookie_desktop.svg);
+    background-position: top 88px right 50%;
+    margin: 0 44px;
+  }
+
+  @include onLarge {
+    margin: 0 auto;
+    max-width: 1200px;
+    background-image: url(../images/Cookie_large.svg);
+    background-position: top 88px right 50%;
+  }
+  
+  &__top {
+    height: 64px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    &-link--onDesktop {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &-cross {
+      margin-right: 20px;
+    }
+
+    &-bakery {
+      margin-left: 20px;
+    }
+
+    @include onDesktop {
+      height: 88px;
+    }
+
+    @include onLarge {
+      height: 88px;
+    }
+
+    &-menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      
+      @media (max-width: 1023px) {
+        display: none;
+      }
+    
+      &-link {
+        display: block;
+        margin-right: 64px;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+        letter-spacing: -0.01em;
+        color: #1c1a26;
+        border-bottom: 1px solid transparent;
+        transition: 0.3s;
+
+        &:hover {
+          color: $titleColor;
+          border-bottom: 1px solid $titleColor;
+        }
+
+        &--last {
+          margin-right: 32px;
+          color: $titleColor;
+          border-bottom: 2px solid transparent;
+        }
+    
+        &--last::before {
+          display: inline-block;
+          content: " ";
+          height: 18px;
+          width: 18px;
+          margin-right: 8px;
+          transform: translateY(25%);
+          background-image: url(../images/phone.png);
+          background-size: contain;
+        }
+      }
+    }
+  }
+}
+
+.header__content {
+  position: relative;
+  margin: 0 16px;
+
+  @include onTablet {
+    margin: 0 44px;
+  }
+  @include onDesktop {
+    margin: 0 44px;
+  }
+
+  @include onLarge {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  &-text {
+    width: 288px;
+    margin: 0 auto 32px;
+    text-align: center;
+    padding-top: 32px;
+
+    @include onTablet {
+      margin: 0 0 146px;
+      padding-top: 80px;
+      width: 280px;
+      text-align: start;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+    }
+    @include onDesktop {
+      margin: 0 0 8px;
+      width: 260px;
+      padding-top: 135px;
+    }
+
+    @include onLarge {
+      margin: 0 0 40px;
+      width: 280px;
+      padding-top: 144px;
+    }
+  }
+  
+  &-title {
+    margin: 0 auto 288px;
+    max-width: 288px;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      max-width: 100%;
+      font-size: 80px;
+      line-height: 85%;
+      margin-bottom: 210px;
+      // white-space: nowrap;
+    }
+
+    @include onDesktop {
+      max-width: 100%;
+      font-size: 136px;
+      line-height: 85%;
+      letter-spacing: -0.06em;
+      margin-bottom: 64px;
+      // white-space: nowrap;
+    }
+    @include onLarge {
+      max-width: 100%;
+      font-size: 144px;
+      line-height: 85%;
+      margin-bottom: 64px;
+    }
+  }
+
+  &-button {
+    display: block;
+    box-sizing: border-box;
+    width: 288px;
+    margin: 0 auto 104px;
+    height: 56px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 56px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $titleColor;
+    border: 2px solid $titleColor;
+    border-radius: 32px;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &::before {
+      display: inline-block;
+      margin-right: 6px;
+      content: "";
+      height: 20px;
+      width: 20px;
+      background-image: url(../images/Vector.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translateY(25%);
+    }
+
+    &:hover {
+      background: $titleColor;
+      color: white;
+    }
+
+    &:hover::before {
+      background-image: url(../images/Vector_white.svg);
+    }
+
+    &:active {
+      background: #b3341a;
+      border-color: #b3341a;
+    }
+
+    @include onDesktop {
+      margin-left: 0;
+    }
+  }
+
+  &-link {
+    padding: 0 30px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $titleColor;
+    text-decoration: none;
+  }
+}
