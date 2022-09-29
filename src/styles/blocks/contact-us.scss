@@ -1,0 +1,39 @@
+.contact-us {
+  display: flex;
+  flex-direction: column;
+
+  @include onDesktop {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    @extend %h2;
+    color: #fff;
+  }
+
+  &__info {
+    width: 50%;
+
+    &:first-of-type {
+      margin-bottom: 40px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__text {
+    @extend %uppercase;
+    color: $second-font-color;
+  }
+
+  &__link {
+    @extend %body-text;
+    text-decoration: none;
+    color: #fff;
+  }
+}

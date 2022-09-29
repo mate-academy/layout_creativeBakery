@@ -1,18 +1,21 @@
 .header {
   &__top {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+
+    @include onDesktopXL {
+      margin-bottom: 144px;
+    }
+
     @include top-actions;
   }
-
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
-
-  // padding: 0 16px;
-
-  // @include onDesktop {
-  //   // height: 88px;
-  //   padding: 0 32px;
-  // }
 
   &__nav {
     @include onDesktop {
@@ -20,5 +23,67 @@
     }
 
     display: none;
+  }
+
+  &__description {
+    margin-bottom: 32px;
+
+    text-align: left;
+    letter-spacing: -0.01em;
+
+    @include onTablet {
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 8px;
+    }
+
+    @include onDesktopXL {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    display: block;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 210px;
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+      font-size: 136px;
+    }
+
+    @include onDesktopXL {
+      font-size: 144px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    @include onTablet {
+      width: 50%;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      z-index: -1;
+    }
   }
 }
