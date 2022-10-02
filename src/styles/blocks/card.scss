@@ -1,0 +1,72 @@
+.card {
+  max-width: 288px;
+
+  @include onTablet {
+    max-width: 328px;
+  }
+
+  @include onDesktop {
+    max-width: 432px;
+  }
+
+  &__image {
+    max-width: 100%;
+    margin-bottom: 16px;
+
+    border-radius: 8px;
+
+    transition-duration: $transition-time;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__category {
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    color: $grey;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin-bottom: 24px;
+  }
+
+  &__order {
+    display: flex;
+    width: max-content;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    color: $accent-orange;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition-duration: $transition-time;
+
+  &::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+
+      background-image: url(../images/Arrow.svg);
+      background-repeat: no-repeat;
+      transition-duration: $transition-time;
+    }
+
+    &:hover {
+      color: $dark-orange;
+
+      &::before {
+        background-image: url(../images/Arrow_dark.svg);
+      }
+    }
+  }
+}
