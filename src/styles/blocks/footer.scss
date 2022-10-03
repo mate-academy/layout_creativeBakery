@@ -1,0 +1,103 @@
+.footer {
+  &__logo {
+    display: block;
+    margin-bottom: 45px;
+
+    @include onTable {
+      margin-bottom: 100px;
+      padding-top: 5px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__section {
+    padding-top: 61px;
+
+    @include onTable {
+      padding-top: 88px;
+    }
+  }
+
+  &__title {
+    grid-template-rows: 1 / 3;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: $white;
+    margin-bottom: 40px;
+
+    @include onTable {
+      margin-bottom: 40px;
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__menu-list {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 42px;
+    }
+  }
+
+  &__menu-title {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey;
+    margin-bottom: 16px;
+  }
+
+  &__menu-item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &__menu-link {
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $white;
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus {
+      color: $accentOrange;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 42px;
+
+    &-link {
+      transition: filter 0.3s;
+
+      &:hover,
+      &:focus {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+
+  &__copyright {
+    color: $grey;
+    margin-bottom: 56px;
+  }
+
+  &__contact-container {
+    @include onDesktop {
+      display: flex;
+      gap: 94px;
+    }
+  }
+}
