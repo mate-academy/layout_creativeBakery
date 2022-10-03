@@ -75,11 +75,23 @@
         border-bottom: 1px solid transparent;
         transition: 0.3s;
 
-        &:hover {
-          color: $titleColor;
-          border-bottom: 1px solid $titleColor;
+        position: relative;
+        &:after {
+          display: block;
+          content: "";
+          background-color: $titleColor;
+          height: 1px;
+          width: 0%;
+          left: 50%;
+          position: absolute;
+          transition: width 0.3s ease-in-out;
+          transform: translateX(-50%);
         }
-
+        &:hover:after,
+        &:focus:after {
+          width: 100%;
+        }
+      
         &--last {
           margin-right: 32px;
           color: $titleColor;

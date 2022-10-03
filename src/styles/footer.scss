@@ -92,11 +92,22 @@
     letter-spacing: -0.01em;
     color: #fff;
     border-bottom: 1px solid transparent;
-    transition: 0.3s;
+    position: relative;
+    &:after {
+      display: block;
+      content: "";
+      background-color: $titleColor;
+      height: 1px;
+      width: 0%;
+      left: 50%;
+      position: absolute;
+      transition: width 0.3s ease-in-out;
+      transform: translateX(-50%);
+    }
 
-    &:hover {
-      color: $titleColor ;
-      border-bottom: 1px solid $titleColor;
+    &:hover:after,
+    &:focus:after {
+      width: 100%;
     }
   }
 
