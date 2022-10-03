@@ -1,0 +1,120 @@
+.content {
+  margin: 0 16px;
+  padding-top: 64px;
+  scroll-behavior: smooth;
+
+  @include onTablet {
+    margin: 0 44px;
+  }
+
+  @include onDesktop {
+    margin: 0 44px;
+  }
+
+  @include onLarge {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  &__title {
+    width: 280px;
+    margin-bottom: 24px;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $titleColor;
+
+    @include onTablet {
+      width: fit-content;
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__about {
+    width: 280px;
+    margin-bottom: 56px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    @include onTablet {
+      width: fit-content;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 8px;
+    width: 288px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+  }
+
+  &__description {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+
+  &__link {
+    display: block;
+    box-sizing: border-box;
+    padding-bottom: 5px;
+    height: 24px;
+    margin-bottom: 54px;
+    width: fit-content;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $titleColor;
+    transition: 0.3s;
+
+    &--last {
+      margin-bottom: 80px;
+
+      @include onTablet {
+        margin-bottom: 160px;
+      }
+      @include onDesktop {
+        margin-bottom: 186px;
+      }
+    }
+
+    &::before {
+      display: inline-block;
+      content: "";
+      height: 16px;
+      width: 16px;
+      margin-right: 8px;
+      transform: translateY(17%);
+      background-image: url(../images/arrow.svg);
+      background-size: contain;
+    }
+
+    &:hover {
+      border-bottom: 2px solid $titleColor;
+    }
+  }
+}
