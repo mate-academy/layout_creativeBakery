@@ -40,21 +40,31 @@
     &--hover {
 
       &:hover {
-        font-weight: bold;
-        padding-bottom: 0.5px;
-        border-bottom: 1px solid #fff;
+        // transform: scale(1.05);
+        padding-bottom: 0.1px;
+        border-bottom: 1px solid #f9512e;
+        position: relative;
+        color: #f9512e;
+        transition: 1s;
+
+        &::after {
+          position: absolute;
+          transition: 3s;
+          // padding-bottom: 0.5px;
+          // border-bottom: 1px solid #fff;
+        }
       }
     }
 
   }
 
-  &__trans {
-    transition: transform 0.5s;
+  // &__trans {
+  //   transition: transform 0.5s;
 
-    &:hover {
-      transform: translateX(0.5%);
-    }
-  }
+  //   &:hover {
+  //     transition: scale(2);
+  //   }
+  // }
 
   &__bot {
     margin-bottom: 16px;
@@ -99,9 +109,9 @@
     margin-bottom: 16px;
     transition: transform 1s;
 
-    &:hover {
-      transform: translateX(-0.5%);
-    }
+    // &:hover {
+    //   transform: translateX(-0.5%);
+    // }
   }
 
   &__top {
@@ -137,11 +147,18 @@
   }
 
   &__hoverd {
-    transition: transform 0.3s;
+    transition: transform 1s;
     &:hover {
       transform: scale(1.2);
 
     }
   }
 
+  &__white {
+    &:hover {
+      svg path {
+        fill: white;
+      }
+    }
+  }
 }
