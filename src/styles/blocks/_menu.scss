@@ -1,0 +1,72 @@
+.menu {
+  &__content {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__nav {
+    margin-bottom: 132px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    &--notebook {
+      display: none;
+      align-items: flex-end;
+
+      @include onNotebook {
+        display: flex;
+      }
+    }
+
+  }
+
+  &__item {
+    @include onNotebook {
+      margin-bottom: 0;
+      margin-right: 64px;
+    }
+
+    @include onDesign {
+      margin-right: 80px;
+    }
+
+    @include onFullHD {
+      margin-right: 100px;
+    }
+
+    @include onLargeScreens {
+      margin-right: 136px;
+    }
+
+    &--notebook {
+      margin: 0 0 24px;
+      text-align: center;
+
+      @include onFullHD {
+        margin-bottom: 36px;
+      }
+
+      @include onLargeScreens {
+        margin-bottom: 45px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 32px;
+    }
+
+    &--contact {
+      display: flex;
+      margin: 0 auto 204px;
+      align-items: center;
+      text-align: center;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
