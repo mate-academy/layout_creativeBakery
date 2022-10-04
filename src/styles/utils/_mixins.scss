@@ -4,3 +4,27 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin fontText($_color, $_fontSize, $_lineHeight) {
+  color: $_color;
+  font-size: $_fontSize;
+  line-height: $_lineHeight;
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onNotebook {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onBigScreen {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}

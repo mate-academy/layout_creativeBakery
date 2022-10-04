@@ -1,0 +1,85 @@
+.nav {
+  display: none;
+
+  &--mobile {
+    padding-top: 60px;
+    position: absolute;
+    display: block;
+    height: 568px;
+    background-color: $accentColor;
+    right: 0;
+    left: 120px;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 20px;
+    transition: color linear 0.2s;
+
+    &:hover {
+      color: $accentColor;
+    }
+
+    &--tel {
+      padding-top: 30px;
+
+      &:hover {
+        color: $secondaryColor;
+      }
+    }
+
+    &--active {
+      color: $accentColor;
+    }
+  }
+
+  &__button {
+    background-color: $secondaryColor;
+    margin: 30px;
+  }
+
+  &__select {
+    border: none;
+    background-color: transparent;
+    padding: 0 15px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  &__press {
+    padding-left: 20px;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: url(../images/vector-right.svg);
+      position: absolute;
+      transform: rotate(90deg) scale(0.5);
+    }
+  }
+
+  @include onNotebook {
+    display: flex;
+
+    &__list {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 10px;
+    }
+
+    &__link {
+      padding: 5px;
+    }
+
+    &__button {
+      margin: 0;
+    }
+
+    &__aside {
+      display: none;
+    }
+  }
+}

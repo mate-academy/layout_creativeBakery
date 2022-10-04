@@ -1,0 +1,31 @@
+.fact {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  &__number {
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 71px;
+    margin: 12px 0 7px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform linear 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @for $i from 1 to 6 {
+      &--#{$i} {
+        background-image: url("../images/about/about-#{$i}.jpg");
+      }
+    }
+  }
+}

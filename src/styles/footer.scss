@@ -1,0 +1,55 @@
+.footer {
+  background-color: $mainColor;
+  color: #fff;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    justify-content: space-around;
+    height: 470px;
+  }
+
+  &__logo {
+    margin-top: 65px;
+  }
+
+  &__link {
+    display: inline-block;
+    color: #fff;
+    padding: 20px 0;
+    transition: color linear 0.2s;
+
+    &:hover {
+      color: $secondaryColor;
+    }
+  }
+
+  &__copyright {
+    &:first-child {
+      padding-right: 10px;
+    }
+    text-align: center;
+    padding: 45px 0;
+    font-size: 12px;
+  }
+
+  @include onTablet {
+    &__content {
+      flex-direction: row;
+      align-items: baseline;
+      height: 140px;
+    }
+
+    &__list {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 10px;
+    }
+
+    &__copyright {
+      padding: 16px 0;
+    }
+  }
+}

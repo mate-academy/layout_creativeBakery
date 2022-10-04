@@ -1,0 +1,35 @@
+.media {
+  display: flex;
+  justify-content: space-around;
+
+  &__link {
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    transition: transform linear 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &--fb {
+      background-image: url(../images/facebook.svg);
+    }
+
+    &--twitter {
+      background-image: url(../images/twitter.svg);
+    }
+
+    &--linkdin {
+      background-image: url(../images/linkedin.svg);
+    }
+  }
+
+  @include onTablet {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+  }
+
+}

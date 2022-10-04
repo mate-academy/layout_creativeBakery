@@ -1,0 +1,129 @@
+.header {
+  position: relative;
+  width: 100%;
+  background-image: url(../images/header-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 568px;
+
+  &__top {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__logo {
+    color: $mainColor;
+    margin-left: 25px;
+  }
+
+  &__heading {
+    font-family: "Cookie", cursive;
+    font-weight: normal;
+    @include fontText($mainColor, 100px, 80px);
+    padding-top: 100px;
+  }
+
+  &__text {
+    font-size: 16px;
+    padding-top: 29px;
+    padding-bottom: 19px;
+  }
+
+  &__button {
+    margin: 0;
+    background-color: $accentColor;
+  }
+
+  &__aside {
+    display: none;
+  }
+
+  &__switcher {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    column-gap: 20px;
+    justify-items: center;
+    align-items: baseline;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 26px;
+
+    &::before {
+      content: url(../images/vector-left--accent.svg);
+      position: absolute;
+      left: 40px;
+      top: 12px;
+      cursor: pointer;
+    }
+
+    &::after {
+      content: url(../images/vector-right.svg);
+      position: absolute;
+      right: 40px;
+      top: 12px;
+      cursor: pointer;
+    }
+  }
+
+  @include onNotebook {
+    background-image: none;
+    height: 840px;
+
+    &__top {
+      align-items: baseline;
+      justify-content: space-around;
+    }
+
+    &__logo {
+      margin: 0;
+    }
+
+    &__container {
+      display: flex;
+      height: 100%;
+    }
+
+    &__switcher {
+      display: none;
+    }
+
+    &__content {
+      flex-grow: 2;
+      background-image: url(../images/header-bg.jpg);
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      left: 0;
+      width: 65%;
+      height: 840px;
+    }
+
+    &__center {
+      padding-left: 20px;
+    }
+
+    &__aside {
+      display: block;
+      flex-grow: 1;
+      background-color: $accentColor;
+      position: absolute;
+      right: 0;
+      width: 35%;
+      height: 840px;
+      padding-right: 20px;
+    }
+  }
+
+  @include onBigScreen {
+    &__center {
+      position: absolute;
+      right: 30%;
+      top: 5%;
+    }
+  }
+}
