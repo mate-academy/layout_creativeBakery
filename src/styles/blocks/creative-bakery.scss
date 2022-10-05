@@ -1,0 +1,110 @@
+.creative-bakery {
+  text-align: center;
+
+  @include onTablet {
+    background-image: url(../images/cookie.png);
+    background-repeat: no-repeat;
+    background-size: 326px;
+    background-position: top 30% center;
+  }
+
+  @include onDesktop {
+    padding: 135px 0 28px;
+    background-size: 544px;
+    background-position: top center;
+  }
+
+  &__text {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      width: 284px;
+      margin-bottom: 146px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      width: 260px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $titleTextColor;
+
+    @include onTablet {
+      margin-bottom: 210px;
+      font-size: 80px;
+      line-height: 85%;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+      font-size: 136px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: contain;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__logo {
+    margin-right: 6px;
+  }
+
+  &__link {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 326px;
+    height: 56px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $titleTextColor;
+    border: 2px solid $titleTextColor;
+    border-radius: 32px;
+    transition: all, $transitionTime;
+
+    @include onDesktop {
+      width: 260px;
+      margin: 0;
+    }
+
+    &:hover {
+      color: $learnMoreHoverColor;
+      background-color: $titleTextColor;
+      border-color: transparent;
+    }
+
+    &:hover .creative-bakery__logo,
+    &:focus .creative-bakery__logo {
+      filter: brightness(0) invert(1);
+    }
+
+    &:focus {
+      color: $learnMoreHoverColor;
+      background-color: $focusColor;
+      border-color: transparent;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}

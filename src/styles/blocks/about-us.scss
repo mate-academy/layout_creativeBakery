@@ -1,0 +1,78 @@
+.about-us {
+  margin-bottom: 72px;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 72px 24px;
+    padding-top: 80px;
+    background-image: url(../images/crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 526px 493px;
+  }
+
+  @include onDesktop {
+    padding: 0 0 350px;
+    grid-gap: 146px 24px;
+    background-position: top 90px left 300px;
+    background-size: 718px 673px;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    background-image: url(../images/crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include onTablet {
+      display: grid;
+      grid-column: 1 / 3;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 80px 24px;
+      background-image: none;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    margin-bottom: 48px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-value {
+    margin-bottom: 8px;
+    font-weight: normal;
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $titleTextColor;
+  }
+}

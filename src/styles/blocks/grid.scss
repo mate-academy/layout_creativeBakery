@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  
+  @include onTablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @for $start from 1 through 2 {
+    @for $end from $start through 2 {
+      &--#{$start}-#{$end} {
+        grid-column: #{$start}/ #{$end + 1};
+      }
+    }
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(8, 1fr);
+    // column-gap: 24px;
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start}/ #{$end + 1};
+        }
+      }
+    }
+  }
+}

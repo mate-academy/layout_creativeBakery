@@ -1,0 +1,36 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: $mainFontColor;
+  scroll-behavior: smooth;
+
+  &__content {
+    margin: 0;
+    background: $mainBackgroundColor;
+    
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 100vh;
+    transform: translateY(-100%);
+    transition: transform $transitionTime;
+
+    &:target {
+      transform: translateY(0);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
