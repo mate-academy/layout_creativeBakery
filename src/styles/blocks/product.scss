@@ -1,0 +1,52 @@
+.product {
+  &__image {
+    margin-bottom: 16px;
+
+    width: 100%;
+    border-radius: 8px;
+
+    transition: transform 500ms;
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+
+    @include uppercase-text;
+    color: $c-gray;
+
+  }
+
+  &__description {
+    margin-bottom: 24px;
+  }
+
+  &__order {
+    @include uppercase-text;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 500ms;
+
+    &-icon {
+      padding-right: 8px;
+      transform: translateY(15%);
+      fill: $c-accentOrange;
+      transition: fill 500ms;
+    }
+
+    &:hover {
+      border-color: $c-accentOrange;
+    }
+
+    &:active {
+      color: $c-darkOrange;
+      border-color: $c-darkOrange;
+      .product__order-icon {
+        fill: $c-darkOrange;
+      }
+    }
+  }
+}

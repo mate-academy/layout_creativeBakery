@@ -1,0 +1,52 @@
+.button {
+  height: 56px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include uppercase-text;
+  text-decoration: none;
+
+  border: 2px solid $c-accentOrange;
+  border-radius: 32px;
+
+  transition: all 500ms;
+
+  &__icon {
+    width: 20px;
+    padding-right: 6px;
+    fill: $c-accentOrange;
+    transition: fill 500ms;
+  }
+
+  &:hover {
+    background-color: $c-accentOrange;
+    color: $c-white;
+
+    .button__icon {
+      fill: $c-white;
+    }
+  }
+
+  &:active {
+    background-color: $c-darkOrange;
+    border-color: $c-darkOrange;
+    color: $c-white;
+
+    .button__icon {
+      fill: $c-white;
+    }
+  }
+
+  &:disabled {
+    background-color: $c-lightOrange;
+    border-color: $c-lightOrange;
+    color: $c-lightOrange;
+
+    .button__icon {
+      fill: $c-lightOrange;
+    }
+  }
+}
