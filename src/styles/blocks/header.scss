@@ -1,0 +1,310 @@
+.header {
+  margin-bottom: 104px;
+
+  @include OnLaptop {
+    margin-bottom: 228px;
+  }
+
+  @include OnDesctop {
+    margin-bottom: 218px;
+  }
+
+  @include OnDesign {
+    margin-bottom: 178px;
+  }
+  
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 52px;
+
+    @include OnLaptop {
+      padding: 20px 20px 100px;
+    }
+
+    @include AfterLaptop {
+      padding: 32px 36px;
+    }
+  }
+
+  &__link-container {
+    display: none;
+
+    @include AfterLaptop {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+    margin-right: 64px;
+    text-decoration: none;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: #f9512e;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+  }
+
+  &__call-container {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-right: 7px;
+  }
+
+  &__call {
+    fill: #1c1a26;
+    display: flex;
+
+    transition: fill 0.3s;
+
+    &:hover {
+      fill: #f9512e;
+    }
+  }
+
+  &__link-contact {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #1c1a26;
+    text-decoration: none;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: #f9512e;
+    }
+  }
+
+  &__menu-container {
+    display: block;
+    text-decoration: none;
+
+    @include AfterLaptop {
+      display: none;
+    }
+  }
+
+  &__menu {
+    fill: #1c1a26;
+
+    transition: fill 0.3s;
+
+    &:hover {
+      fill: #f9512e;
+    }
+  }
+
+  &__content-desctop {
+    display: none;
+    
+    @include AfterLaptop {
+      display: block;
+      height: fit-content;
+      min-height: 546px;
+      background-image: url(../images/Cookie.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__text {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+    padding: 0;
+    margin: 0 0 32px;
+
+    @include OnPhone {
+      text-align: center;
+    }
+
+    @include OnLaptop {
+      margin: 0 0 16px;
+    }
+
+    @include OnDesctop {
+      padding: 135px 0 0;
+      margin: 0 0 8px;
+      width: 260px;
+    }
+
+    @include OnDesign {
+      padding: 144px 0 0;
+      margin: 0 0 40px;
+    }
+  }
+
+  &__title {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #f9512e;
+    margin: 0;
+
+    @include OnLaptop {
+      font-size: 70px;
+    }
+    
+    @include OnDesctop {
+      font-size: 125px;
+      margin: 0 0 64px;
+    }
+    
+    @include OnDesign {
+      font-size: 144px;
+      margin: 0 0 64px;
+    }
+
+    &--desctop {
+      @include OnPhone {
+        display: none;
+      }
+    }
+
+    &--phone {
+      display: none;
+
+      @include OnPhone {
+        display: block;
+      }
+    }
+  }
+
+  &__button-image {
+    fill: #f9512e;
+    margin-right: 6px;
+
+    transition: fill 0.3s;
+  }
+
+  &__button-text {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #f9512e;
+
+    transition: color 0.3s;
+  }
+  
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 56px;
+    border: 2px solid #f9512e;
+    border-radius: 32px;
+    margin: 0;
+    text-decoration: none;
+
+    transition: 0.3s;
+
+    @include OnDesign {
+      margin: 0 0 95px;
+    }
+
+    @include OnDesign {
+      margin: 0 0 112px;
+    }
+
+    &:hover {
+      border: unset;
+      background-color: #f9512e;
+
+      .header__button-text {
+        color: #fff;
+      }
+
+      .header__button-image {
+        fill: #fff;
+      }
+    }
+
+    &:active {
+      border: unset;
+      background-color: #b3341a;
+  
+      .header__button-text {
+        color: #fff;
+      }
+  
+      .header__button-image {
+        fill: #fff;
+      }
+    }
+
+    &:disabled,
+    &[disabled] {
+      border: 2px solid #fba28f;
+      background-color: #fff;
+  
+      .header__button-text {
+        color: #fba28f;
+      }
+  
+      .header__button-image {
+        fill: #fba28f;
+      }
+    }
+  }
+
+  &__content--phone {
+    @include AfterLaptop {
+      display: none;
+    }
+  }
+
+  &__photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 328px;
+    background-image: url(../images/Cookie.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0;
+
+    @include OnLaptop {
+      margin: 0 0 80px;
+    }
+  }
+}

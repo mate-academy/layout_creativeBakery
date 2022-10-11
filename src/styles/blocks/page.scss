@@ -1,0 +1,44 @@
+.page {
+  scroll-behavior: smooth;
+  background-color: #ffeefc;
+  
+  &__body {
+    margin: 0;
+  
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+    
+  &__section {
+    margin-bottom: 70px;
+
+    @include OnLaptop {
+      margin-bottom: 150px;
+    }
+
+    @include AfterLaptop {
+      margin-bottom: 176px;
+    }
+
+    &:last-child {
+      @include AfterLaptop {
+        margin-bottom: 56px;
+      }
+    }
+  }
+}
