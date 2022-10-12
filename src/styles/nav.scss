@@ -1,0 +1,289 @@
+.main {
+  margin: 0 16px;
+
+  @include onTablet {
+    margin: 0 44px;
+  }
+
+  @include onltraDesktop {
+    width: 1192px;
+    margin: 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-title {
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 85%;
+
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $color1C1A26;
+
+    @include onDesktop {
+      font-size: 72px;
+      line-height: 85%;
+    }
+
+    @include onMobileMax {
+      font-size: 48px;
+      line-height: 85%;
+
+      width: 300px;
+      padding-top: 115px;
+    }
+  }
+
+  &-subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    letter-spacing: -0.01em;
+
+    color: $color1C1A26;
+    margin: 24px 0 56px;
+
+    @include onTablet {
+      margin: 24px 0 80px;
+    }
+  }
+
+  &-container {
+    @include onTablet {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 24px;
+      justify-content: flex-start;
+    }
+
+    &-2 {
+      @include onDesktop {
+        display: flex;
+        gap: 24px;
+        justify-content: flex-end;
+      }
+    }
+
+    &-3 {
+      @include onTablet {
+        margin-bottom: 96px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 122px;
+      }
+    }
+  }
+
+  &-blocs {
+    display: flex;
+    flex-direction: column;
+
+    @include onMobileMax {
+      &:hover {
+        .main-photo {
+          box-shadow: 1px 1px 30px $colorF9512E;
+        }
+      }
+    }
+
+    @include onTablet {
+      &:hover {
+        .main-photo {
+          transform: scale(0.95);
+          box-shadow: 1px 1px 30px $colorF9512E;
+        }
+      }
+    }
+  }
+
+  &-photo {
+    width: 288px;
+    height: 356px;
+    border-radius: 10px;
+    transition: $time-transform;
+
+    @include onMobileMax {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include onTablet {
+      width: 328px;
+      height: 424px;
+    }
+
+    @include onDesktop {
+      width: 402px;
+      height: 512px;
+    }
+  }
+
+  &-signature {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    margin: 16px 0 8px;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: $color7F8096;
+  }
+
+  &-items {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    margin: 0 0 24px;
+
+    letter-spacing: -0.01em;
+
+    color: $color1C1A26;
+
+    @include onTablet {
+      max-width: 328px;
+    }
+
+    @include onDesktop {
+      max-width: 402px;
+    }
+  }
+
+  &-top-container {
+    @include onTablet {
+      background-image: url(../images/Crumbs.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+
+  &-aboutUs-blok {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 146px;
+    }
+  }
+}
+
+.about-us {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 85%;
+  margin: 0 0 32px;
+
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  color: $color1C1A26;
+
+  @include onTablet {
+    font-size: 56px;
+    line-height: 85%;
+    margin: 0;
+    max-width: 328px;
+  }
+
+  @include onDesktop {
+    font-size: 72px;
+    line-height: 85%;
+    margin: 0;
+    max-width: 450px;
+  }
+}
+
+.about-us-items {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  letter-spacing: -0.01em;
+
+  color: $color1C1A26;
+
+  @include onMobileMax {
+    margin: 0 0 64px;
+  }
+
+  @include onTablet {
+    max-width: 328px;
+    max-height: 216px;
+  }
+}
+
+.main-time-wrapper {
+  @include onMobileMax {
+    background-image: url(../images/Crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  @include onTablet {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 72px;
+    margin-bottom: 152px;
+    max-width: 680px;
+  }
+
+  @include onDesktop {
+    max-width: max-content;
+    flex-wrap: nowrap;
+    gap: 4px;
+    margin-bottom: 349px;
+  }
+
+  @include onltraDesktop {
+    gap: 24px;
+  }
+}
+  
+.time-container {
+  @include onMobileMax {
+    margin: 0 0 48px;
+
+    &:last-child {
+      margin-bottom: 72px;
+    }
+  }
+}
+
+.time {
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 85%;
+  width: 280px;
+
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  color: $color1C1A26;
+
+  @include onMobileMax {
+    margin-bottom: 8px;
+  }
+}
+
+.time-items {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  letter-spacing: -0.01em;
+
+  color: $color7F8096;
+}
