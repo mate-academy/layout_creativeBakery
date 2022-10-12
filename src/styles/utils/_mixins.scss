@@ -1,6 +1,125 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onDesktopXL {
+  @media (min-width: 1201px) {
+    @content;
+  }
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 24px;
+  justify-content: center;
+  justify-items: center;
+}
+
+@mixin grid-tablet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+}
+
+@mixin h1-Desktop {
+  font-weight: 400;
+  font-size: 144px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $main-title-color;
+}
+
+@mixin h2-Desktop {
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $main-title-color;
+}
+
+@mixin h1-Tablet {
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $main-title-color;
+}
+
+@mixin h2-Tablet {
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $main-title-color;
+}
+
+@mixin h1-Mobile {
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $main-title-color;
+}
+
+@mixin h2-Mobile {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $main-title-color;
+}
+
+@mixin uppercase-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $main-title-color;
+}
+
+@mixin body-text {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+@mixin big-text {
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $main-title-color;
+}
+
+@mixin link {
+  width: max-content;
+  text-decoration: none;
+  transition: color 500ms, border-color 500ms;
+  border-bottom: 1px solid transparent;
+
   &:hover {
-    #{$_property}: $_toValue;
+    color: $c-accentOrange;
+    border-color: $c-accentOrange;
+  }
+
+  &:focus {
+    color: $c-darkOrange;
+    border-color: $c-darkOrange;
   }
 }

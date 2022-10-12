@@ -1,0 +1,117 @@
+.header {
+  // height: 100vh;
+
+  &__top {
+    margin-bottom: 32px;
+
+    @extend %mobile-top;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: 190px 1fr;
+      justify-content: space-between;
+      align-content: center;
+      height: 88px;
+      margin-bottom: 135px;
+      padding: 32px 28px;
+    }
+
+    @include onDesktopXL {
+      margin-bottom: 144px;
+    }
+
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__main {
+    @include onTablet {
+      @include grid;
+    }
+  }
+
+  &__description {
+    margin-bottom: 32px;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 16px;
+      grid-column: 1 / 5;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-bottom: 8px;
+      grid-column: 1 / 3;
+    }
+
+    @include onDesktopXL {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    @include onTablet {
+      position: absolute;
+      top: 338px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+      position: static;
+      grid-column: 1 / -1;
+
+      font-size: 136px;
+      z-index: 2;
+    }
+
+    @include onDesktopXL {
+      @include h1-Desktop;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 544px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+      grid-column: 3 / 7;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      position: absolute;
+      transform: translate(-50%, -135px);
+      z-index: 1;
+    }
+
+    @include onDesktopXL {
+      transform: translate(-50%, -144px);
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.about {
+
+  background-image: url(../images/beckground/4.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center 75%;
+
+  @include onTablet {
+    background-position: center;
+    background-size: 75%;
+  }
+
+  @include onDesktop {
+    background-size: 60%;
+    background-position: 70% 10%;
+  }
+
+  @include onDesktopXL {
+    background-position: center 10%;
+  }
+
+  &__info {
+    @include onTablet {
+      @include grid-tablet;
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 192px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 64px;
+  }
+
+  &__skills {
+    @include onTablet {
+      @include grid-tablet;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    margin-bottom: 48px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+
+      &:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__value {
+    margin-bottom: 8px;
+  }
+}
