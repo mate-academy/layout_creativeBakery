@@ -7,5 +7,5 @@
 - Tablet 640px
 - Mobile (> 320px)
 
-- Technologies: HTML, SCSS, JS
+- Technologies: HTML, SCSS
 - Methodologies: BEM, adaptive layout
