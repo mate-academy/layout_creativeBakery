@@ -10,35 +10,60 @@
 
   &__hidden {
     top: -100%;
-  }
-  &__content {
-    @include onTablet {
-      padding: 50px 70px;
-    }
 
     @include onDesktop {
-      padding: 50px 120px;
+      top: 0;
+      background: transparent;
+    }
+  }
+
+  &__content {
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: auto;
+      padding: 0;
     }
 
-    padding: 25px;
+    padding-top: 15px;
     height: 100vh;
     box-sizing: border-box;
   }
 
   &__top {
     margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
   }
 
   &__list {
     list-style: none;
-    margin: 0 0 32px;
+    margin: calc(50vh - 184px / 2) 0 32px;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onDesktop {
+      display: flex;
+      line-height: 88px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 430px;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
   }
 
   &__item {
     margin-bottom: 24px;
 
-    &:last-child {
+    @include onDesktop {
       margin-bottom: 0;
     }
   }
@@ -46,35 +71,37 @@
   &__link {
     color: black;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 16px;
     line-height: 22px;
     letter-spacing: 2px;
-    text-transform: uppercase;
-    display: inline-block;
     padding-bottom: 8px;
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s;
 
+    @include onDesktop {
+      letter-spacing: normal;
+      padding-bottom: 0;
+    }
+
     &:hover {
       border-color: #fff;
+
+      @include onDesktop {
+        border-bottom: 2px solid $color-orange;
+      }
     }
   }
 
-  // &__call {
-  //   color: #fff;
-  //   text-decoration: none;
-  //   width: max-content;
+  &__list :last-child :last-child {
+    vertical-align: middle;
+    color: $color-orange;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
 
-  //   &--action {
-  //     font-size: 12px;
-  //     letter-spacing: 2px;
-  //     padding-bottom: 8px;
-  //     border-bottom: 1px solid transparent;
-  //     transition: border-color 0.3s;
-
-  //     &:hover {
-  //       border-color: #fff;
-  //     }
-  //   }
-  // }
+.burger {
+  @include onDesktop {
+    display: none;
+  }
 }
