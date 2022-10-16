@@ -1,0 +1,125 @@
+.top-part {
+  @include onTablet {
+    margin-top: 0;
+  }
+
+  @include onDesktop {
+    height: 650px;
+  }
+
+  &__text {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-top: 80px;
+      margin-bottom: 16px;
+      text-align: left;
+      position: relative;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 85%;
+
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: #1c1a26;
+
+    z-index: 1;
+
+    @include onTablet {
+      position: relative;
+      top: 300%;
+      font-size: 64px;
+    }
+
+    @include onDesktop {
+      top: 50%;
+      font-size: 110px;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto;
+    height: 290px;
+
+    @include onTablet {
+      height: 328px;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: -45%;
+      height: 546px;
+    }
+  }
+
+  &__button {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-decoration: none;
+    width: 248px;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: $color_red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include onDesktop {
+      position: relative;
+      top: -850%;
+    }
+
+    height: 56px;
+    border: 2px solid $color_red;
+    box-sizing: border-box;
+    border-radius: 32px;
+    transition: all 0.7s;
+
+    &::before {
+      content: " ";
+      background-image: url(../images/coockie__orange.svg);
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+    }
+
+    &:hover {
+      background-color: $color_red;
+      color: $color_white;
+
+      &::before {
+        content: url(../images/cookie__white.svg);
+        margin-right: 6px;
+      }
+    }
+
+    &:focus {
+      background-color: $color_dark_orange;
+      border-color: $color_dark_orange;
+      color: $color_white;
+    }
+  }
+}

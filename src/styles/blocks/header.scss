@@ -1,0 +1,51 @@
+.header {
+  box-sizing: border-box;
+  
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__menu-link {
+    margin-left: 64px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-left: 67px;
+    }
+  }
+
+  &__menu-opener {
+    display: block;
+    width: 20px;
+    height: 8px;
+
+    background-image: url(../images/menu__opener.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu-cross {
+    display: block;
+    width: 13px;
+    height: 13px;
+
+    background-image: url(../images/menu__closer.svg);
+  }
+}
