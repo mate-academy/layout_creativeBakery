@@ -1,0 +1,92 @@
+.about {
+  height: fit-content;
+  background-image: url(../images/Crumbs.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @include OnPhone {
+    background-position: center 75%;
+  }
+
+  @include OnLaptop {
+    background-size: 65%;
+  }
+
+  &__title {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+
+    margin: 0 0 64px;
+
+    @include OnLaptop {
+      margin: 0 0 72px;
+    }
+
+    @include AfterLaptop {
+      margin: 0 0 146px;
+    }
+  }
+
+  &__number-container {
+    width: fit-content;
+    margin-bottom: 48px;
+
+    transition: transform 0.3s;
+
+    @include OnLaptop {
+      margin-bottom: 80px;
+    }
+
+    @include AfterLaptop {
+      margin-bottom: 293px;
+    }
+
+    &--third {
+      @include OnLaptop {
+        margin-bottom: 0;
+      }
+    }
+
+    &--fourth {
+      @include OnPhone {
+        margin-bottom: 0;
+      }
+
+      @include OnLaptop {
+        margin-bottom: 0;
+      }
+    }
+
+    &:hover {
+      transform: scale(115%);
+    }
+  }
+
+  &__number {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #f9512e;
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+  }
+}
