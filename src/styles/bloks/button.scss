@@ -1,0 +1,56 @@
+.button {
+  position: relative;
+  width: 100%;
+
+  &__link {
+    margin-top: 290px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    height: 56px;
+    width: 100%;
+
+    border: 1px solid #f9512e;
+    border-radius: 32px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #f9512e;
+    letter-spacing: 0.02em;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    @include onTablet {
+      margin-top: 230px;
+    }
+
+    @include onDesktop {
+      margin-top: 72px;
+    }
+
+    &::before {
+      content: url(../images/cookie_button.svg);
+    }
+
+
+    &:hover {
+      background-color: #f9512e;
+      color: #fff;
+
+      &::before {
+        content: url(../images/cookie_button--hover.svg);
+      }
+    }
+
+    &:focus {
+      background-color: #b3341a;
+      color: #fff;
+
+      &::before {
+        content: url(../images/cookie_button--hover.svg);
+      }
+    }
+  }
+}
