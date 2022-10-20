@@ -1,0 +1,155 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.container {
+  box-sizing: border-box;
+  max-width: 1440px;
+  padding: 0 20px;
+
+  margin: 0 auto;
+
+  height: 100vh;
+}
+
+.header {
+  background-image: url(/images/img/1.svg);
+  background-repeat: no-repeat;
+  background-position: center 284px;
+  
+  @include onTablet {
+    background-image: url(/images/img/1.svg);
+    background-position: center 208px;
+  }
+  
+  @include onDesktop {
+    background-image: url(/images/img/1.svg);
+    background-position: center 88px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+            
+    box-sizing: border-box;
+    
+    height: 100vh;
+    padding: $headerTP 0;
+  }
+
+  &__catchword {
+    color: $color-text;
+    margin: 0 auto;
+    text-align: center;
+    
+    width: 230px;
+
+    font-weight: $font-w;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    @include onTablet {
+      text-align: left;
+      margin: 0 0 146px;
+    }
+
+    @include onDesktop {
+      width: 260px;
+      margin: 0 0 8px;
+    }
+  }
+
+  &__title {
+    @extend %font-style;
+    margin-bottom: 550px;
+
+    font-style: normal;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    
+    @extend %uppercase;
+
+    @include onTablet {
+      width: 680px;
+      margin: 0 auto 20px;
+      font-size: 80px;
+      line-height: 68px;
+    }
+
+    @include onDesktop {
+      width: 1112px;
+      margin: 0 auto 64px;
+      font-size: 136px;
+      line-height: 116px;
+    }
+  }
+
+  &__menu {
+    display: none;
+  
+    @include onDesktop {
+      margin-left: auto;
+      width: 496px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__link {
+    color: $color-text;
+    padding: 8px 0;
+    text-decoration: none;
+    transition: color 0.3s;
+              
+    &:hover {
+      color: $color-title;
+    }
+      
+    &--contacts {
+      position: relative;
+      padding-left: 28px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $color-title;
+              
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background-position: center;
+        background-image: url(/images/icon/call.svg);
+      }
+              
+      &:hover {
+        color: $color-title;
+              
+        &::before {
+          filter: brightness(75%);
+        }
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+    
+    @include onDesktop {
+      height: 88px;
+      margin-bottom: 135px;
+    }
+  }
+}

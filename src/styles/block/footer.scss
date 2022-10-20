@@ -1,0 +1,107 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.footer {
+  background-color: $color-text;
+  color: $color-w;
+  height: 914px;
+  
+  @include onTablet {
+    padding-left: 49px;
+    height: 616px;
+  }
+
+  @include onDesktop {
+    padding-left: 49px;
+    height: 528px;
+  }
+
+  &__menu-menu {
+    @extend %font-styleadd;
+
+    color: $color-dark;
+    margin-bottom: 16px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+  }
+
+  &__link {
+    text-decoration: none;
+    max-width: content;
+
+    @extend %font-text;
+    color: $color-w;
+
+    margin-bottom: 16px;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__menu-link {
+    text-decoration: none;
+    
+    @extend %font-text;
+    color: $color-w;
+    
+    margin-bottom: 16px;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__copyright {
+    color: $color-dark;
+    padding-top: 42px;
+  }
+
+  &__networks {
+    padding-top: 42px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+  }
+
+  &__networks-link {
+    padding-right: 40px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__contacts {
+    margin-top: 0;
+  }
+
+  &__title {
+    @extend %uppercase;
+    font-weight: 400;
+    font-size: 48px;
+    letter-spacing: -0.05em;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+}
