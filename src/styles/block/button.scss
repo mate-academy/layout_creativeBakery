@@ -1,0 +1,58 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.button {
+  width: 288px;
+  height: 56px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 0 auto;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: $color-title;
+  border-radius: 32px;
+  background-color: $color-bg;
+  border: 2px solid $color-title;
+  transition: all 0.3s;
+  padding: 20px 75px;
+
+  @include onTablet {
+    margin-top: 250px;
+  }
+
+  @include onDesktop {
+    margin: 0;
+  }
+
+  &::before {
+    display: inline-block;
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    background-image: url(/images/icon/fav.svg);
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-title;
+    color: $color-w;
+    transform: scale(1.2);
+
+    &::before {
+      background-image: url(/images/icon/favhov.svg);
+    }
+  }
+
+  &:active {
+    outline: none;
+
+    &::before {
+      background-image: url(/images/icon/favfocus.svg);
+    }
+  }
+}
