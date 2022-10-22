@@ -1,0 +1,82 @@
+.about {
+  &__top-info {
+    @media (min-width: 768px) {
+      @include useGrid(8, 0, 24px);
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__title {
+    @extend %title-size;
+
+    margin-bottom: 32px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    margin-bottom: 64px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    @include onTablet {
+      @include useGrid(8, 80px, 24px);
+    }
+  }
+
+  &__statistics {
+    &-number {
+      font-size: 96px;
+      line-height: 82px;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+
+      margin-bottom: 8px;
+    }
+
+    &-title {
+      color: $color-grey;
+      line-height: 24px;
+      font-size: inherit;
+      font-weight: inherit;
+    }
+  }
+
+  &__statistics:not(:last-child) {
+    margin-bottom: 48px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 30%;
+    z-index: -1;
+
+    width: 100%;
+
+    object-fit: contain;
+    max-width: $mobile-max-size;
+
+    @include onTablet {
+      bottom: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: none;
+    }
+  }
+}

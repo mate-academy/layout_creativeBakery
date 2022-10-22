@@ -1,6 +1,22 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
   }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin useGrid($countColumns, $rowGap, $columnGap) {
+  display: grid;
+  grid-template-columns: repeat($countColumns, 1fr);
+  gap: $rowGap $columnGap;
 }

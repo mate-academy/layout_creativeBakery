@@ -1,0 +1,53 @@
+.card {
+  &:not(:last-child) {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  max-width: $mobile-max-size;
+  margin: 0 auto;
+
+  @include onTablet {
+    max-width: none;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    width: 100%;
+
+    border-radius: 8px;
+    margin: 0 auto 16px;
+
+    transition: box-shadow 0.3s ease-in;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.4) -5px 5px,
+        rgba(0, 0, 0, 0.3) -10px 10px,
+        rgba(0, 0, 0, 0.2) -15px 15px,
+        rgba(0, 0, 0, 0.1) -20px 20px,
+        rgba(0, 0, 0, 0.05) -25px 25px;
+    }
+  }
+
+  &__title {
+    @extend %sub-title-size;
+
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__wrapper-button {
+    flex-grow: 1;
+
+    display: flex;
+    align-items: flex-end;
+  }
+}
