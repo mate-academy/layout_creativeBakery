@@ -1,0 +1,39 @@
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  background-color: $c-light-blue;
+  height: 100vh;
+
+  transform: translateX(-100%);
+  transition: transform 1s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__top-actions {
+    margin-bottom: 132px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__link {
+    @extend .nav__link;
+    font-size: 24px;
+    margin-right: 0;
+    margin-bottom: 24px;
+
+    &-phone {
+      @extend .nav__link, .nav__link-phone;
+      font-size: 24px;
+    }
+  }
+}

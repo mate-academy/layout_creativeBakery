@@ -1,0 +1,94 @@
+.about {
+  background: url(../images/photos/Crumbs.png) no-repeat;
+  background-size: contain;
+  background-position: center bottom 174px;
+
+  @include onTablet {
+    height: 600px;
+
+    background-position: center bottom 100px;
+    background-size: 526px 493px;
+  }
+
+  @include onDesktop {
+    height: 673px;
+    
+    background-size: 718px 673px;
+    background-position: center bottom;
+  }
+
+  &__pair {
+    @include onTablet {
+      display: flex;
+    }
+
+    &-title {
+      gap: 20px;
+      margin-bottom: 64px;
+    }
+
+    &-numbers {
+      flex-basis: $flex-basis;
+    }
+  }
+
+  &__title {
+    @extend %h2--mobile;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      flex-basis: $flex-basis;
+      font-size: 56px;
+      height: max-content;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__text {
+    @extend %body-text;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      flex-basis: $flex-basis;
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__numbers {
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__number {
+    flex-basis: $flex-basis;
+  }
+
+  &__info {
+    &-number {
+      @extend %big-text;
+      margin-bottom: 8px;
+    }
+
+    &-subtext {
+      @extend %body-text;
+      color: $c-grey;
+      margin-bottom: 48px;
+
+      @include onTablet {
+        margin-bottom: 80px;
+      }
+    }
+  }
+}

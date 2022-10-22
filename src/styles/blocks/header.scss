@@ -1,0 +1,163 @@
+.header {
+  text-align: center;
+
+  @include onTablet {
+    text-align: start;
+  }
+
+  &__content {
+    height: 100vh;
+    margin: 0 16px;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      margin: 0 $horizontal-margin;
+
+      background: url(../images/photos/Cookie.png) center no-repeat;
+      background-position: center 65px;
+      background-size: 326px 328px;
+    }
+
+    @include onDesktop {
+      padding-top: 135px;
+      background-position: center top;
+      background-size: 544px 546px;
+    }
+
+    @include onBigDesktop {
+      padding: 144px 124px 0;
+      background-size: 584px 586px;
+    }
+  }
+
+  &__top-actions {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    align-self: flex-start;
+    @extend %body-text;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      width: 280px;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      width: 280px;
+      margin-bottom: 0;
+    }
+
+    @include onBigDesktop {
+      width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__cookie {
+    @include square(288px);
+
+    @include onTablet {
+      display: none;
+    }
+
+  }
+
+  &__title {
+    @extend %h1--mobile;
+    color: $c-black;
+    text-align: center;
+
+    @include onTablet {
+      font-size: 80px;
+      margin-bottom: 210px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      margin-bottom: 64px;
+    }
+
+    @include onBigDesktop {
+      font-size: 144px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 288px;
+    height: 56px;
+    margin-bottom: 40px;
+
+    background-color: transparent;
+    border: 2px solid $c-accent-orange;
+    border-radius: 32px;
+
+    @include onTablet {
+      width: 326px;
+      padding: 0 96px;
+      margin-bottom: 76px;
+    }
+
+    @include onDesktop {
+      padding: 0 60px;
+      align-self: flex-start;
+      width: 260px;
+    }
+
+    @include onBigDesktop {
+      width: 280px;
+    }
+
+    transition: background-color $default-transition-time,
+      color $default-transition-time,
+      border $default-transition-time;
+
+    &:hover {
+      background-color: $c-accent-orange;
+    }
+
+    &:active {
+      background-color: $c-dark-orange;
+      color: $c-white;
+      border: 2px solid $c-dark-orange;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: 100%;
+    gap: 6px;
+
+    border-radius: 32px;
+    @extend %uppercase-text;
+    color: $c-accent-orange;
+
+    transition: filter $default-transition-time;
+
+    &:hover {
+      filter: brightness(0) invert(1);
+    }
+
+    &:disabled {
+      color: $c-light-orange;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  height: 64px;
+
+  @include onTablet {
+    padding: 0 $horizontal-margin;
+  }
+
+  @include onDesktop {
+    height: 88px;
+  }
+
+  &__opener {
+    display: block;
+    @include square(20px);
+
+    color: $c-black;
+    background-image: url(../images/icons/menu-black.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    transition: transform $default-transition-time;
+
+    &:hover {
+      transform: scale($scale-size);
+    }
+  }
+
+  &__close {
+    display: block;
+    @include square(13px);
+    padding-right: 20px;
+
+    color: $c-black;
+    background-image: url(../images/icons/close-black.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    transition: transform $default-transition-time;
+
+    &:hover {
+      transform: scale($scale-size);
+    }
+  }
+
+  &--small {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--big {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+}
