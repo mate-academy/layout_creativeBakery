@@ -1,0 +1,52 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.about {
+  margin: 0 auto;
+  padding-top: 60px;
+
+  background-image: url(/images/img/Crumbs.svg);
+  @extend %background;
+  background-position: 50% -10%;
+
+  &__title-decoration {
+    @extend %font-style;
+    margin-bottom: 32px;
+
+    font-size: 48px;
+    @extend %uppercase;
+  }
+    
+  &__facts {
+    @include onTablet {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    padding-bottom: 48px;
+
+    @include onTablet {
+      width: 300px;
+    }
+  }
+
+  &__found-year {
+    @extend %font-style;
+
+    font-size: 96px;
+    @extend %uppercase;
+    padding-bottom: 8px;
+  }
+    
+  &__descr {
+    @extend %font-text;
+    padding-bottom: 64px;
+  }
+
+  &__subtitle {
+    @extend %font-text;
+  }
+}
