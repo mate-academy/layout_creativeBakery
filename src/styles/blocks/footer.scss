@@ -2,6 +2,11 @@
   background-color: $color-black;
   padding-left: 20px;
 
+  &__container {
+    max-width: max-content;
+    margin: 0 auto;
+  }
+
   &__logo {
     margin: 50px 0;
   }
@@ -15,7 +20,7 @@
     margin-bottom: 16px;
     text-decoration: none;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 32px;
     letter-spacing: -0.01em;
     color: $color-white;
     transition: color 0.3s;
@@ -67,12 +72,23 @@
   }
 
   @include onTablet {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
     padding: 30px 50px 40px;
+
     &__container {
-      display: flex;
-      max-width: 680px;
+      // display: flex;
+
+      // max-width: 680px;
     }
 
+    &__flex--1-2 {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 24px;
+      // width: 328px;
+    }
     &__flex--1 {
       margin-right: 24px;
       width: 328px;
@@ -83,9 +99,10 @@
     }
 
     &__flex--3 {
+      max-width: 680px;
+      // justify-content: space-between;
       display: flex;
       align-items: center;
-      // justify-content: space-between;
     }
 
     &__info--menu {
@@ -124,6 +141,13 @@
     &__flex--1 {
       min-width: 260px;
       margin-right: 210px;
+    }
+
+    &__flex--3 {
+      max-width: 655px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     &__flex--2 {
