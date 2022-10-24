@@ -1,0 +1,26 @@
+.page {
+  font-family: Inter, Arial, sans-serif;
+  scroll-behavior: smooth;
+  background-color: #ffeefc;
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    background-color: #ffeefc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: $transition-time;
+
+    &:target {
+      transform: translateX(0);
+      z-index: 1;
+    }
+  }
+}
