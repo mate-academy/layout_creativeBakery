@@ -1,0 +1,49 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 136px);
+  column-gap: 16px;
+  justify-content: space-around;
+
+  &__item {
+    @for $start from 1 through 2 {
+      @for $end from $start through 2 {
+        &--phone-#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+
+  @include onTablet {
+    grid-template-columns: repeat(8, 64px);
+    column-gap: 24px;
+
+    &__item {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--tablet-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(8, minmax(118px, 128px));
+    column-gap: 24px;
+
+    &__item {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--desktop-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.menu {
+  background-color: $color-bg;
+  max-width: 1920px;
+
+  @include onDesktop {
+    display: none;
+  }
+  
+  &__content {
+    height: 100vh;
+    padding: 25px 0;
+    box-sizing: border-box;
+  }
+
+  &-top {
+    padding: 0 20px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    margin: 0 0 48px;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+        
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    margin-bottom: 24px;
+    border-bottom: 1px solid transparent;
+    @extend %font-text;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+            
+    &:hover {
+      border-color: $color-title;
+      color: $color-title;
+      transform: scale(1.3);
+    }
+
+    &--contacts {
+      position: relative;
+      padding-left: 28px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $color-title;
+                    
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background-position: center;
+        background-image: url(/images/icon/call.svg);
+      }
+                    
+      &:hover {
+        color: $color-title;
+                    
+        &::before {
+          filter: brightness(75%);
+        }
+      }
+    }
+  }
+}
