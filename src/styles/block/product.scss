@@ -16,11 +16,6 @@
     margin-bottom: 8px;
   }
 
-  &__text {
-    @extend %font-text;
-    padding-bottom: 24px;
-  }
-
   &__photo {
     justify-content: center;
     max-width: 100%;
@@ -33,6 +28,12 @@
       transform: scale(1.02);
       cursor: pointer;
     }
+  }
+
+  &__text {
+    @extend %font-text;
+    padding-bottom: 24px;
+    max-width: 432px;
   }
 
   &__buy {
@@ -60,6 +61,20 @@
     
       &::before {
         animation: 0.3s arrow ease;
+      }
+    }
+  }
+
+  &__item {
+    @include onTablet {
+      &:nth-child(odd){
+        padding-left: 44px;
+      }
+    }
+
+    @include onTablet {
+      &:nth-child(even) {
+        padding-right: 44px;
       }
     }
   }
