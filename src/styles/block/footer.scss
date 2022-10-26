@@ -1,0 +1,121 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.footer {
+  background-color: $color-text;
+  color: $color-w;
+  height: max-content;
+  
+  @include onTablet {
+    padding: 0 49px;
+    height: 616px;
+  }
+
+  @include onDesktop {
+    padding: 0 129px;
+    height: 528px;
+    width: 100%;
+  }
+
+  &--resize {
+    margin: 0 auto;
+    max-width: 1920px;
+  }
+
+  &__menu-menu {
+    @extend %font-styleadd;
+
+    color: $color-dark;
+    margin-bottom: 16px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+
+    &:last-child {
+      padding-bottom: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    max-width: content;
+
+    @extend %font-text;
+    color: $color-w;
+
+    margin-bottom: 16px;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__menu-link {
+    text-decoration: none;
+    
+    @extend %font-text;
+    color: $color-w;
+    
+    margin-bottom: 16px;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__copyright {
+    color: $color-dark;
+    padding-top: 42px;
+    padding-bottom: 56px;
+  }
+
+  &__networks {
+    padding-top: 42px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+  }
+
+  &__networks-link {
+    padding-right: 40px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__contacts {
+    margin-top: 0;
+  }
+
+  &__title {
+    @extend %uppercase;
+    font-weight: 400;
+    font-size: 48px;
+    letter-spacing: -0.05em;
+    padding: 64px 0 40px;
+
+    @include onTablet {
+      font-size: 56px;
+      padding: 40px 0 60px;
+    }
+    
+    @include onDesktop {
+      font-size: 72px;
+      padding: 50px 0 40px;
+    }
+  }
+}

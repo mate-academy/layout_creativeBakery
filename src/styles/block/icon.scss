@@ -1,0 +1,71 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.logo {
+  transition: all 0.3s;
+  position: relative;
+    
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__image-footer {
+    padding: 60px 0 45px;
+
+    @include onTablet {
+      padding: 40px 0 60px;
+    }
+    
+    @include onDesktop {
+      padding: 50px 0 40px;
+    }
+  }
+
+  &--size {
+    width: 127px;
+
+    &--position {
+      padding-left: 20px;
+    }
+  }
+}
+
+.icon {
+  background-image: url(/images/icon/menu.svg);
+
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: all 0.3s;
+  
+  &:hover {
+    transform: scale(1.2);
+  }
+    
+  @include onDesktop {
+    display: none;
+  }
+
+  &-cross {
+    margin-right: 25px;
+    display: block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(/images/icon/cross.svg);
+
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s;
+  }
+}
+
+.footer-icon {
+  width: 20px;
+  height: 16px;
+}
