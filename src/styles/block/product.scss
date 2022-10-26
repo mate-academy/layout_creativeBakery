@@ -1,0 +1,81 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.product {
+  &__descr {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 64px;
+  }
+
+  &__title {
+    @extend %font-styleadd;
+    color: $color-dark;
+
+    margin-bottom: 8px;
+  }
+
+  &__photo {
+    justify-content: center;
+    max-width: 100%;
+    margin-bottom: 16px;
+    border-radius: 8px;
+   
+    transition: transform 0.3s;
+    
+    &:hover {
+      transform: scale(1.02);
+      cursor: pointer;
+    }
+  }
+
+  &__text {
+    @extend %font-text;
+    padding-bottom: 24px;
+    max-width: 432px;
+  }
+
+  &__buy {
+    position: relative;
+    display: block;
+    padding: 10px 0 10px 28px;
+    color: $color-title;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      background-image: url(/images/icon/arrow.svg);
+      background-repeat: no-repeat;
+    }
+    
+    &:hover {
+      color: $color-text;
+    
+      &::before {
+        animation: 0.3s arrow ease;
+      }
+    }
+  }
+
+  &__item {
+    @include onTablet {
+      &:nth-child(odd) {
+        padding-left: 44px;
+      }
+    }
+
+    @include onTablet {
+      &:nth-child(even) {
+        padding-right: 44px;
+      }
+    }
+  }
+}
