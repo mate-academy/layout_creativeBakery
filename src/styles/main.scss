@@ -2,6 +2,47 @@
 @import "fonts";
 @import "typography";
 
-body {
-  background: $c-gray;
+@import "./blocks/button.scss";
+@import "./blocks/icons.scss";
+
+@import "./blocks/page.scss";
+@import "./blocks/header.scss";
+@import "./blocks/menu.scss";
+@import "./blocks/products.scss";
+@import "./blocks/about-us.scss";
+@import "./blocks/footer.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+
+[class*="__container"] {
+  margin: 0 auto;
+  max-width: $max-width;
+  padding: 0 16px;
+
+  @include tablet-768 {
+    padding: 0 35px;
+  }
+
+  @include desktop-1440 {
+    padding: 0 124px;
+  }
 }
