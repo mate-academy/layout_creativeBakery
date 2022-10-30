@@ -1,0 +1,46 @@
+.products {
+  &__container {
+    @include container;
+  }
+
+  &__product {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 88px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__describe {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  @include onDekstop {
+    &__cakes {
+      transform: translateX(-90%);
+      transition: transform 1s;
+    }
+  
+    &__donuts {
+      transform: translateX(90%);
+      transition: transform 1s;
+    }
+  
+    &__cookies {
+      transform: translateX(-90%);
+      transition: transform 1s;
+    }
+  }
+  
+  &__visible {
+    transform: translateX(0);
+  }
+}
