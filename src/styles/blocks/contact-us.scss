@@ -1,12 +1,4 @@
 .contact-us {
-  display: flex;
-  flex-direction: column;
-
-  @include onDesktop {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
   &__title {
     margin-bottom: 40px;
 
@@ -15,10 +7,13 @@
   }
 
   &__info {
-    width: 50%;
 
-    &:first-of-type {
-      margin-bottom: 40px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      &:last-of-type {
+        margin-bottom: 48px;
+      }
     }
 
     display: flex;
@@ -35,5 +30,6 @@
     @extend %body-text;
     text-decoration: none;
     color: #fff;
+    width: max-content;
   }
 }
