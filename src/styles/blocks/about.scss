@@ -1,5 +1,14 @@
 .about {
-  
+  margin-bottom: 72px;
+
+  @include onTablet {
+    margin-bottom: 152px;
+  }
+
+  @include onDekstop {
+    margin-bottom: 350px;
+  }
+
   &__container {
     @include container;
   }
@@ -7,6 +16,11 @@
   &__content {
     position: relative;
     box-sizing: border-box;
+
+    background-image: url(../images/photos/Crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 
   &__title {
@@ -26,24 +40,6 @@
     @extend %text--big;
     color: $color-accentOrange;
     margin: 0 0 8px;
-  }
-
-  &__photo {
-    position: absolute;
-    z-index: -1;
-    object-fit: contain;
-    width: 90%;
-    height: 300px;
-
-    @include onTablet {
-      height: 492px;
-      top: 0;
-    }
-
-    @include onDekstop {
-      height: 674px;
-      top: 0;
-    }
   }
 
   &__text {
