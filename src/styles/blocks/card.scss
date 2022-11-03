@@ -1,0 +1,91 @@
+.card {
+  margin: 0 auto 56px;
+  max-width: 328px;
+
+  @include onTablet {
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  &--last {
+    margin-bottom: 0;
+  }
+
+  &__photo {
+    margin-bottom: 16px;
+
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-gray;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    letter-spacing: -0.01em;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    width: max-content;
+
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: $color-accent-orange;
+    border-radius: 16px;
+
+    transition: 300ms, dellay 200ms;
+    
+    &::before {
+      content: "";
+      display: inline-block;
+      box-sizing: border-box;
+      height: 32px;
+      width: 16px;
+      margin-right: 8px;
+      
+      background-image: url(../images/icons/arrow.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: transform 300ms 100ms;
+    }
+    
+    &:hover {
+      padding-right: 42px;
+      background-color: $color-accent-orange;
+      color: $color-white;
+    }
+
+    &:hover::before {
+      transform: translateX(88px);
+      background-image: url(../images/icons/arrow_white.svg);
+    }
+
+    &:active {
+      background-color: $color-dark-orange;
+    }
+  }
+}
