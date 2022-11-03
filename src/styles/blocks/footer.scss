@@ -1,0 +1,45 @@
+.footer {
+  padding: 56px 0;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  background-color: $main-font-color;
+
+  &__logo {
+    margin-bottom: 40px;
+    border-radius: 5px;
+
+    @include hover(transform, scale(1.1));
+    @include hover-2-property(box-shadow, 0 0 10px 5px #f9512e, padding, 5px);
+  }
+
+  &__navigation {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__blog {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    display: flex;
+    gap: 32px;
+  }
+
+  &__copy {
+    @extend %body-text;
+    color: $second-font-color;
+  }
+}
