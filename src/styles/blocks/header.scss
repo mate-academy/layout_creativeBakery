@@ -1,0 +1,222 @@
+.header {
+  height: 100vh;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 16px;
+    max-width: $max-width;
+
+    @include tablet-768 {
+      padding: 16px 44px;
+    }
+  }
+
+  &__logo {
+    width: 136px;
+    height: 32px;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.5);
+      transform-origin: 0 0;
+    }
+  }
+
+  &__burger {
+    background-image: url(../images/burger.svg);
+    
+    @include tablet-768 {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+    @include tablet-768 {
+      display: flex;
+      z-index: 3;
+
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 64px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--phone {
+      margin-right: 7px;
+      transition: 0.3s;
+
+      @keyframes phone {
+        0% {
+          transform: rotate(8deg);
+        }
+        50% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(-8deg);
+        }
+      }
+
+      &:hover {
+        animation: phone 0.3s ease alternate infinite;
+      }
+      
+    }
+  }
+
+  &__link {
+    display: flex;
+    @extend %body-text;
+    text-decoration: none;
+    color: $black;
+
+    transition: color 0.3s;
+    &:hover {
+      color: $accent-orange;
+    }
+
+    &--orange {
+      position: relative;
+      @extend %uppercase;
+      color: $accent-orange;
+      width: max-content;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 110%;
+        left: 3%;
+        display: block;
+        height: 1px;
+        width: 90%;
+        background-color: $accent-orange;
+        border-radius: 5px;
+        opacity: 0;
+      }
+
+      &:hover::after {
+        opacity: 1;
+        transition-duration: 0.3s;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet-768 {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: $gap;
+    }
+  }
+
+  &__text {
+    margin: 32px 0;
+    @extend %body-text;
+    text-align: center;
+    color: $black;
+
+    @include tablet-768 {
+      grid-column: 1 / 4;
+      margin: 80px 0 146px;
+      text-align: left;
+    }
+
+    @include desktop-1200 {
+      grid-column: 1 / 3;
+      margin: 135px 0 8px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 290px;
+    @extend %h1;
+    text-align: center;
+    color: $accent-orange;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      display: block;
+      width: 288px;
+      height: 290px;
+      background-image: url("../images/Cookie.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+    
+    @include tablet-768 {
+      grid-column: 1 / 9;
+      margin-bottom: 210px;
+
+      &::after {
+        content: "";
+        top: -200%;
+        left: 50%;
+        width: 326px;
+        height: 328px;
+        transform: translate(-50%, 6px);
+      }
+    }
+    
+    @include desktop-1200 {
+      grid-column: 1 / 9;
+      margin-bottom: 64px;
+      &::after {
+        content: "";
+        top: -200%;
+        left: 50%;
+        width: 544px;
+        height: 546px;
+        transform: translate(-50%, 15px);
+      }
+    }
+
+    @include desktop-1440 {
+      font-size: 144px;
+      &::after {
+        content: "";
+        top: -200%;
+        left: 50%;
+        width: 584px;
+        height: 586px;
+        transform: translate(-50%, 14px);
+      }
+    }
+  }
+
+  &__btn {
+    @include tablet-768 {
+      grid-column: 3 / 7;
+    }
+
+    @include desktop-1200 {
+      grid-column: 1 / 3;
+    }
+  }
+}
