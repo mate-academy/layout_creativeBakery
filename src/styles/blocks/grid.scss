@@ -6,7 +6,7 @@
     column-gap: 24px;
   }
 
-  &--tabs {
+  &--tablet {
     display: block;
 
     @include onTablets {
@@ -18,7 +18,19 @@
     @for $start from 1 through 8 {
       @for $end from $start through 8 {
         &--tablet-#{$start}-#{$end} {
-          grid-column: #{$start} / #{$end + 1};
+          @include onTablets {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--desktop-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
         }
       }
     }
