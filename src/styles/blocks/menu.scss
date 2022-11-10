@@ -1,0 +1,62 @@
+.menu {
+  &--big {
+    display: none;
+
+    @include onDesktop {
+      display: contents;
+    }
+  }
+
+  &--small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    text-align: center;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    &--contact {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  @include onDesktop {
+    &__list {
+      display: flex;
+      align-items: center;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin: 0 64px 0 0;
+      }
+    }
+  }
+
+  &__link {
+    letter-spacing: -0.01em;
+    color: $main-color;
+
+    @include transition(color);
+    cursor: pointer;
+
+    &--contact {
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $accent-color;
+    }
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
