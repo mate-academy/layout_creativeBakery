@@ -20,11 +20,6 @@
     &:not(:last-child) {
       margin-bottom: 24px;
     }
-
-    &--contact {
-      display: flex;
-      align-items: center;
-    }
   }
 
   @include onDesktop {
@@ -48,11 +43,25 @@
     cursor: pointer;
 
     &--contact {
+      display: flex;
+      align-items: center;
+
       font-weight: 500;
       line-height: 16px;
       letter-spacing: 0.02em;
       text-transform: uppercase;
       color: $accent-color;
+
+      &::before {
+        content: "";
+
+        display: block;
+        @include iconSize(24px);
+        margin-right: 8px;
+
+        background-image: url("../images/Icon-phone.svg");
+        @include backgroungImagePosition;
+      }
     }
 
     &:hover {
