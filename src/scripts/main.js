@@ -1,7 +1,9 @@
 'use strict';
 
-// const menu = document.querySelector('.icon--menu');
-
-// menu.addEventListener('click', function() {
-//   menu.classList.toggle('icon--menu-opened');
-// });
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#menu') {
+    document.body.classList.add('page__body--with-menu');
+  } else {
+    document.body.classList.remove('page__body--with-menu');
+  }
+});
