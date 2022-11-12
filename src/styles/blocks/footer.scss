@@ -1,0 +1,81 @@
+.footer {
+  background-color: $text-color;
+  padding: 60px 0 56px;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $subtitle-color;
+  }
+
+  &__nav {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 106px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 88px;
+    }
+
+    &--email {
+      @include onTablet {
+        margin-bottom: 48px;
+      }
+    }
+
+    &--social {
+      --icon-width: 20px;
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(3, var(--icon-width));
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white;
+    border-bottom: 1px solid transparent;
+    transition: border-color $transition-duration, color $transition-duration;
+
+    &:hover {
+      border-color: $accent-orange;
+    }
+  }
+
+  &__copyright {
+    color: $subtitle-color;
+  }
+}

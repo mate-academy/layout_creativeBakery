@@ -1,0 +1,96 @@
+.page {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  scroll-behavior: smooth;
+  color: $text-color;
+
+  &__body {
+    margin: 0;
+    background-color: $background-color;
+    animation: background-color 2s alternate infinite;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform $transition-duration;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 186px;
+    }
+
+    &--first {
+      margin-bottom: 104px;
+  
+      @include onTablet {
+        margin-bottom: 228px;
+      }
+  
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 72px;
+
+      @include onTablet {
+        margin-bottom: 152px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 348px;
+      }
+    }
+
+    &--title {
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+
+      @include onTablet {
+        font-size: 56px;
+      }
+
+      @include onDesktop {
+        font-size: 72px;
+      }
+
+      &--footer {
+        color: $white;
+      }
+    }
+
+    &--subtitle {
+      margin-bottom: 56px;
+
+      @include onTablet {
+        margin-bottom: 80px;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.button {
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  width: 328px;
+  border: 2px solid $accent-orange;
+  font-weight: 500;
+  line-height: 100%;
+
+  letter-spacing: 2%;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $accent-orange;
+  transition: background-color $transition-duration, color $transition-duration;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    transition: border-bottom $transition-duration;
+  }
+
+  &__icon {
+    margin-right: 6px;
+    
+    &--cookie {
+      background-image: url(../images/icon/cookie.svg);
+      width: 20px;
+      height: 20px;
+      transition: background-image $transition-duration;
+    }
+
+    &--arrow {
+      background-image: url(../images/icon/arrow.svg);
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &:hover {
+    background-color: $accent-orange;
+    border: none;
+    color: $white;
+
+    .button__icon--cookie {
+      background-image: url(../images/icon/cookie-hover.svg);
+    }
+  }
+
+  &:focus {
+    background-color: $dark-orange;
+    color: $white;
+    border: none;
+
+    .button__icon--cookie {
+      background-image: url(../images/icon/cookie-hover.svg);
+    }
+  }
+}
