@@ -1,10 +1,8 @@
 .icon {
-  display: block;
+  display: inline-block;
   @include iconSize (24px);
 
   @include backgroungImagePosition ;
-
-  @include transition (filter);
 
   &--menu {
     background-image: url("../images/Icon-menu.svg");
@@ -18,8 +16,27 @@
     background-image: url("../images/Icon-close.svg");
   }
 
-  &:hover {
-    filter: invert(39%) sepia(95%) saturate(1015%)
-      hue-rotate(337deg) brightness(94%) contrast(109%);
+  &--social {
+    @include transition(filter);
+
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+
+    &:hover {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &--facebook {
+    background-image: url("../images/Icon-facebook.svg");
+  }
+
+  &--instagram {
+    background-image: url("../images/Icon-instagram.svg");
+  }
+
+  &--twitter {
+    background-image: url("../images/Icon-twitter.svg");
   }
 }
