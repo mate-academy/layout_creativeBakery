@@ -4,3 +4,42 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin Desktop-LG {
+  @media (min-width: 1201px) {
+    @content;
+  }
+}
+
+@mixin Desktop {
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin Tablet {
+  @media (min-width: 640px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin Subtitles {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $black;
+
+  @include Tablet {
+    font-size: 56px;
+  }
+
+  @include Desktop {
+    font-size: 72px;
+  }
+
+  @include Desktop-LG {
+    font-size: 72px;
+  }
+}
