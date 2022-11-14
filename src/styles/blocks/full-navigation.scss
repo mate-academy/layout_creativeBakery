@@ -1,0 +1,98 @@
+.full-navigation {
+  display: none;
+
+  @include Desktop {
+    display: block;
+  }
+
+  @include Desktop-LG {
+    display: block;
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    padding: 148px 0;
+    justify-content: center;
+    align-items: center;
+
+    @include Desktop {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 64px;
+
+      margin: 0;
+      padding: 0;
+    }
+
+    @include Desktop-LG {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 64px;
+
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black;
+
+    transition: all 0.3s;
+
+    &--phone {
+      position: relative;
+      color: $accent-orange;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+
+      cursor: pointer;
+      color: $accent-orange;
+
+      padding: 4px 0 0;
+      border-bottom: 2px solid $accent-orange;
+    }
+
+    &:active {
+      color: $dark-orange;
+      border-bottom: 2px solid $dark-orange;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+
+    transition: all 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      color: $accent-orange;
+
+      padding: 4px 0 0;
+      border-bottom: 2px solid $accent-orange;
+    }
+
+    &:focus {
+      color: $dark-orange;
+      border-bottom: 2px solid $dark-orange;
+    }
+
+    &:focus > .icon--phone {
+      background-image: url(../images/icons/Icon-phone--dark.svg);
+    }
+  }
+}
