@@ -1,0 +1,72 @@
+.about {
+  margin-top: 150px;
+  background-image: url(../images/Crumbs.svg);
+  @extend %icon;
+  
+  &__wrapper {
+    @include tablet() {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
+  }
+  
+  &__shell {
+    width: 60%;
+    @include tablet() {
+      display: flex;
+      gap: 50px;
+      justify-content: space-between;
+    }
+  }
+  
+  &__text {
+    width: 100%;
+    margin-top: 30px;
+  
+    @include tablet() {
+      width: 300px;
+      margin-top: 0;
+    }
+  
+    @media (min-width:850px) {
+      width: 500px;
+    }
+  
+    @include desktop() {
+      width: 700px;
+    }
+  }
+  
+  &__list {
+    list-style: none;
+    margin-top: 100px;
+  
+    @include desktop() {
+      display: flex;
+      gap: 150px;
+    }
+  }
+  
+  &__item {
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 82px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #1c1a26;
+    margin-top: 15px;
+  
+    @include tablet() {
+      margin-top: 0;
+    }
+  
+    &-text {
+      letter-spacing: normal;
+      font-size: 14px;
+      color: $color--grey;
+      text-transform: none;
+      margin-top: -20px;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.card {
+  width: 80%;
+  margin: 0 auto;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+  
+  @include tablet() {
+    width: initial;
+    margin: initial;
+  }
+  
+  @include desktop() {
+    width: 400px;
+  }
+  
+  @media (min-width:800px) {
+    width: 350px;
+  }
+  
+  &__img {
+    width: 100%;
+    margin-top: 70px;
+  
+    @media (min-width:800px) {
+      width: 350px;
+    }
+  
+    @include desktop() {
+      width: 400px;
+    }
+  }
+  
+  &__type {
+    text-transform: uppercase;
+    color: $color--grey;
+    margin-top: 5px;
+  }
+  
+  &__link {
+    color: $color--orange;
+    text-decoration: none;
+    text-transform: uppercase;
+  
+    &-wrapper {
+      display: flex;
+      gap: 10px;
+    }
+  
+    &-line {
+      width: 0;
+      height: 1px;
+      background-color: $color--orange;
+    }
+  
+    &:hover {
+      .card__link-line {
+        width: 100%;
+      }
+    }
+  }
+  
+  &__text {
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
