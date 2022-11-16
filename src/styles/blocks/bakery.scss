@@ -35,7 +35,7 @@
     color: $main-color;
 
     @include onTablets {
-      margin-top: 140px;
+      margin-top: 100px;
 
       font-size: 70px;
       line-height: 68px;
@@ -91,6 +91,10 @@
   }
 
   &__button {
+    @include transition(filter);
+    @include transition(color);
+    @include transition(background-color);
+
     @include onTablets {
       margin-top: 150px;
     }
@@ -99,15 +103,14 @@
       margin-top: 64px;
     }
 
-    &::before {
-      content: "";
-
-      display: block;
-      @include iconSize(24px);
+    &__icon {
       margin-right: 4px;
 
       background-image: url("../images/Icon-cookie.svg");
-      @include backgroungImagePosition;
+    }
+
+    &:hover &__icon {
+      filter: brightness(0) invert(1);
     }
   }
 }
