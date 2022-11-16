@@ -1,0 +1,81 @@
+.nav {
+  $blockName: &;
+
+  &__list {
+    list-style: none;
+
+    &--mobile {
+      position: absolute;
+      top: var(--header-height);
+      right: 0;
+      left: 0;
+
+      height: calc(100vh - var(--header-height));
+
+      transform: translateX(100%);
+      margin: 0 auto;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 132px;
+      overflow: hidden;
+
+      @include onDesktop {
+        display: none;
+      }
+
+      transition: transform 0.3s;
+
+      #{$blockName}--active & {
+        transform: translateX(0);
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        gap: 24px;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 8px;
+    justify-content: center;
+    align-items: center;
+
+    &--contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $accentOrange;
+
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    color: inherit;
+    text-decoration: none;
+
+    @include onDesktop {
+      height: var(--header-height);
+      padding: 0 20px;
+    }
+
+    &--icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
