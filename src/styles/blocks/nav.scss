@@ -5,23 +5,28 @@
     list-style: none;
 
     &--mobile {
-      position: absolute;
-      top: var(--header-height);
+      position: fixed;
+      top: var(--nav-height);
       right: 0;
       left: 0;
 
-      height: calc(100vh - var(--header-height));
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      height: calc(100vh - var(--nav-height));
 
       transform: translateX(100%);
       margin: 0 auto;
       box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
+
       padding: 132px;
       overflow: hidden;
 
-      @include onDesktop {
+      background-color: $lightBlue;
+      z-index: 1;
+
+      @include onLarge {
         display: none;
       }
 
@@ -35,7 +40,7 @@
     &--desktop {
       display: none;
 
-      @include onDesktop {
+      @include onLarge {
         display: flex;
         gap: 24px;
       }
@@ -56,7 +61,7 @@
       line-height: 100%;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      color: $accentOrange;
+      color: $colorMain;
 
     }
   }
@@ -67,9 +72,10 @@
     padding: 8px;
     color: inherit;
     text-decoration: none;
+    white-space: nowrap;
 
-    @include onDesktop {
-      height: var(--header-height);
+    @include onLarge {
+      height: $nav-height-desktop;
       padding: 0 20px;
     }
 

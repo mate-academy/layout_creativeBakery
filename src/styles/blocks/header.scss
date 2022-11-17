@@ -1,15 +1,89 @@
 .header {
-  &__content {
+  background-image: url(../images/Cookie.jpg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+
+  @include onMedium {
+    background-position: center;
+  }
+  &__logo {
+    &__image {
+      height: 32px;
+    }
+  }
+  &__top {
     @include container(16px);
-    height: var(--header-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-}
+    height: var(--nav-height);
 
-.logo {
-  &__image {
-    height: 32px;
+    margin-bottom: 32px;
+
+    @include onMedium {
+      margin-bottom: 80px;
+    }
+
+    @include onLarge {
+      padding: 0 32px;
+      height: $nav-height-desktop;
+      margin-bottom: 136px;
+    }
+
+    @include XLarge {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__content {
+    @include container(16px);
+
+    @include onMedium {
+      @include container(44px);
+      @include useGrid ;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    text-align: center;
+    margin: 0 auto 32px;
+
+    @include onMedium {
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include onLarge {
+      margin-bottom: 8px;
+      &--br {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    margin-bottom: 288px;
+
+    @include onMedium {
+      font-size: 80px;
+      margin-bottom: 146px;
+    }
+
+    @include onLarge {
+      font-size: 136px;
+      margin-bottom: 64px;
+    }
+
+    @include XLarge {
+      font-size: 144px;
+    }
   }
 }

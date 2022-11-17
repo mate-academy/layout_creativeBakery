@@ -1,0 +1,35 @@
+.grid {
+  display: block;
+
+  @include onMedium {
+    @include useGrid;
+
+    &__item {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          @include onMedium {
+            &--tablet-#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include onLarge {
+    @include useGrid;
+
+    &__item {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          @include onLarge {
+            &--desktop-#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+    }
+  }
+}

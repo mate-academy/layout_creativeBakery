@@ -1,10 +1,16 @@
-@mixin onTablet {
+@mixin onMedium {
   @media (min-width:640px) {
     @content;
   }
 }
-@mixin onDesktop {
+@mixin onLarge {
   @media (min-width:1024px) {
+    @content;
+  }
+}
+
+@mixin XLarge {
+  @media (min-width:1200px) {
     @content;
   }
 }
@@ -14,9 +20,19 @@
   padding: 0 $paddingX;
 }
 
+@mixin useGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
   &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin active($_property, $_toValue) {
+  &:active {
     #{$_property}: $_toValue;
   }
 }
