@@ -1,20 +1,26 @@
 .header {
+  box-sizing: border-box;
   background-image: url(../images/Cookie.jpg);
   background-size: 50%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 60%;
   height: 100vh;
 
   @include onMedium {
     background-position: center;
   }
+
+  @include onLarge {
+    background-size: 40%;
+  }
+
   &__logo {
     &__image {
       height: 32px;
     }
   }
   &__top {
-    @include container(16px);
+    padding: 0 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,10 +45,16 @@
 
   &__content {
     @include container(16px);
+    padding-bottom: 104px;
 
     @include onMedium {
       @include container(44px);
       @include useGrid ;
+      padding-bottom: 228px;
+    }
+
+    @include onLarge {
+      padding-bottom: 300px;
     }
   }
 
@@ -70,9 +82,11 @@
     line-height: 85%;
     text-align: center;
     letter-spacing: -0.05em;
-    margin-bottom: 288px;
+    width: 288px;
+    margin: 0 auto 288px;
 
     @include onMedium {
+      width: auto;
       font-size: 80px;
       margin-bottom: 146px;
     }
