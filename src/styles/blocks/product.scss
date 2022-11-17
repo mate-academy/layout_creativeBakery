@@ -30,11 +30,20 @@
     display: flex;
     align-items: center;
     gap: 4px;
+    width: fit-content;
     text-decoration: none;
     font-weight: 500;
     line-height: 100%;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: $colorMain;
+
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s, color 0.3s;
+
+    @include hover(border-bottom-color, $colorMain);
+
+    @include active(border-bottom-color, $colorActive);
+    @include active(color, $colorActive);
   }
 }
