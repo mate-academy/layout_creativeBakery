@@ -1,9 +1,6 @@
 .header {
   box-sizing: border-box;
-  background-image: url(../images/Cookie.jpg);
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: center 60%;
+  position: relative;
   height: 100vh;
 
   @include onMedium {
@@ -89,17 +86,43 @@
     text-align: center;
     letter-spacing: -0.05em;
     width: 288px;
-    margin: 0 auto 288px;
+    margin: 0 auto;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 288px;
+      height: 290px;
+      margin: 0 auto;
+      background-image: url(../images/Cookie.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50%;
+    }
 
     @include onMedium {
       width: auto;
       font-size: 80px;
       margin-bottom: 146px;
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: -1;
+        width: 326px;
+        height: 328px;
+        margin: 0;
+      }
     }
 
     @include onLarge {
       font-size: 136px;
       margin-bottom: 64px;
+      &::after {
+        width: 544px;
+        height: 546px;
+      }
     }
 
     @include XLarge {
