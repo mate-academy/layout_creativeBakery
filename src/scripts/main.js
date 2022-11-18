@@ -3,6 +3,7 @@
 const menuButton = document.querySelector('.icon--menu');
 const closeButton = document.querySelector('.icon--close');
 const nav = document.querySelector('.nav');
+const navLinks = document.querySelectorAll('.nav__link');
 
 menuButton.addEventListener('click', () => {
   document.body.classList.add('page__body--with-menu');
@@ -16,4 +17,13 @@ closeButton.addEventListener('click', () => {
   menuButton.classList.remove('hidden');
   closeButton.classList.add('hidden');
   document.body.classList.remove('page__body--with-menu');
+});
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('nav--active');
+    menuButton.classList.remove('hidden');
+    closeButton.classList.add('hidden');
+    document.body.classList.remove('page__body--with-menu');
+  });
 });

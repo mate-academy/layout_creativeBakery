@@ -1,15 +1,16 @@
 .product {
-
   &__image {
     width: 100%;
     display: block;
     margin: 0 auto 16px;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.3s;
 
-    @include hover(transform, scale(1.05));
-    @include hover(box-shadow, 0 0 35px -15px $colorMain);
+    transition: box-shadow, 0.3s;
+
+    &:hover {
+      box-shadow: 0 0 9px 5px #454545;
+    }
   }
 
   &__title {
@@ -37,6 +38,7 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: $colorMain;
+    padding: 4px 0;
 
     border-bottom: 1px solid transparent;
     transition: border-bottom-color 0.3s, color 0.3s;
@@ -45,5 +47,11 @@
 
     @include active(border-bottom-color, $colorActive);
     @include active(color, $colorActive);
+
+    &:active {
+      .icon--arrow {
+        background-image: url(../images/icons/Icon-arrow-focused.svg);
+      }
+    }
   }
 }
