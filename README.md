@@ -11,7 +11,7 @@ Implementation of a landing page according to [Figma design](https://www.figma.c
 
 ## Technologies Used
 
-HTML, CSS and JS
+HTML, CSS, SASS and JS
 
 ## Preview Link
 
