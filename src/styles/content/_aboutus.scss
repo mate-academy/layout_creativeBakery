@@ -1,0 +1,121 @@
+@import "../utils";
+
+.AboutUs {
+    display: flex;
+    flex-direction: column;
+    background: url(../images/crumbs.png) no-repeat center;
+    margin: 10% 9%;
+    height: 673px;
+
+    @include Bigscreen {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    @include Desktop {
+        margin: 32px 3%;
+    }
+
+    @include Tablet {
+        margin: 80px 3%;
+        height: auto;
+    }
+
+    @include Mobile {
+        margin: 32px 16px;
+        background-position:right;
+    }
+
+    &__con-1{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10%;
+
+        @include Tablet{
+            align-items: flex-start;
+        }
+
+        @include Mobile{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__title{
+        font-family: $family;
+        color: $primary_color;
+        font-weight: 400;
+        font-size: 72px;
+        letter-spacing: -0.05em;
+
+        @include Tablet{
+            font-size: 56px;
+        }
+
+        @include Mobile{
+            font-size: 48px;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__txt{
+        font-family: $family;
+        font-weight: 400;
+        width: 40%;
+        font-size: 16px;
+        align-self: baseline;
+        color: $primary_color;
+        letter-spacing: -0.01em;
+
+        @include Mobile{
+            width: fit-content;
+        }
+    }
+
+    &__all{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 24px;
+
+        @include Tablet{
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 80px;
+        }
+
+
+        @include Mobile{
+            display: flex;
+            flex-direction: column;
+            row-gap: 48px;
+        }
+
+        &--box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            @include Mobile{
+                justify-content: flex-start;
+                align-items:flex-start ;
+            }
+        }
+    }
+
+    &__number{
+        font-family: $family;
+        letter-spacing: -0.05em;
+        font-weight: 400;
+        font-size: 96px;
+        color: $primary_color;
+    }
+
+    &__about{
+        font-family: $family;
+        letter-spacing: -0.05em;
+        font-weight: 400;
+        font-size: 16px;
+        color: $text_color;
+    }
+}

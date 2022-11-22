@@ -1,0 +1,155 @@
+@import "../utils";
+
+
+
+.Footer{
+    display: flex;
+    background: $primary_color;
+    padding: 88px 124px;
+    flex-direction: column;
+
+
+    @include Bigscreen{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    
+
+    @include Desktop{
+        padding: 88px 42px;
+    }
+
+    @include Tablet{
+        column-gap: 5%;
+    }
+
+    @include Mobile{
+        flex-direction: column;
+        padding: 56px 18px;
+        row-gap: 64px;
+    }
+
+
+    &__all-up{
+        display: flex;
+        justify-content: space-between;
+
+        @include Tablet{
+            column-gap: 5%;
+        }
+
+        @include Mobile{
+            flex-direction: column;
+            row-gap: 64px;
+        }
+    }
+
+    &__block{
+        display: flex;
+        flex-direction: column;
+
+        &--1{
+            margin-top: 20px;
+        }
+    }
+
+
+    &__menu-con{
+        display: flex;
+        flex-direction: column;
+        margin-top: 65px;
+        row-gap: 16px;
+    }
+
+    &__about{
+        font-family: $family;
+        font-weight: 500;
+        font-size: 16px;
+        color: $text_color;
+    }
+
+    &__links{
+        font-family: $family;
+        font-weight: 400;
+        font-size: 16px;
+        color: $footer_text;
+
+        &:hover{
+            color: $secondary_color;
+        }
+    }
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+
+        @include Tablet{
+            flex-direction: column;
+            row-gap: 40px;
+        }
+    }
+
+    &__call-con{
+        display: flex;
+        row-gap: 16px;
+        flex-direction: column;
+    }
+
+
+
+    &__title{
+        font-family: $family;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 72px;
+        color: $footer_text;
+
+        @include Tablet{
+            font-size: 56px;
+        }
+
+        @include Mobile{
+            font-size: 48px;
+        }
+    }
+
+    
+    &__Social-con{
+        display: flex;
+        column-gap: 40px;
+    }
+
+    &__social{
+        display: block;
+        cursor: pointer;
+        filter: grayscale(0);
+        &:hover{
+            filter: grayscale(100);
+        }
+    }
+
+    &__end{
+        display: flex;
+        margin-top: 48px;
+        width: 72%;
+        justify-content: space-between;
+
+        @include Bigscreen{
+            width: 80%;
+        }
+
+        @include Mobile{
+            flex-direction: column;
+            row-gap: 42px;
+        }
+    }
+
+    &__rights{
+        font-family: $family;
+        color: $text_color;
+        font-weight: 400;
+        font-size: 16px;
+
+    }
+}
