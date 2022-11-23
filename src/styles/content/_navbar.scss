@@ -1,0 +1,78 @@
+@import "../utils";
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 32px 2%;
+
+    @include Bigscreen {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    @include Desktop {
+        margin: 32px 2%;
+    }
+
+    @include Tablet {
+        margin: 20px 20px;
+    }
+
+
+    &__links-con {
+        display: flex;
+        align-items: center;
+        column-gap: 64px;
+
+        @include Tablet {
+            display: none;
+        }
+    }
+
+    &__links {
+        font-weight: 400;
+        font-size: 16px;
+        font-family: $family;
+        color: $primary_color;
+        cursor: pointer;
+
+        &--orange {
+            column-gap: 7px;
+            font-family: $family;
+            text-transform: uppercase;
+            color: $secondary_color;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $secondary_color;
+            transition: width 0.3s;
+        }
+
+        &:hover {
+            color: $secondary_color;
+
+            &::after {
+                width: 100%;
+            }
+
+        }
+    }
+
+
+    &__burger {
+        display: none;
+        align-items: center;
+
+        @include Tablet {
+            display: flex;
+
+            &:hover {
+                filter: invert(67%) sepia(27%) saturate(3718%) hue-rotate(0deg) brightness(103%) contrast(103%);
+            }
+        }
+    }
+}
