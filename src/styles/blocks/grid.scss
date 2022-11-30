@@ -1,0 +1,35 @@
+.grid {
+  display: grid;
+  grid-template-rows: 50px, 50px;
+  gap: 30px;
+
+  &__item {
+    @for $startrow from 1 through 2 {
+      @for $endrow from $startrow through 3 {
+        &--#{$startrow}-#{$endrow} {
+          grid-row: #{$startrow} / #{$endrow + 1};
+        }
+      }
+    }
+  }
+}
+
+.content__grid {
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 24px;
+    justify-content: center;
+  }
+
+  &__item {
+    @for $startcol from 1 through 8 {
+      @for $endcol from $startcol through 8 {
+        &--#{$startcol}-#{$endcol} {
+          grid-column: #{$startcol} / #{$endcol + 1};
+        }
+      }
+    }
+  }
+}
