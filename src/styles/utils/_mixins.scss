@@ -1,6 +1,37 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 744px) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin topNav {
+  padding: 20px 4px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $pinkcolor;
+}
+
+@mixin titleText {
+  color: $orangecolor;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 46px;
+  line-height: 100%;
+  letter-spacing: 5%;
+  margin-top: 24px;
+}
+
+@mixin subText {
+  color: $darkcolor;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -1%;
 }

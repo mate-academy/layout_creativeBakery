@@ -1,0 +1,127 @@
+.header {
+
+  box-sizing: border-box;
+  max-height: 100vh;
+
+  padding: 0 0 32px;
+  color: $darkcolor;
+
+  @include onTablet {
+    padding: 0 36px 80px;
+  }
+
+  &__top {
+    @include topNav;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__description {
+    display: block;
+    font-weight: 400;
+    font-style: 16px;
+    line-height: 24px;
+    padding-top: 32px;
+
+    @include onTablet {
+      padding: 80px 44px 0;
+    }
+  }
+
+  &__content {
+    box-sizing: border-box;
+
+    @include onTablet {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      margin: 0 auto;
+
+      @include onDesktop {
+        margin: 0 44px;
+      }
+    }
+
+    &-title {
+      color: $orangecolor;
+      font-weight: 400;
+      font-size: 60px;
+      line-height: 54px;
+      letter-spacing: -5%;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 32px 0 0;
+
+      @include onTablet {
+        position: absolute;
+        top: calc(50% - 116px);
+        font-size: 80px;
+        line-height: 68px;
+        margin: 0;
+      }
+
+      @include onDesktop {
+        font-size: 116px;
+        line-height: 96px;
+        margin: 0;
+      }
+
+    }
+
+    &-img {
+
+      @include onTablet {
+        width: 326px;
+        height: 328px;
+        margin: 0 auto;
+        z-index: -1;
+      }
+    }
+
+    &__button {
+      display: flex;
+      align-items: center;
+
+      @include onTablet {
+        margin-top: 80px;
+      }
+
+      &-button {
+        border: 1px solid $orangecolor;
+        background-color: $pinkcolor;
+        border-radius: 50px;
+        width: 288px;
+        text-transform: uppercase;
+        color: $orangecolor;
+        padding: 20px;
+
+        @include onTablet {
+          margin: 0 auto;
+        }
+
+        &:hover {
+          background-color: $orangecolor;
+          color: #fff;
+        }
+
+        &:focus {
+          border: 1px solid #b2341a;
+          background-color: #b2341a;
+          color: #fff;
+        }
+
+        &:disabled {
+          opacity: 80%;
+        }
+      }
+
+      &--description {
+        display: inline;
+      }
+    }
+  }
+}
