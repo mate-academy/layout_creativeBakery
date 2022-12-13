@@ -1,0 +1,57 @@
+.button {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 56px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $orangeColor;
+
+  border: 2px solid $orangeColor;
+  border-radius: 32px;
+
+  transition: transform $transitionTime;
+
+  @include onTablet {
+    margin-top: 85px;
+    width: 328px;
+  }
+
+  @include onDesktop {
+    margin-top: 0;
+  }
+
+  &:hover {
+    background-color: $orangeColor;
+    color: #fff;
+
+    transform: scale(1.05);
+  }
+
+  &:hover .button__image--white {
+    background-image: url(../images/icons/cookie-white.svg);
+  }
+
+  &:focus {
+    background-color: #b3341a;
+    border-color: #b3341a;
+  }
+
+  &__image {
+    margin-right: 6px;
+
+    width: 20px;
+    height: 20px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-image: url(../images/icons/cookie-red.svg);
+  }
+}
