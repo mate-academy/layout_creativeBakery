@@ -1,7 +1,7 @@
 .header {
 
   box-sizing: border-box;
-  max-height: 100vh;
+  height: 100vh;
 
   padding: 0 0 32px;
   color: $darkcolor;
@@ -32,18 +32,15 @@
 
   &__content {
     box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 
-    @include onTablet {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto;
-
-      @include onDesktop {
-        margin: 0 44px;
-      }
+    @include onDesktop {
+      margin: 0 44px;
     }
 
     &-title {
@@ -65,9 +62,10 @@
       }
 
       @include onDesktop {
-        font-size: 116px;
+        font-size: 110px;
         line-height: 96px;
         margin: 0;
+        top: calc(50% - 70px);
       }
 
     }
@@ -91,13 +89,19 @@
         margin-top: 80px;
       }
 
+      @include onDesktop {
+        margin-top: 80px;
+        position: absolute;
+        top: 140px;
+        left: 50px;
+      }
+
       &-button {
         border: 1px solid $orangecolor;
-        background-color: $orangecolor;
+        background-color: $pinkcolor;
         border-radius: 50px;
         width: 288px;
         text-transform: uppercase;
-        color: $orangecolor;
         padding: 20px;
         transition: background-color 0.3s;
 
@@ -106,16 +110,14 @@
         }
 
         &:hover {
-          border: 1px solid #b2341a;
-          background-color: #b2341a;
-          color: #fff;
+          border: 1px solid $orangecolor;
+          background-color: $orangecolor;
           cursor: pointer;
         }
 
         &:active {
-          border: 1px solid $orangecolor;
-          background-color: $pinkcolor;
-          color: $orangecolor;
+          border: 1px solid #b2341a;
+          background-color: #b2341a;
         }
 
         &:disabled {
@@ -125,7 +127,15 @@
 
       &--description {
         display: inline;
-        color: white;
+        color: $orangecolor;
+
+        &:hover {
+          color: #fff;
+        }
+
+        &:active {
+          color: #fff;
+        }
       }
 
       &--img {
@@ -133,4 +143,12 @@
       }
     }
   }
+}
+
+.header__content__button-button:hover .header__content__button--description {
+  color: #fff;
+}
+
+.header__content__button-button:active .header__content__button--description {
+  color: #fff;
 }
