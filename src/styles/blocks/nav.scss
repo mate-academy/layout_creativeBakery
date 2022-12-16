@@ -1,17 +1,45 @@
 .nav {
   &__list {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 65px;
 
     list-style: none;
   }
 
   &__item {
+    @include hover(opacity, 0.7);
 
     &--last {
-      display: flex;
-      align-items: center;
-      gap: 7px;
+      @include hover(opacity, 1);
+
+      &::before {
+        display: inline-block;
+        transform: translateY(5px);
+        content: "";
+        background-image: url(../images/icons/phone.svg);
+        @include square(20px);
+        background-repeat: no-repeat;
+      }
+      
+      &::after {
+        display: block;
+        content: "";
+        height: 1px;
+        width: 0;
+        background-color: $secondary-color;
+
+        transition: width $transition;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+      &:focus::after {
+        background-color: $third-color;
+      }
     }
   }
 
@@ -26,6 +54,10 @@
       text-transform: uppercase;
       font-weight: 500;
       color: $secondary-color;
+
+      @include hover(opacity, 1);
+
+      transition: all $transition;
     }
   }
 }
