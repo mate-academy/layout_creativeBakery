@@ -1,0 +1,33 @@
+.products {
+  display: flex;
+  justify-content: center;
+  &__content {
+    @include grid;
+  }
+
+  &__title {
+    grid-column: 1 / 3;
+    
+    font-size: 48px;
+    line-height: 85%;
+    text-transform: uppercase;
+    color: $secondary-color;
+    margin-bottom: 24px;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__paragraph {
+    grid-column: 1 / 3;
+
+    @extend %p;
+    color: $p-color;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 .nav {
   &__list {
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,46 +10,34 @@
   }
 
   &__item {
+    position: relative;
     @include hover(opacity, 0.7);
 
     &--last {
       @include hover(opacity, 1);
 
       &::before {
-        display: inline-block;
-        transform: translateY(5px);
-        content: "";
+        @include iconPosition;
         background-image: url(../images/icons/phone.svg);
-        @include square(20px);
-        background-repeat: no-repeat;
       }
       
-      &::after {
-        display: block;
-        content: "";
-        height: 1px;
-        width: 0;
-        background-color: $secondary-color;
+      @include button-hover;
 
-        transition: width $transition;
-      }
-
-      &:hover::after {
-        width: 100%;
-      }
-
-      &:focus::after {
-        background-color: $third-color;
+      &-onTablet {
+        @include onTablet {
+          &::before {
+            @include iconPosition;
+            background-image: url(../images/icons/phone.svg);
+            @include square(35px);
+          }
+        }
       }
     }
   }
 
   &__link {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
+    @extend %p;
     text-decoration: none;
-    color: $p-color;
 
     &--last {
       text-transform: uppercase;
@@ -59,5 +48,12 @@
 
       transition: all $transition;
     }
+
+    @include onTablet {
+      &--onTablet {
+        font-size: 32px;
+      }
+    }
   }
+
 }

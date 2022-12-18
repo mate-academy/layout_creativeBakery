@@ -33,3 +33,45 @@
     @content;
   }
 }
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include onTablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+}
+
+@mixin iconPosition {
+  display: inline-block;
+  transform: translateY(3px);
+  content: "";
+  @include square(18px);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin button-hover {
+  &::after {
+    position: absolute;
+    bottom: -5px;
+    display: block;
+    content: "";
+    height: 1px;
+    width: 0;
+    background-color: $secondary-color;
+
+    transition: width $transition;
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+
+  &:focus::after {
+    background-color: $third-color;
+  }
+}
