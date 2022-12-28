@@ -1,0 +1,78 @@
+.menu {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+
+  height: 100%;
+
+  &--desktop {
+    display: none;
+    
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    @include onDesktop {
+      &:not(:last-child) {
+        margin-right: 64px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $colorBlack;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 5px 0;
+
+    &:hover {
+      color: $colorAccentOrange;
+      transform: scale(1.2);
+      border-bottom: 1px solid $colorAccentOrange;
+    }
+    
+    &--orange {
+      display: flex;
+
+      color: $colorAccentOrange;
+      text-transform: uppercase;
+
+      &::before {
+        justify-content: center;
+  
+        margin-right: 8px;
+        content: "";
+        
+        width: 18px;
+    
+        background-image: url(/images/phone.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+}

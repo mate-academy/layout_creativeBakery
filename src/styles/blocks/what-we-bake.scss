@@ -1,0 +1,89 @@
+.what-we-bake {
+  margin-bottom: 80px;
+
+  @include onDesktop {
+    margin-bottom: 180px;
+  }
+
+  &__cards {
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 56px;
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__card {
+
+    &:not(:last-child) {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 16px;
+
+    width: 100%;
+    object-fit: fill;
+    border-radius: 8px;
+
+    transition: 0.3s;
+    
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  }
+
+  &__category {
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    color: $colorGrey;
+    text-transform: uppercase;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+  }
+
+  &__description {
+    min-height: 48px;
+    margin-bottom: 24px;
+  }
+
+  &__order-link {
+    display: flex;
+    transition: 0.3s;
+
+    
+    color: $colorAccentOrange;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+
+    &::before {
+      justify-content: center;
+
+      margin-right: 8px;
+      content: "";
+      
+      width: 18px;
+  
+      background-image: url(/images/line.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      transform: scale(1.1) translateX(5%);
+    }
+  }
+}

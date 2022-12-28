@@ -1,0 +1,53 @@
+.top-action {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 0 20px;
+
+  @include onDesktop {
+    width: max-content;
+    padding: 0;
+  }
+
+  @include onDesktop {
+    margin-bottom: 0;
+  }
+  
+  &__logo {
+    padding: 20px 0;
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: background-image 0.3s;
+  
+    @include onDesktop {
+      display: none;
+    }
+
+    &--burger {
+      background-image: url(/images/burger-black.svg);
+
+      &:hover {
+        background-image: url(/images/burger.svg);
+      }
+    }
+
+    &--cross {
+      background-image: url(/images/cross-black.svg);
+
+      &:hover {
+        background-image: url(/images/cross.svg);
+      }
+    }
+  }
+}
