@@ -1,0 +1,70 @@
+.navMenu {
+  position: fixed;
+  transform: translateX(100%);
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  overflow: hidden;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1 / 3;
+    height: 64px;
+    align-items: center;
+
+    @include iPad {
+      grid-column: 1 / 9;
+    }
+  }
+
+  &__close {
+    width: 24px;
+    height: 24px;
+    background-image: url(/images/close.svg);
+    background-repeat: no-repeat;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 3;
+    align-items: center;
+    height: min-content;
+
+    @include iPad {
+      grid-column: 1 / 9;
+    }
+  }
+  
+  &__item {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+    text-decoration: none;
+    padding-top: 24px;
+
+    &:last-child {
+      text-transform: uppercase;
+      font-weight: 500;
+      position: relative;
+      color: #f9512e;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image: url(../images/Icon-phone.svg);
+        position: absolute;
+        left: -25px;
+      }
+    }
+  }
+}
