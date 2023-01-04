@@ -1,0 +1,119 @@
+.product {
+
+  &__title {
+    margin: 0;
+
+    &:hover {
+      transform: translateX(25%);
+    }
+
+    transition: transform 1.2s cubic-bezier(0,1.27,0.93,0.03);
+  }
+
+  &__tagline {
+    margin-top: 24px;
+
+  }
+
+  &__card {
+    margin-top: 64px;
+    width: 100%;
+
+    @include onTablet {
+      margin-top: 88px;
+    }
+
+    &--first {
+      margin-top: 54px;
+
+      @include onTablet {
+        margin-top: 80px;
+      }
+    }
+
+    &--second {
+      @include onTablet {
+        margin-top: 80px;
+      }
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 356px;
+
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1) translateY(-20px);
+    }
+
+    @include onTablet {
+      height: 424px;
+    }
+
+    @include onDesktop {
+      height: 512px;
+    }
+
+    @include onDesktopXl {
+      height: 560px;
+    }
+  }
+
+  &__name {
+    margin-top: 16px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+  }
+
+  &__description {
+    margin-top: 8px;
+
+    &--container {
+      max-width: 300px;
+    }
+  }
+
+  &__order {
+    display: flex;
+    margin-top: 24px;
+    width: min-content;
+
+    color: #f9512e;
+
+    transition: all 0.3s;
+
+    &-arrow-color {
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      color: #b3341a;
+    }
+
+    &:hover .product__order-arrow-color {
+      fill: #b3341a;
+    }
+  }
+
+  &__button {
+    margin-left: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: inherit;
+    text-decoration: none;
+  }
+}
