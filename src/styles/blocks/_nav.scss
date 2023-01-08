@@ -21,7 +21,36 @@
     letter-spacing: -0.01em;
     color: $black-color;
     text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 4px;
+    transition: all 0.3s;
 
+    &:hover {
+      color: $default-color;
+      border-bottom: 1px solid $default-color;
+    }
+
+    &:hover .nav__link-container {
+      border-bottom: 1px solid $default-color;
+    }
+
+    &:focus {
+      color: $focused-color;
+      border-bottom: 1px solid $focused-color;
+    }
+
+    &:focus .nav__link-container {
+      border-bottom: 1px solid $focused-color;
+    }
+
+    &:focus .nav__link-img {
+      background-image: url(../images/icons/phone-focused.svg);
+    }
+
+    &:focus .nav__link--color--default {
+      color: $focused-color;
+    }
+    
     &--color--default {
       font-weight: 500;
       line-height: 100%;
@@ -39,12 +68,15 @@
   &__link-container {
     display: flex;
     align-items: center;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 4px;
   }
 
   &__link-img {
     width: 24px;
     height: 24px;
     margin-right: 4px;
+    background-image: url(../images/icons/phone.svg);
   }
 
 }

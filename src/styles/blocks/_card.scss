@@ -4,6 +4,11 @@
     width: 100%;
     margin-bottom: 16px;
     border-radius: 8px;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(107%);
+    }
   }
 
   &__title {
@@ -30,12 +35,30 @@
     align-items: center;
     padding: 0 4px;
     text-decoration: none;
+    border-bottom: 1px solid transparent;
+    width: min-content;
+    padding-bottom: 4px;
+    transition: all 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid $default-color;
+      width: min-content;
+    }
+
+    &:focus .card__order-img{
+      background-image: url(../images/icons/arrow-focused.svg);
+    }
+
+    &:focus .card__order-text {
+      color: $focused-color;
+    }
   }
 
   &__order-img {
     width: 24px;
     height: 24px;
     margin-right: 4px;
+    background-image: url(../images/icons/arrow.svg);
   }
 
   &__order-text {
