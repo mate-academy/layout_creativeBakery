@@ -1,0 +1,122 @@
+.header {
+  background-color: #eef7ff;
+  background-image: url(../images/Cookie.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  font-weight: 400;
+
+  @include onTablet {
+    background-size: 50%;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 20px;
+
+    @include onDesktop {
+      padding-top: 32px;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+
+    &--right {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__nav {
+    margin-left: 64px;
+    text-decoration: none;
+    color: $black-color;
+    transition: all 0.5s;
+
+    &:hover {
+      color: $gray-color;
+    }
+
+    &:last-child {
+      margin-left: 76px;
+    }
+  }
+
+  &__contacts {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: $button-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.5s;
+
+    &::after {
+      display: block;
+      background-image: url(../images/phone.svg);
+      height: 18px;
+      width: 18px;
+      content: "";
+      transform: translate(-27px, -110%);
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      filter: grayscale(2);
+
+      &::after {
+        filter: grayscale(2);
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      width: 40%;
+      margin-bottom: 145px;
+    }
+
+    @include onDesktop {
+      width: 25%;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 290px;
+    text-align: center;
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-bottom: 210px;
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+      font-size: 144px;
+    }
+  }
+}
