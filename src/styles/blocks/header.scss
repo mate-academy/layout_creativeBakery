@@ -1,0 +1,123 @@
+.header {
+  min-height: 100vh;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header-top {
+    padding: 20px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      padding: 32px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__description {
+    margin-bottom: 32px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    color: $c-black;
+
+    @include onTablet {
+      margin-bottom: 146px;
+      max-width: 280px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-top: 135px;
+      margin-bottom: 8px;
+    }
+
+    @include onDesktopPlus {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    line-height: 85%;
+
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $c-accent-orange;
+
+    @include onTablet {
+      position: relative;
+
+      margin-bottom: 210px;
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      font-size: 106px;
+      margin-bottom: 64px;
+    }
+
+    @include onDesktopPlus {
+      font-size: 136px;
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    @include image-size(290px);
+
+    animation: image-fader 3s linear;
+
+    @include onTablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include image-size(326px);
+
+      z-index: -1;
+    }
+
+    @include onDesktop {
+      @include image-size(544px);
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      margin: 0 auto;
+      max-width: 326px;
+    }
+
+    @include onDesktop {
+      max-width: 260px;
+      align-items: left;
+      margin: 0;
+    }
+  }
+}
+
+@keyframes image-fader {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}

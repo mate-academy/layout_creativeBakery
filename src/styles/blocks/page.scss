@@ -1,0 +1,54 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__header {
+    position: relative;
+    margin-bottom: 52px;
+
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+  }
+
+  &__section {
+    margin-bottom: 64px;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: $c-light-pink;
+
+    z-index: 9999;
+    transition: all 0.3s linear;
+    transform: translateX(-100%);
+
+    &:target {
+      transform: translateX(0);
+
+      .menu__list {
+        display: block;
+      }
+    }
+  }
+
+  &__products {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+  }
+
+  &__about-us {
+    margin-bottom: 152px;
+
+    @include onDesktop {
+      margin-bottom: 350px;
+    }
+  }
+}

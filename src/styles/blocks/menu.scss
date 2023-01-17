@@ -1,0 +1,81 @@
+.menu {
+  &__header-top {
+    margin: 20px 20px 150px;
+  }
+
+  &__list {
+    display: none;
+    text-align: center;
+
+    &--active {
+      position: fixed;
+      left: 0;
+      right: 0;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--side {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &--blog {
+      @include onDesktop {
+        margin-right: 92px;
+      }
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  @include onTablet {
+    &__item {
+      margin-right: 0;
+
+      @include onDesktop {
+        margin-right: 64px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    color: $c-black;
+
+    transition: all 0.3s linear;
+
+    &:hover {
+      color: $c-accent-orange;
+    }
+
+    &--phone {
+      display: flex;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
