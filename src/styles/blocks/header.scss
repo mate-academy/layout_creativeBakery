@@ -1,0 +1,130 @@
+.header {
+
+  height: max-content;
+  box-sizing: border-box;
+
+  &__top {
+    padding: 16px 16px 52px;
+
+    @include onTablet {
+      padding-bottom: 100px;
+    }
+
+    @include onDesktop {
+      padding: 28px 32px 160px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onTablet {
+      position: relative;
+      align-items: flex-start;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__pre-title {
+    padding-bottom: 32px;
+    width: 288px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    @include onTablet {
+      padding-bottom: 146px;
+      text-align: start;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+      padding-bottom: 8px;
+      width: 260px;
+    }
+
+    @include onDesktopXL {
+      grid-column: 1 / 3;
+      padding-bottom: 40px;
+      width: 280px;
+    }
+  }
+
+  &__title {
+    width: 288px;
+    text-align: center;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      padding-bottom: 210px;
+      width: 100%;
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 9;
+      padding-bottom: 64px;
+      width: 100%;
+      font-size: 115px;
+    }
+
+    @include onDesktopXL {
+      grid-column: 1 / 9;
+      padding-bottom: 64px;
+      width: 100%;
+      font-size: 135px;
+    }
+  }
+
+  &__image-container {
+    display: block;
+    width: 100%;
+
+    @include onTablet {
+      position: absolute;
+      margin: 0 auto;
+      top: 62px;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      max-width: 328px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      margin: 0 auto;
+      top: -145px;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      max-width: 586px;
+    }
+  }
+
+  &__image {
+    display: block;
+    padding-bottom: 100%;
+    background-image: url(../images/Cookie.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
