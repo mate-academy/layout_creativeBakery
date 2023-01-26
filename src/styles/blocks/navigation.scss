@@ -1,0 +1,81 @@
+.navigation {
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+
+    &--column {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    margin-right: 64px;
+
+    &--without-margin {
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+
+    @include hover(color, $color-orange);
+  }
+
+  &__call {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-orange;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background-color: $color-orange;
+    }
+
+    &:hover::after {
+      width: 100%;
+      animation: border 0.3s linear;
+    }
+
+    @keyframes border {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    &:active {
+      color: $color-dark-orange;
+    }
+
+    &:active .icon__phone {
+      fill: $color-dark-orange;
+    }
+
+    &:active::after {
+      background-color: $color-dark-orange;
+    }
+  }
+}

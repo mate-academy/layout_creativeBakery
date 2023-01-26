@@ -1,0 +1,81 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__photo {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.05));
+
+  }
+
+  &__title {
+    margin: 0 0 8px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-grey;
+  }
+
+  &__text {
+    margin: 0 0 16px;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    padding: 8px 0;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-orange;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: $color-orange;
+    }
+
+    &:hover::after {
+      width: 100%;
+      animation: border 0.3s linear;
+    }
+
+    @keyframes border {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    &:active {
+      color: $color-dark-orange;
+    }
+
+    &:active .icon__arrow {
+      fill: $color-dark-orange;
+    }
+
+    &:active::after {
+      background-color: $color-dark-orange;
+    }
+  }
+}
