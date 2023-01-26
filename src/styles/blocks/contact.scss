@@ -1,0 +1,90 @@
+.contact {
+
+  &__flex {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__title {
+    margin: 64px 0 40px;
+    color: $c-white;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__call,
+  &__email {
+    display: flex;
+    @extend %Uppercase;
+    color: $c-gray;
+    margin-bottom: 16px;
+
+    @include onTablet {
+      margin-top: 5px;
+    }
+
+    @include onDesktop {
+      margin-top: 45px;
+    }
+  }
+
+  &__phone {
+    @extend %body;
+    color: $c-white;
+    margin-bottom: 16px;
+  }
+
+  &__contact {
+    @extend %body;
+    color: $c-white;
+    margin-bottom: 42px;
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: row;
+    gap: 41px;
+    
+    &--first {
+      display: none;
+      @include onTablet {
+        display: flex;
+        margin-top: 79px;
+      }
+
+      @include onDesktop {
+        margin-top: 30px;
+      }
+    }
+
+    &--second {
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__end {
+    @extend %body;
+    color: $c-gray;
+    margin: 42px 0 56px;
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+
+    @include onDesktop {
+      margin-top: 69px;
+    }
+  }
+}

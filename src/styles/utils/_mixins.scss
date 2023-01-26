@@ -1,6 +1,27 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover($_propertys...) {
+  transition: all 0.7s;
   &:hover {
-    #{$_property}: $_toValue;
+    @each $_property, $value in $_propertys {
+      #{$_property}: $value;
+    }
+    
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 638px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin onDesign {
+  @media (min-width: 1439px) {
+    @content;
   }
 }

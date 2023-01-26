@@ -1,0 +1,90 @@
+.header {
+  @include onTablet {
+    margin-bottom: 68px;
+  }
+
+  &__list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__text {
+    @extend %body;
+    color: $c-black;
+    text-align: center;
+    margin: 32px 0;
+
+    @include onTablet {
+      text-align: left;
+      margin: 80px 0 146px;
+    }
+
+    @include onDesktop {
+      margin: 135px 0 8px;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+    color: $c-red;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 200px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__image-box {
+    align-items: center;
+    padding-left: 45px;
+    z-index: -1;
+
+    @include onTablet {
+      position: absolute;
+      top: 144px;
+      left: 221px;
+      padding: 0 13px;
+    }
+
+    @include onDesktop {
+      padding: 32px 82px;
+      top: -50px;
+      left: 284px;
+    }
+  }
+
+  &__image {
+    width: 288px;
+    height: 290px;
+
+    @include onTablet {
+      width: 326px;
+      height: 328px;
+    }
+    @include onDesktop {
+      width: 544px;
+      height: 546px;
+    }
+  }
+
+  &__link {
+    width: auto;
+    margin: 0 auto;
+    background-color: $c-pink;
+
+    @include hover(transform scale(1.1));
+
+    &-link {
+      @extend %Uppercase;
+      color: $c-red;
+    }
+  }
+}
