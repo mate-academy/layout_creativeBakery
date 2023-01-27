@@ -1,6 +1,45 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onLargeDesktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin topActions {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 20px;
+  align-items: center;
+
+  @include onTablet {
+    padding: 16px 24px;
+  }
+
+  @include onDesktop {
+    padding: 28px 32px;
+  }
+}
+
+@mixin contactButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $c-AccentOrange;
+  transition: transform 0.3s;
 }

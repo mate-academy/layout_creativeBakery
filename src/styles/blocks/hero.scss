@@ -1,0 +1,124 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 40px 0;
+
+  background-image: url(../images/photos/cookie.png);
+  background-repeat: no-repeat;
+  background-position: center 65%;
+  background-size: 290px;
+
+  @include onTablet {
+    background-size: 330px;
+    background-position: center 30%;
+    padding: 80px 0 220px;
+  }
+
+  @include onDesktop {
+    background-size: 540px;
+    padding: 0 0 65px;
+  }
+
+  @include onLargeDesktop {
+    background-size: 580px;
+    background-position: center -36%;
+    padding: 0;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 145px;
+    }
+
+    @include onDesktop {
+      padding-top: 135px;
+      margin-bottom: 10px;
+    }
+
+    @include onLargeDesktop {
+      padding-top: 145px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 290px;
+
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 80px;
+      margin-bottom: 210px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      margin-bottom: 65px;
+    }
+
+    @include onLargeDesktop {
+      font-size: 144px;
+      margin-bottom: 75px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 56px;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: $c-AccentOrange;
+
+    border: 2px solid $c-AccentOrange;
+    border-radius: 32px;
+    outline: none;
+
+    transition: all 0.3s;
+
+    &::before {
+      content: "";
+      display: block;
+      background-image: url(../images/cookie.svg);
+      height: 24px;
+      width: 24px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-right: 4px;
+    }
+
+    &:hover {
+      color: $c-White;
+      background-color: $c-AccentOrange;
+
+      &::before {
+        background-image: url(../images/cookieHover.svg);
+      }
+    }
+
+    &:active {
+      color: $c-White;
+      border-color: $c-DarkOrange;
+      background-color: $c-DarkOrange;
+    }
+  }
+}

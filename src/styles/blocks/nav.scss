@@ -1,0 +1,38 @@
+.nav {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+    align-self: center;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 64px;
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $c-Black;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-AccentOrange;
+    }
+
+    &--contact {
+      @include contactButton;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
