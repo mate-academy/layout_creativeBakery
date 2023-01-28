@@ -80,11 +80,21 @@
     margin: 0 auto;
     background-color: $c-pink;
 
-    @include hover(transform scale(1.1));
+    @include hover(transform scale(1));
 
-    &-link {
-      @extend %Uppercase;
-      color: $c-red;
+    &:hover {
+      background-color: $c-red;
+      color: $c-white;
+    }
+
+    &:focus {
+      background-color: $c-dark-orange;
+      color: $c-white;
+    }
+
+    &:disabled {
+      background-color: $c-white;
+      color: $c-orange;
     }
   }
 }

@@ -6,6 +6,8 @@
   border: 2px solid $c-red;
   padding: 20px 105px;
   border-radius: 32px;
+  cursor: pointer;
+
   &::before {
     content: "";
     background-image: url(./../images/icons/Icon-cookie.png);
@@ -15,6 +17,19 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  &:hover::before {
+    @include hover(transform scale(1));
+    background-image: url(./../images/icons/Icon-cookie__hover.png);
+  }
+
+  &:focus::before {
+    border-color: $c-dark-orange;
+  }
+
+  &:disabled::before {
+    border-color: $c-orange;
   }
 
   @include onTablet {
