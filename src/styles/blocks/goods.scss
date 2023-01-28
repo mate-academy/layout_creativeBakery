@@ -1,0 +1,86 @@
+.goods {
+  margin-bottom: 56px;
+
+  @include onTablet {
+    margin-bottom: 80px;
+
+    &:nth-child(odd) {
+      margin-right: 24px;
+    }
+  }
+  
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &--1-3 {
+    grid-column: 1 / 5;
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &--4-6 {
+    grid-column: 5 / 9;
+
+    @include onDesktop {
+      grid-column: 4 / 9;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 355px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+
+    @include onTablet {
+      height: 425px;
+    }
+
+    @include onDesktop {
+      height: 510px;
+    }
+
+    @include onLargeDesktop {
+      height: 560px;
+    }
+
+    &--fifth {
+      @include onLargeDesktop {
+        height: 584px;
+      }
+    }
+  }
+
+  &__type {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $c-Grey;
+
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__action {
+    @include contactButton;
+    text-decoration: none;
+  }
+}
