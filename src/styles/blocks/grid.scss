@@ -1,0 +1,79 @@
+.grid {
+  display: block;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onBigDesktop {
+    grid-template-columns: repeat(8, 128px);
+  }
+
+  &--special-3-rows {
+    grid-template-rows: repeat(3, max-content);
+  }
+
+  &--special-3-4-rows {
+    @include onTablet {
+      grid-template-rows: repeat(4, max-content);
+    }
+
+    @include onSmallDesktop {
+      grid-template-rows: repeat(3, max-content);
+    }
+  }
+
+  &__items {
+    position: relative;
+
+    display: grid;
+
+    @include onTablet {
+      @for $start from 1 through 8 {
+        @for $end from $start through 9 {
+          @for $top from 1 through 4 {
+            @for $bottom from $top through 5 {
+              &--tablet-#{$start}-#{$end}-#{$top}-#{$bottom} {
+                grid-column: #{$start}/#{$end};
+                grid-row: #{$top}/#{$bottom};
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include onSmallDesktop {
+      @for $start from 1 through 8 {
+        @for $end from $start through 9 {
+          @for $top from 1 through 4 {
+            @for $bottom from $top through 5 {
+              &--smalldesk-#{$start}-#{$end}-#{$top}-#{$bottom} {
+                grid-column: #{$start}/#{$end};
+                grid-row: #{$top}/#{$bottom};
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include onBigDesktop {
+      @for $start from 1 through 8 {
+        @for $end from $start through 9 {
+          @for $top from 1 through 4 {
+            @for $bottom from $top through 5 {
+              &--bigdesk-#{$start}-#{$end}-#{$top}-#{$bottom} {
+                grid-column: #{$start}/#{$end};
+                grid-row: #{$top}/#{$bottom};
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

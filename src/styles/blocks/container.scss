@@ -1,0 +1,64 @@
+.container {
+  margin: 0 16px;
+
+  @include onTablet {
+    margin: 0 44px;
+  }
+
+  @include onBigDesktop {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  &-nav {
+    margin: 16px 16px 0;
+
+    @include onSmallDesktop {
+      margin: 28px 32px 0;
+    }
+  }
+
+  &-text {
+    margin: 0 auto;
+  }
+
+  &-photo {
+    box-sizing: border-box;
+    width: 100%;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &-main-photo {
+    position: absolute;
+    bottom: 246px;
+
+    margin: 0 auto;
+
+    z-index: -1;
+
+    @include onTablet {
+      margin: 0 120px;
+    }
+
+    @include onSmallDesktop {
+      right: 150px;
+      bottom: 56px;
+      
+      margin: 0;
+    }
+
+    @include onBigDesktop {
+      right: unset;
+
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
