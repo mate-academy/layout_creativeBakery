@@ -1,0 +1,98 @@
+.contact {
+  padding: 56px 0;
+  background-color: $c-Black;
+
+  @include onTablet {
+    padding: 90px 0;
+  }
+
+  &__logo {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 96px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__infoBlock {
+    display: block;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__wrapper {
+    @for $start from 1 through 4 {
+      @for $end from $start through 4 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+
+  &__info {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $c-Grey;
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    @include menuList;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 48px;
+    }
+
+    &--menu {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-White;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-AccentOrange;
+    }
+  }
+
+  &__title {
+    @include title;
+    color: $c-White;
+    margin-bottom: 40px;
+  }
+
+  &__icons {
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  &__license {
+    color: $c-Grey;
+  }
+}
