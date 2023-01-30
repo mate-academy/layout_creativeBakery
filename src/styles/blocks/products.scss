@@ -1,0 +1,60 @@
+.products {
+  margin: 104px 0 72px;
+
+  @include tablet {
+    margin: 228px 0 152px;
+  }
+
+  @include desktop {
+    margin: 218px 0 178px;
+  }
+
+  @include large-desktop {
+    margin-top: 178px;
+  }
+
+  &__desc {
+    margin: 24px 0 54px;
+
+    @include tablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include tablet {
+      @include grid;
+      row-gap: 80px;
+
+      & :nth-child(2n + 1) {
+        grid-column: 1 / 5;
+      }
+
+      & :nth-child(2n + 2) {
+        grid-column: 5 / -1;
+      }
+    }
+
+    @include desktop {
+      & :nth-child(3) {
+        grid-column: 3 / 6;
+      }
+
+      & :nth-child(4) {
+        grid-column: 6 / -1;
+      }
+
+      & :nth-child(4n + 1) {
+        grid-column: 1 / 4;
+      }
+
+      & :nth-child(4n + 2) {
+        grid-column: 4 / 7;
+      }
+    }
+  }
+}

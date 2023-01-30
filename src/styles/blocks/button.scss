@@ -1,0 +1,33 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 56px;
+  border-radius: 32px;
+  box-shadow: $c-orange 0 0 0 2px inset;
+
+  @extend %medium-text;
+  color: $c-orange;
+  transition: all $animation-time;
+
+  & svg {
+    fill: $c-orange;
+    margin-right: 4px;
+    transition: fill $animation-time;
+  }
+
+  &:hover {
+    color: $c-white;
+    box-shadow: $c-orange 0 0 0 30px inset;
+
+    & svg {
+      fill: $c-white;
+    }
+  }
+
+  &:active {
+    box-shadow: $c-dark-orange 0 0 0 30px inset;
+  }
+}
