@@ -1,0 +1,55 @@
+.button {
+  @include onTablet {
+    grid-column: 3 / 7;
+    max-width: 326px;
+  }
+
+  @extend %flex-center;
+  height: 56px;
+  padding: 0 48px;
+  margin: 0;
+  width: 100%;
+  border: 2px solid $colorAccentOrange;
+  border-color: $colorAccentOrange;
+  border-radius: 32px;
+  text-align: center;
+  background-color: transparent;
+  transition: background-color $transition-time ease-in-out;
+
+  cursor: pointer;
+
+  &::before {
+    content: url(../images/icons/Icon-cookie.svg);
+    margin-right: 4px;
+
+
+  }
+
+  &:hover {
+    .button__link {
+      color: $colorWhite;
+    }
+
+    &::before {
+      content: url(../images/icons/Cookie-hover.svg);
+    }
+    background-color: $colorAccentOrange;
+  }
+
+  &__link {
+    @extend %main-text-style--uppercase;
+    text-decoration: none;
+    color: $colorAccentOrange;
+    transition: color $transition-time ease-in-out;
+  }
+
+  &:active {
+    border-color: $colorDarkOrange;
+    background-color: $colorDarkOrange;
+  }
+
+
+
+  // @include onDesktop {
+  // }
+}
