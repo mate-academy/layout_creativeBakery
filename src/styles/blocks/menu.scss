@@ -1,0 +1,122 @@
+.menu {
+  background-color: $color-pageBackGround;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__top {
+    height: 64px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: block;
+    width: 128px;
+    height: 24px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+
+  &__menu-closer {
+    background-image: url(../images/Menu_cross.svg);
+    width: 12px;
+    height: 12px;
+
+    position: relative;
+    right: 20px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    transition: background-image 0.4s, transform 0.4s;
+
+    &:hover {
+      background-image: url(../images/Menu_cross_hover.svg);
+      transform: scale(1.07);
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 93%;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      margin-right: 64px;
+
+      &:last-child {
+        padding-left: 25px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: $color-black;
+
+    &:hover {
+      color: $color-orange;
+    }
+
+    &:active {
+      color: $color-Dark_orange;
+    }
+
+    &__link--contact {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $color-orange;
+      position: relative;
+
+      &::after {
+        content: "";
+        background-image: url(../images/Contact_phone.svg);
+        display: block;
+        position: absolute;
+        top: 0;
+
+        transform: translatex(-100%);
+        padding-right: 7px;
+
+        width: 18px;
+        height: 18px;
+
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      &:active::after {
+        background-image: url(../images/Contact_phone_hover.svg);
+      }
+    }
+  }
+}
