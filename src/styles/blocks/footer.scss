@@ -1,0 +1,109 @@
+.footer {
+  &__container {
+    height: max-content;
+    background-color: $black-color;
+    padding: 56px 16px;
+    @include onTablet {
+      padding: 88px 44px;
+    }
+    @include onLargeScreen {
+      padding: 88px 124px;
+    }
+  }
+
+  &__cols {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 42px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 40px;
+    @include onTablet {
+      font-size: 56px;
+      line-height: 48px;
+    }
+    @include onDesktop {
+      font-size: 72px;
+      line-height: 62px;
+    }
+  }
+
+  &__menu {
+    padding: 0;
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    list-style: none;
+    margin-bottom: 16px;
+    &--first {
+      color: $grey-color;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: transform $duration;
+    &:hover {
+      color: $accent-color;
+      transform: $animation;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image $duration, transform $duration;
+    &--fb {
+      background-image: url(../images/Icon-facebook.svg);
+      &:hover {
+        background-image: url(../images/hover-facebook.png);
+        transform: $animation;
+      }
+    }
+    &--insta {
+      background-image: url(../images/Icon-instagram.svg);
+      &:hover {
+        background-image: url(../images/hover-insta.svg);
+        transform: $animation;
+      }
+    }
+    &--twit {
+      background-image: url(../images/Icon-twitter.svg);
+      &:hover {
+        background-image: url(../images/hover-twitter.svg);
+        transform: $animation;
+      }
+    }
+  }
+  
+  &__copyright {
+    letter-spacing: -0.01em;
+    color: $grey-color;
+  }
+}
