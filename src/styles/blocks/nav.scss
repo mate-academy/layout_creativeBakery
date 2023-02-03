@@ -1,0 +1,50 @@
+.nav {
+  display: none;
+  @include onDesktop {
+    display: flex;
+    gap: 64px;
+  }
+  
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+
+  &__item {
+    transition: transform $duration;
+    &:hover {
+      transform: $animation;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black-color;
+    letter-spacing: -0.01em;
+    transition: color $duration;
+    &--call {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      color: $accent-color;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      &::before {
+        display: inline-block;
+        content: "";
+        background-image: url(../images/Icon-phone.svg);
+        background-size: cover;
+        height: 18px;
+        width: 18px;
+        margin-right: 8px;
+      }
+    }
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}

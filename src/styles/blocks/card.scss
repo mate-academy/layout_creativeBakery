@@ -1,0 +1,60 @@
+.card {
+  margin: 0 auto 56px;
+  max-width: 328px;
+  
+  @include onTablet {
+    margin-bottom: 80px;
+    max-width: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: transform $duration;
+    &:hover {
+      transform: $animation;
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey-color;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    color: $accent-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    transition: transform $duration;
+    &::before {
+      display: inline-block;
+      content: "";
+      background-image: url(../images/Icon-arrow.svg);
+      background-size: cover;
+      height: 24px;
+      width: 24px;
+      margin-right: 8px;
+    }
+    &:hover {
+      transform: $animation;
+    }
+  }
+}

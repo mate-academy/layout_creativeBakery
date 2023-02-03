@@ -1,0 +1,83 @@
+.menu {
+  height: 100vh;
+  background-color: #eef7ff;
+  z-index: 1;
+  overflow-y: auto;
+
+  @include onDesktop {
+    display: none;
+  }
+  
+  &__top {
+    height: 64px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__close {
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image $duration;
+    background-image: url(../images/close.svg);
+    &:hover {
+      background-image: url(../images/Icon-close.svg);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 132px 0;
+    margin: 0 auto;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__item {
+    text-align: center;
+    transition: transform $duration;
+    &:hover {
+      transform: $animation;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black-color;
+    transition: color 0.3s;
+    letter-spacing: -0.01em;
+    &--call {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      text-transform: uppercase;
+      color: $accent-color;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      &::before {
+        display: inline-block;
+        content: "";
+        background-image: url(../images/Icon-phone.svg);
+        background-size: cover;
+        height: 18px;
+        width: 18px;
+        margin-right: 8px;
+      }
+    }
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
