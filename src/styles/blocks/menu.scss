@@ -1,0 +1,43 @@
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: $light-pink;
+  height: 100vh;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__top {
+    margin-bottom: 132px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__link {
+    border-bottom: 1px solid transparent;
+    color: $black;
+    width: max-content;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: $black;
+      scale: 1.2;
+    }
+  }
+
+  &__tel {
+    @extend %tel;
+    margin-top: 8px;
+  }
+}
