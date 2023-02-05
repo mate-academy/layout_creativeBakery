@@ -24,18 +24,21 @@
   }
 }
 
-@mixin top-actions {
-  $icon-width: 24px;
+@mixin FromDesktop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
 
-  display: grid;
-  grid-template-columns: 1fr $icon-width;
-  justify-items: left;
-  align-items: start;
+@mixin top-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  margin-bottom: 32px;
 
-  padding-top: 20px;
-
-  @include onTablet {
-    grid-template-columns: repeat(8, 1fr);
-    // justify-items: ;
+  @include onDesktop {
+    height: 88px;
   }
 }

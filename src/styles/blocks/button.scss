@@ -1,9 +1,4 @@
 .button {
-  @include onTablet {
-    grid-column: 3 / 7;
-    max-width: 326px;
-  }
-
   @extend %flex-center;
   height: 56px;
   padding: 0 48px;
@@ -16,26 +11,36 @@
   background-color: transparent;
   transition: background-color $transition-time ease-in-out;
 
-  cursor: pointer;
-
-  &::before {
-    content: url(../images/icons/Icon-cookie.svg);
-    margin-right: 4px;
+  @include onTablet {
+    grid-column: 3 / 7;
+    max-width: 326px;
+    margin-bottom: 80px;
   }
 
+  @include onDesktop {
+    grid-column: 1 / 3;
+
+  }
+
+  cursor: pointer;
 
   &:hover {
     .button__link {
       color: $colorWhite;
     }
 
-
-    &::before {
-      content: url(../images/icons/Cookie-hover.svg);
+    .icon--cookie {
+      fill: #fff;
     }
+
     background-color: $colorAccentOrange;
   }
 
+  &__icon {
+    margin-right: 4px;
+  }
+
+  // eslint-disable-next-line
   &__link {
     @extend %main-text-style--uppercase;
     text-decoration: none;
@@ -47,7 +52,4 @@
     border-color: $colorDarkOrange;
     background-color: $colorDarkOrange;
   }
-
-  // @include onDesktop {
-  // }
 }
