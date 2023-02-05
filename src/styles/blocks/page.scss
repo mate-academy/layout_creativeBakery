@@ -1,0 +1,39 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: -0.01em;
+  color: $black;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background: $blue_light;
+
+    &--no-scroll {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    background-color: $blue_light;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__footer {
+    background-color: $black;
+  }
+}
