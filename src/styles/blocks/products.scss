@@ -1,1 +1,46 @@
-//
+.products {
+  &__content {
+    @include onTablet {
+      @include useGrid($grid-tablet-col, $grid-gap);
+      grid-row-gap: 0;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+    color: $colorAccentOrange;
+    margin-bottom: 24px;
+
+    @include onTablet {
+      grid-column: 1 /6;
+    }
+  }
+
+  &__paragraph {
+    @extend %main-text-style;
+    margin: 0 0 56px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__card {
+    @include onTablet {
+      &--1 {
+        grid-column: 1 / 5;
+      }
+      &--2 {
+        grid-column: 5 / 9;
+      }
+      &--3 {
+      }
+      &--4 {
+      }
+      &--5 {
+      }
+      &--6 {
+      }
+    }
+  }
+}
