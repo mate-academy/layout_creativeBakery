@@ -1,0 +1,95 @@
+.menu {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  &--burger {
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  &__list {
+    list-style-type: none;
+
+    &--burger {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      text-align: center;
+
+      padding-top: 100px;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    margin-right: 64px;
+    @include transition;
+
+    &:hover {
+      transform: scale(1.2) rotate(-10deg);
+    }
+
+    &--burger {
+      margin: 0 0 24px;
+      color: #fff;
+
+      &:hover {
+        transform: scale(2) rotate(0deg);
+      }
+    }
+
+    &--call-burger {
+      padding-top: 12px;
+      transform: translateX(18px);
+
+      &:hover {
+        transform: scale(2) rotate(0deg);
+      }
+    }
+
+    &--call {
+      margin-right: 0;
+      line-height: 18px;
+      &::before {
+        position: relative;
+        right: 7px;
+        transform: translate(-100%, 100%);
+        content: url("../images/icons/call.svg");
+        display: block;
+        width: 18px;
+        height: 18px;
+
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black;
+    @include transition;
+
+    &:hover {
+      color: $red;
+      transform: scale(1.1) rotate(30deg);
+    }
+
+    &--burger {
+      color: #fff;
+    }
+
+    &--call {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $red;
+    }
+  }
+}
