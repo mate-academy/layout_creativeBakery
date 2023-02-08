@@ -1,17 +1,64 @@
 .products {
   &__content {
+
+    &:last-child {
+     margin-bottom: 80px;
+    }
     @include onTablet {
       @include useGrid($grid-tablet-col, $grid-gap);
       grid-row-gap: 0;
     }
 
-    &:last-child {
-      margin-bottom: 80px;
+    &:nth-last-child(-n+2) {
+      margin-bottom: 160px;
+    }
+
+    @include onDesktop {
+      &:nth-last-child(-n+2) {
+        margin-bottom: 186px;
+      }
     }
   }
 
   &__card {
     margin-bottom: 56px;
+
+    @include onTablet {
+      &--1,
+      &--3,
+      &--5 {
+        grid-column: 1 / 5;
+      }
+      &--2,
+      &--4,
+      &--6 {
+        grid-column: 5 / 9;
+      }
+
+      margin-bottom: 88px;
+    }
+
+    @include onDesktop {
+      &--1,
+      &--5 {
+        grid-column: 1 / 4;
+      }
+      &--2,
+      &--6 {
+        grid-column: 4 / 7;
+      }
+      &--3 {
+        grid-column: 3 / 6;
+      }
+      &--4 {
+        grid-column: 6 / 9;
+      }
+    }
+
+    &:nth-last-child(-n+2) {
+      margin-bottom: 0;
+    }
+
   }
 
   &__title {
@@ -34,38 +81,7 @@
 
     @include onTablet {
       grid-column: 1 / 7;
-    }
-  }
-
-  &__card {
-    @include onTablet {
-      &--1,
-      &--3,
-      &--5 {
-        grid-column: 1 / 5;
-      }
-      &--2,
-      &--4,
-      &--6 {
-        grid-column: 5 / 9;
-      }
-    }
-
-    @include onDesktop {
-      &--1,
-      &--5 {
-        grid-column: 1 / 4;
-      }
-      &--2,
-      &--6 {
-        grid-column: 4 / 7;
-      }
-      &--3 {
-        grid-column: 3 / 6;
-      }
-      &--4 {
-        grid-column: 6 / 9;
-      }
+      margin: 0 0 80px;
     }
   }
 }
