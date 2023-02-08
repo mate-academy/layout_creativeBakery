@@ -1,0 +1,140 @@
+.header {
+  box-sizing: border-box;
+  height: 100vh;
+  background-image: url(../images/Cookie-BG.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: $topPadding;
+
+  @include onDesctop {
+    background-size: 545px;
+    background-position: 50% 20%;
+  }
+
+  @include onLaptop {
+    background-size: 326px;
+    background-position: 50% 30%;
+    padding-top: $topPaddingLaptop;
+  }
+
+  @include onMobile {
+    background-size: 288px;
+    background-position: 50% 75%;
+  }
+
+  &__content {
+    margin: 0 $margin 0;
+
+    @include onDesctop {
+      margin: 0 44px;
+    }
+
+    @include onLaptop {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 16px;
+    }
+  }
+
+  &__tagline {
+    width: 280px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    margin-bottom: 40px;
+
+    @include onDesctop {
+      width: 260px;
+      margin-bottom: 8px;
+    }
+
+    @include onLaptop {
+      width: 280px;
+      margin-bottom: 146px;
+    }
+
+    @include onMobile {
+      width: 100%;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-size: 144px;
+    line-height: 122px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 64px;
+
+    @include onDesctop {
+      font-size: 144px;
+      line-height: 116px;
+    }
+
+    @include onLaptop {
+      font-size: 80px;
+      line-height: 68px;
+      margin-bottom: 210px;
+    }
+
+    @include onMobile {
+      font-size: 64px;
+      line-height: 54px;
+      margin-bottom: 290px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 56px;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $orange;
+    border: 2px solid $orange;
+    border-radius: 32px;
+
+    transition: all $duration;
+
+    @include onLaptop {
+      align-self: center;
+    }
+
+    &::before {
+      content: url(../images/Cookie.svg);
+      margin-right: 6px;
+    }
+
+    &:hover {
+      background-color: $orange;
+      color: $white;
+      transition: content $duration;
+
+      &:before {
+        content: url(../images/cookies-white.svg);
+      }
+    }
+
+    &:active {
+      background-color: $dark-orange;
+      color: $white;
+    }
+
+    &:focus-visible {
+      background-color: $dark-orange;
+      color: $white;
+    }
+  }
+}
