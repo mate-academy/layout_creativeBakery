@@ -1,13 +1,21 @@
 .about {
-  // background-image: url(../images/Crumbs.png);
-  background-image: none;
-  background-position: center 570px;
-  background-repeat: no-repeat;
-  background-size: contain;
+  &__wrapper {
+    @include onTablet {
+      background-image: url(../images/Crumbs.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    @include onDesktop {
+      background-position: 35% center;
+    }
+  }
+
+
 
   &__content {
     margin-bottom: 72px;
-
     @include onTablet {
       @include useGrid($grid-tablet-col, $grid-gap)
     }

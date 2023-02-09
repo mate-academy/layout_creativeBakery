@@ -3,12 +3,40 @@
 
   &__content {
     margin: 0;
+    @include onTablet {
+     @include useGrid($grid-tablet-col, $grid-gap);
+     grid-row-gap: 0;
+    }
+  }
+
+  &__block {
+    &--menu {
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--contacts {
+      padding-top: 56px;
+      @include onTablet {
+        grid-column: 5 / 9;
+      }
+    }
+
+    &--email {
+      @include onTablet {
+        grid-column: 5 / 9;
+      }
+    }
   }
 
   &__contacts-title {
     @extend %h2;
     color: $colorWhite;
     margin-bottom: 40px;
+    @include onTablet {
+     margin-bottom: 56px;
+    }
   }
 
   &__list {
@@ -48,11 +76,18 @@
   &__icon {
     display: inline;
     margin-right: 34px;
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
   }
 
   &__copyright {
     @extend %main-text-style;
     color: $colorGrey;
     padding-bottom: 56px;
+
+    @include onTablet {
+      grid-column: 5 / 9;
+    }
   }
 }
