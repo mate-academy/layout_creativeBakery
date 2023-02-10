@@ -1,0 +1,202 @@
+.header {
+  &__content {
+    @include gridPosition;
+    box-sizing: border-box;
+    height: max-content;
+    padding: $headerTopPadding 0 88px;
+    margin-bottom: 130px;
+
+    @include onTabletOrDesktop {
+      margin-bottom: 250px;
+
+      padding: $headerTopPadding 0 130px;
+    }
+
+    @include onDesktop {
+      padding: $headerTopPadding 0 204px;
+      background-image: url(../images/Cookie-desctop1.jpg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+    // margin: 52px 0 32px;
+    grid-column: 1 / 3;
+
+    @include onTabletOrDesktop {
+      grid-column: 1 / 9;
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__nav {
+    display: none;
+
+    &--phone {
+      padding-right: 30px;
+
+      background-image: url(../images/phone.svg);
+      height: 18px;
+      width: 18px;
+      background-repeat: no-repeat;
+    }
+
+    &-item {
+      list-style-type: none;
+      &:not(:first-child) {
+        margin-left: 64px;
+      }
+    }
+
+    &--link {
+      color: $color-text;
+      text-decoration: none;
+
+      @include hover(color, $color-text--input);
+
+      &-phone {
+        color: #f9512e;
+        font-weight: 500;
+
+        @include hover(color, #7F8096);
+      }
+    }
+
+    @include onDesktop {
+      text-decoration: none;
+      display: flex;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / 3;
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include onTabletOrDesktop {
+      grid-column: 1 / 4;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 3;
+
+    font-weight: 400;
+    font-style: normal;
+    font-size: 64px;
+    line-height: 54px;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    transition: transform 0.3s;
+    margin-bottom: 1px;
+
+    &:hover {
+      transform: scale(105%);
+    }
+
+    @include onTabletOrDesktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      grid-column: 1 / 9;
+      height: 350px;
+
+      background-image: url(../images/Cookie-removebg-preview.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      font-size: 80px;
+      line-height: 68px;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      grid-column: 1 / 9;
+      font-size: 136px;
+      line-height: 116px;
+
+      background-image: none;
+    }
+  }
+
+  &__cookie {
+    display: block;
+    grid-column: 1 / 3;
+    margin: 20px auto;
+    background-image: url(../images/Cookie-removebg-preview.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 310px;
+    height: 290px;
+
+    @include onTabletOrDesktop {
+      display: none;
+    }
+  }
+
+  .header__link-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+
+    background-image: url(../images/header-link.svg);
+    background-repeat: no-repeat;
+  }
+
+  &__link {
+    grid-column: 1 / 3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    color: #f9512e;
+    border: 1px solid #f9512e;
+    border-radius: 32px;
+    height: 56px;
+
+    @include onTabletOrDesktop {
+      grid-column: 3 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+
+    &:hover {
+      transition: all 0.3s;
+
+      .header__link-icon {
+        background-image: url(../images/header-link-hover.svg);
+      }
+
+      background-color: #f9512e;
+      color: #fff;
+    }
+
+    &:focus {
+      transition: all 0.3s;
+      background-color: #b2341a;
+    }
+  }
+}
