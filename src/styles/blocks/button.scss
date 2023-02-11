@@ -8,47 +8,6 @@
   width: max-content;
   padding-bottom: 6px;
 
-  &__icon {
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 16px;
-    width: 16px;
-    margin-right: 8px;
-
-    &--arrow {
-      background-image: url(../images/icons/arrow.svg);
-
-      .button:focus & {
-        background-image: url(../images/icons/arrow_focus.svg);
-      }
-    }
-
-    &--phone {
-      background-image: url(../images/icons/phone.svg);
-
-      .button:focus & {
-        background-image: url(../images/icons/phone_focus.svg);
-      }
-    }
-
-    &--cookie {
-      background-image: url(../images/icons/cookie_orange.svg);
-
-      .button:hover & {
-        background-image: url(../images/icons/cookie_white.svg);
-      }
-
-      .button:focus & {
-        background-image: url(../images/icons/cookie_white.svg);
-      }
-    }
-  }
-
-  &__text {
-    @include textUpper;
-  }
-
   &:hover {
     border-color: $accentOrange;
   }
@@ -75,5 +34,47 @@
       border-color: $darkOrange;
       color: #fff;
     }
+  }
+
+  &__icon {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+
+    &--arrow {
+      background-image: url(../images/icons/arrow.svg);
+
+      .button:focus & {
+        background-image: url(../images/icons/arrow_focus.svg);
+      }
+    }
+
+    &--phone {
+      background-image: url(../images/icons/phone.svg);
+
+      .button:focus & {
+        background-image: url(../images/icons/phone_focus.svg);
+      }
+    }
+
+    &--cookie {
+      background-image: url(../images/icons/cookie_orange.svg);
+      transition: all 0.3s;
+
+      .button:hover & {
+        background-image: url(../images/icons/cookie_white.svg);
+      }
+
+      .button:focus & {
+        background-image: url(../images/icons/cookie_white.svg);
+      }
+    }
+  }
+
+  &__text {
+    @include textUpper;
   }
 }
