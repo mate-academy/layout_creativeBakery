@@ -1,0 +1,47 @@
+.page {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-weight: normal;
+  color: $black;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    padding: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin-bottom: 104px;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    &--products {
+      @include difProperty(margin-bottom, 80px, 160px, 186px, 186px);
+    }
+
+    &--about {
+      @include difProperty(margin-bottom, 72px, 152px, 56px, 56px);
+    }
+  }
+
+  &__section-title {
+    @include textH2;
+  }
+}

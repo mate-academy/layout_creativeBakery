@@ -1,0 +1,105 @@
+.about {
+  &__container {
+    @include onDifDevices {
+      position: relative;
+    }
+  }
+
+  &__content {
+    @include onDifDevices {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &__info {
+    @include onDifDevices {
+      @include grid;
+    }
+
+    @include difProperty(margin-bottom, 64px, 72px, 146px, 146px);
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @include onDifDevices {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__text {
+    @include textBody;
+
+    @include onDifDevices {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__achievements {
+    background-image: url(../images/about_bg.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include onDifDevices {
+      background-image: none;
+    }
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+      row-gap: 80px;
+    }
+
+    @include onDifDesktops {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 24px;
+      padding-bottom: 300px;
+    }
+  }
+
+  &__fact {
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__fact-name {
+    @include textBody;
+  }
+
+  &__number {
+    margin-bottom: 8px;
+
+    @include textBig;
+  }
+
+  &__bg {
+    display: none;
+
+    @include onDifDevices {
+      z-index: 1;
+      display: block;
+      position: absolute;
+    }
+
+    @include onTablet {
+      width: 526px;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+    }
+
+    @include onDifDesktops {
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform:translate(-50%, -50%);
+    }
+  }
+}
