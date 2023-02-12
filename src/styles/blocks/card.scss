@@ -1,0 +1,57 @@
+.card {
+
+  &__picture {
+    margin-bottom: 16px;
+  }
+
+  &__image {
+    border-radius: 8px;
+    width: 100%;
+    max-height: 356px;
+    object-fit: cover;
+    transition: transform 0.3s;
+
+    @include onTablet {
+      max-height: 424px;
+    }
+
+    @include onDesktop {
+      max-height: 512px;
+    }
+
+    @include onDesktopXL {
+      max-height: 560px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__title {
+    @extend %uppercaseText;
+    color: $c-gray;
+    margin: 0 0 8px;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+
+    &::before {
+      width: 24px;
+      height: 24px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(../images/icon/Icon-arrow.svg);
+    }
+    &:hover::before {
+      background-image: url(../images/icon/Icon-arrow.svg);
+    }
+    &:focus::before {
+      background-image: url(../images/icon/Icon-arrow-focus.svg);
+    }
+  }
+}

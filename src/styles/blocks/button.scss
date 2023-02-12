@@ -1,0 +1,90 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 56px;
+
+  border: 2px solid $c-orange-accent;
+  border-radius: 32px;
+  outline: none;
+
+  @extend %uppercaseText;
+  text-decoration: none;
+  color: $c-orange-accent;
+
+  transition: color 0.3s, background-color 0.3s;
+
+  &:hover {
+    color: $c-white;
+    background-color: $c-orange-accent;
+  }
+
+  &:focus {
+    color: $c-white;
+    background-color: $c-orange-dark;
+    border-color: $c-orange-dark;
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+
+    background-image: url(../images/icon/Icon-cookie.svg);
+  }
+
+  &:hover::before {
+    background-image: url(../images/icon/Icon-cookie-hover.svg);
+  }
+
+  &:focus::before {
+    background-image: url(../images/icon/Icon-cookie-hover.svg);
+  }
+
+  &__link {
+    width: fit-content;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    background-color: transparent;
+
+    transition: border-bottom 0.3s;
+
+    &::before {
+      background-image: url(../images/icon/Icon-phone.svg);
+    }
+
+    &:hover {
+      color: $c-orange-accent;
+      background-color: transparent;
+      border-bottom: 1px solid $c-orange-accent;
+    }
+
+    &:focus {
+      color: $c-orange-dark;
+      background-color: transparent;
+    }
+
+    &:hover::before {
+      background-image: url(../images/icon/Icon-phone.svg);
+      border-bottom-color: $c-orange-accent;
+    }
+
+    &:focus::before {
+      background-image: url(../images/icon/Icon-phone-focus.svg);
+      border-bottom-color: $c-orange-dark;
+    }
+  }
+
+  &__simple {
+    &::before {
+      display: none;
+    }
+  }
+}

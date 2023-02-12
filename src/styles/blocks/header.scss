@@ -1,0 +1,143 @@
+.header {
+
+  &__content {
+    position: relative;
+    background-image: url(../images/Cookie.png);
+    background-size: 288px;
+    background-position: center 75%;
+    background-repeat: no-repeat;
+    min-height: 670px;
+
+    @include onTablet {
+      background-position: center 50%;
+    }
+
+    @include onDesktop {
+      background-position: center 40%;
+      background-size: 544px;
+    }
+
+    @include onDesktopXL {
+      background-position: center 40%;
+      background-size: 584px;
+    }
+
+    @include onTablet {
+      min-height: 750px;
+    }
+    @include onDesktop {
+      min-height: 700px;
+    }
+  }
+
+  &__top {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin: 0 -28px 80px;
+    }
+
+    @include onDesktop {
+      margin: 0 -12px 135px;
+    }
+
+    @include onDesktopXL {
+      margin: 0 -92px 135px;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+
+    @extend %bodyText;
+
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 146px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      max-width: 260px;
+      margin: 0 0 188px;
+    }
+    @include onDesktopXL {
+      max-width: 280px;
+      margin-bottom: 226px;
+    }
+  }
+
+  &__title {
+    display: block;
+    width: 100%;
+
+    text-align: center;
+    color: $c-orange-accent;
+    margin-bottom: 290px;
+
+    @include onTablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      font-size: 67px;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 740px) {
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      font-size: 113px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 136px;
+    }
+
+    @include onDesktopXL {
+      font-size: 116px;
+    }
+
+    @media (min-width: 1300px) {
+      font-size: 124px;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 144px;
+    }
+  }
+
+  &__button {
+    max-width: 326px;
+    margin: 0 auto;
+
+    @include onTablet {
+      position: absolute;
+      bottom: 78px;
+      left: 50%;
+      transform: translateX(-50%);
+      // margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      position: static;
+      bottom: auto;
+      left: auto;
+      transform: none;
+      max-width: 260px;
+      margin: 0;
+    }
+  }
+}
