@@ -15,7 +15,7 @@ function digitsCounterAnimate(digitsCounter) {
   const duration = parseInt(
     digitsCounter.dataset.digitsCounter
       ? digitsCounter.dataset.digitsCounter
-      : 1000
+      : 300
   );
   const startValue = parseInt(digitsCounter.innerHTML);
   const startPosition = 0;
@@ -51,7 +51,7 @@ function windowLoad() {
   }
 
   const options = {
-    threshold: 0.3,
+    threshold: 0.2,
   };
 
   const callBack = (entries) => {
