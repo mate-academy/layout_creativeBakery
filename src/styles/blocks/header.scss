@@ -21,8 +21,8 @@
   &__description {
     display: block;
     font-weight: 400;
-    font-style: 16px;
-    line-height: 24px;
+    font-size: 20px;
+    line-height: 30px;
     padding-top: 32px;
 
     @include onTablet {
@@ -32,18 +32,15 @@
 
   &__content {
     box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 
-    @include onTablet {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto;
-
-      @include onDesktop {
-        margin: 0 44px;
-      }
+    @include onDesktop {
+      margin: 0 44px;
     }
 
     &-title {
@@ -54,25 +51,29 @@
       letter-spacing: -5%;
       text-align: center;
       text-transform: uppercase;
-      margin: 32px 0 0;
+      margin: 70px 0 0;
 
       @include onTablet {
-        position: absolute;
-        top: calc(50% - 116px);
+        // position: absolute;
+        // top: calc(50% - 116px);
         font-size: 80px;
         line-height: 68px;
-        margin: 0;
+        margin-top: 40;
       }
 
       @include onDesktop {
         font-size: 116px;
         line-height: 96px;
-        margin: 0;
+        margin-top: 440;
       }
 
     }
 
     &-img {
+      width: 288px;
+      height: 288px;
+      margin: 0 auto;
+      z-index: -1;
 
       @include onTablet {
         width: 326px;
@@ -105,8 +106,8 @@
         }
 
         &:hover {
-          border: 1px solid #b2341a;
-          background-color: #b2341a;
+          border: 1px solid #74daff;
+          background-color: #74daff;
           color: #fff;
           cursor: pointer;
         }
@@ -128,7 +129,8 @@
       }
 
       &--img {
-        transform: translateY(15%);
+        transform: translateY(25%);
+        width: 18px;
       }
     }
   }
