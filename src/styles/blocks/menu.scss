@@ -1,0 +1,23 @@
+.menu {
+  position: relative;
+
+  &__content {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    transition-timing-function: ease-out;
+    background-color: $colorBlue;
+
+    &--hidden {
+      transition-timing-function: ease-in;
+      max-height: 100vh;
+    }
+  }
+
+  @include onNotebook {
+    display: none;
+  }
+}

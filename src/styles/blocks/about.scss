@@ -1,0 +1,52 @@
+.about {
+  display: grid;
+
+  background-image: url(../images/background-images/Crumbs.svg);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+
+  @include onTablet {
+    grid-template-columns: repeat(8, 1fr);
+
+    padding-top: 160px;
+    padding-bottom: 150px;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__description {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__table {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column: 1 / 9;
+    }
+
+    @include onNotebook {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__numb {
+    margin-bottom: 8px;
+  }
+
+  &__numb-descr {
+    margin-bottom: 48px;
+  }
+}

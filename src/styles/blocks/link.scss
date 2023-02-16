@@ -1,0 +1,35 @@
+.link {
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $colorOrange;
+
+  padding-bottom: 5px;
+  border-bottom: 1px solid $colorBlue;
+
+  @include hover (border-color, $colorOrange);
+
+  &:hover {
+    border-color: $colorOrange;
+  }
+
+  &::before {
+    display: inline-block;
+    transform: translateY(15%);
+    margin-right: 7px;
+  }
+
+  &--call {
+    &::before {
+      content: url(../images/favicons/Vector-call.svg);
+    }
+  }
+
+  &--arrow {
+    &::before {
+      content: url(../images/favicons/Vector-arrow.svg);
+    }
+  }
+}

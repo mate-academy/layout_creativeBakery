@@ -1,0 +1,98 @@
+.footer {
+  min-width: $minWidth;
+  max-width: $maxWidth;
+
+  padding: 61px 16px 56px;
+
+  @include onTablet {
+    display: grid;
+    grid-template: repeat(4, max-content) / repeat(8, 1fr);
+
+    padding: 93px 44px 93;
+  }
+
+  &__logo {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    margin: 0;
+    margin-bottom: 40px;
+    list-style: none;
+
+    &--menu {
+      @include onTablet {
+        grid-column-start: 1;
+        grid-row-start: 2;
+      }
+    }
+
+    &--call {
+      @include onTablet {
+        grid-column: 5 / 7;
+        grid-row-start: 2;
+      }
+    }
+
+    &--email {
+      @include onTablet {
+        grid-column: 5 / 7;
+        grid-row-start: 3;
+      }
+
+      @include onNotebook {
+        grid-column: 7 / 9;
+        grid-row-start: 2;
+      }
+    }
+
+    &-item {
+      margin-bottom: 16px;
+    }
+
+    &-link {
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      color: $colorWhite;
+
+      @include hover (text-decoration, underline);
+    }
+  }
+
+  &__contact {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 5 / 9;
+      grid-row: 1;
+    }
+  }
+
+  &__social {
+    display: flex;
+    margin-bottom: 42px;
+
+    list-style: none;
+
+    @include onTablet {
+      grid-column: 1;
+      grid-row: 4;
+
+      margin-bottom: 0;
+    }
+
+    &-item {
+      margin-right: 40px;
+
+      @include hover (filter, brightness(1000%));
+    }
+  }
+
+  &__copyright {
+    @include onTablet {
+      grid-column: 5 / 9;
+      grid-row: 4;
+    }
+  }
+}

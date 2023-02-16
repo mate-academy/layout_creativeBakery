@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $headerHeight;
+
+  padding: 0 20px;
+
+  @include onNotebook {
+    $headerHeight: 88px;
+    height: $headerHeight;
+    padding: 0 36px;
+  }
+
+  &__burgerMenu {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/favicons/Vector-burger-menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+    transition: background-image 0.3s;
+
+    @include onNotebook {
+      display: none;
+    }
+
+    &:hover {
+      background-image: url(../images/favicons/Vector-burger-menu-hover.svg);
+    }
+
+    &--hidden {
+      background-image: url(../images/favicons/Vector-cross-focus.svg);
+
+      &:hover {
+        background-image: url(../images/favicons/Vector-cross.svg);
+      }
+    }
+  }
+}

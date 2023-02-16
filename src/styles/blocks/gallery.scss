@@ -1,0 +1,52 @@
+.gallery {
+  padding-top: 120px;
+
+  @include onTablet {
+    padding-top: 240px;
+  }
+
+  @include onNotebook {
+    padding-top: 220px;
+  }
+
+  @include onDesktop {
+    padding-top: 100px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    margin-bottom: 56px;
+  }
+
+  &__content {
+    display: grid;
+
+    @include onTablet {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+
+  &__section {
+    display: grid;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+
+      grid-column: 1 / 9;
+    }
+
+    @include onNotebook {
+      grid-column: 1 / 7;
+    }
+
+    &--right {
+      @include onNotebook {
+        grid-column: 3 / 9;
+      }
+    }
+  }
+}
