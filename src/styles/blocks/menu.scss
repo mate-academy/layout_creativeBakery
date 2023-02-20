@@ -1,5 +1,9 @@
 .menu {
 
+  @include onDesctop {
+    display: none;
+  }
+
   &__content {
     height: 100vh;
     padding-top: 20px;
@@ -16,6 +20,10 @@
     list-style: none;
     padding: 0;
     margin: 0;
+
+    &_hidden {
+      flex-direction: row;
+    }
   }
 
   &__item {
@@ -32,6 +40,19 @@
 
     &:hover {
       border-bottom-color: $mainColor;
+    }
+
+    &_hidden {
+      margin-right: 64px;
+      margin-bottom: 0;
+
+      &:nth-last-of-type(2) {
+        margin-bottom: 0;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
   }
 
