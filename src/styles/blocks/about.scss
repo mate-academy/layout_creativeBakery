@@ -1,0 +1,105 @@
+.about {
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: #ffeefc;
+  background-blend-mode: multiply;
+  background-image: url(../images/Photos/Crumbs.jpg);
+
+  @include onTablet {
+    @include grid;
+    padding-bottom: 150px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 350px;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+    @extend %h2;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__info {
+    margin-bottom: 64px;
+    @extend %body-text;
+    color: $c-black;
+
+    @include onTablet {
+      grid-column: 5 / 9;
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 9;
+      margin-bottom: 144px;
+    }
+  }
+
+  &__details {
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    &-info {
+      &-num {
+        margin-bottom: 8px;
+        @extend %big-text;
+        color: $c-a-orange;
+      }
+
+      &-item {
+        @extend %body-text;
+        color: $c-black;
+      }
+
+      @include onTablet {
+        &:nth-of-type(1) {
+          grid-column: 1 / 5;
+
+          @include onDesktop {
+            grid-column: 1 / 3;
+          }
+        }
+
+        &:nth-of-type(2) {
+          grid-column: 5 / 9;
+
+          @include onDesktop {
+            grid-column: 3 / 5;
+          }
+        }
+
+        &:nth-of-type(3) {
+          grid-column: 1 / 5;
+
+          @include onDesktop {
+            grid-column: 5 / 7;
+          }
+        }
+
+        &:nth-of-type(4) {
+          grid-column: 5 / 9;
+
+          @include onDesktop {
+            grid-column: 7 /9;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.icon {
+  display: block;
+  width: 100%;
+  padding-bottom: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include topActions;
+  transition: all $trans-time;
+
+  &--menu {
+    background-image: url(../images/Menu.svg);
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &--cross {
+    background-image: url(../images/Cross.svg);
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &--phone {
+    width: 18px;
+    height: 18px;
+    background-image: url(../images/Phone.svg);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}

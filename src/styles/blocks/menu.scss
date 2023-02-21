@@ -1,0 +1,50 @@
+.menu {
+  height: 100vh;
+  margin: 0;
+  background-color: #ffeefc;
+
+  &__top {
+    @include topActions;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__link {
+    @extend %body-text;
+    text-decoration: none;
+    color: $c-black;
+    background-image: linear-gradient($c-a-orange 0 0);
+    background-size: 200% 1px;
+    background-position: 200% 100%;
+    background-repeat: no-repeat;
+    transition: all $trans-time;
+
+    &:hover {
+      color: $c-a-orange;
+      background-size: 100% 1px;
+    }
+
+    &--call {
+      @include phone--call;
+      transition: transform $trans-time;
+
+      &:hover {
+        transform: scale($scale-menu);
+      }
+    }
+  }
+}

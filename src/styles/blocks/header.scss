@@ -1,0 +1,66 @@
+.header {
+  &__logo {
+    height: 25px;
+  }
+
+  &__top {
+    @include topActions;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav {
+    &--hidden {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 64px;
+    transition: all $trans-time;
+
+    &:hover {
+      transform: scale($scale-menu);
+    }
+  }
+
+  &__link {
+    @extend %body-text;
+    text-decoration: none;
+    color: $c-black;
+    background-image: linear-gradient($c-a-orange 0 0);
+    background-size: 200% 1px;
+    background-position: 200% 100%;
+    background-repeat: no-repeat;
+    transition: all $trans-time;
+
+    &:hover {
+      color: $c-a-orange;
+      background-size: 100% 1px;
+      transform: scale($scale-menu);
+    }
+
+    &--call {
+      @include phone--call;
+      transition: transform $trans-time;
+
+      &:hover {
+        transform: scale($scale-menu);
+      }
+    }
+  }
+}
