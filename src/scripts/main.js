@@ -23,16 +23,18 @@ const sectionCard6
 const aboutSectionTitle
   = document.querySelector('.section__title.grid__item_tablet_1-4');
 const foundationYear
-  = document.querySelector('.statistics__foundation');
+  = document.querySelector('.section__statistics_foundation');
 const storesQnt
-  = document.querySelector('.statistics__stores');
+  = document.querySelector('.section__statistics_stores');
 const companiesQnt
-  = document.querySelector('.statistics__companies');
+  = document.querySelector('.section__statistics_companies');
 const clientsQnt
-  = document.querySelector('.statistics__clients');
+  = document.querySelector('.section__statistics_clients');
+const socialNetworkLogos
+  = document.querySelectorAll('.social-networks__logo');
 
 function layoutUpdater(viewportWidth) {
-  if (viewportWidth >= 1280) {
+  if (viewportWidth >= 1200) {
     headerText.classList.toggle('grid__item_tablet_1-4');
     headerText.classList.toggle('grid__item_desctop_1-2');
 
@@ -64,7 +66,7 @@ function layoutUpdater(viewportWidth) {
     sectionCard6.classList.toggle('grid__item_desctop_4-6');
 
     aboutSectionTitle.classList.toggle('grid__item_tablet_1-4');
-    aboutSectionTitle.classList.toggle('grid__item_desctop_1-3');
+    aboutSectionTitle.classList.toggle('grid__item_desctop_1-4');
 
     foundationYear.classList.toggle('grid__item_tablet_1-4');
     foundationYear.classList.toggle('grid__item_desctop_1-2');
@@ -87,5 +89,13 @@ window.addEventListener('hashchange', () => {
     document.body.classList.add('page__body_with-menu');
   } else {
     document.body.classList.remove('page__body_with-menu');
+  }
+});
+
+socialNetworkLogos.forEach((logo, ind) => {
+  if (ind !== socialNetworkLogos.length) {
+    logo.addEventListener('blur', () => {
+      socialNetworkLogos[ind + 1].focus();
+    });
   }
 });

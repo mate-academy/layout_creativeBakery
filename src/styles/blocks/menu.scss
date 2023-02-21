@@ -31,7 +31,7 @@
     transition: border-bottom $transitionDuration;
 
     &:not(:last-of-type) {
-      border-bottom: 4px solid transparent;
+      border-bottom: 2px solid transparent;
     }
 
     &:nth-last-of-type(2) {
@@ -39,6 +39,10 @@
     }
 
     &:hover {
+      border-bottom-color: $mainColor;
+    }
+
+    &:focus-within {
       border-bottom-color: $mainColor;
     }
 
@@ -69,7 +73,7 @@
     }
 
     &:focus {
-      color: $darkOrange;
+      color: $mainColor;
     }
 
     &_contact {
@@ -79,6 +83,7 @@
       letter-spacing: 0.02em;
       text-transform: uppercase;
       color: $mainColor;
+      transition-duration: $transitionDuration;
 
       &::before {
         content: "";
@@ -91,6 +96,23 @@
         background-repeat: no-repeat;
         height: 18px;
         width: 18px;
+        transition-duration: $transitionDuration;
+      }
+
+      &:hover:before {
+        opacity: 0.5;
+      }
+
+      &:hover {
+        color: #fba28f;
+      }
+
+      &:focus:before {
+        opacity: 0.5;
+      }
+
+      &:focus {
+        color: #fba28f;
       }
     }
   }
