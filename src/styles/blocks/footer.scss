@@ -16,7 +16,6 @@
 
   &__block {
     &--menu {
-      text-transform: uppercase;
       @include onTablet {
         grid-column: 1 / 5;
         height: 100%;
@@ -116,6 +115,12 @@
   &__link {
     text-decoration: none;
     color: $colorWhite;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom $transition-time ease;
+
+    &:hover {
+      border-color: $colorWhite;
+    }
 
     &--email {
       margin-bottom: 42px;
@@ -133,7 +138,7 @@
     }
 
     @include onDesktop {
-     margin-top: 48px;
+      margin-top: 48px;
     }
 
     @include onMobile {
