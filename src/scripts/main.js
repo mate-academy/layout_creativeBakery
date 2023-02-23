@@ -33,8 +33,10 @@ const clientsQnt
 const socialNetworkLogos
   = document.querySelectorAll('.social-networks__logo');
 
-function layoutUpdater(viewportWidth) {
-  if (viewportWidth >= 1200) {
+function layoutUpdater() {
+  const viewport = window.innerWidth;
+
+  if (viewport >= 1200) {
     headerText.classList.toggle('grid__item_tablet_1-4');
     headerText.classList.toggle('grid__item_desctop_1-2');
 
@@ -78,11 +80,11 @@ function layoutUpdater(viewportWidth) {
     companiesQnt.classList.toggle('grid__item_desctop_5-6');
 
     clientsQnt.classList.toggle('grid__item_tablet_5-8');
-    clientsQnt.classList.toggle('grid__item_tablet_7-8');
+    clientsQnt.classList.toggle('grid__item_desctop_7-8');
   }
 }
 
-window.addEventListener('resize', layoutUpdater(window.innerWidth));
+window.addEventListener('resize', layoutUpdater());
 
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#menu') {
