@@ -1,0 +1,117 @@
+.card {
+  margin: 0 0 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 432px;
+  font-family: "Inter", sans-serif;
+
+  @include onDesktop {
+    width: 402px;
+  }
+
+  @include onTablet {
+    width: 328px;
+  }
+
+  @include middleSize {
+    width: 260px;
+  }
+
+  @include onPhone {
+    margin: 0 auto 56px;
+    width: 288px;
+  }
+
+  &__picture {
+    padding: 0 0 16px;
+    border-radius: 8px;
+    transition-duration: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      transition-duration: 0.3s;
+      border-radius: 25%;
+    }
+  }
+
+  &__name {
+    margin: 0;
+    padding: 0 0 8px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+  }
+
+  &__discription {
+    margin: 0;
+    padding: 0 0 24px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+  }
+
+  &__button {
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    padding: 0 0 8px;
+    font-family: "Inter", sans-serif;
+
+    width: 84px;
+    height: 32px;
+    text-align: right;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $colorOrange;
+    border: transparent;
+    background-color: $bodyColor;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      background-color: $colorOrange;
+      transform: scaleX(0);
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+      background-color: $colorOrange;
+    }
+
+    &:focus::after {
+      transform: scaleX(1);
+      background-color: #b3341a;
+    }
+
+    &:disabled {
+      color: #fba28f;
+    }
+
+    &-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+.header {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__landing {
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    position: absolute;
+    align-self: center;
+    margin: 0;
+    font-weight: 400;
+    font-size: 144px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $colorBlack;
+    text-align: center;
+
+    @include onDesktop {
+      font-size: 136px;
+      line-height: 85%;
+    }
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 85%;
+    }
+
+    @include onPhone {
+      position: static;
+      display: block;
+      font-size: 64px;
+      line-height: 85%;
+      text-align: center;
+    }
+  }
+
+  &__description {
+    position: relative;
+    top: -20%;
+    margin-bottom: 40px;
+    width: 280px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $colorBlack;
+
+    @include onDesktop {
+      width: 260px;
+    }
+
+    @include onTablet {
+      width: 280px;
+      top: -25%;
+    }
+
+    @include onPhone {
+      display: block;
+      position: static;
+      width: 100%;
+      margin: 1px auto 32px;
+      text-align: center;
+    }
+  }
+
+  &__button {
+    position: relative;
+    top: 15%;
+
+    @include onTablet {
+      margin: 0 auto;
+      top: 25%;
+    }
+
+    @include onPhone {
+      position: static;
+      display: block;
+      height: 56px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image {
+    align-self: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/Cookie.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+
+    @include onDesktop {
+      background-image: url(../images/CookieDesktop.png);
+    }
+
+    @include onTablet {
+      background-image: url(../images/CookieTablet.png);
+    }
+
+    @include onPhone {
+      position: static;
+      display: block;
+      background-image: url(../images/CookiePhone.png);
+      background-size: contain;
+    }
+  }
+}

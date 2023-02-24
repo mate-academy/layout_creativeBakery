@@ -1,0 +1,234 @@
+.footer {
+  background-color: $colorBlack;
+
+  &__section {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+
+    @include onPhone {
+      display: block;
+    }
+  }
+
+  &__menu {
+    grid-column: 1 / 5;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    padding-top: 98px;
+    padding-bottom: 60px;
+
+    @include onPhone {
+      padding: 61px 0 44px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    transition-duration: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+      transition-duration: 0.3s;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+
+    &-header {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #7f8096;
+    }
+
+    &-item {
+      list-style: none;
+      padding-bottom: 16px;
+
+      &--lastMenu {
+        padding-bottom: 50px;
+
+        @include onTablet {
+          padding-bottom: 104px;
+        }
+
+        @include onPhone {
+          padding-bottom: 0;
+        }
+      }
+
+      &--lastContact {
+        padding-bottom: 88px;
+
+        @include onTablet {
+          padding-bottom: 35px;
+        }
+
+        @include onPhone {
+          padding-bottom: 40px;
+        }
+      }
+    }
+
+    &-email {
+      list-style: none;
+      padding-bottom: 16px;
+
+      @include onTablet {
+        padding-bottom: 48px;
+      }
+
+      @include onPhone {
+        padding-bottom: 42px;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: 88px;
+
+    @include onPhone {
+      display: none;
+    }
+
+    &-background {
+      display: inline-block;
+      height: 24px;
+      width: 24px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      transition-duration: 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+        transition-duration: 0.3s;
+      }
+    }
+
+    &-facebook {
+      background-image: url(../images/icons/facebook_red.png);
+    }
+
+    &-insta {
+      background-image: url(../images/icons/insta_red.png);
+    }
+
+    &-twitter {
+      background-image: url(../images/icons/twitter_red.png);
+
+      &:hover {
+        background-image: url(../images/icons/twitter_white.png);
+      }
+    }
+
+    &-hidden {
+      @include fullScreen {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+
+      @include onPhone {
+        display: flex;
+        align-items: flex-start;
+        gap: 32px;
+        margin: 0;
+        padding-bottom: 42px;
+      }
+    }
+  }
+
+  &__contacts {
+    grid-column: 5 / 9;
+
+    &-title {
+      margin: 0;
+      padding: 88px 0 57px;
+      font-weight: 400;
+      font-size: 72px;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #fff;
+
+      @include onTablet {
+        font-size: 56px;
+      }
+
+      @include onPhone {
+        padding: 64px 0 40px;
+        font-size: 48px;
+      }
+    }
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__call {
+    grid-column: 1 / 3;
+  }
+
+  &__email {
+    grid-column: 3 / 5;
+  }
+
+  &__copyright {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #7f8096;
+
+    @include onPhone {
+      display: none;
+    }
+
+    &-hidden {
+      @include fullScreen {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+
+      @include onPhone {
+        margin: 0;
+        padding-bottom: 56px;
+        display: block;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.01em;
+        color: #7f8096;
+      }
+    }
+  }
+}
