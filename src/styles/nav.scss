@@ -30,11 +30,31 @@
   }
   
   &__link {
+    position: relative;
     text-decoration: none;
     color: #1c1a26;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      background-color: $colorBlack;
+      transform: scaleX(0);
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
 
     &-contacts {
       color: #f9512e;
@@ -47,6 +67,25 @@
 
       background-image: url(../images/phone.png);
       background-repeat: no-repeat;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        background-color: $colorOrange;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+  
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
     }
   }
 }
