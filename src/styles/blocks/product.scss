@@ -1,0 +1,114 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 64px;
+
+  @include onTablet {
+    margin-bottom: 88px;
+  }
+
+  &--last {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include onSmallDesktop {
+      margin-bottom: 186px;
+    }
+  }
+
+  &__photo {
+    border-radius: 8px;
+
+    transition: all $transition-duration;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &__title {
+    @extend %UPPERCASE-Inter;
+
+    margin-top: 16px;
+
+    color: $color-grey;
+  }
+
+  &__description {
+    @extend %body-text-Inter;
+
+    margin-top: 8px;
+
+    color: $color-black;
+  }
+
+  &__container {
+    margin: 24px 0 0;
+  }
+
+  &__link {
+    @extend %UPPERCASE-Inter;
+
+    position: relative;
+
+    padding: 0 0 4px 26px;
+
+    text-decoration: none;
+    color: $color-accent-orange;
+    outline: none;
+
+    border-bottom: 0 solid $color-accent-orange;
+
+    transition: all $transition-duration;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 5.7%;
+      right: 79%;
+
+      display: block;
+      width: 16px;
+      height: 16px;
+
+      mask: url("../images/icons/arrow.svg") center;
+      -webkit-mask: url("../images/icons/arrow.svg") center;
+      background-color: $color-accent-orange;
+
+      transition: all $transition-duration;
+    }
+
+    &:visited {
+      color: $color-light-orange;
+
+      border-bottom: 0 solid $color-light-orange;
+
+      &::before {
+        background-color: $color-light-orange;
+      }
+    }
+
+    &:hover {
+      color: $color-accent-orange;
+
+      border-bottom: 1px solid $color-accent-orange;
+
+      &::before {
+        background-color: $color-accent-orange;
+      }
+    }
+
+    &:focus {
+      color: $color-dark-orange;
+
+      border-bottom: 1px solid $color-dark-orange;
+
+      &::before {
+        background-color: $color-dark-orange;
+      }
+    }
+  }
+}

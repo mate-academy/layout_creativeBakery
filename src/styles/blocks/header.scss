@@ -1,0 +1,152 @@
+.header {
+  background-color: $color-light-pink;
+
+  &__content {
+    isolation: isolate;
+
+    &-text {
+      @extend %body-text-Inter;
+
+      padding-top: 48px;
+
+      text-align: center;
+
+      @include onTablet {
+        padding-top: 96px;
+
+        text-align: left;
+      }
+
+      @include onSmallDesktop {
+        padding-top: 150px;
+      }
+
+      @include onBigDesktop {
+        padding-top: 180px;
+      }
+    }
+
+    &-title {
+      @extend %main-styles;
+
+      margin-top: 32px;
+
+      font-size: 48px;
+      text-align: center;
+      color: $color-accent-orange;
+
+      transition: all $transition-duration;
+
+      @include onTablet {
+        margin-top: 0;
+
+        font-size: 80px;
+        align-self: center;
+      }
+
+      @include onSmallDesktop {
+        font-size: 11.2vw;
+        align-self: unset;
+
+        transform: translateY(-15%);
+      }
+
+      @include onBigDesktop {
+        margin-top: 5px;
+
+        font-size: 144px;
+
+        transform: translateY(-10%);
+      }
+    }
+
+    &-photo {
+      position: absolute;
+
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      z-index: -1;
+
+      @include onSmallDesktop {
+        margin-top: 40px;
+      }
+    }
+
+    &-button-photo {
+      @extend %UPPERCASE-Inter;
+
+      display: block;
+      width: 100%;
+      height: 56px;
+
+      line-height: 55px;
+      text-decoration: none;
+      text-align: center;
+      color: $color-accent-orange;
+
+      background-color: $color-light-pink;
+      border: 2px solid $color-accent-orange;
+      border-radius: 32px;
+
+      transition: all $transition-duration;
+
+      &::before {
+        content: "";
+        transform: translateY(20%);
+
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        padding-right: 6px;
+
+        mask: url("../images/icons/favicon.svg") no-repeat center;
+        -webkit-mask: url("../images/icons/favicon.svg") no-repeat center;
+        background-color: $color-accent-orange;
+
+        transition: all $transition-duration;
+      }
+
+      &:visited {
+        color: $color-light-orange;
+
+        background-color: $color-light-pink;
+        border: 2px solid $color-light-orange;
+
+        &::before {
+          background-color: $color-light-orange;
+        }
+      }
+
+      &:hover {
+        color: $color-white;
+        background-color: $color-accent-orange;
+
+        &::before {
+          background-color: $color-white;
+        }
+      }
+
+      &:focus {
+        color: $color-white;
+
+        background-color: $color-dark-orange;
+        border: 2px solid $color-dark-orange;
+
+        &::before {
+          background-color: $color-white;
+        }
+      }
+
+      @include onTablet {
+        margin-top: 100px;
+      }
+
+      @include onSmallDesktop {
+        margin-top: 0;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}

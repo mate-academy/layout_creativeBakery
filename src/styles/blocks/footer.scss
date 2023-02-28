@@ -1,0 +1,103 @@
+.footer {
+  padding: 60px 0 56px;
+
+  color: $color-white;
+  background-color: $color-black;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 40px;
+
+    &-top {
+      @extend %UPPERCASE-Inter;
+
+      color: $color-grey;
+    }
+  }
+
+  &__contact-us-title {
+    @extend %main-styles;
+
+    margin-top: 64px;
+
+    font-size: 48px;
+
+    @include onTablet {
+      margin-top: 0;
+
+      font-size: 56px;
+    }
+
+    @include onSmallDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 168px;
+    height: 40px;
+
+    mask: url("../images/icons/logo.svg") no-repeat center;
+    -webkit-mask: url("../images/icons/logo.svg") no-repeat center;
+    background-color: $color-white;
+
+    transition: all $transition-duration;
+
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 32px;
+    margin-top: 42px;
+  }
+
+  &__icons {
+    width: 24px;
+    height: 24px;
+
+    background-color: $color-accent-orange;
+
+    transition: all $transition-duration;
+
+    &:hover {
+      background-color: $color-white;
+    }
+
+    &:focus {
+      background-color: $color-white;
+    }
+
+    &--facebook {
+      mask: url("../images/icons/facebook.svg") no-repeat center;
+      -webkit-mask: url("../images/icons/facebook.svg") no-repeat center;
+    }
+
+    &--instagram {
+      mask: url("../images/icons/instagram.svg") no-repeat center;
+      -webkit-mask: url("../images/icons/instagram.svg") no-repeat center;
+    }
+
+    &--twitter {
+      mask: url("../images/icons/twitter.svg") no-repeat center;
+      -webkit-mask: url("../images/icons/twitter.svg") no-repeat center;
+    }
+  }
+
+  &__end {
+    @extend %body-text-Inter;
+
+    padding: 42px 0;
+    
+    color: $color-grey;
+  }
+}

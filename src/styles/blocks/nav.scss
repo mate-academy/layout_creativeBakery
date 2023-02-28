@@ -1,0 +1,67 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    width: 128px;
+    height: 24px;
+
+    transition: all $transition-duration;
+
+    &:hover {
+      transform: scale(1.06);
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include onSmallDesktop {
+      display: flex;
+      gap: 64px;
+    }
+  }
+
+  &__icon-menu {
+    width: 20px;
+    height: 8px;
+
+    align-self: center;
+
+    mask: url("../images/icons/menu.svg") center;
+    -webkit-mask: url("../images/icons/menu.svg") center;
+    background-color: $color-black;
+
+    transition: all $transition-duration;
+
+    &:hover {
+      background-color: $color-accent-orange;
+    }
+
+    @include onSmallDesktop {
+      display: none;
+    }
+  }
+
+  &__icon-cross {
+    width: 13px;
+    height: 13px;
+
+    align-self: center;
+
+    mask: url("../images/icons/cross.svg") center;
+    -webkit-mask: url("../images/icons/cross.svg") center;
+
+    background-color: $color-black;
+
+    transition: all $transition-duration;
+
+    &:hover {
+      background-color: $color-accent-orange;
+    }
+
+    @include onSmallDesktop {
+      display: none;
+    }
+  }
+}
