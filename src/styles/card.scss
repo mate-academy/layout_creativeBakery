@@ -1,0 +1,56 @@
+.card {
+  margin-bottom: 64px;
+
+  &--last {
+    margin-bottom: 0;
+  }
+
+  @include onTablet {
+    margin-bottom: 0;
+  }
+
+  &__photo {
+    margin-bottom: 16px;
+    transition-duration: $transition-time;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__img {
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  &__category {
+    @extend %uppercase;
+    color: $c-grey;
+    margin-bottom: 8px;
+  }
+
+  &__about {
+    margin-bottom: 24px;
+  }
+
+  &__order {
+    position: relative;
+    @extend %uppercase;
+    text-decoration: none;
+    color: $c-accent-orange;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+    transition: $transition-time;
+
+    &:hover {
+      color: $c-dark-orange;
+      text-shadow: 1px 1px 2px pink;
+    }
+
+    &:hover path {
+      fill: $c-dark-orange;
+    }
+  }
+}
