@@ -1,0 +1,39 @@
+.button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 56px;
+  max-width: 288px;
+  border: 2px solid $accent-orange;
+  border-radius: 32px;
+
+  @include hover;
+  @include focus;
+
+  &__svg {
+    @include square (20px);
+
+    background-image: url(../images/favicon.png);
+    background-repeat: no-repeat;
+  }
+
+  &__link {
+    display: grid;
+    grid-template-columns: 20px 106px;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    justify-items: start;
+
+    padding: 20px 77px 20px 105px;
+  }
+
+  &__text {
+    @include button-text;
+    white-space: nowrap;
+  }
+}

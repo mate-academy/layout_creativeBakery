@@ -1,0 +1,35 @@
+.page {
+  &__menu {
+    position: fixed;
+    @include poz-0;
+    right: 0;
+
+    transition: transform 1s;
+    transform: translateY(-100%);
+
+    @include onDesktop {
+      position: absolute;
+      @include poz-0;
+      transform: translateY(0);
+    }
+
+    @include onLargeDesktop {
+      position: absolute;
+      @include poz-0;
+      transform: translateY(0);
+    }
+
+    &:target {
+      transform: translateX(0);
+      // transition: transform 0.5s;
+      z-index: 1;
+      background-color: $light-pink;
+    }
+  }
+
+  &__body {
+    margin: 0;
+    width: auto;
+    max-width: 100%;
+  }
+}

@@ -4,3 +4,129 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onMobile {
+  @media (max-width: $maxMobileWidth) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $minTabletWidth) and (max-width: $maxTabletWidth) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $minDesktopWidth) and (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin onLargeDesktop {
+  @media (min-width: $desktop-plus) {
+    @content;
+  }
+}
+
+@mixin header ($_font-size) {
+  font-style: normal;
+  font-weight: 400;
+  font-size: $_font-size;
+  line-height: 85%;
+
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  letter-spacing: -0.01em;
+
+  color: $black;
+}
+
+@mixin button-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: $accent-orange;
+  text-decoration: none;
+}
+
+@mixin about-us-size--tablet {
+  @include onTablet {
+    width: $about-us-card-size--tablet;
+  }
+}
+
+@mixin hover {
+  &:hover {
+    background-color: $accent-orange;
+    transition: transform 1s;
+  }
+
+  &:hover .button__text {
+    color: $white;
+    transition: transform 1s;
+  }
+
+  &:hover .button__svg {
+    background-image: url(../images/favicon-white.png);
+    transition: transform 1s;
+  }
+}
+
+@mixin hover-img {
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 1s;
+  }
+
+  transform: scale(1);
+  transition: transform 1s;
+}
+
+@mixin focus {
+  &:focus {
+    background-color: $dark-orange;
+  }
+
+  &:focus .button__text {
+    color: $white;
+  }
+
+  &:focus .button__svg {
+    background-image: url(../images/favicon-white.png);
+  }
+}
+
+@mixin footer-hover-link {
+  &:hover {
+    color: $accent-orange;
+  }
+}
+
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+}
+
+//zero positioning
+@mixin poz-0 {
+  top: 0;
+  left: 0;
+}
+
+@mixin color-links-hover ($link-color) {
+  &:hover {
+    color: $link-color;
+  }
+}

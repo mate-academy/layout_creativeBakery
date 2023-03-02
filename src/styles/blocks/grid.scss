@@ -1,0 +1,159 @@
+.grid {
+  display: block;
+
+  &--desktop {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $gap-horizontal $gap;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(8, 118px);
+      gap: $gap-horizontal $gap;
+    }
+
+    @include onLargeDesktop {
+      display: grid;
+      grid-template-columns: repeat(8, 128px);
+      gap: $gap-horizontal $gap;
+    }
+  }
+
+  &__item {
+    height: 492px;
+    margin-bottom: 72px;
+
+    @include onTablet {
+      height: 560px;
+      width: 328px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 402px;
+      height: 648px;
+
+      margin-bottom: 0;
+
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end};
+          }
+        }
+      }
+    }
+
+    @include onLargeDesktop {
+      width: 432px;
+      height: 696px;
+
+      margin-bottom: 0;
+
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end};
+          }
+        }
+      }
+    }
+  }
+
+  &__item-img-container {
+    height: 356px;
+    width: 288px;
+    object-fit: contain;
+
+    @include hover-img;
+
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 100%;
+    }
+
+    @include onTablet {
+      height: 424px;
+      width: 328px;
+    }
+
+    @include onDesktop {
+      height: 512px;
+      width: 402px;
+    }
+
+    @include onLargeDesktop {
+      height: 560px;
+      width: 432px;
+    }
+  }
+
+  &__item-text-container {
+    margin-top: 16px;
+  }
+
+  &__item-title {
+    margin: 0;
+
+    @include onMobile {
+      text-align: center;
+    }
+
+    @include button-text;
+    color: $grey;
+  }
+
+  &__item--paragraph {
+    margin: 8px 0 16px;
+
+    @include text;
+
+    @include onTablet {
+      width: 100%;
+    }
+
+    @include onDesktop {
+      width: 402px;
+      height: 48px;
+    }
+  }
+
+  &__item-button-arrow {
+    display: flex;
+    @include square (16px);
+
+    padding: 4px;
+  }
+
+  &__buttom-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item-button {
+    display: flex;
+    padding: 8px 0;
+
+    align-items: center;
+
+    @include button-text;
+    @include hover-img;
+  }
+
+  &__item-img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+
+    @include onMobile {
+      width: 288px;
+    }
+  }
+}
