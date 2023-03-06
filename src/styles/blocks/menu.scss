@@ -1,0 +1,48 @@
+.menu {
+  background-color: $color-bg;
+  z-index: 10;
+
+  &__content {
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  &__top {
+    margin-bottom: 132px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      @extend %accent-text;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    background-image: linear-gradient($color-bg, $color-accent);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 3px;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      color: $color-accent;
+      background-size: 100% 3px;
+    }
+  }
+}
