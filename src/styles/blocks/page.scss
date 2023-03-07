@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: $colorBlack;
+
+  background-color: $colorPink;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    width: 100%;
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin-bottom: 104px;
+
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 290px;
+    }
+  }
+
+  &__main {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 350px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transform: translateX(100%);
+    transition: transform $animationDuration;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

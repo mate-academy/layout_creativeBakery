@@ -1,0 +1,136 @@
+.header {
+  height: max-content;
+
+  &__top-actions {
+    margin: 0 auto;
+  }
+
+  &__hero {
+    @include onTablet {
+      position: relative;
+    }
+  }
+
+  &__text {
+    margin: 32px 0 0;
+
+    text-align: center;
+
+    @include onTablet {
+      margin-top: 80px;
+
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-top: 144px;
+
+      text-align: left;
+    }
+  }
+
+  &__heading {
+    margin: 32px 0 0;
+
+    font-size: 64px;
+    font-weight: inherit;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $colorOrange;
+
+    @include onTablet {
+      margin-top: 146px;
+
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+
+      font-size: 136px;
+    }
+  }
+
+  &__hero-background-wrapper {
+    width: 100%;
+
+    @include onTablet {
+      position: absolute;
+      top: 110px;
+      left: 50%;
+      z-index: -1;
+      transform: translateX(-50%);
+
+      max-width: 400px;
+    }
+
+    @include onDesktop {
+      top: 0;
+
+      max-width: 590px;
+    }
+  }
+
+  &__hero-background {
+    width: 100%;
+
+    padding-bottom: 100%;
+    margin: 0 auto;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/hero.png);
+
+    overflow: hidden;
+  }
+
+  &__learn-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $colorOrange;
+
+    border: 2px solid $colorOrange;
+    border-radius: 32px;
+
+    transition-property: color, background-color, fill, border-color;
+    transition-duration: $animationDuration;
+
+    &:hover {
+      color: #fff;
+      background-color: $colorOrange;
+
+      & .icon--cookie {
+        fill: $colorWhite;
+      }
+    }
+
+    &:active {
+      background-color: $colorDarkOrange;
+
+      border-color: $colorDarkOrange;
+    }
+
+    @include onTablet {
+      margin-top: 210px;
+    }
+
+    @include onDesktop {
+      margin-top: 64px;
+    }
+  }
+
+  &__learn-more-text {
+    margin-left: 6px;
+  }
+}

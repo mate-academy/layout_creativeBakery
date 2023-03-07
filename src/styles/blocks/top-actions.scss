@@ -1,0 +1,32 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1440px;
+  padding: 20px;
+
+  @include onDesktop {
+    padding: 32px 36px;
+  }
+
+  &__menu-button {
+    display: flex;
+    align-items: center;
+
+    &--hidden-desktop {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &:hover .icon {
+      fill: $colorOrange;
+    }
+
+    &:active .icon {
+      fill: $colorDarkOrange;
+    }
+  }
+}
