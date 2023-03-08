@@ -1,0 +1,93 @@
+.background {
+  z-index: -1;
+  position: absolute;
+  bottom: 246px;
+  background-image: url(./../images/Crumbs.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 320px;
+
+  @include onTablet {
+    width: 526px;
+    height: 493px;
+    bottom: 204px;
+    margin-left: 77px;
+  }
+
+  @include onDesktop {
+    width: 718px;
+    height: 673px;
+    top: 105px;
+    margin-left: 279px;
+  }
+}
+
+.about {
+  width: max-content;
+  position: relative;
+  z-index: 10;
+
+  &__title {
+    font-size: 55px;
+    margin-bottom: 32px;
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__subTitle {
+    font-family: "Inter-reg", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: 48px;
+    }
+
+    @include onTablet {
+      &:nth-child(-n + 2) {
+        margin-bottom: 80px;
+      }
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+
+    &--number {
+      font-family: "Inter-reg", sans-serif;
+      font-weight: 400;
+      font-size: 96px;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #f9512e;
+      margin-bottom: 8px;
+    }
+
+    &--text {
+      font-family: "Inter-reg", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      color: #1c1a26;
+    }
+  }
+}
