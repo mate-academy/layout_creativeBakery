@@ -1,0 +1,149 @@
+.footer {
+  padding: 56px 0;
+  margin-bottom: 0;
+  color: $color-white;
+  background-color: $color-main;
+  animation: fadeIn 1s linear;
+
+  &__container {
+    justify-items: start;
+    align-items: start;
+  }
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__logo {
+    margin-bottom: 40px;
+    display: block;
+
+    @include onTablet {
+      margin-bottom: 96px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 61px;
+    }
+  }
+
+  &__image {
+    display: block;
+    height: 40px;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__nav {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 104px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 16px;
+  }
+
+  &__contacts {
+    @include onTablet {
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__info {
+    margin-bottom: 40px;
+    justify-items: left;
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+    }
+  }
+
+  &__phones {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    color: inherit;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    word-spacing: 2px;
+  }
+
+  &__socials {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__copyright {
+    color: $color-grey;
+  }
+}
+
+.socials {
+
+  &__list {
+    display: flex;
+  }
+
+  &__icon {
+    display: block;
+    @extend %icons;
+  }
+
+  &__item {
+    transition: all 0.5s ease-in-out;
+
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.socials__icon path {
+  transition: all 0.5s ease-in-out;
+}
+
+.socials__link:hover path {
+  fill: $color-white;
+}

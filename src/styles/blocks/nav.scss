@@ -10,7 +10,6 @@
 
   &__list {
     display: none;
-    list-style: none;
 
     @include onDesktop {
       display: flex;
@@ -20,10 +19,10 @@
   }
 
   &__item {
-    animation: fadeIn 1s linear;
 
     &:last-child {
       @extend %accent-text;
+      @extend %subtitles;
       display: flex;
       align-items: center;
     }
@@ -34,7 +33,6 @@
   }
 
   &__link {
-    text-decoration: none;
     color: inherit;
     background-image: linear-gradient($color-bg, $color-accent);
     background-position: 0% 100%;
@@ -42,7 +40,8 @@
     background-size: 0% 3px;
     transition: all 0.5s ease-in-out;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $color-accent;
       background-size: 100% 3px;
     }
@@ -51,12 +50,14 @@
 
 .phone {
   content: "";
+  @extend %icons;
   background-image: url(../images/Icon-phone.svg);
-  background-size: contain;
   background-position: center;
-  background-repeat: no-repeat;
-  height: 24px;
-  width: 24px;
   padding: 3px;
   margin-right: 4px;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
