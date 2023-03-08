@@ -1,0 +1,107 @@
+@import "../utils/mixins";
+
+.header {
+  padding: 0 20px;
+
+  @include onDesctop {
+    padding: 0 36px;
+  }
+
+  @include onDesctopLarge {
+    padding: 0;
+  }
+
+  &__content {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onDesctop {
+      height: 88px;
+    }
+
+    @include onDesctopLarge {
+      max-width: 1368px;
+      margin: 0 auto;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    width: 128px;
+    height: 25px;
+  }
+
+  &__img-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/icons/logo-black.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__icon {
+
+    @include onDesctop {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesctop {
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__menu-item {
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-right: 64px;
+    }
+
+    &:nth-last-child(2) {
+      margin-right: 92px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    color: inherit;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+
+    &:hover {
+      border-bottom: 2px solid $colorOrange;
+    }
+
+    &--last {
+      position: relative;
+      font-weight: 500;
+      color: $colorOrange;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -25px;
+        width: 18px;
+        height: 18px;
+        background-image: url("../images/icons/phone-default.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
