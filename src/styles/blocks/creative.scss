@@ -1,0 +1,204 @@
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.creative {
+  box-sizing: border-box;
+  height: 100vh;
+  min-height: 682px;
+  padding: 96px 0 52px;
+
+  @include onTablet {
+    min-height: 786px;
+    padding: 144px 0 114px;
+  }
+
+  @include onDesctop {
+    min-height: 692px;
+    padding: 223px 0 160px;
+  }
+
+  @include onDesctopLarge {
+    min-height: 707px;
+    padding: 232px 0 145px;
+  }
+
+  &__container {
+
+    @include onTablet {
+      position: relative;
+    }
+  }
+
+  &__text {
+    margin: 0 0 26px;
+    letter-spacing: -0.01em;
+    text-align: center;
+
+    @include onTablet {
+      margin: 0 0 16px;
+      width: 280px;
+      text-align: start;
+    }
+
+    @include onDesctop {
+      margin: 0 0 8px;
+      width: 260px;
+    }
+
+    @include onDesctopLarge {
+      margin: 0 0 40px;
+      width: 280px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 64px;
+    line-height: 85%;
+    font-weight: inherit;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $colorOrange;
+
+    @include onTablet {
+      position: absolute;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 44px;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      font-size: 80px;
+    }
+
+    @include onDesctop {
+      padding: 0;
+      margin-bottom: 64px;
+      position: static;
+      transform: translate(0, 0);
+      font-size: 136px;
+    }
+
+    @include onDesctopLarge {
+      font-size: 144px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    max-height: 328px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesctop {
+      max-height: 546px;
+      position: absolute;
+      top: -40%;
+      z-index: -1;
+    }
+
+    @include onDesctopLarge {
+      max-height: 586px;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      padding-bottom: 101%;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__button {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 288px;
+    box-sizing: border-box;
+    padding: 20px 0;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    color: $colorOrange;
+    border: 2px solid $colorOrange;
+    border-radius: 32px;
+    transition: all 0.3s;
+
+    @include onTablet {
+      width: 328px;
+    }
+
+    @include onDesctop {
+      margin: 0;
+      width: 260px;
+    }
+
+    @include onDesctopLarge {
+      width: 280px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 64px;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background-image: url("../images/icons/cookie-default.svg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: all 0.3s;
+
+      @include onTablet {
+        left: 84px;
+      }
+
+      @include onDesctop {
+        left: 50px;
+      }
+
+      @include onDesctopLarge {
+        left: 60px;
+      }
+    }
+
+    &:hover {
+      background-color: $colorOrange;
+      color: $colorBackground;
+
+      &::before {
+        background-image: url("../images/icons/cookie-white.svg");
+      }
+    }
+
+    &:active {
+      background-color: $colorOrangeDark;
+      border: 2px solid $colorOrangeDark;
+      color: $colorBackground;
+    }
+
+    &:disabled {
+      background-color: $colorOrangeLight;
+      border: 2px solid $colorOrangeLight;
+      color: $colorBackground;
+    }
+  }
+}
