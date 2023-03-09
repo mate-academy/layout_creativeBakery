@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 370px;
+    max-width: 370px;
   }
 
   @include onTablet {
@@ -152,20 +152,13 @@
   }
 
   &__title {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    @extend %forCard;
     color: $greyCol;
     margin: 0 0 8px;
   }
 
   &__subtitle {
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: -0.01em;
-    color: $mainDarkCol;
+    @extend %forSubtitle;
     margin-bottom: 16px;
   }
 
@@ -177,13 +170,10 @@
   &__link {
     display: flex;
     margin-right: 4px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    @extend %forCard;
+
     text-decoration: none;
-    color: $mainOrangeCol;
+    color: $orangeCol;
 
     box-sizing: border-box;
     padding-bottom: 4px;
@@ -192,7 +182,7 @@
     transition: border-color 0.3s;
 
     &:hover {
-      border-color: $mainOrangeCol;
+      border-color: $orangeCol;
     }
   }
 }
