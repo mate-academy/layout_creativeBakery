@@ -3,6 +3,8 @@
 @import "../utils/extends";
 
 .about {
+  overflow: hidden;
+  position: relative;
   padding: 40px 0 72px;
 
   @include onTablet {
@@ -13,7 +15,66 @@
     padding: 93px 0 349px;
   }
 
+  &__background-wrapper {
+    position: absolute;
+    top: 52%;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    min-height: 300px;
+
+    @include onTablet {
+      top: 46%;
+      left: 71%;
+      transform: translate(-50%, -50%);
+      min-width: 526px;
+      min-height: 493px;
+    }
+
+    @include onDesctop {
+      min-width: 718px;
+      min-height: 673px;
+      top: 51%;
+      padding-left: 200px;
+    }
+  }
+
+  &__background {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    max-height: 380px;
+    overflow: hidden;
+    background-image: url("../images/crumbs.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      box-sizing: border-box;
+      min-width: 526px;
+      width: 526px;
+      height: 493px;
+      min-height: 493px;
+    }
+
+    @include onDesctop {
+      min-width: 718px;
+      width: 718px;
+      height: 673px;
+      min-height: 673px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 94%;
+    }
+  }
+
   &__content {
+    position: relative;
+    z-index: 8;
     margin-bottom: 64px;
 
     @include onTablet {
@@ -53,6 +114,8 @@
   }
 
   &__items {
+    position: relative;
+    z-index: 5;
 
     @include onTablet {
       display: grid;
