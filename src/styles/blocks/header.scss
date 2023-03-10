@@ -8,6 +8,7 @@
     margin: 32px 0;
 
     @include onTablet {
+      max-width: 280px;
       text-align: left;
       margin: 0;
     }
@@ -21,88 +22,69 @@
       text-align: left;
       margin: 0;
     }
-  }
-
-  &__photo-phone {
-    @media (min-width: 744px) {
-      display: none;
-    }
-
-    height: 290px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../images/Cookie.svg);
-  }
-
-  &__title-phone {
-    @media (min-width: 744px) {
-      display: none;
-    }
-
-    text-align: center;
-    font-weight: 400;
-    font-size: 64px;
-    line-height: 85%;
-
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
   }
 
   &__cover {
-    display: none;
-
-    @media (min-width: 744px) {
-      display: flex;
-    }
-
-    align-items: center;
-    justify-content: center;
-
     position: relative;
-
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
     background-image: url(../images/Cookie.svg);
+    background-size: 300px;
+    background-position: center 100%;
+    background-repeat: no-repeat;
+    min-height: 440px;
 
     @include onTablet {
-      height: 328px;
+      background-size: 330px;
+      min-height: 330px;
     }
 
     @include onDesktop {
-      height: 546px;
+      background-size: 550px;
+      min-height: 550px;
     }
 
     @include onBigDesktop {
-      height: 586px;
+      background-size: 580px;
+      min-height: 580px;
     }
   }
 
   &__title {
-    text-align: center;
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 15%;
+
     font-weight: 400;
+    font-size: 64px;
     line-height: 85%;
 
+    text-align: center;
     letter-spacing: -0.05em;
     text-transform: uppercase;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
+    color: $title-text;
 
     @include onTablet {
+      top: 49%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
       font-size: 80px;
     }
 
     @include onDesktop {
+      top: 39%;
       font-size: 136px;
     }
 
     @include onBigDesktop {
+      top: 39%;
       font-size: 144px;
+    }
+  }
+
+  .br {
+    @media (min-width: 744px) {
+      display: none;
     }
   }
 }
