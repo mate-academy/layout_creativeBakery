@@ -1,0 +1,124 @@
+.navigation {
+  --items-desktop-gap: 64px;
+
+  display: flex;
+  flex-direction: column;
+
+  &--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &--menu {
+    justify-content: center;
+    align-items: center;
+    margin-top: 132px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    & > :nth-child(n) {
+      margin-right: var(--items-desktop-gap);
+    }
+
+    &--menu {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+
+      & > :nth-child(n) {
+        margin-bottom: 24px;
+        margin-right: 0;
+      }
+  
+      & > :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &--footer {
+      flex-direction: column;
+
+      & > :nth-child(n) {
+        margin-bottom: 16px;
+        margin-right: 0;
+      }
+  
+      & > :last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    color: $colorBlack;
+    text-decoration: none;
+
+    transition: color $animationDuration;
+
+    &:hover {
+      color: $colorOrange;
+    }
+
+    &:active {
+      color: $colorDarkOrange;
+    }
+
+    &--color--white {
+      color: $colorWhite;
+    }
+
+    &--underline {
+      position: relative;
+
+      @include underlineAfter;
+    }
+  }
+
+  &__call-text {
+    margin-left: 7px;
+
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $colorOrange;
+
+    transition: color $animationDuration;
+  }
+
+  &__call {
+    position: relative;
+
+    text-decoration: none;
+
+    &:active {
+      & .navigation__call-text {
+        color: $colorDarkOrange;
+      }
+
+      & .icon--phone {
+        fill: $colorDarkOrange;
+      }
+    }
+
+    @include underlineAfter;
+  }
+
+  &__call-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}

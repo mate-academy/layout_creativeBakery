@@ -1,0 +1,64 @@
+.card {
+  &__photo {
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    transition: transform $animationDuration;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__category {
+    margin: 16px 0 0;
+
+    font-size: inherit;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $colorGrey;
+  }
+
+  &__description {
+    margin: 8px 0 0;
+  }
+
+  &__order {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: max-content;
+
+    margin-top: 24px;
+
+    text-decoration: none;
+    color: $colorOrange;
+
+    transition-property: color, fill;
+    transition-duration: $animationDuration;
+
+    &:active {
+      color: $colorDarkOrange;
+
+      & .icon--arrow {
+        fill: $colorDarkOrange;
+      }
+    }
+
+    @include underlineAfter;
+  }
+
+  &__order-text {
+    margin-left: 5px;
+  }
+}

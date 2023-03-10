@@ -1,0 +1,44 @@
+.products {
+  &__heading {
+    margin: 0 0 24px;
+  }
+
+  &__subtitle {
+    margin: 0 0 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__product-cards {
+    width: 100%;
+
+    margin-bottom: 64px;
+
+    display: flex;
+    flex-direction: column;
+
+    &--margin-bottom--0 {
+      margin-bottom: 0;
+    }
+
+    & > :nth-child(n) {
+      margin-bottom: 64px;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+
+      & > :nth-child(n) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
