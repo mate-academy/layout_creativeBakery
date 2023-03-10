@@ -4,12 +4,12 @@
   column-gap: 16px;
 
   @include onTablet {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     column-gap: 24px;
   }
 
   @include onDesktop {
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     column-gap: 24px;
   }
 
@@ -44,8 +44,8 @@
   &__item {
     &--tablet {
       @include onTablet {
-        @for $start from 1 through 6 {
-          @for $end from $start through 6 {
+        @for $start from 1 through 8 {
+          @for $end from $start through 8 {
             &-#{$start}-#{$end} {
               grid-column: #{$start} / #{$end + 1};
             }
@@ -56,8 +56,8 @@
 
     &--desktop {
       @include onDesktop {
-        @for $start from 1 through 12 {
-          @for $end from $start through 12 {
+        @for $start from 1 through 8 {
+          @for $end from $start through 8 {
             &-#{$start}-#{$end} {
               grid-column: #{$start} / #{$end + 1};
             }
