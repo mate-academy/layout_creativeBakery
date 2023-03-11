@@ -1,57 +1,161 @@
-.nav {
+// .nav {
 
-  &-mobile {
+//   &-mobile {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+
+//   @include onDesktop {
+//     display: flex;
+//     flex-direction: row;
+//     height: 100%;
+//   }
+
+//   &__list {
+//     display: block;
+//     position: absolute;
+//     flex-direction: column;
+//     top: 50%;
+//     left: 50%;
+//     transform: translateY(-50%) translateX(-50%);
+//     @include onDesktop {
+//       display: flex;
+//       gap: 64px;
+//     }
+//   }
+
+//   &__item {
+//     align-self: center;
+//   }
+
+//   &__link {
+//     position: relative;
+//     line-height: 150%;
+//     color: $color-dark;
+//     transition: $transition-duration color;
+
+//     &--accent {
+//       color: $accent-color;
+//       font-weight: 500;
+//       text-transform: uppercase;
+//       display: flex;
+//       justify-items: center;
+//       gap: 4px;
+//     }
+
+//     &::after {
+//       display: block;
+//       position: absolute;
+//       bottom: -8px;
+//       width: 100%;
+//       content: "";
+//       border: 1px solid transparent;
+//       border-radius: 3px;
+//       transition: $transition-duration border-color;
+//     }
+
+//     &:hover {
+//       color: $accent-color;
+
+//       &::after {
+//         border-color: $accent-color;
+//       }
+//     }
+
+//     &:focus {
+//       color: $focused-color;
+
+//       &::after {
+//         border-color: $focused-color;
+//       }
+//     }
+//   }
+// }
+
+// .footer-nav {
+//   &__link {
+//     color: $text-color-light;
+//     transition: color $transition-duration;
+
+//     &:hover {
+//       color: $accent-color;
+//     }
+//   }
+// }
+
+.nav {
+  position: relative;
+  width: 100%;
+  padding: 0 16px;
+  background-color: $bg-color;
+
+  @include onDesktop {
+    display: flex;
+    justify-content: space-between;
+    max-height: fit-content;
+    padding: 0 32px;
+  }
+
+  &__control {
     display: flex;
     justify-content: space-between;
   }
 
-  @include onDesktop {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-  }
-
-  &__list {
-    display: block;
-    position: absolute;
-    flex-direction: column;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+  &__toggler {
     @include onDesktop {
-      display: flex;
-      gap: 64px;
+      visibility: hidden;
     }
   }
 
-  &__item {
-    align-self: center;
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    @include onDesktop {
+      margin: 0;
+      transform: translate(0, 0);
+      flex-direction: row;
+      gap: 64px;
+      align-items: stretch;
+    }
   }
 
   &__link {
-    position: relative;
+    display: inline-block;
+    width: max-content;
+    padding: 8px;
     line-height: 150%;
     color: $color-dark;
-    transition: $transition-duration color;
+    transition: color $transition-duration;
+
+    @include onDesktop {
+      padding: 30px 0;
+    }
 
     &--accent {
       color: $accent-color;
       font-weight: 500;
       text-transform: uppercase;
-      display: flex;
-      justify-items: center;
-      gap: 4px;
+
+      &:focus {
+        & .icon {
+          fill: $focused-color;
+        }
+      }
     }
 
     &::after {
-      display: block;
-      position: absolute;
-      bottom: -8px;
-      width: 100%;
       content: "";
-      border: 1px solid transparent;
+      display: block;
+      width: 100%;
+      border-bottom: 2px solid transparent;
       border-radius: 3px;
-      transition: $transition-duration border-color;
+      transition: border-color $transition-duration;
     }
 
     &:hover {
@@ -68,6 +172,24 @@
       &::after {
         border-color: $focused-color;
       }
+    }
+  }
+
+  &--m-open {
+    height: 100vh;
+
+    // .nav__list {
+    //   // display: flex;
+    //   // visibility: visible;
+    // }
+  }
+
+  &--m-close {
+    // height: fit-content;
+
+    .nav__list {
+      // visibility: hidden;
+      display: none;
     }
   }
 }
