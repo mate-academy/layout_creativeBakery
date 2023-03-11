@@ -46,6 +46,7 @@
     @include onDesktop {
       grid-column: 5/7;
     }
+
     @include onDesktopXL {
       grid-column: 5/7;
     }
@@ -99,7 +100,7 @@
   }
 
   &__subtitle {
-    @extend %forCard;
+    @extend %forElse;
     color: $greyCol;
     margin: 0 0 16px;
   }
@@ -110,6 +111,14 @@
 
       @include onTablet {
         margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        margin-bottom: 48px;
+      }
+
+      @include onDesktopXL {
+        margin-bottom: 48px;
       }
     }
 
@@ -133,12 +142,21 @@
   }
 
   &__link {
-    display: block;
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+
     font-size: 16px;
     line-height: 150%;
     text-decoration: none;
     letter-spacing: 0.01em;
     color: $whiteCol;
+    transition: all $duration;
+
+    &:hover {
+      color: $orangeCol;
+      border-color: $orangeCol;
+    }
 
     &--mail {
       margin-bottom: 40px;
@@ -146,6 +164,33 @@
       @include onTablet {
         margin-bottom: 48px;
       }
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 0;
+
+    @include onMobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__copy {
+    @extend %forSubtitle;
+    color: $greyCol;
+
+    @include onTablet {
+      grid-column: 5/9;
+    }
+
+    @include onDesktop {
+      grid-column: 5/9;
+    }
+
+    @include onDesktopXL {
+      grid-column: 5/9;
     }
   }
 }

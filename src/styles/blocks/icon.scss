@@ -2,11 +2,11 @@
   display: block;
 
   &--menu {
-    width: 20px;
+    width: $size20;
     height: 8px;
     background-image: url(../images/Vector-menu-black.svg);
     justify-content: space-between;
-    transition: background-image 0.3s;
+    transition: background-image $duration;
 
     @include onDesktop {
       display: none;
@@ -29,10 +29,9 @@
 
   &--cross {
     background-image: url(../images/Vector-cross-black.svg);
-    width: 20px;
-    height: 20px;
+    @include square($size20);
     background-repeat: no-repeat;
-    transition: background-image 0.3s;
+    transition: background-image $duration;
 
     &:hover {
       background-image: url(../images/Vector-cross.svg);
@@ -41,16 +40,42 @@
 
   &--cookie {
     background-image: url(../images/Vector-coockie.svg);
-    width: 20px;
-    height: 20px;
+    @include square($size20);
     background-repeat: no-repeat;
     margin-right: 6px;
   }
 
   &--arrow {
     background-image: url(../images/Vector-arrow.svg);
-    width: 24px;
-    height: 24px;
+    @include square($size24);
     background-repeat: no-repeat;
+  }
+
+  &--facebook {
+    @include square($size24);
+    transition: transform $duration;
+    &:hover {
+      transform: scale(1.2);
+      filter: brightness(1000%);
+    }
+  }
+  &--instagram {
+    @include square($size24);
+    transition: transform $duration;
+    &:hover {
+      transform: scale(1.2);
+      filter: brightness(1000%);
+    }
+    &:focus {
+      filter: brightness(1000%);
+    }
+  }
+  &--twitter {
+    @include square($size24);
+    transition: transform $duration;
+    &:hover {
+      transform: scale(1.2);
+      filter: brightness(1000%);
+    }
   }
 }
