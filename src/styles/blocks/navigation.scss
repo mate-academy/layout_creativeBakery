@@ -1,6 +1,76 @@
-// .nav {
+.nav {
 
-// }
+  &-mobile {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include onDesktop {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+
+  &__list {
+    display: block;
+    position: absolute;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    @include onDesktop {
+      display: flex;
+      gap: 64px;
+    }
+  }
+
+  &__item {
+    align-self: center;
+  }
+
+  &__link {
+    position: relative;
+    line-height: 150%;
+    color: $color-dark;
+    transition: $transition-duration color;
+
+    &--accent {
+      color: $accent-color;
+      font-weight: 500;
+      text-transform: uppercase;
+      display: flex;
+      justify-items: center;
+      gap: 4px;
+    }
+
+    &::after {
+      display: block;
+      position: absolute;
+      bottom: -8px;
+      width: 100%;
+      content: "";
+      border: 1px solid transparent;
+      border-radius: 3px;
+      transition: $transition-duration border-color;
+    }
+
+    &:hover {
+      color: $accent-color;
+
+      &::after {
+        border-color: $accent-color;
+      }
+    }
+
+    &:focus {
+      color: $focused-color;
+
+      &::after {
+        border-color: $focused-color;
+      }
+    }
+  }
+}
 
 .footer-nav {
   &__link {
