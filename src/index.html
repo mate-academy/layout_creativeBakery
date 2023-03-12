@@ -413,7 +413,7 @@
             </nav>
           </div>
 
-          <div id="contacts" class="contacts footer__contacts grid__item grid__item--tablet-5-8 grid__item--desktop-5-8">
+          <div id="contact" class="contacts footer__contacts grid__item grid__item--tablet-5-8 grid__item--desktop-5-8">
             <h2 class="contacts__title">Contact us</h2>
 
             <div class="footer__contacts-block grid grid--deskAndTablet">
@@ -496,17 +496,20 @@
       const navTogl1 = document.querySelector('.nav__toggler--open');
       const navTogl0 = document.querySelector('.nav__toggler--close');
       const nav = document.querySelector('.nav');
+      const page = document.querySelector('.page')
 
       navTogl1.addEventListener('click', function () {
         navTogl1.classList.remove('nav__toggler--active');
         navTogl0.classList.add('nav__toggler--active');
         nav.classList.replace('nav--m-close', 'nav--m-open');
+        page.classList.add('page--close');
       })
 
       navTogl0.addEventListener('click', function () {
         navTogl0.classList.remove('nav__toggler--active');
         navTogl1.classList.add('nav__toggler--active');
         nav.classList.replace('nav--m-open', 'nav--m-close');
+        page.classList.remove('page--close');
       })
 
       function updateClass() {
