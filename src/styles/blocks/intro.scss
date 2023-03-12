@@ -1,4 +1,5 @@
 .intro {
+  margin-bottom: 72px;
   height: 100%;
   // position: relative; /**/
   // background-color: yellow;
@@ -9,10 +10,12 @@
     // text-align: center;
 
     @include onTablet {
+      margin-top: 80px;
       text-align: left;
     }
 
     @include onDesktop {
+      margin-top: 135px;
       text-align: left;
     }
   }
@@ -31,17 +34,20 @@
 
     @include onTablet {
       font-size: 80px;
+      margin-top: 146px;
       // width: 100%;
-      margin: 0 auto;
-      top: 50%;
+      // margin: 0 auto;
+      // top: 50%;
     }
 
     @include onDesktop {
+      margin-top: 8px;
       font-size: 136px;
       // position: absolute;
     }
 
     @media (min-width: 1440px) {
+      margin-top: 40px;
       font-size: 144px;
     }
   }
@@ -50,5 +56,37 @@
     width: 100%;
     display: block;
     z-index: 1;
+
+    @include onTablet {
+      position: absolute;
+      z-index: -1;
+      width: 50%;
+      top: 208px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include onDesktop {
+      position: absolute;
+      z-index: -1;
+      width: 50%;
+      top: 88px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media (min-width: 1440px) {
+      width: 40%;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      margin-top: 210px;
+    }
+
+    @include onDesktop {
+      margin-top: 64px;
+    }
   }
 }

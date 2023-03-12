@@ -1,5 +1,52 @@
 .product-card {
+  &:not(:last-child) {
+    margin-bottom: 56px;
+  }
+
+  @include onTablet {
+    margin-bottom: 80px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 80px;
+  }
+
   &__image {
+    margin-bottom: 16px;
     width: 100%;
+    border-radius: 8px;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    color: $text-color-grey;
+    letter-spacing: 2%;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+    line-height: 24px;
+    letter-spacing: -1%;
+  }
+
+  &__order-link {
+    color: $accent-color;
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+    transition-duration: $transition-duration;
+    transition-property: border-bottom, color;
+
+    &:hover {
+      border-bottom: 1px solid $accent-color;
+    }
+
+    &:focus {
+      color: $focused-color;
+      border-bottom: 1px solid $focused-color;
+
+      .product-card__icon {
+        fill: $focused-color;
+      }
+    }
   }
 }
