@@ -1,4 +1,7 @@
 .product-card {
+  height: 150%;
+  // overflow: hidden;
+
   &:not(:last-child) {
     margin-bottom: 56px;
   }
@@ -11,10 +14,39 @@
     margin-bottom: 80px;
   }
 
+  // .hover-image-scale {
+  //   display: inline-block;
+  //    /* Скрываем всё за контуром */
+  // }
+  .hover-image-scale img {
+    transition: 1s; /* Время эффекта */
+    display: block;
+  }
+  // .hover-image-scale img:hover {
+  //   transform: scale(1.2); /* Увеличиваем масштаб */
+  // }
+
   &__image {
-    margin-bottom: 16px;
     width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform $transition-duration ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__image-container {
+    display: inline-block;
+    margin-bottom: 16px;
+    overflow: hidden;
     border-radius: 8px;
+
+    & .product-card__image {
+      display: block;
+      transition: 1s;
+    }
   }
 
   &__title {
