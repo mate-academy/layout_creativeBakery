@@ -1,87 +1,21 @@
-// .nav {
+.anim-slide-in {
+  // transform: translateX(-100%);
+  opacity: 0;
+  animation-name: slide-in;
+  animation-duration: $transition-duration * 3;
+  animation-fill-mode: forwards;
+}
 
-//   &-mobile {
-//     display: flex;
-//     justify-content: space-between;
-//   }
-
-//   @include onDesktop {
-//     display: flex;
-//     flex-direction: row;
-//     height: 100%;
-//   }
-
-//   &__list {
-//     display: block;
-//     position: absolute;
-//     flex-direction: column;
-//     top: 50%;
-//     left: 50%;
-//     transform: translateY(-50%) translateX(-50%);
-//     @include onDesktop {
-//       display: flex;
-//       gap: 64px;
-//     }
-//   }
-
-//   &__item {
-//     align-self: center;
-//   }
-
-//   &__link {
-//     position: relative;
-//     line-height: 150%;
-//     color: $color-dark;
-//     transition: $transition-duration color;
-
-//     &--accent {
-//       color: $accent-color;
-//       font-weight: 500;
-//       text-transform: uppercase;
-//       display: flex;
-//       justify-items: center;
-//       gap: 4px;
-//     }
-
-//     &::after {
-//       display: block;
-//       position: absolute;
-//       bottom: -8px;
-//       width: 100%;
-//       content: "";
-//       border: 1px solid transparent;
-//       border-radius: 3px;
-//       transition: $transition-duration border-color;
-//     }
-
-//     &:hover {
-//       color: $accent-color;
-
-//       &::after {
-//         border-color: $accent-color;
-//       }
-//     }
-
-//     &:focus {
-//       color: $focused-color;
-
-//       &::after {
-//         border-color: $focused-color;
-//       }
-//     }
-//   }
-// }
-
-// .footer-nav {
-//   &__link {
-//     color: $text-color-light;
-//     transition: color $transition-duration;
-
-//     &:hover {
-//       color: $accent-color;
-//     }
-//   }
-// }
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 .nav {
   position: relative;
@@ -97,13 +31,25 @@
   }
 
   &__control {
+    position: relative;
     display: flex;
     justify-content: space-between;
   }
 
   &__toggler {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    visibility: hidden;
+    background-color: transparent;
+    border: none;
+
+    &--active {
+      visibility: visible;
+    }
+
     @include onDesktop {
-      visibility: hidden;
+      display: none;
     }
   }
 
@@ -124,6 +70,10 @@
       align-items: stretch;
     }
   }
+
+  // &__item {
+
+  // }
 
   &__link {
     display: inline-block;
@@ -177,19 +127,15 @@
 
   &--m-open {
     height: 100vh;
-
-    // .nav__list {
-    //   // display: flex;
-    //   // visibility: visible;
-    // }
   }
 
   &--m-close {
-    // height: fit-content;
-
     .nav__list {
-      // visibility: hidden;
       display: none;
+
+      @include onDesktop {
+        display: flex;
+      }
     }
   }
 }

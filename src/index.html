@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <div class="element"></div>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,17 +25,8 @@
             >
           </a>
 
-          <button class="nav__toggler">
-            <svg
-              class="icon--open"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path d="M2 8H22V10H2V8ZM2 14H22V16H2V14Z">
-            </svg>
-
+          <button class="nav__toggler nav__toggler--close"
+          >
             <svg
             class="icon--close"
               xmlns="http://www.w3.org/2000/svg"
@@ -45,22 +37,35 @@
               <path d="M12.0002 10.586L16.9502 5.63599L18.3642 7.04999L13.4142 12L18.3642 16.95L16.9502 18.364L12.0002 13.414L7.05023 18.364L5.63623 16.95L10.5862 12L5.63623 7.04999L7.05023 5.63599L12.0002 10.586Z">
             </svg>
           </button>
+
+          <button class="nav__toggler nav__toggler--open nav__toggler--active"
+          >
+            <svg
+              class="icon--open"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M2 8H22V10H2V8ZM2 14H22V16H2V14Z">
+            </svg>
+          </button>
         </div>
 
         <ul class="nav__list">
-          <li class="nav__item">
+          <li class="nav__item anim-slide-in">
             <a class="nav__link" href="#products">Products</a>
           </li>
 
-          <li class="nav__item">
+          <li class="nav__item anim-slide-in">
             <a class="nav__link" href="#about">About Us</a>
           </li>
 
-          <li class="nav__item">
+          <li class="nav__item anim-slide-in">
             <a class="nav__link" href="#blog">Blog</a>
           </li>
 
-          <li class="nav__item">
+          <li class="nav__item anim-slide-in">
             <a class="nav__link nav__link--accent" href="#contact">
               <svg
                 class="icon"
@@ -413,7 +418,7 @@
             <h2>Contact us</h2>
 
             <div class="footer__contacts-block grid grid--deskAndTablet">
-              <div class="footer__contacts-call grid__item grid__item--tablet-5-8 grid__item--desktop-1-4">
+              <div class="footer__contacts-call grid__item grid__item--tablet-1-4 grid__item--desktop-1-4">
                 <h3>Call us</h3>
 
                 <a class="footer__contacts-link" href="tel:+16295550129">(629) 555-0129</a>
@@ -487,5 +492,41 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      const navTogl1 = document.querySelector('.nav__toggler--open');
+      const navTogl0 = document.querySelector('.nav__toggler--close');
+      const nav = document.querySelector('.nav');
+
+      navTogl1.addEventListener('click', function () {
+        navTogl1.classList.remove('nav__toggler--active');
+        navTogl0.classList.add('nav__toggler--active');
+        nav.classList.replace('nav--m-close', 'nav--m-open');
+      })
+
+      navTogl0.addEventListener('click', function () {
+        navTogl0.classList.remove('nav__toggler--active');
+        navTogl1.classList.add('nav__toggler--active');
+        nav.classList.replace('nav--m-open', 'nav--m-close');
+      })
+
+      function updateClass() {
+        if (window.innerWidth < 1024) {
+          nav.classList.add('nav--m-close');
+          nav.classList.replace('nav--m-open', 'nav--m-close');
+          navTogl1.classList.add('nav__toggler--active');
+          navTogl0.classList.remove('nav__toggler--active');
+        }
+
+        if (window.innerWidth >= 1024) {
+          nav.classList.remove('nav--m-close');
+          nav.classList.remove('nav--m-open');
+          navTogl0.classList.remove('nav__toggler--active');
+          navTogl1.classList.remove('nav__toggler--active');
+        }
+      }
+
+      window.addEventListener('resize', updateClass);
+    </script>
   </body>
 </html>
