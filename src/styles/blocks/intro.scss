@@ -20,6 +20,7 @@
   text-align: center;
 
   &__lead-text {
+    position: relative;
     letter-spacing: -0.01em;
 
     @include onTablet {
@@ -27,9 +28,8 @@
     }
 
     @include onDesktop {
-      position: relative;
-      top: 20vh;
       text-align: left;
+      align-self: end;
     }
   }
 
@@ -38,33 +38,34 @@
   }
 
   &__title {
-    font-weight: 400;
-    font-size: 64px;
-    letter-spacing: -0.05em;
-    
+    position: relative;
+    align-self: center;
+    text-align: center;
+    align-items: center;
 
-    @include onTablet {
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      left: -50%;
-      transform: translateY(-50%);
-      width: max-content;
-      font-size: 80px;
-    }
+    &-text {
+      font-weight: 400;
+      font-size: 64px;
+      letter-spacing: -0.05em;
 
-    @include onDesktop {
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      left: -50%;
-      transform: translateY(-50%);
-      width: max-content;
-      font-size: 136px;
-    }
+      @include onTablet {
+        position: relative;
+        z-index: 1;
+        width: max-content;
+        font-size: 11vw;
+        line-height: 100%;
+      }
 
-    @media (min-width: 1440px) {
-      font-size: 144px;
+      @include onDesktop {
+        position: relative;
+        z-index: 1;
+        width: max-content;
+        font-size: 11vw;
+      }
+
+      @media (min-width: 1240px) {
+        font-size: 144px;
+      }
     }
   }
 
@@ -78,17 +79,22 @@
     border-radius: 50%;
     overflow: hidden;
 
+    @include onDesktop {
+      grid-row: 1 / 4;
+    }
+
     &:hover {
       transform: rotate(360deg);
     }
   }
 
   &__button {
-    transition: transform $animation-duration;
+    transition: $animation-duration;
 
     @include onDesktop {
       position: relative;
-      bottom: 24vh;
+      align-self: flex-start;
+      margin-top: 20px;
     }
 
     // &:nth-child(n*2) {
