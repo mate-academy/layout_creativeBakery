@@ -511,7 +511,8 @@
       const navTogl1 = document.querySelector('.nav__toggler--open');
       const navTogl0 = document.querySelector('.nav__toggler--close');
       const nav = document.querySelector('.nav');
-      const page = document.querySelector('.page')
+      const page = document.querySelector('.page');
+      const nav__link = document.querySelector('.nav__link');
 
       navTogl1.addEventListener('click', function () {
         navTogl1.classList.remove('nav__toggler--active');
@@ -542,6 +543,10 @@
           navTogl1.classList.remove('nav__toggler--active');
         }
       }
+
+      nav__link.addEventListener('click', function () {
+        page.classList.remove('page--close');
+      })
 
       window.addEventListener('resize', updateClass);
     </script>
