@@ -1,0 +1,121 @@
+.header {
+  margin-bottom: 104px;
+
+  @include onTablet {
+    margin-bottom: 228px;
+  }
+
+  @include onDeskTop {
+    margin-bottom: 218px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 20px 16px 20px 20px;
+
+    @include onDeskTop {
+      padding: 32px 32px 32px 36px;
+    }
+  }
+
+  &__logo {
+    transition: fill $animation-time;
+
+    &:hover {
+      fill: $c-accent-orange;
+    }
+  }
+
+  &__menu {
+    transition: fill $animation-time;
+
+    &:hover {
+      fill: $c-accent-orange;
+    }
+
+    @include onDeskTop {
+      display: none;
+    }
+  }
+
+  &__content {
+    padding-top: 32px;
+
+    @include onTablet {
+      padding-top: 80px;
+    }
+
+    @include onDeskTop {
+      padding-top: 135px;
+    }
+  }
+
+  &__description {
+    margin: 0 auto 32px;
+    text-align: center;
+    max-width: 288px;
+
+    @include onTablet {
+      margin: 0 0 146px;
+      text-align: initial;
+    }
+
+    @include onDeskTop {
+      margin: 0 0 8px;
+      max-width: 260px;
+    }
+
+    @include onLargeDeskTop {
+      margin: 0 0 40px;
+      max-width: 280px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    @extend %h1;
+
+    @include onTablet {
+      margin-bottom: 210px;
+    }
+
+    @include onDeskTop {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+    width: 288px;
+    height: 290px;
+
+    @include onTablet {
+      position: relative;
+      margin-bottom: -320px;
+      z-index: -1;
+      transform: translateY(-400px);
+      width: 326px;
+      height: 328px;
+    }
+
+    @include onDeskTop {
+      margin-bottom: -550px;
+      width: 544px;
+      height: 546px;
+    }
+
+    @include onLargeDeskTop {
+      margin-bottom: -575px;
+      transform: translateY(-425px);
+      width: 584px;
+      height: 586px;
+    }
+  }
+}

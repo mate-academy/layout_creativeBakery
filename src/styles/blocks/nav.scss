@@ -1,0 +1,47 @@
+.nav {
+  display: none;
+
+  @include onDeskTop {
+    display: block;
+  }
+  
+  &__list {
+    display: flex;
+    gap: 64px;
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $c-black;
+    transition: color $animation-time;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: $c-accent-orange;
+      transition: width $animation-time;
+    }
+
+    &:hover {
+      color: $c-accent-orange;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &--contact-us {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      fill: $c-accent-orange;
+      color: $c-accent-orange;
+      @extend %uppercase;
+    }
+  }
+}
