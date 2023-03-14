@@ -1,0 +1,56 @@
+.menuDesktop {
+  display: none;
+
+  &__menu {
+    display: flex;
+    gap: 64px;
+
+    &--link {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    &--item {
+      list-style: none;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      color: $colorBlack;
+      transition: color 0.7s ease, font-size 0.7s ease;
+
+      &:hover {
+        color: $colorOrange;
+        font-size: 18px;
+      }
+    }
+
+    &--contacts {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      &--phone {
+        fill: $colorOrange;
+        @include transition;
+      }
+
+      &--name {
+        color: $colorOrange;
+      }
+
+      &:hover .menuDesktop__menu--contacts--name {
+        color: $colorGray;
+      }
+
+      &:hover .menuDesktop__menu--contacts--phone {
+        fill: $colorGray;
+        scale: 1.2;
+      }
+    }
+  }
+  
+  @include onSmallDesktop {
+    display: flex;
+  }
+}

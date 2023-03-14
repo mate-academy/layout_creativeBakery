@@ -1,0 +1,121 @@
+.aboutUs {
+  margin-bottom: 72px;
+  position: relative;
+
+  @include onTablet {
+    margin-bottom: 152px;
+  }
+
+  @include onSmallDesktop {
+    margin-bottom: 0;
+    padding-bottom: 349px;
+  }
+
+  &::before {
+    @include onTablet {
+      content: "";
+      position: absolute;
+      display: block;
+      z-index: -1;
+      top: 51px;
+      bottom: 52px;
+      left: 77px;
+      right: 77px;
+      background: inherit;
+      background-image: url(../images/Crumbs.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+    }
+
+    @include onSmallDesktop {
+      top: 0;
+      left: 281px;
+      right: 113px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $colorOrange;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onSmallDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $colorBlack;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+    }
+
+    @include onSmallDesktop {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__stat {
+    background-image: url(../images/Crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include onTablet {
+      background-image: none;
+    }
+
+    &--info {
+      margin-bottom: 48px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include onTablet {
+        margin-bottom: 80px;
+
+        &:nth-child(3) {
+          margin-bottom: 0;
+        }
+      }
+
+      @include onSmallDesktop {
+        margin-bottom: 0;
+      }
+
+      &-item {
+        font-weight: 400;
+        font-size: 96px;
+        line-height: 85%;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: $colorOrange;
+        margin-bottom: 8px;
+      }
+
+      &-description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.01em;
+        color: $colorBlack;
+      }
+    }
+  }
+}
