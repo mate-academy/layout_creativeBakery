@@ -1,0 +1,71 @@
+.products {
+  &__title {
+    @extend %h2;
+    margin-bottom: 25px;
+  }
+
+  &__description {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__cards-container {
+    @include onDeskTop {
+      @include grid;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    @include onDeskTop {
+      grid-column: 1 / 7;
+    }
+
+    &--second {
+      margin: 64px 0;
+
+      @include onTablet {
+        margin: 88px 0;
+      }
+      
+      @include onDeskTop {
+        grid-column: 3 / -1;
+      }
+    }
+  }
+
+  &__card {
+    &-image {
+      border-radius: 8px;
+      margin-bottom: 16px;
+      width: 100%;
+      transition: transform $animation-time;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    &-title {
+      margin-bottom: 8px;
+      @extend %uppercase;
+      color: $c-grey;
+    }
+
+    &-description {
+      margin-bottom: 24px;
+    }
+  }
+}
