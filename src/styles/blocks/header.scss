@@ -1,0 +1,61 @@
+.header {
+  &__logo {
+    height: $logoHeight;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav {
+    &--widescreen {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 64px;
+    list-style: none;
+  }
+
+  &__item {
+    transition: scale $transitionTime;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &--call {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  &__link {
+    @extend %body-text;
+    text-decoration: none;
+    color: $colorMainBlack;
+
+    &--call {
+      @extend %uppercase-text;
+      color: $colorAccentOrange;
+    }
+  }
+
+  &__menu {
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

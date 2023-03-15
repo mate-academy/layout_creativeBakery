@@ -1,0 +1,54 @@
+.menu {
+  background-color: $colorLightPink;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    height: $logoHeight;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+    transition: scale $transitionTime;
+
+    &:last-child {
+      margin-bottom: 32px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &--call {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  &__link {
+    @extend %body-text;
+    text-decoration: none;
+    color: $colorMainBlack;
+
+    &--call {
+      @extend %uppercase-text;
+      color: $colorAccentOrange;
+    }
+  }
+}
