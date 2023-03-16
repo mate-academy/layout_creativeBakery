@@ -18,7 +18,18 @@
 }
 
 @mixin wideDesktop {
-  @media (min-width: 1200px) {
+  @media (min-width: 1201px) {
     @content;
+  }
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
   }
 }
