@@ -1,0 +1,55 @@
+.top-action {
+  margin-bottom: 32px;
+  display: flex;
+  height: 64px;
+  padding: 0 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onTablet {
+    margin-bottom: 80px;
+  }
+
+  @include onLaptop {
+    height: 88px;
+    padding: 0 35px;
+    margin-bottom: 120px;
+  }
+
+}
+
+.list {
+  display: flex;
+  gap: 64px;
+
+  &__item {
+    display: inline-block;
+    position: relative;
+    &:hover {
+      &::after {
+        content: "";
+        display: block;
+        border-bottom: 2px solid $orange-color;
+        width: 100%;
+        position: absolute;
+        bottom: -4px;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $dark-color;
+
+    
+
+    &--call {
+      padding-left: 26px;
+      color: $orange-color;
+      background-image: url(../images/call-icon.png);
+      background-repeat: no-repeat;
+      background-size: 18px;
+    }
+  }
+}
