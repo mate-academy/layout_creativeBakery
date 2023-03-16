@@ -3,8 +3,14 @@
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -0.01em;
-  background-color: #eef7ff;
+  background-color: $blue-color;
   scroll-behavior: smooth;
+  
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
 
   &__section-title {
     margin-bottom: 30px;
@@ -16,5 +22,18 @@
   &__section-description {
     margin-bottom: 32px;
     line-height: 150%;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translate(0);
+    }
   }
 }

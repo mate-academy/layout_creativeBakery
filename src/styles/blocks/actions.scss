@@ -16,40 +16,41 @@
     padding: 0 35px;
     margin-bottom: 120px;
   }
-
 }
 
 .list {
-  display: flex;
-  gap: 64px;
+  display: none;
 
-  &__item {
-    display: inline-block;
-    position: relative;
-    &:hover {
-      &::after {
-        content: "";
-        display: block;
-        border-bottom: 2px solid $orange-color;
-        width: 100%;
-        position: absolute;
-        bottom: -4px;
+  @include onLaptop {
+    display: flex;
+    gap: 64px;
+
+    &__item {
+      display: inline-block;
+      position: relative;
+      &:hover {
+        &::after {
+          content: "";
+          display: block;
+          border-bottom: 2px solid $orange-color;
+          width: 100%;
+          position: absolute;
+          bottom: -4px;
+        }
       }
     }
-  }
 
-  &__link {
-    text-decoration: none;
-    color: $dark-color;
+    &__link {
+      text-decoration: none;
+      color: $dark-color;
 
-    
-
-    &--call {
-      padding-left: 26px;
-      color: $orange-color;
-      background-image: url(../images/call-icon.png);
-      background-repeat: no-repeat;
-      background-size: 18px;
+      &--call {
+        padding-left: 26px;
+        color: $orange-color;
+        background-image: url(../images/call-icon.png);
+        background-repeat: no-repeat;
+        background-size: 18px;
+      }
     }
   }
 }
