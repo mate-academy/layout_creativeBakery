@@ -14,6 +14,7 @@
 
   &__cards {
     @include grid;
+    justify-items: center;
     row-gap: 64px;
 
     @include onTablet {
@@ -64,6 +65,12 @@
       object-fit: cover;
       object-position: center;
       border-radius: 8px;
+      transition: all $transitionTime;
+
+      &:hover {
+        box-shadow: 1px 3px 22px 9px rgba(255,255,255,1);
+        transform: scale(1.02);
+      }
     }
 
     &-info {
@@ -75,6 +82,7 @@
       @extend %uppercase-text;
       color: $colorMainGrey;
       text-decoration: none;
+      @include hover (color, $colorAccentOrange);
     }
 
     &-description {
