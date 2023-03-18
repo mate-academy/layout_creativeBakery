@@ -1,0 +1,153 @@
+.footer {
+  background-color: $colorMainBlack;
+
+  &__content {
+    @include gridAreas;
+  }
+
+  &__logo {
+    grid-area: logo;
+    height: 30px;
+    margin: 0 0 44px;
+
+    @include onTablet {
+      margin: 0 0 100px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 66px;
+    }
+  }
+
+  &__nav {
+    grid-area: nav;
+    margin: 0 0 64px;
+
+    @include onTablet {
+      margin: 0 0 106px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 50px;
+    }
+
+    &-title {
+      @extend %uppercase-text;
+      color: $colorMainGrey;
+      padding: 0;
+      margin: 0 0 16px;
+    }
+
+    &-list {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+
+    &-item {
+      margin: 16px 0 0;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: #fff;
+      @include hover (color, $colorAccentOrange);
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    @extend %h2;
+    margin: 0 0 40px;
+    color: #fff;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__phones {
+    grid-area: tel;
+    margin: 0 0 40px;
+    width: max-content;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    &-title {
+      @extend %uppercase-text;
+      margin: 0;
+      color: $colorMainGrey;
+    }
+
+    &-num {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      margin-top: 16px;
+      @include hover (color, $colorAccentOrange);
+    }
+  }
+
+  &__email {
+    grid-area: email;
+    margin: 0 0 40px;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    &-title {
+      @extend %uppercase-text;
+      color: $colorMainGrey;
+      margin: 0 0 16px;
+    }
+
+    &-address {
+      text-decoration: none;
+      color: #fff;
+      @include hover (color, $colorAccentOrange);
+    }
+  }
+
+  &__icons {
+    grid-area: icon;
+    display: flex;
+    gap: 40px;
+    margin: 0 0 40px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &--fb {
+      width: 10px;
+      background-image: url(../images/icon-fb.png);
+      @include hover (background-image, url(../images/fb-hover.svg));
+    }
+
+    &--instagram {
+      background-image: url(../images/insta.svg);
+      @include hover (background-image, url(../images/insta-hover.svg));
+    }
+
+    &--twitter {
+      background-image: url(../images/icon-twitter.png);
+      @include hover (background-image, url(../images/icon-twitter-white.png));
+    }
+  }
+
+  &__copyright {
+    grid-area: copy;
+    color: $colorMainGrey;
+  }
+}

@@ -33,3 +33,19 @@
     column-gap: 24px;
   }
 }
+
+@mixin gridAreas {
+  @include onTablet {
+    display: grid;
+    column-gap: 190px;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "logo title" "nav tel" "nav email" "icon copy";
+
+    @include onDesktop {
+      grid-template-columns: 2fr 1fr 1fr;
+      column-gap: 0;
+      grid-template-areas: "logo title title" "nav tel email" "icon copy copy";
+    }
+  }
+}
