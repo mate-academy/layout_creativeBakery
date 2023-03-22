@@ -1,0 +1,133 @@
+.grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include onTablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  &--tablet {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &--tablet2 {
+    display: block;
+
+    @include onTablet2 {
+      display: grid;
+    }
+  }
+
+  &--desktop {
+    display: block;
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &--header {
+    @include onTablet {
+      grid-template-rows: 144px 328px 120px;
+    }
+
+    @include onDesktop {
+      grid-template-rows: 215px 116px 215px;
+    }
+
+    @include onWideDesktop {
+      grid-template-rows: 232px 122px 232px;
+    }
+  }
+
+  &--about-us {
+    & :nth-child(3),
+    & :nth-child(4),
+    & :nth-child(5) {
+      margin-bottom: 48px;
+
+      @include onTablet2 {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onTablet2 {
+      grid-template-rows: 216px 72px 130px 80px 130px;
+    }
+
+    @include onDesktop {
+      grid-template-rows: 122px 124px;
+      row-gap: 144px;
+    }
+  }
+
+  &__item {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--tabletC-#{$start}-#{$end} {
+          @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--desktopC-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 5 {
+      @for $end from $start through 5 {
+        &--tabletR-#{$start}-#{$end} {
+          @include onTablet {
+            grid-row: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 5 {
+      @for $end from $start through 5 {
+        &--desktopR-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-row: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    &--center {
+      justify-content: center;
+      align-self: center;
+    }
+
+    &--down {
+      @include onTablet {
+        align-self: flex-end;
+      }
+
+      &-tab {
+        @include onDesktop {
+          align-self: unset;
+        }
+      }
+    }
+
+    &--z-1 {
+      z-index: 1;
+    }
+  }
+}

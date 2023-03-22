@@ -1,0 +1,73 @@
+.page {
+  font-family: "Inter", sans-serif;
+
+  scroll-behavior: smooth;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &__body {
+    margin: 0;
+
+    background-color: $c-light-pink;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__header {
+    margin-bottom: 102px;
+
+    @include onTablet2 {
+      margin-bottom: 226px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 218px;
+    }
+
+    @include onWideDesktop {
+      margin-bottom: 178px;
+    }
+  }
+
+  &__what-we-bake {
+    margin-bottom: 88px;
+
+    @include onTablet2 {
+      margin-bottom: 168px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 194px;
+    }
+  }
+
+  &__about-us {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 349px;
+    }
+  }
+}
