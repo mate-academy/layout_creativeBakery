@@ -64,7 +64,11 @@ module.exports = {
         letterSpacing: '-0.05em',
       }],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'cookie-icon': "url('/images/cookie_icon.svg')",
+      },
+    },
   },
   plugins: [],
 };
