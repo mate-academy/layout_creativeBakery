@@ -5,7 +5,8 @@
 
 .btn {
   @apply flex items-center gap-2 fill-accent-orange text-s-bolder
-    uppercase text-accent-orange disabled:text-light-orange;
+    uppercase text-accent-orange transition duration-300
+    disabled:text-light-orange;
 }
 
 .card__text {
@@ -17,11 +18,16 @@
 }
 
 .card__button {
-  @apply btn mt-6 border-b border-b-transparent pb-1
-    hover:border-b-accent-orange focus:border-b-dark-orange
+  @apply btn mt-6 w-fit border-b border-b-transparent pb-1 transition
+    duration-300 hover:border-b-accent-orange focus:border-b-dark-orange
     focus:text-dark-orange disabled:border-b-0 disabled:text-light-orange;
 }
 
 .card__button-icon {
-  @apply group-focus:fill-dark-orange group-disabled:fill-light-orange;
+  @apply transition duration-300 group-focus:fill-dark-orange
+    group-disabled:fill-light-orange;
+}
+
+.footer__list {
+  @apply flex flex-col gap-4 text-s text-white;
 }
