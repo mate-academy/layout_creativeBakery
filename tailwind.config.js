@@ -16,9 +16,10 @@ module.exports = {
       'accent-orange': '#F9512E',
       'light-orange': '#FBA28F',
       'light-pink': '#FFEEFC',
-      'light-blue': '#FFEEFC',
+      'light-blue': '#EEF7FF',
       black: '#1C1A26',
       grey: '#7F8096',
+      white: '#FFFFFF',
     },
 
     fontFamily: {
@@ -67,6 +68,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         'cookie-icon': "url('/images/cookie_icon.svg')",
+      },
+      gridTemplateColumns: {
+        mobile: 'repeat(2, 136px)',
       },
     },
   },
