@@ -3,10 +3,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* MAIN CONTAINERS */
+.grid-container {
+  @apply grid grid-cols-mobile gap-4 tablet:grid-cols-tablet tablet:gap-x-6
+    desktop:grid-cols-desktop desktop-xl:grid-cols-desktop-xl;
+}
+
+/* TITLE */
+.h2 {
+  @apply text-m uppercase tablet:text-l desktop:text-2xl;
+}
+
+/* HEADER */
 .btn {
   @apply flex items-center gap-2 fill-accent-orange text-s-bolder
     uppercase text-accent-orange transition duration-300
     disabled:text-light-orange;
+}
+
+.nav__link {
+  @apply transition duration-300 hover:underline;
+}
+
+/* PRODUCTS */
+.cards__container {
+  @apply col-span-full mt-14 tablet:mt-20 tablet:flex
+    tablet:gap-6 desktop:col-span-6;
 }
 
 .card__text {
@@ -28,6 +50,25 @@
     group-disabled:fill-light-orange;
 }
 
+/* ABOUT US */
+.big__text {
+  @apply text-4xl tablet:mt-0 tablet:basis-1/2;
+}
+
+.grey__text {
+  @apply mt-2 block text-s text-grey;
+}
+
+/* FOOTER */
+.footer__socials {
+  @apply transition duration-300 hover:scale-150;
+}
+
 .footer__list {
-  @apply flex flex-col gap-4 text-s text-white;
+  @apply col-span-2 mt-10 flex flex-col gap-4 text-s text-white
+    tablet:col-span-4 tablet:col-start-5 desktop:col-span-2;
+}
+
+.footer__link {
+  @apply transition duration-300 hover:text-dark-orange;
 }
