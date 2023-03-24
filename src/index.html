@@ -29,90 +29,133 @@
     class="overflow-x-hidden bg-light-blue font-Inter text-black dark:bg-light-pink"
   >
     <header>
-      <div class="col-span-full flex w-full items-center justify-between p-5">
+      <div class="flex w-full items-center justify-between p-5">
         <a class="transtion w-32 duration-300 hover:scale-105" href="#">
           <img src="./images/bakerlab.svg" alt="Bakerlab logo icon" />
         </a>
 
-        <a href="#menu" class="transtion p-1 duration-300 hover:rotate-90">
+        <a
+          href="#menu"
+          class="transtion p-1 duration-300 hover:rotate-90 desktop:hidden"
+        >
           <img src="./images/menu.svg" alt="menu opener" />
         </a>
 
-        <nav
-          id="menu"
-          class="fixed inset-0 left-full z-10 flex h-screen w-full flex-col items-center bg-light-blue transition duration-300 target:left-1/2 target:-translate-x-1/2"
-        >
-          <div class="flex w-full items-center justify-between p-5">
-            <a class="transtion duration-300 hover:scale-105" href="#">
-              <img src="./images/bakerlab.svg" alt="Bakerlab logo icon" />
-            </a>
-
-            <a
-              class="transtion rounded-full border-2 border-transparent p-1 duration-300 hover:border-black"
-              href="#"
-            >
-              <img src="./images/cross.svg" alt="menu close" />
-            </a>
-          </div>
-
-          <ul class="mt-32 flex flex-col items-center gap-6 text-s">
-            <a class="transtion duration-300 hover:underline" href="#products">
-              <li>Products</li>
-            </a>
-
-            <a class="transtion duration-300 hover:underline" href="#about-us">
-              <li>About us</li>
-            </a>
-
-            <a class="transtion duration-300 hover:underline" href="#blog">
-              <li>Blog</li>
-            </a>
-          </ul>
-
-          <a
-            href="tel:(629) 555-0129"
-            class="card__button mt-8 transition duration-300"
-          >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="card__button-icon"
-            >
-              <path
-                d="M18 13.42V16.956C18.0001 17.2092 17.9042 17.453 17.7316 17.6382C17.559 17.8234 17.3226 17.9363 17.07 17.954C16.633 17.984 16.276 18 16 18C7.163 18 0 10.837 0 2C0 1.724 0.015 1.367 0.046 0.93C0.0637224 0.677444 0.176581 0.441011 0.361804 0.268409C0.547026 0.0958068 0.790823 -0.000114433 1.044 2.56579e-07H4.58C4.70404 -0.000125334 4.8237 0.045859 4.91573 0.12902C5.00776 0.212182 5.0656 0.326583 5.078 0.45C5.101 0.68 5.122 0.863 5.142 1.002C5.34073 2.38892 5.748 3.73783 6.35 5.003C6.445 5.203 6.383 5.442 6.203 5.57L4.045 7.112C5.36445 10.1865 7.81455 12.6365 10.889 13.956L12.429 11.802C12.4919 11.714 12.5838 11.6509 12.6885 11.6237C12.7932 11.5964 12.9042 11.6068 13.002 11.653C14.267 12.2539 15.6156 12.6601 17.002 12.858C17.141 12.878 17.324 12.9 17.552 12.922C17.6752 12.9346 17.7894 12.9926 17.8724 13.0846C17.9553 13.1766 18.0012 13.2961 18.001 13.42H18Z"
-                fill="currentColor"
-              />
-            </svg>
-            Contact us
+        <ul class="hidden items-center gap-16 text-s desktop:flex">
+          <a class="transtion duration-300 hover:underline" href="#products">
+            <li>Products</li>
           </a>
-        </nav>
+
+          <a class="transtion duration-300 hover:underline" href="#about-us">
+            <li>About us</li>
+          </a>
+
+          <a class="transtion duration-300 hover:underline" href="#blog">
+            <li>Blog</li>
+          </a>
+
+          <a href="tel:(629) 555-0129">
+            <li
+              class="btn disabled:text-light-orangetransition mt-2 w-fit border-b border-b-transparent pb-1 transition duration-300 hover:border-b-accent-orange focus:border-b-dark-orange focus:text-dark-orange disabled:border-b-0"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="card__button-icon"
+              >
+                <path
+                  d="M18 13.42V16.956C18.0001 17.2092 17.9042 17.453 17.7316 17.6382C17.559 17.8234 17.3226 17.9363 17.07 17.954C16.633 17.984 16.276 18 16 18C7.163 18 0 10.837 0 2C0 1.724 0.015 1.367 0.046 0.93C0.0637224 0.677444 0.176581 0.441011 0.361804 0.268409C0.547026 0.0958068 0.790823 -0.000114433 1.044 2.56579e-07H4.58C4.70404 -0.000125334 4.8237 0.045859 4.91573 0.12902C5.00776 0.212182 5.0656 0.326583 5.078 0.45C5.101 0.68 5.122 0.863 5.142 1.002C5.34073 2.38892 5.748 3.73783 6.35 5.003C6.445 5.203 6.383 5.442 6.203 5.57L4.045 7.112C5.36445 10.1865 7.81455 12.6365 10.889 13.956L12.429 11.802C12.4919 11.714 12.5838 11.6509 12.6885 11.6237C12.7932 11.5964 12.9042 11.6068 13.002 11.653C14.267 12.2539 15.6156 12.6601 17.002 12.858C17.141 12.878 17.324 12.9 17.552 12.922C17.6752 12.9346 17.7894 12.9926 17.8724 13.0846C17.9553 13.1766 18.0012 13.2961 18.001 13.42H18Z"
+                  fill="currentColor"
+                />
+              </svg>
+              Contact us
+            </li>
+          </a>
+        </ul>
       </div>
 
-      <article
-        class="mt-8 grid grid-cols-mobile items-center justify-center gap-4 tablet:mt-20 tablet:grid-cols-tablet tablet:gap-6"
+      <nav
+        id="menu"
+        class="fixed inset-0 left-full z-10 flex h-screen w-full flex-col items-center bg-light-blue transition duration-300 target:left-1/2 target:-translate-x-1/2 desktop:hidden"
       >
-        <p class="col-span-2 text-center text-s tablet:col-span-4">
+        <div class="flex w-full items-center justify-between p-5">
+          <a class="transtion w-32 duration-300 hover:scale-105" href="#">
+            <img src="./images/bakerlab.svg" alt="Bakerlab logo icon" />
+          </a>
+
+          <a
+            class="transtion rounded-full border-2 border-transparent p-1 duration-300 hover:border-black"
+            href="#"
+          >
+            <img src="./images/cross.svg" alt="menu close" />
+          </a>
+        </div>
+
+        <ul class="mt-32 flex flex-col items-center gap-6 text-s">
+          <a class="transtion duration-300 hover:underline" href="#products">
+            <li>Products</li>
+          </a>
+
+          <a class="transtion duration-300 hover:underline" href="#about-us">
+            <li>About us</li>
+          </a>
+
+          <a class="transtion duration-300 hover:underline" href="#blog">
+            <li>Blog</li>
+          </a>
+
+          <a href="tel:(629) 555-0129">
+            <li class="card__button mt-8 transition duration-300">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="card__button-icon"
+              >
+                <path
+                  d="M18 13.42V16.956C18.0001 17.2092 17.9042 17.453 17.7316 17.6382C17.559 17.8234 17.3226 17.9363 17.07 17.954C16.633 17.984 16.276 18 16 18C7.163 18 0 10.837 0 2C0 1.724 0.015 1.367 0.046 0.93C0.0637224 0.677444 0.176581 0.441011 0.361804 0.268409C0.547026 0.0958068 0.790823 -0.000114433 1.044 2.56579e-07H4.58C4.70404 -0.000125334 4.8237 0.045859 4.91573 0.12902C5.00776 0.212182 5.0656 0.326583 5.078 0.45C5.101 0.68 5.122 0.863 5.142 1.002C5.34073 2.38892 5.748 3.73783 6.35 5.003C6.445 5.203 6.383 5.442 6.203 5.57L4.045 7.112C5.36445 10.1865 7.81455 12.6365 10.889 13.956L12.429 11.802C12.4919 11.714 12.5838 11.6509 12.6885 11.6237C12.7932 11.5964 12.9042 11.6068 13.002 11.653C14.267 12.2539 15.6156 12.6601 17.002 12.858C17.141 12.878 17.324 12.9 17.552 12.922C17.6752 12.9346 17.7894 12.9926 17.8724 13.0846C17.9553 13.1766 18.0012 13.2961 18.001 13.42H18Z"
+                  fill="currentColor"
+                />
+              </svg>
+              Contact us
+            </li>
+          </a>
+        </ul>
+      </nav>
+
+      <article
+        class="mt-8 grid grid-cols-mobile items-center justify-center gap-4 tablet:mt-20 tablet:grid-cols-tablet tablet:gap-6 desktop:grid-cols-desktop desktop-xl:grid-cols-desktop-xl"
+      >
+        <p
+          class="col-span-2 text-center text-s tablet:col-span-4 desktop:col-span-2"
+        >
           We bake your fantasies — croissants, cakes, cookies, and cupcakes.
         </p>
 
-        <div class="col-span-full mt-8 tablet:relative tablet:mt-36">
-          <h1 class="text-center text-xl uppercase tablet:text-3xl">
+        <div
+          class="col-span-full mt-8 tablet:relative tablet:mt-36 desktop:mt-0"
+        >
+          <h1
+            class="text-center text-xl uppercase tablet:text-3xl desktop:text-[136px] desktop-xl:text-5xl"
+          >
             Creative bakery
           </h1>
 
           <img
             src="./images/cookie.png"
             alt="Delicious bited cookie"
-            class="-z-10 h-[290px] w-[288px] tablet:absolute tablet:top-1/2 tablet:left-1/2 tablet:h-[328x] tablet:w-[326px] tablet:-translate-x-1/2 tablet:-translate-y-1/2"
+            class="-z-10 h-[290px] w-[288px] tablet:absolute tablet:top-1/2 tablet:left-1/2 tablet:h-[328x] tablet:w-[326px] tablet:-translate-x-1/2 tablet:-translate-y-1/2 desktop:h-[546px] desktop:w-[544px] desktop-xl:h-[586px] desktop-xl:w-[584px]"
           />
         </div>
 
         <a
           href="#about-us"
-          class="btn group col-span-2 w-full justify-center rounded-full border-2 border-accent-orange py-5 transition duration-300 hover:bg-accent-orange hover:text-white focus:border-dark-orange focus:bg-dark-orange focus:text-white disabled:border-light-orange tablet:col-span-4 tablet:col-start-3 tablet:mt-52"
+          class="btn group col-span-2 w-full justify-center rounded-full border-2 border-accent-orange py-5 transition duration-300 hover:bg-accent-orange hover:text-white focus:border-dark-orange focus:bg-dark-orange focus:text-white disabled:border-light-orange tablet:col-span-4 tablet:col-start-3 tablet:mt-52 desktop:col-span-2 desktop:mt-16"
         >
           <svg
             width="20"
@@ -131,16 +174,25 @@
     </header>
 
     <main
-      class="mt-24 grid grid-cols-mobile justify-center gap-4 tablet:mt-56 tablet:grid-cols-tablet tablet:gap-6"
+      class="mt-24 grid grid-cols-mobile justify-center gap-4 tablet:mt-56 tablet:grid-cols-tablet tablet:gap-6 desktop:mt-80 desktop:grid-cols-desktop desktop-xl:grid-cols-desktop-xl"
     >
-      <article class="col-span-full" id="products">
-        <h2 class="text-m uppercase tablet:text-l">What we bake</h2>
+      <article
+        class="col-span-full desktop:grid desktop:grid-cols-desktop"
+        id="products"
+      >
+        <h2
+          class="col-span-full text-m uppercase tablet:text-l desktop:text-2xl"
+        >
+          What we bake
+        </h2>
 
-        <p class="mt-6 text-s">
+        <p class="col-span-full mt-6 text-s">
           We can customize our cookies right for your needs. Just imagine it
         </p>
 
-        <div class="col-span-full mt-14 tablet:mt-20 tablet:flex tablet:gap-6">
+        <div
+          class="col-span-full mt-14 tablet:mt-20 tablet:flex tablet:gap-6 desktop:col-span-6"
+        >
           <div class="group">
             <img
               class="rounded-lg transition duration-300 group-hover:scale-105"
@@ -198,7 +250,9 @@
           </div>
         </div>
 
-        <div class="col-span-full mt-14 tablet:mt-20 tablet:flex tablet:gap-6">
+        <div
+          class="col-span-full mt-14 tablet:mt-20 tablet:flex tablet:gap-6 desktop:col-span-6 desktop:col-start-4"
+        >
           <div class="group mt-16 tablet:mt-0">
             <img
               class="rounded-lg transition duration-300 group-hover:scale-105"
@@ -252,7 +306,9 @@
           </div>
         </div>
 
-        <div class="col-span-full mt-14 tablet:mt-20 tablet:flex tablet:gap-6">
+        <div
+          class="col-span-full mt-14 tablet:mt-20 tablet:flex tablet:gap-6 desktop:col-span-6"
+        >
           <div class="group mt-16 tablet:mt-0">
             <img
               class="rounded-lg transition duration-300 group-hover:scale-105"
@@ -309,13 +365,15 @@
 
       <article
         id="about-us"
-        class="col-span-full mt-20 flex flex-col items-center tablet:col-span-full tablet:mt-40"
+        class="col-span-full mt-20 flex flex-col items-center tablet:col-span-full tablet:mt-40 desktop:mt-48"
       >
         <div
-          class="w-[320px] bg-cookie-icon bg-contain bg-[0_75%] bg-no-repeat tablet:w-full tablet:bg-center"
+          class="w-[320px] bg-cookie-icon bg-contain bg-[0_75%] bg-no-repeat tablet:w-full tablet:bg-center tablet:pb-40 desktop:pb-80"
         >
           <div class="mx-auto w-[288px] tablet:flex tablet:w-full tablet:gap-6">
-            <h2 class="text-m uppercase tablet:basis-1/2 tablet:text-l">
+            <h2
+              class="text-m uppercase tablet:basis-1/2 tablet:text-l desktop:text-2xl"
+            >
               Few words About us
             </h2>
 
@@ -330,7 +388,7 @@
           </div>
 
           <div
-            class="mx-auto w-[288px] tablet:mt-20 tablet:flex tablet:w-full tablet:flex-wrap"
+            class="mx-auto w-[288px] tablet:mt-20 tablet:flex tablet:w-full tablet:flex-wrap desktop:mt-36 desktop:flex-nowrap"
           >
             <p class="mt-16 text-4xl tablet:mt-0 tablet:basis-1/2">
               2015
@@ -354,7 +412,7 @@
     </main>
 
     <footer
-      class="mt-16 grid w-full grid-cols-mobile justify-center gap-x-4 bg-black pb-14 pt-16 tablet:mt-40 tablet:grid-cols-tablet tablet:gap-x-6 tablet:pb-20 tablet:pt-24"
+      class="mt-16 grid w-full grid-cols-mobile justify-center gap-x-4 bg-black pb-14 pt-16 tablet:grid-cols-tablet tablet:gap-x-6 tablet:pb-20 tablet:pt-24 desktop:grid-cols-desktop desktop-xl:grid-cols-desktop-xl"
     >
       <a
         href="#"
@@ -395,47 +453,49 @@
       </nav>
 
       <h2
-        class="col-span-2 mt-16 text-m uppercase text-white tablet:col-span-4 tablet:col-start-5 tablet:row-start-1 tablet:mt-0 tablet:text-l"
+        class="col-span-2 mt-16 text-m uppercase text-white tablet:col-span-4 tablet:col-start-5 tablet:row-start-1 tablet:mt-0 tablet:text-l desktop:text-2xl"
         id="contact"
       >
         Contact us
       </h2>
 
-      <div class="col-span-2 mt-10 tablet:col-span-4 tablet:col-start-5">
-        <ul class="footer__list">
-          <span class="text-s-bolder uppercase text-grey">Call us</span>
+      <ul
+        class="footer__list col-span-2 mt-10 tablet:col-span-4 tablet:col-start-5 desktop:col-span-2"
+      >
+        <span class="text-s-bolder uppercase text-grey">Call us</span>
 
-          <a
-            class="transtion duration-300 hover:text-dark-orange"
-            href="tel:(629) 555-0129"
-          >
-            <li>(629) 555-0129</li>
-          </a>
+        <a
+          class="transtion duration-300 hover:text-dark-orange"
+          href="tel:(629) 555-0129"
+        >
+          <li>(629) 555-0129</li>
+        </a>
 
-          <a
-            class="transtion duration-300 hover:text-dark-orange"
-            href="tel:(603) 555-0123"
-          >
-            <li>(603) 555-0123</li>
-          </a>
+        <a
+          class="transtion duration-300 hover:text-dark-orange"
+          href="tel:(603) 555-0123"
+        >
+          <li>(603) 555-0123</li>
+        </a>
 
-          <a
-            class="transtion duration-300 hover:text-dark-orange"
-            href="tel:(704) 555-0127"
-          >
-            <li>(704) 555-0127</li>
-          </a>
-        </ul>
+        <a
+          class="transtion duration-300 hover:text-dark-orange"
+          href="tel:(704) 555-0127"
+        >
+          <li>(704) 555-0127</li>
+        </a>
+      </ul>
 
-        <div class="footer__list mt-10">
-          <span class="text-s-bolder uppercase text-grey">Email us</span>
-          <a
-            class="transtion duration-300 hover:text-dark-orange"
-            href="mailto:bakerlab@example.com"
-          >
-            bakerlab@example.com
-          </a>
-        </div>
+      <div
+        class="footer__list col-span-2 mt-10 tablet:col-span-4 tablet:col-start-5 desktop:col-span-2"
+      >
+        <span class="text-s-bolder uppercase text-grey">Email us</span>
+        <a
+          class="transtion duration-300 hover:text-dark-orange"
+          href="mailto:bakerlab@example.com"
+        >
+          bakerlab@example.com
+        </a>
       </div>
 
       <div
