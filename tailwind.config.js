@@ -8,7 +8,7 @@ module.exports = {
     screens: {
       mobile: '320px',
       tablet: '768px',
-      desktop: '1200px',
+      desktop: '1024px',
     },
 
     colors: {
@@ -99,6 +99,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         mobile: 'repeat(2, 136px)',
+        tablet: 'repeat(8, 64px)',
       },
     },
   },
