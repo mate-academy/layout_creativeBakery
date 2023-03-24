@@ -3,7 +3,6 @@
 
 module.exports = {
   content: ['./src/**/*.{html,js}'],
-  darkMode: 'class',
   theme: {
     screens: {
       mobile: '320px',
