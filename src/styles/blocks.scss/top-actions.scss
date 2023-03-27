@@ -1,0 +1,56 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 32px;
+
+  @include onTablet {
+    margin-bottom: 80px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 135px;
+  }
+
+  @include onTV {
+    margin-bottom: 144px;
+  }
+}
+
+.list {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+    gap: 64px;
+
+    &__item {
+      display: inline-block;
+      position: relative;
+      &:hover {
+        &::after {
+          content: "";
+          display: block;
+          border-bottom: 2px solid $light-red;
+          width: 100%;
+          position: absolute;
+          bottom: -4px;
+        }
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: #1C1A26;
+
+      &--phone {
+        padding-left: 26px;
+        background-image: url(../images/icon-phone.svg);
+        background-repeat: no-repeat;
+        color: $light-red;
+        background-size: 18px;
+      }
+    }
+  }
+}
