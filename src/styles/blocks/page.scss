@@ -1,0 +1,54 @@
+.page {
+  font-family: 'Inter', sans-serif;
+  background-color: $light-pink;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 180px;
+    }
+
+    &--no-margin {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-title {
+    margin-bottom: 24px;
+
+    @include mobileHeadingsH2;
+
+    @include onTablet {
+      @include tabletHeadingsH2;
+    }
+
+    @include onDesktop {
+      @include desktopHeadingsH2;
+    }
+  }
+}
