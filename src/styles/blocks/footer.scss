@@ -1,0 +1,212 @@
+.footer {
+  background-color: #1c1a26;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      @include grid;
+    }
+
+    &--1 {
+      grid-column: 1 / 5;
+      grid-row: 1 / 2;
+      margin-bottom: 45px;
+    }
+
+    &--2 {
+      margin-bottom: 64px;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--3 {
+      grid-column: 5 / 9;
+      grid-row: 1 / 2;
+      margin-bottom: 40px;
+    }
+
+    &--4 {
+      grid-column: 5 / 9;
+      margin-bottom: 42px;
+
+      @include onTablet {
+        margin-bottom: 48px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+
+    &--5 {
+      grid-column: 1 / 5;
+      margin-bottom: 42px;
+    }
+
+    &--6 {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__logo {
+    height: 30px;
+  }
+
+  &-menu {
+    &__subtitle {
+      margin-bottom: 16px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 2%;
+      text-transform: uppercase;
+      color: #7f8096;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &__items {
+      @extend %body-text;
+      text-decoration: none;
+      color: #fff;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      transition: $trans-time;
+
+      &:hover {
+        color: $color-orange;
+      }
+    }
+  }
+
+  &-title {
+    &__contacts {
+      font-weight: normal;
+      font-size: 48px;
+      line-height: 85%;
+
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #fff;
+
+      @include onTablet {
+        font-size: 56px;
+        line-height: 85%;
+      }
+
+      @include onDesktop {
+        font-size: 72px;
+        line-height: 85%;
+      }
+    }
+  }
+
+  &-contacts {
+    &__section {
+      @include onDesktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    &__phone {
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        margin: 0;
+      }
+    }
+
+    &__subtitle {
+      margin-bottom: 16px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 2%;
+      text-transform: uppercase;
+      color: #7f8096;
+    }
+
+    &__items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+    }
+
+    &__item {
+      @extend %body-text;
+      text-decoration: none;
+      color: #fff;
+      transition: $trans-time;
+
+      &:hover {
+        color: $color-orange;
+      }
+    }
+  }
+
+  &-links {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+
+    &__icon {
+      width: 20px;
+      height: 20px;
+      text-decoration: none;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &-facebook {
+        width: 10px;
+        background-image: url(../images/icons/Facebook.svg);
+
+        &:hover {
+          background-image: url(../images/icons/Facebook-hover.svg);
+        }
+      }
+
+      &-insta {
+        background-image: url(../images/icons/Inst.svg);
+
+        &:hover {
+          background-image: url(../images/icons/Inst-hover.svg);
+        }
+      }
+
+      &-twitter {
+        background-image: url(../images/icons/Twitter.svg);
+
+        &:hover {
+          background-image: url(../images/icons/Twitter-hover.svg);
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    color: #7f8096;
+
+    &__text {
+      @extend %body-text;
+    }
+  }
+}

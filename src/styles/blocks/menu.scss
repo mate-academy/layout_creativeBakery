@@ -1,0 +1,59 @@
+.menu {
+  height: 100vh;
+  margin: 0;
+  background-color: #ffeefc;
+
+  &__top {
+    @include topActions;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__link {
+    @extend %body-text;
+    text-decoration: none;
+    color: #1c1a26;
+    background-size: 200% 1px;
+    background-position: 200% 100%;
+    background-repeat: no-repeat;
+    transition: all $trans-time;
+
+    &:hover {
+      color: $color-orange;
+    }
+
+    &--call {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 2%;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+      text-decoration: none;
+      color: $color-orange;
+      transition: transform $trans-time;
+
+      &:hover {
+        transform: scale($scale-menu);
+      }
+    }
+  }
+}
