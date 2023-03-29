@@ -9,6 +9,7 @@ module.exports = {
       tablet: '768px',
       desktop: '1200px',
       'desktop-xl': '1440px',
+      'landscape': { 'raw': '(orientation: landscape)' },
     },
 
     colors: {
