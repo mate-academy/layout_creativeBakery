@@ -1,0 +1,97 @@
+.what-we-bake {
+  margin-bottom: 100px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  cursor: pointer;
+  margin-bottom: 56px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.04);
+  }
+
+  @include onTablet {
+    margin-bottom: 80px;
+  }
+
+  &__pictures {
+    border-radius: 5%;
+    margin-bottom: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 10);
+    height: 423px;
+    width: 100%;
+
+    @include onTablet {
+      height: 424px;
+    }
+
+    @include onDesktop {
+      height: 512px;
+    }
+
+    &--1 {
+      background-image: url(./../images/bg__card/photo-product-01.png);
+    }
+
+    &--2 {
+      background-image: url(./../images/bg__card/photo-product-02.png);
+    }
+
+    &--3 {
+      background-image: url(./../images/bg__card/photo-product-03.png);
+    }
+
+    &--4 {
+      background-image: url(./../images/bg__card/photo-product-04.png);
+    }
+
+    &--5 {
+      background-image: url(./../images/bg__card/photo-product-05.png);
+    }
+
+    &--6 {
+      background-image: url(./../images/bg__card/photo-product-06.png);
+    }
+  }
+
+  &__title {
+    @include uppercase;
+    color: $grey;
+    margin-bottom: 8px;
+  }
+
+  &__paragraph {
+    @include body__text;
+    color: $black;
+    margin-bottom: 16px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 10px;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid $accent__orange;
+    }
+
+    @include uppercase;
+    color: $accent__orange;
+
+    &--pictures {
+      margin-right: 7px;
+    }
+  }
+}
