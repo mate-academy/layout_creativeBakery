@@ -1,0 +1,85 @@
+.contacts {
+  background-color: $colorBlack;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include onMobile {
+      flex-direction: column;
+    }
+  }
+
+  &__sectionLeft {
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+      filter: invert(1);
+      padding-top: 90px;
+    }
+
+    .menu__list {
+      align-items: flex-start;
+    }
+
+    .menu__link {
+      color: #ffffff;
+    }
+  }
+
+  &__sectionRight {
+    display: flex;
+    flex-direction: column;
+
+    .contactUs__title {
+      font-size: 72px;
+      line-height: 61px;
+  
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+
+      color: #ffffff;
+      padding-top: 88px;
+
+      @include onTablet {
+        font-size: 56px;
+        line-height: 48px;
+      }
+    }
+
+    .contactUs {
+      display: flex;
+
+      @include onTablet {
+        flex-direction: column;
+      }
+
+      &__call, &__email {
+        display: flex;
+        flex-direction: column;
+
+        width: 50%;
+
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+
+        color: $colorGray;
+        margin-top: 40px;
+
+        &__item {
+          letter-spacing: -0.01em;
+          text-decoration: none;
+          text-transform: none;
+
+          color: #ffffff;
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}

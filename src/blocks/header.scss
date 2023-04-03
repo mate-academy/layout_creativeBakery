@@ -1,0 +1,62 @@
+.header {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 7em;
+
+    @include onDesktop {
+      .icon__menu {
+        display: none;
+
+        &__cros {
+          display: none;
+        }
+      }
+    }
+
+    @include onTablet {
+      .icon__menu {
+        text-decoration: none;
+        line-height: 7em;
+        color: $colorBlack;
+      }
+
+      .icon__menu__cros {
+        display: none;
+      }
+
+      .header__nav {
+        display: none;
+      }
+    }
+  }
+
+  .menu__list {
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+    justify-content: space-around;
+  }
+
+  .menu__item {
+    margin-top: 0;
+  }
+
+  .icon__phone {
+    margin-right: 7px;
+    color: $colorRed;
+  }
+
+  .menu__contact__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+
+    letter-spacing: 0.02em;
+
+    text-transform: uppercase;
+    color: $colorRed;
+  }
+}
