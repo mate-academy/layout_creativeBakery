@@ -1,0 +1,57 @@
+.header {
+  margin-bottom: 30px;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 54px;
+    }
+  }
+
+  &__nav {
+    display: none;
+    column-gap: 64px;
+    align-items: center;
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: 64px;
+  }
+
+  &__link {
+    @extend %bodyText;
+    &--call {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @extend %upperText;
+      color: $accent-orange;
+      &:hover {
+        transition: all 0.3s ease;
+        text-decoration: underline;
+      }
+    }
+    &:hover {
+      transition: all 0.3s ease;
+      text-decoration: underline;
+    }
+  }
+  @include onTablet {
+    &:not(:last-child) {
+      margin-bottom: 80px;
+    }
+  }
+  @include onDesktop {
+    &:not(:last-child) {
+      margin-bottom: 108px;
+    }
+    &__nav {
+      display: flex;
+    }
+    &__opener {
+      display: none;
+    }
+  }
+}

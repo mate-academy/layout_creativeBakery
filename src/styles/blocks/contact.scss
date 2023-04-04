@@ -1,0 +1,111 @@
+.contact {
+  color: #fff;
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__menu {
+    margin-bottom: 64px;
+    flex: 1 0 288px;
+    @include onTablet {
+      flex: 1 0 328px;
+    }
+  }
+
+  &__logo {
+    margin-left: -4px;
+    img {
+      margin-bottom: 40px;
+    }
+    @include onDesktop {
+      img {
+        margin-bottom: 61px;
+      }
+      
+    }
+  }
+
+  &__name {
+    @extend %upperText;
+    color: $grey;
+    margin-bottom: 16px;
+   
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__link {
+    @extend %bodyText;
+    &:hover {
+      text-decoration: underline;
+      transition: text-decoration 0.3s ease;
+    }
+  }
+
+  &__contacts {
+    flex: 1 0 288px;
+    @include onTablet {
+      flex: 1 0 328px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: min-content;
+      align-items: start;
+    }
+  }
+
+  &__title {
+    
+    font-size: 56px;
+    margin-bottom: 40px;
+    @include onTablet {
+      width: 264px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      margin-bottom: 53px;
+      grid-column: 1 / 5;
+    }
+  }
+  &__call {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__email {
+    @include onDesktop {
+      grid-column: 3 / 5;
+    }
+  }
+  
+  &__mailTo {
+    @extend %bodyText;
+    &:hover {
+      text-decoration: underline;
+      transition: text-decoration 0.3s ease;
+    }
+  }
+
+  &__phone {
+    @extend %bodyText;
+    
+    display: block;
+    &:hover {
+      text-decoration: underline;
+      transition: text-decoration 0.3s ease;
+    }
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}
