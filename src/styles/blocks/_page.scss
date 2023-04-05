@@ -1,0 +1,128 @@
+.page {
+  scroll-behavior: smooth;
+  
+  &__body {
+    margin: 0;
+    font-family: $font, sans-serif;
+    background-color: $c-gray;
+    color: $color;
+    min-width: 320px;
+    font-weight: 400;
+    overflow-x: hidden;
+
+    &--with-menu {
+      height: 100vh;
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    height: 100vh;
+    max-height: 745px;
+
+    @include desk-768 {
+      max-height: 900px;
+    }
+  }
+
+  &__menu {
+    background-color: $c-gray;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 100vh;
+
+    transform: translateX(300%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    padding-top: 104px;
+
+    @include desk-768 {
+      padding-top: 228px;
+    }
+
+    @include desk-1200 {
+      padding-top: 218px;
+    }
+
+    @include desk-768 {
+      padding-top: 178px;
+    }
+
+    &--about {
+      padding-top: 72px;
+      margin-top: 0;
+      @include desk-768 {
+        padding-top: 152px;
+      }
+
+      @include desk-1200 {
+        padding-top: 178px;
+      }
+    }
+  }
+
+  &__section-title {
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include desk-768 {
+      font-size: 56px;
+    }
+
+    @include desk-768 {
+      font-size: 72px;
+    }
+
+    @include desk-768 {
+      font-size: 56px;
+    }
+  }
+
+  &__section-about-us {
+    margin-top: 32px;
+
+    @include desk-768 {
+      margin-top: 0;
+    }
+  }
+
+  &__achievement {
+    padding: 64px 0 72px;
+    
+    @include desk-768 {
+      padding: 72px 0 152px;
+
+    }
+  }
+
+  &__crumbs {
+    background-image: url(/images/Crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center top 178px;
+  }
+
+  &__footer {
+    background-color: rgba(28, 26, 38, 1);
+    color: rgba(255, 255, 255, 1);
+    padding: 61px 0 56px;
+    
+    @include desk-768 {
+      padding: 88px 0;
+    }
+  }
+}

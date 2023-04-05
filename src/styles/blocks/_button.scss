@@ -1,0 +1,62 @@
+.button {
+  --color-button: rgba(249, 81, 46, 1);
+  --color-button-focus: rgba(178, 52, 26, 1);
+  --color-button-disabled: rgba(251, 162, 143, 1);
+
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  width: 248px;
+  height: 56px;
+  border: 2px solid var(--color-button);
+  border-radius: 32px;
+  color: var(--color-button);
+  line-height: 56px;
+  
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: var(--color-button);
+    color: rgba(255, 255, 255, 1);
+  }
+
+  &:focus {
+    background-color: var(--color-button-focus);
+    border: 0;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  &--disabled {
+    background-color: var(--color-button-disabled);
+  }
+
+  &--contact-us {
+    border: 0;
+    width: max-content;
+    height: 56px;
+    padding: 20px 0;
+    line-height: 24px;
+    transition: transform 0.3s;
+    @include desk-1200 {
+      padding: 32px 0;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $c-gray;
+      color: rgba(249, 81, 46, 1);
+      transform: scale(1.1);
+    }
+  }
+
+  &__name {
+    margin-left: 6px;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
