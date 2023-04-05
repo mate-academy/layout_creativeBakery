@@ -4,3 +4,49 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTabletOrDesktop {
+  @media (min-width: 640px) {
+    @content;
+
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onDesktopHigth {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin top-actions {
+  --icon-width: 18px;
+  display: grid;
+  grid-template-columns: 1fr var(--icon-width);
+  align-items: center;
+  margin: 32px 28px;
+
+  @include onTabletOrDesktop {
+    --icon-width: 24px;
+  }
+
+  @include onDesktop {
+    margin: 32px;
+  }
+}
+
+@mixin gridPosition {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+}
