@@ -18,12 +18,7 @@
     font-size: 16px;
     font-weight: $font-weight-regular;
 
-    &--cta {
-      color: $cta-color;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-
+    &-cta {
       &::before {
         content: "";
         background-image: url(../images/icons/phone.svg);
@@ -31,9 +26,14 @@
         width: $icon-size;
         height: $icon-size;
         margin-right: 7px;
-        background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
+        vertical-align: middle;
+      }
+
+      &:focus {
+        &::before {
+          background-image: url(../images/icons/phone_focus.svg);
+        }
       }
     }
   }
