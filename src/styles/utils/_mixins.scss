@@ -1,6 +1,28 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin medium-up {
+  @media (min-width: $bp-medium) {
+    @content;
+  }
+}
+
+@mixin large-up {
+  @media (min-width: $bp-large) {
+    @content;
+  }
+}
+
+@mixin x-large-up {
+  @media (min-width: $bp-x-large) {
+    @content;
+  }
+}
+
+@mixin grid-system {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  column-gap: $grid-base * 3;
+
+  @include medium-up {
+    grid-template-columns: repeat(8, 1fr);
   }
 }
