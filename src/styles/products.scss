@@ -1,4 +1,5 @@
 .products {
+  margin-top: 152px;
   
   &__slogan {
     margin-top: 24px;
@@ -10,17 +11,11 @@
     @include grid();
     row-gap: 80px;
 
-    @include onTablet {
+    @include onMobile {
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-  }
-
-  &__item {
-    @include onTablet {
-    max-width: 328px;
+      gap: 56px;
     }
   }
 
@@ -68,21 +63,37 @@
     }
   }
 
-  &__item-1, 
-  &__item-5  {
+  &__item-1,
+  &__item-5 {
     grid-column: 1 / 4;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
   }
 
   &__item-2,
   &__item-6 {
     grid-column: 4 / 7;
+
+    @include onTablet {
+      grid-column: 5 / 9;
+    }
   }
 
   &__item-3 {
     grid-column: 3 / 6;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
   }
 
   &__item-4 {
     grid-column: 6 / 9;
+
+    @include onTablet {
+      grid-column: 5 / 9;
+    }
   }
 }
