@@ -9,24 +9,55 @@
     background-repeat: no-repeat;
     background-size: contain;
 
-    margin: 100px 0 200px;
+    padding: 100px 0;
 
     @include onTablet {
       gap: 150px;
+      background-size: 330px;
+      padding: 50px 0;
+    }
+
+    @include onMobile {
+      background-image: none;
+
       justify-content: center;
       align-items: center;
+
+      gap: 32px;
+      padding: 32px 0 100px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+
+    &__cookie {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cookie_img {
+      display: none;
+      @include onMobile {
+        display: block;
+      }
+    }
+
+    @include onTablet {
+      gap: 150px;
     }
 
     @include onMobile {
       gap: 32px;
-      padding: 32px 0;
-      margin: 0 auto;
+      width: 18em;
     }
   }
 
   &__description {
     width: 18em;
-
+    
     color: $colorBlack;
 
     @include onMobile {
@@ -56,6 +87,11 @@
   }
 
   &__more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
     width: 18em;
     height: 56px;
 
@@ -63,13 +99,9 @@
     border-radius: 32px;
     box-sizing: border-box;
 
-    font-size: 16px;
-    line-height: 56px;
-
     letter-spacing: 0.02em;
     text-transform: uppercase;
     text-decoration: none;
-    text-align: center;
 
     color: $colorRed;
     background-color: $colorMain;
@@ -79,6 +111,10 @@
     &:hover {
       color: #fff;
       background-color: $colorRed;
+    }
+
+    @include onTablet {
+      margin: 0 auto;
     }
   }
 }
