@@ -1,5 +1,6 @@
 .btn {
-  display: flex;
+  position: relative;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 6px;
@@ -12,6 +13,23 @@
   padding: $grid-base 0;
   line-height: 1;
   transition: all $anim-time ease;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: $c-accent-orange;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity $anim-time ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
 
   &--primary {
     height: 56px;
@@ -28,6 +46,9 @@
     &:hover {
       background-color: $c-accent-orange;
       color: $c-white;
+      &::after {
+        display: none;
+      }
     }
     //
     &:hover img {
