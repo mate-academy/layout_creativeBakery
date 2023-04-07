@@ -1,0 +1,159 @@
+.creative {
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__text {
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      grid-area: 1 / 1 / 2 / 5;
+      text-align: left;
+      margin-bottom: 16px;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 1 / 2 / 3;
+      margin: 135px 0 8px;
+      align-self: end;
+    }
+
+    @include onDesktopPlus {
+      margin: 144px 0 40px;
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $colorRed;
+    font-weight: 400;
+
+    @include onTablet {
+      grid-area: 2 / 1 / 3 / -1;
+      align-self: center;
+      z-index: 1;
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      grid-area: 2 / 1 / 3 / -1;
+      align-self: start;
+      font-size: 136px;
+      margin: 0 0 64px;
+    }
+
+    @include onDesktopPlus {
+      font-size: 144px;
+    }
+  }
+
+  &__photo {
+    @include onTablet {
+      grid-area: 2 / 3 / 3 / 7;
+      margin: 0 auto ;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 3 / 4 / 7;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 288px;
+    height: 290px;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 326px;
+      height: 328px;
+    }
+
+    @include onDesktop {
+      width: 544px;
+      height: 546px;
+    }
+
+    @include onDesktopPlus {
+      width: 584px;
+      height: 586px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $colorRed;
+    border: 2px solid $colorRed;
+    border-radius: 32px;
+    height: 56px;
+    transition: all 0.3s;
+    path {
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      color: $colorWhite;
+      background-color: $colorRed;
+
+      path {
+        fill: $colorWhite;
+      }
+    }
+
+    &:focus {
+      background-color: $colorBackground;
+      color: $colorFocusButton;
+      border-color: $colorFocusButton;
+
+      path {
+        fill: $colorFocusButton;
+      }
+    }
+
+    &:active {
+      background-color: $colorActiveButton;
+      color: $colorWhite;
+      border-color: $colorActiveButton;
+
+      path {
+        fill: $colorWhite;
+      }
+    }
+
+    @include onTablet {
+      grid-area: 3 / 3 / 4 / 7;
+      margin: 80px 0 0;
+    }
+
+    @include onDesktop {
+      grid-area: 3 / 1 / 4 / 3;
+      margin: 0 0 95px;
+    }
+
+    @include onDesktopPlus {
+      margin: 0 0 112px;
+
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.footer {
+  background-color: $colorBlack;
+  padding-bottom: 56px;
+
+  @include onTablet {
+    padding-bottom: 88px;
+  }
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__social {
+    margin-bottom: 42px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    @include onTablet {
+      grid-column: 1;
+      margin: 0;
+    }
+  }
+
+  &__copyright {
+    grid-column: 5;
+    align-self: center;
+  }
+
+  &__copyright-image {
+    display: block;
+  }
+
+  &__social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    path {
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      path {
+        fill: $colorWhite;
+      }
+    }
+  }
+
+  &__facebook {
+    padding: 0 5px;
+  }
+}
