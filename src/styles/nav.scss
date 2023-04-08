@@ -18,7 +18,7 @@
     font-size: 16px;
     font-weight: $font-weight-regular;
 
-     &:hover {
+    &:hover {
       color: $cta-color;
     }
 
@@ -27,6 +27,7 @@
     }
 
     &-cta {
+      color: #f9512e;
       &::before {
         content: "";
         background-image: url(../images/icons/phone.svg);
@@ -59,4 +60,43 @@
       }
     }
   }
-}
+
+  &-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+
+    background-color: $bcg-color-main;
+
+    transform: translate(-100%);
+    transition: ease-in-out 300ms;
+
+    &:target {
+      transform: translate(0);
+    }
+
+    &__cross {
+      background-image: url(../images/icons/Icon-close.svg);
+      display: block;
+      width: $icon-size;
+      height: $icon-size;
+    }
+
+    &__list {
+      display: block;
+      text-align: center;
+      margin-top: 135px;
+    }
+
+    &__item {
+      margin-top: 24px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+} 
+
