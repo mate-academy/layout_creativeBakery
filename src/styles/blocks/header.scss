@@ -1,14 +1,92 @@
 .header {
-  box-sizing: border-box;
   height: 100vh;
-  padding: 20px 16px 40px;
+  box-sizing: border-box;
+
+  &__desktop-content {
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include onDesktop {
+    position: relative;
+  }
+
+  @include onDesktopPlus {
+    position: relative;
+  }
 
   &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 50px;
+    padding: 20px;
+    margin-bottom: 32px;
 
+    &--desktop {
+      display: none;
+    }
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      display: none;
+   
+      &--desktop {
+        display: initial;
+      }
+    }
+
+    @include onDesktopPlus {
+      display: none;
+
+      &--desktop {
+        display: initial;
+      }
+    }
+
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 64px;
+  }
+
+  &__nav-item {
+    list-style: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $c-black;
+
+    &--contacts {
+      align-self: center;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $c-orange-accent;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        transform: translateY(20%);
+        margin-right: 7px;
+        background-image: url(images/phone.svg);
+        width: 18px;
+        height: 18px;
+        background-size: cover;
+        background-position: center;
+      }
+    }
   }
 
   &__menu-opener {
@@ -31,6 +109,29 @@
     text-align: center;
     letter-spacing: -0.01em;
     color: $c-black;
+
+    @include onTablet {
+      width: 280px;
+      padding-bottom: 16px;
+      text-align: start;
+    }
+
+    @include onDesktop {
+      width: 260px;
+      text-align: start;
+
+      position: absolute;
+      top: 215px;
+      padding-bottom: 0;
+    }
+
+    @include onDesktopPlus {
+      padding: 0;
+      width: 280px;
+      text-align: start;
+      position: absolute;
+      top: 175px;
+    }
   }
 
   &__title {
@@ -43,10 +144,89 @@
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: $c-orange-accent;
+
+    @include onTablet {
+      position: absolute;
+      transform: translate(2%, 187%);
+      z-index: 1;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 80px;
+      line-height: 85%;
+      text-align: center;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      line-height: 85%;
+
+      position: absolute;
+      top: 315px;
+    }
+
+    @include onDesktopPlus {
+      margin: 0 auto;
+      font-size: 135px;
+      line-height: 85%;
+      letter-spacing: -0.06em;
+      width: 100%;
+      
+
+      position: absolute;
+      top: 315px;
+    }
   }
 
   &__photo {
     width: 288px;
     height: 290px;
+    
+    background-image: url(images/Cookie.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      margin: 0 auto 70px;
+      position: relative;
+
+      width: 325px;
+      height: 325px;
+    }
+
+    @include onDesktop {
+      margin: 0 auto;
+      width: 540px;
+      height: 540px;
+      z-index: -1;
+    }
+
+    @include onDesktopPlus {
+      margin: 0 auto;
+      width: 585px;
+      height: 585px;
+    }
+    
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin: 0 auto 200px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      top: 500px;
+    }
+
+    @include onDesktopPlus {
+      position: absolute;
+      top: 520px;
+    }
   }
 }
