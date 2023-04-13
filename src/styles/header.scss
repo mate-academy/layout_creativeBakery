@@ -1,25 +1,26 @@
 .header {
   height: 100vh;
-  background-image: url(../images/Cookie.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 544px;
+  // background-image: url(../images/Cookie.svg);
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: 544px;
 
-  @include onLarge {
-    background-size: 584px;
-    background-position: center 25%;
-  }
-  
-  @include onTablet {
-    background-size: 326px;
-  }
+  // @include onLarge {
+  //   background-size: 584px;
+  //   background-position: center 25%;
+  // }
 
-  @include onMobile {
-    background-size: 288px;
-    background-position: center;
-  }
+  // @include onTablet {
+  //   background-size: 326px;
+  // }
+
+  // @include onMobile {
+  //   background-size: 288px;
+  //   background-position: center;
+  // }
 
   &__nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,9 +37,30 @@
     }
   }
 
+  &__img {
+    position: absolute;
+    max-width: 100%;
+    left: 50%;
+    right: 50%;
+    translate: -50%;
+    z-index: 0;
+
+    @include onTablet {
+      max-width: 326px;
+      translate: -50% 40%;
+    }
+
+    @include onMobile {
+      position: relative;
+      max-width: 288px;
+      translate: -50%;
+    }
+  }
+
   &__description {
     grid-column: 1 / 3;
     margin-top: 135px;
+    z-index: 1;
 
     @include onLarge {
       margin-top: 144px;
@@ -64,6 +86,7 @@
     margin: 8px 0 0;
     font-weight: $font-weight-regular;
     line-height: 85%;
+    z-index: 1;
 
     @include onLarge {
       font-size: 144px;
@@ -98,6 +121,7 @@
     line-height: 100%;
     transition: 300ms;
     cursor: pointer;
+    z-index: 1;
 
     &::before {
       content: "";
@@ -115,7 +139,7 @@
     &:hover {
       background-color: $cta-color;
       color: #fff;
-      
+
       &::before {
         background-image: url(../images/icons/Icon-cookie_hover.svg);
       }
@@ -125,7 +149,7 @@
       background-color: $cta-focused-color;
       border-color: $cta-focused-color;
       color: #fff;
-      
+
       &::before {
         background-image: url(../images/icons/Icon-cookie_hover.svg);
       }
@@ -137,7 +161,7 @@
     }
 
     @include onMobile {
-      margin-top: 290px;
+      margin-top: 0;
     }
   }
 }
