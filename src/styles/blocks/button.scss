@@ -1,0 +1,149 @@
+.button {
+  @include d-flex--center;
+  @extend %upper-font-style;
+
+  &__phone-icon {
+    fill: $accent-orange;
+    margin-right: 7px;
+    @include transition;
+
+  }
+
+  &__contact-us {
+    padding-bottom: 8px;
+    position: relative;
+    @include transition;
+
+    &::after {
+      content: '';
+      height: 1px;
+      background-color: $accent-orange;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      @include transition;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &:focus::after {
+      width: 100%;
+      background-color: $dark-orange;
+    }
+
+    &:focus {
+      color: $dark-orange;
+    }
+
+    &:focus > .button__phone-icon {
+      fill: $dark-orange;
+      @include transition;
+    }
+  }
+
+  &__learn-more {
+    width: 290px;
+    height: 56px;
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+    @include transition;
+
+    @include display-640px {
+      width: 100%;
+    }
+
+    &:hover {
+      color: $white;
+      background-color: $accent-orange;
+    }
+
+    &:hover > .button__cookie-icon {
+      fill: $white;
+    }
+
+    &:focus {
+      color: $white;
+      background-color: $dark-orange;
+      border-color: $dark-orange;
+    }
+
+    &:focus > .button__cookie-icon {
+      fill: $white;
+    }
+
+    &:disabled {
+      color: $light-orange;
+      border-color: $light-orange;
+    }
+
+    &:disabled > .button__cookie-icon {
+      fill: $light-orange;
+    }
+  }
+
+  &__cookie-icon {
+    fill: $accent-orange;
+    margin-right: 7px;
+    @include transition;
+  }
+
+  &__order {
+    display: flex;
+    width: max-content;
+    justify-content: start;
+    position: relative;
+    padding-bottom: 8px;
+
+    &::after {
+      content: '';
+      height: 1px;
+      background-color: $accent-orange;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      @include transition;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &:focus::after {
+      width: 100%;
+      background-color: $dark-orange;
+    }
+
+    &:focus {
+      color: $dark-orange;
+    }
+
+    &:focus > .button__arrow-icon {
+      fill: $dark-orange;
+
+    }
+
+    &:disabled::after {
+      width: 0;
+    }
+
+    &:disabled {
+      color: $light-orange;
+    }
+
+    &:disabled > .button__arrow-icon {
+      fill: $light-orange;
+    }
+
+  }
+
+  &__arrow-icon {
+    fill: $accent-orange;
+    margin-right: 8px;
+    @include transition;
+  }
+}
+
