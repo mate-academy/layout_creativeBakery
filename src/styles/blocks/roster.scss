@@ -1,0 +1,56 @@
+.roster {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    list-style: none;
+
+    padding: 0;
+    margin-bottom: 42px;
+
+    @include onIpad {
+      margin: 0;
+    }
+  }
+
+  &__list-item {
+    position: relative;
+    line-height: 15px;
+    margin-bottom: 8px;
+
+    @include onIpad {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: #fff;
+    }
+
+    &--subtitle {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $text-light-color;
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
+}
