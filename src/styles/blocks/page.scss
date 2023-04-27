@@ -1,0 +1,88 @@
+@import "../utils/variables";
+
+.page {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+
+  color: $colorBlack;
+  background-color: $colorPink;
+  scroll-behavior: smooth;
+
+
+
+  &__body {
+    margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-color: $colorPink;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 80px;
+  }
+
+  &__section-title {
+    margin: 0;
+    padding-bottom: 32px;
+    position: relative;
+
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $colorOrange;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+  }
+
+  &__section-text{
+    padding-bottom: 56px;
+    position: relative;
+
+    @include onTablet {
+      padding-bottom: 80px;
+    }
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    color: $colorBlack;
+  }
+
+  &__section-numbers {
+    margin: 0;
+    position: relative;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 85%;
+
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $colorOrange;
+  }
+
+}
