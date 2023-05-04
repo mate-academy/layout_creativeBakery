@@ -1,0 +1,151 @@
+.section-one {
+  height: calc(100vh - 94px);
+  display: flex;
+  align-items: center;
+  background: url(../images/photos/Cookie.png) no-repeat center;
+  background-size: 584px;
+  background-position: 50% 25%;
+
+  @media (max-width: 1199px) {
+    background-size: 544px;
+    background-position: 50% 30%;
+  }
+  @media (max-width: 1023px) {
+    background-size: 326px;
+  }
+  @media (max-width: 639px) {
+    background-size: 288px;
+    background-position: 50% 65%;
+  }
+}
+
+.section-two {
+  &__button {
+    margin: 18px 0 82px;
+  }
+  &__paragraph {
+    margin: 24px 0 80px;
+  }
+  &__products {
+    max-width: 1158px;
+    gap: 24px;
+    display: flex;
+    &:nth-child(2n) {
+      justify-content: flex-end;
+    }
+  }
+  &__cards {
+    overflow: hidden;
+    width: calc(75% / 2);
+  }
+
+  &__photo {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+    &:hover {
+      transform: translateY(-55px) scale(1.2);
+    }
+  }
+  &__info {
+    margin: 16px 0 8px;
+    @include upper-text;
+    color: $gray;
+  }
+
+  @media (max-width: 1199px) {
+    &__photo {
+      height: 512px;
+    }
+  }
+  @media (max-width: 1023px) {
+    &__cards {
+      width: 50%;
+    }
+    &__photo {
+      height: 424px;
+    }
+  }
+  @media (max-width: 639px) {
+    &__button {
+      margin: 18px 0 58px;
+    }
+    &__paragraph {
+      margin: 24px 0 56px;
+    }
+    &__cards {
+      width: 100%;
+    }
+
+    &__products {
+      display: block;
+    }
+    &__photo {
+      height: 356px;
+    }
+  }
+}
+
+.section-three {
+  margin: 104px 0 349px;
+  @media (max-width: 1023px) {
+    margin: 78px 0 72px;
+  }
+  @media (max-width: 639px) {
+    margin: 0 0 72px;
+  }
+  &__big-text {
+    margin-bottom: 8px;
+    @include big-text;
+  }
+  &__about {
+    @media (max-width: 1023px) {
+      margin: 0 0 80px;
+    }
+    @media (max-width: 639px) {
+      margin: 0 0 48px;
+    }
+  }
+  &__block-one {
+    margin-bottom: 144px;
+    gap: 24px;
+    display: flex;
+    @media (max-width: 1023px) {
+      margin-bottom: 72px;
+    }
+
+    @media (max-width: 639px) {
+      display: block;
+      margin-bottom: 64px;
+    }
+  }
+  &__title {
+    width: 50%;
+    @media (max-width: 639px) {
+      width: 100%;
+    }
+  }
+  &__paragraph {
+    width: 50%;
+    @media (max-width: 639px) {
+      width: 100%;
+    }
+  }
+  &__block-two {
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    gap: 24px;
+    @media (max-width: 639px) {
+      display: block;
+    }
+  }
+  &__blocks {
+    width: calc(25% - 18px);
+
+    @media (max-width: 1023px) {
+      width: calc(50% - 12px);
+    }
+  }
+}
