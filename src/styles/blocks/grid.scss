@@ -1,0 +1,24 @@
+.grid {
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onDesktop_l {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  &--row-gap {
+    @include onTablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__item {
+    @include tabletLoop;
+    @include desktopLoop;
+  }
+}
