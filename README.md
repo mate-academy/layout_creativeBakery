@@ -1,1 +1,1 @@
-[DEMO LINK](https://AllaSerhiienko.github.io/layout_creativeBakery/).
+[DEMO LINK](https://AllaSerhiienko.github.io/layout_creativeBakery/)
