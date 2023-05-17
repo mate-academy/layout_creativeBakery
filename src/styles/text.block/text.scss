@@ -1,0 +1,103 @@
+.text {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: $c-for-big-words;
+
+  &--desktop {
+    &:nth-child(-n +3) {
+      margin: auto 64px auto auto;
+    }
+  }
+
+  &--first {
+    text-align: center;
+    padding: 32px 0;
+    margin: 0;
+
+    @include onTablet {
+      padding-top: 80px;
+      padding-left: 0;
+      width: 280px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      padding-top: 135px;
+      width: 260px;
+    }
+
+    @include onDesktopLarge {
+      padding-top: 180px;
+      width: 280px;
+    }
+  }
+
+  &--h1 {
+    display: block;
+    text-align: center;
+    width: 288px;
+    margin: auto;
+    font-size: 64px;
+    font-family: "Inter", sans-serif;
+    line-height: 54px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $c-for-big-words;
+    height: 108px;
+
+    @include onTablet {
+      position: absolute;
+      top: 338px;
+      right: 0;
+      left: 0;
+      font-size: 80px;
+      height: 68px;
+      width: 680px;
+      line-height: 68px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      text-align: center;
+      line-height: 115px;
+      height: 116px;
+      width: 1112px;
+      top: 320px;
+    }
+
+    @include onDesktopLarge {
+      font-size: 144px;
+      height: 122px;
+      width: max-content;
+      line-height: 122px;
+    }
+  }
+
+  &--contact-us {
+    display: flex;
+    margin-top: 32px;
+    color: $c-orange;
+    font-weight: 500;
+    text-transform: uppercase;
+    flex-direction: row;
+
+    @include onDesktop {
+      margin: auto 0 auto 3px;
+    }
+
+    &::before {
+      content: "";
+      display: flex;
+      width: 18px;
+      height: 18px;
+      margin-top: 4px;
+      margin-right: 7px;
+      background-image: url(../images/phone.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}

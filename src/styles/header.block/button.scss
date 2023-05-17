@@ -1,0 +1,67 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 56px;
+  background-color: transparent;
+  border: 2px solid $c-orange;
+  border-radius: 32px;
+
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 27px;
+  color: $c-orange;
+  cursor: pointer;
+
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    background-image: url(../images/cookiesDefault.svg);
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    position: relative;
+    transform: translateY(-5%);
+    transition: background-image 0.3s;
+  }
+
+  &:hover {
+    background-color: $c-orange;
+    color: #fff;
+
+    &::before {
+      background-image: url(../images/cookiesHover.svg);
+    }
+  }
+
+  &:focus {
+    background-color: rgb(109, 33, 33);
+    border-color: rgb(109, 33, 33);
+    color: #fff;
+    &::before {
+      background-image: url(../images/cookiesHover.svg);
+    }
+  }
+
+  @include onTablet {
+    margin-top: 400px;
+    width: 326px;
+  }
+
+  @include onDesktop {
+    width: 260px;
+    margin-top: 250px;
+    margin-left: 0;
+  }
+
+  @include onDesktopLarge {
+    width: 280px;
+  }
+}
