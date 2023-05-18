@@ -112,28 +112,49 @@
     line-height: 100%;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    text-decoration: none;
 
     color: $colorOrange;
     border: 2px solid $colorOrange;
     border-radius: 32px;
 
+    &--img {
+      padding-right: 6px;
+      height: 20px;
+      width: 20px;
+    }
+
+    &:hover {
+      color: $colorWhite;
+      background-color: $colorOrange;
+    }
+
+    &:active {
+      color: $colorWhite;
+      background-color: $colorFocused;
+      border: 2px solid $colorFocused;
+    }
+
     @include onTablet {
       width: 326px;
-      display: block;
       margin-left: auto;
       margin-right: auto;
+
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
     }
 
     @include onDesktop {
       width: 260px;
-      display: block;
       margin-left: 0;
       margin-top: -281px;
-    }
 
-    &:hover {
-      color: #fff;
-      background-color: $colorOrange;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
     }
   }
 }
