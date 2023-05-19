@@ -21,9 +21,23 @@
   cursor: pointer;
   transition: all 0.3s;
 
+  @include onTablet {
+    margin-top: 210px;
+  }
+
+  @include onDesktops {
+    margin-top: 64px;
+  }
+
   &__content {
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    @include uppercase;
+    color: $accent-orange;
+    line-height: 100%;
   }
 
   &__image {
@@ -32,15 +46,17 @@
   }
 
   &:hover {
-    box-shadow: 1px 4px 16px rgba(232, 232, 240, 0.4);
+    background: $accent-orange;
+
+    color: $white;
   }
 
-  &:active {
-    box-shadow: 1px 4px 16px rgba(232, 232, 240, 0.64);
-  }
+  &:focus {
+    background: $dark-orange;
+    border-color: $dark-orange;
 
-  &__text {
-    @include uppercase;
-    color: $accent-orange;
+    .button__text {
+      color: $white;
+    }
   }
 }
