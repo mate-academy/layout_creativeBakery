@@ -11,6 +11,10 @@
   &__body {
     margin: 0;
     min-width: 320px;
+
+    &--with-menu {
+      overflow: hidden;
+    }
   }
 
   &__paragraph {
@@ -34,6 +38,38 @@
 
     @include onDesktops {
       display: none;
+    }
+  }
+
+  &__section-title {
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktops {
+      font-size: 72px;
+    }
+
+    &--contact-us {
+      color: $white;
+      margin-top: 64px;
+
+      @include notPhone {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__section-description {
+    margin: 24px 0 0;
+
+    &--about-us {
+      margin: 32px 0 0;
+
+      @include notPhone {
+        margin: 0;
+      }
     }
   }
 }
