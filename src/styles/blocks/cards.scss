@@ -45,6 +45,15 @@
     margin-bottom: 16px;
     border-radius: 8px;
 
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: rgba(17, 17, 26, 0.5) 0 8px 24px,
+        rgba(17, 17, 26, 0.5) 0 16px 56px,
+        rgba(17, 17, 26, 0.5) 0 24px 80px;
+    }
+
     @include onTablet {
       height: 424px;
       width: 325px;
@@ -90,6 +99,8 @@
     text-transform: uppercase;
 
     color: #f9512e;
+
+    @include hover(transform, scale(1.2));
 
     &::before {
       content: url(../images/icons/arrow-right.svg);
