@@ -3,4 +3,24 @@
   background-color: #eef7ff;
   scroll-behavior: smooth;
   color: #1c1a26;
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
 }
