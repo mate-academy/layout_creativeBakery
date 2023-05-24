@@ -21,12 +21,17 @@
               class="header__logo-img"
             >
           </a>
-          <ul class="header__menu">
-            <li class="header__menu-item"><a href="#products" class="header__menu-link">Products</a></li>
-            <li class="header__menu-item"><a href="#about" class="header__menu-link">About Us</a></li>
-            <li class="header__menu-item"><a href="#" class="header__menu-link">Blog</a></li>
-            <li class="header__menu-item "><a href="#" class="header__menu-link header__menu-link--accent">contact us</a></li>
-          </ul>
+          <div class="header__burger">
+            <span></span>
+          </div>
+          <nav class="header__menu">
+            <ul class="header__menu-list">
+              <li class="header__menu-item"><a href="#products" class="header__menu-link">Products</a></li>
+              <li class="header__menu-item"><a href="#about" class="header__menu-link">About Us</a></li>
+              <li class="header__menu-item"><a href="#" class="header__menu-link">Blog</a></li>
+              <li class="header__menu-item "><a href="#" class="header__menu-link header__menu-link--accent">contact us</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
@@ -34,7 +39,7 @@
     <main class="main">
       <section class="introduction">
         <div class="container">
-          <div class="introduction_container">
+          <div class="introduction__container">
             <div class="introduction__about">
               We bake your fantasies — croissants, cakes, cookies, and cupcakes.
             </div>
@@ -242,5 +247,28 @@
     </footer>
 
     <script type="text/javascript" src="scripts/main.js"></script>
+
+    <script>
+      if (window.innerWidth < 575) {
+          document.querySelector('.footer__creator').insertAdjacentElement("beforebegin", document.querySelector('.footer__social'))
+      }
+
+      document.querySelector('.header__burger').addEventListener('click', () => {
+        document.querySelector('.header__menu').classList.toggle('active');
+        document.querySelector('.header__burger').classList.toggle('active');
+        document.body.classList.toggle('hidden');
+      })
+
+      let menuItems = document.querySelectorAll('.header__menu-item');
+
+      for (let item of menuItems) {
+        item.addEventListener('click', function (event) {
+          console.log(event)
+          document.querySelector('.header__menu').classList.remove('active');
+          document.querySelector('.header__burger').classList.remove('active');
+          document.body.classList.remove('hidden');
+        })
+      }
+    </script>
   </body>
 </html>

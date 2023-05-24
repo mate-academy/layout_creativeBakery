@@ -64,7 +64,10 @@ body {
   }
 
   &__menu {
-    display: flex;
+
+    &-list {
+      display: flex;
+    }
 
     &-link {
       font-size: 16px;
@@ -123,7 +126,7 @@ body {
 
   &__about {
     font-size: 16px;
-    max-width: 280px;
+    max-width: 300px;
     line-height: 24px;
     margin-bottom: 40px;
   }
@@ -190,6 +193,7 @@ body {
       font-size: 72px;
       font-weight: 400;
       letter-spacing: -0.05em;
+      line-height: 1;
       text-transform: uppercase;
       color: #f9512e;
       margin-bottom: 24px;
@@ -249,6 +253,7 @@ body {
       font-size: 16px;
       letter-spacing: 0.02em;
       line-height: 16px;
+      z-index: -1;
       transition: 0.5s;
 
       &::before {
@@ -342,8 +347,8 @@ body {
   color: white;
 
   &__container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   &__logo-img {
@@ -402,5 +407,258 @@ body {
   &__creator {
     font-size: 16px;
     color: #7f8096;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .hidden {
+    overflow: hidden;
+  }
+
+  .header {
+    position: fixed;
+    width: 100%;
+
+    &__body {
+      position: relative;
+    }
+
+    &__burger {
+      display: block;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      z-index: 5;
+
+      & span {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        top: 6px;
+        background-color: black;
+        transition: 0.5s;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        bottom: 6px;
+        background-color: black;
+        transition: 0.5s;
+      }
+
+      &.active span {
+        transform: rotate(-45deg) translate(-2px, 2px);
+      }
+
+      &.active::after {
+        transform: rotate(45deg) translate(-2px, -2px);
+      }
+    }
+
+    &__logo {
+      z-index: 5;
+    }
+
+    &__menu {
+      position: fixed;
+      width: 100%;
+      transform: translateX(100%);
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      transition: 0.5s;
+
+      &.active {
+        transform: translateX(-5%);
+        width: 105%;
+      }
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        width: 100%;
+      }
+
+      &-item {
+        margin: 0;
+      }
+    }
+  }
+
+  .introduction {
+    background-size: 40%;
+    background-position: center 50%;
+    padding: 80px 0;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 60px;
+    }
+
+    &__about {
+      margin: 0;
+    }
+
+    &__title {
+      font-size: 80px;
+      margin: 150px 0;
+    }
+
+    &__button {
+      margin: 0 auto;
+      z-index: -1;
+    }
+  }
+
+  .products {
+
+    &__heading {
+
+      &-title {
+        font-size: 56px;
+      }
+    }
+
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__card {
+      grid-area: auto;
+    }
+  }
+
+  .about {
+    padding: 70px 0 150px;
+
+    &__description {
+
+      &-title {
+        font-size: 56px;
+      }
+    }
+
+    &__statistic {
+      margin-top: 70px;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: start;
+      gap: 80px 30px;
+    }
+  }
+
+  .footer {
+    &__contact {
+      &-title {
+        font-size: 56px;
+      }
+
+      &-information {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .introduction {
+    padding: 36px 0;
+    background-size: contain;
+    background-position: center 70%;
+
+    &__container {
+      align-items: center;
+    }
+
+    &__title {
+      font-size: 64px;
+      margin-bottom: 300px;
+      margin-top: 30px;
+    }
+
+    &__button {
+      width: 290px;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    &__button::before {
+      left: 65px;
+    }
+  }
+
+  .products {
+    &__container {
+      padding: 40px 0;
+    }
+
+    &__heading {
+      margin-bottom: 55px;
+
+      &-title {
+        font-size: 48px;
+      }
+    }
+
+    &__list {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 56px;
+    }
+  }
+
+  .about {
+    padding: 70px 0;
+
+    &__description {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 30px;
+
+      &-title {
+        font-size: 48px;
+      }
+    }
+
+    &__statistic {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 48px;
+    }
+  }
+
+  .footer {
+    padding: 50px 0;
+
+    &__container {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 40px;
+    }
+
+    &__contact {
+
+      &-title {
+        font-size: 48px;
+      }
+    }
+
+    &__list,
+    &__social {
+      margin-bottom: 40px;
+    }
   }
 }
