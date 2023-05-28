@@ -21,9 +21,11 @@ burgerMenu.addEventListener('click', () => {
 
 navLinks.forEach((link) => {
   link.addEventListener('click', () => {
-    body.classList.toggle('block-scroll');
-    nav.classList.toggle('nav__active');
-    burgerMenu.classList.toggle('header__burger-menu--active');
+    if (burgerMenu.style.display === 'block') {
+      body.classList.toggle('block-scroll');
+      nav.classList.toggle('nav__active');
+      burgerMenu.classList.toggle('header__burger-menu--active');
+    }
   });
 });
 
