@@ -21,7 +21,7 @@ burgerMenu.addEventListener('click', () => {
 
 navLinks.forEach((link) => {
   link.addEventListener('click', () => {
-    if (burgerMenu.style.display === 'block') {
+    if (burgerMenu.offsetWidth > 0) {
       body.classList.toggle('block-scroll');
       nav.classList.toggle('nav__active');
       burgerMenu.classList.toggle('header__burger-menu--active');
