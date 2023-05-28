@@ -1,0 +1,154 @@
+.footer {
+  padding: 61px 0 56px;
+  background-color: $main-color-text;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__logo {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__caption {
+    position: relative;
+    margin-top: 40px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $caption-color-text;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    &--margin-top-45 {
+      margin-top: 44.8px;
+
+      @include onTablet {
+        margin-top: 40px;
+      }
+    }
+
+    &:nth-child(5) {
+      @include onLaptop {
+        grid-column: 5 / 7;
+      }
+    }
+
+    &:nth-child(7) {
+      @include onTablet {
+        margin-top: 24px;
+        grid-column: 5 / -1;
+        grid-row: 4 / 5;
+      }
+
+      @include onLaptop {
+        margin-top: 40px;
+        position: relative;
+        grid-column: 7 / -1;
+        grid-row: 2 / 3;
+      }
+    }
+  }
+
+  &__list {
+    margin-top: 16px;
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &--grid-left {
+      @include onTablet {
+        grid-column: 1 / 5;
+        grid-row: 3 / 4;
+      }
+    }
+
+    &--grid-right {
+      @include onTablet {
+        grid-column: 5 / -1;
+      }
+
+      @include onLaptop {
+        grid-column: 5 / 7;
+        grid-row: 3 / 4;
+      }
+    }
+
+    &:last-of-type {
+      @include onTablet {
+        grid-column: 5 / -1;
+      }
+
+      @include onLaptop {
+        grid-column: 7 / -1;
+        grid-row: 3 / 4;
+      }
+    }
+
+  }
+
+  &__link {
+    position: relative;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 1.5px;
+      background-color: $caption-color-text;
+      transition: width 0.3s;
+    }
+
+    &:hover {
+      color: $caption-color-text;
+
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &--margin-top-16 {
+      margin-top: 16px;
+    }
+
+    &--media {
+      @include onTablet {
+        grid-column: 5 / -1;
+        grid-row: 5 / 6;
+      }
+
+      @include onLaptop {
+        grid-column: 7 / -1;
+        grid-row: 3 / 4;
+      }
+    }
+  }
+
+  &__icons-wrapper {
+    padding: 0 5px;
+    margin-top: 42px;
+    display: flex;
+    gap: 40.5px;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+}

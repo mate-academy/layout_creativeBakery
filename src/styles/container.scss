@@ -1,0 +1,36 @@
+@mixin column-count($count) {
+  grid-template-columns: repeat(var(--column-count), var(--column-width));
+}
+
+.container {
+  padding: 0 16px;
+  display: grid;
+  column-gap: 16px;
+
+  --column-count: 2;
+  --column-width: 1fr;
+
+  @include column-count(var(--column-count));
+
+  @include onTablet {
+    --column-count: 8;
+    --column-width: 1fr;
+    padding: 0 44px;
+    column-gap: 24px;
+  }
+
+  @include onDesktop {
+    --column-width: 128px;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1192px;
+  }
+
+  &--margin-top-72 {
+    margin-top: 64px;
+
+    @include onTablet {
+      margin-top: 72px;
+    }
+  }
+}
