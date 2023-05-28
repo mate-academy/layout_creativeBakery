@@ -1,0 +1,129 @@
+.menu {
+  z-index: 1;
+  background-color: $light-pink;
+
+  &__content {
+    height: 100vh;
+  }
+
+  &__top {
+    @include top-actions;
+    margin-bottom: 132px;
+  }
+
+  &-close {
+    display: block;
+    width: 13px;
+    height: 13px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/close.svg);
+  }
+
+  &__title {
+    color: $grey;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    text-align: center;
+
+    @include onDesktop {
+      margin: 0;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &--top {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+
+    &--bottom {
+      text-align: start;
+      margin-top: 40px;
+    }
+  }
+
+  &__item {
+    transition: all 0.3s;
+
+    margin-top: 24px;
+
+    @include onDesktop {
+      margin-top: 0;
+      margin-left: 64px;
+    }
+
+    &:last-child {
+      margin-top: 32px;
+
+      @include onDesktop {
+        margin-top: 0;
+        margin-left: 67px;
+      }
+    }
+
+    &--bottom {
+      margin-top: 16px;
+
+      &:last-child {
+        margin-top: 16px;
+
+        @include onDesktop {
+          margin-left: 0;
+        }
+      }
+
+      @include onDesktop {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__link {
+    width: fit-content;
+    color: $black;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    padding: 8px 0;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: $accent-orange;
+      color: $accent-orange;
+    }
+
+    &:focus {
+      border-color: $dark-orange;
+      color: $dark-orange;
+    }
+
+    &:disabled {
+      color: $light-orange;
+    }
+
+  }
+
+  &__link--contact-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &__link--bottom {
+    color: $white;
+  }
+}

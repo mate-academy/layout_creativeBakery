@@ -1,0 +1,60 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include onDesktop {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onIpad {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  &--desktop {
+    display: block;
+
+    @include onDesktop {
+      display: grid;
+    }
+
+    @include onIpad {
+      display: grid;
+    }
+  }
+
+  @include onDesktop {
+    &__item {
+
+      &--contact-us {
+        grid-row: 1 / 2;
+      }
+
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  @include onIpad {
+    &__item-ipad {
+
+      &--contact-us {
+        grid-row: 1 / 2;
+      }
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}
