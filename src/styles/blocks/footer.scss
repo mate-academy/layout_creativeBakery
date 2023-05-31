@@ -5,9 +5,16 @@
     padding: 88px 0 0;
   }
 
+  &__grid-wrapper {
+    @include onDesktop {
+      grid-column: 5 / 7;
+    }
+  }
+
   &__wrapper {
     @include pageGrid;
   }
+
   &__position {
     margin-bottom: 45px;
     @include onTablet {
@@ -18,37 +25,54 @@
   &__nav {
     margin-bottom: 64px;
   }
+
   &__menu {
     margin-bottom: 16px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: $grey;
   }
+
   &__list {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
+
   &__link {
     color: $white;
+    @include hover(transform, scale(1.04s));
+    &:active {
+      color: $dark-orange;
+    }
   }
+
   &__contact-wrapper {
     margin-bottom: 40px;
     @include onTablet {
       grid-column: 5 / 9;
     }
+
   }
+
   &__contact-us {
     font-size: 48px;
     line-height: 85%;
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: $white;
-    margin-bottom: 40px;
-    font-weight: 400;
+    margin-bottom: 60px;
+    font-weight: $main-font-weight;
+
     @include onTablet {
       font-size: 56px;
     }
+
+    @include onDesktop {
+      font-size: 72px;
+      margin-bottom: 60px;
+    }
+
   }
   &__icons-wrapper {
     display: flex;
@@ -62,8 +86,12 @@
     }
   }
 
+  &__icons {
+    @include hover(transform, scale(1.04s));
+  }
   &__icons-image {
     width: 24px;
+    @include hover(transform, scale(1.2));
     height: 24px;
   }
 
@@ -72,6 +100,7 @@
       grid-column: 5 / 7;
     }
   }
+
   &__bakerlab {
     color: $grey;
   }
@@ -79,7 +108,6 @@
 
 .phone__list {
   margin-bottom: 40px;
-
 }
 
 .wrapper__email {
@@ -87,6 +115,10 @@
 
   &-mail {
     color: $white;
+    @include hover(transform, scale(1.04s));
+    &:active {
+      color: $dark-orange;
+    }
   }
 }
 
@@ -94,5 +126,5 @@
   @include onTablet {
     grid-column: 1 / 3 ;
   }
-  
+
 }
