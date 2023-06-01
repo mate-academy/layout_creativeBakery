@@ -17,17 +17,23 @@ headerButton.addEventListener('click', () => {
 burgerMenu.addEventListener('click', () => {
   nav.classList.toggle('nav__active');
   body.classList.toggle('block-scroll');
-  header.classList.toggle('block-scroll');
   burgerMenu.classList.toggle('header__burger-menu--active');
+
+  if (window.innerHeight < 410) {
+    header.classList.toggle('block-scroll');
+  }
 });
 
 navLinks.forEach((link) => {
   link.addEventListener('click', () => {
     if (burgerMenu.offsetWidth > 0) {
       body.classList.toggle('block-scroll');
-      header.classList.toggle('block-scroll');
       nav.classList.toggle('nav__active');
       burgerMenu.classList.toggle('header__burger-menu--active');
+    }
+
+    if (window.innerHeight < 410) {
+      header.classList.toggle('block-scroll');
     }
   });
 });
