@@ -6,6 +6,7 @@
       href="https://fonts.gstatic.com"
       crossorigin="anonymous"
     >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.svg">
     <meta charset="UTF-8">
@@ -276,5 +277,12 @@
       </div>
     </footer>
     <script type="text/javascript" src="scripts/main.js"></script>
+    <script>
+      $('a').click(function (e) {
+          $('html, body').animate({
+              scrollTop: $($(this).attr('href')).offset().top
+          }, 1000);
+      });
+    </script>
   </body>
 </html>
