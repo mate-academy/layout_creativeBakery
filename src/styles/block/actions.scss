@@ -1,0 +1,75 @@
+.top-action {
+  margin-bottom: 32px;
+  display: flex;
+  height: 64px;
+  padding: 0 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onTablet {
+    margin-bottom: 80px;
+  }
+  
+  @include onLaptop {
+    height: 88px;
+    padding: 0 35px;
+    margin-bottom: 120px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 144px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $Black;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $AccentOrange;
+    }
+
+    &--call {
+      padding-left: 26px;
+      color: $AccentOrange;
+      background-image: url(../images/header/phone.svg);
+      background-repeat: no-repeat;
+      background-size: 18px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-size: 20px;
+      }
+    }
+  }
+
+  &__list {
+    gap: 64px;
+    display: none;
+
+    @include onLaptop {
+      display: flex;
+    }
+    
+    @include onDesktop {
+      display: flex;
+    }
+
+    &__item {
+      display: inline-block;
+      position: relative;
+        
+      &:hover {
+        &::after {
+          content: "";
+          display: block;
+          border-bottom: 2px solid f9512e;
+          width: 100%;
+          position: absolute;
+          bottom: -4px;
+        }
+      }
+    }
+  }
+  
+}
