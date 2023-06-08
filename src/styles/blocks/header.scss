@@ -1,0 +1,131 @@
+.header {
+  background-image: url(../images/photo/Cookie.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center 80%;
+
+  @include onTablet {
+    background-position: center 60%;
+  }
+
+  @include onDesktop {
+    background-position: center 30%;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__top {
+    position: relative;
+    margin-bottom: 32px;
+    height: 64px;
+
+    @include top-actions;
+    
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      height: 88px;
+      display: flex;
+      margin-bottom: 130px;
+    }
+
+    &--container {
+      @include onDesktop {
+        display: none;
+      }
+
+      --icon-width: 20px;
+      display: grid;
+      grid-template-columns: repeat(1, var(--icon-width));
+      justify-self: end;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    @include onDesktop {
+      padding-bottom: 310px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 280px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    color: $text-color;
+    text-transform: uppercase;
+
+    @include onTablet {
+      padding-bottom: 220px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 80px;
+      font-size: 136px;
+      letter-spacing: -0.1em;
+    }
+
+    @include XLgrid {
+      font-size: 144px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 146px;
+      display: flex;
+      text-align: start;
+    }
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    @include XLgrid {
+      margin-bottom: 40px;
+    }
+
+    &--br {
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+  }
+}

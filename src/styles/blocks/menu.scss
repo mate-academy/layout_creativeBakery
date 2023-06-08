@@ -1,0 +1,81 @@
+.menu {
+  background-color: $background-color;
+  animation: background-color 5s alternate infinite;
+
+  &__top {
+    @include top-actions;
+    padding: 20px 0 132px;
+  }
+
+  &__content {
+    height: 100vh;
+    padding: 0 0 108px;
+    color: $text-color;
+    overflow-y: auto;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    margin: 0 auto 24px;
+
+    &:last-child {
+      margin-bottom: 32px;
+    }
+
+    &--desktop {
+      margin-right: 64px;
+    }
+  }
+
+  &__link {
+    text-align: center;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    color: $text-color;
+    transition: border-color $transition-duration, color $transition-duration;
+
+    &:hover {
+      color: $accent-orange;
+      border-color: $accent-orange;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    transition: border-color $transition-duration;
+
+    &--icon {
+      background-image: url(../images/icon/phone.svg);
+      margin-right: 6px;
+      height: 18px;
+      width: 18px;
+    }
+  
+    &--title {
+      text-align: center;
+      color: $accent-orange;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      border-bottom-color: $accent-orange;
+    }
+  }
+}
