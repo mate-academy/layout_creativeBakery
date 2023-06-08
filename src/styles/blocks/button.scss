@@ -4,7 +4,10 @@
   justify-content: center;
   align-items: center;
 
-  margin-bottom: 120px;
+  @include onTablet {
+    display: flex;
+    flex-direction: left;
+  }
 
   @include onTablet {
     margin-bottom: 240px;
@@ -12,26 +15,36 @@
 
   border: 2px solid #f9512e;
   border-radius: 32px;
-  width: 100%;
+  width: 248px;
   height: 56px;
+  margin: 0 auto 120px;
 
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 100%;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #f9512e;
+  @include onDesktop {
+    margin-left: 0;
+  }
 
-  &:hover {
-    background-color: #f9512e;
-    border-radius: 32px;
-
+  &__link {
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: #fff;
+    color: #f9512e;
+    text-decoration: none;
+
+    &:hover {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+  }
+
+  &:hover {
+    background-color: #f9512e;
+    border-radius: 32px;
   }
 
   &:focus {
