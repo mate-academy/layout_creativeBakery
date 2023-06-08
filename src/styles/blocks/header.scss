@@ -1,0 +1,102 @@
+.header {
+  height: max-content;
+
+  &__top {
+    display: flex;
+    height: 64px;
+    padding: 0 18px 0 20px;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onDesktops {
+      height: 88px;
+    }
+
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    box-sizing: border-box;
+  }
+
+  &__description {
+    padding-top: 32px;
+
+    @include onTablet {
+      text-align: left;
+      padding-top: 80px;
+    }
+
+    @include onDesktopL {
+      text-align: left;
+      padding-top: 135px;
+    }
+
+    @include onDesktopXL {
+      text-align: left;
+      padding-top: 144px;
+    }
+  }
+
+  &__title {
+    padding-top: 32px;
+
+    &--pink {
+      color: $accent-orange;
+    }
+
+    @include onTablet {
+      font-size: $h1-tablet;
+      padding-top: 146px;
+    }
+
+    @include onDesktopL {
+      font-size: $h1-desktopL;
+      padding-top: 8px;
+    }
+
+    @include onDesktopXL {
+      font-size: $h1-desktopXL;
+      padding-top: 40px;
+    }
+
+  }
+
+  &__image {
+    object-fit: contain;
+    height: 100%;
+    z-index: -1;
+
+    @include notPhone {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include onDesktops {
+      top: 88px;
+    }
+
+    @include onTablet {
+      max-height: 328px;
+      top: 208px;
+    }
+
+    @include onDesktopL {
+      max-height: 546px;
+    }
+
+    @include onDesktopXL {
+      max-height: 586px;
+    }
+  }
+
+  &__container {
+    @include onDesktops {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,145 @@
+.menu {
+  background-color: $light-blue;
+  color: $black;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding: 0 18px 0 20px;
+  }
+
+  &__list {
+    margin: 132px 0 0;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+
+    @include onDesktops {
+      margin: 0;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &--top {
+      display: none;
+
+      @include onDesktops {
+        display: flex;
+      }
+    }
+
+    &--bottom {
+      margin: 40px 0 0;
+      justify-self: end;
+
+      @include onTablet;
+    }
+  }
+
+  &__item {
+    transition: all 0.3s;
+
+    margin-top: 24px;
+
+    @include onDesktops {
+      margin-top: 0;
+      margin-left: 64px;
+    }
+
+    &:last-child {
+      margin-top: 32px;
+
+      @include onDesktops {
+        margin-top: 0;
+        margin-left: 67px;
+      }
+    }
+
+    &--bottom {
+      margin: 0;
+
+      &:last-child {
+        margin-top: 0;
+
+        @include onDesktops {
+          margin-top: 0;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__link {
+    width: fit-content;
+    display: flex;
+
+    margin: 0 auto;
+
+    color: $black;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+    @include bodyText;
+    white-space: nowrap;
+    padding: 8px 0;
+
+    transition: all 0.3s;
+
+    &--order {
+      margin: 24px 0 0;
+      text-transform: uppercase;
+      color: $accent-orange;
+      padding: 0;
+      line-height: 100%;
+    }
+
+    &:hover {
+
+      border-color: $accent-orange;
+      color: $accent-orange;
+    }
+
+    &:focus {
+      border-color: $dark-orange;
+      color: $dark-orange;
+    }
+
+    &:disabled {
+      color: $light-orange;
+    }
+
+    &--contact-us {
+      @include uppercase;
+      color: $accent-orange;
+    }
+
+    &--bottom {
+      color: $white;
+      margin: 16px 0 0;
+      padding: 0;
+    }
+  }
+
+  &__title {
+    color: $grey;
+    @include uppercase;
+    text-align: left;
+    margin-top: 40px;
+
+    &--email-us {
+
+      @include onTablet {
+        margin-top: 0;
+      }
+    }
+  }
+}

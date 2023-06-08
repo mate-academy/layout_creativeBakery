@@ -1,0 +1,69 @@
+.about-us {
+  margin: 80px 0 0;
+  padding: 0 0 72px;
+
+  background-image: url("../images/other/Crumbs.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 68%;
+
+  @include onTablet {
+    background-size: 526px;
+    background-position: 50% 20%;
+  }
+
+  @include onDesktops {
+    background-size: 718px;
+    background-position: 50% 20%;
+  }
+
+  &__background {
+    object-fit: contain;
+    max-height: 300px;
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+  }
+
+  @include onTablet {
+    margin: 160px 0 0;
+    padding: 0 0 152px;
+  }
+
+  @include onDesktops {
+    margin: 186px 0 0;
+    padding: 0 0 349px;
+  }
+
+  &__info-title {
+    @include bigText;
+    margin: 48px 0 0;
+
+    @include onTablet {
+      margin: 80px 0 0;
+    }
+
+    @for $number from 1 through 2 {
+      @include onTablet {
+        &--#{$number} {
+          margin: 72px 0 0;
+        }
+      }
+    }
+
+    @include onDesktops {
+      margin: 146px 0 0;
+    }
+  }
+
+  &__info-description {
+    color: $grey ;
+    margin: 8px 0 0;
+  }
+
+  &__info-title--pink {
+    color: $accent-orange;
+  }
+}

@@ -1,0 +1,84 @@
+.button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 56px;
+
+  text-decoration: none;
+  text-align: center;
+
+  background: transparent;
+  border: 2px solid $accent-orange;
+  border-radius: 32px;
+  color: $accent-orange;
+
+  @include uppercase;
+
+  cursor: pointer;
+  transition: all 0.5s;
+
+  @include onTablet {
+    margin-top: 210px;
+  }
+
+  @include onDesktops {
+    margin-top: 64px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    @include uppercase;
+    color: $accent-orange;
+    line-height: 100%;
+  }
+
+  &__image {
+    transition: all 0.3s;
+    display: block;
+    margin-right: 6px;
+  }
+
+  &:hover {
+    background: $accent-orange;
+
+    color: $white;
+
+    .button__image {
+      content: url(../images/icons/white/Cookie.svg);
+    }
+  }
+
+  &:focus {
+    background: $dark-orange;
+    border-color: $dark-orange;
+
+    .button__text {
+      color: $white;
+    }
+  }
+
+  &--order {
+    border: none;
+    justify-content: start;
+    margin: 24px 0 0;
+
+    &:hover {
+      color: $accent-orange;
+    }
+
+    &:focus {
+
+      .button__text {
+        color: $accent-orange;
+      }
+    }
+  }
+}

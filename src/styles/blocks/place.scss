@@ -1,0 +1,51 @@
+.place {
+  &__photo-container {
+    position: relative;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 356px;
+    overflow: hidden;
+    transition: all $anim-speed;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      height: 424px;
+      padding-bottom: 0;
+    }
+
+    @include onDesktopL {
+      height: 512px;
+      padding-bottom: 0;
+    }
+
+    @include onDesktopXL {
+      height: 560px;
+      padding-bottom: 0;
+    }
+
+    &:hover {
+      transform: scale($scale-ratio);
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 8px;
+
+    &:not(:first-child) {
+      margin: 64px 0 0;
+    }
+  }
+}
