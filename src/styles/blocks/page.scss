@@ -1,0 +1,30 @@
+.page {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background-color: $pink;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    transform: translateX(-100%);
+    transition: transform $default-hover-time;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

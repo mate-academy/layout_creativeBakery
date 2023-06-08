@@ -1,0 +1,28 @@
+.products {
+  margin-bottom: 80px;
+
+  &__title {
+    margin-bottom: 24px;
+    @include title-h2;
+  }
+
+  &__below-title {
+    margin-bottom: 56px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 64px;
+
+    @include onTablet {
+      column-gap: 24px;
+      row-gap: 88px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include onLaptop {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+}

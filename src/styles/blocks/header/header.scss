@@ -1,0 +1,42 @@
+.header {
+  margin-bottom: 20px;
+
+  &__top-content {
+    padding-bottom: 32px;
+
+    @include onTablet {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__list {
+    display: none;
+    justify-content: space-between;
+    gap: 24px;
+    text-align: center;
+
+    @include onLaptop {
+      display: flex;
+      gap: 64px;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__link {
+    color: $black;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom $default-hover-time;
+
+    &:hover {
+      border-color: $black;
+    }
+
+    &-contact {
+      @include contact;
+    }
+  }
+}

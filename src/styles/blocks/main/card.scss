@@ -1,0 +1,72 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  &__img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-bottom: 16px;
+    box-shadow: 5px 10px 18px $grey;
+    transition: transform $default-hover-time;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__type {
+    margin-bottom: 8px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin-bottom: 24px;
+    color: $black;
+  }
+
+  &__order {
+    display: flex;
+    align-items: center;
+    width: min-content;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $orange;
+    border-bottom: 1px solid transparent;
+    transition: border-color $default-hover-time;
+
+    &::before {
+      content: url(../images/arrow-icon.svg);
+      padding-right: 8px;
+    }
+
+    &:hover {
+      border-color: $orange;
+    }
+  }
+
+  @include onLaptop {
+    &:nth-child(1) {
+      grid-area: 1 / 1 / 2 / 4;
+    }
+    &:nth-child(2) {
+      grid-area: 1 / 4 / 2 / 7;
+    }
+    &:nth-child(3) {
+      grid-area: 2 / 3 / 3 / 6;
+    }
+    &:nth-child(4) {
+      grid-area: 2 / 6 / 3 / 9;
+    }
+    &:nth-child(5) {
+      grid-area: 3 / 1 / 4 / 4;
+    }
+    &:nth-child(6) {
+      grid-area: 3 / 4 / 4 / 7;
+    }
+  }
+}
