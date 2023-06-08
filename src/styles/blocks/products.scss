@@ -1,0 +1,86 @@
+.products {
+  @include pageGrid;
+  @include padding;
+
+  margin-top: 104px;
+
+  @include onTablet {
+    margin-top: 248px;
+  }
+
+  @include onDesktop {
+    margin-top: 218px;
+  }
+
+  &__title {
+    margin: 0;
+    grid-column: 1 / -1;
+
+    font-size: 4.8rem;
+    line-height: 4.08rem;
+    font-weight: 400;
+    color: $orange-accent;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 5.6rem;
+      line-height: 4.76rem;
+    }
+
+    @include onDesktop {
+      font-size: 7.2rem;
+      line-height: 6.12rem;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-top: 24px;
+    grid-column: 1 / -1;
+
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+
+  &__product {
+    margin-top: 56px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      margin-top: 80px;
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      margin-top: 88px;
+
+      &:nth-child(3),
+      &:nth-child(7) {
+        grid-column: 1 / 4;
+      }
+
+      &:nth-child(4),
+      &:nth-child(8) {
+        grid-column: 4 / 7;
+      }
+
+      &:nth-child(5) {
+        grid-column: 3 / 6;
+      }
+
+      &:nth-child(6) {
+        grid-column: 6 / 9;
+      }
+    }
+  }
+
+  // @include onDesktop {
+  //   &__product:nth-child(3) {
+  //     grid-column: 1 / 4;
+  //   }
+
+  //   &:nth-child(4) &__product {
+  //     grid-column: 4 / 7;
+  //   }
+  // }
+}
