@@ -1,0 +1,41 @@
+.navbar {
+  &--header {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    &--header {
+      flex-direction: row;
+      gap: 64px;
+      align-items: center;
+    }
+
+    &--menu {
+      text-align: center;
+      gap: 24px;
+
+      & > * {
+        &:last-child {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+
+  &__item {
+    height: 100%;
+  }
+
+  &__link {
+    color: inherit;
+
+    @include hover(color, $color-branding);
+  }
+}

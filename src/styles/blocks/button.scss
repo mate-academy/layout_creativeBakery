@@ -1,0 +1,66 @@
+.button {
+  @extend %uppercase;
+  color: $color-branding;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  border-bottom: 1px solid transparent;
+
+  transition: $transition;
+
+  &:hover {
+    border-color: $color-branding;
+  }
+  &:focus {
+    color: $color-branding-dark;
+    border-color: $color-branding-dark;
+
+    & > .icon {
+      fill: $color-branding-dark;
+    }
+  }
+
+  &:disabled {
+    border-color: transparent;
+    color: $color-branding-light;
+
+    & > .icon {
+      fill: $color-branding-light;
+    }
+  }
+
+  &--learn {
+    width: auto;
+    padding: 18px;
+    border: 2px solid $color-branding;
+    border-radius: 32px;
+
+    transition: $transition;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+
+      & > .icon {
+        fill: #fff;
+      }
+    }
+
+    &:hover {
+      background-color: $color-branding;
+
+    }
+
+    &:focus {
+      background-color: $color-branding-dark;
+    }
+
+    &:disabled {
+      border-color: $color-branding-light;
+      background-color: #fff;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.footer {
+  background-color: $color-dark;
+  color: #fff;
+  padding: 56px 0;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      @include grid;
+    }
+  }
+
+  &__logo {
+    @include onTablet {
+      margin-bottom: 100px;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    color: inherit;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__section {
+    &--menu {
+      margin-bottom: 24px;
+    }
+
+    @include onTablet {
+      &--menu {
+        margin-bottom: 0;
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+      }
+
+      &--call {
+        grid-row: 2 / 3;
+        grid-column: 5 / -1;
+      }
+
+      &--mail {
+        grid-column: 5 / -1;
+      }
+    }
+
+    @include onDesktop {
+      &--menu {
+        margin-bottom: 10px;
+      }
+
+      &--call {
+        grid-column: 5 / 7;
+      }
+
+      &--mail {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &__section-title {
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    & > * {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__link {
+    color: inherit;
+    @include hover(color, $color-branding);
+  }
+
+  &__social-links {
+    display: flex;
+    gap: 34px;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+  }
+
+  &__copyright {
+    color: $color-text-light;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+  }
+}

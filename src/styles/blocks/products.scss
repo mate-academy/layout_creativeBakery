@@ -1,0 +1,40 @@
+.products {
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__headline {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    @include onTablet {
+      @include grid;
+      row-gap: 88px;
+    }
+  }
+
+  &__card {
+    grid-column: span 4;
+
+    @include onDesktop {
+      grid-column: span 3;
+
+      &:nth-child(3) {
+        grid-column: 3 / 6;
+      }
+
+      &:nth-child(4) {
+        grid-column-start: 6 / 9;
+      }
+    }
+  }
+}
