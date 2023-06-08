@@ -17,6 +17,11 @@
     column-gap: 24px;
   }
 
+  @include onBigDesktop {
+    grid-template-columns: repeat(8, 128px);
+    column-gap: 24px;
+  }
+
   &__item {
     @for $start from 1 through 2 {
       @for $end from $start through 2 {
@@ -28,6 +33,18 @@
 
     @include onLaptop {
       &--laptop {
+        @for $start from 1 through 8 {
+          @for $end from $start through 8 {
+            &-#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+    }
+
+    @include onBigDesktop {
+      &--big {
         @for $start from 1 through 8 {
           @for $end from $start through 8 {
             &-#{$start}-#{$end} {

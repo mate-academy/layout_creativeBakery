@@ -1,6 +1,4 @@
 .header {
-  // max-width: 1180px;
-  
 
   background-image: url(../images/header/Cookie.svg);
   background-size: 288px;
@@ -16,14 +14,31 @@
 
   @include onLaptop {
     background-size: 544px;
-    background-position: center top 70px;
+    background-position: center top 42px;
     margin-bottom: 218px;
   }
 
   @include onDesktop {
     background-size: 584px;
-    background-position: center top 70px;
+    background-position: center top 20px;
     margin-bottom: 290px;
+  }
+
+  @include onBigDesktop {
+    background-size: 600px;
+    background-position: center top 43px;
+    margin-bottom: 290px;
+  }
+
+  &__container {
+
+    @include onDesktop {
+      margin: 0 124px;
+    }
+
+    @include onBigDesktop {
+      margin: 0 124px;
+    }
   }
 
   &__logo {
@@ -54,6 +69,10 @@
     @include onDesktop {
       display: none;
     }
+
+    @include onBigDesktop {
+      display: none;
+    }
   }
 
   &__description {
@@ -79,8 +98,16 @@
     }
   
     @include onDesktop {
-      margin-left: 124px;
+      margin: 0;
       margin-bottom: 40px;
+    }
+
+    @include onBigDesktop {
+      width: 350px;
+      font-size: 20px;
+      margin: 0;
+      margin-bottom: 40px;
+      text-align: start;
     }
   }
 
@@ -125,11 +152,29 @@
     @include onLaptop {
       margin: 0 44px;
       margin-bottom: 64px;
-      font-size: 136px;
+      display: flex;
+      justify-content: start;
+      font-size: 126px;
+      white-space: nowrap;
     }
   
     @include onDesktop {
-      font-size: 144px;
+      font-size: 125px;
+      margin: 0;
+      display: flex;
+      justify-content: start;
+      white-space: nowrap;
+      width: 1192px;
+      margin-bottom: 64px;
+    }
+
+    @include onBigDesktop {
+      font-size: 146px;
+      margin: 0;
+      display: flex;
+      justify-content: start;
+      white-space: nowrap;
+      width: 1192px;
       margin-bottom: 64px;
     }
   }
@@ -167,7 +212,12 @@
     }
       
     @include onDesktop {
-      margin: 0 124px;
+      margin: 0;
+    }
+
+    @include onBigDesktop {
+      margin: 0;
+      max-width: 230px;
     }
   }
 }

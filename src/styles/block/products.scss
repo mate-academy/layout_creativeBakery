@@ -1,7 +1,6 @@
 .products {
   box-sizing: border-box;
   margin: 0 16px 80px;
-  min-height: 100vh;
 
   @include onTablet {
     margin: 0 44px 160px;
@@ -12,7 +11,11 @@
   }
 
   @include onDesktop {
-    margin: 0 0 186px 30px;
+    margin: 0 0 186px;
+  }
+
+  @include onBigDesktop {
+    margin: 0 0 186px;
   }
 
   &__text {
@@ -23,6 +26,23 @@
     letter-spacing: -0.01em;
     color: $Black;
     margin-bottom: 56px;
+
+    @include onTablet {
+      width: 680px;
+    }
+
+    @include onLaptop {
+      width: 584px;
+    }
+
+    @include onDesktop {
+      width: 584px;
+    }
+
+    @include onBigDesktop {
+      font-size: 16px;
+      width: 584px;
+    }
 
   }
 
@@ -36,6 +56,21 @@
     color: $AccentOrange;
     margin-bottom: 24px;
 
+    @include onTablet {
+      width: 680px;
+    }
+
+    @include onLaptop {
+      width: 558px;
+    }
+
+    @include onDesktop {
+      width: 558px;
+    }
+
+    @include onBigDesktop {
+      width: 558px;
+    }
   }
 
   &__card {
@@ -67,6 +102,10 @@
 
       @include onDesktop {
         height: 560px;
+      }
+
+      @include onBigDesktop {
+        height: 590px;
       }
     }
 
