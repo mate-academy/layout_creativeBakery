@@ -1,0 +1,158 @@
+.footer {
+  background-color: $c-black;
+  padding: 61px 0 56px;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__content {
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
+    @include onTablet {
+      @include grid;
+    }
+  }
+
+  &__section-nav {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__logo {
+    display: block;
+    fill: $c-white;
+    margin-bottom: 45px;
+    transition: fill $animation-time;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDeskTop {
+      margin-bottom: 65px;
+    }
+
+    &:hover {
+      fill: $c-accent-orange;
+    }
+  }
+
+  &__title {
+    @extend %uppercase;
+    color: $c-grey;
+    margin-bottom: 16px;
+
+    &-contacts {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-contacts {
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__contacts-title {
+    height: 96px;
+    @extend %h2;
+    color: $c-white;
+    margin-bottom: 40px;
+
+    @include onDeskTop {
+      height: max-content;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 44px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDeskTop {
+      @include grid;
+    }
+  }
+
+  &__call {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+
+    @include onDeskTop {
+      margin-bottom: 0;
+      grid-column: 1 / 5;
+    }
+
+    &-phone {
+      color: $c-white;
+      text-decoration: none;
+      transition: color $animation-time;
+
+      &:hover {
+        color: $c-accent-orange;
+      }
+    }
+  }
+
+  &__email {
+    @include onDeskTop {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__mailto {
+    color: $c-white;
+    text-decoration: none;
+    transition: color $animation-time;
+
+    &:hover {
+      color: $c-accent-orange;
+    }
+  }
+
+  &__bottom {
+    @include onTablet {
+      @include grid;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 42px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      grid-column: 1 / 5;
+    }
+
+    &-icon {
+      fill: $c-accent-orange;
+      transition: fill $animation-time;
+
+      &:hover {
+        fill: $c-white;
+      }
+    }
+  }
+
+  &__copyright {
+    color: $c-grey;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+  }
+}
