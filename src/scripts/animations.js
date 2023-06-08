@@ -20,7 +20,7 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, {
-  threshold: 0.3,
+  threshold: 0.2,
 });
 
 const animElements = document.querySelectorAll('.anim');
