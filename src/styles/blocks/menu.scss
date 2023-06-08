@@ -1,0 +1,108 @@
+.menu {
+  &--big {
+    display: none;
+
+    @include onDesktop {
+      display: contents;
+    }
+  }
+
+  &--small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    text-align: center;
+  }
+
+  &__list {
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
+
+    &--footer {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    @include onDesktop {
+      &:not(:last-child) {
+        margin: 0 64px 0 0;
+      }
+    }
+
+    &--footer {
+      &:not(:last-child) {
+        margin: 0 0 16px;
+      }
+    }
+  }
+
+  &__link {
+    letter-spacing: -0.01em;
+    color: $main-color;
+
+    @include transition(color);
+    cursor: pointer;
+
+    &--contact {
+      display: flex;
+      align-items: center;
+
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $accent-color;
+
+      &::before {
+        content: "";
+
+        display: block;
+        @include iconSize(24px);
+        margin-right: 8px;
+
+        background-image: url("../images/Icon-phone.svg");
+        @include backgroungImagePosition;
+      }
+    }
+
+    &--footer {
+      color: $white-color;
+    }
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+
+  &--footer {
+    margin: 48px 0 64px;
+
+    @include onTablets {
+      margin: 100px 0 106px;
+    }
+
+    @include onDesktop {
+      margin: 64px 0 48px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey-color;
+  }
+}

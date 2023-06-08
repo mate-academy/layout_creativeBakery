@@ -1,0 +1,43 @@
+.icon {
+  display: inline-block;
+  @include iconSize (24px);
+
+  @include backgroungImagePosition ;
+
+  &--menu {
+    background-image: url("../images/Icon-menu.svg");
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--close {
+    background-image: url("../images/Icon-close.svg");
+  }
+
+  &--social {
+    @include transition(filter);
+
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+
+    &:hover,
+    &:focus {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &--facebook {
+    background-image: url("../images/Icon-facebook.svg");
+  }
+
+  &--instagram {
+    background-image: url("../images/Icon-instagram.svg");
+  }
+
+  &--twitter {
+    background-image: url("../images/Icon-twitter.svg");
+  }
+}

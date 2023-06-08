@@ -1,0 +1,119 @@
+.bakery {
+  display: flex;
+  align-items: center;
+  height: $bakery-height;
+
+  @include onTablets {
+    height: $bakery-tablet-height;
+  }
+
+  &__motto {
+    margin-top: 32px;
+
+    letter-spacing: -0.01em;
+    color: $main-color;
+    text-align: center;
+
+    @include onTablets {
+      margin-top: 60px;
+
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+    }
+  }
+
+  &__title {
+    margin-top: 32px;
+
+    font-size: 64px;
+    font-weight: inherit;
+    line-height: 54px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $main-color;
+
+    @include onTablets {
+      margin-top: 100px;
+
+      font-size: 70px;
+      line-height: 68px;
+    }
+
+    @include onDesktop {
+      margin-top: 15px;
+
+      font-size: 110px;
+      line-height: 116px;
+    }
+
+    @include onLargeDesktops {
+      margin-top: 40px;
+
+      font-size: 140px;
+      line-height: 122px;
+    }
+
+    &::after {
+      content: "";
+
+      display: block;
+      width: 288px;
+      height: 290px;
+      margin: 0 auto;
+
+      background-image: url("../images/Cookie.svg");
+      @include backgroungImagePosition;
+
+      @include onTablets {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+
+        width: 326px;
+        height: 328px;
+        margin: 0;
+      }
+
+      @include onDesktop {
+        width: 544px;
+        height: 546px;
+      }
+
+      @include onLargeDesktops {
+        width: 584px;
+        height: 586px;
+      }
+    }
+  }
+
+  &__button {
+    @include transition(filter);
+    @include transition(color);
+    @include transition(background-color);
+
+    @include onTablets {
+      margin-top: 150px;
+    }
+
+    @include onDesktop {
+      margin-top: 64px;
+    }
+
+    &__icon {
+      margin-right: 4px;
+
+      background-image: url("../images/Icon-cookie.svg");
+    }
+
+    &:hover &__icon,
+    &:focus &__icon {
+      filter: brightness(0) invert(1);
+    }
+  }
+}
