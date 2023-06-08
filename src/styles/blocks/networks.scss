@@ -1,0 +1,46 @@
+.networks {
+  margin-bottom: 42px;
+  
+  @include onTablet {
+    grid-column: 1 / 3;
+    margin: 0;
+  }
+
+  &__network {
+    display: grid;
+    grid-template-columns: repeat(3, 20px);
+    column-gap: 35px;
+  }
+
+  &__network-icon {
+    position: relative;
+    @include linksIcons;
+    width: 20px;
+    padding-bottom: 20px;
+    transition: background-image 0.3s;
+  
+    &--facebook {
+      background-image: url(../images/facebook-icon.svg);
+
+      &:hover {
+        background-image: url(../images/facebook-hover-icon.png);
+      }
+    }
+  
+    &--instagram {
+      background-image: url(../images/instagram-icon.svg);
+
+      &:hover {
+        background-image: url(../images/instagram-hover-icon.png);
+      }
+    }
+  
+    &--twitter {
+      background-image: url(../images/twitter-icon.svg);
+
+      &:hover {
+        background-image: url(../images/twitter-hover-icon.svg);
+      }
+    }
+  }
+}
