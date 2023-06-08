@@ -1,13 +1,328 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <meta name="author" content="Sviatoslav Holovin">
+    <title>Creative Bakery</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/images/favicon.ico"
+    >
     <link rel="stylesheet" href="./styles/main.scss">
+    <script src="./scripts/animations.js" defer></script>
+    <script src="./scripts/burger-handler.js" defer></script>
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
-    <script type="text/javascript" src="scripts/main.js"></script>
+  <body class="page__body">
+    <div class="intro" id="loader"></div>
+
+    <header class="header anim anim--t">
+      <div class="header__content">
+        <div class="header__logo">
+          <a href="#">
+            <img
+              src="./images/logo.png"
+              alt="Creative Bakery"
+              class="header__logo-image"
+            >
+          </a>
+        </div>
+
+        <input
+          type="checkbox"
+          name="burger"
+          id="burger"
+          class="header__burger"
+        >
+        <label class="header__burger-label" for="burger"></label>
+
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a
+                href="#product"
+                class="header__nav-link"
+                data-burger="uncheck"
+              >
+                Products
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a
+                href="#about"
+                class="header__nav-link"
+                data-burger="uncheck"
+              >
+                About Us
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Blog</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="tel:+1-629-555-0129" class="header__nav-link">Contact us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="begin">
+      <p class="begin__text anim anim--l">
+        We bake your fantasies — croissants, cakes, cookies, and cupcakes.
+      </p>
+
+      <div class="begin__img anim anim--su"></div>
+
+      <a href="#about" class="begin__button anim anim--b">
+        <button class="button">
+          <span class="button__text">Learn more</span>
+        </button>
+      </a>
+    </section>
+
+    <section class="products" id="product">
+      <h2 class="products__title anim anim--t">What we bake</h2>
+      <p class="products__text anim">
+        We can customize our cookies right for your needs.
+        Just imagine it
+      </p>
+
+      <article class="products__product product anim anim--l">
+        <a href="#" class="product__image">
+          <img
+            src="./images/products/1.png"
+            alt="Cakes"
+            class="product__img"
+          >
+        </a>
+
+        <h3 class="product__title">
+          <a href="#" class="product__link text-link">Cakes</a>
+        </h3>
+        <p class="product__text">
+          Oatmeal cookies with golden raisins, orange zest and chocolate chips
+        </p>
+
+        <a href="#contact" class="product__button text-link">Order</a>
+      </article>
+      <article class="products__product product anim anim--l">
+        <a href="#" class="product__image">
+          <img
+            src="./images/products/2.png"
+            alt="Cakes"
+            class="product__img"
+          >
+        </a>
+
+        <h3 class="product__title">
+          <a href="#" class="product__link text-link">Cakes</a>
+        </h3>
+        <p class="product__text">
+          Chocolate biscuit coffee cake topped with a buttercream and powder
+        </p>
+
+        <a href="#contact" class="product__button text-link">Order</a>
+      </article>
+
+      <article class="products__product product anim anim--r">
+        <a href="#" class="product__image">
+          <img
+            src="./images/products/3.png"
+            alt="Donuts"
+            class="product__img"
+          >
+        </a>
+
+        <h3 class="product__title">
+          <a href="#" class="product__link text-link">Donuts</a>
+        </h3>
+        <p class="product__text">
+          Light multi-layered croissant strewn with cinammon and almond “petals”
+        </p>
+
+        <a href="#contact" class="product__button text-link">Order</a>
+      </article>
+      <article class="products__product product anim anim--r">
+        <a href="#" class="product__image">
+          <img
+            src="./images/products/4.png"
+            alt="Donuts"
+            class="product__img"
+          >
+        </a>
+
+        <h3 class="product__title">
+          <a href="#" class="product__link text-link">Donuts</a>
+        </h3>
+        <p class="product__text">
+          Light multi-layered croissant strewn with coconut and nuts
+        </p>
+
+        <a href="#contact" class="product__button text-link">Order</a>
+      </article>
+
+      <article class="products__product product anim anim--l">
+        <a href="#" class="product__image">
+          <img
+            src="./images/products/5.png"
+            alt="Cakes"
+            class="product__img"
+          >
+        </a>
+
+        <h3 class="product__title">
+          <a href="#" class="product__link text-link">Cakes</a>
+        </h3>
+        <p class="product__text">
+          Cake with chocolate salted caramel, Vanilla frutti pebbles inside
+        </p>
+
+        <a href="#contact" class="product__button text-link">Order</a>
+      </article>
+      <article class="products__product product anim anim--l">
+        <a href="#" class="product__image">
+          <img
+            src="./images/products/6.png"
+            alt="Cookies"
+            class="product__img"
+          >
+        </a>
+
+        <h3 class="product__title">
+          <a href="#" class="product__link text-link">Cookies</a>
+        </h3>
+        <p class="product__text">
+          Oatmeal cookies with golden raisins, orange zest and chocolate chips
+        </p>
+
+        <a href="#contact" class="product__button text-link">Order</a>
+      </article>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="about__title anim anim--l">Few words About us</h2>
+      <p class="about__text anim anim--r">
+        Like many design teams, Onfido made the transition from Abstract + Sketch, to Figma in the last couple of years.
+        One of the common resistance points internally before making that switch, was Figma’s lack of Git-style branching that Abstract enabled.
+        The design team had come to rely on branching and had built a lot of our processes around it.
+      </p>
+
+      <div class="about__image anim anim--su">
+        <div class="about__img"></div>
+      </div>
+
+      <div class="about__statistics">
+        <div class="about__num anim anim--l">
+          <h3 class="about__num-num">2015</h3>
+          <p class="about__num-text">Foundation year</p>
+        </div>
+
+        <div class="about__num  anim anim--r">
+          <h3 class="about__num-num">23</h3>
+          <p class="about__num-text">Stores</p>
+        </div>
+
+        <div class="about__num  anim anim--l">
+          <h3 class="about__num-num">155</h3>
+          <p class="about__num-text">Companies</p>
+        </div>
+
+        <div class="about__num  anim anim--r">
+          <h3 class="about__num-num">10K+</h3>
+          <p class="about__num-text">Clients</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__content anim anim--t">
+        <div class="footer__logo">
+          <a href="#">
+            <img
+              src="./images/Logo-white.png"
+              alt="Creative Bakery"
+              class="footer__logo-image"
+            >
+          </a>
+        </div>
+
+        <nav class="footer__nav footer__nav--menu">
+          <h4 class="footer__nav-title">Menu</h4>
+
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#product" class="footer__nav-link text-link">Products</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#about" class="footer__nav-link text-link">About Us</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#" class="footer__nav-link text-link">Blog</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#" class="footer__nav-link text-link">Terms & Privacy</a>
+            </li>
+          </ul>
+        </nav>
+
+        <h2 class="footer__title" id="contact">Contact us</h2>
+
+        <nav class="footer__nav footer__nav--call">
+          <h4 class="footer__nav-title">Call us</h4>
+
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="tel:+1-629-555-0129" class="footer__nav-link text-link">(629) 555-0129</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="tel:+1-603-555-0123" class="footer__nav-link text-link">(603) 555-0123</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="tel:+1-704-555-0127" class="footer__nav-link text-link">(704) 555-0127</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="footer__nav footer__nav--email">
+          <h4 class="footer__nav-title">Email us</h4>
+
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="mailto:bakerlab@example.com" class="footer__nav-link text-link">bakerlab@example.com</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="footer__social">
+          <ul class="footer__social-list">
+            <li class="footer__social-item">
+              <a
+                href="https://www.facebook.com/"
+                class="footer__social-link footer__social-link--facebook"
+                target="_blank"
+              ></a>
+            </li>
+            <li class="footer__social-item">
+              <a
+                href="https://www.instagram.com/"
+                class="footer__social-link footer__social-link--instagram"
+                target="_blank"
+              ></a>
+            </li>
+            <li class="footer__social-item">
+              <a
+                href="https://twitter.com/"
+                class="footer__social-link footer__social-link--twitter"
+                target="_blank"
+              ></a>
+            </li>
+          </ul>
+        </nav>
+
+        <p class="footer__copyright">© Bakerlab 2022</p>
+      </div>
+    </footer>
   </body>
 </html>

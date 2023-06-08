@@ -1,0 +1,60 @@
+.button {
+  box-sizing: border-box;
+  width: 100%;
+  padding-block: 20px;
+
+  cursor: pointer;
+  outline: none;
+  border: 2px solid $orange-accent;
+  background-color: $pink-light;
+  border-radius: 32px;
+
+  transition: background-color $effect-duration $effect-function;
+
+  &__text {
+    position: relative;
+    display: inline-block;
+
+    padding-left: 30px;
+
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $orange-accent;
+
+    transition: color $effect-duration $effect-function;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 24px;
+      height: 24px;
+
+      background-color: $orange-accent;
+      -webkit-mask: url("../images/icons/Icon-cookie.svg") no-repeat center;
+      mask-image: url("../images/icons/Icon-cookie.svg") no-repeat center;
+
+      transition: background-color $effect-duration $effect-function;
+    }
+  }
+
+  &:hover {
+    background-color: $orange-accent;
+  }
+
+  &:hover &__text {
+    color: $white;
+
+    &::before {
+      background-color: $white;
+    }
+  }
+
+  &:active {
+    animation: press $effect-duration $effect-function;
+  }
+}

@@ -1,0 +1,177 @@
+.footer {
+  margin-top: 72px;
+
+  background-color: $black;
+
+  @include onTablet {
+    margin-top: 150px;
+  }
+
+  @include onDesktop {
+    margin-top: 350px;
+  }
+
+  &__content {
+    @include pageGrid;
+    @include padding;
+  }
+
+  &__logo {
+    margin-top: 56px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      order: -2;
+      margin-top: 93px;
+      grid-column: span 4;
+    }
+
+    &-image {
+      width: 168px;
+      height: 40px;
+
+      @include hover(scale, 1.07);
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin: 0;
+    margin-top: 64px;
+
+    font-size: 4.8rem;
+    line-height: 4.08rem;
+    color: $white;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    @include onTablet {
+      grid-column: span 4;
+      order: -1;
+      margin-top: 88px;
+
+      font-size: 5.6rem;
+      line-height: 4.76rem;
+    }
+
+    @include onDesktop {
+      font-size: 7.2rem;
+      line-height: 6.12rem;
+    }
+  }
+
+  &__nav {
+    margin-top: 40px;
+    grid-column: 1 / -1;
+
+    &-title {
+      margin: 0;
+
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 1.6rem;
+      color: $grey;
+    }
+
+    &-list {
+      padding: 0;
+      margin: 0;
+
+      text-decoration: none;
+    }
+
+    &-item {
+      margin-top: 16px;
+    }
+
+    &-link {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      color: $white;
+    }
+
+    &--menu {
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--email {
+      @include onTablet {
+        margin-top: 0;
+      }
+    }
+
+    &--call,
+    &--email {
+      @include onTablet {
+        grid-column: 5 / 8;
+      }
+
+      @include onDesktop {
+        margin-top: 40px;
+        grid-column: span 2;
+      }
+    }
+  }
+
+  &__social {
+    margin-top: 40px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    &-list {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      gap: 32px;
+
+      text-decoration: none;
+    }
+
+    &-link {
+      display: block;
+      width: 24px;
+      height: 24px;
+
+      background-color: $orange-accent;
+
+      transition: background-color $effect-duration $effect-function;
+
+      &--facebook {
+        -webkit-mask: url("../images/icons/Icon-facebook.svg") no-repeat center;
+        mask-image: url("../images/icons/Icon-facebook.svg") no-repeat center;
+      }
+      &--instagram {
+        -webkit-mask: url("../images/icons/Icon-instagram.svg") no-repeat center;
+        mask-image: url("../images/icons/Icon-instagram.svg") no-repeat center;
+      }
+      &--twitter {
+        -webkit-mask: url("../images/icons/Icon-twitter.svg") no-repeat center;
+        mask-image: url("../images/icons/Icon-twitter.svg") no-repeat center;
+      }
+
+      &:hover {
+        background-color: $white;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: 40px;
+    grid-column: 1 / -1;
+    margin-bottom: 56px;
+
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: $grey;
+
+    @include onTablet {
+      grid-column: span 4;
+      margin-bottom: 88px;
+    }
+  }
+}

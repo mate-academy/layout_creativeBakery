@@ -1,0 +1,69 @@
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+
+  background-color: $pink-light;
+
+  transition: opacity 1s ease-out;
+}
+
+.anim {
+  @include onTablet {
+    $animation-offset: 32px;
+  }
+
+  opacity: 0;
+
+  &--r {
+    transform: translate($animation-offset, 0);
+  }
+
+  &--l {
+    transform: translate(-$animation-offset, 0);
+  }
+
+  &--t {
+    transform: translate(0, -$animation-offset);
+  }
+
+  &--b {
+    transform: translate(0, $animation-offset);
+  }
+
+  &--su {
+    transform: scale(0.8);
+  }
+
+  &--show {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  transition: transform $effect-duration $effect-function,
+    opacity $effect-duration $effect-function;
+}
+
+@keyframes press {
+  0% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes hover-arrow {
+  0% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
