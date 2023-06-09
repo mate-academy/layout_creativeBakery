@@ -31,13 +31,13 @@
   }
 
   &__container {
-
+    margin: 0 auto;
     @include onDesktop {
-      margin: 0 124px;
+      padding: 0 124px;
     }
 
     @include onBigDesktop {
-      margin: 0 124px;
+      padding: 0 124px;
     }
   }
 
@@ -182,6 +182,7 @@
   &__button {
     display: flex;
     padding: 20px 65px;
+    gap: 6px;
     margin: 0 auto;
     max-width: 200px;
     justify-content: center;
@@ -191,20 +192,30 @@
     text-transform: uppercase;
     border: 2px solid $AccentOrange;
     border-radius: 120px;
-    background-image: url(../images/header/hren.svg);
-    background-repeat: no-repeat;
-    background-position: center left 80px;
+
+    &--img {
+      background-image: url(../images/header/hren.svg);
+      background-position: center;
+      width: 20px;
+      height: 20px;
+      transition: all 0.3s;
+      &:hover {
+        background-image: url(../images/header/hrenwhite.svg);
+      }
+
+      &:active {
+        background-image: url(../images/header/hrenwhite.svg);
+      }
+    }
 
     &:hover {
       color: $White;
       background-color: $AccentOrange;
-      background-image: url(../images/header/hrenwhite.svg);
     }
       
     &:active {
       color: $White;
       background-color: $DarkOorange;
-      background-image: url(../images/header/hrenwhite.svg);
     }
 
     @include onLaptop {
@@ -217,7 +228,6 @@
 
     @include onBigDesktop {
       margin: 0;
-      max-width: 230px;
     }
   }
 }
