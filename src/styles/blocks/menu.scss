@@ -1,0 +1,119 @@
+.menu {
+  background-color: $body-color;
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 0;
+
+    @include onDesktop {
+      height: max-content;
+      padding: 32px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__top {
+    @include theTop;
+    margin-bottom: 150px;
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    @include onDesktop {
+      margin-right: 64px;
+      margin-bottom: 0;
+    }
+
+    &:nth-child(3) {
+      margin-bottom: 32px;
+
+      @include onDesktop {
+        margin-right: 67px;
+        margin-bottom: 0;
+      }
+    }
+
+    &:last-child {
+      margin: 0;
+      @include onDesktop {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $text-color;
+    cursor: pointer;
+    transition: text-shadow 0.3s;
+
+    &:hover {
+      font-weight: normal;
+      text-shadow: 3px 9px 25px $link-hover-focus-color;
+    }
+
+    &--contact-us {
+      @include theLinksWithIcons;
+      font-weight: normal;
+      line-height: 100%;
+
+      &::before {
+        content: "";
+        background-image: url(../images/phone-icon.svg);
+        @include linksIcons;
+        margin-right: 7px;
+        width: 18px;
+        padding-bottom: 18px;
+      }
+    }
+  }
+
+  &__footer-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__footer-item {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__footer-link {
+    text-decoration: none;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $white-color;
+    cursor: pointer;
+    transition: text-shadow 0.3s;
+
+    &:hover {
+      text-shadow: 3px 9px 25px #f8f8fa;
+    }
+  }
+}
