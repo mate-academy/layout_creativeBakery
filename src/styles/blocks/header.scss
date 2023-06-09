@@ -1,0 +1,143 @@
+.header {
+  height: 734px;
+  background-image: url(../images/Cookie_mobile.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 120px;
+
+  @include onTablet {
+    background-image: url(../images/Cookie_tablet.png);
+    margin-bottom: 230px;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/Cookie_desktop.png);
+    margin-bottom: 210px;
+  }
+
+  &__actions {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      padding: 32px 36px;
+      margin-bottom: 135px;
+    }
+
+    &_logo {
+      display: block;
+    }
+
+    &_nav {
+      list-style: none;
+      gap: 64px;
+      align-items: center;
+
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+
+    &_link {
+      text-decoration: none;
+      color: $textBlackColor;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+
+      transition: all 0.3s;
+
+      &:hover {
+        color: $orangeColor;
+      }
+
+      &--contact {
+        color: $orangeColor;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        position: relative;
+        padding-left: 28px;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          height: 18px;
+          width: 18px;
+          background-image: url(../images/phone_icon.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+
+    &_menu {
+      display: block;
+      height: 25px;
+      width: 20px;
+
+      background-image: url(../images/menu_icon.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__paragraf {
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    margin-bottom: 300px;
+
+    @include onTablet {
+      font-size: 80px;
+      margin-bottom: 220px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      margin-bottom: 74px;
+    }
+  }
+}
