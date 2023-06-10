@@ -1,0 +1,77 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  padding: 6px 0;
+  @include upper-text;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &__icon {
+    background-image: url(../images/arrow.svg);
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    margin-right: 6px;
+    transition: all 0.3s ease;
+
+    .button:hover & {
+      background-image: url(../images/arrow.svg);
+    }
+    .button:focus & {
+      background-image: url(../images/arrow1.svg);
+    }
+  }
+
+  &:hover {
+    color: $accent-orange;
+    border-bottom: 1px solid $accent-orange;
+  }
+
+  &:focus {
+    color: $dark-orange;
+    border-bottom: 1px solid $dark-orange;
+  }
+
+  &--border {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+    padding: 18px 0;
+    width: 100%;
+
+    &__icon {
+      background-image: url(../images/btn1.svg);
+      background-repeat: no-repeat;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      margin-right: 6px;
+      transition: all 0.3s ease;
+      .button--border:hover & {
+        background-image: url(../images/btn2.svg);
+      }
+      .button--border:focus & {
+        background-image: url(../images/btn2.svg);
+      }
+    }
+
+    &:hover {
+      color: $white;
+      background-color: $accent-orange;
+      border: 2px solid $accent-orange;
+    }
+
+    &:focus {
+      color: $white;
+      background-color: $dark-orange;
+      border: 2px solid $dark-orange;
+    }
+  }
+}

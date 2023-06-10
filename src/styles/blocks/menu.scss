@@ -1,0 +1,44 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $light-pink;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+  &:target {
+    transform: translateX(0);
+  }
+  &__cross {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/cross1.svg);
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 152px 0;
+  }
+  &__item {
+    list-style: none;
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+  &__link {
+    padding-bottom: 8px;
+    color: inherit;
+    text-decoration: none;
+  }
+}
