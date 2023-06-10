@@ -1,0 +1,98 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    font-family: $font-familie;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: $body-color;
+    color: $text-color;
+
+    @include onPhone {
+      min-width: 319px;
+    }
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin: 0 0 104px;
+
+    @include onTablet {
+      margin: 0 0 228px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 218px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.2s;
+
+    @include onDesktop {
+      position: absolute;
+      transform: translateX(0);
+    }
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__text-gray-titles {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $gray-titles;
+  }
+
+  &__section {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 186px;
+    }
+
+    &:last-child {
+      margin-bottom: 72px;
+
+      @include onTablet {
+        margin-bottom: 152px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 349px;
+      }
+    }
+  }
+}
