@@ -1,0 +1,40 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $secondary-text-color;
+
+    @include hover(color, $main-text-color);
+
+    &--phone-us {
+      text-transform: uppercase;
+      color: $main-text-color;
+      padding-bottom: 4px;
+
+      border-bottom: 1px solid transparent;
+
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+        border-color: $main-text-color;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image: url(../images/icons/phone-icon.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: middle;
+      }
+    }
+  }
+}
