@@ -1,0 +1,89 @@
+.about {
+  position: relative;
+  margin-bottom: 72px;
+
+  @include onTablet {
+    margin-bottom: 152px;
+  }
+
+  @include onBigTablet {
+    margin-bottom: 56px;
+    height: 670px;
+  }
+
+  &__background {
+    @extend %background-image-cover;
+    position: absolute;
+    width: 100vw;
+    min-height: 300px;
+    height: 93vw;
+    background-image: url(/src/images/Crumbs-bcg.jpg);
+    bottom: 174px;
+    z-index: -1;
+
+    @include onTablet {
+      min-width: 525px;
+      min-height: 500px;
+      width: 68vw;
+      height: 65vw;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    @include onBigTablet {
+      top: 57%;
+      left: 68%;
+    }
+  }
+
+  &__description-container {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+    }
+
+    @include onBigTablet {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__description-title {
+    @extend %font-h2;
+    color: $color-accent-orange;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__description-text {
+    @extend %font-body-text;
+    color: $color-black;
+  }
+
+  &__counter-element {
+    margin-bottom: 48px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onBigTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__counter-number {
+    @extend %font-big-text;
+    color: $color-accent-orange;
+    margin-bottom: 8px;
+  }
+
+  &__counter-description {
+    @extend %font-body-text;
+    color: $color-black;
+  }
+}
