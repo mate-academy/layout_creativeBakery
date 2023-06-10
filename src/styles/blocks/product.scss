@@ -1,0 +1,144 @@
+.product {
+
+  &__title {
+    margin-bottom: 24px;
+    @extend %h2;
+  }
+
+  &__info {
+    margin-bottom: 56px;
+    @extend %body-text;
+    color: $c-black;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onTablet {
+      @include grid;
+      row-gap: 88px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    max-width: 430px;
+    margin-bottom: 64px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &:nth-of-type(1) {
+      grid-column: 1 / 5;
+
+      @include onDesktop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &:nth-of-type(2) {
+      grid-column: 5 / 9;
+
+      @include onDesktop {
+        grid-column: 4 / 7;
+      }
+    }
+
+    &:nth-of-type(3) {
+      grid-column: 1 / 5;
+
+      @include onDesktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &:nth-of-type(4) {
+      grid-column: 5 / 9;
+
+      @include onDesktop {
+        grid-column: 6 / 9;
+      }
+    }
+
+    &:nth-of-type(5) {
+      grid-column: 1 / 5;
+
+      @include onDesktop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &:nth-of-type(6) {
+      grid-column: 5 / 9;
+
+      @include onDesktop {
+        grid-column: 4 / 7;
+      }
+    }
+
+    &-photo {
+      width: 100%;
+      max-height: 100%;
+      margin-bottom: 16px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+      transition: all $trans-time;
+
+      &:hover {
+        box-shadow: 5px 5px 10px 1px rgba(250, 0, 150, 0.1),
+          -5px -5px 10px 1px rgba(180, 0, 100, 0.1);
+        transform: scale(1.02);
+      }
+    }
+
+    &-details {
+      height: max-content;
+    }
+
+    &-title {
+      margin-bottom: 8px;
+      @extend %uppercase;
+      text-decoration: none;
+      color: $c-grey;
+    }
+
+    &-description {
+      margin-bottom: 24px;
+      @extend %body-text;
+      color: $c-black;
+    }
+
+    &-order {
+      display: flex;
+      @extend %uppercase;
+      text-decoration: none;
+      color: $c-a-orange;
+      transition: translate $trans-time;
+
+      &:hover {
+        translate: 3px;
+      }
+
+      &__vector {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        @include imgPosition;
+        background-image: url(../images/Vector.svg);
+      }
+    }
+  }
+}

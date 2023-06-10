@@ -1,0 +1,182 @@
+.footer {
+  background-color: $c-black;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      @include grid;
+    }
+
+    &--1 {
+      grid-column: 1 / 5;
+      grid-row: 1 / 2;
+      margin-bottom: 45px;
+    }
+
+    &--2 {
+      margin-bottom: 64px;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--3 {
+      grid-column: 5 / 9;
+      grid-row: 1 / 2;
+      margin-bottom: 40px;
+    }
+
+    &--4 {
+      grid-column: 5 / 9;
+      margin-bottom: 42px;
+
+      @include onTablet {
+        margin-bottom: 48px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+
+    &--5 {
+      grid-column: 1 / 5;
+      margin-bottom: 42px;
+    }
+
+    &--6 {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__logo {
+    height: 30px;
+    filter: brightness(0) invert(1);
+  }
+
+  &-menu {
+    &__subtitle {
+      margin-bottom: 16px;
+      @extend %uppercase;
+      color: $c-grey;
+    }
+
+    &__nav {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &__items {
+      @extend %body-text;
+      text-decoration: none;
+      color: $c-white;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      transition: $trans-time;
+
+      &:hover {
+        color: $c-a-orange;
+      }
+    }
+  }
+
+  &-title {
+    &__contacts {
+      @extend %h2;
+      color: $c-white;
+    }
+  }
+
+  &-contacts {
+    &__section {
+      @include onDesktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    &__phone {
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        margin: 0;
+      }
+    }
+
+    &__subtitle {
+      margin-bottom: 16px;
+      @extend %uppercase;
+      color: $c-grey;
+    }
+
+    &__items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+    }
+
+    &__item {
+      @extend %body-text;
+      text-decoration: none;
+      color: $c-white;
+      transition: $trans-time;
+
+      &:hover {
+        color: $c-a-orange;
+      }
+    }
+  }
+
+  &-links {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+
+    &__icon {
+      width: 20px;
+      height: 20px;
+      text-decoration: none;
+      @include imgPosition;
+
+      &-facebook {
+        width: 10px;
+        background-image: url(../images/Facebook.svg);
+
+        @include hover(background-image, url(../images/Facebook-hover.svg));
+      }
+
+      &-insta {
+        background-image: url(../images/Insta.svg);
+
+        @include hover(background-image, url(../images/Insta-hover.svg));
+      }
+
+      &-twitter {
+        background-image: url(../images/Twitter.svg);
+
+        @include hover(background-image, url(../images/Twitter-hover.svg));
+      }
+    }
+  }
+
+  &-bottom {
+    color: $c-grey;
+
+    &__itext {
+      @extend %body-text;
+    }
+  }
+}

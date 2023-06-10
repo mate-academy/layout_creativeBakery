@@ -1,0 +1,150 @@
+.top {
+
+  &-info {
+    z-index: 99;
+    grid-column: 1 / 3;
+    margin-bottom: 32px;
+    @extend %body-text;
+    color: $c-black;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 99;
+    grid-column: 1 / 3;
+    @extend %h1;
+    transition: transform $trans-time;
+    animation: title 3s 1;
+
+    @include onTablet {
+      grid-column: 1 / 9;
+      margin-bottom: 220px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 9;
+      margin-bottom: 70px;
+    }
+
+    @keyframes title {
+      from {
+        transform: scale(0.8);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+    &:hover {
+      transform: scale($scale-menu);
+    }
+  }
+
+  &__image {
+    z-index: 0;
+    display: block;
+    grid-column: 1 / 3;
+    margin: 0 auto;
+    width: 290px;
+    height: 290px;
+
+    @include imgPosition;
+    background-color: #ffeefc;
+    background-blend-mode: multiply;
+    background-image: url(../images/Photos/CookiePiece.jpg);
+
+    animation: open 3s 1;
+
+    @include onTablet {
+      position: absolute;
+      top: 30%;
+      left: 15%;
+      right: 15%;
+      width: 350px;
+      height: 350px;
+      grid-column: 3 / 6;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      top: 17%;
+      left: 15%;
+      right: 15%;
+      width: 550px;
+      height: 550px;
+      grid-column: 3 / 6;
+    }
+
+    @keyframes open {
+      from {
+        transform: scale(0.2);
+      }
+
+      to {
+        transform: scale(1)
+          rotate(360deg);
+      }
+    }
+  }
+
+  &__button-icon {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/Cookie.svg);
+  }
+
+  &__button {
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    gap: 6px;
+    grid-column: 1 / 3;
+
+    @extend %uppercase;
+    text-decoration: none;
+    color: $c-a-orange;
+    border: 1px solid $c-a-orange;
+    border-radius: 32px;
+    transition: all $trans-time;
+
+    &:hover {
+      .top__button-icon {
+
+        background-image: url(../images/Cookie-hover.svg);
+      }
+
+      background-color: $c-a-orange;
+      color: $c-white;
+      transform: scale(1.05);
+    }
+
+    &:focus {
+      .top__button-icon {
+        background-image: url(../images/Cookie-hover.svg);
+      }
+      transform: scale(1.05);
+      background-color: $c-d-orange;
+      color: $c-white;
+    }
+
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+  }
+}
