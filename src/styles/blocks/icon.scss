@@ -1,0 +1,34 @@
+.icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background-size: cover;
+  background-image: url(../images/icons/burger-menu.png);
+  transition: transform 0.3s;
+
+  @include hover(transform, scale(0.9));
+
+  @include onTablet {
+    height: 28px;
+    width: 28px;
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &--close {
+    background-image: url(../images/icons/close-icon.svg);
+  }
+
+  &--social {
+    fill: $main-text-color;
+
+    @include hover(transform, scale(1));
+    @include hover(fill, #fff);
+
+    @include onDesktop {
+      display: inline-block;
+    }
+  }
+}

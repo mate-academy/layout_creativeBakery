@@ -1,0 +1,56 @@
+.what-we-bake {
+  padding-bottom: 80px;
+
+  @include onTablet {
+    padding-bottom: 160px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 186px;
+  }
+
+  &__description {
+    padding-top: 24px;
+    padding-bottom: 56px;
+
+    @include onTablet {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__product-card {
+    @include pageGrid;
+    // gap: 64px;
+    row-gap: 64px;
+  }
+
+  &__products-width {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+
+    &--left {
+      @include onDesktop {
+        grid-column: span 3;
+      }
+    }
+
+    &--right:nth-child(3) {
+      @include onDesktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--right:nth-child(4) {
+      @include onDesktop {
+        grid-column: 6 / 9;
+      }
+    }
+  }
+}
