@@ -1,18 +1,30 @@
 .top-actions {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 64px;
+  padding: 0 16px;
+  margin-bottom: 32px;
+
+  @include onTablet {
+    padding: 0 20px;
+    margin-bottom: 80px;
+  }
+
+  @include onBigTablet {
+    height: 88px;
+    padding: 0 32px;
+    margin-bottom: 135px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 144px;
+  }
 
   &--mobile {
-    padding: 20px 16px 0;
-    margin-bottom: 50px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    @include onTablet {
-      padding: 20px 20px 0;
-      margin-bottom: 100px;
-    }
-
     @include onBigTablet {
       display: none;
     }
@@ -20,12 +32,9 @@
 
   &--big-tablet {
     display: none;
-    margin-bottom: 32px;
 
     @include onBigTablet {
       display: flex;
-      justify-content: space-between;
-      padding: 32px 32px 0;
     }
   }
 }
