@@ -1,19 +1,53 @@
 .order-button {
   text-decoration: none;
   display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__text {
     @extend %font-body-text-uppercase;
     color: $color-accent-orange;
   }
 
-  &--learn-more {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &--product {
+    justify-content: start;
+    padding-bottom: 8px;
 
+    &:hover {
+      padding-bottom: 7px;
+      box-sizing: border-box;
+      border-bottom: 1px solid $color-accent-orange;
+      width: max-content;
+    }
+  }
+
+  &--learn-more {
     border: 1px solid $color-accent-orange;
     border-radius: $button-height;
     height: $button-height;
+
+    &:hover {
+      background-color: $color-accent-orange;
+
+      .order-button__text {
+        color: $color-white;
+      }
+
+      .icon--learn-more {
+        background-image: url(/src/images/Icon-cookie-white.svg);
+      }
+    }
+
+    &:focus {
+      background-color: $color-dark-orange;
+
+      .order-button__text {
+        color: $color-white;
+      }
+
+      .icon--learn-more {
+        background-image: url(/src/images/Icon-cookie-white.svg);
+      }
+    }
   }
 }
