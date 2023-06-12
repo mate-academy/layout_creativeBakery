@@ -1,0 +1,55 @@
+.page {
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+  &__body {
+    margin: 0;
+    background-color: $blue;
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+  &__menu {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    &:target {
+      transform: translateX(0);
+    }
+  }
+  &__hero {
+    margin-bottom: 102px;
+    @include onTablet {
+      margin-bottom: 225px;
+    }
+  }
+  &__products {
+    margin-bottom: 78px;
+    @include onTablet {
+      margin-bottom: 164px;
+    }
+  }
+  &__about {
+    margin-bottom: 72px;
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+    @include onDesktop {
+      margin-bottom: 56px;
+    }
+  }
+  &__contact {
+    background-color: $black;
+    padding-top: 88px;
+    padding-bottom: 40px;
+    @include onTablet {
+      padding-bottom: 48px;
+    }
+  }
+  &__footer {
+    border-color: $black;
+  }
+}

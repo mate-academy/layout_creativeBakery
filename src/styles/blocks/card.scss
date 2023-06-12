@@ -1,0 +1,64 @@
+.card {
+  max-width: 402px;
+  justify-self: center;
+  &__img {
+    margin-bottom: 16px;
+
+    &:hover {
+      transition: transform 0.5s ease-in-out;
+      transform: scale(1.05);
+    }
+
+    img {
+      border-radius: 8px;
+      width: 100%;
+      height: 356px;
+      
+      @include onTablet {
+        height: 424px;
+      }
+    }
+  }
+
+  &__name {
+    @extend %upperText;
+    color: $grey;
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    @extend %bodyText;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    @extend %upperText;
+    color: $accent-orange;
+    display: flex;
+    align-items: center;
+    &:hover {
+      text-decoration: underline;
+      transition: text-decoration 0.3s ease;
+    }
+  }
+
+  @include onDesktop {
+    &:nth-of-type(1),
+    &:nth-of-type(5) {
+      grid-column: 1 / 4;
+    }
+
+    &:nth-of-type(2),
+    &:nth-of-type(6) {
+      grid-column: 4 / 7;
+    }
+
+    &:nth-of-type(3) {
+      grid-column: 3 / 6;
+    }
+
+    &:nth-of-type(4) {
+      grid-column: 6 / 9;
+    }
+  }
+}

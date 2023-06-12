@@ -1,0 +1,102 @@
+.hero {
+  &__img {
+    width: 288px;
+    height: 290px;
+    margin: 0 auto;
+    background-image: url(../images/Cookie.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__text {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__title {
+    color: $black;
+    text-align: center;
+  }
+
+  &__button {
+    @extend %upperText;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    line-height: 56px;
+    max-width: 326px;
+    color: $accent-orange;
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+    z-index: 2;
+    &:hover {
+      transition: all 0.3s ease-in;
+      background-color: $accent-orange;
+      color: #fff;
+      .hero__icon {
+        background-image: url(../images/icon-cookie-white.svg);
+      }
+    }
+    &:focus {
+      background-color: $dark-orange;
+      color: #fff;
+      .button__icon {
+        background-image: url(../images/icon-cookie-white.svg);
+      }
+    }
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  @include onTablet {
+    &__text {
+      max-width: 280px;
+      text-align: left;
+      margin-left: 24px;
+      &:not(:last-child) {
+        margin-bottom: 146px;
+      }
+    }
+    &__title {
+      position: relative;
+      z-index: 5;
+      margin-bottom: 210px;
+    }
+    &__img {
+      z-index: 1;
+      position: absolute;
+      top: 25%;
+      left: 15%;
+      right: 15%;
+      width: 330px;
+      height: 330px;
+      background-blend-mode: darken;
+    }
+  }
+  @include onDesktop {
+    &__text {
+      margin-left: 0;
+      &:not(:last-child) {
+        margin-bottom: 90px;
+      }
+    }
+    &__title {
+      margin-bottom: 64px;
+    }
+
+    &__img {
+      width: 584px;
+      height: 586px;
+      top: 11%;
+    }
+
+    &__button {
+      width: 260px;
+    }
+  }
+}
