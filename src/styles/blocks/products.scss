@@ -1,0 +1,52 @@
+.products {
+  margin-bottom: 72px;
+
+  @include onDesktop {
+    margin-bottom: 178px;
+  }
+
+  @include onIpad {
+    margin-bottom: 152px;
+  }
+
+  &__item {
+    margin-bottom: 56px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+
+      &:nth-child(-n + 4) {
+        margin-bottom: 80px;
+      }
+    }
+
+    @include onIpad {
+      margin-bottom: 0;
+
+      &:nth-child(-n + 4) {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 56px;
+    color: $black;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+
+    @include onIpad {
+      margin-bottom: 80px;
+    }
+  }
+}

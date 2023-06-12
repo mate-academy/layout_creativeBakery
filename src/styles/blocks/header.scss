@@ -1,0 +1,119 @@
+.header {
+  margin-bottom: 100px;
+
+  @include onDesktop {
+    margin-bottom: 310px;
+  }
+
+  @include onIpad {
+    margin-bottom: 220px;
+  }
+
+  &__top {
+    @include top-actions;
+    margin-bottom: 32px;
+
+    @include onDesktop {
+      height: 88px;
+      margin-bottom: 135px;
+    }
+
+    @include onIpad {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    font-size: 64px;
+    font-weight: 400;
+    color: $accent-orange;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      font-size: 136px;
+      text-align: start;
+      margin-bottom: 64px;
+    }
+
+    @include onIpad {
+      font-size: 80px;
+      margin-bottom: 210px;
+    }
+  }
+
+  &__title > span {
+    color: $dark-grey;
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    @include onDesktop {
+      text-align: start;
+      margin-bottom: 40px;
+    }
+
+    @include onIpad {
+      text-align: start;
+      margin-bottom: 146px;
+    }
+  }
+
+  &__menu-opener {
+    display: block;
+    width: 20px;
+    height: 8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/icons/icon-menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__img {
+    object-fit: contain;
+    height: 100%;
+    z-index: -1;
+    animation: rotate 50s linear infinite;
+
+    @include onDesktop {
+      position: absolute;
+      max-height: 546px;
+      top: 95px;
+      left: 50%;
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    @include onIpad {
+      position: absolute;
+      max-height: 328px;
+      top: 208px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
