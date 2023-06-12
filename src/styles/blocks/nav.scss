@@ -1,0 +1,61 @@
+.nav {
+  display: block;
+
+  &--header {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include onTablet {
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 64px;
+      align-items: start;
+    }
+  }
+
+  &__link {
+    display: block;
+    box-sizing: border-box;
+    padding: 4px 0;
+
+    color: inherit;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $colorOrange;
+    }
+
+    &--contact-us {
+      padding-left: 25px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $colorOrange;
+
+      background-image: url(../images/phone.svg);
+      background-repeat: no-repeat;
+      background-position: 0 center;
+      background-size: 18px 18px;
+    }
+  }
+}

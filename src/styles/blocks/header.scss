@@ -1,0 +1,106 @@
+.header {
+  min-height: 100vh;
+  max-height: 900px;
+  padding: $headerTopPadding 0 30px;
+  box-sizing: border-box;
+
+  @include onDesktop {
+    padding: 32px 0 50px;
+  }
+
+  &__top {
+    @include top-actions;
+    margin-bottom: 52px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin: 0 32px 166px 36px;
+    }
+
+    @include onBigDesktop {
+      margin-bottom: 176px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0 0 32px;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 146px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-bottom: 8px;
+    }
+
+    @include onBigDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 210px;
+      font-size: 10.6vw;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+      font-size: 11.2vw;
+    }
+
+    @include onBigDesktop {
+      font-size: 144px;
+    }
+  }
+
+  &__title-container {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-width: 326px;
+    margin: 0 auto;
+
+    background-image: url(../images/header.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+
+      width: 50%;
+      max-width: none;
+
+      transform: translate(-50%, -50%);
+    }
+  }
+}

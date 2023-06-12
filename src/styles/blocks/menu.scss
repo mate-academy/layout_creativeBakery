@@ -1,0 +1,28 @@
+.menu {
+
+  // position: relative;
+  box-sizing: border-box;
+  height: 100vh;
+  padding: $headerTopPadding 0;
+
+  overflow-y: auto;
+
+  background-color: $colorLightBlue;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__content {
+    @include onMobileAndTablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__top {
+    @include top-actions;
+  }
+}
