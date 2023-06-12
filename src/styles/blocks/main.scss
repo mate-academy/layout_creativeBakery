@@ -1,0 +1,38 @@
+.main {
+  @include contentPaddingInline;
+  // @include pageGrid;
+
+  &__products {
+    // grid-column: 1 / -1;
+    @include pageGrid;
+
+    @include onTablet {
+      row-gap: 80px;
+    }
+  }
+  &__title {
+
+
+    grid-column: 1 / -1;
+    @include onTablet {
+      font-size: 56px;
+      line-height: 85%;
+      grid-column: span 4;
+      margin-bottom: 24px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      white-space: nowrap;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    grid-column: 1 / -1;
+    @include onTablet {
+      grid-column: span 6;
+      margin-bottom: 80px;
+    }
+  }
+}

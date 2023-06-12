@@ -1,0 +1,98 @@
+.header {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    // height: 100%;
+    // height: 100vh;
+
+    // @include onTablet {
+    //   height: 900px;
+    // }
+
+    // @include onDesktop {
+    //   height: 700px;
+    // }
+  }
+
+  &__bottom {
+    margin-top: 32px;
+
+    @include pageGrid;
+
+    position: relative;
+
+    @include onTablet {
+      margin-block: 80px 230px;
+    }
+
+    @include onDesktop {
+      margin-block: 0 220px;
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    @include onDesign {
+      margin-block: 0 180px;
+
+    }
+
+  }
+
+  &__background{
+    grid-column: span 2;
+    width: 100%;
+
+
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+
+    @include onDesktop {
+      z-index: -2;
+      grid-row: 1 / -1;
+    }
+  }
+
+  &__primary-title {
+    text-align: center;
+    grid-column: span 2;
+
+    @include onTablet {
+      position: absolute;
+      justify-self: center;
+      align-self: center;
+    }
+
+    @include onDesktop {
+      position: static;
+      white-space: nowrap;
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+    }
+
+  }
+
+  &__secondary-title {
+    font-size: 16px;
+    text-align: center;
+    grid-column: span 2;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      text-align: left;
+
+      grid-column: span 4;
+      margin-bottom: 16px;
+    }
+
+    @include onDesktop {
+      align-self: self-end;
+      grid-column: span 2;
+      margin-bottom: 6px;
+    }
+
+    @include onDesign {
+      margin-bottom: 40px;
+    }
+  }
+
+}
