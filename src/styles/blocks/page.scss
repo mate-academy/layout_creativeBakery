@@ -1,0 +1,72 @@
+.page {
+  min-width: 320px;
+  background-color: #eef7ff;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  scroll-behavior: smooth;
+
+  &__content {
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__header {
+    margin-bottom: 104px;
+
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 313px;
+    }
+
+    @include onDesktop_l {
+      margin-bottom: 290px;
+    }
+  }
+
+  &__products {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 178px;
+    }
+  }
+
+  &__about-us {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 349px;
+    }
+  }
+}

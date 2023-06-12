@@ -1,6 +1,49 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onDesktop_l {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin topAction {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin tabletLoop {
+  @for $start from 1 through 8 {
+    @for $end from $start through 8 {
+      @include onTablet {
+        &--#{$start}-#{$end}-tablet {
+          grid-column: #{$start}/#{$end + 1};
+        }
+      }
+    }
+  }
+}
+
+@mixin desktopLoop {
+  @for $start from 1 through 8 {
+    @for $end from $start through 8 {
+      @include onDesktop {
+        &--#{$start}-#{$end}-desktop {
+          grid-column: #{$start}/#{$end + 1};
+        }
+      }
+    }
   }
 }
