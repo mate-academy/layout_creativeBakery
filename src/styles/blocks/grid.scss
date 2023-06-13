@@ -1,0 +1,104 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+
+  &--row {
+    row-gap: 150px;
+  }
+
+  &--header {
+    grid-template-rows: 144px 328px -1px;
+
+    @include onDesktop {
+      grid-template-rows: 144px 328px 120px;
+    }
+  }
+
+  &__item--center {
+    align-self: center;
+  }
+
+  &--on {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &--tablet--off {
+    display: block;
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &--desktop--off {
+    display: grid;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  @include onTablet {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, 328px, 1fr);
+    column-gap: 24px;
+
+    &__item {
+      @for $start from 1 through 5 {
+        @for $end from $start through 5 {
+          &-tablet-row--#{$start}-#{$end} {
+            grid-row: #{$start} / #{$end};
+          }
+        }
+      }
+    }
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+
+    &__item {
+      @for $start from 1 through 5 {
+        @for $end from $start through 5 {
+          &-desktop-row--#{$start}-#{$end} {
+            grid-row: #{$start} / #{$end};
+          }
+        }
+      }
+    }
+  }
+
+  @include onTablet {
+    &__item {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &-tablet--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  @include onDesktop {
+    &__item {
+      @for $start from 1 through 8 {
+        @for $end from $start through 8 {
+          &-desktop--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}

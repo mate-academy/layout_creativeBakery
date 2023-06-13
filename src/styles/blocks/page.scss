@@ -1,0 +1,49 @@
+.page {
+  box-sizing: border-box;
+  background-color: $light__pink;
+  
+  &__body {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 0.3s;
+    z-index: 10;
+
+    transform: translateX(100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__title {
+    @include h2__mobile;
+    color: $accent__orange;
+    margin-bottom: 24px;
+
+    @include onTablet {
+      @include h2__tablet;
+    }
+
+    @include onDesktop {
+      @include h2__desktop;
+    }
+  }
+
+  &__paragraph {
+    @include body__text;
+    color: $black;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+}

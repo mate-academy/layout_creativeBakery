@@ -1,0 +1,145 @@
+.header {
+  margin-bottom: 100px;
+  
+  &__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 64px;
+    }
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include body__text;
+      color: $black;
+      transition: 0.3s;
+
+      &--bold {
+        @include uppercase;
+        font-weight: 500;
+        color: $accent__orange;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 5px;
+        transition: 0.3s;
+
+        &:hover {
+          border-bottom: 1px solid $accent__orange;
+        }
+      }
+
+      &:hover {
+        color: $accent__orange;
+      }
+
+      &--contact {
+        display: flex;
+        margin-right: 7px;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__paragraph {
+    @include body__text;
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    @include h1__mobile;
+    text-align: center;
+    color: $accent__orange;
+
+    @include onTablet {
+      @include h1__tablet;
+      position: relative;
+      text-align: center;
+      z-index: 2;
+    }
+
+    @include onDesktop {
+      @include h1__desktop;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    max-width: 584px;
+    max-height: 586px;
+
+    background-image: url(./../images/Cookie.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    margin: 0 auto;
+    z-index: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: unset;
+    @include uppercase;
+    
+    height: 56px;
+    max-width: 100%;
+    transition: 0.3s;
+    
+    color: $accent__orange;
+    border: 3px solid $accent__orange;
+    border-radius: 32px;
+
+    @include onTablet {
+      margin: 0 auto;
+      max-width: 326px;
+      align-self: unset;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+
+    &--pictures {
+      margin-right: 7px;
+    }
+
+    &:hover path {
+      fill: $white;
+    }
+
+    &:hover {
+      color: $white;
+      background-color: $accent__orange;
+    }
+
+    &:focus {
+      background-color: $dark__orange;
+      border-color: $dark__orange;
+    }
+  }
+}

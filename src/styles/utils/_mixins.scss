@@ -1,6 +1,95 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1199px) {
+    @content;
+  }
+}
+
+/*--TEXT---DESKTOP-------------------------------------------*/
+
+@mixin h1__desktop {
+  font-size: 143px;
+  font-weight: normal;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin h2__desktop {
+  font-size: 72px;
+  font-weight: normal;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+/*--TEXT---TABLET--------------------------------------------*/
+
+@mixin h1__tablet {
+  font-size: 80px;
+  font-weight: normal;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin h2__tablet {
+  font-size: 56px;
+  font-weight: normal;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+/*--TEXT---MOBILE--------------------------------------------*/
+
+@mixin h1__mobile {
+  font-size: 64px;
+
+  @media (width: 280px) {
+    font-size: 40px;
+  }
+
+  font-weight: normal;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin h2__mobile {
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+/*--BIG---TEXT-----------------------------------------------*/
+
+@mixin big__text {
+  font-size: 96px;
+  font-weight: normal;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin body__text {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+@mixin uppercase {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
