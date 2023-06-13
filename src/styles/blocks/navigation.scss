@@ -1,0 +1,142 @@
+.anim-slide-in {
+  // transform: translateX(-100%);
+  opacity: 0;
+  animation-name: slide-in;
+  animation-duration: $transition-duration * 3;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.nav {
+  position: relative;
+  width: 100%;
+  padding: 0 16px;
+  background-color: $bg-color;
+
+  @include onDesktop {
+    display: flex;
+    justify-content: space-between;
+    max-height: fit-content;
+    padding: 0 32px;
+  }
+
+  &__control {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__toggler {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    visibility: hidden;
+    background-color: transparent;
+    border: none;
+
+    &--active {
+      visibility: visible;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 40vh 0 0 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    @include onDesktop {
+      margin: 0;
+      transform: translate(0, 0);
+      flex-direction: row;
+      gap: 64px;
+      align-items: stretch;
+    }
+  }
+
+  // &__item {
+
+  // }
+
+  &__link {
+    display: inline-block;
+    width: max-content;
+    padding: 8px;
+    line-height: 150%;
+    color: $color-dark;
+    transition: color $transition-duration;
+
+    @include onDesktop {
+      padding: 30px 0;
+    }
+
+    &--accent {
+      color: $accent-color;
+      font-weight: 500;
+      text-transform: uppercase;
+
+      &:focus {
+        & .icon {
+          fill: $focused-color;
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      border-bottom: 2px solid transparent;
+      border-radius: 3px;
+      transition: border-color $transition-duration;
+    }
+
+    &:hover {
+      color: $accent-color;
+
+      &::after {
+        border-color: $accent-color;
+      }
+    }
+
+    &:focus {
+      color: $focused-color;
+
+      &::after {
+        border-color: $focused-color;
+      }
+    }
+  }
+
+  &--m-open {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &--m-close {
+    .nav__list {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+  }
+}
