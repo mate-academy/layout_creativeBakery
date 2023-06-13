@@ -1,0 +1,90 @@
+.header {
+  &__top {
+    @include top-actions;
+  }
+
+  &__text {
+    text-align: center;
+    margin: 32px 0;
+
+    @include onTablet {
+      max-width: 280px;
+      text-align: left;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      margin: 0;
+    }
+
+    @include onBigDesktop {
+      text-align: left;
+      margin: 0;
+    }
+  }
+
+  &__cover {
+    position: relative;
+    background-image: url(../images/Cookie.svg);
+    background-size: 300px;
+    background-position: center 100%;
+    background-repeat: no-repeat;
+    min-height: 440px;
+
+    @include onTablet {
+      background-size: 330px;
+      min-height: 330px;
+    }
+
+    @include onDesktop {
+      background-size: 550px;
+      min-height: 550px;
+    }
+
+    @include onBigDesktop {
+      background-size: 580px;
+      min-height: 580px;
+    }
+  }
+
+  &__title {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 15%;
+
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $title-text;
+
+    @include onTablet {
+      top: 49%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      top: 39%;
+      font-size: 136px;
+    }
+
+    @include onBigDesktop {
+      top: 39%;
+      font-size: 144px;
+    }
+  }
+
+  .br {
+    @media (min-width: 744px) {
+      display: none;
+    }
+  }
+}
