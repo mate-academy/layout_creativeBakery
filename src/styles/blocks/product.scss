@@ -1,0 +1,95 @@
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.product {
+  &__card {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktopBig {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__image {
+    display: block;
+    height: 356px;
+    max-width: fit-content;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-bottom: 16px;
+
+    transition: transform 0.3s;
+
+    @include onTablet {
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
+
+    @include onDesktop {
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
+
+    @include onDesktopBig {
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
+  }
+
+  &__name {
+    color: $grey;
+    font-weight: 500;
+    font-size: inherit;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    line-height: 150%;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    color: $accentOrange;
+    font-weight: 500;
+    font-size: inherit;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $darkOrange;
+    }
+
+    &--arrow {
+      margin-right: 8px;
+
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateX(5px);
+      }
+    }
+  }
+}
