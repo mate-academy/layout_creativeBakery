@@ -1,0 +1,92 @@
+.header {
+  height: 100vh;
+
+  padding-bottom: 20px;
+  margin-bottom: 80px;
+
+  &__content {
+    width: 100%;
+    height: calc(100vh - 64px - 20px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      height: calc(100vh - 88px - 20px);
+
+      justify-content: start;
+    }
+  }
+
+  &__about {
+    margin: 32px 0;
+    text-align: center;
+
+    @include onTablet {
+      margin-top: 80px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin: 135px 0 8px;
+    }
+
+    @include onWide {
+      margin: 144px 0 40px;
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $colorAccentOrange;
+
+    @include onTablet {
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+
+      margin-bottom: 64px;
+    }
+
+    @include onWide {
+      font-size: 144px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 290px;
+
+    align-self: center;
+
+    background-image: url(../images/pictures/Cookie.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include onTablet {
+      height: 328px;
+
+      position: absolute;
+      top: 36%;
+      z-index: -1;
+    }
+
+    @include onDesktop {
+      height: 546px;
+      top: 11%;
+    }
+
+    @include onWide {
+      height: 586px;
+    }
+  }
+}

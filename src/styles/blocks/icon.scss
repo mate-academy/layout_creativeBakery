@@ -1,0 +1,33 @@
+.icon {
+  display: block;
+  width: 20px;
+  height: 8px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--menu {
+    background-image: url(../images/Icon-menu-dark.svg);
+    transition: all $transition-time;
+
+    &:hover {
+      background-image: url(../images/Icon-menu.svg);
+      transform: scale(120%);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--cross {
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/Icon-close.svg);
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(120%) rotate(360deg);
+    }
+  }
+}

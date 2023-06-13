@@ -1,0 +1,120 @@
+.footer {
+  background-color: $colorBlack;
+
+  padding: 60px 0;
+
+  @include onTablet {
+    padding: 90px 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    list-style: none;
+
+    &-email {
+      padding-top: 40px;
+
+      @include onDesktop {
+        padding-top: 0;
+      }
+    }
+
+    &-item:first-child {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $colorGrey;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $colorWhite;
+
+      transition: color $transition-time;
+
+      &:hover {
+        color: $colorAccentOrange;
+      }
+    }
+  }
+
+  &__title {
+    color: $colorWhite;
+    padding: 64px 0 40px;
+
+    @include onTablet {
+      padding: 0 0 40px;
+    }
+  }
+
+  &__blog {
+    display: flex;
+    gap: 40px;
+    padding-top: 40px;
+
+    @include onTablet {
+      padding-top: 48px;
+    }
+
+    &-icon {
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &-fb {
+        background-image: url(../images/Icon-facebook.svg);
+        transition: background-image $transition-time;
+
+        &:hover {
+          background-image: url(../images/Icon-facebook-hover.svg);
+        }
+
+        &:focus {
+          background-image: url(../images/Icon-facebook-hover.svg);
+        }
+      }
+
+      &-ig {
+        background-image: url(../images/Icon-instagram.svg);
+        transition: background-image $transition-time;
+
+        &:hover {
+          background-image: url(../images/Icon-instagram-hover.svg);
+        }
+
+        &:focus {
+          background-image: url(../images/Icon-instagram-hover.svg);
+        }
+      }
+
+      &-tw {
+        background-image: url(../images/Icon-twitter.svg);
+        transition: background-image $transition-time;
+
+        &:hover {
+          background-image: url(../images/Icon-twitter-hover.svg);
+        }
+
+        &:focus {
+          background-image: url(../images/Icon-twitter-hover.svg);
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    color: $colorGrey;
+
+    padding-top: 40px;
+
+    @include onTablet {
+      padding-top: 48px;
+    }
+  }
+}

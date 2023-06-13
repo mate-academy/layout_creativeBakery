@@ -1,0 +1,67 @@
+.place {
+  &__card {
+    padding-bottom: 60px;
+
+    @include onTablet {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    border-radius: 16px;
+
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  &__title {
+    margin: 16px 0 8px;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $colorGrey;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    width: 84px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $colorAccentOrange;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-image: url(../images/Icon-arrow.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+
+      margin-right: 8px;
+    }
+
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(130%);
+    }
+  }
+}
