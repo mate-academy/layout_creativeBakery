@@ -1,0 +1,233 @@
+.header {
+
+  background-image: url(../images/header/Cookie.svg);
+  background-size: 288px;
+  background-repeat: no-repeat;
+  background-position: center top 285px;
+  margin-bottom: 84px;
+
+  @include onTablet {
+    background-size: 326px;
+    background-position: center top 200px;
+    margin-bottom: 198px;
+  }
+
+  @include onLaptop {
+    background-size: 544px;
+    background-position: center top 23px;
+    margin-bottom: 188px;
+  }
+
+  @include onDesktop {
+    background-size: 584px;
+    background-position: center top 25px;
+    margin-bottom: 260px;
+  }
+
+  @include onBigDesktop {
+    background-size: 600px;
+    background-position: center top 52px;
+    margin-bottom: 260px;
+  }
+
+  &__container {
+    margin: 0 auto;
+    @include onDesktop {
+      padding: 0 124px;
+    }
+
+    @include onBigDesktop {
+      padding: 0 180px;
+    }
+  }
+
+  &__logo {
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__cross {
+    width: 20px;
+    height: 13px;
+    margin: 10px 0;
+    background-image: url(../images/header/menubutton.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-image: url(../images/header/menohover.svg);
+    }
+
+    @include onLaptop {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    @include onBigDesktop {
+      display: none;
+    }
+  }
+
+  &__description {
+    display: block;
+    width: 288px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 150%;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin: 0 44px;
+      text-align: start;
+      width: 280px;
+      margin-bottom: 146px;
+    }
+
+    @include onLaptop {
+      margin: 0 44px;
+      width: 260px;
+      margin-bottom: 8px;
+      text-align: start;
+    }
+  
+    @include onDesktop {
+      margin: 0;
+      margin-bottom: 40px;
+      text-align: start;
+    }
+
+    @include onBigDesktop {
+      width: 350px;
+      font-size: 16px;
+      margin: 0;
+      margin-bottom: 40px;
+      text-align: start;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 300px;
+    text-align: center;
+    font-size: 64px;
+    line-height: 85%;
+    color: $AccentOrange;
+    letter-spacing: -0.05em;
+
+    &--animation {
+      animation-name: text-animation;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    
+    @keyframes text-animation {
+      0% {
+        color: $AccentOrange;
+        transform: scale(1);
+      }
+    
+      50% {
+        color: $DarkOorange;
+        transform: scale(1.1);
+      }
+    
+      100% {
+        color: $AccentOrange;
+        transform: scale(1);
+      }
+    }
+    
+    @include onTablet {
+      margin-bottom: 180px;
+      font-size: 80px;
+      white-space: nowrap;
+    }
+  
+    @include onLaptop {
+      margin: 0 44px;
+      margin-bottom: 64px;
+      display: flex;
+      justify-content: start;
+      font-size: 126px;
+      white-space: nowrap;
+    }
+  
+    @include onDesktop {
+      font-size: 125px;
+      margin: 0;
+      display: flex;
+      justify-content: start;
+      white-space: nowrap;
+      width: 100%;
+      margin-bottom: 64px;
+    }
+
+    @include onBigDesktop {
+      font-size: 146px;
+      margin: 0;
+      justify-content: start;
+      white-space: nowrap;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    padding: 20px 65px;
+    gap: 6px;
+    margin: 0 auto;
+    max-width: 200px;
+    justify-content: center;
+    text-decoration: none;
+    color: $AccentOrange;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    border: 2px solid $AccentOrange;
+    border-radius: 120px;
+
+    &--img {
+      background-image: url(../images/header/hren.svg);
+      background-position: center;
+      width: 20px;
+      height: 20px;
+      transition: all 0.3s;
+      &:hover {
+        background-image: url(../images/header/hrenwhite.svg);
+      }
+
+      &:active {
+        background-image: url(../images/header/hrenwhite.svg);
+      }
+    }
+
+    &:hover {
+      color: $White;
+      background-color: $AccentOrange;
+    }
+      
+    &:active {
+      color: $White;
+      background-color: $DarkOorange;
+    }
+
+    @include onLaptop {
+      margin: 0 44px;
+    }
+      
+    @include onDesktop {
+      margin: 0;
+    }
+
+    @include onBigDesktop {
+      margin: 0;
+    }
+  }
+}
