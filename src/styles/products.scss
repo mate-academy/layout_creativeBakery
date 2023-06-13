@@ -1,0 +1,157 @@
+.products {
+
+  &__content {
+    padding: 183px 0 93px;
+
+    @include oniPad {
+      font-size: 56px;
+      padding: 120px 0 80px;
+    }
+
+    @include onMobile {
+      padding: 55px 0 40px;
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+
+    @include oniPad {
+      font-size: 56px;
+    }
+
+    @include onMobile {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    margin-bottom: 80px;
+
+    @include onMobile {
+      margin-bottom: 55px;
+      text-align: center;
+
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    margin-bottom: 88px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--line2 {
+      justify-content: flex-end;
+    }
+
+    @include onMobile {
+      flex-direction: column;
+      margin-bottom: 0;
+      align-items: center;
+
+    }
+  }
+
+  &__wrap-img {
+    max-width: 432px;
+    height: auto;
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    // &:not(:last-child) {
+    //   margin-right: 24px;
+    // }
+
+    @include oniPad {
+      max-width: 328px;
+      width: 328px;
+    }
+
+    @include onMobile {
+      max-width: 288px;
+      width: 288px;
+      margin-bottom: 64px;
+      margin-right: 0;
+    }
+
+    &--3 {
+      @include onMobile {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 8px;
+
+    object-position: center;
+    object-fit: cover;
+    margin-bottom: 16px;
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__name {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px     ;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $orange;
+
+    display: flex;
+    align-items: center;
+    transition: color 300ms;
+
+    &:hover {
+      color: $darcOrange;
+    }
+
+    &::before {
+      display: block;
+      content: " ";
+      background-image: url(../images/arrow.png);
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+    }
+  }
+}
