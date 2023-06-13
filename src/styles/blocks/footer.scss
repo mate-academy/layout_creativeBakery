@@ -1,0 +1,176 @@
+.footer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $c-black;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-bottom: 56px;
+
+    @include onTablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      padding-bottom: 90px;
+    }
+  }
+
+  &__block {
+    box-sizing: border-box;
+    margin-top: 64px;
+
+    @include onTablet {
+      margin-top: 88px;
+
+      flex-basis: 50%;
+    }
+  }
+
+  &__logo {
+    margin-left: 5px;
+    width: 128px;
+    height: 24px;
+
+    background-image: url(../images/Bakerlab-logo-footer.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      filter: invert(49%) sepia(66%)
+        saturate(5224%) hue-rotate(344deg)
+        brightness(102%) contrast(95%);
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    font-size: 16px;
+    line-height: 150%;
+
+    letter-spacing: -0.01em;
+
+    color: $c-white;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-a-orange;
+    }
+  }
+
+  &__list {
+    text-decoration: none;
+    list-style: none;
+    display: block;
+
+    margin-top: 44px;
+
+    @include onDesktop {
+      flex-basis: 50%;
+    }
+
+    &--menu {
+      @include onTablet {
+        margin-top: 68px;
+      }
+
+      @include onDesktop {
+        margin-top: 120px;
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: $c-grey;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 85%;
+
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $c-white;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      flex-basis: 100%;
+
+      font-size: 72px;
+    }
+  }
+
+  &__social-link {
+    margin-right: 40px;
+  }
+
+  &__social-logo {
+    height: 20px;
+
+    transition: all 0.5s;
+
+    &:hover {
+      filter: brightness(0) invert(1);
+      transform: scale(1.3);
+    }
+  }
+
+  &__copyright {
+    font-size: 16px;
+    line-height: 150%;
+
+    letter-spacing: -0.01em;
+
+    color: $c-grey;
+  }
+
+}

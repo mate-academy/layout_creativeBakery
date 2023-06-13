@@ -1,0 +1,63 @@
+.page {
+  font-family: "Inter", Helvetica, sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    width: 100%;
+    margin: 0;
+    padding: 20px 16px;
+    box-sizing: border-box;
+
+    background-color: $c-l-blue;
+
+    @include onTablet {
+      padding-left: 44px;
+      padding-right: 44px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto;
+
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__main {
+    margin-top: 100px;
+
+    @include onTablet {
+      margin-top: 200px;
+    }
+
+    @include onDesktop {
+      margin-top: 300px;
+    }
+  }
+
+  &__footer {
+    margin: 0 -16px -20px;
+    padding: 0 16px 20px;
+
+    @include onTablet {
+      margin: 0 -44px -20px;
+      padding: 0 44px 20px;
+    }
+  }
+}

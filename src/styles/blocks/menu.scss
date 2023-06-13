@@ -1,0 +1,74 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  gap: 25vh;
+
+  padding: 20px 16px;
+
+  background-color: $c-l-blue;
+
+  z-index: 1;
+
+  @include onTablet {
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    @include onTablet {
+      gap: 48px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 150%;
+
+    letter-spacing: -0.01em;
+
+    transition: color 0.3s;
+
+    @include onTablet {
+      font-size: 32px;
+    }
+
+    &:hover {
+      color: $c-a-orange;
+
+    }
+
+    &--hot {
+      text-transform: uppercase;
+      color: $c-a-orange;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        margin-right: 6px;
+
+        height: 18px;
+        width: 18px;
+
+        background-image: url(../images/phone.svg);
+        transform: translateY(25%);
+
+        @include onTablet {
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+}

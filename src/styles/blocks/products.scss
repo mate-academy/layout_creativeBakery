@@ -1,0 +1,124 @@
+.product {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &__group {
+    @include onTablet {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    @include onDesktop {
+      align-self: flex-start;
+
+      &:nth-child(2n) {
+        align-self: flex-end;
+      }
+    }
+
+  }
+
+  &__card {
+    margin-top: 56px;
+
+    min-width: 288px;
+    max-width: 100%;
+
+    @include onTablet {
+      margin-top: 80px;
+      
+      max-width: 328px;
+    }
+
+    @include onDesktop {
+      max-width: 402px;
+
+      transition: all 0.3s;
+
+      &:hover {
+        cursor: zoom-in;
+        transform: scale(1.08);
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__type {
+    margin-top: 16px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: $c-grey;
+  }
+
+  &__description {
+    margin-top: 8px;
+
+    font-size: 16px;
+    line-height: 150%;
+
+    letter-spacing: -0.01em;
+
+    color: $c-black;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: 24px;
+    padding-bottom: 9px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: $c-a-orange;
+    border-bottom: 1px solid transparent;
+
+    transition: all 0.3s;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-right: 8px;
+
+      height: 16px;
+      width: 16px;
+
+      background-image: url(../images/buy-arrow.svg);
+
+      transform: translateY(15%);
+    }
+
+    &:hover {
+      border-color: $c-a-orange;
+    }
+
+    &:active {
+      color: $c-d-orange;
+      border-color: $c-d-orange;
+
+      &::before {
+        filter: invert(22%) sepia(65%)
+          saturate(2860%) hue-rotate(355deg)
+          brightness(86%) contrast(86%);
+      }
+    }
+  }
+}
