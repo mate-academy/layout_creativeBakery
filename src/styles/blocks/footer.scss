@@ -1,0 +1,117 @@
+.footer {
+  background-color: $black;
+  color: $white;
+  padding: 61px 0 56px;
+  width: 100%;
+  box-sizing: border-box;
+
+  .contact__title {
+    font-size: 48px;
+    line-height: 41px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    margin: 0 0 40px;
+    @include onDesktop {
+      font-size: 72px;
+      line-height: 85%;
+    }
+  }
+
+  .subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin: 44px 0 16px;
+    color: $gray;
+    &--menu {
+      margin-top: 65px;
+    }
+  }
+  &--link {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    &:hover {
+      color: $Accent-orange;
+    }
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 64px;
+    &--item {
+      margin-bottom: 16px;
+    }
+    &--number {
+      margin: 0 0 40px;
+    }
+    @include onDesktop {
+      margin: 0 0 50px;
+    }
+  }
+  &__social-media {
+    margin: 42px 0;
+
+    width: max-content;
+  }
+  &__link {
+    margin-right: 60px;
+    text-decoration: none;
+    @include onTablet {
+      margin-right: 40px;
+    }
+  }
+  .copyright {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #7f8096;
+    width: max-content;
+    @include onTablet {
+      margin: 48px 0 0;
+    }
+  }
+  .svg {
+    path {
+      transition: all 0.3s ease;
+    }
+  }
+  .svg:hover {
+    path {
+      fill: $white;
+    }
+  }
+  .grid {
+    @include onTablet {
+      @include useGrid(8, 24px);
+
+      &__item {
+        &--tablet-5-8 {
+          grid-column: 5/9;
+        }
+      }
+    }
+  }
+  @include onDesktop {
+    .wrapper {
+      display: flex;
+      gap: 150px;
+    }
+
+    .email {
+      align-self: flex-start;
+      &--subtitle {
+        margin-top: 0;
+      }
+    }
+    .subtitle--call {
+      margin-top: 0;
+    }
+  }
+}
