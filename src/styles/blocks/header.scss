@@ -1,0 +1,76 @@
+.header {
+  background-color: $bgColor;
+
+  &__content {
+    display: flex;
+    box-sizing: border-box;
+    height: 64px;
+    max-width: 120%;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onDesktop {
+      height: 88px;
+    }
+
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktopBig {
+      display: block;
+    }
+  }
+
+  // .header__nav-list
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    list-style: none;
+
+  }
+
+  // .header__nav-link
+
+  &__nav-link {
+    color: $fontColor;
+    text-decoration: none;
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: $activeColor;
+    }
+
+    &--phone {
+      display: flex;
+      gap: 7px;
+      text-decoration: none;
+      text-transform: uppercase;
+      align-items: center;
+      height: 18px;
+      color: $activeColor;
+      transition: all 0.3s linear;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+        background-image: url(../images/phone.svg);
+      }
+
+      &:hover {
+        color: $focusColor;
+
+        &::before {
+          background-image: url(../images/phone-hoversvg.svg);
+        }
+      }
+    }
+  }
+
+  // .header__menu-icon
+}
