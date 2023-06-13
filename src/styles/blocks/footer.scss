@@ -1,0 +1,220 @@
+.footer {
+  padding: 61px 0 56px;
+  background-color: $colorBlack;
+  color: $colorWhite;
+
+  @include onTablet {
+    padding: 93px 0 88px;
+  }
+
+  &__main-wrapper {
+    margin-bottom: 42px;
+
+    @include onTablet {
+      margin-bottom: 48px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onDesctop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__main {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 44px;
+    display: block;
+    width: 158px;
+    height: 30px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesctop {
+      margin-bottom: 65px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__name {
+    margin: 0 0 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $colorGray;
+  }
+
+  &__menu {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list {
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__link {
+    @extend %footerLink;
+  }
+
+  &__contacts {
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__title {
+    margin: 0 0 40px;
+    padding-right: 50px;
+    font-weight: inherit;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      padding-right: 0;
+      font-size: 56px;
+    }
+
+    @include onDesctop {
+      font-size: 72px;
+    }
+  }
+
+  &__tel-wrapper {
+
+    @include onDesctop {
+      display: flex;
+    }
+  }
+
+  &__tels {
+    margin-bottom: 40px;
+
+    @include onDesctop {
+      margin-bottom: 0;
+      flex: 0 0 50%;
+    }
+  }
+
+  &__telephones {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__phone {
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__phone-link {
+    @extend %footerLink;
+
+  }
+
+  &__emails {
+
+    @include onDesctop {
+      margin-left: 12px;
+      flex: 0 0 50%;
+    }
+  }
+
+  &__email {
+    display: block;
+    width: max-content;
+    @extend %footerLink;
+  }
+
+  &__icon-wrapper {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__icons {
+    margin-bottom: 42px;
+    display: flex;
+    column-gap: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image $transitionDuration;
+
+    &--facebook {
+      background-image: url("../images/icons/facebook-default.svg");
+
+      &:hover {
+        background-image: url("../images/icons/facebook-hover.svg");
+      }
+    }
+
+    &--instagram {
+      background-image: url("../images/icons/instagram-default.svg");
+
+      &:hover {
+        background-image: url("../images/icons/instagram-hover.svg");
+      }
+    }
+
+    &--twitter {
+      background-image: url("../images/icons/twitter-default.svg");
+
+      &:hover {
+        background-image: url("../images/icons/twitter-hover.svg");
+      }
+    }
+  }
+
+  &__copy {
+    margin: 0;
+    letter-spacing: -0.01em;
+    color: $colorGray;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+  }
+}
