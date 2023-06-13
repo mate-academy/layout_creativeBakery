@@ -1,0 +1,131 @@
+.footer {
+  padding: 56px 16px;
+  background-color: $c-black;
+  color: $white;
+
+  @include tabletBreakpoint {
+    padding: 88px 44px;
+  }
+
+  &__content-wrapper {
+    @include limitContentWidth;
+    display: grid;
+
+    @include tabletBreakpoint {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktopBreakpoint {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+
+  &__logo {
+    height: 40px;
+    width: 168px;
+
+    @include tabletBreakpoint {
+      width: 168px;
+    }
+
+    @include desktopBreakpoint {
+      @include customColumns(8);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 16px;
+
+    @include tabletBreakpoint {
+      &--menu {
+        grid-row-start: 2;
+      }
+
+      &--numbers {
+        grid-row-start: 2;
+      }
+
+      &--email {
+        grid-column: 2;
+      }
+    }
+
+    @include desktopBreakpoint {
+      @include customColumns(8);
+    }
+  }
+
+  &__item-title {
+    margin-top: 40px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $c-grey;
+  }
+
+  &__link {
+    display: block;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+
+  &__heading {
+    margin-top: 64px;
+    max-width: 280px;
+
+    @include tabletBreakpoint {
+      margin-top: 0;
+      max-width: 328px;
+      height: 96px;
+    }
+
+    @include desktopBreakpoint {
+      @include customColumns(8);
+      max-width: initial;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+    max-width: 136px;
+
+    @include tabletBreakpoint {
+      grid-row-start: 4;
+    }
+
+    @include desktopBreakpoint {
+      @include customColumns(8);
+    }
+  }
+
+  &__icon {
+    height: 24px;
+    width: 24px;
+    fill: $accent-orange;
+    transition: fill $transition-duration ease-in-out;
+
+    &:hover {
+      fill: #fff;
+    }
+  }
+
+  &__copyright {
+    margin-top: 40px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $c-grey;
+
+    @include tabletBreakpoint {
+      grid-row-start: 4;
+    }
+
+    @include desktopBreakpoint {
+      @include customColumns(8);
+    }
+  }
+}

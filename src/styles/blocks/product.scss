@@ -1,0 +1,66 @@
+.product {
+  height: 492px;
+  width: 288px;
+  @include scaleOnHover;
+
+  @include tabletBreakpoint {
+    height: 560px;
+    width: 328px;
+  }
+
+  @include desktopBreakpoint {
+    @include customColumns(8);
+    height: 648px;
+    width: 402px;
+  }
+
+  &__img {
+    height: 356px;
+    width: 100%;
+
+    @include tabletBreakpoint {
+      height: 424px;
+    }
+
+    @include desktopBreakpoint {
+      height: 512px;
+    }
+  }
+
+  &__category {
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $c-grey;
+  }
+
+  &__description {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $accent-orange;
+
+    &::before {
+      content: url("../images/arrow.svg");
+      transform: translate(0, 15%);
+      height: 24px;
+      width: 24px;
+    }
+  }
+}

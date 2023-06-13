@@ -1,0 +1,29 @@
+.contact-link {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $accent-orange;
+
+  &::before {
+    content: url("../images/phone.svg");
+    display: inline-block;
+    margin-right: 7px;
+    transform: translate(0, 15%);
+    height: 18px;
+    width: 18px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $accent-orange;
+    transition: width $transition-duration;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}

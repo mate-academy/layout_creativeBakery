@@ -1,0 +1,98 @@
+.about {
+
+  &__content-wrapper {
+    @include limitContentWidth;
+    background: url("/images/photos/crumbs.png") no-repeat 0 688px;
+    background-size: 320px 300px;
+
+    @include tabletBreakpoint {
+      background-size: 526px 493px;
+      background-position: 80px 48px;
+    }
+
+    @include desktopBreakpoint {
+      background-size: 718px 673px;
+      background-position: 280px 0;
+    }
+  }
+
+  &__text-wrapper {
+    display: grid;
+
+    @include tabletBreakpoint {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+  &__heading {
+    color: $accent-orange;
+
+    @include tabletBreakpoint {
+      max-width: 328px;
+    }
+
+    @include desktopBreakpoint {
+      max-width: 544px;
+    }
+  }
+
+  &__description {
+    margin-top: 32px;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    @include tabletBreakpoint {
+      margin-top: 0;
+    }
+  }
+
+  &__numbers {
+    display: grid;
+    margin-top: 64px;
+
+    @include tabletBreakpoint {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 80px 0;
+      margin-top: 72px;
+    }
+
+    @include desktopBreakpoint {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 144px;
+    }
+  }
+
+  &__number-wrapper {
+    margin-top: 48px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @include tabletBreakpoint {
+      margin-top: 0;
+    }
+  }
+
+  &__big-text {
+    font-size: 68px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    color: $accent-orange;
+    text-transform: uppercase;
+
+    @include tabletBreakpoint {
+      font-size: 96px;
+    }
+  }
+
+  &__small-text {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+}

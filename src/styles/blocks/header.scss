@@ -1,0 +1,160 @@
+.header {
+
+  &__controls-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 16px 0;
+
+    @include desktopBreakpoint {
+      display: none;
+    }
+  }
+
+  &__logo {
+    cursor: pointer;
+  }
+
+  &__menu-toggler {
+    height: 24px;
+    width: 24px;
+    background: url("/images/menu.svg") no-repeat center;
+  }
+
+  &__nav {
+    display: none;
+
+    @include desktopBreakpoint {
+      display: flex;
+    }
+  }
+
+  &__content-wrapper {
+    @include limitContentWidth;
+    display: grid;
+    padding: 24px 16px 0;
+
+    @include tabletBreakpoint {
+      padding: 80px 44px 0;
+    }
+
+    @include desktopBreakpoint {
+      grid-template-columns: repeat(8, 1fr);
+      padding: 0 44px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    line-height: 24px;
+
+    @include tabletBreakpoint {
+      text-align: initial;
+      width: 280px;
+    }
+
+    @include desktopBreakpoint {
+      @include customColumns(8);
+      margin-top: 135px;
+      width: 260px;
+    }
+  }
+
+  &__title {
+    margin: 16px auto 0;
+    font-size: 48px;
+    text-transform: uppercase;
+    color: $accent-orange;
+    letter-spacing: -0.05em;
+    text-align: center;
+    line-height: 85%;
+
+    @include tabletBreakpoint {
+      position: absolute;
+      top: 310px;
+      left: 0;
+      right: 0;
+      font-size: 80px;
+    }
+
+    @include desktopBreakpoint {
+      @include customColumns(8);
+      margin-top: 0;
+      max-width: 1112px;
+      font-size: 130px;
+    }
+  }
+
+  &__img {
+    place-self: center;
+    height: 290px;
+    width: 288px;
+
+    @include tabletBreakpoint {
+      margin-top: 16px;
+      height: 328px;
+      width: 326px;
+    }
+
+    @include desktopBreakpoint {
+      @include customColumns(8);
+      margin-top: 0;
+      height: 546px;
+      width: 544px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    place-self: center;
+    justify-content: center;
+    align-items: center;
+    transition: background-color $transition-duration ease-in-out;
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+    height: 56px;
+    width: 288px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $accent-orange;
+
+    &::before {
+      content: url("/images/button-icon.svg");
+      transform: translate(0, -15%);
+      margin-right: 6px;
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      background-color: $accent-orange;
+      color: $white;
+    }
+
+    &:active {
+      background-color: $button-active-orange;
+      color: $white;
+    }
+
+    &:active::before,
+    &:hover::before {
+      content: url("/images/button-icon-hover.svg");
+    }
+
+    @include tabletBreakpoint {
+      margin-top: 80px;
+      width: 326px;
+    }
+
+    @include desktopBreakpoint {
+      @include customColumns(8);
+      place-self: initial;
+      margin-top: -144px;
+      width: 260px;
+    }
+  }
+}

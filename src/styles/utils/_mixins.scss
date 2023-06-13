@@ -4,3 +4,55 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin tabletBreakpoint {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktopBreakpoint {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin limitContentWidth() {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@mixin limitContentWidthNav() {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@mixin customColumns($numberOfCols) {
+  @for $start from 1 through $numberOfCols {
+    @for $end from $start through $numberOfCols {
+      &--cols--#{$start}-#{$end} {
+        grid-column: #{$start} / #{$end + 1};
+      }
+    }
+  }
+}
+
+@mixin marginBetweenSections($mobile, $tablet, $desktop) {
+  margin-top: $mobile;
+
+  @include tabletBreakpoint {
+    margin-top: $tablet;
+  }
+
+  @include desktopBreakpoint {
+    margin-top: $desktop;
+  }
+}
+
+@mixin scaleOnHover {
+  transition: transform 0.5s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
