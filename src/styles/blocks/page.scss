@@ -1,0 +1,29 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $body-bg;
+  }
+
+  &__body--with-menu {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    background-color: $body-bg;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    // @include onDesktop {
+    //   display: none;
+    // }
+  }
+}

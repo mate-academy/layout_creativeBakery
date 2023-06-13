@@ -4,3 +4,57 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin icon {
+  display: block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin title {
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 41px;
+  letter-spacing: -0.05em;
+  color: $orange-color;
+  text-transform: uppercase;
+
+  @include onTablet {
+    font-size: 56px;
+    line-height: 48px;
+  }
+
+  @include onDesktop {
+    font-size: 72px;
+    line-height: 61px;
+  }
+}
+
+@mixin main-text {
+  line-height: 24px;
+  color: $black-color;
+  letter-spacing: -0.01em;
+}
+
+@mixin half {
+  @include onTablet {
+    width: 328px;
+  }
+
+  @include onDesktop {
+    width: 544px;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

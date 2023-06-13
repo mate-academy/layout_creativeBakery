@@ -1,0 +1,132 @@
+.footer {
+  padding: 60px 0;
+  background-color: $black-color;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 24px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 64px;
+
+    @include half;
+  }
+
+  &__contacts {
+    @include half;
+  }
+
+  &__contacts-content {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__caption {
+    @extend .products__item-name;
+    margin: 0;
+  }
+
+  &__flex-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  &__nav-link {
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: white;
+
+    &:hover {
+      color: $orange-color;
+    }
+  }
+
+  &__title {
+    @include title;
+    margin-bottom: 40px;
+    color: white;
+  }
+
+  &__call-us {
+    @extend .footer__flex-wrap;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      width: 260px;
+    }
+  }
+
+  &__email-us {
+    @extend .footer__flex-wrap;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      width: 260px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 35px;
+    margin-bottom: 40px;
+    @include half;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__social-link {
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s linear;
+  }
+
+  &__social--facebook {
+    background-image: url(../images/fb-icon.svg);
+
+    &:hover,
+    &:focus {
+      background-image: url(../images/fb-icon-white.svg);
+    }
+  }
+
+  &__social--instagram {
+    background-image: url(../images/insta-icon.svg);
+
+    &:hover,
+    &:focus {
+      background-image: url(../images/insta-icon-white.svg);
+    }
+  }
+
+  &__social--twitter {
+    background-image: url(../images/twitter-icon.svg);
+
+    &:hover,
+    &:focus {
+      background-image: url(../images/twitter-icon-white.svg);
+    }
+  }
+
+  &__copyright {
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #7f8096;
+    @include half;
+  }
+}
