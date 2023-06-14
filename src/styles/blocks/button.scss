@@ -1,0 +1,58 @@
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px 71px;
+  gap: 4px;
+  width: 100%;
+  height: 56px;
+
+  border: 2px solid $main-color;
+  background-color: #ffeefc;
+  border-radius: 32px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $main-color;
+  cursor: pointer;
+
+  transition: all 0.3s;
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icons/Icon-cookie.svg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  &:hover {
+    background-color: $main-color;
+    color: #fff;
+
+    &::before {
+      background-image: url(../images/icons/Icon-cookie-white.svg);
+    }
+  }
+
+  &:focus {
+    background-color: #b3341a;
+    border-color: #b3341a;
+    color: #fff;
+
+    &::before {
+      background-image: url(../images/icons/Icon-cookie-white.svg);
+    }
+  }
+
+  @include onIpad {
+    margin: 0 auto;
+    width: 326px;
+  }
+}

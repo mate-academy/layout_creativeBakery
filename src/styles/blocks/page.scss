@@ -1,0 +1,145 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background: #ffeefc;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onDesktop {
+      margin-bottom: 186px;
+    }
+
+    &--header {
+      margin-bottom: 0;
+      
+      @include onIpad {
+        margin-bottom: 100px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 186px;
+      }
+
+    }
+    &--about {
+      @include onIpad {
+        background-image: url(../images/product-photo/Crumbs.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 70%;
+      }
+
+      @include onDesktop {
+        background-size: contain;
+      }
+    }
+  }
+
+  &__section-title {
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $main-color;
+    font-weight: 400;
+    margin: 0 0 24px;
+
+    &--footer {
+      color: #fff;
+      margin-bottom: 40px;
+    }
+
+    @include onIpad {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__section-text {
+    color: $text-color;
+    margin: 0 0 56px;
+    line-height: 150%;
+
+    @include onIpad {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__section--cards {
+    @include onIpad {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+
+  &__section-items {
+    background-image: url(../images/product-photo/Crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include onIpad {
+      background-image: none;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 24px;
+    }
+  }
+
+  &__section-about {
+    @include onIpad {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+  }
+
+  &__section-button {
+    text-decoration: none;
+  }
+}
