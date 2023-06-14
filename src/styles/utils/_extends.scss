@@ -1,4 +1,64 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+%button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  color: $color-main;
+
+  transition: all $effectDuration;
+
+  &:focus {
+    color: $color-focus;
+    outline: none;
+  }
+}
+
+%underline {
+  position: relative;
+  width: fit-content;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scale(0);
+    transition: transform $effectDuration;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}
+
+%title {
+  font-family: "Inter", sans-serif;
+  font-size: 48px;
+  line-height: 85%;
+
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  color: $color-main;
+}
+
+%icon {
+  display: block;
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
 }
