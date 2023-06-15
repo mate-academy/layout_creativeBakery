@@ -1,0 +1,82 @@
+.nav {
+  &__item {
+    width: max-content;
+    margin: 0 auto 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--footer {
+      width: 100%;
+      margin: 0 0 16px;
+    }
+  }
+  
+  &__link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: $black-color;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 4px;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $default-color;
+      border-bottom: 1px solid $default-color;
+    }
+
+    &:hover .nav__link-container {
+      border-bottom: 1px solid $default-color;
+    }
+
+    &:focus {
+      color: $focused-color;
+      border-bottom: 1px solid $focused-color;
+    }
+
+    &:focus .nav__link-container {
+      border-bottom: 1px solid $focused-color;
+    }
+
+    &:focus .nav__link-img {
+      background-image: url(../images/icons/phone-focused.svg);
+    }
+
+    &:focus .nav__link--color--default {
+      color: $focused-color;
+    }
+    
+    &--color--default {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $default-color;
+    }
+
+    &--color--white {
+      text-align: left;
+      color: $white-color;
+    }
+  }
+
+  &__link-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 4px;
+  }
+
+  &__link-img {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    background-image: url(../images/icons/phone.svg);
+  }
+
+}
