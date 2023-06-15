@@ -1,0 +1,126 @@
+.footer {
+  --gap: 16px;
+  padding-block: 61px 56px;
+  background-color: $color-black;
+
+  @include onDesktop {
+    position: sticky;
+    z-index: 1;
+    bottom: 0;
+  }
+
+  @include onTablet {
+    padding-block: 88px;
+  }
+
+  &__content {
+    @include pageGrid;
+
+    row-gap: 40px;
+    grid-template-areas: "lg lg"
+      "menu menu"
+      "cu cu"
+      "call-us call-us"
+      "email-us email-us"
+      "social social"
+      "copyright copyright";
+
+    @include onTablet {
+      row-gap: 40px;
+      grid-template-areas: "lg lg lg lg cu cu cu cu"
+        "menu menu menu menu call-us call-us call-us call-us"
+        "menu menu menu menu email-us email-us email-us email-us"
+        "social social social social copyright copyright copyright copyright";
+    }
+
+    @include onDesktop {
+      row-gap: 40px;
+      grid-template-areas: "lg lg lg lg cu cu cu cu"
+        "menu menu menu menu call-us call-us email-us email-us"
+        "social social social social copyright copyright copyright copyright";
+    }
+  }
+
+  &__logo {
+    display: flex;
+    width: fit-content;
+    height: 40px;
+    grid-area: lg;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__menu {
+    grid-area: menu;
+    margin-bottom: 24px;
+
+    @include onDesktop {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-grey;
+
+    margin-bottom: var(--gap);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  &__link {
+    display: block;
+    letter-spacing: -0.01em;
+    color: $color-white;
+    text-decoration: none;
+    
+    @include hover(color, $color-main);
+
+    @extend %underline;
+  }
+
+  &__contacts-title {
+    grid-area: cu;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $color-white;
+    width: min-content;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      width: fit-content;
+    }
+  }
+
+  &__call-us {
+    grid-area: call-us;
+  }
+
+  &__email {
+    grid-area: email-us;
+
+    @include onTablet {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    letter-spacing: -0.01em;
+    color: $color-grey;
+  }
+}

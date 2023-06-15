@@ -1,0 +1,45 @@
+.products {
+  &__title {
+    @extend %title;
+
+    margin-bottom: 24px;
+  }
+
+  &__content {
+    @include pageGrid;
+    row-gap: 56px;
+
+    @include onTablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__description {
+    letter-spacing: -0.01em;
+    grid-column: 1 / -1;
+  }
+
+  &__cards-row {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 8;
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+
+    &--right {
+      @include onDesktop {
+        grid-column: 3 / -1;
+      }
+    }
+  }
+}
