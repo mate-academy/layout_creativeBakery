@@ -1,0 +1,54 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background-color: #eef7ff;
+    transition: all 0.3s ease-in-out;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section-title {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: left;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    &--text-center {
+      text-align: center;
+    }
+
+    @include onTablet {
+      font-size: 56px;
+      line-height: 85%;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      line-height: 85%;
+    }
+  }
+}

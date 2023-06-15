@@ -1,0 +1,131 @@
+.creative-bakery {
+  height: 100vh;
+  margin: 32px 0 104px;
+
+  @include onTablet {
+    margin-bottom: 230px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 0;
+  }
+
+  &__text {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-top: 80px;
+      margin-bottom: 146px;
+      text-align: left;
+      position: relative;
+    }
+
+    @include onDesktop {
+      margin-top: 144px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #1c1a26;
+
+    z-index: 1;
+
+    @include onTablet {
+      position: relative;
+      top: 300%;
+      font-size: 64px;
+    }
+
+    @include onDesktop {
+      top: 50%;
+      font-size: 110px;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto;
+    height: 290px;
+
+    @include onTablet {
+      position: relative;
+      top: -10%;
+      height: 328px;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      top: -45%;
+      height: 546px;
+    }
+  }
+
+  &__button {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-decoration: none;
+    width: 248px;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: $color_accent_orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include onDesktop {
+      position: relative;
+      top: -850%;
+    }
+
+    height: 56px;
+    border: 2px solid $color_accent_orange;
+    box-sizing: border-box;
+    border-radius: 32px;
+    transition: all 0.3s;
+
+    &::before {
+      content: " ";
+      background-image: url(../images/coockie.svg);
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+    }
+
+    &:hover {
+      background-color: $color_accent_orange;
+      color: $color_white;
+
+      &::before {
+        content: url(../images/white_coockie.svg);
+        margin-right: 6px;
+      }
+    }
+
+    &:focus {
+      background-color: $color_dark_orange;
+      border-color: $color_dark_orange;
+      color: $color_white;
+    }
+  }
+}
