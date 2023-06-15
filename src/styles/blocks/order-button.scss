@@ -1,0 +1,63 @@
+.order-button {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $all-transitions;
+
+  &--nav {
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__text {
+    @extend %font-body-text-uppercase;
+    color: $color-accent-orange;
+  }
+
+  &--product {
+    justify-content: start;
+    padding-bottom: 8px;
+    transition: $all-transitions;
+
+    &:hover {
+      padding-bottom: 7px;
+      box-sizing: border-box;
+      border-bottom: 1px solid $color-accent-orange;
+      width: max-content;
+      transform: translateX(2px);
+    }
+  }
+
+  &--learn-more {
+    border: 1px solid $color-accent-orange;
+    border-radius: $button-height;
+    height: $button-height;
+    transition: $all-transitions;
+
+    &:hover {
+      background-color: $color-accent-orange;
+
+      .order-button__text {
+        color: $color-white;
+      }
+
+      .icon--learn-more {
+        background-image: url(../images/Icon-cookie-white.svg);
+      }
+    }
+
+    &:focus {
+      background-color: $color-dark-orange;
+
+      .order-button__text {
+        color: $color-white;
+      }
+
+      .icon--learn-more {
+        background-image: url(../images/Icon-cookie-white.svg);
+      }
+    }
+  }
+}

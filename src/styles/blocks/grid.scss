@@ -1,0 +1,66 @@
+.grid {
+  // розподіляю екран на колонки за грідом для
+  // мобійл, таблет, десктоп
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include onTablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onBigTablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  //цей модифікатор обмежує використання гріда
+  //і зонує елементи як блоки
+  &--screen {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  //створюю адресне зонування по колонкам гріда для таблетки і десктопа
+  //grid__item--"пристрій"-(start)-(end)
+  &__item {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--tablet-#{$start}-#{$end} {
+          @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--big-tablet-#{$start}-#{$end} {
+          @include onBigTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--desktop-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}

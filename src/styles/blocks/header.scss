@@ -1,0 +1,92 @@
+.header {
+  margin-bottom: 104px;
+
+  @include onTablet {
+    margin-bottom: 228px;
+  }
+
+  @include onBigTablet {
+    margin-bottom: 300px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 290px;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__text {
+    @extend %font-body-text;
+    text-align: center;
+    color: $color-black;
+    margin-bottom: 32px;
+    width: 288px;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include onBigTablet {
+      margin-bottom: 8px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    @extend %font-h1;
+    text-align: center;
+    color: $color-accent-orange;
+    width: 288px;
+    margin-bottom: 290px;
+
+    @include onTablet {
+      margin-bottom: 210px;
+      width: 100%;
+    }
+
+    @include onBigTablet {
+      margin-bottom: 64px;
+      font-size: 116px;
+    }
+
+    @include onDesktop {
+      font-size: 144px;
+    }
+  }
+
+  &__image {
+    @extend %background-image-cover;
+    width: 288px;
+    height: 288px;
+    background-image: url(../images/Cookie.jpg);
+    position: absolute;
+    top: 332px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+
+    @include onTablet {
+      width: 326px;
+      height: 326px;
+      top: 43%;
+    }
+
+    @include onBigTablet {
+      width: 544px;
+      height: 544px;
+    }
+
+    @include onDesktop {
+      width: 584px;
+      height: 584px;
+    }
+  }
+}
