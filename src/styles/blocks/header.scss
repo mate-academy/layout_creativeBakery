@@ -1,0 +1,36 @@
+.header {
+
+  &__nav {
+    height: 64px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      height: 88px;
+      margin-bottom: 135px;
+    }
+
+    @include onBigDesktop {
+      height: 88px;
+      margin-bottom: 144px;
+    }
+  }
+
+  &__menu {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.4s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
