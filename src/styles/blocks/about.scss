@@ -1,0 +1,42 @@
+.about {
+  &__content {
+    @include pageGrid;
+
+    @include onTablet {
+      background-image: url("../images/crumbs.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  &__title {
+    @extend %title;
+
+    margin-bottom: 32px;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__description {
+    letter-spacing: -0.01em;
+    margin-bottom: 64px;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 146px;
+    }
+  }
+}

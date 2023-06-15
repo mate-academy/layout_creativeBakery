@@ -1,0 +1,47 @@
+.page {
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  background-color: $color-bg;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &:has(.page__contact:target) {
+    .page__contact-title {
+      @include animation(blink, 4s, 500ms);
+    }
+  }
+
+  &__body {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $color-black;
+
+    background-color: $color-bg;
+  }
+
+  &__menu {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+    transition: all $effectDuration;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+  }
+}

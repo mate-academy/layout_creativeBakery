@@ -1,0 +1,64 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 56px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--extra-padding {
+      padding-top: 8px;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    padding-inline: 4px;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+
+    color: $color-black;
+
+    transition: color $effectDuration;
+
+    @extend %underline;
+
+    &:hover {
+      color: $color-main;
+    }
+
+    &:focus {
+      color: $color-focus;
+      outline-color: currentColor;
+    }
+
+    &--contact {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+
+      color: $color-main;
+    }
+  }
+}

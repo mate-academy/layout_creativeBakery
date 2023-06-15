@@ -1,0 +1,137 @@
+.header {
+  min-height: 100vh;
+  background-color: $color-bg;
+
+  @include onDesktop {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__top-bar {
+    transform: translateY(-100%);
+    @include animation(top-bar-move, 0.7s, 2.5s);
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+  
+  &__bottom {
+    @include pageGrid;
+
+    padding-block: 32px 40px;
+
+    @include onTablet {
+      padding-block: 80px 228px;
+    }
+
+    @include onDesktop {
+      padding-block: 135px 161px;
+    }
+
+    @include onDesktopLarge {
+      padding-block: 144px 138px;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    margin-bottom: 32px;
+
+    text-align: center;
+    letter-spacing: -0.01em;
+    opacity: 0;
+
+    @include animation(opacity, 0.7s, 2s);
+
+    @include onTablet {
+      max-width: 280px;
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      max-width: 260px;
+      margin-bottom: 8px;
+    }
+
+    @include onDesktopLarge {
+      max-width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    position: relative;
+    font-weight: 400;
+    font-size: 64px;
+    text-align: center;
+
+    @extend %title;
+
+    @include pageGrid;
+
+    @include onTablet {
+      margin-bottom: 210px;
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      margin-bottom: 64px;
+    }
+
+    @include onDesktopLarge {
+      font-size: 144px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-bottom: 100%;
+      background-image: url("../images/cookie.webp");
+      background-size: cover;
+      background-position: center;
+      grid-column: 1 / -1;
+
+      animation: move-mobile 1s;
+
+      @include onTablet {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        transform: translateY(-40%);
+        grid-column: 3 / 7;
+        animation: move 1s;
+      }
+    }
+  }
+
+  &__title-content {
+    grid-column: 1 / -1;
+    transform: scale(0);
+
+    @include animation(scale, 1s, 1s);
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    opacity: 0;
+
+    @include animation(opacity, 0.7s, 2s);
+
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.data-list {
+  grid-column: span 2;
+
+  background-image: url("../images/crumbs.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  @include onTablet {
+    background-image: none;
+    grid-column: span 8;
+  }
+
+  @include pageGrid;
+
+  row-gap: 48px;
+
+  &__group {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__term {
+    margin-bottom: 8px;
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $color-main;
+  }
+}
