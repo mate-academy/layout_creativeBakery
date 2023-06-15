@@ -1,0 +1,119 @@
+.footer {
+  padding: 60px 0;
+  background-color: $black;
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 5;
+  }
+
+  &__logo-image {
+    display: block;
+    width: 160px;
+    height: 30px;
+  }
+
+  &__menu-title {
+    margin-top: 44px;
+    color: $grey;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    &--menu {
+      @include onTablet {
+        margin-top: 92px;
+      }
+
+      @include onDesktop {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  &__menu-item {
+    margin-top: 16px;
+    color: $white;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+
+  &__contact {
+    grid-column: 5 / 9;
+  }
+
+  &__contact-title {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    color: $white;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+
+  &__contact-content {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 100px;
+    }
+  }
+
+  &__contact-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__networks {
+    margin-top: 42px;
+    display: flex;
+    gap: 35px;
+    grid-template-columns: 1 / 3;
+
+    @include onTablet {
+      margin-top: 48px;
+    }
+  }
+
+  &__trademark {
+    margin-top: 42px;
+    grid-column: 5 / 7;
+    color: $grey;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    @include onTablet {
+      margin-top: 48px;
+    }
+  }
+}
+
+svg {
+  color: $orange;
+
+  &:hover {
+    color: $white;
+  }
+}

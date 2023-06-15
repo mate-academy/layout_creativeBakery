@@ -1,0 +1,53 @@
+html {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $black;
+}
+
+body,
+p,
+h1,
+h2,
+ul,
+li {
+  margin: 0;
+}
+
+.page {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $lightBlue;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform $transitionTime linear;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section-info {
+    background-image: url(../images/Crumbs.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include onDesktop {
+      background-position: center;
+    }
+  }
+}

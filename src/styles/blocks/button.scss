@@ -1,0 +1,52 @@
+.button {
+  box-sizing: border-box;
+  display: flex;
+  padding: 20px 80px;
+  width: max-content;
+  height: 60px;
+  color: $orange;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  background-color: inherit;
+  border: 2px solid $orange;
+  border-radius: 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @include onTablet {
+    padding: 20px 110px;
+  }
+
+  &__content {
+    position: relative;
+
+    &::before {
+      @include iconBefore;
+      background-image: url(../images/icon_cake.png);
+    }
+
+    &:hover::before {
+      @include iconBefore;
+      background-image: url(../images/Icon-cookie.png);
+    }
+
+    &:focus::before {
+      @include iconBefore;
+      background-image: url(../images/Icon-cookie.png);
+    }
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $orange;
+  }
+
+  &:focus {
+    color: $white;
+    background-color: $darkOrange;
+    border-color: $darkOrange;
+
+  }
+}

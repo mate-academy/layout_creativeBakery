@@ -1,0 +1,148 @@
+.products {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+
+  &__title {
+    margin-bottom: 24px;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 56px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+  &__catalog {
+    @include onTablet {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+}
+
+.card {
+
+  &--1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 5;
+
+    @include onDesktop {
+      grid-row: 1 / 2;
+      grid-column: 1 / 4;
+    }
+  }
+
+  &--2 {
+    grid-row: 1 / 2;
+    grid-column: 5 / 9;
+
+    @include onDesktop {
+      grid-row: 1 / 2;
+      grid-column: 4 / 7;
+    }
+  }
+
+  &--3 {
+    grid-row: 2 / 3;
+    grid-column: 1 / 5;
+
+    @include onDesktop {
+      grid-row: 2 / 3;
+      grid-column: 3 / 6;
+    }
+  }
+
+  &--4 {
+    grid-row: 2 / 3;
+    grid-column: 5 / 9;
+
+    @include onDesktop {
+      grid-row: 2 / 3;
+      grid-column: 6 / 9;
+    }
+  }
+
+  &--5 {
+    grid-row: 3 / 4;
+    grid-column: 1 / 5;
+
+    @include onDesktop {
+      grid-row: 3 / 4;
+      grid-column: 1 / 4;
+    }
+  }
+
+  &--6 {
+    grid-row: 3 / 4;
+    grid-column: 5 / 9;
+
+    @include onDesktop {
+      grid-row: 3 / 4;
+      grid-column: 4 / 7;
+    }
+  }
+
+  &__photo {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: flex-start;
+
+  }
+
+  &__image {
+    height: 356px;
+
+    @include onTablet {
+      height: 424px;
+    }
+
+    @include onDesktop {
+      height: 512px;
+    }
+
+    @include onBigDesktop {
+      height: 506px;
+    }
+  }
+
+  &__type {
+    margin-bottom: 8px;
+    color: $grey;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  &__overview {
+    margin-bottom: 24px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+
+  &__order {
+    margin-bottom: 64px;
+    margin-left: 20px;
+    display: block;
+    font-weight: 500;
+    color: $orange;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    position: relative;
+
+    &::before {
+      @include iconBefore;
+      background-image: url(../images/Icon-arrow.png);
+    }
+  }
+}

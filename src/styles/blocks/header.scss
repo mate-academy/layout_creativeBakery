@@ -1,0 +1,158 @@
+.header {
+  padding-bottom: 120px;
+
+  @include onTablet {
+    padding-bottom: 240px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 300px;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  &__nav {
+    @include headerTop;
+    margin: 0 -10px;
+  }
+
+  &__nav--big {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__logo-image {
+    display: block;
+    width: 128px;
+    height: 25px;
+  }
+
+  &__menu {
+    list-style: none;
+    align-items: baseline;
+  }
+
+  &__item {
+    margin-right: 64px;
+
+    &:last-child {
+      margin-right: 0;
+      margin-left: $iconSize;
+    }
+  }
+
+  &__link {
+    @include linkInHeader;
+  }
+
+  &__link-contact {
+    @include contactInHeader;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+
+    @include onTablet {
+      align-items: center;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      column-gap: 24px;
+      justify-content: center;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    width: 290px;
+
+    @include onTablet {
+      display: flex;
+      text-align: start;
+      align-self: flex-start;
+    }
+
+    @include onDesktop {
+      width: 200px;
+      align-self: flex-start;
+      grid-area: 2 / 1 / 3 / 3;
+    }
+
+    @include onBigDesktop {
+      width: 280px;
+    }
+  }
+
+  &__title {
+    margin-top: 30px;
+    padding-bottom: 150px;
+    grid-area: 1 / 1 / 5 / 9;
+    height: 290px;
+    font-size: 64px;
+    font-weight: inherit;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    background-image: url(../images/Cookie.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 80px;
+      margin-top: 0;
+      height: 326px;
+      padding-bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      height: 544px;
+    }
+  }
+
+  &__image {
+    width: 290px;
+    z-index: -1;
+
+    @include onTablet {
+      width: 326px;
+      position: absolute;
+      transform: translateY(30%);
+    }
+
+    @include onDesktop {
+      width: 544px;
+    }
+
+    @include onBigDesktop {
+      width: 584px;
+    }
+  }
+
+  &__button {
+    grid-area: 3 / 1 / 5 / 3;
+  }
+}
