@@ -1,8 +1,9 @@
 .header {
-  min-height: 100vh;
+  min-height: #{"min("}100vh, 700px#{")"};
   background-color: $color-bg;
 
   @include onDesktop {
+    min-height: #{"min("}100vh, 960px#{")"};
     position: relative;
     z-index: 2;
   }
@@ -19,7 +20,7 @@
       display: flex;
     }
   }
-  
+
   &__bottom {
     @include pageGrid;
 
@@ -71,6 +72,7 @@
     font-weight: 400;
     font-size: 64px;
     text-align: center;
+    z-index: 4;
 
     @extend %title;
 
