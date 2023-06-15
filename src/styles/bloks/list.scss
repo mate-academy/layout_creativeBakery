@@ -1,0 +1,72 @@
+.list {
+  display: flex;
+  gap: 64px;
+
+  &--column {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &--footer {
+    align-items: flex-start;
+  }
+
+  &__link {
+    color: #{$color};
+    transition: color 0.5s;
+
+    &:hover {
+      color: #{$special-color};
+      padding-bottom: 3px;
+      border-bottom: 1px solid;
+      border-color: #{$special-color};
+
+    }
+    
+    &:focus {
+      color: #{$focused-color};
+      padding-bottom: 3px;
+      border-bottom: 1px solid;
+      border-color: #{$focused-color};
+    }
+
+    &-footer {
+      color: white;
+
+      &:hover {
+        color: #7f8096;
+      }
+      
+      &:focus {
+        color: #{$focused-color};
+        padding-bottom: 3px;
+        border-bottom: 1px solid;
+        border-color: #{$focused-color};
+      }
+    }
+
+    &--special {
+      color: #{$special-color};
+      text-transform: uppercase;
+
+      &-nav {
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          padding-right: 10px;
+          background-image: url("../images/phone.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
+
+      &-blog:hover {
+        color: white;
+      }
+    }
+  }
+}

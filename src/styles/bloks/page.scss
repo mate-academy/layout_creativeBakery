@@ -1,0 +1,121 @@
+.page {
+  background-color: #{$c-gray};
+
+  &--menu {
+    overflow: hidden;
+  }
+
+  &__menu {
+    background-color: #{$c-gray};
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: all 1s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    &-main {
+      height: 450px;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 85%;
+      min-width: 288px;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      text-align: center;
+
+      
+
+      @media (min-width: 640px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 80px;
+        line-height: 85%;
+        color: #{$special-color};
+      }
+
+      @media (min-width: 1199px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 124px;
+        line-height: 85%;
+        color: #{$special-color};
+        height: 224px;
+      }
+    }
+
+    &-title {
+      padding-bottom: 40px;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #{$special-color};
+
+      &--footer {
+        color: white;
+      }
+    }
+
+    &-name {
+      color: #7f8096;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+
+      &--special {
+        color: #{$special-color};
+        transition: all 2s;
+
+        &:hover {
+          color: #7f8096;
+        }
+
+        &:focus {
+          color: #{$focused-color};
+        }
+
+        &:visited {
+          filter: contrast(0.5);
+        }
+      }
+
+      &--last {
+        padding-top: 40px;
+      }
+    }
+
+    &-description {
+      padding-bottom: 32px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      color: #1c1a26;
+
+      @media (min-width: 640px) {
+        padding-bottom: 0;
+      }
+    }
+
+    &__count {
+      font-weight: 400;
+      font-size: 96px;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #{$special-color};
+    }
+  }
+}
