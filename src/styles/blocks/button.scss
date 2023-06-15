@@ -12,11 +12,6 @@
     margin-top: 0;
   }
 
-  &__image {
-    height: 20px;
-    width: 20px;
-  }
-
   &__link {
     display: flex;
     gap: 6px;
@@ -37,5 +32,42 @@
     border: 3px solid $c-accent-orange;
     border-radius: 40px;
 
+    &::before {
+      content: "";
+      height: 20px;
+      width: 20px;
+      background-image: url(../images/icons/icon-cookie.svg);
+      background-position: center;
+    }
+
+    &:hover {
+      background-color: $c-accent-orange;
+      color: #fff;
+    }
+
+    &:hover::before {
+      background-image: url(../images/icons/icon-cookie-hover.svg);
+    }
+
+    &:active {
+      border: 3px solid $c-dark-orange;
+      background-color: $c-dark-orange;
+      color: #fff;
+    }
+
+    &--state--disabled {
+      pointer-events: none;
+      border: 3px solid $c-light-orange;
+      background-color: #fff;
+      color: $c-light-orange;
+
+      &::before {
+        content: "";
+        height: 20px;
+        width: 20px;
+        background-image: url(../images/icons/icon-cookie-disabled.svg);
+        background-position: center;
+      }
+    }
   }
 }

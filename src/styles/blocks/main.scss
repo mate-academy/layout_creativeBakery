@@ -1,19 +1,33 @@
 .main {
-  @include contentPaddingInline;
+  margin-bottom: 72px;
+
+  @include onTablet {
+    margin-bottom: 152px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 350px;
+  }
+
   &__title {
 
     grid-column: 1 / -1;
     margin-bottom: 24px;
+
     @include onTablet {
+      font-weight: 400;
       font-size: 56px;
       line-height: 85%;
       grid-column: span 4;
-      margin-bottom: 24px;
     }
 
     @include onDesktop {
       font-size: 72px;
       white-space: nowrap;
+    }
+
+    @include onDesign {
+      grid-column: span 4;
     }
   }
 
@@ -25,5 +39,30 @@
       grid-column: span 6;
       margin-bottom: 80px;
     }
+
+    @include onDesign {
+      grid-column: span 6;
+    }
+  }
+
+  &__products {
+    grid-column: 1 / -1;
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 178px;
+    }
+
+    @include onDesign {
+      margin-bottom: 186px;
+    }
+  }
+
+  &__about-us {
+    grid-column: 1 / -1;
   }
 }

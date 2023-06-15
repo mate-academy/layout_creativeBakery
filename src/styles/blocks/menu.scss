@@ -7,11 +7,20 @@
 
   overflow: auto;
 
-  // @include onTablet {
-  //   display: none;
-  // }
+  @include onDesktop {
+    display: none;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   &__phone-number {
+    position: relative;
+    width: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +29,24 @@
     text-decoration: none;
     font-weight: 500;
     color: $c-accent-orange;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-accent-orange;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
 
     @include onDesktop {
       margin-bottom: 0;

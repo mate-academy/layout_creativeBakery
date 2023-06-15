@@ -1,4 +1,5 @@
 .header {
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -22,12 +23,11 @@
 
     @include onDesign {
       margin-block: 0 180px;
-
     }
-
   }
 
   &__background {
+    z-index: -1;
     grid-column: span 2;
     width: 100%;
 
@@ -36,7 +36,6 @@
     }
 
     @include onDesktop {
-      z-index: -2;
       grid-row: 1 / -1;
     }
   }
@@ -47,6 +46,8 @@
 
     @include onTablet {
       position: absolute;
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
       justify-self: center;
       align-self: center;
     }
