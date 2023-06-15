@@ -1,0 +1,109 @@
+.menu {
+  background-color: $main-color;
+  box-sizing: border-box;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+
+  @media (min-width: 1024px) {
+    transform: translateX(0);
+    height: 88px;
+    background: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 18px 20px;
+
+    @media (min-width: 1024px) {
+      display: none;
+      z-index: -1;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin-top: 132px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 640px) {
+      margin-top: 200px;
+    }
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      justify-content: end;
+      align-items: center;
+      margin-top: 32px;
+    }
+     @media (min-width: 1440px) {
+      padding-right: $padding-big;
+    }
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:nth-child(3) {
+      margin-bottom: 32px;
+    }
+    &:last-child {
+      color: $accent-color;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: 1024px) {
+      display: block;
+      margin-right: 64px;
+      &:last-of-type {
+        margin-right: 32px;
+      }
+
+      &:nth-child(3) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom:1px solid transparent;
+    transition: color $time,
+                border-bottom $time;
+    &:hover {
+      color: $accent-color;
+      border-bottom:1px solid $accent-color;
+    }
+  }
+
+  &__phone {
+    display: block;
+    margin-right: 8px;
+  }
+}
