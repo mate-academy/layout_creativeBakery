@@ -1,0 +1,118 @@
+.bake {
+
+  &__container {
+    max-width: 1112px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $black;
+    margin-bottom: 24px;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__pharagraph {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $black;
+    margin-bottom: 56px;
+  }
+
+  &__image {
+    margin-bottom: 16px;
+  }
+
+  &-photo {
+    border-radius: 8px;
+
+    &:hover {
+      border-radius: 8px;
+      background: linear-gradient(145deg, #f0f0f0, #cacaca);
+      box-shadow: 25px 25px 50px #9d9d9d, -25px -25px 50px #fff;
+      scale: 1.05;
+      transition: all 0.3s;
+    }
+  }
+
+  &__card {
+    margin-bottom: 88px;
+
+    &-title {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $grey;
+      margin-bottom: 8px;
+    }
+
+    &-pharagraph {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      color: $black;
+      margin-bottom: 24px;
+    }
+
+    &-button {
+      display: inline-block;
+      position: relative;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $accent-orange;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url("../images/icon/arrow.svg");
+        transform: translateY(15%);
+      }
+
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 40px;
+        bottom: -8px;
+        width: 0;
+        height: 2px;
+        background-color: $accent-orange;
+        -webkit-transition: width 0.3s ease-out;
+        -moz-transition: width 0.3s ease-out;
+        transition: width 0.3s ease-in-out;
+        transform: translateX(-50%);
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
+    }
+  }
+}
