@@ -1,0 +1,75 @@
+// #region Menu
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $c-light-blue;
+  text-transform: uppercase;
+
+  overflow: auto;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__phone-number {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    color: $c-accent-orange;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-accent-orange;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__top {
+    margin-bottom: 32px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: $c-light-blue;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__nav {
+    margin-top: 132px;
+    margin-bottom: 32px;
+  }
+}
+
+// #endregion

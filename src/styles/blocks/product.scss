@@ -1,0 +1,75 @@
+.product {
+
+  &__wrapper {
+    margin-bottom: 72px;
+
+    @include pageGrid;
+    row-gap: 56px;
+
+    @include onTablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__card {
+    grid-column: span 2;
+    display: grid;
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+
+      &--aling-right {
+        grid-column: 3 / span 3;
+      }
+    }
+
+    @include onDesign {
+      grid-column: span 3;
+
+      &--aling-right {
+        grid-column: 3 / span 3;
+      }
+    }
+  }
+
+  &__link {
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  &__picture {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform $transition-speed;
+
+    &:hover {
+      transform: scale(1.1);
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+
+    color: $c-dark-gray;
+  }
+
+  &__descriprion {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  &__order {
+    color: $c-accent-orange;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+}

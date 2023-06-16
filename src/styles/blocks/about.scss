@@ -1,0 +1,47 @@
+.about-us {
+  @include pageGrid;
+  margin-bottom: 72px;
+  position: relative;
+
+  &__description {
+    grid-column: 1 / -1;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+    }
+  }
+
+  &__achivements {
+    grid-column: 1 / -1;
+  }
+
+  &__background {
+    position: absolute;
+    bottom: 17%;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    z-index: -1;
+    @include onTablet {
+      max-height: 100%;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      grid-column: 2 / 8;
+    }
+
+    @include onDesktop {
+      max-height: max-content;
+      margin: 0;
+      width: 100%;
+      height: auto;
+      grid-column: 3 / 8;
+    }
+
+    @include onDesign {
+      transform: translateX(-10%);
+    }
+  }
+}

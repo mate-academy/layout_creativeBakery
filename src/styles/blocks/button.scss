@@ -1,0 +1,73 @@
+.button {
+  grid-column: span 2;
+  @include  onTablet {
+    grid-column: 3 / 7;
+    margin-top: 80px;
+
+  }
+
+  @include onDesktop {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    margin-top: 0;
+  }
+
+  &__link {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 56px;
+    width: 100%;
+
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    line-height: 170%;
+    color: $c-accent-orange;
+
+    border: 3px solid $c-accent-orange;
+    border-radius: 40px;
+
+    transition: all, $transition-speed;
+    
+    &::before {
+      content: "";
+      height: 20px;
+      width: 20px;
+      background-image: url(../images/icons/icon-cookie.svg);
+      background-position: center;
+    }
+
+    &:hover {
+      background-color: $c-accent-orange;
+      color: #fff;
+    }
+
+    &:hover::before {
+      background-image: url(../images/icons/icon-cookie-hover.svg);
+    }
+
+    &:active {
+      border: 3px solid $c-dark-orange;
+      background-color: $c-dark-orange;
+      color: #fff;
+    }
+
+    &--state--disabled {
+      pointer-events: none;
+      border: 3px solid $c-light-orange;
+      color: $c-light-orange;
+
+      &::before {
+        content: "";
+        height: 20px;
+        width: 20px;
+        background-image: url(../images/icons/icon-cookie-disabled.svg);
+        background-position: center;
+      }
+    }
+  }
+}
