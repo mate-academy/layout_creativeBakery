@@ -24,7 +24,7 @@
     text-align: center;
 
     @media (min-width: 768px) {
-      margin: 135px 0 0;
+      margin: 100px 0 0;
       grid-column: 1/5;
       text-align: start;
     }
@@ -113,7 +113,7 @@
     @media (min-width: 768px) {
       @include size (326px, 56px);
       grid-column: 3/5;
-      margin-top: 40px;
+      margin-top: 210px;
     }
 
     @media (min-width: 1024px) {
@@ -122,9 +122,25 @@
       @include size (260px, 56px);
     }
 
+    &::before {
+      content: "";
+      background-image: url("../images/320/cookie.svg");
+      background-repeat: no-repeat;
+      @include size (20px, 20px);
+      margin-right: 6px;
+    }
+
     &:hover {
       background-color: #f9512e;
       color: #fff;
+
+      &::before {
+        content: "";
+        background-image: url("../images/320/cookie-w.svg");
+        background-repeat: no-repeat;
+        @include size (20px, 20px);
+        margin-right: 6px;
+      }
     }
 
     &:focus {
