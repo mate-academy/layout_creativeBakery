@@ -1,0 +1,49 @@
+.menu-mobile {
+  height: 100vh;
+  background-color: $color-light-pink;
+  padding: 20px 5px;
+
+  &__top {
+    margin-bottom: 152px;
+    @extend %top-actions;
+  }
+
+  .menu__list {
+    margin-bottom: 32px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu__item {
+    margin-right: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .menu-mobile__call {
+    display: grid;
+    grid-template-columns: 18px auto;
+    column-gap: 7px;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition;
+
+    &-text {
+      @extend %h3;
+      color: $color-accent-orange;
+    }
+    
+    &:hover {
+      .menu-mobile__call-text {
+        text-decoration: $color-accent-orange underline 2px;
+        text-underline-offset: 3px;
+      }
+
+      .icon--phone {
+        opacity: 0.6;
+      }
+    }
+  }
+}

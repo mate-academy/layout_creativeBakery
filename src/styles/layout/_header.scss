@@ -1,0 +1,54 @@
+.header {
+  max-width: 1440px;
+  @extend %top-actions;
+  margin-bottom: 52px;
+  padding: 20px 18px 0 20px;
+
+  @include onTablet {
+    margin-bottom: 100px;
+  }
+
+  @include onDesktop {
+    padding: 32px 36px 20px;
+    margin-bottom: 90px;
+  }
+
+  @include onScreen {
+    margin-bottom: 75px;
+  }
+
+  &__call {
+    display: none;
+    transition: all $transition;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 18px auto;
+      column-gap: 7px;
+      align-items: center;
+      margin-left: 67px;
+    }
+
+    &-text {
+      @extend %h3;
+      color: $color-accent-orange;
+    }
+
+    &:hover {
+      .header__call-text {
+        text-decoration: $color-accent-orange underline 2px;
+        text-underline-offset: 3px;
+      }
+
+      .icon--phone {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &__icon-menu {
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.card {
+  max-width: 288px;
+
+  @include onTablet {
+    max-width: 328px;
+  }
+
+  @include onDesktop {
+    max-width: 402px;
+  }
+
+  @include onScreen {
+    max-width: 432px;
+  }
+
+  &__img-container {
+    height: 356px;
+    margin: 0 auto 16px;
+    transition: transform $transition;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
+    @include onTablet {
+      height: 424px;
+    }
+
+    @include onDesktop {
+      height: 512px;
+    }
+
+    @include onScreen {
+      height: 560px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    color: $color-grey;
+  }
+
+  &__text {
+    margin-bottom: 24px;
+    @extend %body-text;
+  }
+
+  &__button {
+    margin-left: 4px;
+  }
+}

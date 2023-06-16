@@ -1,0 +1,51 @@
+.button {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  color: $color-accent-orange;
+  cursor: pointer;
+  transition: all $transition;
+
+  &__bordered {
+    justify-content: center;
+    height: 56px;
+    border: 2px solid $color-accent-orange;
+    border-radius: 32px;
+
+    &-text {
+      margin-left: 6px;
+      text-decoration: none;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      background-color: $color-light-orange;
+      border-color: $color-light-orange;
+
+      .button__bordered-text {
+        text-decoration: underline #fff;
+        text-underline-offset: 3px;
+        color: #fff;
+      }
+    }
+  }
+
+  &__borderless {
+    &-text {
+      margin-left: 8px;
+    }
+
+    &:hover {
+      .button__borderless-icon {
+        transform: scale(1.2);
+      }
+
+      .button__borderless-text {
+        text-decoration: underline darken($color: #f9512e, $amount: 20%);
+        text-underline-offset: 3px;
+        color: darken($color: $color-accent-orange, $amount: 20%);
+      }
+    }
+  }
+}

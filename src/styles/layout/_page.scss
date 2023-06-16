@@ -1,0 +1,43 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background-color: $color-light-pink;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__section {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+  }
+
+  &__section-title {
+    color: $color-accent-orange;
+  }
+
+  &__menu-mobile {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform $transition;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
