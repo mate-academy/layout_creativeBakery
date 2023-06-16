@@ -1,0 +1,71 @@
+.confirmation {
+  border: 1px transparent;
+  height: 32px;
+  border-radius: 0;
+  background-color: transparent;
+  width: 144px;
+  transition: all 0.3s ease-in-out;
+
+  &--order {
+    width: 84px;
+  }
+
+  &:hover {
+    border-bottom: 1px solid $accent-orange;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:focus-within {
+    border-bottom: 1px solid $dark-orange;
+  }
+
+  &__img {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+    background: url(../images/Icon-phone.svg) no-repeat center;
+    transition: all 0.3s ease-in-out;
+
+    &--order {
+      background: url(../images/Icon-arrow.svg) no-repeat center;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $accent-orange;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      color: $dark-orange;
+    }
+
+    &:focus .confirmation__img {
+      background: url(../images/icon-dark-orange.svg);
+
+      &--order {
+        background: url(../images/Icon-arrow-dark.svg);
+      }
+    }
+
+    &:disabled .confirmation {
+      border-bottom: $light-orange;
+    }
+
+    &:disabled {
+      color: $light-orange;
+    }
+
+    &:disabled &__img {
+      background-image: url(../images/icon-light-orange.svg);
+    }
+  }
+}

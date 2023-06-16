@@ -27,4 +27,4 @@ Implement landing page according to [Figma design](https://www.figma.com/file/dY
 
 > To update you PR repeat steps 7-11.
 
-15. Check yourself using the [CHECKLIST](https://github.com/mate-academy/layout_creativeBakery/blob/master/checklist.md) when finished;
+15. Check yourself using the [CHECKLIST](https://github.com/olyakachmarchyk/layout_creativeBakery/blob/master/checklist.md) when finished;
