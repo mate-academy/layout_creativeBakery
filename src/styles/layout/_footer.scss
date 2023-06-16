@@ -1,0 +1,92 @@
+.footer {
+  padding: 61px 0 56px;
+  background-color: $color-black;
+  color: #fff;
+
+  @include onTablet {
+    padding: 88px 0 56px;
+  }
+
+  @include onDesktop {
+    padding: 88px 0 48px;
+  }
+
+  &__content {
+    @extend %grid-system;
+    row-gap: 10px;
+
+    @include onDesktop {
+      row-gap: 33px;
+    }
+  }
+
+  &__logo {
+    margin: 0 0 45px 5px;
+
+    @include onTablet {
+      margin: 5px 0 0 5px;
+      grid-column: 1/4;
+      grid-row: 1/2;
+      align-items: flex-start;
+    }
+
+  }
+
+  &__subtitle {
+    margin-bottom: 16px;
+    color: $color-grey;
+  }
+
+  &__menu {
+    display: block;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      grid-column: 1/4;
+      grid-row: 2/3;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      padding-top: 12px;
+    }
+
+    .menu__list {
+      flex-direction: column;
+    }
+
+    .menu__item:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    .menu__link {
+      color: inherit;
+      @extend %body-text;
+      transition: all $transition;
+
+      &:hover{
+        color: $color-accent-orange;
+      }
+    }
+  }
+
+  &__contacts {
+    grid-column: 5/9;
+    grid-row: 1/3;
+  }
+
+  &__social {
+    grid-column: 1/4;
+    margin-bottom: 42px;
+    display: grid;
+    grid-template-columns: repeat(3, 24px);
+    column-gap: 32px;
+  }
+
+  &__copyright {
+    grid-column: 5/9;
+    grid-row: 3/4;
+    @extend %body-text;
+    color: $color-grey;
+  }
+}
