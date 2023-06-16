@@ -1,0 +1,39 @@
+.list {
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+
+  &__item {
+    display: flex;
+    list-style: none;
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    text-decoration-line: none;
+    &--contact {
+      position: relative;
+      color: #f9512e;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+
+      &::after {
+        content: "";
+        background-image: url("../images/320/icon-phone.png");
+        background-repeat: no-repeat;
+        display: block;
+        position: absolute;
+        right: 112px;
+        top: 0;
+        @include size(20px, 20px);
+      }
+    }
+
+    &:hover {
+      text-decoration-line: underline;
+      color: #f9512e;
+    }
+  }
+}
