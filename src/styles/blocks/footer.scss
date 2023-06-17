@@ -1,0 +1,184 @@
+.footer {
+  background-color: $black;
+  color: $white;
+
+  @include onPhone {
+    padding: 56px 0;
+  }
+
+  &__content {
+    @include grid;
+  }
+
+  &__logo {
+    grid-column: 1 / 5;
+    margin-bottom: 40px;
+    display: block;
+    width: 168px;
+    height: 40px;
+    background: url(../images/Logo-white.svg) no-repeat;
+    background-size: contain;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__list {
+    margin-bottom: 48px;
+
+    &--1 {
+      grid-column: 1 / 5;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+
+      @include onPhone {
+        display: block;
+        margin-bottom: 64px;
+      }
+    }
+
+    &--2 {
+      grid-column: 5 / 7;
+      grid-row: 2 / 3;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+
+      @include onPhone {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+
+    &--3 {
+      grid-column: 7 / 9;
+      grid-row: 2 / 3;
+
+      @include onTablet {
+        grid-column: 5 / 9;
+        grid-row: 3 / 4;
+      }
+
+      @include onPhone {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__list-name {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey;
+    margin-bottom: 16px;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $white;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $accent-orange;
+      text-decoration: underline;
+      text-underline-offset: 8px;
+      text-decoration-thickness: 1px;
+    }
+
+    &:focus {
+      color: $dark-orange;
+    }
+  }
+
+  &__social {
+    grid-column: 1 / 5;
+
+    @include onTablet {
+      grid-row: 4 / 5;
+    }
+
+    @include onPhone {
+      margin-bottom: 40px;
+    }
+
+    width: 280px;
+    display: flex;
+  }
+
+  &__social-link {
+    margin-right: 32px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s;
+
+    &--1 {
+      background-image: url(../images/Icon-facebook.svg);
+      &:hover,
+      &:focus {
+        background-image: url(../images/Icon-facebook-white.svg);
+      }
+    }
+
+    &--2 {
+      background-image: url(../images/Icon-instagram.svg);
+      &:hover,
+      &:focus {
+        background-image: url(../images/Icon-instagram-white.svg);
+      }
+    }
+
+    &--3 {
+      background-image: url(../images/Icon-twitter.svg);
+
+      &:hover,
+      &:focus {
+        background-image: url(../images/Icon-twitter-white.svg);
+      }
+    }
+  }
+
+  &__heading {
+    margin-bottom: 40px;
+    grid-column: 5 / 9;
+    grid-row: 1 / 2;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onPhone {
+      font-size: 48px;
+    }
+  }
+
+  &__copyright {
+    @include text;
+    color: $grey;
+    grid-column: 5 / 9;
+  }
+}
