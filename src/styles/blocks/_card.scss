@@ -1,0 +1,85 @@
+.card {
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    &:nth-child(odd) {
+      grid-column: 1/4;
+    }
+
+    &:nth-child(even) {
+      grid-column: 5/9;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &:nth-child(odd) {
+      grid-column: 1/4;
+    }
+
+    &:nth-child(even) {
+      grid-column: 4/9;
+    }
+
+    &:nth-child(5) {
+      grid-column: 3/6;
+    }
+
+    &:nth-child(6) {
+      grid-column: 6/9;
+    }
+  }
+
+  &__img {
+    @include size (288px, 356px);
+    border-radius: 8px;
+    @media (min-width: 768px) {
+      @include size (328px, 424px);
+    }
+
+    @media (min-width: 1024px) {
+      @include size (402px, 512px);
+    }
+
+    @media (min-width: 1200px) {
+      @include size (432px, 560px);
+    }
+  }
+
+  &__title {
+    margin: 16px 0 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #7f8096;
+  }
+
+  &__text {
+    margin: 0 0 24px;
+  }
+
+  &__link {
+    display: flex;
+    position: relative;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #f9512e;
+    text-decoration: none;
+
+    &::before {
+      content: "";
+      background-image: url("../images/320/arrow.png");
+      @include size (16px, 15.56px);
+      margin-right: 8px;
+    }
+  }
+}

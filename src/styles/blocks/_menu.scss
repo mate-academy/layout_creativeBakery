@@ -1,0 +1,42 @@
+@import "./list";
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  background: $c-pink;
+  transform: translateX(100%);
+  transition: transform 300ms;
+
+  height: 100vh;
+  padding: 20px;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__logo {
+    @include size (132px, 32px);
+  }
+
+  &__close {
+    @include size (13px, 13px);
+    margin-top: 7px;
+    margin-right: 4px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 140px;
+  }
+}
