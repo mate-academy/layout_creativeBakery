@@ -1,0 +1,140 @@
+.footer {
+  padding: 56px 0;
+
+  background-color: $black;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__top-grid {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    width: 168px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    &--menu {
+      margin-bottom: 64px;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+        margin-bottom: 0;
+      }
+    }
+
+    &--call-us {
+      margin-bottom: 40px;
+      @include onTablet {
+        grid-column: 5 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / 7;
+        margin-bottom: 0;
+      }
+    }
+
+    &--email {
+      @include onTablet {
+        grid-column: 5 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &__list-title {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey;
+  }
+
+  &__link {
+    color: #fff;
+
+    transition: color $duration;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  &__title {
+    @include title;
+
+    margin-bottom: 40px;
+
+    color: #fff;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    column-gap: 40px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 0;
+    }
+  }
+
+  &__social {
+    @include icon(url(../images/icons/facebook.svg));
+
+    transition: background-image $duration;
+
+    &:hover {
+      background-image: url(../images/icons/facebook-white.svg);
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/instagram.svg);
+
+      &:hover {
+        background-image: url(../images/icons/instagram-white.svg);
+      }
+    }
+
+    &--twitter {
+      background-image: url(../images/icons/twitter.svg);
+
+      &:hover {
+        background-image: url(../images/icons/twitter-white.svg);
+      }
+    }
+  }
+
+  &__copyright {
+    color: $grey;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+  }
+}
