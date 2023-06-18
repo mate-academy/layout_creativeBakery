@@ -1,6 +1,61 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin icon($url) {
+  display: block;
+  width: 24px;
+  height: 24px;
+  content: "";
+
+  background-image: $url;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin title {
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $orange;
+
+  @include onTablet {
+    font-size: 56px;
+  }
+
+  @include onDesktop {
+    font-size: 72px;
+  }
+}
+
+@mixin headerTopStyles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+@mixin contactUsLinkStyles {
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $orange;
+
+  &::before {
+    @include icon(url(../images/icons/phone.svg));
   }
 }

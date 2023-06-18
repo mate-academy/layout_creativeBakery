@@ -1,0 +1,132 @@
+.products {
+  margin-bottom: 76px;
+
+  @include onTablet {
+    margin-bottom: 156px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 182px;
+  }
+
+  &__title {
+    @include title;
+
+    margin-bottom: 24px;
+  }
+
+  &__under-title {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 60px;
+
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
+    }
+
+    &:nth-child(2n + 1) {
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &:nth-child(2n + 2) {
+      @include onTablet {
+        grid-column: 5 / 9;
+      }
+    }
+
+    &:nth-child(4n + 1) {
+      @include onDesktop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &:nth-child(4n + 2) {
+      @include onDesktop {
+        grid-column: 4 / 7;
+      }
+    }
+
+    &:nth-child(3) {
+      @include onDesktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &:nth-child(4) {
+      @include onDesktop {
+        grid-column: 6 / 9;
+      }
+    }
+  }
+
+  &__info-image-wrapper {
+    margin-bottom: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__info-image {
+    display: block;
+    width: 100%;
+
+    transition: transform $duration;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+  }
+
+  &__info-title,
+  &__info-link {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  &__info-title {
+    margin-bottom: 8px;
+
+    color: $grey;
+  }
+
+  &__info-text {
+    margin-bottom: 24px;
+  }
+
+  &__info-link {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    width: max-content;
+
+    color: $orange;
+
+    border-bottom: 1px solid transparent;
+
+    transition: border-bottom-color $duration;
+
+    &::before {
+      @include icon(url(../images/icons/arrow-right.svg));
+    }
+
+    &:hover {
+      border-bottom-color: $orange;
+    }
+  }
+}

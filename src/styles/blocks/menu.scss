@@ -1,0 +1,53 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  transform: translateX(110%);
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  background-color: $pink;
+
+  transition: transform $duration;
+
+  &--show {
+    transform: translateX(0);
+  }
+
+  &__top {
+    @include headerTopStyles;
+  }
+
+  &__logo-image {
+    display: block;
+  }
+
+  &__cross {
+    @include icon(url(../images/icons/cross.svg));
+  }
+
+  &__nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    text-align: center;
+  }
+
+  &__link {
+    &--contact-us {
+      @include contactUsLinkStyles;
+    }
+  }
+}

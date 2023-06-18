@@ -1,0 +1,77 @@
+.about {
+  margin-bottom: 72px;
+
+  background-image: url(../images/сrumbs.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  @include onTablet {
+    margin-bottom: 152px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 294px;
+    margin-bottom: 56px;
+  }
+
+  &__title {
+    @include title;
+
+    margin-bottom: 32px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      margin-bottom: 0;
+    }
+  }
+
+  &__fact {
+    &:not(:last-child) {
+      margin-bottom: 48px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+
+    @for $index from 0 through 3 {
+      &--#{$index * 2 + 1} {
+        @include onTablet {
+          grid-column: 1 / 5;
+        }
+      }
+
+      &--#{$index * 2 + 2} {
+        @include onTablet {
+          grid-column: 5 / 9;
+        }
+      }
+
+      &--#{$index + 1} {
+        @include onDesktop {
+          grid-column: #{1 + 2 * $index} / #{3 + 2 * $index};
+        }
+      }
+    }
+  }
+
+  &__fact-value {
+    margin-bottom: 8px;
+
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $orange;
+  }
+}
