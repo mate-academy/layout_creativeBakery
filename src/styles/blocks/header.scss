@@ -10,10 +10,8 @@
   }
 
   &__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
+    @include headerTopStyles;
+
     margin-bottom: 32px;
 
     @include onTablet {
@@ -67,19 +65,7 @@
     }
 
     &--contact-us {
-      display: flex;
-      align-items: center;
-      column-gap: 7px;
-
-      font-weight: 500;
-      line-height: 100%;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: $orange;
-
-      &::before {
-        @include icon(url(../images/icons/phone.svg));
-      }
+      @include contactUsLinkStyles;
 
       &:hover {
         border-bottom-color: $orange;
