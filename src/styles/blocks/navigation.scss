@@ -1,0 +1,74 @@
+.nav {
+  height: 100vh;
+  background: $fancy-white;
+
+  &__container {
+    padding: 20px 21.64px 0;
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__logo {
+    width: 128px;
+    height: 25px;
+  }
+
+  &__closer {
+    display: block;
+    height: 13px;
+    width: 13px;
+
+    background-image: url(../images/closer.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 24px;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: #1c1a26;
+  }
+
+  &__item:nth-child(4n) a {
+    font-size: 16px;
+    line-height: 100%;
+
+    color: $main-orange;
+  }
+
+  &__item:nth-child(4n) {
+    position: relative;
+    text-decoration: none;
+                  
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -25px;
+
+      background-image: url(../images/phone.svg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      height: 18px;
+      width: 18px;
+    }
+  }
+}
