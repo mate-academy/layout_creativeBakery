@@ -1,0 +1,126 @@
+.footer {
+  margin-top: 72px;
+  padding-bottom: 56px;
+  background-color: $text-color;
+
+  @include onTablet {
+    margin-top: 152px;
+    padding-bottom: 88px;
+  }
+
+  @include onDesktop {
+    margin-top: 349px;
+  }
+
+  &__logo {
+    margin-top: 61px;
+    grid-column: 1 / 3;
+
+    @include onTablet {
+      margin-top: 93px;
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__ul {
+    margin-top: 136px;
+    padding: 0;
+    grid-column: 1 / 3;
+    @include bodyText;
+
+    @include onTablet {
+      margin-top: 40px;
+      grid-column: 5 / 9;
+
+      &--menu {
+        grid-column: 1 / 5;
+      }
+    }
+
+    @include onDesktop {
+      &--call-us {
+        grid-column: 5 / 7;
+      }
+
+      &--email {
+        grid-column: 7 / 9;
+      }
+    }
+  }
+
+  &__li {
+    margin-top: 16px;
+    list-style: none;
+
+    &--menu {
+      color: $gray;
+      text-transform: uppercase;
+    }
+
+    &--icon {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    height: 0;
+    text-decoration: none;
+    color: $footer-text-color;
+  }
+
+  &__h2 {
+    margin-top: 64px;
+    grid-column: 1 / 3;
+    color: $footer-text-color;
+
+    @include h2;
+
+    @include onTablet {
+      margin-top: 88px;
+      grid-column: 5 / 9;
+      grid-row: 1;
+    }
+  }
+
+  &__icon {
+    margin-top: 42px;
+    padding: 0;
+    display: flex;
+    grid-column: 1 / 3;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+  }
+
+  &__fav {
+    margin-right: 40px;
+    fill: $svg-color;
+    transition: 0.3s;
+
+    &:focus {
+      fill: $svg-hover;
+    }
+
+    &:hover {
+      fill: $svg-hover;
+    }
+  }
+
+  &__signature {
+    margin-top: 42px;
+    grid-column: 1 / 3;
+    color: $gray;
+    @include bodyText;
+
+    @include onTablet {
+      margin-top: 50px;
+      grid-column: 5 / 9;
+      grid-row: 4;
+    }
+
+    @include onDesktop {
+      grid-row: 3;
+    }
+  }
+}

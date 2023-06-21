@@ -1,6 +1,131 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktopXL {
+  @media (min-width: $desktopXL-min-width) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline {
+  padding-inline: 16px;
+
+  @include onTablet {
+    min-width: $tablet-min-width;
+    padding-inline: 44px;
+  }
+
+  @include onDesktop {
+    min-width: $desktop-min-width;
+    padding-inline: 44px;
+  }
+
+  @include onDesktopXL {
+    min-width: $desktopXL-min-width;
+    margin-inline: auto;
+    padding-inline: 124px;
+  }
+}
+
+@mixin pageGrid {
+  --colums: 2;
+  --width-column: 1fr;
+  display: grid;
+  column-gap: 1fr;
+  grid-template-columns: repeat(var(--colums), var(--width-column));
+
+  @include onTablet {
+    --colums: 8;
+    --width-column: 1fr;
+    column-gap: 24px;
+  }
+
+  @include onDesktop {
+    --colums: 8;
+    --width-column: 1fr;
+    column-gap: 24px;
+  }
+
+  @include onDesktopXL {
+    --colums: 8;
+    --width-column: 1fr;
+    column-gap: 24px;
+  }
+}
+
+@mixin h1 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include onTablet {
+    font-size: 80px;
+  }
+
+  @include onDesktop {
+    font-size: 136px;
+  }
+  @include onDesktopXL {
+    font-size: 144px;
+  }
+}
+
+@mixin h2 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include onTablet {
+    font-size: 56px;
+  }
+
+  @include onDesktop {
+    font-size: 72px;
+  }
+}
+
+@mixin bodyText {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+@mixin bigText {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin uppercase {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }

@@ -1,0 +1,58 @@
+.menu {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $background-color;
+  z-index: 99;
+
+  transform: translateX(100%);
+  transition: transform $effectDuration;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__aside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    width: 100%;
+    padding: 28px 18px;
+  }
+
+  &__ul {
+    flex-direction: column;
+    padding: 0;
+    margin-top: 132px;
+    text-align: center;
+  }
+
+  &__list {
+    margin-bottom: 24px;
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-color;
+
+    @include bodyText;
+
+    &--last {
+      position: relative;
+      color: $svg-color;
+
+      @include uppercase;
+    }
+  }
+
+  &__phone {
+    position: absolute;
+    top: 5%;
+    right: 100%;
+    margin-right: 7px;
+  }
+}
