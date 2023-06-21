@@ -5,6 +5,7 @@
   left: 0;
   right: 0;
   background-color: $background-color;
+
   z-index: 99;
 
   transform: translateX(100%);
@@ -39,7 +40,18 @@
     text-decoration: none;
     color: $text-color;
 
+    transition: all $effectDuration;
+
     @include bodyText;
+
+    &:hover {
+      font-weight: bold;
+      font-size: large;
+    }
+
+    &:focus {
+      color: $text-colot-focus;
+    }
 
     &--last {
       position: relative;
@@ -51,7 +63,7 @@
 
   &__phone {
     position: absolute;
-    top: 5%;
+    top: 10%;
     right: 100%;
     margin-right: 7px;
   }

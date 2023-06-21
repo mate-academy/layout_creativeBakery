@@ -18,6 +18,10 @@
     }
   }
 
+  &__link {
+    text-decoration: none;
+  }
+
   &__description {
     color: $text-color;
     grid-column: 1 / 3;
@@ -90,6 +94,13 @@
     width: 100%;
     border-radius: 6px;
     object-fit: fill;
+    cursor: pointer;
+    transition: all $effectDuration;
+
+    &:hover {
+      box-shadow: 1px 4px 16px rgba(88, 88, 160, 0.4);
+      transform: scale(101%);
+    }
 
     @include onTablet {
       margin-top: 88px;
@@ -129,7 +140,17 @@
     background-color: $background-color;
     border: none;
     grid-column: 1 / 2;
+    transition: all $effectDuration;
 
     @include uppercase;
+
+    &:hover {
+      font-weight: bold;
+      transform: scale(101%);
+    }
+
+    &:focus {
+      color: $text-colot-focus;
+    }
   }
 }
