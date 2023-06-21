@@ -1,0 +1,150 @@
+.header {
+  &__content {
+    padding: 20px 0 100px;
+
+    @include onTablet {
+      padding-bottom: 228px;
+      height: 546px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 152px;
+      height: 586px;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+    margin-bottom: 32px;
+    
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__menu-burger {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__container {
+    @include grid;
+  }
+
+  &__paragraph {
+    @extend %p;
+    text-align: center;
+    padding-bottom: 32px;
+
+    grid-column: 1 / 3;
+
+    @include onTablet {
+      text-align: left;
+      grid-column: 1 / 5;
+      letter-spacing: -0.01em;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+      padding: 0;
+
+      position: absolute;
+      top: 180px;
+      max-width: 260px;
+    }
+
+    @include onLargeScreen {
+      top: 210px;
+      max-width: 280px;
+    }
+  }
+  
+  &__title {
+    font-size: 64px;
+    line-height: 85%;
+    text-transform: uppercase;
+    text-align: center;
+    color: $secondary-color;
+    letter-spacing: -0.05em;
+
+    grid-column: 1 / 3;
+
+    @include onTablet {
+      grid-column: 1 / 9;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 337px;
+      z-index: 1;
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      top: 260px;
+      font-size: 118px;
+    }
+
+    @include onLargeScreen {
+      top: 280px;
+      font-size: 144px;
+    }
+  }
+
+  &__image {
+    grid-column: 1 / 3;
+    justify-self: center;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+      min-width: 326px;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      min-width: 544px;
+    }
+
+    @include onLargeScreen {
+      min-width: 584px;
+    }
+  }
+
+  &__button {
+    align-self: center;
+    gap: 6px;
+    width: 100%;
+
+    max-width: 326px;
+    justify-self: center;
+
+    grid-column: 1 / 3;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+
+    @include onDesktop {
+      max-width: 256px;
+      justify-self: start;
+
+      position: absolute;
+      top: 440px;
+    }
+
+    @include onLargeScreen {
+      top: 460px;
+    }
+  }
+}
