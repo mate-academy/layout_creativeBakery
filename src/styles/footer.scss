@@ -1,0 +1,117 @@
+.footer {
+  box-sizing: border-box;
+  background-color: $c-black;
+
+  @include onTablet {
+    padding-bottom: 90px;
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 45px;
+  }
+
+  &__image {
+    width: 158px;
+    height: 31px;
+  }
+
+  &__title {
+    @extend %h2;
+    color: $c-white;
+    margin-bottom: 40px;
+  }
+
+  &__subtitle {
+    @extend %uppercase;
+    color: $c-grey;
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    display: block;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &--menu {
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--call-us {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $c-white;
+    @extend %link-bottom-hover;
+
+    &:hover {
+      text-shadow: 1px 1px 2px $c-accent-orange;
+    }
+
+    &::after {
+      background-color: $c-white;
+    }
+  }
+
+  &__email {
+    display: block;
+    text-decoration: none;
+    color: $c-white;
+    margin-bottom: 42px;
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__media {
+    display: flex;
+    margin-bottom: 42px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__social {
+    padding-right: 40px;
+  }
+
+  &__icon {
+    & path {
+      transition: $transition-time;
+    }
+
+    &:hover path {
+      fill: $c-white;
+    }
+  }
+
+  &__privacy {
+    color: $c-grey;
+  }
+}

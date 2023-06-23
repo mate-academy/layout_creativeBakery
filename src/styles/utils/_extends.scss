@@ -1,4 +1,87 @@
+%contact-us {
+  position: relative;
+  @extend %uppercase;
+
+  &::before {
+    content: url(../images/icon_phone.svg);
+    color: $c-accent-orange;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-right: 7px;
+    position: absolute;
+    bottom: 0;
+    right: 100%;
+    transform: translateY(-10%);
+  }
+}
+
+%uppercase {
+  font-weight: $text-bold;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+%big-text {
+  font-weight: $text-normal;
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $c-accent-orange;
+}
+
 %h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-weight: $text-normal;
+  font-size: 64px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $c-accent-orange;
+
+  @include onTablet {
+    font-size: 80px;
+  }
+
+  @include onDesktop {
+    font-size: 144px;
+  }
+}
+
+%h2 {
+  font-weight: $text-normal;
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $c-accent-orange;
+
+  @include onTablet {
+    font-size: 56px;
+  }
+
+  @include onDesktop {
+    font-size: 72px;
+  }
+}
+
+%link-bottom-hover {
+  border-bottom: 1px solid transparent;
+  width: max-content;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    opacity: 0;
+    transition: $transition-time;
+  }
+
+  &:hover:after {
+    opacity: 0.5;
+  }
 }

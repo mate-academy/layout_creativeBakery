@@ -1,0 +1,33 @@
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    margin-right: 64px;
+    color: inherit;
+    @extend %link-bottom-hover;
+
+    &::after {
+      background-color: $c-black;
+    }
+
+    &--blog {
+      margin-right: 92px;
+    }
+
+    &--contact-us {
+      @extend %contact-us;
+      margin-right: 0;
+      color: $c-accent-orange;
+
+      &::after {
+        background-color: $c-accent-orange;
+      }
+    }
+  }
+}
