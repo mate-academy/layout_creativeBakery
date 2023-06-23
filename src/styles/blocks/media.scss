@@ -1,0 +1,38 @@
+.media {
+  display: flex;
+
+  &--margin-bottom {
+    margin-bottom: 42px;
+
+    @include onTablet {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    width: 20px;
+    height: 20px;
+
+    &--margin-right {
+
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+
+    &:hover {
+      filter: brightness(0)
+        saturate(100%)
+        invert(94%)
+        sepia(100%)
+        hue-rotate(-36deg);
+    }
+  }
+}

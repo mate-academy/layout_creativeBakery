@@ -1,0 +1,52 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+  border: 2px solid $accent-orange;
+  border-radius: 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include text-decoration ($fw-2, $fz-1, $lh-2, $ls-3, $accent-orange);
+  transition: 0.3s;
+
+  &--margin-top-1 {
+    margin-top: 290px;
+
+    @include onTablet {
+      margin-top: 210px;
+    }
+
+    @include onDesktop {
+      margin-top: 64px;
+    }
+  }
+
+  &__cookie {
+    transition: 0.3s;
+
+    &--margin-right {
+      margin-right: 6px;
+    }
+  }
+
+  &:hover {
+    background-color: $accent-orange;
+    @include text-decoration ($fw-2, $fz-1, $lh-2, $ls-3, $white);
+  }
+
+  &:focus,
+  &:active {
+    background-color: $dark-orange;
+    border: 2px solid $dark-orange;
+  }
+
+  &:hover .button__cookie {
+    filter: brightness(0)
+      saturate(100%)
+      invert(94%)
+      sepia(100%)
+      hue-rotate(-36deg);
+  }
+}

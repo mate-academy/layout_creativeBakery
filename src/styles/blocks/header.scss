@@ -1,0 +1,89 @@
+.header {
+  height: 100vh;
+
+  &__container-top {
+    @extend %header-container;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__container {
+    @extend %container;
+    background-image: url(../images/background/Cookie.svg);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: 50% 80%;
+
+    @include onTablet {
+      background-size: 30%;
+      background-position: 50% 55%;
+    }
+
+    @include onDesktop {
+      background-size: 30%;
+      background-position: 50% 100%;
+    }
+
+  }
+
+  &__description {
+    @include text-decoration ($fw-1, $fz-1, $lh-3, $ls-2, $black);
+    margin: 0;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    &--margin-top {
+      margin-top: 52px;
+
+      @include onTablet {
+        margin-top: 100px;
+      }
+
+      @include onDesktop {
+        margin-top: 167px;
+      }
+
+      @include onBigDesktop {
+        margin-top: 175px;
+      }
+    }
+  }
+
+  &__title {
+    @include text-decoration ($fw-1, $fz-8, $lh-1, $ls-1, $black);
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include onTablet {
+      @include text-decoration ($fw-1, $fz-11, $lh-1, $ls-1, $black);
+    }
+
+    @include onDesktop {
+      @include text-decoration ($fw-1, $fz-16, $lh-1, $ls-1, $black);
+    }
+
+    @include onBigDesktop {
+      @include text-decoration ($fw-1, $fz-17, $lh-1, $ls-1, $black);
+    }
+
+    &--margin-top {
+      margin-top: 32px;
+
+      @include onTablet {
+        margin-top: 146px;
+      }
+
+      @include onDesktop {
+        margin-top: 8px;
+      }
+
+      @include onBigDesktop {
+        margin-top: 40px;
+      }
+    }
+  }
+}

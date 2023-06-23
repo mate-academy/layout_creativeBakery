@@ -1,4 +1,58 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+%inter {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+}
+
+%header-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 20px 16px 0;
+
+  @include onTablet {
+    padding: 20px 44px 0;
+  }
+
+  @include onBigDesktop {
+    padding: 32px 32px 0;
+  }
+}
+
+%container {
+  box-sizing: border-box;
+  max-width: $weight-4;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include onTablet {
+    padding: 0 44px;
+  }
+
+  @include onBigDesktop {
+    padding: 0 32px;
+  }
+}
+
+%title {
+  @include text-decoration ($fw-1, $fz-4, $lh-1, $ls-1, $black);
+  margin: 0;
+  text-transform: uppercase;
+
+  @include onTablet {
+    @include text-decoration ($fw-1, $fz-6, $lh-1, $ls-1, $black);
+  }
+
+  @include onDesktop {
+    @include text-decoration ($fw-1, $fz-10, $lh-1, $ls-1, $black);
+  }
+}
+
+%subtitle {
+  @include text-decoration ($fw-2, $fz-1, $lh-2, $ls-3, $grey);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+%text {
+  @include text-decoration ($fw-1, $fz-1, $lh-3, $ls-2, $black);
+  margin: 0;
 }

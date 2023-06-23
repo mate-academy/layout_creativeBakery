@@ -1,0 +1,27 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    @extend %inter;
+    margin: 0;
+    padding: 0;
+    background-color: $light-blue;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+    transition: 0.3s;
+
+    &:target {
+      transform: translateY(0%);
+    }
+  }
+}
