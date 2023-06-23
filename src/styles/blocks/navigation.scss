@@ -1,5 +1,8 @@
 .nav {
   height: 100vh;
+  
+  z-index: 1;
+
   background: $fancy-white;
 
   &__container {
@@ -15,7 +18,7 @@
     height: 13px;
     width: 13px;
 
-    background-image: url(../images/closer.png);
+    background-image: url(../images/closer.svg);
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -38,32 +41,35 @@
     color: #1c1a26;
   }
 
-  &__item:nth-child(4n) a {
-    font-size: 16px;
-    line-height: 100%;
+  &__item {
 
-    color: $main-orange;
-  }
+    &-icon {
+      width: 24px;
+      height: 24px;
+    }
 
-  &__item:nth-child(4n) {
-    position: relative;
-    text-decoration: none;
-                  
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    &-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    &::before {
-      content: "";
-      position: absolute;
-      left: -25px;
+      gap: 7px;
+    }
 
-      background-image: url(../images/phone.svg);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    &:nth-child(4n) a {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+    
+      color: $main-orange;
+    }
 
-      height: 18px;
-      width: 18px;
+    &:nth-child(4n) {
+      text-decoration: none;
+                    
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
     }
   }
 }
