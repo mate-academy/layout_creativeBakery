@@ -1,0 +1,38 @@
+.section {
+  display: block;
+  @include onTablet {
+    @include pageGrid;
+  }
+  @include onDesctop {
+    @include pageGrid;
+  }
+}
+
+.grid__desctop {
+  @include onDesctop {
+    @for $start from 1 through 9 {
+      @for $end from $start through 9 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end};
+        }
+      }
+
+    }
+  }
+}
+
+.grid__tablet {
+  @include onTablet {
+    @for $start from 1 through 9 {
+      @for $end from $start through 9 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end};
+        }
+      }
+    }
+  }
+}
+
+.grid-row {
+  grid-row: 1;
+}

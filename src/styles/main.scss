@@ -1,7 +1,52 @@
 @import "utils";
-@import "fonts";
-@import "typography";
 
-body {
+.page {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  scroll-behavior: smooth;
   background: $c-gray;
+  margin: 0;
+
+  &__section-title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    @include onTablet {
+      font-size: 56px;
+    }
+    @include onDesctop {
+      font-size: 72px;
+    }
+    &--footer {
+      color: #fff;
+    }
+  }
+
+  &__section-subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.container {
+  padding-inline: 44px;
+  @include onTablet {
+    padding-inline: 44px;
+    margin-inline: auto;
+  }
+  @include onDesctop {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
 }

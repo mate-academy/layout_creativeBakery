@@ -1,0 +1,59 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: inherit;
+  width: 100%;
+  height: 56px;
+  border: 2px solid $button-color;
+  border-radius: 32px;
+  cursor: pointer;
+
+  &__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $button-color;
+    margin-left: 6px;
+  }
+
+  &__container {
+
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    @include onDesctop {
+      @include pageGrid;
+    }
+  }
+
+  &__icon {
+    height: 20px;
+  }
+
+  &:hover {
+    background: $button-color;
+
+    .button__text {
+      color: #fff;
+    }
+
+    .button__icon {
+      content: url(/images/icon/icon-button-hover.png);
+    }
+  }
+
+  &:active {
+    background: #b2341a;
+  }
+
+  &:disabled {
+    color: $button-disabled;
+    border-color: $button-disabled;
+    background: #fff;
+    content: url(/images/icon/icon-cookie-disabled.png);
+  }
+}
