@@ -1,0 +1,73 @@
+.contact-us {
+  &__sector {
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 24px;
+    }
+
+    &-1 {
+      grid-column: 1 / 5;
+    }
+
+    &-2 {
+      grid-column: 1 / 2 ;
+
+    }
+
+    &-3 {
+      grid-column: 3 / 5 ;
+
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 41px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTabletOrDesktop {
+      margin-top: 0;
+
+      font-size: 56px;
+      line-height: 48px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      line-height: 61px;
+    }
+  }
+
+  &__call {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    width: max-content;
+  }
+
+  &__call--link {
+    text-decoration: none;
+    color: #fff;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    @include hover(color, $color-text--input);
+  }
+
+  &__email {
+    margin-bottom: 42px;
+  }
+
+  &__email--link {
+    text-decoration: none;
+    color: #fff;
+
+    @include hover(color, $color-text--input);
+  }
+}

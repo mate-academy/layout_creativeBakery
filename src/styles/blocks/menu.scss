@@ -1,0 +1,71 @@
+.menu {
+  z-index: 1;
+  background-color: $c-gray;
+
+  &__content {
+    box-sizing: border-box;
+    padding: $headerTopPadding 0;
+    height: 100vh;
+
+    overflow-y: auto;
+  }
+
+  &__top {
+    @include top-actions;
+    margin-bottom: 152px;
+    margin-top: 15px;
+
+    @include onTabletOrDesktop {
+      margin-top: 27px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0 0 205px;
+    padding: 0;
+  }
+
+  &__item {
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+
+    color: $color-text;
+
+    @include hover(color, $color-text--input);
+
+    &--phone-icon {
+      padding-right: 30px;
+
+      background-image: url(../images/phone.svg);
+      height: 18px;
+      width: 18px;
+      background-repeat: no-repeat;
+    }
+
+    &--phone {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 16px;
+
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #f9512e;
+
+      @include hover(color, #7F8096);
+    }
+  }
+}
