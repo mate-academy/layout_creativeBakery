@@ -1,0 +1,180 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.container {
+  box-sizing: border-box;
+  padding: 0 20px;
+
+  max-width: 1920px;
+  margin: 0 auto;
+
+  @include onTablet {
+    padding: 0 44px;
+  }
+
+  &-main {
+    @include onDesktop {
+      padding: 0 124px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.header {
+  background-image: url(/images/img/1.svg);
+  background-repeat: no-repeat;
+  background-position: center 250px;
+  height: 100vh;
+  margin-bottom: 150px;
+  align-items: center;
+  justify-content: center;
+
+  
+  @include onTablet {
+    background-image: url(/images/img/1.svg);
+    background-position: center center;
+  }
+  
+  @include onDesktop {
+    background-image: url(/images/img/1.svg);
+    background-position: 50% 50%;
+    margin-bottom: 0;
+    height: 852px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+            
+    box-sizing: border-box;
+    
+    height: 100vh;
+    padding: 25px 0;
+    margin: 0 auto;
+
+    @include onDesktop {
+      &:nth-child(1) {
+        padding: 0 124px;
+      }
+    }
+  }
+
+  &__catchword {
+    color: $color-text;
+    margin: 0 auto;
+    text-align: center;
+    
+    width: 230px;
+
+    font-weight: $font-w;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    padding-bottom: 32px;
+
+    @include onTablet {
+      text-align: left;
+      margin: 0 0 146px;
+    }
+
+    @include onDesktop {
+      width: 260px;
+      margin: 0 0 40px;
+    }
+  }
+
+  &__title {
+    @extend %font-style;
+    margin-bottom: 500px;
+
+    font-style: normal;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    
+    @extend %uppercase;
+
+    @include onTablet {
+      width: 680px;
+      margin: 0 auto 20px;
+      font-size: 80px;
+      line-height: 68px;
+    }
+
+    @include onDesktop {
+      width: max-content;
+      margin: 0 auto 64px;
+      font-size: 136px;
+      line-height: 116px;
+    }
+  }
+
+  &__menu {
+    display: none;
+  
+    @include onDesktop {
+      margin-left: auto;
+      width: 496px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__link {
+    color: $color-text;
+    padding: 8px 0;
+    text-decoration: none;
+    transition: color 0.3s;
+              
+    &:hover {
+      color: $color-title;
+    }
+      
+    &--contacts {
+      position: relative;
+      padding-left: 28px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $color-title;
+              
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background-position: center;
+        background-image: url(/images/icon/call.svg);
+      }
+              
+      &:hover {
+        color: $color-title;
+              
+        &::before {
+          filter: brightness(75%);
+        }
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+    
+    @include onDesktop {
+      height: 88px;
+      margin: 0 0 135px;
+    }
+  }
+}

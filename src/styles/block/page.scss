@@ -1,0 +1,70 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+@import "../utils/extends";
+
+.page {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+  background-color: $color-bg;
+  margin: 0 auto;
+
+  &__body {
+    margin: 0;
+    
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 80px;
+  }
+
+  &__section-title {
+    @extend %font-style;
+
+    font-size: 48px;
+    @extend %uppercase;
+    margin: 0 16px 24px;
+
+    @include onTablet {
+      padding: 0 44px;
+    }
+  }
+
+  &__section-descr {
+    max-width: 300px;
+    @extend %font-text;
+    margin-bottom: 56px;
+    margin-left: 16px;
+
+    @include onTablet {
+      max-width: max-content;
+      padding: 0 44px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 1920px;
+}
