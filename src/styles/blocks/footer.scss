@@ -1,0 +1,113 @@
+.footer {
+  padding: 56px 0;
+  background-color: $colorBlack;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 44px;
+
+    &-image {
+      width: 168px;
+      height: 40px;
+    }
+
+    @include onTablet {
+      margin: 0 0 96px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 60px;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 16px;
+
+    @extend %uppercase;
+    color: $colorGrey;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &-item {
+      margin: 0 0 16px;
+    }
+  }
+
+  &__link {
+    @extend %mainText;
+    color: #fff;
+    text-decoration: none;
+
+    @include hover(text-decoration, underline);
+  }
+
+  &__title {
+    margin: 0 0 40px;
+    color: #fff;
+  }
+
+  &__contacts {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__call-us-wrapper {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+      margin-bottom: 0;
+    }
+  }
+
+  &__email-us-wrapper {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
+    @include onDesktop {
+      grid-column: 3 / 5;
+      margin-bottom: 0;
+    }
+  }
+
+  &__social-links {
+    display: flex;
+    column-gap: 34px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__copyright-text {
+    @extend %mainText;
+    color: $colorGrey;
+  }
+}
