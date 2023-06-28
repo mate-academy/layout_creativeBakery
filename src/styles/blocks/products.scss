@@ -1,0 +1,122 @@
+.products {
+  padding-top: 60px;
+
+  @include onDesktop {
+    padding: 0;
+    margin-bottom: 176px;
+  }
+
+  &__title {
+    width: 288px;
+    height: 82px;
+    @include title-fonts;
+    margin-bottom: 24px;
+
+    @include onTablet {
+      padding-top: 50px;
+      width: 680px;
+      height: 48px;
+    }
+
+    @include onDesktop {
+      width: 584px;
+      height: 61px;
+    }
+
+  }
+
+  &__subtitle {
+    line-height: 24px;
+    color: $color-font;
+    letter-spacing: -0.01em;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 88px;
+    }
+  }
+
+  &__item:nth-child(n+5) {
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__photo {
+    width: 288px;
+    height: 356px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 16px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.02);
+      cursor: pointer;
+    }
+
+    @include onTablet {
+      width: 328px;
+      height: 424px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      height: 512px;
+    }
+
+  }
+
+  &__name {
+    margin-bottom: 8px;
+    font-weight: 500;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #7f8096;
+  }
+
+  &__text {
+    margin-bottom: 14px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $color-font;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 10px 0 10px 28px;
+    color: $color-hover;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      background-image: url(../images/Arrow.svg);
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      color: $color-active;
+
+      &::before {
+        animation: 0.3s arrow ease;
+      }
+    }
+  }
+}

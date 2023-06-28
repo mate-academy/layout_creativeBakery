@@ -1,0 +1,150 @@
+.header {
+  background-image: url(../images/Cookie_phone.png);
+  background-repeat: no-repeat;
+  background-position: center 284px;
+
+  @include onTablet {
+    background-image: url(../images/Cookie_tablet.png);
+    background-position: center 208px;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/Cookie.png);
+    background-position: center 88px;
+  }
+
+  &__content {
+    @extend %place__content;
+  }
+
+  &__nav {
+    @extend %nav__location;
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      margin-left: auto;
+      width: 496px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__menu-small {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/menu.svg);
+    @include icon;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__pharagraph {
+    width: 288px;
+    margin: 0 auto 32px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: $color-font;
+
+    @include onTablet {
+      text-align: left;
+      margin: 0 0 146px;
+    }
+
+    @include onDesktop {
+      width: 260px;
+      margin: 0 0 8px;
+    }
+
+  }
+
+  &__title {
+    margin: 0 auto 280px;
+    width: 288px;
+    height: 108px;
+    font-size: 64px;
+    line-height: 54px;
+    font-weight: normal;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-font;
+
+    @include onTablet {
+      width: 680px;
+      margin: 0 auto 130px;
+      font-size: 80px;
+      line-height: 68px;
+    }
+
+    @include onDesktop {
+      width: 1112px;
+      margin: 0 auto 64px;
+      font-size: 136px;
+      line-height: 116px;
+    }
+  }
+
+  &__link {
+    @extend %link;
+
+    &--contacts {
+      @extend %link__active;
+    }
+  }
+
+  &__button {
+    width: 260px;
+    height: 56px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 auto;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $color-hover;
+    border-radius: 32px;
+    border: 2px solid $color-hover;
+    transition: all 0.3s;
+
+    @include onDesktop {
+      margin: 0;
+    }
+
+    &::before {
+      display: inline-block;
+      content: "";
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+      background-image: url(../images/pin.svg);
+    }
+
+    &:hover {
+      color: white;
+      background-color: $color-hover;
+
+      &::before {
+        background-image: url(../images/pin_hover.svg);
+      }
+    }
+
+    &:active {
+      color: white;
+      border-color: $color-active ;
+      background-color: $color-active;
+      outline: none;
+
+      &::before {
+        background-image: url(../images/pin_hover.svg);
+      }
+    }
+  }
+}
