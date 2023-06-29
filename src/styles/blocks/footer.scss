@@ -1,0 +1,77 @@
+.footer {
+  height: 525px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: $colorBlack;
+  padding: 88px $bigSidePadding;
+
+  @include onDesktop {
+    padding: 88px $standartSidePadding;
+  }
+        
+  @include onTablet {
+    height: 616px;
+  }
+  
+  @include onMobile {
+    height: 914px;
+    padding: 61px $smallSidePadding 56px;
+  }
+  
+  &__content {
+    display: flex;
+
+    @include onMobile {
+      flex-direction: column;
+    }
+  }
+  
+  &__basement {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    @include onMobile {
+      flex-direction: column;
+    }
+  }
+  
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  
+  &__contact-us {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    width: 138px;
+
+    @include onMobile {
+      margin-bottom: 42px;
+    }
+  }
+
+  &__trademark {
+    width: 50%;
+  }
+
+  .social__image:hover {
+    filter: invert(100%) sepia(90%)
+      saturate(7445%) hue-rotate(172deg)
+      brightness(117%) contrast(112%);
+  }
+
+  .social__image:focus {
+    filter: invert(100%) sepia(90%)
+      saturate(7445%) hue-rotate(172deg)
+      brightness(117%) contrast(112%);
+  }
+}

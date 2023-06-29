@@ -1,0 +1,63 @@
+.page {
+
+  scroll-behavior: smooth;
+  
+  &__body {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorBlack;
+    background-color: $colorGrayBlue;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    background-color: $colorGrayBlue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    
+    transform: translateX(-100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  a {
+    text-decoration: none;
+    & .contact-us__item {
+      color: $colorWhite;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      transition: transform 0.4s;
+
+      &:hover {
+        color: $colorOrange;
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  &__section {
+    display: flex;
+    flex-direction: column;
+    padding: 0 $bigSidePadding;
+
+    @include onDesktop {
+      padding: 0 $standartSidePadding;
+    }
+
+    @include onMobile {
+      padding: 0 $smallSidePadding;
+    }
+  }
+}

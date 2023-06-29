@@ -1,0 +1,142 @@
+.header {
+  margin-bottom: 178px;
+
+  @include onDesktop {
+    margin-bottom: 218px;
+  }
+
+  @include onTablet {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 639px) {
+    margin-bottom: 64px;
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 586px;
+        
+    background-image: url(../images/products_photos/Cookie.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    @include onDesktop {
+      background-size: 544px 546px;
+      height: 546px;
+    }
+
+    @include onTablet {
+      background-size: 326px 328px;
+      background-position: 50% 30%;
+      height: 836px;
+    }
+
+    @include onMobile {
+      background-size: 288px 290px;
+      background-position: 50% 70%;
+      height: 606px;
+    }
+  }
+  
+  &__moto {
+    width: 283px;
+    margin-top: 144px;
+    margin-bottom: 40px;
+    
+    @include onDesktop {
+      width: 260px;
+      margin-top: 135px;
+      margin-bottom: 8px;
+    }
+
+    @include onTablet {
+      width: 283px;
+      margin-top: 80px;
+      margin-bottom: 146px;
+    }
+
+    @include onMobile {
+      width: 288px;
+      margin: 32px auto;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    height: 116px;
+    text-align: center;
+
+    margin: 0 0 64px;
+    font-weight: 400;
+    font-size: 9.8vw;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    
+    @include onTablet {
+      margin: 0 0 208px;
+    }
+
+    @include onMobile {
+      font-size: 64px;
+      margin: 0 0 290px;
+    }
+  }
+  
+  &__button-more {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 56px;
+    border: 2px solid $colorOrange;
+    border-radius: 32px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $colorOrange;
+    letter-spacing: 0.02em;
+    line-height: 100%;
+
+    @include onDesktop {
+      width: 260px;
+    }
+
+    @include onTablet {
+      width: 328px;
+      margin: 0 auto;
+    }
+
+    &:hover {
+      background-color: $colorOrange;
+      color: $colorWhite;
+    }
+
+    &:focus {
+      background-color: #b2341a;
+      border: 2px solid #b2341a;
+      color: $colorWhite;
+    }
+  }
+
+  &__button-image {
+    margin-right: 7px;
+  }
+
+  &__button-more:hover &__button-image {
+    filter: invert(100%) sepia(90%)
+      saturate(7445%) hue-rotate(172deg)
+      brightness(117%) contrast(112%);
+  }
+
+  &__button-more:focus &__button-image {
+    filter: invert(100%) sepia(90%)
+      saturate(7445%) hue-rotate(172deg)
+      brightness(117%) contrast(112%);
+  }
+}
