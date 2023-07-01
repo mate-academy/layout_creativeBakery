@@ -6,9 +6,10 @@
     border-radius: 8px;
     cursor: pointer;
 
+    transition: 500ms;
+
     &:hover {
       transform: scale(1.05);
-      transition: 500ms;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
       border-radius: 8px;
@@ -47,6 +48,9 @@
       font-weight: 500;
       line-height: 100%;
 
+      width: fit-content;
+      align-items: center;
+
       letter-spacing: 0.02em;
       text-transform: uppercase;
 
@@ -54,8 +58,10 @@
       cursor: pointer;
       position: relative;
 
+      transition: 500ms;
+
       &:hover {
-        color: $colorFocused;
+        transform: scale(1.1);
       }
     }
   }
@@ -81,13 +87,22 @@
 
     @include onTablet {
       display: block;
-      margin-top: -610px;
+      margin-top: -780px;
       margin-bottom: 124px;
       margin-left: auto;
       margin-right: auto;
 
       height: 493px;
       width: 526px;
+    }
+
+    @include onDesktop {
+      margin-top: -510px;
+    }
+
+    @include onDesktopPlus {
+      margin-top: -432px;
+      margin-bottom: 56px;
     }
   }
 }
