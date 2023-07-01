@@ -1,0 +1,81 @@
+.header {
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      visibility: visible;
+      display: flex;
+      gap: 64px;
+    }
+  }
+
+  &__main {
+    @include pageGrid;
+
+    padding: 32px 0 40px;
+    justify-items: center;
+    position: relative;
+
+    @include onTablet {
+      padding: 80px 0 228px;
+      row-gap: 40px;
+    }
+
+    @include onDesktop {
+      padding: 135px 0 66px;
+    }
+  }
+
+  &__text {
+    @extend %body-text;
+    text-align: center;
+    margin: 0 0 32px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      margin: 0;
+      text-align: left;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__title {
+    @extend %h1-style;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      z-index: 1;
+      position: absolute;
+      top: 40%;
+    }
+
+    @include onDesktop {
+      position: static;
+    }
+  }
+
+  &__img {
+    height: 290px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      height: 328px;
+      grid-column: 3 / -3;
+    }
+
+    @include onDesktop {
+      height: 546px;
+      position: absolute;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.page {
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+
+  &__body {
+    margin: 0;
+    background-color: $bg-color;
+  }
+
+  &__section {
+    margin: 0 0 72px;
+    padding: 24px 0 0;
+
+    @include onTablet {
+      margin: 0 0 152px;
+    }
+
+    &-title {
+      @extend %section-title-style;
+    }
+
+    &-text {
+      @extend %body-text;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform $transition-duration;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}

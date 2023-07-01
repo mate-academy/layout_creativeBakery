@@ -1,0 +1,53 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: pointer;
+
+  transition: transform $transition-duration;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  @include onTablet {
+    grid-column: span 4;
+  }
+
+  @include onDesktop {
+    grid-column: span 3;
+
+    &--3 {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &__img {
+    border-radius: 8px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__category {
+    @extend %text-upper;
+    color: $text-color-grey;
+    text-decoration: none;
+    width: max-content;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    
+    transition: border-color $transition-duration;
+
+    &:hover {
+      border-bottom: 1px solid $text-color-grey;
+    }
+  }
+
+  &__description {
+    @extend %body-text;
+  }
+}
