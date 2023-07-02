@@ -1,0 +1,131 @@
+@import "../utils/variables";
+
+.page {
+  cursor: default;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+
+  color: $colorBlack;
+  background-color: $colorPink;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    width: 100%;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-color: $colorPink;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    padding: 20px;
+
+    @include onDesktop {
+      margin: 0 auto;
+    }
+
+    @include onDesktopPlus {
+      margin: 0 auto;
+    }
+  }
+
+  &__section-title {
+    margin: 0;
+    padding-bottom: 32px;
+    position: relative;
+
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $colorOrange;
+
+    @include onTablet {
+      font-size: 56px;
+      padding-top: 0;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      padding-top: 0;
+      width: 500px;
+    }
+
+    @include onDesktopPlus {
+      padding-bottom: 144px;
+    }
+  }
+
+  &__section-title-first {
+    padding-top: 104px;
+
+    @include onTablet {
+      padding-top: 100px;
+    }
+
+    @include onDesktop {
+      padding-top: 0;
+      padding-bottom: 24px;
+      width: 100%;
+    }
+
+    @include onDesktopPlus {
+      padding-top: 0;
+      padding-bottom: 24px;
+      width: 100%;
+    }
+  }
+
+  &__section-text {
+    padding-bottom: 56px;
+    position: relative;
+
+    @include onTablet {
+      padding-bottom: 80px;
+    }
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    color: $colorBlack;
+  }
+
+  &__section-numbers {
+    margin: 0;
+    position: relative;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 85%;
+
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: $colorOrange;
+  }
+}
