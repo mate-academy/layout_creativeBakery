@@ -1,0 +1,94 @@
+.menu {
+  background-color: $c-blue;
+  height: 100vh;
+  overflow-y: auto;
+
+  transform: translateX(100%);
+  transition: all 0.3s;
+
+  &:target {
+    transform: translateX(0%);
+  }
+
+  &__header {
+    @include topActions;
+  }
+
+  &__top {
+    margin-bottom: 132px;
+  }
+
+  &__cross {
+    background: url(../images/icon/cross.svg);
+    width: 18px;
+    height: 13px;
+    transition: background 0.3s;
+
+    &:hover {
+      background: url(../images/icon/cross-hover.svg);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+    text-align: center;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+    width: max-content;
+
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $c-black;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $c-darkRed;
+      border-color: $c-darkRed;
+    }
+
+    &--phone {
+      position: relative;
+      color: $c-red;
+      text-transform: uppercase;
+
+      &::before {
+        content: "";
+        background-image: url(../images/icon/phone.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        margin-right: 7px;
+        width: 18px;
+        height: 18px;
+      }
+
+      &:hover::before {
+        content: "";
+        background-image: url(../images/icon/phone-icon_focus.svg);
+      }
+    }
+  }
+}
