@@ -1,4 +1,9 @@
 .header {
+
+  &__logo--img {
+    cursor: pointer;
+  }
+
   &__subtitle {
     margin: 0;
     font-size: 16px;
@@ -85,9 +90,10 @@
   }
 
   &--img {
+    z-index: 0;
     margin: 0;
     width: 100%;
-
+    
     @include onTablet {
       margin-top: 16px;
       margin-bottom: 100px;
@@ -165,6 +171,14 @@
   &__link {
     text-decoration: none;
     color: $description-color;
+    transition: all 0.3s;
+    padding-bottom: 10px;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      color: $title-and-links-color;
+      border-bottom: 1px solid $title-and-links-color;
+    }
 
     &_orange-color {
       color: $title-and-links-color;
