@@ -1,0 +1,101 @@
+.card {
+  margin-bottom: 64px;
+
+  @include onTablet {
+    margin-bottom: 0;
+
+    &:nth-child(1) {
+      grid-column: 1 / 5;
+      grid-row: 1 / 2;
+    }
+
+    &:nth-child(2) {
+      grid-column: 5 / 9;
+      grid-row: 1 / 2;
+    }
+
+    &:nth-child(3) {
+      grid-column: 1 / 5;
+      grid-row: 2 / 3;
+    }
+
+    &:nth-child(4) {
+      grid-column: 5 / 9;
+      grid-row: 2 / 3;
+    }
+
+    &:nth-child(5) {
+      grid-column: 1 / 5;
+      grid-row: 3 / 4;
+    }
+
+    &:nth-child(6) {
+      grid-column: 5 / 9;
+      grid-row: 3 / 4;
+    }
+  }
+
+  @include onDesktop {
+    &:nth-child(1) {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+    }
+
+    &:nth-child(2) {
+      grid-column: 4 / 7;
+      grid-row: 1 / 2;
+    }
+
+    &:nth-child(3) {
+      grid-column: 3 / 6;
+      grid-row: 2 / 3;
+    }
+
+    &:nth-child(4) {
+      grid-column: 6 / 9;
+      grid-row: 2 / 3;
+    }
+
+    &:nth-child(5) {
+      grid-column: 1 / 4;
+      grid-row: 3 / 4;
+    }
+
+    &:nth-child(6) {
+      grid-column: 4 / 7;
+      grid-row: 3 / 4;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    @include hover(scale, 1.05);
+  }
+
+  &__name {
+    margin-bottom: 8px;
+    @extend %uppercase;
+    color: $grey;
+  }
+
+  &__description {
+    margin-bottom: 24px;
+  }
+
+  &__order {
+    @extend %uppercase;
+    color: $accent-orange;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateX(10px);
+      scale: 1.2;
+    }
+  }
+}

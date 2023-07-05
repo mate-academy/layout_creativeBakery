@@ -1,0 +1,47 @@
+.top-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 64px;
+
+  @include onDesktop {
+    padding: 32px 34px;
+  }
+
+  &__logo {
+    @include hover (scale, 1.1);
+  }
+
+  &__menu {
+    @include hover (scale, 1.2);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      gap: 64px;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    color: $black;
+    @include hover(scale, 1.2);
+  }
+
+  &__tel {
+    @extend %tel;
+  }
+
+  &__close {
+    @include hover(scale, 1.2);
+  }
+}

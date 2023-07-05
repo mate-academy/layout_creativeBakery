@@ -1,4 +1,80 @@
 %h1 {
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
+  font-size: 64px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include onTablet {
+    font-size: 67px;
+    line-height: 85%;
+  }
+
+  @include onDesktop {
+    font-size: 113px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+  }
+
+  @include onBigDesktop {
+    font-size: 135px;
+  }
+}
+
+%h2 {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $accent-orange;
+
+  @include onTablet {
+    font-size: 56px;
+  }
+
+  @include onDesktop {
+    font-size: 72px;
+  }
+}
+
+%big-text {
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+%body-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+%uppercase {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+%tel {
+  @extend %uppercase;
+  color: $accent-orange;
+  @include hover(scale, 1.2);
+
+  &::before {
+    content: "";
+    background-image: url(./../images/logos/Icon-phone.svg);
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    top: 3px;
+  }
 }
