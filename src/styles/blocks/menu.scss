@@ -1,0 +1,31 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $background-color;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__top {
+    margin-bottom: 132px;
+
+    @media (orientation:landscape) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__nav-list {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  &__nav-link {
+    @include underlineOnHover ($link-underline-color, center);
+  }
+
+  &__bottom {
+    padding-bottom: 196px;
+  }
+}
