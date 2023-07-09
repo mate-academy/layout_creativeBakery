@@ -26,13 +26,14 @@
 
     @include onDesktop {
       margin-top: 167px;
-      width: 100%;
+      width: 260px;
       text-align: start;
     }
   }
 
   &__title {
     margin: 0;
+    z-index: 2;
     font-size: 64px;
     line-height: 85%;
     text-align: center;
@@ -41,35 +42,41 @@
     color: $title-and-links-color;
 
     @include onTabletAndDesktop {
-      position: absolute;
       width: max-content;
     }
 
     @include onTablet {
+      position: relative;
+      margin: 0 auto;
       margin-top: 146px;
-      font-size: 80px;
+      font-size: 68px;
     }
 
     @include onDesktop {
+      position: absolute;
       margin-top: 8px;
-      font-size: 136px;
+      font-size: 118px;
+    }
+
+    @include OnDesktopOver1200 {
+      font-size: 120px;
     }
   }
 
   &__content {
     @include onTablet {
-      margin-left: 44px;
-      margin-right: 44px;
+      margin-left: 28px;
+      margin-right: 28px;
     }
 
     @include onDesktop {
-      margin-left: 44px;
-      margin-right: 44px;
+      margin-left: 28px;
+      margin-right: 28px;
     }
 
     @include OnDesktopOver1200 {
-      margin-left: 124px;
-      margin-right: 124px;
+      margin-left: 106px;
+      margin-right: 106px;
     }
   }
 
@@ -95,12 +102,27 @@
     width: 100%;
     
     @include onTablet {
+      display: block;
+      position: relative;
+      bottom: 200px;
+      margin: 0 auto;
       margin-top: 16px;
       margin-bottom: 100px;
+      width: 326px;
     }
 
     @include onDesktop {
+      display: block;
+      margin: 0 auto;
+      position: relative;
       margin-top: -230px;
+      width: 544px;
+    }
+
+    @include OnDesktopOver1200 {
+      position: relative;
+      top: 10px;
+      width: 584px;
     }
   }
 
@@ -152,6 +174,25 @@
         content: url(../images/header/Vector-white.svg);
         margin-right: 6px;
       }
+    }
+
+    @include onTablet {
+      position: relative;
+      margin: 0 auto;
+      width: 326px;
+      bottom: 210px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      width: 280px;
+      top: 500px;
+    }
+
+    @include OnDesktopOver1200 {
+      position: absolute;
+      width: 280px;
+      top: 520px;
     }
   }
 }
