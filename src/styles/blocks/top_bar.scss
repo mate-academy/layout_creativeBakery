@@ -1,0 +1,109 @@
+.top__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  height: 64px;
+  margin-bottom: 32px;
+
+  @include onTablet {
+    margin-bottom: 80px;
+  }
+
+  @include onDesktop {
+    padding: 42px 0;
+  }
+
+  &-logo {
+    width: 128px;
+    height: 24px;
+    transition: all 0.3s;
+
+    @include onDesktop {
+      &:hover {
+        cursor: pointer;
+        transform: scale(105%);
+      }
+      &:focus {
+        transform: scale(105%);
+      }
+    }
+  }
+
+  &-list {
+    display: none;
+    list-style: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 64px;
+    }
+  }
+
+  &-link {
+    font-weight: $main-font-w;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $main-color-text;
+    transition: all 0.3s;
+
+    @include hoverOrangeColor;
+
+    &-logo {
+      height: 18px;
+      width: 18px;
+    }
+
+    &--block {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: $font-w-500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $main-red-color;
+
+      &::before {
+        content: "";
+        display: block;
+        background-image: url(../images/phone.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 18px;
+        width: 18px;
+      }
+
+      &:hover::before {
+        cursor: pointer;
+        animation: phoneCall 2s infinite;
+      }
+      &:focus::before {
+        animation: phoneCall 2s infinite;
+      }
+    }
+  }
+
+  &-line {
+    height: 2px;
+    width: 100%;
+    background-color: $main-color-text;
+    transition: all 0.3s;
+  }
+
+  &_menu-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    height: 8px;
+    width: 20px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

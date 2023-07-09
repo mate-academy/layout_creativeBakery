@@ -4,3 +4,73 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onProblemFooter {
+  @media (min-width: 640px) and (max-width: 780px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onProblem {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onLargeScreen {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 8;
+    column-gap: 24px;
+  }
+
+  @include onDesktop {
+    --columns: 8;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 16px;
+
+  @include onTablet {
+    padding-inline: 44px;
+  }
+
+  @include onDesktop {
+    padding-inline: 44px;
+  }
+}
+
+@mixin hoverOrangeColor {
+  @include onDesktop {
+    &:hover {
+      cursor: pointer;
+      color: #f9512e;
+    }
+    &:focus {
+      color: #f9512e;
+    }
+  }
+}
