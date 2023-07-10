@@ -1,0 +1,68 @@
+.products {
+  @include contentPaddingInline;
+  @include pageGrid;
+  overflow: hidden;
+
+  margin-bottom: 80px;
+
+  @include onTablet {
+    margin-bottom: 160px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 186px;
+  }
+
+  &__atricle {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    grid-column: 1/-1;
+
+    &:not(:last-child) {
+      margin-bottom: 64px;
+      @include onTablet {
+        margin-bottom: 88px;
+      }
+    }
+    @include onTablet {
+      gap: 16px;
+      flex-direction: row;
+    }
+
+    @include onDesktop {
+      grid-column: 1/7;
+    }
+
+    &--right-site {
+      @include onDesktop {
+        grid-column: 3/-1;
+      }
+    }
+  }
+
+  &__container-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    grid-column: 1/-1;
+    margin-bottom: 56px;
+  }
+
+  &__title {
+    font-weight: $main-font-w;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $main-color-text;
+  }
+
+  &__sub-title {
+    font-weight: $main-font-w;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $main-color-text;
+  }
+}

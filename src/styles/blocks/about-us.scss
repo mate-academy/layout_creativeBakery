@@ -1,0 +1,138 @@
+.about-us {
+  @include pageGrid;
+  @include contentPaddingInline;
+  overflow: hidden;
+
+  background-image: url(../images/photos/Crumbs.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 68%;
+
+  @include onTablet {
+    background-size: 526px;
+    background-position: 44% 20%;
+  }
+
+  @include onDesktop {
+    background-size: 718px 673px;
+  }
+
+  &__title {
+    font-weight: $main-font-w;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $main-color-text;
+    grid-column: 1/-1;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__text {
+    font-weight: $main-font-w;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $main-color-text;
+    grid-column: 1/-1;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      grid-column: 5/-1;
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__num-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &:not(:last-child) {
+      margin-bottom: 48px;
+      @include onTablet {
+        margin-bottom: 80px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 72px;
+      @include onTablet {
+        margin-bottom: 152px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 350px;
+      }
+    }
+
+    &--year {
+      grid-column: 1/-1;
+      @include onTablet {
+        grid-column: 1/4;
+      }
+      @include onDesktop {
+        grid-column: span 2;
+      }
+    }
+
+    &--stores {
+      grid-column: 1/-1;
+      @include onTablet {
+        grid-column: 5/-1;
+      }
+      @include onDesktop {
+        grid-column: span 2;
+      }
+    }
+
+    &--companies {
+      grid-column: 1/-1;
+      @include onTablet {
+        grid-column: 1/4;
+      }
+      @include onDesktop {
+        grid-column: span 2;
+      }
+    }
+
+    &--clients {
+      grid-column: 1/-1;
+      @include onTablet {
+        grid-column: 5/-1;
+      }
+      @include onDesktop {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  &__num {
+    font-weight: $main-font-w;
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $main-color-text;
+
+    &-text {
+      font-weight: $main-font-w;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      color: $grey-color;
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: $grey-white-color;
+  opacity: 0;
+  @include contentPaddingInline;
+  transition: all 0.3s;
+  z-index: 1;
+
+  transform: translateX(100%);
+  overflow: hidden;
+  pointer-events: none;
+
+  -webkit-box-shadow: 6px 9px 44px -10px rgba(70, 70, 74, 1);
+  -moz-box-shadow: 6px 9px 44px -10px rgba(70, 70, 74, 1);
+  box-shadow: 6px 9px 44px -10px rgba(70, 70, 74, 1);
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__content {
+    display: flex;
+    gap: 196px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &:target {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__nav {
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__item {
+    opacity: 0;
+  }
+
+  &__link {
+    font-weight: $main-font-w;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $main-color-text;
+
+    &-logo {
+      height: 18px;
+      width: 18px;
+    }
+
+    &--block {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: $font-w-500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $main-red-color;
+
+      &::before {
+        content: "";
+        display: block;
+        background-image: url(../images/phone.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 18px;
+        width: 18px;
+      }
+    }
+  }
+
+  &__logo {
+    width: 128px;
+    height: 24px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    height: 64px;
+  }
+
+  &__top-close {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__top-line {
+    height: 2px;
+    width: 17px;
+    background-color: $main-color-text;
+
+    &--one {
+      transform: rotate(45deg) translateY(1.5px);
+    }
+
+    &--two {
+      transform: rotate(-45deg) translateY(-1.5px);
+    }
+  }
+}
