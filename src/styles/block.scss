@@ -1,0 +1,147 @@
+.block__picture {
+  display: flex;
+  gap: 28px;
+  // justify-content: space-between;
+  @include onMob {
+    display: block;
+  }
+}
+
+.block__picture:nth-child(2) {
+  justify-content: right;
+}
+
+.blocks {
+  padding-bottom: 178px;
+  width: 1200px;
+  margin: 0 auto;
+  @include onMob {
+    width: 320px;
+    padding-bottom: 72px;
+  }
+  @include onTablet {
+ 
+    width: 680px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+  }
+  @include onDesktop {
+    // display: flex;
+    width: 1112px;
+  }
+}
+
+.block__text {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  width: 1200px;
+  margin: 0 auto;
+  @include onMob {
+    display: block;
+    width: 320px;
+  }
+  @include onTablet {
+    width: 680px;
+  }
+  @include onDesktop {
+    width: 1200px;
+  }
+
+}
+
+.block__digit {
+  display: flex;
+  gap: 24px;
+  // font-family: "Inter";
+  @include onMob {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  @include onTablet {
+    display: flex;
+    flex-direction: row;
+    gap: 72px;
+  }
+  @include onDesktop {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+  }
+}
+
+.digit {
+  display: block;
+  color: #f9512e;
+  width: 280px;
+  /* Big text */
+  font-size: 96px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 85%;
+  letter-spacing: -4.8px;
+  text-transform: uppercase;
+  &__discription {
+    text-align: left;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    letter-spacing: -0.16px;
+    color: #1c1a26;
+  }
+}
+
+.blocks--gap {
+  .block__picture:not(:last-child) {
+    margin-bottom: 80px;
+    @include onMob {
+      margin-bottom: 56px;
+    }
+  }
+  .block__digit:not(:last-child) {
+    @include onMob {
+      margin-bottom: 56px;
+    }
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+  .digit__discription:nth-child(4) {
+    @include onMob {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.blocks__digits {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: 1200px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include onMob {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 320px;
+    background-image: url(../images/Crumbs__Mob.png);
+    
+  }
+  @include onTablet {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    width: 680px;
+    // background-image: url(../images/Crumbs__Tablet.png);
+  }
+  @include onDesktop {
+    background-image: none;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    width: 1200px;
+  }
+}

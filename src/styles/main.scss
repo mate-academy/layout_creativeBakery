@@ -2,6 +2,103 @@
 @import "fonts";
 @import "typography";
 
+@import "container";
+
+@import "mixins";
+
+@import "header";
+
+@import "icon";
+
+@import "menu";
+
+@import "button";
+
+@import "discription";
+
+@import "section";
+
+@import "footer";
+
+@import "page";
+
+@import "logo";
+
+@import "picture";
+
+@import "block";
+
 body {
   background: $c-gray;
+}
+
+body:has(.menu__top:target) {
+  overflow: hidden;
+  height: 100vh;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.position {
+  justify-content: center;
+  position: relative;
+  display: flex;
+}
+
+.title {
+  font-size: 72px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 85%;
+  letter-spacing: -2.8px;
+  text-transform: uppercase;
+  color: #1c1a26;
+  // color: #fff;
+  margin-bottom: 24px;
+  margin-left: 0;
+  @include onMob {
+    width: 280px;
+    font-size: 48px;
+    margin: 0 auto 24px;
+  }
+  @include onTablet {
+    font-size: 56px;
+    width: 680px;
+    margin: 0 auto 24px;
+  }
+  @include onDesktop {
+    width: 1112px;
+    margin: 0 auto 44px;
+  }
+  @include onDesign {
+    width: 1200px;
+    margin: 0 auto 44px;
+  }
+  &-text {
+    @include onTablet {
+      min-width: max-content;
+      max-width: 328px;
+    }
+    @include onDesktop {
+      max-width: 544px;
+    }
+    @include onDesign {
+      width: 584px;
+    }
+  }
+}
+
+.order {
+  display: flex;
+  align-items: center;
 }
