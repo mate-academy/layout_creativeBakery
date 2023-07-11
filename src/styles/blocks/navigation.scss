@@ -1,0 +1,103 @@
+.navigation {
+  height: 32px;
+  display: none;
+
+  @include onDesktop {
+    display: initial;
+  }
+
+  &--menu {
+    display: initial;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    &--menu {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    margin-left: 64px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-left: 67px;
+    }
+
+    &--menu {
+      margin: 24px 0 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin: 32px 0 0;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    padding: 8px 0;
+
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: $black;
+    text-decoration: none;
+
+    transition-duration: $transition-time;
+
+    &:hover {
+      color: $accent-orange;
+    }
+
+    &--contact-us {
+      padding: 7px 0;
+
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $accent-orange;
+
+      &::before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        margin-right: 7px;
+
+        background-image: url(../images/Phone.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        transition-duration: $transition-time;
+      }
+
+      &:hover {
+        color: $dark-orange;
+
+        &::before {
+          background-image: url(../images/Phone_dark.svg);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.button {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $accent-orange;
+
+  border: 2px solid $accent-orange;
+  border-radius: 32px;
+  transition-duration: $transition-time;
+
+  &::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+
+    background-image: url(../images/Bisquit.svg);
+    background-position: center;
+    background-size: contain;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $accent-orange;
+
+    &::before {
+      background-image: url(../images/Bisquit_white.svg);
+      transition-duration: $transition-time;
+    }
+  }
+
+  &:active {
+    color: $white;
+
+    background-color: $dark-orange;
+    border-color: $dark-orange;
+  }
+}
