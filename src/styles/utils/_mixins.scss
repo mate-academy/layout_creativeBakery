@@ -4,3 +4,71 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 16px;
+
+  @include onTablet {
+    padding-inline: 44px;
+  }
+
+  @include onDesktop {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    column-gap: 24px;
+    --columns: 8;
+  }
+}
+
+@mixin button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px 71px;
+  border: 2px solid $buttons-color;
+  border-radius: 32px;
+  background-color: $bg-color;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: $buttons-color;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    color: #fff;
+    background-color: $buttons-color;
+  }
+
+  &:active {
+    color: #fff;
+    background-color: #b2341a;
+  }
+}
