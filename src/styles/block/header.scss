@@ -1,4 +1,5 @@
 .header {
+  // @include pageGrid;
   &__content {
     height: 100vh;
 
@@ -13,7 +14,9 @@
   }
 
   &__bottom {
-    padding-bottom: 40px;
+    @include onTablet {
+      @include pageGrid;
+    }
   }
 
   &__button {
@@ -31,10 +34,14 @@
     font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.02em;
+
+    transition: background-color $effectDuration ease;
     &:hover {
       background-color: $accent-orange;
       color: white;
-      background-image: url(../images/icon/cookie-button-icon-white.png);
+      .button__icon {
+        content: url(../images/icon/cookie-button-icon-white.png);
+      }
     }
 
     &:focus {
@@ -45,13 +52,19 @@
     &:disabled {
       border-color: $lite-orange;
       color: $lite-orange;
-      background-image: url(../images/icon/cookie-button-icon-disable.png);
+      .button__icon {
+        content: url(../images/icon/cookie-button-icon-disable.png);
+      }
     }
   }
 
   &__slogan {
     margin: 0;
     margin-bottom: 32px;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
   }
 
   &__title {
