@@ -1,0 +1,57 @@
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onPhone {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin theDesign {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin onTop {
+  display: grid;
+  grid-template-columns: 1fr 20px;
+}
+
+@mixin gridOnTabletAndDesktop {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 24px;
+}
+
+@mixin gridOnPhone {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
+}
+
+@mixin linksIcons {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: $titles-links-color;
+}
+
+@mixin propertyIcons {
+  display: block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
