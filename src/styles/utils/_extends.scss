@@ -1,4 +1,83 @@
 %h1 {
-  font-family: "Roboto", sans-serif;
+  font-size: 64px;
+  line-height: 85%;
+
+  margin: 0;
+
   font-weight: 400;
+
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include onTablet {
+    font-size: 80px;
+    line-height: 85%;
+  }
+
+  @include onDesktop {
+    font-size: 136px;
+    line-height: 85%;
+  }
+
+  @include onBigDesktop {
+    font-size: 144px;
+    line-height: 85%;
+  }
+
+  &::selection {
+    color: #fff;
+    background-color: $orange;
+  }
+}
+
+%h2 {
+  margin: 0;
+
+  color: $orange;
+  font-size: 48px;
+  line-height: 85%;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include onTablet {
+    font-size: 56px;
+  }
+
+  @include onDesktop {
+    font-size: 72px;
+  }
+
+  &::selection {
+    color: #fff;
+    background-color: $orange;
+  }
+}
+
+%grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include onTablet {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0 24px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0 24px;
+  }
+
+  @include onBigDesktop {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(8, 128px);
+    gap: 0 24px;
+  }
+
 }

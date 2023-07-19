@@ -1,0 +1,52 @@
+.product {
+
+  &__title {
+    @extend %h2;
+
+    margin-bottom: 24px;
+  }
+
+  &__info {
+    margin-bottom: 60px;
+
+    &::selection {
+      color: #fff;
+      background-color: $orange;
+    }
+  }
+
+  &__catalog {
+    @extend %grid;
+
+  }
+
+  &__item {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 150px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 180px;
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        @include onTablet {
+          &--tablet-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+
+        &--desktop-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+
+      }
+    }
+  }
+
+}
