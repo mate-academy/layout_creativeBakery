@@ -1,0 +1,51 @@
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.3s;
+
+  &:hover {
+    #{$property}: #{$toValue};
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDekstop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin onDekstopXL {
+  @media (min-width: $dekstop-large-min-width) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet() {
+    --columns: 8;
+    column-gap: 24px;
+  }
+}
+
+@mixin bottomHover($toValue) {
+  padding-bottom: 0.15em;
+  background: #{$toValue}, #{$toValue};
+  background-size: 0.3em 0.1em;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  transition: 0.3s linear, background-size 0.3s 0.2s linear;
+}
+
+@mixin bottomHoverEffect {
+  background-size: 40% 0.1em;
+  background-position: 10% 100%, 90% 100%;
+}

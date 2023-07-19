@@ -1,0 +1,48 @@
+.button {
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 20px;
+    height: 56px;
+
+    box-sizing: border-box;
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+
+    cursor: pointer;
+    text-decoration: none;
+    color: $accent-orange;
+
+    font-weight: 500;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+
+    &--cookie {
+      width: 24px;
+      height: 24px;
+      background-image: url(../images/Icon-cookie2.svg);
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: contain;
+    }
+
+    &:hover {
+      @include hover(box-shadow, 1px 4px 16px 0 rgba(178, 52, 26, 0.7));
+      @include hover(background-color, $accent-orange);
+      color: $main-white;
+      animation: phoneCall 1s infinite;
+    }
+
+    &:hover &--cookie {
+      background-image: url(../images/Icon-cookie-white.svg);
+    }
+
+    &:active {
+      @include hover(box-shadow, 1px 4px 16px 0 rgba(178, 52, 26, 0.7));
+      @include hover(background-color, $dark-orange);
+      border-color: $dark-orange;
+    }
+  }
+}
