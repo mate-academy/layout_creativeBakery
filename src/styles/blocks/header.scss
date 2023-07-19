@@ -1,0 +1,223 @@
+.header {
+  background: $backround-color;
+
+  &__top {
+    padding: 16px 16px 0;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include smartphone {
+      margin-bottom: 96px;
+    }
+
+    @include smalldesktop {
+      width: 100%;
+      padding: 32px;
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      padding-top: 28px;
+      padding-bottom: 28px;
+    }
+  }
+
+  &__logo {
+    @include hover(transform, scale(1.1));
+  }
+
+  &__menu {
+    display: none;
+
+    @include smalldesktop {
+      display: flex;
+    }
+  }
+
+  &__list {
+    @include smalldesktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 64px;
+    }
+  }
+
+  &__menu-icon {
+    @include smalldesktop {
+      display: none;
+    }
+  }
+
+  &__link {
+    color: $black-color;
+    font-family: $font-family;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    cursor: pointer;
+    transition: 0.5s all;
+
+    &--contact {
+      color: $red-color;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+
+      @include hover(transform, scale(1.1));
+    }
+
+    &:hover {
+      color: $red-color;
+    }
+  }
+
+  &__content {
+    @include smartphone {
+      display: flex;
+      background-image: url(../images/image/Cookie.png);
+      background-size: 326px;
+      background-position-x: center;
+      background-position-y: 50px;
+      background-repeat: no-repeat;
+
+      width: 100%;
+      @include gridPage;
+      height: 700px;
+    }
+
+    @include smalldesktop {
+      background-size: 600px;
+      background-position-y: top;
+    }
+  }
+
+  &__text {
+    color: $black-color;
+    text-align: center;
+    font-family: $font-family;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    margin-bottom: 32px;
+
+    @include smartphone {
+      grid-column: 1 / 5;
+      grid-row: 1;
+      text-align: left;
+      width: 280px;
+    }
+
+    @include smalldesktop {
+      grid-column: 1 / 3;
+      grid-row: 1;
+      margin-top: 135px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__name {
+    color: $red-color;
+    text-align: center;
+    font-family: $font-family;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+
+    @include smartphone {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      font-size: 68px;
+      letter-spacing: -4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    @include smalldesktop {
+      font-size: 136px;
+      margin-top: 135px;
+    }
+
+    @include desktop {
+      font-size: 140px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    @include smartphone {
+      display: none;
+    }
+  }
+
+  &__button {
+    background-image: url(../images/icons/Icon-cookie.svg);
+    background-repeat: no-repeat;
+    background-position-y: 14px;
+    background-position-x: 60px;
+    display: flex;
+    width: 288px;
+    height: 56px;
+    padding: 20px 71px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+
+    border-radius: 32px;
+    border: 2px solid $red-color;
+
+    color: $red-color;
+    background-color: transparent;
+    font-family: $font-family;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    transition: 0.5s all;
+
+    &:hover {
+      background-color: $red-color;
+      color: $white-color;
+      background-image: url(../images/icons/Icon-cookie1.svg);
+      background-repeat: no-repeat;
+      background-position-y: 14px;
+      background-position-x: 60px;
+    }
+
+    &:focus {
+      background-image: url(../images/icons/focus.svg);
+      background-repeat: no-repeat;
+      background-position-y: 14px;
+      background-position-x: 60px;
+      background-color: #b2341a;
+      color: $white-color;
+    }
+
+    @include smartphone {
+      grid-column: 3 / 7;
+      margin: 0 auto;
+    }
+
+    @include smalldesktop {
+      grid-column: 1 / 3;
+    }
+  }
+}
