@@ -1,0 +1,54 @@
+.contact-us {
+  &__title {
+    margin: 0 0 $marg-bottom-title-contact-us;
+    color: $white-color;
+  }
+  
+  &__contacts {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 24px;
+      }
+    }
+  
+  &__info {
+    margin: 0 0 40px;
+  
+    @include onDesktop {
+      margin: 0;
+    }
+  
+    &:last-child {
+      margin: 0;
+    }
+  
+    &--phone {
+      @include onDesktop {
+        grid-column: 1 / 3;
+      }
+    }
+  
+    &--email {
+      @include onDesktop {
+        grid-column: 3 / 5;
+      }
+    }
+  }
+  
+  &__info-title {
+    margin: 0 0 16px;
+  }
+  
+  &__info-link {
+    color: $white-color;
+    display: block;
+    margin: 0 0 16px;
+    text-decoration: none;
+    transition: text-shadow 0.3s;
+  
+    &:hover {
+      text-shadow: 3px 9px 25px $contact-hover-color;
+    }
+  }
+}
