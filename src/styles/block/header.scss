@@ -1,7 +1,9 @@
 .header {
   // @include pageGrid;
+  position: relative;
+  height: 100vh;
   &__content {
-    height: 100vh;
+    // height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -11,10 +13,28 @@
   &__image {
     width: 288px;
     height: 290px;
+
+    @include onTablet {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      z-index: -1;
+      left: 50%;
+
+      width: 326px;
+      height: 328px;
+    }
+
   }
 
   &__bottom {
     @include onTablet {
+      position: relative;
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      position: relative;
       @include pageGrid;
     }
   }
@@ -34,6 +54,14 @@
     font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.02em;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
 
     transition: background-color $effectDuration ease;
     &:hover {
@@ -63,7 +91,17 @@
     margin-bottom: 32px;
 
     @include onTablet {
+      grid-column: span 4;
+      margin-bottom: 146px;
+      text-align: left;
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    @include onDesktop {
+      margin: 0;
       grid-column: span 2;
+      padding-top: 135px;
     }
   }
 
@@ -75,6 +113,16 @@
     letter-spacing: -0.05em;
     line-height: 54.4px;
     text-transform: uppercase;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      margin-bottom: 230px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+      margin-bottom: 64px;
+    }
   }
 
 }

@@ -1,9 +1,13 @@
 .footer {
   background-color: $text-black;
-  // height: 125vh;
   padding-block: 56px;
-  // position: sticky;
   bottom: 0;
+
+  &__grid {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
 
   &__logo {
     display: flex;
@@ -40,6 +44,7 @@
     color: white;
     text-transform: uppercase;
     margin-bottom: 40px;
+
   }
 
   &__icons {
@@ -47,6 +52,10 @@
     gap: 32px;
     margin: 0;
     margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
   }
 
   &__watermark {
@@ -56,6 +65,10 @@
     line-height: 150%;
     letter-spacing: -0.16px;
     color: $subtitle-gray;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
   }
 
   &__menu {
@@ -64,6 +77,11 @@
     gap: 16px;
     font-size: 16px;
     margin-bottom: 64px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
     &-title {
       margin: 0;
       color: $subtitle-gray;
@@ -83,9 +101,9 @@
       // @include hover(transform, scaleY(1.1));
       // transform: scaleY(1.2);
 
-      &:hover {
-        transform: scale(1.2);
-      }
+      // &:hover {
+      //   transform: scale(1.2);
+      // }
     }
   }
 }

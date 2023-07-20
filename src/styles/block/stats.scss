@@ -1,11 +1,27 @@
 .stats {
   display: flex;
   flex-wrap: wrap;
+
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    @include pageGrid;
+  }
+
   gap: 48px;
 
   &__info {
     flex-shrink: 0;
     width: 100%;
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
   }
 
   &__title {
