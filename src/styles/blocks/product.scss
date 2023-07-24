@@ -1,0 +1,103 @@
+.product {
+  &__photos {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 88px;
+
+    @include onMobile {
+      flex-direction: column;
+      margin-bottom: 64px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--end {
+      justify-content: flex-end;
+    }
+  }
+
+  &__photo {
+    width: 432px;
+    height: 560px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: transform $duration;
+
+    &:hover {
+      transform: scale(1.06);
+    }
+
+    @include onDesctop {
+      width: 400px;
+      height: 510px;
+    }
+
+    @include onLaptop {
+      width: 330px;
+      height: 425px;
+    }
+
+    @include onSmMobile {
+      width: 322px;
+      height: 390px;
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $gray-color;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    width: 432px;
+    margin-bottom: 24px;
+
+    @include onDesctop {
+      width: 400px;
+    }
+
+    @include onLaptop {
+      width: 330px;
+    }
+
+    @include onSmMobile {
+      width: 322px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 84px;
+    height: 32px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $orange;
+    margin-bottom: 8px;
+    transition: all $duration;
+
+    &::before {
+      content: url(../images/arrow.svg);
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $orange;
+      @extend %scale;
+    }
+  }
+}

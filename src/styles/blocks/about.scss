@@ -1,0 +1,146 @@
+.about {
+  box-sizing: border-box;
+  background-image: url(../images/Crumbs.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 350px;
+
+  @include onLaptop {
+    padding-bottom: 150px;
+  }
+
+  @include onMobile {
+    background-size: 300px;
+    background-position: bottom;
+    padding-bottom: 70px;
+  }
+  
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+    height: 100%;
+
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 4;
+    font-size: 72px;
+    line-height: 61px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    margin-bottom: 144px;
+
+    @include onSmLaptop {
+      font-size: 56px;
+      line-height: 48px;
+    }
+
+    @include onMobile {
+      font-size: 48px;
+      line-height: 41px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__description {
+    grid-column: 5 / 9;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    margin-bottom: 144px;
+
+    @include onMobile {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__numbers {
+    font-size: 96px;
+    line-height: 82px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    &::after {
+      content: " ";
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+      color: $gray-color;
+      text-transform: none;
+      padding-top: 8px;
+    }
+
+    &--year {
+      grid-column: 1 / 2;
+
+      &::after {
+        content: "Foundation year";
+
+        @include onSmLaptop {
+          padding-bottom: 80px;
+        }
+
+        @include onMobile {
+          padding-bottom: 48px;
+        }
+      }
+
+      @include onSmLaptop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--stores {
+      grid-column: 3 / 4;
+
+      &::after {
+        content: "Stores";
+
+        @include onSmLaptop {
+          padding-bottom: 80px;
+        }
+
+        @include onMobile {
+          padding-bottom: 48px;
+        }
+      }
+
+      @include onSmLaptop {
+        grid-column: 5 / 8;
+      }
+    }
+
+    &--companies {
+      grid-column: 5 / 6;
+
+      &::after {
+        content: "Companies";
+
+        @include onMobile {
+          padding-bottom: 48px;
+        }
+      }
+
+      @include onSmLaptop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--clients {
+      grid-column: 7 / 8;
+
+      &::after {
+        content: "Clients";
+      }
+
+      @include onSmLaptop {
+        grid-column: 5 / 8;
+      }
+    }
+  }
+}

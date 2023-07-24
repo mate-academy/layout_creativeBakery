@@ -1,0 +1,66 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $main-color;
+  background-color: rgba(238, 247, 255, 1);
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform $duration;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 178px;
+
+    @include onMobile {
+      margin-bottom: 72px;
+    }
+  }
+
+  &__section-title {
+    font-size: 72px;
+    line-height: 61px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+
+    @include onSmLaptop {
+      font-size: 56px;
+      line-height: 48px;
+    }
+
+    @include onMobile {
+      font-size: 48px;
+      line-height: 41px;
+      align-self: flex-start;
+    }
+  }
+
+  &__section-text {
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    margin-bottom: 80px;
+
+    @include onMobile {
+      margin-bottom: 56px;
+    }
+  }
+}
