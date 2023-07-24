@@ -1,0 +1,131 @@
+.hero-block {
+  height: 100vh;
+  align-items: center;
+  position: relative;
+
+  &__content {
+    @include pageGrid;
+  }
+  
+  &__slogan {
+    grid-column: 1 / -1;
+    margin-top: 32px;
+    text-align: center;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -0.16px;
+  
+    @include onTablet {
+      grid-column: 1 / 5;
+      text-align: start;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__main-title {
+    grid-column: 1 / -1;
+    margin-top: 32px;
+    text-align: center;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    cursor: default;
+
+    @include onTablet {
+      position: absolute;
+      left: 50%;
+      top: 215px;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 100%;
+      font-size: 80px;
+      letter-spacing: -4px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      left: 50%;
+      top: 250px;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 100%;
+      font-size: 136px;
+      letter-spacing: -6.8px;
+    }
+  }
+  
+  &__image {
+    grid-column: 1 / -1;
+    display: block;
+    margin: 0 auto;
+    background-image: url(../images/cookie-image.png);
+    width: 288px;
+    height: 290px;
+  
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+  
+    @include onTablet {
+      z-index: 1;
+      width: 326px;
+      height: 328px;
+      background-image: url(../images/cookie-image-tablet.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  
+    @include onDesktop {
+      width: 544px;
+      height: 546px;
+      background-image: url(../images/cookie-image-desktop.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+  
+  .button {
+    grid-column: 1 / -1;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+      margin-top: 80px;
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+      position: absolute;
+      margin-top: 395px;
+      margin-bottom: 161px;
+    }
+
+    &__link {
+      @include button;
+    }
+
+    &__link-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 4px;
+      background-image: url(../images/icon-cookie-orange.png);
+      background-size: cover;
+    }
+
+    &:hover {
+      & .button__link-icon {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}

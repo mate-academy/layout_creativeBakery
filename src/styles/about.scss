@@ -1,0 +1,115 @@
+.about {
+  &__description {
+    @include pageGrid;
+
+    margin-top: 72px;
+
+    @include onTablet {
+      margin-top: 152px;
+    }
+
+    @include onDesktop {
+      margin-top: 178px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      font-size: 56px;
+      letter-spacing: -2.8px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      letter-spacing: -3.6px;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    margin-top: 32px;
+
+    font-style: normal;
+    letter-spacing: -0.16px;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      margin: 0;
+    }
+  }
+
+  &__stats {
+    @include pageGrid;
+    margin-top: 64px;
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-top: 72px;
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-top: 144px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__bg-image {
+    background-image: url("../images/crumbs-background-for-phone.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+
+    @include onTablet {
+      background-image: url(../images/crumbs-background-for-tablet.png);
+    }
+
+    @include onDesktop {
+      height: 673px;
+      background-image: url(../images/crumbs-background-for-desktop.png);
+    }
+  }
+}
+
+.stat {
+  margin-top: 48px;
+
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    grid-column: span 4;
+  }
+
+  @include onDesktop {
+    grid-column: span 2;
+  }
+
+  &__number {
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -4.8px;
+    text-transform: uppercase;
+  }
+
+  &__name {
+    margin-top: 8px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: $subtitle-color;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+  }
+}

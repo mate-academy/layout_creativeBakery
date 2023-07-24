@@ -1,0 +1,92 @@
+.products {
+  &__title {
+    font-size: 48px;
+    line-height: 85%;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+  }
+
+  &__slogan {
+    margin-top: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+  }
+
+  &__cards {
+    @include pageGrid;
+  }
+}
+
+.card {
+  margin-top: 56px;
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    grid-column: span 4;
+    margin-top: 80px;
+  }
+
+  @include onDesktop {
+    grid-column: span 3;
+  }
+
+  &--right {
+    @include onDesktop {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+
+    @include cards-hover;
+  }
+
+  &__name {
+    margin-top: 16px;
+    color: $subtitle-color;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin-top: 8px;
+    letter-spacing: -0.16px;
+  }
+
+  &__button {
+    margin-top: 16px;
+    padding: 0;
+    border: none;
+    background-color: $bg-color;
+
+    @include icon-hover;
+  }
+
+  &__link {
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $buttons-color;
+  }
+
+  &__arrow {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    background-image: url(../images/icon-arrow.png);
+    background-size: cover;
+    vertical-align: middle;
+  }
+}

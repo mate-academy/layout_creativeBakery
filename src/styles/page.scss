@@ -1,0 +1,36 @@
+.page {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: $main-text-color;
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $bg-color;
+    min-width: 320px;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateX(100%);
+    pointer-events: none;
+  
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
