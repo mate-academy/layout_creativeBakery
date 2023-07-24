@@ -1,5 +1,4 @@
 .products {
-
   &__title {
     font-size: 48px;
     line-height: 85%;
@@ -18,13 +17,7 @@
   }
 
   &__cards {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    // gap: 24px;
-
-    @media (min-width: 640px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    @include pageGrid;
   }
 }
 
@@ -32,20 +25,33 @@
   margin-top: 56px;
   grid-column: 1 / -1;
 
-  @media (min-width: 640px) {
-    grid-column: span 1;
+  @include onTablet {
+    grid-column: span 4;
+    margin-top: 80px;
+  }
+
+  @include onDesktop {
+    grid-column: span 3;
+  }
+
+  &--right {
+    @include onDesktop {
+      grid-column: 3 / 6;
+    }
   }
 
   &__photo {
     width: 100%;
     display: block;
     margin: 0 auto;
+    cursor: pointer;
+
+    @include cards-hover;
   }
 
   &__name {
     margin-top: 16px;
     color: $subtitle-color;
-    font-style: normal;
     font-weight: 500;
     line-height: 100%;
     letter-spacing: 0.32px;
@@ -62,16 +68,14 @@
     padding: 0;
     border: none;
     background-color: $bg-color;
+
+    @include icon-hover;
   }
 
   &__link {
-    align-items: center;
     line-height: 100%;
     letter-spacing: 0.32px;
     font-weight: 500;
-    font-style: normal;
-    text-align: center;
-    text-decoration: none;
     text-transform: uppercase;
     color: $buttons-color;
   }

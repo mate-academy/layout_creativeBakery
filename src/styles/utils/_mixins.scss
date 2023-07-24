@@ -1,10 +1,3 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
-  }
-}
-
 @mixin onTablet {
   @media (min-width: $tablet-min-width) {
     @content;
@@ -63,12 +56,36 @@
 
   &:hover {
     transform: scale(1.05);
-    color: #fff;
+    color: $links-color;
     background-color: $buttons-color;
   }
 
   &:active {
-    color: #fff;
+    color: $links-color;
     background-color: #b2341a;
+  }
+}
+
+@mixin link-hover {
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: $buttons-color;
+  }
+}
+
+@mixin icon-hover {
+  transition: scale 0.3s ease-in-out;
+
+  &:hover {
+    scale: 1.15;
+  }
+}
+
+@mixin cards-hover {
+  transition: scale 0.3s ease-in-out;
+
+  &:hover {
+    scale: 1.05;
   }
 }
