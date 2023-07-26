@@ -1,0 +1,41 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    scroll-behavior: smooth;
+    background-color: $lightBlue;
+    min-width: 320px;
+    max-width: 1440px;
+    margin-inline: auto;
+
+    @include mainFont;
+  }
+
+  &__top {
+    padding-top: 16px;
+    padding-inline: 16px;
+
+    @include onDesktop {
+      padding-top: 28px;
+      padding-inline: 32px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: all $effectDuration;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+}
