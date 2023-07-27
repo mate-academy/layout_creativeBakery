@@ -1,0 +1,61 @@
+.page {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: #1c1a26;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background-color: #ffeefc;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    transform: translateX(100%);
+    transition: transform $transitionTime;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section{
+    padding: 80px 0 0;
+
+    @include onTablet {
+      padding: 160px 0 0;
+    }
+
+    @include onDesktop{
+      padding: 186px 0 0;
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: normal;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $orangeColor;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop{
+      font-size: 72px;
+    }
+  }
+}
