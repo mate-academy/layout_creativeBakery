@@ -2,18 +2,43 @@
   margin-bottom: 64px;
   &__content {
     margin: 0 16px;
-    padding: 16px 0 40px;
+    padding: 0 0 40px;
+
+    @include onTablet {
+      margin: 0 44px;
+      padding: 0 0 228px;
+    }
   }
 
   &__top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 48px;
+    padding: 16px;
+    // margin: 16px 16px 48px;
+    margin-bottom: 32px;
   }
 
   &__logo-page {
     width: 136px;
+  }
+
+  &__prewiev {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+
+    &-page {
+      width: 288px;
+
+      @include onTablet {
+        width: 326px;
+        margin-bottom: 80px;
+      }
+    }
   }
 
   &__main-content {
@@ -25,10 +50,23 @@
   &__text {
     margin-bottom: 32px;
     color: black;
+
+    @include onTablet {
+      width: 280px;
+      text-align: left;
+    }
   }
 
   &__title {
     color: #f9512e;
+
+    @include onTablet {
+      position: absolute;
+      top: 27%;
+
+      font-size: 80px;
+      line-height: 85%;
+    }
   }
 
   // &__prewiev {
@@ -47,6 +85,10 @@
 
     &-page {
       margin-right: 4px;
+    }
+
+    @include onTablet {
+      width: 326px;
     }
   }
 }
