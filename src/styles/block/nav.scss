@@ -1,0 +1,54 @@
+.nav {
+  display: none;
+  
+  @include tablet() {
+    display: block;
+  }
+  
+  &--menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 50%;
+  }
+    
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    justify-content: flex-end;
+  
+    @include desktop() {
+      gap: 80px;
+    }
+  
+    &--menu {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+  
+  &__link {
+    text-decoration: none;
+    font-size: 14px;
+    color: #000;
+  
+    &:hover {
+      color: $color--orange;
+    }
+  
+    &--menu {
+      font-size: 18px;
+    }
+  
+    &--contact {
+      display: flex;
+      gap: 10px;
+      text-transform: uppercase;
+      color: #f9512e;
+  
+      &:hover {
+        color: $color--dark-orange;
+      }
+    }
+  }
+}
