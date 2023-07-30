@@ -1,0 +1,52 @@
+.footer {
+  background-color: $main-text-color;
+  padding: 56px 0;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__section {
+    @include pageGrid;
+  }
+
+  &__bottom-bar {
+    margin-bottom: 40px;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      margin-bottom: 96px;
+
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      margin-bottom: 61px;
+    }
+
+    &__logo {
+      display: flex;
+      transition: transform $effectDuration;
+
+      @include hover(transform, scale(1.2));
+
+    }
+  }
+
+  &__nav-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    @include onTablet {
+      display: grid;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 2;
+    }
+  }
+}
