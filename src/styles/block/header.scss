@@ -1,10 +1,11 @@
 .header {
-  // @include pageGrid;
   position: relative;
-  height: 100vh;
-  &__content {
-    // height: 100vh;
+  height: 75vh;
 
+  @include onTablet {
+    height: 100vh;
+  }
+  &__content {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -23,6 +24,18 @@
 
       width: 326px;
       height: 328px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      z-index: -1;
+      left: 50%;
+
+      width: 544px;
+      height: 546px;
+      flex-shrink: 0;
     }
 
   }
@@ -89,6 +102,11 @@
   &__slogan {
     margin: 0;
     margin-bottom: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $text-black;
+    letter-spacing: -0.16px;
 
     @include onTablet {
       grid-column: span 4;
@@ -108,18 +126,23 @@
   &__title {
     margin: 0;
     font-size: 64px;
+    text-align: center;
     color: $accent-orange;
     font-weight: 400;
-    letter-spacing: -0.05em;
-    line-height: 54.4px;
+    letter-spacing: -3.2px;
+    line-height: 85%;
     text-transform: uppercase;
 
     @include onTablet {
+      font-size: 80px;
+      letter-spacing: -4px;
       grid-column: 1 / -1;
       margin-bottom: 230px;
     }
 
     @include onDesktop {
+      font-size: 133px;
+      letter-spacing: -6.8px;
       grid-column: 1 / -1;
       margin-bottom: 64px;
     }

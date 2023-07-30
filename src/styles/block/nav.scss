@@ -9,6 +9,11 @@
     gap: 24px;
     font-weight: 400;
     font-size: 16px;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 64px;
+    }
   }
 
   &__contacts-us {
@@ -19,7 +24,7 @@
 
     &:hover {
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         bottom: -4px;
@@ -35,8 +40,10 @@
     color: inherit;
     text-decoration: none;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 150%;
+    font-weight: 400;
     letter-spacing: -0.16px;
+    @include hover (transform, scale(1.2));
     &--contact-us {
       color: $accent-orange;
       font-style: normal;
