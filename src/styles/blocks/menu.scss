@@ -1,0 +1,52 @@
+.menu {
+  box-sizing: border-box;
+
+  background-color: $c-light-pink;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    @include contentPaddingInline;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        padding-inline: 0;
+        margin-inline: 0;
+        height: 0;
+        flex-direction: row;
+        margin-top: 32px;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    &-title {
+      color: $c-grey;
+      margin: 0;
+      margin-bottom: 16px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+    }
+  }
+}

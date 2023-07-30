@@ -1,0 +1,135 @@
+.about-us {
+  @include pageGrid;
+
+  background-image: url(../images/about-us/about-us-bg-mobile.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: left 75%;
+
+  @include onTablet {
+    background-image: url(../images/about-us/about-us-bg-tablet.png);
+    background-size: auto;
+    background-position: center 35%;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/about-us/about-us-bg-desktop.png);
+    background-size: contain;
+    background-position: 55%;
+  }
+
+  @include onMonitor {
+    background-image: url(../images/about-us/about-us-bg-monitor.png);
+    background-size: contain;
+    background-position: 35%;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      grid-column: 5 / 9;
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__container {
+    grid-column: 1 / -1;
+  }
+
+  &__benefits {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include onTablet {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 24px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      column-gap: 4px;
+      grid-template-columns: repeat(8, 1fr);
+
+    }
+
+    @include onMonitor {
+      @include pageGrid;
+    }
+  }
+
+  &__item {
+    display: grid;
+    margin-bottom: 48px;
+
+    row-gap: 8px;
+
+    &--first-benefit {
+      @include onTablet {
+        margin-bottom: 80px;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 2;
+      }
+    }
+
+    &--second-benefit {
+      @include onTablet {
+        margin-bottom: 80px;
+      }
+
+      @include onDesktop {
+        grid-column: 3 / 4;
+      }
+    }
+
+    &--third-benefit {
+      @include onDesktop {
+        grid-column: 5 / 6;
+      }
+    }
+
+    &--last-benefit {
+      margin-bottom: 0;
+
+      @include onDesktop {
+        grid-column: 7 / 9;
+      }
+    }
+  }
+
+  &__numbers {
+    margin: 0;
+    color: $c-accent-orange;
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -4.8px;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin: 0;
+    color: $main-text-color;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+  }
+}

@@ -1,0 +1,171 @@
+.header {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include onTablet {
+      @include pageGrid;
+
+      position: relative;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    margin-bottom: 32px;
+    color: $main-text-color;
+    text-align: center;
+
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+
+    @include onTablet {
+      margin-bottom: 146px;
+      width: 280px;
+      text-align: left;
+
+      grid-column: 1 / 3;
+    }
+
+    @include onDesktop {
+      margin-bottom: 8px;
+      width: 260px;
+    }
+
+    @include onMonitor {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $c-accent-orange;
+    text-align: center;
+
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-bottom: 210px;
+      font-size: 80px;
+      letter-spacing: -4px;
+
+      z-index: 1;
+
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+      font-size: 136px;
+      letter-spacing: -6.8px;
+    }
+
+    @include onMonitor {
+      font-size: 144px;
+      letter-spacing: -7.2px;
+    }
+  }
+
+  &__image {
+    width: 288px;
+    height: 290px;
+
+    @include onTablet {
+      position: absolute;
+      width: 326px;
+      height: 328px;
+
+      top: 8%;
+      left: 9%;
+
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      width: 544px;
+      height: 546px;
+
+      top: -28%;
+      left: 0;
+
+      grid-column: 3 / 6;
+    }
+
+    @include onMonitor {
+      width: 584px;
+      height: 586px;
+
+      top: -24%;
+      left: 1%;
+    }
+  }
+
+  &__link {
+    color: $c-accent-orange;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 16px;
+  }
+
+  &__button {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 16px 71px;
+    gap: 4px;
+    border: 2px solid $c-accent-orange;
+    border-radius: 32px;
+    text-decoration: none;
+
+    transition: $effectDuration;
+
+    @include onTablet {
+      box-sizing: content-box;
+      padding: 15px;
+      margin-bottom: 228px;
+
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      margin-bottom: 161px;
+      padding: 15px;
+
+      grid-column: 1 / 3;
+    }
+
+    @include onMonitor {
+      margin-bottom: 138px;
+    }
+
+    &:hover {
+      background-color: $c-accent-orange;
+
+      .icon--cookie {
+        background-image: url(../images/icons/icon-cookie-hover.png);
+      }
+
+      .header__link {
+        color: $c-white;
+      }
+    }
+
+    &:active {
+      .header__link {
+        background-color: $c-dark-orange;
+        color: $c-white;
+      }
+    }
+  }
+}

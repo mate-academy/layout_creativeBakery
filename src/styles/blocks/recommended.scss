@@ -1,0 +1,59 @@
+.recommended {
+  &__description {
+    margin: 0;
+    margin-bottom: 56px;
+    color: $main-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__products {
+    @include pageGrid;
+    row-gap: 56px;
+
+    @include onTablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__product {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+      row-gap: 24px;
+    }
+
+    @include onDesktop {
+      &--desktop-position-one {
+        grid-column: 1 / 4;
+      }
+
+      &--desktop-position-two {
+        grid-column: 4 / 7;
+      }
+
+      &--desktop-position-three {
+        grid-column: 3 / 6;
+      }
+
+      &--desktop-position-four {
+        grid-column: 6 / 9;
+      }
+
+      &--desktop-position-five {
+        grid-column: 1 / 4;
+      }
+
+      &--desktop-position-six {
+        grid-column: 4 / 7;
+      }
+    }
+  }
+}
