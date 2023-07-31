@@ -1,0 +1,35 @@
+.page {
+  background-color: $main-pink;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+
+  font-size: 16px;
+  font-style: normal;
+  line-height: 100%;
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+    overflow-x: hidden;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.7s;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

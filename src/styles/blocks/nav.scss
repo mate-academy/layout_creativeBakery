@@ -1,0 +1,52 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    list-style: none;
+
+    @include onDekstop {
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main-black;
+    @include bottomHover(linear-gradient($accent-orange 0 0));
+    transition: color 0.3s;
+
+    &:hover {
+      color: $accent-orange;
+    }
+
+    &--orange-link {
+      color: $accent-orange;
+      font-weight: 500;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+
+      &::before {
+        content: "";
+        display: block;
+        background-image: url(../images/Icon-phone-pink.svg);
+        width: 24px;
+        height: 24px;
+        animation: phoneCall 1s infinite;
+      }
+
+      @include bottomHover(linear-gradient($accent-orange 0 0));
+    }
+  }
+}

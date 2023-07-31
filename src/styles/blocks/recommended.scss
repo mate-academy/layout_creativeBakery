@@ -1,0 +1,33 @@
+.recommended {
+  &__products {
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    @include onDekstop {
+      @include pageGrid;
+    }
+  }
+
+  &__product {
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDekstop {
+      grid-column: span 3;
+    }
+
+    &--left {
+      @include onDekstop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--left-2 {
+      @include onDekstop {
+        grid-column: 6 / 9;
+      }
+    }
+  }
+}
