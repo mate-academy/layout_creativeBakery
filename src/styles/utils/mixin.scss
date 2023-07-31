@@ -37,15 +37,22 @@
 }
 
 @mixin bottomHover($toValue) {
-  padding-bottom: 0.15em;
-  background: #{$toValue}, #{$toValue};
-  background-size: 0.3em 0.1em;
-  background-position: 50% 100%;
-  background-repeat: no-repeat;
-  transition: 0.3s linear, background-size 0.3s 0.2s linear;
-}
+  position: relative;
 
-@mixin bottomHoverEffect {
-  background-size: 40% 0.1em;
-  background-position: 10% 100%, 90% 100%;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+    height: 1px;
+    background: #{$toValue};
+    opacity: 0;
+    transition: opacity 0.3s linear;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
 }

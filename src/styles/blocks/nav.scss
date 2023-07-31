@@ -19,11 +19,11 @@
   &__link {
     text-decoration: none;
     color: $main-black;
-
-    @include bottomHover(linear-gradient(#000 0 0));
+    @include bottomHover(linear-gradient($accent-orange 0 0));
+    transition: color 0.3s;
 
     &:hover {
-      @include bottomHoverEffect;
+      color: $accent-orange;
     }
 
     &--orange-link {
@@ -37,8 +37,6 @@
       align-items: center;
       gap: 4px;
 
-      @include bottomHover(linear-gradient($accent-orange 0 0));
-
       &::before {
         content: "";
         display: block;
@@ -48,9 +46,7 @@
         animation: phoneCall 1s infinite;
       }
 
-      &:hover {
-        @include bottomHoverEffect;
-      }
+      @include bottomHover(linear-gradient($accent-orange 0 0));
     }
   }
 }
