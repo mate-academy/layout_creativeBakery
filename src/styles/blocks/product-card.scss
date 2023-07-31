@@ -1,0 +1,64 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+
+  @include onTablet {
+    display: block;
+  }
+
+  &__photo {
+    width: 100%;
+    object-fit: cover;
+    padding-bottom: 16px;
+    align-self: center;
+    border-radius: 5%;
+
+    @include hover(transform, scale(1.05));
+
+    @include onDesktop {
+      max-width: 432px;
+    }
+  }
+
+  &__title {
+    color: #7f8096;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    padding-bottom: 8px;
+  }
+
+  &__description {
+    padding-bottom: 24px;
+  }
+
+  &__order {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $main-text-color;
+    letter-spacing: 0.02em;
+    width: fit-content;
+
+    border-bottom: 1px solid transparent;
+
+    transition: all 0.4s ease-in-out;
+    padding-bottom: 5px;
+
+    &:hover {
+      border-color: $main-text-color;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-image: url(../images/icons/icon-arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+  }
+}
