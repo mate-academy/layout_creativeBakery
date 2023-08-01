@@ -1,0 +1,122 @@
+.footer {
+  background-color: $color-black;
+  color: $color-white;
+  padding: 56px 0;
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-areas: "logo title" "menu contact" "media coppyright";
+      row-gap: 40px;
+    }
+  }
+
+  &__section {
+    &--logo {
+      @include onTablet {
+        grid-area: logo;
+      }
+    }
+
+    &--menu {
+      margin-bottom: 64px;
+
+      @include onTablet {
+        grid-area: menu;
+      }
+    }
+
+    &--title {
+      @include onTablet {
+        grid-area: title;
+      }
+    }
+
+    &--contact {
+      @include onTablet {
+        grid-area: contact;
+      }
+
+      @include onDesktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    &--media {
+      @include onTablet {
+        grid-area: media;
+      }
+    }
+
+    &--copyright {
+      @include onTablet {
+        grid-area: coppyright;
+      }
+    }
+  }
+
+  &__section:not(:last-child) {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__sub-title {
+    @extend %sub-title-size;
+
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    display: inline-flex;
+    flex-direction: column;
+  }
+
+  &__list-item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    @extend %title-size;
+    width: min-content;
+
+    @include onDesktop {
+      width: max-content;
+    }
+  }
+
+  &__phone {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__media {
+    display: flex;
+  }
+
+  &__icon {
+    display: inline-flex;
+    color: inherit;
+
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: scale(1.15);
+      color: $color-accentOrange;
+    }
+  }
+
+  &__icon:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &__copyright {
+    color: $color-grey;
+  }
+}

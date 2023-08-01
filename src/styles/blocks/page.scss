@@ -1,0 +1,58 @@
+.page {
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+  background-color: $color-lightBlue;
+  color: $color-black;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+
+  &__header {
+    margin-bottom: 104px;
+
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 152px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transform: translateX(-100%);
+
+    transition: transform 0.25s linear;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__products {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 178px;
+    }
+  }
+
+  &__about {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 150px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 350px;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+.header {
+  &__top-actions {
+    margin-bottom: 32px;
+  }
+
+  &__content {
+    @include onTablet {
+      @include useGrid(8, 0, 24px);
+      position: relative;
+    }
+  }
+
+  &__info {
+    text-align: center;
+    max-width: max-content;
+    margin: 0 auto 32px;
+
+    @include onTablet {
+      text-align: initial;
+      margin: 0 0 16px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+
+      position: absolute;
+      top: 20%;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    width: min-content;
+    margin: 0 auto;
+
+    font-size: 64px;
+    line-height: 54px;
+    letter-spacing: -0.05em;
+    font-weight: inherit;
+    text-transform: uppercase;
+
+    @include onTablet {
+      position: absolute;
+      align-self: center;
+      justify-self: center;
+
+      width: auto;
+
+      font-size: 80px;
+      line-height: 68px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      line-height: 116px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: -1;
+    animation: move 2s ease-in;
+
+    display: block;
+    max-width: $mobile-max-size;
+    width: 100%;
+
+    margin: 0 auto;
+
+    @include onTablet {
+      max-width: fit-content;
+
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 65px;
+    }
+  }
+}
