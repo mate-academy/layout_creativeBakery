@@ -1,0 +1,158 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include onDesktop {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  // &--tablet {
+  //   @include onTablet {
+  //     display: flex;
+  //     flex-direction: column;
+  //     padding: 48px;
+  //   }
+  // }
+
+  &--desktop {
+    display: block;
+
+    @include onDesktop {
+      display: grid;
+    }
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__item {
+
+    &--tablet-row {
+      @include onTablet {
+        grid-row: 1;
+      }
+    }
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--desktop-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+
+    }
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--tablet-#{$start}-#{$end} {
+          @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  &--wrapper {
+    @include onDesktop {
+      padding-top: 150px;
+    }
+
+    @include onTablet {
+      padding-top: 72px;
+    }
+  }
+
+  &--header-mobile {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &-button {
+      align-self: center;
+    }
+
+    @include onDesktop {
+      display: grid;
+    }
+
+    @include onTablet {
+      display: grid;
+    }
+
+    &--grow {
+      flex-grow: 1;
+    }
+  }
+
+  &__row {
+
+    &-header-button {
+
+      @include onTablet {
+        grid-row: 4;
+        align-self: flex-end;
+      }
+
+      @include onDesktop {
+        grid-row: 3;
+        z-index: 1;
+      }
+    }
+
+    &-header-title {
+      grid-row: 2;
+
+      @include onTablet {
+        grid-row: 2 / 4;
+      }
+
+      &-small {
+        grid-row: 2;
+        align-self: center;
+
+        @include onTablet {
+          grid-row: 1 / 2;
+        }
+
+        @include onDesktop {
+          padding-bottom: 120px;
+        }
+      }
+    }
+
+    &-about {
+      grid-row: 1;
+    }
+
+    &-call {
+      grid-row: 2;
+    }
+
+    &-email {
+      grid-row: 2;
+
+      @include onTablet {
+        grid-row: auto;
+      }
+    }
+
+    &-copyright {
+      grid-row: 4;
+
+      @include onTablet {
+        grid-row: auto;
+      }
+    }
+  }
+}
