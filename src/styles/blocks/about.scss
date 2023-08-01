@@ -1,0 +1,58 @@
+.about {
+  @include onTablet {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/crumbs--tablet.png);
+  }
+
+  @include onDesktop {
+    background-image: url(../images/crumbs--desktop.png);
+  }
+
+  &__introduction {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__arrival {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    @extend %section-title-style;
+    transition: color 0.3s;
+
+    margin-bottom: 32px;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+
+      padding-right: 126px;
+    }
+  }
+
+  &__text {
+    @extend %main-text-style;
+
+    margin-bottom: 64px;
+  }
+}

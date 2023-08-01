@@ -1,0 +1,119 @@
+.footer {
+  padding: 61px 0 56px;
+
+  background-color: $black;
+
+  @include onDesktop {
+    padding: 88px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    @include onDesktop {
+      align-items: flex-start;
+    }
+  }
+
+  &__menu-logo {
+    margin-bottom: 44px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 65px;
+    }
+  }
+
+  &__menu {
+    @include onTablet {
+      grid-area: 1 / 1 / 1 / 3;
+    }
+  }
+
+  &__menu-title {
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    margin-bottom: 64px;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    @extend %main-text-style;
+    color: $white;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $accent-orange;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 42px;
+
+    @include onTablet {
+      grid-area: 1 / 5 / 1 / 7;
+
+      margin-bottom: 48px;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 5 / 1 / 9;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__networks {
+    width: 136px;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 42px;
+
+    @include onTablet {
+      grid-area: 2 / 1 / 2 / 1;
+    }
+  }
+
+  &__networks-link {
+    overflow: hidden;
+    font-size: 0;
+  }
+
+  &__copyright {
+    @include onTablet {
+      grid-area: 2 / 5 / 2 / 7;
+    }
+
+    @include onDesktop {
+      align-items: flex-start;
+    }
+  }
+
+  &__copyright-text {
+    @extend %main-text-style;
+    color: $grey;
+  }
+}

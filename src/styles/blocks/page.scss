@@ -1,0 +1,51 @@
+.page {
+  box-sizing: border-box;
+
+  font-family: "Inter", sans-serif;
+
+  background-color: $light-pink;
+
+  scroll-behavior: smooth;
+
+  &--change-theme {
+
+    background-color: $light-blue;
+
+    .menu {
+      background-color: $light-blue;
+    }
+
+    .header__title,
+    .products__title,
+    .about__title,
+    .arrival__number {
+      transition: color 0.3s;
+
+      color: $black;
+    }
+  }
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-200%);
+    transition: transform 0.6s;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

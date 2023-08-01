@@ -1,0 +1,70 @@
+.navigation {
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    padding-left: 68px;
+
+    &--theme-toggle {
+      padding-left: 0;
+
+      margin-left: 68px;
+
+      transition: color 0.3s, transform 0.3s;
+
+      &:hover {
+        color: $accent-orange;
+
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+
+    @extend %main-text-style;
+    color: $black;
+
+    padding: 20px 0;
+
+    transition: color 0.3s, transform 0.3s;
+
+    &:hover {
+      color: $accent-orange;
+      transform: scale(1.1);
+    }
+
+    @include onDesktop {
+      padding: 32px 0;
+    }
+
+    &--attention {
+      position: relative;
+
+      color: $accent-orange;
+
+      text-transform: uppercase;
+
+      &::before {
+        content: "";
+
+        display: block;
+
+        position: absolute;
+        left: -26px;
+
+        width: 24px;
+        height: 24px;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(../images/phone.svg);
+      }
+    }
+  }
+}
