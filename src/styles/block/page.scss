@@ -1,0 +1,70 @@
+.page {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+
+  color: $colorBlack;
+  background-color: $backgroundcolorPink;
+  scroll-behavior: smooth;
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $backgroundcolorPink;
+
+    transform: translate(-100%);
+    transition: transform $transitionTime;
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
+
+  &__section {
+    padding-bottom: 20px;
+
+    @include onTab {
+      padding-bottom: 70px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 100px;
+    }
+
+    &--title {
+      font-size: 48px;
+      line-height: 85%;
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: $colorOrange;
+      margin-bottom: 24px;
+
+      @include onTab {
+        font-size: 56px;
+      }
+
+      @include onDesktop {
+        font-size: 72px;
+      }
+    }
+
+    &--describe {
+      margin-bottom: 56px;
+
+      @include onTab {
+        margin-bottom: 80px;
+      }
+    }
+  }
+}

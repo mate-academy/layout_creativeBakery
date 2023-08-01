@@ -1,0 +1,142 @@
+.footer {
+  box-sizing: border-box;
+  background-color: $colorBlack;
+
+  padding: 60px 0;
+
+  @include onTab {
+    padding: 90px 0;
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 85%;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $colorWhite;
+    margin-bottom: 24px;
+    padding: 64px 0 9px;
+
+    @include onTab {
+      font-size: 56px;
+      padding: 0 0 9px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+
+    &-flex {
+      @include onDesktop {
+        display: flex;
+        justify-content: space-between;
+        min-width: max-content;
+        gap: 40px;
+      }
+
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+
+    &-email {
+      margin-left: 20px;
+      margin-top: 40px;
+
+      @include onTab {
+        margin-top: 40px;
+      }
+
+      @include onDesktop {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__item {
+    &--start {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $colorGray;
+    }
+    
+    transition: transform $transitionTime;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $colorWhite;
+
+    transition: color $transitionTime;
+
+    &:hover {
+      color: $colorOrange;
+    }
+
+    // &:last-child{
+    //   margin-bottom: 40px;
+    // }
+  }
+
+  &__blog {
+    display: flex;
+    gap: 40px;
+    padding-top: 40px;
+
+    @include onTab {
+      padding-top: 48px;
+    }
+    
+    &-icon {
+      background-color: $colorOrange;
+      transition: all $transitionTime;
+  
+      &:hover {
+        background-color: $colorWhite;
+      }
+  
+      &:focus {
+        background-color: $colorWhite;
+      }
+  
+      &-fb {
+        -webkit-mask: url(../images/facebook.svg) no-repeat center;
+        mask: url(../images/facebook.svg) no-repeat center;
+        width: 15px;
+        height: 20px;
+      }
+  
+      &-ig {
+        -webkit-mask: url(../images/instagram.svg) no-repeat center;
+        mask: url(../images/instagram.svg) no-repeat center;
+        width: 24px;
+        height: 20px;
+      }
+  
+      &-tw {
+        -webkit-mask: url(../images/Twitter.svg) no-repeat center;
+        mask: url(../images/Twitter.svg) no-repeat center;
+        width: 21px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__copyright {
+    color: $colorGray;
+
+    padding-top: 40px;
+
+    @include onTab {
+      padding-top: 48px;
+    }
+  }
+}

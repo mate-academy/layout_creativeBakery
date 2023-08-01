@@ -1,0 +1,63 @@
+.place {
+  &__card {
+    padding-bottom: 60px;
+
+    @include onTab {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+   
+    transition: all $transitionTime;
+
+    &:hover {
+      transform: scale(107%);
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $colorGray;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    width: 84px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $colorOrange;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background-image: url(/images/arrow.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      margin-right: 8px;
+      transform: translate(-3px, 3px);
+    }
+
+    transition: all $transitionTime;
+  }
+}
