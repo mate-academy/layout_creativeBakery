@@ -1,6 +1,52 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onDesktopBig {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin nav-link {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: $c-text;
+  transition: $transition-time;
+
   &:hover {
-    #{$_property}: $_toValue;
+    transform: scale(1.05);
+    color: $c-text-orange;
+  }
+
+  &--last {
+    color: $c-text-orange;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  &--last::before {
+    content: "";
+    background-image: url(../images/icons/phone-menu.png);
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    right: 110px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
