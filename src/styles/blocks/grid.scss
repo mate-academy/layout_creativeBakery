@@ -1,0 +1,32 @@
+.grid {
+  justify-content: center;
+
+  @include onMobile {
+    justify-content: start;
+    gap: 40px;
+  }
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  @include onDesktop {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  @include onFullHD {
+    grid-template-columns: repeat(8, 128px);
+  }
+
+  @for $start from 1 through 8 {
+    @for $end from $start through 8 {
+
+      &--#{$start}-#{$end} {
+        display: block;
+        @include onDesktop {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+}

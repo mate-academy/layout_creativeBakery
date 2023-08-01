@@ -1,0 +1,96 @@
+.sweets {
+
+  &__photo {
+    margin-bottom: 16px;
+
+    // &:hover {
+
+    // }
+  }
+  &__img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.05);
+      animation: imgBorder 2s linear 0.2s infinite;
+    }
+  }
+
+  &__category {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7f8096;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: #f9512e;
+    }
+  }
+
+  &__about {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+    margin-bottom: 24px;
+  }
+
+  &__order {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #f9512e;
+    display: flex;
+    width: max-content;
+    text-decoration: none;
+    margin-bottom: 8px;
+
+    transition: font-weight 0.3s linear;
+
+    &:hover {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      background-image: url(../images/before_arrow.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+@keyframes imgBorder {
+  0% {
+    box-shadow: 1px 1px 1px rgb(237, 88, 237);
+    z-index: 2;
+  }
+
+  60% {
+    z-index: 2;
+    box-shadow: 4px 3px 5px rgb(234, 106, 212),
+      -4px 3px 5px rgb(106, 234, 183),
+      -4px -3px 5px rgb(35, 211, 227);
+  }
+
+  100% {
+    box-shadow: 1px 1px 1px rgb(250, 0, 167);
+    z-index: 2;
+
+  }
+}

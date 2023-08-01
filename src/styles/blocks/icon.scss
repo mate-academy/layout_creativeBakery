@@ -1,0 +1,31 @@
+.icon {
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &--menu {
+    background-image: url(../images/menu_mobile.svg);
+    &:hover {
+      animation: menuRotate 2s linear infinite;
+    }
+  }
+
+  &--cross {
+    background-image: url(../images/menu_cross.svg);
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+}
+
+@keyframes menuRotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
