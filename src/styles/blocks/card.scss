@@ -1,0 +1,61 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 0;
+
+  &__wrapper {
+    max-height: 356px;
+    margin-bottom: rem(16);
+    border-radius: 8px;
+    overflow: hidden;
+
+    @include md-device {
+      max-height: 424px;
+    }
+
+    @include lg-device {
+      max-height: 512px;
+    }
+
+    @include xl-device {
+      max-height: 560px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+
+    transition: all 0.3s;
+  }
+
+  &__title {
+    color: $g-color-gray;
+    margin: 0 0 rem(8);
+  }
+
+  &__decription {
+    margin: 0 0 rem(16);
+  }
+
+  &__link {
+    display: flex;
+    width: max-content;
+    justify-self: flex-end;
+    align-items: center;
+    color: $g-color-accent;
+    gap: rem(8);
+
+    transition: all 0.3s ease-in-out;
+
+    &:active {
+      color: $g-color-accent-s-hover;
+
+      svg {
+        fill: $g-color-accent-s-hover;
+      }
+    }
+  }
+}
