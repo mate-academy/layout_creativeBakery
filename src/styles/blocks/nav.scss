@@ -1,0 +1,93 @@
+.nav {
+  background-color: #eef7ff;
+  height: 100vh;
+  width: 100%;
+
+  &__cross {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    &--logo {
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &--link {
+      display: flex;
+      background-repeat: no-repeat;
+      background-image: url(../images/cross.svg);
+      width: 15px;
+      height: 15px;
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 45px 20px 0;
+
+    @include on768px {
+      padding-top: 100px;
+    }
+  }
+
+  &__item {
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+    transition: 0.5s;
+
+    &--tel {
+      position: relative;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #f9512e;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/phone.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: -24%;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: #f9512e;
+    }
+  }
+}
