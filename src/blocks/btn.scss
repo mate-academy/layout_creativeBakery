@@ -1,0 +1,69 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding: 15px 50px 15px 80px;
+  border: 2px solid $red;
+  border-radius: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.2s linear, background-color 0.2s linear;
+
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: $red;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &-container {
+    display: flex;
+    justify-content: center;
+
+    @include On1200 {
+      margin-top: -150px;
+      justify-content: start;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    @extend .bg-img;
+    background-image: url(../images/vectors/cookie.svg);
+    transition: filter 0.2s linear;
+  }
+
+  &:hover {
+    background-color: $red;
+    color: #fff;
+
+    &::before {
+      filter: invert(100%) sepia(0%) saturate(7462%)
+        hue-rotate(22deg) brightness(1231%) contrast(98%);
+    }
+  }
+
+  &:focus {
+    outline: none;
+    background-color: #b3341a;
+    border-color: #b3341a;
+    color: #fff;
+    &::before {
+      filter: invert(100%) sepia(0%) saturate(7462%)
+        hue-rotate(22deg) brightness(1231%) contrast(98%);
+    }
+  }
+
+  &:disabled {
+    background-color: #fba28f;
+  }
+}

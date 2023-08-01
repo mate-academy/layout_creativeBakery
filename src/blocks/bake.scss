@@ -1,0 +1,180 @@
+.bake {
+  
+  &__title {
+    display: block;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $main-col;
+    margin-bottom: 24px;
+
+    @include On768 {
+      font-size: 56px;
+    }
+    @include On1200 {
+      font-size: 72px;
+    }
+  }
+
+  &__info {
+    display: block;
+    letter-spacing: -0.01em;
+    margin-bottom: 56px;
+
+    @include On768 {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 712px) {
+      flex-direction: row;
+    }
+
+    &--1,
+    &--3 {
+      @include On1200 {
+        margin-left: 0;
+        margin-right: auto;
+      }
+    }
+
+    &--2 {
+      @include On1200 {
+        transform: translateX(10%);
+      }
+    }
+  }
+
+  &__cards {
+    overflow-x: hidden;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (min-width: 712px) {
+      transform: translateX(12px);
+    }
+  }
+
+  &__card {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto 64px;
+
+    @media (min-width: 712px) {
+      padding-right: 24px;
+      margin: 0 0 64px;
+    }
+
+    @include On768 {
+      width: 50%;
+      max-width: 380px;
+    }
+    @include On1200 {
+      max-width: 426px;
+    }
+    @include On1200 {
+      max-width: 456px;
+    }
+
+    &-pict {
+      overflow: hidden;
+      height: 356px;
+      width: 100%;
+      margin-bottom: 16px;
+
+      @include On768 {
+        height: 424px;
+      }
+      @include On1200 {
+        height: 512px;
+      }
+      @include On1440 {
+        height: 560px;
+      }
+    }
+
+    &-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      transition: transform 0.2s linear;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &-title {
+      display: block;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $grey;
+      margin-bottom: 8px;
+    }
+
+    &-info {
+      display: block;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+
+    &-order {
+      display: flex;
+      align-items: center;
+
+      &-link {
+        font-family: inherit;
+        position: relative;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $red;
+        transition: text-shadow 0.3s;
+
+        &:hover {
+          text-shadow: 0 0 0.5px $red;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          height: 2px;
+          width: 0;
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          z-index: 1;
+          background-color: $red;
+        }
+      }
+
+      &-arrow {
+        @extend .bg-img;
+        background-image: url(../images/vectors/arrow.svg);
+        height: 15.5px;
+        width: 16px;
+        margin-right: 7px;
+        transition: transform 0.3s linear;
+      }
+
+      &:hover &-arrow {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
