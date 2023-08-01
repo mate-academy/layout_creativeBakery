@@ -1,0 +1,90 @@
+.introduction {
+
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    position: relative;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include onTablet {
+      justify-content: space-between;
+    }
+
+    @include onDesktop {
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      align-self: flex-start;
+      text-align: left;
+      max-width: 280px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+
+    @include onDesktop {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__image {
+    max-width: 40vh;
+
+    @include customRes(551px) {
+      flex: 1 0 auto;
+      max-width: 50vh;
+      object-fit: cover;
+    }
+
+    @include onTablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      max-width: 50%;
+
+      transform: translate(-50%, -50%);
+      object-fit: contain;
+    }
+  }
+
+  &__button {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 10px;
+    width: 100%;
+
+    @include onTablet {
+      margin-top: 0;
+      width: 276px;
+
+    }
+  }
+}

@@ -1,0 +1,146 @@
+.footer {
+  $root: &;
+
+  --list-margin: 16px;
+  --elements-mb: 40px;
+  --grid-areas-onTablet: "logo logo . . title title title title"
+    "menu menu . . call-us call-us call-us call-us"
+    ". . . . email-us email-us email-us email-us"
+    "social social . . credits credits . .";
+
+  --grid-areas-onDesktop: "logo logo . . title title title title"
+    "menu menu . . call-us call-us email-us email-us"
+    "social social . . credits credits . .";
+
+  --grid-rows-count: 3;
+
+  padding: 56px 0;
+
+  background-color: $black-color;
+
+  @include onTablet {
+    padding: 88px 0;
+
+  }
+  &__grid {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(--grid-rows-count, auto);
+      gap: 0 24px;
+      grid-template-areas: var(--grid-areas-onTablet);
+
+      #{$root}__email-us {
+        margin-top: calc(0px - var(--elements-mb));
+        margin-bottom: calc(var(--elements-mb) + 8px);
+      }
+      #{$root}__social {
+        margin-bottom: 0;
+      }
+    }
+    @include onDesktop {
+      --grid-rows-count: 4;
+      grid-template-areas: var(--grid-areas-onDesktop);
+      #{$root}__email-us {
+        margin-top: 0;
+      }
+
+      #{$root}__menu {
+        margin-bottom: calc(var(--elements-mb) + 8px);
+      }
+    }
+  }
+  &__logo {
+    margin-bottom: var(--elements-mb);
+
+    grid-area: logo;
+    display: block;
+    width: 168px;
+    height: 40px;
+  }
+  &__title {
+    margin-bottom: calc(var(--elements-mb) + 24px);
+    grid-area: title;
+
+    color: $white-color;
+    @include onTablet {
+      margin-bottom: var(--elements-mb);
+
+    }
+  }
+  &__menu {
+    margin-bottom: var(--elements-mb);
+    grid-area: menu;
+
+  }
+  &__subtitle {
+    margin-bottom: var(--list-margin);
+  }
+
+  &__list-item {
+    margin-bottom: var(--list-margin);
+  }
+  &__link {
+    color: $white-color;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $accent-orange-color;
+    }
+  }
+  &__call-us {
+    margin-bottom: var(--elements-mb);
+    grid-area: call-us;
+  }
+
+  &__email-us {
+    margin-bottom: var(--elements-mb);
+    grid-area: email-us;
+  }
+  &__social {
+    margin-bottom: var(--elements-mb);
+    grid-area: social;
+    display: flex;
+  }
+  &__social-link {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image 0.3s;
+    -webkit-transition: background-image 0.3s;
+
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+  }
+  &__social-link--fb {
+    background-image: url("../images/icons/fb.svg");
+
+    &:hover {
+      background-image: url("../images/icons/fb-active.svg");
+    }
+  }
+  &__social-link--inst {
+    background-image: url("../images/icons/inst.svg");
+
+    &:hover {
+      background-image: url("../images/icons/inst-active.svg");
+    }
+  }
+  &__social-link--twitt {
+    background-image: url("../images/icons/twitt.svg");
+
+    &:hover {
+      background-image: url("../images/icons/twitt-active.svg");
+    }
+  }
+  &__credits {
+    grid-area: credits;
+
+    color: $grey-color;
+  }
+}

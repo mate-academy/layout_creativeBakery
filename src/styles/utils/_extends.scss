@@ -1,4 +1,55 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
+%defaultHeading {
   font-weight: 400;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  color: $black-color;
+}
+
+%h1 {
+  font-size: 64px;
+
+  @extend %defaultHeading;
+
+  @include onTablet {
+    font-size: 80px;
+  }
+
+  @include onDesktop {
+    font-size: 136px;
+  }
+
+  @include customRes(1400px) {
+    font-size: 144px;
+  }
+}
+
+%h2 {
+  font-size: 48px;
+
+  @extend %defaultHeading;
+
+  @include onTablet {
+    font-size: 56px;
+  }
+
+  @include onDesktop {
+    font-size: 72px;
+  }
+}
+%h3 {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: $grey-color;
+}
+
+%p {
+  line-height: 150%;
+  letter-spacing: -0.01em;
+
+  color: $black-color;
 }
