@@ -1,0 +1,88 @@
+.about-us {
+  position: relative;
+
+  &__stats-wrapper {
+    @include paddingInline;
+    @include paddingBlock;
+    @include pageGrid;
+  }
+
+  &__story {
+    @include pageGrid;
+
+    @include paddingInline;
+
+    &-title {
+      margin: 0;
+      margin-bottom: 32px;
+      text-align: left;
+      letter-spacing: -0.05em;
+
+      grid-column: 1 / -1;
+
+      @include onTablet {
+
+        grid-column: 1 / 5;
+      }
+
+      @include onDesktop {
+
+        grid-column: 1 / 4;
+      }
+    }
+
+    &-description {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      margin: 0;
+
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        margin-bottom: 72px;
+        grid-column: 5 / -1;
+      }
+
+      @include onDesktop {
+        margin-bottom: 144px;
+      }
+    }
+  }
+
+  &__stats-title {
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 85%;
+    margin: 0;
+    margin-bottom: 8px;
+
+    &--clients {
+      text-transform: uppercase;
+    }
+  }
+
+  &__stats {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__stats-name {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+    margin-bottom: 48px;
+
+    @include onTablet {
+      margin-bottom: 56px;
+    }
+  }
+}
