@@ -1,0 +1,40 @@
+.nav {
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    @include hover (transform, scale(1.2));
+
+    &--red {
+      color: #f9512e;
+      text-transform: uppercase;
+      font-weight: 500;
+
+      &::before {
+        content: "";
+        background-image: url(../images/icons/icon-phone.png);
+        width: 24px;
+        height: 24px;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
