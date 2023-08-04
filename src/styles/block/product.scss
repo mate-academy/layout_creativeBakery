@@ -1,0 +1,162 @@
+.product {
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    @include pageGrid;
+  }
+
+  @include onDesktopPlus {
+    @include pageGrid;
+    padding-inline: 80px;
+  }
+  &-title {
+    padding-top: 64px;
+    margin: 0;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -2.4px;
+    color: $accent-orange;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    @include onTablet {
+      font-size: 56px;
+      letter-spacing: -2.8px;
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      letter-spacing: -3.6px;
+      grid-column: span 5;
+    }
+  }
+
+  &__description {
+    color: $text-black;
+    letter-spacing: -0.16px;
+    line-height: 150%;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 56px;
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__cakes {
+    width: 100%;
+    @include hover(transform, scale(105%));
+    cursor: pointer;
+    &--image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin-bottom: 16px;
+
+      @include onDesktop {
+        height: 512px;
+      }
+    }
+    margin-bottom: 56px;
+
+    @include onTablet {
+      grid-column: span 4;
+      margin-bottom: 180px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+
+    &-1to3 {
+      @include onDesktop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &-4to6 {
+      @include onDesktop {
+        grid-column: span 3;
+      }
+    }
+
+    &-3to5 {
+      @include onDesktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &-6to8 {
+      @include onDesktop {
+        grid-column: 6 / -1;
+      }
+    }
+    // @include onDesktop {
+    //   grid-column: span 3;
+    // }
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.32px;
+    color: $subtitle-gray;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  &__subdescription {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    color: $text-black;
+    margin-bottom: 16px;
+  }
+
+  &__order {
+    position: relative;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    color: $accent-orange;
+    text-decoration: none;
+    border: 1px solid transparent;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      height: 1px;
+      background-color: $accent-orange;
+      transform: scaleX(0);
+      transition: transform 0.5s;
+      transform-origin: left;
+
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__arrow {
+    margin: 0;
+    margin-right: 4px;
+  }
+}

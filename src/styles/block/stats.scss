@@ -1,0 +1,54 @@
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    @include pageGrid;
+  }
+
+  gap: 48px;
+
+  &__info {
+    flex-shrink: 0;
+    width: 100%;
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__title {
+    font-size: 96px;
+    margin: 0;
+    font-weight: 400;
+    line-height: 85%;
+    color: $accent-orange;
+    letter-spacing: -4.8px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: $text-black;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 293px;
+    }
+  }
+}

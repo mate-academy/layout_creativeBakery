@@ -1,0 +1,74 @@
+.about-us {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+
+  background-image: url(../images/сrumbs.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: fill;
+
+  // @include onDesktop {
+  //   margin-bottom: 120px;
+  // }
+
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    @include pageGrid;
+  }
+
+  @include onDesktopPlus {
+    @include pageGrid;
+    padding-inline: 80px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -2.4px;
+    color: $accent-orange;
+    text-transform: uppercase;
+    grid-column: span 4;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      font-size: 56px;
+      margin-bottom: 72px;
+      letter-spacing: -2.8px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      letter-spacing: -3.6px;
+      grid-column: span 4;
+      margin-bottom: 146px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: $text-black;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    grid-column: span 4;
+    margin-bottom: 32px;
+
+    // margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+      margin-bottom: 146px;
+    }
+  }
+}
