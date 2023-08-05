@@ -5,6 +5,31 @@
   }
 }
 
+@mixin gridPage {
+  --column: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--column), 136px);
+  grid-template-rows: repeat(6, 1fr);
+  grid-auto-flow: column;
+  column-gap: 16px;
+
+  @include onTablet {
+    --column: 8;
+    grid-template-columns: repeat(var(--column), 64px);
+    // grid-template-rows: repeat(3, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onDesctop {
+    grid-template-columns: repeat(var(--column), 118px);
+  }
+
+  @include onPC {
+    grid-template-columns: repeat(var(--column), 128px);
+  }
+  @content;
+}
+
 @mixin onTablet {
   @media (min-width: $tabletWidth) {
     @content;
@@ -18,7 +43,7 @@
 }
 
 @mixin onPC {
-  @media (width: $pctWidth) {
+  @media (min-width: $pctWidth) {
     @content;
   }
 }

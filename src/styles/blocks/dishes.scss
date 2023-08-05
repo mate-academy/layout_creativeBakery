@@ -1,31 +1,112 @@
 .main {
-  &__content {
-    padding: 0 16px;
+  &--bottom {
     margin-bottom: 72px;
 
     @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesctop {
+      margin-bottom: 178px;
+    }
+  }
+
+  &__content {
+    padding: 0 16px;
+
+    @include onTablet {
       padding: 0 44px;
+    }
+
+    @include onPC {
+      padding: 0 124px;
+    }
+
+    &-info {
+      @include gridPage {
+        justify-content: center;
+        grid-template-rows: repeat(1, 1fr);
+      }
     }
   }
 
   &__title {
     color: #f9512e;
     margin-bottom: 24px;
+    grid-column: 1 / -1;
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
   }
 
   &__text {
     margin-bottom: 56px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
   }
 
-  // &__cards {
-  //   display: flex;
+  &__cards {
+    @include gridPage {
+      row-gap: 56px;
+      justify-content: center;
+      grid-template-rows: repeat(3, 1fr);
+      grid-auto-rows: min-content;
+    }
 
-  // }
+    @include onTablet {
+      row-gap: 80px;
+    }
+  }
 
   &__card {
     display: flex;
     flex-direction: column;
-    margin-bottom: 56px;
+
+    &:nth-child(2n + 1) {
+      grid-column: 1 / -1;
+    }
+
+    &:nth-child(2n) {
+      grid-column: 1 / -1;
+    }
+
+    @include onTablet {
+      width: 328px;
+
+      &:nth-child(2n + 1) {
+        grid-column: 1 / 5;
+      }
+
+      &:nth-child(2n) {
+        grid-column: 5 / 9;
+      }
+    }
+
+    @include onDesctop {
+      width: 402px;
+
+      &:nth-child(1),
+      &:nth-child(5) {
+        grid-column: 1 / 4;
+      }
+
+      &:nth-child(2),
+      &:nth-child(6) {
+        grid-column: 4 / 7;
+      }
+
+      &:nth-child(3) {
+        grid-column: 3 / 6;
+      }
+
+      &:nth-child(4) {
+        grid-column: 6 / 9;
+      }
+
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -34,6 +115,10 @@
     &-page {
       margin-bottom: 16px;
       border-radius: 8px;
+
+      @include onTablet {
+        object-fit: cover;
+      }
     }
 
     &-title {
