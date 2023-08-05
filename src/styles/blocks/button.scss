@@ -6,6 +6,15 @@
   gap: 4px;
   border-radius: 32px;
   border: 2px solid $accentOrange;
+  margin-bottom: 40px;
+
+  @include onTablet {
+    margin-bottom: 228px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 0;
+  }
 
   &__text {
     @include mainFont {
@@ -18,10 +27,6 @@
     }
   }
 
-  &__icon {
-    // height: 24px;
-  }
-
   transition: $effectDuration;
 
   &:hover {
@@ -32,12 +37,13 @@
     }
 
     .button__icon {
-      content: url(../images/icons/icon-cookie-hoover.png);
+      content: url(../images/icons/icon-cookie-hover.png);
     }
   }
 
   &:active {
     background: $darkOrange;
+    border: $darkOrange;
   }
 
   &:disabled {

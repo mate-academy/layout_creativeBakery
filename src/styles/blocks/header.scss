@@ -1,19 +1,24 @@
 .header {
   margin: 0;
-  margin-bottom: 228px;
+  margin-bottom: 64px;
   position: relative;
+
+  @include onTablet {
+    margin-bottom: 0;
+  }
+
+  @include onDesktop {
+    margin-bottom: 152px;
+  }
 
   &__nav {
     display: none;
 
     @include onDesktop {
       display: flex;
+      margin-bottom: 152px;
     }
   }
-
-  // background-image: url(../images/cookie-header-bg.png);
-  // background-position: center;
-  // background-repeat: no-repeat;
 
   &__content {
     height: 100vh;
@@ -22,6 +27,7 @@
   &__bottom {
     &-content {
       position: relative;
+      transition: $effectDuration;
 
       @include onTablet {
         @include pageGrid;
