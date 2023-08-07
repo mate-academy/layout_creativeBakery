@@ -1,0 +1,142 @@
+.products {
+  @include contentPaddingInline;
+  margin-bottom: 72px;
+
+  @include onTablet {
+    margin-bottom: 152px;
+  }
+
+  @include onDesktopSm {
+    margin-bottom: 178px;
+  }
+  &__title {
+    margin-bottom: 24px;
+
+  }
+
+  &-description {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__wrapper {
+    @include pageGrid;
+    row-gap: 56px;
+  }
+
+  &__product {
+    grid-column: 1 / -1;
+    row-gap: 16px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktopSm {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+    }
+
+  }
+}
+
+.products__product--left--2 {
+  @include onDesktopSm {
+    grid-column-start: 6;
+    grid-column-end: 9;
+
+  }
+  @include onDesktop {
+    grid-column-start: 6;
+    grid-column-end: 9;
+  }
+}
+
+.products__product--left--1 {
+  @include onDesktopSm {
+
+    grid-column-start: 3;
+    grid-column-end: 6;
+  }
+
+  @include onDesktop {
+    grid-column-start: 3;
+    grid-column-end: 6;
+  }
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__photo {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    align-self: center;
+
+    @include hover(transform, scale(1.1));
+
+    @include onTablet {
+      width: 100%;
+    }
+
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    position: relative;
+    color: $main-grey-color;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__btn {
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+    width: 30%;
+
+    @include onDesktopSm {
+      width: 25%;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $accent-orange-color;
+    }
+
+    &:focus .icon--arrow {
+      background-image: url(../images/icons/icon-arrow-dark.svg);
+    }
+
+    &:focus {
+      border-bottom: 1px solid $dark-orange-color;
+      color: $dark-orange-color;
+    }
+
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $accent-orange-color;
+    display: inline;
+  }
+}

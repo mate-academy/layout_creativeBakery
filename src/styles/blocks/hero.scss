@@ -1,0 +1,179 @@
+.hero {
+  padding-block-end: 40px;
+  margin-bottom: 64px;
+  position: relative;
+
+  @include onTablet {
+    margin-bottom: 188px;
+
+  }
+
+  @include onDesktopSm {
+    margin-bottom: 152px;
+    padding-block-end: 161px;
+  }
+
+  @include onDesktop {
+    padding-block-end: 138px;
+  }
+
+  &__description {
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      text-align: left;
+      width: 280px;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktopSm {
+      width: 260px;
+      margin-bottom: 8px;
+    }
+
+    @include onDesktop {
+      width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+
+  }
+
+  &__img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include onTablet {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -163px;
+      margin-top: -220px;
+      z-index: -2;
+    }
+
+    @include onDesktopSm {
+      margin-left: -272px;
+      margin-top: -365px;
+    }
+
+    @include onDesktop {
+      margin-left: -292px;
+      margin-top: -370px;
+    }
+  }
+
+  &__img {
+    width: 288px;
+    height: 290px;
+
+    @include onTablet {
+      width: 326px;
+      height: 328px;
+    }
+
+    @include onDesktopSm {
+      width: 544px;
+      height: 546px;
+    }
+
+    @include onDesktop {
+      width: 584px;
+      height: 586px;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: $accent-orange-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+  }
+
+  &__btn {
+    box-sizing: border-box;//?
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 56px;
+    gap: 4px;
+    border: 2px solid $accent-orange-color;
+    border-radius: 32px;
+    padding: 20px 71px;
+    //padding: 14px 71px;
+    position: relative;
+    cursor: pointer;
+
+    @include onTablet {
+      width: 326px;
+      margin: 0 auto;
+    }
+
+    @include onDesktopSm {
+      width: 290px;
+      margin: 0;
+    }
+
+    &:hover {
+      background-color: $accent-orange-color;
+      color: #fff;
+
+      .hero__link {
+        color: $main-white-color;
+      }
+    }
+
+    &:disabled {
+      border-color: $light-orange-color;
+    }
+
+    &:disabled .hero__link {
+      color: $light-orange-color;
+    }
+
+    &:focus {
+      background-color: $dark-orange-color;
+      border-color: $dark-orange-color;
+
+      .hero__link {
+        color: $main-white-color;
+      }
+    }
+  }
+
+  &__btn .icon--cookie--white,
+  &__btn .icon--cookie--dis {
+    display: none;
+  }
+
+  &__btn:hover .icon--cookie,
+  &__btn:focus .icon--cookie,
+  &__btn:disabled .icon--cookie {
+    display: none;
+  }
+
+  &__btn:hover .icon--cookie--white,
+  &__btn:focus .icon--cookie--white {
+    display: block;
+  }
+
+  &__btn:disabled .icon--cookie--dis {
+    display: block;
+  }
+
+}
