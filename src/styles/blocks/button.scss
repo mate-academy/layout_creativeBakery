@@ -1,0 +1,57 @@
+.button {
+  &::before {
+    content: url(../images/icon__orange.svg);
+    margin-right: 6px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $mainOrange;
+  height: 56px;
+  border: 2px solid $mainOrange;
+  border-radius: 32px;
+
+  @include onDesktop {
+    position: relative;
+    top: -850%;
+  }
+
+  @include onDesktopBig {
+    position: relative;
+    top: -900%;
+  }
+
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $mainOrange;
+    color: $white;
+
+    &::before {
+      content: url(../images/icon__white.svg);
+      margin-right: 6px;
+    }
+  }
+
+  &:focus {
+    background-color: $darkOrange;
+    border-color: $darkOrange;
+    color: $white;
+
+    &::before {
+      content: url(../images/icon__white.svg);
+      margin-right: 6px;
+    }
+  }
+
+  &:active {
+    background-color: $darkOrange;
+    border-color: $darkOrange;
+  }
+}

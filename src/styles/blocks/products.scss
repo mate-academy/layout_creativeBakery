@@ -1,0 +1,111 @@
+.products {
+  margin-bottom: 80px;
+
+  @include onTablet {
+    margin-bottom: 160px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 186px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 64px;
+    }
+
+    @include onTablet {
+      &:not(:nth-last-child(-n + 2)) {
+        margin-bottom: 88px;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 41px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $darkGrey;
+    margin-bottom: 24px;
+
+    @include onTablet {
+      font-size: 56px;
+      line-height: 48px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      line-height: 61px;
+    }
+  }
+
+  &__info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    counter-reset: $darkGrey;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.product {
+  &__photo {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 8px;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey;
+    margin-bottom: 8px;
+  }
+
+  &__info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $darkGrey;
+    margin-bottom: 24px;
+  }
+
+  &__order {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $mainOrange;
+    text-decoration: none;
+
+    &::before {
+      margin-right: 8px;
+      content: url(../images/arrow.svg);
+    }
+
+    &:hover {
+      filter: brightness(0)
+        saturate(100%)
+        invert(35%)
+        sepia(31%)
+        saturate(3913%)
+        hue-rotate(346deg)
+        brightness(70%)
+        contrast(98%);
+    }
+  }
+}
