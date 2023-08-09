@@ -1,0 +1,38 @@
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    gap: 24px;
+    list-style: none;
+    text-align: center;
+
+    &--forDesktop {
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+
+  &__item {
+    @include hover(transform, scale(1.2));
+  }
+
+  &__link {
+    @extend %body-text;
+    text-decoration: none;
+    color: $black;
+
+    &--contact {
+      display: flex;
+      gap: 4px;
+      @extend %uppercase;
+      color: $accent-orange;
+      align-items: center;
+
+      &::before {
+        content: url(../images/header/icon-phone.svg);
+      }
+    }
+  }
+}

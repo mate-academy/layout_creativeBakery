@@ -1,0 +1,106 @@
+.about-us {
+  padding: 64px 0 72px;
+  background-image: url(../images/about-us/Crumbs.png);
+  background-repeat: no-repeat;
+  background-size: 320px 300px;
+  background-position: 50% 75%;
+
+  @include onTablet {
+    padding-block: 152px;
+    background-size: 526px 493px;
+    background-position: 50% 50%;
+  }
+
+  @include onDesktop {
+    padding: 178px 0 349px;
+    background-size: 718px 673px;
+    background-position: right 157px bottom 56px;
+  }
+
+  @include onBigDesktop {
+    background-position: right 361px bottom 56px;
+  }
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      margin: 178px 0 0;
+    }
+  }
+
+  &__statistic {
+    display: grid;
+    gap: 48px;
+
+    @include onTablet {
+      @include pageGrid;
+      margin: 72px 0 0;
+      gap: 48px;
+    }
+
+    @include onDesktop {
+      margin: 146px 0 0;
+    }
+
+    &--first-column {
+      @include onTablet {
+        grid-column: span 4;
+      }
+
+      @include onDesktop {
+        grid-column: span 2;
+      }
+    }
+
+    &--second-column {
+      @include onTablet {
+        grid-column: 5 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 3 / 5;
+      }
+    }
+
+    &--third-column {
+      @include onTablet {
+        grid-column: span 4;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / 7;
+      }
+    }
+
+    &--forth-column {
+      @include onTablet {
+        grid-column: 5 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 9;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0 0 60px;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      margin: 0;
+    }
+  }
+
+  &__big-text {
+    margin: 0 0 8px;
+    color: $accent-orange;
+  }
+
+  &__body-text {
+    margin: 0;
+
+  }
+}
