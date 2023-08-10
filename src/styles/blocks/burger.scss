@@ -1,14 +1,26 @@
 .header__btn {
+  visibility: hidden;
   position: relative;
   width: 24px;
   height: 2px;
   background-color: black;
   z-index: 2;
 
-  &::after {
+  & > span::before {
     content: "";
     position: absolute;
-    top: 5px;
+    visibility: visible;
+    top: -2px;
+    width: 24px;
+    height: 2px;
+    background-color: black;
+  }
+
+  & > span::after {
+    content: "";
+    position: absolute;
+    visibility: visible;
+    top: 2px;
     width: 24px;
     height: 2px;
     background-color: black;
@@ -36,7 +48,7 @@
   }
 
   &-logo {
-    margin-bottom: 148px;
+    margin-bottom: 80px;
   }
 }
 
@@ -71,7 +83,7 @@
 .burger__menue--active {
   display: block;
   position: fixed;
-  overflow: hidden;
+  overflow-y: hidden;
   top: 0;
   height: 100vh;
   width: 100vw;
@@ -81,27 +93,32 @@
 }
 
 .active {
-  transform: rotate(360deg);
+  transform: rotate(45deg);
 }
-// .horizontally {
-//   overflow: none;
-// }
-// .landscape {
-//   overflow-y: hidden;
-// }
 
-// .landscape::-webkit-scrollbar {
-//   overflow-y: scroll;
-// }
+.header__btn span::before,
+.header__btn span::after {
+  transition: $animationTransition;
+}
 
-// .header__btn {
+.header__btn.active span {
+  visibility: hidden;
+  transition: 0.1s;
+}
 
-// }
+.header__btn.active span::after {
+  visibility: visible;
+  width: 24px;
+  top: 0;
+  transform: rotate(90deg);
+}
 
-// .header__btn::before {
-//   transform: rotate(-60deg);
-// }
-// .header__btn::after {
-//   content: "";
-//   transform: rotate(60deg);
-// }
+.header__btn.active span::before {
+  visibility: visible;
+  width: 24px;
+  top: 0;
+}
+
+.landscape {
+  overflow: hidden;
+}

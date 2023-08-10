@@ -8,6 +8,7 @@
   @include onDesctop {
     margin-bottom: 152px;
   }
+
   &__content {
     padding: 0 16px 40px;
 
@@ -41,6 +42,13 @@
 
   &__logo-page {
     width: 136px;
+
+    @include onDesctop {
+      &:hover {
+        transition: $animationTransition;
+        transform: scale(1.2);
+      }
+    }
   }
 
   &__list {
@@ -57,10 +65,21 @@
   &__item:last-child {
     display: flex;
     align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      transition: $animationTransition;
+      opacity: 0.5;
+    }
   }
 
   &__link {
     color: $black;
+
+    &:hover {
+      transition: $animationTransition;
+      opacity: 0.5;
+    }
   }
 
   &__prewiev {
@@ -150,6 +169,7 @@
     align-items: center;
     justify-content: center;
     white-space: nowrap;
+    cursor: pointer;
     grid-column: 1 / -1;
     width: 288px;
     height: 56px;
@@ -159,6 +179,7 @@
     font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 500;
+
     line-height: 100%; /* 16px */
     letter-spacing: 0.32px;
     text-transform: uppercase;
@@ -166,6 +187,7 @@
     border: 2px solid $accentOrange;
     border-radius: 32px;
     color: $accentOrange;
+    transition: $animationTransition;
 
     &-page {
       margin-right: 4px;
@@ -197,10 +219,12 @@
       background-size: cover;
     }
 
-    &:disabled {
-      border-color: $darkOrang;
-      background-color: $lightOrange;
-    }
+    // &:disabled > &-page,
+    // &.clicked > &-page {
+    //   background: url(./images/header/Icon-cookie.svg)no-repeat center;
+    //   border-color: $darkOrang;
+    //   background-color: $white;
+    // }
 
     @include onTablet {
       grid-column: 3 / 5;

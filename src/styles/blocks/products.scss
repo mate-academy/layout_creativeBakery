@@ -38,8 +38,13 @@
     color: $accentOrange;
     margin-bottom: 24px;
     grid-column: 1 / -1;
+
     @include onTablet {
+      font-size: 56px;
       grid-column: 1 / 6;
+    }
+    @include onDesctop {
+      font-size: 72px;
     }
   }
 
@@ -161,6 +166,41 @@
       &-page {
         margin-right: 4px;
       }
+    }
+  }
+}
+
+@include onDesctop {
+  // @property --angle {
+  //   syntax: "<angle>";
+  //   initial-value: 0deg;
+  //   inherits: false;
+  // }
+
+  .main__card {
+    position: relative;
+  }
+
+  .main__card::after {
+    filter: blur(10px);
+  }
+
+  .main__card:hover::after {
+    content: "";
+    position: absolute;
+    inset: -0.2rem;
+    z-index: -1;
+    background: linear-gradient(var(--angle),
+    #fca8e3, #b6dee9, rgb(244, 170, 231));
+    animation: cardRgb 10s linear infinite;
+  }
+
+  @keyframes cardRgb {
+    0% {
+      --angle: 0deg;
+    }
+    100% {
+      --angle: 360deg;
     }
   }
 }
