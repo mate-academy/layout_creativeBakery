@@ -1,0 +1,48 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: $c-black;
+
+  user-select: none;
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $c-light-blue;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include tablet {
+      font-size: 56px;
+    }
+
+    @include desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-100%);
+    transition: transform 0.5s linear;
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
+}

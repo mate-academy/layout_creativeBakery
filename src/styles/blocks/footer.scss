@@ -1,0 +1,109 @@
+.footer {
+  background-color: $c-black;
+  margin-top: 72px;
+  padding: 56px 0;
+
+  @include tablet {
+    margin-top: 152px;
+    padding: 88px 0;
+  }
+
+  @include desktop {
+    margin-top: 56px;
+  }
+
+  &__content,
+  &__menu,
+  &__contacts,
+  &__contacts-box {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__content {
+    @include tablet {
+      gap: 48px;
+    }
+  }
+
+  &__grid-box {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    &:last-child {
+      gap: 40px;
+    }
+
+    @include tablet {
+      @include grid;
+
+      &:last-child {
+        gap: 24px;
+      }
+
+      & :nth-child(1) {
+        grid-column: 1 / 4;
+      }
+
+      & :nth-child(2) {
+        grid-column: 5 / -1;
+      }
+    }
+  }
+
+  &__menu {
+    @include tablet {
+      gap: 96px;
+    }
+
+    @include desktop {
+      gap: 60px;
+    }
+  }
+
+  &__contacts-box {
+    @include desktop {
+      flex-direction: row;
+      gap: 166px;
+    }
+
+    @include large-desktop {
+      gap: 186px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__subtitle {
+    @extend %medium-text;
+    color: $c-gray;
+  }
+
+  &__link {
+    color: $c-white;
+    transition: color $animation-time;
+
+    &:hover {
+      color: $c-orange;
+    }
+  }
+
+  &__title {
+    color: $c-white;
+  }
+
+  &__social {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__copyright {
+    color: $c-gray;
+  }
+}
