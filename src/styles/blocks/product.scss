@@ -1,5 +1,10 @@
 .product {
   margin-bottom: 56px;
+  transition-duration: 1s;
+
+  &:hover {
+    transform: scale(1.08);
+  }
 
   @include onTablet {
     margin-bottom: 80px;
@@ -10,6 +15,10 @@
 
     @include onTablet {
       margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 178px;
     }
   }
 
@@ -39,6 +48,7 @@
     line-height: 150%;
     letter-spacing: -0.16px;
     margin-bottom: 16px;
+    height: 48px;
   }
 
   &__info {
@@ -70,6 +80,12 @@
       height: 24px;
       width: 24px;
       background-image: url(icons-images/Icon-arrow.svg);
+    }
+  }
+
+  &--right {
+    @include onDesktop {
+      grid-column: 3 / 6;
     }
   }
 }
