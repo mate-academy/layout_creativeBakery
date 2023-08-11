@@ -1,0 +1,91 @@
+.product {
+  margin-bottom: 56px;
+  transition-duration: 1s;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+
+  @include onTablet {
+    margin-bottom: 80px;
+  }
+
+  &:last-child {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 178px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    color: #7f8096;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin: 0;
+    color: #1c1a26;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    margin-bottom: 16px;
+    height: 48px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 4px;
+    padding: 4px 0;
+    height: 32px;
+    width: 84px;
+    border: none;
+    background-color: (#eef7ff);
+    color: #f9512e;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &-icon {
+      height: 24px;
+      width: 24px;
+      background-image: url(icons-images/Icon-arrow.svg);
+    }
+  }
+
+  &--right {
+    @include onDesktop {
+      grid-column: 3 / 6;
+    }
+  }
+}
