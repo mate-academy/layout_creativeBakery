@@ -4,6 +4,27 @@ const burger = document.querySelector('.header__btn');
 const burgerMenue = document.querySelector('.burger__menue');
 const links = document.querySelectorAll('.burger__link');
 const homeLink = document.querySelector('.burger__menue-logo');
+const buttom = document.querySelector('.header__button');
+const buttomPage = document.querySelector('.header__button-page');
+const myButton = document.getElementById('myButton');
+
+myButton.addEventListener('click', function() {
+  myButton.disabled = true;
+});
+
+// buttom.addEventListener('click', () => {
+//   buttom.classList.toggle('disabled');
+// });
+
+buttom.addEventListener('click', () => {
+  if (buttomPage.classList.contains('header__button-page')) {
+    buttomPage.classList.remove('header__button-page');
+    buttomPage.classList.add('disabled--page');
+  } else {
+    buttomPage.classList.add('header__button-page');
+    buttomPage.classList.remove('disabled--page');
+  }
+});
 
 burger.addEventListener('click', () => {
   burgerMenue.classList.toggle('burger__menue--active');

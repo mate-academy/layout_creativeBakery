@@ -180,12 +180,13 @@
     font-size: 16px;
     font-weight: 500;
 
-    line-height: 100%; /* 16px */
+    line-height: 100%;
     letter-spacing: 0.32px;
     text-transform: uppercase;
 
     border: 2px solid $accentOrange;
     border-radius: 32px;
+    background-color: #ffeefc;
     color: $accentOrange;
     transition: $animationTransition;
 
@@ -219,13 +220,6 @@
       background-size: cover;
     }
 
-    // &:disabled > &-page,
-    // &.clicked > &-page {
-    //   background: url(./images/header/Icon-cookie.svg)no-repeat center;
-    //   border-color: $darkOrang;
-    //   background-color: $white;
-    // }
-
     @include onTablet {
       grid-column: 3 / 5;
       width: 326px;
@@ -236,4 +230,20 @@
       width: 260px;
     }
   }
+}
+
+#myButton:disabled {
+  border-color: #fba28f;
+  color: #fba28f;
+  background-color: #ffeefc;
+  cursor: not-allowed;
+}
+
+.disabled--page {
+  margin-right: 4px;
+  background: url(./images/header/Icon-cookie-disabled.svg)no-repeat center;
+  background-size: cover;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
 }
