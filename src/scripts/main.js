@@ -12,10 +12,6 @@ myButton.addEventListener('click', function() {
   myButton.disabled = true;
 });
 
-// buttom.addEventListener('click', () => {
-//   buttom.classList.toggle('disabled');
-// });
-
 buttom.addEventListener('click', () => {
   if (buttomPage.classList.contains('header__button-page')) {
     buttomPage.classList.remove('header__button-page');
