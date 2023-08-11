@@ -8,11 +8,8 @@ const buttom = document.querySelector('.header__button');
 const buttomPage = document.querySelector('.header__button-page');
 const myButton = document.getElementById('myButton');
 
-myButton.addEventListener('click', function() {
-  myButton.disabled = true;
-});
-
 buttom.addEventListener('click', () => {
+// змінюємо стан buttomPage
   if (buttomPage.classList.contains('header__button-page')) {
     buttomPage.classList.remove('header__button-page');
     buttomPage.classList.add('disabled--page');
@@ -20,6 +17,22 @@ buttom.addEventListener('click', () => {
     buttomPage.classList.add('header__button-page');
     buttomPage.classList.remove('disabled--page');
   }
+
+  // вимикаємо myButton
+  myButton.disabled = true;
+
+  // Через 1 секунду повертааємо стан buttomPage та вмикаємо myButton
+  setTimeout(function() {
+    if (buttomPage.classList.contains('header__button-page')) {
+      buttomPage.classList.remove('header__button-page');
+      buttomPage.classList.add('disabled--page');
+    } else {
+      buttomPage.classList.add('header__button-page');
+      buttomPage.classList.remove('disabled--page');
+    }
+
+    myButton.disabled = false;
+  }, 1000);
 });
 
 burger.addEventListener('click', () => {
