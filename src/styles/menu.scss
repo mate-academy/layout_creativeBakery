@@ -1,0 +1,36 @@
+.nav {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  transform: translateX(100%);
+  transition: $time-transform;
+  
+  &:target {
+    transform: translateX(0);
+    background-color: $colorEEF7FF;
+    z-index: 3;
+  }
+
+  &-items-link {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    align-items: center;
+    margin-top: 40%;
+  }
+}
+
+.menu-close-bloc {
+  transition: transform $time-transform linear;
+
+  &:hover {
+    transform: scale(1.1) rotate(180deg);
+    a {
+      transform: scale(1.1);
+    }
+  }
+}
