@@ -1,0 +1,209 @@
+.main {
+  &--bottom {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesctop {
+      margin-bottom: 178px;
+    }
+  }
+
+  @include onDesctop {
+    margin-bottom: 56px;
+  }
+
+  &__content {
+    padding: 0 16px;
+
+    @include onTablet {
+      padding: 0 44px;
+    }
+
+    @include onPC {
+      padding: 0 124px;
+    }
+
+    &-info {
+      @include gridPage {
+        justify-content: center;
+        grid-template-rows: repeat(1, 1fr);
+      }
+    }
+  }
+
+  &__title {
+    color: $accentOrange;
+    margin-bottom: 24px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      font-size: 56px;
+      grid-column: 1 / 6;
+    }
+    @include onDesctop {
+      font-size: 72px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 56px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      margin-bottom: 80px;
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__cards {
+    @include gridPage {
+      row-gap: 56px;
+      justify-content: center;
+      grid-template-rows: repeat(3, 1fr);
+      grid-auto-rows: min-content;
+    }
+
+    @include onTablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    &:nth-child(2n + 1) {
+      grid-column: 1 / -1;
+    }
+
+    &:nth-child(2n) {
+      grid-column: 1 / -1;
+    }
+
+    @include onTablet {
+      width: 328px;
+
+      &:nth-child(2n + 1) {
+        grid-column: 1 / 5;
+      }
+
+      &:nth-child(2n) {
+        grid-column: 5 / 9;
+      }
+    }
+
+    @include onDesctop {
+      width: 402px;
+
+      &:nth-child(1),
+      &:nth-child(5) {
+        grid-column: 1 / 4;
+      }
+
+      &:nth-child(2),
+      &:nth-child(6) {
+        grid-column: 4 / 7;
+      }
+
+      &:nth-child(3) {
+        grid-column: 3 / 6;
+      }
+
+      &:nth-child(4) {
+        grid-column: 6 / 9;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-page {
+      margin-bottom: 16px;
+      border-radius: 8px;
+
+      @include onTablet {
+        object-fit: cover;
+      }
+    }
+
+    &-title {
+      color: $grey;
+
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    &-text {
+      color: $black;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: -0.16px;
+      margin-bottom: 16px;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      width: 30%;
+
+      color: $accentOrange;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+
+      &-page {
+        margin-right: 4px;
+      }
+    }
+  }
+}
+
+@include onDesctop {
+  .main__card {
+    position: relative;
+    transition: $animationTransition;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .main__card:hover::before,
+  .main__card:hover::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    filter: blur(10px);
+    background: linear-gradient(45deg,#fca8e3, #b6dee9, rgb(244, 170, 231));
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+  }
+
+  @keyframes steam {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+}

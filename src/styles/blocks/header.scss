@@ -1,0 +1,249 @@
+.header {
+  margin-bottom: 64px;
+
+  @include onTablet {
+    margin-bottom: 228px;
+  }
+
+  @include onDesctop {
+    margin-bottom: 152px;
+  }
+
+  &__content {
+    padding: 0 16px 40px;
+
+    @include onTablet {
+      position: relative;
+      padding: 0 44px;
+    }
+
+    @include onDesctop {
+      position: relative;
+      padding: 0 44px 161px;
+    }
+
+    @include onPC {
+      padding: 0 124px 138px;
+    }
+  }
+
+  &__top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    margin-bottom: 32px;
+
+    @include onDesctop {
+      margin-bottom: 135px;
+      padding: 28px 32px;
+    }
+  }
+
+  &__logo-page {
+    width: 136px;
+
+    @include onDesctop {
+      transition: $animationTransition;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include onDesctop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 500px;
+    }
+  }
+
+  &__item:last-child {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: $animationTransition;
+
+    &:hover {
+      opacity: $halphOpacity;
+    }
+  }
+
+  &__link {
+    color: $black;
+    transition: $animationTransition;
+
+    &:hover {
+      opacity: $halphOpacity;
+    }
+  }
+
+  &__prewiev {
+    @include gridPage {
+      justify-content: center;
+      text-align: center;
+    }
+
+    &-page {
+      width: 288px;
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        position: absolute;
+        top: 44%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 326px;
+        margin-bottom: 0;
+        grid-column: 3 / 3;
+      }
+
+      @include onDesctop {
+        width: 544px;
+        top: 30%;
+        margin-bottom: 0;
+        grid-column: 3 / 3;
+      }
+
+      @include onPC {
+        top: 32%;
+        width: 584px;
+      }
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    color: black;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      width: 280px;
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include onDesctop {
+      width: 260px;
+      margin-bottom: 8px;
+    }
+
+    @include onPC {
+      width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    color: $accentOrange;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      position: relative;
+      font-size: 80px;
+      line-height: 85%;
+      letter-spacing: -4px;
+      margin-bottom: 210px;
+      z-index: 1;
+    }
+
+    @include onDesctop {
+      font-size: 136px;
+      letter-spacing: -6.8px;
+      margin-bottom: 64px;
+    }
+
+    @include onPC {
+      font-size: 144px;
+      letter-spacing: -7.2px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    cursor: pointer;
+    grid-column: 1 / -1;
+    width: 288px;
+    height: 56px;
+
+    padding: 20px 71px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+
+    border: 2px solid $accentOrange;
+    border-radius: 32px;
+    background-color: #ffeefc;
+    color: $accentOrange;
+    transition: $animationTransition;
+
+    &-page {
+      margin-right: 4px;
+      background: url(./images/header/Icon-cookie.svg)no-repeat center;
+      background-size: cover;
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      background-color: $accentOrange;
+      color: $white;
+    }
+
+    &:hover > &-page {
+      background: url(./images/header/Icon-cookie-hover.svg)no-repeat center;
+      background-size: cover;
+    }
+
+    &:focus {
+      background-color: $darkOrang;
+      border-color: $darkOrang;
+      color: $white;
+    }
+
+    &:focus > &-page {
+      background: url(./images/header/Icon-cookie-hover.svg)no-repeat center;
+      background-size: cover;
+    }
+
+    @include onTablet {
+      grid-column: 3 / 5;
+      width: 326px;
+    }
+
+    @include onDesctop {
+      grid-column: 1 / 2;
+      width: 260px;
+    }
+  }
+}
+
+#myButton:disabled {
+  border-color: #fba28f;
+  color: #fba28f;
+  background-color: #ffeefc;
+}
+
+.disabled--page {
+  margin-right: 4px;
+  background: url(./images/header/Icon-cookie-disabled.svg)no-repeat center;
+  background-size: cover;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}

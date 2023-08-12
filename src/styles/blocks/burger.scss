@@ -1,0 +1,124 @@
+.header__btn {
+  visibility: hidden;
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background-color: black;
+  z-index: 2;
+
+  & > span::before {
+    content: "";
+    position: absolute;
+    visibility: visible;
+    top: -2px;
+    width: 24px;
+    height: 2px;
+    background-color: black;
+  }
+
+  & > span::after {
+    content: "";
+    position: absolute;
+    visibility: visible;
+    top: 2px;
+    width: 24px;
+    height: 2px;
+    background-color: black;
+  }
+
+  @include onDesctop {
+    display: none;
+  }
+}
+
+.burger__menue {
+  display: none;
+  transform: translateX(-100%);
+  z-index: 1;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px;
+    padding: 16px 0 0;
+  }
+
+  &-page {
+    width: 136px;
+  }
+
+  &-logo {
+    margin-bottom: 80px;
+  }
+}
+
+.burger__list {
+  text-align: center;
+}
+
+.burger__link {
+  color: $black;
+}
+
+.burger__item {
+  margin-bottom: 24px;
+
+  &:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+}
+
+.link--color_orange {
+  color: $accentOrange;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+}
+
+.burger__menue--active {
+  display: block;
+  position: fixed;
+  overflow-y: hidden;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+
+  background-color: $lightPink;
+  transform: translate(0);
+}
+
+.active {
+  transform: rotate(45deg);
+}
+
+.header__btn span::before,
+.header__btn span::after {
+  transition: $animationTransition;
+}
+
+.header__btn.active span {
+  visibility: hidden;
+  transition: 0.1s;
+}
+
+.header__btn.active span::after {
+  visibility: visible;
+  width: 24px;
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.header__btn.active span::before {
+  visibility: visible;
+  width: 24px;
+  top: 0;
+}
+
+.landscape {
+  overflow: hidden;
+}
