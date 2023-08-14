@@ -4,3 +4,88 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onMobile {
+  @media (min-width: $mobile-min-width) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin onLargeDesktop {
+  @media (min-width: $large_desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline {
+  padding-inline: 16px;
+
+  @include onTablet {
+    padding-inline: 44px;
+    justify-items: center;
+  }
+
+  @include onDesktop {
+    padding-inline: 44px;
+  }
+
+  @include onLargeDesktop {
+    padding-inline: 124px;
+  }
+}
+
+.container {
+  @include contentPaddingInline;
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 8;
+    column-gap: 24px;
+    column-width: 64px;
+  }
+
+  @include onDesktop {
+    column-width: 118px;
+  }
+
+  @include onLargeDesktop {
+    column-width: 128px;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} $effectDuration;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin transition (
+  $transition-property--1,
+  $transition-property--2,
+  $transition-property--3,
+  $transition-duration,
+) {
+  transition-property: $transition-property--1,
+    $transition-property--2,
+    $transition-property--3;
+  transition-duration: $transition-duration;
+}

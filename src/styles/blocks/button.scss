@@ -1,0 +1,66 @@
+.button {
+  display: flex;
+  width: 288px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 32px;
+  border: 2px solid $red-color;
+  background-color: #eef7ff;
+
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  color: $red-color;
+  text-decoration: none;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  @include transition (background-color,color,border,$effectDuration);
+
+  &:hover {
+    .button__text {
+      fill: $white-color;
+    }
+    cursor: pointer;
+    background-color: $red-color;
+    color: $white-color;
+
+  }
+
+  &:focus {
+    border: 2px solid $focus-color;
+    background-color: $focus-color;
+    color: $white-color;
+    .button__text {
+      fill: $white-color;
+    }
+  }
+
+  @include onMobile {
+    width: 100%;
+    margin-top: 290px;
+  }
+
+  @include onTablet {
+    width: 326px;
+    margin: 210px auto 0;
+  }
+
+  @include onDesktop {
+    width: 260px;
+    margin: 64px;
+  }
+
+  @include onLargeDesktop {
+    width: 280px;
+  }
+}
