@@ -1,0 +1,53 @@
+.cake {
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    margin-top: 56px;
+    border-radius: 8px;
+
+    @include onTablet {
+      height: 424px;
+      margin-top: 80px;
+    }
+
+    @include onDesktop {
+      height: 512px;
+    }
+  }
+
+  &__name {
+    @extend %Uppercase;
+    color: $c-gray;
+    margin: 16px 0 8px;
+  }
+
+  &__text {
+    @extend %body;
+    color: $c-black;
+    margin-bottom: 24px;
+  }
+
+  &__order {
+    @extend %Uppercase;
+    color: $c-red;
+    align-items: center;
+    display: flex;
+
+    &-order {
+      @extend %Uppercase;
+      color: $c-red;
+    }
+
+    &::before {
+      content: "";
+      background-image: url(./../images/icons/Icon-arrow.png);
+      width: 21px;
+      height: 22px;
+      display: flex;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-right: 8px;
+    }
+  }
+}
