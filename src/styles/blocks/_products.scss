@@ -1,0 +1,134 @@
+.products {
+  overflow: hidden;
+
+  &__title {
+    margin-bottom: rem(24);
+  }
+
+  &__text {
+    @include adaptiveValue("margin-bottom", 80, 56);
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(16);
+    @include adaptiveValue("row-gap", 80, 56);
+
+    @media (min-width:$mobileSmall) {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: rem(24);
+    }
+  }
+}
+
+.card-products {
+
+  &__body {
+    height: 100%;
+  }
+
+  &__content {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image-ibg {
+    padding-bottom: percent(356, 288);
+    margin-bottom: rem(16);
+    border-radius: rem(8);
+
+    @media (min-width:$mobile) {
+      padding-bottom: percent(560, 432);
+    }
+
+    @include anyHoverImage(1.1);
+  }
+
+  &__title {
+    margin-bottom: rem(8);
+    color: $grey;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: rem(0.32);
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: rem(16);
+    flex: 1 1 auto;
+  }
+
+  &--01 {
+    grid-column: 1 / -1;
+
+    @media (min-width:$mobileSmall) {
+      grid-column: 1 / 5;
+    }
+
+    @media (min-width:$tablet) {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &--02 {
+    grid-column: 1 / -1;
+
+    @media (min-width:$mobileSmall) {
+      grid-column: 5 / -1;
+    }
+
+    @media (min-width:$tablet) {
+      grid-column: 4 / 7;
+    }
+  }
+
+  &--03 {
+    grid-column: 1 / -1;
+
+    @media (min-width:$mobileSmall) {
+      grid-column: 1 / 5;
+    }
+
+    @media (min-width:$tablet) {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &--04 {
+    grid-column: 1 / -1;
+
+    @media (min-width:$mobileSmall) {
+      grid-column: 5 / -1;
+    }
+
+    @media (min-width:$tablet) {
+      grid-column: 6 / -1;
+    }
+  }
+
+  &--05 {
+    grid-column: 1 / -1;
+
+    @media (min-width:$mobileSmall) {
+      grid-column: 1 / 5;
+    }
+
+    @media (min-width:$tablet) {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &--06 {
+    grid-column: 1 / -1;
+
+    @media (min-width:$mobileSmall) {
+      grid-column: 5 / -1;
+    }
+
+    @media (min-width:$tablet) {
+      grid-column: 4 / 7;
+    }
+  }
+}

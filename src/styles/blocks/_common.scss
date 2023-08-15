@@ -1,0 +1,232 @@
+.logo {
+  font-size: 0;
+  position: relative;
+  z-index: 9;
+  padding: rem(4);
+  margin-left: rem(-4);
+  margin-right: rem(20);
+}
+
+.menu {
+  &__body {
+
+    @media (max-width:$toMobile) {
+      display: block;
+      position: fixed;
+      z-index: 7;
+      left: -100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      padding-top: rem(196);
+      text-align: center;
+      background-color: $mainBgColor;
+      overflow-y: auto;
+      transition: all 0.3s;
+
+      &::before {
+        content: "";
+        position: fixed;
+        z-index: 8;
+        left: -100%;
+        width: 100%;
+        top: 0;
+        @include adaptiveValue("height", 88, 64);
+        background-color: $mainBgColor;
+        transition: all 0.3s;
+      }
+
+      &._menu-open {
+        left: 0;
+
+        &::before {
+          left: 0;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(24);
+
+    @media (min-width:$fromMobile) {
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      column-gap: rem(64);
+      row-gap: rem(14);
+    }
+  }
+
+  &__item {
+    transition: all 0.3s;
+
+    @media (any-hover: hover) {
+
+      &:hover,
+      &:active,
+      &:focus {
+
+        @media (max-width:$toMobile) {
+          background-color: $lightOrange;
+
+          .menu__link {
+            color: $white;
+          }
+        }
+
+        @media (min-width:$fromMobile) {
+          .menu__link {
+            border-bottom: rem(1) solid $black;
+
+            &--contact {
+              border-bottom: rem(1) solid $accentOrange;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    text-transform: capitalize;
+    border-bottom: rem(1) solid transparent;
+    transition: all 0.3s;
+
+    @media (max-width:$toMobile) {
+      @include adaptiveValue("font-size", 24, 16, 768, 320, 1);
+    }
+
+    &--contact {
+      font-weight: 500;
+      color: $accentOrange;
+      text-transform: uppercase;
+
+      &::before {
+        margin-right: rem(6);
+      }
+    }
+  }
+}
+
+.icon-menu {
+  display: block;
+  position: relative;
+  z-index: 9;
+  width: rem(20);
+  height: rem(8);
+  background-color: transparent;
+  outline: none;
+
+  @media (any-hover: none) {
+    cursor: default;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    // z-index: 5;
+    height: rem(2);
+    width: 100%;
+    right: 0;
+    background-color: $black;
+    transition: all 0.3s;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+
+      &::before,
+      &::after {
+        content: "";
+        background-color: $accentOrange;
+      }
+    }
+  }
+
+  &._menu-open {
+
+    &::before {
+      top: calc(50% - rem(1));
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      bottom: calc(50% - rem(1));
+      transform: rotate(45deg);
+    }
+  }
+
+  @media (min-width:$fromMobile) {
+    display: none;
+  }
+}
+
+.title-section {
+  @include adaptiveValue("font-size", 72, 48);
+  text-transform: uppercase;
+  line-height: 0.85;
+  letter-spacing: rem(-2.4);
+
+  @media (min-width:$mobile) {
+    letter-spacing: rem(-2.8);
+  }
+
+  @media (min-width:$tablet) {
+    letter-spacing: rem(-3.6);
+  }
+
+  &--contacts {
+    color: $white;
+  }
+}
+
+.text {
+  letter-spacing: rem(-0.16);
+}
+
+.subtitle-footer {
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  color: $grey;
+}
+
+.social {
+  display: flex;
+  column-gap: rem(32);
+
+  @media (max-width:$mobile) {
+    margin-bottom: rem(40);
+  }
+
+  &__link {
+    padding: rem(4);
+    font-size: rem(20);
+    color: $accentOrange;
+    transition: all 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.2);
+        color: $lightOrange;
+      }
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+  }
+}

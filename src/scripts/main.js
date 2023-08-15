@@ -216,7 +216,7 @@ if (numbersDisplay.length > 0 && scrollTrigger) {
 
 if (footerContent) {
   window.addEventListener('scroll', function onScrollToFooter() {
-    const footerContentPositionTop = scrollTrigger.getBoundingClientRect().top;
+    const footerContentPositionTop = footerContent.getBoundingClientRect().top;
 
     if (footerContentPositionTop < (window.innerHeight / 2)) {
       this.removeEventListener('scroll', onScrollToFooter);
