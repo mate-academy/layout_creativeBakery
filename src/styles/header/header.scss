@@ -1,0 +1,192 @@
+.header {
+  margin: 0;
+  position: relative;
+  height: 100vh;
+
+  &__content {
+    position: relative;
+  }
+
+  &__main-content {
+    padding: 32px 0 0;
+
+    @include onTablet {
+      padding: 80px 0 0;
+    }
+
+    @include onDesktop {
+      padding: 135px 0 0;
+    }
+
+    @include onBigDesktop {
+      padding: 144px 0 0;
+    }
+  }
+
+  &__prewiev {
+    justify-content: center;
+    text-align: center;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    &-page {
+      width: 288px;
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 326px;
+        margin-bottom: 0;
+        grid-column: 3 / 3;
+      }
+
+      @include onDesktop {
+        width: 544px;
+        top: 60%;
+        margin-bottom: 0;
+        grid-column: 3 / 3;
+      }
+
+      @include onBigDesktop {
+        width: 584px;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0 0 32px;
+    color: black;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      width: 280px;
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 16px;
+    }
+
+    @include onBigDesktop {
+      width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    color: $accent-orange;
+    grid-column: 1 / -1;
+    margin: 0;
+    text-transform: uppercase;
+
+    @include onTablet {
+      position: relative;
+      font-size: 80px;
+      line-height: 85%;
+      letter-spacing: -4px;
+      margin: 0 0 210px;
+      z-index: 1;
+    }
+
+    @include onDesktop {
+      font-size: 116px;
+      letter-spacing: -6.8px;
+      white-space: nowrap;
+      grid-column: 1 / -1;
+      margin-bottom: 64px;
+    }
+
+    @include onBigDesktop {
+      font-size: 128px;
+      letter-spacing: -7.2px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    cursor: pointer;
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 56px;
+
+    padding: 20px 71px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+    background-color: $lightPink;
+    color: $accent-orange;
+    transition: $effectDuration;
+
+    &-page {
+      margin-right: 4px;
+      background: url(../images/button/icon-cookie.svg)no-repeat center;
+      background-size: cover;
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      background-color: $accent-orange;
+      color: $white;
+    }
+
+    &:hover > &-page {
+      background: url(../images/button/icon-cookie-hover.svg)no-repeat center;
+      background-size: cover;
+    }
+
+    &:focus {
+      background-color: $dark-orange;
+      border-color: $dark-orange;
+      color: $white;
+    }
+
+    &:focus > &-page {
+      background: url(../images/button/icon-cookie-hover.svg)no-repeat center;
+      background-size: cover;
+    }
+
+    @include onTablet {
+      grid-column: 3 / -3;
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+      margin-bottom: 0;
+    }
+  }
+}
+
+#myButton:disabled {
+  border-color: $light-orange;
+  color: $light-orange;
+  background-color: #ffeefc;
+}
+
+.disabled--page {
+  margin-right: 4px;
+  background: url(../images/button/icon-cookie-disabled.svg)no-repeat center;
+  background-size: cover;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}

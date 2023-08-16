@@ -1,0 +1,119 @@
+.products {
+  &__cakes,
+  &__cookies,
+  &__donats {
+    @include onTablet {
+      @include pageGrid;
+      margin: 0 0 80px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__first-block {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      grid-column: span 4;
+      margin-bottom: 0;
+    }
+
+    &--cakes {
+      @include onDesktop {
+        grid-column: span 3;
+      }
+    }
+
+    &--donuts {
+      @include onDesktop {
+        grid-column: 3 / 6;
+      }
+    }
+  }
+
+  &__second-block {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      margin-bottom: 0;
+    }
+
+    &--cakes {
+      @include onDesktop {
+        grid-column: 4 / 7;
+      }
+    }
+
+    &--donuts {
+      @include onDesktop {
+        grid-column: 6 / -1;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 0 0 16px;
+    cursor: pointer;
+    transition: all $effectDuration;
+
+    &:hover {
+      transform: scale(1.02);
+
+      @include onTablet {
+        transform: scale(1.06);
+      }
+
+      @include onDesktop {
+        transform: scale(1.07);
+      }
+    }
+  }
+
+  &__uppercase-text {
+    color: $grey;
+    margin: 0 0 8px;
+  }
+
+  &__body-text {
+    color: $black;
+    margin: 0 0 16px;
+  }
+
+  &__button {
+    display: flex;
+    height: 32px;
+    padding: 4px 0;
+    margin: 0 0 56px;
+    gap: 4px;
+    background: $lightPink;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @include hover (transform, scale(1.2));
+
+  }
+
+  &__uppercase-button {
+    display: flex;
+    color: $accent-orange;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    @extend %uppercase;
+
+    &::before {
+      content: url(../images/products/icon-arrow.svg);
+    }
+  }
+}
