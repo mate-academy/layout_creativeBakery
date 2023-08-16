@@ -1,0 +1,25 @@
+.page {
+
+  &__body {
+    background-color: $light-pink;
+    position: relative;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    @include transition;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

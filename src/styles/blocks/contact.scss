@@ -1,0 +1,51 @@
+.contact {
+
+  @extend %upper-font-style;
+
+  color: $grey;
+
+  &__item {
+    margin-bottom: 16px;
+
+    &:first-child {
+      margin-top: 16px;
+    }
+  }
+
+  &__link {
+    @extend %main-font-style;
+    color: $white;
+    position: relative;
+    padding-bottom: 8px;
+    text-transform: lowercase;
+    @include transition;
+
+    &::after {
+      content: "";
+      height: 1px;
+      background-color: $accent-orange;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      @include transition;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &:hover {
+      color: $accent-orange;
+    }
+
+    &:focus::after {
+      background-color: $dark-orange;
+      width: 100%;
+    }
+
+    &:focus {
+      color: $dark-orange;
+    }
+  }
+}

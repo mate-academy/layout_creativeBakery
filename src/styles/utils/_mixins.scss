@@ -1,6 +1,34 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin transition {
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin background-image($url) {
+  background-image: #{$url};
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin d-flex--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin d-flex--space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin display-1024px {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin display-640px {
+  @media (min-width: 640px) {
+    @content;
   }
 }
