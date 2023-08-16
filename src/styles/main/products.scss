@@ -52,10 +52,12 @@
     width: 100%;
     border-radius: 8px;
     margin: 0 0 16px;
-    transition: background-color 0.3s ease-in-out;
-
-    @include hover(transform, scale(1.1));
     cursor: pointer;
+    transition: all $effectDuration;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__uppercase-text {
@@ -78,6 +80,7 @@
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
 
     &:last-child {
       margin: 0;
@@ -93,6 +96,7 @@
     justify-content: center;
     align-items: center;
     margin: 0;
+    @extend %uppercase;
 
     &::before {
       content: url(../images/products/icon-arrow.svg);
