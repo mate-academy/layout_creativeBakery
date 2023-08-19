@@ -18,7 +18,8 @@
 
   &__title {
     grid-column: 1 / 5;
-    @include adaptiveValue("font-size", 72, 48);
+    @include adaptiveValue("font-size", 56, 48, 767.98, 320, 1);
+    white-space: nowrap;
     line-height: 0.85;
     text-transform: uppercase;
     letter-spacing: rem(-2.4);
@@ -30,10 +31,11 @@
     @media (min-width:$mobile) {
       position: relative;
       left: -100%;
+      @include adaptiveValue("font-size", 72, 56, 1280, 768, 1);
+      letter-spacing: rem(-2.8);
       opacity: 0;
       visibility: hidden;
-      letter-spacing: rem(-2.8);
-      transition: all 0.8s;
+      transition: left 0.8s;
     }
 
     @media (min-width:$tablet) {
@@ -53,11 +55,12 @@
       right: -100%;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.8s;
+      transition: right 0.8s;
     }
   }
 
   &._anim-active {
+
     .about-us__title,
     .about-us__text {
       opacity: 1;

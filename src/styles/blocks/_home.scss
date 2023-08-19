@@ -11,7 +11,13 @@
     @media (min-width:$mobile) {
       background-image: url("../images/home/01.png");
       background-repeat: no-repeat;
-      background-position: 50%;
+      background-position: 50% 36%;
+      background-size: percent(500,991);
+    }
+
+    @media (min-width:$tablet) {
+      background-position: 50% 25%;
+      background-size: percent(584,1280);
     }
   }
 
@@ -38,7 +44,7 @@
 
   &__title {
     grid-column: span 2;
-    @include adaptiveValue("font-size", 112, 64, 991, 550, 1);
+    @include adaptiveValue("font-size", 106, 64, 991, 600, 1);
     letter-spacing: rem(-3.2);
     line-height: 0.85;
     text-align: center;
@@ -48,13 +54,13 @@
       position: relative;
       z-index: 1;
       grid-column: span 8;
-      margin-bottom: rem(210);
+      @include adaptiveValue("margin-bottom", 260, 210, 991.98, 767.98, 0);
       white-space: nowrap;
       letter-spacing: rem(-4);
     }
 
     @media (min-width:$tablet) {
-      @include adaptiveValue("font-size", 144, 114, 1224, 992, 1);
+      @include adaptiveValue("font-size", 144, 110, 1280, 992, 1);
       margin-bottom: rem(64);
       letter-spacing: rem(-6.8);
     }

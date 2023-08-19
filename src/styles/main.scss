@@ -13,23 +13,52 @@ $mobileSmall: em(479.98);
 @import "blocks";
 
 [class*="__container"] {
+
   @if ($maxWidthContainer>0) {
+    // max-width: rem($containerWidth);
+    // margin: 0 auto;
+
+    $containerWidth: $maxWidthContainer + $containerPaddingTo;
     max-width: rem($containerWidth);
     margin: 0 auto;
+
+    @media (min-width: $mobile) {
+      $containerWidth: $maxWidthContainer + $containerPaddingFrom;
+      max-width: rem($containerWidth);
+    }
   }
 
-  @if ($containerPadding>0) {
+  @if ($containerPaddingTo>0 && $containerPaddingFrom>0) {
     @if ($maxWidthContainer>0) {
-      padding: 0 rem(math.div($containerPadding, 2));
+
+      @media (max-width: $mobile) {
+        padding: 0 rem(math.div($containerPaddingTo, 2));
+      }
+
+      @media (min-width: $mobile) {
+        padding: 0 rem(math.div($containerPaddingFrom, 2));
+      }
     }
 
     @else {
-      @include adaptiveValue(
-        "padding-left", math.div($containerPadding, 2), 15);
-      @include adaptiveValue(
-        "padding-right", math.div($containerPadding, 2), 15);
+      @include adaptiveValue("padding-left", math.div(
+        $containerPaddingFrom, 2), $containerPaddingTo);
+      @include adaptiveValue("padding-right", math.div(
+        $containerPaddingFrom, 2), $containerPaddingTo);
     }
   }
+  // @if ($containerPadding>0) {
+  //   @if ($maxWidthContainer>0) {
+  //     padding: 0 rem(math.div($containerPadding, 2));
+  //   }
+
+  //   @else {
+  //     @include adaptiveValue("padding-left", math.div(
+  //       $containerPadding, 2), 15);
+  //     @include adaptiveValue("padding-right", math.div(
+  //       $containerPadding, 2), 15);
+  //   }
+  // }
 }
 
 [class*="-ibg"] {

@@ -3,12 +3,26 @@
   overflow: hidden;
 
   &__body {
-    padding: rem(136) 0 rem(56);
+    padding: rem(56) 0;
 
     @media (min-width:$mobile) {
       @include grid;
       padding: rem(88) 0;
       transition: all 0.8s;
+    }
+  }
+
+  &__logo {
+    margin: 0 rem(-8);
+    @include adaptiveValue("margin-bottom", 60, 40);
+
+    @media (min-width:$mobile) {
+      grid-column: 1 / 5;
+      position: relative;
+      top: 300%;
+      opacity: 0;
+      visibility: hidden;
+      transition: top 0.8s;
     }
   }
 
@@ -18,11 +32,12 @@
     @media (min-width:$mobile) {
       grid-column: 1 / 5;
       grid-row: 2 / 3;
+      margin-bottom: rem(48);
       position: relative;
       top: 300%;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.8s;
+      transition: top 0.8s;
     }
   }
 
@@ -35,18 +50,20 @@
       top: 500%;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.8s;
+      transition: top 0.8s;
     }
   }
 
   &__contacts {
+    @include adaptiveValue("margin-bottom", 48, 40, 767.98, 320, 1);
+
     @media (min-width:$mobile) {
       grid-column: 5 / 9;
       position: relative;
       top: 300%;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.8s;
+      transition: top 0.8s;
     }
   }
 
@@ -58,7 +75,7 @@
       top: 600%;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.8s;
+      transition: top 0.8s;
     }
   }
 
@@ -71,11 +88,12 @@
       top: 600%;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.8s;
+      transition: top 0.8s;
     }
   }
 
   &._anim-active {
+    .footer__logo,
     .footer__menu,
     .footer__title,
     .footer__contacts,
