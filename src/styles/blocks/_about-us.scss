@@ -1,0 +1,134 @@
+.about-us {
+  background-image: url("../images/about-us/01.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 80%;
+
+  &__body {
+
+    @media (min-width:$mobile) {
+      @include grid;
+      @include adaptiveValue("row-gap", 144, 80, 1224, 768, 0);
+    }
+
+    @media (min-width:$tablet) {
+      padding-bottom: rem(292);
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 5;
+    @include adaptiveValue("font-size", 56, 48, 767.98, 320, 1);
+    white-space: nowrap;
+    line-height: 0.85;
+    text-transform: uppercase;
+    letter-spacing: rem(-2.4);
+
+    @media (max-width:$mobile) {
+      margin-bottom: rem(32);
+    }
+
+    @media (min-width:$mobile) {
+      position: relative;
+      left: -100%;
+      @include adaptiveValue("font-size", 72, 56, 1280, 768, 1);
+      letter-spacing: rem(-2.8);
+      opacity: 0;
+      visibility: hidden;
+      transition: left 0.8s;
+    }
+
+    @media (min-width:$tablet) {
+      letter-spacing: rem(-3.6);
+    }
+  }
+
+  &__text {
+    grid-column: 5 / 9;
+
+    @media (max-width:$mobile) {
+      margin-bottom: rem(64);
+    }
+
+    @media (min-width:$mobile) {
+      position: relative;
+      right: -100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: right 0.8s;
+    }
+  }
+
+  &._anim-active {
+
+    .about-us__title,
+    .about-us__text {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .about-us__title {
+      left: 0;
+    }
+
+    .about-us__text {
+      right: 0;
+    }
+  }
+
+  &__numbers {
+
+    @media (max-width:$mobile) {
+      &:not(:last-child) {
+        margin-bottom: rem(48);
+      }
+    }
+  }
+}
+
+.numbers {
+
+  &__number {
+    margin-bottom: rem(8);
+    font-size: rem(96);
+    line-height: 0.85;
+    letter-spacing: rem(-4.8);
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: $grey;
+  }
+
+  &--year-foundation {
+    grid-column: 1 / 5;
+
+    @media (min-width:$tablet) {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &--stores {
+    grid-column: 5 / 9;
+
+    @media (min-width:$tablet) {
+      grid-column: 3 / 5;
+    }
+  }
+
+  &--companies {
+    grid-column: 1 / 5;
+
+    @media (min-width:$tablet) {
+      grid-column: 5 / 7;
+    }
+  }
+
+  &--clients {
+    grid-column: 5 / 9;
+
+    @media (min-width:$tablet) {
+      grid-column: 7 / 9;
+    }
+  }
+}

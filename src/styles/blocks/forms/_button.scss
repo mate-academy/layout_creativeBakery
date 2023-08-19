@@ -1,0 +1,97 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(20);
+  width: 100%;
+  border: rem(2) solid $accentOrange;
+  border-radius: rem(32);
+  color: $accentOrange;
+  background: transparent;
+  transition: all 0.3s;
+
+  &::before {
+    margin-right: rem(6);
+    transition: color 0.3s;
+    color: $accentOrange;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      border-color: transparent;
+      background-color: $accentOrange;
+      color: $white;
+
+      &::before {
+        color: $white;
+      }
+    }
+  }
+
+  &:active {
+    background-color: $darkOrange;
+    color: $white;
+
+    &::before {
+      color: $accentOrange;
+    }
+  }
+
+  &:disabled {
+    border-color: $lightOrange;
+    color: $lightOrange;
+    cursor: default;
+
+    &::before {
+      color: $accentOrange;
+    }
+  }
+}
+
+.button-card-products {
+  align-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: rem(32);
+  background-color: transparent;
+  color: $accentOrange;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: rem(0.32);
+  text-transform: uppercase;
+  border-bottom: rem(1) solid transparent;
+  transition: border-bottom 0.3s;
+
+  &::before {
+    padding: rem(4);
+    margin-right: rem(4);
+    color: $accentOrange;
+    font-size: rem(16);
+    transition: all 0.3s;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      border-color: $accentOrange;
+    }
+  }
+
+  &:active {
+    color: $darkOrange;
+    border-color: $darkOrange;
+
+    &::before {
+      color: $darkOrange;
+    }
+  }
+
+  &:disabled {
+    border-color: transparent;
+    color: $lightOrange;
+    cursor: default;
+
+    &::before {
+      color: $lightOrange;
+    }
+  }
+}

@@ -1,1 +1,41 @@
-$c-gray: #eee;
+$minWidth: 320;
+$maxWidth: 1440;
+$maxWidthContainer: 1192;
+
+$vw: 100vw;
+
+$containerPaddingTo: 32;
+$containerPaddingFrom: 88;
+
+@function getContainerPadding($vw) {
+  $containerPadding: if($vw <= 768, $containerPaddingTo, $containerPaddingFrom);
+  @return $containerPadding;
+}
+
+@function getContainerWidth($padding) {
+  $containerWidth: $maxWidthContainer + $padding;
+  @return $containerWidth;
+}
+
+// Загальний відступ у контейнера
+// $containerPadding: 32;
+$containerPadding: getContainerPadding($vw);
+
+// Ширина спрацьовування першого брейкпоінту
+// $containerWidth: $maxWidthContainer + $containerPadding;
+// $containerWidth: $maxWidthContainer + $containerPaddingTo;
+$containerWidth: getContainerWidth($containerPadding);
+
+$fontFamily: "Inter", sans-serif;
+$white: #fff;
+$black: #1c1a26;
+$accentOrange: #f9512e;
+$darkOrange: #b2341a;
+$lightOrange: #fba28f;
+$grey: #7f8096;
+
+$mainBgColor: #eef7ff;
+$titleMainTheme: #1c1a26;
+
+$secondaryBgColor: #ffeefc;
+$titleSecondaryTheme: #f9512e;

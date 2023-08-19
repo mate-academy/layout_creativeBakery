@@ -1,0 +1,147 @@
+.footer {
+  background-color: $black;
+  overflow: hidden;
+
+  &__body {
+    padding: rem(56) 0;
+
+    @media (min-width:$mobile) {
+      @include grid;
+      padding: rem(88) 0;
+      transition: all 0.8s;
+    }
+  }
+
+  &__logo {
+    margin: 0 rem(-8);
+    @include adaptiveValue("margin-bottom", 60, 40);
+
+    @media (min-width:$mobile) {
+      grid-column: 1 / 5;
+      position: relative;
+      top: 300%;
+      opacity: 0;
+      visibility: hidden;
+      transition: top 0.8s;
+    }
+  }
+
+  &__menu {
+    margin-bottom: rem(64);
+
+    @media (min-width:$mobile) {
+      grid-column: 1 / 5;
+      grid-row: 2 / 3;
+      margin-bottom: rem(48);
+      position: relative;
+      top: 300%;
+      opacity: 0;
+      visibility: hidden;
+      transition: top 0.8s;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(40);
+
+    @media (min-width:$mobile) {
+      grid-column: 5 / 9;
+      position: relative;
+      top: 500%;
+      opacity: 0;
+      visibility: hidden;
+      transition: top 0.8s;
+    }
+  }
+
+  &__contacts {
+    @include adaptiveValue("margin-bottom", 48, 40, 767.98, 320, 1);
+
+    @media (min-width:$mobile) {
+      grid-column: 5 / 9;
+      position: relative;
+      top: 300%;
+      opacity: 0;
+      visibility: hidden;
+      transition: top 0.8s;
+    }
+  }
+
+  &__social {
+
+    @media (min-width:$mobile) {
+      grid-column: 1 / 5;
+      position: relative;
+      top: 600%;
+      opacity: 0;
+      visibility: hidden;
+      transition: top 0.8s;
+    }
+  }
+
+  &__copy {
+    color: $grey;
+
+    @media (min-width:$mobile) {
+      grid-column: 5 / 9;
+      position: relative;
+      top: 600%;
+      opacity: 0;
+      visibility: hidden;
+      transition: top 0.8s;
+    }
+  }
+
+  &._anim-active {
+    .footer__logo,
+    .footer__menu,
+    .footer__title,
+    .footer__contacts,
+    .footer__social,
+    .footer__copy {
+      opacity: 1;
+      visibility: visible;
+      top: 0;
+    }
+  }
+}
+
+.menu-footer {
+
+  &__body {
+    @media (min-width:$mobile) {
+      margin-bottom: rem(104);
+    }
+
+    @media (min-width:$tablet) {
+      margin-bottom: rem(48);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: rem(16);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(16);
+  }
+
+  &__link {
+    padding: rem(4);
+    margin: 0 rem(-4);
+    color: $white;
+    line-height: 1.5;
+    letter-spacing: rem(-0.16);
+    text-transform: capitalize;
+    border-bottom: rem(1) solid transparent;
+    transition: border-color 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: $white;
+      }
+    }
+  }
+}

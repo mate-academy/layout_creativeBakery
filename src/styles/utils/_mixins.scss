@@ -1,6 +1,109 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    src: url("../fonts/#{$file_name}.woff2") format("woff2"),
+      url("../fonts/#{$file_name}.woff") format("woff");
+    font-weight: #{$weight};
+    font-style: #{$style};
+    font-display: swap;
+  }
+}
+
+@mixin anyHoverImage($value) {
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+
+  & img {
+    transition: transform 0.3s;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      & img {
+        transform: scale(#{$value});
+      }
+    }
+  }
+}
+
+@mixin hoverBefore($_property, $_toValue) {
+  transition: $_property 0.3s;
+
+  &:hover::before {
+    @content;
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+// Адаптивна властивість (clamp)
+@mixin adaptiveValue(
+  $property, $startSize, $minSize, $widthFrom:
+  $containerWidth, $widthTo: $minWidth, $keepSize: 0
+) {
+  @if ($widthFrom ==$containerWidth and $maxWidthContainer ==0) {
+    $widthFrom: $maxWidth;
+  }
+
+  @if ($minSize <=0) {
+    $minSize: 0.01;
+  }
+
+  @if ($startSize <=0) {
+    $startSize: 0.01;
+  }
+
+  // Брейк-поинты в EM
+  $widthFromMedia: em($widthFrom);
+  $widthToMedia: em($widthTo);
+
+  // Формула плавающего значения
+  // Источник:
+  // https://css-tricks.com/
+  // linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  $slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+  $yIntersection: -$widthTo * $slope + $minSize;
+  $flyValue: #{rem($yIntersection)}" + "#{$slope * 100}vw;
+
+  // Получение значения свойства
+  $propertyValue:
+    #{"clamp("rem($minSize)","$flyValue","rem($startSize)")"};
+
+  // Если отрицательные значения
+  @if ($minSize > $startSize) {
+    $propertyValue: #{"clamp("rem($startSize)","$flyValue","rem($minSize)")"};
+  }
+
+  @if $widthFrom == $containerWidth or
+    $widthFrom == $maxWidth or $keepSize == 1 or $keepSize == 2 {
+    @media (min-width: $widthFromMedia) {
+      #{$property}: rem($startSize);
+    }
+  }
+
+  @media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+    #{$property}: $propertyValue;
+  }
+
+  @if $widthTo == $minWidth or $keepSize == 1 or $keepSize == 3 {
+    @media (max-width: $widthToMedia) {
+      #{$property}: rem($minSize);
+    }
+  }
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: rem(16);
+
+  @media (min-width:$mobile) {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: rem(24);
   }
 }
