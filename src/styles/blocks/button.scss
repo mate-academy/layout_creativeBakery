@@ -1,0 +1,118 @@
+.button {
+  @extend %uppercase;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+
+  font-style: normal;
+  font-weight: 500px;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  color: $accent-orange;
+  text-transform: uppercase;
+
+
+  &__contact {
+    @include hover (border-bottom-color, $accent-orange);
+
+    gap: 4px;
+
+    &:focus {
+      color: $dark-orange;
+      border-bottom-color: $dark-orange;
+
+      &>.icon {
+        fill: $dark-orange;
+      }
+    }
+
+    &:disabled {
+      border-bottom-color: transparent;
+      color: $light-orange;
+
+      &>.icon {
+        fill: $light-orange;
+      }
+    }
+  }
+
+
+  &--learn {
+    display: flex;
+    gap: 6px;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+
+    border: solid 2px $accent-orange;
+    border-radius: 32px;
+    color: $accent-orange;
+
+    text-decoration: none;
+
+    &--icon-white,
+    &--icon-dark {
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      @include hover (background-color, $accent-orange);
+      color: #fff;
+
+      &>.button__icon-orange{
+        display: none;
+      }
+      &>.button__icon-white{
+        display: block;
+      }
+    }
+
+    &:focus {
+      background-color: $dark-orange;
+      border-color: $dark-orange;
+
+      &>.button__icon-orange{
+        display: none;
+      }
+      &>.button__icon-white{
+        display: block;
+      }
+    }
+
+    &:disabled {
+      &>.button__icon-dark {
+        display: block;
+      }
+
+      color: $light-orange;
+      border-color: $light-orange;
+      background-color: $c-light--blue;
+    }
+  }
+
+  &__order {
+    @include hover (border-bottom-color, $accent-orange);
+
+    gap: 4px;
+
+    &:focus {
+      color: $dark-orange;
+      border-bottom-color: $dark-orange;
+
+      &>.icon {
+        fill: $dark-orange;
+      }
+    }
+
+    &:disabled {
+      border-bottom-color: transparent;
+      color: $light-orange;
+
+      &>.icon {
+        fill: $light-orange;
+      }
+    }
+  }
+}

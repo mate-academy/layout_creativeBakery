@@ -1,0 +1,34 @@
+.dropdown__btn {
+  background-color: $c-light--blue;
+  border: none;
+  width: 24px;
+  height: 24px;
+}
+
+.dropdown__btn:hover {
+  @include hover (scale, 1.1);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+
+  background-color: $c-light--blue;
+
+  transform: translateX(-100%);
+  transition: transform 0.4s;
+}
+
+.show {
+  z-index: 2;
+  pointer-events: all;
+  transform: translateX(0);
+}

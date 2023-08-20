@@ -1,0 +1,238 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+
+  background-color: $black;
+  color: #fff;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      @include grid;
+    }
+
+    &__logo {
+      display: flex;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        grid-column: 1 / 4;
+        margin-bottom: 96px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 61px;
+      }
+
+      &--img {
+        @include hover (scale, 1.1);
+        width: 168px;
+        height: 40px;
+      }
+    }
+
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      gap: 16px;
+
+      color: $gray;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 2%;
+      font-weight: 500;
+      text-transform: uppercase;
+
+      margin-bottom: 64px;
+
+      @include onTablet {
+        grid-row: 2;
+        grid-column: 1 / 4;
+      }
+
+      &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        &__item {
+          height: 100%;
+          width: fit-content;
+          @include hover (scale, 1.1);
+
+          &--link {
+            @include text;
+            @include hover (color, $accent-orange);
+
+            text-transform: none;
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    &__contactus {
+      @include mobileHeading2;
+      color: #fff;
+      text-align: left;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        @include tabletHeading2;
+        color: #fff;
+
+        grid-row: 1;
+        grid-column: 5 / -1;
+      }
+
+      @include onDesktop {
+        @include desktopHeading2;
+      }
+    }
+
+    &__contact {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      margin-bottom: 40px;
+
+      @include onTablet {
+        grid-row: 2;
+        grid-column: 5 / 8;
+
+        margin-bottom: 0;
+
+        @include onDesktop {
+          grid-row: 2;
+          grid-column: 5 / 7;
+        }
+      }
+
+      &--call {
+        color: $gray;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 2%;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        margin-bottom: 16px;
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        &__item {
+          height: 100%;
+          width: fit-content;
+          @include hover (scale, 1.1);
+
+          &--link {
+            @include text;
+            @include hover (color, $accent-orange);
+
+            text-transform: none;
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    &__email {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      margin-bottom: 40px;
+
+      @include onTablet {
+        grid-column: 5 / 8;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 9;
+      }
+
+      &--heading {
+        color: $gray;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 2%;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        margin-bottom: 16px;
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        &__item {
+          height: 100%;
+          width: fit-content;
+          @include hover (scale, 1.1);
+
+          &--link {
+            @include text;
+            @include hover (color, $accent-orange);
+
+            text-transform: none;
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    &__links {
+      display: flex;
+
+      margin-bottom: 40px;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+        margin-bottom: 0;
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+
+        &__item {
+          width: 24px;
+          height: 24px;
+
+          &--link {
+            &--icon {
+              &:hover {
+                @include hover (fill, #fff);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__copyright {
+      @include text;
+      color: $gray;
+      text-align: left;
+
+      @include onTablet {
+        grid-column: 5 / 8;
+      }
+    }
+  }
+}

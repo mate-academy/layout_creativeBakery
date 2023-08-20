@@ -1,0 +1,146 @@
+.header {
+  display: flex;
+  flex-direction: column;
+
+  background-image: url("../images/Cookie.png");
+  background-size: 288px 290px;
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+
+  @include onTablet {
+    background-size: 326px 328px;
+    background-position: 50% 40%;
+  }
+
+  @include onDesktop {
+    background-size: 544px 546px;
+    background-position: 50% 55%;
+  }
+
+  @include onLargeScreen {
+    background-size: 544px 546px;
+    background-position: 50% 60%;
+  }
+
+  &__topbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 88px;
+    padding: 0 28px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 140px;
+    }
+
+    @include onLargeScreen {
+      margin-bottom: 140px;
+    }
+
+    &__dropdown__btn {
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__logo {
+    @include hover (scale, 1.2);
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &__list {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 64px;
+
+      &-item {
+        height: 100%;
+        @include hover (scale, 1.1);
+
+        &-link {
+          @include text;
+          text-decoration: none;
+          color: $black;
+          border-bottom: 1px solid transparent;
+
+          @include hover (color, $accent-orange);
+
+          &:focus {
+            color: $dark-orange;
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+      @include grid;
+
+
+    &__slogan {
+      @include text;
+      grid-column: 1 / -1;
+      margin-bottom: 32px;
+
+      @include onTablet {
+        text-align: left;
+        margin-bottom: 146px;
+        grid-column: 1 / 5;
+      }
+
+      @include onDesktop {
+        margin-bottom: 40px;
+        grid-column: 1 / 3;
+      }
+    }
+
+    &__title {
+      @include mobileHeading;
+
+      grid-column: 1 / -1;
+      margin-bottom: 290px;
+
+      @include onTablet {
+        @include tabletHeading;
+        margin-bottom: 210px;
+        grid-column: 1 / -1;
+      }
+
+      @include onDesktop {
+        @include desktopHeading;
+        margin-bottom: 64px;
+        grid-column: 1 / -1;
+      }
+    }
+
+    &__button {
+      grid-column: 1 / -1;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 228px;
+        grid-column: 3 / 7;
+      }
+
+      @include onDesktop {
+        margin-bottom: 161px;
+        grid-column: 1 / 3;
+      }
+    }
+  }
+}
