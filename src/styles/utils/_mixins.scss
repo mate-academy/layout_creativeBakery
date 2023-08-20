@@ -1,6 +1,109 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} 0.4s ease-in-out;
   &:hover {
+    cursor: pointer;
     #{$_property}: $_toValue;
   }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onLargeScreen {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin grid {
+  --columns: 2;
+  --gap: 16px;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: var(--gap);
+
+  @include onTablet {
+    --columns: 8;
+    --gap: 24px;
+  }
+}
+
+@mixin text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+
+@mixin bigText {
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 82px;
+  letter-spacing: -0.05em;
+}
+
+@mixin mobileHeading {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 54px;
+  letter-spacing: -0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  color: $black;
+}
+
+@mixin mobileHeading2 {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 41px;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $black;
+}
+
+@mixin tabletHeading {
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 68px;
+  letter-spacing: -0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  color: $black;
+}
+
+@mixin tabletHeading2 {
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $black;
+}
+
+@mixin desktopHeading {
+  font-size: 144px;
+  font-weight: 400;
+  line-height: 122px;
+  letter-spacing: -.05em;
+  text-align: center;
+  text-transform: uppercase;
+  color: $black;
+}
+
+@mixin desktopHeading2 {
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 61px;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
 }
