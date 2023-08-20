@@ -1,9 +1,11 @@
 'use strict';
 
-// eslint-disable-next-line no-unused-vars
 function myFunction() {
   document.getElementById('myDropdown').classList.toggle('show');
 };
+
+myFunction();
+myFunction();
 
 const menu = document.getElementById('myDropdown');
 const links = document.getElementsByClassName('menu__nav__list-item-link');
