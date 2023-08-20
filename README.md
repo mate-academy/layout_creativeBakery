@@ -5,4 +5,4 @@ Implement landing page according to [Figma design](https://www.figma.com/file/dY
 
 
 ## Github flow
-  [DEMO LINK](https://vashivan.github.io/layout_creativeBakery/).gir
+  [DEMO LINK](https://vashivan.github.io/layout_creativeBakery/)
