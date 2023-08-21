@@ -1,11 +1,8 @@
 'use strict';
 
-function myFunction() {
+function getMenu() {
   document.getElementById('myDropdown').classList.toggle('show');
 };
-
-myFunction();
-myFunction();
 
 const menu = document.getElementById('myDropdown');
 const links = document.getElementsByClassName('menu__nav__list-item-link');
