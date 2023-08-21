@@ -1,0 +1,126 @@
+.header {
+  box-sizing: border-box;
+  height: 100vh;
+
+  @include onMedium {
+    background-position: center;
+  }
+
+  @include onLarge {
+    background-size: 40%;
+  }
+
+  &__logo {
+    &-image {
+      height: 32px;
+      cursor: pointer;
+
+      transition: transform 0.3s;
+
+      @include hover(transform, scale(1.1));
+    }
+  }
+
+  &__top {
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--nav-height);
+
+    margin-bottom: 32px;
+
+    @include onMedium {
+      margin-bottom: 80px;
+    }
+
+    @include onLarge {
+      padding: 0 32px;
+      height: $nav-height-desktop;
+      margin-bottom: 136px;
+    }
+
+    @include XLarge {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__content {
+    @include container(16px);
+    
+    @include onMedium {
+      @include container(44px);
+      @include useGrid ;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    text-align: center;
+    margin: 0 auto 32px;
+
+    @include onMedium {
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include onLarge {
+      margin-bottom: 8px;
+      &--br {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    width: 288px;
+    margin: 0 auto;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 288px;
+      height: 290px;
+      margin: 0 auto;
+      background-image: url(../images/Cookie.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50%;
+    }
+
+    @include onMedium {
+      position: relative;
+      width: auto;
+      font-size: 80px;
+      margin-bottom: 146px;
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: -1;
+        width: 326px;
+        height: 328px;
+        margin: 0;
+      }
+    }
+
+    @include onLarge {
+      font-size: 136px;
+      margin-bottom: 64px;
+      &::after {
+        width: 544px;
+        height: 546px;
+      }
+    }
+
+    @include XLarge {
+      font-size: 144px;
+    }
+  }
+}

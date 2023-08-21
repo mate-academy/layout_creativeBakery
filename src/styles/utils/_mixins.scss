@@ -1,6 +1,56 @@
+@mixin onMedium {
+  @media (min-width:640px) {
+    @content;
+  }
+}
+@mixin onLarge {
+  @media (min-width:1024px) {
+    @content;
+  }
+}
+
+@mixin XLarge {
+  @media (min-width:1200px) {
+    @content;
+  }
+}
+
+@mixin container($paddingX) {
+  margin: 0 auto;
+  padding: 0 $paddingX;
+  max-width: 1200px;
+}
+
+@mixin useGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 24px ;
+}
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin active($_property, $_toValue) {
+  &:active {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin section-title {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include onMedium {
+    font-size: 56px;
+  }
+
+  @include onLarge {
+    font-size: 72px;
   }
 }

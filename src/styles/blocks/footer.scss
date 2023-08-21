@@ -1,0 +1,111 @@
+.footer {
+  background-color: $colorText;
+  color: #fff;
+
+  &__container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 56px 16px;
+
+    @include onMedium {
+      padding: 88px 44px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+
+  &__logo {
+    &-image {
+      height: 40px;
+    }
+    display: block;
+    margin-bottom: 40px;
+
+    @include onMedium {
+      margin-bottom: 100px;
+    }
+
+    @include onLarge {
+      margin-bottom: 64px;
+    }
+
+    transition: transform 0.3s;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__contact--lists {
+    @include onLarge {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__list {
+    list-style: none;
+
+    &--home {
+      margin-bottom: 64px;
+
+      @include onMedium {
+        margin-bottom: 100px;
+      }
+
+      @include onLarge {
+        margin-bottom: 64px;
+      }
+    }
+
+    &--call {
+      margin-bottom: 40px;
+    }
+
+    &--email {
+      margin-bottom: 40px;
+    }
+
+  }
+  &__item {
+    margin-bottom: 8px;
+
+    &-top {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $colorGrey;
+      margin-bottom: 12px;
+    }
+  }
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    padding: 4px 0;
+
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s, color 0.3s;
+
+    @include hover(border-bottom-color, $colorMain);
+    @include hover(color, $colorMain);
+
+    @include active(border-bottom-color, $colorActive);
+    @include active(color, $colorActive);
+  }
+
+  &__title {
+    @include section-title;
+    margin-bottom: 40px;
+
+    &--br {
+      @include onLarge {
+        display: none;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+}
