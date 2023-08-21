@@ -1,0 +1,62 @@
+.ad {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include hover(transform, scale(1.1));
+
+  grid-column: span 2;
+
+  @include onTablet {
+    grid-column: span 4;
+  }
+
+  @include onDesktop {
+    grid-column: span 3;
+  }
+
+  &--style {
+    @include onDesktop {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  &__description {
+    color: #7f8096;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+
+  &__text {
+    color: #1c1a26;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+
+  &__link {
+    color: #f9512e;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__link::before {
+    content: "";
+    background-image: url(./../images/icons/Icon-arrow.png);
+    width: 24px;
+    height: 24px;
+  }
+}
