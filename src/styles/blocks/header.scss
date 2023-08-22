@@ -1,0 +1,94 @@
+.header {
+  box-sizing: border-box;
+  height: 100vh;
+
+  &__text {
+    margin-block: 32px;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    color: $main-text-color;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+      width: 280px;
+    }
+
+  }
+
+  &__title {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+    color: $text-color;
+    text-align: center;
+    width: 100%;
+
+    @include onTablet {
+      position: absolute;
+      top: 204px;
+      font-size: 70px;
+    }
+
+    @include onDesktop {
+      font-size: 106px;
+      top: 284px;
+    }
+  }
+
+  &__top {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__bottom {
+    margin-top: 32px;
+    position: relative;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    height: 290px;
+
+    @include onTablet {
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      z-index: -1;
+      width: 326px;
+      height: 328px;
+      top: 44px;
+    }
+
+    @include onDesktop {
+      width: 544px;
+      height: 546px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      position: absolute;
+      top: 364px;
+      width: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include onDesktop {
+      top: 504px;
+      left: 194px;
+      width: 280px;
+    }
+  }
+}
