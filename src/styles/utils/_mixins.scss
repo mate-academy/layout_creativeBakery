@@ -4,10 +4,6 @@
   @include onTablet {
     padding-inline: 44px;
   }
-
-  @include onDesktop() {
-    // padding-inline: 44px;
-  }
 }
 
 @mixin hover($_property, $_toValue) {
@@ -18,13 +14,13 @@
 }
 
 @mixin onTablet {
-  @media (min-width: 768px) {
+  @media (min-width: $tablet-min-width) {
     @content;
   }
 }
 
 @mixin onDesktop {
-  @media (min-width: 1200px) {
+  @media (min-width: $desktop-min-width) {
     @content;
   }
 }
