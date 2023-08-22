@@ -1,0 +1,53 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: $c-light--blue;
+
+
+  &__topbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 88px;
+    padding: 0 28px;
+    margin-bottom: 132px;
+
+    &__logo {
+      @include hover (scale, 1.1);
+    }
+  }
+
+  &__nav {
+    &__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 64px;
+
+      &-item {
+        height: 100%;
+        @include hover (scale, 1.1);
+
+        &-link {
+          @include text;
+          text-decoration: none;
+          color: $black;
+          border-bottom: 1px solid transparent;
+
+          @include hover (color, $accent-orange);
+
+          &:focus {
+            color: $dark-orange;
+          }
+
+          &:disabled {
+            color: $light-orange;
+          }
+        }
+      }
+    }
+  }
+}

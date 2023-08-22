@@ -1,0 +1,79 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background-image: url("../images/Crumbs.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  background-size: 420px, 300px;
+
+  @include onTablet {
+    @include grid;
+    background-size: contain;
+  }
+
+  @include onDesktop {
+    background-size: contain;
+    gap: 80px;
+  }
+
+  @include onLargeScreen {
+    background-size: contain;
+  }
+
+  &__title {
+    @include mobileHeading2;
+    text-align: left;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      @include tabletHeading2;
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      @include desktopHeading2;
+      grid-column: span 4;
+    }
+  }
+
+  &__description {
+    @include text;
+    text-align: justify;
+
+    margin-bottom: 64px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-bottom: 48px;
+
+    &__num {
+      @include bigText;
+      margin-bottom: 8px;
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+      color: $gray;
+      text-align: left;
+    }
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
+  }
+}
