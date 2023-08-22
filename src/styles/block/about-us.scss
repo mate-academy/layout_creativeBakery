@@ -1,0 +1,126 @@
+.about-us {
+  position: relative;
+
+  @include onDesktop {
+    padding-block-end: 293px;
+  }
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 544px;
+    left: 0;
+    z-index: -1;
+
+    height: 300px;
+    width: 100%;
+
+    background-image: url(../images/crumbs.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      top: 50%;
+      left: 50%;
+
+      height: 493px;
+      width: 526px;
+
+      transform: translate(-50%, -50%);
+    }
+
+    @include onDesktop {
+      top: 0;
+      left: 27%;
+      width: 718px;
+      height: 673px;
+
+      transform: translate(0, 0);
+    }
+
+    @include onXLDesktop {
+      left: 30%;
+    }
+  }
+
+  &__content {
+    @include pageGrid;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+
+    margin-block-start: 0;
+    margin-block-end: 32px;
+
+    @include onTablet {
+      grid-column: span 4;
+
+      margin-block-end: 192px;
+    }
+
+    @include onDesktop {
+      margin-block-end: 192px;
+    }
+  }
+
+  &__text {
+    grid-column: 1/-1;
+
+    margin-block-start: 0;
+    margin-block-end: 64px;
+
+    @include onTablet {
+      grid-column: span 4;
+
+      margin-block-end: 72px;
+    }
+
+    @include onDesktop {
+      margin-block-end: 146px;
+    }
+  }
+
+  &__list {
+    grid-column: 1/-1;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include pageGrid;
+    row-gap: 48px;
+
+    @include onTablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__list-item {
+    grid-column: 1/-1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: 8px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__list-value {
+    color: var(--page-color);
+
+    font-size: 96px;
+    line-height: 0.85;
+    letter-spacing: -4.8px;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,104 @@
+.page {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  --dark-orange: #b2341a;
+  --accent-orange: #f9512e;
+  --light-orange: #fba28f;
+  --light-pink: #ffeefc;
+  --light-blue: #eef7ff;
+  --black: #1c1a26;
+  --grey: #7f8096;
+  --white: #fff;
+
+  --bg-color: var(--light-pink);
+  --page-color: var(--accent-orange);
+
+  font: normal normal 16px/1.5 "Inter", sans-serif;
+  letter-spacing: -0.16px;
+  color: var(--black);
+  background-color: var(--bg-color);
+
+  scroll-behavior: smooth;
+
+  transition: color #{$transition-duration},
+    background-color #{$transition-duration};
+
+  &--theme--light-blue {
+    --bg-color: var(--light-blue);
+    --page-color: var(--black);
+  }
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+  }
+
+  &__header {
+    --margin-bottom: 104px;
+    margin-block-end: var(--margin-bottom);
+
+    @include onTablet {
+      --margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      --margin-bottom: 313px;
+    }
+
+    @include onXLDesktop {
+      --margin-bottom: 290px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transform: translateX(-100%);
+    transition: all $transition-duration;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+
+      transform: translateX(0);
+    }
+  }
+
+  &:has(menu:target) {
+    overflow: hidden;
+  }
+
+  &__products {
+    margin-block-end: 72px;
+
+    @include onTablet {
+      margin-block-end: 152px;
+    }
+
+    @include onDesktop {
+      margin-block-end: 178px;
+    }
+  }
+
+  &__about-us {
+    margin-block-end: 72px;
+
+    @include onTablet {
+      margin-block-end: 152px;
+    }
+
+    @include onDesktop {
+      margin-block-end: 56px;
+    }
+  }
+}

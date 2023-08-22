@@ -1,0 +1,49 @@
+.footer {
+  padding-block-start: 40px;
+  padding-block-end: 56px;
+
+  background-color: var(--black);
+
+  @include onTablet {
+    padding-block-end: 88px;
+  }
+
+  &__content {
+    @include pageGrid;
+  }
+
+  &__icons {
+    grid-column: 1/-1;
+
+    margin: 0 0 40px;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    column-gap: 32px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__icon-svg {
+    fill: var(--accent-orange);
+
+    @include active(fill, var(--white));
+
+    @include hover(fill, var(--white));
+
+    @include hover(transform, scale($scale-factor));
+  }
+
+  &__text {
+    grid-column: 1/-1;
+
+    color: var(--grey);
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+.contact-us {
+  padding-block-start: 56px;
+  background-color: var(--black);
+
+  @include onTablet {
+    padding-block-start: 88px;
+  }
+
+  &__content {
+    @include pageGrid;
+  }
+
+  &__top {
+    grid-column: 1/-1;
+
+    margin-block-end: 64px;
+
+    @include onTablet {
+      grid-column: span 4;
+
+      margin-block-end: 56px;
+    }
+
+    @include onDesktop {
+      margin-block-end: 0;
+    }
+  }
+
+  &__bottom {
+    grid-column: 1/-1;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    margin-block-start: 0;
+    margin-block-end: 40px;
+
+    width: min-content;
+
+    @include onDesktop {
+      width: unset;
+    }
+  }
+
+  &__label {
+    margin-block-end: 16px;
+
+    display: block;
+
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+
+    color: var(--grey);
+  }
+
+  &__numbers {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__link {
+    position: relative;
+
+    display: block;
+
+    width: fit-content;
+
+    text-decoration: none;
+
+    color: var(--white);
+
+    transition: transform #{$transition-duration} ease-in-out;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      display: block;
+      margin-top: -4px;
+      height: 1px;
+      width: 100%;
+      background-color: transparent;
+
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform #{$transition-duration} ease-in-out,
+        background-color #{$transition-duration} ease-in-out;
+    }
+
+    &:hover {
+      transform: scale($scale-factor);
+
+      &::after {
+        transform-origin: left;
+        transform: scaleX(1);
+        background-color: var(--white);
+      }
+    }
+  }
+}

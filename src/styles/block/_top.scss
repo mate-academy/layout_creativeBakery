@@ -1,0 +1,79 @@
+.top {
+  padding-block-start: 16px;
+  padding-inline: 16px;
+
+  display: grid;
+  grid-template-columns: 1fr min-content;
+
+  @include onDesktop {
+    padding-block-start: 28px;
+    padding-inline: 32px;
+  }
+
+  &--contact-us {
+    padding-block-start: 0;
+    padding-inline: 0;
+
+    grid-template-columns: 1fr;
+  }
+
+  &__logo-link {
+    grid-column: 1/2;
+    align-self: center;
+    justify-self: left;
+
+    display: block;
+  }
+
+  &__label {
+    display: none;
+
+    &--contact-us {
+      grid-column: 1/2;
+
+      margin-block-end: 16px;
+      display: block;
+
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+
+      color: var(--grey);
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      grid-column: 2/3;
+      align-self: center;
+      justify-self: left;
+
+      display: block;
+    }
+
+    &--menu {
+      grid-column: 1/-1;
+      justify-self: center;
+
+      padding-block-start: 148px;
+      padding-block-end: 196px;
+      display: block;
+      width: 100%;
+    }
+
+    &--contact-us {
+      grid-column: 1/2;
+
+      display: block;
+    }
+  }
+
+  &__icon {
+    grid-column: 2/3;
+    align-self: center;
+    justify-self: left;
+  }
+}

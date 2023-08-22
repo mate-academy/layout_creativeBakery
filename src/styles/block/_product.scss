@@ -1,0 +1,55 @@
+.product {
+  @include pageGrid;
+
+  &__img {
+    grid-column: 1/-1;
+
+    margin-block-end: 16px;
+    display: block;
+    width: 100%;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    @include onTablet {
+      height: 424px;
+    }
+
+    @include onDesktop {
+      height: 512px;
+    }
+
+    @include onXLDesktop {
+      height: 560px;
+    }
+
+    @include hover(transform, scale(1.02));
+  }
+
+  &__title {
+    grid-column: 1/-1;
+
+    margin-block-start: 0;
+    margin-block-end: 8px;
+
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+
+    color: var(--grey);
+  }
+
+  &__description {
+    grid-column: 1/-1;
+
+    margin-block-start: 0;
+    margin-block-end: 16px;
+  }
+
+  &__button {
+    grid-column: 1/-1;
+    justify-self: left;
+  }
+}
