@@ -1,0 +1,168 @@
+.button {
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4px;
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: var(--accent-orange);
+  background-color: var(--bg-color);
+
+  border: 2px solid transparent;
+
+  &__icon {
+    fill: var(--accent-orange);
+  }
+
+  &--borderless {
+    position: relative;
+
+    transition: color #{$transition-duration} ease-in-out,
+      transform #{$transition-duration} ease-in-out;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      display: block;
+      margin-top: -4px;
+      height: 1px;
+      width: 100%;
+      background-color: transparent;
+
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform #{$transition-duration} ease-in-out,
+        background-color #{$transition-duration} ease-in-out;
+    }
+
+    &:hover {
+      color: var(--accent-orange);
+      transform: scale($scale-factor);
+
+      &::after {
+        background-color: var(--accent-orange);
+
+        transform-origin: left;
+        transform: scaleX(1);
+      }
+    }
+
+    &:active {
+      color: var(--dark-orange);
+      transform: scale($scale-factor);
+
+      &::after {
+        background-color: var(--dark-orange);
+
+        transform-origin: left;
+        transform: scaleX(1);
+      }
+
+      .button__icon {
+        fill: var(--dark-orange);
+      }
+    }
+  }
+
+  &--header {
+    height: 56px;
+
+    border-color: var(--accent-orange);
+    border-radius: 32px;
+
+    transition: color #{$transition-duration} ease-in-out,
+      background-color #{$transition-duration} ease-in-out,
+      border-color #{$transition-duration} ease-in-out,
+      transform #{$transition-duration} ease-in-out;
+
+    &:hover {
+      color: var(--white);
+      background-color: var(--accent-orange);
+
+      transform: scale($scale-factor);
+
+      .button__icon {
+        fill: var(--white);
+      }
+    }
+
+    &:active {
+      color: var(--white);
+      background-color: var(--dark-orange);
+      border-color: var(--dark-orange);
+
+      .button__icon {
+        fill: var(--dark-orange);
+      }
+    }
+  }
+
+  &--order {
+    position: relative;
+    height: 32px;
+
+    transition: color #{$transition-duration} ease-in-out,
+      transform #{$transition-duration} ease-in-out;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      display: block;
+      margin-top: -4px;
+      height: 1px;
+      width: 100%;
+
+      background-color: transparent;
+
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform #{$transition-duration} ease-in-out,
+        background-color #{$transition-duration} ease-in-out;
+    }
+
+    &:hover {
+      color: var(--accent-orange);
+      transform: scaleX($scale-factor);
+
+      &::after {
+        background-color: var(--accent-orange);
+
+        transform-origin: left;
+        transform: scaleX(1);
+      }
+    }
+
+    &:active {
+      color: var(--dark-orange);
+      transform: scale($scale-factor);
+
+      &::after {
+        background-color: var(--dark-orange);
+
+        transform-origin: left;
+        transform: scaleX(1);
+      }
+
+      .button__icon {
+        fill: var(--dark-orange);
+      }
+    }
+  }
+}
