@@ -1,0 +1,64 @@
+.products {
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__card-list {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+
+      &:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__photo-container {
+    margin-bottom: 16px;
+
+    overflow: hidden;
+    border-radius: 5%;
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    @include hover (transform, scale($scale));
+  }
+
+  &__info {
+    min-height: 72px;
+    max-height: auto;
+    margin-bottom: 16px;
+  }
+
+  &__category {
+    margin-bottom: 8px;
+
+    color: $grey;
+  }
+
+  &__button {
+    @include link("../images/Icon-arrow.png", "../images/Icon-arrow-dark.png");
+
+    width: 85px;
+  }
+}

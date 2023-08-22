@@ -1,0 +1,141 @@
+.footer {
+  background-color: $black;
+  color: $white;
+
+  &__content {
+    --footer-top-padding: 56px;
+    --footer-bottom-padding: 56px;
+
+    padding: var(--footer-top-padding) 0 var(--footer-bottom-padding);
+
+    @include onTablet {
+      --footer-top-padding: 88px;
+      --footer-bottom-padding: 88px;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 40px;
+    max-width: min-content;
+
+    @include onTablet {
+      margin-bottom: 96px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 61px;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+
+    background-color: inherit;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+    &--call-us {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 48px;
+      }
+    }
+
+    &-title {
+      margin-bottom: 16px;
+
+      display: flex;
+      justify-content: flex-start;
+
+      color: $grey;
+    }
+  }
+
+  &__list {
+    margin-bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    @include hover (transform, scale($scale));
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: $white;
+  }
+
+  &__contact {
+    margin-bottom: 40px;
+
+    width: 250px;
+
+    @include onDesktop {
+      width: auto;
+    }
+  }
+
+  &__social {
+    margin-bottom: 40px;
+
+    &-list {
+      display: flex;
+      gap: 32px;
+    }
+
+    &-item {
+      @include hover (transform, scale($scale));
+    }
+
+    &-link {
+      width: 24px;
+      height: 24px;
+
+      display: block;
+
+      background-repeat: no-repeat;
+      background-position: 0;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .footer__facebook-link {
+      background-image: url(../images/Icon-facebook.png);
+
+      @include hover(background-image, url(../images/Icon-facebook-white.png));
+    }
+
+    .footer__instagram-link {
+      background-image: url(../images/Icon-instagram.png);
+
+      @include hover(background-image, url(../images/Icon-instagram-white.png));
+    }
+
+    .footer__twitter-link {
+      background-image: url(../images/Icon-twitter.png);
+
+      @include hover(background-image, url(../images/Icon-twitter-white.png));
+    }
+  }
+
+  &__copyright-sign {
+    color: $grey;
+  }
+}
