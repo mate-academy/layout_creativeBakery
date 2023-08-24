@@ -2,6 +2,10 @@
   box-sizing: border-box;
   height: 100vh;
 
+  &__content {
+    position: relative;
+  }
+
   &__text {
     margin-block: 32px;
     font-family: "Inter", sans-serif;
@@ -20,16 +24,15 @@
     @include onDesktop {
       width: 260px;
       top: 140px;
-      left: 150px;
     }
 
   }
 
   &__title {
+    padding: 0;
     margin: 0;
     font-family: "Inter", sans-serif;
     font-size: 64px;
-    font-style: normal;
     line-height: 85%;
     letter-spacing: -3.2px;
     text-transform: uppercase;
@@ -39,18 +42,24 @@
 
     @include onTablet {
       position: absolute;
-      top: 204px;
-      font-size: 70px;
+      top: 190px;
+      font-size: 80px;
+      white-space: nowrap;
     }
 
     @include onDesktop {
-      font-size: 116px;
+      width: 100%;
+      font-size: 136px;
       top: 284px;
+      text-align: left;
     }
+
   }
 
   &__top {
+    padding: 16px;
     @include onDesktop {
+      padding: 28px 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -59,7 +68,10 @@
 
   &__bottom {
     margin-top: 32px;
-    position: relative;
+
+    &__content {
+      position: relative;
+    }
   }
 
   &__image {
@@ -86,16 +98,17 @@
   &__button {
     @include onTablet {
       position: absolute;
-      top: 364px;
+      top: 424px;
       width: 50%;
       left: 50%;
       transform: translateX(-50%);
     }
 
     @include onDesktop {
-      top: 444px;
-      left: 264px;
+      top: 464px;
       width: 280px;
+      left: 0;
+      transform: translateX(0);
     }
   }
 }

@@ -10,29 +10,29 @@
     grid-template-columns: repeat(8, 8fr);
     row-gap: 40px;
 
+    @include onTablet {
+      row-gap: 0;
+    }
+
+    @include onDesktop {
+      row-gap: 40px;
+    }
   }
 
   &__logo__link {
-    grid-column: 1/4;
+    grid-column: 1/5;
   }
 
   &__menu {
     cursor: pointer;
-    grid-column: 1/4;
-    @include onTablet {
-      margin-bottom: 104px;
-    }
-
-    @include onDesktop {
-      margin-bottom: 48px;
-    }
+    grid-column: 1/5;
   }
 
   &__contacts {
     display: grid;
     grid-column: 1/-1;
     @include onTablet {
-      grid-column: 5/-1;
+      grid-column: 6/-1;
     }
 
     @include onDesktop {
@@ -44,7 +44,8 @@
   &__email {
     grid-column: 1/-1;
     @include onTablet {
-      grid-column: 5/-1;
+      grid-column: 6/-1;
+      margin-bottom: 48px;
     }
 
     @include onDesktop {
@@ -53,29 +54,32 @@
   }
 
   &__title {
-    max-width: 100%;
     margin: 0;
     font-size: 48px;
+    font-weight: 400;
     line-height: 85%;
     letter-spacing: -2.4px;
     text-transform: uppercase;
     color: $footer-content-color;
     grid-column: 1/-1;
-    margin-bottom: 40px;
 
     @include onTablet {
       font-size: 56px;
-      grid-column: 5/-4;
+      grid-column: 6/-1;
       grid-row: 1;
+      margin-bottom: 48px;
+      margin-top: 0;
     }
 
-    @include onTablet {
+    @include onDesktop {
       font-size: 72px;
       grid-column: 5/-1;
+      margin: 0;
     }
   }
 
   &__text {
+    margin: 0;
     font-weight: 500;
     line-height: 100%;
     letter-spacing: 0.32px;
@@ -83,27 +87,27 @@
     color: $footer-text-color;
 
     &__item {
+      margin-top: 16px;
       display: block;
       color: $footer-content-color;
       line-height: 150%;
       letter-spacing: -0.16px;
-      margin-bottom: 16px;
       @include hover (transform, scale(1.05));
     }
   }
 
   &__nav {
     &__list {
-      margin: 0;
       padding: 0;
     }
 
     &__link {
+      padding: 0;
       color: $footer-content-color;
     }
 
     &__item {
-      margin-bottom: 16px;
+      margin-top: 16px;
       @include hover (transform, scale(1.05));
     }
   }
@@ -111,6 +115,10 @@
   &__copyright {
     grid-column: 1/-1;
     @include onTablet {
+      grid-column: 6/-1;
+    }
+
+    @include onDesktop {
       grid-column: 5/-1;
     }
   }
@@ -128,7 +136,7 @@
     grid-column: 1/-1;
 
     @include onTablet {
-      grid-column: 1/4;
+      grid-column: 1/5;
     }
   }
 }
