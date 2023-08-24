@@ -1,0 +1,228 @@
+.header {
+  @include pageGrid;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  @include onDesktop {
+    margin-bottom: 152px;
+  }
+
+  &__wrap {
+    @include contentPaddingInline;
+    @include pageGrid;
+
+    position: relative;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+      width: 100%;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    @include onDesktop {
+      height: 544px;
+      width: 546px;
+      grid-column: 3 / 7;
+      position: absolute;
+      top: 200px;
+    }
+  }
+
+  &__top {
+    box-sizing: border-box;
+  }
+
+  &__wrapper {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+  }
+
+  &__item {
+    transition: all $time linear;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__item--icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    &::before {
+      content: "";
+      background-image: url(./../images/icons/Icon-phone-svg.svg);
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: rgba(28, 26, 38, 1);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &__first-title {
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -1%;
+    width: 100%;
+    margin-bottom: 32px;
+    grid-column: 1 / -1;
+    margin-left: 0;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 146px;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      margin-left: 44px;
+      margin-bottom: 16px;
+      grid-column: span 2;
+      width: 320px;
+    }
+  }
+
+  &__second-title {
+    text-align: center;
+    font-size: 64px;
+    color: $accent-orange;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    font-style: normal;
+    margin: 0;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      font-size: 80px;
+      letter-spacing: -4px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+      font-size: 125px;
+    }
+  }
+
+  &__button {
+    height: 56px;
+    width: 100%;
+    grid-column: 1 / -1;
+    border: 2px solid $accent-orange;
+    background-color: rgba(255, 238, 252, 1);
+    border-radius: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    transition: all linear $time;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $accent-orange;
+      color: rgba(255, 255, 255, 1);
+    }
+
+    &:focus {
+      background-color: $focus-color;
+      border: 2px solid $focus-color;
+      color: rgba(255, 255, 255, 1);
+    }
+
+    &:disabled {
+      background-color: #fff;
+      color: $disabled-color;
+      border: 2px solid $disabled-color;
+    }
+
+    @include onTablet {
+      width: 100%;
+      grid-column: 3 / 7;
+      margin-top: 210px;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+      width: 260px;
+      grid-column: span 2;
+      margin-left: 44px;
+    }
+
+    &::before {
+      content: "";
+      background-image: url(./../images/icons/Icon-cookie-start.svg);
+      height: 24px;
+      width: 24px;
+    }
+
+    &:hover::before {
+      content: "";
+      background-image: url(./../images/icons/Icon-cookie-white.svg);
+      height: 24px;
+      width: 24px;
+    }
+
+    &:focus::before {
+      content: "";
+      background-image: url(./../images/icons/Icon-cookie-white.svg);
+      height: 24px;
+      width: 24px;
+    }
+
+    &:disabled::before {
+      content: "";
+      background-image: url(./../images/icons/Icon-cookie-dis.svg);
+      height: 24px;
+      width: 24px;
+    }
+  }
+}

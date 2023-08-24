@@ -1,0 +1,106 @@
+.about-us {
+  background-image: url(./../images/Crumbs.svg);
+  background-repeat: no-repeat;
+  background-size: 320px 300px;
+  background-position: 50% 75%;
+
+  @include onTablet {
+    background-size: 620px 800px;
+    background-position: 50% 75%;
+  }
+
+  @include onDesktop {
+    background-size: 620px 800px;
+    background-position: 50% 75%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    @include onTablet {
+      gap: 72px;
+    }
+
+    @include onDesktop {
+      gap: 144px;
+    }
+  }
+
+  &__top {
+    @include pageGrid;
+    gap: 32px;
+
+    &__title {
+      letter-spacing: -3px;
+      width: 100%;
+
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: span 4;
+        width: 328px;
+      }
+
+      @include onDesktop {
+        grid-column: span 4;
+        width: 544px;
+      }
+    }
+
+    &__text {
+      position: relative;
+      top: -16px;
+
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: span 4;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / -1;
+      }
+    }
+  }
+
+  &__bottom {
+    @include pageGrid;
+
+    gap: 48px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+      gap: 80px;
+    }
+
+    &__p {
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: span 4;
+      }
+
+      @include onDesktop {
+        grid-column: span 2;
+      }
+    }
+
+    &__main {
+      color: $accent-orange;
+      font-size: 96px;
+      font-weight: 400;
+      line-height: 81.6px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    &__side {
+      color: #1c1a26;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+}
