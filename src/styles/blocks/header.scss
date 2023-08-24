@@ -15,6 +15,12 @@
     @include pageGrid;
 
     position: relative;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 60px;
+    }
   }
 
   &__image {
@@ -27,16 +33,19 @@
       grid-column: 3 / 7;
       width: 100%;
       position: absolute;
-      top: 85%;
+      top: 45%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: -1;
     }
 
     @include onDesktop {
+      height: 544px;
+      width: 546px;
       grid-column: 3 / 7;
       width: 100%;
       position: absolute;
+      top: 200px;
     }
   }
 
@@ -100,6 +109,7 @@
     width: 100%;
     margin-bottom: 32px;
     grid-column: 1 / -1;
+    margin-left: 0;
 
     @include onTablet {
       text-align: left;
@@ -112,6 +122,7 @@
       margin-left: 44px;
       margin-bottom: 16px;
       grid-column: span 2;
+      width: 320px;
     }
   }
 
@@ -138,19 +149,6 @@
     }
   }
 
-  &__bottom {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-
-    @include pageGrid;
-    @include contentPaddingInline;
-
-    @include onTablet {
-      margin-bottom: 128px;
-    }
-  }
-
   &__button {
     height: 56px;
     width: 100%;
@@ -161,6 +159,7 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 16px;
+    margin-left: 0;
 
     display: flex;
     justify-content: center;
@@ -196,7 +195,7 @@
       margin-top: 60px;
       width: 260px;
       grid-column: span 2;
-      margin-left: 40px;
+      margin-left: 44px;
     }
 
     &::before {
