@@ -1,0 +1,127 @@
+.header {
+  box-sizing: border-box;
+  height: 100vh;
+
+  // &__content {
+  //   position: relative;
+  // }
+
+  &__text {
+    margin-block: 32px;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    color: $main-text-color;
+    text-align: center;
+
+    @include onTablet {
+      position: absolute;
+      text-align: left;
+      width: 280px;
+    }
+
+    @include onDesktop {
+      width: 260px;
+      top: 140px;
+    }
+
+    @include onDesktop1200 {
+      left: 10px;
+    }
+
+  }
+
+  &__title {
+    font-weight: 400;
+    margin: 0;
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+    color: $text-color;
+    text-align: center;
+    width: 100%;
+
+    @include onTablet {
+      position: absolute;
+      top: 190px;
+      font-size: 60px;
+      letter-spacing: -4px;
+
+    }
+
+    @include onDesktop {
+      font-size: 110px;
+      top: 284px;
+      letter-spacing: -6.8px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    @include onDesktop1200 {
+      font-size: 120px;
+      text-align: center;
+    }
+
+  }
+
+  &__top {
+    @include onDesktop {
+      padding-right: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__bottom {
+    margin-top: 32px;
+
+    &__content {
+      position: relative;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    height: 290px;
+
+    @include onTablet {
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      z-index: -1;
+      width: 326px;
+      height: 328px;
+      top: 44px;
+    }
+
+    @include onDesktop {
+      width: 544px;
+      height: 546px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      position: absolute;
+      top: 424px;
+      width: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include onDesktop {
+      top: 464px;
+      width: 280px;
+      left: 0;
+      transform: translateX(0);
+    }
+
+    @include onDesktop1200 {
+      left: 10px;
+    }
+  }
+}

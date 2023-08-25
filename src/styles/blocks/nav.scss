@@ -1,0 +1,46 @@
+.nav {
+  &__list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      gap: 64px;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+  }
+
+  &__link {
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    color: $main-text-color;
+    padding: 28px;
+  }
+  &__item {
+    @include hover (transform, scale(1.2));
+    list-style: none;
+
+    &--contact-us {
+      font-weight: 500;
+      color: $text-color;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-transform: uppercase;
+
+      &::before {
+        content: url(../images/icons/icon-phone.svg);
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

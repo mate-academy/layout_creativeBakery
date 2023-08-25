@@ -1,0 +1,94 @@
+.products {
+  @include pageGrid() ;
+  &__section-title {
+    margin: 0;
+    margin-bottom: 24px;
+
+  }
+
+  &__description {
+    color: $main-text-color;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+
+    &--margin {
+      margin: 0;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__order__button {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    color: $text-color;
+    background-color: $bg-color;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    gap: 4px;
+    cursor: pointer;
+
+    &::before {
+      content: url(../images/icons/icon-arrow.svg);
+      width: 24px;
+      height: 24px;
+    }
+
+  }
+
+  &__product {
+    display: grid;
+    grid-column: 1/-1;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+    }
+
+    &--3 {
+      @include onDesktop {
+        grid-column: 3/6;
+      }
+    }
+    &--4 {
+      @include onDesktop {
+        grid-column: 6/-1;
+      }
+    }
+  }
+
+  &__text {
+    grid-column: 1/-1;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    border-radius: 8px;
+    @include hover (transform, scale(1.05));
+  }
+
+  &__categoties {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    color: $categories-color;
+
+    &--margin {
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+  }
+
+}
