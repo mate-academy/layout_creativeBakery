@@ -1,0 +1,76 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__title {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__subtitle {
+    color: $grey;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+  }
+
+  &__body {
+    margin: 0;
+    scroll-behavior: smooth;
+    background-color: $lightBlue;
+    min-width: 320px;
+    // max-width: 1440px;
+    // margin-inline: auto;
+
+    @include mainFont;
+  }
+
+  &__top {
+    padding: 16px;
+
+    @include onDesktop {
+      padding: 28px 32px;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: all $effectDuration;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+}

@@ -1,0 +1,182 @@
+.footer {
+  background-color: $black;
+  color: $white;
+  max-width: 100vw;
+
+  &__content {
+    padding-top: 56px;
+    margin-bottom: 48px;
+
+    @include pageGrid;
+
+    @include onTablet {
+      padding-top: 88px;
+    }
+  }
+
+  &__menu {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    &__wrapper {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 96px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 61px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    @include mainFont {
+      color: $white;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: -0.16px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $white;
+
+      transition: transform $effectDuration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__nav {
+    margin-bottom: 64px;
+
+    &__subtitle {
+      margin-bottom: 16px;
+    }
+
+    &__list {
+      @include footerFlex;
+    }
+  }
+
+  &__contacts {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    &__list {
+      @include footerFlex;
+    }
+
+    &__wrapper {
+      @include onDesktop {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 24px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__phone-numbers {
+      @include footerFlex;
+
+      margin-bottom: 40px;
+      grid-column: span 2;
+    }
+
+    &__email-us {
+      @include footerFlex;
+
+      grid-column: span 2;
+    }
+  }
+
+  &__bottom {
+    @include footerFlex;
+    gap: 40px;
+
+    @include pageGrid;
+
+    padding-bottom: 56px;
+
+    @include onTablet {
+      padding-bottom: 88px;
+    }
+
+    &__social-media {
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: span 4;
+      }
+
+      &__icon {
+        width: 24px;
+        height: 24px;
+
+        &--facebook {
+          background-image: url(../images/icons/icon-facebook.svg);
+
+          &:hover {
+            background-image: url(../images/icons/icon-facebook-hover.svg);
+          }
+        }
+
+        &--instagram {
+          background-image: url(../images/icons/icon-instagram.svg);
+
+          &:hover {
+            background-image: url(../images/icons/icon-instagram-hover.svg);
+          }
+        }
+
+        &--twitter {
+          background-image: url(../images/icons/icon-twitter.svg);
+
+          &:hover {
+            background-image: url(../images/icons/icon-twitter-hover.svg);
+          }
+        }
+      }
+    }
+
+    &__copyright {
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: span 4;
+      }
+
+      @include mainFont {
+        color: $grey;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.16px;
+      }
+    }
+  }
+}
