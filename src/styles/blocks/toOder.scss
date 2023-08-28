@@ -1,0 +1,51 @@
+.toOrder {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  color: $c-orange;
+  text-decoration: none;
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 85px;
+    background-color: $c-orange;
+    transition: transform $transition-speed;
+    transform-origin: left;
+    transform: scale(0);
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &::after {
+      transform: scale(1);
+    }
+  }
+
+  &:active {
+    &::after {
+      transform-origin: right;
+      transform: scale(0);
+    }
+  }
+
+  &__img {
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+    background: url(../images/icon/icon_arrow.svg) no-repeat;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 32px;
+    text-transform: uppercase;
+  }
+}

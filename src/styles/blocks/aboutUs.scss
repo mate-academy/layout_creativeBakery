@@ -1,0 +1,112 @@
+
+.aboutUs {
+
+  &__content {
+    position: relative;
+    @include grid;
+
+    margin-block: 72px;
+    max-width: $max-width-on-wide-screen;
+
+    @include onTablet {
+      margin-block: 152px;
+    }
+
+    @include onDesktop {
+      margin-top: 178px;
+      margin-bottom: 349px;
+    }
+
+    @include onWideDesktop {
+      margin-inline: auto;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-bottom: 32px;
+
+    @include h2_font;
+
+    @include onTablet {
+      grid-column: span 4;
+      margin-bottom: 0;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    max-width: 584px;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      grid-column: span 4;
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 544px;
+    z-index: -1;
+    width: 100%;
+
+    @include onTablet {
+      top: 51px;
+      left: 0;
+      right: 0;
+      margin-inline: auto;
+      width: 526px;
+    }
+
+    @include onDesktop {
+      top: 0;
+      width: 718px;
+    }
+  }
+
+  &__fact {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-bottom: 48px;
+
+    @include onTablet {
+      grid-column: span 4;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    &:last-of-type() {
+      margin-bottom: 0;
+    }
+
+    &:nth-of-type(n + 3) {
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__value {
+    font-size: 96px;
+    line-height: 81.6px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  &__header {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $fc-gray;
+  }
+}
