@@ -1,0 +1,132 @@
+.products {
+  @include grid;
+  &__header {
+    grid-column: 1 / 5;
+    margin-bottom: 24px;
+    padding: 0;
+
+    @include onTablet {
+      grid-column: 1 / 9;
+    }
+  }
+
+  &__subheading {
+    @include text;
+    grid-column: 1 / 5;
+    margin-bottom: 80px;
+
+    @include onTablet {
+      grid-column: 1 / 9;
+    }
+
+    @include onPhone {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__card {
+    margin-bottom: 86px;
+    &--1 {
+      grid-column: 1 / 4;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--5 {
+      grid-column: 1 / 4;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--6 {
+      grid-column: 4 / 7;
+
+      @include onTablet {
+        grid-column: 5 / 9;
+      }
+    }
+
+    &--2 {
+      grid-column: 4 / 7;
+
+      @include onTablet {
+        grid-column: 5 / 9;
+      }
+    }
+
+    &--3 {
+      grid-column: 3 / 6;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--4 {
+      grid-column: 6 / 9;
+
+      @include onTablet {
+        grid-column: 5 / 9;
+      }
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    padding-bottom: 130%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    &--1 {
+      background-image: url(../images/photo-product-01.png);
+    }
+
+    &--2 {
+      background-image: url(../images/photo-product-06.png);
+    }
+
+    &--3 {
+      background-image: url(../images/photo-product-05.png);
+    }
+
+    &--4 {
+      background-image: url(../images/photo-product-04.png);
+    }
+
+    &--5 {
+      background-image: url(../images/photo-product-03.png);
+    }
+
+    &--6 {
+      background-image: url(../images/photo-product-02.png);
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    @include text;
+    margin-bottom: 24px;
+    min-height: 48px;
+  }
+}

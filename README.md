@@ -22,9 +22,9 @@ Implement landing page according to [Figma design](https://www.figma.com/file/dY
 11. `git push origin develop` - to send you code for PR.
 12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
 13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/layout_creativeBakery/).
+  [DEMO LINK](https://olyakachmarchyk.github.io/layout_creativeBakery/).
 14. Copy `DEMO LINK` to the PR description.
 
 > To update you PR repeat steps 7-11.
 
-15. Check yourself using the [CHECKLIST](https://github.com/mate-academy/layout_creativeBakery/blob/master/checklist.md) when finished;
+15. Check yourself using the [CHECKLIST](https://github.com/olyakachmarchyk/layout_creativeBakery/blob/master/checklist.md) when finished;
