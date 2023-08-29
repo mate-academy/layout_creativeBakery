@@ -1,0 +1,65 @@
+.button {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  color: $button-col;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  padding: 20px 71px;
+
+  background-color: transparent;
+
+  height: 56px;
+  border: 2px solid $button-col;
+  border-radius: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  &::before {
+    display: flex;
+    background-image: url(..//images/icons/icon-cookie.jpg);
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:hover {
+    background-color: $button-col;
+    color: #fff;
+
+    &::before {
+      background-image: url(..//images/icons/Icon-cookie__hover.png);
+    }
+  }
+
+  &:focus {
+    background-color: #b2341a;
+    color: #fff;
+
+    &::before {
+      background-image: url(..//images/icons/Icon-cookie__hover.png);
+    }
+  }
+
+  &-container {
+    grid-column: 1 / -1;
+    margin: 0 auto;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+
+    @include onDesctop {
+      grid-column: 1 / 3;
+    }
+  }
+}
