@@ -1,0 +1,81 @@
+.navigation {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include onDesktop {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__item {
+    margin-top: 24px;
+    list-style: none;
+
+    @include onDesktop {
+      margin: 0 64px 0 0;
+    }
+
+    &:last-child {
+      margin-top: 32px;
+
+      @include onDesktop {
+        margin: 0;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    @include onDesktop {
+      padding-bottom: 8px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+
+      &:hover {
+        border-color: #1c1a26;
+      }
+    }
+  }
+
+  &__contacts {
+    display: inline-block;
+    
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-decoration: none;
+    color: #f9512e;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      padding-bottom: 8px;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+
+      &:hover {
+        border-color: #f9512e;
+      }
+    }
+
+    &::before {
+      content: url(../images/phone.png);
+      position: relative;
+      top: 3px;
+      margin-right: 8px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
