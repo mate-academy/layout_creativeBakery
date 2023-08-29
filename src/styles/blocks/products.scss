@@ -1,0 +1,39 @@
+.products {
+
+  &__content {
+    @include grid;
+
+    margin-top: 64px;
+    max-width: $max-width-on-wide-screen;
+    margin-inline: auto;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-bottom: 24px;
+
+    @include h2_font;
+  }
+
+  &__intro {
+    grid-column: 1 / -1;
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+    }
+  }
+
+  &__card:nth-of-type(4n + 3) {
+    @include onDesktop {
+      grid-column: 3 / 6;
+    }
+  }
+}

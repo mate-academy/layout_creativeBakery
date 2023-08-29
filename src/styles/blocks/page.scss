@@ -1,0 +1,50 @@
+.page {
+  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden; /* not to scroll the page */
+  }
+
+  &__body {
+    margin: 0;
+    min-width: 330px;
+    background: $c-gray;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: $fc-black;
+    background-color: $bgc-lightblue;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $bgc-lightblue;
+
+    transition: opacity 0s step-end, transform $transition-speed;
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+
+    @include onDesktop {
+      position: absolute;
+      transition: opacity 0s, transform 0s step-end;
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: all;
+      left: initial;
+    }
+  }
+
+  &__menu:target {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__aboutUs {
+    position: relative;
+  }
+}

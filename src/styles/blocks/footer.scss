@@ -1,0 +1,164 @@
+.footer {
+  background-color: $bdc-black;
+
+  &__content {
+    @include grid;
+
+    padding-block: 56px;
+
+    @include onTablet {
+      padding-block: 88px;
+    }
+
+    @include onWideDesktop {
+      max-width: $max-width-on-wide-screen;
+      margin-inline: auto;
+    }
+  }
+
+  &__menu-bar {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      grid-row: 2 / 4;
+    }
+
+    @include onDesktop {
+      grid-row: 2;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 96px;
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    color: $fc-white;
+
+    @include changeColor($c-accentorange, $c-darkorange);
+  }
+
+  &__img {
+    @include hoverInteractivity(transform, scale(1.05), scale(1));
+  }
+
+  &__header {
+    grid-column: 1 / -1;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $fc-gray;
+
+    &--email {
+      margin-top: 40px;
+      margin-bottom: 16px;
+
+      @include onDesktop {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__menu {
+    padding: 0;
+    margin: 0;
+    grid-column: 1 / -1;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item {
+    list-style: none;
+    margin-top: 16px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    color: $fc-white;
+    margin-bottom: 40px;
+    grid-column: 1 / -1;
+
+    @include h2_font;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      grid-row: 1;
+      margin-bottom: 0;
+      width: 200px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+
+  &__callUs {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__phone {
+    display: block;
+    text-decoration: none;
+    margin-top: 16px;
+    color: $fc-white;
+
+    @include changeColor($c-accentorange, $c-darkorange);
+  }
+
+  &_emailUs {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__email {
+    text-decoration: none;
+    color: $fc-white;
+
+    @include changeColor($c-accentorange, $c-darkorange);
+  }
+
+  &__social {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__copyright {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+      margin-top: 48px;
+    }
+  }
+}

@@ -1,6 +1,88 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin onTablet() {
+  @media(min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDesktop() {
+  @media(min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onWideDesktop() {
+  @media(min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin hoverInteractivity($_property, $_hoverValue, $_activeValue) {
+  transition: #{$_property} $transition-speed;
+
   &:hover {
-    #{$_property}: $_toValue;
+    #{$_property}: $_hoverValue;
+  }
+
+  &:active {
+    #{$_property}: $_activeValue;
+  }
+}
+
+@mixin changeColor($_hoveredColor, $_activedColor) {
+  transition: color $transition-speed;
+
+  &:hover {
+    color: #{$_hoveredColor};
+  }
+
+  &:active {
+    color: #{$_activedColor};
+  }
+}
+
+@mixin grid() {
+  --grid_column: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--grid_column), 1fr);
+  column-gap: 16px;
+
+  @include onTablet() {
+    --grid_column: 8;
+    column-gap: 24px;
+  }
+}
+
+@mixin h1_font() {
+  font-size: 64px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include onTablet {
+    font-size: 63px;
+  }
+
+  @include onDesktop {
+    font-size: 108px;
+  }
+
+  @include onWideDesktop {
+    font-size: 128px;
+  }
+}
+
+@mixin h2_font() {
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include onTablet {
+    font-size: 56px;
+  }
+
+  @include onDesktop {
+    font-size: 72px;
   }
 }
