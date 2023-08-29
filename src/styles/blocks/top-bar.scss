@@ -1,0 +1,73 @@
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    padding: 16px 0;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__menu-icon {
+    padding: 20px 0;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onDesctop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesctop {
+      display: flex;
+      gap: 64px;
+    }
+
+    &--link {
+      letter-spacing: -0.16px;
+      color: $main-col;
+      transition: 0.3s;
+
+      &:hover {
+        color: $button-col;
+      }
+
+      &-tel {
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.32px;
+        text-transform: uppercase;
+        color: $button-col;
+        display: flex;
+        align-items: center;
+        transition: 0.3s;
+
+        &::before {
+          display: flex;
+          content: "";
+          width: 24px;
+          height: 24px;
+          background-image: url(..//images/icons/icon-phone.svg);
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
