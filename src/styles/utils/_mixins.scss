@@ -1,6 +1,175 @@
+// Define common font properties
+@mixin responsive-font(
+  $base-size,
+  $tablet-size: null,
+  $desktop-size: null,
+  $big-desktop-size: null
+) {
+  font-size: $base-size;
+
+  @include onTablet {
+    font-size: $tablet-size;
+  }
+
+  @include onDesktop {
+    font-size: $desktop-size;
+  }
+
+  @include onBigDesktop {
+    font-size: $big-desktop-size;
+  }
+}
+
+// Mixin for hover effect
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $transition-duration;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+// Mixins for responsive breakpoints
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onBigDesktop {
+  @media (min-width: 1444px) {
+    @content;
+  }
+}
+
+// Mixin for top actions layout
+@mixin top-actions {
+  --menu-width: 24px;
+
+  display: grid;
+  grid-template-columns: 1fr var(--menu-width);
+  gap: 16px;
+
+  &--menu {
+    grid-template-columns: 1fr var(--menu-width);
+  }
+
+  @include onTablet {
+    gap: 24px;
+  }
+
+  @include onDesktop {
+    --menu-width: 500px;
+  }
+}
+
+// Mixin for custom button
+@mixin custom-button {
+  @extend %h4-uppercase-text;
+  
+  width: 100%;
+  max-width: 248px;
+  height: 56px;
+
+  background: transparent;
+
+  color: $accent-orange;
+  border: 2px solid $accent-orange;
+  border-radius: 32px;
+  outline: none;
+  cursor: pointer;
+
+  transition: color $transition-duration, background $transition-duration;
+
+  @include onTablet {
+    max-width: 326px;
+  }
+
+  @include onDesktop {
+    max-width: 260px;
+  }
+
+  &:hover {
+    background: $accent-orange;
+    color: $white;
+  }
+
+  &:active {
+    background: $dark-orange;
+    color: $white;
+    border: 2px solid $dark-orange;
+  }
+
+  &:disabled {
+    background: $white;
+    color: $light-orange;
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+// Mixin for custom button-link with image
+@mixin link($_img-normal, $_img-active) {
+  @extend %h4-uppercase-text;
+
+  position: relative;
+  margin: 0 auto;
+
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 140px;
+  height: 32px;
+
+  cursor: pointer;
+  color: $accent-orange;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: url(#{$_img-normal});
+
+  &::after {
+    content: "";
+    margin-top: 6px;
+
+    position: absolute;
+    left: 0;
+    top: 25px;
+    width: 0;
+    height: 0;
+
+    background-color: $accent-orange;
+    transition: width $transition-duration, height $transition-duration;
+  }
+
+  &:hover::after {
+    width: 100%;
+    height: 1px;
+  }
+
+  &:active {
+    color: $dark-orange;
+    background-image: url(#{$_img-active});
+
+    &::after {
+      background-color: $dark-orange;
+    }
+  }
+
+  &:disabled {
+    color: $light-orange;
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-image: url(#{$_img-normal});
   }
 }

@@ -1,0 +1,91 @@
+.menu {
+  background-color: $light-blue;
+
+  @include onDesktop {
+    background-color: transparent;
+    z-index: 1;
+  }
+
+  &__content {
+    --header-top-padding: 150px;
+    --header-bottom-padding: 104px;
+
+    position: relative;
+    padding: var(--header-top-padding) 0 var(--header-bottom-padding);
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    @include onTablet {
+      --header-bottom-padding: 228px;
+    }
+
+    @include onDesktop {
+      --header-top-padding: 28px;
+      --header-bottom-padding: 0;
+
+      height: auto;
+    }
+
+    @include onBigDesktop {
+      --header-top-padding: 28px;
+      --header-bottom-padding: 0;
+
+      height: auto;
+    }
+  }
+
+  &__top {
+    padding-bottom: 148px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onDesktop {
+      padding-bottom: 0;
+    }
+  }
+
+  &__list {
+    margin-bottom: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onDesktop {
+      margin-bottom: 0;
+      position: absolute;
+      right: 0;
+
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    @include hover (transform, scale($scale));
+
+    @include onDesktop {
+      margin-bottom: 0;
+      margin-right: 55px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    @extend %p-body-text;
+
+    color: $black;
+  }
+
+  &__call {
+    @include link("../images/Icon-phone.png", "../images/Icon-phone-dark.png");
+  }
+}

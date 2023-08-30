@@ -1,0 +1,146 @@
+.header {
+  &__content {
+    --header-top-padding: 16px;
+    --header-bottom-padding: 104px;
+
+    position: relative;
+
+    padding: var(--header-top-padding) 0 var(--header-bottom-padding);
+
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      --header-bottom-padding: 228px;
+    }
+
+    @include onDesktop {
+      --header-top-padding: 28px;
+      --header-bottom-padding: 313px;
+    }
+
+    @include onBigDesktop {
+      --header-bottom-padding: 290px;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+
+    padding-bottom: 48px;
+    z-index: 1;
+
+    align-items: center;
+
+    @include onTablet {
+      padding-bottom: 80px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 135px;
+    }
+  }
+
+  &__slogan {
+    padding-bottom: 32px;
+    text-align: center;
+
+    @include onTablet {
+      padding-bottom: 146px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      padding-bottom: 8px;
+    }
+
+    @include onBigDesktop {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    @include onTablet {
+      letter-spacing: -4px;
+    }
+
+    @include onDesktop {
+      letter-spacing: -6.8px;
+    }
+
+    @include onBigDesktop {
+      letter-spacing: -7.2px;
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    z-index: -1;
+    animation: shake 2s ease-in-out infinite;
+
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      padding-bottom: 210px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 64px;
+    }
+  }
+
+  &__image {
+    width: 288px;
+    height: 290px;
+
+    @include onTablet {
+      position: absolute;
+
+      width: 350px;
+      height: 350px;
+
+      transform: translateY(-60%);
+    }
+
+    @include onDesktop {
+      width: 550px;
+      height: 550px;
+    }
+
+    @include onBigDesktop {
+      width: 590px;
+      height: 590px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    @include custom-button;
+
+    &-icon {
+      height: 24px;
+      width: 24px;
+      background-image: url(/images/Icon-cookie.png);
+
+      transition: background-image $transition-duration;
+    }
+
+    &:hover &-icon {
+      background-image: url(/images/Icon-cookie-white.png);
+
+      transition: background-image $transition-duration;
+    }
+  }
+}
