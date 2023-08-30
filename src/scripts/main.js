@@ -1,5 +1,6 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import MicroModal from 'micromodal';
 
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 AOS.init({
-  duration: 1200,
-  delay: 200,
+  duration: 600,
 });
+
+MicroModal.init();

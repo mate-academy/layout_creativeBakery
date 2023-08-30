@@ -68,18 +68,15 @@
   }
 }
 
-// Mixin for custom button with image
-@mixin custom-button-with-img($_img-normal, $_img-hover) {
+// Mixin for custom button
+@mixin custom-button {
   @extend %h4-uppercase-text;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
   width: 100%;
   max-width: 248px;
   height: 56px;
 
-  background: transparent url(#{$_img-normal}) 40px/24px no-repeat;
+  background: transparent;
 
   color: $accent-orange;
   border: 2px solid $accent-orange;
@@ -91,45 +88,25 @@
 
   @include onTablet {
     max-width: 326px;
-
-    background-position: 75px;
   }
 
   @include onDesktop {
     max-width: 260px;
-
-    background-position: 45px;
   }
 
   &:hover {
-    background: $accent-orange url(#{$_img-hover}) 40px/24px no-repeat;
+    background: $accent-orange;
     color: $white;
-
-    @include onTablet {
-      background-position: 75px;
-    }
-
-    @include onDesktop {
-      background-position: 45px;
-    }
   }
 
   &:active {
-    background: $dark-orange url(#{$_img-hover}) 40px/24px no-repeat;
+    background: $dark-orange;
     color: $white;
     border: 2px solid $dark-orange;
-
-    @include onTablet {
-      background-position: 75px;
-    }
-
-    @include onDesktop {
-      background-position: 45px;
-    }
   }
 
   &:disabled {
-    background: $white url(#{$_img-normal}) 45px/24px no-repeat;
+    background: $white;
     color: $light-orange;
     cursor: not-allowed;
     opacity: 0.6;

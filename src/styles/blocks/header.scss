@@ -122,9 +122,25 @@
 
     transform: translateX(-50%);
 
-    @include custom-button-with-img(
-      "../images/Icon-cookie.png",
-      "../images/Icon-cookie-white.png"
-    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    @include custom-button;
+
+    &-icon {
+      height: 24px;
+      width: 24px;
+      background-image: url(/images/Icon-cookie.png);
+
+      transition: background-image $transition-duration;
+    }
+
+    &:hover &-icon {
+      background-image: url(/images/Icon-cookie-white.png);
+
+      transition: background-image $transition-duration;
+    }
   }
 }
