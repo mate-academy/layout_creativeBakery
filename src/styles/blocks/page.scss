@@ -1,0 +1,36 @@
+.page {
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  scroll-behavior: smooth;
+  &__body {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: $bg-color;
+  }
+
+  &__menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+
+    &:target {
+      transform: translateX(0);
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
