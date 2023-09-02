@@ -1,0 +1,30 @@
+.products {
+  &__list {
+    @include pageGrid;
+    row-gap: 56px;
+
+    @include onTablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__product {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+
+      &--right-1 {
+        grid-column: 3 / -4;
+      }
+
+      &--right-2 {
+        grid-column: -4 / -1;
+      }
+    }
+  }
+}
