@@ -1,28 +1,30 @@
 .nav {
   &__list {
-    display: none;
-
     @include onDesktop {
-      display: flex;
-      justify-content: space-between;
-      gap: 64px;
-      margin: 0;
       padding: 0;
+      margin: 0;
+      list-style: none;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 64px;
     }
 
     &__menu {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      row-gap: 24px;
     }
 
   }
 
   &__link {
-    line-height: 150%;
+    position: relative;
+    display: block;
+    text-decoration: none;
     letter-spacing: -0.16px;
     color: $main-text-color;
-    padding: 28px;
   }
   &__item {
     @include hover (transform, scale(1.2));
