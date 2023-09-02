@@ -5,6 +5,8 @@
 
   &__logo-link {
     display: flex;
+
+    @include hover(transform, scale(1.1));
   }
 
   &__logo {
@@ -14,5 +16,19 @@
   &__icon {
     display: flex;
     align-items: center;
+
+    &.icon--menu {
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
   }
 }
