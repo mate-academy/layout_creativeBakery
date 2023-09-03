@@ -1,0 +1,43 @@
+.top-bar {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 40px;
+    color: $c-main;
+  }
+
+  &__link {
+    position: relative;
+    color: $c-main;
+    text-decoration: none;
+    @include lineAfterHover;
+
+    &--orang {
+      display: block;
+      width: 100%;
+      height: 24px;
+      padding-left: 30px;
+
+      color: $accent-orange;
+      background: url(../images/icons/icon/Icon-phone.svg) no-repeat;
+
+      @include lineAfterHover-60px;
+    }
+    &:hover {
+      color: $c-focused;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: end;
+  }
+}

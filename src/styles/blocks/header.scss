@@ -1,0 +1,94 @@
+.page {
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 400vh;
+
+    box-sizing: border-box;
+    background-color: $bg;
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}
+
+.header {
+  padding: 16px;
+  margin-bottom: 100px;
+  &__container {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  &__top {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin: 23px 27px 30px;
+    }
+
+    @include onDesktop {
+      margin: 40px 50px 80px;
+    }
+  }
+
+  &__text {
+    max-width: 280px;
+    text-align: center;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.icon {
+  &--burger {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background: url(../images/icons/icon/Icon-menu-bl.png) no-repeat center;
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--close {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(../images/icons/icon/Icon-close-bl.png) no-repeat center;
+  }
+}
+
+.logo {
+  display: flex;
+  width: 24px;
+  height: 24px;
+
+  @include hover(transform ,scale($scale));
+
+  @include onDesktop {
+    width: 136px;
+    height: 32px;
+  }
+}
