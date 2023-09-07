@@ -1,0 +1,57 @@
+.button {
+  display: flex;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 32px;
+  border: 2px solid $accentOrange;
+  margin-bottom: 40px;
+
+  @include onTablet {
+    margin-bottom: 228px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 0;
+  }
+
+  &__text {
+    @include mainFont {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      color: $accentOrange;
+    }
+  }
+
+  transition: $effectDuration;
+
+  &:hover {
+    background-color: $accentOrange;
+
+    .button__text {
+      color: $white;
+    }
+
+    .button__icon {
+      content: url("../images/button/cookie-hover.png");
+    }
+  }
+
+  &:active {
+    background: $darkOrange;
+    border: $darkOrange;
+  }
+
+  &:disabled {
+    border: $lightOrange;
+    color: $lightOrange;
+    background: $white;
+    .button__icon {
+      content: url("../images/button/cookie-disable.png");
+    }
+  }
+}
