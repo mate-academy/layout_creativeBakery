@@ -1,0 +1,142 @@
+.footer {
+  background-color: $footer-color;
+  padding-block: 56px;
+  @include onTablet {
+    padding-block: 88px;
+  }
+
+  &__content {
+    @include pageGrid;
+    grid-template-columns: repeat(8, 8fr);
+    row-gap: 40px;
+
+    @include onTablet {
+      row-gap: 0;
+    }
+
+    @include onDesktop {
+      row-gap: 40px;
+    }
+  }
+
+  &__logo__link {
+    grid-column: 1/5;
+  }
+
+  &__menu {
+    cursor: pointer;
+    grid-column: 1/5;
+  }
+
+  &__contacts {
+    display: grid;
+    grid-column: 1/-1;
+    @include onTablet {
+      grid-column: 6/-1;
+    }
+
+    @include onDesktop {
+      grid-column: 5/7;
+    }
+
+  }
+
+  &__email {
+    grid-column: 1/-1;
+    @include onTablet {
+      grid-column: 6/-1;
+      margin-bottom: 48px;
+    }
+
+    @include onDesktop {
+      grid-column: 7/-1;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+    color: $footer-content-color;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      font-size: 56px;
+      grid-column: 6/-1;
+      grid-row: 1;
+      margin-bottom: 48px;
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      grid-column: 5/-1;
+      margin: 0;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    color: $footer-text-color;
+
+    &__item {
+      margin-top: 16px;
+      display: block;
+      color: $footer-content-color;
+      line-height: 150%;
+      letter-spacing: -0.16px;
+      @include hover (transform, scale(1.05));
+    }
+  }
+
+  &__nav {
+    &__list {
+      padding: 0;
+    }
+
+    &__link {
+      padding: 0;
+      color: $footer-content-color;
+    }
+
+    &__item {
+      margin-top: 16px;
+      @include hover (transform, scale(1.05));
+    }
+  }
+
+  &__copyright {
+    grid-column: 1/-1;
+    @include onTablet {
+      grid-column: 6/-1;
+    }
+
+    @include onDesktop {
+      grid-column: 5/-1;
+    }
+  }
+
+  &__copyright__text {
+    margin: 0;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    color: #7f8096;
+  }
+
+  &__icons {
+    display: flex;
+    column-gap: 32px;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: 1/5;
+    }
+  }
+}
