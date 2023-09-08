@@ -1,0 +1,147 @@
+.footer {
+  padding: 56px 0;
+  background-color: $c-Black;
+  color: #FFF;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__content {
+    @include pageGrid;
+    grid-row-gap: 40px;
+
+    @include onTablet {
+      grid-row-gap: 48px;
+    }
+  }
+
+  &__logo {
+    grid-column: 1 / -1;
+    align-items: start;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__main {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__logo-img {
+    width: 168px;
+    height: 40px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    color: $c-Grey;
+    margin-bottom: 16px;
+  }
+
+  &__list-list {
+    gap: 16px;
+    align-items: start;
+
+    @include onDesktop {
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    color: #FFF;
+  }
+
+  &__contact-title {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      display: grid;
+      column-gap: 24px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__contact-list {
+    @include onDesktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 32px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+
+    &:hover {
+      scale: 1.07;
+
+      .footer__social-img {
+        fill: #FFF;
+      }
+    }
+
+    &:focus {
+      scale: 1.07;
+
+      .footer__social-img {
+        fill: #FFF;
+      }
+    }
+  }
+
+  &__social-img {
+    display: block;
+    fill: $c-Orange;
+    transition: 0.3s;
+  }
+
+  &__copyright {
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-Grey;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+}
