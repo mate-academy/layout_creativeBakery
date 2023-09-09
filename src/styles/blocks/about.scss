@@ -1,8 +1,24 @@
 .about {
-  background-image: url("../img/crumbs.png");
-  background-position: bottom center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  padding: 0;
+
+  &__container {
+    background-image: url("../img/crumbs.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 72px;
+    padding-bottom: 72px;
+
+    @include onTablet {
+      margin-top: 152px;
+      padding-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-top: 178px;
+      padding-bottom: 350px;
+    }
+  }
 
   &__content {
     @include pageGrid;
@@ -41,6 +57,5 @@
 
   &__blog {
     grid-column: 1 / -1;
-    margin-bottom: 72px;
   }
 }
