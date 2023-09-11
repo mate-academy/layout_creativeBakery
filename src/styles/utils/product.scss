@@ -5,6 +5,11 @@
     height: 100%;
     border-radius: 8px;
     object-fit: cover;
+    transition: transform $time-transition;
+
+    &:hover {
+      transform: scale(1.06);
+    }
   }
 
   &__title {
@@ -16,11 +21,7 @@
     letter-spacing: 0.32px;
     text-transform: uppercase;
     margin-top: 16px;
-    grid-column: span 2;
-
-    @include onTablet {
-      grid-column: span 4;
-    }
+    margin-bottom: 8px;
   }
 
   &__info {
@@ -42,16 +43,16 @@
   &__send {
     grid-column: span 2;
 
-    // @include onTablet {
-
-    //   grid-column: span 2;
-
-    // }
   }
 
   &__sends {
     display: flex;
     align-items: center;
+    transition: transform $time-transition;
+
+    &:hover {
+      transform: scale(1.06);
+    }
 
     &--label {
       font-family: "Inter", sans-serif;

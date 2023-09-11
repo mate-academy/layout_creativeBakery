@@ -1,16 +1,53 @@
 .recommended {
 
   &__products {
-    row-gap: 80px;
+    row-gap: 56px;
     @include pageGrid;
 
+    @include onTablet {
+      row-gap: 80px;
+    }
   }
 
   &__product {
     grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
 
     @include onTablet {
       grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+    }
+
+    &--wiev {
+      display: flex;
+      flex-direction: column;
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: span 4;
+      }
+
+      @include onDesktop {
+        grid-column: 3/6;
+      }
+    }
+
+    &--square {
+      flex-direction: column;
+      grid-column: span 2;
+      display: flex;
+
+      @include onTablet {
+        grid-column: span 4;
+      }
+      @include onDesktop {
+        grid-column: 6/-1;
+      }
     }
   }
 }
