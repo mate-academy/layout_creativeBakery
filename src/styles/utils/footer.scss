@@ -1,11 +1,6 @@
 .footer {
   background-color: $color-black;
 
-  &__logobaker {
-    display: flex;
-    flex-direction: column;
-  }
-
   &__bakerlab {
     font-family: "Inter", sans-serif;
     font-size: 16px;
@@ -13,22 +8,29 @@
     font-weight: 400;
     line-height: 150%;
     letter-spacing: -0.16px;
-    grid-column: span 2;
-    margin-bottom: 56px;
+    grid-column: 1/-1;
+    padding-block: 0 56px;
 
     @include onTablet {
       grid-column: 5/-1;
-      margin-bottom: 88px;
+      padding-block: 0 88px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 5/7;
     }
   }
 
   &__icon {
     display: flex;
     gap: 32px;
+    grid-column: span 2;
     margin-bottom: 40px;
 
     @include onTablet {
-      margin-bottom: 88px;
+      grid-column: 1/5;
+      margin: 0;
     }
   }
 
@@ -45,7 +47,10 @@
 
     @include onTablet {
       grid-column: 5/-1;
-      // grid-row: 2;
+    }
+
+    @include onDesktop {
+      grid-column: 5/7;
     }
   }
 
@@ -57,7 +62,6 @@
     line-height: 100%;
     letter-spacing: 0.32px;
     text-transform: uppercase;
-    // padding-block: 0 16px;
     margin: 0;
   }
 
@@ -79,7 +83,12 @@
 
     @include onTablet {
       grid-column: 5/-1;
-      grid-row: 3;
+      margin-bottom: 48px;
+    }
+
+    @include onDesktop {
+      grid-column: 7/-1;
+      margin-bottom: 168px;
     }
   }
 
@@ -93,7 +102,6 @@
     text-transform: uppercase;
     margin: 0;
     padding-block: 0 16px;
-
   }
 
   &__adress {
@@ -121,8 +129,14 @@
       grid-column: 5/-1;
       grid-row: 1;
       margin-top: 88px;
+      font-size: 56px;
     }
 
+    @include onDesktop {
+      letter-spacing: -3.6px;
+      font-size: 72px;
+      grid-column: 5/-1;
+    }
   }
 
   &__info {
@@ -148,59 +162,5 @@
     grid-column: span 2;
     width: 168px;
     height: 40px;
-  }
-}
-
-.content {
-
-  &__bottom {
-    padding-block: 0 64px;
-    grid-column: span 1;
-
-    @include onTablet {
-      grid-column: 1/4;
-      padding-block: 0 104px;
-    }
-
-    @include onDesktop {
-      padding-block: 0 46px;
-      grid-column: 1/3;
-    }
-  }
-}
-
-.slide {
-
-  &__list {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 16px;
-
-    // margin-bottom: 24px;
-  }
-
-  &__link {
-    text-decoration: none;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: -0.16px;
-    position: relative;
-    color: $color-white;
-
-    &--menus {
-      color: $color-gray;
-      font-family: "Inter", sans-serif;
-      font-weight: 500;
-      line-height: 100%;
-      letter-spacing: 0.32px;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
   }
 }
