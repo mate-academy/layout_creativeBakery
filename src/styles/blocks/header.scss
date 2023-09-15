@@ -1,0 +1,162 @@
+.header {
+  @include onTablet {
+    height: 900px;
+  }
+
+  @include onDesktop {
+    height: 700px;
+  }
+
+  &__content {
+    @include pageGrid;
+    @include paddingInline;
+
+    @include onTablet {
+      grid-template-rows: auto auto auto auto;
+    }
+
+    @include onDesktop {
+      align-self: start;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    margin: 0;
+    margin-top: 32px;
+
+    color: $mainTextColor;
+    text-align: center;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      grid-row: 1 / 2;
+      text-align: left;
+      margin-top: 80px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+      margin-top: 135px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin: 0;
+    margin-top: 32px;
+
+    color: $mainOrange;
+    text-align: center;
+
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+      align-self: center;
+
+      font-size: 80px;
+      letter-spacing: -0.05em;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      letter-spacing: -6.8px;
+      margin-top: 8px;
+      align-self: start;
+    }
+  }
+
+  &__cookies {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+      grid-row: 2 / 3;
+      z-index: -1;
+      margin-top: 16px;
+    }
+
+    @include onDesktop {
+      grid-row: 1 / -1;
+      margin-top: 0;
+      margin-bottom: 66px;
+    }
+
+    &--img {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 40px;
+
+    padding: 0;
+    height: 56px;
+    border: 2px solid $mainOrange;
+    border-radius: 32px;
+    background: transparent;
+    text-decoration: none;
+    transition: all $effectDuration;
+
+    &:hover {
+      background-color: $mainOrange;
+    }
+
+    &:focus {
+      background-color: $darkOrange;
+      border-color: $darkOrange;
+    }
+
+    @include onTablet {
+      grid-column: 3 / 7;
+      margin-top: 80px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+      margin-top: 64px;
+      align-self: start;
+      margin-bottom: 94px;
+    }
+
+    &--text {
+      transition: all $effectDuration;
+      display: block;
+      margin: 0;
+      color: $mainOrange;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+    }
+
+    &--icon {
+      transition: all $effectDuration;
+      fill: $mainOrange;
+    }
+
+    &:hover .header__button--icon {
+      fill: $whiteTextColor;
+    }
+
+    &:hover .header__button--text {
+      color: $whiteTextColor;
+    }
+  }
+}

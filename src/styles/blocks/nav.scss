@@ -1,0 +1,59 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__items {
+    width: fit-content;
+    position: relative;
+    margin-bottom: 10px;
+
+    &::after {
+      transition: transform $effectDuration;
+      transform: scale(0);
+      transform-origin: left;
+
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $mainTextColor;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &--box {
+      display: flex;
+      gap: 4px;
+
+      &::after {
+        background-color: $mainOrange;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    color: $mainTextColor;
+    font-size: 23px;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+
+    &--contacts {
+      color: $mainOrange;
+      text-transform: uppercase;
+    }
+  }
+}
