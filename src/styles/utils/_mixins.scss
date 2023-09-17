@@ -1,6 +1,52 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: $tabletMinWidth) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktopMinWidth) {
+    @content;
+  }
+}
+
+@mixin paddingInline() {
+  padding-inline: 16px;
+
+  @media (min-width: $tabletMinWidth) {
+    padding-inline: 44px;
+  }
+
+  @media (min-width: $desktopMinWidth) {
+    padding-inline: 44px;
+    margin-inline: auto;
+    max-width: 1280px;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    column-gap: 24px;
+    --columns: 8;
+  }
+}
+
+@mixin hover ($property, $toValue) {
+  transition: #{$property} $effectDuration;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+.hover {
+  @include hover (transform, scale(1.2));
+}
+
+.product-card__foto {
+  @include hover (transform, scale(1.05));
 }

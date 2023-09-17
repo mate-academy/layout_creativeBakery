@@ -1,0 +1,54 @@
+.top-bar {
+  padding-block: 16px;
+  padding-inline: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @include onDesktop {
+    padding-block: 28px;
+    padding-inline: 32px;
+  }
+
+  &__logo {
+    display: flex;
+    height: 32px;
+    width: 136px;
+  }
+
+  .top-bar__icon {
+    fill: $mainTextColor;
+    transition: fill $effectDuration;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &:hover {
+      fill: $mainOrange;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__list {
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      gap: 64px;
+
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+}
