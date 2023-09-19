@@ -1,0 +1,36 @@
+.icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &--call {
+    background-image: url(../images/icon-phone.png);
+  }
+
+  &--menu {
+    background-image: url(../images/icon-menu-black.png);
+    transition: background-image $transitionTime;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &:hover {
+      background-image: url(../images/icon-menu.png);
+    }
+  }
+
+  &--close {
+    width: 12px;
+    height: 12px;
+    background-image: url(../images/icon-close-black.png);
+    transition: background-image $transitionTime;
+
+    &:hover {
+      background-image: url(../images/icon-close.png);
+    }
+  }
+}
