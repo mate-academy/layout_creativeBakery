@@ -1,0 +1,114 @@
+.footer {
+  background-color: $black-color;
+
+  &__content {
+    @include pageGrid;
+    row-gap: 40px;
+    padding-block: 56px;
+  }
+
+  &__logo {
+    background-image: url(../images/Logo-2.png);
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+
+    &--call-us {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 5 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / 7;
+      }
+    }
+  }
+
+  &__title {
+    color: $white-color;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__email {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 16px;
+    &-link {
+      width: fit-content;
+      @extend %text;
+      color: $white-color;
+      text-decoration: none;
+
+      @include onDesktop {
+        @include hover(transform, scale(1.2));
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          display: block;
+          height: 1px;
+          width: 100%;
+          background-color: $orrange-color;
+          transition: transform 0.3s;
+          transform: scale(0);
+          transform-origin: center;
+        }
+
+        &:hover::after {
+          transform: scale(1);
+        }
+      }
+    }
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      height: fit-content;
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 32px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__bakerlab {
+    grid-column: 1 / -1;
+    @extend %text;
+    color: $grey-color;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+  }
+}

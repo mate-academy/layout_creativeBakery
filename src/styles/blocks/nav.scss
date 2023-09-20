@@ -1,0 +1,89 @@
+.nav {
+  width: 100%;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: end;
+      gap: 64px;
+    }
+
+    &-footer {
+      @include onDesktop {
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+  }
+
+  &__item-contact {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    @include onDesktop {
+      width: fit-content;
+    }
+  }
+
+  &__link {
+    margin: auto;
+    width: fit-content;
+    position: relative;
+    display: block;
+    color: $black-color;
+    text-decoration: none;
+    text-align: center;
+
+    @extend %text;
+
+    &-footer {
+      color: $white-color;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      @include hover(transform, scale(1.2));
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $orrange-color;
+        transition: transform 0.3s;
+        transform: scale(0);
+        transform-origin: center;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+
+    &-contact {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      align-items: center;
+      color: $orrange-color;
+
+      @extend %uppercase;
+
+      @include onDesktop {
+        @include hover(transform, scale(1.2));
+      }
+    }
+  }
+}
