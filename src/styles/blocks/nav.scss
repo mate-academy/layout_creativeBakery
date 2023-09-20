@@ -1,0 +1,44 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    &--row-direction {
+      flex-direction: row;
+      gap: 64px;
+    }
+
+    &--column-direction {
+      gap: 24px;
+    }
+
+    &--column-direction-compact {
+      gap: 16px;
+    }
+  }
+
+  &__link {
+    color: $black-text-color;
+    @include linkHover;
+
+    &--white-color {
+      color: $white-text-color;
+    }
+
+    &--tel {
+      position: relative;
+      padding-left: 24px;
+      color: $accent-text-color;
+
+      &::before {
+        content: "";
+        background: url(../images/icons/icon-phone.svg);
+        position: absolute;
+        top: -2px;
+        left: -4px;
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+}
