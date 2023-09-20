@@ -1,0 +1,139 @@
+.footer {
+  background-color: $footer-bg;
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    padding: 30px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include grid_6;
+
+    @include onTablet {
+      padding: 30px 0;
+      row-gap: 50px;
+    }
+
+    @include onDesktop {
+      @include grid_12;
+      padding: 60px 0;
+      row-gap: 30px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__applications {
+    display: flex;
+    gap: 20px;
+
+    &--1 {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--2 {
+      display: none;
+      @include onDesktop {
+        display: flex;
+        gap: 14px;
+        grid-column: 8 / 13;
+        grid-row: 2;
+      }
+    }
+  }
+
+  &__text {
+    color: $bg-color;
+
+    @include onDesktop {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+  }
+
+  &__address {
+    display: block;
+    @include a-hover;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 13;
+      gap: 20px;
+    }
+  }
+
+  &__copy {
+    display: none;
+
+    @include onDesktop {
+      display: inline;
+    }
+  }
+
+  &__years {
+    font-weight: 600;
+    line-height: 130%;
+    // font-variant: small-caps;
+    width: 198px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 300px;
+      text-align: left;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+  }
+
+  &__copyrigth {
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      display: flex;
+      grid-column: 1 / 6 ;
+    }
+  }
+}

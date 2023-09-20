@@ -1,0 +1,77 @@
+.explanation {
+
+  &__container {
+    @include container;
+
+    @include onDesktop {
+      @include grid_12;
+      align-items: center;
+      position: relative;
+      grid-row: 100px;
+      padding: 100px 0;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: $dark-green;
+
+    @include onTablet {
+      width: 280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 1.2px;
+      width: 380px;
+      text-align: left;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      height: 1px;
+    }
+
+    &--1 {
+      position: absolute;
+      width: 100%;
+      background-color: $dark-green;
+      top: 0;
+      left: 0;
+      grid-column: 1 / 6;
+    }
+
+    &--2 {
+      position: absolute;
+      width: 100%;
+      background-color: $dark-green;
+      grid-column: 7 / 13;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__text2 {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 2 / 6;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.about {
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    @include grid_6;
+
+    @include onDesktop {
+      @include grid_12;
+      position: relative;
+    }
+  }
+
+  &__title {
+    @include section-title;
+    margin-bottom: 10px;
+  }
+
+  &__p {
+    margin: 0;
+
+    &--2 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__learn-more {
+    @include learn-more;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin: 40px 0;
+    }
+  }
+
+  &__img {
+
+    &--1 {
+      background-image: url(../images/about-brend/brand_1.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include onTablet {
+        height: 321px;
+        grid-column: 4 / 7;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 11;
+        height: 529px;
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        background-image: url(../images/about-brend/brand_2.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        grid-column: 11 / 13;
+        height: 430px;
+        margin-top: 99px;
+      }
+    }
+  }
+
+  &__box {
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+}

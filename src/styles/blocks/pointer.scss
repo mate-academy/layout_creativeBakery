@@ -1,0 +1,73 @@
+.pointer {
+  display: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 130%;
+  text-decoration: none;
+  color: $dark-green;
+
+  height: fit-content;
+  opacity: 0.5;
+  transform: rotate(-90deg);
+
+  @include onDesktop {
+    display: inline;
+    position: absolute;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    text-align: left;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      display: block;
+      width: 100px;
+      height: 1px;
+      background-color: $dark-green;
+      opacity: 0.5;
+      margin-right: 10px;
+      top: 50%;
+      right: 100%;
+    }
+  }
+
+  &--about {
+    @include onDesktop {
+      width: 192px;
+      right: -30%;
+      top: 14%;
+    }
+  }
+
+  &--shop {
+    @include onDesktop {
+      width: 35px;
+      right: 64%;
+      top: 22%;
+    }
+  }
+
+  &--creators {
+    @include onDesktop {
+      width: 132px;
+      right: 90%;
+      top: 9%;
+    }
+  }
+
+  &--ayurvedic {
+    @include onDesktop {
+      width: 80px;
+      right: 34%;
+      top: 9%;
+    }
+  }
+
+  &--contact {
+    @include onDesktop {
+      width: 35px;
+      right: 94%;
+      top: 2%;
+    }
+  }
+}
