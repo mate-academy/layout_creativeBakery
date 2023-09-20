@@ -1,0 +1,76 @@
+.product {
+  grid-column: span 4;
+  margin-top: 56px;
+
+  @include onDesktop {
+    grid-column: span 3;
+
+    &:nth-child(3){
+      grid-column: 3 / 6;
+    }
+
+    &:nth-child(4){
+      grid-column: 6 / -1;
+    }
+  }
+
+
+  &__img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    border-radius: 8px;
+    max-height: 90%;
+
+    @include onDesktop {
+      @include hover(box-shadow, 0px 0px 20px #000);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: 16px;
+    @extend %uppercase;
+    color: $grey-color;
+  }
+
+  &__text {
+    max-width: 80%;
+    margin-top: 8px;
+    @extend %text;
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    padding-block: 4px;
+    width: fit-content;
+    margin-top: 16px;
+    @extend %uppercase;
+    color: $orrange-color;
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: $orrange-color;
+      transform: scale(0);
+      position: absolute;
+      bottom: 0;
+      transition: all 0.3s;
+      transform-origin: left;
+      opacity: 0;
+    }
+
+    @include onDesktop {
+      &:hover::after {
+        opacity: 1;
+        transition: transform 0.3s;
+        transform: scale(1);
+      }
+    }
+  }
+}

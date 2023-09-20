@@ -1,0 +1,83 @@
+.about-us {
+  position: relative;
+  @include pageGrid;
+  margin-block: 72px;
+  row-gap: 32px;
+
+  @include onTablet {
+    margin-block: 152px;
+    row-gap: 72px;
+  }
+
+  @include onDesktop {
+    margin-top: 178px;
+    margin-bottom: 56px;
+    row-gap: 144px;
+    max-height: 675px;
+  }
+
+  & * {
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__text {
+    padding-bottom: 32px;
+    @include onTablet {
+      grid-column: span 4;
+      padding-bottom: 0;
+    }
+  }
+
+  &__wrapper {
+    grid-column: 1 / -1;
+    @include pageGrid;
+    gap: 48px;
+
+    @include onDesktop {
+      margin-bottom: 12vw;
+    }
+  }
+
+  &__bg {
+    background-image: url(../images/backgrounds/Crumbs.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    grid-column: 1 / -1;
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    right: 0;
+    height: 300px;
+    z-index: -1;
+
+    @include onTablet {
+      height: 500px;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include onDesktop {
+      height: 675px;
+      top: 0;
+    }
+  }
+
+  &__achievments {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
+  }
+}
