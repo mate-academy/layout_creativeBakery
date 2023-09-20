@@ -128,32 +128,29 @@
     justify-content: center;
     align-items: center;
     color: $accent-text-color;
+    transition: background-color $transform-duration-time;
 
     height: 56px;
     border: 2px solid $accent-text-color;
     border-radius: 32px;
 
-    &__button-icon {
+    &::before {
+      content: url(../images/icons/icon-cookie.svg);
       margin-right: 2px;
-      transition: all $transform-duration-time;
     }
 
     &:hover {
       background-color: $accent-text-color;
       color: $white-text-color;
-
-      .header__button-icon {
-        content: url(../images/icons/icon-cookie-hover.svg);
-      }
     }
 
-    &:focus {
+    &:hover::before {
+      content: url(../images/icons/icon-cookie-hover.svg);
+    }
+
+    &:active {
       background-color: $accent-dark-text-color;
       color: $white-text-color;
-
-      .header__button-icon {
-        content: url(../images/icons/icon-cookie-hover.svg);
-      }
     }
   }
 }
