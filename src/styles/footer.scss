@@ -1,10 +1,89 @@
 .footer {
   background-color: $text-c-black;
   color: $text-c-white;
+  padding-bottom: 56px;
+
+  & :nth-child(-n + 5):not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  @include onSM {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 88px;
+    position: relative;
+  }
 
   &__nav {
-
+    margin-top: 120px;
+    padding-bottom: 64px;
     max-width: 288px;
     margin: 0 auto;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $text-c-gray;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    margin-top: 40px;
+  }
+
+  &__link {
+    color: inherit;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &__contacts {
+    max-width: 288px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+
+    &__title {
+      font-family: "Inter", sans-serif;
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 41px;
+      text-transform: uppercase;
+      padding-bottom: 45px;
+
+      @include onSM {
+        padding: 0;
+      }
+    }
+  }
+
+  &__mail {
+    padding-top: 24px;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 32px;
+
+    @include onSM {
+      position: absolute;
+      bottom: 77px;
+      left: 45px;
+    }
+  }
+
+  &__rights {
+    color: $text-c-gray;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    @include onSM {
+      padding-top: 48px;
+    }
   }
 }

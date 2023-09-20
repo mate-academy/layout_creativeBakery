@@ -1,30 +1,50 @@
 .product {
-  max-width: 288px;
-  margin: 0 auto;
+  @include onSM {
+    text-align: start;
+  }
+
+  &__header {
+    max-width: 288px;
+    margin: 0 auto;
+
+    @include onSM {
+      max-width: 680px;
+    }
+  }
 
   &__cards {
+    max-width: 288px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    gap: 56px;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    @include onSM {
+      max-width: 680px;
+      row-gap: 80px;
+      column-gap: 24px;
+    }
   }
 
   &__title {
-    font-family: "Inter", sans-serif;
-    font-size: 48px;
     font-weight: 400;
+    font-size: 48px;
     line-height: 41px;
     text-transform: uppercase;
-
     padding-top: 64px;
     padding-bottom: 24px;
+
+    @include onSM {
+      font-size: 56px;
+      line-height: 47px;
+      padding-top: 180px;
+    }
   }
 
   &__description {
-    font-family: "Inter", sans-serif;
+    font-weight: 400;
     font-size: 16px;
-    font-weight: normal;
     line-height: 24px;
-
     padding-bottom: 56px;
   }
 }

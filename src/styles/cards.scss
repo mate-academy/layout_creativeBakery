@@ -1,14 +1,23 @@
 .card {
+  // width: 288px;
+  box-sizing: border-box;
+
+  @include onSM {
+    width: 328px;
+  }
+
+  & :nth-child(odd) {
+    padding-bottom: 16px;
+  }
+
   &__image {
     width: 100%;
     border-radius: 8px;
-    padding-bottom: 16px;
   }
 
   &__title {
     text-transform: uppercase;
     color: $text-c-gray;
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 16px;
@@ -18,18 +27,14 @@
   }
 
   &__description {
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: normal;
     line-height: 24px;
     letter-spacing: -1%;
-
-    padding-bottom: 16px;
   }
 
   &__link {
     color: $c-accent-orange-hover;
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     line-height: 16px;
     letter-spacing: 2%;

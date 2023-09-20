@@ -1,31 +1,62 @@
 .about-us {
   max-width: 288px;
   margin: 0 auto;
+  padding-top: 72px;
 
-  &__title {
-    font-family: "Inter", sans-serif;
-    font-size: 48px;
-    font-weight: 400;
-    line-height: 41px;
-    text-transform: uppercase;
-    padding-top: 72px;
-  }
-
-  &__description {
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 24px;
-    padding-top: 32px;
-  }
-
-  &__list {
-    padding-top: 64px;
+  @include onSM {
     background-image: url(../images/Crumbs.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  @include onSM {
+    max-width: 680px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 41px;
+    text-transform: uppercase;
+    padding-bottom: 32px;
+
+    @include onSM {
+      max-width: 328px;
+      font-size: 56px;
+      line-height: 47px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 24px;
+
+    @include onSM {
+      max-width: 328px;
+    }
+  }
+
+  &__list {
+    background-image: url(../images/Crumbs.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    padding-top: 64px;
     padding-bottom: 72px;
+
+    @include onSM {
+      background-image: none;
+      padding-top: 72px;
+      width: 100%;
+      columns: 2;
+      gap: 24px;
+    }
   }
 
   &__list__item {
