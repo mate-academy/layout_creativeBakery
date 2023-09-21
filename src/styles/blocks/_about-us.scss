@@ -1,0 +1,86 @@
+.about-us {
+  position: relative;
+  margin-bottom: 72px;
+
+  @include onTablet {
+    margin-bottom: 152px;
+  }
+
+  @include onDesktop {
+    @include pageGrid;
+    margin-bottom: 349px;
+  }
+
+  &__content {
+    margin-top: 72px;
+
+    @include onTablet {
+      margin-top: 152px;
+
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      margin-top: 178px;
+      grid-column: span 8;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-mobile-h2;
+    line-height: $line-hight-85;
+    letter-spacing: $letter-spacing-mobile-h2;
+    text-transform: uppercase;
+
+    @include onTablet {
+      grid-column: span 4;
+      font-size: $font-size-tablet-h2;
+      letter-spacing: $letter-spacing-tablet-h2;
+    }
+
+    @include onDesktop {
+      font-size: $font-size-decktop-h2;
+      letter-spacing: $letter-spacing-desktop-h2;
+    }
+  }
+
+  &__few-words {
+    margin-top: 32px;
+
+    @include onTablet {
+      margin-top: 0;
+      grid-column: span 4;
+    }
+  }
+
+  &__crumb {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 300px;
+    background-image: url(../images/cookie/Crumbs-small.png);
+    background-repeat: no-repeat;
+    bottom: 207px;
+
+    @include onTablet {
+      background-image: url(../images/cookie/Crumbs.png);
+      width: 526px;
+      height: 493px;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/cookie/Crumbs-desktop.png);
+      width: 718px;
+      height: 673px;
+      grid-column: 3/8;
+      margin: 0;
+      top: 178px;
+      bottom: unset;
+    }
+  }
+}

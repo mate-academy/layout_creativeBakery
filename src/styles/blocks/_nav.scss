@@ -1,0 +1,51 @@
+.nav {
+  grid-column: 1/-1;
+
+  &--header {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &--menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 132px;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+
+    &--menu {
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    color: $main-text-color;
+
+    &--color {
+      text-transform: uppercase;
+      color: $accent-text-color;
+      padding-left: 4px;
+    }
+  }
+
+  &__link {
+    color: $main-text-color;
+    @include hover (transform, scale(1.2));
+
+    &--orange {
+      color: $accent-text-color;
+      @include hover (transform, scale(1.05));
+    }
+  }
+}

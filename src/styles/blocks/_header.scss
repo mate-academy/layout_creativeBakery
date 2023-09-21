@@ -1,0 +1,103 @@
+.header {
+  position: relative;
+
+  &__content {
+    @include pageGrid;
+    @include onTablet {
+      grid-template-rows: auto;
+    }
+  }
+
+  &__introduction {
+    text-align: center;
+    margin-top: 32px;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      text-align: start;
+      grid-column: span 4;
+      margin-top: 80px;
+    }
+
+    @include onDesktop {
+      grid-column: 1/3;
+      margin-top: 135px;
+    }
+
+    @include onBigDesktop {
+      margin-top: 144px;
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    line-height: $line-hight-85;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 32px;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      font-size: 80px;
+      letter-spacing: -4px;
+      z-index: 1;
+      margin-top: 146px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      letter-spacing: -6.8px;
+      margin-top: 8px;
+    }
+
+    @include onBigDesktop {
+      font-size: 144px;
+      letter-spacing: -7.2px;
+      margin-top: 40px;
+
+    }
+  }
+
+  &__img {
+    display: flex;
+    justify-self: center;
+    height: 290px;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      height: 328px;
+      position: absolute;
+      top: 208px;
+      object-fit: cover;
+      grid-column: 3/7;
+      display: flex;
+      justify-self: center;
+
+      @include onDesktop {
+        top: 88px;
+        height: 546px;
+      }
+
+      @include onBigDesktop {
+        height: 586px;
+      }
+    }
+  }
+
+  &__buy-btn {
+    grid-column: 1/-1;
+    @include onTablet {
+      grid-column: 3/7;
+      margin-top: 210px;
+    }
+
+    @include onDesktop {
+      margin-top: 64px;
+    }
+
+    @include onDesktop {
+      grid-column: 1/3;
+    }
+  }
+}

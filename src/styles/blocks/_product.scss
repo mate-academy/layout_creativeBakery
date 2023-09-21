@@ -1,0 +1,67 @@
+.product {
+  display: grid;
+  margin-top: 56px;
+  grid-column: span 2;
+
+  @include onTablet {
+    grid-column: span 4;
+  }
+
+  @include onDesktop {
+    &--1,
+    &--5 {
+      grid-column: 1/4;
+    }
+
+    &--2,
+    &--6 {
+      grid-column: 4/7;
+    }
+
+    &--3 {
+      grid-column: 3/6;
+    }
+
+    &--4 {
+      grid-column: 6/-1;
+    }
+  }
+
+  &__img {
+    @include hover (scale, 1.05);
+    border-radius: 8px;
+    width: 100%;
+    grid-column: 1/-1;
+  }
+
+  &__name {
+    margin-top: 16px;
+    color: $secondary-text-color;
+    font-size: $font-size-main-text;
+    font-weight: $font-weight-madium;
+    line-height: $line-hight-100;
+    letter-spacing: $letter-spacing-secondary-text;
+    text-transform: uppercase;
+  }
+
+  &__describe {
+    margin-top: 8px;
+  }
+
+  &__order {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__p {
+    @include hover (scale, 1.15);
+    cursor: pointer;
+    color: $accent-text-color;
+    font-size: 16px;
+    font-weight: $font-weight-madium;
+    line-height: $line-hight-100;
+    letter-spacing: $letter-spacing-secondary-text;
+    text-transform: uppercase;
+  }
+}
