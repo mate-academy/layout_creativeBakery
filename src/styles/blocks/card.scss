@@ -1,0 +1,57 @@
+.card {
+  margin-bottom: 62px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__photo-container {
+    overflow: hidden;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 16px;
+  }
+
+  &__photo {
+    width: 100%;
+    display: block;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__title {
+    color: $grey;
+    margin-bottom: 8px;
+
+    @include textUpper;
+  }
+
+  &__info {
+    margin-bottom: 24px;
+
+    @include textBody;
+  }
+
+  &__button {
+    justify-content: flex-start;
+  }
+
+  @include onDifDesktops {
+    &:nth-child(2n + 1) {
+      grid-column: 3 / 6;
+    }
+
+    &:nth-child(4n + 1) {
+      grid-column: 1 / 4;
+    }
+
+    &:nth-child(4n + 2) {
+      grid-column: 4 / 7;
+    }
+
+    &:nth-child(4n) {
+      grid-column: -4 / -1;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+.header {
+  &__menu {
+    display: none;
+
+    @include onDifDesktops {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  &__menu-item {
+    @include onDifDesktops {
+      display: block;
+      text-decoration: none;
+      color: $black;
+      margin-right: 64px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+
+      @include textBody;
+
+      &:hover {
+        color: $accentOrange;
+        border-color: $accentOrange;
+      }
+
+      &:focus {
+        color: $darkOrange;
+        border-color: $darkOrange;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__contact-icon {
+    height: 16px;
+    width: 16px;
+    display: block;
+    margin-right: 8px;
+  }
+
+  &__contact {
+    color: $accentOrange;
+  }
+
+  &__info {
+    text-align: center;
+
+    @include difProperty(
+      margin,
+      0 16px 104px,
+      0 44px 228px,
+      0 44px 218px,
+      0 124px 178px
+    );
+
+    @include onDifDevices {
+      position: relative;
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+
+    @include textBody;
+    @include difProperty(width, 100%, 280px, 260px, 280px);
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 16px;
+    }
+
+    @include onDifDesktops {
+      text-align: left;
+      position: absolute;
+      left: 0;
+      top: 24%;
+    }
+  }
+
+  &__title {
+    @include textH1;
+    @include difProperty(font-size, 64px, 80px, 118px, 121px);
+
+    @include onDifDevices {
+      z-index: 2;
+      right: 0;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+    }
+
+    @include onTablet {
+      top: 45%;
+    }
+  }
+
+  &__photo {
+    @include difProperty(height, 100%, 328px, 546px, 586px);
+
+    @include onTablet {
+      margin-bottom: 80px;
+      position: relative;
+    }
+
+    @include onDifDesktops {
+      position: relative;
+    }
+  }
+
+  &__photo-img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &__button-container {
+    @include onDifDevices {
+      @include grid;
+    }
+
+    @include onDifDesktops {
+      position: absolute;
+      top: 72%;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+
+    @include onDifDesktops {
+      grid-column: 1 / 3;
+    }
+  }
+}

@@ -1,0 +1,108 @@
+.footer {
+  background-color: $black;
+  padding: 61px 0 56px;
+
+  &__top {
+    @include onDifDevices {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+
+    @include onDifDevices {
+      margin-bottom: 0;
+    }
+  }
+
+  &__logo {
+    height: 30px;
+    margin-bottom: 44px;
+  }
+
+  &__subtitle {
+    color: $grey;
+    margin-bottom: 16px;
+
+    @include textUpper;
+  }
+
+  &__link {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: max-content;
+    border-bottom: 1px solid transparent;
+    margin-bottom: 16px;
+    transition: all 0.3s;
+
+    @include textBody;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: $accentOrange;
+      border-color: $accentOrange;
+    }
+  }
+
+  &__contacts {
+    @include onDifDesktops {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__contacts-title {
+    @include textH2;
+
+    color: #fff;
+    margin-bottom: 40px;
+  }
+
+  &__call-us {
+    margin-bottom: 40px;
+  }
+
+  &__email-us {
+    margin-bottom: 44px;
+
+    @include onDifDevices {
+      margin-bottom: 0;
+    }
+  }
+
+  &__social {
+    @include onDifDevices {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__social-links {
+    display: flex;
+    margin-bottom: 42px;
+  }
+
+  &__icon {
+    margin-right: 35px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__copyright {
+    color: $grey;
+
+    @include textBody;
+  }
+}

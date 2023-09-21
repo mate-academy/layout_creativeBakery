@@ -4,3 +4,114 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: 640px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onDesktopXL {
+  @media (min-width: 1201px) {
+    @content;
+  }
+}
+
+@mixin onDifDesktops {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onDifDevices {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin difProperty(
+  $_property,
+  $_valueMob,
+  $_valueTab,
+  $_valueDesk,
+  $_valueDeskXL
+) {
+  #{$_property}: #{$_valueMob};
+
+  @include onTablet {
+    #{$_property}: #{$_valueTab};
+  }
+
+  @include onDesktop {
+    #{$_property}: #{$_valueDesk};
+  }
+
+  @include onDesktopXL {
+    #{$_property}: #{$_valueDeskXL};
+  }
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 24px;
+}
+
+@mixin textH1 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  margin: 0;
+
+  @include difProperty(font-size, 64px, 80px, 136px, 144px);
+}
+
+@mixin textH2 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  margin: 0;
+
+  @include difProperty(font-size, 48px, 56px, 72px, 72px);
+}
+
+@mixin textBig {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-size: 96px;
+}
+
+@mixin textBody {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -0.01em;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+@mixin textUpper {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}

@@ -1,0 +1,26 @@
+.products {
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    margin-bottom: 56px;
+
+    @include textBody;
+    @include onDifDevices {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__catalog {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onDifDesktops {
+      @include grid;
+    }
+  }
+}
