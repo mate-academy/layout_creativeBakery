@@ -1,13 +1,15 @@
 .header {
-  max-width: 288px;
-  margin: 0 auto;
   text-align: center;
-  padding-bottom: 40px;
+  padding: 16px;
   box-sizing: border-box;
 
   @include onSM {
-    max-width: 680px;
-    text-align: center;
+    // text-align: center;
+  }
+
+  @include onMD {
+    max-width: 1112px;
+    padding: 44px;
   }
 
   &__subtitle {
@@ -15,10 +17,17 @@
     font-weight: 400;
     line-height: 24px;
     padding-top: 32px;
+    max-width: 280px;
+    margin: 0 auto;
 
     @include onSM {
-      max-width: 280px;
       text-align: start;
+      margin: 0;
+    }
+
+    @include onMD {
+      max-width: 260px;
+      margin-bottom: -140px;
     }
   }
 
@@ -32,30 +41,32 @@
 
     @include onSM {
       font-size: 76px;
-      height: 328px;
-      line-height: 328px;
-      padding: 0;
-      margin: 16px 0 80px;
-      position: relative;
+      position: absolute;
+      top: 50%;
     }
 
-    &::after {
-      content: "";
-      display: block;
-      background-image: url(../images/Cookie.png);
-      background-size: contain;
-      background-repeat: no-repeat;
-      width: 288px;
-      height: 290px;
+    @include onMD {
+      box-sizing: border-box;
+      max-width: 1112px;
+      margin: 0 auto;
+      padding: 0;
+      font-size: 119px;
+      height: 116px;
+    }
+  }
 
-      @include onSM {
-        position: absolute;
-        top: 0;
-        left: calc(50% - 144px);
-        width: 326px;
-        height: 328px;
-        z-index: -1;
-      }
+  &__image {
+    width: 288px;
+    height: 290px;
+
+    @include onSM {
+      width: 326px;
+      height: 328px;
+    }
+
+    @include onMD {
+      width: 544px;
+      height: 546px;
     }
   }
 
@@ -71,12 +82,17 @@
     color: $c-accent-orange-hover;
     font-size: 16px;
     line-height: 16px;
-    letter-spacing: 2%;
     text-transform: uppercase;
 
     @include onSM {
       width: 326px;
       margin: 0 auto;
+    }
+
+    @include onMD {
+      width: 260px;
+      padding: 20px 6px;
+      margin: 0;
     }
   }
 

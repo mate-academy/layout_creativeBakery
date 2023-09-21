@@ -1,0 +1,61 @@
+.aside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  box-sizing: border-box;
+  padding: 16px;
+  height: 100vh;
+  margin: 0 auto;
+
+  opacity: 0;
+  pointer-events: none;
+
+  background-color: #fff;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding-top: 132px;
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -1%;
+    color: inherit;
+  }
+
+  &__link:last-child {
+    color: $c-accent-orange-hover;
+  }
+
+  &__link:last-child::before {
+    content: "";
+    background-image: url(../images/icons/phone-hover.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    padding-right: 26px;
+  }
+
+  &__link:hover {
+    color: $c-accent-orange-hover;
+  }
+}
