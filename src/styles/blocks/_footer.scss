@@ -1,0 +1,146 @@
+.footer {
+  background-color: $main-text-color;
+  color: $footer-text-color;
+
+  &__content {
+    padding-top: 56px;
+
+    @include onTablet {
+      @include pageGrid;
+      grid-template-rows: auto;
+      padding-top: 88px;
+    }
+  }
+
+  &__menu {
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__contacts {
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__contact-wrapper {
+    @include onDesktop {
+      grid-column: span 4;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__call-us {
+    @include onDesktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__email-us {
+    @include onDesktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__logo {
+    @include hover (transform, scale(1.05));
+  }
+
+  &__contact-name {
+    margin-top: 40px;
+    color: $secondary-text-color;
+    font-weight: $font-weight-madium;
+    line-height: $line-hight-100;
+    letter-spacing: $letter-spacing-secondary-text;
+    text-transform: uppercase;
+
+    @include onTablet {
+      &--menu {
+        margin-top: 96px;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+
+      &--email {
+        grid-column: 3/-1;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 64px;
+    font-size: $font-size-mobile-h2;
+    line-height: $line-hight-85;
+    letter-spacing: $letter-spacing-mobile-h2;
+    text-transform: uppercase;
+    max-width: min-content;
+
+    @include onTablet {
+      margin-top: 0;
+      font-size: $font-size-tablet-h2;
+      letter-spacing: $letter-spacing-tablet-h2;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+      font-size: $font-size-decktop-h2;
+      letter-spacing: $letter-spacing-desktop-h2;
+      max-width: none;
+    }
+  }
+
+  &__numbers {
+    @include onDesktop {
+      grid-column: 1/3;
+    }
+  }
+
+  &__email {
+    display: inline-block;
+    margin-top: 16px;
+    color: $footer-text-color;
+    @include hoverLinksUnderlines ($accent-text-color, 5px);
+
+    @include onDesktop {
+      grid-column: 3/-1;
+    }
+  }
+
+  &__bottom {
+    margin-top: 40px;
+    @include onTablet {
+      grid-column: span 8;
+      @include pageGrid;
+      margin-top: 48px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    column-gap: 32px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__privacy {
+    margin-top: 40px;
+    color: $secondary-text-color;
+    padding-bottom: 56px;
+
+    @include onTablet {
+      margin-top: 0;
+      grid-column: span 4;
+    }
+  }
+}
