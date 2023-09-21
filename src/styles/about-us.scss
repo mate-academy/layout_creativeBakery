@@ -1,20 +1,24 @@
 .about-us {
   max-width: 288px;
-  margin: 0 auto;
-  padding-top: 72px;
+  margin: 72px auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 
   @include onSM {
+    flex-direction: row;
+    flex-wrap: wrap;
     background-image: url(../images/Crumbs.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+
+    max-width: 680px;
+    gap: 24px;
   }
 
-  @include onSM {
-    max-width: 680px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
+  @include onMD {
+    max-width: 1112px;
   }
 
   &__title {
@@ -29,9 +33,16 @@
       font-size: 56px;
       line-height: 47px;
     }
+
+    @include onMD {
+      max-width: 544px;
+      font-size: 72px;
+      line-height: 61px;
+    }
   }
 
   &__description {
+    width: 100%;
     font-size: 16px;
     font-weight: normal;
     line-height: 24px;
@@ -39,23 +50,31 @@
     @include onSM {
       max-width: 328px;
     }
+
+    @include onMD {
+      max-width: 544px;
+    }
   }
 
   &__list {
+    width: 100%;
     background-image: url(../images/Crumbs.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 
     padding-top: 64px;
-    padding-bottom: 72px;
 
     @include onSM {
       background-image: none;
       padding-top: 72px;
-      width: 100%;
       columns: 2;
       gap: 24px;
+    }
+
+    @include onMD {
+      columns: 4;
+      margin: 0 auto;
     }
   }
 

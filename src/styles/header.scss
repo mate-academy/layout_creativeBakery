@@ -1,15 +1,19 @@
 .header {
   text-align: center;
-  padding: 16px;
   box-sizing: border-box;
 
-  @include onSM {
-    // text-align: center;
-  }
+  &__bottom {
+    padding: 0 16px;
 
-  @include onMD {
-    max-width: 1112px;
-    padding: 44px;
+    @include onSM {
+      padding: 0 44px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    @include onMD {
+      max-width: 1112px;
+    }
   }
 
   &__subtitle {
@@ -27,7 +31,8 @@
 
     @include onMD {
       max-width: 260px;
-      margin-bottom: -140px;
+      // bottom: 0;
+      // margin-bottom: -140px;
     }
   }
 
@@ -42,22 +47,25 @@
     @include onSM {
       font-size: 76px;
       position: absolute;
-      top: 50%;
+      top: 40%;
     }
 
     @include onMD {
       box-sizing: border-box;
-      max-width: 1112px;
-      margin: 0 auto;
       padding: 0;
+      top: 68%;
       font-size: 119px;
       height: 116px;
     }
   }
 
   &__image {
+    margin: 0 auto;
     width: 288px;
     height: 290px;
+    background-image: url(../images/Cookie.png);
+    background-size: contain;
+    background-position: center;
 
     @include onSM {
       width: 326px;
@@ -85,14 +93,13 @@
     text-transform: uppercase;
 
     @include onSM {
-      width: 326px;
-      margin: 0 auto;
+      max-width: 288px;
+      padding: 20px 60px;
+      margin: 0;
     }
 
     @include onMD {
-      width: 260px;
-      padding: 20px 6px;
-      margin: 0;
+      max-width: 326px;
     }
   }
 

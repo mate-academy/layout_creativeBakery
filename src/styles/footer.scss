@@ -14,6 +14,13 @@
     position: relative;
   }
 
+  @include onMD {
+    &__contacts__container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   &__nav {
     padding-top: 120px;
     padding-bottom: 64px;
@@ -48,22 +55,41 @@
     margin: 0 auto;
     padding-bottom: 40px;
 
+    @include onSM {
+      max-width: 328px;
+    }
+
+    @include onMD {
+      max-width: 544px;
+    }
+
     &__title {
       font-family: "Inter", sans-serif;
-      font-size: 48px;
       font-weight: 400;
+      font-size: 48px;
       line-height: 41px;
       text-transform: uppercase;
       padding-bottom: 45px;
 
       @include onSM {
+        font-size: 56px;
+        line-height: 47px;
         padding: 0;
+      }
+
+      @include onMD {
+        font-size: 72px;
+        line-height: 61px;
       }
     }
   }
 
   &__mail {
     padding-top: 24px;
+
+    @include onMD {
+      padding: 0;
+    }
   }
 
   &__socials {
