@@ -1,0 +1,42 @@
+.what-we-bake {
+  &__top {
+    @include pageGrid();
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+
+    margin-bottom: 56px;
+
+    @include onTable() {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__products {
+    @include pageGrid();
+    row-gap: 56px;
+
+    @include onTable() {
+      row-gap: 80px;
+    }
+  }
+
+  &__article {
+    grid-column: span 2;
+
+    @include onTable() {
+      grid-column: span 4;
+    }
+
+    @include onDesktop() {
+      grid-column: span 3;
+    }
+  }
+}
