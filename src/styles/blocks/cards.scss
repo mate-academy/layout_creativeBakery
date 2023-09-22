@@ -1,0 +1,110 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 56px;
+
+  @include onTablet {
+    gap: 80px;
+  }
+
+  &__pair {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    margin: 0 auto;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__pair--mid {
+    justify-content: end;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 280px;
+
+    @include onTablet {
+      max-width: 328px;
+    }
+  }
+
+  &__card-image {
+    height: 356px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: rgba(17, 17, 26, 0.5) 0 8px 24px,
+        rgba(17, 17, 26, 0.5) 0 16px 56px,
+        rgba(17, 17, 26, 0.5) 0 24px 80px;
+    }
+
+    @include onTablet {
+      height: 424px;
+      width: 325px;
+    }
+  }
+
+  &__card-name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #7f8096;
+
+    margin-bottom: 8px;
+  }
+
+  &__card-description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    letter-spacing: -0.01em;
+
+    margin-bottom: 16px;
+  }
+
+  &__card-btn {
+    width: 84px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #f9512e;
+
+    @include hover(transform, scale(1.2));
+
+    &::before {
+      content: url(../images/icons/arrow-right.svg);
+      padding-right: 8px;
+    }
+  }
+}

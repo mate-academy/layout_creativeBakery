@@ -1,0 +1,98 @@
+.menu {
+  height: 100vh;
+  z-index: 1;
+  background-color: #eef7ff;
+
+  &__content {
+    padding-top: 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      padding-top: 32px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 148px;
+
+    @include onTablet {
+      margin-bottom: 180px;
+    }
+  }
+
+  &__logo {
+    width: 136px;
+    height: 32px;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__icon-close {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__list {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    @include onTablet {
+      gap: 30px;
+    }
+  }
+
+  &__item {
+    @include hover(transform, scale(1.2));
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    color: #1c1a26;
+
+    &--contact-us {
+      color: #f9512e;
+      font-weight: 500;
+      line-height: 16px;
+      height: 32px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::before {
+        content: url(../images/icons/phone.svg);
+        padding-right: 6px;
+      }
+
+      @include onTablet {
+        height: 36px;
+      }
+    }
+
+    @include onTablet {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+}
