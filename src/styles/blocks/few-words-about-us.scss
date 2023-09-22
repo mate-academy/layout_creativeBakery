@@ -1,4 +1,24 @@
 .few-words-about-us {
+  background-image: url(../images/few-words-about-us/background.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center 75%;
+
+  @include onTable() {
+    background-image: url(../images/few-words-about-us/background-table.png);
+
+    background-size: 526px 493px;
+    background-position: center;
+  }
+
+  @include onDesktop() {
+    background-image: url(../images/few-words-about-us/background-desktop.png);
+
+    background-size: 718px 673px;
+
+    padding-bottom: 293px;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -32,10 +52,5 @@
     @include onTable() {
       grid-column: span 4;
     }
-  }
-
-  &__statistics-list {
-    @include pageGrid();
-    row-gap: 48px;
   }
 }
