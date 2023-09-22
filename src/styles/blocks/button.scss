@@ -4,19 +4,47 @@
   justify-content: center;
   gap: 4px;
 
+  color: $button-main-color;
+
   &--learn-more {
     border-radius: 32px;
-    border: 2px solid $page-main-color;
+    border: 2px solid $button-main-color;
 
     padding-block: 20px;
+
+    @include hover(background-color, $button-main-color);
+    @include hover(color, #fff);
+
+    &:hover .button__icon {
+      background-image: url(../images/icons/icon-cookie-hover.svg);
+    }
+
+    &:active {
+      background-color: $button-active-color;
+      border-color: $button-active-color;
+    }
   }
 
   &--order {
+    position: absolute;
+
     justify-content: start;
+
+    @include hoverUnderline($button-main-color);
+
+    &:active {
+      color: $button-active-color;
+      border-bottom: 1px solid $button-active-color;
+
+      @include hoverUnderlineOff();
+    }
+
+    &:active .button__icon {
+      background-image: url(../images/icons/icon-arrow-active.svg);
+    }
   }
 
   &__text {
-    color: $page-main-color;
     font-weight: 500;
     letter-spacing: 0.32px;
     text-transform: uppercase;
