@@ -1,0 +1,166 @@
+.contact-us {
+  &__wrapper {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    grid-column: 1 / 4;
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+
+    &--title {
+      color: $c-green;
+      margin-bottom: 10px;
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--description {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+    }
+
+    &--field {
+      @extend %menu-text;
+      font-size: 14px;
+      color: $c-green;
+      width: 100%;
+      border-bottom: 1px solid;
+      border-color: $c-gray-3;
+      background-color: transparent;
+      padding-bottom: 10px;
+      @include hover(border-color, $c-green);
+
+      &:valid {
+        border-color: $c-green;
+      }
+
+      &::placeholder {
+        color: $c-gray-3;
+      }
+      
+      &:hover::placeholder {
+        transition: 0.3s;
+        color: $c-green;
+      }
+
+      &:focus {
+        color: $c-gray-3;
+        border-color: $c-black;
+      }
+      
+      &--name {
+        margin-bottom: 25px;
+
+        @include onDesktop {
+          margin-bottom: 30px;
+        }
+      }
+
+      &--email {
+        text-transform: none;
+        margin-bottom: 25px;
+
+        @include onDesktop {
+          margin-bottom: 30px;
+        }
+      }
+
+      &--phone-number {
+        margin-bottom: 45px;
+
+        @include onDesktop {
+          margin-bottom: 60px;
+        }
+      }
+
+      &--message {
+        text-transform: none;
+        margin-bottom: 30px;
+
+        @include onDesktop {
+          margin-bottom: 50px;
+        }
+
+        &::-webkit-scrollbar {
+          width: 6px;
+        }
+  
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;
+          background: $c-gray-3;
+        }
+  
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background-color: $c-light-gray;
+        }
+  
+        &::-webkit-scrollbar-thumb:hover {
+          background-color: $c-light-green;
+        }
+      }
+
+      &:-webkit-autofill {
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+          caret-color: $c-green;
+          -webkit-text-fill-color: $c-green;
+          -webkit-box-shadow: 0 0 0 1000px $c-warm-gray inset;
+        }
+      }
+    }
+
+    &--button {
+      width: 280px;
+      align-self: center;
+    }
+  }
+
+  &__photo {
+    &-box {
+      overflow: hidden;
+      display: none;
+      grid-column: 4 / 7;
+
+      @include onTablet {
+        display: block;
+      }
+  
+      @include onDesktop {
+        grid-column: 7 / 13;
+      }
+    }
+
+    @include hover(transform, scale(1.2));
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+
+    @include onTablet {
+      background-image: url(/images/contact-us/tablet.png);
+    }
+
+    @include onDesktop {
+      background-image: url(/images/contact-us/desktop.png);
+    }
+  }
+}
