@@ -7,8 +7,16 @@ const shop = document.querySelector('.icon--shop__var');
 const delet = document.querySelector('.product__card--delete-btn');
 let count = 0;
 let res = 0;
-
 const sS = window.sessionStorage;
+
+// if (Number.shop.innerHTML <= 0) {
+//   shop.style.display = 'none';
+// }
+// if (zalups >= 0) {
+//   shop.style.display = 'none';
+// } else {
+//   shop.style.display = 'block';
+// }
 
 if (button) {
   button.addEventListener('click', function() {
@@ -17,6 +25,7 @@ if (button) {
     sS.setItem('res', res);
     // lS.setItem('res', res);
     shop.innerHTML = sS.getItem('res');
+    shop.style.display = 'flex';
     // shop.innerHTML = lS.getItem('res');
   });
 };
@@ -27,6 +36,7 @@ if (delet) {
     count = 0;
     res = 0;
     sS.setItem('res', res);
+    shop.style.display = 'none';
     // lS.setItem('res', res);
   });
 };
@@ -38,3 +48,7 @@ if (typeof window !== 'undefined') {
   // count = lS.getItem('res');
   shop.innerHTML = count;
 };
+
+if (count <= 0) {
+  shop.style.display = 'none';
+}
