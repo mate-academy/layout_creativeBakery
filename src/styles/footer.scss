@@ -1,94 +1,109 @@
 .footer {
   background-color: $text-c-black;
   color: $text-c-white;
-  padding-bottom: 56px;
 
-  & :nth-child(-n + 5):not(:last-child) {
-    margin-bottom: 16px;
-  }
+  padding: 56px 16px;
 
-  @include onSM {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 88px;
-    position: relative;
-  }
+  &__container {
+    display: grid;
+    grid-template-areas:
+    "logo"
+    "menu"
+    "title"
+    "call_info"
+    "email_info"
+    "socials_info"
+    "rights_info";
 
-  @include onMD {
-    &__contacts__container {
-      display: flex;
-      justify-content: space-between;
+    @include onSM {
+      grid-template-areas:
+      "logo title"
+      "menu call_info"
+      "menu email_info"
+      "socials_info rights_info";
+
+      grid-column-gap: 24px;
+      padding: 88px 44px;
     }
+
+    @include onMD {
+      grid-template-columns: 1fr 2fr;
+      grid-template-areas:
+      "logo title title title"
+      "menu call_info email_info"
+      "socials_info rights_info";
+     }
   }
 
   &__nav {
-    padding-top: 120px;
-    padding-bottom: 64px;
-    max-width: 288px;
-    margin: 0 auto;
+    grid-area: menu;
 
-    @include onSM {
-      padding-top: 0;
+    & :nth-child(-n + 4):not(:last-child) {
+      margin-bottom: 16px;
     }
   }
 
   &__title {
     text-transform: uppercase;
     color: $text-c-gray;
-    font-family: "Inter", sans-serif;
+    font-family: inherit;
     font-size: 16px;
     font-weight: 500;
     line-height: 16px;
-    margin-top: 40px;
   }
 
   &__link {
     color: inherit;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
     font-weight: 400;
     line-height: 24px;
   }
 
-  &__contacts {
-    max-width: 288px;
-    margin: 0 auto;
-    padding-bottom: 40px;
+  &__contacts__title {
+    font-family: "Inter", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 41px;
+    text-transform: uppercase;
+    margin-top: 64px;
+
+    grid-area: title;
 
     @include onSM {
-      max-width: 328px;
+      font-size: 56px;
+      line-height: 48px;
+      // max-width: 328px;
+      margin-top: 0;
     }
 
     @include onMD {
-      max-width: 544px;
+      font-size: 72px;
+      line-height: 61px;
+      // max-width: 544px;
     }
+  }
 
     &__title {
-      font-family: "Inter", sans-serif;
-      font-weight: 400;
-      font-size: 48px;
-      line-height: 41px;
-      text-transform: uppercase;
-      padding-bottom: 45px;
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 16px;
+      margin-top: 40px;
+  }
 
-      @include onSM {
-        font-size: 56px;
-        line-height: 47px;
-        padding: 0;
-      }
+  &__call {
+    grid-area: call_info;
 
-      @include onMD {
-        font-size: 72px;
-        line-height: 61px;
-      }
+    & :nth-child(-n + 4):not(:last-child) {
+      margin-bottom: 16px;
     }
   }
 
   &__mail {
     padding-top: 24px;
+    grid-area: email_info;
 
-    @include onMD {
-      padding: 0;
+    & :nth-child(-n + 4):not(:last-child) {
+      margin-bottom: 16px;
     }
   }
 
@@ -97,12 +112,9 @@
     justify-content: start;
     align-items: start;
     gap: 32px;
-    padding-top: 40px;
+    margin-top: 40px;
 
-    @include onSM {
-      bottom: 77px;
-      left: 20vh;
-    }
+    grid-area: socials_info;
   }
 
   &__rights {
@@ -111,9 +123,8 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
+    margin-top: 40px;
 
-    @include onSM {
-      padding-top: 48px;
-    }
+    grid-area: rights_info;
   }
 }
