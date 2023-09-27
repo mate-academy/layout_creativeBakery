@@ -1,0 +1,117 @@
+.about-the-creators {
+  &__wrapper {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+
+    &--title {
+      color: $c-green;
+      margin-bottom: 10px;
+
+      @include onDesktop {
+        margin-bottom: 34px;
+      }
+
+      @include onDesign {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--description {
+      &--1 {
+        margin-bottom: 20px;
+
+        @include onTablet {
+          margin-bottom: 15px;
+        }
+
+        @include onDesktop {
+          margin-bottom: 30px;
+        }
+      }
+
+      &--2 {
+        margin-bottom: 30px;
+        
+        @include onTablet {
+          margin-bottom: 20px;
+        }
+
+        @include onDesktop {
+          margin-bottom: 30px;
+        }
+      }
+
+      &--3 {
+        display: none;
+        
+        @include onDesktop {
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &--button {
+      width: 280px;
+      align-self: center;
+
+      @include onTablet {
+        align-self: self-start;
+      }
+
+      &--learn-more {
+        align-self: self-start;
+        margin-bottom: 36px;
+  
+        @include onTablet {
+          margin-bottom: 41px;
+        }
+  
+        @include onDesktop {
+          margin-bottom: 51px;
+        }
+      }
+    }
+  }
+
+  &__img {
+    &-box {
+      display: none;
+      height: 100%;
+      overflow: hidden;
+
+      @include onTablet {
+        display: block;
+        grid-column: 4 / 7;
+      }
+  
+      @include onDesktop {
+        grid-column: 7 / 13;
+      }
+    }
+    height: 100%;
+    background-image: url(/images/about-the-creators/tablet.png);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include hover(transform, scale(1.2));
+
+    @include onDesktop {
+      background-image: url(/images/about-the-creators/desktop.png);
+    }
+  }
+}

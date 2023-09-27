@@ -1,0 +1,147 @@
+.all-product__wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  column-gap: 30px;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.product {
+  // width: 296px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #d8ccb1;
+  // height: 500px;
+  border-radius: 20px;
+  // @include hover(transform, scale(1,2));
+
+  &__price {
+    @extend %price;
+  }
+
+  &__photo {
+    &-box {
+      border-radius: 20px;
+      width: 293px;
+      height: 300px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include hover(transform, scale(1.2));
+
+    &--face {
+      background-image: url(/images/shop/tablet-1.png);
+      @include onDesktop {
+        background-image: url(/images/shop/desktop-1.png);
+      }
+
+      &-2 {
+        background-image: url(/images/shop/tablet-2.png);
+
+        @include onDesktop {
+          background-image: url(/images/shop/desktop-2.png);
+        }
+      }
+    }
+
+    &--body {
+      background-image: url(/images/shop/forest.png);
+
+      &-2 {
+        background-image: url(/images/shop/sleeping.png);
+      }
+    }
+
+    &--hair {
+      background-image: url(/images/shop/hair-1.png);
+
+      &-2 {
+        background-image: url(/images/shop/hair-2.png);
+      }
+    }
+
+    &--candles {
+      background-image: url(/images/shop/candles-1.jpeg);
+
+      &-2 {
+        background-image: url(/images/shop/candles-2.png);
+      }
+    }
+  }
+}
+// .product {
+//   padding-top: 20px;
+
+//   @include onTablet {
+//     padding-top: 30px;
+//   }
+
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: left;
+
+//   &__card {
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     position: fixed;
+//     z-index: 99;
+//     background-color: $c-warm-gray;
+//     transform: scale(0);
+//     transform-origin: top right;
+//     transition: all 0.3s linear;
+//     transform-style: preserve-3d;
+//   }
+
+//   &__title {
+//     align-self: start;
+//     margin-bottom: 10px;
+//   }
+
+//   &__price {
+//     align-self: start;
+//     margin-bottom: 20px;
+//   }
+
+//   &__image {
+//     width: 100%;
+//     height: 300px;
+//     background-position: center;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     margin-bottom: 30px;
+
+//     &--face-1 {
+//       background-image: url(/images/shop/tablet-1.png);
+//     }
+//   }
+
+//   &__button {
+//     margin-bottom: 50px;
+//   }
+
+//   &__ingredients {
+//     margin-bottom: 20px;
+//     color: $c-green;
+//   }
+
+//   &__application {
+//     color: $c-green;
+//   }
+// }

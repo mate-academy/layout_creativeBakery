@@ -1,0 +1,96 @@
+.icon {
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+
+  &--close {
+    // width: 14px;
+    // height: 14px;
+    background-image: url(/images/icons/close.svg);
+    @include hover(transform, scale(1.2));
+  }
+
+  &--facebook {
+    background-image: url(/images/icons/facebook.svg);
+    @include hover(transform, scale(1.2));
+  }
+
+  &--instagram {
+    background-image: url(/images/icons/instagram.svg);
+    @include hover(transform, scale(1.2));
+  }
+
+  &--logo {
+    background-image: url(/images/icons/logo.svg);
+    // background-size: auto auto;
+    // background-size: 50px;
+
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+      background-size: contain;
+    }
+
+    &__wrapper {
+      @include hover(transform, scale(1.4));
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    &--title {
+      display: none;
+      
+      @include onDesktop {
+        color: $c-green;
+        display: block;
+      }
+    }
+
+  }
+
+  &--menu {
+    background-image: url(/images/icons/menu.svg);
+    @include hover(transform, scale(1.2));
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--shop {
+    background-image: url(/images/icons/shop.svg);
+    @include hover(transform, scale(1.2));
+    position: relative;
+
+    @include onDesktop {
+      width: 32px;
+      height: 32px;
+    }
+
+    &__var {
+      z-index: -1;
+      position: absolute;
+      top: -7px;
+      right: -16px;
+      color: $c-green;
+      height: 23px;
+      width: 23px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: $c-light-green;
+    }
+  }
+
+  &--copyright {
+    width: 15px;
+    height: 15px;
+    background-image: url(/images/icons/copyright.svg);
+  }
+}

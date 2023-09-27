@@ -1,0 +1,48 @@
+.top-bar {
+  padding-top: 15px;
+
+  @include onTablet {
+    padding-top: 20px;
+  }
+
+  @include onDesktop {
+    padding-top: 40px;
+  }
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav {
+    display: none;
+    flex-direction: row;
+    gap: 40px;
+
+    @include onDesktop {
+      display: flex;
+    }
+    &--link {
+      color: $c-green;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        background-color: $c-green;
+        transition: transform 0.3s;
+        transform-origin: left;
+
+        transform: scale(0);
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+}

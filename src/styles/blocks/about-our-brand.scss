@@ -1,0 +1,126 @@
+.about-our-brand {
+  &__wrapper {
+    position: relative;
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__text-block {
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+
+    &--title {
+      color: $c-green;
+      margin-bottom: 10px;
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+    }
+
+    &--description {
+      font-size: 16px;
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+
+      &--2 {
+        display: none;
+
+        @include onDesktop {
+          display: block;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  &__image {
+    &-block {
+      overflow: hidden;
+      display: none;
+      height: 321px;
+
+      @include onTablet {
+        display: block;
+        grid-column: 4 / 7;
+      }
+  
+      @include onDesktop {
+        height: 529px;
+        grid-column: 7 / 11;
+      }
+
+      &--2 {
+        overflow: hidden;
+        display: none;
+        height: 430px;
+
+        @include onDesktop {
+          display: block;
+          grid-column: 11 / 13;
+          align-self: self-end;
+        }
+      }
+    }
+
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(/images/about-brand/tablet.png);
+
+    @include hover(transform,scale(1.2));
+
+    @include onDesktop {
+      background-image: url(/images/about-brand/desktop1.png);
+    }
+
+    &--2 {
+      height: 100%;
+      width: 100%;
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(/images/about-brand/desktop2.png);
+
+      @include hover(transform,scale(1.2));
+    }
+  }
+}
+
+.left-line {
+  display: none;
+  @extend %decorative-text;
+  color: rgba(52, 79, 16, 0.5);
+  writing-mode: tb-rl;
+  height: max-content;
+  position: absolute;
+  // display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  transform: rotate(180deg);
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  &::before {
+    content: "";
+    width: 1px;
+    height: 100px;
+    background: rgba(52, 79, 16, 0.5);
+  }
+}
