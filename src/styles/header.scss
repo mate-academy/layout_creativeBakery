@@ -4,13 +4,16 @@
 
   &__bottom {
     padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     @include onSM {
+      align-items: start;
       padding: 0 44px;
-      max-width: 680px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
+      max-width: 680px;
     }
 
     @include onMD {
@@ -93,6 +96,7 @@
     &:hover {
       background-color: $c-accent-orange-hover;
       color: $text-c-white;
+      transition: 0.3s;
     }
 
     @include onSM {
@@ -119,5 +123,6 @@
 
   &__link:hover::before {
     background-image: url(../images/icons/cookie-hover.svg);
+    transition: 0.3s;
   }
 }
