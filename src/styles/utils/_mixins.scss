@@ -1,6 +1,119 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin sizeIcon ($size) {
+  width: #{$size};
+  height: #{$size};
+}
+
+@mixin hover ($property, $toValue) {
+  transition: all 0.3s;
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $toValue;
+  }
+}
+
+@mixin a-hover {
+  transition: all 0.3s;
+  &:hover {
+    color: #344f10;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin container {
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 0 20px ;
+
+  @include onTablet {
+    max-width: 1280px;
+    padding: 0 27px;
+  }
+
+  @include onDesktop {
+    max-width: 1280px;
+    padding: 0 50px;
+  }
+}
+
+@mixin section-title {
+  color: $dark-green;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin: 0;
+
+  @include onDesktop {
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: 1.8px;
+  }
+}
+
+@mixin underline {
+  padding-bottom: 10px;
+  position: relative;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: $dark-green;
+
+    transition: transform 0.3s;
+    transform: scale(0);
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}
+
+@mixin learn-more {
+  display: inline-block;
+  color: $dark-green;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 130%;
+  @include underline;
+  margin-top: 30px;
+  width: fit-content;
+}
+
+@mixin img-full-width ($margin) {
+  //let`s add 'position: relative' for parent block
+  width: calc(100% + #{$margin});
+  position: absolute;
+  right: -#{$margin};
+  left: -#{$margin};
+}
+
+@mixin grid_6 {
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+  }
+}
+
+@mixin grid_12 {
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
   }
 }

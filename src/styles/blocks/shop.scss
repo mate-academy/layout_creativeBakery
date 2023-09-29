@@ -1,0 +1,82 @@
+.shop {
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+
+    @include onDesktop {
+      @include grid_12;
+      position: relative;
+    }
+
+  }
+
+  &__title {
+    @include section-title;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 4;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    margin: 0 0 11px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+    @include onTablet {
+      justify-content: start;
+      gap: 34px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $gray1;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    position: relative;
+    transition: all, 0.3;
+
+    &:hover {
+      color: $gray;
+    }
+
+    &::after {
+      content: " ";
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $gray;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

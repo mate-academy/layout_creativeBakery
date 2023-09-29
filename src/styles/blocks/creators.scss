@@ -1,0 +1,85 @@
+.creators {
+
+  &__container {
+    @include container;
+    position: relative;
+  }
+
+  &__content {
+    @include grid_6;
+
+    @include onDesktop {
+      @include grid_12;
+    }
+  }
+
+  &__title {
+    @include section-title;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__learn-more {
+    @include learn-more;
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+  }
+
+  &__none {
+    display: none;
+
+    @include onDesktop {
+      display: inline;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      gap: 15px;
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      gap: 30px;
+    }
+  }
+
+  &__box {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+
+  }
+
+  &__img {
+    @include hover (transform, scale(1.1));
+    
+    @include onTablet {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url(../images/about-creators/bird.png);
+      height: 440px;
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      height: 659px;
+      grid-column: 7 / 13;
+    }
+  }
+}
