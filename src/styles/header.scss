@@ -1,9 +1,13 @@
 .header {
   box-sizing: border-box;
   padding: 16px auto 104px;
-  height: 100vh;
+  // height: 100vh;
   max-width: 1023px;
   margin: 0 auto;
+
+  @media (min-width:1024px) {
+    height: fit-content;
+  }
 
   &__nav {
     display: flex;
@@ -112,13 +116,12 @@
       @media (min-width:1024px) {
         font-size: 16px;
         width: 260px;
-        margin-bottom: 0;
+        margin-bottom: 120px;
         margin-top: 135px;
       }
 
       @media (min-width:1200px) {
-        padding-top: 135px;
-        height: 612px;
+        margin-top: 313px;
         font-size: 16px;
         width: 260px;
       }
@@ -143,7 +146,7 @@
       }
 
       @media (min-width:1200px) {
-        font-size: 136px;
+        font-size: 116px;
         text-wrap: nowrap;
         margin: 0 auto;
         left: 44px;
@@ -162,13 +165,17 @@
     }
 
     &--button {
+      width: 288px;
+      height: 33px;
       text-decoration: none;
-      display: flex;
-      gap: 8px;
-      align-items: center;
       border: 1px solid #f9512e;
       border-radius: 32px;
-      padding: 20px 71px;
+      // padding: 20px 71px;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      padding-top: 20px;
+      margin-bottom: 104px;
 
       font-family: Inter, sans-serif;
       font-size: 16px;
@@ -179,14 +186,34 @@
       text-transform: uppercase;
       color: #f9512e;
 
+      &:hover {
+        color: #fff;
+        background-color: #f9512e;
+      }
+
       @media (min-width:640px) {
-        margin: 0 auto;
-        width: 164px;
+        justify-content: center;
+        margin-bottom: 0;
       }
 
       @media (min-width:1024px) {
-        margin: 0;
+        margin-top: 155px;
       }
+
+      &-inner {
+        display: flex;
+        justify-content: center;
+
+        @media (min-width:1024px) {
+          display: block;
+        }
+      }
+
+      &-img {
+        width: 24px;
+        height: 19px;
+      }
+
     }
   }
 }
