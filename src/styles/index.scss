@@ -1,0 +1,53 @@
+@import "utils";
+@import "fonts";
+@import "typography";
+@import "header";
+@import "nav";
+@import "icon";
+@import "menu";
+@import "main";
+@import "what-we-bake";
+@import "info";
+@import "section-title";
+@import "product";
+@import "about-us";
+@import "items";
+@import "footer";
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  &__body {
+    margin: 0;
+    padding: 0;
+    background-color: $lightPink;
+    font-family: $font-family;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+}
+
+
