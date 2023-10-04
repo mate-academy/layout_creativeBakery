@@ -1,0 +1,124 @@
+.footer {
+  background-color: $black-color;
+
+  &__content {
+    box-sizing: border-box;
+    padding: 61px 0 56px;
+  }
+
+  &__logo {
+    margin-bottom: 45px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__phone {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__email {
+    margin-bottom: 42px;
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__typography {
+    @extend %main-text;
+
+    color: $gray-color;
+  }
+
+  &__list {
+    width: max-content;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--first {
+      @extend %secondary-text;
+
+      color: $gray-color;
+    }
+  }
+
+  &__contacts-title {
+    @extend %title-text;
+    margin-bottom: 40px;
+
+    color: $white-color;
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: grid;
+      }
+    }
+
+    &--mobile {
+      display: block;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 35px;
+    margin-bottom: 42px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__social-link {
+    &--image {
+      height: 20px;
+      transform: translateY(20%);
+      transition: all 0.5s;
+
+      &:hover {
+        filter: grayscale(1) brightness(1000%);
+        scale: 1.2;
+      }
+    }
+  }
+}

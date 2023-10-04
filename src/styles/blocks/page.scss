@@ -1,0 +1,60 @@
+.page {
+  @extend %main-text;
+
+  background-color: $background-color;
+  color: $black-color;
+  min-width: 320px;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin-bottom: 80px;
+    // margin-bottom: 104px;
+
+    // @include onTablet {
+    //   // margin-bottom: 228px;
+    // }
+
+    // @include onDesktop {
+    //   // margin-bottom: 290px;
+    // }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__section {
+    &--first {
+      margin-bottom: 80px;
+
+      @include onTablet {
+        margin-bottom: 160px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 186px;
+      }
+    }
+  }
+}
