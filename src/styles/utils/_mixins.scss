@@ -37,7 +37,31 @@
 @mixin paddingInline {
   padding-inline: 16px;
 
-  @include onTablet{
+  @include onTablet {
     padding-inline: 44px;
   }
 }
+
+@mixin hoverUnderline {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    display: block;
+    width: 100%;
+    height: 1px;
+    @content;
+
+    transform: scale(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+  }
+}
+
