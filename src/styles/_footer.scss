@@ -1,0 +1,129 @@
+.footer {
+  padding: 56px 16px;
+  background-color: $black;
+  @include pageGrid;
+  row-gap: 64px;
+
+  @include onTablet {
+    padding: 88px 44px;
+  }
+  &__navigation {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    height: fit-content;
+    margin-bottom: 40px;
+
+    grid-column: span 2;
+
+  }
+
+  &__logo-img {
+    width: 168px;
+    height: 40px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__heading {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $white;
+
+    @include hoverUnderline {
+      background-color: $white;
+    }
+  }
+
+  &__contact {
+    display: grid;
+    row-gap: 40px;
+    grid-column: span 2;
+    margin-bottom: -24px;
+
+    @include onTablet {
+      grid-column: 5 / 8;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__title {
+    grid-column: span 2;
+    color: $white;
+  }
+
+  &__phone-num {
+    grid-column: span 2;
+
+    @include onDesktop {
+      grid-column: span 1;
+    }
+  }
+
+  &__email {
+    grid-column: span 2;
+
+    @include onDesktop {
+      grid-column: span 1;
+    }
+  }
+
+  &__socials {
+    display: grid;
+    grid-template-columns: repeat(3, 24px);
+    column-gap: 32px;
+    margin-bottom: -24px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__end {
+    grid-column: span 2;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: $grey;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+  }
+}

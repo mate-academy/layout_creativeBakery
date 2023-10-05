@@ -1,0 +1,55 @@
+.items {
+  grid-column: 1 / -1;
+  @include pageGrid;
+  row-gap: 48px;
+
+  margin-bottom: 72px;
+
+  @include onTablet {
+    margin-bottom: 152px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 349px;
+  }
+
+  &__item {
+    display: grid;
+    row-gap: 8px;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__heading {
+    max-width: fit-content;
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 82px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    color: $accentorange;
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+
+  &__info {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: $black;
+  }
+}

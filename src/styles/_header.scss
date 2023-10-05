@@ -1,0 +1,161 @@
+.header {
+  background: url(../images/header-bg.png) no-repeat;
+  background-position: center 35%;
+  background-size: 288px 290px;
+  height: 100vh;
+
+  @include onTablet {
+    background-size: 326px 328px;
+  }
+
+  @include onDesktop {
+    background-size: 544px 546px;
+  }
+
+  @include onDesktop-1200 {
+    background-size: 584px 586px;
+  }
+
+  &__nav {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+
+    @include onDesktop-1200 {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__bottom {
+    @include pageGrid;
+    @include paddingInline;
+    max-width: 400px;
+    margin-inline: auto;
+
+    @include onTablet {
+      max-width: 768px;
+    }
+
+    @include onDesktop {
+      max-width: 1200px;
+    }
+  }
+
+  &__info {
+    grid-column: span 2;
+    margin-bottom: 32px;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: $black;
+
+    @include onTablet {
+      grid-column: span 4;
+      margin-bottom: 146px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+      margin-bottom: 8px;
+    }
+
+    @include onDesktop-1200 {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    grid-column: span 2;
+    margin-bottom: 290px;
+
+    font-family: inherit;
+    text-transform: uppercase;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    color: $accentorange;
+
+    @include onTablet {
+      grid-column: span 8;
+
+      font-size: 80px;
+      line-height: 68px;
+      margin-bottom: 210px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      line-height: 116px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__button {
+    grid-column: span 2;
+
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    border: 2px solid $accentorange;
+    border-radius: 32px;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $accentorange;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &::before {
+      content: "";
+      background-image: url(../images/icons/icon-cookie.png);
+      height: 24px;
+      width: 24px;
+    }
+    @include onDesktop {
+      &:hover {
+        background: $accentorange;
+        color: $white;
+
+        &::before {
+          background-image: url(../images/icons/icon-cookie-hover.png);
+        }
+      }
+    }
+
+    &:focus {
+      background: $darkOrange;
+      color: $white;
+      border: none;
+
+      &::before {
+        background-image: url(../images/icons/icon-cookie-hover.png);
+      }
+    }
+
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
+  }
+}
