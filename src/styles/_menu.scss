@@ -1,0 +1,46 @@
+.menu {
+  position: fixed;
+  background-color: $light-pink;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  @include top;
+  @include paddings;
+  @include hover(opacity, 1);
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__top {
+    padding-bottom: 16px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 132px;
+    gap: 24px;
+  }
+
+  &__link {
+    @include text-properties($font--black-color, Inter, 16px, 400, 150%, -0.16px);
+    text-decoration: none;
+
+    &-red {
+      display: flex;
+      gap: 4px;
+      text-decoration: inherit;
+      text-transform: uppercase;
+      align-items: center;
+      @include text-properties($accent-orange, Inter, 16px, 500, 100%, 0.32px);
+    }
+  }
+}
