@@ -56,14 +56,25 @@
   &__info-blocks {
     margin-top: 64px;
     grid-column: 1 / -1;
+
+    @include onTablet {
+      margin-top: 72px;
+    }
+
+    @include onDesktop {
+      margin-top: 146px;
+    }
   }
 }
 
 .card {
   grid-column: 1 / -1;
+  margin-top: 56px;
+  transition: transform 0.3s ease-in-out;
 
   @include onTablet {
     grid-column: 1 / 5;
+    margin-top: 80px;
   };
 
   &:nth-child(2n) {
@@ -92,8 +103,11 @@
 
   &__photo {
     width: 100%;
-    margin-top: 56px;
     border-radius: 8px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
   }
 
   &__category {
@@ -140,11 +154,44 @@
     line-height: 100%;
     letter-spacing: 0.32px;
     text-transform: uppercase;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__icon {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover &__label{
+    transform: translateX(10px);
+  }
+
+  &:hover &__icon{
+    transform: translateX(-5px);
   }
 }
 
 .few-words-about-us {
   margin-top: 72px;
+  padding-bottom: 72px;
+
+  background-image: url(../images/crumbs.png);
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: 0% 69%;
+
+  @include onTablet {
+    margin-top: 152px;
+    padding-bottom: 152px;
+    background-size: 71%;
+    background-position: 40% 22%;
+  }
+
+  @include onDesktop {
+    margin-top: 178px;
+    padding-bottom: 349px;
+    background-size: 65%;
+  }
+
 
   &__title {
     @include onTablet {
@@ -165,11 +212,6 @@
   &__block {
     margin-top: 48px;
   }
-
-  background-image: url(../images/crumbs.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: 0% 42%;
 }
 
 .block {
