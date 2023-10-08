@@ -7,6 +7,10 @@
 
 @mixin paddings {
   padding: 16px 16px 0;
+
+  @include onTablet {
+    padding: 16px 44px 0;
+  }
 }
 
 @mixin top {
@@ -25,7 +29,7 @@
 }
 
 @mixin onDeskop {
-  @media (min-width: $desktop-min-witdh) {
+  @media (min-width: $desktop-min-width) {
     @content;
   }
 }
@@ -37,4 +41,20 @@
   font-weight: $_fontWeight;
   line-height: $_lineHeight;
   letter-spacing: $_letterSpacing;
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  column-gap: 16px;
+  @include onTablet {
+    --columns: 8;
+    column-gap: 24px;
+  }
+
+  @include onDeskop {
+    column-width: 128px;
+  }
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
 }

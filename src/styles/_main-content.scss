@@ -3,8 +3,12 @@
 }
 
 .section {
+  display: grid;
+  @include pageGrid;
+
   &__title {
     margin-bottom: 24px;
+    grid-column: 1 / -1;
 
     color: $accent-orange;
     font-family: Inter;
@@ -14,9 +18,16 @@
     line-height: 85%;
     letter-spacing: -2.4px;
     text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 56px;
+      letter-spacing: -2.8px;
+    }
   }
 
   &__paragraph {
+    grid-column: 1 / -1;
+
     color: $font--black-color;
     font-family: Inter;
     font-size: 16px;
@@ -26,12 +37,30 @@
     letter-spacing: -0.16px;
   }
 
+  &__cards {
+    grid-column: 1 / -1;
+    @include pageGrid;
+  }
+
   &__info-blocks {
     margin-top: 64px;
+    grid-column: 1 / -1;
   }
 }
 
 .card {
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    grid-column: 1 / 5;
+  };
+
+  &:nth-child(2n) {
+    @include onTablet {
+      grid-column: 5 / -1;
+    };
+  }
+
   &__photo {
     width: 100%;
     margin-top: 56px;
@@ -87,9 +116,23 @@
 
 .few-words-about-us {
   margin-top: 72px;
+
+  &__title {
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__paragraph {
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+  }
 }
 
 .info-blocks {
+  @include pageGrid;
+
   &__block {
     margin-top: 48px;
   }
@@ -101,6 +144,16 @@
 }
 
 .block {
+  @include onTablet {
+    grid-column: 1 / 5;
+  }
+
+  &:nth-child(2n) {
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+  }
+
   &__title {
     color: $accent-orange;
     font-family: Inter;

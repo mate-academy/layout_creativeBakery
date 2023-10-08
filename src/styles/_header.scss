@@ -1,6 +1,24 @@
 .header {
-  @include paddings;
   @include top;
+  @include pageGrid;
+
+  background-image: url('../images/cookie.png');
+  background-repeat: no-repeat;
+  background-position: 50% 62%;
+
+  @include onTablet {
+    background-position: 50% 46%;
+    background-size: 43%;
+  }
+
+  &__top {
+    grid-column: 1 / -1;
+    padding: 16px 16px 0;
+
+    @include onTablet {
+      margin-bottom: 96px;
+    }
+  }
 
   &__upper-title {
     color: $font--black-color;
@@ -13,12 +31,19 @@
     letter-spacing: -0.16px;
 
     margin-bottom: 32px;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin: 0 28px 146px;
+      text-align: left;
+    }
   }
 
   &__title {
     color: $accent-orange;
     text-align: center;
-
     font-family: Inter;
     font-size: 64px;
     font-style: normal;
@@ -26,6 +51,14 @@
     line-height: 85%;
     letter-spacing: -3.2px;
     text-transform: uppercase;
+    margin-bottom: 290px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      font-size: 80px;
+      letter-spacing: -4px;
+      margin: 0 28px 210px;
+    }
   }
 
   &__btn-learn-more {
@@ -38,9 +71,14 @@
     border-radius: 32px;
     border: 2px solid $accent-orange;
     margin-bottom: 104px;
+    grid-column: 1 / -1;
 
     @include text-properties($accent-orange, Inter, 16px, 500, 100%, 0.32px);
     text-decoration: none;
     text-transform: uppercase;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
   }
 }
