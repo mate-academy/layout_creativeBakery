@@ -28,7 +28,7 @@
   }
 }
 
-@mixin onDeskop {
+@mixin onDesktop {
   @media (min-width: $desktop-min-width) {
     @content;
   }
@@ -46,15 +46,16 @@
 @mixin pageGrid {
   --columns: 2;
   column-gap: 16px;
+
   @include onTablet {
     --columns: 8;
     column-gap: 24px;
+    grid-template-columns: repeat(var(--columns), 1fr);
   }
 
-  @include onDeskop {
-    column-width: 128px;
+  @include onDesktop {
+    // grid-template-columns: repeat(var(--columns), 128px);
   }
 
   display: grid;
-  grid-template-columns: repeat(var(--columns), 1fr);
 }

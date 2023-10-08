@@ -1,7 +1,6 @@
 .footer {
-  display: grid;
   @include paddings;
-  @include pageGrid;
+
 
   margin-top: 72px;
   padding-top: 56px;
@@ -12,6 +11,16 @@
   }
 
   background-color: $font--black-color;
+
+  .wrapper {
+    @include pageGrid;
+    margin: 0 auto;
+
+    @include onDesktop {
+      width: 1192px;
+      padding: 0;
+    }
+  }
 
   &__menu {
     grid-column: 1 / -1;
