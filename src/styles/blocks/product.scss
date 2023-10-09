@@ -1,0 +1,134 @@
+.products {
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 56px;
+    margin-bottom: 72px;
+
+    @include onTablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 80px;
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: start;
+      column-gap: 24px;
+
+      :nth-child(3) {
+        margin-left: auto;
+      }
+    }
+
+    @include onDesktopPlus {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: start;
+      column-gap: 24px;
+
+      :nth-child(3) {
+        margin-left: auto;
+      }
+    }
+
+    @include onDesktopPlusM {
+      flex-direction: row;
+    }
+  }
+}
+
+.product {
+  &__photos {
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      width: 328px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      width: 402px;
+      gap: 16px;
+    }
+
+    @include onDesktopPlus {
+      width: 432px;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktopPlusM {
+      width: 550px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    border-radius: 8px;
+    transition: $effectDuration;
+  }
+
+  &__photo:hover {
+    transform: scale(1.07) ;
+  }
+
+  &__title {
+    color: $color-gray;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    margin-top: 16px;
+
+  }
+
+  &__discription {
+    color: $color-black;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    margin-top: 8px;
+
+    @include onDesktop {
+      width: 402px;
+    }
+
+    @include onDesktopPlus {
+      width: 432px;
+    }
+
+    @include onDesktopPlusM {
+      width: 550px;
+    }
+  }
+
+  &__order {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    color: $accent-orange;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 16px;
+    transition: $effectDuration;
+
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+}
