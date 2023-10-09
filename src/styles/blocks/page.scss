@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  font-family: $main-font;
+  font-size: 16px;
+  font-weight: 400;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background: $Light-Blue;
+    min-width: 320px;
+  }
+
+  &:has(.menu:target) {
+    overflow: hidden;
+  }
+}
+
+.logo {
+  &__img {
+    @include hover(scale, 1.1);
+  }
+}
+
+.top-bar {
+  grid-column: span 2;
+  display: flex;
+  height: 64px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 16px;
+
+  @include onTablet {
+    grid-column: 1 / -1;
+  }
+
+  &__hiden {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      width: 53%;
+      justify-content: space-between;
+      gap: 64px;
+      margin: 0;
+    }
+
+    &-link {
+      color: $Black;
+      line-height: 150%;
+      letter-spacing: -0.16px;
+      text-decoration: none;
+      @include hover (scale, 1.1);
+    }
+
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      padding-block: 4px;
+      text-decoration: none;
+      @include hover(scale, 1.1);
+
+      &-text {
+        color: $Accent-Orange;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 0.32px;
+        text-transform: uppercase;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.menu {
+  background-color: $Light-Blue;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  @include contentPaddingInline;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: all 0.3s;
+  pointer-events: none;
+  overflow: auto;
+
+  @include onDesktop {
+    transform: translateX(-200%);
+  }
+
+  &:target {
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  &__wrapper {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    justify-content: center;
+
+    @include onTablet {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__categories {
+    text-decoration: none;
+    color: $Black;
+    text-align: center;
+    @include hover(scale, 1.1);
+  }
+}

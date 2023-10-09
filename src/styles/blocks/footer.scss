@@ -1,0 +1,114 @@
+.footer {
+  @include pageGrid;
+  @include contentPaddingInline;
+  background-color: $Black;
+  padding-block: 56px;
+
+  @include onTablet {
+    padding-block: 88px;
+  }
+
+  &__container {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      padding-bottom: 48px;
+      @include pageGrid;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+
+    &--last {
+      @include onDesktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      height: 90%;
+    }
+  }
+
+  &__title {
+    @extend h2;
+    margin: 0;
+    color: $White;
+    width: 80%;
+
+    @include onDesktop {
+      font-size: 72px;
+      width: 100%;
+      grid-column: span 2;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__subtitle {
+    padding-top: 40px;
+    color: $Grey;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &__link {
+    color: $White;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    text-decoration: none;
+    margin: 0;
+    width: 50%;
+    @include hover(scale, 1.1);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__icons {
+    grid-column: span 2;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+      margin: 0;
+    }
+  }
+
+  &__rights {
+    grid-column: span 2;
+    color: $Grey;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    margin-top: 40px;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      margin: 0;
+    }
+  }
+}
