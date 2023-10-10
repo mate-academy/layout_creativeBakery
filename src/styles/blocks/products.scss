@@ -1,0 +1,100 @@
+.products {
+  @include pageGrid;
+  @include contentPaddingInline;
+  padding-bottom: 16px;
+
+  @include onTablet {
+    margin-bottom: 152px;
+  }
+  &__title {
+    @extend h2;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      margin: 0;
+    }
+  }
+
+  &__description {
+    color: $Black;
+    line-height: 150%;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      margin-top: 24px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__card {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 56px;
+
+    @include onTablet {
+      grid-column: span 4;
+      padding-bottom: 80px;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+      &:nth-child(5) {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      border-radius: 8px;
+      transition: all 0.3s;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+    }
+
+    &-description {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &-subtitle {
+      color: $Grey;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    &-recipe {
+      color: $Black;
+      line-height: 150%;
+      letter-spacing: -0.16px;
+      margin: 0;
+    }
+
+    &-order {
+      display: flex;
+      width: 84px;
+      justify-content: right;
+      color: $Accent-Orange;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      text-decoration: none;
+      background-image: url(../images/icons/Icon-arrow.svg);
+      background-repeat: no-repeat;
+      background-position: 2px center;
+      @include hover(scale, 1.1);
+      padding-block: 4px;
+    }
+  }
+}
