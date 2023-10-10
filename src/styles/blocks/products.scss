@@ -34,7 +34,6 @@
     flex-direction: column;
     gap: 16px;
     padding-bottom: 56px;
-    @include hover(scale, 1.05);
 
     @include onTablet {
       grid-column: span 4;
@@ -43,16 +42,20 @@
 
     @include onDesktop {
       grid-column: span 3;
-    }
-
-    &:nth-child(5) {
-      grid-column: 3 / 6;
+      &:nth-child(5) {
+        grid-column: 3 / 6;
+      }
     }
 
     &-img {
       width: 100%;
       border-radius: 8px;
-      // @include hover(scale, 1.05);
+      transition: all 0.3s;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
     }
 
     &-description {
