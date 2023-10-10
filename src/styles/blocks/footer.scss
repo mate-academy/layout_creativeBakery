@@ -1,6 +1,5 @@
 .footer {
-  @include pageGrid;
-  @include contentPaddingInline;
+  margin: 0;
   background-color: $Black;
   padding-block: 56px;
 
@@ -9,11 +8,11 @@
   }
 
   &__container {
-    grid-column: span 2;
     display: flex;
     flex-direction: column;
     gap: 64px;
     padding-bottom: 40px;
+    @include contentPaddingInline;
 
     @include onTablet {
       grid-column: 1 / -1;
@@ -96,6 +95,10 @@
     @include onTablet {
       grid-column: 1 / 3;
       margin: 0;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
     }
   }
 
