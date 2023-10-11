@@ -11,17 +11,17 @@ document.addEventListener('click', (event) => {
   }
 });
 
-let prevScrollPos = window.pageYOffset;
-const nav = document.getElementById('nav');
+const navContainer = document.getElementById('nav-container');
 
-window.onscroll = () => {
-  const currentScrollPos = window.scrollY;
+let lastScrollTop = 0;
 
-  if (prevScrollPos > currentScrollPos) {
-    nav.style.top = '0';
+window.addEventListener('scroll', () => {
+  const currentScrollTop = window.scrollY;
+
+  if (currentScrollTop > lastScrollTop) {
+    navContainer.style.top = '-95px';
   } else {
-    nav.style.top = '-8%';
+    navContainer.style.top = '0';
   }
-
-  prevScrollPos = currentScrollPos;
-};
+  lastScrollTop = currentScrollTop;
+});
