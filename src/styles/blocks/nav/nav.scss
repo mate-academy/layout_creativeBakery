@@ -1,0 +1,89 @@
+.nav {
+  box-sizing: border-box;
+  padding: 16px;
+
+  @include onDesktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 32px;
+  }
+
+  &__top {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 64px;
+    }
+  }
+
+  &__item {
+    width: max-content;
+  }
+
+  &--shown {
+    .nav__list {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+
+    .nav__open-menu {
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &--hidden {
+    z-index: 999;
+    background-color: $light-pink;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    right: -100%;
+    transition: right 0.3s ease-in-out;
+
+    .nav__list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+    }
+
+    .nav__item {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  &__list-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__button {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

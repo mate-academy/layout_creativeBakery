@@ -1,0 +1,96 @@
+.header {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+
+  &__content {
+    max-width: 1200px;
+    height: 100vh;
+    background-image: url("../images/Cookie.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 0 16px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 144px 140px 220px auto;
+    gap: 16px;
+
+    @include onTablet {
+      padding: 0 44px;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 192px 214px 266px auto;
+      gap: 24px;
+    }
+
+    @include onDesktop {
+      padding: 0 44px;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 295px 124px 120px auto;
+      gap: 24px;
+    }
+  }
+
+  &__nav-container {
+    position: fixed;
+    background-color: $light-pink;
+    width: 100%;
+    z-index: 999;
+  }
+
+  &__text {
+    margin: 0;
+    padding-top: 10vw;
+    text-align: left;
+    grid-column: 1/-1;
+    grid-row: 1/2;
+
+    @include onMobile {
+      padding-top: 20vw;
+      text-align: center;
+    }
+
+    @include onTablet {
+      grid-column: 1/5;
+    }
+
+    @include onDesktop {
+      grid-column: 1/2;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding-top: 32px;
+    grid-column: 1/-1;
+    grid-row: 2/3;
+
+    @include onTablet {
+      padding-top: 146px;
+    }
+
+    @include onSDesktop {
+      padding-top: 8px;
+    }
+
+    @include onLDesktop {
+      padding-top: 40px;
+    }
+  }
+
+  &__button {
+    grid-column: 1/-1;
+    grid-row: 4/-1;
+
+    @include onTablet {
+      grid-column: 3/7;
+    }
+
+    @include onDesktop {
+      grid-column: 1/2;
+    }
+  }
+}

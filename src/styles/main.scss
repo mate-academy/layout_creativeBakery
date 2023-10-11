@@ -2,6 +2,59 @@
 @import "fonts";
 @import "typography";
 
-body {
-  background: $c-gray;
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  background: $light-pink;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+button,
+a,
+p,
+span,
+ul,
+li,
+input,
+textarea,
+h1,
+h2,
+h3 {
+  all: unset;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+@import "./blocks/header/header.scss";
+@import "./blocks/nav/nav.scss";
+
+.main {
+  padding: 0 16px;
+  margin: 0 auto;
+  max-width: 1200px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  justify-content: space-around;
+
+  @include onTablet {
+    padding: 0 44px;
+  }
+
+  @include onDesktop {
+    padding: 0 44px;
+  }
+}
+
+@import "./blocks/section/section.scss";
+@import "./blocks/products/products.scss";
+@import "./blocks/values/values.scss";
+@import "./blocks/footer/footer.scss";
