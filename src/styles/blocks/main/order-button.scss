@@ -1,0 +1,39 @@
+.order-button {
+  @include reset;
+
+  position: relative;
+  height: 32px;
+  width: 84px;
+  text-decoration: none;
+  color: $c-accent-orange;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: flex;
+    bottom: -1px;
+    height: 1px;
+    width: 100%;
+    background-color: $c-accent-orange;
+
+    transition: transform $effectDuration;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+
+  @include hover(transform, scale(1.2))
+}
+
+.order__text {
+  @include uppercase-text;
+  letter-spacing: 0.32px;
+}
+
+

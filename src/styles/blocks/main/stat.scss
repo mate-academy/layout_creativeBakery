@@ -1,0 +1,41 @@
+.stats {
+  margin-block: 64px 72px;
+  display: grid;
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    margin-block: 72px 152px;
+    row-gap: 80px;
+  }
+
+  @include onDesktop {
+    margin-block: 146px 349px;
+  }
+
+  @include pageGrid;
+  
+  &__stat {
+    margin-bottom: 48px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__value {
+    @include big-text;
+    color: $c-accent-orange;
+    margin-bottom: 4px;
+  }
+
+  &__name {
+    @include body-text;
+    letter-spacing: -0.16px;
+  }
+}

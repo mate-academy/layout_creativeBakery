@@ -1,0 +1,48 @@
+.hover__panel {
+  position: relative;
+  display: flex;
+
+  &:hover .panel {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.panel {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  width: 145px;
+  margin-top: 5px;
+
+  visibility: hidden;
+  padding: 0;
+  opacity: 0;
+  transition: all $effectDuration ease-out;
+
+  &__item {
+    margin-bottom: 1px;
+    list-style: none;
+    padding: 10px 5px;
+  }
+
+  &__link {
+    @include body-text;
+    text-decoration: none;
+    color: $c-black;
+
+    @include hover(color, all);
+
+    &:hover {
+      color: $c-accent-orange;
+    }
+
+    &:active {
+      color: $c-dark-orange;
+    }
+  }
+}
