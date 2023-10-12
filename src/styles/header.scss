@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,14 +10,12 @@ body {
   font-weight: 400;
   font-size: 16px;
   background-color: #ffeefc;
-  scroll-behavior: smooth;
 }
 
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0;
-  scroll-behavior: smooth;
 }
 
 //#region header
@@ -26,7 +28,6 @@ main {
   display: grid;
   column-gap: 16px;
   grid-template-columns: repeat(var(--columns), 1fr);
-  scroll-behavior: smooth;
 
   @include onTablet() {
     --columns: 8;
@@ -35,7 +36,6 @@ main {
 }
 
 .header {
-  scroll-behavior: smooth;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -46,17 +46,16 @@ main {
     line-height: 150%;
     letter-spacing: -0.16px;
 
-    margin: 0;
-    margin-bottom: 32px;
+    margin-block: 32px;
 
     grid-column: 1 / -1;
+
     @include onTablet {
-      grid-column: 1 / 4;
-      margin-bottom: 16px;
+      margin-block: 0;
+      margin-top: 80px;
     }
     @include onDesktop {
       grid-column: 1 / 3;
-      margin-top: 135px;
     }
   }
 
@@ -73,24 +72,34 @@ main {
     grid-column: 1 / -1;
 
     @include onTablet {
-      // display: block;
-      // position: absolute;
-      // width: 100%;
-      // top: 25%;
       font-size: 80px;
       letter-spacing: -4px;
+
+      background-image: url(../images/Header-Cookie.png);
+      background-position: 50%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding-block: 130px;
     }
     @include onDesktop {
-      font-size: 136px;
-      line-height: 85%;
+      position: absolute;
+      background-image: none;
+      font-size: 117px;
       letter-spacing: -6.8px;
+      padding-block: 215px;
+      left: 0;
+      right: 0;
+      top: 64px;
     }
   }
 
   &__picture {
-    margin: 0 auto;
     width: 288px;
     height: 290px;
+
+    @include onTablet {
+      display: none;
+    }
 
     &__picture {
       width: 100%;
@@ -98,17 +107,13 @@ main {
 
     grid-column: 1 / -1;
 
-    @include onTablet {
-      width: 326px;
-      height: 328px;
-      grid-column: 3 / 7;
-      margin-bottom: 80px;
-    }
-
     @include onDesktop {
-      width: 544px;
-      height: 546px;
-      margin-bottom: 66px;
+      // grid-column: 3 / 7;
+      // display: block;
+      // width: 544px;
+      // height: 546px;
+      // margin-bottom: 66px;
+      // flex-shrink: 0;
     }
   }
 
@@ -117,13 +122,11 @@ main {
 
     @include onTablet {
       grid-column: 3 / 7;
-      margin-bottom: 228px;
+      margin-top: 80px;
     }
 
     @include onDesktop {
       grid-column: 1 / 3;
-      margin-bottom: 0;
-
     }
 
     cursor: pointer;
@@ -154,13 +157,11 @@ main {
 // #endregion
 
 //#region top__bar
-.top__bar {
-  max-width: 1200px;
+.top-bar {
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto;
   padding: 0;
   padding-inline: 16px;
 
@@ -168,16 +169,19 @@ main {
     height: 88px;
     padding-inline: 32px;
   }
-}
 
-.logo {
-  width: 136px;
-  height: 32px;
+  &__logo {
+    width: 136px;
+    height: 32px;
 
-  &__picture {
-    width: 100%;
+    &__picture {
+      width: 100%;
+    }
+
+    @include hover;
   }
 }
+
 // #endregion
 
 //#region nav__bar
@@ -196,6 +200,10 @@ main {
       display: flex;
       gap: 64px;
     }
+  }
+
+  &__items {
+    @include hover;
   }
 
   &__link {
@@ -252,9 +260,9 @@ main {
   @include onDesktop {
     display: none;
   }
-}
 
-.side__bar:target {
-  opacity: 1;
-  pointer-events: all;
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
 }
