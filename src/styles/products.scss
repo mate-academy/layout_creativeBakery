@@ -86,6 +86,24 @@
     gap: 2px;
     padding: 0;
 
+    &::after {
+      content: " " ;
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $Accent-Orange;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      justify-content: center;
+      transform: scale(1);
+    }
+
     @include hover;
   }
 

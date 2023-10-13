@@ -1,0 +1,82 @@
+.nav {
+  margin-top: 132px;
+
+  &__list {
+    display: grid;
+    row-gap: 24px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    width: fit-content;
+
+    @include onDesktop {
+      display: flex;
+      gap: 64px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    @include hover;
+
+  }
+
+  &__link {
+    position: relative;
+    color: $black-text-color;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+
+    &:hover {
+      color: $Accent-Orange;
+    }
+
+    &::after {
+      content: " " ;
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $Accent-Orange;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      justify-content: center;
+      transform: scale(1);
+    }
+
+  }
+
+  &--desctop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin: 0;
+    }
+  }
+}
+
+.phone__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.phone--link {
+  color: $Accent-Orange;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+}
