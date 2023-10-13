@@ -1,0 +1,71 @@
+.button__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  grid-column: span 2;
+  margin-bottom: 104px;
+
+  @include onTablet {
+    grid-column: 3 / 7;
+    margin-bottom: 228px;
+  }
+
+  @include onDesktop {
+    grid-column: span 2;
+    margin-bottom: 161px;
+  }
+
+  @include onDesigned {
+    margin-bottom: 138px;
+  }
+}
+
+.button {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  height: 56px;
+  padding: 20px 71px;
+
+  border-radius: 32px;
+  border: 2px solid $c-accent-orange;
+
+  cursor: pointer;
+  color: $c-accent-orange;
+
+  @include hover(all, all);
+
+  &__img {
+    height: 24px;
+    width: 24px;
+    background-image: url(../images/icon/Icon-cookie.png);
+    background-repeat: no-repeat;
+  }
+
+  &__text {
+    @include reset;
+    @include uppercase-text;
+    letter-spacing: 0.32px;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    background-color: $c-accent-orange;
+    color: $c-white;
+  }
+
+  &:hover &__img {
+    background-image: url(../images/icon/Icon-cookie-white.png);
+  }
+
+  &:active {
+    background-color: $c-dark-orange;
+    color: $c-white;
+    border-color: $c-dark-orange;
+  }
+
+  &:active &__img {
+    background-image: url(../images/icon/Icon-cookie-white.png);
+  }
+}

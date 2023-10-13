@@ -1,0 +1,63 @@
+.products {
+  row-gap: 56px;
+  margin-block: 56px 72px;
+
+  grid-column: 1 / -1;
+  @include pageGrid;
+
+  @include onTablet {
+    row-gap: 80px;
+    margin-block: 80px 152px;
+  }
+
+  @include onDesktop {
+    margin-block: 80px 178px;
+  }
+
+  &__card {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+    }
+
+    &--position {
+
+      @include onDesktop {
+        grid-column: 3 / 6;
+      }
+
+    }
+  }
+
+  &__photo {
+    @include hover(transform, scale(1.05));
+    border-radius: 8px;
+    width: 100%;
+
+    &:hover {
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    }
+    
+  }
+
+  &__name {
+    @include uppercase-text;
+
+    margin-block: 16px 8px;
+    letter-spacing: 0.32px;
+    color: $c-grey;
+  }
+
+  &__description {
+    @include body-text;
+
+    margin-bottom: 16px;
+    letter-spacing: -0.16px;
+
+  }
+}

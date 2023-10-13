@@ -1,6 +1,76 @@
+@mixin reset {
+  padding: 0;
+  margin: 0;
+}
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $effectDuration;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: $mobile-max-width) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesigned {
+  @media (min-width: $designed-min-width) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include onTablet {
+    grid-template-columns: repeat($number-of-columns, 1fr);
+    column-gap: $designe-column-gap-width;
+  }
+
+  @include onDesigned {
+    grid-template-columns: repeat($number-of-columns, $designe-column-width);
+    justify-content: center;
+  }
+}
+
+@mixin contentPaddingInLine {
+  padding-inline: 16px;
+
+  @include onTablet {
+    padding-inline: 44px;
+  }
+
+  @include onDesigned {
+    padding-inline: 0;
+    $number-of-columns: 8;
+    margin-inline: auto;
+
+    /*This formula calculates the maximum content
+      width for the designer version based on the number of columns,
+      their size and the gap between them.*/
+    max-width: calc(
+      #{$designe-column-width * $number-of-columns} +
+      #{$designe-column-gap-width * ($number-of-columns - 1)}
+    );
+    /*If you need to change the maximum
+     content width for the designer version,
+     change the initial value in _vars.sss */
   }
 }

@@ -1,0 +1,85 @@
+.header {
+  &__content {
+    @include pageGrid;
+
+    @include onTablet {
+      background-image: url(../images/background/Cookie.png);
+      background-repeat: no-repeat;
+      background-position-x: center;
+      background-position-y: 140px;
+      background-size: 335px;
+    }
+
+    @include onDesktop {
+      background-position-x: center;
+      background-position-y: top;
+      background-size: 550px;
+    }
+
+    @include onDesigned {
+      background-size: 590px;
+    }
+  }
+
+  &__preface {
+    @include reset;
+    @include body-text;
+
+    margin-block: 32px;
+    letter-spacing: -0.16px;
+    text-align: center;
+
+    grid-column: span 2;
+
+    @include onTablet {
+      text-align: left;
+      margin-block: 80px 0;
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+      margin-block: 135px 8px;
+    }
+
+    @include onDesigned {
+      margin-block: 144px 40px;
+    }
+  }
+
+  &__title {
+    @include reset;
+    text-align: center;
+    letter-spacing: -3.2px;
+    grid-column: span 2;
+    color: $c-accent-orange;
+
+    @include onTablet {
+      grid-column: span 8;
+      letter-spacing: -4px;
+      padding-block: 146px 210px;
+    }
+
+    @include onDesktop {
+      letter-spacing: -6.8px;
+      padding-block: 0 64px;
+    }
+
+    @include onDesigned {
+      letter-spacing: -7.2px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    grid-column: span 2;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__button {
+    grid-column: span 2;
+  }
+}

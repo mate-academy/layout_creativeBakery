@@ -1,0 +1,151 @@
+.footer {
+  background-color: $c-black;
+  @include body-text;
+
+  letter-spacing: -0.16px;
+  color: $c-white;
+
+  &__content {
+    display: grid;
+    @include pageGrid;
+
+    padding-block: 56px;
+
+    @include onTablet {
+      padding-block: 88px;
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+    width: 168px;
+    height: 40px;
+  }
+
+  &__logo {
+    width: 168px;
+    height: 40px;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__menu {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__nav,
+  &__numbers,
+  &__email {
+    @include reset;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  &__nav--pos {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 96px;
+    }
+  }
+
+  &__numbers--pos {
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      grid-column: span 1;
+    }
+  }
+
+  &__email--pos {
+    @include onDesktop {
+      grid-column: 2;
+    }
+  }
+
+  &__group-title {
+    @include uppercase-text;
+    color: $c-grey;
+    letter-spacing: 0.32px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-white;
+    @include hover(color, all);
+
+    &:hover {
+      color: $c-accent-orange;
+    }
+
+    &:active {
+      color: $c-dark-orange;
+    }
+  }
+
+  &__contacts {
+    @include reset;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: span 2;
+    column-gap: 24px;
+    row-gap: 40px;
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+
+    &-title {
+      margin-top: 64px;
+      letter-spacing: -2.4px;
+
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        margin-top: 0;
+        grid-column: span 1;
+        letter-spacing: -2.8px;
+      }
+
+      @include onDesktop {
+        grid-column: span 2;
+        letter-spacing: -3.6px;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-top: 40px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__bakerlab {
+    @include body-text;
+
+    margin-top: 40px;
+    letter-spacing: -0.16px;
+    color: $c-grey;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      margin-top: 48px;
+    }
+  }
+}
