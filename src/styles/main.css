@@ -11,12 +11,10 @@ h1 {
   justify-content: center;
   position: relative;
 }
-
 .button__icon-container {
   width: 24px;
   height: 24px;
 }
-
 .button__label {
   color: #f9512e;
   font-family: "Inter", sans-serif;
@@ -31,7 +29,6 @@ h1 {
 .button-with-icon-no-border {
   position: relative;
 }
-
 .button-with-icon-no-border::after {
   content: "";
   position: absolute;
@@ -42,15 +39,12 @@ h1 {
   background-color: #f9512e;
   transition: width 0.3s ease-in-out;
 }
-
 .button-with-icon-no-border:hover::after {
   width: 100%;
 }
-
 .button-with-icon-no-border:focus {
   color: #b2341a;
 }
-
 .button-with-icon-no-border:focus::after {
   background-color: #b2341a;
 }
@@ -64,29 +58,23 @@ h1 {
   border: 2px solid #f9512e;
   transition: all 0.3s ease-in-out;
 }
-
 .button-with-icon-border:hover {
   background-color: #f9512e;
   border-color: #f9512e;
 }
-
 .button-with-icon-border:focus {
   background-color: #b2341a;
   border-color: #b2341a;
 }
-
 .button-with-icon-border:hover .button__label {
   color: #fff;
 }
-
 .button-with-icon-border:focus .button__label {
   color: #fff;
 }
-
 .button-with-icon-border:hover path {
   fill: #fff;
 }
-
 .button-with-icon-border:focus path {
   color: #fff;
 }
@@ -109,7 +97,6 @@ h1 {
 .scale-on-hover {
   transition: transform 0.3s ease-in-out;
 }
-
 .scale-on-hover:hover {
   transform: scale(1.03);
 }
@@ -117,7 +104,6 @@ h1 {
 .underline-on-hover {
   position: relative;
 }
-
 .underline-on-hover::after {
   content: "";
   position: absolute;
@@ -128,7 +114,6 @@ h1 {
   background-color: #1c1a26;
   transition: width 0.3s ease-in-out;
 }
-
 .underline-on-hover:hover::after {
   width: 100%;
 }
@@ -139,7 +124,6 @@ h1 {
   font-weight: normal;
   font-style: normal;
 }
-
 .h1title {
   color: #f9512e;
   font-family: "Inter", sans-serif;
@@ -264,8 +248,8 @@ button {
   position: relative;
   overflow-x: hidden;
 }
-
 .header__content {
+  min-height: 568px;
   max-width: 1200px;
   height: 100vh;
   background-image: url("../images/Cookie.png");
@@ -276,8 +260,13 @@ button {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 144px 140px 220px auto;
+  grid-template-rows: 144px 140px 270px auto;
   gap: 16px;
+}
+@media only screen and (max-width: 639.99px) {
+  .header__content {
+    background-image: none;
+  }
 }
 @media only screen and (min-width: 640px) and (max-width: 1023px) {
   .header__content {
@@ -295,7 +284,18 @@ button {
     gap: 24px;
   }
 }
-
+.header__image {
+  display: none;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 639.99px) {
+  .header__image {
+    display: block;
+    height: 100%;
+    aspect-ratio: 288/290;
+    grid-column: 1/-1;
+  }
+}
 .header__nav-container {
   position: fixed;
   background-color: #ffeefc;
@@ -304,7 +304,6 @@ button {
   top: 0;
   transition: top 0.3s ease-in-out;
 }
-
 .header__text {
   margin: 0;
   padding-top: 10vw;
@@ -314,7 +313,7 @@ button {
 }
 @media only screen and (max-width: 639.99px) {
   .header__text {
-    padding-top: 20vw;
+    padding-top: 100px;
     text-align: center;
   }
 }
@@ -328,7 +327,6 @@ button {
     grid-column: 1/2;
   }
 }
-
 .header__title {
   margin: 0;
   padding-top: 32px;
@@ -350,7 +348,6 @@ button {
     padding-top: 40px;
   }
 }
-
 .header__button {
   grid-column: 1/-1;
   grid-row: 4/-1;
@@ -379,7 +376,6 @@ button {
     padding: 28px 32px;
   }
 }
-
 .nav__top {
   width: 100%;
   display: flex;
@@ -395,11 +391,9 @@ button {
     gap: 64px;
   }
 }
-
 .nav__item {
   width: max-content;
 }
-
 .nav--shown .nav__list {
   display: none;
 }
@@ -413,7 +407,6 @@ button {
     display: none;
   }
 }
-
 .nav--hidden {
   z-index: 999;
   background-color: #ffeefc;
@@ -424,19 +417,16 @@ button {
   right: -100%;
   transition: right 0.3s ease-in-out;
 }
-
 .nav--hidden .nav__list {
   display: flex;
   flex-direction: column;
   gap: 24px;
   width: 100%;
 }
-
 .nav--hidden .nav__item {
   text-align: center;
   margin: 0 auto;
 }
-
 .nav__list-container {
   height: 100%;
   width: 100%;
@@ -445,7 +435,6 @@ button {
   align-items: center;
   justify-content: center;
 }
-
 .nav__button {
   width: 24px;
   height: 24px;
@@ -478,14 +467,12 @@ button {
   padding: 0;
   margin: 0;
 }
-
 .section__title {
   text-align: left;
   padding: 0;
   margin: 0;
   padding-bottom: 24px;
 }
-
 .section__text {
   text-align-last: left;
   padding: 0;
@@ -601,7 +588,6 @@ button {
   justify-content: baseline;
   align-items: start;
 }
-
 .product__text-container {
   padding-top: 16px;
   height: 120px;
@@ -610,19 +596,16 @@ button {
   justify-content: space-between;
   align-items: start;
 }
-
 .product__title {
   padding: 0;
   margin: 0;
   color: #7f8096;
 }
-
 .product__image-container {
   width: 100%;
   aspect-ratio: 402/512;
   position: relative;
 }
-
 .product__image {
   border-radius: 8px;
   position: absolute;
@@ -673,29 +656,25 @@ button {
   flex-direction: column;
   gap: 40px;
 }
-
 .contact__item {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-
 .contact__title {
   color: #fff;
 }
-
 .contact__label {
   color: #7f8096;
 }
-
 .contact__data {
   color: #fff;
+  width: max-content;
 }
 
 .footer {
   background-color: #1c1a26;
 }
-
 .footer__container {
   padding: 56px 16px;
   margin: 0 auto;
@@ -720,7 +699,6 @@ button {
     gap: 24px;
   }
 }
-
 .footer__container .underline-on-hover::after {
   background-color: #fff;
 }
@@ -734,7 +712,6 @@ button {
     height: 61px;
   }
 }
-
 .footer .nav {
   padding: 0;
   margin: 0;
@@ -753,27 +730,22 @@ button {
     grid-column: 1/2;
   }
 }
-
 .footer .nav__top {
   align-items: start;
 }
-
 .footer .nav__list {
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: start;
 }
-
 .footer .nav__link {
   color: #fff;
 }
-
 .footer .nav__label {
   margin: 0;
   color: #7f8096;
 }
-
 .footer .contact {
   display: flex;
   flex-direction: column;
@@ -814,7 +786,6 @@ button {
     gap: 24px;
   }
 }
-
 .icons-container__icons {
   display: flex;
   flex-direction: row;
@@ -831,12 +802,10 @@ button {
     grid-column: 1/2;
   }
 }
-
 .icons-container__icon:hover path {
   transition: all 0.3s ease-in-out;
   fill: #fff;
 }
-
 .icons-container__copy {
   color: #7f8096;
 }

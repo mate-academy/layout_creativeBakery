@@ -5,6 +5,7 @@
   overflow-x: hidden;
 
   &__content {
+    min-height: 568px;
     max-width: 1200px;
     height: 100vh;
     background-image: url("../images/Cookie.png");
@@ -16,8 +17,12 @@
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 144px 140px 220px auto;
+    grid-template-rows: 144px 140px 270px auto;
     gap: 16px;
+
+    @include onMobile {
+      background-image: none;
+    }
 
     @include onTablet {
       padding: 0 44px;
@@ -31,6 +36,19 @@
       grid-template-columns: repeat(8, 1fr);
       grid-template-rows: 295px 124px 120px auto;
       gap: 24px;
+    }
+  }
+
+  &__image {
+    display: none;
+    margin: 0 auto;
+
+    @include onMobile {
+      display: block;
+      height: 100%;
+      aspect-ratio: 288/290;
+
+      grid-column: 1/-1;
     }
   }
 
@@ -51,7 +69,7 @@
     grid-row: 1/2;
 
     @include onMobile {
-      padding-top: 20vw;
+      padding-top: 100px;
       text-align: center;
     }
 
