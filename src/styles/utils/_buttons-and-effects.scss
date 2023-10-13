@@ -1,0 +1,126 @@
+.button {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__icon-container {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__label {
+    color: $accent-orange;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+}
+
+.button-with-icon-no-border {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: $accent-orange;
+    transition: width 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &:focus {
+    color: $dark-orange;
+  }
+
+  &:focus::after {
+    background-color: $dark-orange;
+  }
+}
+
+.button-with-icon-border {
+  width: 100%;
+  max-width: 260px;
+  height: 56px;
+  margin: 0 auto;
+  border-radius: 32px;
+  border: 2px solid $accent-orange;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $accent-orange;
+    border-color: $accent-orange;
+  }
+
+  &:focus {
+    background-color: $dark-orange;
+    border-color: $dark-orange;
+  }
+
+  &:hover .button__label {
+    color: $white;
+  }
+
+  &:focus .button__label {
+    color: $white;
+  }
+
+  &:hover path {
+    fill: $white;
+  }
+
+  &:focus path {
+    color: $white;
+  }
+
+  @include onTablet {
+    width: 326px;
+  }
+
+  @include onSDesktop {
+    width: 260px;
+  }
+
+  @include onLDesktop {
+    width: 280px;
+  }
+}
+
+.scale-on-hover {
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.underline-on-hover {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background-color: $black;
+    transition: width 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}

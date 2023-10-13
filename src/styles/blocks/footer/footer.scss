@@ -1,0 +1,176 @@
+.contact {
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__title {
+    color: $white;
+  }
+
+  &__label {
+    color: $grey;
+  }
+
+  &__data {
+    color: $white;
+    width: max-content;
+  }
+}
+
+.footer {
+  background-color: $black;
+
+  &__container {
+    padding: 56px 16px;
+    margin: 0 auto;
+    max-width: 1200px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      padding: 88px 44px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 24px;
+    }
+
+    @include onDesktop {
+      padding: 88px 44px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 24px;
+    }
+
+    .underline-on-hover {
+      &::after {
+        background-color: $white;
+      }
+    }
+  }
+
+  &__top-part {
+    @include onTablet {
+      height: 96px;
+    }
+
+    @include onDesktop {
+      height: 61px;
+    }
+  }
+
+  .nav {
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: baseline;
+
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
+    @include onDesktop {
+      grid-column: 1/2;
+    }
+
+    &__top {
+      align-items: start;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: start;
+    }
+
+    &__link {
+      color: $white;
+    }
+
+    &__label {
+      margin: 0;
+      color: $grey;
+    }
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      grid-column: 5/-1;
+    }
+
+    @include onDesktop {
+      grid-column: 5/-1;
+    }
+  }
+}
+
+.icons-container {
+  grid-column: 1/-1;
+
+  @include onMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 24px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 24px;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    width: 168px;
+
+    @include onTablet {
+      grid-column: 1/5;
+    }
+
+    @include onDesktop {
+      grid-column: 1/2;
+    }
+  }
+
+  &__icon:hover path {
+    transition: all $transition-time ease-in-out;
+    fill: $white;
+  }
+
+  &__copy {
+    color: $grey;
+
+    @include onTablet {
+      grid-column: 5/-1;
+    }
+
+    @include onDesktop {
+      grid-column: 5/7;
+    }
+  }
+}
