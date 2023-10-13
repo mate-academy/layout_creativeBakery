@@ -10,7 +10,6 @@
   }
 }
 
-
 @mixin onMobile {
   @media (max-width: $mobile-max-width) {
     @content;
@@ -63,11 +62,15 @@
     $number-of-columns: 8;
     margin-inline: auto;
 
-    //This formula calculates the maximum content width for the designer version based on the number of columns, their size and the gap between them.
+    /*This formula calculates the maximum content
+      width for the designer version based on the number of columns,
+      their size and the gap between them.*/
     max-width: calc(
       #{$designe-column-width * $number-of-columns} +
       #{$designe-column-gap-width * ($number-of-columns - 1)}
     );
-    // !!! If you need to change the maximum content width for the designer version,change the initial value in _vars.sss
+    /*If you need to change the maximum
+     content width for the designer version,
+     change the initial value in _vars.sss */
   }
 }
