@@ -1,0 +1,136 @@
+.footer {
+  padding: 56px 0;
+  background-color: $color-text-body;
+
+  @media (min-width: 768px) {
+    padding: 88px 0;
+  }
+
+  &__body {
+    @media (min-width: 768px) {
+      display: flex;
+      gap: 24px;
+    }
+  }
+
+  &__navigation {
+    @media (min-width: 768px) {
+      flex: 1 0 50%;
+    }
+  }
+
+  &__logo {
+    display: block;
+
+    @media (min-width: 768px) {
+      padding-bottom: 56px;
+    }
+
+    @include onSmallDesctop {
+      padding-bottom: 21px;
+    }
+  }
+
+  &__logo-img {
+    @include hover (transform, scale(1.1));
+  }
+
+  &__contacts-nav {
+    @include onSmallDesctop {
+      display: flex;
+      gap: 24px;
+    }
+  }
+
+  &__nav {
+    @media (min-width: 768px) {
+      flex: 1 0 50%;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    @extend %link-style;
+    color: $color-white;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+
+    position: relative;
+
+    @include hover (transform, scale(1.2));
+    @include hoverAfterWhite (transform, scale(1));
+  }
+
+  &__link-home {
+    color: $color-block-title;
+    text-transform: uppercase;
+  }
+
+  &__contacts {
+    @media (min-width: 768px) {
+      flex: 1 0 50%;
+    }
+  }
+
+  &__title {
+    margin-top: 64px;
+    color: $color-white;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
+  }
+
+  &__bottom {
+    @media (min-width: 768px) {
+      margin-top: 48px;
+      display: flex;
+      gap: 24px;
+    }
+  }
+
+  &__socials {
+    margin-top: 40px;
+    display: flex;
+    gap: 32px;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+      flex: 1 0 50%;
+    }
+  }
+
+  &__social-icon {
+    display: block;
+    @include hover (transform, scale(1.2));
+  }
+
+  &__social-icon path {
+    &:hover,
+    &:focus {
+      fill: $color-white;
+    }
+  }
+
+  &__copyraight {
+    margin-top: 40px;
+    @extend %text-body;
+    text-align: left;
+    color: $color-block-title;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+      flex: 1 0 50%;
+    }
+  }
+}

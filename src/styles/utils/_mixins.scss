@@ -69,3 +69,14 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin hoverAfterWhite ($_property, $_toValue) {
+  &::after {
+    @extend %after-underline-footer;
+    transform: scale(0);
+    transition: #{$_property} 0.5s;
+  }
+  &:hover::after {
+    #{$_property}: $_toValue;
+  }
+}
