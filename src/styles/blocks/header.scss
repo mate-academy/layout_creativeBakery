@@ -1,0 +1,122 @@
+.header {
+  &__top-bar {
+    padding: 16px 0;
+
+    @include onSmallDesctop {
+      padding: 28px 0;
+    }
+  }
+
+  &__content {
+    margin-top: 32px;
+
+    @include onTablet {
+      margin-top: 80px;
+    }
+
+    @include onSmallDesctop {
+      margin-top: 135px;
+    }
+
+    @include onDesctop {
+      margin-top: 144px;
+    }
+  }
+
+  &__text {
+    @extend %text-body;
+
+    @include onTablet {
+      max-width: 280px;
+      text-align: left;
+    }
+
+    @include onSmallDesctop {
+      max-width: 260px;
+    }
+
+    @include onDesctop {
+      max-width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__content-main {
+    @include onTablet {
+      position: relative;
+    }
+  }
+
+  &__title {
+    margin-top: 32px;
+
+    @include onTablet {
+      margin-top: 0;
+      white-space: nowrap;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+  }
+
+  &__image {
+    text-align: center;
+
+    @include onTablet {
+      margin-top: 16px;
+    }
+
+    @include onSmallDesctop {
+      margin-top: -214px;
+    }
+  }
+
+  &__button {
+    max-width: 500px;
+    margin: 0 auto;
+    border: 2px solid $color-title;
+    border-radius: 32px;
+
+    @include hover (background-color, $color-title);
+    @include active (background-color, $color);
+    @include active (border-color, $color);
+
+    &:hover,
+    &:focus {
+      .header__button-img path {
+        fill: #fff;
+      }
+    }
+
+    @include onTablet {
+      margin-top: 80px;
+      max-width: 326px;
+    }
+
+    @include onSmallDesctop {
+      margin: -155px auto 0 0;
+      max-width: 260px;
+    }
+
+    @include onDesctop {
+      max-width: 280px;
+      position: relative;
+      z-index: 5;
+    }
+  }
+
+  &__button-link {
+    @extend %flex-center;
+    @extend %text-button;
+    text-decoration: none;
+    padding: 20px 0;
+
+    @include hover(color, $color-white);
+  }
+
+  &__button-img {
+    margin-right: 4px;
+  }
+}

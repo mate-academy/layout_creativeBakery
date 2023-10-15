@@ -4,3 +4,79 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin active($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:active {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onSmallDesctop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onDesctop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline {
+  padding-inline: 16px;
+
+  @include onTablet {
+    padding-inline: 44px;
+  }
+
+  @include onDesctop {
+    padding: 0;
+    max-width: 1112px;
+    margin: 0 auto;
+
+    @media (min-width: 1440px) {
+      max-width: 1192px;
+    }
+  }
+}
+
+@mixin hoverAfter ($_property, $_toValue) {
+  &::after {
+    @extend %after-underline;
+    transform: scale(0);
+    transition: #{$_property} 0.5s;
+  }
+  &:hover::after {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin hoverAfterRed ($_property, $_toValue) {
+  &::after {
+    @extend %after-underline-contact;
+    transform: scale(0);
+    transition: #{$_property} 0.5s;
+  }
+  &:hover::after {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin hoverAfterWhite ($_property, $_toValue) {
+  &::after {
+    @extend %after-underline-footer;
+    transform: scale(0);
+    transition: #{$_property} 0.5s;
+  }
+  &:hover::after {
+    #{$_property}: $_toValue;
+  }
+}

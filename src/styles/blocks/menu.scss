@@ -1,0 +1,76 @@
+.menu {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: $color-background-page;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__top-bar {
+    padding: 16px 0;
+
+    @include onSmallDesctop {
+      padding: 28px 0;
+    }
+  }
+
+  &__nav {
+    margin-top: 132px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__link {
+    @extend %link-style;
+    color: $color-text-body;
+    font-weight: 400;
+    text-align: center;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+
+    display: inline-block;
+    position: relative;
+
+    @include hover (transform, scale(1.2));
+    @include hoverAfter (transform, scale(1));
+  }
+
+  &__contacts {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+
+    @include hoverAfterRed (transform, scale(1));
+  }
+
+  &__contacts-link {
+    @extend %link-style;
+    text-transform: uppercase;
+    color: $color-title;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-decoration: none;
+  }
+
+  &__contacts-tel {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,56 @@
+.products {
+  margin-top: 104px;
+
+  @include onTablet {
+    margin-top: 228px;
+  }
+
+  @include onSmallDesctop {
+    margin-top: 313px;
+  }
+
+  @include onDesctop {
+    margin-top: 290px;
+  }
+
+  &__text {
+    margin-top: 24px;
+    @extend %text-body;
+    text-align: left;
+  }
+
+  &__block-1,
+  &__block-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      // display: flex;
+      flex-direction: row;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    @include onSmallDesctop {
+      justify-content: flex-start;
+    }
+  }
+
+  &__block-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      // display: flex;
+      flex-direction: row;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    @include onSmallDesctop {
+      justify-content: flex-end;
+    }
+  }
+}

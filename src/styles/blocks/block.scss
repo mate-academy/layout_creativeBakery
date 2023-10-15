@@ -1,0 +1,69 @@
+.block {
+  &__item {
+    width: 288px;
+
+    @include onTablet {
+      width: 328px;
+    }
+
+    @media (min-width: 768px) {
+      width: 328px;
+    }
+
+    @include onSmallDesctop {
+      width: 402px;
+    }
+
+    @include onDesctop {
+      width: 432px;
+    }
+  }
+
+  &__image {
+    margin-top: 56px;
+
+    display: flex;
+    justify-content: center;
+
+    @include onSmallDesctop {
+      margin-top: 80px;
+    }
+  }
+
+  &__img {
+    @include hover (opacity, 0.7);
+    @include hover (transform, scale(1.05));
+  }
+
+  &__title {
+    margin-top: 16px;
+  }
+
+  &__text {
+    margin-top: 8px;
+    @extend %text-body;
+    text-align: left;
+  }
+
+  &__button {
+    width: 84px;
+    margin-top: 16px;
+    padding: 4px 0;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+
+    @include hoverAfterRed (transform, scale(1));
+  }
+
+  &__link {
+    @extend %link-style;
+    text-transform: uppercase;
+    color: $color-title;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+  }
+}
