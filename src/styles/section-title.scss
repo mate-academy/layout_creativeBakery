@@ -1,26 +1,78 @@
-.section-title {
+.section {
   margin: 0;
-  margin-bottom: 24px;
   font-size: 48px;
   line-height: 85%; /* 40.8px */
   letter-spacing: -2.4px;
   text-transform: uppercase;
+  font-weight: 400;
 
   @include onTablet {
+
     font-size: 56px;
     letter-spacing: -2.8px;
   }
 
   @include onDesktop {
+
     font-size: 72px;
     letter-spacing: -3.6px;
   }
 
-  &--margin1 {
-    margin-bottom: 32px;
+  &__products {
+    padding-top: 64px;
+
+    @include onTablet {
+      padding-top: 0;
+    }
+
+    @include onDesktop {
+      padding-top: 152px;
+    }
+
+    &-text {
+      margin: 24px 0 56px;
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        margin-bottom: 80px;
+      }
+    }
+
+    @include onBigDesktop {
+      padding-top: 178px;
+    }
   }
 
-  &--margin2 {
-    margin-bottom: 40px;
+  &__about-us {
+
+    &-title {
+      margin-bottom: 32px;
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: span 4;
+      }
+
+      @include onDesktop {
+        grid-column: span 3;
+      }
+    }
+
+    &-text {
+      grid-column: span 2;
+      margin: 0 0 64px;
+
+      @include onTablet {
+        grid-column: span 4;
+      }
+
+      @include onDesktop {
+        grid-column: 5/8;
+      }
+    }
+  }
+
+  &__contact-title {
+    color: $White;
   }
 }

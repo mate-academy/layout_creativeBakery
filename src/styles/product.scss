@@ -1,0 +1,63 @@
+.products__wraper {
+  @include pageGrid;
+  row-gap: 56px;
+}
+
+.product {
+  margin: 0;
+
+  grid-column: span 2;
+
+  @include onTablet {
+    grid-column: span 4;
+  }
+
+  @include onDesktop {
+    grid-column: span 3;
+  }
+
+  &--right-3 {
+    @include onDesktop {
+      grid-column: 3/6;
+    }
+  }
+
+  &--right-4 {
+    @include onDesktop {
+      grid-column: 6/-1;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+  }
+
+  &__title {
+    margin: 16px 0 8px;
+    font-weight: 500;
+    color: $Grey;
+    line-height: 100%; /* 16px */
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin: 0 0 16px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 4px;
+    letter-spacing: 0.32px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $Accent-Orange;
+
+    height: 24px;
+    width: 112px;
+    background-image: url(../images/icon-arrow-order1.png);
+    background-repeat: no-repeat;
+  }
+}

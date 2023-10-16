@@ -1,0 +1,91 @@
+.footer {
+  background-color: $Black;
+  @include pageGrid;
+  row-gap: 64px;
+  @include contentPaddingFooter;
+
+  &__navigation {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
+  }
+
+  &__logo {
+    height: 40px;
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__heading {
+    text-decoration: none;
+    color: $Grey;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    color: $White;
+    text-decoration: none;
+  }
+
+  &__contact {
+    display: grid;
+    row-gap: 40px;
+    grid-column: span 2;
+
+    // @include onTablet {
+    //   grid-column: 5/7;
+    // }
+
+    // @include onDesktop {
+    //   grid-column: 5/-1;
+    //   grid-template-columns: repeat(2,1fr);
+    // }
+  }
+
+  &__email {
+    grid-column: span 2;
+  }
+
+  &__contact-socials {
+    display: grid;
+    grid-template-columns: repeat(3, 29px);
+    column-gap: 32px;
+
+    // @include onTablet {
+    //   grid-column: 1/2;
+    // }
+  }
+
+  &__end {
+    margin: 0;
+    color: $Grey;
+    grid-column: span 2;
+
+    // @include onTablet {
+    //   grid-column: 5/9;
+    // }
+
+  }
+
+  &__phone-number {
+    grid-column: span 2;
+
+    @include onDesktop {
+      // grid-column: span 1;
+    }
+  }
+}

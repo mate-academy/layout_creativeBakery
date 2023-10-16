@@ -1,8 +1,7 @@
 .header {
   // display: none !important;
   box-sizing: border-box;
-  // height: 100vh;
-  background-image: url(../images/Cookie.png);
+  background-image: url(../images/Cookie2.png);
   background-repeat: no-repeat;
   background-position: center 75%;
   background-size: 288px 290px;
@@ -21,7 +20,6 @@
   &__bottom {
     display: flex;
     flex-direction: column;
-    // align-items: center;
     margin-bottom: 40px;
 
     @include onTablet {
@@ -83,6 +81,7 @@
     margin: 0;
     display: flex;
     justify-content: center;
+    height: 56px;
 
     @include onDesktop {
       justify-content: flex-start;
@@ -90,10 +89,9 @@
   }
 
   &__button-top {
-    background-color: $Light-Blue; // Червоний колір фону кнопки
-    border: none;
+    background-color: $Light-Blue;
     border-radius: 32px;
-    // border: 2px solid $Accent-Orange;
+    border: 2px solid $Accent-Orange;
     padding: 20px 71px;
     gap: 4px;
     color: $Accent-Orange;
@@ -102,9 +100,34 @@
     letter-spacing: 0.32px;
     text-transform: uppercase;
     display: flex;
-    align-items: center; // Вирівнювання по вертикалі
+    align-items: center;
     cursor: pointer;
-    height: 56px;
+    text-decoration: none;
   }
 
+  &__button-top::before {
+    content: "";
+    background-image: url(../images/icon-cookie2-button.svg);
+    width: 24px;
+    height: 24px;
+  }
+
+  &__button-top:hover {
+    background: $Accent-Orange;
+    color: $White;
+  }
+
+  &__button-top:hover::before {
+    background-image: url(../images/Icon-cookie-hover.svg);
+  }
+
+  &__button-top:focus {
+    background-color: $Dark-Orange;
+    border: 2px solid $Dark-Orange;
+    color: $White;
+  }
+
+  &__button-top:focus::before {
+    background-image: url(../images/Icon-cookie-hover.svg);
+  }
 }
