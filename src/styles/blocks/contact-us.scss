@@ -15,12 +15,21 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 24px;
+    }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
     row-gap: 16px;
+
+    @include onDesktop {
+      flex: 1;
+    }
   }
 
   &__item {
@@ -40,5 +49,9 @@
     max-width: max-content;
 
     @include hoverUnderline(#ffff);
+
+    @include onDesktop {
+      flex: 1;
+    }
   }
 }
