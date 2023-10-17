@@ -1,6 +1,12 @@
 .header {
   &__content {
     @include pageGrid;
+
+    @include onTablet {
+      background-image: url(../images/header-images/tablet-cookie.png);
+      background-position: center 208px;
+      background-repeat: no-repeat;
+    }
   }
 
   &__top-bar {
@@ -14,6 +20,12 @@
     letter-spacing: -0.16px;
 
     margin-block: 32px;
+
+    @include onTablet {
+      grid-column: span 4;
+      text-align: left;
+      margin-block: 80px 16px;
+    }
   }
 
   &__tittle {
@@ -26,6 +38,14 @@
     color: $page-main-color;
     text-align: center;
     text-transform: uppercase;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      font-size: 80px;
+      line-height: 68px;
+      letter-spacing: -4px;
+      padding-block: 130px;
+    }
   }
 
   &__image {
@@ -40,5 +60,10 @@
   &__button {
     grid-column: span 2;
     margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 3 / span 4;
+      margin-block: 80px 76px;
+    }
   }
 }
