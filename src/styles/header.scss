@@ -1,0 +1,132 @@
+.header {
+  box-sizing: border-box;
+  background-image: url(../images/Cookie2.png);
+  background-repeat: no-repeat;
+  background-position: center 75%;
+  background-size: 288px 290px;
+  margin: 0;
+
+  @include onTablet {
+    background-position: center 58%;
+    background-size: 326px 328px;
+  }
+
+  @include onDesktop {
+    background-size: 544px 546px;
+    background-position: center 70px;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 161px;
+    }
+
+    @include onBigDesktop {
+      margin-bottom: 112px;
+    }
+
+    @include contentPaddingInline;
+
+  }
+
+  &__text {
+    margin: 32px 0;
+    text-align: center;
+
+    @include onTablet {
+      margin: 80px 0 146px;
+      width: 280px;
+      text-align: start;
+      display: flex;
+    }
+
+    @include onDesktop {
+      margin: 135px 0 8px;
+      width: 260px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 290px;
+    text-align: center;
+    font-size: 64px;
+    line-height: 85%; /* 54.4px */
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 80px;
+      letter-spacing: -4px;
+      margin-bottom: 210px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      letter-spacing: -6.8px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__button {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 56px;
+
+    @include onDesktop {
+      justify-content: flex-start;
+    }
+  }
+
+  &__button-top {
+    background-color: $Light-Blue;
+    border-radius: 32px;
+    border: 2px solid $Accent-Orange;
+    padding: 20px 71px;
+    gap: 4px;
+    color: $Accent-Orange;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &__button-top::before {
+    content: "";
+    background-image: url(../images/icon-cookie2-button.svg);
+    width: 24px;
+    height: 24px;
+  }
+
+  &__button-top:hover {
+    background: $Accent-Orange;
+    color: $White;
+  }
+
+  &__button-top:hover::before {
+    background-image: url(../images/Icon-cookie-hover.svg);
+  }
+
+  &__button-top:focus {
+    background-color: $Dark-Orange;
+    border: 2px solid $Dark-Orange;
+    color: $White;
+  }
+
+  &__button-top:focus::before {
+    background-image: url(../images/Icon-cookie-hover.svg);
+  }
+}
