@@ -1,0 +1,28 @@
+.side__bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #ffeefc;
+  height: 100vh;
+
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.3s;
+  pointer-events: none;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &:target {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+    z-index: 2;
+    overflow: hidden;
+  }
+}

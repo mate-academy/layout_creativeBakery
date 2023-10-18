@@ -1,0 +1,157 @@
+.products {
+  @include PaddingInlain;
+  @include pageGrid;
+  margin-top: 64px;
+  margin-bottom: 72px;
+
+  @include onTablet {
+    margin-bottom: 152px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 178px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 24px;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+    @include onDesktop {
+      margin-top: 152px;
+      margin-bottom: 24px;
+      font-size: 72px;
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__description {
+    color: $black-text-color;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    margin: 0;
+    margin-bottom: 16px;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+    }
+    @include onDesktop {
+      grid-column: 1 / -1;
+      padding: 0;
+    }
+  }
+
+  &__picture {
+    margin-bottom: 16px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+  }
+
+  &__item {
+    width: 100%;
+  }
+
+  &__name {
+    color: $grey;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__order {
+    color: $Accent-Orange;
+    width: fit-content;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 0;
+
+    &::after {
+      content: " " ;
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $Accent-Orange;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      justify-content: center;
+      transform: scale(1);
+    }
+
+    @include hover;
+  }
+
+}
+
+.products__card {
+  margin-bottom: 56px;
+
+  grid-column: 1 / -1;
+
+  @include onTablet {
+
+    grid-column: span 4;
+  }
+}
+
+.card--1 {
+  @include onDesktop {
+    grid-column: 1 / 4;
+  }
+}
+
+.card--2 {
+  @include onDesktop {
+    grid-column: 4 / 7;
+  }
+}
+
+.card--3 {
+  @include onDesktop {
+    grid-column: 3 / 6;
+  }
+}
+
+.card--4 {
+  @include onDesktop {
+    grid-column: 6 / -1;
+  }
+}
+
+.card--5 {
+  @include onDesktop {
+    grid-column: 1 / 4;
+  }
+}
+
+.card--6 {
+  @include onDesktop {
+    grid-column: 4 / 7;
+  }
+}
