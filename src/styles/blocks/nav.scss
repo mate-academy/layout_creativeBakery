@@ -1,0 +1,60 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100%;
+  min-height: $s-h-header-mobile;
+  max-height: $s-h-header-laptop;
+
+  &__list {
+    display: flex;
+    align-items: stretch;
+    gap: 48px;
+
+    height: 100%;
+
+    color: $c-main-text;
+
+    &-item {
+      display: none;
+
+      @include hoverUnderline {
+        &::after {
+          bottom: 33%;
+        }
+
+        &:hover::after {
+          width: calc(100% - #{$p-nav-link-inline * 2});
+        }
+      }
+
+      @include onLaptop {
+        display: flex;
+      }
+
+      &--menu {
+        align-self: center;
+        display: flex;
+        
+        @include icon("icon-menu");
+
+        @include onLaptop {
+          display: none;
+        }
+      }
+
+      &--close {
+        align-self: center;
+        display: flex;
+        
+        @include icon("icon-close");
+        background-size: cover;
+      }
+    }
+
+    &-link {
+      @include nav-link;
+    }
+  }
+}
