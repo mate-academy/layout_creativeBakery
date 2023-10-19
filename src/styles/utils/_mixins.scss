@@ -4,3 +4,74 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: $tables-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin onBigDesktop {
+  @media (min-width: $big-desktop-min-width) {
+    @content;
+  }
+}
+
+
+@mixin contentPaddingInlineHeader() {
+  padding: 16px;
+
+  @include onDesktop() {
+    padding: 28px 32px;
+  }
+
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 8;
+    column-gap: 24px;
+  }
+
+  @include onDesktop {
+    --columns: 8;
+    column-gap: 24px;
+  }
+}
+
+@mixin contentPaddingFooter() {
+  padding: 56px 16px;
+
+  @include onTablet() {
+    padding: 88px 44px;
+  }
+
+  @include onBigDesktop {
+    padding: 88px 124px;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 16px;
+
+  @include onTablet {
+    padding-inline: 44px;
+  }
+
+  @include onBigDesktop {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 124px;
+  }
+}
