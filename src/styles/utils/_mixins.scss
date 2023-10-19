@@ -1,6 +1,134 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin hover {
+  @media (pointer: fine) and (hover: hover) {
+    transition: $a-transition-time;
+    &:hover {
+      @content;
+    }
   }
+}
+
+@mixin prefixIconHover($path) {
+  @media (pointer: fine) and (hover: hover) {
+    transition: $a-transition-time;
+    &:hover > &-icon {
+      background-image: url(../images/icons/icons-hover/#{$path}-hover.svg);
+    }
+  }
+}
+
+@mixin iconHover($path) {
+  @media (pointer: fine) and (hover: hover) {
+    transition: $a-transition-time;
+    &:hover {
+      background-image: url(../images/icons/icons-hover/#{$path}-hover.svg);
+    }
+  }
+}
+
+@mixin hoverUnderline {
+  @media (pointer: fine) and (hover: hover) {
+    position: relative;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      transition: $a-transition-time;
+      height: 1px;
+      width: 0;
+      background-color: currentColor;
+      position: absolute;
+      bottom: 0;
+    }
+  
+    &:hover::after {
+      width: 100%;
+    }
+
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onLaptop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin grid {
+  display: grid;
+  --columns: 1;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 8;
+    column-gap: 24px;
+  }
+}
+
+@mixin p-page {
+  padding-inline: $p-page-mobile;
+  max-width: $s-max-w-page;
+  
+  @include onTablet {
+    padding-inline: $p-page-tablet;
+  }
+  
+  @include onLaptop {
+    box-sizing: content-box;
+    margin-inline: auto;
+  }
+}
+
+@mixin icon($path) {
+  width: $s-icon;
+  /* stylelint-disable-next-line */
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("/images/icons/#{$path}.svg");
+}
+
+@mixin prefixIcon($path) {
+  &-icon {
+    @include icon($path);
+    margin-right: 4px;
+  }
+}
+
+@mixin strongText {
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+@mixin title {
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $c-accent-text;
+}
+
+@mixin nav-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-inline: $p-nav-link-inline;
 }
