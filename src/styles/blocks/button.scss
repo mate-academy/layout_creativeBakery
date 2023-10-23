@@ -1,0 +1,132 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include uppercase;
+
+  text-align: center;
+  text-decoration: none;
+
+  color: $c-accent-orange;
+
+  &__center {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 13px;
+      margin-right: 6px;
+
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &--cookie {
+      &::before {
+        background-image: url(../images/icons/icon-cookie.svg);
+      }
+    }
+
+    &--phone {
+      &::before {
+        @include square(18px);
+        background-image: url(../images/icons/icon-phone.svg);
+      }
+    }
+
+    &--arrow {
+      &::before {
+        @include square(15px);
+        background-image: url(../images/icons/icon-arrow.svg);
+      }
+    }
+  }
+
+  &--primary {
+    width: 100%;
+    max-width: 552px;
+    height: 56px;
+
+    border: 2px solid $c-accent-orange;
+    border-radius: 32px;
+
+    @include onDesktop {
+      &:hover {
+        color: $c-white;
+        background-color: $c-accent-orange;
+
+        .button__center--cookie::before {
+          background-image: url(../images/icons/icon-cookie-white.svg);
+        }
+      }
+    }
+
+    &:focus {
+      color: $c-white;
+      background-color: $c-dark-orange;
+      border-color: $c-dark-orange;
+
+      .button__center--cookie::before {
+        background-image: url(../images/icons/icon-cookie-white.svg);
+      }
+    }
+
+    &:disabled {
+      color: $c-light-orange;
+      background-color: $c-white;
+      border-color: $c-light-orange;
+
+      .button__center--cookie::before {
+        background-image: url(../images/icons/icon-cookie-disabled.svg);
+      }
+    }
+
+    @include onWideDesktop {
+      width: 280px;
+    }
+  }
+
+  &--secondary {
+    width: fit-content;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid transparent;
+    background-color: transparent;
+
+    @include onDesktop {
+      &:hover {
+        border-bottom: 1px solid $c-accent-orange;
+      }
+
+      &:focus {
+        color: $c-dark-orange;
+        border-bottom: 1px solid $c-dark-orange;
+
+        .button__center--phone::before {
+          background-image: url(../images/icons/icon-phone-dark.svg);
+        }
+
+        .button__center--arrow::before {
+          background-image: url(../images/icons/icon-arrow-dark.svg);
+        }
+      }
+
+      &:disabled {
+        color: $c-light-orange;
+
+        .button__center--phone::before {
+          background-image: url(../images/icons/icon-phone-light.svg);
+        }
+
+        .button__center--arrow::before {
+          background-image: url(../images/icons/icon-arrow-light.svg);
+        }
+      }
+    }
+  }
+}
