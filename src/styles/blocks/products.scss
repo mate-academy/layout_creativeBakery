@@ -1,0 +1,164 @@
+.products {
+  &__product {
+    @include onTablet {
+      @include useGrid(8, 24px)
+    }
+
+    &:last-child > .products__card {
+
+      &:first-child {
+        margin-bottom: 56px;
+
+        @include onTablet {
+          margin-bottom: 0;
+        }
+      }
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    color: $c-orange;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+    margin: 0 auto 24px 0;
+
+    @include onTablet {
+      font-size: 56px;
+      letter-spacing: -2.8px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      letter-spacing: -3.6px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 56px 0;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__card {
+    max-width: 328px;
+    margin-bottom: 56px;
+
+
+    @include onTablet {
+      max-width: 100%;
+      margin-bottom: 80px;
+    }
+
+    &--1,
+    &--5 {
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
+
+      @include onDesktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--4 {
+      @include onTablet {
+        grid-column: 5 / 9;
+      }
+
+      @include onDesktop {
+        grid-column: 6 / 9;
+      }
+    }
+
+    &--2,
+    &--6 {
+      @include onTablet {
+        grid-column: 5 / 9;
+      }
+
+      @include onDesktop {
+        grid-column: 4 / 7;
+      }
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    margin-bottom: 8px;
+    border-radius: 8px;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    &-containter {
+      display: block;
+      width: 328px;
+      height: 424px;
+    }
+  }
+
+  &__type {
+    text-transform: uppercase;
+    color: $c-grey;
+    letter-spacing: 0.32px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    margin-bottom: 16px;
+  }
+
+  &__order {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    color: $c-orange;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.32px;
+    width: max-content;
+    box-sizing: border-box;
+
+    &:hover {
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

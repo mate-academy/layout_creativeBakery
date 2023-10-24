@@ -1,0 +1,159 @@
+.hero {
+  &__content {
+    @include onTablet {
+      @include useGrid(8, 24px);
+      row-gap: 0;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 64px;
+  }
+
+  &__description {
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+    line-height: 24px;
+    letter-spacing: -0.16px;
+    margin: 32px 0;
+
+    @include onTablet {
+      text-align: left;
+      margin-right: 80px;
+      margin: 80px auto 146px 0;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      margin: 144px auto 8px 0;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__title {
+    display: block;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    z-index: 1;
+
+    @include onTablet {
+      font-size: 80px;
+      margin-bottom: 210px;
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__title-text {
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $c-orange;
+    margin: 0;
+
+    @include onTablet {
+      font-size: 78px;
+    }
+
+    @include onDesktop {
+      line-height: 68px;
+      font-size: 112px;
+      letter-spacing: -6.8px;
+      line-height: 85%;
+    }
+
+    @include onXL {
+      font-size: 136px;
+      letter-spacing: -7.2px;
+    }
+  }
+
+  &__cookie-image {
+    height: 290px;
+    z-index: 0;
+
+    @include onTablet {
+      height: 328px;
+      position: absolute;
+      top: 208px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    @include onDesktop {
+      height: 546px;
+      position: absolute;
+      top: 100px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    width: 288px;
+    border: solid 2px $c-orange;
+    border-radius: 32px;
+    text-decoration: none;
+    color: $c-orange;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $c-orange;
+      color: white;
+
+      & > .hero__button--icon-orange {
+        display: none;
+      }
+
+      & > .hero__button--icon-white {
+        display: block;
+      }
+    }
+
+    &:focus {
+      background-color: $c-dark-orange;
+      border-color: $c-dark-orange;
+
+      & > .hero__button--icon-white {
+        display: block;
+      }
+    }
+
+    &--icon-orange {
+      padding-right: 4px;
+    }
+
+    &--icon-white,
+    &--icon-focused {
+      display: none;
+      padding-right: 4px;
+    }
+
+    @include onTablet {
+      width: 100%;
+    }
+  }
+}
