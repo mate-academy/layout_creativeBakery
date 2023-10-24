@@ -1,0 +1,39 @@
+.menu {
+  height: 100vh;
+  background-color: $color-bg;
+  transform: translateX(110%);
+  transition: transform ease-in-out $transition-duration;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:target {
+    transform: translateX(0);
+
+    .icon--phone {
+      top: 0px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: transform ease-in $transition-duration;
+
+    &:hover {
+      transform: scale(1.2);
+
+      .icon--close__path {
+        fill: $color-font-secondary;
+      }
+    }
+  }
+}

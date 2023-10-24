@@ -1,0 +1,57 @@
+.icon {
+  width: 24px;
+  height: 24px;
+
+  &--phone {
+    position: absolute;
+    top: 32px;
+    left: -27px;
+
+    &__path {
+      transition: all ease-in $transition-duration;
+      fill: $color-font-secondary;
+    }
+  }
+
+  &--cookie {
+    position: absolute;
+    top: 16px;
+    left: 60px;
+
+    &__path {
+      transition: all ease-in $transition-duration;
+      fill: $color-font-secondary;
+    }
+  }
+
+  &--menu {
+    display: none;
+    cursor: pointer;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &__path {
+      fill: $color-font-primary;
+      transition: all ease-in $transition-duration;
+    }
+
+    &:hover {
+      .icon--menu__path {
+        fill: $color-font-secondary;
+        transform: scale(1.2);
+        transform-origin: center;
+      }
+    }
+  }
+
+  &--close {
+    cursor: pointer;
+
+    &__path {
+      transition: all ease-in $transition-duration;
+      fill: $color-font-primary;
+    }
+  }
+}
