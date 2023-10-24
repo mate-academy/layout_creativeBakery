@@ -1,0 +1,53 @@
+.page {
+  font-family: "Poppins", sans-serif;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    &--no-scroll {
+      overflow: hidden;
+    }
+
+    &--theme-blue {
+      background-color: $colorLightBlue;
+      .header__title,
+      .products__title,
+      .about__title,
+      .stats__number {
+        color: $colorBlack;
+      }
+    }
+
+    &--theme-pink {
+      background-color: $colorLightPink;
+
+      .header__title,
+      .products__title,
+      .about__title,
+      .stats__number {
+        color: $colorAccentOrange;
+      }
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+
+    transition: transform $transition-time ease-in-out;
+    background-color: $colorLightPink;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    &--desktop {
+      transform: none;
+    }
+  }
+}

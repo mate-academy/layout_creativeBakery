@@ -1,0 +1,54 @@
+.card {
+  box-sizing: border-box;
+
+  @include hover(scale, 1.05);
+  &__image {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+
+    height: 356px;
+    @include onTablet {
+      height: 424px;
+    }
+    @include onDesktop {
+      height: 512px;
+    }
+
+    &-container {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 8px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: $colorGrey;
+  }
+
+  &__description {
+    @extend %main-text-style;
+    margin: 0 0 24px;
+  }
+
+  &__link {
+    @extend %flex-center;
+    justify-content: start;
+    @extend %main-text-style--uppercase;
+    @extend %link-style;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      .icon--arrow {
+        animation: wobble-hor-bottom 1s ease-in-out;
+      }
+      // @include hover(scale, 1.05);
+    }
+  }
+}

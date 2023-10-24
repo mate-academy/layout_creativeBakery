@@ -1,0 +1,190 @@
+.footer {
+  background-color: $colorBlack;
+
+  &-contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    margin: 0;
+    @include onTablet {
+      @include useGrid($grid-tablet-col, $grid-gap);
+      grid-row-gap: 0;
+    }
+  }
+
+  &__block {
+    &--menu {
+      @include onTablet {
+        grid-column: 1 / 5;
+        height: 100%;
+      }
+    }
+
+    &--contacts {
+      padding-top: 64px;
+      @include onTablet {
+        grid-column: 5 / 9;
+        padding-top: 88px;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+
+      &-desktop {
+        padding-top: 88px;
+        grid-column: 5 / 9;
+
+        @include FromDesktop {
+          display: none;
+        }
+      }
+    }
+
+    &--email {
+      @include onDesktop {
+        grid-column: 7 / 9;
+      }
+
+      &:last-child {
+        margin-bottom: 42px;
+        @include onTablet {
+          margin-bottom: 48px;
+        }
+      }
+    }
+  }
+
+  &__contacts-title {
+    @extend %h2;
+    color: $colorWhite;
+    margin-bottom: 40px;
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &--contact {
+      @include onDesktop {
+        grid-column: 1 / 5;
+      }
+      .footer__item {
+        &:last-child {
+          margin-bottom: 40px;
+        }
+
+        @include onDesktop {
+          &:last-child {
+            margin-bottom: 88px;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    @extend %main-text-style;
+    color: $colorWhite;
+    margin: 0 0 16px;
+
+    &--email {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 48px;
+      }
+    }
+
+    &:first-child {
+      color: $colorGrey;
+      font-weight: 500;
+    }
+
+    &--last {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $colorWhite;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom $transition-time ease;
+
+    &:hover {
+      border-color: $colorWhite;
+    }
+
+    &--email {
+      margin-bottom: 42px;
+      @include onTablet {
+        margin-bottom: 48px;
+      }
+    }
+  }
+
+  &__socials {
+    margin-bottom: 40px;
+    @include onTablet {
+      margin-bottom: 0;
+      margin-top: 100px;
+    }
+
+    @include onDesktop {
+      margin-top: 48px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    &--mobile {
+      margin-bottom: 40px;
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__icon {
+    display: inline;
+    margin-right: 34px;
+    text-decoration: none;
+    @include onTablet {
+      margin-bottom: 104px;
+    }
+
+    &:hover,
+    &:active {
+      .icon--socials {
+        fill: $colorWhite;
+      }
+    }
+  }
+
+  &__copyright {
+    @extend %main-text-style;
+    color: $colorGrey;
+    padding-bottom: 56px;
+
+    @include onTablet {
+      padding-bottom: 88px;
+      &--mobile {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      @include onMobile {
+        display: none;
+      }
+    }
+  }
+}

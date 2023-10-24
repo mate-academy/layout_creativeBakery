@@ -1,0 +1,44 @@
+.about {
+  &__wrapper {
+    @include onTablet {
+      background-image: url(../images/Crumbs.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    @include onDesktop {
+      background-position: 35% center;
+    }
+  }
+
+
+
+  &__content {
+    margin-bottom: 72px;
+    @include onTablet {
+      @include useGrid($grid-tablet-col, $grid-gap)
+    }
+  }
+
+  &__title {
+    @extend %h2;
+    margin: 0 0 32px;
+    color: $colorAccentOrange;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      font-size: 56px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0 0 64px;
+    @extend %main-text-style;
+
+    @include onTablet {
+      grid-column: 5 / 9;
+      margin-bottom: 72px;
+    }
+  }
+}

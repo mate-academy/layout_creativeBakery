@@ -1,0 +1,65 @@
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+
+  &--menu {
+    background-image: url(../images/icons/Icon-menu-black.svg);
+    @include hover(scale, 1.2);
+  }
+
+  &--cross {
+    background-image: url(../images/icons/Icon-menu-close-black.svg);
+    @include hover(scale, 1.2);
+  }
+
+  &--cookie {
+    transition: fill $transition-time ease;
+  }
+
+  &--phone {
+    display: inline;
+    margin-right: 4px;
+  }
+
+  &--arrow {
+    margin-right: 8px;
+  }
+
+  &--socials {
+    transition: fill $transition-time ease;
+    &:hover,
+    &:active {
+      fill: $colorWhite;
+    }
+  }
+
+  background-size: 24px;
+
+  &__tooltip {
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translate(-100%, -50%);
+
+    width: max-content;
+    padding-right: 20px;
+    color: $colorAccentOrange;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &:hover &__tooltip {
+    pointer-events: all;
+    opacity: 1;
+    transition: opacity $transition-time ease-in;
+  }
+}
