@@ -1,0 +1,164 @@
+.about {
+  max-width: 1280px;
+  margin-top: 72px;
+
+  background-image: url(../images/about-us/Crumbs.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center 75%;
+
+  @include onTablet {
+    margin-top: 152px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    background-size: contain;
+    background-position: center center;
+  }
+
+  @include onDesktop {
+    height: 673px;
+    margin: 178px auto 0;
+
+    @include displayGrid;
+    grid-template-rows: repeat(2, 120px);
+    row-gap: 0;
+  }
+
+  &__title {
+    color: $c-text;
+    font-size: $size-m;
+    font-weight: $weight-s;
+    line-height: $lin-hei-s;
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      width: 328px;
+      height: 122px;
+
+      font-size: 56px;
+      letter-spacing: -2.8px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+      width: 544px;
+
+      font-size: 72px;
+      font-weight: $weight-s;
+      letter-spacing: -3.6px;
+    }
+  }
+
+  &__description {
+    width: 288px;
+
+    margin-top: 32px;
+
+    @include onTablet {
+      width: 328px;
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      width: 544px;
+      height: 120px;
+      grid-column: 4 / 9;
+    }
+
+    &-text {
+      color: $c-text;
+      @include textStyle;
+    }
+  }
+
+  &__content {
+    margin-top: 64px;
+
+    @include onTablet {
+      display: flex;
+      flex-wrap: wrap;
+
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-row: 2 / 2;
+    }
+  }
+
+  &__statistic {
+    margin-top: 48px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @include onTablet {
+      margin-top: 72px;
+      margin-right: 72px;
+
+      width: 280px;
+
+      &:first-child {
+        margin-top: 72px;
+      }
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+
+    @include onDesktop {
+      width: 280px;
+      margin-top: 144px;
+      margin-right: 0;
+
+      &:first-child {
+        margin-top: 144px;
+      }
+    }
+
+    &--1 {
+      @include onDesktop {
+        grid-column: 1 / 2;
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        grid-column: 3 / 4;
+      }
+    }
+
+    &--3 {
+      @include onDesktop {
+        grid-column: 5 / 6;
+      }
+    }
+
+    &--4 {
+      @include onDesktop {
+        grid-column: 7 / 8;
+      }
+    }
+  }
+
+  &__numbers {
+    color: $c-text;
+    font-size: 96px;
+    font-weight: $weight-s;
+    line-height: $lin-hei-s;
+    letter-spacing: -4.8px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-top: 8px;
+
+    @include textStyle;
+  }
+}

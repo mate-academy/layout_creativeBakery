@@ -4,3 +4,33 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin centerContent {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@mixin displayGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 24px;
+}
+
+@mixin textStyle {
+  font-size: $size-s;
+  font-weight: $weight-s;
+  line-height: 150%;
+  letter-spacing: -0.16px;
+}

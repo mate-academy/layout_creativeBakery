@@ -1,0 +1,168 @@
+.footer {
+  width: 100%;
+  margin-top: 72px;
+  background-color: $c-text;
+
+  &__container {
+    @include onTablet {
+      @include displayGrid;
+    }
+
+    @include onDesktop {
+      @include centerContent;
+    }
+  }
+
+  &__nav {
+    padding-top: 56px;
+
+    @include onTablet {
+      padding-top: 0;
+      width: 328px;
+      grid-column: 1 / 4;
+      margin-top: 88px;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 40px;
+
+    color: $c-gray;
+    font-size: $size-s;
+    font-weight: $weight-m;
+    line-height: $lin-hei-m;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    margin-top: 16px;
+  }
+
+  &__link {
+    color: $white;
+    @include textStyle;
+
+    &:hover {
+      border-color: $white;
+    }
+  }
+
+  &__contact {
+    margin-top: 64px;
+
+    @include onTablet {
+      width: 328px;
+      margin-top: 88px;
+      grid-column: 5 / 8;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    width: 288px;
+
+    color: $white;
+    font-size: $size-m;
+    font-weight: $weight-s;
+    line-height: $lin-hei-s;
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 56px;
+      letter-spacing: -2.8px;
+    }
+
+    @include onDesktop {
+      width: 544px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      width: 100%;
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    &-tel {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-mail {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__phone {
+    margin-top: 16px;
+
+    color: $white;
+    @include textStyle;
+
+    &:hover {
+      opacity: $opacity;
+    }
+  }
+
+  &__email {
+    margin-top: 16px;
+
+    color: $white;
+    @include textStyle;
+
+    &:hover {
+      opacity: $opacity;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 32px;
+
+    padding: 40px 0;
+
+    @include onTablet {
+      width: 328px;
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__icon {
+    &-faceb {
+      transition: transform $t-anim;
+
+      &:hover {
+        transform: rotate($anim-soci);
+      }
+    }
+
+    &-inst {
+      transition: transform $t-anim;
+
+      &:hover {
+        transform: rotate($anim-soci);
+      }
+    }
+
+    &-twit {
+      transition: transform $t-anim;
+
+      &:hover {
+        transform: rotate($anim-soci);
+      }
+    }
+  }
+}

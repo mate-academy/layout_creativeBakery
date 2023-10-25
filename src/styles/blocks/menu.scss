@@ -1,0 +1,63 @@
+.menu {
+  background-color: $main-c;
+  z-index: 3;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+  &__top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  &__list {
+    margin-top: 132px;
+    text-align: center;
+  }
+
+  &__item {
+    margin-top: 24px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    color: $c-text;
+    @include textStyle;
+
+    &:hover {
+      border-color: $c-text;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    &:hover {
+      opacity: $opacity;
+    }
+  }
+
+  &__text {
+    color: $orange;
+    font-weight: $weight-m;
+    line-height: $lin-hei-m;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+}
