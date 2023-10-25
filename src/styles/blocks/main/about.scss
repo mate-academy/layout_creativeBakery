@@ -1,5 +1,18 @@
 .about {
   @include grid;
+  background-image: url(../images/about/Crumbs.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include onTablet {
+    background-size: contain;
+    background-position: initial;
+  }
+
+  @include onMobile {
+    background-size: contain;
+    background-position: center 603px;
+  }
 
   &__title {
     grid-column: 1/5;
@@ -110,5 +123,19 @@
   &__key {
     color: $color-font-light;
     letter-spacing: -0.16px;
+  }
+
+  &__wrap {
+    width: 115px;
+    height: 100px;
+    overflow: hidden;
+  }
+
+  &__slider {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: translateY(0);
+    transition: transform ease-in-out 1s;
   }
 }

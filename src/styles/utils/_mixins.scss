@@ -1,6 +1,7 @@
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} $transition-duration;
   cursor: pointer;
+
   &:hover {
     #{$_property}: $_toValue;
   }
@@ -32,5 +33,21 @@
   @include onMobile {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
+  }
+}
+
+@mixin scrollBar {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-font-secondary;
+    outline: 1px solid $color-font-secondary;
+    border-radius: 5px;
   }
 }

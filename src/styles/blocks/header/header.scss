@@ -118,7 +118,7 @@
     @include onTablet {
       grid-column: 1/-1;
       justify-self: center;
-      margin-bottom: 0;
+      margin-bottom: 228px;
     }
 
     @include onMobile {
@@ -131,9 +131,22 @@
   }
 
   &__menu-link {
+    display: none;
     position: absolute;
     top: 20px;
     right: 20px;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/icons/icon-menu.svg);
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-position: center;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include hover(background-image, url(../images/icons/icon-menu-hover.svg));
   }
 
   &__menu-icon {
