@@ -1,0 +1,87 @@
+.menu {
+  background-color: $c-background;
+  height: 100vh;
+  z-index: 2;
+
+  &__top {
+    @include top-actions;
+    @include onDesktop {
+      padding: 28px 32px;
+    }
+
+    margin-bottom: 132px;
+  }
+
+  &__content {
+    padding: 16px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    gap: 24px;
+  }
+
+  &__cross {
+    display: block;
+    background-image: url(../images/icon-close.svg);
+    height: 24px;
+    width: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: $c-black;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.1em;
+      background-color: $c-black;
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      transform: translate3d(0, 0.1em, 0);
+    }
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $c-orange;
+    font-weight: 500;
+    letter-spacing: 0.32px;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transform: scale(1.02);
+    }
+  }
+}
