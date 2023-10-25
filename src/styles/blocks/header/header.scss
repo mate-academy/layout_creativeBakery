@@ -95,12 +95,19 @@
     transition: all ease-in $transition-duration;
     cursor: pointer;
 
+    &::before {
+      content: url(../images/icons/Icon-cookie.svg);
+      margin-right: 5px;
+      margin-top: 5px;
+      transition: all ease-in $transition-duration;
+    }
+
     &:hover {
       color: $color-font-footer;
       background-color: $color-font-secondary;
 
-      .icon--cookie__path {
-        fill: $color-font-footer;
+      &::before {
+        content: url(../images/icons/Icon-cookie-hover.svg);
       }
     }
 
@@ -127,6 +134,15 @@
     position: absolute;
     top: 20px;
     right: 20px;
+  }
+
+  &__menu-icon {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      @include hover(transform, scale(1.2));
+    }
   }
 
   &__menu {
