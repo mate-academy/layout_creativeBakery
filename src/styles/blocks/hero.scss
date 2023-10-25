@@ -15,14 +15,12 @@
   &__description {
     font-size: 16px;
     text-align: center;
-    margin: 0;
+    margin: 32px 0;
     line-height: 24px;
     letter-spacing: -0.16px;
-    margin: 32px 0;
 
     @include onTablet {
       text-align: left;
-      margin-right: 80px;
       margin: 80px auto 146px 0;
       grid-column: 1 / 5;
     }
@@ -65,14 +63,13 @@
     }
 
     @include onDesktop {
-      line-height: 68px;
       font-size: 112px;
       letter-spacing: -6.8px;
       line-height: 85%;
     }
 
     @include onXL {
-      font-size: 136px;
+      font-size: 130px;
       letter-spacing: -7.2px;
     }
   }
@@ -120,6 +117,20 @@
 
     transition: background-color 0.3s;
 
+    &--icon-orange {
+      padding-right: 4px;
+    }
+
+    &--icon-white,
+    &--icon-focused {
+      display: none;
+      padding-right: 4px;
+    }
+
+    @include onTablet {
+      width: 100%;
+    }
+
     &:hover {
       background-color: $c-orange;
       color: white;
@@ -140,20 +151,6 @@
       & > .hero__button--icon-white {
         display: block;
       }
-    }
-
-    &--icon-orange {
-      padding-right: 4px;
-    }
-
-    &--icon-white,
-    &--icon-focused {
-      display: none;
-      padding-right: 4px;
-    }
-
-    @include onTablet {
-      width: 100%;
     }
   }
 }
