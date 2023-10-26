@@ -1,0 +1,39 @@
+.products {
+  @include grid;
+  transform: translateY(150px);
+  transition: transform ease 1s;
+
+  &__box {
+    grid-column: 1/7;
+    margin-bottom: 80px;
+    display: flex;
+    gap: 24px;
+
+    &--middle {
+      grid-column: -1/3;
+    }
+
+    @include onTablet {
+      grid-column: 1/-1;
+    }
+
+    @include onMobile {
+      margin-bottom: 56px;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    margin-bottom: 24px;
+  }
+
+  &__subtitle {
+    grid-column: 1/-1;
+    margin-bottom: 80px;
+
+    @include onMobile {
+      margin-bottom: 56px;
+    }
+  }
+}

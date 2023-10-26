@@ -1,0 +1,40 @@
+.menu {
+  height: 100vh;
+  background-color: $color-bg;
+  transform: translateX(110%);
+  transition: transform ease-in-out $transition-duration;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:target {
+    transform: translateX(0);
+
+    .nav__item--phone::before {
+      top: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: transform ease-in $transition-duration;
+    background-image: url(../images/icons/icon-close.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+
+    @include hover(background-image, url(../images/icons/icon-close-hover.svg));
+
+  }
+}

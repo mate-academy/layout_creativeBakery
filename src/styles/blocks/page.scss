@@ -1,0 +1,39 @@
+.page {
+  font-family: "Inter", "Arial", sans-serif;
+  color: $color-font-primary;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  scroll-behavior: smooth;
+
+  @include scrollBar;
+
+  &:has(.menu:target) {
+    overflow: hidden;
+
+    .nav__item::after {
+      top: 25px;
+    }
+  }
+
+  &__content {
+    margin: 0 auto;
+    background-color: $color-bg;
+  }
+
+  &__header {
+    margin-bottom: 178px;
+
+    @include onDesktop {
+      margin-bottom: 152px;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onMobile {
+      margin-bottom: 64px;
+    }
+  }
+}

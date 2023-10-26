@@ -1,0 +1,86 @@
+.nav {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+
+  &--header {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--menu,
+  &--footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: fit-content;
+  }
+
+  &--footer {
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  &__item {
+    letter-spacing: -0.16px;
+    padding-block: 32px;
+    position: relative;
+    width: fit-content;
+    text-transform: capitalize;
+    @include hover(color, $color-font-secondary);
+
+    &--menu {
+      padding: 0;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $color-font-secondary;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform ease-in $transition-duration;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+
+    &--phone {
+      position: relative;
+      text-transform: uppercase;
+      color: $color-font-secondary;
+
+      &::before {
+        content: url(../images/icons/icon-phone.png);
+        position: absolute;
+        top: 30px;
+        left: -30px;
+      }
+    }
+
+    &--icon {
+      position: absolute;
+    }
+
+    &--footer {
+      color: $color-font-footer;
+      padding: 0;
+      transition: all ease-in $transition-duration;
+
+      @include hover(color, $color-font-secondary);
+
+      &::after {
+        top: 25px;
+      }
+    }
+  }
+
+}
