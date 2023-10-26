@@ -5,8 +5,28 @@
   justify-content: space-between;
   align-items: center;
 
+  @include onDesktop {
+    padding: 28px 32px;
+
+    & .icon--menu {
+      display: none;
+    }
+  }
+
   &__logo {
     width: 136px;
     height: 32px;
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      & .nav__list {
+        flex-direction: row;
+      }
+    }
   }
 }
