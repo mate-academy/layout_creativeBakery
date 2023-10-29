@@ -1,0 +1,81 @@
+.products {
+  @include pageGrid;
+
+  &__title {
+    font-size: 72px;
+    line-height: 85%;
+    letter-spacing: -3.6px;
+    text-transform: uppercase;
+    color: $active-color;
+    grid-column: 1 / -1;
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+  }
+}
+
+.product {
+  margin-bottom: 56px;
+  @include pageGrid;
+  grid-column: 1 / -1;
+  transition-duration: 300ms;
+
+  @include onTablet {
+    margin-bottom: 80px;
+    grid-column: span 4;
+  }
+
+  @include onDesktop {
+    grid-column: span 3;
+  }
+
+  &:hover {
+    transform:  scale(1.1);
+  }
+
+  &__img {
+    grid-column: 1 / -1;
+    border: 1px solid $c-gray;
+    border-radius: 5px;
+    height: 356px;
+    width: 100%;
+  }
+
+  &__group {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: $gray;
+    text-transform: uppercase;
+    grid-column: 1 / -1;
+  }
+
+  &__descripyion {
+    margin: 0;
+    grid-column: 1 / -1;
+  }
+}
+
+.order {
+  align-items: center;
+  gap: 4px;
+  display: flex;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $active-color;
+}
+
+.main {
+  padding-inline: 16px;
+
+  @include onTablet {
+    padding-inline: 44px;
+  }
+}
+
+.donuts_1 {
+  @include onDesktop {
+  grid-column: 3 / 6;
+  }
+}
+
