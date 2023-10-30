@@ -6,6 +6,8 @@
   color: #1C1A26;
   background-color: #FFEEFC;
 
+  scroll-behavior: smooth;
+
   &__menu {
     position: fixed;
     top: 0;
@@ -13,12 +15,15 @@
     right: 0;
 
     opacity: 0;
+    transition: all 0.5s;
+    transform: translateX(-100%);
     pointer-events: none;
 
     background-color: #FFEEFC;
 
     &:target {
         opacity: 1;
+        transform: translateX(0);
         pointer-events: all;
       }
     }

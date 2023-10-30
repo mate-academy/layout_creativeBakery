@@ -16,7 +16,6 @@
   }
 }
 
-
 @mixin contentPaddingInline() {
   padding-inline: 16px;
 
@@ -33,5 +32,12 @@
   @include onTablet() {
     grid-template-columns: repeat(8,1fr);
     column-gap: 24px;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.5s;
+  &:hover {
+    #{$property}: $toValue
   }
 }
