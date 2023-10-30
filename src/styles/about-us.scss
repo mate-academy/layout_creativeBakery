@@ -1,14 +1,28 @@
 .about-us {
-  background-image: url(../images/Crumbs.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  overflow: hidden;
 
   &__container {
+    margin-top: 72px;
+
+    @include onSM {
+      background-image: url(../images/Crumbs.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: hidden;
+
+      margin-top: 152px;
+    }
+
+    @include onXL {
+      margin-top: 178px;
+      margin-bottom: 56px;
+    }
+  }
+
+  &__top {
     display: grid;
     max-width: 288px;
-    margin: 72px auto;
+    margin: auto;
 
     @include onSM {
       grid-template-areas: "title description";
@@ -21,11 +35,6 @@
 
     @include onMD {
       max-width: 1112px;
-    }
-
-    @include onXL {
-      margin-top: 178px;
-      margin-bottom: 56px;
     }
   }
 
