@@ -1,0 +1,124 @@
+.footer {
+  background-color: $font-color-main;
+  color: #fff;
+  padding: 88px 0;
+
+  &__content {
+    @include grid();
+    row-gap: 40px;
+
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    grid-column: 1 / 3;
+
+    @include onMobile {
+      max-width: 168px;
+    }
+  }
+
+  &__title {
+    grid-column: 5 / 9;
+
+    color: inherit;
+  }
+
+  &__nav {
+    grid-column: 1 / 3;
+  }
+
+  &__social {
+    grid-column: 1 / 3;
+
+    display: inline-block;
+  }
+
+  &__contacts {
+    grid-column: 5 / 9;
+    display: flex;
+    gap: 176px;
+
+    @include onTablet {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  &__rights {
+    grid-column: 5 / 7;
+
+    color: $font-add-color;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    margin-top: 16px;
+    transition: 300ms;
+
+    &:hover {
+      color: $cta-color;
+    }
+
+    &:focus {
+      color: $cta-focused-color;
+    }
+
+    &--social {
+      margin: 0 32px 0 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__name {
+    text-transform: uppercase;
+    color: $font-add-color;
+  }
+
+  &__icon {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: $icon-size;
+    height: $icon-size;
+
+    &--facebook {
+      background-image: url(../images/icons/Icon-facebook.svg);
+
+      &:hover {
+        background-image: url(../images/icons/Icon-facebook_white.svg);
+      }
+    }
+
+    &--insta {
+      background-image: url(../images/icons/Icon-instagram.svg);
+
+      &:hover {
+        background-image: url(../images/icons/Icon-instagram_white.svg);
+      }
+    }
+
+    &--twitter {
+      background-image: url(../images/icons/Icon-twitter.svg);
+
+      &:hover {
+        background-image: url(../images/icons/Icon-twitter_white.svg);
+      }
+    }
+  }
+}

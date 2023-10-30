@@ -1,0 +1,104 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $font-color-main;
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+
+    &:hover {
+      color: $cta-color;
+    }
+
+    &:focus {
+      color: $cta-focused-color;
+    }
+
+    &-cta {
+      color: #f9512e;
+      &::before {
+        content: "";
+        background-image: url(../images/icons/phone.svg);
+        display: inline-block;
+        width: $icon-size;
+        height: $icon-size;
+        margin-right: 7px;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+      }
+
+      &:focus {
+        &::before {
+          background-image: url(../images/icons/phone_focus.svg);
+        }
+      }
+    }
+  }
+
+  &__menu {
+    @include onTablet {
+      @include onTablet {
+        background-image: url(../images/icons/Icon-menu.svg);
+        display: block;
+        width: $icon-size;
+        height: $icon-size;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+  }
+
+  &-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 2;
+
+    background-color: $bcg-color-main;
+
+    transform: translate(-100%);
+    transition: ease-in-out 300ms;
+
+    overflow: auto;
+
+    &:target {
+      transform: translate(0);
+    }
+
+    &__cross {
+      background-image: url(../images/icons/Icon-close.svg);
+      display: block;
+      width: $icon-size;
+      height: $icon-size;
+    }
+
+    &__list {
+      display: block;
+      text-align: center;
+      margin-top: 135px;
+    }
+
+    &__item {
+      margin-top: 24px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

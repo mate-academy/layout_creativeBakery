@@ -1,0 +1,90 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  font-family: $font-family;
+  background-color: $bcg-color-main;
+  color: $font-color-main;
+  margin: 0;
+  box-sizing: border-box;
+
+  &--no-scroll {
+    overflow: hidden;
+  }
+
+  &__container {
+    padding: 0 44px;
+
+    @include onMobile {
+      padding: 0 16px;
+    }
+  }
+
+  &__title {
+    font-weight: $font-weight-regular;
+    font-size: 72px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $font-color-main;
+    margin: 0;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onMobile {
+      font-size: 48px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: $font-weight-regular;
+    letter-spacing: -0.01em;
+    color: $font-color-main;
+  }
+
+  &__cta {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: $cta-color;
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: 300ms;
+
+    &:hover {
+      border-color: $cta-color;
+    }
+
+    &:focus {
+      color: $cta-focused-color;
+      border-bottom: 1px solid $cta-focused-color;
+    }
+  }
+
+  &__products {
+    margin-top: 152px;
+
+    @include onMobile {
+      margin-top: 64px;
+    }
+  }
+
+  &__about {
+    margin-top: 178px;
+
+    @include onTablet {
+      margin-top: 152px;
+    }
+
+    @include onMobile {
+      margin-top: 72px;
+    }
+  }
+}

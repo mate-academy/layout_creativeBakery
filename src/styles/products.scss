@@ -1,0 +1,99 @@
+.products {
+
+  &__slogan {
+    margin-top: 24px;
+  }
+
+  &__content {
+    margin-top: 80px;
+
+    @include grid();
+    row-gap: 80px;
+
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 56px;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    transition: ease-in-out 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  }
+
+  &__name {
+    font-weight: $font-weight-normal;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $font-add-color;
+    margin: 16px 0 0;
+  }
+
+  &__description {
+    margin-top: 8px;
+  }
+
+  &__cta {
+    display: inline-block;
+    margin-top: 20px;
+
+    &::before {
+      content: "";
+      background-image: url(../images/icons/Icon-arrow.svg);
+      background-repeat: no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: $icon-size;
+      height: $icon-size;
+      margin-right: 4px;
+    }
+
+    &:focus::before {
+      background-image: url(../images/icons/Icon-arrow_focus.svg);
+    }
+  }
+
+  &__item-1,
+  &__item-5 {
+    grid-column: 1 / 4;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__item-2,
+  &__item-6 {
+    grid-column: 4 / 7;
+
+    @include onTablet {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__item-3 {
+    grid-column: 3 / 6;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__item-4 {
+    grid-column: 6 / 9;
+
+    @include onTablet {
+      grid-column: 5 / 9;
+    }
+  }
+}
