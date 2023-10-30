@@ -1,14 +1,22 @@
 .header {
+  height: 100vh;
+  min-height: 670px;
+
   &__content {
     position: relative;
+
+    height: calc(100vh - #{$top-bar-height-mobile});
     padding-block: 32px 40px;
+
     @include pageGrid;
 
     @include onTablet {
-      padding-block: 80px 228px;
+
+      padding-block: 80px 164px;
     }
 
     @include onDesktop {
+      height: calc(100vh - #{$top-bar-height-desktop});
       padding-block: 135px 161px;
     }
 
@@ -16,6 +24,7 @@
 
   &__slogan {
     margin-bottom: 140px;
+    align-self: end;
 
     text-align: center;
     line-height: 150%;
@@ -52,6 +61,8 @@
     @include onDesktop {
       height: 546px;
       position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       z-index: -1;
     }
   }
