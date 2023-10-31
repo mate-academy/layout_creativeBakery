@@ -1,42 +1,36 @@
 .footer {
   background-color: $text-c-black;
   color: $text-c-white;
-  padding: 56px 16px;
-
-  @include onSM {
-    padding: 88px 44px;
-  }
 
   &__container {
+    padding: 56px 16px;
     margin: 0 auto;
     display: grid;
     grid-template-areas: "logo"
       "menu"
       "title"
-      "call_info"
-      "email_info"
+      "contacts"
       "socials_info"
       "rights_info";
 
     @include onSM {
+      padding: 88px 44px;
+      grid-template-columns: 50%;
       grid-template-areas: "logo title"
-        "menu call_info"
-        "menu email_info"
+        "menu contacts"
+        ". contacts"
         "socials_info rights_info";
     }
 
     @include onMD {
-      padding: 93px 124px;
       max-width: 1112px;
     }
 
     @include onXL {
-      padding: 88px 0;
-
-      grid-template-areas: "logo title title"
-        "menu call_info email_info"
-        "menu call_info ."
-        "socials_info rights_info .";
+      grid-template-areas: "logo title"
+        "menu contacts"
+        ". contacts"
+        "socials_info rights_info";
     }
   }
 
@@ -62,13 +56,21 @@
     }
   }
 
+  &__call__container {
+    grid-area: contacts;
+  }
+
+  &__contacts__wrapper {
+    @include onXL {
+      display: flex;
+      gap: 190px;
+    }
+  }
+
   &__contacts__title {
-    font-family: "Inter", sans-serif;
-    font-size: 48px;
-    font-weight: 400;
-    line-height: 41px;
-    text-transform: uppercase;
+    @include forTitles;
     margin-top: 64px;
+    padding-bottom: 40px;
     grid-area: title;
 
     @include onSM {
@@ -76,7 +78,6 @@
       line-height: 48px;
       max-width: 328px;
       margin: 0;
-      padding-bottom: 40px;
     }
 
     @include onMD {
@@ -102,6 +103,10 @@
     & :nth-child(-n + 4):not(:last-child) {
       margin-bottom: 16px;
     }
+
+    @include onXL {
+      padding: 0;
+    }
   }
 
   &__socials {
@@ -109,14 +114,14 @@
     justify-content: start;
     align-items: start;
     gap: 32px;
-    margin-top: 40px;
+    margin-top: 48px;
     grid-area: socials_info;
   }
 
   &__rights {
     color: $text-c-gray;
     @include forTexts;
-    margin-top: 40px;
+    margin-top: 48px;
     grid-area: rights_info;
   }
 }
