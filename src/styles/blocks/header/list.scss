@@ -1,0 +1,33 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  gap: 64px;
+
+  & li:last-child {
+    @include hoverLink;
+    display: flex;
+    gap: 4px;
+    text-transform: uppercase;
+    color: $accent-color;
+    font-weight: 500;
+
+    &::before {
+      content: url("../images/icons/icon-phone.svg");
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+
+    @include hoverLink;
+  }
+}

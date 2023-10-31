@@ -1,0 +1,63 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__photo {
+    display: block;
+    width: 100%;
+    object-position: center;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    @include hover(scale, 1.02);
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    color: $grey-color;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    display: block;
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 48px;
+  }
+
+  &__button {
+    @include hoverLink;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: max-content;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    padding: 4px 0;
+    box-sizing: border-box;
+    color: $accent-color;
+
+    &::before {
+      content: url("../images/icons/icon-arrow.svg");
+      display: block;
+      width: 24px;
+      height: 24px;
+      margin-right: 4px;
+    }
+  }
+}

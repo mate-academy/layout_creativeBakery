@@ -1,0 +1,144 @@
+.footer {
+  padding-block: 56px;
+  background-color: $black-color;
+  color: #fff;
+
+  @include contentPaddingInline;
+
+  @include onTablet {
+    padding-block: 88px;
+  }
+
+  &__content {
+    @include pageGrid;
+    grid-row-gap: 40px;
+
+    @include onTablet {
+      grid-row-gap: 48px;
+    }
+  }
+
+  &__logo {
+    width: 168px;
+    height: 40px;
+    @include hover(scale, 1.07);
+
+    &-link {
+      grid-column: 1 / -1;
+      align-items: start;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
+    }
+  }
+
+  &__main {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__list {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    &-title {
+      margin-bottom: 16px;
+
+      font-weight: 500;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: $grey-color;
+    }
+
+    &-item:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &-link {
+      @include hoverLink;
+      color: #fff;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 5 / span 2;
+    }
+
+    &-title {
+      margin-bottom: 40px;
+      color: #fff;
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 5 / -1;
+        grid-row: 1 / 2;
+      }
+    }
+
+    &-list {
+      margin-bottom: 40px;
+      grid-column: 1 / -1;
+
+      @include onDesktop {
+        margin-bottom: 88px;
+      }
+    }
+  }
+
+  &__email {
+    @include hoverLink;
+
+    &-wrapper {
+      grid-column: 1 / -1;
+
+      @include onDesktop {
+        grid-column: 7 / -1;
+      }
+    }
+    color: #fff;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 32px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s;
+
+      &:hover {
+        scale: 1.07;
+      }
+    }
+  }
+
+  &__copyright {
+    color: $grey-color;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+}
