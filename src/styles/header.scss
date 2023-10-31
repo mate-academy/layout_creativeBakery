@@ -1,6 +1,5 @@
 .header {
   box-sizing: border-box;
-  // padding: 0 16px;
 
   &__bottom {
     padding: 0 16px;
@@ -89,19 +88,14 @@
   &__link {
     display: block;
     box-sizing: border-box;
-
     padding: 20px 70px;
 
     border: 2px solid $c-accent-orange-hover;
     border-radius: 32px;
     @include forSubheaders;
     color: $c-accent-orange-hover;
-
-    &:hover {
-      background-color: $c-accent-orange-hover;
-      color: $text-c-white;
-      transition: all 0.3s;
-    }
+    @include hover(background-color, $c-accent-orange-hover);
+    @include hover(color, $text-c-white);
 
     @include onSM {
       max-width: 288px;
