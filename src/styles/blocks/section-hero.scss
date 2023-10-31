@@ -1,6 +1,10 @@
 .hero {
   margin-bottom: 64px;
 
+  &__icon {
+    fill: #F9512E;
+  }
+
   @include onTablet {
     margin-bottom: 0;
   }
@@ -89,18 +93,14 @@
   }
 
   &__button {
-    // width: 100%;
-
     display: flex;
     gap: 4px;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0;
 
     border-radius: 32px;
     border: 2px solid #F9512E;
 
-    // padding-block: 20px;
     padding: 20px 70px;
 
     grid-column: span 2;
@@ -110,13 +110,40 @@
     letter-spacing: 0.32px;
     text-transform: uppercase;;
     color: #F9512E;
+    transition: all 0.5s;
+
+    &::before {
+      content: "";
+      background-image: url(../images/icons/icon-cookie.svg);
+      display: block;
+      background-size: contain;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+      padding-bottom: 20px;
+    }
 
     @include hover (transform, scale(1.05));
 
     &:hover {
       color: white;
       background-color: #F9512E;
-      transition: all 0.5s;
+
+      &::before {
+        content: "";
+        background-image: url("../images/icons/icon-cookie-hover.svg");
+      }
+    }
+
+    &:focus {
+      background-color: #B2341A;
+      color: white;
+
+      &::before {
+        content: "";
+        background-image: url("../images/icons/icon-cookie-hover.svg");
+      }
     }
 
     @include onTablet {
