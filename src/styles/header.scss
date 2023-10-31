@@ -45,6 +45,23 @@
     }
   }
 
+  &__title-img {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1/ -1;
+
+    @include onTablet {
+      grid-column:3/7
+    }
+
+    @include onDesktop {
+      grid-row: 1 / -1;
+    }
+  }
+
   &__bottom {
     margin-top: 32px;
     width: 100%;
@@ -82,30 +99,24 @@
   }
 
   &__title {
-    z-index: 1;
-    color: $active-color;
     text-align: center;
-    text-transform: uppercase;
     line-height: 85%;
-    letter-spacing: 3px;
+    letter-spacing: -.05em;
+    text-transform: uppercase;
+    color: $active-color;
+    width: min-content;
     font-size: 64px;
     grid-column: 1 / -1;
 
     @include onTablet {
-      position: absolute;
-      top: 55%;
-      left: 15%;
-    }
-
-    @include onMTablet {
-      top: 80%;
-      left: 1%;
+      position:absolute;
+      grid-column: 1/-1;
+      text-wrap: nowrap;
+      font-size: 70px;
     }
 
     @include onDesktop {
-      font-size: 136px;
-      top: 35%;
-      left: 2%;
+      font-size: 125px;
     }
   }
 
