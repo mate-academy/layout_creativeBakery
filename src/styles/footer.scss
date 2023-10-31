@@ -1,0 +1,123 @@
+.footer {
+  background-color: $text-c-black;
+  color: $text-c-white;
+
+  &__container {
+    padding: 56px 16px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "logo"
+      "menu"
+      "title"
+      "contacts"
+      "socials_info"
+      "rights_info";
+
+    @include onSM {
+      padding: 88px 44px;
+      grid-template-columns: 50%;
+      grid-template-areas: "logo title"
+        "menu contacts"
+        ". contacts"
+        "socials_info rights_info";
+    }
+
+    @include onMD {
+      max-width: 1112px;
+    }
+
+    @include onXL {
+      grid-template-areas: "logo title"
+        "menu contacts"
+        ". contacts"
+        "socials_info rights_info";
+    }
+  }
+
+  &__nav {
+    grid-area: menu;
+
+    & :nth-child(-n + 4):not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title {
+    @include forSubheaders;
+  }
+
+  &__link {
+    @include forTexts;
+    color: inherit;
+    @include hover(color, $c-accent-orange-hover);
+  }
+
+  &__call__container {
+    grid-area: contacts;
+  }
+
+  &__contacts__wrapper {
+    @include onXL {
+      display: flex;
+      gap: 190px;
+    }
+  }
+
+  &__contacts__title {
+    @include forTitles;
+    margin-top: 64px;
+    padding-bottom: 40px;
+    grid-area: title;
+
+    @include onSM {
+      font-size: 56px;
+      line-height: 48px;
+      max-width: 328px;
+      margin: 0;
+    }
+
+    @include onMD {
+      font-size: 72px;
+      line-height: 61px;
+      padding-bottom: 40px;
+      max-width: 544px;
+    }
+  }
+
+  &__call {
+    grid-area: call_info;
+
+    & :nth-child(-n + 4):not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__mail {
+    padding-top: 40px;
+    grid-area: email_info;
+
+    & :nth-child(-n + 4):not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    @include onXL {
+      padding: 0;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 32px;
+    margin-top: 48px;
+    grid-area: socials_info;
+  }
+
+  &__rights {
+    color: $text-c-gray;
+    @include forTexts;
+    margin-top: 48px;
+    grid-area: rights_info;
+  }
+}

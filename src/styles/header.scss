@@ -1,0 +1,126 @@
+.header {
+  box-sizing: border-box;
+
+  &__bottom {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include onSM {
+      align-items: start;
+      padding: 0 44px;
+      margin: 0 auto;
+      max-width: 680px;
+    }
+
+    @include onMD {
+      max-width: 1112px;
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+    @include forTexts;
+    padding-top: 32px;
+    max-width: 283px;
+
+    @include onSM {
+      text-align: start;
+      padding-top: 88px;
+      margin-bottom: 146px;
+    }
+
+    @include onMD {
+      max-width: 260px;
+      padding-top: 135px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__title {
+    @include forHeaders;
+    padding-top: 32px;
+    text-align: center;
+
+    @include onSM {
+      font-size: 76px;
+      line-height: 68px;
+      padding: 0;
+      margin-bottom: 210px;
+    }
+
+    @include onMD {
+      box-sizing: border-box;
+      padding-top: 20px;
+      margin-bottom: 64px;
+      font-size: 125px;
+      line-height: 115px;
+    }
+  }
+
+  &__image {
+    margin: 0 auto;
+    width: 288px;
+    height: 290px;
+    background-image: url(../images/Cookie.png);
+    background-size: contain;
+    background-position: center;
+
+    @include onSM {
+      width: 326px;
+      height: 328px;
+      position: absolute;
+      top: 232px;
+      left: calc(50% - 163px);
+      z-index: -1;
+    }
+
+    @include onMD {
+      width: 544px;
+      height: 546px;
+      top: 88px;
+      left: calc(50% - 272px);
+    }
+  }
+
+  &__link {
+    display: block;
+    box-sizing: border-box;
+    padding: 20px 70px;
+
+    border: 2px solid $c-accent-orange-hover;
+    border-radius: 32px;
+    @include forSubheaders;
+    color: $c-accent-orange-hover;
+    @include hover(background-color, $c-accent-orange-hover);
+    @include hover(color, $text-c-white);
+
+    @include onSM {
+      max-width: 288px;
+      padding: 20px 60px;
+      margin: 0 auto;
+    }
+
+    @include onMD {
+      max-width: 326px;
+      margin: 0;
+    }
+  }
+
+  &__link::before {
+    content: "";
+    background-image: url(../images/icons/cookie.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    padding-right: 26px;
+  }
+
+  &__link:hover::before {
+    background-image: url(../images/icons/cookie-hover.svg);
+    transition: all 0.3s;
+  }
+}

@@ -1,0 +1,53 @@
+.card {
+  box-sizing: border-box;
+
+  @include onSM {
+    width: 328px;
+  }
+
+  @include onMD {
+    width: 402px;
+  }
+
+  & :nth-child(odd) {
+    padding-bottom: 16px;
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 8px;
+    @include hover(transform, scale(95%));
+  }
+
+  &__title {
+    @include forSubheaders;
+    padding-bottom: 8px;
+  }
+
+  &__description {
+    @include forTexts;
+  }
+
+  &__link {
+    @include forSubheaders;
+    font-weight: 400;
+    color: $c-accent-orange-hover;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      padding-bottom: 5px;
+      border-bottom: 1px solid $c-accent-orange-hover;
+      width: fit-content;
+    }
+  }
+
+  &__link::before {
+    content: "";
+    background-image: url(../images/icons/arrow-hover.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    padding-right: 26px;
+  }
+}

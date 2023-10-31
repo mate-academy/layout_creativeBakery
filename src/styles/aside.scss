@@ -1,0 +1,48 @@
+.aside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: auto;
+
+  box-sizing: border-box;
+  padding: 16px;
+  transition: all 0.3s;
+  transform: translateX(-100%);
+  height: 100vh;
+  margin: 0 auto;
+
+  opacity: 0;
+  pointer-events: none;
+  background-color: #fff;
+
+  &:target {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding-top: 132px;
+  }
+
+  &__link {
+    @include forTexts;
+    color: inherit;
+    @include hover(color, $c-accent-orange-hover);
+  }
+
+  &__link:last-child {
+    color: $c-accent-orange-hover;
+  }
+}

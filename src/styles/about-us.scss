@@ -1,0 +1,111 @@
+.about-us {
+  &__container {
+    margin: 72px auto;
+
+    @include onSM {
+      background-image: url(../images/Crumbs.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: hidden;
+      margin: 152px auto;
+    }
+
+    @include onXL {
+      margin-top: 178px;
+      margin-bottom: 56px;
+    }
+  }
+
+  &__top {
+    display: grid;
+    max-width: 288px;
+    margin: auto;
+
+    @include onSM {
+      grid-template-areas: "title description";
+      grid-template-columns: 50%;
+
+      max-width: 680px;
+      padding: 0 44px;
+      gap: 24px;
+    }
+
+    @include onMD {
+      max-width: 1112px;
+    }
+  }
+
+  &__title {
+    @include forTitles;
+    padding-bottom: 32px;
+
+    @include onSM {
+      max-width: 328px;
+      font-size: 56px;
+      line-height: 47px;
+      padding-bottom: 0;
+    }
+
+    @include onMD {
+      max-width: 544px;
+      font-size: 72px;
+      line-height: 61px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 24px;
+
+    @include onSM {
+      max-width: 328px;
+    }
+
+    @include onMD {
+      max-width: 544px;
+    }
+  }
+
+  &__list {
+    background-image: url(../images/Crumbs.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 288px;
+    margin: 0 auto;
+    margin-bottom: 72px;
+
+    @include onSM {
+      max-width: 680px;
+      padding: 0 44px;
+      background-image: none;
+      columns: 2;
+      gap: 24px;
+    }
+
+    @include onMD {
+      columns: 4;
+      margin: 0 auto;
+      max-width: 1112px;
+    }
+  }
+
+  &__list__item {
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 82px;
+    padding-top: 48px;
+  }
+
+  &__item__desc {
+    @include forTexts;
+    color: $text-c-gray;
+    padding-top: 8px;
+
+    @include onXL {
+      margin-bottom: 293px;
+    }
+  }
+}

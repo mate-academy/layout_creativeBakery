@@ -1,0 +1,61 @@
+.product {
+  @include onSM {
+    text-align: start;
+  }
+
+  &__header {
+    max-width: 288px;
+    margin: 0 auto;
+
+    @include onSM {
+      max-width: 680px;
+      padding: 0 44px;
+    }
+
+    @include onMD {
+      max-width: 1112px;
+    }
+  }
+
+  &__cards {
+    max-width: 288px;
+    padding: 0 16px;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    @media (min-width: 768px) {
+      padding: 0 44px;
+      max-width: 680px;
+      row-gap: 80px;
+      column-gap: 24px;
+    }
+
+    @include onMD {
+      max-width: 1112px;
+
+      & :nth-child(3) {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__title {
+    @include forTitles;
+    padding-top: 64px;
+    padding-bottom: 24px;
+
+    @include onSM {
+      font-size: 56px;
+      line-height: 47px;
+      padding-top: 180px;
+    }
+  }
+
+  &__description {
+    @include forTexts;
+    padding-bottom: 56px;
+  }
+}

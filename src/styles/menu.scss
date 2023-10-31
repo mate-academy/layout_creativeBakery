@@ -1,0 +1,36 @@
+.menu {
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+
+  @include onMD {
+    display: flex;
+
+    & :nth-child(-n + 3):not(:last-child) {
+      padding-right: 64px;
+    }
+  }
+
+  &__link {
+    color: inherit;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 16px;
+    @include hover(color, $c-accent-orange-hover);
+  }
+
+  &__link--contact {
+    @include forSubheaders;
+    color: $c-accent-orange-hover;
+
+    &::before {
+      content: "";
+      background-image: url(../images/icons/phone-hover.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+      padding-right: 26px;
+    }
+  }
+}
