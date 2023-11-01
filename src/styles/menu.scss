@@ -1,0 +1,77 @@
+.nav {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  &__item {
+    align-items: center;
+    list-style: none;
+    transition: 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid black;
+    }
+  }
+
+  &__list {
+    gap: 64px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    scroll-behavior: smooth;
+    line-height: 150%;
+    text-decoration: none;
+    color: $text-color;
+    transition: transform 0.3s;
+  }
+
+  &__phone {
+    width: 24px;
+    height: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    color: $active-color;
+    align-items: center;
+  }
+}
+
+.icon {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__burger {
+    background-image: url(../images/icon-menu.svg);
+
+    &:hover {
+      background-image: url(../images/icon-menu-h.svg);
+    }
+  }
+
+  &__close {
+    background-image: url(../images/icon-close.svg);
+
+    &:hover {
+      background-image: url(../images/icon-close-h.svg);
+    }
+  }
+}
+
+.phone {
+  &:hover {
+    border-bottom: $active-color;
+  }
+}

@@ -1,0 +1,109 @@
+.products {
+  @include pageGrid;
+
+  &__title {
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -3.6px;
+    text-transform: uppercase;
+    color: $active-color;
+    grid-column: 1 / -1;
+    margin-bottom: 24px;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 0;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      padding-bottom: 80px;
+    }
+  }
+}
+
+.product {
+  margin-bottom: 56px;
+  @include pageGrid;
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    margin-bottom: 80px;
+    grid-column: span 4;
+  }
+
+  @include onDesktop {
+    grid-column: span 3;
+  }
+
+  @include onBigDesktop {
+    grid-column: span 3;
+  }
+
+  &__img {
+    grid-column: 1 / -1;
+    border: 1px solid $c-gray;
+    border-radius: 5px;
+    width: 100%;
+    transition-duration: 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__group {
+    z-index: 1;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: $gray;
+    text-transform: uppercase;
+    grid-column: 1 / -1;
+  }
+
+  &__descripyion {
+    margin: 0;
+    grid-column: 1 / -1;
+    margin-bottom: 16px;
+  }
+}
+
+.order {
+  align-items: center;
+  gap: 4px;
+  display: flex;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $active-color;
+  transition-duration: 300ms;
+
+  &:hover {
+    border-bottom: 1px solid $active-color;
+  }
+}
+
+.main {
+  padding-inline: 16px;
+
+  @include onTablet {
+    padding-inline: 44px;
+  }
+
+  @include onBigDesktop {
+    padding-inline: 124px;
+  }
+}
+
+.donuts_1 {
+  @include onDesktop {
+    grid-column: 3 / 6;
+  }
+
+}
