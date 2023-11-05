@@ -1,0 +1,281 @@
+.header {
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  
+  @include onPhone {
+    display: grid;
+    grid-template-columns: repeat(2, 136px);
+    justify-content: center;
+    gap: 16px;
+    margin: 0 0 104px;
+  }
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(8, 64px);
+    background-image: url(../images/Header/Header__background-phone-fr.png);
+    justify-content: center;
+    gap: 24px;
+    margin: 0 44px 228px 0;
+    padding: 0;
+  }
+  
+  @include onDesctop {
+    background-image: url(../images/Header/Header__background.png);
+    display: grid;
+    grid-template-columns: repeat(8, 118px);
+    justify-content: center;
+    gap: 24px;
+    margin: 0 44px;
+    padding: 0;
+  }
+}
+
+.header__container-top {
+  display: flex;
+  align-items: center;
+
+  @include onPhone {
+    justify-content: space-between;
+    grid-row: 1;
+    grid-column: 1/3;
+    margin: 16px 0 0;
+  }
+
+  @include onTablet {
+    justify-content: space-between;
+    grid-row: 1;
+    grid-column: 1/9;
+    margin: 16px 0 80px;
+  }
+
+  @include onDesctop {
+    grid-row: 1;
+    grid-column: 1/8;
+    margin: 28px 0 163px;
+  }
+}
+
+.header__logo {
+  @include onDesctop {
+    margin: 0 501px 0 0;
+  }
+}
+
+.header__nav {
+  margin: 0;
+  padding: 0;
+
+  @include onPhone {
+    display: none;
+  }
+
+  @include onTablet {
+    display: none;
+  }
+
+  @include onDesctop {
+    display: block;
+  }
+
+  .header__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    .header__link {
+      list-style: none;
+      margin: 0 64px 0 0;
+      width: max-content;
+
+      .header__item {
+        text-decoration: none;
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        color: #1c1a26;
+      }
+    }
+  }
+}
+
+.header__contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  text-decoration: none;
+  width: 136px;
+
+  @include onPhone {
+    display: none;
+  }
+
+  @include onTablet {
+    display: none;
+  }
+
+  @include onDesctop {
+    display: flex;
+  }
+  
+  .header__tell-icon {
+    width: 18px;
+    height: 18px;
+    margin: 0 4px 0 0;
+  }
+
+  .header__tell-text {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #f9512e;
+  }
+}
+
+.header__menu-link {
+  @include onTablet {
+    display: block;
+  }
+
+  @include onDesctop {
+    display: none;
+  }
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+
+  @include onTablet {
+    grid-column: 1/9;
+    grid-row: 2;
+  }
+  
+  @include onDesctop {
+    grid-column: 1/9;
+    grid-row: 2;
+    margin: 0 0 161px;
+  }
+
+  .header__describe {
+    color: #1c1a26;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    
+    @include onPhone {
+      text-align: center;
+      width: 288px;
+      margin: 12px 0 32px;
+    }
+
+    @include onTablet {
+      width: 260px;
+      margin: 0 0 146px;
+    }
+    
+    @include onDesctop {
+      width: 260px;
+      margin: 0 0 20px;
+    }
+  }
+
+  .header__title {
+    color: #f9512e;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    @include onPhone {
+      font-size: 60px;
+      text-align: center;
+      margin: 0;
+    }
+    
+    @include onTablet {
+      font-size: 76px;
+      line-height: 68px;
+      margin: 0 0 201px;
+    }
+    
+    @include onDesctop {
+      font-size: 124px;
+      margin: 0 0 64px;
+    }
+  }
+
+  .header__phone-photo {
+
+    @include onPhone {
+      display: block;
+      width: 288px;
+      height: 290px;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesctop {
+      display: none;
+    }
+  }
+
+  .header__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    height: 56px;
+    border: 1px solid #f9512e;
+    background-color: #ffeefc;
+    border-radius: 30px;
+    color: #f9512e;
+
+    @include onPhone {
+      width: 288px;
+    }
+    
+    @include onTablet {
+      width: 326px;
+      margin: 0 0 0 174px;
+    }
+    
+    @include onDesctop {
+      width: 260px;
+      margin: 0;
+    }
+
+    &:hover {
+      background-color: #f9512e;
+      color: white;
+    }
+
+    &:active {
+      transition-duration: 50ms;
+      background: #b2341a;
+    }
+  }
+
+  .header__button-icon {
+    background-image: url(../images/Header/Header__button-icon.png);
+    width: 24px;
+    height: 24px;
+    margin: 0 4px 0 0;
+
+    &:hover {
+      transition-duration: 1s;
+    }
+  }
+}
