@@ -1,0 +1,105 @@
+.about-us {
+  background: url("../images/footer/crumbs.png");
+  background-position: center top 70%;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  transition: $effectDuration;
+
+  @include onTablet {
+    background-position: center top 20%;
+    background-size: 70%;
+  }
+
+  @include onDesktop() {
+    background-position: center left 325px;
+    background-size: 65%;
+  }
+
+  @include onDesktop() {
+    background-position: center left 361px ;
+    background-size: 55%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    @include onTablet {
+      gap: 72px;
+    }
+
+    @include onDesktop() {
+      gap: 144px;
+    }
+  }
+
+  &__top {
+    @include pageGrid;
+    gap: 32px;
+
+    &__title {
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: span 4;
+      }
+    }
+
+    &__text {
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  &__bottom {
+    margin-bottom: 72px;
+    gap: 48px;
+
+    @include pageGrid;
+
+    @include onTablet {
+      margin-bottom: 152px;
+      gap: 80px;
+    }
+
+    @include onDesktop() {
+      margin-bottom: 349px;
+    }
+
+    &__numbers {
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: span 4;
+      }
+
+      @include onDesktop() {
+        grid-column: span 2;
+      }
+    }
+
+    &__number {
+      @include mainFont {
+        font-size: 96px;
+        font-weight: 400;
+        line-height: 85%;
+        letter-spacing: -4.8px;
+      }
+    }
+
+    &__subtitle {
+      @include mainFont {
+        color: $text-other;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: -0.16px;
+      }
+    }
+  }
+}

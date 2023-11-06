@@ -1,0 +1,57 @@
+.button {
+  display: flex;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 32px;
+  border: 2px solid $buttons;
+  margin-bottom: 40px;
+
+  @include onTablet {
+    margin-bottom: 228px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 0;
+  }
+
+  &__text {
+    @include mainFont {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      color: $buttons;
+    }
+  }
+
+  transition: $effectDuration;
+
+  &:hover {
+    background-color: $buttons;
+
+    .button__text {
+      color: $footer-text;
+    }
+
+    .button__icon {
+      content: url("../images/icons/cookie-white.svg");
+    }
+  }
+
+  &:active {
+    background: $button-focused;
+    border: $button-focused;
+  }
+
+  &:disabled {
+    border: $button-disabled;
+    color: $button-disabled;
+    background: $footer-text;
+    .button__icon {
+      content: url("../images/icons/cookie-disabled.svg");
+    }
+  }
+}
