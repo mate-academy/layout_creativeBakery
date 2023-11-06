@@ -1,0 +1,118 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  70% {
+    opacity: 0.5;
+    transform: translateY(30%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  70% {
+    opacity: 0.5;
+    transform: translateX(-30%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  70% {
+    opacity: 0.5;
+    transform: translateX(30%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animated.rotate {
+  animation: rotate 1s linear;
+}
+
+.animated.fadeIn {
+  animation: fadeIn 1s linear;
+}
+
+.animated.fadeUp {
+  animation: fadeIn 1s linear;
+  
+  @include onDesktop {
+    animation: fadeUp 1s linear;
+  }
+}
+
+.animated.fadeRight {
+  animation: fadeIn 1s linear;
+
+  @include onTablet {
+    animation: fadeRight 1s linear;
+  }
+}
+
+.animated.fadeLeft {
+  animation: fadeIn 1s linear;
+
+  @include onTablet {
+    animation: fadeLeft 1s linear;
+  }
+}
+
+.scroll {
+  opacity: 0;
+}
+
+.scroll.animated {
+  opacity: 1;
+}

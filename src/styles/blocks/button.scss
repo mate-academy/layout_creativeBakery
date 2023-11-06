@@ -1,0 +1,52 @@
+.button {
+  @extend %accent-text;
+  @extend %subtitles;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  border: 2px solid $color-accent;
+  border-radius: 32px;
+  width: 100%;
+  max-width: 326px;
+  height: 56px;
+  transition: all 0.5s ease-in-out;
+  justify-self: center;
+
+  @include onTablet {
+    margin-top: 80px;
+  }
+
+  @include onDesktop {
+    grid-row: 2 / 3;
+    margin-top: 180px;
+  }
+
+  @include onDesktop {
+    margin-top: 186px;
+  }
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-accent;
+  }
+
+  &:focus {
+    color: $color-white;
+    border: 2px solid #b2341a;
+    background-color: #b2341a;
+  }
+
+  &__icon {
+    margin-right: 4px;
+  }
+}
+
+.button__icon path {
+  transition: all 0.5s ease-in-out;
+}
+
+.button:hover path,
+.button:focus path {
+  fill: $color-white;
+}
