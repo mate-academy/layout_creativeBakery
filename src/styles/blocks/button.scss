@@ -1,0 +1,46 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 20px;
+
+  @include onTablet {
+    padding: 15px 95px;
+  }
+
+  @include onDesktop {
+    height: 55px;
+    width: 260px;
+    padding: 0;
+  }
+
+  border: 2px solid $color-orange-accent;
+  border-radius: 32px;
+
+  @extend %uppercase;
+  color: $color-orange-accent;
+
+  transition: background-color $transition, border-color $transition;
+
+  &::before {
+    content: "";
+    @include square(24px);
+    background-image: url(../images/icons/Icon-cookie.svg);
+    margin-right: 4px;
+  }
+
+  &:hover {
+    background-color: $color-orange-accent;
+    color: $color-white;
+
+    &::before {
+      filter: brightness(6);
+      -webkit-filter: brightness(6);
+    }
+  }
+
+  &:active {
+    background-color: $color-orange-dark;
+    border-color: $color-orange-dark;
+  }
+}

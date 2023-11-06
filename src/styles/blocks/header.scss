@@ -1,0 +1,84 @@
+.header {
+  height: 100vh;
+
+  &__main {
+    height: calc(100vh - #{$top-bar-s});
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-block: 32px 60px;
+
+    @include onDesktop {
+      height: calc(100vh - #{$top-bar-l});
+      padding: 0;
+    }
+  }
+
+  &__tagline {
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      text-align: left;
+      max-width: 300px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      max-width: 250px;
+      position: absolute;
+      top: 38%;
+    }
+
+    @include onWideScreens {
+      max-width: 250px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+
+    @extend %h1;
+
+    @include onTablet {
+      align-items: center;
+      grid-column: 1 / -1;
+      padding-block: 130px;
+
+      background: url(../images/Cookie.png) center / 325px no-repeat;
+    }
+
+    @include onDesktop {
+      grid-row: 1 / 2;
+      height: 100%;
+
+      background-size: 545px;
+    }
+  }
+
+  &__cookie {
+    @include square(290px);
+    margin: 0 auto;
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 1 / -1;
+      margin-inline: auto;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 20%;
+    }
+  }
+}
