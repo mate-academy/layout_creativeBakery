@@ -1,0 +1,19 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 24px;
+
+  @include onMobile {
+    display: block;
+  }
+  
+  &__item {
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &_tablet_#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+}
