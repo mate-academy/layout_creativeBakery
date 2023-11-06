@@ -1,0 +1,196 @@
+.footer {
+  padding: 56px 0;
+  background-color: $blackCol;
+  box-sizing: border-box;
+  margin: 0;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  @include onDesktop {
+    padding: 88px 0;
+  }
+
+  @include onDesktopXL {
+    padding: 88px 0;
+  }
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onDesktopXL {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__menu {
+    grid-column: 1/4;
+  }
+
+  &__phones {
+    grid-column: 5/9;
+
+    @include onDesktop {
+      grid-column: 5/7;
+    }
+
+    @include onDesktopXL {
+      grid-column: 5/7;
+    }
+  }
+
+  &__mail {
+    grid-column: 5/9;
+
+    @include onDesktop {
+      grid-column: 7/9;
+    }
+
+    @include onDesktopXL {
+      grid-column: 7/9;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+
+    @include onDesktopXL {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    grid-column: 5/9;
+    grid-row: 1/2;
+    font-weight: 400;
+    font-size: 48px;
+    @extend %forTitle;
+    color: $whiteCol;
+    margin: 0 0 40px;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+
+    @include onDesktopXL {
+      font-size: 72px;
+    }
+  }
+
+  &__subtitle {
+    @extend %forElse;
+    color: $greyCol;
+    margin: 0 0 16px;
+  }
+
+  &__nav {
+    &--menu {
+      margin-bottom: 64px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        margin-bottom: 48px;
+      }
+
+      @include onDesktopXL {
+        margin-bottom: 48px;
+      }
+    }
+
+    &--contacts {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    color: $whiteCol;
+    transition: all $duration;
+
+    &:hover {
+      color: $orangeCol;
+      border-color: $orangeCol;
+    }
+
+    &--mail {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 48px;
+      }
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 0;
+
+    @include onMobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__copy {
+    @extend %forSubtitle;
+    color: $greyCol;
+
+    @include onTablet {
+      grid-column: 5/9;
+    }
+
+    @include onDesktop {
+      grid-column: 5/9;
+    }
+
+    @include onDesktopXL {
+      grid-column: 5/9;
+    }
+  }
+}

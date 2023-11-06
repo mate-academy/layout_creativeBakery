@@ -1,0 +1,167 @@
+.about {
+  display: block;
+  box-sizing: border-box;
+  background-image: url(../images/Crumbs.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include onDesktop {
+    background-position: bottom;
+  }
+
+  @include onDesktopXL {
+    background-position: bottom;
+  }
+
+  &__content {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onDesktopXL {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__title {
+    display: block;
+    font-weight: 400;
+    font-size: 48px;
+    @extend %forTitle;
+
+    margin: 0 0 32px;
+
+    @include onTablet {
+      grid-column: 1/4;
+      margin: 0 0 72px;
+    }
+
+    @include onDesktop {
+      grid-column: 1/4;
+      margin: 0 0 144px;
+    }
+
+    @include onDesktopXL {
+      grid-column: 1/4;
+      margin: 0 0 144px;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    @extend %forSubtitle;
+
+    margin-bottom: 64px;
+
+    @include onTablet {
+      grid-column: 5/9;
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      grid-column: 5/9;
+      margin-bottom: 144px;
+    }
+
+    @include onDesktopXL {
+      grid-column: 5/9;
+      margin-bottom: 144px;
+    }
+  }
+
+  &__details {
+    margin-bottom: 48px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+
+      &--year {
+        grid-column: 1/4;
+      }
+
+      &--stores {
+        grid-column: 5/9;
+      }
+
+      &--companies {
+        grid-column: 1/4;
+        margin-bottom: 152px;
+      }
+
+      &--clients {
+        grid-column: 5/9;
+        margin-bottom: 152px;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+
+      &--year {
+        grid-column: 1/3;
+      }
+
+      &--stores {
+        grid-column: 3/5;
+      }
+
+      &--companies {
+        grid-column: 5/7;
+      }
+
+      &--clients {
+        grid-column: 7/9;
+        margin-bottom: 172px;
+      }
+    }
+
+    @include onDesktopXL {
+      margin-bottom: 0;
+
+      &--year {
+        grid-column: 1/3;
+      }
+
+      &--stores {
+        grid-column: 3/5;
+      }
+
+      &--companies {
+        grid-column: 5/7;
+      }
+
+      &--clients {
+        grid-column: 7/9;
+        margin-bottom: 172px;
+      }
+    }
+  }
+
+  &__numbers {
+    font-size: 96px;
+    @extend %forTitle;
+    margin-bottom: 8px;
+    transition: transform $duration;
+
+    &:hover {
+      transform: scale(1.05);
+      cursor: default;
+    }
+  }
+
+  &__subscription {
+    @extend %forSubtitle;
+  }
+}

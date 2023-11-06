@@ -1,0 +1,188 @@
+.card {
+  @include onMobile {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 370px;
+  }
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include onDesktopXL {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  &__conteiner {
+    margin-bottom: 56px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 80px;
+      &--1 {
+        grid-column: 1/5;
+      }
+
+      &--2 {
+        grid-column: 5/9;
+      }
+
+      &--3 {
+        grid-column: 1/5;
+      }
+
+      &--4 {
+        grid-column: 5/9;
+      }
+
+      &--5 {
+        grid-column: 1/5;
+        margin-bottom: 0;
+      }
+
+      &--6 {
+        grid-column: 5/9;
+        margin-bottom: 0;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+      &--1 {
+        grid-column: 1/4;
+      }
+
+      &--2 {
+        grid-column: 4/7;
+      }
+
+      &--3 {
+        grid-column: 3/6;
+      }
+
+      &--4 {
+        grid-column: 6/9;
+      }
+
+      &--5 {
+        grid-column: 1/4;
+        margin-bottom: 0;
+      }
+
+      &--6 {
+        grid-column: 4/7;
+        margin-bottom: 0;
+      }
+    }
+    @include onDesktopXL {
+      margin-bottom: 80px;
+      &--1 {
+        grid-column: 1/4;
+      }
+
+      &--2 {
+        grid-column: 4/7;
+      }
+
+      &--3 {
+        grid-column: 3/6;
+      }
+
+      &--4 {
+        grid-column: 6/9;
+      }
+
+      &--5 {
+        grid-column: 1/4;
+        margin-bottom: 0;
+      }
+
+      &--6 {
+        grid-column: 4/7;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__photo-container {
+    display: flex;
+
+    margin-bottom: 16px;
+
+    @include onMobile {
+      justify-content: center;
+    }
+  }
+
+  &__photo {
+    display: block;
+    width: 100%;
+    height: 424px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform $duration;
+
+    @include onDesktop {
+      height: 500px;
+    }
+    @include onDesktopXL {
+      height: 540px;
+    }
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @extend %forElse;
+    color: $greyCol;
+    margin: 0 0 8px;
+  }
+
+  &__subtitle {
+    @extend %forSubtitle;
+    margin-bottom: 16px;
+  }
+
+  &__button {
+    display: inline-block;
+    width: 84px;
+  }
+
+  &__link {
+    display: flex;
+    margin-right: 4px;
+    @extend %forElse;
+
+    text-decoration: none;
+    color: $orangeCol;
+
+    box-sizing: border-box;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+
+    transition: border-color $duration;
+
+    &:hover {
+      border-color: $orangeCol;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  background-color: #ffeefc;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    transform: translateX(-100%);
+    transition: transform $duration;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+    @include onDesktop {
+      margin-bottom: 178px;
+    }
+  }
+}
