@@ -1,0 +1,133 @@
+.footer {
+  background-color: $clr--black;
+
+  &__grid {
+    @include pageGrid;
+
+    padding-block: 56px;
+
+    @include onTablet {
+      padding-block: 88px;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__menu {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 2 / 4;
+    }
+
+    @include onDesktop {
+      padding-bottom: 48px;
+    }
+  }
+
+  &__subtitle {
+    padding-top: 40px;
+
+    color: $clr--gray;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__calls {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__email {
+    grid-column: 1 / -1;
+    padding-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      padding-bottom: 48px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    padding-top: 64px;
+    color: $clr--white;
+
+    @include onTablet {
+      padding-top: 0;
+      grid-column: 5 / -1;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__contacts--link {
+    display: inline-block;
+    width: fit-content;
+    color: $clr--white;
+    padding-top: 16px;
+
+    @include hover(color, $clr--gray);
+  }
+
+  &__icons {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    color: $clr--orange-accent;
+
+    @include hover(color, $clr--white);
+  }
+
+  &__copyright {
+    grid-column: 1 / -1;
+    color: $clr--gray;
+    padding-top: 40px;
+
+    @include onTablet {
+      padding-top: 0;
+
+      grid-column: 5 / -1;
+    }
+  }
+}

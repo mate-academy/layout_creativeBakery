@@ -1,0 +1,95 @@
+.product-card {
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    grid-column: span 4;
+  }
+
+  @include onDesktop {
+    grid-column: span 3;
+
+    &:nth-child(3) {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &__image {
+    @include onBgImg;
+    @include hover(transform, scale(1.05));
+    cursor: pointer;
+
+    width: 100%;
+    height: 356px;
+
+    @include onTablet {
+      height: 424px;
+    }
+
+    @include onDesktop {
+      height: 512px;
+    }
+
+    @include onWideScreen {
+      height: 560px;
+    }
+
+    &--01 {
+      background-image: url("../images/product-card/product-card-01.png");
+    }
+
+    &--02 {
+      background-image: url("../images/product-card/product-card-02.png");
+    }
+
+    &--03 {
+      background-image: url("../images/product-card/product-card-03.png");
+    }
+
+    &--04 {
+      background-image: url("../images/product-card/product-card-04.png");
+    }
+
+    &--05 {
+      background-image: url("../images/product-card/product-card-05.png");
+    }
+
+    &--06 {
+      background-image: url("../images/product-card/product-card-06.png");
+    }
+  }
+
+  &__title {
+    padding-top: 16px;
+  }
+
+  &__text {
+    padding-top: 8px;
+  }
+
+  &__link {
+    margin-top: 16px;
+    width: 84px;
+
+    display: flex;
+    height: 32px;
+    padding: 4px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    color: $clr--orange-accent;
+    font-family: $font--main;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+
+    @include hover(transform, scale(1.1));
+
+    &::before {
+      content: url("../images/product-card/icon-arrow.svg");
+    }
+  }
+}
