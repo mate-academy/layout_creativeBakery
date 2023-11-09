@@ -2,11 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1400px;
   padding: 13px;
   height: $top-bar-s;
   background-color: $color-pink-light;
 
   position: sticky;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
@@ -14,16 +16,6 @@
   @include onDesktop {
     padding-inline: 32px;
     height: $top-bar-l;
-  }
-
-  &__logo {
-    height: 32px;
-    width: 136px;
-    transition: transform $transition;
-
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 
   &__nav {
@@ -43,23 +35,14 @@
     position: relative;
     transition: color $transition, transform $transition;
 
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      height: 1px;
-      width: 100%;
-      transform: scaleX(0);
-      background-color: $color-orange-accent;
-      transition: transform $transition;
-    }
+    @extend %animated-underline;
 
     &:hover {
       color: $color-orange-accent;
-      &::after {
-        transform: scaleX(1);
-        transform-origin: left;
-      }
+    }
+
+    &:active {
+      color: $color-orange-dark;
     }
 
     &--contact {
@@ -79,13 +62,21 @@
         background: url(../images/icons/Icon-phone.svg) center / cover no-repeat;
         left: -25px;
 
-        transition: transform $transition;
+        transition: transform $transition, filter $transition;
       }
 
       &:hover {
         transform: scale(1.1);
         &::before {
           transform: rotate(20deg);
+        }
+      }
+
+      &:active {
+        color: $color-orange-dark;
+        &::before {
+          filter: grayscale(5);
+          -webkit-filter: grayscale(5);
         }
       }
     }

@@ -1,10 +1,9 @@
 .header {
-  height: 100vh;
+  @include onDesktop {
+    height: 100vh;
+  }
 
   &__main {
-    height: calc(100vh - #{$top-bar-s});
-    grid-column: 1 / -1;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -43,19 +42,18 @@
     justify-content: center;
 
     position: relative;
+    z-index: -1;
 
     @extend %h1;
 
     @include onTablet {
       align-items: center;
-      grid-column: 1 / -1;
       padding-block: 130px;
 
       background: url(../images/Cookie.png) center / 325px no-repeat;
     }
 
     @include onDesktop {
-      grid-row: 1 / 2;
       height: 100%;
 
       background-size: 545px;
@@ -72,7 +70,6 @@
 
   &__button {
     @include onTablet {
-      grid-column: 1 / -1;
       margin-inline: auto;
     }
 
