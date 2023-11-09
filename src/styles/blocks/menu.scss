@@ -1,0 +1,43 @@
+.menu {
+  height: 100vh;
+  background-color: $color-pink-light;
+  z-index: 1;
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__link {
+    display: block;
+    padding-block: 10px;
+
+    &--contact {
+      display: flex;
+      position: relative;
+      @extend %uppercase;
+      color: $color-orange-accent;
+
+      &::before {
+        content: "";
+        position: absolute;
+        @include square(18px);
+        background: url(../images/icons/Icon-phone.svg) center / cover no-repeat;
+        left: -25px;
+      }
+    }
+  }
+
+}

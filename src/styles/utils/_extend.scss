@@ -1,0 +1,84 @@
+%uppercase {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+
+%h1 {
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 54px;
+  letter-spacing: -5%;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-orange-accent;
+
+  @include onTablet {
+    font-size: 76px;
+    line-height: 68px;
+  }
+
+  @include onDesktop {
+    font-size: 125px;
+    line-height: 116px;
+  }
+}
+
+%h2 {
+  font-size: 48px;
+  line-height: 41px;
+  font-weight: normal;
+  letter-spacing: -0.05em;
+  text-align: left;
+  text-transform: uppercase;
+  color: $color-orange-accent;
+
+  @include onTablet {
+    font-size: 56px;
+    line-height: 48px;
+  }
+
+  @include onDesktop {
+    font-size: 72px;
+    line-height: 61px;
+  }
+}
+
+%big-text {
+  font-size: 96px;
+  line-height: 82px;
+  letter-spacing: -0.05em;
+  text-align: left;
+}
+
+%menu-element {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: $color-black;
+  position: absolute;
+}
+
+%animated-underline {
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    background-color: $color-orange-accent;
+    transition: transform $transition;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  &:active::after {
+    background-color: $color-orange-dark;
+  }
+}
