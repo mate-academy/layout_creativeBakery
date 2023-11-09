@@ -1,0 +1,69 @@
+.product {
+  &__photo-container {
+    position: relative;
+  
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 356px;
+    max-height: 560px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    transition: transform 0.3s linear;
+  
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 125%;
+    }
+
+    @include onTablet {
+      height: 424px;
+      padding-bottom: 0;
+    }
+  
+    @include onDekstop {
+      height: 560px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    color: $color-gray;
+  }
+  
+  &__description {
+    margin-bottom: 24px;
+  }
+  
+  &__order {
+    display: flex;
+    gap: 8px;
+    text-decoration: none;
+    @extend %text--uppercase;
+    color: $color-accentOrange;
+  
+    & path {
+      transition: fill 0.3s;
+    }
+
+    &:hover,
+    &:hover path {
+      color: $color-darkOrange;
+      fill: $color-darkOrange;
+    }
+  }
+}

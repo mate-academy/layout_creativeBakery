@@ -1,0 +1,134 @@
+.footer {
+  box-sizing: border-box;
+  background-color: $color-black;
+  color: $color-white;
+  padding: 60px 0;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+  
+  &__container {
+    @include container;
+  }
+
+  &__logo {
+    margin-bottom: 44px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDekstop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__section-title {
+    color: $color-gray;
+    margin-bottom: 16px;
+  }
+
+  &__nav {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: all 0.3s linear;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      color: $color-accentOrange;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 40px;
+
+    @include onDekstop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 88px;
+    }
+  }
+
+  &__phone {
+    margin-bottom: 40px;
+
+    @include onDekstop {
+      margin-bottom: 0;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__email {
+    @include onDekstop {
+      grid-column: 3 / 5;
+    }
+  }
+
+  &__networks {
+    display: flex;
+    gap: 35px;
+    margin-bottom: 42px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__network {
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    transition: transform 0.3s linear;
+
+    & path {
+      transition: fill 0.3s;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:hover path {
+      fill: $color-white;
+    }
+  }
+}

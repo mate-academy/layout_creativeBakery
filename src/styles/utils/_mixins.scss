@@ -4,3 +4,38 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDekstop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin top-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+
+  @include onDekstop {
+    padding: 0 36px;
+  }
+}
+
+@mixin container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 16px;
+
+  @include onDekstop {
+    padding: 0 44px;
+  }
+}

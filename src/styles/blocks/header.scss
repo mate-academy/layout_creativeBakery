@@ -1,0 +1,111 @@
+.header {
+  box-sizing: border-box;
+  margin: 0 auto 100px;
+
+  @include onTablet {
+    margin-bottom: 220px;
+  }
+
+  &__container {
+    box-sizing: border-box;
+    @include container;
+  }
+
+  &__top {
+    @include top-actions;
+    
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDekstop {
+      display: block;
+    }
+  }
+
+  &__menu-icon {
+    display: block;
+    width: 20px;
+    height: 8px;
+    background-image: url(../images/Menu.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+
+    @include onDekstop {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: block;
+  
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+  }
+
+  &__text {
+    margin: 0 auto 32px;
+    display: block;
+    text-align: center;
+    max-width: max-content;
+    
+    @include onTablet {
+      margin: 0;
+      text-align: left;
+      grid-column: 1 / 4;
+    }
+
+    @include onDekstop {
+      position: absolute;
+      top: 20%;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__title {
+    color: $color-accentOrange;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+
+    @include onTablet {
+      position: absolute;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+
+  &__photo {
+    max-width: fit-content;
+    position: relative;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    margin: 0 auto 65px;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+  }
+
+  &__button {
+    display: block;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+
+    @include onDekstop {
+      position: absolute;
+      bottom: 20%;
+      grid-column: 1 / 3;
+    }
+  }
+}
