@@ -1,0 +1,69 @@
+.card {
+  width: 288px;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    width: 328px;
+  }
+
+  @include smallDesktop {
+    width: 402px;
+  }
+
+  @include desktop {
+    width: 432px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__photo {
+    width: 288px;
+    height: 356px;
+
+    @include tablet {
+      width: 328px;
+      height: 560px;
+    }
+
+    @include smallDesktop {
+      width: 402px;
+      height: 648px;
+    }
+
+    @include desktop {
+      width: 432px;
+      height: 696px;
+    }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    @include upperText;
+    color: $grey;
+    margin-top: 16px;
+  }
+
+  &__text {
+    @include bodyText;
+    color: $black;
+    margin-top: 8px;
+  }
+
+  &__link {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    @include upperText;
+    text-decoration: none;
+    color: $accentOrange;
+  }
+}

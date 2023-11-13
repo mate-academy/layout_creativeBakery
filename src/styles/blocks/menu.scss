@@ -1,0 +1,70 @@
+.menu {
+  background-color: $lightBlue;
+  height: 100vh;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+
+  &:target {
+    z-index: 1;
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0%);
+  }
+
+  &__top {
+    margin-top: 16px;
+    padding: 0 16px;
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include smallDesktop {
+    display: none;
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+    margin-top: 148px;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      gap: 24px;
+    }
+
+    &__link {
+      @include bodyText;
+      color: $black;
+      text-decoration: none;
+
+      &:hover {
+        transform: scale(1.1);
+        color: $accentOrange;
+      }
+
+      &--menu {
+        @include upperText;
+        color: $accentOrange;
+        text-decoration: none;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+  }
+}

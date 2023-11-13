@@ -1,0 +1,96 @@
+.header {
+  &__top {
+    margin-top: 16px;
+    padding: 0 16px;
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include smallDesktop {
+      margin-top: 28px;
+      padding: 0 32px;
+    }
+  }
+
+  position: relative;
+
+  &__text {
+    margin-top: 48px;
+    grid-column: 1 / -1;
+    text-align: center;
+    @include bodyText;
+
+    @include tablet {
+      margin-top: 96px;
+      text-align: start;
+      grid-column: span 4;
+      grid-row: 1;
+    }
+
+    @include smallDesktop {
+      margin-top: 163px;
+      grid-column: span 2;
+    }
+
+    @include desktop {
+      margin-top: 172px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-top: 32px;
+    grid-column: 1 / -1;
+    text-align: center;
+
+    @include tablet {
+      grid-column: span 8;
+      margin-top: 146px;
+      grid-row: 2;
+      z-index: 1;
+    }
+
+    @include smallDesktop {
+      margin-top: 8px;
+    }
+
+    @include desktop {
+      margin-top: 40px;
+    }
+
+  }
+
+  &__cover {
+    grid-column: 1/-1;
+    margin: 0 auto;
+    width: 288px;
+    height: 290px;
+    display: block;
+    background-image: url(../images/Cookie.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include tablet {
+      grid-column: 3 / -3;
+      grid-row: 3;
+      width: 326px;
+      height: 328px;
+      position: relative;
+      top: -200px;
+    }
+
+    @include smallDesktop {
+      width: 544px;
+      height: 546px;
+      top: -330px;
+    }
+
+    @include desktop {
+      width: 584px;
+      height: 586px;
+      top: -370px;
+    }
+  }
+}
