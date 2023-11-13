@@ -1,0 +1,85 @@
+.button {
+  display: flex;
+  align-items: center;
+  margin: auto;
+
+  color: $button-color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &__primary {
+    box-sizing: border-box;
+    justify-content: center;
+    width: 100%;
+    height: 56px;
+
+    background-color: transparent;
+    border: 2px solid $button-color;
+    border-radius: 32px;
+    transition: all 0.5s;
+
+    &::before {
+      display: block;
+      background: url(../images/cookie_icon.svg) no-repeat cover;
+      height: 20px;
+      width: 20px;
+      content: "";
+      transform: translateX(-6px);
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      color: $white-color;
+      background: $button-color;
+
+      &::before {
+        filter: grayscale(1) brightness(100%);
+      }
+    }
+
+    &:focus {
+      background: $focused-color;
+    }
+
+    &:disabled {
+      color: $disabled-color;
+      background: $white-color;
+
+      &::before {
+        filter: grayscale(1) brightness(100%);
+      }
+    }
+
+    @include onTablet {
+      width: 50%;
+    }
+
+    @include onDesktop {
+      width: 25%;
+      margin: 0;
+    }
+  }
+
+  &__secondary {
+    transform: translateX(8px);
+    transition: all 0.5s;
+
+    &::before {
+      display: block;
+      background-image: url(../images/arrow.svg);
+      height: 16px;
+      width: 16px;
+      content: "";
+      transform: translateX(-8px);
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      filter: grayscale(2);
+
+      &::before {
+        filter: grayscale(2);
+      }
+    }
+  }
+}
