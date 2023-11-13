@@ -1,0 +1,143 @@
+.header {
+  &__content {
+    position: relative;
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 20px;
+
+    @include onDesktop {
+      padding-top: 32px;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+
+    &--right {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__nav {
+    margin-left: 64px;
+    text-decoration: none;
+    color: $black-color;
+    transition: all 0.5s;
+
+    &:hover {
+      color: $gray-color;
+    }
+
+    &:last-child {
+      margin-left: 76px;
+    }
+  }
+
+  &__contacts {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: $button-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.5s;
+
+    &::after {
+      display: block;
+      background-image: url(../images/phone.svg);
+      height: 18px;
+      width: 18px;
+      content: "";
+      transform: translate(-27px, -110%);
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      filter: grayscale(2);
+
+      &::after {
+        filter: grayscale(2);
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      width: 280px;
+      margin-bottom: 146px;
+    }
+
+    @include onDesktop {
+      width: 23%;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 64px;
+    height: 85%;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-bottom: 210px;
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+      font-size: 136px;
+    }
+  }
+
+  &__photo {
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+
+    @include onTablet {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      margin-top: 36px;
+    }
+
+    @include onDesktop {
+      width: 544px;
+      height: 546px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.03);
+      margin-top: 40px;
+    }
+
+    &-cookie {
+      width: 100%;
+    }
+  }
+}
