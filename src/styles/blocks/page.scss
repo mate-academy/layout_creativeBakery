@@ -1,13 +1,16 @@
 .page {
   @extend %main-text;
-
   background-color: $background-color;
   color: $black-color;
   min-width: 320px;
-  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
 
   &__body {
     margin: 0;
+    overflow-x: hidden;
 
     &--with-menu {
       overflow: hidden;
