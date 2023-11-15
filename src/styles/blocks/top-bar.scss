@@ -1,0 +1,74 @@
+.top-bar {
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;
+
+  @include  onDesktop1024 {
+    padding: 28px 32px;
+  }
+
+  &__logo {
+    width: 136px;
+    height: 32px;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__list {
+    display: none;
+    justify-content: space-between;
+    list-style: none;
+
+    @include  onDesktop1024 {
+      display: flex;
+    }
+  }
+
+  &__item {
+    padding-left: 64px;
+    color: $black;
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+
+    &:hover {
+      color: $accentorange;
+    }
+
+    &--contacts {
+      color: $accentorange;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.2);
+        text-decoration: none;
+        color: $accentorange;
+      }
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    background-image: url(/images/icons/Icon-menu-blk.png);
+    background-size: cover;
+    background-position: center;
+
+    @include onDesktop1024 {
+      display: none;
+    }
+  }
+}
+
+.phone__icon {
+  width: 24px;
+  height: 24px;
+  align-items: baseline;
+  padding-right: 4px;
+}

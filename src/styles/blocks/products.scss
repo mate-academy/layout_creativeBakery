@@ -1,0 +1,97 @@
+.products {
+  @include pageGrid;
+  position: relative;
+
+  &__name {
+    margin: 64px 0 28px;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 8;
+    }
+  }
+
+  &__add {
+    margin: 0 0 56px;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 8;
+    }
+  }
+}
+
+.card {
+  grid-column: span 2;
+
+  @include onTablet {
+    grid-column: span 4;
+  }
+
+  &--1,
+  &--5,
+  &--2,
+  &--6 {
+    @include onDesktop1024 {
+      grid-column: span 3;
+    }
+  }
+
+  &--3 {
+    @include onDesktop1024 {
+      grid-column: 3/6;
+    }
+  }
+
+  &--4 {
+    @include onDesktop1024 {
+      grid-column: 6/9;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__name {
+    margin: 16px 0 0;
+  }
+
+  &__add {
+    margin: 0 0 16px;
+  }
+
+  &__href {
+    text-transform: uppercase;
+    color: $accentorange;
+    text-decoration: none;
+    font-family: "Inter", serif;
+    position: relative;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-bottom: 56px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    &::before {
+      content: "";
+      background-image: url(/images/icons/Icon-arrow.png);
+      display: block;
+      background-size: contain;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
