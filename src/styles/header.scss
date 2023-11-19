@@ -1,0 +1,54 @@
+@import "./utils/mixins";
+@import "./utils/vars";
+@import "./utils/reset";
+@import "./icon";
+
+.header {
+  // height: 100vh;
+
+  &__text {
+    text-align: center;
+    margin-block: 32px;
+  }
+
+  &__hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+
+    &--title {
+      text-align: center;
+    }
+
+    &--image {
+      width: 288px;
+      height: 290px;
+    }
+  }
+  &__button {
+    @include button-header;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 24px;
+      width: 24px;
+      background-image: url("../images/icons/icon-cookie.svg");
+    }
+
+    &:hover {
+      background-color: $accent-orange;
+      color: $main-white;
+
+      &::before {
+        background-image: url("../images/icons/icon-cookie-white.svg");
+      }
+    }
+
+    &:focus {
+      background-color: $dark-orange;
+    }
+  }
+}

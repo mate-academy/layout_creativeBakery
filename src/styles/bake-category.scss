@@ -1,0 +1,50 @@
+@import "./utils/vars";
+@import "./utils/mixins";
+
+@import "./utils/reset";
+@import "./header";
+@import "./icon";
+@import "./page";
+@import "./top-bar";
+
+.bake-category {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__photo {
+    width: 100%;
+    border-radius: 8px;
+    // max-height: 492px;
+  }
+
+  &__name {
+    @include uppercase-text-styles;
+    margin: 0;
+    color: $c-gray;
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  &__order {
+    @include uppercase-text-styles;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+
+    width: fit-content;
+    padding-block: 4px;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 24px;
+      width: 24px;
+      background-image: url("../images/icons/icon-arrow.svg");
+    }
+  }
+}

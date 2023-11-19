@@ -4,3 +4,107 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin big-text-styles {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin page-text-styles {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+@mixin uppercase-text-styles {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+@mixin h1-styles {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include onTablet() {
+    font-size: 80px;
+  }
+
+  @include onDesktop() {
+    font-size: 144px;
+  }
+}
+
+@mixin h2-styles {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include onTablet() {
+    font-size: 56px;
+  }
+
+  @include onDesktop() {
+    font-size: 72px;
+  }
+}
+
+@mixin button-header {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  padding: 15px auto;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 326px;
+  border-radius: 32px;
+  border: 2px solid $accent-orange;
+  background-color: inherit;
+  color: $accent-orange;
+
+  @include uppercase-text-styles;
+  padding-block: 18px;
+
+  @include onTablet() {
+    max-width: 326px;
+  }
+
+  @include onDesktop() {
+    max-width: 260px;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+@mixin onDesktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
