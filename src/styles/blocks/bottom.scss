@@ -1,0 +1,178 @@
+.bottom {
+  padding-block: 50px 40px;
+  position: relative;
+
+  @include onTablet {
+    padding-block: 80px 225px;
+
+    @include pageGrid;
+  }
+
+  @include onSmallDesktop {
+    padding-block: 135px 160px;
+  }
+
+  @include onMediumDesktop {
+    padding-block: 144px 140px;
+  }
+
+  &__subtittle {
+    color: $main-text-color;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    text-align: center;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      padding-bottom: 146px;
+      text-align: left;
+      grid-column: 1 / 5;
+    }
+
+    @include onSmallDesktop {
+      padding-block: 8px;
+      grid-column: 1 / 3;
+    }
+
+    @include onMediumDesktop {
+      padding-block: 40px;
+    }
+  }
+
+  &__tittle {
+    color: $main-text-color;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include onTablet {
+      padding-bottom: 210px;
+      font-size: 80px;
+      letter-spacing: -4px;
+      grid-column: -1 / 1;
+    }
+
+    @include onSmallDesktop {
+      padding-bottom: 64px;
+      font-size: 136px;
+      letter-spacing: -6.8px;
+    }
+
+    @include onMediumDesktop {
+      font-size: 144px;
+      letter-spacing: -7.2px;
+    }
+  }
+
+  &__img {
+    display: block;
+    height: 290px;
+    width: 288px;
+    margin: 0 auto;
+
+    @include onTablet {
+      height: 328px;
+      width: 326px;
+      position: absolute;
+      top: 144px;
+      z-index: -1;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    @include onSmallDesktop {
+      height: 546px;
+      width: 544px;
+      top: 0;
+    }
+
+    @include onMediumDesktop {
+      height: 586px;
+      width: 584px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-position: 25%;
+    background-color: transparent;
+    border: 1px solid $main-item-color;
+    border-radius: 32px;
+    width: 288px;
+    padding-block: 20px;
+    margin: 0 auto;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      background-color: $main-item-color;
+    }
+
+    &:focus {
+      background-color: rgba(178, 52, 26, 1);
+    }
+
+    &--text {
+      color: $main-item-color;
+      text-decoration: none;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      transition: 0.4s ease-in-out;
+    }
+
+    &--img {
+      background-image: url(../images/icon/Icon-cookie.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      height: 24px;
+      width: 24px;
+      transition: 0.4s ease-in-out;
+    }
+
+    @include onTablet {
+      width: 326px;
+      grid-column: 3 / 7;
+    }
+
+    @include onSmallDesktop {
+      width: 260px;
+      grid-column: 1 / 3;
+    }
+
+    @include onMediumDesktop {
+      width: 280px;
+    }
+  }
+
+}
+
+.bottom__button:hover .bottom__button--img {
+  background-image: url(../images/icon/Icon-cookie-1.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bottom__button:hover .bottom__button--text {
+  color: $second-text-color;
+}
+
+.bottom__button:focus .bottom__button--img {
+  background-image: url(../images/icon/Icon-cookie-1.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bottom__button:focus .bottom__button--text {
+  color: $second-text-color;
+}

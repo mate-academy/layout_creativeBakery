@@ -1,0 +1,68 @@
+.card {
+  &__img {
+    display: block;
+    height: 356px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 1px 12.1px 5px rgba(249, 81, 46, 0.7);
+    }
+
+    @include onTablet {
+      height: 424px;
+      width: 328px;
+    }
+
+    @include onSmallDesktop {
+      height: 512px;
+      width: 402px;
+    }
+
+    @include onMediumDesktop {
+      height: 560px;
+      width: 432px;
+    }
+  }
+
+  &__name {
+    color: $third-text-color;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+  }
+
+  &__subtittle {
+    color: $main-text-color;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    padding-bottom: 16px;
+  }
+
+  &__order {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+
+    &--text {
+      color: $main-item-color;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      transition: 0.4s ease-in-out;
+    }
+  }
+}
+
+.card__order:hover .card__order--text {
+  transform: translateX(10px);
+}

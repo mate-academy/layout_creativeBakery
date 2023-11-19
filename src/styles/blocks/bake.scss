@@ -1,0 +1,70 @@
+.bake {
+  padding-bottom: 72px;
+
+  @include onTablet {
+    padding-bottom: 150px;
+  }
+
+  @include onSmallDesktop {
+    padding-bottom: 180px;
+  }
+
+  &__tittle {
+    padding-bottom: 24px;
+  }
+
+  &__subtittle {
+    color: $main-text-color;
+    font-size: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    padding-bottom: 56px;
+
+    @include onTablet {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include onTablet {
+      gap: 80px;
+    }
+
+    @include onSmallDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__staff {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    &--one {
+      @include onSmallDesktop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--two {
+      @include onSmallDesktop {
+        grid-column: 3 / -1;
+      }
+    }
+
+    &--three {
+      @include onSmallDesktop {
+        grid-column: 1 / 7;
+      }
+    }
+  }
+}
