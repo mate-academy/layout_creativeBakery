@@ -1,0 +1,151 @@
+.content {
+  &__title {
+    color: $c-accent-orange;
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    color: $c-black;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__place {
+    margin-bottom: 64px;
+
+    &:last-child {
+      margin-bottom: 80px;
+
+      @include onTablet {
+        margin-bottom: 160px;
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 88px;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    margin-bottom: 16px;
+
+    cursor: pointer;
+
+    transition: transform $transition-time, box-shadow $transition-time;
+
+    &:hover {
+      transform: scale(105%);
+
+      @include onDesktop {
+        box-shadow: 11px 10px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
+  &__subtitle {
+    color: $c-grey;
+    margin-bottom: 8px;
+  }
+
+  &__label {
+    min-height: 50px;
+    color: $c-black;
+    margin-bottom: 24px;
+  }
+
+  &__order {
+    position: relative;
+
+    transform: translateY(10%);
+
+    padding: 6px;
+
+    @include uppercase;
+    color: $c-accent-orange;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      height: 1px;
+      background-color: $c-accent-orange;
+    }
+
+    &:hover {
+      &::after {
+        animation: link $transition-time linear forwards;
+      }
+    }
+  }
+
+  &__fact {
+    margin-bottom: 48px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-top: 146px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 72px;
+
+      @include onTablet {
+        margin-bottom: 152px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 360px;
+      }
+    }
+  }
+
+  &__fact-title {
+    @include big-text;
+    color: $c-accent-orange;
+
+    margin-bottom: 8px;
+  }
+
+  &__fact-info {
+    color: $c-black;
+  }
+
+  &__picture {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+
+    @include squere(492px);
+
+    z-index: -1;
+
+    @include onTablet {
+      display: inline-block;
+    }
+
+    @include onDesktop {
+      @include squere(672px);
+      top: 0;
+      left: 25%;
+      transform: translateX(0);
+    }
+  }
+
+  &--info {
+    position: relative;
+  }
+}
