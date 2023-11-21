@@ -1,6 +1,108 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $transform-duration-time;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin linkHover {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: currentColor;
+
+    transition: transform $transform-duration-time;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktopLarge {
+  @media (min-width: $desktop-large-min-width) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline {
+  padding-inline: 16px;
+
+  @include onTablet {
+    padding-inline: 44px;
+  }
+
+  @include onDesktopLarge {
+    padding-inline: 124px;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 8;
+
+    column-gap: 24px;
+  }
+}
+
+@mixin headerTitleSize {
+  font-size: $header-title-size-mobile;
+  line-height: $header-title-size-mobile * 0.85;
+
+  @include onTablet {
+    font-size: $header-title-size-mobile + 16;
+    line-height: ($header-title-size-mobile + 16) * 0.85;
+  }
+
+  @include onDesktop {
+    font-size: $header-title-size-mobile + 72;
+    line-height: ($header-title-size-mobile + 72) * 0.85;
+  }
+
+  @include onDesktopLarge {
+    font-size: $header-title-size-mobile + 80;
+    line-height: ($header-title-size-mobile + 80) * 0.85;
+  }
+}
+
+@mixin sectionTitleSize {
+  font-size: $section-title-size-mobile;
+  line-height: $section-title-size-mobile * 0.85;
+
+  @include onTablet {
+    font-size: $section-title-size-mobile + 8;
+    line-height: ($section-title-size-mobile + 8) * 0.85;
+  }
+
+  @include onDesktop {
+    font-size: $section-title-size-mobile + 24;
+    line-height: ($section-title-size-mobile + 24) * 0.85;
   }
 }
