@@ -1,5 +1,4 @@
 .header {
-
   &__container {
     padding-inline: 16px;
 
@@ -21,4 +20,32 @@
 
   }
 
+  &__image {
+    grid-column: 1 / -1;
+    height: 290px;
+    background-image: url(../images/header-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include onTablet {
+      height: 328px;
+
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      right: 0;
+      top: 208px;
+    }
+
+    @include onDesktop {
+      grid-column: 3 / 7;
+      height: 546px;
+      top: 88px;
+    }
+
+    @include onXlDesign {
+      height: 586px;
+    }
+  }
 }

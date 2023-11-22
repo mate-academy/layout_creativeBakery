@@ -22,3 +22,26 @@
     @content;
   }
 }
+
+@mixin pageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include onTablet() {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 16px;
+
+  @include onTablet {
+    padding-inline: 44px;
+  }
+
+  @include onXlDesign {
+    padding-inline: 124px;
+  }
+}

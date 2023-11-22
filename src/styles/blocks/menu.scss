@@ -6,7 +6,7 @@
   /* to scroll the menu if needed */
 
   &__container {
-    padding-inline: 16px;
+    padding-inline: 20px;
   }
 
   &__logo {
@@ -18,7 +18,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-block: 16px;
+    padding-block: 25px;
 
     position: sticky;
     /* to keep cross always visible */
@@ -64,8 +64,10 @@
   &__items {
     display: flex;
     flex-direction: column;
+    padding-left: 20px;
     gap: 24px;
     align-items: center;
+    list-style: none;
 
     &--header {
       @include onDesktop {
@@ -82,7 +84,9 @@
 
   &__link {
     position: relative;
-    color: #1c1a26;
+    color: $c-main;
+    text-decoration: none;
+    text-align: center;
 
     &::after {
       content: "";
@@ -91,7 +95,7 @@
       position: absolute;
       bottom: -8px;
       height: 1px;
-      background-color: #f9512e;
+      background-color: $c-accent;
 
       transition: transform 0.5s;
       transform: scale(0);
@@ -103,7 +107,7 @@
     }
 
     &:hover {
-      color: #f9512e;
+      color: $c-accent;
       transition: all 0.5s;
     }
 
@@ -116,9 +120,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 4px;
 
-    color: #f9512e;
+    color: $c-accent;
     text-transform: uppercase;
     font-weight: 500;
     line-height: 100%;
