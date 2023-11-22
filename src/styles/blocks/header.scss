@@ -1,0 +1,161 @@
+.header {
+  position: relative;
+  margin-bottom: 104px;
+
+  @include on-tablet {
+    margin-bottom: 228px;
+  }
+
+  @include on-desktop {
+    margin-inline: auto;
+    height: 700px;
+    margin-bottom: 152px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+
+    @include on-desktop {
+      padding: 0 32px;
+      margin: 0;
+    }
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__description {
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      text-align: start;
+      margin-bottom: 16px;
+      width: 280px;
+    }
+
+    @include on-desktop {
+      margin-top: 132px;
+      width: 260px;
+    }
+
+    @include on-desktop-xl {
+      width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    pointer-events: none;
+
+    @include on-tablet {
+      position: absolute;
+      top: 290px;
+      font-size: 80px;
+      letter-spacing: -4px;
+      z-index: 1;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 270px;
+      font-size: 136px;
+      letter-spacing: -6.8px;
+    }
+
+    @include on-desktop-xl {
+      font-size: 144px;
+      letter-spacing: -7.2px;
+    }
+  }
+
+  &__img {
+    width: 288px;
+    height: 290px;
+    transition: $effect-duration;
+
+    @include on-tablet {
+      width: 326px;
+      height: 328px;
+      bottom: 80px;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      top: 65px;
+      width: 544px;
+      height: 546px;
+    }
+
+    @include hover(transform, scale(1.05));
+
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 288px;
+    height: 56px;
+    border: 2px solid $color-orange;
+    border-radius: 32px;
+    color: $color-orange;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-decoration: none;
+    transition: $effect-duration;
+
+    @include on-tablet {
+      margin-top: 80px;
+      width: 326px;
+      align-self: center;
+    }
+
+    @include on-desktop {
+      margin-top: 120px;
+      width: 260px;
+      align-self: flex-start;
+    }
+
+    @include on-desktop-xl {
+      width: 280px;
+      left: 260px;
+    }
+  }
+
+  &__btn:hover .header__btn--image {
+    fill: $color-white;
+  }
+
+  &__btn:hover {
+    color: $color-white;
+    background-color: $color-orange;
+    transform: scale(1.03);
+  }
+
+  &__btn:active {
+    background-color: $color-dark-orange;
+    border: 2px solid $color-dark-orange;
+  }
+}
