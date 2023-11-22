@@ -111,5 +111,23 @@
     background-size: contain;
     background-position: 2px center;
     background-repeat: no-repeat;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $color-orange;
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
   }
 }
