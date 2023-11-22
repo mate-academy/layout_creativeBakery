@@ -4,3 +4,42 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin focus($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:focus {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop-xl {
+  @media (min-width: $desktop-xl-min-width) {
+    @content;
+  }
+}
+
+@mixin pag-grid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 8;
+
+    column-gap: 24px;
+  }
+}
