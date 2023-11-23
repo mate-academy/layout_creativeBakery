@@ -1,0 +1,132 @@
+.products {
+  width: 85vw;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  &__title {
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 62px;
+    width: 100%;
+  }
+  &__text {
+    margin-top: -24px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+  }
+  &__productCard {
+    width: 432px;
+    height: 696px;
+    margin-top: 80px;
+    margin-right: 24px;
+    margin-top: 80px;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:nth-child(4n) {
+      margin-right: 5%;
+    }
+    &:nth-child(4n + 1) {
+      margin-left: 5%;
+    }
+    &-img {
+      height: 560px;
+      width: 100%;
+    }
+    &-tag {
+      color: $c-gray;
+      font-weight: 500;
+      line-height: 16px;
+      font-size: 16px;
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: -8px;
+    }
+    &-order {
+      display: flex;
+      flex-wrap: wrap;
+      height: 32px;
+      &-img {
+        width: 24px;
+        height: 24px;
+        margin: 4px;
+      }
+      &-link {
+        text-decoration: none;
+        color: $c-accentOrange;
+        font-weight: 500;
+        line-height: 16px;
+        font-size: 16px;
+        text-transform: uppercase;
+        margin: 8px 0;
+      }
+    }
+
+  }
+
+
+}
+
+@media screen and (max-width: 1030px) {
+  .products {
+    &__title {
+      font-size: 56px;
+      line-height: 48px;
+    }
+    &__text {
+      margin-top: -24px;
+    }
+    &__productCard {
+      width: 328px;
+      height: 560px;
+      margin-top: 80px;
+      margin-right: 24px;
+      margin-top: 80px;
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+      &:nth-child(4n + 1) {
+        margin-left: 0;
+      }
+      &-img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1030px) and (max-width: 1130px) {
+.products__productCard:nth-child(even) {
+    margin-right: 0;
+  }
+  .products__productCard:nth-child(4n) {
+    margin-right: 0;
+  }
+  .products__productCard:nth-child(4n + 1) {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .products__productCard:nth-child(even) {
+    margin-right: 24px;
+  }
+  .products__productCard:nth-child(4n) {
+    margin-right: 24px;
+  }
+  .products__productCard:nth-child(4n + 1) {
+    margin-left: 0;
+  }
+}
