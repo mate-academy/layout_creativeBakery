@@ -17,21 +17,8 @@
     }
   }
 
-  &__description-content {
+  &__description-wrapper {
     position: relative;
-
-    @include on-desktop {
-      @include page-grid;
-
-      padding-inline: 50px;
-      margin-block: 100px;
-    }
-
-    @include on-second-desktop {
-      max-width: 1180px;
-      margin-inline: auto;
-      padding-inline: 130px;
-    }
 
     &::before {
       display: none;
@@ -41,7 +28,7 @@
         content: "";
         position: absolute;
         left: 0;
-        top: -100px;
+        top: 0;
         width: 41.4%;
         height: 1px;
 
@@ -60,7 +47,7 @@
         display: block;
         content: "";
         position: absolute;
-        bottom: -100px;
+        bottom: 0;
         right: 0;
         width: 49.2%;
         height: 1px;
@@ -70,6 +57,21 @@
       @include on-second-desktop {
         width: 52%;
       }
+    }
+  }
+
+  &__description-content {
+    @include on-desktop {
+      @include page-grid;
+
+      padding-inline: 50px;
+      margin-block: 100px;
+    }
+
+    @include on-second-desktop {
+      max-width: 1180px;
+      margin-inline: auto;
+      padding-inline: 130px;
     }
   }
 
