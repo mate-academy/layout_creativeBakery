@@ -1,0 +1,111 @@
+.main {
+  &__content {
+    display: grid;
+    row-gap: 100px;
+    padding-block: 100px 100px;
+
+    @include on-tablet {
+      row-gap: 130px;
+      padding-top: 130px;
+      padding-bottom: 132px;
+    }
+
+    @include on-desktop {
+      row-gap: 200px;
+      padding-top: 200px;
+      padding-bottom: 130px;
+    }
+  }
+
+  &__description-wrapper {
+    position: relative;
+
+    &::before {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 41.4%;
+        height: 1px;
+
+        background-color: $green-color;
+      }
+
+      @include on-second-desktop {
+        width: 45%;
+      }
+    }
+
+    &::after {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 49.2%;
+        height: 1px;
+        background-color: $green-color;
+      }
+
+      @include on-second-desktop {
+        width: 52%;
+      }
+    }
+  }
+
+  &__description-content {
+    @include on-desktop {
+      @include page-grid;
+
+      padding-inline: 50px;
+      margin-block: 100px;
+    }
+
+    @include on-second-desktop {
+      max-width: 1180px;
+      margin-inline: auto;
+      padding-inline: 130px;
+    }
+  }
+
+  &__description {
+    @extend %h5;
+
+    color: $dark-green-color;
+
+    @include on-tablet {
+      margin-inline: auto;
+      width: 280px;
+      text-align: center;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      padding: 0;
+      margin: 0;
+      width: 380px;
+      font-size: 24px;
+      line-height: 36px;
+      text-align: left;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+
+    @extend %text-16;
+
+    @include on-desktop {
+      display: block;
+      width: 380px;
+      grid-column: 2 / 6;
+    }
+  }
+}

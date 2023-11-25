@@ -1,0 +1,174 @@
+.contact {
+  &__wrapper {
+    @include page-grid;
+
+    row-gap: 30px;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include hover(transform, scale(1.03));
+
+    @include on-tablet {
+      display: grid;
+      object-fit: cover;
+      object-position: left;
+      grid-column: 4 / -1;
+
+      width: 100%;
+      height: 407px;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      height: 539px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    @extend %small-text-14;
+
+    color: $main-color;
+
+    @include on-tablet {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__input {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    padding: 0;
+    padding-bottom: 5px;
+
+    @extend %small-text-14;
+
+    text-transform: capitalize;
+    color: $gray2-color;
+
+    &:nth-child(3) {
+      margin-bottom: 45px;
+    }
+
+    &:nth-child(4) {
+      margin-bottom: 18px;
+    }
+
+    @include on-desktop {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      padding: 0;
+      padding-bottom: 10px;
+
+      &:nth-child(-n + 2) {
+        margin-bottom: 30px;
+      }
+
+      &:nth-child(3) {
+        margin-bottom: 60px;
+      }
+
+      &:nth-child(4) {
+        margin-bottom: 40px;
+      }
+    }
+
+    transition: all $effect-duration;
+
+    &--textarea {
+      resize: none;
+      margin-bottom: 30px;
+      height: 21px;
+      padding-bottom: 0;
+
+      @include on-tablet {
+        height: 27px;
+      }
+
+      @include on-desktop {
+        height: 38px;
+      }
+    }
+
+    &::placeholder {
+      color: #7e7e83;
+    }
+
+    &:hover,
+    &:focus {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid $main-color;
+    }
+
+    &:focus {
+      font-family: $main-font;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 0%;
+      text-align: left;
+    }
+
+    &:valid,
+    & textarea:valid {
+      border-color: $dark-green-color;
+      color: $dark-green-color;
+    }
+
+    &:-webkit-autofill {
+      box-shadow: 0 0 0 1000px $page-bg-color inset;
+
+      @extend %small-text-14;
+
+      transition: box-shadow $effect-duration;
+
+      &:hover {
+        box-shadow: 0 0 0 1000px $page-bg-color inset;
+      }
+    }
+    
+    &:invalid:focus,
+    & textarea:invalid:focus {
+      border-color: $red-color;
+      color: $red-color;
+    }
+  }
+
+  &__button {
+    @include button;
+
+    border: none;
+    cursor: pointer;
+
+    @include on-tablet {
+      margin-inline: 0;
+    }
+  }
+}

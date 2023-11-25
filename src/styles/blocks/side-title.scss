@@ -1,0 +1,61 @@
+.side-title {
+  display: none;
+
+  @extend %decorative;
+
+  text-align: end;
+  color: $green-color;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  @include on-desktop {
+    position: relative;
+    display: block;
+    grid-column: 1 / 2;
+
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: 190px;
+      right: 9px;
+      display: block;
+      width: 1px;
+      height: 100px;
+      background-color: $green-color;
+    }
+  }
+
+  &--about-creators {
+    @include on-desktop {
+      &::before {
+        bottom: 142px;
+      }
+    }
+  }
+
+  &--shop {
+    @include on-desktop {
+      &::before {
+        bottom: 45px;
+      }
+    }
+  }
+
+  &--tooth-powder {
+    @include on-desktop {
+      &::before {
+        bottom: 90px;
+        height: 88px;
+      }
+    }
+  }
+
+  &--contact {
+    @include on-desktop {
+      &::before {
+        bottom: 44px;
+        height: 88px;
+      }
+    }
+  }
+}

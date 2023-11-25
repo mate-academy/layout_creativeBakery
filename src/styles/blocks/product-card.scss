@@ -1,0 +1,151 @@
+.product-card {
+  background-color: $page-bg-color;
+  overflow: auto;
+  overflow-x: hidden;
+  height: 100vh;
+  z-index: 1;
+
+  &__top {
+    background-color: $page-bg-color;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $page-bg-color;
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__bottom-wrapper {
+    @include on-tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 466px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include on-tablet {
+      padding: 0 151px 72px;
+    }
+  }
+
+  &__photo {
+    background-image: url(../images/mobile-images/mobile-product-card-oil.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 280px;
+    height: 248px;
+    margin-bottom: 30px;
+    align-self: center;
+
+    @include hover(transform, scale(1.03));
+
+    @include on-tablet {
+      background-image: url(../images/tablet-images/tablet-product-card-oil.png);
+      background-position: center;
+      width: 466px;
+      height: 440px;
+      margin-bottom: 27px;
+    }
+  }
+
+  &__title {
+    @extend %h5;
+
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      display: none;
+      margin-bottom: 25px;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+      }
+    }
+  }
+
+  &__price {
+    margin-bottom: 20px;
+
+    @extend %text-2-regular-uppercase;
+
+    @include on-tablet {
+      display: none;
+      margin-bottom: 10px;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 27px;
+        color: $dark-green-color;
+      }
+    }
+  }
+
+  &__gramm {
+    display: none;
+
+    @extend %price-18;
+
+    @include on-tablet {
+      display: block;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__button {
+    @include button;
+
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      width: 280px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 20px;
+
+    @extend %small-text-14;
+
+    @include on-tablet {
+      margin-bottom: 25px;
+
+      font-size: 16px;
+      line-height: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__first-word {
+    color: $dark-green-color;
+  }
+}

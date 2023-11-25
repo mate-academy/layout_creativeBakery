@@ -1,0 +1,155 @@
+.shop {
+  &__wrapper {
+    @include page-grid;
+
+    @include on-desktop {
+      padding-inline: 50px;
+    }
+
+    @include on-second-desktop {
+      max-width: 1180px;
+      margin-inline: auto;
+      padding-inline: 130px;
+    }
+  }
+
+  &__top {
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__items-wrapper {
+    grid-column: 1 / -1;
+    margin-top: 27px;
+    margin-bottom: 30px;
+    margin-inline: auto;
+
+    @include on-tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      gap: 30px;
+      padding-inline: 27px;
+      margin-top: 37px;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      padding-inline: 0;
+      gap: 20px;
+      grid-column: 2 / -1;
+      margin-top: 62px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__nav {
+    @include on-desktop {
+      padding-inline: 0;
+    }
+  }
+
+  &__title {
+    @extend %h5;
+
+    color: $main-color;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-bottom: 15px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__price {
+    @extend %price-18;
+
+    text-transform: uppercase;
+    color: $main-color;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    transition: all $effect-duration;
+    &:hover .shop__title,
+    &:hover .shop__price {
+      color: #8e8d8c;
+    }
+
+    &--second {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__item-description {
+    padding-inline: 20px;
+
+    @include on-tablet {
+      padding-inline: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    width: 320px;
+    height: 267px;
+    margin-bottom: 20px;
+
+    @include hover(transform, scale(1.03));
+
+    @include on-tablet {
+      width: 342px;
+      height: 300px;
+    }
+
+    @include on-desktop {
+      width: 530px;
+      height: 500px;
+    }
+
+    &--2 {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-inline: 20px;
+
+    @include on-desktop {
+      padding-inline: 0;
+    }
+  }
+
+  &__button {
+    @include button;
+  }
+}
