@@ -1,0 +1,130 @@
+@import "./utils/vars";
+@import "./utils/mixins";
+
+@import "./utils/reset";
+@import "./header";
+@import "./icon";
+@import "./page";
+@import "./top-bar";
+@import "./bake-category";
+
+.footer {
+  background-color: $main-black;
+  color: white;
+  display: grid;
+
+  margin-inline: -16px;
+
+  padding: 56px 16px;
+
+  row-gap: 40px;
+
+  &__text {
+    color: white;
+  }
+
+  &__logo {
+    display: flex;
+    &:hover {
+      @include hover(scale, 1.04);
+    }
+  }
+
+  &__image {
+    max-width: 168px;
+    max-height: 40px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+
+    &--header {
+      color: $c-gray;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    &--list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 0px;
+      margin: 0;
+    }
+    &--link {
+      color: $main-white !important;
+      text-decoration: none;
+
+      &:hover {
+        @include hover(text-shadow, 1px 0.5px 3px);
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+
+    &--header {
+      margin-top: 48px;
+
+      color: $main-white;
+    }
+
+    &--text {
+      text-transform: uppercase;
+      color: $c-gray;
+
+      &-email {
+        text-transform: uppercase;
+        color: $c-gray;
+      }
+    }
+
+    &--list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 0px;
+      margin: 0;
+    }
+    &--link {
+      color: $main-white !important;
+      text-decoration: none;
+
+      &:hover {
+        @include hover(text-shadow, 1px 0.5px 3px);
+      }
+    }
+  }
+
+  &__contacts-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__social-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+
+    color: white;
+  }
+
+  &__social-icon {
+    @include hover(scale, 1.2);
+  }
+
+  &__copyright {
+    @include page-text-styles;
+    color: $c-gray;
+  }
+}

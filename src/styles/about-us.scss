@@ -1,0 +1,54 @@
+@import "./utils/vars";
+@import "./utils/mixins";
+
+@import "./utils/reset";
+@import "./header";
+@import "./icon";
+@import "./page";
+@import "./top-bar";
+@import "./bake-category";
+
+
+.about-us {
+  margin-block: 72px;
+  background-image: url("../images/crumbs-background.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom 216px center;
+
+  display: grid;
+  gap: 64px;
+
+  &__hero {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__info {
+
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  &__fact {
+
+    display: flex;
+    flex-direction: column;
+    padding-right: 8px;
+    gap: 8px;
+
+    &--text {
+      color: $c-gray;
+      @include page-text-styles;
+
+    }
+
+    &--number {
+      color: $main-black;
+      @include big-text-styles;
+    }
+  }
+
+}
