@@ -1,0 +1,31 @@
+.top-bar {
+  height: $top-bar-height-mobile;
+  padding-inline: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onDesktop {
+    padding-inline: 32px;
+    height: $top-bar-height-desktop;
+
+    & .icon--menu {
+      display: none;
+    }
+  }
+
+  &__logo {
+    width: 136px;
+    height: 32px;
+    @include hover(transform, scale(1.1));
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}

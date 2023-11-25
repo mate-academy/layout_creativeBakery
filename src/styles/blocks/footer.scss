@@ -1,0 +1,85 @@
+.footer {
+  background-color: $c-main-accent;
+
+  &__content {
+    padding-block: 56px;
+
+    @include pageGrid;
+    row-gap: 40px;
+
+    @include onTablet {
+      padding-block: 88px;
+    }
+  }
+
+  &__logo {
+    width: 168px;
+    height: 40px;
+    @include hover(transform, scale(1.1));
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 24px;
+
+    @include onTablet {
+      grid-column: span 4;
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    width: min-content;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      grid-row: 1;
+    }
+
+    @include onDesktop {
+      width: auto;
+    }
+  }
+
+  &__contacts {
+    display: grid;
+    row-gap: 40px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+      align-items: start;
+    }
+  }
+
+  &__bottom-wrapper {
+    display: grid;
+    row-gap: 40px;
+
+    @include onTablet {
+      padding-top: 8px;
+      grid-column: 1 / -1;
+
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__copyright {
+    color: $c-grey-accent;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+  }
+}
