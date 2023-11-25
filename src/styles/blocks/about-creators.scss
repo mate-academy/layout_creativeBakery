@@ -1,0 +1,100 @@
+.about-creators {
+  &__wrapper {
+    @include page-grid;
+
+    row-gap: 20px;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    @include hover(transform, scale(1.03));
+
+    @include on-tablet {
+      object-fit: cover;
+      width: 100%;
+      height: 440px;
+
+      display: grid;
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      height: 659px;
+    }
+
+    @include on-second-desktop {
+      height: 645px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    @extend %small-text-14;
+
+    color: $main-color;
+
+    @include on-tablet {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 30px;
+    }
+
+    &--first {
+      margin-bottom: 20px;
+
+      @include on-tablet {
+        margin-bottom: 15px;
+      }
+
+      @include on-desktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--last {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__link-wrapper {
+    margin-bottom: 35px;
+
+    @include on-desktop {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__link {
+    @include link;
+  }
+
+  &__button {
+    @include button;
+    
+    margin-inline: 0;
+  }
+}

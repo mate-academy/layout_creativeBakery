@@ -1,0 +1,35 @@
+.page {
+  font-family: $main-font;
+  color: $main-color;
+  background-color: $page-bg-color;
+  scroll-behavior: smooth;
+
+  &__body {
+    min-width: 320px;
+  }
+
+  &__menu,
+  &__product-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: all $effect-duration;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+      z-index: 1;
+    }
+  }
+
+  &:has(.page__menu:target),
+  &:has(.page__product-card:target) {
+    overflow: hidden;
+  }
+}
