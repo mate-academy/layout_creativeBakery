@@ -1,0 +1,94 @@
+@import "./utils/vars";
+@import "./utils/mixins";
+
+@import "./utils/reset";
+@import "./header";
+@import "./icon";
+@import "./page";
+@import "./top-bar";
+@import "./bake-category";
+
+
+.menu {
+  background-color: $main-light-blue;
+
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  transform: translateX(100%);
+  transition: all 0.3s;
+
+  opacity: 0;
+  pointer-events: none;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  &__top {
+    display: flex;
+    padding: 16px;
+
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  &__hero {
+    @include flex-centred;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    @include page-text-styles;
+    color: $main-black !important;
+
+    &:hover {
+      @include hover(text-shadow, 0.1px 0.1px 0.1px);
+    }
+  }
+
+  &__contact-us {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+
+    &:hover {
+      @include hover(text-shadow, 0.1px 0.1px 0.1px);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 24px;
+      width: 24px;
+      background-image: url("../images/icons/icon-phone.svg");
+    }
+  }
+
+
+}

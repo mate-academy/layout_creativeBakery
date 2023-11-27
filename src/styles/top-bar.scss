@@ -19,4 +19,51 @@
     max-width: 136px;
     max-height: 32px;
   }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+
+    margin: 0;
+    padding: 0;
+
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__contact-us {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+
+    &:hover {
+      @include hover(text-shadow, 0.1px 0.1px 0.1px);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 24px;
+      width: 24px;
+      background-image: url("../images/icons/icon-phone.svg");
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @include page-text-styles;
+    color: $main-black !important;
+
+    &:hover {
+      @include hover(text-shadow, 0.1px 0.1px 0.1px);
+    }
+  }
 }
