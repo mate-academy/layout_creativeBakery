@@ -69,9 +69,12 @@
     color: $c-product-order;
     padding-left: 28px;
     text-decoration: none;
-    position: absolute;
+
+
+    @include underlane-effect($c-product-order);
 
     @include on-tablet {
+      position: absolute;
       bottom: 0;
     }
 
@@ -84,23 +87,6 @@
       position: absolute;
       top: -3px;
       left: -4px;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -8px;
-      display: block;
-      height: 1px;
-      width: 100%;
-      background-color: $c-product-order;
-      transition: transform 0.3s;
-      transform: scale(0);
-      transform-origin: left;
-    }
-
-    &:hover::after {
-      transform: scale(1);
     }
   }
 }
