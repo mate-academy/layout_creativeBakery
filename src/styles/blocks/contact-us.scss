@@ -2,7 +2,7 @@
   &__title {
     font-size: 48px;
     font-weight: 400;
-    line-height: 85%; /* 40.8px */
+    line-height: 85%;
     letter-spacing: -2.4px;
     text-transform: uppercase;
     color: $c-footer-text;
@@ -11,7 +11,7 @@
   &__subtitle {
     font-size: 16px;
     font-weight: 500;
-    line-height: 100%; /* 16px */
+    line-height: 100%;
     letter-spacing: 0.32px;
     text-transform: uppercase;
     color: $c-footer-subtitle;
@@ -34,43 +34,17 @@
 
   &__phone,
   &__email {
-    color: $c-footer-text;
-    font-weight: 400;
-  }
-
-  &__phone {
-    position: relative;
+    text-transform: lowercase;
     width: fit-content;
     line-height: 32px;
 
-    &:hover {
-      cursor: pointer;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -8px;
-      display: block;
-      height: 1px;
-      width: 100%;
-      background-color: $c-footer-text;
-      transition: transform 0.3s;
-      transform: scale(0);
-      transform-origin: left;
-    }
-
-    &:hover::after {
-      transform: scale(1);
-    }
+    @include underlane-effect($c-footer-text);
   }
 
-  &__phone-link {
+  &__phone-link,
+  &__email-link {
     text-decoration: none;
-    color: $c-footer-text;;
-  }
-
-  &__email {
-    text-transform: lowercase;
+    color: $c-footer-text;
+    font-weight: 400;
   }
 }

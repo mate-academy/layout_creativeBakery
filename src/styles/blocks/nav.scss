@@ -17,25 +17,9 @@
     text-decoration: none;
     text-transform: capitalize;
     color: $c-base-text;
-    position: relative;
     text-wrap: nowrap;
 
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -8px;
-      display: block;
-      height: 1px;
-      width: 100%;
-      background-color: $c-base-text;
-      transition: transform 0.3s;
-      transform: scale(0);
-      transform-origin: left;
-    }
-
-    &:hover::after {
-      transform: scale(1);
-    }
+    @include underlane-effect($c-base-text);
   }
 
   &__item:last-child {

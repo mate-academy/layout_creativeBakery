@@ -29,3 +29,29 @@
     @content;
   }
 }
+
+@mixin underlane-effect($_color) {
+  position: relative;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: $_color;
+    transition: transform 0.3s;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}
