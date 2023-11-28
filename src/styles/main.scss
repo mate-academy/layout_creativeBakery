@@ -1,7 +1,109 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "normilize.scss";
+@import "utils/mixins";
+@import "utils/vars";
 
-body {
-  background: $c-gray;
+@import "blocks/header.scss";
+@import "blocks/container.scss";
+@import "blocks/logo.scss";
+@import "blocks/button.scss";
+@import "blocks/top-actions.scss";
+@import "blocks/menu.scss";
+@import "blocks/products.scss";
+@import "blocks/card.scss";
+@import "blocks/about-us.scss";
+@import "blocks/blog.scss";
+@import "blocks/footer.scss";
+@import "blocks/footer-menu.scss";
+@import "blocks/contact-us.scss";
+@import "blocks/social.scss";
+
+.page {
+  background-color: $c-pink-light;
+  scroll-behavior: smooth;
+
+  @include onTablet {
+    background-image: url(images/Crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center top 3200px;
+    background-size: 530px;
+  }
+
+  @include onDesktop {
+    background-image: url(images/Crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center bottom 670px;
+    background-size: 600px;
+  }
+
+  @include onDesktopPlus {
+    background-image: url(images/Crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center bottom 670px;
+    background-size: 600px;
+  }
+  
+  &__body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section-products {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 185px;
+    }
+  }
+
+  &__section-about-us {
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__section-blog {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 350px;
+    }
+
+    @include onDesktopPlus {
+      margin-bottom: 350px;
+    }
+  }
+
+  &__header {
+    
+    @include onTablet {
+      margin-bottom: 200px;
+    }
+  }
 }

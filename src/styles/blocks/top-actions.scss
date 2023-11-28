@@ -1,0 +1,111 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+
+  &__desktop-content {
+    margin-bottom: 135px;
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onDesktopPlus {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 64px;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: $c-black;
+
+    transition: 0.3s;
+
+    &:hover {
+      color: $c-orange-accent;
+    }
+
+    &--contacts {
+      align-self: center;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $c-orange-accent;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        transform: translateY(20%);
+        margin-right: 7px;
+        background-image: url(images/phone.svg);
+        width: 18px;
+        height: 18px;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+
+  &__nav-item {
+    list-style: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+  }
+
+  &__menu-opener {
+    display: block;
+    width: 20px;
+    height: 8px;
+    
+    background-image: url(images/menu-opener.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__cross {
+    display: block;
+    width: 12px;
+    height: 12px;
+
+    background-image: url(images/cross.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &--desktop {
+    display: none;
+  }
+
+  @include onDesktop {
+    
+    display: none;
+   
+    &--desktop {
+      display: initial;
+
+    }
+  }
+
+  @include onDesktopPlus {
+    display: none;
+
+    &--desktop {
+      display: initial;
+    }
+  }
+}
