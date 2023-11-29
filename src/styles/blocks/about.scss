@@ -1,0 +1,64 @@
+.about {
+  background-image: url(../images/about-us-bg.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include onDesktop {
+    padding-bottom: 350px;
+  }
+
+  &__container {
+    @include on-tablet {
+      display: grid;
+    }
+  }
+
+  &__text {
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      margin-bottom: 72px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @extend %section-title;
+  }
+
+  &__statistics {
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include on-tablet {
+      margin-bottom: 80px;
+
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include on-desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__number {
+    font-weight: 400;
+    font-size: 96px;
+    color: $accent-orange;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+}

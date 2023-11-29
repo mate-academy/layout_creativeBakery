@@ -1,0 +1,66 @@
+.card {
+  max-width: 288px;
+
+  @include on-tablet {
+    max-width: 328px;
+  }
+
+  @include on-desktop {
+    max-width: 432px;
+  }
+
+  &__image {
+    border-radius: 8px;
+    max-width: 100%;
+    margin-bottom: 16px;
+    transition-duration: $transition-time;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__category {
+    font-weight: 500;
+    color: $grey;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin-bottom: 24px;
+  }
+
+  &__order {
+    display: flex;
+    font-weight: 500;
+    color: $accent-orange;
+    width: max-content;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition-duration: $transition-time;
+
+    &::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      background-image: url(../images/icons/icon-arrow.svg);
+      background-repeat: no-repeat;
+      transform: scale(1.05);
+    }
+
+    &:hover {
+      color: $dark-orange;
+      transform: scale(1.05);
+
+      &::before {
+        background-image: url(../images/icons/icon-arrow-hover.svg);
+      }
+    }
+  }
+}
