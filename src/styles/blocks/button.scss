@@ -1,0 +1,42 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $accent-orange;
+  box-sizing: border-box;
+  border: 2px solid $accent-orange;
+  border-radius: 32px;
+  transition-duration: $transition-time;
+
+  &::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    background-image: url(../images/icons/icon-cookie.svg);
+    background-position: center;
+    background-size: contain;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $accent-orange;
+
+    &::before {
+      background-image: url(../images/icons/icon-cookie-hover.svg);
+      transition-duration: $transition-time;
+    }
+  }
+
+  &:active {
+    color: $white;
+    background-color: $dark-orange;
+    border-color: $dark-orange;
+  }
+}

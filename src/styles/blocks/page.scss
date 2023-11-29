@@ -1,0 +1,62 @@
+.page {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__header {
+    margin: 0 16px;
+
+    @include on-desktop {
+      margin: 0 auto;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition-duration: $transition-time;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__main {
+    margin: 80px 16px 72px;
+
+    @include on-tablet {
+      margin: 170px 44px 172px;
+    }
+
+    @include on-desktop {
+      margin: 0 auto 56px;
+    }
+  }
+
+  &__section {
+    margin: 0 auto 72px;
+    max-width: 1200px;
+
+    &:last-child {
+      margin: 0 auto;
+    }
+
+    @include on-tablet {
+      margin: 0 auto 152px;
+    }
+
+    @include on-desktop {
+      margin: 0 auto 178px;
+    }
+  }
+}
