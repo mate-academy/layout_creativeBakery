@@ -1,0 +1,56 @@
+.nav {
+
+  &__item {
+    font-family: "Inter", sans-serif;
+    color: $black;
+    padding-bottom: 24px;
+
+    position: relative;
+    text-decoration: none;
+
+    &:hover {
+      color: $accentorange;
+      text-decoration: underline;
+    }
+
+    &--contacts {
+      color: $accentorange;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.2);
+        color: $accentorange;
+        text-decoration: none;
+      }
+    }
+
+    &::after {
+      content: " ";
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+
+      transition: transform 03;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

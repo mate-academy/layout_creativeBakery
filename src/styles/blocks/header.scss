@@ -1,0 +1,165 @@
+.header {
+
+  &__content {
+    @include pageGrid;
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 40px;
+
+    @include onTablet {
+      grid-column: span 8;
+      padding-top: 80px;
+      padding-bottom: 228px;
+    }
+    @include onDesktop1024 {
+      grid-column: span 8;
+      padding-top: 0;
+      padding-bottom: 218px;
+    }
+
+    @include onDesktop1200 {
+      padding-top: 0;
+      padding-bottom: 178px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    align-items: center;
+    grid-column: span 2;
+
+    @include onTablet {
+      margin-top: 0;
+      width: 326px;
+      grid-column: 3/7;
+    }
+
+    @include onDesktop1024 {
+      width: 544px;
+    }
+
+    @include onDesktop1200 {
+      width: 584px;
+    }
+  }
+
+  &__motto {
+    margin: 0;
+    padding-bottom: 32px;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+      text-align: left;
+    }
+
+    @include onDesktop1024 {
+      grid-column: span 2;
+      height: 72px;
+      margin-top: 135px;
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 64px;
+    justify-self: center;
+    line-height: 85%;
+
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    grid-column: span 2;
+
+    @include onTablet {
+      position: absolute;
+      top: 290px;
+      font-size: 80px;
+      letter-spacing: -0.05em;
+      grid-column: span 8;
+    }
+
+    @include onDesktop1024 {
+      font-size: 136px;
+      top: 220px;
+    }
+
+    @include onDesktop1200 {
+      font-size: 144px;
+      top: 220px;
+    }
+  }
+
+  .button {
+    grid-column: span 2;
+    display: flex;
+    padding: 20px 71px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    border-radius: 32px;
+    border: 2px solid $accentorange;
+
+    color: $accentorange;
+    text-decoration: none;
+    font-family: "Inter", serif;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    transition: transform 0.5s;
+
+    &::before {
+      content: "";
+      background-image: url(/images/icons/Icon-cookie.png);
+      display: block;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      color: $lightblue;
+      background-color: $accentorange;
+
+      &::before {
+        content: "";
+        background-image: url(/images/icons/Icon-cookie-wht.png);
+      }
+    }
+
+    &:active {
+      color: $lightblue;
+      background-color: $darkorange;
+      border: 2px solid $darkorange;
+
+      &::before {
+        content: "";
+        background-image: url(/images/icons/Icon-cookie-wht.png);
+      }
+    }
+
+    @include onTablet {
+      grid-column: 3/-3;
+      margin-top: 80px;
+    }
+
+    @include onDesktop1024 {
+      position: absolute;
+      top: 50%;
+      grid-column: 1/-1;
+    }
+  }
+
+}
+
+.container {
+  @include contentPaddingInline;
+}
