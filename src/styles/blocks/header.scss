@@ -1,0 +1,128 @@
+.header {
+  @include on-mobile {
+    display: table;
+  }
+
+  &__top {
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+
+    .nav__list {
+      @include on-desktop {
+        flex-direction: row;
+        width: 100%;
+        column-gap: 64px;
+      }
+    }
+  }
+
+  &__bottom {
+    padding-inline: 16px;
+    padding-bottom: 40px;
+    position: relative;
+
+    @include on-tablet {
+      padding-inline: 44px;
+    }
+  }
+
+  &__bg {
+    width: 290px;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    position: relative;
+
+    &::after {
+      content: "Creative bakery";
+      text-transform: uppercase;
+      letter-spacing: -4px;
+      position: absolute;
+      display: block;
+      white-space: nowrap;
+      top: 33%;
+      left: -52%;
+
+      @include on-mobile {
+        display: none;
+      }
+
+      @include on-desktop {
+        letter-spacing: -6.8px;
+      }
+
+      @include on-big-desktop {
+        letter-spacing: -7.2px;
+      }
+    }
+
+    @include on-tablet {
+      width: 326px;
+      font-size: 80px;
+    }
+
+    @include on-desktop {
+      width: 545px;
+      font-size: 136px;
+    }
+
+    @include on-big-desktop {
+      width: 585px;
+      font-size: 144px;
+    }
+  }
+
+  &__bg-img {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-block: 32px 0;
+    display: none;
+
+    @include on-mobile {
+      display: block;
+    }
+  }
+
+  &__description {
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    text-align: center;
+
+    @include on-tablet {
+      max-width: 280px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      max-width: 260px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__button {
+    margin-top: 0;
+    background-color: $button-default-bg;
+
+    @include on-tablet {
+      margin-top: 80px;
+    }
+  }
+}

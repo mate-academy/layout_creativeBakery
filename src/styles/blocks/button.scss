@@ -1,0 +1,50 @@
+
+.button {
+  &__text {
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      background-image: url(../images/icons/icon-cookie-red.png);
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      top: -4px;
+      left: -28px;
+    }
+  }
+
+  &__learn-more {
+    display: block;
+    border-radius: 32px;
+    width: 290px;
+    height: 56px;
+    text-align: center;
+    margin-inline: auto;
+    padding-block: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $button-default-text;
+    background-color: transparent;
+    border: 2px solid $button-default-border;
+
+    @include hover(background-color, $button-hover-bg);
+
+    &:hover {
+      color: $button-hover-text;
+      border: 2px solid $button-hover-border;
+
+      .button__text::before {
+        background-image: url(../images/icons/icon-cookie-white.png);
+      }
+    }
+
+    &:active {
+      color: $button-active-text;
+      background-color: $button-active-bg;
+      border: 2px solid $button-active-border;
+    }
+  }
+}
