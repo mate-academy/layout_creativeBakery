@@ -1,0 +1,30 @@
+.page {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  scroll-behavior: smooth;
+  color: $main-black;
+  &__body{
+    margin: 0;
+    background-color: $pink-background;
+    min-width: 320px;
+  }
+  &__menu{
+    background-color: $pink-background;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.5s;
+    transform: translateX(-100%);
+    pointer-events: none;
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+      z-index: 10;
+    }
+  }
+}

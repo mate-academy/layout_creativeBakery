@@ -1,0 +1,81 @@
+.nav {
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    &--mobile {
+      flex-direction: column;
+      gap: 24px;
+      
+    }
+    &--desktop {
+      flex-direction: row;
+      gap: 64px;
+    }
+    &--footer {
+      padding: 0;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 64px;
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: $main-black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+
+    @include hover(transform, scale(1.1));
+    &--footer {
+      color: #fff;
+      display: block;
+    }
+    &--contact-us-icon {
+      display: inline-block;
+      height: 18px;
+      width: 18px;
+      background-image: url(../images/phone.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &--contact-us {
+      color: $accent-orange;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+
+      @include hover(transform, scale(1.1));
+      &::before {
+        content: "";
+        position: relative;
+        left: -7px;
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+        background-image: url(../images/phone.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+  &__link-header {
+    color: $secondary-text-color;
+    text-transform: uppercase;
+
+    @include hover(transform, scale(1.0));
+  }
+}

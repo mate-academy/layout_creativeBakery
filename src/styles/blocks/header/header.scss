@@ -1,0 +1,90 @@
+.header {
+  display: flex;
+  flex-direction: column;
+
+  @include on-desktop {
+    display: block;
+  }
+  &__bottom {
+    margin-block: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include on-tablet {
+      align-items: start;
+    }
+    &--tablet {
+      @include on-desktop {
+        display: none;
+      }
+    }
+    &--desktop {
+      display: none;
+
+      @include on-desktop {
+        height: 546px;
+
+        @include page-grid;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url(../images/cookie.png);
+      }
+    }
+  }
+  &__picture {
+    width: 288px;
+
+    @include on-tablet {
+      display: none;
+      
+    }
+  }
+  &__header-text {
+    @include on-tablet {
+      height: 326px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url(../images/cookie.png);
+    }
+  }
+  &__image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__proposition {
+    margin-bottom: 32px;
+    text-align: center;
+    font-weight: 400;
+
+    @include on-tablet {
+      text-align: left;
+      width: 280px;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      margin-bottom: 40px;
+    }
+  }
+  &__desktop {
+    grid-column: 1/-1;
+    align-self: center;
+  }
+  &__content {
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      margin-bottom: 150px;
+    }
+  }
+}

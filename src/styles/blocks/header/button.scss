@@ -1,0 +1,57 @@
+.button {
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 77px;
+  border-radius: 32px;
+  border: 2px solid $accent-orange;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: $accent-orange;
+  text-transform: uppercase;
+  cursor:pointer;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  &__learn-more {
+    &--desktop {
+      margin-top: 40px;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 24px;
+      width: 24px;
+      background-image: url(../images/cookie.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &:hover {
+      background-color: $accent-orange;
+      color: white;
+      &::before {
+        background-image: url(../images/cookie-hover.svg);
+      }
+    }
+    &:focus {
+      background-color: $dark-orange;
+      border-color: $dark-orange;
+      color: white;
+      &::before {
+        background-image: url(../images/cookie-hover.svg);
+      }
+    }
+    &:disabled {
+      background-color: $pale-orange;
+      border-color: $pale-orange;
+      color: $pale-orange;
+      &::before {
+        background-image: url(../images/cookie-disabled.svg);
+      }
+    }
+  }
+}
