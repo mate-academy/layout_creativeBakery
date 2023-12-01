@@ -4,30 +4,89 @@
 @import "./icon";
 
 .header {
+  --gridColumns: 2;
+
   height: 100vh;
 
-  &__fact--text {
-    text-align: center;
-    margin-block: 32px;
-  }
-
   &__hero {
-    @include flex-centred;
-    flex-direction: column;
-
+    display: grid;
+    grid-template-columns: repeat(var(--gridColumns), 1fr);
+    column-gap: 16px;
     padding-bottom: 40px;
+
+    @include onTablet {
+      --gridColumns: 8;
+      column-gap: 24px;
+    }
+
+    &--wrap {
+      grid-column: 1 / -1;
+      @include onTablet {
+        position: relative;
+      }
+    }
 
     &--title {
       text-align: center;
+      grid-column: 1 / -1;
+    }
+
+    &--text {
+      text-align: center;
+      margin: 32px 0;
+
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: span 4;
+        margin-top: 80px;
+        margin-bottom: 146px;
+      }
+
+      @include onDesktop {
+        grid-column: span 2;
+        margin-top: 135px;
+        margin-bottom: 150px;
+      }
     }
 
     &--image {
+      grid-column: 1 / -1;
       width: 288px;
       height: 290px;
+      margin: 0 auto;
+
+      @include onTablet {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        width: 326px;
+        height: 328px;
+        z-index: -1;
+      }
+
+      @include onDesktop {
+        width: 544px;
+        height: 546px;
+      }
     }
   }
   &__button {
     @include button-header;
+    grid-column: 1 / -1;
+
+    margin: 0 auto;
+
+    @include onTablet {
+      margin-top: 210px;
+      position: relative;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+      margin-top: 64px;
+    }
 
     &::before {
       content: "";
