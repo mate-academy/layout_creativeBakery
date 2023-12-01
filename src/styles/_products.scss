@@ -1,0 +1,82 @@
+.products {
+  &__title {
+    margin: 0;
+
+    font-size: 72px;
+    text-transform: uppercase;
+    line-height: 61px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    color: $accent-color;
+
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    margin: 0;
+
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__wrapper {
+    @include pageGrid;
+    row-gap: 24px;
+  }
+}
+
+.product {
+  grid-column: span 2;
+
+  @include onTablet {
+    grid-column: span 4;
+  }
+
+  @include onDesktop {
+    grid-column: span 3;
+
+    &:nth-of-type(-3n + 3) {
+      grid-column: 3/6;
+    }
+    &:nth-of-type(-4n) {
+      grid-column: 6/-1;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    text-transform: uppercase;
+
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: $gray-color;
+
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    margin: 0;
+
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: $main-color;
+
+    margin-bottom: 16px;
+  }
+
+  &__photo {
+    display: block;
+    width: 100%;
+
+    margin-bottom: 16px;
+  }
+}

@@ -1,0 +1,130 @@
+.hero {
+  &__block {
+    @include onTablet() {
+      position: relative;
+    }
+
+    @include onDesktop() {
+      position: relative;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    min-width: auto;
+
+    text-transform: uppercase;
+    font-size: 64px;
+    line-height: 54px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    color: $accent-color;
+
+    @include onTablet() {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      text-transform: uppercase;
+      width: max-content;
+
+      font-family: Inter;
+      font-size: 80px;
+      font-weight: 400;
+      line-height: 68px;
+      letter-spacing: -0.05em;
+      text-align: center;
+    }
+
+    @include onDesktop() {
+      text-transform: uppercase;
+      width: max-content;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      font-family: Inter;
+      font-size: 136px;
+      line-height: 116px;
+      letter-spacing: -0.05em;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 32px;
+
+    text-align: center;
+
+    @include onTablet() {
+      text-align: left;
+    }
+
+    @include onDesktop() {
+      position: absolute;
+      top: 20%;
+      left: 0;
+      text-align: left;
+      width: 30%;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+
+    @include onTablet() {
+      width: 326px;
+    }
+
+    @include onDesktop() {
+      width: 544px;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+
+    border: 2px solid $accent-color;
+    border-radius: 32px;
+
+    @include onTablet() {
+      display: flex;
+      width: fit-content;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    @include onDesktop() {
+      display: flex;
+      width: fit-content;
+      position: absolute;
+      bottom: 15%;
+      left: 0;
+    }
+  }
+
+  &__link {
+    padding: 21px 70px;
+  }
+}
+
+.link-icon {
+  text-transform: uppercase;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: $accent-color;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}

@@ -1,0 +1,65 @@
+.header {
+  padding-block: 28px;
+
+  &__logo {
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.nav {
+  display: none;
+  &__list {
+    display: flex;
+    gap: 64px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main-color;
+  }
+
+  @include onTablet() {
+    display: none;
+  }
+  @include onDesktop {
+    display: block;
+  }
+}
+
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  &--menu {
+    display: block;
+    background-image: url(../images/icons/icon-menu.svg);
+
+    @mixin onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+  &--close {
+    background-image: url(../images/icons/icon-close.svg);
+  }
+}
+
+.logo {
+  display: flex;
+  width: 136px;
+  height: 32px;
+}

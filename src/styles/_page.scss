@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding-block: 40px;
+
+  @include onTablet {
+    padding-block: 88px;
+  }
+  @include onDesktop {
+    padding-block: 88px;
+  }
+}
+
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    background-color: $primary-bg-color;
+
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+
+    &:has(.page__menu:target) {
+      overflow: hidden; /* not to scroll the page */
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms;
+
+    z-index: 1;
+
+    // @media screen and (min-width: 320px)
+    //   and (max-width: 767px)
+    //   and (orientation: landscape) {
+    //   overflow: auto;
+    // }
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
+
+// -------------------------------MENU------------------
+
+.menu {
+  height: 100vh;
+  background-color: $primary-bg-color;
+  overflow-y: auto;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-block: 16px;
+  }
+
+  &__list {
+    margin: 196px 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__link {
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: $main-color;
+
+    &--contact {
+    }
+  }
+}
+
+// -------------------------------MENU---------------
+
+.contact__block {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+}

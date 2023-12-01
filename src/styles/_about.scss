@@ -1,0 +1,83 @@
+.about {
+  background-image: url(../images/icons/crumbs.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &__content {
+    @include onTablet() {
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 32px;
+
+    text-transform: uppercase;
+    font-size: 48px;
+    line-height: 41px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    color: $accent-color;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 64px;
+
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+
+    @include onTablet {
+      grid-column: 5/-1;
+    }
+  }
+
+  &__list {
+    @include pageGrid;
+    list-style: none;
+    gap: 48px;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    grid-column: span 2;
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__digit {
+    margin: 0;
+    margin-bottom: 8px;
+
+    font-size: 96px;
+    line-height: 82px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    color: $accent-color;
+  }
+
+  &__desc {
+    margin: 0;
+
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+  }
+}
