@@ -16,47 +16,89 @@
   background-repeat: no-repeat;
   background-position: bottom 216px center;
 
-  @include pageGrid(64px);
   column-gap: 32px;
+  row-gap: 40px;
 
   &__hero {
     grid-column: 1 / -1;
 
-    @include pageGrid(24px);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+
+    margin-bottom: 64px;
+
+    @include onTablet {
+      @include pageGrid(24px);
+      row-gap: 72px;
+    }
 
     &--header {
-      font-size: 72px;
-      grid-column: 1 / 5;
+      grid-column: 1 / -1;
+
+      @include h2-styles;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
     }
 
     &--words {
-      grid-column: 5 / 8;
+      grid-column: 1 / -1;
+      @include onTablet {
+        grid-column: 5 / 8;
+      }
     }
   }
 
   &__info {
+
     display: flex;
     flex-direction: column;
     gap: 48px;
+
+    @include onTablet {
+      @include pageGrid(72px);
+      padding-top: 72px;
+      padding-bottom: 140px;
+    }
+
+    @include onDesktop {
+      padding-top: 144px;
+      padding-bottom: 240px;
+    }
   }
 
   &__fact {
-
     display: flex;
     flex-direction: column;
     padding-right: 8px;
     gap: 8px;
 
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
+
     &--text {
       color: $c-gray;
       @include page-text-styles;
-
+      @include onTablet {
+        grid-column: span 2;
+      }
     }
 
     &--number {
       color: $main-black;
       @include big-text-styles;
+
+      @include onTablet {
+        grid-column: span 2;
+      }
     }
   }
-
 }

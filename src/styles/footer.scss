@@ -11,25 +11,47 @@
 .footer {
   background-color: $main-black;
   color: white;
-  display: grid;
+
+  padding: 56px 16px;
 
   margin-inline: -16px;
 
   @include onTablet {
-    margin-inline: -32px;
+    margin-left: -124px;
+    @include pageGrid(24px);
+    column-gap: 44px;
+    padding: 88px 44px;
+
+    margin-inline: -44px !important;
   }
 
   @include onDesktop {
-    margin-inline: -120px;
-    padding: 16px 26px;
+    margin-inline: -124px !important;
   }
 
-  padding: 56px 16px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
 
-  row-gap: 40px;
+    &--left {
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--right {
+      @include onTablet {
+        grid-column: 5 / -1;
+      }
+    }
+  }
 
   &__text {
     color: white;
+
+    @include onDesktop {
+      grid-column: 5 / -1;
+    }
   }
 
   &__image {
@@ -52,6 +74,10 @@
       margin-bottom: 16px;
     }
 
+    &-wrap {
+      margin-top: 40px;
+    }
+
     &--list {
       list-style-type: none;
       display: flex;
@@ -71,13 +97,28 @@
     }
   }
 
+  &__email-us {
+    grid-column: 2 / -1;
+  }
+
   &__contacts {
     display: flex;
     flex-direction: column;
     gap: 40px;
 
+    margin-top: 40px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: (repeat(2), 1fr);
+    }
+
     &--header {
       margin-top: 48px;
+
+      @include onTablet {
+        margin-top: 0;
+      }
 
       color: $main-white;
     }
@@ -109,29 +150,48 @@
         @include hover(text-shadow, 1px 0.5px 3px);
       }
     }
-
   }
 
   &__contacts-wrap {
     display: flex;
     flex-direction: column;
     gap: 16px;
+
+    @include onDesktop {
+      grid-column: 1;
+    }
+
+    &--email {
+      @include onDesktop {
+        grid-column: 2;
+      }
+    }
   }
 
   &__social-block {
     display: flex;
     align-items: flex-start;
     gap: 32px;
+    margin-top: 40px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
 
     color: white;
   }
 
   &__social-icon {
     @include hover(scale, 1.2);
+
+    grid-column: 1 / 4;
   }
 
   &__copyright {
     @include page-text-styles;
+
+    grid-column: 5 / -1;
     color: $c-gray;
+    margin-top: 48px;
   }
 }
