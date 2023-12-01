@@ -10,22 +10,31 @@
 
 .about-us {
   margin-block: 72px;
+  margin-top: 178px;
   background-image: url("../images/crumbs-background.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom 216px center;
 
-  display: grid;
-  gap: 64px;
+  @include pageGrid(64px);
+  column-gap: 32px;
 
   &__hero {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+    grid-column: 1 / -1;
+
+    @include pageGrid(24px);
+
+    &--header {
+      font-size: 72px;
+      grid-column: 1 / 5;
+    }
+
+    &--words {
+      grid-column: 5 / 8;
+    }
   }
 
   &__info {
-
     display: flex;
     flex-direction: column;
     gap: 48px;
