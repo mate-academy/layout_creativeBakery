@@ -1,4 +1,10 @@
 .hero {
+  @include onTablet() {
+  }
+
+  @include onDesktop() {
+  }
+
   &__block {
     @include onTablet() {
       position: relative;
@@ -87,6 +93,9 @@
   }
 
   &__btn {
+  }
+
+  &__link {
     display: flex;
     justify-content: center;
 
@@ -109,10 +118,6 @@
       left: 0;
     }
   }
-
-  &__link {
-    padding: 21px 70px;
-  }
 }
 
 .link-icon {
@@ -127,4 +132,16 @@
   align-items: center;
   justify-content: center;
   gap: 4px;
+  padding: 21px 70px;
+  transition-duration: 200ms;
+
+  &:hover {
+    background-color: $accent-color;
+    color: $white-color;
+  }
+
+  &:focus {
+    background-color: $focus-color;
+    color: $white-color;
+  }
 }

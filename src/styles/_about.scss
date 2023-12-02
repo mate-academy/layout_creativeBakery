@@ -4,6 +4,16 @@
   background-size: contain;
   background-position: center;
 
+  padding-bottom: 64px;
+
+  @include onTablet {
+    padding-bottom: 152px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 350px;
+  }
+
   &__content {
     @include onTablet() {
       @include pageGrid;
@@ -23,10 +33,23 @@
 
     @include onTablet {
       grid-column: span 4;
+
+      font-size: 56px;
+      line-height: 48px;
+      letter-spacing: -0.05em;
+      text-align: left;
     }
 
     @include onDesktop {
-      grid-column: span 3;
+      grid-column: span 4;
+
+      //styleName: Desktop headings/H2;
+      font-family: Inter;
+      font-size: 72px;
+      font-weight: 400;
+      line-height: 61px;
+      letter-spacing: -0.05em;
+      text-align: left;
     }
   }
 
@@ -71,6 +94,11 @@
     letter-spacing: -0.05em;
     text-align: left;
     color: $accent-color;
+    transition-duration: 200ms;
+
+    &:hover {
+      scale: 1.1;
+    }
   }
 
   &__desc {

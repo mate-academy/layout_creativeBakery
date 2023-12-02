@@ -1,28 +1,61 @@
 .footer {
   background-color: $main-color;
-  color: $white-color;
   padding-block: 56px;
+
+  @include onTablet {
+    padding-block: 88px;
+  }
+
+  &__grid {
+    color: $white-color;
+
+    @include onTablet {
+      display: grid;
+      grid-column-gap: 24px;
+      grid-template-areas:
+        "logo logo logo logo contact contact"
+        "menu menu menu menu tel tel"
+        "line line line line email email"
+        "icons icons icons icons text text";
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-column-gap: 24px;
+      grid-template-areas:
+        "logo logo logo contact contact"
+        "menu menu menu tel email"
+        "icons icons icons text text";
+    }
+  }
 
   &__title {
     margin: 0;
+    margin-bottom: 16px;
 
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 500;
     line-height: 16px;
     letter-spacing: 0.02em;
-    text-align: left;
     color: $gray-color;
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    // @include onDesktop {
+    //   padding: 0;
+    // }
   }
 
   &__title-big {
     margin: 0;
-
-    text-transform: uppercase;
-    font-size: 48px;
-    line-height: 41px;
-    letter-spacing: -0.05em;
+    margin-bottom: 40px;
+    display: block;
     text-align: left;
+
+    grid-area: contact;
 
     @include onTablet() {
       text-transform: uppercase;
@@ -30,38 +63,67 @@
       line-height: 61px;
       letter-spacing: -0.05em;
       text-align: left;
+
+      width: min-content;
+      margin-bottom: 40px;
     }
 
     @include onDesktop() {
+      text-transform: uppercase;
+      font-size: 72px;
+      line-height: 61px;
+      letter-spacing: -0.05em;
     }
   }
 
   &__text {
+    margin: 0;
+    margin-top: 40px;
+
     line-height: 24px;
     letter-spacing: -0.01em;
     text-align: left;
     color: $gray-color;
+    grid-area: text;
+
+    @include onTablet {
+      margin-top: 48px;
+    }
   }
 
   &__list {
     margin: 0;
+    padding: 0;
   }
 
   &__link {
     color: $white-color;
   }
 
+  &__list-tel {
+    margin: 0;
+    padding: 0;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+
   &__link-tel {
     color: $white-color;
   }
 
-  &__email {
+  &__emailadress {
     text-align: left;
-    color: $gray-color;
+    color: $white-color;
   }
 
   &__list-icons {
     margin: 0;
+    margin-top: 48px;
+    padding: 0;
+
+    grid-area: icons;
 
     display: flex;
     align-items: center;
@@ -69,5 +131,51 @@
   }
 
   &__link-icons {
+    & img {
+      transition-duration: 200ms;
+    }
+    & img:hover {
+      scale: 1.2;
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__men {
+    grid-area: menu;
+    margin-top: 40px;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__block {
+    grid-area: call;
+  }
+
+  &__email {
+    grid-area: email;
+    padding-top: 40px;
+
+    @include onTablet {
+      padding: 0;
+      margin-top: 40px;
+    }
+    @include onTablet {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__line {
+    grid-area: line;
+  }
+
+  &__tel {
+    grid-area: tel;
   }
 }
