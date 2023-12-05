@@ -1,0 +1,66 @@
+.nav {
+  &__list {
+    list-style: none;
+
+    &--footer {
+      padding-top: 40px;
+      padding-bottom: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @include on-tablet {
+        padding-top: 96px;
+        padding-bottom: 104px;
+      }
+
+      @include on-desktop {
+        padding-top: 61px;
+        padding-bottom: 48px;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main-text-color;
+
+    @include hover(transform, scale(1.2));
+
+    &:hover {
+      font-weight: 500;
+      border-bottom: 1px solid $main-text-color;
+    }
+
+    &--contact {
+      color: $accent-orange-color;
+      font-weight: 500;
+      text-transform: uppercase;
+      background-image: url(../images/icon-phone.svg);
+
+      @include background-sets;
+
+      background-position: left;
+      padding-left: 20px;
+
+      &:hover {
+        font-weight: 500;
+        border-bottom: 1px solid $accent-orange-color;
+      }
+    }
+
+    &--header {
+      color: $grey-text-color;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    &--footer {
+      color: $white-color;
+    }
+  }
+
+  &__item {
+    @include hover(transform, scale(1.1));
+  }
+}

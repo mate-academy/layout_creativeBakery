@@ -1,0 +1,57 @@
+.about-us {
+  padding-top: 72px;
+  padding-bottom: 72px;
+
+  @include on-tablet {
+    padding-top: 152px;
+    padding-bottom: 152px;
+  }
+
+  @include on-desktop {
+    padding-top: 158px;
+    padding-bottom: 158px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 64px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      padding-bottom: 72px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 146px;
+    }
+  }
+
+  &__title {
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__descr {
+    @include hover(transform, scale(1.2));
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__statistics {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      justify-items: start;
+    }
+  }
+}

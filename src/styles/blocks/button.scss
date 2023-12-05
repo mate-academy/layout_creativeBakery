@@ -1,0 +1,40 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+  border: 2px solid $accent-orange-color;
+  width: 100%;
+  height: 56px;
+  text-align: center;
+  line-height: 55px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $accent-orange-color;
+
+  &::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/favicon.svg);
+    margin-right: 4px;
+  }
+
+  @include on-tablet {
+    width: 50%;
+  }
+
+  @include on-desktop {
+    width: 25%;
+  }
+
+  &:hover {
+    background-color: $accent-orange-color;
+    color: $white-color;
+  }
+
+  &:focus {
+    background-color: $dark-orange-color;
+    color: $white-color;
+  }
+}

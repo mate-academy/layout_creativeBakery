@@ -1,0 +1,43 @@
+.bakery {
+  padding-top: 104px;
+
+  @include on-tablet {
+    padding-top: 228px;
+  }
+
+  @include on-desktop {
+    padding-top: 152px;
+  }
+
+  &__title {
+    text-align: left;
+    width: 98%;
+    padding-bottom: 24px;
+  }
+
+  &__text {
+    width: 83%;
+    padding-bottom: 56px;
+
+    @include on-tablet {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__products {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    align-items: center;
+
+    @include on-tablet {
+      @include page-grid;
+
+      align-items: start;
+    }
+
+    @include on-desktop {
+      row-gap: 80px;
+    }
+  }
+}
