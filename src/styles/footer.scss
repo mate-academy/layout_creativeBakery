@@ -21,12 +21,10 @@
     @include pageGrid(24px);
     column-gap: 44px;
     padding: 88px 44px;
-
-    margin-inline: -44px !important;
   }
 
   @include onDesktop {
-    margin-inline: -124px !important;
+    margin-inline: -124px;
   }
 
   &__wrapper {
@@ -67,6 +65,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    color: $main-white;
 
     &--header {
       color: $c-gray;
@@ -88,8 +87,7 @@
     }
 
     &--link {
-      color: $main-white !important;
-      text-decoration: none;
+      color: $main-white;
 
       &:hover {
         @include hover(text-shadow, 1px 0.5px 3px);
@@ -143,7 +141,6 @@
     }
 
     &--link {
-      color: $main-white !important;
       text-decoration: none;
 
       &:hover {
@@ -182,9 +179,34 @@
   }
 
   &__social-icon {
-    @include hover(scale, 1.2);
+    height: 24px;
+    width: 24px;
 
     grid-column: 1 / 4;
+
+    &--facebook {
+      background-image: url("../images/icons/icon-facebook.svg");
+
+      &:hover {
+        background-image: url("../images/icons/icon-facebook-white.svg");
+      }
+    }
+
+    &--instagram {
+      background-image: url("../images/icons/icon-instagram.svg");
+
+      &:hover {
+        background-image: url("../images/icons/icon-instagram-white.svg");
+      }
+    }
+
+    &--twitter {
+      background-image: url("../images/icons/icon-twitter.svg");
+
+      &:hover {
+        background-image: url("../images/icons/icon-twitter-white.svg");
+      }
+    }
   }
 
   &__copyright {

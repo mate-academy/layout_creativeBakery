@@ -4,11 +4,12 @@
 @import "./icon";
 
 .header {
-  height: 100vh;
+  --header-height: 50vh;
 
   &__hero {
     @include pageGrid(16px);
-    padding-bottom: 40px;
+    margin-bottom: 64px;
+    min-height: var(--header-height);
 
     @include onTablet {
       --gridColumns: 8;
@@ -29,19 +30,19 @@
 
     &--text {
       text-align: center;
-      margin: 32px 0;
+      padding: 32px 0;
 
       grid-column: 1 / -1;
 
       @include onTablet {
         grid-column: span 4;
-        margin-top: 80px;
+        padding-top: 80px;
         margin-bottom: 146px;
       }
 
       @include onDesktop {
         grid-column: span 2;
-        margin-top: 135px;
+        padding-top: 156px;
         margin-bottom: 150px;
       }
     }
@@ -71,8 +72,9 @@
   &__button {
     @include button-header;
     grid-column: 1 / -1;
-
     margin: 0 auto;
+
+    transition: background-color 0.5s, color 0.5s;
 
     @include onTablet {
       margin-top: 210px;
@@ -99,6 +101,7 @@
       color: $main-white;
 
       &::before {
+        transition: background-image 0.5s;
         background-image: url("../images/icons/icon-cookie-white.svg");
       }
     }
