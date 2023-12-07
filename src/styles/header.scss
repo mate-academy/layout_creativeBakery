@@ -142,7 +142,6 @@
       height: 100%;
       max-width: 545px;
       max-height: 545px;
-
     }
   }
 
@@ -175,6 +174,11 @@
     border: 1px solid $accent-orange;
     text-decoration: none;
     border-radius: 32px;
+    transition: border 0.3s ease;
+
+    &:hover {
+      border: 1px solid $light-blue;
+    }
   }
 
   &__icon-cook {
@@ -221,17 +225,43 @@
     line-height: 24px;
     letter-spacing: -0.01em;
     color: $black;
+    background-color: transparent;
+    transition: color 0.3s ease-in-out;
 
     &--contact {
       display: flex;
       gap: 8px;
       align-items: center;
-
       color: $accent-orange;
-
       font-weight: 500;
       line-height: 16px;
       letter-spacing: 0.02em;
+      transition: background-color 0.3s ease-in-out;
+      border-radius: 8px;
+    }
+
+    @include on-desktop {
+      &--contact {
+        width: 136px;
+        height: 36px;
+
+        &:hover {
+          justify-content: center;
+          background-color: $accent-orange;
+
+          & :first-child {
+            display: none;
+          }
+
+          &:nth-child(n) {
+            color: $light-blue;
+          }
+        }
+      }
+
+      &:hover {
+        color: $accent-orange;
+      }
     }
   }
 
