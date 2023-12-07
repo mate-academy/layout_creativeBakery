@@ -1,7 +1,264 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import './header';
+@import './footer';
+
+
+* {
+  color: $black;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: transparent;
+}
 
 body {
-  background: $c-gray;
+  background-color: $light-blue;
 }
+
+.main {
+  padding-top: $pt-64-mobile;
+
+  @include on-tablet {
+    padding-top: 0;
+    padding-inline: 44px;
+  }
+
+  &__cakes {
+    padding-inline: 16px;
+  }
+
+  &__title {
+    font-family: Inter,sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 41px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      font-size: 56px;
+      line-height: 48px;
+
+      &--grid {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  &__desc {
+    padding-top: 24px;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 54px 16px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(8, 1fr);
+      gap: 80px 24px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+    max-width: 328px;
+    margin: auto;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__card-img {
+    position: relative;
+    width: 100%;
+    max-width: 328px;
+    max-height: 424px;
+  }
+
+  &__card-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: calc(((356 / 288) * 100) * 1%);
+  }
+
+  &__card-src {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__type {
+    padding-top: 16px;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey;
+  }
+
+  &__cake-desc {
+    padding-top: 8px;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  &__btn {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    text-decoration: none;
+    padding-top: 16px;
+  }
+
+  &__icon-cook {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/Icons/Icon-arrow.svg');
+  }
+
+  &__btn-text {
+    display: block;
+    text-transform: uppercase;
+    color: $accent-orange;
+
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  &__about {
+    padding: $pt-72-mobile 0;
+
+    @include on-tablet {
+      padding: $pt-152-tablet 0;
+    }
+  }
+
+  &__about-content {
+    position: relative;
+  }
+
+  &__about-text {
+    padding-top: 32px;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+
+    @include on-tablet {
+      grid-column:  span 4;
+      padding-top: 0;
+    }
+  }
+
+  &__info {
+    position: relative;
+    z-index: 1;
+    padding-inline: 16px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+      padding-inline: 0;
+    }
+  }
+
+  &__rating {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-top: $pt-64-mobile;
+    padding-inline: 16px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 80px 24px;
+      padding-top: $pt-72-mobile;
+      padding-inline: 0;
+    }
+  }
+
+  &__rating-container {
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__rating-title {
+    font-family: Inter, sans-serif;
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 82px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+  }
+
+  &__rating-desc {
+    padding-top: 8px;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $grey;
+  }
+
+  &__cook-back {
+    position: relative;
+    max-width: 526px;
+    max-height: 493px;
+
+    @include on-tablet {
+      left: 50%;
+      bottom: 52px;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__cook-image {
+    position: absolute;
+    bottom: 150px;
+    z-index: 0;
+    width: 100%;
+    padding-bottom: calc(((300 / 320) * 100) * 1%);
+
+    @include on-tablet {
+      bottom: 0;
+    }
+  }
+
+  &__cook-src {
+    position: absolute;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background-image: url('../images/Galery/Crumbs.png');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
