@@ -1,0 +1,52 @@
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include onTablet {
+    grid-column: span 4;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    @extend %section-title-style;
+    color: $white;
+  }
+
+  &__phones {
+    flex-direction: column;
+    gap: 16px;
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__email {
+    flex-direction: column;
+    gap: 16px;
+
+    @include onDesktop {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__soc-media {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+
+  &__item {
+    align-items: center;
+
+    &--title {
+      @extend %text-upper;
+      color: $text-color-grey;
+    }
+
+    &--copyright {
+      @extend %body-text;
+      color: $text-color-grey;
+    }
+  }
+
+  &__link {
+    @extend %body-text;
+    display: inline-block;
+    text-decoration: none;
+
+    &--header {
+      border-bottom: 1px solid transparent;
+      transition: border-color $transition-duration;
+
+      &:hover {
+        border-bottom: 1px solid $text-color-black;
+      }
+    }
+
+    &--contact-us {
+      @extend %text-upper;
+      line-height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid transparent;
+      transition: border-color $transition-duration;
+
+      &:hover {
+        border-bottom: 1px solid $accent-orange-color;
+      }
+
+      &::before {
+        content: "";
+        background-image: url(../images/icons/icon-phone.svg);
+        @extend %icon-style;
+        margin-right: 4px;
+      }
+    }
+
+    &--white {
+      color: $white;
+      border-bottom: 1px solid transparent;
+      transition: border-color $transition-duration;
+
+      &:hover {
+        border-bottom: 1px solid $white;
+      }
+    }
+  }
+}
