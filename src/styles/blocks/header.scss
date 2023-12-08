@@ -82,15 +82,12 @@
   }
 
   &__button {
-    @include centring;
     @include hover;
     background: $light-blue;
     width: 288px;
     height: 56px;
-    gap: 4px;
     margin: 0 auto;
     box-sizing: border-box;
-    color: $orange;
     border: 2px solid $orange;
     border-radius: 32px;
     cursor: pointer;
@@ -112,16 +109,22 @@
       background: $orange;
       color: $white;
     }
+  }
 
-    &:focus {
-      background: $dark--orange;
+  &__button-container {
+    @include centring;
+    gap: 4px;
+    color: $orange;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+    letter-spacing: 0.32px;
+    height: 100%;
+
+    &:hover {
       color: $white;
-    }
-
-    &:disabled {
-      background: $light-blue;
-      border: 2px solid $light-orange;
-      color: $light-orange;
     }
   }
 }
