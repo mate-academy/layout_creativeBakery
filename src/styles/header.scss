@@ -174,10 +174,35 @@
     border: 1px solid $accent-orange;
     text-decoration: none;
     border-radius: 32px;
-    transition: border 0.3s ease;
+    transition: background-color 0.3s ease;
 
     &:hover {
-      border: 1px solid $light-blue;
+      background-color: $accent-orange;
+
+      & :first-child {
+        background-image: url('../images/Icons/Icon-cookie-white.svg');
+      }
+
+      & :last-child {
+        color: $light-blue;
+      }
+
+      &:focus {
+        background-color: $dark-orange;
+      }
+    }
+
+    &:focus {
+      background-color: $dark-orange;
+      border: 1px solid $dark-orange;
+    }
+
+    &:disabled {
+      border: 1px solid $light-orange;
+
+      & :last-child {
+        color: $light-blue;
+      }
     }
   }
 
@@ -236,31 +261,33 @@
       font-weight: 500;
       line-height: 16px;
       letter-spacing: 0.02em;
-      transition: background-color 0.3s ease-in-out;
-      border-radius: 8px;
+      transition: border-bottom 0.3s ease-in-out;
     }
 
     @include on-desktop {
       &--contact {
-        width: 136px;
+        width: fit-content;
         height: 36px;
 
         &:hover {
-          justify-content: center;
-          background-color: $accent-orange;
+          border-bottom: 1px solid $accent-orange;
+        }
+
+        &:focus {
+          border-bottom: 1px solid $dark-orange;
 
           & :first-child {
-            display: none;
-          }
-
-          &:nth-child(n) {
-            color: $light-blue;
+            background-image: url('../images/Icons/Icon-phone-dark.svg');
           }
         }
       }
 
       &:hover {
         color: $accent-orange;
+      }
+
+      &:focus {
+        color: $dark-orange;
       }
     }
   }
@@ -272,5 +299,7 @@
 
     background-image: url('../images/Icons/Icon-phone-orange.svg');
     background-repeat: no-repeat;
+
+    transition: background-image 0.3s ease-in-out;
   }
 }
