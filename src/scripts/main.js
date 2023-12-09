@@ -14,7 +14,6 @@ menuClose.forEach((btn) => {
   btn.addEventListener('click', hideMenu);
   logo.addEventListener('click', hideMenu);
 });
-menu.addEventListener('click', hideMenu);
 
 function toggleMenu() {
   menu.classList.toggle('active');
