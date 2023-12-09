@@ -176,6 +176,19 @@
     border-radius: 32px;
     transition: background-color 0.3s ease;
 
+    &:focus {
+      background-color: $dark-orange;
+      border: 1px solid $dark-orange;
+    }
+
+    &:disabled {
+      border: 1px solid $light-orange;
+
+      & :last-child {
+        color: $light-blue;
+      }
+    }
+
     &:hover {
       background-color: $accent-orange;
 
@@ -189,19 +202,6 @@
 
       &:focus {
         background-color: $dark-orange;
-      }
-    }
-
-    &:focus {
-      background-color: $dark-orange;
-      border: 1px solid $dark-orange;
-    }
-
-    &:disabled {
-      border: 1px solid $light-orange;
-
-      & :last-child {
-        color: $light-blue;
       }
     }
   }
@@ -261,13 +261,15 @@
       font-weight: 500;
       line-height: 16px;
       letter-spacing: 0.02em;
-      transition: border-bottom 0.3s ease-in-out;
+      border-bottom: 1px solid transparent;
+      box-sizing: content-box;
     }
 
     @include on-desktop {
       &--contact {
         width: fit-content;
         height: 36px;
+        transition: border-bottom 0.3s ease-in-out;
 
         &:hover {
           border-bottom: 1px solid $accent-orange;
