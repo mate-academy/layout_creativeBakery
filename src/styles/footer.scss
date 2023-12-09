@@ -1,0 +1,144 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 16px;
+  padding: 56px 16px;
+  background-color: $black;
+
+  @include on-tablet {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 48px 24px;
+    padding: 88px 44px;
+  }
+
+  &__title {
+    padding-top: 24px;
+    font-family: Inter, sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 41px;
+    letter-spacing: -0.05em;
+    color: $white;
+
+    @include on-tablet {
+      padding-top: 0;
+    }
+  }
+
+  &__item {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 168px;
+    height: 40px;
+    background-image: url('../images/Icons/Logo-white.svg');
+  }
+
+  &__menu {
+    padding-top: 40px;
+  }
+
+  &__menu-title {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey;
+  }
+
+  &__menu-nav {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__menu-item {
+    padding-top: 16px;
+  }
+
+  &__menu-link {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+
+    @include on-desktop {
+      &:hover {
+        color: $accent-orange;
+      }
+
+      &:focus {
+        color: $dark-orange;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    transition: background-image 0.3s ease-in-out;
+
+    &--facebook {
+      background-image: url('../images/Icons/Icon-facebook.svg');
+
+      &:hover {
+        background-image: url('../images/Icons/Icon-facebook-hover.svg');
+      }
+
+      &:focus {
+        background-image: url('../images/Icons/Icon-facebook-hover.svg');
+      }
+    }
+
+    &--instagram {
+      background-image: url('../images/Icons/Icon-instagram.svg');
+
+      &:hover {
+        background-image: url('../images/Icons/Icon-instagram-hover.svg');
+      }
+
+      &:focus {
+        background-image: url('../images/Icons/Icon-instagram-hover.svg');
+      }
+    }
+
+    &--twitter {
+      background-image: url('../images/Icons/Icon-twitter.svg');
+
+      &:hover {
+        background-image: url('../images/Icons/Icon-twitter-hover.svg');
+      }
+
+      &:focus {
+        background-image: url('../images/Icons/Icon-twitter-hover.svg');
+      }
+    }
+  }
+
+  &__copy {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $grey;
+  }
+}

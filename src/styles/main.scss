@@ -1,7 +1,394 @@
 @import "utils";
-@import "fonts";
-@import "typography";
+@import './header';
+@import './footer';
+@import './menu';
+
+
+* {
+  color: $black;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: transparent;
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  background-color: $light-blue;
+
+  &:has(.menu:target) {
+    overflow: hidden;
+  }
 }
+
+.main {
+  max-width: 1280px;
+  margin: auto;
+  padding-top: $pt-64-mobile;
+
+  @include on-tablet {
+    padding-top: 0;
+    padding-inline: 44px;
+  }
+
+  &__cakes {
+    padding-inline: 16px;
+
+    @include on-tablet {
+      padding-inline: 0;
+    }
+  }
+
+  &__title {
+    font-family: Inter,sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 41px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      font-size: 56px;
+      line-height: 48px;
+
+      &--grid {
+        grid-column: span 4;
+      }
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+      line-height: 61px;
+
+      &--grid {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  &__desc {
+    padding-top: 24px;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 54px 16px;
+    padding-top: 56px;
+
+    @include on-tablet {
+      padding-top: 80px;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 80px 24px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 100%;
+    max-width: 328px;
+    margin: auto;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+      max-width: 402px;
+    }
+
+    &--space-left {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+        grid-column: span 2;
+        grid-row: 2;
+      }
+    }
+  }
+
+  &__card-img {
+    position: relative;
+    width: 100%;
+    max-width: 328px;
+    max-height: 424px;
+
+    @include on-tablet {
+      max-width: 402px;
+      max-height: 512px;
+    }
+  }
+
+  &__card-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: calc(((356 / 288) * 100) * 1%);
+    overflow: hidden;
+  }
+
+  &__card-src {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+  }
+
+  &__type {
+    padding-top: 16px;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey;
+  }
+
+  &__cake-desc {
+    padding-top: 8px;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  &__btn {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    text-decoration: none;
+    padding-top: 16px;
+    border-bottom: 1px solid transparent;
+    width: fit-content;
+    transition: border-bottom 0.3s ease-in-out;
+
+    &:hover {
+      border-bottom: 1px solid $accent-orange;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $dark-orange;
+
+      &:hover {
+        border-bottom: 1px solid $dark-orange;
+
+        & :first-child {
+          background-image: url('../images/Icons/Icon-arrow-focus.svg');
+        }
+
+        & :last-child {
+          color: $dark-orange;
+        }
+      }
+
+      & :first-child {
+        background-image: url('../images/Icons/Icon-arrow-focus.svg');
+      }
+
+      & :last-child {
+        color: $dark-orange;
+      }
+    }
+  }
+
+  &__icon-cook {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/Icons/Icon-arrow.svg');
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease-in-out;
+  }
+
+  &__btn-text {
+    display: block;
+    text-transform: uppercase;
+    color: $accent-orange;
+
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  &__about {
+    padding: $pt-72-mobile 0;
+
+    @include on-tablet {
+      padding: $pt-152-tablet 0 $pt-56-pc;
+    }
+  }
+
+  &__about-content {
+    position: relative;
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__about-text {
+    padding-top: 32px;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+
+    @include on-tablet {
+      grid-column:  span 4;
+      padding-top: 0;
+    }
+  }
+
+  &__info {
+    position: relative;
+    z-index: 1;
+    padding-inline: 16px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+      padding-inline: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__rating {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-top: $pt-64-mobile;
+    padding-inline: 16px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 80px 24px;
+      padding-top: $pt-72-mobile;
+      padding-inline: 0;
+    }
+
+    @include on-desktop {
+      padding: $pt-145-pc 0 293px;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__rating-container {
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__rating-title {
+    font-family: Inter, sans-serif;
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 82px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+  }
+
+  &__rating-desc {
+    padding-top: 8px;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $grey;
+  }
+
+  &__cook-back {
+    position: absolute;
+    left: 0;
+    bottom: 174px;
+    z-index: 0;
+    width: 100%;
+    max-width: 526px;
+    max-height: 493px;
+
+    @include on-tablet {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+
+      max-width: 526px;
+      max-height: 493px;
+    }
+
+    @include on-desktop {
+      left: 0;
+      top: 0;
+      transform: translate(0, 0);
+      grid-column: 3 / 8;
+
+      height: 100%;
+      width: 100%;
+      max-width: 718px;
+      max-height: 673px;
+    }
+  }
+
+  &__cook-image {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: calc(((300 / 320) * 100) * 1%);
+
+    @include on-tablet {
+      bottom: 0;
+      padding-bottom: calc(((496 / 512) * 100) * 1%);
+    }
+  }
+
+  &__cook-src {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background-image: url('../images/Galery/Crumbs-phone.png');
+    background-size: cover;
+    background-position: center;
+
+    @include on-tablet {
+      background-image: url('../images/Galery/Crumbs-tablet.png');
+    }
+
+    @include on-desktop {
+      background-image: url('../images/Galery/Crumbs.png');
+    }
+  }
+}
+

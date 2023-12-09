@@ -1,0 +1,111 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-color: $light-blue;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__top {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: $light-blue;
+
+    @include on-desktop {
+      padding: 28px 32px;
+    }
+  }
+
+  &__logo {
+    width: 136px;
+    height: 32px;
+    background-image: url('../images/Icons/Logo.svg');
+  }
+
+  &__menu {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url('../images/Icons/Icon-close.svg');
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    list-style-type: none;
+    padding: 0;
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__item {
+    width: 100%;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $black;
+    text-align: center;
+    transition: color 0.3s ease-in-out;
+
+    &--contact {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+
+      color: $accent-orange;
+
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    @include on-desktop {
+      &:hover {
+        color: $accent-orange;
+      }
+    }
+  }
+
+  &__icon-phone {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background-image: url('../images/Icons/Icon-phone-orange.svg');
+    background-repeat: no-repeat;
+  }
+}
