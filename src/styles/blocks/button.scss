@@ -1,0 +1,102 @@
+.primaryButton {
+  cursor: pointer;
+  display: flex;
+  background-color: transparent;
+  @extend %Up;
+  color: $AccentOrange;
+  align-items: center;
+  justify-content: center;
+  width: 248px;
+  height: 56px;
+  text-decoration: none;
+  border: 2px solid $AccentOrange;
+  outline: none;
+  border-radius: 32px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $AccentOrange;
+    color: $White;
+  }
+
+  &:focus,
+  &:target,
+  &:active {
+    color: $White;
+    background-color: $DarkOrange;
+    border-color: $DarkOrange;
+  }
+
+  &:disabled {
+    color: $LightOrange;
+    border-color: $LightOrange;
+  }
+}
+
+.cookieButton {
+  cursor: pointer;
+  display: flex;
+  gap: 4px;
+  background-color: transparent;
+  @extend %Up;
+  color: $AccentOrange;
+  align-items: center;
+  justify-content: center;
+  width: 248px;
+  height: 56px;
+  text-decoration: none;
+  border: 2px solid $AccentOrange;
+  outline: none;
+  border-radius: 32px;
+  transition: all 0.3s ease;
+
+  &::before {
+    content: "";
+    background-image: url(../images/cookieOrange.svg);
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+  }
+
+  &:hover {
+    background-color: $AccentOrange;
+    color: $White;
+
+    &::before {
+      content: "";
+      background-image: url(../images/cookieWhite.svg);
+      background-repeat: no-repeat;
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  &:focus,
+  &:target,
+  &:active {
+    color: $White;
+    background-color: $DarkOrange;
+    border-color: $DarkOrange;
+
+    &::before {
+      content: "";
+      background-image: url(../images/cookieWhite.svg);
+      background-repeat: no-repeat;
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  &:disabled {
+    color: $LightOrange;
+    border-color: $LightOrange;
+
+    &::before {
+      content: "";
+      background-image: url(../images/cookiePink.svg);
+      background-repeat: no-repeat;
+      height: 24px;
+      width: 24px;
+    }
+  }
+}

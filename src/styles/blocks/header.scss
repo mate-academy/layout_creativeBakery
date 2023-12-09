@@ -1,0 +1,181 @@
+.header {
+  padding-bottom: 50px;
+
+  @include onTablet {
+    padding-bottom: 114px;
+  }
+
+  &__top {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    padding: 16px;
+
+    @include onDesktop {
+      padding: 28px 32px;
+    }
+  }
+
+  &__logo {
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__links {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      gap: 64px;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    @extend %BodyT;
+    text-decoration: none;
+    color: $Black;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__phone {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $AccentOrange;
+    @extend %Up;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &::before {
+      display: block;
+      content: "";
+      background-image: url(../images/phone.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__burger {
+    outline: none;
+    border: none;
+    background: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__btn {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: $Black;
+    transition: all 0.3s ease;
+
+    &:last-child {
+      margin-top: 4px;
+    }
+
+    &--1 {
+      &.active {
+        transform: rotate(45deg) translate(25%, 50%);
+      }
+    }
+
+    &--2 {
+      &.active {
+        transform: rotate(-45deg) translate(15%, 50%);
+      }
+    }
+  }
+
+  &__up-text {
+    @extend %BodyT;
+
+    @include onDesktop {
+      grid-area: 1 / 1 / 2 / 3;
+      align-items: end;
+      display: flex;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+    color: $AccentOrange;
+    margin-top: 32px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onDesktop {
+      grid-area: 2 / 1 / 3 / 13;
+      z-index: 2;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onTablet {
+      width: 50%;
+      display: flex;
+      margin: auto;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 3 / 4 / 7;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    margin: auto;
+
+    @include onDesktop {
+      grid-area: 3 / 1 / 4 / 3;
+      margin: initial;
+    }
+  }
+
+  &__grid {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 0;
+      grid-row-gap: 0;
+    }
+  }
+}

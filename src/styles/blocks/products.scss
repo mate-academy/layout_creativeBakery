@@ -1,0 +1,114 @@
+.products {
+  padding-bottom: 50px;
+
+  @include onTablet {
+    padding-bottom: 114px;
+  }
+
+  &__title {
+    @extend %h2;
+  }
+
+  &__subtitle {
+    @extend %BodyT;
+    margin-top: 24px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    margin-top: 56px;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 0;
+      grid-row-gap: 80px;
+    }
+  }
+
+  &__zoom {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__name {
+    @extend %Up;
+    color: $Grey;
+    margin-top: 16px;
+  }
+
+  &__text {
+    @extend %BodyT;
+    color: $Black;
+    margin-top: 8px;
+  }
+
+  &__order {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    @extend %Up;
+    color: $AccentOrange;
+    text-decoration: none;
+    margin-top: 16px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-image: url(../images/arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+
+    &--first {
+      @include onDesktop {
+        grid-area: 1 / 1 / 2 / 7;
+      }
+    }
+
+    &--second {
+      @include onDesktop {
+        grid-area: 2 / 3 / 3 / 9;
+      }
+    }
+
+    &--third {
+      @include onDesktop {
+        grid-area: 3 / 1 / 4 / 7;
+      }
+    }
+  }
+}

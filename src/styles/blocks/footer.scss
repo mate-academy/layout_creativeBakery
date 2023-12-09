@@ -1,0 +1,176 @@
+.footer {
+  background-color: $Black;
+  padding: 56px 0;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__grid {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 24px;
+      grid-row-gap: 40px;
+    }
+  }
+
+  &__logo {
+    background-image: url(../images/logoF.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: block;
+    width: 168px;
+    height: 40px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onTablet {
+      grid-area: 1 / 1 / 2 / 5;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    &--1 {
+
+      @include onTablet {
+        grid-area: 2 / 1 / 4 / 5;
+      }
+    }
+
+    &--2 {
+
+      @include onTablet {
+        grid-area: 2 / 5 / 4 / 7;
+      }
+    }
+
+    &--3 {
+
+      @include onTablet {
+        grid-area: 2 / 7 / 4 / 9;
+      }
+    }
+  }
+
+  &__menu {
+    @extend %Up;
+    color: $Grey;
+  }
+
+  &__link {
+    text-decoration: none;
+    @extend %BodyT;
+    color: $White;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+      color: $AccentOrange;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+    color: $White;
+    margin-top: 64px;
+
+    @include onTablet {
+      margin-top: 0;
+      grid-area: 1 / 5 / 2 / 9;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 32px;
+
+    @include onTablet {
+      grid-area: 4 / 1 / 5 / 5;
+    }
+  }
+
+  &__social {
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    &--1 {
+      content: "";
+      display: block;
+      background-image: url(../images/fb.svg);
+
+      &:hover {
+        background-image: url(../images/fbWh.svg);
+      }
+    }
+
+    &--2 {
+      content: "";
+      display: block;
+      background-image: url(../images/inst.svg);
+
+      &:hover {
+        background-image: url(../images/instWh.svg);
+      }
+    }
+
+    &--3 {
+      content: "";
+      display: block;
+      background-image: url(../images/tw.svg);
+
+      &:hover {
+        background-image: url(../images/twWh.svg);
+      }
+    }
+  }
+
+  &__bakerlab {
+    display: inline-block;
+    @extend %BodyT;
+    color: $Grey;
+    width: fit-content;
+    height: min-content;
+    text-decoration: none;
+    margin-top: 40px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $White;
+    }
+
+    @include onTablet {
+      grid-area: 4 / 5 / 5 / 9;
+    }
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+}
