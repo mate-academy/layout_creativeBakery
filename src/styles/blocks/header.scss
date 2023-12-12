@@ -1,0 +1,174 @@
+.header {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &__top-bar {
+    padding: 16px;
+
+    @include desktop {
+      padding: 28px 32px;
+    }
+
+    width: 100%;
+    max-width: 1440px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-img {
+    height: 32px;
+
+    @include hover;
+  }
+
+  &__nav {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__menu-button {
+    height: 24px;
+    width: 24px;
+    background-image: url(../images/icons/Icon-menu.svg);
+
+    @include desktop {
+      display: none;
+    }
+
+    @include hover;
+  }
+
+  &__content {
+    background-image: url(../images/backgrounds/Cookie.png);
+    background-repeat: no-repeat;
+    background-position: center 65%;
+    background-size: 288px;
+    padding: 32px 0 40px;
+    width: 100%;
+
+    @include tablet {
+      background-position: center 35%;
+      background-size: 326px;
+      padding: 80px 0 160px;
+    }
+
+    @include desktop {
+      background-size: 544px;
+      padding: 134px 0 160px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+
+  &__info {
+    margin-bottom: 32px;
+    color: $black;
+    text-align: center;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+
+    @include tablet {
+      align-self: start;
+      width: 240px;
+      margin-bottom: 144px;
+      text-align: left;
+    }
+
+    @include desktop {
+      width: 200px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 288px;
+    color: $accent-orange;
+    text-align: center;
+    font-family: Inter, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+
+    @include tablet {
+      letter-spacing: -4px;
+      margin-bottom: 212px;
+    }
+
+    @include desktop {
+      font-size: 136px;
+      letter-spacing: -6.8px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__button {
+    padding: 16px 0;
+    width: 100%;
+    max-width: 320px;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 32px;
+    border: 2px solid $accent-orange;
+    color: $accent-orange;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    @include desktop {
+      align-self: start;
+    }
+
+    &:hover {
+      background-color: $accent-orange;
+      color: $light-pink;
+    }
+
+    &:focus {
+      background-color: $dark-orange;
+      border-color: $dark-orange;
+    }
+  }
+
+  &__button-img {
+    height: 24px;
+  }
+
+  &__button-img-hover {
+    height: 24px;
+    display: none;
+  }
+
+  &__button:hover &__button-img {
+    display: none;
+  }
+
+  &__button:hover &__button-img-hover {
+    display: flex;
+  }
+}
