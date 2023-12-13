@@ -1,0 +1,30 @@
+.products {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include tablet {
+      grid-column: span 4;
+    }
+
+    @include desktop {
+      grid-column: span 3;
+    }
+
+    &--3 {
+      @include desktop {
+        grid-column: 3 / span 3;
+      }
+    }
+  }
+}
