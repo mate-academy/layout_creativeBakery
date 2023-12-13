@@ -15,7 +15,7 @@
     top: 0;
     left: 0;
     right: 0;
-    transition: all 300ms;
+    transition: all $time-animation;
     opacity: 0;
     transform: translateX(-100%);
     pointer-events: none;
@@ -23,7 +23,12 @@
     &:target {
       opacity: 1;
       transform: translateX(0);
+      transition: all $time-animation;
       pointer-events: all;
     }
+  }
+
+  &:has(&__menu:target) {
+    overflow: hidden;
   }
 }
