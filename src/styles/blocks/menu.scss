@@ -1,0 +1,66 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $backround-color;
+  color: $default-text-color;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__bottom {
+    display: flex;
+    margin-top: 132px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__list {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    list-style: none;
+  }
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../images/icons/icon-close.svg);
+}
+
+.nav {
+
+  &__item {
+
+    @include hover(transform, scale(1.15));
+
+    &--contact {
+      margin: 0;
+      align-items: center;
+      text-transform: uppercase;
+      color: $button-color;
+    }
+  }
+
+  &__link {
+    color: $default-text-color;
+    text-decoration: none;
+
+    &--phone {
+      display: flex;
+      gap: 4px;
+      color: $button-color;
+      text-decoration: none;
+    }
+
+    &--image {
+      height: 24px;
+      width: 24px;
+      background-image: url(../images/icons/icon-phone.svg);
+    }
+  }
+}

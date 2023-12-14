@@ -1,0 +1,127 @@
+.footer {
+  background-color: $default-text-color;
+
+  &__content {
+    @include pageGrid;
+    padding-block: 56px;
+
+    @include onDesktop {
+      padding-block: 88px;
+    }
+  }
+
+  &__logo {
+    grid-column: 1 /-1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__menu {
+    grid-column: 1 /-1;
+    grid-row: 2 / 4;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__calls {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__email {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__category {
+    padding-top: 40px;
+    padding-bottom: 16px;
+    color: $category-text-color;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__link {
+    color: $footer-text-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $button-color;
+      transition: all 0.5s;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 32px;
+    padding-top: 40px;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      padding-top: 48px;
+    }
+  }
+
+  &__icon {
+    height: 24px;
+    width: 24px;
+    color: $button-color;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+
+    &:hover {
+      color: $footer-text-color;
+      transition: all 0.5s;
+    }
+  }
+
+  &__copyright {
+    padding-top: 40px;
+    color: $category-text-color;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+      padding-top: 48px;
+    }
+  }
+
+  &__contact {
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+}

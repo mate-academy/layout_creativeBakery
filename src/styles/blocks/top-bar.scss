@@ -1,0 +1,38 @@
+.top-bar {
+  position: relative;
+  display: flex;
+  padding-block: 16px;
+  justify-content: space-between;
+  align-items: center;
+
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    margin: 0 -16px;
+  }
+
+  @include onDesktop {
+    margin: 0 -32px;
+  }
+
+  &__icon {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/icons/icon-menu.svg);
+
+    @include hover(transform, scale(1.15));
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__logo-link {
+    height: 32px;
+
+    @include hover(transform, scale(1.15));
+  }
+}
