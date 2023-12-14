@@ -1,0 +1,120 @@
+.footer {
+  @include grid;
+
+  row-gap: 64px;
+  background-color: $color-black;
+  padding-block: 56px;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  &__menu {
+    grid-column: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      gap: 96px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-text {
+      color: $color-grey;
+    }
+
+    &-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $color-white;
+      transition: color 0.3s ease-in;
+
+      &:hover {
+        color: $color-accent-orange;
+      }
+    }
+  }
+
+  &__contacts {
+    grid-column: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      grid-column: 5 / 9;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &-title {
+      color: $color-white;
+      letter-spacing: -2px;
+
+      @include on-desktop {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @include on-desktop {
+        grid-column: span 1;
+      }
+
+      &--title {
+        color: $color-grey;
+      }
+
+      &--item {
+        color: $color-white;
+        text-decoration: none;
+        transition: color 0.3s ease-in;
+
+        &:hover {
+          color: $color-accent-orange;
+        }
+      }
+    }
+  }
+
+  &__social {
+    margin-top: -24px;
+    grid-column: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  &__description {
+    grid-column: 1;
+    margin-top: -24px;
+    color: $color-grey;
+
+    @include on-tablet {
+      grid-column: 5 / 9;
+    }
+  }
+}

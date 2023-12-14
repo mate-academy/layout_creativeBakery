@@ -1,0 +1,96 @@
+.about-us {
+  @include grid;
+
+  padding-bottom: 72px;
+  row-gap: 64px;
+
+  @include on-tablet {
+    background-image: url(../images/about-us/about-us-img.png);
+    background-size: 526px 493px;
+    background-position: center;
+    background-repeat: no-repeat;
+    row-gap: 72px;
+    padding-bottom: 152px;
+  }
+
+  @include on-desktop {
+    background-size: 718px 673px;
+    row-gap: 156px;
+    padding-bottom: 350px;
+  }
+
+  &__text {
+    grid-column: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include on-tablet {
+      grid-column: 1 / 9;
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    &-title {
+      color: $color-accent-orange;
+
+      @include on-tablet {
+        width: 50%;
+      }
+    }
+
+    &-description {
+      color: $color-black;
+
+      @include on-tablet {
+        width: 50%;
+      }
+    }
+  }
+
+  &__main {
+    grid-column: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    background-image: url(../images/about-us/about-us-img.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include on-tablet {
+      grid-column: 1 / 9;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 80px 24px;
+      background-image: none;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        transform: scale(1.1);
+        padding: 20px;
+        box-shadow: 0 9px 20px 10px $color-grey;
+        border-radius: 20px;
+        background-color: $color-ligth-pink;
+      }
+
+      &--title {
+        color: $color-accent-orange;
+      }
+
+      &--description {
+        color: $color-black;
+      }
+    }
+  }
+}
