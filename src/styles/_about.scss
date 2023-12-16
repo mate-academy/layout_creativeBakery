@@ -18,6 +18,10 @@
     @include onTablet() {
       @include pageGrid;
     }
+
+    @include onDesktop {
+      gap: 128px;
+    }
   }
 
   &__title {
@@ -43,7 +47,6 @@
     @include onDesktop {
       grid-column: span 4;
 
-      //styleName: Desktop headings/H2;
       font-family: Inter;
       font-size: 72px;
       font-weight: 400;
@@ -97,7 +100,9 @@
     transition-duration: 200ms;
 
     &:hover {
-      scale: 1.1;
+      @include onTablet {
+        scale: 1.1;
+      }
     }
   }
 

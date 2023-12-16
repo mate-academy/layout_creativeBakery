@@ -6,17 +6,46 @@
     padding-top: 152px;
   }
 
+  @include onDesktop {
+    padding-bottom: 178px;
+  }
+
   &__title {
     margin: 0;
 
-    font-size: 72px;
+    width: 288px;
+
     text-transform: uppercase;
-    line-height: 61px;
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 41px;
     letter-spacing: -0.05em;
     text-align: left;
     color: $accent-color;
-
     margin-bottom: 24px;
+
+    @include onTablet() {
+      width: fit-content;
+
+      font-family: Inter;
+      font-size: 56px;
+      font-weight: 400;
+      line-height: 48px;
+      letter-spacing: -0.05em;
+      text-align: left;
+    }
+
+    @include onDesktop() {
+      width: fit-content;
+
+      font-family: Inter;
+      font-size: 72px;
+      font-weight: 400;
+      line-height: 61px;
+      letter-spacing: -0.05em;
+      text-align: left;
+    }
   }
 
   &__text {
@@ -87,12 +116,13 @@
 
     margin-bottom: 16px;
     &:hover {
-      scale: 1.05;
+      scale: 1.03;
     }
   }
 
   &__link {
-    padding: 21px 70px;
+    padding: 21px 70px 21px 0px;
+
     border-radius: 32px;
     transition-duration: 300ms;
   }

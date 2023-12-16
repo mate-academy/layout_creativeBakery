@@ -92,27 +92,41 @@
     }
   }
 
-  &__btn {
-  }
-
   &__link {
     display: flex;
+    align-items: center;
     justify-content: center;
+
+    padding: 21px 70px;
+
+    text-transform: uppercase;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: $accent-color;
+
+    width: 100%;
+    gap: 4px;
 
     border: 2px solid $accent-color;
     border-radius: 32px;
+  }
 
-    @include onTablet() {
-      display: flex;
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include onTablet {
       width: fit-content;
-      justify-content: center;
-      align-items: center;
       margin: 0 auto;
     }
 
-    @include onDesktop() {
-      display: flex;
+    @include onDesktop {
+      display: inline-block;
       width: fit-content;
+
       position: absolute;
       bottom: 15%;
       left: 0;
@@ -131,8 +145,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   gap: 4px;
-  padding: 21px 70px;
+
   transition-duration: 300ms;
 
   &:hover {
