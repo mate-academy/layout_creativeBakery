@@ -1,83 +1,92 @@
 /* #region media-screen */
-
-@mixin onMobile {
+@mixin on-mobile {
   @media (min-width: 320px) {
     @content;
   }
 }
 
-@mixin onTablet {
+@mixin on-tablet {
   @media (min-width: 640px) {
     @content;
   }
 }
 
-@mixin onMiddleDisplay {
+@mixin on-middle-display {
   @media (min-width: 1024px) {
     @content;
   }
 }
 
-@mixin onLargeDisplay {
+@mixin on-large-display {
   @media (min-width: 1200px) {
     @content;
   }
 }
 
-@mixin onPaddingPage{
+@mixin on-padding-page{
   padding-inline: 16px;
 
-  @include onMiddleDisplay {
+  @include on-middle-display {
     padding-inline: 32px;
   }
 }
 
-@mixin baseGridTemplate {
+@mixin base-grid-template {
+  @include on-padding-page;
 
-  @include onPaddingPage;
-  
   margin: 0 auto;
   column-gap: 16px;
+
   --columns: 2;
+
   display: grid;
+
   grid-template-columns: repeat(var(--columns), 1fr);
 
-  @include onTablet {
+  @include on-tablet {
     column-gap: 24px;
+
     --columns: 8;
   }
 
-  @include onMiddleDisplay {
+  @include on-middle-display {
     column-gap: 24px;
+
     --columns: 8;
   }
 
-  @include onLargeDisplay {
+  @include on-large-display {
     column-gap: 24px;
+
     --columns: 8;
   }
 }
 
-@mixin catalogGridTemplate {
+@mixin catalog-template {
   min-width: 320px;
   margin: 0 auto;
   column-gap: 16px;
+
   --columns: 2;
+
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
 
-  @include onTablet {
+  @include on-tablet {
     column-gap: 24px;
+    
     --columns: 8;
   }
 
-  @include onMiddleDisplay {
+  @include on-middle-display {
     column-gap: 24px;
+
     --columns: 8;
   }
 
-  @include onLargeDisplay {
+  @include on-large-display {
     column-gap: 24px;
+
     --columns: 8;
   }
 }
