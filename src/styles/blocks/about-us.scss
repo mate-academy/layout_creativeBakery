@@ -1,0 +1,54 @@
+.about-us {
+  background-image: url(../images/about-us-background/Crumbs-phone.png);
+  background-repeat: no-repeat;
+  background-position: center 70%;
+  background-size: contain;
+
+  @include onTablet {
+    background-image: url(../images/about-us-background/Crumbs-tablet.png);
+    background-size: 526px 493px;
+    background-position: center;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/about-us-background/Crumbs-desktop.png);
+    background-size: 718px 673px;
+    background-position: center;
+    padding-bottom: 293px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    @include onTablet {
+      gap: 62px;
+    }
+
+    @include onDesktop {
+      gap: 146px;
+    }
+  }
+
+  &__top {
+    @include pageGrid;
+    row-gap: 32px;
+  }
+
+  &__tittle {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__text {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+}
