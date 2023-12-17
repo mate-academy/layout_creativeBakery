@@ -1,0 +1,130 @@
+.about {
+  position: relative;
+  margin-block: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+
+  @include onTablet {
+    margin-block: 152px;
+  }
+
+  @include onMiddleDisplay {
+    margin-top: 178px;
+    margin-bottom: 349px;
+  }
+
+  &__wrap {
+    @include baseGridTemplate;
+
+    row-gap: 32px;
+    align-items: center;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    grid-column: 1 / -1;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 41px;
+
+    @include onTablet {
+      grid-column: span 4;
+      font-size: 56px;
+      line-height: 48px;
+    }
+
+    @include onMiddleDisplay {
+      grid-column: span 3;
+      font-size: 72px;
+      line-height: 61px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onMiddleDisplay {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__crumbs {
+    z-index: -1;
+    width: 320px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    background-image: url("../images/crumbs.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include onTablet {
+      left: 20%;
+      top: 15%;
+      width: 526px;
+      height: 493px;
+    }
+
+    @include onMiddleDisplay {
+      top: 0;
+      left: 23%;
+      width: 718px;
+      height: 673px;
+    }
+  }
+
+  &__blog {
+    box-sizing: border-box;
+    padding: 64px;
+    width: 100%;
+    row-gap: 48px;
+
+    @include baseGridTemplate;
+
+    @include onTablet {
+      margin-top: 72px;
+      row-gap: 80px;
+    }
+
+    @include onMiddleDisplay {
+      margin-top: 144px;
+    }
+  }
+
+  &__counts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onMiddleDisplay {
+      grid-column: span 2;
+    }
+  }
+
+  &__number {
+    text-transform: uppercase;
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 82px;
+  }
+
+  &__value {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgba(127, 128, 150, 1);
+  }
+}

@@ -1,0 +1,63 @@
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__image {
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color: rgba(127, 128, 150, 1);
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+
+  &__btn {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 16px;
+    text-align: left;
+    color: $main-color;
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @include transition;
+
+    &::before {
+      content: url("../images/icons/icon-arrow.svg");
+      width: 24px;
+      height: 24px;
+      margin-right: 4px;
+
+      @include transition;
+    }
+
+    &:hover {
+      color: $focused;
+
+      @include transition;
+
+      &::before {
+        content: url("../images/icons/icon-arrow-hover.svg");
+        
+        @include transition;
+      }
+    }
+  }
+}

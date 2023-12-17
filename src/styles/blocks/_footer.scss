@@ -1,0 +1,177 @@
+.footer {
+  box-sizing: border-box;
+  background: rgba(28, 26, 38, 1);
+  color: rgba(255, 255, 255, 1);
+
+  @include baseGridTemplate;
+
+  grid-template-rows: repeat(4), 1fr;
+  row-gap: 40px;
+  padding-block: 56px;
+
+  @include onTablet {
+    padding-block: 88px;
+  }
+
+  &__logo {
+    width: 168px;
+    height: 40px;
+    background-size: contain;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-row: 1 / 2;
+      grid-column: 1 / 3;
+    }
+
+    @include onMiddleDisplay {
+      grid-column: span 2;
+    }
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+    text-align: left;
+
+    &--menu {
+      @include onTablet {
+        grid-row: 2 / 3;
+        grid-column: 1 / 5;
+      }
+
+      @include onMiddleDisplay {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &--numbers {
+      @include onTablet {
+        grid-row: 2 / 3;
+        grid-column: 5 / -1;
+      }
+
+      @include onMiddleDisplay {
+        grid-column: 5 / 7;
+      }
+    }
+
+    &--email {
+      @include onTablet {
+        grid-row: 3 / 4;
+        grid-column: 5 / -1;
+      }
+
+      @include onMiddleDisplay {
+        grid-row: 2 / 3;
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &__contacts-title {
+    text-transform: uppercase;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 41px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-row: 1 / 2;
+      grid-column: 5 / -1;
+      font-size: 56px;
+      line-height: 48px;
+    }
+
+    @include onMiddleDisplay {
+      font-size: 72px;
+      line-height: 61px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-link {
+
+      @include transition;
+
+      &:hover {
+        color: $main-color;
+
+        @include transition;
+      }
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    color: rgba(127, 128, 150, 1);
+  }
+
+  &__icons {
+    grid-column: 1 / 2;
+    display: flex;
+    gap: 34px;
+
+    @include onTablet {
+      grid-row: 4 / 5;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include transition;
+
+    &--facebook {
+      background-image: url("../images/icons/icon-facebook.svg");
+
+      &:hover {
+        background-image: url("../images/icons/icon-facebook-hover.svg");
+
+        @include transition;
+      }
+    }
+
+    &--instagram {
+      background-image: url("../images/icons/icon-instagram.svg");
+
+      &:hover {
+        background-image: url("../images/icons/icon-instagram-hover.svg");
+
+        @include transition;
+      }
+    }
+
+    &--twitter {
+      background-image: url("../images/icons/icon-twitter.svg");
+
+      &:hover {
+        background-image: url("../images/icons/icon-twitter-hover.svg");
+
+        @include transition;
+      }
+    }
+  }
+
+  &__copy {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    color: rgba(127, 128, 150, 1);
+    grid-column: 1 / 2;
+
+    @include onTablet {
+      grid-row: 4 / 5;
+      grid-column: 5 / -1;
+    }
+  }
+}

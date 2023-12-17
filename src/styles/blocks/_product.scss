@@ -1,0 +1,89 @@
+.product {
+  @include baseGridTemplate;
+
+  margin-top: 64px;
+
+  @include onTablet {
+    margin-top: 228px;
+  }
+
+  @include onMiddleDisplay {
+    margin-top: 152px;
+  }
+
+  @include onLargeDisplay {
+    margin-top: 178px;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 41px;
+    text-align: left;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 56px;
+      line-height: 48px;
+    }
+
+    @include onMiddleDisplay {
+      font-size: 72px;
+      line-height: 61px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    margin-top: 24px;
+    margin-bottom: 56px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__catalog {
+    grid-column: 1 / -1;
+
+    @include catalogGridTemplate;
+
+    row-gap: 56px;
+
+    @include onTablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include transition;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onMiddleDisplay {
+      grid-column: span 3;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+
+      @include transition;
+    }
+  }
+}
+
+.product__card.right {
+  
+  @include onMiddleDisplay {
+    grid-column: 3 / 6;
+  }
+}

@@ -1,0 +1,26 @@
+.aside {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  scroll-behavior: smooth;
+  background-color: rgb(238, 247, 255);
+  opacity: 0;
+  pointer-events: none;
+  overflow: auto; /* to scroll the menu if needed */
+
+  @include transition;
+
+  &:target {
+    opacity: 1;
+    pointer-events: auto;
+    
+    @include transition;
+  }
+
+  &__menu {
+    margin-block: 200px
+  }
+}
