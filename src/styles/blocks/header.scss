@@ -1,0 +1,111 @@
+.header {
+  display: flex;
+  flex-direction: column;
+
+  @include on-desktop {
+    display: block;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+
+    &--tablet {
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include on-desktop {
+        height: 546px;
+        justify-items: center;
+
+        @include page-grid;
+
+        background-image: url(../images/header/cookie-image.png);
+
+        @include background-sets;
+      }
+    }
+  }
+
+  &__proposition {
+    text-align: center;
+    padding-bottom: 32px;
+
+    @include on-tablet {
+      text-align: left;
+      width: 280px;
+      padding-bottom: 0;
+    }
+
+    @include on-desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    @include on-desktop {
+      padding-bottom: 64px;
+    }
+  }
+
+  &__title--tablet {
+    text-align: center;
+
+    @include on-tablet {
+      width: 100%;
+      height: 328px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(../images/header/cookie-image.png);
+
+      @include background-sets;
+    }
+  }
+
+  &__desktop {
+    grid-column: 1/-1;
+    align-self: center;
+  }
+
+  &__photo {
+    width: 288px;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__navigation {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+}

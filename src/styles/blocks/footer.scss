@@ -1,0 +1,133 @@
+.footer {
+  padding-top: 56px;
+  background-color: $main-text-color;
+
+  @include on-tablet {
+    padding-top: 88px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    background-image: url(../images/icon-logo-white.svg);
+    width: 168px;
+    height: 40px;
+    display: block;
+
+    @include background-sets;
+    @include hover(transform, scale(1.2));
+  }
+
+  &__title {
+    color: $white-color;
+    padding-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      height: 96px;
+      margin-top: -37px;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / -1;
+      height: 61px;
+    }
+  }
+
+  &__nav {
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__contacts {
+    @include on-tablet {
+      grid-column: 5 / -1;
+      margin-top: -285px;
+    }
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: -232px;
+    }
+
+    &--wrap {
+      padding-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+
+      @include on-tablet {
+        padding-bottom: 48px;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    padding-bottom: 40px;
+    height: 32px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    &--fb {
+      display: block;
+
+      @include background-sets;
+      @include hover(transform, scale(1.2));
+
+      &:hover path {
+        fill: $white-color;
+      }
+    }
+
+    &--inst {
+      @include hover(transform, scale(1.2));
+
+      &:hover path {
+        fill: $white-color;
+      }
+    }
+
+    &--tw {
+      @include hover(transform, scale(1.2));
+
+      &:hover path {
+        fill: $white-color;
+      }
+    }
+  }
+
+  &__copyright {
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    &--text {
+      color: $grey-text-color;
+      padding-bottom: 56px;
+
+      @include on-tablet {
+        padding-bottom: 88px;
+      }
+    }
+  }
+}
