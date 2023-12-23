@@ -1,0 +1,128 @@
+.menu {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+  width: 100%;
+
+  &__list {
+    display: none;
+    gap: 64px;
+    width: 100%;
+
+    @include on-middle-display {
+      display: flex;
+    }
+
+    &--aside {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+    }
+  }
+
+  &__item {
+    &--aside {
+      align-self: center;
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 24px;
+    position: relative;
+    scroll-behavior: smooth;
+
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+      width: 50%;
+      height: 1px;
+      background-color: $main-color;
+
+      @include transition;
+    }
+
+    &:hover {
+      color: $main-color;
+
+      @include transition;
+
+      &::after {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+
+    &--focus {
+      color: $main-color;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      line-height: 16px;
+      gap: 4px;
+
+      &::after {
+        content: "";
+        background-color: $main-color;
+        bottom: -8px;
+      }
+
+      &::before {
+        content: url("../images/icons/icon-phone.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__icon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+    @include transition;
+
+    &--burger {
+      background-image: url("../images/icons/burger-menu.png");
+      display: block;
+
+      @include transition;
+
+      &:hover {
+        background-image: url("../images/icons/icon-menu-hover.png");
+
+        @include transition;
+      }
+
+      @include on-middle-display {
+        display: none;
+      }
+    }
+
+    &--close {
+      &::before {
+        content: url("../images/icons/icon-close.svg");
+
+        @include transition;
+      }
+
+      &:hover {
+         @include transition;
+
+        &::before {
+          content: url("../images/icons/icon-close-hover.svg");
+        }
+      }
+    }
+  }
+}

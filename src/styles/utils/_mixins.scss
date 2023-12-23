@@ -1,6 +1,100 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+/* #region media-screen */
+@mixin on-mobile {
+  @media (min-width: 320px) {
+    @content;
   }
+}
+
+@mixin on-tablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin on-middle-display {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin on-large-display {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin on-padding-page{
+  padding-inline: 16px;
+
+  @include on-middle-display {
+    padding-inline: 32px;
+  }
+}
+
+@mixin base-grid-template {
+  @include on-padding-page;
+
+  margin: 0 auto;
+  column-gap: 16px;
+
+  --columns: 2;
+
+  display: grid;
+
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    column-gap: 24px;
+
+    --columns: 8;
+  }
+
+  @include on-middle-display {
+    column-gap: 24px;
+
+    --columns: 8;
+  }
+
+  @include on-large-display {
+    column-gap: 24px;
+
+    --columns: 8;
+  }
+}
+
+@mixin catalog-template {
+  min-width: 320px;
+  margin: 0 auto;
+  column-gap: 16px;
+
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    column-gap: 24px;
+    
+    --columns: 8;
+  }
+
+  @include on-middle-display {
+    column-gap: 24px;
+
+    --columns: 8;
+  }
+
+  @include on-large-display {
+    column-gap: 24px;
+
+    --columns: 8;
+  }
+}
+
+/* #endregion */
+
+@mixin transition {
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
 }
