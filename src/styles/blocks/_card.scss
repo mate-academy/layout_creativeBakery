@@ -8,6 +8,8 @@
     border-radius: 8px;
     width: 100%;
     margin-bottom: 16px;
+
+    @include transition;
   }
 
   &__title {
@@ -52,12 +54,10 @@
       color: $focused;
 
       @include transition;
-
-      &::before {
-        content: url("../images/icons/icon-arrow-hover.svg");
-        
-        @include transition;
-      }
     }
   }
+}
+
+.card:hover .card__image {
+  transform: scale(1.03);
 }
