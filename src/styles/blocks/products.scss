@@ -1,0 +1,98 @@
+.products {
+  &__description--sections {
+    @include basic-text-styles(16px, 400, 150%, -0.16px);
+    
+    color: $black;
+    padding-top: 24px;
+    padding-bottom: 56px;
+
+    @include on-tablet {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__product {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      row-gap: 80px;
+    }
+  }
+}
+
+.product {
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  &__left {
+    @include on-desktop {
+      grid-column: 1/4;
+    }
+  }
+
+  &__right {
+    @include on-desktop {
+      grid-column: 4/7;
+    }
+  }
+
+  &__extend--left {
+    @include on-desktop {
+      grid-column: 3/6;
+    }
+  }
+
+  &__extend--right {
+    @include on-desktop {
+      grid-column: 6/9;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.02));
+  }
+
+  &__title {
+    @include basic-text-styles(16px, 500, 100%, 0.32px);
+
+    text-transform: uppercase;
+    color: $grey;
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+
+  &__description {
+    @include basic-text-styles(16px, 400, 150%, -0.16px);
+
+    color: $black;
+    padding-bottom: 16px;
+  }
+
+  &__button {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    @include hover (box-shadow, 0 0 11px rgba(249, 81, 46, 1));
+  }
+
+  &__icon {
+    &--link {
+      @include basic-text-styles(16px, 500, 100%, 0.32px);
+
+      color: $accent-orange;
+      max-width: max-content;
+    }
+  }
+}

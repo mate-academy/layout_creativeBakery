@@ -1,0 +1,45 @@
+.top-bar {
+  padding: 16px;
+
+  @include on-tablet {
+    padding: 20px;
+  }
+
+  @include on-desktop {
+    padding: 28px 32px;
+  }
+
+  &__mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__desktop {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__nav {
+    &--list {
+      display: flex;
+      gap: 64px;
+    }
+
+  }
+
+  &__logo {
+    height: 32px;
+    
+    @include hover(transform, scale(1.02));
+  }
+}
