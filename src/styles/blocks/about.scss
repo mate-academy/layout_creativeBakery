@@ -1,0 +1,125 @@
+.about {
+  &__content {
+    padding-block: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    @include on-tablet {
+      background-image: url(../images/crumbs-bg.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: grid;
+      padding-top: 179px;
+      padding-block: 152px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 350px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include on-tablet {
+      display: grid;
+
+      @include page-grid;
+    }
+  }
+
+  &__title {
+    @include on-tablet {
+      grid-column: 1/5;
+    }
+  }
+
+  &__text {
+    @include basic-text-styles(16px, 400, 150%, -0.16px);
+
+    color: $black;
+
+    @include on-tablet {
+      grid-column: 5/9;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    background-image: url(../images/crumbs-bg.png);
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include on-tablet {
+      background-image: none;
+      display: grid;
+
+      @include page-grid;
+    }
+  }
+
+  &__year {
+    @include on-tablet {
+      grid-column: 1/5;
+    }
+
+    @include on-desktop {
+      grid-column: 1/3;
+    }
+  }
+
+  &__stores {
+    @include on-tablet {
+      grid-column: 5/9;
+    }
+
+    @include on-desktop {
+      grid-column: 3/4;
+    }
+  }
+
+  &__compaines {
+    @include on-tablet {
+      grid-column: 1/5;
+    }
+
+    @include on-desktop {
+      grid-column: 5/7;
+    }
+  }
+
+  &__clients {
+    @include on-tablet {
+      grid-column: 5/9;
+    }
+
+    @include on-desktop {
+      grid-column: 7/9;
+    }
+  }
+
+  &__number {
+    @include basic-text-styles(96px, 400, 85%, -4.8px);
+    
+    text-transform: uppercase;
+    color: $accent-orange;
+    padding-bottom: 8px;
+
+    @include hover(transform, scale(1.02));
+
+  }
+
+  &__subtitle {
+    @include basic-text-styles(16px, 400, 150%, -0.16px);
+
+    color: $black;
+  }
+}

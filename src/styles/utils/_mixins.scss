@@ -1,6 +1,69 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover($property, $toValue) {
+  transition: #{$property} $effect-duration;
+
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $toValue;
   }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-design {
+  @media (min-width: $design-min-width) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --colomns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--colomns), 1fr);
+  column-gap: 16px;
+
+  @include on-tablet {
+    --colomns: 8;
+
+    column-gap: 24px;
+  }
+
+  @include on-desktop {
+    --colomns: 8;
+  }
+}
+
+@mixin content-padding-inline {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop {
+    padding-inline: 44px;
+  }
+
+  @include on-design {
+    padding-inline: 124px;
+  }
+}
+
+@mixin basic-text-styles($f-size, $f-weight, $line-height, $l-spacing) {
+  font-size: $f-size;
+  font-weight: $f-weight;
+  line-height: $line-height;
+  letter-spacing: $l-spacing;
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  margin: 0;
 }
