@@ -1,6 +1,7 @@
 .header {
   // display: none;
   box-sizing: border-box;
+  min-height: 100vh;
 
   &__content-center {
     display: flex;
@@ -20,11 +21,16 @@
       margin: 0 0 146px;
       text-align: left;
     }
+
+    @include on-desktop {
+      margin: 0 0 8px;
+    }
   }
 
   &__title {
     color: $titles-text-color;
     text-align: center;
+    cursor: pointer;
     font-family: Inter, sans-serif;
     font-size: 64px;
     font-weight: 400;
@@ -33,8 +39,18 @@
     text-transform: uppercase;
     margin: 0;
 
+    @include hover-links(transform, scale(1.05));
+
     @include on-tablet {
+      font-size: 80px;
+      letter-spacing: -4px;
       margin: 0 0 210px;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+      letter-spacing: -6.8px;
+      margin: 0 0 64px;
     }
   }
 
@@ -43,14 +59,19 @@
     height: auto;
 
     @include on-tablet {
+      width: 60%;
       position: absolute;
       z-index: -1;
-      top: 144px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
-  }
 
-  &__wraper-btn {
-    grid-column: span 2;
+    @include on-desktop {
+      width: 50%;
+    }
+
+
   }
 
   &__button {
@@ -61,6 +82,7 @@
     cursor: pointer;
     height: 56px;
     width: 100%;
+    max-width: 288px;
     border-radius: 32px;
     text-decoration: none;
     outline: 2px solid #f9512e;
@@ -72,10 +94,26 @@
     line-height: 100%;
     letter-spacing: 0.32px;
     text-transform: uppercase;
-    margin: 0 0 40px;
+    margin: 0 auto;
+    transition: 0.5s ease;
 
     @include on-tablet {
-      margin: 0 0 288px;
+      width: 326px;
+    }
+
+    @include on-desktop {
+      width: 260px;
+      margin: 0 0 160px;
+    }
+
+    &:hover {
+      color: $footer-color-text;
+      background-color: $button-text-color;
+
+      .icon-buttom {
+        transition: all 1s ease;
+        filter: grayscale(100%) brightness(1000%);
+      }
     }
   }
 }
@@ -90,9 +128,65 @@
   @include on-tablet {
     margin-bottom: 80px;
   }
+
+  @include on-desktop {
+    margin-bottom: 135px;
+  }
+
   &__logo {
     display: flex;
     height: 32px;
     width: 136px;
+
+    @include hover-links(transform, scale(1.1))
+  }
+}
+
+.nav-desktop {
+  display: none;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 64px;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $menu-text-color;
+    text-align: center;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    position: relative;
+
+    @include hover-links(transform, scale(1.05));
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      color: $titles-text-color;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $titles-text-color;
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  @include on-desktop {
+    display: flex;
   }
 }

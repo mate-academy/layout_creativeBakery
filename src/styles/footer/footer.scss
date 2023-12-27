@@ -12,6 +12,8 @@
     height: 40px;
     grid-column: span 2;
 
+    @include hover-links(transform, scale(1.1));
+
     @include on-tablet {
       grid-column: span 4;
     }
@@ -56,12 +58,17 @@
     line-height: 150%;
     letter-spacing: -0.16px;
     text-decoration: none;
+    transition: 0.3s;
 
     &-title {
       color: $article-title-color;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.32px;
+    }
+
+    &:hover {
+      color: $titles-text-color;
     }
   }
 
@@ -86,6 +93,7 @@
     gap: 32px;
     align-items: center;
     grid-column: span 2;
+    transition: all 5s ease;
 
     @include on-tablet {
       grid-column: 1 / 4;
@@ -101,6 +109,13 @@
 
     &-twiter {
       background-image: url(../images/icons/icon-twitter.svg);
+    }
+
+    &-link {
+      &:hover {
+        transition: all 1s ease;
+        filter: grayscale(100%) brightness(1000%);
+      }
     }
   }
 

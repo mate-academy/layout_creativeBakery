@@ -10,11 +10,21 @@
   }
 }
 
+@mixin on-big-screen {
+  @media (min-width: $big-screen-min-width) {
+    @content;
+  }
+}
+
 @mixin content-padding-inline {
   padding-inline: 16px;
 
   @include on-tablet {
     padding-inline: 44px;
+  }
+
+  @include on-big-screen {
+    padding-inline: 124px;
   }
 }
 
@@ -33,10 +43,8 @@
   }
 }
 
-@mixin hover($property, $toValue) {
-  opacity: 1;
+@mixin hover-links($property, $toValue) {
   transition: #{$property} 0.3s;
-
   &:hover {
     #{$property}: $toValue;
   }

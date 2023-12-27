@@ -2,6 +2,7 @@
   box-sizing: border-box;
   height: 100vh;
   background-color: $bg-color-page;
+  min-width: 320px;
 
   &__content-bottom {
     margin-top: 132px;
@@ -18,6 +19,11 @@
     gap: 24px;
   }
 
+  &__item {
+    display: flex;
+    justify-content: center;
+  }
+
   &__link {
     display: block;
     text-decoration: none;
@@ -26,6 +32,9 @@
     font-size: 16px;
     line-height: 150%;
     letter-spacing: -0.16px;
+    position: relative;
+
+    @include hover-links(transform, scale(1.05));
 
     &-contact {
       display: flex;
@@ -37,6 +46,23 @@
       letter-spacing: 0.32px;
       text-transform: uppercase;
       color: $titles-text-color;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $titles-text-color;
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
     }
   }
 }
