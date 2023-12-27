@@ -1,0 +1,55 @@
+.menu {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: $background-color;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &-top {
+    @include top-actions-menu;
+  }
+
+  &-container {
+    padding: 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $description-color;
+    transition: all 0.3s;
+    padding-bottom: 10px;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      color: $title-and-links-color;
+      border-bottom: 1px solid $title-and-links-color;
+    }
+
+    &_orange-color {
+      color: $title-and-links-color;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    margin-top: 151px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    text-align: center;
+    row-gap: 24px;
+    padding-bottom: 204px;
+
+    &:nth-child(3n) {
+      row-gap: 32px;
+    }
+  }
+}
