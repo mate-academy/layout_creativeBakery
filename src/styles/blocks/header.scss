@@ -1,0 +1,149 @@
+.header {
+  position: relative;
+  height: 734px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include on-tablet {
+    height: 900px;
+  }
+
+  @include on-desktop-mini {
+    height: 700px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__title {
+    color: $acc-orange;
+    font-size: 64px;
+    line-height: 54px;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+    pointer-events: none;
+
+    @include on-tablet {
+      width: 100%;
+      position: absolute;
+      top: 338px;
+      z-index: 1;
+      font-size: 80px;
+      line-height: 68px;
+      letter-spacing: -4px;
+    }
+
+    @include on-desktop-mini {
+      top: 303px;
+      font-size: 136px;
+      line-height: 116px;
+      letter-spacing: -6.8px;
+    }
+
+    @include on-desktop-middle {
+      top: 320px;
+      font-size: 144px;
+      line-height: 122px;
+      letter-spacing: -7.2px;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__span {
+    align-items: center;
+    text-align: center;
+    color: $black;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.16px;
+    max-width: 288px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      text-align: left;
+      margin-top: 80px;
+      margin-bottom: 16px;
+      width: 280px;
+    }
+
+    @include on-desktop-mini {
+      margin-top: 135px;
+      margin-bottom: 8px;
+      width: 260px;
+    }
+
+    @include on-desktop-middle {
+      margin-top: 144px;
+      margin-bottom: 40px;
+      width: 280px;
+    }
+  }
+
+  &__image {
+    width: 288px;
+    height: 290px;
+    transition: $effect-duration;
+    background-image: url(../images/mobCookie.svg);
+
+    @include hover(transition, $effect-duration);
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      top: 144px;
+      width: 326px;
+      height: 328px;
+    }
+
+    @include on-desktop-mini {
+      position: absolute;
+      top: 88px;
+      background-image: url(../images/Cookie-b.svg);
+      width: 544px;
+      height: 546px;
+      margin-bottom: 66px;
+    }
+
+    @include on-desktop-middle {
+      width: 584px;
+      height: 586px;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__button {
+    @include on-tablet {
+      width: 326px;
+      align-items: center;
+      margin-top: 80px;
+      margin-bottom: 228px;
+    }
+
+    @include on-desktop-mini {
+      width: 260px;
+      align-self: flex-start;
+      margin-top: 188px;
+      margin-bottom: 161px;
+    }
+
+    @include on-desktop-middle {
+      width: 280px;
+      left: 260px;
+      margin-top: 226px;
+      margin-bottom: 138px;
+    }
+  }
+}

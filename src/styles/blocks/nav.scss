@@ -1,0 +1,52 @@
+.nav {
+  @include on-desktop-mini {
+    &__list {
+      width: 299px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      row-gap: 64px;
+      list-style: none;
+    }
+
+    &__link {
+      color: $black;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.16px;
+
+      margin: 0;
+      padding: 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      @include hover(transition, $effect-duration);
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        margin-top: 30px;
+        width: 100%;
+        height: 2px;
+        background-color: $focus;
+        transform: scale(0);
+        transform-origin: left;
+
+        @include hover(transition, $effect-duration);
+      }
+
+      @include hover(font-weight, 700);
+      @include hover(color, $hover);
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+}
