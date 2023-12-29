@@ -1,0 +1,60 @@
+@mixin hover($property, $toValue) {
+  transition: #{$property} $toValue;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin focus($property, $toValue) {
+  transition: #{$property} 0.6s;
+  &:focus {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: 680px) {
+    @content;
+  }
+}
+
+@mixin on-desktop-mini {
+  @media (min-width: 1124px) {
+    @content;
+  }
+}
+
+@mixin on-desktop-middle {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include on-desktop-mini {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@mixin content-padding-inline {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop-middle {
+    padding-inline: 124px;
+    margin-inline: auto;
+    max-width: 1464px;
+  }
+}

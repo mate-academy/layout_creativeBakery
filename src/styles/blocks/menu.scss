@@ -1,0 +1,61 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: $l-pink;
+  color: $black;
+  transition: transform $effect-duration;
+  transform: translateX(100%);
+  overflow: auto;
+
+  &__top {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding-block: 16px;
+    margin-bottom: 132px;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    padding: 4px 0;
+  }
+
+  &__link {
+    color: $acc-orange;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all $effect-duration;
+
+    @include hover(transition, $effect-duration);
+    @include hover(transform, scale(1.2));
+    @include hover(color, $hover);
+    @include hover(font-weight, 700);
+  }
+
+  @include on-desktop-mini {
+    display: none;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
