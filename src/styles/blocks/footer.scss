@@ -1,0 +1,157 @@
+.footer {
+  background-color: $black;
+  color: #fff;
+
+  &__content {
+    @include content-padding-inline;
+    @include page-grid;
+
+    row-gap: 40px;
+
+    padding-block: 56px;
+
+    @include on-tablet {
+      padding-block: 88px;
+    }
+
+    &--logo {
+      grid-column: 1 / -1;
+
+			@include on-tablet {
+				grid-column: 1 / 5;
+			}
+    }
+
+    &--menu {
+      grid-column: 1 / -1;
+
+			@include on-tablet {
+				grid-column: 1 / 5;
+			}
+    }
+
+    &--title {
+      grid-column: 1 / -1;
+
+			@include on-tablet {
+				grid-column: 5 / -1;
+				grid-row: 1 / 2;
+			}
+    }
+
+    &--contacts {
+      grid-column: 1 / -1;
+
+			@include on-tablet {
+				grid-column: 5 / -1;
+			}
+
+      @include on-desktop {
+        grid-column: 5 / 7;
+      }
+    }
+
+    &--email {
+      grid-column: 1 / -1;
+
+			@include on-tablet {
+				grid-column: 5 / -1;
+			}
+
+      @include on-desktop {
+        grid-column: 7 / -1;
+      }
+    }
+
+    &--icons {
+      grid-column: 1 / -1;
+
+			@include on-tablet {
+				grid-column: 1 / 5;
+			}
+    }
+
+    &--notice {
+      grid-column: 1 / -1;
+
+			@include on-tablet {
+				grid-column: 5 / -1;
+			}
+    }
+  }
+
+  &__logo-img {
+    display: flex;
+
+    @include hover(transform, scale(1.2));
+  }
+
+
+  &__title {
+    margin: 0;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__icon {
+    display: flex;
+    text-decoration: none;
+    height: 24px;
+    width: 24px;
+
+    &--facebook {
+      background-image: url(../images/icons/icon-facebook.svg);
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/icon-instagram.svg);
+    }
+
+    &--twitter {
+      background-image: url(../images/icons/icon-twitter.svg);
+    }
+
+    @include hover(transform, scale(1.2));
+
+
+  }
+
+  &__copyright-notice {
+    color: #7f8096;
+  }
+}
+
+.footer-nav {
+  &__title {
+    color: #7f8096;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.16px;
+
+    @include hover(transform, scale(1.2));
+  }
+}

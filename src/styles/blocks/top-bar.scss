@@ -1,0 +1,41 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+	align-items: center;
+  padding: 16px;
+
+  &__logo {
+    display: flex;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  @include on-desktop {
+    padding: 32px;
+  }
+
+  &__menu {
+    display: none;
+    pointer-events: none;
+
+    @include on-desktop {
+      display: flex;
+      pointer-events: all;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: raw;
+    gap: 64px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: raw;
+    gap: 64px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
