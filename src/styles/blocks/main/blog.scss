@@ -1,0 +1,32 @@
+.blog {
+  @include pageGrid;
+  grid-row-gap: 48px;
+
+  @include onTablet {
+    grid-row-gap: 80px;
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__number {
+    font-size: 96px;
+    line-height: 82px;
+    letter-spacing: -5%;
+    color: $accent-color;
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    color: $black-color;
+  }
+}
