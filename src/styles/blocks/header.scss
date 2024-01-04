@@ -1,0 +1,142 @@
+.header {
+  box-sizing: border-box;
+  height: 100vh;
+  background-image: url(../images/header-bg.png);
+  background-repeat: no-repeat;
+	background-size: 288px 290px;
+	background-position: 50% 284px;
+
+
+
+  @include on-tablet {
+    background-size: 326px 328px;
+    background-position: 50% 208px;
+  }
+
+	@include on-desktop {
+    background-size: 544px 546px;
+    background-position: 50% 50%;
+  }
+
+	@include on-huge-screen {
+    background-size: 584px 586px;
+    background-position: 50% 50%;
+  }
+
+  &__content {
+		box-sizing: border-box;
+    height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-top: 32px;
+
+    @include content-padding-inline;
+
+    @include on-tablet {
+      padding-top: 80px;
+    }
+
+		@include on-desktop {
+			justify-content: stretch;
+			padding-top: 135px;
+		}
+  }
+
+  &__bottom {
+    padding-bottom: 40px;
+  }
+
+  &__description {
+    color: $black;
+    margin: 0;
+    text-align: center;
+    letter-spacing: -0.16px;
+
+    @include on-tablet {
+      text-align-last: left;
+    }
+  }
+
+  &__title {
+    color: $accent-orange;
+    margin: 32px 0 0 ;
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include on-tablet {
+      font-size: 80px;
+      letter-spacing: -4px;
+      margin-top: 146px;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+      letter-spacing: -6.8px;
+      margin-top: 8px;
+    }
+
+		@include on-huge-screen {
+      font-size: 144px;
+      letter-spacing: -7.2px;
+      margin-top: 40px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    text-decoration: none;
+    color: $accent-orange;
+    font-weight: 500;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    @include on-tablet {
+      width: 326px;
+      margin: 210px auto ;
+    }
+
+		@include on-desktop {
+			margin: 64px 0 0;
+		}
+
+    &::before {
+      content: "";
+      display: block;
+      background-image: url(../images/icons/icon-cookie.svg);
+      height: 24px;
+      width: 24px;
+    }
+
+    &:hover {
+      transition: all 0.3s;
+      background-color: $accent-orange;
+      color: #fff;
+    }
+
+    &:hover::before {
+      transition: all 0.3s;
+      background-image: url(../images/icons/icon-cookie-hover.svg);
+    }
+
+    &:focus {
+      background-color: #b2341a;
+      color: #fff;
+      border: 2px solid #b2341a;
+    }
+
+    &:focus::before {
+      background-image: url(../images/icons/icon-cookie-hover.svg);
+    }
+  }
+}
