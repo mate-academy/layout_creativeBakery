@@ -1,0 +1,133 @@
+.header {
+  @include top;
+
+  .wrapper {
+    @include pageGrid;
+    margin: 0 auto;
+    padding: 16px 16px 0;
+
+    background-image: url('../images/cookie.png');
+    background-repeat: no-repeat;
+    background-position: 50% 55%;
+
+    @include onTablet {
+      background-position: 50% 19%;
+      background-size: 43%;
+    }
+
+    @include onDesktop {
+      width: 1192px;
+      padding: 0;
+    }
+
+  }
+
+  &__top {
+    padding: 16px 16px 0;
+
+    @include onTablet {
+      margin-bottom: 96px;
+    }
+
+    @include onDesktop {
+
+      .btn-to-menu {
+        display: none;
+      }
+
+      .nav {
+        display: flex;
+      }
+    }
+  }
+
+  &__upper-title {
+    color: $font--black-color;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+
+    margin-bottom: 32px;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin: 0 28px 146px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__title {
+    color: $accent-orange;
+    text-align: center;
+    font-family: Inter;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+    margin-bottom: 290px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      font-size: 80px;
+      letter-spacing: -4px;
+      margin: 0 28px 210px;
+    }
+
+    @include onDesktop {
+      font-size: 136px;
+      letter-spacing: -6.8px;
+    }
+  }
+}
+
+
+.nav {
+  display: none;
+  margin-left: 85px;
+  gap: 64px;
+
+  &__link {
+    @include text-properties($font--black-color, Inter, 16px, 400, 150%, -0.16px);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: $accent-orange;
+    }
+
+    &-red {
+      display: flex;
+      gap: 4px;
+      text-decoration: inherit;
+      text-transform: uppercase;
+      align-items: center;
+      @include text-properties($accent-orange, Inter, 16px, 500, 100%, 0.32px);
+      transition: color 0.3s ease-in-out;
+
+      svg {
+        fill: $accent-orange;
+        transition: fill 0.3s ease-in-out;
+      }
+
+      &:hover {
+        color: $dark-orange;
+
+        svg {
+          fill: $dark-orange;
+        }
+      }
+    }
+  }
+}

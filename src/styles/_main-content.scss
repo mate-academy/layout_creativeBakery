@@ -1,0 +1,268 @@
+.main {
+  @include paddings;
+
+  .wrapper {
+    @include pageGrid;
+    margin: 0 auto;
+
+    @include onDesktop {
+      width: 1192px;
+      padding: 0;
+    }
+  }
+}
+
+.section {
+  display: grid;
+  grid-column: 1 / -1;
+  @include pageGrid;
+
+  &__title {
+    margin-bottom: 24px;
+    grid-column: 1 / -1;
+
+    color: $accent-orange;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 56px;
+      letter-spacing: -2.8px;
+    }
+  }
+
+  &__paragraph {
+    grid-column: 1 / -1;
+
+    color: $font--black-color;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+  }
+
+  &__cards {
+    grid-column: 1 / -1;
+    @include pageGrid;
+  }
+
+  &__info-blocks {
+    margin-top: 64px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      margin-top: 72px;
+    }
+
+    @include onDesktop {
+      margin-top: 146px;
+    }
+  }
+}
+
+.card {
+  grid-column: 1 / -1;
+  margin-top: 56px;
+  transition: transform 0.3s ease-in-out;
+
+  @include onTablet {
+    grid-column: 1 / 5;
+    margin-top: 80px;
+  };
+
+  &:nth-child(2n) {
+    @include onTablet {
+      grid-column: 5 / -1;
+    };
+  }
+
+  @include onDesktop {
+    &:nth-child(1), &:nth-child(5) {
+      grid-column: 1 / 4;
+    }
+
+    &:nth-child(2), &:nth-child(6) {
+      grid-column: 4 / 7;
+    }
+
+    &:nth-child(3) {
+      grid-column: 3 / 6;
+    }
+
+    &:nth-child(4) {
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__category {
+    margin-top: 16px;
+
+    color: $grey;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__body-text {
+    margin-top: 8px;
+
+    color: $font--black-color;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+  }
+}
+
+.btn-order {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  padding: 4px 0;
+  background-color: transparent;
+  border: none;
+  gap: 4px;
+
+  &__label {
+    color: $accent-orange;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__icon {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover &__label{
+    transform: translateX(10px);
+  }
+
+  &:hover &__icon{
+    transform: translateX(-5px);
+  }
+}
+
+.few-words-about-us {
+  margin-top: 72px;
+  padding-bottom: 72px;
+
+  background-image: url(../images/crumbs.png);
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: 0% 69%;
+
+  @include onTablet {
+    margin-top: 152px;
+    padding-bottom: 152px;
+    background-size: 71%;
+    background-position: 40% 22%;
+  }
+
+  @include onDesktop {
+    margin-top: 178px;
+    padding-bottom: 349px;
+    background-size: 65%;
+  }
+
+
+  &__title {
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__paragraph {
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+  }
+}
+
+.info-blocks {
+  @include pageGrid;
+
+  &__block {
+    margin-top: 48px;
+  }
+}
+
+.block {
+  @include onTablet {
+    grid-column: 1 / 5;
+  }
+
+  @include onTablet {
+    &:nth-child(2n) {
+      grid-column: 5 / -1;
+    }
+  }
+
+  @include onDesktop {
+    &:nth-child(1) {
+      grid-column: 1 / 3;
+    }
+
+    &:nth-child(2) {
+      grid-column: 3 / 5;
+    }
+
+    &:nth-child(3) {
+      grid-column: 5 / 7;
+    }
+
+    &:nth-child(4) {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__title {
+    color: $accent-orange;
+    font-family: Inter;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -4.8px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-top: 8px;
+
+    color: $font--black-color;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+  }
+}
