@@ -1,0 +1,38 @@
+.menu {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  background-color: $c-li-blue;
+
+  opacity: 0;
+  pointer-events: none;
+
+  &__content {
+    margin-top: 132px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.page:has(.menu:target) {
+  overflow: hidden;
+}
+
+.menu:target{
+  opacity:1;
+  pointer-events: all;
+}
+
+.menu__content_list_item_link_contact {
+  @include header-contact;
+}
+
+.menu__content_list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
