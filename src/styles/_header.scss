@@ -1,0 +1,51 @@
+.header {
+  position: relative;
+
+  .header__content_link_button_icone-cookie {
+    background-image: url(../images/icone/Icon-cookie.svg);
+  }
+
+  &__content {
+    &_title {
+      color: $c-ac-orange;
+    }
+
+    &_link {
+      height: 56px;
+      min-width: 288px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid $c-ac-orange;
+      gap: 4px;
+      color: $c-ac-orange;
+      border-radius: 32px;
+      background: none;
+    }
+
+    &_link:hover {
+      transition: 0.5s;
+      background-color: $c-ac-orange;
+      color: #fff;
+      .header__content_link_button_icone-cookie {
+        transition: 0.5s;
+        background-image: url(../images/icone/Icon-cookie-white.png);
+      }
+    }
+
+    &_link:focus {
+      background-color: $c-darc-orange;
+      border: $c-darc-orange;
+    }
+  }
+}
+
+.header__nav_list_item_link_contact {
+  @include header-contact;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,73 @@
+.main {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    &_title {
+      color: $c-ac-orange;
+    }
+  }
+
+  &__products {
+
+    &_card {
+      display: flex;
+      flex-direction: column;
+
+      &_description {
+        margin: 8px 0 16px;
+      }
+
+      &_link-order {
+        position: relative;
+        width: 84px;
+        display: flex;
+        align-items: center;
+        color: $c-ac-orange;
+      }
+
+      &_link-order::after {
+        display: block;
+	      position: absolute;
+	      left: 0;
+        bottom: -5px;
+	      width: 0;
+	      height: 2px;
+	      background-color: $c-ac-orange;
+	      content: "";
+	      transition: width 0.3s ease-out;
+      }
+
+      &_link-order:hover::after,
+      &_link-order:focus::after {
+        width: 100%;
+      }
+
+      &_title {
+        color: $c-grey;
+        letter-spacing: 0.32px;
+      }
+    }
+  }
+
+  &__about-us {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &_head {
+      &_title {
+        color: $c-ac-orange;
+        font-weight: 400;
+      }
+    }
+
+    &_stats {
+
+      &_stat {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  }
+}
