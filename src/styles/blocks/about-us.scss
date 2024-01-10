@@ -1,0 +1,110 @@
+.about-us {
+  @include page-grid;
+
+  margin-top: 72px;
+
+  @include on-tablet {
+    margin-top: 152px;
+  }
+
+  @include on-desktop {
+    margin-top: 178px;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / -5;
+    }
+  }
+
+  &__description {
+    @include body-text;
+    
+    grid-column: 1 / -1;
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      margin-bottom: 72px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &--year {
+      grid-column: 1 / -1;
+      margin-bottom: 48px;
+
+      @include on-tablet {
+        grid-column: 1 / 4;
+        margin-bottom: 80px;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 3;
+        margin: 0;
+      }
+    }
+
+    &--stores {
+      grid-column: 1 / -1;
+      margin-bottom: 48px;
+
+      @include on-tablet {
+        grid-column: 5 / -1;
+        margin-bottom: 80px;
+      }
+
+      @include on-desktop {
+        grid-column: 3 / 4;
+        margin: 0;
+      }
+    }
+
+    &--companies {
+      grid-column: 1 / -1;
+      margin-bottom: 48px;
+
+      @include on-tablet {
+        grid-column: 1 / 4;
+        margin: 0;
+      }
+
+      @include on-desktop {
+        grid-column: 5 / 6;
+      }
+    }
+
+    &--clients {
+      grid-column: 1 / -1;
+      margin: 0;
+
+      @include on-tablet {
+        grid-column: 5 / -1;
+      }
+
+      @include on-desktop {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &__cell {
+    @include big-text;
+
+    &-description {
+      @include body-text;
+
+      color: $secondary-color;
+    }
+  }
+}
