@@ -1,0 +1,35 @@
+.contacts {
+  &__wrapper {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px 24px;
+    }
+  }
+
+  &__tel-numbers {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      grid-column: 1/3;
+    }
+  }
+
+  &__emaile {
+    @include onDesktop {
+      grid-column: 3/-1;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    color: $white-text-color;
+
+    @include linkHover;
+  }
+}
