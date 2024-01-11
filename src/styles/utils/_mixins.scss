@@ -4,3 +4,149 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-mobile {
+  @media (min-width: $mobile-min-width) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-design {
+  @media (min-width: $design-min-width) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-design {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 124px;
+  }
+}
+
+.container {
+  @include content-padding-inline;
+}
+
+@mixin page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include on-design {
+    grid-template-columns: repeat(8, 128px);
+    column-gap: 24px;
+  }
+}
+
+@mixin body-text {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  text-align: left;
+  margin: 0;
+  color: $primary-color;
+}
+
+@mixin big-text {
+  font-family: Inter, sans-serif;
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 82px;
+  letter-spacing: -0.05em;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 0;
+  color: $primary-color;
+}
+
+@mixin button {
+  width: 288px;
+  height: 56px;
+  border-radius: 32px;
+  border: 2px solid #f9512e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: .32px;
+  text-transform: uppercase;
+  color: #f9512e;
+  text-decoration: none;
+  transition: $effect-duration;
+
+  &::before {
+    content: "";
+    background-image: url(/src/images/icon__button.svg);
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    transition: $effect-duration;
+  }
+
+  &:hover::before {
+    content: "";
+    background-image: url(/src/images/button__icon-hover.svg);
+  }
+
+  @include on-tablet {
+    width: 326px;
+  }
+
+  @include on-desktop {
+    width: 260px;
+  }
+
+  @include on-design {
+    width: 280px;
+  }
+
+  &:hover {
+    background-color: $background-button-hover;
+    color: $button-hover-color-text;
+  }
+
+  &:focus {
+    background-color: $button-hover;
+    border: 2px solid $button-hover;
+    color: $button-hover-color-text;
+  }
+}
