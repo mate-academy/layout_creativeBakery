@@ -1,0 +1,57 @@
+.nav {
+
+  @include on-desktop {
+    margin-top: 12px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 64px;
+      align-items: normal;
+    }
+  }
+
+  &__item {
+    @include hover(transform, scale(1.1));
+    position: relative;
+    color: inherit;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 2px;
+  }
+
+  &__link {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include on-desktop {
+      text-transform: none;
+    }
+
+    &-img {
+      display: flex;
+      gap: 4px;
+      color: #F9512E;
+      justify-items: center;
+    }
+  }
+
+
+  &__top {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+}
