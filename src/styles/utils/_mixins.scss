@@ -24,21 +24,30 @@
 }
 
 @mixin page-grid {
-   --columns: 2;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   column-gap: 16px;
 
-  display: grid;
-  column-gap: 20px;
-  grid-template-columns: repeat(var(--columns), 1fr);
 
   @include on-tablet {
-    --columns: 6;
-
+    grid-template-columns: repeat(8, 1fr);
     column-gap: 24px;
-
   }
 
-  @include on-desktop {
-    --columns: 12;
+  // @include on-desktop {
+  //   --columns: 12;
+  // }
+}
+
+@mixin content-padding-inline() {
+  padding-inline: 16px;
+
+    @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-xl-design {
+    padding-inline: 124px;
   }
 }
 
