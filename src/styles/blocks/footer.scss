@@ -1,0 +1,97 @@
+.footer {
+  background-color: $main-text-color;
+  width: 100%;
+  color: #fff;
+  padding-block: 56px;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  &__content {
+    @include content-padding-inline;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include on-tablet {
+      gap: 48px;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      gap: 96px;
+    }
+
+    @include on-desktop {
+      gap: 61px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 32px;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+
+    @include hover(transform, scale(1.2));
+
+    &--facebook {
+      background-image: url(../images/icons/Icon-facebook.svg);
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/Icon-instagram.svg);
+    }
+
+    &--twitter {
+      background-image: url(../images/icons/Icon-twitter.svg);
+    }
+  }
+
+  &__last-text {
+    color: $grey;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.16px;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+  }
+}

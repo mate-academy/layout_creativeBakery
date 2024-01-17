@@ -1,0 +1,114 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin-bottom: 72px;
+
+  @include on-tablet {
+    background-image: url(../images/Crumbs.png);
+    background-position: center;
+    background-size: 526px 493px;
+    background-repeat: no-repeat;
+    margin-bottom: 152px;
+  }
+
+  @include on-desktop {
+    background-size: 718px 673px;
+    padding-bottom: 293px;
+    margin-bottom: 56px;
+  }
+
+  @include on-tablet {
+    gap: 72px;
+  }
+
+  @include on-desktop {
+    gap: 146px;
+  }
+
+  &__title {
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__title-overview {
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__info {
+    @include content-padding-inline;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__statistics {
+    width: 100%;
+    
+    @include content-padding-inline;
+
+    @include on-tablet {
+      @include page-grid;
+
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 80px;
+    }
+
+    @include on-desktop {
+      grid-template-rows: repeat(1, 1fr);
+    }
+
+    background-image: url(../images/Crumbs.png);
+    background-size: 320px 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 48px;
+
+
+    @include on-tablet {
+      background: none;
+    }
+  }
+
+  &__blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__number {
+    margin: 0;
+    color: $accent-orange;
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 85%; /* 81.6px */
+    letter-spacing: -4.8px;
+    text-transform: uppercase;
+
+    &-overview {
+      color: $main-text-color;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+      letter-spacing: -0.16px;
+    }
+  }
+
+}
