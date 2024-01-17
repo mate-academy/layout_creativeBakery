@@ -1,0 +1,65 @@
+.footer {
+  background-color: $footer-background-color;
+  padding-block: 56px;
+
+  @include on-tablet {
+    padding-block: 80px;
+  }
+
+  &__wrapper {
+    @include page-grid;
+    row-gap: 64px;
+  }
+
+  &__menu {
+    display: grid;
+    row-gap: 16px;
+  }
+
+  &__section {
+    display: grid;
+    grid-column: 1 / -1;
+    row-gap: 40px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    color: $item-title-color;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__contacts {
+    display: grid;
+    row-gap: 40px;
+
+    @include on-desktop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__contact {
+    display: grid;
+    row-gap: 16px;
+    align-self: start;
+  }
+
+  &__marck {
+    color: $item-title-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+  }
+}
