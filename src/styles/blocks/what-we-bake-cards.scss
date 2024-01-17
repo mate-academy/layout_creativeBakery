@@ -1,0 +1,121 @@
+.what-card {
+  cursor: pointer;
+  @include hover(transform, scale(1.05));
+  width: 288px;
+  display: grid;
+  gap: 16px;
+
+  @include on-tablet {
+    width: 328px;
+  }
+
+  @include on-desktop {
+    width: 402px;
+  }
+
+  @include large-screens {
+    width: 432px;
+  }
+
+  &__img {
+    border-radius: 8px;
+    height: 356px;
+    width: 100%;
+
+    @include on-tablet {
+      height: 424px;
+    }
+
+    @include on-desktop {
+      height: 512px;
+    }
+
+    @include large-screens {
+      height: 560px;
+    }
+
+    background-position: center;
+    background-size: cover;
+
+    &--one {
+      background-image: url(../images/what-we-bake/photo-product-01.png);
+    }
+
+    &--two {
+      background-image: url(../images/what-we-bake/photo-product-06.png);
+    }
+
+    &--three {
+      background-image: url(../images/what-we-bake/photo-product-05.png);
+    }
+
+    &--four {
+      background-image: url(../images/what-we-bake/photo-product-04.png);
+    }
+
+    &--five {
+      background-image: url(../images/what-we-bake/photo-product-03.png);
+    }
+
+    &--six {
+      background-image: url(../images/what-we-bake/photo-product-02.png);
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: 16px;
+  }
+
+  &__text {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__title {
+    margin: 0;
+    color: $grey;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__overview {
+    color: $main-text-color;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.16px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    color: $accent-orange;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+
+    @include underline-text-hover(-7px, $accent-orange);
+
+    &:before {
+      content: "";
+      display: block;
+      height: 24px;
+      width: 24px;
+      background-image: url(../images/icons/Icon-arrow.svg);
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+  }
+}
