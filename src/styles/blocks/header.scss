@@ -99,7 +99,10 @@
     @include page-grid;
 
     &--link {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
       padding-block: 20px;
       text-align: center;
       font-size: 16px;
@@ -110,6 +113,29 @@
       color: $link-color;
       border-radius: 32px;
       border: 2px solid  $link-color;
+
+      &::before {
+        content: '';
+        display: block;
+        background-image: url(../images/icon-cookie.svg);
+        height: 24px;
+        width: 24px;
+
+      }
+
+      &:hover {
+        background-color: $link-color;
+        color: $link-hover-text-color;
+
+        &::before {
+          background-image: url(../images/icon-cookie-wihte.svg);
+        }
+      }
+
+      &:active {
+        background-color: $link-target-color;
+        border: 2px solid $link-target-color;
+      }
 
       grid-column: 1 / -1;
 
