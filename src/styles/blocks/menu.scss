@@ -1,0 +1,32 @@
+.menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: -100vw;
+  transition: $transition-time;
+  opacity: 0;
+  background-color: $bg-color;
+
+  &:target {
+    left: 0;
+    opacity: 1;
+  }
+
+  @include on-desktop {
+    display: none;
+  }
+}
+
+.menu-nav {
+  margin-top: 132px;
+  margin-inline: auto;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

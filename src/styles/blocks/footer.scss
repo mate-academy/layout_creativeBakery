@@ -1,0 +1,169 @@
+.footer {
+  background-color: $footer-bg-color;
+  padding-top: 56px;
+  padding-bottom: 56px;
+
+  @include padding-inline;
+  @include grid-mobile;
+
+  @include on-tablet {
+    @include grid-tablet;
+
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  @include on-desktop-wide {
+    @include grid-desktop-wide;
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: 64px;
+    grid-column: 1/-1;
+    color: $footer-text-color;
+
+    @include on-tablet {
+      max-height: 96px;
+      margin-top: 0;
+    }
+  }
+
+  &__mini-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    color: $footer-mini-title-color;
+  }
+
+  &__contacts {
+    grid-column: 1/span 1;
+  }
+
+  &__email {
+    grid-column: 1/span 1;
+
+    @include on-desktop {
+      grid-column: 3/span 2;
+    }
+  }
+
+  &__email-address {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    color: $footer-text-color;
+  }
+
+  &__socials {
+    margin-top: 40px;
+    grid-column: 1/span 1;
+    display: flex;
+    gap: 32px;
+    height: 24px;
+
+    @include on-tablet {
+      margin-top: 48px;
+      grid-column: 1 /span 4;
+    }
+  }
+}
+
+.footer-logo {
+  display: block;
+  width: 168px;
+  height: 40px;
+}
+
+.footer-menu {
+  grid-column: 1/span 1;
+
+  @include on-tablet {
+    margin-top: 96px;
+  }
+}
+
+.footer-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-link {
+  margin: 0;
+  text-decoration: none;
+  color: $footer-text-color;
+  transition: $transition-time;
+
+    &:hover {
+      color: $red-text-color;
+    }
+}
+
+.footer-containers {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.facebook-icon{
+  background-image: url(/src/images/icons/icon-facebook.svg);
+
+  &:hover, &:active {
+    background-image: url(/src/images/icons/icon-facebook-active.svg);
+  }
+}
+
+.instagram-icon{
+  background-image: url(/src/images/icons/icon-instagram.svg);
+
+  &:hover, &:active {
+    background-image: url(/src/images/icons/icon-instagram-active.svg);
+  }
+}
+
+.twitter-icon{
+  background-image: url(/src/images/icons/icon-twitter.svg);
+
+  &:hover, &:active {
+    background-image: url(/src/images/icons/icon-twitter-active.svg);
+  }
+}
+
+.copyright {
+  color: $footer-mini-title-color;
+  grid-column: 1/-1;
+  margin-top: 40px;
+
+  @include on-tablet {
+    margin-top: 48px;
+    grid-column: 5 /span 4;
+  }
+}
+
+.footer-left-container {
+  @include on-tablet {
+    grid-column: 1 /span 4;
+  }
+}
+
+.footer-right-container {
+  @include on-tablet {
+    grid-column: 5 /span 4;
+  }
+
+  @include on-desktop {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 24px;
+  }
+}
