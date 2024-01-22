@@ -1,0 +1,54 @@
+@mixin on-tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop-wide {
+  @media (min-width: $desktop-wide-width) {
+    @content;
+  }
+}
+
+@mixin text-style {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.16px;
+}
+
+@mixin padding-inline {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop-wide {
+    padding-inline: 124px;
+  }
+}
+
+@mixin grid-mobile {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+}
+
+@mixin grid-tablet {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 24px;
+}
+
+@mixin grid-desktop-wide {
+  display: grid;
+  grid-template-columns: repeat(8, 128px);
+  column-gap: 24px;
+}

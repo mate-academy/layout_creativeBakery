@@ -1,0 +1,129 @@
+.header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  min-height: 655px;
+
+  &__main {
+    max-width: 288px;
+    padding-top: 32px;
+    margin-inline: auto;
+    text-align: center;
+
+    @include padding-inline;
+
+    @include on-tablet {
+      @include grid-tablet;
+
+      position: relative;
+      max-width: 100%;
+      padding-top: 80px;
+    }
+
+    @include on-desktop {
+      padding-top: 0;
+    }
+
+    @include on-desktop-wide {
+      @include grid-desktop-wide;
+    }
+  }
+
+  &__main-text {
+    @include on-tablet {
+      margin: 0;
+      text-align: left;
+      max-width: 280px;
+      grid-column: 1/-1;
+    }
+
+    @include on-desktop {
+      max-width: 260px;
+      margin-top: 135px;
+    }
+
+    @include on-desktop-wide {
+      max-width: 280px;
+      margin-top: 144px;
+    }
+  }
+
+  &__main-title {
+    margin-top: 32px;
+    margin-bottom: 0;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -3.2px;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      grid-column: 1/-1;
+      font-size: 80px;
+      letter-spacing: -4px;
+      margin-top: 146px;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+      letter-spacing: -6.8px;
+      margin-top: 8px;
+    }
+
+    @include on-desktop-wide {
+      letter-spacing: -7.2px;
+      margin-top: 40px;
+    }
+  }
+
+  &__main-image {
+    max-width: 100%;
+
+    @include on-desktop {
+      min-width: 544px;
+    }
+
+    @include on-desktop-wide {
+      min-width: 584px;
+    }
+  }
+
+  &__main-button {
+    margin-top: 0;
+
+    @include on-tablet {
+      margin-top: 210px;
+      grid-column: 3/span 4;
+    }
+
+    @include on-desktop {
+      margin-top: 64px;
+      grid-column: 1/span 2;
+    }
+  }
+}
+
+.header-image-container {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @include on-tablet {
+    position: absolute;
+    z-index: -1;
+    top: 144px;
+    grid-column: span 4;
+    left: 29%;
+    max-width: 326px;
+  }
+
+  @include on-desktop {
+    top: 0;
+    left: 28%;
+  }
+
+  @include on-desktop-wide {
+    left: 31%;
+  }
+}

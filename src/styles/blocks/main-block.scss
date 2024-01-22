@@ -1,0 +1,169 @@
+.products {
+  margin-inline: auto;
+  max-width: 320px;
+
+  @include padding-inline;
+  @include grid-mobile;
+
+  @include on-tablet {
+    @include grid-tablet;
+
+    max-width: 680px;
+  }
+
+  @include on-desktop {
+    max-width: 1192px;
+  }
+
+  @include on-desktop-wide {
+    @include grid-desktop-wide;
+  }
+
+  &__title {
+    margin-top: 64px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      margin-top: 0;
+    }
+
+    @include on-desktop {
+      margin-top: 152px;
+    }
+
+    @include on-desktop-wide {
+        margin-top: 178px;
+    }
+  }
+
+  &__text {
+    margin-top: 24px;
+    grid-column: 1/-1;
+  }
+}
+
+.about-us {
+  position: relative;
+  margin-inline: auto;
+  margin-top: 72px;
+  padding-bottom: 72px;
+  max-width: 320px;
+
+  @include padding-inline;
+  @include grid-mobile;
+
+  @include on-tablet {
+    margin-top: 152px;
+    max-width: 680px;
+    padding-bottom: 152px;
+
+    @include grid-tablet;
+  }
+
+  @include on-desktop {
+    margin-top: 178px;
+    max-width: 1192px;
+    padding-bottom: 349px;
+  }
+
+  @include on-desktop-wide {
+    @include grid-desktop-wide;
+  }
+
+  &__title {
+    margin-top: 0;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+    height: fit-content;
+    }
+  }
+
+  &__text {
+    margin-top: 32px;
+    margin-bottom: 64px;
+    text-align: left;
+    grid-column: span 2;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-column: span 4;
+    }
+  }
+
+  &__card {
+    margin-top: 48px;
+    grid-column: 1/span 1;
+
+    @include on-tablet {
+      margin-top: 72px;
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      margin-top: 146px;
+      grid-column: span 2;
+    }
+  }
+
+  &__card-title {
+    margin-top: 8px;
+    color: $about-us-mini-title-color;
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+    left: -20px;
+    width: 340px;
+    bottom: 256px;
+    transform: rotate(90deg);
+
+    @include on-tablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      width: 90%;
+    }
+
+    @include on-desktop {
+      width: auto;
+      height: 90%;
+      left: 53%;
+    }
+
+    @include on-desktop-wide {
+      left: 50%;
+    }
+  }
+}
+
+.main-titles {
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -2.4px;
+  text-transform: uppercase;
+
+  @include on-tablet {
+    font-size: 56px;
+    letter-spacing: -2.8px;
+  }
+
+  @include on-desktop {
+    font-size: 72px;
+    letter-spacing: -3.6px;
+  }
+}
+
+.big-text {
+  padding: 0;
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -4.8px;
+  text-transform: uppercase;
+}
