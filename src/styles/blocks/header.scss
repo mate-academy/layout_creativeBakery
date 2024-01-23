@@ -1,0 +1,107 @@
+.header {
+  margin-bottom: 104px;
+
+  @include on-tablet {
+    margin-bottom: 228px
+  }
+
+  @include on-desktop {
+    margin-bottom: 218px
+  }
+
+  &__middle {
+    position: relative;
+    @include page-grid;
+
+    &-text {
+      color: $color-for-text;
+      margin-bottom: 32px;
+      text-align: center;
+      grid-column: span 2;
+
+      @include on-tablet {
+        text-align: left;
+        grid-column: span 4;
+      }
+
+      @include on-desktop {
+        position: absolute;
+        width: 260px;
+        top: 24%;
+      }
+    }
+
+    &-title {
+      color: $color-for-title;
+      text-align: center;
+      grid-column: 1 / -1;
+      font-size: 64px;
+      line-height: 85%;
+      letter-spacing: -3.2px;
+      text-transform: uppercase;
+
+      @include on-tablet {
+        width: max-content;
+        position: absolute;
+        font-size: 80px;
+        letter-spacing: -4px;
+        top: 36%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      @include on-desktop {
+        font-size: 136px;
+        top: 38%;
+      }
+    }
+
+    &-image {
+      margin: 0 auto;
+      grid-column: 1 / -1;
+
+      @include on-desktop {
+        width: 544px;
+        height: 546px;
+      }
+    }
+
+    &-button {
+      padding: 20px 71px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      grid-column: span 2;
+      border-radius: 32px;
+      border: 2px solid $color-for-button;
+      color: $color-for-button;
+      transition: all 0.3s ease-out;
+
+      &:hover {
+        color: $c-gray;
+        background-color: $color-for-button;
+        &-img {
+          fill: $c-gray;
+        }
+      }
+
+
+
+
+      @include on-tablet {
+        margin-top: 80px;
+        grid-column: 3 / 7;
+      }
+
+      @include on-desktop {
+        width: max-content;
+        position: absolute;
+        top: 52%;
+        right: 108%;
+      }
+    }
+  }
+}
+
+

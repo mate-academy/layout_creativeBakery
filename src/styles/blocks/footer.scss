@@ -1,0 +1,117 @@
+.footer {
+  background-color: $color-for-bc;
+  color: #fff;
+  padding: 56px 0;
+
+  @include on-tablet {
+    padding: 88px 0;
+  }
+
+  &__wrapper {
+    @include page-grid;
+  }
+
+  &__menu {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    &-logo {
+      width: 168px;
+      height: 40px;
+      margin-bottom: 24px;
+      @include hover(transform, scale(1.1));
+
+    }
+
+    &-text {
+      &-title {
+        color: $color-for-additional-text;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__contacts {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: 5 / 9;
+    }
+
+    &-title {
+      font-size: 48px;
+      line-height: 85%;
+      letter-spacing: -2.4px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    &-email {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &-text {
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.16px;
+
+      &-title {
+        color: $color-for-additional-text;
+        text-transform: uppercase;
+      }
+
+      &-email {
+        margin-top: 24px;
+        color: $color-for-additional-text;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__socials {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 32px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__privacy {
+    grid-column: 1 / -1;
+    color: $color-for-additional-text;
+
+    @include on-tablet {
+      grid-column: 5 / 9;
+    }
+  }
+
+
+  &__text-link {
+    color: $c-gray;
+
+    &:hover {
+      transition: all 0.3s ease-out;
+      color: #CACACA;
+    }
+  }
+
+  &__img-link {
+    @include hover(transform, scale(1.1));
+  }
+}

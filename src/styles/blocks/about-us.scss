@@ -1,0 +1,109 @@
+.about-us {
+  &__wrapper {
+    @include page-grid;
+    background-image: url(../images/Crumbs.svg);
+    margin-bottom: 72px;
+    height: 1000px;
+
+    @include on-tablet {
+      height: 560px;
+      margin-bottom: 152px;
+    }
+    @include on-desktop {
+      height: 673px;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    color: $color-for-title;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    color: $color-for-text;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    margin-bottom: 64px;
+  }
+
+  @include on-tablet {
+    &__title {
+      grid-column: 1 / 4;
+    }
+
+    &__text {
+      grid-column: 5 / 9;
+      margin-bottom: 146px;
+    }
+  }
+
+  &__statistics {
+    margin-bottom: 48px;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &-title {
+      color: $color-for-title;
+      font-size: 96px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 85%;
+      letter-spacing: -4.8px;
+      text-transform: uppercase;
+    }
+
+    &-text {
+      color: $color-for-additional-text;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.16px;
+    }
+
+    @include on-tablet {
+      &-1 {
+        grid-column: 1 / 5;
+      }
+
+      &-2 {
+        grid-column: 5 / 9;
+      }
+
+      &-3 {
+        grid-column: 1 / 5;
+      }
+
+      &-4 {
+        grid-column: 5 / 9;
+      }
+
+    }
+
+    @include on-desktop {
+      &-1 {
+        grid-column: 1 / 2;
+      }
+
+      &-2 {
+        grid-column: 3 / 4;
+      }
+
+      &-3 {
+        grid-column: 5 / 6;
+      }
+
+      &-4 {
+        grid-column: 7 / 8;
+      }
+    }
+  }
+}

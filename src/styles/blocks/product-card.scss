@@ -1,0 +1,88 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 2;
+  margin-bottom: 56px;
+  @include hover(transform, scale(1.05));
+  cursor: pointer;
+
+  @include on-tablet {
+    margin-bottom: 80px;
+  }
+
+  &__wrapper {
+    @include page-grid;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+    color: $color-for-title;
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    color: $color-for-text;
+    padding: 24px 0 56px 0;
+  }
+
+  &-title {
+    color: $color-for-additional-text;
+    margin: 16px 0 8px 0;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &-text {
+    margin-bottom: 16px;
+  }
+
+  &__button {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+
+    &-text {
+      color: $color-for-button;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+    }
+  }
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    &-1,
+    &-5 {
+      grid-column: 1 / 4;
+    }
+
+    &-2,
+    &-6 {
+      grid-column: 4 / 7;
+    }
+
+    &-3 {
+      grid-column: 3 / 6;
+    }
+
+    &-4 {
+      grid-column: 6 / 9;
+    }
+  }
+
+}
