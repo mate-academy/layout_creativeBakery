@@ -1,0 +1,37 @@
+.page {
+  font-family: Inter, serif;
+  background-color: $color-pink-light;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -1%;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__top-bar {
+    margin-inline: auto;
+  }
+
+  &__header {
+    margin-bottom: 104px;
+
+    @include on-desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    pointer-events: none;
+    transition: all 0.3s;
+
+    &:target {
+      left: 0;
+      right: 0;
+      pointer-events: all;
+    }
+  }
+}

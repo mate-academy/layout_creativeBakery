@@ -1,0 +1,69 @@
+.product-card {
+  @include on-desktop {
+    @include chess-grid;
+  }
+
+  &__image {
+    border-radius: 8px;
+    margin-bottom: 16px;
+    width: 100%;
+
+    transition: box-shadow $transition, transform $transition;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 10px 3px 10px $color-orange-dark;
+      transform: scale(1.01);
+    }
+  }
+
+  &__title {
+    @extend %uppercase;
+
+    color: $color-grey;
+
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__order {
+    @extend %uppercase;
+
+    color: $color-orange-accent;
+    padding-block: 8px;
+    display: flex;
+    gap: 4px;
+    width: max-content;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: inline-block;
+
+      @include square(16px);
+
+      background: url(../images/icons/Icon-arrow.svg) center / contain no-repeat;
+
+      transition: transform $transition;
+    }
+
+    @extend %animated-underline;
+
+    &::after {
+      bottom: 0;
+    }
+
+    &:active {
+      color: $color-orange-dark;
+
+      &::before {
+        transform: translateX(4px);
+        filter: grayscale(5);
+        -webkit-filter: grayscale(5);
+      }
+    }
+  }
+}

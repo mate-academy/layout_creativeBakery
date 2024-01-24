@@ -1,0 +1,19 @@
+.grid {
+  display: grid;
+  row-gap: 56px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px 24px;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &--cols--4 {
+    @include on-desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
