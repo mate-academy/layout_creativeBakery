@@ -1,0 +1,83 @@
+.header {
+  @include on-desktop {
+    height: 100vh;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-block: 32px 60px;
+
+    @include on-desktop {
+      height: calc(100vh - #{$top-bar-l});
+      padding: 0;
+    }
+  }
+
+  &__tagline {
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      text-align: left;
+      max-width: 300px;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      max-width: 250px;
+      position: absolute;
+      top: 38%;
+    }
+
+    @include on-wide-screens {
+      max-width: 250px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    z-index: -1;
+
+    @extend %h1;
+
+    @include on-tablet {
+      align-items: center;
+      padding-block: 130px;
+
+      background: url(../images/Cookie.png) center / 325px no-repeat;
+    }
+
+    @include on-desktop {
+      height: 100%;
+
+      background-size: 545px;
+    }
+  }
+
+  &__cookie {
+    @include square(290px);
+
+    margin: 0 auto;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__button {
+    @include on-tablet {
+      margin-inline: auto;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      bottom: 20%;
+    }
+  }
+}
