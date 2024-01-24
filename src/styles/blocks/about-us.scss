@@ -1,0 +1,51 @@
+.about-us {
+  row-gap: 32px;
+  margin-bottom: 152px;
+
+  @include on-tablet {
+    row-gap: 80px;
+    margin-bottom: 56px;
+    padding-bottom: 256px;
+    background: url(../images/Crumbs.png) center / contain no-repeat;
+  }
+
+  &__title {
+    @include on-desktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__text {
+    @include on-desktop {
+      grid-column: 3 / -1;
+    }
+  }
+
+  &__intro {
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      margin-bottom: 72px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__benefits {
+    background: url(../images/Crumbs.png) center / contain no-repeat;
+
+    @include on-tablet {
+      background: none;
+    }
+
+    &-block {
+      & :first-child {
+        @extend %big-text;
+
+        color: $color-orange-accent;
+      }
+    }
+  }
+}
