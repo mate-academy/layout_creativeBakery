@@ -1,5 +1,5 @@
 .header {
-  @include onDesktop {
+  @include on-desktop {
     height: 100vh;
   }
 
@@ -10,7 +10,7 @@
 
     padding-block: 32px 60px;
 
-    @include onDesktop {
+    @include on-desktop {
       height: calc(100vh - #{$top-bar-l});
       padding: 0;
     }
@@ -20,19 +20,19 @@
     text-align: center;
     margin-bottom: 32px;
 
-    @include onTablet {
+    @include on-tablet {
       text-align: left;
       max-width: 300px;
       margin-bottom: 0;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       max-width: 250px;
       position: absolute;
       top: 38%;
     }
 
-    @include onWideScreens {
+    @include on-wide-screens {
       max-width: 250px;
     }
   }
@@ -46,14 +46,14 @@
 
     @extend %h1;
 
-    @include onTablet {
+    @include on-tablet {
       align-items: center;
       padding-block: 130px;
 
       background: url(../images/Cookie.png) center / 325px no-repeat;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       height: 100%;
 
       background-size: 545px;
@@ -62,18 +62,20 @@
 
   &__cookie {
     @include square(290px);
+
     margin: 0 auto;
-    @include onTablet {
+
+    @include on-tablet {
       display: none;
     }
   }
 
   &__button {
-    @include onTablet {
+    @include on-tablet {
       margin-inline: auto;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       position: absolute;
       bottom: 20%;
     }

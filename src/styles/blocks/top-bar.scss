@@ -13,7 +13,7 @@
   left: 0;
   right: 0;
 
-  @include onDesktop {
+  @include on-desktop {
     padding-inline: 32px;
     height: $top-bar-l;
   }
@@ -21,7 +21,7 @@
   &__nav {
     display: none;
 
-    @include onDesktop {
+    @include on-desktop {
       display: flex;
       align-items: center;
       gap: 64px;
@@ -48,7 +48,9 @@
     &--contact {
       display: flex;
       position: relative;
+
       @extend %uppercase;
+
       color: $color-orange-accent;
 
       &::after {
@@ -58,7 +60,9 @@
       &::before {
         content: "";
         position: absolute;
+
         @include square(18px);
+
         background: url(../images/icons/Icon-phone.svg) center / cover no-repeat;
         left: -25px;
 
@@ -87,14 +91,16 @@
     height: 8px;
     position: relative;
 
-    &:before {
+    &::before {
       @extend %menu-element;
+      
       top: 0;
       transition: transform 0.3s;
     }
 
-    &:after {
+    &::after {
       @extend %menu-element;
+
       bottom: 0;
       transition: transform 0.3s;
     }
@@ -135,7 +141,7 @@
       }
     }
 
-    @include onDesktop {
+    @include on-desktop {
       display: none;
     }
   }

@@ -1,6 +1,6 @@
 .product-card {
-  @include onDesktop {
-    @include chessGrid;
+  @include on-desktop {
+    @include chess-grid;
   }
 
   &__image {
@@ -19,6 +19,7 @@
 
   &__title {
     @extend %uppercase;
+
     color: $color-grey;
 
     margin-bottom: 8px;
@@ -30,6 +31,7 @@
 
   &__order {
     @extend %uppercase;
+
     color: $color-orange-accent;
     padding-block: 8px;
     display: flex;
@@ -40,7 +42,9 @@
     &::before {
       content: "";
       display: inline-block;
+
       @include square(16px);
+
       background: url(../images/icons/Icon-arrow.svg) center / contain no-repeat;
 
       transition: transform $transition;
