@@ -1,0 +1,42 @@
+.top-bar {
+  @include padding-inline;
+  @include column;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: grid;
+  align-items: center;
+
+  @media (min-width:1280px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  &--link {
+    grid-column: 3/3;
+
+    @media (min-width:640px) {
+      grid-column: 9/9;
+    }
+  }
+}
+
+.top-logo {
+  height: 32px;
+  animation: $animation-content;
+
+  &:hover {
+    transform: $transform-content;
+  }
+}
+
+.top-icon {
+
+  &:hover {
+    animation: $vibrate;
+  }
+
+  @media (min-width:1280px) {
+    display: none;
+  }
+}

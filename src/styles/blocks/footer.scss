@@ -1,0 +1,160 @@
+.footer {
+  background-color: $color-text;
+  padding: 50px 0;
+
+  &__container {
+    @include column;
+    @include padding-inline;
+
+    display: grid;
+  }
+
+  &__logo {
+    height: 40px;
+    animation: $animation-content;
+
+    &:hover {
+      transform: $transform-content;
+    }
+
+    &-link {
+      grid-column: span 2;
+      margin-bottom: 40px;
+
+      @media (min-width:640px) {
+        grid-area: 1/1/1/4;
+        margin: 0;
+      }
+    }
+  }
+
+  &__nav {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @media (min-width:1280px) {
+      gap: 20px;
+    }
+
+    &-menu {
+      @media (min-width:640px) {
+        grid-area: 2/1/2/5;
+      }
+    }
+
+    &-contacts {
+      @media (min-width:640px) {
+        grid-area: 2/5/2/9;
+      }
+
+      @media (min-width:1280px) {
+        grid-column: 5/7;
+      }
+    }
+
+    &-email {
+      margin: 40px 0;
+
+      @media(min-width:640px) {
+        grid-area: 3/5/3/9;
+      }
+
+      @media (min-width:1280px) {
+        grid-area: 2/7/2/9;
+        margin: 0;
+      }
+    }
+
+    &-title {
+      color: $color-grey;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__item {
+    width: fit-content;
+    animation: $animation-content;
+
+    &:hover {
+      transform: $transform-content;
+    }
+  }
+
+  &__link {
+    color: $color-white;
+
+    &:hover {
+      color: $color-main-text;
+    }
+  }
+
+  &__title {
+    margin: 60px 0 40px;
+    color: $color-white;
+    line-height: 85%;
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+
+    @media (min-width:640px) {
+      grid-area: 1/5/1/9;
+      margin: 0 0 40px;
+    }
+
+    @media (min-width:1280px) {
+      font-size: 72px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 30px;
+    grid-column: span 2;
+    margin-bottom: 40px;
+
+    @media (min-width:640px) {
+      grid-area: 4/1/4/5;
+    }
+
+    @media (min-width:1280px) {
+      margin: 50px 0 0;
+    }
+
+    &-icon {
+      animation: $animation-content;
+
+      &:hover {
+        transform: scale(1.1);
+
+        path {
+          fill: $color-white;
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    color: $color-grey;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+
+    @media (min-width:640px) {
+      grid-area: 4/5/4/9;
+    }
+
+    @media (min-width:1280px) {
+      margin-top: 45px;
+    }
+  }
+}

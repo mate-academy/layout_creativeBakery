@@ -1,6 +1,85 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin mobile {
+  @media (min-width:$width-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width:$width-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width:$width-desktop) {
+    @content;
+  }
+}
+
+@mixin big-desktop {
+  @media (min-width:$width-big-desktop) {
+    @content;
+  }
+}
+
+
+@mixin padding-inline {
+  padding-inline: $padding-inline-mobile;
+
+  @include tablet {
+    padding-inline: $padding-inline-tablet;
+  }
+
+  @include desktop {
+    padding-inline: $padding-inline-desktop;
+  }
+
+  @include big-desktop {
+    padding-inline: $padding-inline-big-desktop;
+  }
+}
+
+
+@mixin column {
+  --columns:2;
+
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include tablet {
+    --columns: 8;
+
+    column-gap: 20px;
+  }
+
+  @include desktop {
+    --columns: 8;
+
+    column-gap: 24px;
+  }
+
+  @include big-desktop {
+    --columns: 8;
+
+    column-gap: 24px;
+  }
+}
+
+
+@keyframes vibrate {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
