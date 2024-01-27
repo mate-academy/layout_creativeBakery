@@ -1,6 +1,87 @@
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop-big {
+  @media (min-width: $desktop-big-min-width) {
+    @content;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} 0.7s;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin content-padding-in-line() {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop {
+    margin-inline: auto;
+    padding-inline: 44px;
+  }
+
+  @include on-desktop-big {
+    margin-inline: auto;
+    padding-inline: 124px;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 8;
+    
+    column-gap: 24px;
+  }
+
+  @include on-desktop {
+    --columns: 8;
+  }
+}
+
+@mixin sections-texts-style {
+  font-weight: $font-default;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-black;
+    letter-spacing: 0.16px;
+}
+
+
+@mixin line-after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -1px;
+  height: 1px;
+  width: 100%;
+  cursor: pointer;
+
+  transition: all $effect-duration;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+@mixin line-hover-after {
+  transform: scale(1);
 }

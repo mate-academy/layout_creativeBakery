@@ -1,0 +1,142 @@
+.page__menu {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+
+  transition: all 0.5s;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  @include on-desktop {
+    position: absolute;
+    overflow: visible;
+    top: -0.9%;
+    left: 50%;
+    opacity: 1;
+    pointer-events: all;
+    transform: none;
+  }
+
+  @include on-desktop-big {
+    left: 47%
+  }
+}
+
+.menu {
+  height: 100vh;
+  background-color: $main-color;
+
+  @include content-padding-in-line;
+
+  @include on-desktop {
+    position: absolute;
+    height: 32px;
+    width: 510px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 132px;
+
+    @include on-desktop {
+      margin: 0;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 64px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    width: 136px;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+
+    @include on-desktop {
+      margin: 0;
+    }
+
+  }
+
+  &__button--icon {
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/icon-logo/icon-phone.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+  &__button--link {
+    width: 108px;
+    padding-left: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: $font-add;
+    font-size: 16px;
+    line-height: 16px;
+    color: $color-orange;
+    transition: color $effect-duration;
+  }
+
+  &__button--link:hover {
+    color: $dark-orange;
+  }
+}
+
+.nav {
+  &__list {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    list-style: none;
+    padding: 0;
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    font-weight: $font-default;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    color: $color-black;
+  }
+}
+
+.hover-style::after {
+@include line-after;
+
+  background-color: $color-black;
+}
+
+.hover-style:hover::after {
+  @include line-hover-after;
+
+  background-color: $color-black;
+}
+
