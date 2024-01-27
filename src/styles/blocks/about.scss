@@ -1,0 +1,131 @@
+.about {
+  position: relative;
+  padding-bottom: 70px;
+
+  &__container {
+    @include column;
+    @include padding-inline;
+
+    display: grid;
+  }
+
+  &__title {
+    color: $color-main-text;
+    grid-column: span 2;
+    margin-bottom: 30px;
+
+    @media (min-width:640px) {
+      grid-area: 1/1/1/5;
+    }
+
+    @media (min-width:1280px) {
+      font-size: 72px;
+      grid-column: 1/5;
+      margin-bottom: 140px;
+    }
+  }
+
+  &__subtitle {
+    grid-column: span 2;
+    color: $color-text;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    margin-bottom: 60px;
+
+    @media (min-width:640px) {
+      grid-area: 1/5/1/9;
+      text-align: center;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-1 {
+      grid-column: span 2;
+
+      @media (min-width:640px) {
+        grid-area: 2/1/2/4;
+        margin-bottom: 80px;
+      }
+
+      @media (min-width:1280px) {
+        grid-area: 2/1/2/3;
+      }
+    }
+
+    &-2 {
+      grid-column: span 2;
+      margin: 50px 0;
+
+      @media (min-width:640px) {
+        grid-area: 2/5/2/8;
+        margin: 0 0 80px;
+      }
+
+      @media (min-width:1280px) {
+        grid-area: 2/3/2/5;
+      }
+    }
+
+    &-3 {
+      grid-column: span 2;
+      margin-bottom: 50px;
+
+      @media (min-width:640px) {
+        grid-area: 3/1/3/4;
+      }
+
+      @media (min-width:1280px) {
+        grid-area: 2/5/2/7;
+      }
+    }
+
+    &-4 {
+      grid-column: span 2;
+
+      @media (min-width:640px) {
+        grid-area: 3/5/3/8;
+      }
+
+      @media (min-width:1280px) {
+        grid-area: 2/7/2/9;
+      }
+    }
+
+    &-title {
+      color: $color-main-text;
+      font-size: 96px;
+      font-weight: 400;
+      line-height: 85%;
+      letter-spacing: -4.8px;
+      text-transform: uppercase;
+    }
+
+    &-text {
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: -0.16px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 200px;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: 300px;
+
+    @media (min-width:640px) {
+      height: 500px;
+    }
+
+    @media (min-width:1280px) {
+      bottom: 0;
+    }
+  }
+}

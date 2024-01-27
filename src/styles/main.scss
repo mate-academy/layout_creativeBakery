@@ -1,7 +1,47 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "./blocks/header";
+@import "./blocks/top-bar";
+@import "./blocks/menu";
+@import "./blocks/bake";
+@import "./blocks/about";
+@import "./blocks/footer";
 
-body {
-  background: $c-gray;
+.page {
+  scroll-behavior: smooth;
+  font-family: Inter, sans-serif;
+
+  &-body {
+    overflow-x: hidden;
+    margin: 0;
+    background-color: #FFEEFC;
+    max-width: 2000px;
+
+    &:has(.menu:target) {
+      overflow: hidden;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p, a, ul, h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  height: fit-content;
+}
+
+li {
+  list-style: none;
+}
+
+a, img {
+  cursor: pointer;
 }
