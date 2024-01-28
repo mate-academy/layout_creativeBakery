@@ -1,0 +1,37 @@
+.page {
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+    height: 100%;
+    transition: background-color 0.3s ease;
+
+    background-color: $c-pink;
+
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+
+    color: $c-pink;
+    height: 100vh;
+
+  }
+}

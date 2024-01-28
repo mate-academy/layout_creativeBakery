@@ -1,0 +1,121 @@
+.top-bar {
+  padding: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include on-tablet {
+    padding-block: 20px;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 24px;
+
+    @include on-tablet {
+      gap: 55px;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    height: 46px;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-tablet {
+      height: 65px;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: row;
+      column-gap: 64px;
+    }
+  }
+
+  &__link {
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $c-black;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-black;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: center;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+    &--call-to-order {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      position: relative;
+
+      height: 32px;
+
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      color: $c-hover;
+      text-decoration: none;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $c-hover;
+
+        transition: transform 0.3s;
+        transform: scale(0);
+        transform-origin: center;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+      &:hover {
+        color: $c-hover;
+      }
+      &:focus {
+        color: $c-focus;
+
+        img {
+          filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(18deg) brightness(77%) contrast(86%) hue-rotate(-18deg);
+            }
+      }
+      &:focus::after {
+        background-color: $c-focus;
+      }
+    }
+  }
+}
