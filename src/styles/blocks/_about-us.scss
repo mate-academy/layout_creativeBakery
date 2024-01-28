@@ -1,0 +1,87 @@
+.about-us {
+
+
+  &__info {
+    @include page-grid;
+
+    padding-bottom: 64px;
+
+    @include on-tablet {
+      padding-bottom: 72px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 144px;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    padding-bottom: 32px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+  &__description {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__achievs {
+    @include page-grid;
+
+    row-gap: 48px;
+    position: relative;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__item {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__value {
+    padding-bottom: 8px;
+  }
+
+  &__bg {
+    background: url(../images/about-us-bg.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+
+    transform: translateY(500px);
+    z-index: -1;
+    height: 300px;
+    width: 100%;
+
+    @include on-tablet {
+      height: 493px;
+      width: 526px;
+      transform: translate(121px, 200px);
+    }
+
+    @include on-desktop {
+      height: 673px;
+      width: 700px;
+      transform: translate(324px, 180px);
+    }
+
+    @include on-full-screen {
+      transform: translate(325px, 180px);
+    }
+  }
+}
