@@ -1,0 +1,31 @@
+.what-we-bake{
+  &__products {
+    @include page-grid;
+
+    gap: 56px 16px;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__product {
+    display: grid;
+    grid-column: 1 / -1;
+    row-gap: 16px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+    }
+
+    &--flex-end {
+      @include on-desktop {
+        grid-column: 3 / 6;
+      }
+    }
+  }
+}
