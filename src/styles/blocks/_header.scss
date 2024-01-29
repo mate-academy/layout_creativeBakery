@@ -1,6 +1,6 @@
 .header {
   // display: none !important;
-  height: 100vh;
+  min-height: 100vh;
 
   &__nav {
     display: none;
@@ -14,16 +14,114 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-block: 32px 40px;
 
-    padding: 32px 0 40px;
+    @include on-tablet {
+      position: relative;
+
+      padding-block: 80px 228px;
+    }
+
+    @include on-desktop {
+      padding-block: 0 66px;
+    }
+
+    @include on-large {
+      padding-bottom: 26px;
+    }
   }
 
   &__text {
     margin-bottom: 32px;
+
+    @include on-tablet {
+      position: absolute;
+      top: 80px;
+      left: 0;
+
+      max-width: 280px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      top: 135;
+
+      max-width: 260px;
+    }
+
+    @include on-large {
+      top: 144px;
+
+      max-width: 280px;
+    }
+  }
+
+  &__title {
+    @include on-tablet {
+      position: absolute;
+      top: 274px;
+      left: 0;
+      right: 0;
+      z-index: 1;
+
+      font-size: 80px;
+    }
+
+    @include on-desktop {
+      top: 215px;
+
+      font-size: calc($size-header-title + 72px);
+    }
+
+    @include on-large {
+      top: 232px;
+      
+      font-size: calc($size-header-title + 80px);
+    }
   }
 
   &__cookie {
     display: block;
     height: 290px;
+
+    @include on-tablet {
+      position: absolute;
+      top: 144px;
+
+      height: 328px;
+    }
+
+    @include on-desktop {
+      top: 0;
+
+      height: 546px;
+    }
+
+    @include on-large {
+      height: 586px;
+    }
+  }
+
+  &__btn {
+    @include on-tablet {
+      position: absolute;
+      top: 552px;
+
+      width: 326px;
+    }
+
+    @include on-desktop {
+      top: 395px;
+      left: 0;
+
+      width: 260px;
+      padding-inline: 50px;
+    }
+
+    @include on-large {
+      top: 418px;
+
+      width: 280px;
+    }
   }
 }
