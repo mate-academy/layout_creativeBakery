@@ -1,0 +1,125 @@
+.products {
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    margin-bottom: 56px;
+
+    @include tablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__grid-container {
+    row-gap: 56px;
+
+    @include tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__card {
+    @include mobile {
+      &:not(:last-child) {
+        margin-bottom: 56px;
+      }
+    }
+  }
+
+  @include tablet {
+    &__card:nth-child(2n + 1) {
+      grid-column: 1 / 5;
+    }
+
+    &__card:nth-child(2n + 2) {
+      grid-column: 5 / -1;
+    }
+  }
+
+  @include desktop {
+    &__card:nth-child(4n + 1) {
+      grid-column: 1 / 4;
+    }
+
+    &__card:nth-child(4n + 2) {
+      grid-column: 4 / 7;
+    }
+
+    &__card:nth-child(4n + 3) {
+      grid-column: 3 / 6;
+    }
+
+    &__card:nth-child(4n + 4) {
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__card-image {
+    padding-bottom: 123%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+
+    transition: all .3s;
+
+    @for $i from 1 through 6 {
+      &--#{$i} {
+        background-image: url("../images/products-#{$i}.png");
+      }
+    }
+
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: 10px 15px 10px rgba(249, 81, 46, 0.7);
+    }
+  }
+
+  &__card-name {
+    color: rgb(127, 128, 150);
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+
+    padding: 16px 0 8px;
+
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      color: rgb(48, 49, 58);
+    }
+  }
+
+  &__card-description {
+    color: $c-black;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.16px;
+  }
+
+  &__order {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    color:rgb(249, 81, 46);
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+
+    margin-top: 16px;
+
+    @include hover(gap, 0);
+  }
+}

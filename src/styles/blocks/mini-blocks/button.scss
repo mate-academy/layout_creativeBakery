@@ -1,0 +1,52 @@
+.button {
+  width: 100%;
+  height: 56px;
+  background-color: transparent;
+  color: $c-orange;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%; /* 16px */
+  letter-spacing: 0.32px;
+  padding: 20px;
+  text-transform: uppercase;
+  border: 2px solid $c-orange;
+  border-radius: 32px;
+
+  transition: all .3s;
+
+  & span {
+    position: relative;
+  }
+
+  & span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -28px;
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    transform: translateY(-50%);
+    background-image: url("../images/svg/Icon-cookie.svg");
+    background-size: contain;
+    background-position: center;
+
+    transition: all .3s;
+  }
+
+  &:hover, &:focus {
+    background-color: $c-orange;
+    color: rgb(255, 255, 255);
+
+    & span::before {
+      background-image: url("../images/svg/Icon-cookie-hover.svg");
+    }
+  }
+
+  &:focus {
+    border: 2px solid rgb(178, 52, 26);
+    background-color: rgb(178, 52, 26);
+  }
+}
