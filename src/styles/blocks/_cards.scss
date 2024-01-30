@@ -1,0 +1,72 @@
+.cards {
+  display: grid;
+  row-gap: 56px;
+
+  @include on-tablet {
+    @include grid-template-tablet;
+
+    row-gap: 80px;
+  }
+
+  &__card {
+    @include on-tablet {
+      &:nth-child(odd) {
+        grid-column: 1 / span 4;
+      }
+
+      &:nth-child(even) {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    @include on-desktop {
+      &:nth-child(1), &:nth-child(5) {
+        grid-column: 1 / span 3;
+      }
+
+      &:nth-child(3) {
+        grid-column: 3 / span 3;
+      }
+
+      &:nth-child(4) {
+        grid-column:  6 / span 3;
+      }
+
+      &:nth-child(2), &:nth-child(6) {
+        grid-column: 4 / span 3;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
+
+  &__subtitle {
+    margin-bottom: 8px;
+    color: $color-subtitle;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $color-second-text;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}

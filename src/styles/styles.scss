@@ -9,6 +9,10 @@
 @import './blocks/top-bar';
 @import './blocks/menu';
 @import './blocks/nav';
+@import './blocks/products';
+@import './blocks/cards';
+@import './blocks/about-us';
+@import './blocks/blog';
 
 * {
   box-sizing: border-box;
@@ -36,5 +40,35 @@ body {
 
   @include on-tablet {
     padding-inline: $padding-inline-tb;
+  }
+}
+
+.wrapper {
+  position: relative;
+}
+
+.section-bg {
+  position: absolute;
+  top: 420px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  // width: 100%;
+  height: 300px;
+  background-image: url('./../images/crumbs.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @include on-tablet {
+    inset: 40px 77px 204px;
+
+    height: 495px;
+  }
+
+  @include on-desktop {
+    inset: 0 100px 50px 280px;
+
+    height: 673px;
   }
 }
