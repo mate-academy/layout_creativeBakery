@@ -1,0 +1,156 @@
+.footer {
+  background-color: $c-black;
+  color: rgb(255, 255, 255);
+
+  padding: 56px 0;
+
+  @include tablet {
+    padding: 88px 0;
+  }
+
+  &__logo {
+    margin-bottom: 40px;
+    grid-column: 1 / 5;
+  }
+
+  &__menu {
+    &--menu {
+      grid-column: 1 / 5;
+    }
+
+    &--contact {
+      grid-column: 5 / 7;
+    }
+
+    @include desktop {
+      &--mail {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+
+  &__menu, &__menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__contact-title {
+    color: inherit;
+    font-family: Inter, sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 85%; /* 40.8px */
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+
+    grid-row: 1 / 2;
+    grid-column: 5 / -1;
+
+    display: block;
+    max-width: 250px;
+
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin: 64px 0 40px;
+    }
+
+    @include desktop {
+      font-size: 56px;
+    }
+
+    @include desktop {
+      font-size: 72px;
+      max-width: max-content;
+    }
+  }
+
+  &__menu-title {
+    color: rgb(127, 128, 150);
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    @include mobile {
+      margin-top: 40px;
+    }
+
+    &:hover {
+      color: rgb(190, 193, 223);
+    }
+  }
+
+  &__menu-link {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.16px;
+
+    transition: all .3s;
+
+    &:hover {
+      color: $c-orange;
+    }
+  }
+
+  &__socials-list {
+    display: flex;
+    gap: 32px;
+    grid-column: 1 / 5;
+  }
+
+  &__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    transition: all .3s;
+
+    margin-top: 48px;
+
+    &--facebook {
+      background-image: url("../images/svg/fb.svg");
+
+      &:hover {
+        background-image: url("../images/svg/fb-h.svg");
+      }
+    }
+
+    &--instagram {
+      background-image: url("../images/svg/inst.svg");
+
+      &:hover {
+        background-image: url("../images/svg/inst-h.svg");
+      }
+    }
+
+    &--twitter {
+      background-image: url("../images/svg/twi.svg");
+
+      &:hover {
+        background-image: url("../images/svg/twi-h.svg");
+      }
+    }
+  }
+
+  &__copy {
+    color: rgb(127, 128, 150);
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.16px;
+
+    grid-column: 5 / -1;
+
+    margin-top: 48px;
+  }
+}

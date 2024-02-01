@@ -1,0 +1,131 @@
+.navigation {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: rgba(238, 247, 255, 0.7);
+  z-index: 50;
+
+  &__container {
+    max-width: 1440px;
+    padding: 0 16px;
+
+    @include desktop {
+      padding: 0 32px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 0;
+
+    @include tablet {
+      padding: 28px 0;
+    }
+  }
+
+  &__logo {
+    width: 136px;
+
+    transition: all .3s;
+
+    &:hover, &:focus {
+      transform: scale(1.1);
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu-list {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      gap: 64px;
+      align-items: center;
+    }
+  }
+
+  &__menu-link {
+    position: relative;
+    color: $c-black;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.16px;
+
+    &--contact {
+      display: flex;
+      color: $c-orange;
+      text-transform: uppercase;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      display: block;
+      height: 2px;
+      width: 0;
+      background-color: $c-orange;
+
+      transition: all .3s;
+    }
+
+    &:hover, &:focus {
+      color: $c-orange;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__menu-phone {
+    margin-right: 4px;
+  }
+
+  &__burger {
+    width: 24px;
+    height: 24px;
+    background-image: url("../images/svg/menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    transition: all .3s;
+
+    &:hover, &:focus {
+      transform: scale(1.05);
+      background-image: url("../images/svg/menu-hover.svg");
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__close {
+    width: 24px;
+    height: 24px;
+    background-image: url("../images/svg/close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    transition: all .3s;
+
+    &:hover, &:focus {
+      transform: scale(1.05) rotate(90deg);
+      background-image: url("../images/svg/close-hover.svg");
+    }
+  }
+
+
+}
