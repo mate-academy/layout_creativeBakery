@@ -9,6 +9,8 @@
   }
 
   &__card {
+    transition: transform $time-animation;
+
     @include on-tablet {
       &:nth-child(odd) {
         grid-column: 1 / span 4;
@@ -34,6 +36,11 @@
 
       &:nth-child(2), &:nth-child(6) {
         grid-column: 4 / span 3;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
       }
     }
   }
@@ -63,5 +70,10 @@
     letter-spacing: 0.32px;
     text-transform: uppercase;
     text-decoration: none;
+    transition: opacity $time-animation;
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 }

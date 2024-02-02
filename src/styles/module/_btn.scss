@@ -16,4 +16,37 @@
   letter-spacing: 0.32px;
   text-transform: uppercase;
   text-decoration: none;
+  transition: all $time-animation;
+
+  &__icon {
+    display: block;
+    background-image: url('./../images/icons/icon-cookie.svg');
+  }
+
+  &-disabled {
+    background-color: transparent;
+    border-color: $color-btn-disabled;
+    color: $color-btn-disabled;
+  }
+
+  &-disabled &__icon {
+    background-image: url('./../images/icons/icon-cookie-disabled.svg');
+  }
+
+  &:hover, &:focus {
+    color: $color-btn-text-hover;
+  }
+
+  &:hover {
+    background-color: $color-btn-bg-hover;
+  }
+
+  &:focus {
+    background-color: $color-btn-bg-focus;
+    border-color: $color-btn-bg-focus;
+  }
+
+  &:hover &__icon, &:focus &__icon {
+    background-image: url('./../images/icons/icon-cookie-hover.svg');
+  }
 }
