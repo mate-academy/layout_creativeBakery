@@ -1,0 +1,74 @@
+.about-us {
+  @include on-tablet-size {
+    height: $about-us-height-crumbs-tablet;
+  }
+
+  @include on-desktop-md-size {
+    height: $about-us-height-crumbs-desktop;
+  }
+
+  &__wrapper{
+    position: relative;
+    display: grid;
+    row-gap: 64px;
+
+    &-text {
+      display: grid;
+      row-gap: $row-gap-about-us;
+
+      @include on-tablet-size {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: $column-gap-desktop-tablet;
+      }
+    }
+
+    &-information {
+      width: 100%;
+      display: grid;
+      row-gap: $row-gap-about-us;
+
+      @include on-tablet-size {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: $column-gap-desktop-tablet;
+      }
+
+      @include on-desktop-md-size {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  &__information {
+      display: grid;
+      row-gap: 8px;
+
+      &-descripition {
+        color: $grey;
+      }
+  }
+
+  &__image {
+    width: $about-us-width-crumbs-mobile;
+    height: $about-us-height-crumbs-mobile;
+    background-image: url(../images/Crumbs.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -10;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include on-tablet-size {
+      width: $about-us-width-crumbs-tablet;
+      height: $about-us-height-crumbs-tablet;
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+
+    @include on-desktop-md-size {
+      width: $about-us-width-crumbs-desktop;
+      height: $about-us-height-crumbs-desktop;
+    }
+  }
+}

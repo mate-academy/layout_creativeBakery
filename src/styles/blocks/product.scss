@@ -1,0 +1,52 @@
+.product {
+
+  &__card {
+    width: $width-product-card-mobile;
+    height: $height-product-card-mobile;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include hover(scale, 1.05);
+
+    @include on-tablet-size {
+      width: $width-product-card-tablet;
+      height: $height-product-card-tablet;
+    }
+
+    @include on-desktop-md-size {
+      width: $width-product-card-desktop-md;
+      height: $height-product-card-desktop-md;
+
+      &--align--right {
+        margin-left: auto;
+      }
+    }
+
+    @include on-desktop-xl-size {
+      width: $width-product-card-desktop-xl;
+      height: $height-product-card-desktop-xl;
+    }
+
+  }
+
+  &__wrapper-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__photo {
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+
+    &-card {
+      flex: 1;
+    }
+  }
+
+  &__title {
+    color: $grey;
+  }
+}
