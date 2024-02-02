@@ -2,6 +2,12 @@
   padding-block: 61px 56px;
   background-color: $color-footer-bg;
 
+  &__content {
+    @include on-tablet {
+      @include grid-template-tablet;
+    }
+  }
+
   &__logo {
     display: block;
     margin-bottom: 40px;
@@ -10,20 +16,36 @@
       width: 168px;
       height: 40px;
     }
+
+    @include on-tablet {
+      grid-column: 1 / span 4;
+    }
   }
 
   &__title {
     margin-bottom: 40px;
     color: $color-footer-text;
+
+    @include on-tablet {
+      grid-column: 5 / span 4;
+    }
   }
 
   &__social {
     margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / span 4;
+    }
   }
 
   &__copy {
     color: $color-subtitle;
     line-height: 150%;
     letter-spacing: -1%;
+
+    @include on-tablet {
+      grid-column: 5 / span 4;
+    }
   }
 }

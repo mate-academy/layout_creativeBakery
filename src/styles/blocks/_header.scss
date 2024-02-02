@@ -1,5 +1,4 @@
 .header {
-  // display: none !important;
   min-height: 100vh;
 
   &__nav {
@@ -19,15 +18,9 @@
     @include on-tablet {
       position: relative;
 
+      @include grid-template-tablet;
+
       padding-block: 80px 228px;
-    }
-
-    @include on-desktop {
-      padding-block: 0 66px;
-    }
-
-    @include on-large {
-      padding-bottom: 26px;
     }
   }
 
@@ -35,48 +28,35 @@
     margin-bottom: 32px;
 
     @include on-tablet {
-      position: absolute;
-      top: 80px;
-      left: 0;
-
-      max-width: 280px;
+      grid-column: 1 / span 4;
       text-align: left;
+      margin-bottom: 146px;
     }
 
     @include on-desktop {
-      top: 135;
-
-      max-width: 260px;
+      grid-column: 1 / span 2;
+      margin-bottom: 10px;
     }
 
     @include on-large {
-      top: 144px;
-
-      max-width: 280px;
+      margin-bottom: 40px;
     }
   }
 
   &__title {
     @include on-tablet {
-      position: absolute;
-      top: 274px;
-      left: 0;
-      right: 0;
-      z-index: 1;
-
+      grid-column: 1 / span 8;
       font-size: 80px;
+      margin-bottom: 210px;
     }
 
     @include on-desktop {
-      top: 215px;
-
-      font-size: calc($size-header-title + 72px);
+      font-size: 136px;
+      margin-bottom: 64px;
     }
 
     @include on-large {
-      top: 232px;
-      
-      font-size: calc($size-header-title + 80px);
+      font-size: 144px;
     }
   }
 
@@ -87,6 +67,9 @@
     @include on-tablet {
       position: absolute;
       top: 144px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
 
       height: 328px;
     }
@@ -104,24 +87,12 @@
 
   &__btn {
     @include on-tablet {
-      position: absolute;
-      top: 552px;
-
-      width: 326px;
+      grid-column: 3 / span 4;
     }
 
     @include on-desktop {
-      top: 395px;
-      left: 0;
-
-      width: 260px;
+      grid-column: 1 / span 2;
       padding-inline: 50px;
-    }
-
-    @include on-large {
-      top: 418px;
-
-      width: 280px;
     }
   }
 }
