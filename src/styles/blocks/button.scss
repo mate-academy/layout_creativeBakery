@@ -1,0 +1,43 @@
+.button {
+  text-decoration: none;
+
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: $gap-inside-button;
+  color: $accent-orange;
+
+  &-without-border {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: -4px;
+      height: 1px;
+      transition: all $duration-for-animation;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      background-color: $accent-orange;
+      transform: scale(1);
+    }
+
+    &:focus::after {
+      background-color: $dark-orange;
+      transform: scale(1);
+    }
+    &:focus {
+      color: $dark-orange;
+
+      & img {
+        filter: brightness(0.7);
+      }
+    }
+
+  }
+}

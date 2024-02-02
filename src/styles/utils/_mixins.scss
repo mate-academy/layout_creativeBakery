@@ -1,6 +1,25 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $duration-for-animation;
   &:hover {
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-desktop-xl-size {
+  @media (min-width: $min-width-desktop-xl) {
+    @content;
+  }
+}
+
+@mixin on-desktop-md-size {
+  @media (min-width: $min-width-desktop-md){
+    @content;
+  }
+}
+
+@mixin on-tablet-size {
+  @media (min-width: $min-width-tablet) {
+    @content;
+  }
+}
+
