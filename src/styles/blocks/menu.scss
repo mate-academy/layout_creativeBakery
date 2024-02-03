@@ -2,10 +2,11 @@
   box-sizing: border-box;
   height: 100vh;
   width: 100vw;
-  background-color: #FFEEFC;
+  background-color: $light-pink;
   font-weight: 400;
   overflow: auto;
   z-index: 1;
+
   @include content-padding-inline;
 
   &__container {
@@ -13,7 +14,9 @@
   }
 
   &__content {
-    width: 320px;
+    padding-top: 132px;
+    width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 24px;
@@ -24,7 +27,6 @@
       flex-direction: row;
       gap: 64px;
     }
-
 
    &--footer {
       padding: 0;
@@ -43,13 +45,11 @@
     }
   }
  &__list {
-    margin: 132px 0;
     padding: 0;
     list-style: none;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
     gap: 24px;
   }
@@ -77,10 +77,9 @@
 
   &__link {
     position: relative;
-    color: #1C1A26;
+    color: $black;
     text-align: center;
     text-decoration: none;
-    position: relative;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -94,7 +93,7 @@
       display: block;
       height: 1px;
       width: 100%;
-      background-color: #FFEEFC;
+      background-color: $light-pink;
       transition: transform 0.3s;
       transform: scale(0);
       transform-origin: left;
@@ -105,18 +104,17 @@
     }
 
     &:hover {
-      color: #FFEEFC;
+      color: $light-pink;
       transition: all 0.5s;
     }
 
-    &:hover {
-      color: #f9512e;
-      transition: all 0.5s;
-
-    }
+    // &:hover {
+    //   color: $accent-orange;
+    //   transition: all 0.5s;
+    // }
 
     &--footer {
-      color: #FFF;
+      color: $white;
     }
   }
 
@@ -126,7 +124,7 @@
     align-items: center;
     gap: 4px;
 
-    color: #F9512E;
+    color: $accent-orange;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;

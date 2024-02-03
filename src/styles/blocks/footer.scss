@@ -1,16 +1,20 @@
 .footer {
   width: 100%;
-  background-color: #1C1A26;
-
-  @include on-tablet {
-    padding-block: 88px;
-  }
+  background-color: $black;
 
   &__content {
     width: 100%;
+    padding-top: 160px;
+
+    @include on-tablet {
+      padding-top: 88px;
+    }
+
+    @include on-desktop {
+        padding-top: 93px;
+    }
 
     @include page-grid;
-
     @include content-padding-inline;
 
   }
@@ -36,16 +40,16 @@
     @include on-desktop {
       margin-bottom: 61px;
       grid-column: 1 / 2;
+      padding-block: 88px;
     }
   }
 
   &__menu {
     margin-top: 40px;
-    margin-bottom: 64px;
   }
 
   &__description--menu {
-    color: #7F8096;
+    color: $grey;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -59,9 +63,8 @@
     }
   }
 
-
   &__description {
-    color: #7F8096;
+    color: $grey;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -83,13 +86,12 @@
   &__contacts {
     display: flex;
     flex-direction: column;
-    gap: 16px;
     grid-column: 1 / -1;
     margin-bottom: 40px;
 
     @include on-tablet {
       margin-bottom: 48px;
-      grid-column: 4 / 8;
+      grid-column: 3 / 8;
     }
 
     @include on-desktop {
@@ -98,7 +100,7 @@
   }
 
   &__title {
-    color: #FFF;
+    color: $white;
     font-size: 48px;
     font-style: normal;
     font-weight: 400;
@@ -108,7 +110,6 @@
     margin-bottom: 40px;
     display: block;
     text-align: left;
-    margin: 0;
 
     @include on-tablet {
       font-size: 56px;
@@ -123,12 +124,6 @@
     }
   }
 
-  // &__contact {
-  //   display: flex;
-  //   flex-direction: column;
-  //   gap: 16px;
-  // }
-
   &__contact--list {
     display: flex;
     flex-direction: column;
@@ -136,7 +131,7 @@
   }
 
   &__link {
-    color: #FFF;
+    color: $white;
     text-decoration: none;
     position: relative;
     font-size: 16px;
@@ -145,14 +140,23 @@
     line-height: 150%;
     letter-spacing: -0.16px;
     gap: 16px;
+
+     &:hover {
+      transition: all 0.5s;
+      color: $accent-orange;
+    }
+  }
+
+  .contacts-wrapper {
+    @include on-desktop {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__mail {
     gap: 16px;
-    margin-bottom: 40px;
     grid-column: 1 / -1;
-
-    @include content-padding-inline;
 
     @include on-tablet {
       font-size: 16px;
@@ -169,7 +173,6 @@
     padding: 0;
 
     @include page-grid;
-
     @include content-padding-inline;
 
   }
@@ -188,22 +191,27 @@
   &__social--link {
     width: 24px;
     height: 24px;
+
+    
   }
 
   &__privacy{
-    color: #7F8096;
+    color: $grey;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
     letter-spacing: -0.16px;
-    margin-top: 40px;
     margin-bottom: 56px;
 
      @include on-tablet {
       margin-top: 48px;
       grid-column: 5 / 7;
       white-space: nowrap;
+    }
+
+    @include on-desktop {
+    grid-column: 5 / 6;
     }
   }
 }

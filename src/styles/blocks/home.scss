@@ -6,15 +6,14 @@
       margin-bottom: 0;
     }
 
-    @include on-desktop {
-      margin-bottom: 152px;
-    }
-
     &__content {
       position: relative;
       padding: 32px 0 40px;
       text-align: center;
       align-items: center;
+      display: flex;
+      flex-direction: column;
+
 
       @include on-tablet {
         display: flex;
@@ -23,16 +22,14 @@
       }
 
       @include on-desktop {
-        padding: 0 0 66px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-
       }
     }
 
     &__description {
-      color:  #1C1A26;
+      color: $black;
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
@@ -59,7 +56,7 @@
    }
 
     &__title {
-      color: #F9512E;
+      color: $accent-orange;
       font-style: normal;
 
       @include on-tablet {
@@ -73,6 +70,7 @@
         width: max-content;
         top: 50%;
         left: 50%;
+        margin: 0 0 210px;
       }
 
       @include on-desktop {
@@ -93,6 +91,8 @@
       background-repeat: no-repeat;
       background-position: 50%;
       background-size: contain;
+      // justify-content: space-between;
+      // align-items: center;
 
       @include on-tablet {
         width: 326px;
@@ -125,9 +125,9 @@
       text-decoration: none;
       height: 16px;
       padding: 20px 71px;
-      color:  #F9512E;
+      color: $accent-orange;
       border-radius: 32px;
-      border: 2px solid  #F9512E;
+      border: 2px solid $accent-orange;
       font-size: 16px;
       font-style: normal;
       font-weight: 500;
@@ -148,7 +148,7 @@
       }
 
       &:hover {
-        background-color: #f9512e;
+        background-color: $accent-orange;
         color: #fff ;
 
 
@@ -159,9 +159,9 @@
       }
 
       &:focus {
-        background-color:#B2341A;
-        color:#FFFFFF;
-        border: 2px solid  #B2341A;
+        background-color: $dark-orange;
+        color:$white;
+        border: 2px solid $dark-orange;
 
         &::before {
           content: "";
@@ -176,7 +176,6 @@
       }
 
       @include on-desktop {
-        width: 260px;
         display: flex;
         height: 56px;
         padding: 20px 71px;
