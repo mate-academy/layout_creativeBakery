@@ -1,0 +1,87 @@
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/fonts';
+@import './module/btn';
+@import './module/text';
+@import './module/title';
+@import './module/icons';
+@import './blocks/header';
+@import './blocks/top-bar';
+@import './blocks/menu';
+@import './blocks/nav';
+@import './blocks/products';
+@import './blocks/cards';
+@import './blocks/about-us';
+@import './blocks/blog';
+@import './blocks/links-block';
+@import './blocks/footer';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 400;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: $color-main-text;
+  font-size: $size-main-text;
+
+  &:has(.menu:target) {
+    overflow: hidden;
+  }
+}
+
+body {
+  background-color: $color-first-bg;
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 1200px;
+
+  @include on-mobile {
+    padding-inline: $padding-inline-mb;
+  }
+
+  @include on-tablet {
+    padding-inline: $padding-inline-tb;
+  }
+}
+
+.wrapper {
+  position: relative;
+}
+
+.section-bg {
+  position: absolute;
+  top: 420px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  height: 300px;
+  background-image: url('./../images/crumbs.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @include on-tablet {
+    inset: 40px 77px 204px;
+
+    height: 495px;
+  }
+
+  @include on-desktop {
+    inset: 0 100px 50px 280px;
+
+    height: 673px;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 32px;
+}

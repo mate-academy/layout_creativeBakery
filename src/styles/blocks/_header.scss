@@ -1,0 +1,98 @@
+.header {
+  min-height: 100vh;
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 32px 40px;
+
+    @include on-tablet {
+      position: relative;
+
+      @include grid-template-tablet;
+
+      padding-block: 80px 228px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      grid-column: 1 / span 4;
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 2;
+      margin-bottom: 10px;
+    }
+
+    @include on-large {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    @include on-tablet {
+      grid-column: 1 / span 8;
+      font-size: 80px;
+      margin-bottom: 210px;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+      margin-bottom: 64px;
+    }
+
+    @include on-large {
+      font-size: 144px;
+    }
+  }
+
+  &__cookie {
+    display: block;
+    height: 290px;
+
+    @include on-tablet {
+      position: absolute;
+      top: 144px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+
+      height: 328px;
+    }
+
+    @include on-desktop {
+      top: 0;
+
+      height: 546px;
+    }
+
+    @include on-large {
+      height: 586px;
+    }
+  }
+
+  &__btn {
+    @include on-tablet {
+      grid-column: 3 / span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 2;
+      padding-inline: 50px;
+    }
+  }
+}

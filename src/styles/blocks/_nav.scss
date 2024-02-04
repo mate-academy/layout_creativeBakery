@@ -1,0 +1,46 @@
+.nav {
+  margin-inline: auto;
+  width: fit-content;
+
+  @include on-desktop {
+    margin: 0;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    list-style: none;
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    color: $color-main-text;
+    text-align: center;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: opacity $time-animation;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &-contact {
+      display: flex;
+      gap: 4px;
+
+      color: $color-second-text;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
+}

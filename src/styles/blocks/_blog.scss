@@ -1,0 +1,60 @@
+.blog {
+  padding-bottom: 72px;
+
+  @include on-tablet {
+    padding-bottom: 152px;
+  }
+
+  @include on-desktop {
+    padding-bottom: 349px;
+  }
+
+  &__cards {
+    display: grid;
+    row-gap: 48px;
+
+    @include on-tablet {
+      @include grid-template-tablet;
+
+      row-gap: 80px;
+    }
+  }
+
+  &__card {
+    @include on-tablet {
+      &:nth-child(odd) {
+        grid-column: 1 / span 4;
+      }
+
+      &:nth-child(even) {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    @include on-desktop {
+      &:nth-child(1) {
+        grid-column: 1 / span 2;
+      }
+
+      &:nth-child(2) {
+        grid-column: 3 / span 2;
+      }
+
+      &:nth-child(3) {
+        grid-column: 5 / span 2;
+      }
+
+      &:nth-child(4) {
+        grid-column: 7 / span 2;
+      }
+    }
+  }
+
+  &__text-big {
+    color: $color-second-text;
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -4.8px;
+    text-transform: uppercase;
+  }
+}

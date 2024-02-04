@@ -1,6 +1,47 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+// Media запросы
+
+@mixin on-mobile {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin on-large {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+// Grid template
+
+@mixin grid-template-mobile {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+}
+
+@mixin grid-template-tablet {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 24px;
+
+  @include on-desktop {
+    grid-template-columns: repeat(8, 118px);
+  }
+
+  @include on-large {
+    grid-template-columns: repeat(8, 1fr);
   }
 }

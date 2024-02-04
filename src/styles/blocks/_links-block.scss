@@ -1,0 +1,49 @@
+.links-block {
+  margin-bottom: 45px;
+
+  &-one {
+    @include on-tablet {
+      grid-column: 1 / span 4;
+      grid-row: 2;
+    }
+  }
+
+  &-two {
+    @include on-tablet {
+      grid-column: 5 / span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / span 2;
+    }
+  }
+
+  &-three {
+    @include on-tablet {
+      grid-column: 5 / span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / span 2;
+    }
+  }
+
+  &__items {
+    display: grid;
+    row-gap: 16px;
+
+    list-style: none;
+  }
+
+  &__link {
+    color: $color-footer-text;
+    line-height: 150%;
+    text-decoration: none;
+    letter-spacing: -1%;
+    transition: opacity $time-animation;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
