@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+
+
+  }
+
+.page {
+  height: 100%;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  color: $black;
+  scroll-behavior: smooth;
+  background-color: $light-pink;
+  
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+    background-color: $light-pink;
+
+
+    &:target {
+      z-index: 1;
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &__body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-width: 320px;
+  }
+}

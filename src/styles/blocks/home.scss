@@ -1,0 +1,187 @@
+  .home {
+    margin-bottom: 64px;
+    padding: 0;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+
+    &__content {
+      position: relative;
+      padding: 32px 0 40px;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+
+      @include on-tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @include on-desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    &__description {
+      color: $black;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: -0.16px;
+      grid-column: 1 / 3 ;
+
+
+      @include on-tablet {
+        text-align: left;
+        margin: 0 0 146px;
+        align-self: flex-start;
+      }
+
+      @include on-desktop {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        text-align: left;
+        width: 30%;
+        max-width: 260px;
+        grid-column: 1 / 2 ;
+      }
+   }
+
+    &__title {
+      color: $accent-orange;
+      font-style: normal;
+
+      @include on-tablet {
+        font-size: 80px;
+        font-weight: 400;
+        line-height: 85%;
+        letter-spacing: -4px;
+        text-align: center;
+        text-transform: uppercase;
+        grid-column: 1 / 4;
+        width: max-content;
+        top: 50%;
+        left: 50%;
+        margin: 0 0 210px;
+      }
+
+      @include on-desktop {
+        font-size: 136px;
+        line-height: 85%;
+        font-weight: 400;
+        letter-spacing: -6.8px;
+        text-align: center;
+        text-transform: uppercase;
+        width: max-content;
+        margin-top: 215px;
+        top: 50%;
+        left: 50%;
+      }
+    }
+
+    &__img {
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: contain;
+
+      @include on-tablet {
+        width: 326px;
+        height: auto;
+        grid-column: 2 / -2;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      @include on-desktop {
+        width: 544px;
+        height: auto;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 32px;
+      }
+    }
+
+    &__button {
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      height: 16px;
+      padding: 20px 71px;
+      color: $accent-orange;
+      border-radius: 32px;
+      border: 2px solid $accent-orange;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        background-image: url(../images/icons/icon--cookie.svg);
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        padding-bottom: 20px;
+      }
+
+      &:hover {
+        background-color: $accent-orange;
+        color: #fff ;
+
+
+        &::before {
+          content: "";
+          background-image: url(../images/icons/icon--cookie-hover.svg);
+        }
+      }
+
+      &:focus {
+        background-color: $dark-orange;
+        color:$white;
+        border: 2px solid $dark-orange;
+
+        &::before {
+          content: "";
+          background-image: url(../images/icons/icon--cookie-hover.svg);
+        }
+      }
+
+      @include on-tablet {
+        bottom: 25%;
+        grid-column: 3 / -3;
+        width: 326px;
+      }
+
+      @include on-desktop {
+        display: flex;
+        height: 56px;
+        padding: 20px 71px;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+
+      }
+    }
+  }
