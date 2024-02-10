@@ -1,0 +1,139 @@
+.products {
+  margin-top: 64px;
+  margin-bottom: 50px;
+
+  @include on-tablet {
+    margin-bottom: 100px;
+  }
+
+  &__slog {
+font-size: 48px;
+line-height: 41px;
+letter-spacing: -0.05em;
+text-align: left;
+color: $accent-orange;
+text-transform: uppercase;
+
+@include on-tablet {
+  font-size: 56px;
+  line-height: 48px;
+}
+
+@include on-desktop {
+  font-size: 72px;
+  line-height: 61px;
+}
+
+  }
+
+  &__slogan {
+  margin-bottom: 56px;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include page-grid;
+
+    @include on-desktop {
+      row-gap: 80px;
+    }
+
+    &__product {
+     @include page-grid;
+
+     grid-column: 1 / -1;
+
+     @include on-tablet {
+      grid-column: span 4;
+     }
+
+     @include on-desktop {
+      grid-column: span 3;
+    }
+
+    &--three {
+      @include on-desktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--four {
+      @include on-desktop {
+        grid-column: 6 / -1;
+      }
+    }
+
+      &__image {
+        width: 100%;
+        border-radius: 8px;
+        grid-column: 1 / -1;
+        object-fit: cover;
+        cursor: pointer;
+
+        &:hover {
+          transform: translate(-5, -5);
+          box-shadow: 5px 5px 5px $accent-orange;
+        }
+
+        &:active {
+          transform: scale(1.1);
+        }
+
+      }
+
+      &__content {
+        grid-column: 1 / -1;
+
+        &__category {
+          font-weight: 500;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: $grey;
+        }
+
+        &__button {
+          position: relative;
+
+          @include button-order;
+
+          width: 84px;
+
+          &__image {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.order-button {
+  display: block;
+  position: relative;
+  width: 82px;
+
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: $accent-orange;
+    bottom: -4px;
+    height: 1px;
+    width: 100%;
+    transition: transform 0.3s;
+    transform: scale(0);
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+
+  &:focus::after {
+    background-color: $dark-orange;
+    transform: scale(1);
+  }
+}

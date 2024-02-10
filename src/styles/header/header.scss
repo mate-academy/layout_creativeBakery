@@ -1,0 +1,115 @@
+.header {
+  margin-bottom: 16px;
+
+  &__main__menu{
+    @include on-tablet {
+      display: none;
+    }
+
+    @include on-phone {
+      display: none;
+    }
+
+    @include on-desktop {
+      display: contents;
+    }
+
+    &__nav {
+      padding: 4px;
+      display: flex;
+      place-items:  center ;
+    }
+
+  }
+
+  &__nav__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+
+    gap: 64px;
+  }
+
+  &-hero {
+    @include on-tablet {
+      margin-bottom: 150px;
+    }
+
+    &__button {
+      width: 100%;
+
+      @include on-tablet {
+        grid-column: 3 / 7;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 3;
+        margin-top: 64px;
+        margin-bottom: 75px;
+      }
+    }
+  }
+
+  &__content{
+    @include content-padding-inline;
+
+    padding-top: 16px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    @include on-desktop {
+      flex-direction: row;
+    }
+}
+
+&__icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  @include on-desktop {
+    display: block;
+    width: 136px;
+  }
+}
+
+&__logo {
+  display: flex;
+  width: 136px;
+  height: 32px;
+  position: relative;
+
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: $accent-orange;
+    bottom: -4px;
+    height: 1px;
+    width: 100%;
+    transition: transform 0.3s;
+    transform: scale(0);
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+
+  }
+
+  &__menu {
+  display: flex;
+  width: 24px;
+  height: 24px;
+
+  @include on-desktop {
+    display: none;
+  }
+  }
+}
+
+
+

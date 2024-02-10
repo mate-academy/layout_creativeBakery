@@ -1,0 +1,141 @@
+.hero {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 0;
+
+   @include on-tablet{
+    @include page-grid;
+
+    background: url(../images/cookie.png) 50%/325px no-repeat;
+
+  }
+
+  @include on-desktop {
+    background: url(../images/cookie.png) 50%/325px no-repeat;
+    background-size: 544px 546px;
+  }
+
+   &:target{
+    opacity: 1;
+   }
+
+&__cookie {
+  height: 290px;
+  width: 290px;
+  margin: 0 auto;
+
+  @include on-tablet {
+   display: none;
+   }
+}
+
+  &__title {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+
+    @include on-tablet {
+      grid-column: span 4;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+      margin-top: 135px;
+    }
+
+
+  }
+
+  &__big-text {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: inherit;
+    font-size: 64px;
+    line-height: 54px;
+    letter-spacing: -0.05em;
+    color: $accent-orange;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      padding-block: 130px;
+      font-size: 76px;
+
+      grid-column: 1 / -1;
+     }
+
+     @include on-desktop {
+      grid-column: 1 / -1;
+      padding: 0;
+      font-size: 115px;
+      line-height: 116px;
+      margin: 0;
+     }
+
+     @include on-pc {
+      font-size: 136px;
+     }
+  }
+
+  &__button {
+    width: 100%;
+    height: 56px;
+    border: $accent-orange 2px solid;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-blue;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $accent-orange;
+    gap: 4px;
+    cursor: pointer;
+
+    &__icon {
+      background-image: url(../images/icon-cookie.png);
+      width: 24px;
+      height: 24px;
+      background-size: cover;
+
+    }
+
+    &:hover {
+      background-color: $accent-orange;
+      color: $white;
+    }
+
+    &:focus {
+      background-color: $dark-orange;
+      color: $white;
+      border-color: $dark-orange;
+    }
+
+     &:hover &__icon, &:focus &__icon {
+        background-image: url(../images/icon-cookie-white.png);
+     }
+
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+      margin-top: 64px;
+      margin-bottom: 102px;
+    }
+
+  }
+
+}
+
