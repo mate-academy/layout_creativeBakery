@@ -1,0 +1,94 @@
+.about-us {
+background-image: url(../images/crumbs.svg);
+background-repeat: no-repeat;
+background-position: bottom 246px right 50%;
+background-size: contain;
+
+@include on-desktop {
+  margin-top: 178px;
+}
+
+
+  &__about {
+    @include on-tablet {
+       @include page-grid;
+    }
+
+    &__headling {
+      @include headling-2;
+
+      color: $accent-orange;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+
+      @include on-tablet {
+        grid-column: span 4;
+        font-size: 56px;
+        line-height: 48px;
+        margin: 0;
+      }
+
+      @include on-desktop {
+        font-size: 72px;
+        line-height: 61px;
+        grid-column: span 4;
+      }
+
+    }
+
+    &__discription {
+      @include bodytext;
+
+      @include on-tablet {
+        grid-column: span 4;
+        margin: 0;
+      }
+    }
+
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-top: 64px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+      padding-bottom: 345px;;
+    }
+
+    &__stat {
+      @include on-tablet {
+        grid-column: span 4;
+      }
+
+      @include on-desktop {
+        grid-column: span 2;
+      }
+
+      &__big-text {
+        @include bigtext;
+
+        color: $accent-orange;
+        margin-bottom: 8px;
+        margin-top: 0;
+
+        @include on-tablet {
+          font-size: 96px;
+          line-height: 82px;
+        }
+      }
+
+      &__discription {
+        @include bodytext;
+      }
+    }
+  }
+}
