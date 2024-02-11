@@ -1,0 +1,127 @@
+.footer {
+  background-color: $main-text-color;
+
+  &__content {
+    @include page-grid;
+
+      padding-block: 56px;
+
+    @include on-tablet {
+      padding-block: 88px;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 2;
+    }
+
+    @include on-desktop {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__menu-wrapper {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__logo-link {
+    text-decoration: none;
+    display: block;
+    width: max-content;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 96px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 61px;
+    }
+  }
+
+  &__logo {
+    height: 40px;
+  }
+
+  &__menu-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $category-color;
+  }
+
+  &__item {
+    text-align: left;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    color: $footer-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    text-decoration: none;
+  }
+
+  &__buttons {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 32px;
+    grid-column: 1 / -1;
+    align-items: center;
+
+    @include on-tablet {
+      grid-column: span 2;
+    }
+  }
+
+  &__button-link {
+    height: 24px;
+  }
+
+  &__button-icon {
+    width: 24px;
+    height: 24px;
+    transition: all $effect-duration;
+
+    &:hover, &:focus {
+      -webkit-filter: grayscale(100) brightness(200);
+      filter: grayscale(100) brightness(200);
+    }
+  }
+
+  &__copyright {
+    margin-top: 40px;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    text-align: left;
+    color: $category-color;
+
+    @include on-tablet {
+      margin-top: 48px;
+      grid-column: 5 / 9;
+    }
+  }
+}

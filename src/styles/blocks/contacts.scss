@@ -1,0 +1,53 @@
+.contacts {
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: 5 / 9;
+  }
+
+  &__numbers {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__title {
+    color: $footer-text-color;
+    margin-bottom: 40px;
+    letter-spacing: -5%;
+  }
+
+  &__info-link {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    text-align: left;
+    color: $footer-text-color;
+    width: max-content;
+  }
+
+  &__email {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    margin-top: 40px;
+
+    @include on-desktop {
+      margin-top: 0;
+    }
+  }
+}

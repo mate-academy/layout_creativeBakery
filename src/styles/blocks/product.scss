@@ -1,0 +1,96 @@
+.product {
+  &__card {
+    padding-top: 56px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      padding-top: 80px;
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      padding-top: 80px;
+      grid-column: span 3;
+    }
+
+    &--left-1 {
+      @include on-desktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--left-2 {
+      @include on-desktop {
+        grid-column: 6 / 9;
+      }
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  &__title {
+    margin-top: 16px;
+    margin-bottom: 8px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    color: $category-color;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    color: $main-text-color;
+
+    &--br {
+      word-wrap: break-word;
+    }
+  }
+
+  &__button {
+    display: flex;
+    height: 32px;
+    width: 84px;
+    padding: 4px 0;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    color: $minor-text-color;
+    text-decoration: none;
+    
+    transition: all $effect-duration;
+
+    @include on-desktop {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__button-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__br {
+    display: none;
+
+    @include on-desktop {
+      display: initial;
+    }
+  }
+}
