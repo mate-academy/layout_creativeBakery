@@ -11,13 +11,22 @@
     color: $c-white-accent;
   }
 
-  :has(&__menu:target) {
-    overflow: hidden;
-  }
-
   &__body {
     min-width: 320px;
     background-color: #ffeefc;
+  }
+
+  &:has(&__menu:target) .page__body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  :has(&__menu:target) {
+    ::-webkit-scrollbar {
+      background-color: #ffeefc;
+    }
   }
 
   &__menu {
