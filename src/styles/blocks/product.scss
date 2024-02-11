@@ -1,0 +1,64 @@
+.product__wrapper {
+  @include page-grid;
+
+  @include on-desktop {
+      .product--gap {
+        grid-column: 3 / span 3; // Займає 3 колонки починаючи з третьої
+      }
+  }
+}
+
+.product {
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 3;
+  }
+
+  &__photo {
+    width: 100%;
+    margin-bottom: 16px;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__name {
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 2%;
+    color: $grey-color;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    padding: 8px 0;
+    width: 84px;
+    height: 32px;
+
+    text-decoration: none;
+
+    @include hover(transform, scale(1.1));
+
+    &-title {
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 2%;
+      color: $accent-orange;
+      text-transform: uppercase;
+    }
+  }
+}
