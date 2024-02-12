@@ -1,0 +1,144 @@
+.footer {
+  color: $footer-text-color;
+  background-color: $footer-color;
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &-icon {
+      display: block;
+      height: 24px;
+      width: 24px;
+      background-size: cover;
+
+      @include hover(transform, scale(1.2));
+    }
+  }
+
+  &__content {
+    @include content-padding-inline;
+    @include page-grid;
+
+    align-content: center;
+    padding-block: 56px;
+
+    @include on-tablet {
+      padding-block: 88px;
+    }
+  }
+
+  &__logo {
+    order: -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &-image {
+      @include hover(transform, scale(1.05));
+    }
+  }
+
+  &__contact-us {
+    color: $footer-text-color;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-align: left;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      order: -1;
+      grid-column: span 4;
+
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__navigation {
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__contact {
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__call {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+
+    color: $grey-color;
+    text-transform: uppercase;
+
+    &-number {
+      color: $footer-text-color;
+      text-decoration: none;
+
+      @include hover(color, $accent-orange);
+    }
+  }
+
+  &__email {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    color: $grey-color;
+    text-transform: uppercase;
+
+    &-link {
+      text-decoration: none;
+      color: $footer-text-color;
+      text-transform: none;
+
+      @include hover(color, $accent-orange);
+    }
+  }
+
+  &__note {
+    color: $grey-color;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style-type: none;
+    gap: 16px;
+    margin-bottom: 64px;
+    color: $grey-color;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    color: $footer-text-color;
+    text-decoration: none;
+
+    @include hover(color, $accent-orange);
+  }
+}
