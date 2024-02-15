@@ -1,0 +1,97 @@
+.menu {
+  // display: none !important;
+
+  background-color: $c-light-pink;
+  box-sizing: border-box;
+  height: 100vh;
+  color: $c-black;
+  text-align: center;
+  overflow: auto; /* to scroll the menu if needed */
+
+  &__top {
+    margin-bottom: 32px;
+    position: sticky; /* to keep cross always visible */
+    top: 0;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    padding-inline: 16px;
+  }
+
+  &__nav {
+    margin-top: 132px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+    height: 32px;
+    padding: 4px 0;
+    justify-content: center;
+    gap: 4px;
+    border: none;
+    align-items: center;
+    background-color: $c-light-pink;
+    text-transform: uppercase;
+    color: $c-accent-orange;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-accent-orange;
+
+      transition: transform 0.3s ;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &:hover {
+      transition: 0.3s ;
+      color: $c-accent-orange;
+    }
+
+    &:focus {
+      transition: 0.3s ;
+      color: $c-dark-orange;
+    }
+
+    &:disabled {
+      transition: 0.3s ;
+      color: $c-light-orange;
+    }
+
+    &:focus .icon--phone{
+      background-color: $c-dark-orange;
+    }
+
+    &:disabled .icon--phone{
+      background-color: $c-light-orange;
+    }
+
+    &--top {
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+}
+
+
