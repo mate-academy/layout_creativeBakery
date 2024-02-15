@@ -7,12 +7,16 @@
 
   &--menu {
     background-image: url(../images/icons/icon-menu.png);
-    
+
     @include on-desktop {
       display: none !important;
     }
 
     @include hover(transform, scale(1.2));
+
+    &:hover {
+      background-image: url(../images/icons/burger-menu-red.png);
+    }
   }
 
   &--cookie {
@@ -28,11 +32,20 @@
   }
 
   &--close {
-    background-image: url(../images/icons/icon-close.png);
     width: 18px;
     height: 18px;
 
+    -webkit-mask: url(../images/icons/icon-close.png);
+    mask: url(../images/icons/icon-close.png);
+    background-color: $c-black;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+
     @include hover(transform, scale(1.2));
+
+    &:hover {
+      background-color: $c-accent-orange;
+    }
   }
 
   &--phone {
