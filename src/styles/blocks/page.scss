@@ -1,0 +1,31 @@
+.page {
+  scroll-behavior: smooth;
+  background-color: #ffeefc;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  color: #1c1a26;
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: scroll;
+
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}
