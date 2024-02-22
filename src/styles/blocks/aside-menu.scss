@@ -1,0 +1,22 @@
+.aside-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+  background: $page-background-color;
+
+  transition: all 0.3s;
+
+  @include content-inline-padding;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+    z-index: 999;
+  }
+}
