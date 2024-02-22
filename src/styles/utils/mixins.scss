@@ -1,0 +1,62 @@
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-laptop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin content-inline-padding {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop {
+    padding-inline: 144px;
+  }
+}
+
+@mixin page-grid {
+  display: grid;
+  grid-template-columns: repeat($grid-columns-mobile, 1fr);
+  column-gap: 16px;
+  align-items: center;
+  justify-content: center;
+
+  @include on-tablet {
+    grid-template-columns: repeat($grid-columns-tablet, 1fr);
+    column-gap: 24px;
+  }
+
+  @include on-laptop {
+    grid-template-columns: repeat($grid-columns-tablet, 1fr);
+  }
+}
+
+@mixin scale-on-hover($scale) {
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+@mixin link-animation-on-hover {
+  transition: all 0.3s;
+
+  &:hover {
+    letter-spacing: 4px;
+  }
+}
