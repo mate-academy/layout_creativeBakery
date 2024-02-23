@@ -8,7 +8,7 @@
     @include page-grid;
 
     @include on-laptop {
-      margin-top: 135px;
+      @include content-inline-padding;
     }
   }
 
@@ -48,15 +48,14 @@
     grid-row: 2;
 
     @include on-tablet {
+      margin-top: 0;
       font-size: 80px;
-
       grid-column: 1 / -1;
       grid-row: 3;
-      z-index: 2;
     }
 
     @include on-laptop {
-      margin-top: 40px;
+    margin-top: 0;
       font-size: 136px;
       line-height: 116px;
       text-align: left;
@@ -65,27 +64,21 @@
   }
 
   &__background-image {
-    background-image: url(../images/cookie.png);
-    background-size: cover;
-    background-position: center;
-    width: 288px;
-    height: 290px;
-
-    justify-self: center;
-
+    max-width: 288px;
+    max-height: 290px;
+    z-index: -1;
     grid-column: 1 / -1;
     grid-row: 3;
+    justify-self: center;
 
     @include on-tablet {
-      width: 326px;
-      height: 328px;
-
-      grid-column: 3 / 7;
+      max-width: 326px;
+      max-height: 328px;
     }
 
     @include on-laptop {
-      width: 100%;
-      height: 100%;
+      max-width: 544px;
+      max-height: 546px;
       grid-row: 1 / 4;
     }
   }
