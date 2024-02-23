@@ -1,19 +1,24 @@
 .header {
   background-image: url(../images/header-bg-image.png);
-  background-size: contain;
+  background-size: 50%;
   background-repeat: no-repeat;
-  background-position: left 50% top 80%;
+  background-position: left 50% top 65%;
+
+  @include on-tablet {
+    background-size: 38%;
+    background-position: center;
+  }
 
   &__content {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
 
   &__title-content {
-    text-align: center;
-    padding-bottom: 290px;
+    @include on-tablet {
+      padding: 0;
+    }
   }
 
   &__text {
@@ -22,7 +27,14 @@
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.1;
-    padding-bottom: 32px;
+    padding-block: 32px;
+    text-align: center;
+
+    @include on-tablet {
+      width: 280px;
+      text-align: left;
+      padding-block: 80px 146px;
+    }
   }
 
   &__title {
@@ -33,11 +45,21 @@
     color: #F9512E;
     letter-spacing: -0.5;
     text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 290px;
+
+    @include on-tablet {
+      padding-bottom: 210px;
+    }
   }
 
   &__bottom {
-    margin-bottom: 40px;
+    padding-bottom: 40px;
     text-align: center;
+
+    @include on-tablet {
+      padding-bottom: 248px;
+    }
   }
 
   &__button {
