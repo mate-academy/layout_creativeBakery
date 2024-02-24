@@ -1,0 +1,103 @@
+.footer {
+  @include content-inline-padding;
+  @include page-grid;
+
+  align-items: start;
+
+  padding: 56px 0;
+  background-color: #1C1A26;
+
+  &__logo-link {
+    display: flex;
+
+    grid-column: 1 / -1;
+    grid-row: 1;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__logo {
+    @include scale-on-hover(1.1);
+
+    @include on-tablet {
+      @include scale-on-hover(1.3);
+    }
+  }
+
+  &__contact-us-title {
+    margin-top: 64px;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 41px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #fff;
+
+    grid-column: 1 / -1;
+    grid-row: 3;
+
+    @include on-tablet {
+      font-size: 56px;
+      line-height: 47.6px;
+
+      grid-column: 5 / -1;
+      grid-row: 1;
+    }
+
+    @include on-laptop {
+      margin: 0;
+      font-size: 72px;
+      line-height: 61.2px;
+
+      grid-column: 5 / -1;
+      grid-row: 1;
+    }
+  }
+
+  &__icons {
+    margin-top: 40px;
+    display: flex;
+    gap: 32px;
+
+    grid-column: 1/ -1;
+    grid-row: 6;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      grid-row: 4;
+    }
+  }
+
+  &__icon-link {
+    color: #F9512E;
+
+    &:hover {
+      color: #fff;
+    }
+
+    @include scale-on-hover(1.1);
+
+    @include on-laptop {
+      @include scale-on-hover(1.3);
+    }
+  }
+
+  &__info {
+    margin-top: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #7F8096;
+
+    grid-column: 1 / -1;
+    grid-row: 7;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      grid-row: 4;
+    }
+  }
+}
