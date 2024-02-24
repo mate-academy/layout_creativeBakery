@@ -1,3 +1,62 @@
 .about-us {
-  
+  @include content-inline-padding;
+  @include page-grid;
+
+  background: center / contain no-repeat url(../images/statistic-background.png);
+
+  align-items: start;
+
+  &--margin-top {
+    margin-top: 72px;
+
+    @include on-tablet {
+      margin-top: 152px;
+    }
+
+    @include on-laptop {
+      margin-top: 178px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 41px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    justify-self: start;
+
+    grid-column: 1 / -1;
+    grid-row: 1;
+
+    @include on-tablet {
+      font-size: 56px;
+      line-height: 48px;
+
+      grid-column: 1 / 5;
+    }
+
+    @include on-laptop {
+      font-size: 72px;
+      line-height: 61.2px;
+
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__text {
+    margin-bottom: 64px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      grid-row: 1;
+    }
+  }
 }
