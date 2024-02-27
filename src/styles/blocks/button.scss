@@ -1,0 +1,50 @@
+.button {
+  margin-top: auto;
+  border: 2px solid $accent-orange;
+  border-radius: 32px;
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+
+  @include on-tablet {
+    width: 50%;
+    margin-top: auto;
+  }
+
+  @include on-desktop {
+    align-self: flex-start;
+    width: 25%;
+    margin-top: 0;
+  }
+
+  &__icon {
+    background-image: url(../images/icons/icon-cookie.png);
+  }
+
+  &__text {
+    text-transform: uppercase;
+    color: $accent-orange;
+    font-size: 16px;
+    margin-left: 4px;
+  }
+
+  @include hover(background-color, $accent-orange);
+
+  &:focus {
+    background-color: $dark-orange;
+    border-color: $dark-orange;
+  }
+}
+
+.button:hover .button__text,
+.button:focus .button__text {
+  color: #fff;
+}
+
+.button:hover .button__icon,
+.button:focus .button__icon {
+  background-image: url(../images/icons/icon-cookie-white.png);
+}
