@@ -8,6 +8,7 @@
   align-self: center;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
   @include on-tablet {
     width: 50%;
@@ -37,14 +38,26 @@
     background-color: $dark-orange;
     border-color: $dark-orange;
   }
+
+  &:disabled {
+    border-color: $light-orange;
+  }
 }
 
 .button:hover .button__text,
 .button:focus .button__text {
-  color: #fff;
+  color: $text-white;
 }
 
 .button:hover .button__icon,
 .button:focus .button__icon {
   background-image: url(../images/icons/icon-cookie-white.png);
+}
+
+.button:disabled .button__text {
+  color: $light-orange;
+}
+
+.button:disabled .button__icon {
+  background-image: url(../images/icons/icon-cookie-light-orange.png);
 }
