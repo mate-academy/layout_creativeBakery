@@ -1,0 +1,51 @@
+.button {
+  @extend %uppercase;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: transparent;
+  border: 0;
+  outline: 2px solid $c-accent-orange;
+  border-radius: 32px;
+  padding: 20px 71px;
+  width: 100%;
+  color: $c-accent-orange;
+  position: relative;
+
+  &::before {
+    content:'';
+    width: 24px;
+    height: 24px;
+    background: url(/src/images/icons/icon-cookie.svg) no-repeat center;
+    background-size: contain;
+  }
+
+  &:hover {
+    background-color: $c-accent-orange;
+    color: $c-white;
+    &::before {
+      background: url(/src/images/icons/icon-cookie-white.svg) no-repeat center;
+    }
+  }
+
+  &:focus {
+    outline: 2px solid $c-dark-orange;
+    background-color: $c-dark-orange;
+    color: $c-white;
+    &::before {
+      background: url(/src/images/icons/icon-cookie-white.svg) no-repeat center;
+    }
+  }
+
+  &:disabled {
+    outline: 2px solid $c-light-orange;
+    background-color: transparent;
+    color: $c-light-orange;
+    &::before {
+      background: url(/src/images/icons/icon-cookie-disabled.svg) no-repeat center;
+    }
+  }
+}
