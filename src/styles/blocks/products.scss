@@ -1,0 +1,55 @@
+.products {
+  &__section {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &-title {
+      color: $c-accent-orange;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-photo {
+      border-radius: 8px;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    &-texts {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &-title {
+      @extend %uppercase;
+
+      color: $c-gray;
+    }
+
+    &-order {
+      @extend %uppercase;
+
+      color: $c-accent-orange;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding-block: 4px;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url(/src/images/icons/icon-arrow.svg) no-repeat center;
+      }
+    }
+  }
+}
