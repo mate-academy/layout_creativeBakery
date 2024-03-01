@@ -4,18 +4,49 @@
 @import './header';
 @import './hero';
 @import './icon';
+@import './menu';
+@import './nav';
 
-body {
-  margin: 0;
-  background: rgba(238, 247, 255, 1);
+
+.page {
+  background: $background-color;
   color: $text-dark-color;
   font-family: $font-family;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
 }
 
-.common-container {
-  padding: 0 16px;
+.main {
+
+
+  &__section {
+    padding: 0 16px;
+  }
 }
 
-.main__section {
-  padding: 0 16px;
-}
