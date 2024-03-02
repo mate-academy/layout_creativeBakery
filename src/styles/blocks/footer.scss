@@ -1,18 +1,17 @@
 .footer {
-  @include page-grid;
-
   background-color: $bg-footer-color;
 
   &__content {
-    grid-column: 1 / -1;
+    @include page-grid;
+
     padding-block: 56px;
+  }
+
+  &__navigation {
+    grid-column: 1 / -1;
 
     @include on-tablet {
-      grid-column: 2 / -2;
-    }
-
-    @include on-desktop {
-      grid-column: 2 / -2;
+      grid-column: span 4;
     }
   }
 
@@ -23,6 +22,10 @@
       padding-bottom: 40px;
 
       @include hover(transform, scale(1.1));
+
+      @include on-tablet {
+        padding-bottom: 96px;
+      }
     }
   }
 
@@ -38,7 +41,13 @@
   }
 
   &__contact-us {
+    grid-column: 1 / -1;
     padding-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      padding-bottom: 0;
+    }
   }
 
   &__contact-us-title {
@@ -59,12 +68,25 @@
   &__social {
     display: flex;
     gap: 32px;
+    align-items: center;
 
     &--icon {
       width: 24px;
       height: 24px;
 
       @include hover(transform, scale(1.1));
+    }
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__copyright {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
     }
   }
 
