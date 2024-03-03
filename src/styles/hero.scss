@@ -102,8 +102,21 @@
     gap: 4px;
     margin-bottom: 40px;
     justify-self: center;
+    background-color: transparent;
+    cursor: pointer;
 
     grid-column: span 2;
+
+    @include hover(transform, scale(1.1));
+
+    &:focus {
+      background-color: $dark-orange;
+      border-color: $dark-orange;
+    }
+
+    &:hover {
+      background-color: $accent-orange;
+    }
 
     @include on-tablet {
       grid-column: 3 / 7;
@@ -128,6 +141,18 @@
       text-transform: uppercase;
       color: $accent-orange;
       text-decoration: none;
+    }
+
+    &:hover .hero__button--link,
+    &:hover .hero__button--icon {
+      color: $white-color;
+      fill: $white-color;
+    }
+
+    &:focus .hero__button--link,
+    &:focus .hero__button--icon {
+      color: $white-color;
+      fill: $white-color;
     }
   }
 }
