@@ -1,5 +1,10 @@
 .about-us {
+  @include page-grid;
   margin-bottom: 72px;
+
+  @include on-tablet {
+    margin-bottom: 152px;
+  }
 
   &__title {
     text-transform: uppercase;
@@ -9,6 +14,13 @@
     letter-spacing: -0.05em;
     margin: 0;
     padding-bottom: 32px;
+
+    grid-column: span 2;
+
+    @include on-tablet {
+      font-size: 56px;
+      grid-column: span 4;
+    }
   }
 
   &__descr {
@@ -16,14 +28,26 @@
     letter-spacing: -0.01em;
     margin-top: 0;
     margin-bottom: 64px;
+
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
   }
 
   &__stat {
-    display: flex;
-    background-image: url(../images/Crumbs.png);
+    display: grid;
+    background-image: url(../images/crumbs.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 100% 40%;
+
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 8;
+    }
 
     &--list {
       list-style: none;
@@ -33,9 +57,17 @@
   }
 
   .list {
+    @include page-grid;
+    row-gap: 48px;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+
     &__item {
-      &:not(:last-child){
-        padding-bottom: 48px;
+
+      @include on-tablet {
+        grid-column: span 4;
       }
 
       &--year {

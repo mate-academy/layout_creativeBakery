@@ -1,6 +1,21 @@
 .products {
-  margin-top: 64px;
-  margin-bottom: 72px;
+    @include page-grid;
+    margin-bottom: 72px;
+
+    @include on-tablet {
+      margin-bottom: 152px;
+    }
+
+  &__content {
+    @include page-grid;
+    row-gap: 56px;
+    grid-column: span 2;
+
+    @include on-tablet {
+      row-gap: 80px;
+      grid-column: span 8;
+    }
+  }
 
   &__title {
     text-transform: uppercase;
@@ -10,6 +25,13 @@
     letter-spacing: -0.05em;
     padding-bottom: 24px;
     margin: 0;
+
+    grid-column: -1 / 1;
+
+    @include on-tablet {
+      font-size: 56px;
+      grid-column: 1 / 6;
+    }
   }
 
   &__text {
@@ -17,55 +39,63 @@
     letter-spacing: -0.01em;
     margin-bottom: 56px;
     margin-top: 0;
+
+    grid-column: -1 / 1;
+
+    @include on-tablet {
+      grid-column: 1 / 7;
+    }
+  }
+}
+
+.pastries {
+  display: grid;
+  row-gap: 16px;
+
+  grid-column: -1 / 1;
+
+  @include on-tablet {
+    grid-column: span 4;
   }
 
-  .pastries {
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  &__title {
+    color: $category-text-color;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+
+  &__descr {
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  &__button {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 56px;
+    width: 84px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
 
-    &__photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-      padding-bottom: $products-padding-bottom;
-    }
-
-    &__title {
-      color: $category-text-color;
+    &--link {
       text-transform: uppercase;
+      font-family: $font-family;
+      border: none;
+      background-color: transparent;
+      color: $accent-orange;
+      font-size: 16px;
       font-weight: 500;
       letter-spacing: 0.02em;
-      margin: 0;
-      padding-bottom: 8px;
-    }
-
-    &__descr {
-      line-height: 1.5;
-      letter-spacing: -0.01em;
-      margin: 0;
-      padding-bottom: $products-padding-bottom;
-    }
-
-    &__button {
-      display: flex;
-      width: 84px;
-      justify-content: space-between;
-      align-items: center;
-      gap: 4px;
-
-      &--link {
-        text-transform: uppercase;
-        font-family: $font-family;
-        border: none;
-        background-color: transparent;
-        color: $accent-orange;
-        font-size: 16px;
-        font-weight: 500;
-        letter-spacing: 0.02em;
-        padding: 0;
-      }
+      padding: 0;
     }
   }
 }
