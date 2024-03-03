@@ -1,4 +1,11 @@
 .nav {
+  @include on-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
   &__list {
     list-style: none;
     margin: 0;
@@ -7,6 +14,13 @@
 
   &__item {
     padding-bottom: 24px;
+
+    @include on-desktop {
+      display: inline-flex;
+      padding: 4px 0;
+      align-items: center;
+      padding-right: 64px;
+    }
 
     &--link {
       color: $text-dark-color;
@@ -23,6 +37,10 @@
     padding: 0;
     gap: 4px;
     cursor: pointer;
+
+    @include on-desktop {
+      display: inline-flex;
+    }
 
     &--link {
       text-decoration: none;

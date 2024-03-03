@@ -1,10 +1,20 @@
 .about-us {
+
   @include page-grid;
 
+  background-image: url(../images/crumbs.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center 75%;
   margin-bottom: 72px;
 
   @include on-tablet {
     margin-bottom: 152px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 56px;
+    background-position: 80%;
   }
 
   &__title {
@@ -22,6 +32,12 @@
       font-size: 56px;
       grid-column: span 4;
     }
+
+    @include on-desktop {
+      font-size: 72px;
+      grid-column: span 4;
+      margin-bottom: 144px;
+    }
   }
 
   &__descr {
@@ -35,19 +51,20 @@
     @include on-tablet {
       grid-column: span 4;
     }
+
   }
 
   &__stat {
     display: grid;
-    background-image: url(../images/crumbs.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 100% 40%;
-
     grid-column: span 2;
 
     @include on-tablet {
       grid-column: span 8;
+    }
+
+    @include on-desktop {
+      padding-bottom: 293px;
+
     }
 
     &--list {
@@ -67,8 +84,14 @@
     }
 
     &__item {
+      grid-column: span 2;
+
       @include on-tablet {
         grid-column: span 4;
+      }
+
+      @include on-desktop {
+        grid-column: span 2;
       }
 
       &--year {
