@@ -1,0 +1,61 @@
+.nav {
+  @include on-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    padding-bottom: 24px;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-desktop {
+      display: inline-flex;
+      padding: 4px 0;
+      align-items: center;
+      padding-right: 64px;
+    }
+
+    &--link {
+      color: $text-dark-color;
+      text-decoration: none;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+    }
+  }
+
+  .button-contact-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
+
+    @include on-desktop {
+      display: inline-flex;
+    }
+
+    &--link {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $accent-orange;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding-left: 4px;
+    }
+
+    &:hover .button-contact-us--link,
+    &:hover .button-contact-us--icon {
+      color: $dark-orange;
+      fill: $dark-orange;
+    }
+  }
+}

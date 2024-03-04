@@ -1,0 +1,123 @@
+.about-us {
+
+  @include page-grid;
+
+  background-image: url(../images/crumbs.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center 75%;
+  margin-bottom: 72px;
+
+  @include on-tablet {
+    margin-bottom: 152px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 56px;
+    background-position: 80%;
+  }
+
+  @include on-desktop-xl {
+    background-position: 50%;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    margin: 0;
+    padding-bottom: 32px;
+
+    grid-column: span 2;
+
+    @include on-tablet {
+      font-size: 56px;
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+      grid-column: span 4;
+    }
+  }
+
+  &__descr {
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    margin-top: 0;
+    margin-bottom: 64px;
+
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      margin-bottom: 144px;
+    }
+
+  }
+
+  &__stat {
+    display: grid;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 8;
+    }
+
+    @include on-desktop {
+      padding-bottom: 293px;
+
+    }
+
+    &--list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .list {
+    @include page-grid;
+
+    row-gap: 48px;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+
+    &__item {
+      grid-column: span 2;
+
+      @include hover(transform, scale(1.1));
+
+      @include on-tablet {
+        grid-column: span 4;
+      }
+
+      @include on-desktop {
+        grid-column: span 2;
+      }
+
+      &--year {
+        display: inline;
+        font-size: 96px;
+        font-weight: 400;
+        line-height: 0.85;
+        letter-spacing: -0.05em;
+      }
+
+      &--text {
+        color: $category-text-color;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+        margin: 0;
+        margin-top: 8px;
+      }
+    }
+  }
+}
