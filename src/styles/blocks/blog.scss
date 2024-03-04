@@ -1,0 +1,67 @@
+.blog {
+  position: relative;
+  &__wrapper {
+    @include page-grid;
+
+    row-gap: 48px;
+  }
+
+  &__achive {
+    z-index: 1;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $main-color-text;
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -4.8px;
+    text-transform: uppercase;
+  }
+
+  &__prescription {
+    margin-bottom: 0;
+    margin-top: 8px;
+    color: $item-title-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+  }
+
+  &__photo {
+    width: 320px;
+    height: 300px;
+
+    @include on-tablet {
+      width: 526px;
+      height: 493px;
+    }
+
+    @include on-desktop {
+      width: 718px;
+      height: 673px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+  }
+}
