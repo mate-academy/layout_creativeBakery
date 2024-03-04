@@ -1,0 +1,39 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+
+    @include on-desktop {
+      flex-direction: row;
+      align-self: flex-end;
+      gap: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $text-black;
+    font-weight: 400;
+    margin: 0 32px;
+  }
+
+  &__item:last-child &__link {
+    text-transform: uppercase;
+    color: $accent-orange;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    letter-spacing: 2;
+    font-weight: 500;
+  }
+}

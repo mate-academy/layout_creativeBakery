@@ -1,0 +1,108 @@
+.header {
+  box-sizing: border-box;
+  height: 100vh;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+
+  &__top {
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 32px 16px 0;
+
+    @include on-tablet {
+      padding: 80px 44px 228px;
+      justify-content: center;
+    }
+
+    @include on-desktop {
+      justify-content: center;
+      padding: 133px 44px 0;
+    }
+
+    @include on-desktop-lg {
+      padding: 152px 124px 0;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-family: Inter, sans-serif;
+    font-size: 64px;
+    letter-spacing: -5px;
+    font-weight: 400;
+    line-height: 54px;
+    text-align: center;
+    margin: 0;
+
+    @include on-tablet {
+      font-size: 80px;
+      line-height: 68px;
+      position: relative;
+    }
+
+    @include on-desktop {
+      font-size: 133px;
+      line-height: 116px;
+      margin-bottom: 64px;
+    }
+
+    @include on-desktop-lg {
+      font-size: 142px;
+    }
+  }
+
+  &__background {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    margin-bottom: 32px;
+    text-align: center;
+    font-family: Inter, sans-serif;
+    line-height: 24px;
+
+    @include on-tablet {
+      align-self: flex-start;
+      text-align: left;
+      width: 50%;
+      margin-bottom: 146px;
+    }
+
+    @include on-desktop {
+      width: 20%;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__image {
+    flex-grow: 1;
+    background-image: url(../images/сookie.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+}
