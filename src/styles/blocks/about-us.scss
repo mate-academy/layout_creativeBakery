@@ -5,13 +5,29 @@
 
     row-gap: 32px;
 
+    @include on-tablet {
+      row-gap: 80px;
+    }
+
     &-title {
       grid-column: 1 / -1;
       color: $c-accent-orange;
+
+      @include on-tablet {
+        grid-column: span 4;
+
+      }
+      @include on-desktop {
+        grid-column: span 4;
+      }
     }
 
     &-description {
       grid-column: 1 / -1;
+
+      @include on-tablet {
+        grid-column: 5 / span 4;
+      }
     }
   }
 
@@ -26,6 +42,14 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+
+      @include on-tablet {
+        grid-column: span 4;
+
+      }
+      @include on-desktop {
+        grid-column: span 2;
+      }
     }
 
     &-number {

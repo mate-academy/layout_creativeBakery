@@ -6,6 +6,11 @@
   align-items: center;
   justify-content: center;
 
+  @include on-desktop {
+    align-items: end;
+    justify-content: space-between;
+  }
+
   &__list {
     list-style-type: none;
     margin: 0;
@@ -17,6 +22,25 @@
       align-items: center;
       justify-content: center;
       gap: 24px;
+
+      @include on-tablet {
+        display: none;
+      }
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    &--topbar {
+      display: none;
+
+      @include on-desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 64px;
+      }
     }
   }
 

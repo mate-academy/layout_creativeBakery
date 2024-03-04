@@ -8,9 +8,6 @@
   }
 
   &__header {
-    @include page-grid;
-    @include container-padding-inline;
-
     grid-template-rows: 64px auto;
     height: 100vh;
   }
@@ -21,7 +18,6 @@
 
   &__menu {
     @include page-grid;
-    @include container-padding-inline;
 
     background-color: $c-light-pink;
     grid-template-rows: 64px auto;
@@ -46,6 +42,10 @@
 
     padding-block: 64px 72px;
     row-gap: 56px;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
   }
 
   &__about-us {
@@ -55,6 +55,13 @@
     padding-bottom: 72px;
     background: url(/src/images/crumbs.png) no-repeat center 70%;
     background-size: contain;
+
+    @include on-tablet {
+      background-size: 65%;
+      background-position-y: 25%;
+      gap: 72px;
+      padding-bottom: 152px;
+    }
   }
 
   &__footer {
@@ -64,5 +71,10 @@
     background: $c-black;
     padding-block: 56px;
     row-gap: 40px;
+
+    @include on-tablet {
+      padding-block: 88px;
+
+    }
   }
 }

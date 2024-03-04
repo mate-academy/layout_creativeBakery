@@ -1,4 +1,6 @@
 .top-bar {
+  @include topbar-padding-inline;
+
   grid-column: 1 / -1;
   display: flex;
   box-sizing: border-box;
@@ -19,6 +21,10 @@
     &--menu {
       background: url(/src/images/icons/icon-menu.svg) no-repeat center;
       background-size: contain;
+
+      @include on-desktop {
+        display: none;
+      }
     }
 
     &--close {

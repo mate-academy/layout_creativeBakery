@@ -2,6 +2,7 @@
   @extend %uppercase;
 
   cursor: pointer;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,8 +11,9 @@
   border: 0;
   outline: 2px solid $c-accent-orange;
   border-radius: 32px;
-  padding: 20px 71px;
+  padding: 16px 16px;
   width: 100%;
+  height: 56px;
   color: $c-accent-orange;
   position: relative;
 
@@ -20,15 +22,6 @@
     width: 24px;
     height: 24px;
     background: url(/src/images/icons/icon-cookie.svg) no-repeat center;
-    background-size: contain;
-  }
-
-  &:hover {
-    background-color: $c-accent-orange;
-    color: $c-white;
-    &::before {
-      background: url(/src/images/icons/icon-cookie-white.svg) no-repeat center;
-    }
   }
 
   &:focus {
@@ -39,6 +32,14 @@
       background: url(/src/images/icons/icon-cookie-white.svg) no-repeat center;
     }
   }
+
+    &:hover {
+      background-color: $c-accent-orange;
+      color: $c-white;
+      &::before {
+        background: url(/src/images/icons/icon-cookie-white.svg) no-repeat center;
+      }
+    }
 
   &:disabled {
     outline: 2px solid $c-light-orange;
