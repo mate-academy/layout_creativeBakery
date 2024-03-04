@@ -1,0 +1,51 @@
+.product {
+  @include on-tablet {
+    margin-bottom: 80px;
+  }
+
+  @include on-desktop {
+    &:first-child {
+      grid-area: 1 / 1 / 2 / 4;
+    }
+    &:nth-child(2) {
+      grid-area: 1 / 4 / 2 / 7;
+    }
+    &:nth-child(3) {
+      grid-area: 2 / 3 / 3 / 6;
+    }
+    &:nth-child(4) {
+      grid-area: 2 / 6 / 3 / 9;
+    }
+    &:nth-child(5) {
+      grid-area: 3 / 1 / 4 / 4;
+    }
+    &:nth-child(6) {
+      grid-area: 3 / 4 / 4 / 7;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    margin-bottom: 16px;
+    transition: transform 300ms;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $text-gray;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  &__order {
+    color: $accent-orange;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: flex;
+    text-decoration: none;
+  }
+}
