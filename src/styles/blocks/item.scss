@@ -1,0 +1,52 @@
+.item {
+  &__photo {
+    width: 100%;
+    border-radius: 8px;
+
+    @include hover (transform, scale(1.05));
+  }
+
+  &__title {
+    color: $item-title-color;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &__subtitle {
+    margin-top: 8px;
+    margin-bottom: 16px;
+    color: $main-color-text;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 4;
+    text-decoration: none;
+
+    color: $link-color;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+
+    @include hover (transform, scale(1.1));
+
+    &::before {
+      content: '';
+      display: block;
+      background-image: url(../images/icons/icon-arrow.svg);
+      height: 24px;
+      width: 24px;
+    }
+  }
+}
