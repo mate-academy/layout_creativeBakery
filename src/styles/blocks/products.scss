@@ -1,0 +1,36 @@
+.products {
+  padding: 64px 16px 0;
+
+  @include on-desktop {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop-lg {
+    padding-inline: 124px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    margin-bottom: 56px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 56px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 24px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 24px;
+    }
+  }
+}
