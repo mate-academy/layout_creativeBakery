@@ -5,6 +5,11 @@
     display: flex;
     height: 40px;
 
+    @media (orientation: landscape) {
+      grid-column: span 4;
+
+    }
+
     @include on-tablet {
       grid-column: span 4;
     }
@@ -13,6 +18,12 @@
   &__menu {
     grid-column: 1 / -1;
     padding-bottom: 24px;
+
+    @media (orientation: landscape) {
+      grid-column: span 4;
+      grid-row: 2;
+
+    }
 
     @include on-tablet {
       grid-column: span 4;
@@ -34,7 +45,36 @@
       color: $c-gray;
     }
 
-    &-link, &-link:link, &-link:hover, &-link:visited, &-link:active {
+    &-link, &-link:link{
+      text-decoration: none;
+      color: $c-white;
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+      flex-direction: column;
+      gap: 4px;
+
+      &::after {
+        position: absolute;
+        transform-origin: right;
+        transform: scaleX(0);
+        content: '';
+        display: inline-block;
+        height: 1px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        transition: transform $transition-time;
+        background: $c-white;
+      }
+
+      &:hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+      }
+    }
+
+    &-link:visited, &-link:active {
       text-decoration: none;
       color: $c-white;
     }
@@ -47,6 +87,12 @@
     padding: 0;
     color: $c-white;
 
+    @media (orientation: landscape) {
+      grid-column: span 4;
+      grid-row: 1;
+
+    }
+
     @include on-tablet {
       grid-column: span 4;
       grid-row: 1;
@@ -57,6 +103,12 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    @media (orientation: landscape) {
+      grid-column: 5 / span 4;
+      grid-row: 2;
+
+    }
 
     @include on-tablet {
       grid-column: 5 / span 4;
@@ -78,7 +130,36 @@
     flex-direction: column;
     gap: 16px;
 
-    &-link, &-link:link, &-link:hover, &-link:visited, &-link:active {
+    &-link, &-link:link{
+      text-decoration: none;
+      color: $c-white;
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+      flex-direction: column;
+      gap: 4px;
+
+      &::after {
+        position: absolute;
+        transform-origin: right;
+        transform: scaleX(0);
+        content: '';
+        display: inline-block;
+        height: 1px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        transition: transform $transition-time;
+        background: $c-white;
+      }
+
+      &:hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+      }
+    }
+
+    &-link:visited, &-link:active {
       text-decoration: none;
       color: $c-white;
     }
@@ -103,7 +184,36 @@
     gap: 16px;
 
 
-    &-link, &-link:link, &-link:hover, &-link:visited, &-link:active {
+    &-link, &-link:link{
+      text-decoration: none;
+      color: $c-white;
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+      flex-direction: column;
+      gap: 4px;
+
+      &::after {
+        position: absolute;
+        transform-origin: right;
+        transform: scaleX(0);
+        content: '';
+        display: inline-block;
+        height: 1px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        transition: transform $transition-time;
+        background: $c-white;
+      }
+
+      &:hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+      }
+    }
+
+    &-link:visited, &-link:active {
       text-decoration: none;
       color: $c-white;
     }
@@ -123,6 +233,12 @@
     grid-column: 1 / -1;
     display: flex;
     gap: 32px;
+
+    @media (orientation: landscape) {
+      grid-column: span 4;
+      grid-row: 3;
+
+    }
 
     @include on-tablet {
       grid-column: span 4;
@@ -163,6 +279,12 @@
   &__copyrights {
     grid-column: 1 / -1;
     color: $c-gray;
+
+    @media (orientation: landscape) {
+      grid-column: span 4;
+      grid-row: 3;
+
+    }
 
     @include on-tablet {
       grid-column: span 4;
