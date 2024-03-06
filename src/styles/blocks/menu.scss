@@ -1,0 +1,109 @@
+@import '../utils';
+
+
+.menu {
+  background-color: $light-blue;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  transform: translate(-100%);
+  transition: $main-transition;
+
+  @include column-flex;
+
+  gap: 132px;
+
+  &__top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    height: 72px;
+  }
+
+  &__navigation {
+    align-self: center;
+  }
+
+  &__list {
+    @include column-flex;
+    align-items: center;
+
+    gap: 24px;
+  }
+
+  &__link {
+    display: block;
+    color: $main-black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    transition: $all-transition;
+
+    &:hover {
+      opacity: $hover-opacity;
+    }
+
+    &::after {
+      background-color: $main-black;
+      opacity: $hover-opacity;
+    }
+
+    &--red {
+      color: rgb(249, 81, 46);
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-align: left;
+      text-transform: uppercase;
+      position: relative;
+      margin-left: 30px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        background-image: url(../images/header/Icon-phone.svg);
+        width: 24px;
+        height: 24px;
+        left: -29px;
+        top: -3px;
+      }
+    }
+  }
+
+  &__logo {
+    background-image: url(../images/header/Logo.svg);
+    display: block;
+    width: 136px;
+    height: 32px;
+    transition: $all-transition;
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__icon-close {
+    background-image: url(../images/header/Icon-close.svg);
+    display: block;
+    width: 24px;
+    height: 24px;
+    transition: $all-transition;
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

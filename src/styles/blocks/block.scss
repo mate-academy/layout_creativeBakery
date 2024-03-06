@@ -1,0 +1,59 @@
+@import '../utils';
+
+
+
+.block-item {
+  @include column-flex;
+
+  gap: 16px;
+
+  &__subtitle {
+    color: rgb(127, 128, 150);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    @include column-flex;
+    gap: 8px;
+  }
+
+  &__text {
+    color: $main-black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__image {
+    max-width: 328px;
+  }
+
+  &__button {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 4px;
+    color: $main-red;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    padding: 8px 0;
+    transition: $all-transition;
+
+    &:hover {
+      opacity: $hover-opacity;
+      transform: translateX(5px);
+    }
+
+    &::after {
+      background-color: $main-red;
+      bottom: 3px;
+    }
+  }
+}
