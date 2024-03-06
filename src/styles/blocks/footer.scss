@@ -1,0 +1,146 @@
+.footer {
+  background-color: $font-color;
+
+  &__content {
+    @include margin-inline;
+
+    padding: 56px 0;
+
+    @include on-tablet {
+      padding: 88px 0;
+    }
+
+    @include page-grid;
+  }
+
+  &__link {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      grid-row: 1 / 5;
+    }
+  }
+
+  &__logo {
+    width: 168px;
+    margin-bottom: 40px;
+
+    @include hover(scale, 1.1);
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop-l {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 40px;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop-l {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__contact-us {
+    margin: 0 0 40px;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    color: #fff;
+    text-transform: uppercase;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__numbers {
+    margin-bottom: 40px;
+
+    @include on-desktop-l {
+      grid-row: 1 / -1;
+      grid-column: span 2;
+    }
+  }
+
+  &__email {
+    @include on-desktop-l {
+      grid-row: 1 / -1;
+      grid-column: span 2;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 40px;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s;
+
+    @include hover(scale, 1.1);
+
+    &--facebook {
+      background-image: url(../images/icons/icon-facebook.svg);
+
+      &:hover {
+        background-image: url(../images/icons/icon-facebook-hover.svg);
+      }
+    }
+
+    &--insta {
+      background-image: url(../images/icons/icon-instagram.svg);
+
+      &:hover {
+        background-image: url(../images/icons/icon-instagram-hover.svg);
+      }
+    }
+
+    &--twitter {
+      background-image: url(../images/icons/icon-twitter.svg);
+
+      &:hover {
+        background-image: url(../images/icons/icon-twitter-hover.svg);
+      }
+    }
+  }
+
+  &__copiright {
+    font: inherit;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $font-color-grey;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+}
