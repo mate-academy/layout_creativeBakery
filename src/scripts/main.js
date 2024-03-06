@@ -21,6 +21,8 @@ const aboutTitle = document.querySelector('.about-us__title');
 const infoTitle = document.querySelector('.info__title');
 const infoAchiev = document.querySelectorAll('.info__main h3');
 const achievItems = Array.from(infoAchiev);
+const blueText = document.querySelector('.header__color--blue');
+const pinkText = document.querySelector('.header__color--pink');
 
 themeSwitcher.addEventListener('click', () => {
   themeSwitcher.classList.toggle('before-transform');
@@ -29,6 +31,8 @@ themeSwitcher.addEventListener('click', () => {
   headerTitle.classList.toggle('title-pink');
   aboutTitle.classList.toggle('title-pink');
   infoTitle.classList.toggle('title-pink');
+  blueText.classList.toggle('text-dark');
+  pinkText.classList.toggle('text-pink');
 
   achievItems.forEach((element) => {
     element.classList.toggle('title-pink');
