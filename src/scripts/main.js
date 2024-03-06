@@ -23,7 +23,7 @@ const infoAchiev = document.querySelectorAll('.info__main h3');
 const achievItems = Array.from(infoAchiev);
 
 themeSwitcher.addEventListener('click', () => {
-  themeSwitcher.classList.toggle('before-transform'); 
+  themeSwitcher.classList.toggle('before-transform');
   body.classList.toggle('body-pink');
   menu.classList.toggle('body-pink');
   headerTitle.classList.toggle('title-pink');
@@ -39,7 +39,7 @@ button.addEventListener('mouseover', () => {
   cookie.classList.add('cookie--white');
 });
 
-button.addEventListener('mouseout', function() {
+button.addEventListener('mouseout', function () {
   cookie.classList.remove('cookie--white');
 });
 
@@ -77,7 +77,6 @@ iconThree.addEventListener('mouseout', () => {
   twitter.classList.remove('footer-icons-white');
 });
 
-
 window.addEventListener('hashchange', function () {
   if (window.location.hash === '#product') {
     menu.classList.remove('menu-transform');
@@ -93,6 +92,3 @@ window.addEventListener('hashchange', function () {
     body.classList.remove('page-body');
   }
 });
-
-
-
