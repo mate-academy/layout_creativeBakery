@@ -1,0 +1,47 @@
+.product {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop-l {
+    grid-column: span 3;
+  }
+
+  &--right {
+    @include on-desktop-l {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+
+    @include hover(scale, 1.05);
+  }
+
+  &__category {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $font-color-grey;
+  }
+
+  &__description {
+    margin: 8px 0 16px;
+  }
+
+  &__order {
+    display: flex;
+    column-gap: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $font-color-pink;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+}
