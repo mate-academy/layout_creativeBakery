@@ -1,0 +1,53 @@
+.button {
+  --bg-img: url('/src/images/icons/Icon-cookie.png');
+
+  display: block;
+  border: 2px solid $color-acent-orange;
+  height: 56px;
+  border-radius: 32px;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: $color-acent-orange;
+  text-transform: uppercase;
+
+  &:hover {
+    --bg-img: url('/src/images/icons/Icon-cookie-wht.png');
+
+    background-color: $color-acent-orange;
+    color: $color-white;
+  }
+
+  &:focus {
+    --bg-img: url('/src/images/icons/Icon-cookie-wht.png');
+
+    background-color: $color-dark-orange;
+    color: $color-white;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    justify-content: center;
+    column-gap: 4px;
+    height: 100%;
+  }
+
+  &__img {
+    background: var(--bg-img) no-repeat center/contain;
+    width: 24px;
+    height: 0;
+    padding-top: 100%;
+    justify-self: end;
+  }
+
+  &__text {
+    margin: 0;
+    justify-self: start;
+  }
+}
