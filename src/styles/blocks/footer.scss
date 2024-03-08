@@ -21,10 +21,14 @@
       height: 40px;
       padding-bottom: 40px;
 
-      @include hover(transform, scale(1.1));
+      @include hover(transform, scale(1.05));
 
       @include on-tablet {
-        padding-bottom: 96px;
+        padding-bottom: 82px;
+      }
+
+      @include on-desktop {
+        padding-bottom: 61px;
       }
     }
   }
@@ -41,10 +45,17 @@
   }
 
   &__contact-us {
+    @include page-grid;
+
     grid-column: 1 / -1;
     padding-bottom: 40px;
 
     @include on-tablet {
+      grid-column: span 3;
+      padding-bottom: 0;
+    }
+
+    @include on-desktop {
       grid-column: span 4;
       padding-bottom: 0;
     }
@@ -59,23 +70,33 @@
     line-height: 40.8px;
     letter-spacing: -0.5;
     padding-bottom: 40px;
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+
+      font-size: 72px;
+      line-height: 61.2px;
+    }
   }
 
   &__call-us {
     padding-bottom: 40px;
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__email-us {
+    @include on-desktop {
+      grid-column: span 4;
+    }
   }
 
   &__social {
     display: flex;
     gap: 32px;
     align-items: center;
-
-    &--icon {
-      width: 24px;
-      height: 24px;
-
-      @include hover(transform, scale(1.1));
-    }
 
     @include on-tablet {
       grid-column: span 4;
@@ -86,7 +107,7 @@
     grid-column: 1 / -1;
 
     @include on-tablet {
-      grid-column: span 4;
+      grid-column: span 3;
     }
   }
 

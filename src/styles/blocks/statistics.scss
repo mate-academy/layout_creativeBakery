@@ -1,17 +1,27 @@
 .statistics {
   @include page-grid;
 
-  background-image: url('../images/crumbs.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  grid-column: 1 / -1;
+  row-gap: 48px;
+  padding-bottom: 72px;
+
+  @include on-tablet {
+    padding-bottom: 152px;
+  }
+
+  @include on-desktop {
+    padding-bottom: 349px;
+  }
 
   &__content {
     grid-column: 1 / -1;
-    padding-bottom: 48px;
 
     @include on-tablet {
       grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
     }
   }
 

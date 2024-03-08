@@ -1,6 +1,15 @@
 .about-us {
   @include page-grid;
 
+  background-image: url('../images/crumbs.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 68%;
+
+  @include on-tablet {
+    background-position: center;
+  }
+
   &__title {
     grid-column: 1 / -1;
 
@@ -18,11 +27,17 @@
     line-height: 24px;
     letter-spacing: -0.1;
     color: $main-text-color;
+    padding-bottom: 64px;
 
     @include on-tablet {
       grid-column: span 4;
 
       text-align: justify;
+      padding-bottom: 64px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 144px;
     }
   }
 

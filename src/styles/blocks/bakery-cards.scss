@@ -12,8 +12,18 @@
   &__product {
     grid-column: 1 / -1;
 
+    &:nth-child(3) {
+      @include on-desktop {
+        grid-area: 2 / 3 / 3 / 6;
+      }
+    }
+
     @include on-tablet {
       grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
     }
   }
 }
