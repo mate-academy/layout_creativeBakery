@@ -1,30 +1,17 @@
 # Creative Bakery landing page
 
-Implement landing page according to [Figma design](https://www.figma.com/file/dY3izAm0Vspsmra4lQWQIP/Bakerlab-FE-students?node-id=0%3A1) - Use BEM and SCSS
+Implement landing page according to [Figma design](https://www.figma.com/file/dY3izAm0Vspsmra4lQWQIP/Bakerlab-FE-students?node-id=0%3A1)
 
-- The design 1440px
-- Desktop 1280px
-- Tablet 640px
-- Mobile (> 320px)
+[DEMO LINK](https://syavaYki.github.io/layout_creativeBakery/).
 
+Demo page for backing company “Creative Bakery” adapted for phones, tablets, and large screens. The page was designed with CSS grids and using SCSS.
+Main elements of the page:
++ Header with background and icons for navigation
++ Full view menu with links to different sections of the page as well as links to call company directory
++ Sections:
+    Recommended. Used to showcase popular products, the design will change based on screen size from one line to 3 columns. All links have transitions for use to indicate interacted parts of the site
+    Categories. Main store categories for different products we company sells. Similar to other sections all animation and transitions are consistent throughout the site.
+    About us. The short back story for the compare and mission outline. This section will display inline for smaller screens and two columns for large screens.
+    Contact us. Section Contact for users to send messages to the company along with company contact information. Forms are changing appearance slightly on the hover and have displayed placeholders for all the fields, also some validation is done on the required field to catch user input errors. All company information is active links with phone, email, and map location. This section will display inline for smaller screens and two columns for large screens.
 
-## Github flow
-1. **Fork** the repo.
-2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
-3. Run `npm install` (or just `npm i`).
-4. Run `npm start`.
-5. Open one more terminal window for the next steps.
-6. `git checkout -b develop` - to create new branch and switch on it.
-7. Write you code in `src` folder.
-8. Run `npm run lint` and fix code style errors.
-9. Run `npm run deploy` to deploy your solution to `gh-pages`.
-10. `git add . && git commit -m 'solution'` to save your changes.
-11. `git push origin develop` - to send you code for PR.
-12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
-13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/layout_creativeBakery/).
-14. Copy `DEMO LINK` to the PR description.
-
-> To update you PR repeat steps 7-11.
-
-15. Check yourself using the [CHECKLIST](https://github.com/mate-academy/layout_creativeBakery/blob/master/checklist.md) when finished;
+Page is built based on Grid positioning with the usage of Flex positioning. Consistent hover effects are used to help users understand interacted parts of the size. Some of the main techniques are smooth scrolling, scaling, and translate.
