@@ -1,0 +1,92 @@
+.products {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+
+  @include on-tablet {
+    margin-top: 228px;
+  }
+
+  @include on-desktop {
+    margin-top: 0;
+  }
+
+  &__cards {
+    @include page-grid;
+
+    row-gap: 56px;
+  }
+
+  &__card {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 4;
+
+      gap: 80px, 24px;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+      max-width: 402px;
+    }
+
+    &--left {
+      @include on-desktop {
+        grid-column: 3/6;
+      }
+    }
+
+    &--right {
+      @include on-desktop {
+      grid-column: span 3;
+      }
+    }
+  }
+
+  &__image {
+    border-radius: 8px;
+    width: 100%;
+
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    margin-top: 16px;
+  }
+
+  &__title {
+    line-height: 16px;
+    font-weight: 500;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  &__button {
+    line-height: 16px;
+    font-weight: 500;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $accent-orange;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: url(../images/Icons/icon-arrow.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
