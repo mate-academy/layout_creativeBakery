@@ -7,10 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openMenu() {
     menu.style.display = 'block';
+    document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
     menu.style.display = 'none';
+    document.body.style.overflow = 'auto';
   }
 
   menuLink.addEventListener('click', (event) => {
