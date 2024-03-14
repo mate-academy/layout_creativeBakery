@@ -1,0 +1,87 @@
+.animation {
+  position: relative;
+  display: flex;
+
+  &__row {
+    width: 50px;
+    height: 50px;
+
+    background-image: url(../images/small.png);
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+
+    animation: move 15s infinite linear;
+
+    z-index: -2;
+
+    &:nth-child(2n) {
+      background-image: url(../images/cho.png);
+    }
+
+    &:nth-child(2) {
+      left: 20%;
+      animation-duration: 10s;
+      animation-delay: 1s;
+    }
+
+    &:nth-child(3) {
+      left: 35%;
+      animation-duration: 8s;
+      animation-delay: 2s;
+      width: 30px;
+      height: 30px;
+    }
+
+    &:nth-child(4) {
+      left: 50%;
+      animation-duration: 15s;
+      animation-delay: 3s;
+      width: 30px;
+      height: 30px;
+    }
+
+    &:nth-child(5) {
+      left: 60%;
+      animation-duration: 10s;
+      animation-delay: 3.5s;
+      width: 45px;
+      height: 45px;
+    }
+
+    &:nth-child(6) {
+      left: 80%;
+      animation-duration: 8s;
+      animation-delay: 4s;
+      width: 45px;
+      height: 45px;
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    bottom: -150px;
+    transform: translateX(0);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translateX(50px);
+    opacity: 1;
+
+  }
+
+  100% {
+    bottom: 100vh;
+    transform: translateX(-10px);
+    opacity: 0.5;
+  }
+}
+
+
+
+

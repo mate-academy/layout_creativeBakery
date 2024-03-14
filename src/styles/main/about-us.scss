@@ -1,0 +1,68 @@
+.about-us {
+  background-image: url(../images/crumbs.png);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &__content {
+    z-index: 10;
+
+    @include on-desktop {
+      height: 673px;
+
+    }
+  }
+
+  &__text {
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 72px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__description {
+    @include on-tablet {
+      width: calc(50% - 12px);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__item {
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__count {
+    font-size: 96px;
+    line-height: 82px;
+    letter-spacing: -8px;
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    line-height: 24px;
+    color: #7f8096;
+  }
+}

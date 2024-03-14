@@ -1,6 +1,68 @@
+/* csslint ignore:start */
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-large-desktop {
+  @media (min-width: $large-desktop-min-width) {
+    @content;
+  }
+}
+
+
+@mixin contant-padding-inline {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 34px;
+    max-width: 1023px;
+    margin-inline: auto;
+  }
+
+  @include on-desktop {
+    padding-inline: 44px;
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  @include on-large-desktop {
+    padding-inline: 44px;
+    max-width: 1400px;
+    margin-inline: auto;
+  }
+}
+
+.container {
+  margin: 0 auto;
+
+  @include contant-padding-inline;
+}
+
+@mixin page-grid {
+  --colums: 2;
+  
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--colums), 1fr);
+
+  @include on-tablet {
+    --colums: 8;
+
+    column-gap: 24px;
   }
 }

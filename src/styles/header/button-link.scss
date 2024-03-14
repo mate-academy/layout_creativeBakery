@@ -1,0 +1,46 @@
+.button-link {
+  min-width: 280px;
+
+  height: 56px;
+  border: 1px solid $orange-color;
+  border-radius: 28px 28px 28px 28px / 28px 28px 28px 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: $orange-color;
+
+  @include on-tablet {
+    width: 300px;
+  }
+
+  &__img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: $orange-color;
+
+    transition: all $effect-duretion;
+
+    /* csslint ignore:start */
+    -webkit-mask-image: url(../images/icons/Icon-cookie.svg);
+
+    /* csslint ignore:end */
+
+  }
+
+  @include hover(background-color, $orange-color);
+  @include hover(color, $background-color);
+
+
+  &:hover &__img {
+    background-color: $background-color;
+    transform: rotateY(180deg);
+  }
+
+}
+

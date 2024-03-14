@@ -1,0 +1,65 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 64px;
+
+  &__logo {
+    display: block;
+    width: 158px;
+    height: 31px;
+
+    /* csslint ignore:start */
+    -webkit-mask-image: url(../images/icons/logo.svg);
+
+    /* csslint ignore:end */
+
+    background-color: $main-text-color;
+
+    @include hover(background-color, $orange-color);
+
+  }
+
+  &__icon {
+    width: 24px;
+    height: 8px;
+    display: block;
+    background-color: $main-text-color;
+
+    @include hover(background-color, $orange-color);
+
+    &--menu {
+       /* csslint ignore:start */
+      -webkit-mask-image: url(../images/icons/menu.svg);
+
+      /* csslint ignore:end */
+
+    }
+
+    &--close {
+    height: 24px;
+
+      /* csslint ignore:start */
+
+    -webkit-mask-image: url(../images/icons/icon-close.svg);
+
+    /* csslint ignore:end */
+    }
+
+    @include hover(transform, scale(1.2));
+
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+}
