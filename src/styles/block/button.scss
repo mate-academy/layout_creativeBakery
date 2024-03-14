@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
 
   height: 56px;
   max-width: 288px;
@@ -11,24 +10,33 @@
   padding-block: 20px;
   color: $accent-orange;
   background-color: $light-blue;
-  cursor: pointer;
-
-  background-image: url(../images/favicon.svg);
-  background-position: 28%;
-  background-repeat: no-repeat;
   text-transform: uppercase;
+  cursor: pointer;
 
   transition: all 0.3s ease-in;
 
   &:hover {
     color: $white;
     background-color: $accent-orange;
-    background-image: url(../images/cookie-white.svg);
   }
 
   &:focus {
     background-color: $dark-orange;
     border: none;
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    background-image: url(../images/favicon.svg);
+    background-repeat: no-repeat;
+  }
+
+  &:hover::before {
+    background-image: url(../images/cookie-white.svg);
   }
 
   @include on-tablet {
