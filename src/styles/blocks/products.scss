@@ -1,0 +1,81 @@
+.products {
+  &__section {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &-title {
+      color: $c-accent-orange;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+    }
+
+    &--3 {
+      @include on-desktop {
+        grid-column: 3 / span 3;
+      }
+    }
+
+    &-photo {
+      border-radius: 8px;
+      width: 100%;
+      object-fit: contain;
+      cursor: pointer;
+      transition: transform $transition-time;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+
+    &-texts {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &-title {
+      @extend %uppercase;
+
+      color: $c-gray;
+    }
+
+    &-order {
+      @extend %uppercase;
+
+      color: $c-accent-orange;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding-block: 4px;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url(/src/images/icons/icon-arrow.svg) no-repeat center;
+        transition: transform $transition-time;
+      }
+
+      &:hover::before {
+        transform: translateX(5px);
+      }
+    }
+  }
+}

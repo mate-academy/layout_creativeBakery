@@ -4,3 +4,75 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-tablet {
+  @media (min-width: $min-width-tablet) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $min-width-desktop) {
+    @content;
+  }
+}
+
+@mixin on-bigdesktop {
+  @media (min-width: $min-width-bigdesktop) {
+    @content;
+  }
+}
+
+@mixin container-padding-inline {
+  padding-inline: 16px;
+
+    @include on-tablet {
+      padding-inline: 32px;
+    }
+
+    @include on-desktop {
+      padding-inline: 32px;
+    }
+
+    @include on-bigdesktop {
+      padding-inline: auto;
+    }
+}
+
+@mixin topbar-padding-inline {
+  padding-inline: 16px;
+
+    @include on-tablet {
+      padding-inline: 16px;
+    }
+
+    @include on-desktop {
+      padding-inline: 32px;
+    }
+
+    @include on-bigdesktop {
+      padding-inline: auto;
+    }
+}
+
+@mixin page-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat($columns-mobile, 1fr);
+  column-gap: $column-gap-mobile;
+
+  @include on-tablet {
+    grid-template-columns: repeat($columns-tablet, 1fr);
+    column-gap: $column-gap-tablet;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat($columns-desktop, 1fr);
+    column-gap: $column-gap-desktop;
+  }
+
+  @include on-bigdesktop {
+    grid-template-columns: repeat($columns-desktop, minmax(80px, $column-max-size-desktop));
+    column-gap: $column-gap-desktop;
+  }
+}
