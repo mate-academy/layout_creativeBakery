@@ -1,0 +1,160 @@
+.header {
+  &__logo {
+    @include hover(transform, scale(1.05));
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+
+    @include hover(transform, scale(1.05));
+
+    &-title {
+      text-transform: uppercase;
+      color: $accent-orange;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 2%;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+
+    padding: 16px;
+
+    @include on-tablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    &-link {
+      text-decoration: none;
+      color: $header-text-color;
+
+      @include hover(color, $accent-orange);
+    }
+
+    @include on-desktop {
+      display: flex;
+      align-items: center;
+      padding-block: 4px;
+      gap: 64px;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include content-padding-inline;
+
+    @include on-tablet {
+      @include header-grid;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+
+    @include on-tablet {
+      width: 50%;
+    }
+  }
+
+  &__center {
+    box-sizing: border-box;
+
+    @include on-tablet {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      grid-column: span 8;
+      margin-bottom: 80px;
+
+      @include on-desktop {
+        margin-top: -150px;
+        margin-bottom: -140px;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 71px;
+    gap: 4px;
+
+    width: 288px;
+    height: 56px;
+    margin-bottom: 40px;
+
+    box-sizing: border-box;
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      width: auto;
+      margin-bottom: 228px;
+      grid-column: 3 / span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+      margin-bottom: 349px;
+    }
+  }
+
+  &__moto {
+    margin-bottom: 32px;
+    text-align: center;
+
+    @include on-tablet {
+      text-align: left;
+      grid-column: span 3;
+      margin-bottom: 16px;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+      margin-top: 135px;
+    }
+  }
+
+  &__title {
+    color: $accent-orange;
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      position: absolute;
+      font-size: 80px;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+    }
+  }
+}
