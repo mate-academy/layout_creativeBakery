@@ -1,0 +1,37 @@
+.nav {
+  display: none;
+
+  @media (min-width: $desktop-min-width) {
+    display: block;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    @media (min-width: $desktop-min-width) {
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main-text-color;
+    transition: color 0.3s;
+
+    &--phone {
+      color: $title-text-color;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      color: $active-btn;
+    }
+  }
+}
