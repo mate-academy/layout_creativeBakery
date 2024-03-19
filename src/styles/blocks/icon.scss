@@ -1,0 +1,44 @@
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: transform .3s;
+
+  &:hover {
+    @include scale;
+  }
+
+  &--logo {
+    background-image: url(../images/Logo.svg);
+    width: 158px;
+    height: 32px;
+  }
+
+  &--menu {
+    background-image: url(../images/Icon-menu.svg);
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &--close {
+    background-image: url(../images/Icon-close.svg);
+  }
+
+  &--order {
+    @include text;
+    color: $accent-orange;
+    font-weight: 500;
+  }
+
+  &--footer-logo {
+    background-image: url(../images/footer/Logo.svg);
+    width: 158px;
+    height: 32px;
+    grid-row: 1;
+  }
+}
