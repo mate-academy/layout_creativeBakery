@@ -1,0 +1,125 @@
+.header {
+  height: 100vh;
+
+  background-image: url(../images/header-bg-image.png);
+  background-size: 290px 288px;
+  background-repeat: no-repeat;
+  background-position: left 50% top 284px;
+
+  @include on-tablet {
+    background-size: 328px 326px;
+    background-position: left 50% top 208px;
+  }
+
+  @include on-desktop {
+    background-size: 546px 544px;
+    background-position: left 50% top 88px;
+  }
+
+  @include on-desktop-large {
+    background-size: 586px 584px;
+  }
+
+  &__content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title-content {
+    @include on-tablet {
+      padding: 0;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.1;
+    padding-block: 32px;
+    text-align: center;
+
+    @include on-tablet {
+      width: 280px;
+      text-align: left;
+      padding-block: 80px 146px;
+    }
+
+    @include on-desktop {
+      padding-block: 144px 40px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 54.4px;
+    color: $main-text-color;
+    letter-spacing: -0.5;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 290px;
+
+    @include on-tablet {
+      font-size: 72px;
+      line-height: 68px;
+      padding-bottom: 210px;
+    }
+
+    @include on-desktop {
+      font-size: 118px;
+      line-height: 115.6px;
+      padding-bottom: 64px;
+    }
+
+    @include on-desktop-large {
+      font-size: 130px;
+      line-height: 122.4px;
+      padding-bottom: 64px;
+    }
+  }
+
+  &__bottom {
+    text-align: center;
+
+    @include on-desktop {
+      text-align: left;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    outline: none;
+    width: 288px;
+    height: 56px;
+    border: 2px solid #F9512E;
+    border-radius: 32px;
+    background-color: transparent;
+
+    background-image: url(../images/icons/icon-cookie.png);
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-position: top 50% left 23%;
+
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.2;
+    color: #F9512E;
+
+    &:hover {
+      color: #fff;
+      background-color: #F9512E;
+      background-image: url(../images/icons/icon-cookie--hover.png);
+    }
+
+    &:active {
+      background-color: #B2341A;
+      border-color: #B2341A;
+    }
+  }
+}

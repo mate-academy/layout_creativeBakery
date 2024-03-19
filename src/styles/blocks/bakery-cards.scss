@@ -1,0 +1,29 @@
+.bakery-cards {
+  &__products {
+    @include page-grid;
+
+    row-gap: 56px;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__product {
+    grid-column: 1 / -1;
+
+    &:nth-child(3) {
+      @include on-desktop {
+        grid-area: 2 / 3 / 3 / 6;
+      }
+    }
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+    }
+  }
+}
