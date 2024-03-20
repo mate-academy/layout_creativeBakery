@@ -17,9 +17,13 @@
 .bake {
   grid-column: 1 / -1;
   padding-bottom: 58px;
+  display: flex;
+  flex-direction: column;
 
   &--left{
     @include on-tablet {
+      padding: 0;
+      padding-bottom: 58px;
       grid-column: 1 / 5;
     }
 
@@ -36,7 +40,9 @@
 
   &--right{
     @include on-tablet {
-      grid-column: 4 / 9;
+      padding: 0;
+      padding-bottom: 58px;
+      grid-column: 5 / 9;
     }
 
     @include on-desktop {
@@ -44,10 +50,19 @@
     }
 
     &--second {
+      padding: 0;
+      padding-bottom: 58px;
       @include on-desktop {
         grid-column: 6 / 9;
       }
     }
+  }
+
+  &__column {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   &__image {
@@ -60,11 +75,12 @@
     font-weight: 500;
     color: $grey;
     text-transform: uppercase;
+    padding-bottom: 8px;
   }
 
   &__description {
     @include text;
-    padding: 8px 0 16px;
+    padding-bottom: 16px;
   }
 
   &__order {
@@ -75,4 +91,8 @@
 
 .bake:last-child {
   padding-bottom: 0px;
+
+  @include on-tablet {
+    padding-bottom: 58px;
+  }
 }
