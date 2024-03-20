@@ -36,14 +36,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-
-const imageElement = document.querySelector('.creative__cookie');
-const button = document.querySelector('.button');
-
-button.addEventListener('mouseover', () => {
-  imageElement.src = '/Icon-cookie-white.svg'; // Update to new image path
-});
-
-button.addEventListener('mouseout', () => {
-  imageElement.src = '/Icon-cookie.svg'; // Revert to original image path
-});
