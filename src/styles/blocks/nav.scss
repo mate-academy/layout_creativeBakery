@@ -1,0 +1,49 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 16px;
+
+  &__links {
+    display: none;
+    gap: 64px;
+
+    @include on-desktop {
+      display: flex;
+    }
+  }
+
+  &__link {
+    position: relative;
+    @include text;
+
+    &::after {
+      @include after-line;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+
+    &--contact {
+      font-weight: 500;
+      color: $accent-orange;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      gap: 4px;
+
+      &::before {
+        content: '';
+        background-image: url(../images/Icon-phone.svg);
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}
