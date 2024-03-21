@@ -1,0 +1,139 @@
+.first {
+
+  &__wrap {
+    padding-block: 32px 40px;
+
+    @include onTable {
+      padding-block: 80px 228px;
+      @include pageGrid;
+    }
+
+    @include onLaptop {
+      padding-block: 135px 161px;
+    }
+
+    @include onDesktop {
+      padding-block: 141px 138px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include onTable {
+      text-align: left;
+      grid-column: 1 / 5;
+    }
+
+     @include onLaptop {
+      margin-bottom: 0;
+      grid-column: 1 / 3;
+    }
+
+     @include onDesktop {
+      margin-bottom: 40px;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__cookie-block {
+    position: relative;
+    overflow: hidden;
+
+    @include onTable {
+      overflow: visible;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    padding-bottom: 290px;
+
+    @include onTable {
+      grid-column: 1 / -1;
+    }
+
+    @media (min-width: 738px) {
+      white-space: nowrap;
+      padding-block: 146px 210px ;
+    }
+
+    @include onLaptop {
+      padding-block: 0 64px ;
+    }
+
+    @media (min-width: 1200px) {
+      white-space: nowrap;
+    }
+  }
+
+  &__img {
+    border-radius: 50%;
+
+    position: absolute;
+    top: 108px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: rotate 25s infinite linear;
+
+    @media (min-width: 552px) {
+      top: 56px;
+    }
+
+    @include onTable {
+      top: 112px;
+      z-index: -1;
+    }
+
+    @media (min-width: 738px) {
+      top: 15px;
+    }
+
+    @include onLaptop {
+      top: -120px;
+    }
+
+    @media (min-width: 1200px) {
+      top: -200px;
+    }
+  }
+
+   @keyframes rotate {
+    0% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+
+    100% {
+      transform: translateX(-50%) rotate(360deg);
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      display: block;
+      background-image: url('/src/images/icons/icon-cookie-orange.png');
+    }
+
+    &:hover::before {
+      background-image: url('/src/images/icons/icon-cookie-white.png');
+    }
+
+    @include onTable {
+      grid-column: 3 / 7;
+    }
+
+    @include onLaptop {
+      grid-column: 1 / 3;
+    }
+  }
+}

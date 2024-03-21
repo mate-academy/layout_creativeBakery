@@ -1,0 +1,73 @@
+.product-card {
+  grid-column: 1 / -1;
+
+  @include onTable {
+    grid-column: span 4;
+  }
+
+  @include onLaptop {
+    grid-column: span 3;
+
+    &:nth-child(3) {
+      grid-column: 3 / 6;
+    }
+
+    &:nth-child(4) {
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__img {
+    border-radius: 8px;
+
+    @include hover(scale, 1.03);
+  }
+
+  &__link {
+    position: relative;
+    margin-top: 16px;
+    color: $accent-orange;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    padding-left: 28px;
+    transition: transform ease 0.3s;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-image: url(/src/images/icons/icon-arrow.png);
+      transition: transform ease 0.4s;
+    }
+
+    &::before {
+      left: 0;
+      transform: scale(1);
+    }
+
+    &::after {
+      right: 0;
+      transform: scale(0) rotate(180deg);
+      transform-origin: right;
+    }
+
+    &:hover {
+      transform: translateX(-28px);
+      padding-right: 28px;
+
+      &::before {
+        transform: scale(0);
+      }
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+}

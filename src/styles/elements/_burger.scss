@@ -1,0 +1,44 @@
+.burger {
+  cursor: pointer;
+  position: relative;
+  width: 24px;
+  height: 24px;
+
+  @include onLaptop {
+    display: none;
+  }
+
+  & span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: $black;
+    left: 50%;
+    top: 50%;
+    transition: transform 0.3s;
+
+    &:nth-child(1) {
+      position: absolute;
+      transform: translate(-50%, calc(-50% - 3px));
+    }
+
+    &:nth-child(2) {
+      position: absolute;
+      transform: translate(-50%, calc(-50% + 3px));
+    }
+  }
+
+  &.active{
+    & span {
+      &:nth-child(1) {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+}
+
+
