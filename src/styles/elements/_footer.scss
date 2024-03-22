@@ -1,0 +1,97 @@
+.footer {
+  background-color: $black;
+  color: $white;
+  padding-block: 56px;
+
+  @include onTable {
+    padding-block: 88px;
+  }
+
+  &__wrap {
+    @include onTable {
+      @include pageGrid;
+    }
+  }
+
+  &__logo-link {
+    display: inline-block;
+    margin-bottom: 40px;
+
+    @include onTable {
+      margin-bottom: 0;
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__title {
+    color: $white;
+    margin-block: 64px 40px;
+
+    @include onTable {
+      margin-block: 0 40px;
+      grid-column: 5 / 8;
+      grid-row: 1 / 2;
+    }
+
+    @include onLaptop {
+      margin-block: 0 40px;
+      grid-column: 5 / 9;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__tell-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+
+    @include onTable {
+      grid-column: 5 / 8;
+      margin-bottom: 48px;
+    }
+
+    @include onLaptop {
+      grid-column: 5 / 7;
+      margin-bottom: 88px;
+    }
+  }
+
+  &__email-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include onTable {
+      grid-column: 5 / 8;
+      margin-bottom: 48px;
+    }
+
+    @include onLaptop {
+      grid-column: 7 / 9;
+    }
+  }
+
+  &__media {
+    display: flex;
+    gap: 32px;
+    margin-block: 40px 40px;
+
+    @include onTable {
+      grid-column: 1 / 4;
+      margin-block: 0;
+    }
+  }
+
+  &__link:hover svg {
+    @include hover(fill, $white);
+  }
+
+  &__copyright {
+    color: $grey;
+
+    @include onTable {
+      grid-column: 5 / 8;
+    }
+  }
+}

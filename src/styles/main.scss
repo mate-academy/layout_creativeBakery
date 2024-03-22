@@ -1,7 +1,37 @@
-@import 'utils';
-@import 'fonts';
+@import './utils/index';
 @import 'typography';
+@import './elements/index';
+@import './sections/index';
+
+html {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: $black;
+  scroll-behavior: smooth;
+  cursor: url(/src/images/cursor-28px-reverse.png), auto;
+
+
+  &:has(.mobile-menu.active) {
+    overflow: hidden;
+  }
+}
 
 body {
-  background: $c-gray;
+  background-color: $light-pink;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $light-pink;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $accent-orange;
+    border-radius: 20px;
+  }
 }
+
+
