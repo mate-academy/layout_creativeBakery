@@ -1,0 +1,77 @@
+.about-us {
+  padding-block: 8px 72px;
+
+  background-image: url(../images/decor/crumbs.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0 550px;
+
+  @include on-tablet {
+    padding-block: 0 152px;
+
+    background-position: 0 50px;
+  }
+
+  @include on-desktop {
+    padding-block: 0 349px;
+
+    background-position: 280px -10px;
+  }
+
+  &__content {
+    @include on-tablet {
+      @include page-grid;
+
+      row-gap: 72px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+
+      grid-column: span 4;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 62px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+
+      grid-column: span 4;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      grid-column: 1 / -1;
+      row-gap: 80px;
+    }
+  }
+
+  &__stat {
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__value {
+    margin-bottom: 8px;
+
+    color: $accent;
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+  }
+}
