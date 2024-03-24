@@ -1,5 +1,5 @@
 .icon {
-  display: block;
+  display: inline-block;
   width: 24px;
   height: 24px;
   background-repeat: no-repeat;
@@ -9,6 +9,13 @@
 
   &:hover {
     @include scale;
+  }
+
+  &__order {
+
+    width: 24px;
+    height: 24px;
+    display: inline-block;
   }
 
   &--logo {
@@ -33,7 +40,23 @@
     @include text;
 
     color: $accent-orange;
+    text-decoration: none;
     font-weight: 500;
+    width: 200px;
+    margin: auto 0;
+
+    &::before {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      content: url(../images/icon/arrow.svg);
+      vertical-align: middle;
+
+    }
+
+    &:hover {
+      color: $dark-orange
+    }
   }
 
   &--footer-logo {

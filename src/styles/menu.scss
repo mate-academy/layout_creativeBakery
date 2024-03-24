@@ -19,8 +19,25 @@
     gap: 24px;
   }
 
+  &__list {
+    display: inline;
+    margin: 0 auto;
+  }
+
   &__link {
+    position: relative;
+
     @include text;
+
+       &::after {
+      @include after-line;
+
+      background-color: $dark-orange;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
 
     &--contact {
       font-weight: 500;
@@ -40,6 +57,7 @@
         height: 24px;
         background-repeat: no-repeat;
         background-position: center;
+        transform: scaleX(1);
       }
     }
   }
