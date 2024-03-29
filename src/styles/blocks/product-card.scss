@@ -1,0 +1,48 @@
+.product-card {
+  &__title {
+    color: $c-grey;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: 100%;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    color: $c-black;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  &__image-frame {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    transition: border 0.5s ease-in-out;
+    border: 1px solid transparent;
+
+    &:hover {
+      border-color: $c-light-orange;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 1 / 1.24;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
+    @include on-tablet {
+      aspect-ratio: 1 / 1.29;
+    }
+
+    @include on-desktop {
+      aspect-ratio: 1 / 1.27;
+    }
+  }
+}
