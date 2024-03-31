@@ -1,0 +1,98 @@
+.what-we-bake {
+  margin-top: 64px;
+
+  @include onTablet {
+    margin-top: 226px;
+  }
+
+  &__inner {
+    display: grid;
+    column-gap: 16px;
+    row-gap: 56px;
+    margin-top: 56px;
+
+    @include onTablet {
+      grid-template-columns: repeat(8, 64px);
+      column-gap: 24px;
+      row-gap: 80px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(8, 118px);
+    }
+
+    @include onFullDesktop {
+      grid-template-columns: repeat(8, 128px);
+      justify-content: space-between;
+    }
+  }
+
+  &__picture {
+    @include onTablet {
+      width: 328px;
+    }
+
+    @include onDesktop {
+      width: 402px;
+    }
+
+    @include onFullDesktop {
+      width: 100%;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    @include gridChild;
+
+    @include hover(scale, 1.03);
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 48px;
+    line-height: 40.8px;
+    margin-bottom: 24px;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__name {
+    color: $grey-color;
+    text-transform: uppercase;
+    line-height: 100%;
+    margin-top: 16px;
+  }
+
+  &__desc {
+    min-width: 288px;
+    font-size: 16px;
+    line-height: 24px;
+    color: $black-color;
+
+    &--special {
+      margin-top: 8px;
+    }
+  }
+
+  &__button {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $orange-color;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.1))
+  }
+}
