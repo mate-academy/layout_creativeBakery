@@ -1,6 +1,91 @@
+
+/* Mixin for animations */
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $animation-duration;
   &:hover {
     #{$_property}: $_toValue;
+    @content;
+  }
+}
+
+/* Mixins for adaptive */
+@mixin onFullDesktop() {
+  @media screen and (min-width: $size-full-desktop) {
+    @content;
+  }
+}
+
+@mixin onDesktop() {
+  @media screen and (min-width: $size-desktop) {
+    @content;
+  }
+}
+
+@mixin onTablet() {
+  @media screen and (min-width: $size-tablet) {
+    @content;
+  }
+}
+
+@mixin onMobile() {
+  @media screen and (min-width: $size-mobile) {
+    @content;
+  }
+}
+
+/* Mixin for change general paddings in container */
+@mixin onGeneralPadding() {
+  padding: 0px 16px 0 16px;
+
+
+  @include onTablet() {
+    padding: 0px 44px 0 44px;
+  }
+
+  @include onFullDesktop() {
+    padding: 0px 124px 0 124px;
+  }
+}
+
+@mixin onHeaderPadding() {
+  padding: 0px 16px 0 16px;
+
+
+  @include onDesktop {
+    padding: 0px 32px 0 32px;
+  }
+}
+
+@mixin gridChild() {
+  &--item--1 {
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &--item--2 {
+    @include onTablet {
+      grid-column: 5 / 8;
+    }
+
+    @include onDesktop {
+      grid-column: 4 / -3;
+    }
+  }
+
+  &--item--primary {
+    @include onDesktop {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &--item--special {
+    @include onDesktop {
+      grid-column: 6 / -1;
+    }
   }
 }
