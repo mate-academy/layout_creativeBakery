@@ -1,6 +1,9 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import './utils/reset';
+@import './page';
+@import './blocks/page-menu';
 @import './blocks/header';
 @import './blocks/bakery-card';
 @import './blocks/menu';
@@ -8,57 +11,3 @@
 @import './blocks/about-us';
 @import './blocks/footer';
 
-button {
-  border: none;
-  outline: none;
-  background: transparent;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: $Inter;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 150%;
-  scroll-behavior: smooth;
-  background: $light-blue;
-}
-
-.main__title {
-  text-align: center;
-  margin-top: 32px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  min-width: 288px;
-
-  @include onTablet {
-    text-align: left;
-    width: 280px;
-    margin-top: 80px;
-  }
-
-  @include onDesktop {
-    display: none;
-  }
-}
-
-.header__container {
-  @include onHeaderPadding;
-}
-
-.container,
-.header__container {
-  min-width: $size-mobile;
-  margin: 0 auto;
-}
-
-.container {
-  @include onGeneralPadding;
-}

@@ -47,14 +47,6 @@
     }
   }
 
-  // &__icon {
-  //   display: block;
-  //   width: 24px;
-  //   height: 24px;
-  //   background-repeat: no-repeat;
-  //   background-image: url('../images/icon-cookie.svg');
-  // }
-
   &__title {
     text-align: center;
     text-transform: uppercase;
@@ -149,6 +141,11 @@
     cursor: pointer;
     z-index: 1;
 
+    @include hover(background, $orange-color) {
+      color: $white-color;
+      border: 2px solid $orange-color;
+    };
+
     @include onTablet {
       width: 326px;
     }
@@ -156,9 +153,18 @@
     @include onDesktop {
       width: 260px;
     }
+  }
 
-    // @include hover(background, $orange-color) {
-    //   color: $c-gray;
-    // };
+  &__button:hover &__icon {
+    background-image: url('../images/Icon-cookie-white.svg');
+  }
+
+  &__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../images/Icon-cookie.svg');
   }
 }
