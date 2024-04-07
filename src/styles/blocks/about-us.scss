@@ -1,0 +1,50 @@
+.about-us {
+  background-image: url(../images/crumbs.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include on-tablet {
+    height: 100vh;
+  }
+
+  &__title {
+    display: grid;
+    row-gap: 16px;
+    margin-bottom: 56px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title-item {
+    grid-column: span 4;
+  }
+
+  &__content {
+    @include page-grid;
+
+    gap: 48px;
+
+    @include on-tablet {
+      grid-template-rows: repeat(auto-fill, 1fr);
+    }
+  }
+
+  &__items {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-row: span 1;
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-row: span 1;
+      grid-column: span 2;
+    }
+  }
+}
