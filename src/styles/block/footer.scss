@@ -4,8 +4,6 @@
   background-color: $black;
 
   &__content {
-    display: grid;
-
     @include page-grid;
 
     padding-block: 56px;
@@ -15,25 +13,8 @@
     }
   }
 
-  &__top {
-    grid-column: 1 / -1;
-
-    @include on-tablet {
-      grid-column: 1 / 5;
-    }
-
-    @include on-desktop {
-      grid-column: 1 / 3;
-    }
-  }
-
   &__logo {
     grid-column: 1 / -1;
-    transition: 0.3s;
-
-    &:hover {
-      transform: scale(1.05);
-    }
 
     @include on-tablet {
       grid-column: span 4;
@@ -42,19 +23,21 @@
 
   &__menu {
     @include on-tablet {
-      margin-top: 96px;
+      grid-column: 1 / 3;
     }
 
     @include on-desktop {
-      margin-top: 61px;
-      grid-column: 1/3;
+      grid-column: 1 / 3;
     }
   }
 
   &__section--title {
     margin-bottom: 16px;
-    margin-top: 40px;
-}
+
+    @include on-tablet {
+      margin-top: 40px;
+    }
+  }
 
   &__nav {
     display: flex;
@@ -66,20 +49,6 @@
     }
   }
 
-  &__bottom {
-    display: grid;
-
-    grid-column: 1 / -1;
-
-    @include on-tablet {
-      display: grid;
-
-      @include page-grid;
-
-      grid-column: 5 / -1;
-    }
-  }
-
   &__title {
     color: $white;
     margin-top: 64px;
@@ -87,11 +56,13 @@
     grid-column: 1 / -1;
 
     @include on-tablet {
-      grid-column: 1 / -1;
+      grid-column: 5 / 8;
+      grid-row: 1 / 2;
       margin-top: 0;
     }
 
     @include on-desktop {
+      grid-column: 5 / 9;
       height: 61px;
     }
   }
@@ -102,28 +73,27 @@
 
     grid-column: 1 / -1;
 
+    transition: transform 0.3s ease;
+
     @include on-tablet {
-      grid-column: span 4;
+      grid-column: 5 / -1;
     }
 
     @include on-desktop {
-      grid-column: 1 / 5;
+      grid-column: 5 / 7;
       margin-bottom: 88px;
     }
   }
 
   &__email {
-    display: flex;
-    flex-direction: column;
-
-      grid-column: 1 / -1;
+    grid-column: 1 / -1;
 
     @include on-tablet {
-      grid-column: 1 / 5;
+      grid-column: 5 / -1;
     }
 
     @include on-desktop {
-      grid-column: 5 / -1;
+      grid-column: 7 / -1;
     }
   }
 
@@ -142,7 +112,7 @@
     }
   }
 
-  &__copyring{
+  &__copyring {
     grid-column: 1 / -1;
     color: $grey;
     margin-top: 40px;

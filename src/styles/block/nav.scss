@@ -4,58 +4,56 @@
   align-items: center;
   margin-top: 132px;
 
-&__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  gap: 24px;
-}
-
-&__link {
-  text-decoration: none;
-  color: $black;
-  font-size: 16px;
-  line-height: 24px;
-
-  &:hover {
-    transform: scale(1.02);
+    gap: 24px;
   }
 
-&--phone {
-  display: flex;
-  justify-content: center;
-  gap: 4px;
+  &__link {
+    text-decoration: none;
+    color: $black;
+    font-size: 16px;
+    line-height: 24px;
 
-  text-transform: uppercase;
-  font-weight: 500px;
-  color: $accent-orange;
+    @include hover(transform, scale(1.02));
 
-  &:hover {
-    border-bottom: 2px solid $accent-orange;
-     }
+    &--footer {
+      padding-top: 16px;
+      color: $white;
+    }
 
-  &::after {
-    content: "";
-    background-color: $accent-orange;
-    bottom: -8px;
+    &--phone {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+
+      text-transform: uppercase;
+      font-weight: 500px;
+      color: $accent-orange;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::after {
+        background-color: $accent-orange;
+        bottom: -8px;
+      }
+
+      &::before {
+        content: url(../images/icons/icon-phone.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
-
-  &::before {
-    content: url(../images/icons/icon-phone.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 24px;
-    height: 24px;
-  }
-  }
-
-  &--footer {
-    color:$white;
-  }
-}
 }

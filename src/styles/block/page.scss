@@ -1,5 +1,4 @@
 .page {
-  overflow-y: auto;
   scroll-behavior: smooth;
 
   &__body {
@@ -8,18 +7,22 @@
     background-color: $pink;
   }
 
-   &__menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
-  opacity: 0;
-  pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
 
-  &:target {
-    opacity: 1;
-    pointer-events: all;
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
   }
-}
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
 }
