@@ -1,0 +1,37 @@
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  text-decoration: none;
+
+  @include hover(transform, scale(1.1));
+
+  &--menu {
+    @include icon(url(../images/icons/icon-menu.svg));
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &--close {
+    @include icon(url(../images/icons/icon-close.svg));
+  }
+
+  &--facebook {
+    @include icon(url(../images/icons/icon-facebook.svg));
+  }
+
+  &--instagram {
+    @include icon(url(../images/icons/icon-instagram.svg));
+  }
+
+  &--twitter {
+    @include icon(url(../images/icons/icon-twitter.svg));
+  }
+
+  &--facebook, &--instagram, &--twitter {
+    @include hover(background-color, $c-white);
+  }
+}

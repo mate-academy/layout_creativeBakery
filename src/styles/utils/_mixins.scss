@@ -1,6 +1,73 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover($property, $toValue) {
+  transition: $property $effect-duration ease-in-out;
+
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $toValue;
   }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop-lg {
+  @media (min-width: $desktop-lg-min-width) {
+    @content;
+  }
+}
+
+@mixin padding-inline-content() {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+}
+
+.container {
+  @include padding-inline-content;
+
+  @include on-desktop {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 8;
+
+   column-gap: 24px;
+  }
+}
+
+@mixin icon($url) {
+  background-color: $c-accent-orange;
+  mask: $url no-repeat 50% 50%;
+}
+
+@mixin underline($paddingBottom) {
+  content: '';
+  position: absolute;
+  bottom: $paddingBottom;
+  width: 100%;
+  height: 1px;
+  background-color: $c-accent-orange;
+  transform-origin: bottom left;
+  transform: scale(0);
+  transition: transform $effect-duration ease-out;
 }
