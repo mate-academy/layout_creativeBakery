@@ -1,9 +1,19 @@
 .header {
   height: 100vh;
-  background-image: url(./../images/photo/Cookie.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+
+  @include grid;
+
+  &__navigation {
+    grid-column: span 2;
+    grid-row: 1 / 2;
+  }
+
+  &__photo {
+    width: 288px;
+    height: 290px;
+
+    grid-row: 4 / 5;
+  }
 
   &__content {
     font-family: Inter, sans-serif;
@@ -13,5 +23,10 @@
     color: $c-dark-font;
     letter-spacing: -0.01em;
     text-align: center;
+
+    grid-column: span 2;
+    grid-row: 2 / 3;
+
+    margin-top: 32px;
   }
 }
