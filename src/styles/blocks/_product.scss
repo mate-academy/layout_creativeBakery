@@ -1,10 +1,23 @@
 .product {
+  @include grid;
+
+  &__article {
+    grid-column: span 4;
+  }
+
   &__photo {
     width: 288px;
     height: 356px;
     border-radius: 8px;
 
     margin-top: 56px;
+
+    @include tablet {
+      width: 328px;
+      height: 424px;
+
+      margin-top: 80px;
+    }
   }
 
   &__paragraph {
@@ -18,11 +31,17 @@
 
     margin-top: 24px;
 
+    @include tablet {
+      grid-column: span 8;
+    }
+
     &--color {
       font-weight: 500;
       color: $c-grey;
       line-height: 16px;
       letter-spacing: 0.02em;
+
+      margin-top: 16px;
     }
 
     &--distance {
