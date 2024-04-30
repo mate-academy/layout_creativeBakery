@@ -1,11 +1,21 @@
 .about-us {
-  margin-top: 64px;
+  margin-top: 8px;
   margin-bottom: 72px;
 
   background-image: url(./../images/photo/Crumbs-small.svg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 0 75%;
   background-size: contain;
+
+  @include grid;
+
+  @include tablet {
+    margin-top: 152px;
+    margin-bottom: 152px;
+
+    background-position: 50% 70%;
+    background-size: 526px 493px;
+  }
 
   &__label {
     font-family: Inter, sans-serif;
@@ -29,5 +39,50 @@
     text-align: left;
 
     margin-top: 48px;
+  }
+
+  &__paragraph {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: $c-dark-font;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+
+    margin-top: 32px;
+
+    grid-column: span 2;
+
+    @include tablet {
+      grid-column: span 4;
+
+      margin-top: 0;
+    }
+  }
+
+  &__block {
+    grid-column: span 2;
+
+    @include tablet {
+      grid-column: span 4;
+
+      margin-top: 8px;
+    }
+    &--distance {
+      @include tablet {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  &__title {
+    grid-column: span 2;
+
+    @include tablet {
+      grid-column: span 4;
+
+      margin-top: 0;
+    }
   }
 }
