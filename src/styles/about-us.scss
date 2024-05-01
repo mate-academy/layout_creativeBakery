@@ -1,0 +1,106 @@
+.about-us {
+  --cloumns: 2;
+
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--cloumns), 1fr);
+  padding-inline: 16px;
+
+  padding-top: 72px;
+
+  @include on-tablet {
+    --cloumns: 8;
+
+    column-gap: 24px;
+    padding-inline: 44px;
+    padding-top: 152px;
+  }
+
+  @include on-desktop {
+    padding-inline: 44px;
+    padding-top: 178px;
+  }
+
+  @include on-desktop-xl {
+    padding-inline: 124px;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / 8;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 40.8px;
+
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      font-size: 56px;
+      line-height: 47.6px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+      line-height: 61.2px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    line-height: 24px;
+    padding-top: 32px;
+
+    @include on-tablet {
+      grid-column: 4 / 8;
+      padding-top: 0;
+    }
+  }
+
+  &__benefist {
+    display: grid;
+    row-gap: 48px;
+    margin: 0;
+    padding: 0;
+    margin-top: 64px;
+    list-style: none;
+    font-weight: bold;
+    font-weight: 400;
+    font-size: 96px;
+    color: $c-black;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 48px;
+      margin-top: 72px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 144px;
+    }
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-gray;
+  }
+
+  &__stats {
+    display: grid;
+    row-gap: 48px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  &--menu {
+    background-image: url(../images/Icon-menu.png);
+
+    &:target .page__body {
+      display: none;
+    }
+  }
+
+  &--close {
+    background-image: url(../images/Icon-close.png);
+  }
+
+  @media (min-width: 1280px) {
+    display: none;
+  }
+}
+
+.page__body:has(.page__menu:target) {
+  overflow: hidden;
+}

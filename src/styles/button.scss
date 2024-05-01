@@ -1,0 +1,59 @@
+.header__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 288px;
+  height: 56px;
+  margin: 0 auto;
+  border: 2px solid $c-orange-accent;
+  color: $c-orange-accent;
+  background-color: $c-blue-light;
+  border-radius: 32px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  transition: color 0.3s, background-color 0.3s;
+
+  @media (min-width: 640px) {
+    width: 326px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 260px;
+    margin: 0;
+  }
+
+  @media (min-width: 1440px) {
+    width: 280px;
+  }
+
+  &:hover {
+    color: $c-white;
+    background-color: $c-orange-accent;
+  }
+
+  &:focus {
+    color: $c-white;
+    background-color: $c-orange-dark;
+    border-color: $c-orange-dark;
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    background-image: url(../images/Icon-cookie.png);
+    background-repeat: no-repeat;
+  }
+
+  &:hover::before {
+    background-image: url(../images/icon-cookie-hover.png);
+  }
+
+  &:focus::before {
+    background-image: url(../images/icon-cookie-hover.png);
+  }
+}
