@@ -4,13 +4,18 @@
   &__article {
     grid-column: span 2;
 
+    margin-top: 56px;
+
     @include tablet {
       grid-column: span 4;
+
+      margin-top: 80px;
     }
 
     @include desktop {
       grid-column: span 3;
     }
+
     &--position-1 {
       @include desktop {
         grid-column: 3 / 6;
@@ -29,18 +34,22 @@
     height: 356px;
     border-radius: 8px;
 
-    margin-top: 56px;
-
     @include tablet {
       width: 328px;
       height: 424px;
-
-      margin-top: 80px;
     }
 
     @include desktop {
       width: 402px;
       height: 512px;
+      margin-top: 0;
+
+      transition: transform 0.4s;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(105%);
+      }
     }
 
     @include xxl {
