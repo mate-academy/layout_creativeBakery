@@ -1,0 +1,28 @@
+.menu {
+  @include grid;
+
+  grid-template-rows: 64px 1fr;
+
+  background-color: $c-background;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-y: auto;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(100%);
+
+  @include desktop {
+    height: 88px;
+    transform: none;
+    position: absolute;
+    transition: none;
+  }
+
+  &:target {
+    transform: translateX(0);
+    transition: transform 0.4s ease-in-out;
+  }
+}

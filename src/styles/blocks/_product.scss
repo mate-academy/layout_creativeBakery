@@ -1,0 +1,113 @@
+.product {
+  @include grid;
+
+  &__article {
+    grid-column: span 2;
+
+    margin-top: 56px;
+
+    @include tablet {
+      grid-column: span 4;
+
+      margin-top: 80px;
+    }
+
+    @include desktop {
+      grid-column: span 3;
+    }
+
+    &--position-1 {
+      @include desktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--position-2 {
+      @include desktop {
+        grid-column: 6 / 9;
+      }
+    }
+  }
+
+  &__photo {
+    width: 288px;
+    height: 356px;
+    border-radius: 8px;
+
+    @include tablet {
+      width: 328px;
+      height: 424px;
+    }
+
+    @include desktop {
+      width: 402px;
+      height: 512px;
+      margin-top: 0;
+
+      transition: transform 0.4s;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(105%);
+      }
+    }
+
+    @include xxl {
+      width: 432px;
+      height: 584px;
+    }
+  }
+
+  &__paragraph {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: $c-dark-font;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+
+    margin-top: 24px;
+
+    grid-column: span 2;
+
+    @include tablet {
+      grid-column: span 8;
+    }
+
+    &--color {
+      font-weight: 500;
+      color: $c-grey;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+
+      margin-top: 16px;
+    }
+
+    &--distance {
+      margin-top: 8px;
+    }
+  }
+
+  &__item {
+    height: 32px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    margin-top: 16px;
+  }
+
+  &__link {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: $c-orange;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
