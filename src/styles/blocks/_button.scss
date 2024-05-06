@@ -23,10 +23,27 @@
   justify-content: center;
   align-items: center;
 
+  &::before {
+    content: '';
+    background-image: url(./../images/photo/Icon-cookie.svg);
+    background-repeat: no-repeat;
+
+    height: 20px;
+    width: 26px;
+  }
+
+  &:hover::before {
+    background-image: url(./../images/photo/Icon-cookie-white.svg);
+  }
+
   &:hover {
     background-color: $c-orange;
     color: white;
-    fill: white;
+  }
+
+  &:active {
+    background-color: #b2341a;
+    border: #b2341a;
   }
 
   @include tablet {
@@ -38,12 +55,8 @@
 
   @include desktop {
     grid-column: 1 / 3;
-    margin-top: 0;
+    margin-top: -100px;
 
     align-self: center;
-  }
-
-  &__icon {
-    padding-right: 4px;
   }
 }
