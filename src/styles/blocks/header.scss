@@ -1,0 +1,201 @@
+.header {
+  padding-bottom: 40px;
+  margin-bottom: 64px;
+
+  &__navigation {
+    display: none;
+
+    @include on-desctop {
+     display: block;
+    }
+  }
+
+  &__content {
+   @include on-tablet {
+    position: relative;
+   }
+  }
+
+  &__subtitle {
+    @include grid;
+    }
+
+  &__image {
+    height: 290px;
+    background-image: url(/src/images/header-image.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include on-tablet {
+      height: 328px;
+    }
+
+    @include on-desctop {
+      height: 546px;
+
+    }
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 32px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      text-align: left;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / 3;
+      text-align: left;
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-accent-orange;
+
+    @include on-tablet {
+      font-size: 65px;
+      grid-column: 1 / -1;
+      position: absolute;
+      bottom: 50%;
+      transform: translateY(-50%);
+      left: 5%;
+      right: 5%;
+      z-index: 2;
+      }
+
+    @include on-desctop {
+      font-size: 110px;
+      grid-column: 1 / -1;
+      left: 0%;
+      right: 0%;
+    }
+  }
+
+  &__button {
+    @include grid;
+  }
+
+  &__btn {
+    display: block;
+    transition: $all-transition;
+
+    border: 2px solid $color-accent-orange;
+    border-radius: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: $color-accent-orange;
+    padding: 20px 0;
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / 3;
+      &:hover {
+        color: $color-white;
+        background-color: $color-accent-orange;
+        span::after{
+          background-image: url(/src/images/icons/icon-cookie-btn-white.png);
+        }
+      }
+      &:focus {
+        background-color: $color-dark-orange;
+      }
+      &:disabled {
+        opacity: 0.3;
+      }
+
+    }
+  }
+}
+
+span {
+  position: relative;
+  padding-left: 28px;
+
+  &::after {
+    content: '';
+    background-image: url(/src/images/icons/icon-cookie.svg);
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.navigation__item:not(:last-child) {
+  margin-bottom: 24px;
+
+  @include on-desctop {
+    margin-bottom: 0;
+    margin-right: 64px;
+  }
+}
+
+.navigation__list {
+  @include on-desctop {
+    display: flex;
+  }
+}
+
+.navigation__link {
+  position: relative;
+  width: fit-content;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 0.5px;
+    display: block;
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+    background-color: $color-accent-orange;
+    bottom: -4px;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &--contacts{
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $color-accent-orange;
+    position: relative;
+    padding-left: 25px;
+
+    &::before {
+      content:"" ;
+      background-image: url(/src/images/icons/icon-phone.svg);
+      position: absolute;
+      left:0;
+      width: 24px;
+      height: 24px;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+  }
+}
+
+.logo {
+  @include hover(transform, scale(1.2))
+}
+

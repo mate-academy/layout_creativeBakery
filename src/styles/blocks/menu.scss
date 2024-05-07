@@ -1,0 +1,38 @@
+.menu {
+  background-color: $color-light-pink;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.page:has(.page__menu:target) {
+  overflow: hidden; /* not to scroll the page */
+}
+
+.menu__top {
+  display: flex;
+}
+
+.icon--close {
+  background-image: url(/src/images/icons/icon-close.svg);
+}
+
+.menu__navigation {
+  text-align: center;
+}
+
