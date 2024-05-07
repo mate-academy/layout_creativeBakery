@@ -1,0 +1,21 @@
+.page {
+  &:has(&__aside:target) {
+    overflow: hidden;
+  }
+
+  &__aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translate(-100%);
+    pointer-events: none;
+    transition: all $animation-duration;
+    z-index: 2;
+
+    &:target {
+      transform: translate(0%);
+      pointer-events: all;
+    }
+  }
+}

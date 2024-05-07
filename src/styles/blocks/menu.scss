@@ -1,0 +1,45 @@
+.menu {
+  width: 100%;
+  height: 100vh;
+  background: $light-blue;
+
+  &__list {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    gap: 24px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 130px;
+
+    &--primary {
+      display: none;
+
+      @include on-desktop {
+        display: flex;
+        margin: 0;
+        gap: 64px;
+      }
+    }
+  }
+
+  &__link {
+    color: $black-color;
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include hover(color, $orange-color);
+
+    &--contact-us {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: $orange-color;
+      font-weight: 500;
+      line-height: 16px;
+      text-transform: uppercase;
+    }
+  }
+}
