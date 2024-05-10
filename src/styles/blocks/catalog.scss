@@ -1,0 +1,115 @@
+.catalog {
+  &__wrapper {
+    @include page-grid;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    font-size: 48px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    line-height: 40.8px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    color: $second-color;
+    text-transform: uppercase;
+    margin-top: 64px;
+
+    @include on-tablet {
+      grid-column: span 5;
+    }
+  }
+
+  &__description {
+    margin-top: 24px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 5;
+      font-size: 16px;
+    }
+
+    @include on-desktop {
+      grid-column: 1/5;
+      font-size: 16px;
+    }
+  }
+
+  &__product {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      &--cakes1,
+      &--cakes3 {
+        // grid-column-start: 1;
+        grid-column: 1/4;
+      }
+
+      &--cakes2,
+      &--cookies {
+        grid-column: span 3;
+
+        // grid-column-start: 4/7;
+      }
+
+      &--donuts1 {
+        grid-column: 3/6;
+      }
+
+      &--donuts2 {
+        grid-column: span 3;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-top: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: $subtitle-color;
+  }
+
+  &__text {
+    margin-top: 8px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+  }
+
+  &__img {
+    margin-top: 56px;
+    width: 100%;
+
+    @include hover(transform, scale(1.02));
+  }
+
+  &__link {
+    display: block;
+    color: $second-color;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-decoration: none;
+    position: relative;
+    margin-top: 16px;
+    padding: 4px 0 4px 24px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: -1px;
+      background-size: cover;
+      background-image: url(../images/icons/icon-arrow.png);
+    }
+  }
+}

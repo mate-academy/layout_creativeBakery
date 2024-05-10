@@ -1,0 +1,120 @@
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-design {
+  @media (min-width: $design-min-width) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --colums: 2;
+
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--colums), 1fr);
+
+  @include on-tablet {
+    --colums: 8;
+
+    column-gap: 24px;
+  }
+
+  @include on-desktop {
+    --colums: 8;
+
+    column-gap: 24px;
+  }
+
+  @include on-design {
+    --colums: 8;
+
+    column-gap: 24px;
+  }
+  &__img {
+    width: 100%;
+  }
+}
+
+@mixin content-padding-in-line() {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop {
+    padding-inline: 44px;
+  }
+
+  @include on-design {
+    // // margin-inline: auto;
+    // padding-inline: 120px;
+    // margin: 0 auto;
+
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+
+@mixin header-padding-in-line() {
+  padding: 16px 20px 16px 16px;
+
+  @include on-tablet {
+    padding: 16px 20px 16px 16px;
+  }
+
+  @include on-desktop {
+    padding: 28px 32px;
+  }
+
+  @include on-design {
+    padding: 28px 32px;
+  }
+}
+
+@mixin titleh2() {
+  font-size: 48px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 40.8px;
+  letter-spacing: -0.05em;
+  text-align: left;
+  color: $second-color;
+  text-transform: uppercase;
+
+  @include on-tablet {
+    font-size: 56px;
+    line-height: 47.6px;
+    letter-spacing: -0.05em;
+    height: 96px;
+  }
+
+  @include on-desktop {
+    font-size: 72px;
+    line-height: 61.2px;
+    letter-spacing: -0.05em;
+    height: 61px;
+  }
+
+  @include on-design {
+    font-size: 72px;
+    line-height: 61.2px;
+  }
+}

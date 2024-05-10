@@ -1,0 +1,127 @@
+.footer {
+  background-color: $main-color;
+  padding: 56px 0;
+
+  @include on-tablet {
+    padding: 88px 0;
+  }
+
+  &__wrapper {
+    @include page-grid;
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  // &__nav {
+  //   @include on-tablet {
+  //     margin-top: 96px;
+  //   }
+
+  // }
+
+  &__logo {
+    height: 40px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 96px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 61px;
+    }
+  }
+
+  &__logo-link {
+    // height: 40px;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__logo-img {
+    width: 168px;
+    height: 40px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 96px;
+    }
+  }
+
+  &__item {
+    color: $subtitle-color;
+  }
+  &__link {
+    color: $white-color;
+  }
+
+  &__contacts {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+  &__contacts-title {
+    @include titleh2;
+
+    color: $white-color;
+    margin-bottom: 40px;
+  }
+
+  &__contact-content {
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__phone {
+    @include on-desktop {
+      // grid-column: span 2;
+    }
+  }
+
+  &__email {
+    margin-top: 40px;
+    grid-template-rows: max-content;
+
+    @include on-desktop {
+      // grid-column: 7/-1;
+      margin-top: 0;
+    }
+  }
+
+  &__bottom {
+    margin-top: 40px;
+    display: flex;
+    gap: 32px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__trademark {
+    margin-top: 40px;
+    color: $subtitle-color;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+}
