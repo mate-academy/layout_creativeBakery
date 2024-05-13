@@ -1,0 +1,31 @@
+.menu {
+  background-color: $light-pink;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+
+  &:target {
+    transform: translateX(0);
+    z-index: 100;
+  }
+
+  &__top-bar {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__content {
+    transform: translateY(-$header-height);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include on-desktop {
+      transform: translateY(-$header-height-desktop);
+    }
+  }
+}

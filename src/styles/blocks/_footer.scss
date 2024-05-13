@@ -1,0 +1,97 @@
+.footer {
+  background-color: $black;
+  padding-block: 56px;
+  color: $white;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  &__content {
+    @include page-grid;
+
+    row-gap: 40px;
+  }
+
+  &__row {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__row--left {
+    padding-bottom: 24px;
+  }
+
+  &__logo {
+    display: block;
+    width: 168px;
+    height: 40px;
+    margin-bottom: 96px;
+
+    @include on-tablet {
+      margin-bottom: 60px;
+    }
+
+    @include hover(transform, scale(1.02));
+  }
+
+  &__subtitle {
+    @include uppercase;
+
+    color: $grey;
+    margin-bottom: 16px;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white;
+
+    @include hover(font-weight, 600);
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    @include on-desktop {
+      flex-direction: row;
+      column-gap: 24px;
+      margin-bottom: 48px;
+    }
+  }
+
+  &__box {
+    flex-basis: 50%;
+  }
+
+  &__social {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__link--social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__path {
+    @include hover(fill, $white);
+  }
+
+  &__copyright {
+    color: $grey;
+  }
+}
