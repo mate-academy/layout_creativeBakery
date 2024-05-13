@@ -1,0 +1,48 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  @include hover(transform, scale(1.02));
+
+  &__picture {
+    object-fit: cover;
+    margin-bottom: 16px;
+    max-height: 356px;
+    border-radius: 8px;
+
+    @include on-tablet {
+      max-height: 424px;
+    }
+
+    @include on-desktop {
+      max-height: 512px;
+    }
+
+    @include on-desktop-big {
+      max-height: 560px;
+    }
+  }
+
+  &__title {
+    @include uppercase;
+
+    color: $grey;
+    margin-bottom: 8px;
+  }
+  &__text {
+    margin-bottom: 16px;
+  }
+  &__link {
+    text-decoration: none;
+    color: $accent-orange;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    @include uppercase;
+
+    &::before {
+      content: url('../images/icons/Icon-arrow.svg');
+    }
+  }
+}

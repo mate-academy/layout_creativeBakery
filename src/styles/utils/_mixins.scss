@@ -1,6 +1,82 @@
+@mixin on-tablet {
+  @media (min-width: $tablet-max-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-max-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop-big {
+  @media (min-width: $desktop-big-max-width) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 16px;
+
+  @include on-tablet {
+    --columns: 8;
+
+    column-gap: 24px;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin h1-font-styles {
+  color: $accent-orange;
+  font-size: 64px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include on-tablet {
+    font-size: 80px;
+  }
+
+  @include on-desktop {
+    font-size: 144px;
+  }
+}
+
+@mixin h2-font-styles {
+  font-size: 48px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  @include on-tablet {
+    font-size: 56px;
+  }
+
+  @include on-desktop {
+    font-size: 72px;
+  }
+}
+
+@mixin big-text {
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin uppercase {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
