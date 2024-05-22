@@ -1,0 +1,55 @@
+@import '../utils';
+
+.about-us {
+  margin-top: 105px;
+
+  &__container,
+  &__blocks,
+  &__group {
+    @include grid;
+
+    row-gap: 56px;
+  }
+
+  &__text,
+  &__blocks,
+  &__group,
+  &__block {
+    grid-column: 1 / -1;
+  }
+
+  &__block {
+    transition: $all-transition;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding-bottom: 10px;
+
+    &:hover {
+      transform: translateY(-10px);
+      border: 1px solid $main-red
+    }
+  }
+
+
+
+  &__text {
+    @include column-flex;
+
+    gap: 24px;
+    color: $main-black;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -2.4px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+}
