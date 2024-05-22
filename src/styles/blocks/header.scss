@@ -136,6 +136,8 @@
 @include on-desktop-small {
   .header {
     color: $text-color;
+    overflow: auto;
+    max-height: 100vh;
     &__cover {
       display: flex;
       flex-direction: column;
@@ -162,6 +164,7 @@
           display: flex;
           gap: 64px;
           box-sizing: border-box;
+          overflow: auto;
 
           &--top {
             display: none;
@@ -270,6 +273,8 @@
 @include on-tablet {
   .header {
     color: $text-color;
+    overflow: auto;
+    max-height: 100vh;
     &__cover {
       display: flex;
       flex-direction: column;
@@ -301,10 +306,11 @@
           position: fixed;
           top: -110vh;
           background-color: $background-color;
-          width: 95%;
+          width: 100%;
+          padding-right: 28px;
           transition: all $transition-duration;
-
           z-index: 10;
+          overflow: auto;
 
           &--link {
             text-align: center;
@@ -319,11 +325,11 @@
             letter-spacing: -0.16px;
             border-bottom: 3px solid $background-color;
             margin: 0;
-          }
 
-          &--link:hover {
-            transform: scale(1.1);
-            border-bottom: 3px solid $orange-color;
+            &--span:hover {
+              transform: scale(1.1);
+              border-bottom: 3px solid $orange-color;
+            }
           }
 
           &--link:last-child {
@@ -360,6 +366,9 @@
 
         &--nav:target {
           top: 0;
+        }
+
+        body.no-scroll {
           overflow: hidden;
         }
       }
@@ -435,6 +444,8 @@
   .header {
     color: $text-color;
     padding-inline: 16px;
+    max-height: 100vh;
+    overflow: auto;
 
     &__cover {
       display: flex;
@@ -467,8 +478,10 @@
           position: fixed;
           top: -110vh;
           background-color: $background-color;
-          width: 95%;
+          width: 100%;
+          padding-right: 16px;
           transition: all $transition-duration;
+          overflow: auto;
 
           z-index: 10;
 
@@ -485,11 +498,11 @@
             letter-spacing: -0.16px;
             border-bottom: 3px solid $background-color;
             margin: 0;
-          }
 
-          &--link:hover {
-            transform: scale(1.1);
-            border-bottom: 3px solid $orange-color;
+            &--span:hover {
+              transform: scale(1.1);
+              border-bottom: 3px solid $orange-color;
+            }
           }
 
           &--link:last-child {
@@ -528,6 +541,9 @@
 
         &--nav:target {
           top: 0;
+        }
+
+        body.no-scroll {
           overflow: hidden;
         }
       }
