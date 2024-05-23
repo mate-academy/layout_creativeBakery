@@ -1,0 +1,54 @@
+.page {
+  font-family: Inter, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: 'slnt' 0;
+  color: $black;
+
+  scroll-behavior: smooth;
+  &:has(.page__menu:target) {
+    overflow: hidden; /* not to scroll the page */
+  }
+
+  &__body {
+    box-sizing: border-box;
+    background: $light-pink;
+
+    min-width: 320px;
+    margin-inline: auto;
+
+    position: relative;
+    overflow-x: hidden; // for card animation
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $light-pink;
+    height: 100%;
+    z-index: 2; // because h1 has z-index 1
+
+    transition: all $transition-duration;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: fit-content;
+  }
+}

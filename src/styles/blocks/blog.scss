@@ -1,0 +1,76 @@
+.blog {
+  &__wrap {
+    padding-bottom: 72px;
+
+    @include page-grid;
+
+    row-gap: 48px;
+
+    @include on-tablet {
+      row-gap: 80px;
+      padding-bottom: 152px;
+    }
+
+    @include on-desktop {
+      row-gap: 80px;
+      padding-bottom: 349px;
+    }
+
+    @include on-xl-display {
+      row-gap: 80px;
+      padding-bottom: 349px;
+    }
+  }
+
+  &__section {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      /* First sequence: 1, 5, 9, 13, ... */
+      &:nth-of-type(4n-3) {
+        grid-column: 1 / span 4;
+      }
+
+      /* Second sequence: 2, 6, 10, 14, ... */
+      &:nth-of-type(4n-2) {
+        grid-column: 5 / span 4;
+      }
+
+      /* Third sequence: 3, 7, 11, 15, ... */
+      &:nth-of-type(4n-1) {
+        grid-column: 1 / span 4;
+      }
+
+      /* Fourth sequence: 4, 8, 12, 16, ... */
+      &:nth-of-type(4n) {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    @include on-desktop {
+      /* First sequence: 1, 5, 9, 13, ... */
+      &:nth-of-type(4n-3) {
+        grid-column: 1 / span 2;
+      }
+
+      /* Second sequence: 2, 6, 10, 14, ... */
+      &:nth-of-type(4n-2) {
+        grid-column: 3 / span 2;
+      }
+
+      /* Third sequence: 3, 7, 11, 15, ... */
+      &:nth-of-type(4n-1) {
+        grid-column: 5 / span 2;
+      }
+
+      /* Fourth sequence: 4, 8, 12, 16, ... */
+      &:nth-of-type(4n) {
+        grid-column: 7 / span 2;
+      }
+    }
+  }
+
+  &__subtitle {
+    color: $accent-orange;
+  }
+}
