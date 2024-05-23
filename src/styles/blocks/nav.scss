@@ -1,0 +1,42 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item:first-child {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__item:last-child {
+    display: block;
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__link {
+    background-repeat: no-repeat;
+    background-size: 24px;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+
+    &--menu {
+      background-image: url('../images/icons/Icon-menu-black.svg');
+
+      @include hover(scale, 1.2);
+    }
+
+    &--close {
+      background-image: url('../images/icons/Icon-close-black.svg');
+
+      @include hover(scale, 1.2);
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.menu {
+  &__item {
+    &:last-child > a {
+      color: $accent-orange;
+    }
+  }
+  &__link {
+    position: relative;
+    color: $black;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $accent-orange;
+
+      transition:
+        background-color 0.3s,
+        transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include hover(color, $accent-orange);
+
+    &:focus {
+      color: $dark-orange !important;
+    }
+
+    &--phone-icon::before {
+      content: '';
+      background-image: url('../images/icons/Icon-phone.svg');
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+      top: 0;
+      left: 0;
+      display: inline-block;
+    }
+  }
+}

@@ -1,0 +1,201 @@
+.footer {
+  background-color: $black;
+  &__wrap {
+    padding-block: 56px;
+
+    @include page-grid;
+
+    gap: 40px;
+
+    @include on-tablet {
+      grid-template-areas:
+        'logo logo logo . contacts contacts contacts contacts'
+        'menu menu menu menu contacts contacts contacts contacts '
+        'social social social social footer footer footer footer';
+
+      padding-block: 88px;
+      gap: 48px;
+    }
+  }
+
+  &__link-logo {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    align-self: flex-start;
+
+    @include on-tablet {
+      grid-column: 1 / span 3;
+      grid-area: logo;
+    }
+  }
+
+  &-menu {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / span 4;
+      grid-area: menu;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+
+    &__title {
+      color: $gray;
+    }
+
+    &__list {
+      color: #fff;
+      display: grid;
+      gap: 16px;
+    }
+
+    &__item {
+      width: fit-content;
+      &:last-child > a {
+        color: #fff;
+      }
+    }
+
+    &__link {
+      color: #fff;
+      justify-content: flex-start;
+    }
+  }
+
+  &-contacts {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / span 4;
+      grid-area: contacts;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 40px;
+
+    &__wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      @include on-desktop {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+    }
+
+    &__title {
+      color: #fff;
+      padding-right: 10px;
+      margin-block: 24px 0;
+
+      @include on-tablet {
+        margin-block: 0;
+      }
+    }
+
+    &__subtitle {
+      color: $gray;
+    }
+
+    &__phones {
+      display: grid;
+      gap: 16px;
+    }
+
+    &__link {
+      color: #fff;
+      justify-content: flex-start;
+    }
+    &__email {
+      display: grid;
+      gap: 16px;
+    }
+  }
+
+  &-social {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / span 4;
+      grid-area: social;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+
+    &__link {
+      background-repeat: no-repeat;
+      background-size: 24px;
+      height: 24px;
+      width: 24px;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      &:focus {
+        transform: scale(1.2);
+      }
+
+      &--facebook {
+        background-image: url('../images/icons/Icon-facebook-red.svg');
+
+        &:hover {
+          background-image: url('../images/icons/Icon-facebook-white.svg');
+        }
+
+        &:focus {
+          background-image: url('../images/icons/Icon-facebook-white.svg');
+        }
+      }
+
+      &--instagram {
+        background-image: url('../images/icons/Icon-instagram-red.svg');
+
+        &:hover {
+          background-image: url('../images/icons/Icon-instagram-white.svg');
+        }
+
+        &:focus {
+          background-image: url('../images/icons/Icon-instagram-white.svg');
+        }
+      }
+
+      &--twitter {
+        background-image: url('../images/icons/Icon-twitter-2x.png');
+
+        &:hover {
+          background-image: url('../images/icons/Icon-twitter-2x-white.png');
+        }
+
+        &:focus {
+          background-image: url('../images/icons/Icon-twitter-2x-white.png');
+        }
+      }
+
+      transition: all $transition-duration;
+    }
+  }
+
+  &-bottom {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / span 4;
+      grid-area: footer;
+    }
+
+    p {
+      color: $gray;
+    }
+  }
+}
