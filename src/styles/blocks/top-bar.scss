@@ -1,0 +1,40 @@
+.top-bar {
+  box-sizing: border-box;
+  width: 100%;
+  height: 64px;
+  padding: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include on-laptop {
+    height: 88px;
+    padding: 28px 32px;
+  }
+
+  &__icon {
+    @include icon(url(../images/icons/icon-menu.svg));
+    @include on-hover(transform, scale(1.3));
+    @include pointer-cursor;
+
+    &--menu {
+      @include on-laptop {
+        display: none;
+      }
+
+      @include on-hover(
+        background-image,
+        url(../images/icons/icon-menu-hover.svg)
+      );
+    }
+
+    &--close {
+      @include icon(url(../images/icons/icon-close.svg));
+      @include on-hover(
+        background-image,
+        url(../images/icons/icon-close-hover.svg)
+      );
+    }
+  }
+}

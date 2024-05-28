@@ -1,0 +1,184 @@
+.header {
+  min-width: $contentMinWidth;
+
+  &__content {
+    @include grid-container;
+
+    justify-items: center;
+
+    box-sizing: border-box;
+    padding: 32px 0 40px;
+
+    @include on-tablet {
+      padding: 80px 0 228px;
+    }
+
+    @include on-laptop {
+      padding: 135px 0 161px;
+    }
+
+    @include on-desktop {
+      padding: 144px 0 112px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+
+    margin: 0;
+    margin-bottom: 32px;
+
+    letter-spacing: -0.01em;
+    text-align: center;
+
+    @include on-tablet {
+      grid-column: span 4;
+      justify-self: start;
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include on-laptop {
+      grid-column: span 2;
+      margin-bottom: 8px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title-wrapper {
+    position: relative;
+
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 290px;
+
+    @include on-tablet {
+      margin-bottom: 210px;
+    }
+
+    @include on-laptop {
+      margin-bottom: 64px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 290px;
+      top: 100%;
+      z-index: -1;
+
+      background-image: url(../images/cookie.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include on-tablet {
+        top: auto;
+        height: 328px;
+      }
+
+      @include on-laptop {
+        height: 546px;
+      }
+
+      @include on-desktop {
+        height: 586px;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 54.4px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      font-size: 80px;
+      line-height: 68px;
+    }
+
+    @include on-laptop {
+      font-size: 136px;
+      line-height: 115.6px;
+    }
+
+    @include on-desktop {
+      font-size: 144px;
+      line-height: 122.4px;
+    }
+  }
+
+  &__learn-more {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+
+    box-sizing: border-box;
+    width: 288px;
+    height: 56px;
+    border-radius: 32px;
+    border: 2px solid $accentOrange;
+
+    @include pointer-cursor;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: $accentOrange;
+
+    @include on-tablet {
+      width: 326px;
+    }
+
+    @include on-laptop {
+      justify-self: start;
+      width: 260px;
+    }
+
+    @include on-desktop {
+      width: 280px;
+    }
+
+    &::before {
+      content: '';
+
+      @include icon(url(../images/icons/icon-cookie.svg));
+    }
+
+    @include on-hover(background-color, $accentOrange);
+    @include on-hover(color, $white);
+
+    &:hover::before {
+      content: '';
+
+      @include icon(url(../images/icons/icon-cookie-hover.svg));
+    }
+
+    &:active {
+      background-color: $darkOrange;
+      border-color: $darkOrange;
+    }
+  }
+}
