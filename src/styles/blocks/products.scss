@@ -1,0 +1,94 @@
+.products {
+  &__content {
+    @include grid-container;
+
+    justify-items: center;
+    row-gap: 56px;
+    padding-top: 64px;
+
+    @include on-tablet {
+      row-gap: 80px;
+      padding-top: 0;
+    }
+
+    @include on-laptop {
+      padding-top: 152px;
+    }
+
+    @include on-desktop {
+      padding-top: 178px;
+    }
+  }
+
+  &__info {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-self: start;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 24px;
+
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 40.8px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      font-size: 56px;
+      line-height: 47.6px;
+    }
+
+    @include on-laptop {
+      font-size: 72px;
+      line-height: 61.2px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  &__card {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-laptop {
+      &--1 {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+      }
+
+      &--2 {
+        grid-column: 4 / 7;
+        grid-row: 2 / 3;
+      }
+
+      &--3 {
+        grid-column: 3 / 6;
+        grid-row: 3 / 4;
+      }
+
+      &--4 {
+        grid-column: 6 / 9;
+        grid-row: 3 / 4;
+      }
+
+      &--5 {
+        grid-column: 1 / 4;
+        grid-row: 4 / 5;
+      }
+
+      &--6 {
+        grid-column: 4 / 7;
+        grid-row: 4 / 5;
+      }
+    }
+  }
+}
