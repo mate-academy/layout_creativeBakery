@@ -1,0 +1,123 @@
+.header {
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  @include on-desktop {
+    height: 100vh;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+  }
+
+  &__bottom {
+    @include page-grid;
+
+    place-items: center;
+    text-align: center;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+  }
+
+  &__text {
+    padding: 0;
+    margin: 32px 0;
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1/ 4;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 64px;
+    line-height: 54.4px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $c-orange;
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    z-index: 2;
+
+    @include on-tablet {
+      font-size: 80px;
+      font-weight: 400;
+      line-height: 68px;
+      position: relative;
+      margin: 146px 0 210px;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+      line-height: 115.6px;
+      margin: 8px 0 64px;
+    }
+
+    @include on-desktop-xl {
+      font-size: 144px;
+    }
+  }
+
+  &__image {
+    grid-column: 1 / 8;
+    grid-row: 3 / 4;
+    z-index: 1;
+
+    @include on-tablet {
+      position: absolute;
+      width: 326px;
+      height: 328px;
+    }
+
+    @include on-desktop {
+      width: 544px;
+      height: 586px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 4px;
+    text-decoration: none;
+    color: $c-orange;
+    text-transform: uppercase;
+    border: 2px $c-orange solid;
+    border-radius: 32px;
+    padding: 16px 0;
+    width: 288px;
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+    margin-bottom: 40px;
+    transition: all 300ms;
+
+    &:hover {
+      background-color: $c-orange;
+      color: #fff;
+
+      img {
+        content: url('../images/IconСookieWhite.svg');
+      }
+    }
+
+    @include on-tablet {
+      width: 326px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+    }
+  }
+}
