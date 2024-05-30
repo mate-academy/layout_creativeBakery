@@ -1,0 +1,59 @@
+.footer {
+  background: #000;
+  padding-top: 56px;
+  padding-bottom: 56px;
+
+  @include on-tablet {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  &__container {
+    @include page-grid;
+
+    row-gap: 40px;
+  }
+
+  &__menu {
+    grid-column: -1 / 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    padding-bottom: 24px;
+
+    @include on-tablet {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.networks {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  grid-column: -1 / 1;
+
+  @include on-tablet {
+    margin-top: 8px;
+    grid-column: 1 / 5;
+  }
+
+  &__photo {
+    @include hover(transform, scale(1.3));
+
+    &:hover path {
+      fill: $text-color-hover;
+    }
+  }
+}

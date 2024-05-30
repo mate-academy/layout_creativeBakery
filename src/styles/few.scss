@@ -1,0 +1,86 @@
+.few {
+  @include page-grid;
+
+  background-image: url(/src/images/few-bg.png);
+  background-repeat: no-repeat;
+  background-position: center 616px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  row-gap: 48px;
+
+  @include on-tablet {
+    padding-top: 152px;
+    padding-bottom: 152px;
+    row-gap: 80px;
+    background-position: center center;
+    background-size: 680px;
+  }
+
+  @include on-desktop {
+    background-position: center 178px;
+    padding-top: 178px;
+    padding-bottom: 349px;
+    background-size: 720px;
+    row-gap: 144px;
+  }
+
+  &__title {
+    grid-column: -1 / 1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__text {
+    grid-column: -1 / 1;
+    margin-top: -12px;
+    margin-bottom: 16px;
+
+    @include on-tablet {
+      grid-column: 5 / 9;
+      margin-top: 0;
+      margin-bottom: -8px;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 9;
+      margin-bottom: 0;
+    }
+  }
+
+  &__card {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__main {
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 81.6px;
+    letter-spacing: -0.05em;
+    margin: 0;
+    color: var(--main-text-color);
+  }
+
+  &__content {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    margin: 0;
+    margin-top: 8px;
+    color: $gray-text-color;
+  }
+}

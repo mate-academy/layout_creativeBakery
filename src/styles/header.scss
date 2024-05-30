@@ -1,0 +1,88 @@
+.header {
+  background-image: url(/src/images/header-bg.png);
+  background-repeat: no-repeat;
+  background-position: center 284px;
+  background-size: 290px;
+  height: 606px;
+
+  @include on-tablet {
+    background-position: center 208px;
+    background-size: 328px;
+    height: 900px;
+  }
+
+  @include on-desktop {
+    background-position: center 88px;
+    background-size: 546px;
+    height: 700px;
+  }
+
+  @include on-big-desktop {
+    background-size: 586px;
+    height: 700px;
+  }
+
+  &__content {
+    @include contest-pading-inline;
+    @include page-grid;
+  }
+
+  &__title {
+    grid-column: -1 / 1;
+    text-align: center;
+    color: var(--main-text-color);
+    text-transform: uppercase;
+    margin: 0;
+    font-family: Inter, sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 54.4px;
+    letter-spacing: -8px;
+
+    @include on-tablet {
+      font-size: 80px;
+      line-height: 68px;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+      line-height: 115.6px;
+    }
+
+    @include on-big-desktop {
+      font-size: 144px;
+      line-height: 122px;
+      width: 1200px;
+    }
+  }
+
+  &__text {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    grid-column: -1 / 1;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: $text-color;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      margin-top: 80px;
+      margin-bottom: 146px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+      margin-top: 135px;
+      margin-bottom: 8px;
+    }
+
+    @include on-big-desktop {
+      margin-top: 144px;
+      margin-bottom: 40px;
+    }
+  }
+}

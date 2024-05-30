@@ -1,0 +1,118 @@
+.bake {
+  @include page-grid;
+
+  row-gap: 56px;
+  padding-top: 64px;
+
+  @include on-tablet {
+    row-gap: 80px;
+    padding-top: 0;
+  }
+
+  @include on-desktop {
+    padding-top: 152px;
+  }
+
+  @include on-big-desktop {
+    padding-top: 178px;
+  }
+
+  &__title {
+    grid-column: -1 / 1;
+
+    &--text {
+      margin: 0;
+      margin-top: 24px;
+    }
+  }
+}
+
+.product-card {
+  grid-column: -1 / 1;
+
+  @include hover(transform, scale(1.05));
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 3;
+  }
+
+  &:nth-child(4) {
+    @include on-desktop {
+      grid-column: 3 / span 3;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: $gray-text-color;
+    margin: 16px 0 0;
+  }
+
+  &__text {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: $text-color;
+    margin: 8px 0 16px;
+  }
+
+  &__order {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    text-decoration: none;
+
+    &--icon {
+      background-image: url(/src/images/icons/icon-arrow.svg);
+      width: 24px;
+      height: 24px;
+    }
+
+    &--text {
+      text-transform: uppercase;
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      color: $orange-text;
+      margin: 0;
+      align-items: center;
+    }
+
+    &:hover {
+      @include hover-old(transform, scale(1.03), left);
+
+      .product-card__order--text {
+        background-color: $orange-text;
+        color: $text-color-hover;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  &__photo {
+    width: 100%;
+  }
+
+  &:hover {
+    border-radius: 20px;
+    border: 2px solid $orange-text;
+
+    .product-card__photo {
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+    }
+  }
+}
