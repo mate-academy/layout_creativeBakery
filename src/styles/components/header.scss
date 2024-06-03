@@ -1,0 +1,91 @@
+.header {
+  @include grid(2) {
+    row-gap: 20px;
+  }
+
+  &__top {
+    grid-column: 1 / -1;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  &__wrapper {
+    margin-top: 30px;
+  }
+
+  &__img {
+    @include animation(cookie-animation, 20s, linear) {
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $accent-orange;
+  }
+
+  &__btn {
+    @include flex(row, 4px) {
+      justify-content: center;
+    }
+
+    cursor: pointer;
+    width: 100%;
+    height: 56px;
+
+    @include font-style(500, 16px, 16px);
+
+    text-transform: uppercase;
+    color: $accent-orange;
+
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+    background-color: transparent;
+
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+
+      background-image: url(../icon/icon-cookie.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    @include hover(transform, scale(1.03), $time-fast) {
+      box-shadow: $shadow $accent-orange;
+      text-shadow: $shadow $accent-orange;
+    }
+
+    @include active(box-shadow, inset 10px 15px 30px $accent-orange) {
+      color: $white;
+    }
+  }
+
+  @keyframes cookie-animation {
+    0% {
+      transform: scale(1) rotate(0);
+    }
+
+    25% {
+      transform: scale(0.9) rotate(20deg);
+    }
+
+    50% {
+      transform: scale(1.1) rotate(10deg);
+    }
+
+    75% {
+      transform: scale(0.9) rotate(20deg);
+    }
+
+    100% {
+      transform: scale(1) rotate(0);
+    }
+  }
+}

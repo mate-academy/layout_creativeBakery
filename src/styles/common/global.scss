@@ -1,0 +1,37 @@
+:root {
+  --tablet: #{$tablet};
+  --desktop: #{$desktop};
+  --design: #{$design};
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.body {
+  @extend %inter;
+
+  @include flex(column, 100px);
+
+  margin: 0 $m-retreat;
+  color: $black;
+  background: $light-pink;
+
+  &__lock {
+    overflow: hidden;
+  }
+
+  @include breakpoint($tablet) {
+    margin: 0 $t-retreat;
+  }
+
+  @include breakpoint($design) {
+    margin: 0 $d-retreat;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

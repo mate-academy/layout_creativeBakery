@@ -1,0 +1,68 @@
+.top-bar {
+  @include flex(row, 0) {
+    justify-content: space-between;
+  }
+
+  padding: 16px 0;
+
+  &__logo {
+    cursor: pointer;
+    max-width: 136px;
+
+    @include hover(transform, $scale, $time-average) {
+      filter: drop-shadow($shadow $black);
+    }
+  }
+
+  &__icon-menu {
+    position: relative;
+    width: 30px;
+    height: 30px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 3px;
+      width: 24px;
+      height: 3px;
+
+      border-radius: 5px;
+      background-color: $black;
+      transition:
+        $time_fast $time_fast,
+        transform $time-fast;
+    }
+
+    &::before {
+      top: 10px;
+    }
+
+    &::after {
+      bottom: 9px;
+    }
+
+    &--active {
+      &::before {
+        top: 13px;
+        transform: rotate(45deg);
+        transition:
+          $time_fast,
+          transform $time_fast ease $time-fast;
+      }
+
+      &::after {
+        bottom: 13px;
+        transform: rotate(-45deg);
+        transition:
+          $time_fast,
+          transform $time_fast ease $time-fast;
+      }
+    }
+
+    @include hover(transform, $scale, $time-average) {
+      border-radius: 50%;
+      box-shadow: 0 0 5px $black;
+    }
+  }
+}
