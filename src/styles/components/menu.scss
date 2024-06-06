@@ -2,7 +2,7 @@
   position: fixed;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
 
   @include flex(column, 30px) {
     justify-content: center;
@@ -114,8 +114,7 @@
       }
 
       .menu__contact--icon {
-        @include animation(phone-animation, $time-average, linear) {
-          animation-timing-function: ease-in-out;
+        @include animation(phone-animation, $time-average, ease-in-out) {
           animation-iteration-count: infinite;
         }
       }
@@ -130,36 +129,31 @@
         color: $white;
       }
     }
+  }
 
-    @keyframes border-animation {
-      0% {
-        clip-path: ellipse(10% 10% at 10% 10%);
-      }
-      100% {
-        clip-path: ellipse(100% 100% at 60% 80%);
-      }
+  @include breakpoint($desktop) {
+    width: 45vw;
+    height: 5vh;
+    top: 0;
+    left: 48%;
+
+    padding: 16px 44px;
+    pointer-events: all;
+    visibility: visible;
+    transform: translate(0);
+
+    flex-direction: row;
+    align-items: flex-start;
+
+    border-radius: 0 0 20px 20px;
+    background-color: rgba($color: $light-pink, $alpha: 0.8);
+
+    &__list {
+      flex-direction: row;
     }
 
-    @keyframes phone-animation {
-      0% {
-        transform: translateY(0);
-      }
-
-      25% {
-        transform: translateY(2px);
-      }
-
-      50% {
-        transform: translateY(-2px) $scale;
-      }
-
-      75% {
-        transform: translateY(2px);
-      }
-
-      100% {
-        transform: translateY(0);
-      }
+    &__item {
+      width: 120px;
     }
   }
 }

@@ -63,4 +63,67 @@
   animation-duration: $_duration;
   animation-timing-function: $_term;
   @content;
+
+  @keyframes border-animation {
+    0% {
+      clip-path: ellipse(10% 10% at 10% 10%);
+    }
+    100% {
+      clip-path: ellipse(100% 100% at 60% 80%);
+    }
+  }
+
+  @keyframes phone-animation {
+    0% {
+      transform: translateY(0);
+    }
+
+    25% {
+      transform: translateY(2px);
+    }
+
+    50% {
+      transform: translateY(-2px) $scale;
+    }
+
+    75% {
+      transform: translateY(2px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes cookie-animation {
+    0% {
+      transform: scale(1) rotate(0);
+    }
+
+    25% {
+      transform: scale(0.9) rotate(20deg);
+    }
+
+    50% {
+      transform: scale(1.1) rotate(10deg);
+    }
+
+    75% {
+      transform: scale(0.9) rotate(20deg);
+    }
+
+    100% {
+      transform: scale(1) rotate(0);
+    }
+  }
+
+  @keyframes anime-arrow {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(340%);
+    }
+  }
 }

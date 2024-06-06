@@ -1,3 +1,237 @@
 .main {
-  background-color: antiquewhite;
+  @include grid(2) {
+    row-gap: 70px;
+  }
+}
+
+.products {
+  grid-column: 1 / -1;
+
+  @include grid(2) {
+    row-gap: 60px;
+  }
+
+  &__top {
+    grid-column: 1 / -1;
+
+    @include flex(column, 24px);
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__text {
+    height: 100%;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    height: 100%;
+
+    @include grid(2) {
+      row-gap: 60px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include flex(column, 20px) {
+      align-items: flex-start;
+    }
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    color: $gray;
+  }
+
+  &__wrapper {
+    height: 35px;
+  }
+
+  &__link {
+    @include flex(row, 2px);
+    @include font-style(500, 16px, 16px);
+
+    text-transform: uppercase;
+    padding: 5px 30px 5px 5px;
+    color: $accent-orange;
+
+    &::before {
+      content: '';
+      display: block;
+
+      width: 24px;
+      height: 24px;
+
+      background-image: url(../icon/icon-arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    @include hover(transform, $scale, $time-average) {
+      border: 1px solid $accent-orange;
+      box-shadow: $shadow $accent-orange;
+      border-radius: 10px;
+
+      &::before {
+        @include animation(anime-arrow, $time-average, ease-in-out) {
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+
+    @include active(box-shadow, inset 5px 5px 20px $accent-orange) {
+      color: $white;
+      border: none;
+
+      &::before {
+        background-image: url(../icon/icon-arrow-white.svg);
+      }
+    }
+  }
+
+  @include media-breakpoint($tablet, 8) {
+    column-gap: 24px;
+
+    &__top {
+      align-items: flex-start;
+    }
+
+    &__title {
+      font-size: 56px;
+    }
+
+    &__content {
+      row-gap: 80px;
+    }
+
+    &__card {
+      grid-column: auto;
+    }
+  }
+
+  @include media-breakpoint($desktop, 8) {
+    &__title {
+      font-size: 72px;
+    }
+
+    &__content {
+      @include grid(8);
+    }
+
+    &__card {
+      &:nth-of-type(1) {
+        grid-column: 1 / 4;
+      }
+
+      &:nth-of-type(2) {
+        grid-column: 4 / 7;
+      }
+
+      &:nth-of-type(3) {
+        grid-column: 3 / 6;
+      }
+
+      &:nth-of-type(4) {
+        grid-column: 6 / -1;
+      }
+
+      &:nth-of-type(5) {
+        grid-column: 1 / 4;
+      }
+
+      &:nth-of-type(6) {
+        grid-column: 4 / 7;
+      }
+    }
+  }
+}
+
+.about-us {
+  grid-column: 1 / -1;
+
+  @include grid(2) {
+    row-gap: 50px;
+  }
+
+  background-image: url(../images/crumbs.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center 75%;
+  margin-top: 100px;
+
+  &__top {
+    grid-column: 1 / -1;
+
+    @include flex(column, 20px);
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include grid(2) {
+      row-gap: 50px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include flex(column, 10px) {
+      align-items: flex-start;
+    }
+  }
+
+  &__numbers {
+    font-size: 96px;
+    line-height: 82px;
+  }
+
+  @include media-breakpoint($tablet, 8) {
+    gap: 24px 80px;
+
+    background-position: center;
+    background-size: 90vh;
+
+    &__top {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    &__title {
+      flex-basis: 50%;
+    }
+
+    &__text {
+      flex-basis: 50%;
+    }
+
+    &__card {
+      grid-column: auto;
+    }
+  }
+
+  @include media-breakpoint($desktop, 8) {
+    height: 673px;
+    background-size: contain;
+
+    &__title {
+      font-size: 72px;
+      line-height: 61px;
+    }
+
+    &__content {
+      @include flex(row, 20px) {
+        justify-content: space-between;
+      }
+    }
+  }
 }
