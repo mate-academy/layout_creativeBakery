@@ -4,6 +4,9 @@ import { infoBlock, products } from "./array_of_data.js";
 
 import {
   classHtml,
+  cloningElement,
+  elementCloning,
+  elementCloningAll,
   querySelector,
   querySelectorAll,
   templateHtmlForAboutUs,
@@ -29,6 +32,21 @@ const NO_ACTIVE = '--no-active';
     querySelector('products__content').innerHTML = products.map(templateHtmlForProduct).join('');
 
     querySelector('about-us__content').innerHTML = infoBlock.map(templateHtmlForAboutUs).join('');
-    
-    // #region change the position of element when the screen size changes
-    // #endregion ???????????????????????
+
+    // #region clone navigation menu
+    const cloneMenu = querySelector('menu__list').cloneNode(true);
+    cloneMenu.classList = 'footer__list';
+
+    querySelector('footer__menu--content').appendChild(cloneMenu);
+
+    const cloneItem =  cloneMenu.querySelectorAll('LI');
+    const cloneLink =  cloneMenu.querySelectorAll('A');
+
+    for(let i of cloneItem) {
+      i.classList = 'footer__item';
+    };
+
+    for(let i of cloneLink) {
+      i.classList = 'footer__link';
+    };
+    // #endregion
