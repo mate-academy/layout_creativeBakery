@@ -1,0 +1,40 @@
+.nav {
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+
+    &--bottom {
+      flex-direction: column;
+      row-gap: 24px;
+      text-align: center;
+    }
+
+    &--top {
+      column-gap: 64px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &--accent {
+      @extend %uppercase-text;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image: url(/src/images/icons/icon-phone-orange.svg);
+        background-size: cover;
+        margin-right: 4px;
+      }
+    }
+  }
+}
