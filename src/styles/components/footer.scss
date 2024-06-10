@@ -12,11 +12,13 @@
     content: '';
     position: absolute;
     inset: 0 - $m-retreat 0 - $m-retreat;
-    background-color: $black;
     z-index: -1;
+    background-color: $black;
   }
 
   &__logo {
+    cursor: pointer;
+
     @include hover(transform, $scale, $time-average) {
       filter: drop-shadow($shadow $white);
     }
@@ -34,8 +36,9 @@
   &__item {
     position: relative;
     cursor: pointer;
-    width: 120%;
     padding: 5px;
+    width: 100%;
+    border-radius: 10px;
 
     @extend %hover-and-active;
   }
@@ -46,7 +49,14 @@
     color: $white;
   }
 
+  &__content-contact,
+  &__content-email {
+    @include flex(row, 50px);
+  }
+
   &__list,
+  &__wrapper,
+  &__call-list,
   &__email {
     @include flex(column, 15px) {
       align-items: flex-start;
@@ -56,12 +66,14 @@
   }
 
   &__link {
+    display: block;
     color: $white;
   }
 
   &__mail {
-    color: $white;
+    border-radius: 10px;
     padding: 5px;
+    color: $white;
 
     @extend %hover-and-active;
   }
@@ -69,10 +81,6 @@
   &__subtitle {
     text-transform: uppercase;
     color: $gray;
-  }
-
-  &__popur {
-    color: $white;
   }
 
   &__social-network {
@@ -143,7 +151,10 @@
 
     &__contact-us {
       flex-direction: row;
-      justify-content: space-between;
+    }
+
+    &__content-contact {
+      width: 230px;
     }
   }
 }

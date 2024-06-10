@@ -4,7 +4,7 @@
   right: 0;
   z-index: 2;
 
-  @include flex(column, 30px) {
+  @include flex(column, 20px) {
     justify-content: center;
   }
 
@@ -68,6 +68,8 @@
   }
 
   &__link {
+    display: block;
+
     @include font-style(400, 16px, 24px);
 
     color: $black;
@@ -76,15 +78,22 @@
   &__contact {
     position: relative;
 
-    @include flex(row, 10px);
+    @include flex(row, 10px) {
+      justify-content: center;
+    }
 
     cursor: pointer;
-    padding: 3px 10px;
     border-radius: 10px;
+    width: 200px;
+    height: 32px;
 
     &--icon {
       width: 24px;
       height: auto;
+
+      &--active {
+        display: none;
+      }
     }
 
     &--text {
@@ -150,11 +159,12 @@
     background-color: rgba($color: $light-pink, $alpha: 0.8);
 
     &__list {
+      width: 100%;
       flex-direction: row;
     }
 
-    &__item {
-      width: 120px;
+    &__contact {
+      width: 300px;
     }
   }
 }
