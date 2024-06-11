@@ -5,7 +5,6 @@ import { infoBlock, products } from "./array_of_data.js";
 import {
   classHtml,
   querySelector,
-  querySelectorAll,
   templateHtmlForAboutUs,
   templateHtmlForProduct,
   templateHtmlInformationNotification
@@ -43,7 +42,8 @@ const NO_ACTIVE = '--no-active';
 
 // #region view information notification
   querySelector('menu__contact').addEventListener('click', () => {
-    templateHtmlInformationNotification('popup-call', 'menu__contact', 'first', '/icon-phone.39dbd526.svg');
+    
+    templateHtmlInformationNotification('popup-call', 'menu__contact', 'first', 'icon-phone-popup.9d6af868.svg');
 
     classHtml('menu__contact--icon', 'add', 'menu__contact--icon' + ACTIVE);
 
@@ -58,7 +58,7 @@ const NO_ACTIVE = '--no-active';
       'popup-call',
       'footer__content-contact',
       'end',
-      '/icon-phone.39dbd526.svg'
+      'icon-phone-popup.9d6af868.svg'
     );
   });
 
@@ -68,12 +68,12 @@ const NO_ACTIVE = '--no-active';
       'popup-call',
       'footer__content-email',
       'end',
-      '/icon-mail.42c4e05a.svg'
+      'icon-email.d67c3a5a.svg'
     );
   });
 // #endregion
 
-    // #region clone navigation menu
+// #region clone navigation menu
     const cloneMenu = querySelector('menu__list').cloneNode(true);
     cloneMenu.classList = 'footer__list';
 
@@ -102,4 +102,20 @@ const NO_ACTIVE = '--no-active';
 
     newfooterItem.appendChild(newfooterLink);
     cloneMenu.appendChild(newfooterItem);
-    // #endregion
+// #endregion
+
+// #region changing colors
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const colors = ["#ffeefc", "#eef7ff"];
+      let currentColor = 0;
+
+      function changingColors() {
+        document.body.style.backgroundColor = colors[currentColor];
+        querySelector('menu').style.backgroundColor = colors[currentColor];
+        currentColor = (currentColor + 1) % colors.length;
+      }
+
+      setInterval(changingColors, 8000);
+      changingColors();
+    });
+//#endregion

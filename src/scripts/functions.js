@@ -4,16 +4,6 @@
 export function querySelector(className) {
   return document.querySelector(`.${className}`);
 };
-
-export function querySelectorAll(clasessName) {
-  return document.querySelectorAll(`.${clasessName}`);
-};
-
-export function breakpoint(breakpoint) {
-  return getComputedStyle(document.documentElement)
-  .getPropertyPriority(breakpoint)
-  .slice(0, -2);
-};
 // #endregion
 
 // #region manipulation of class
