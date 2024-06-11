@@ -5,15 +5,25 @@
     display: flex;
     margin: 0;
 
-    &--bottom {
+    &-top {
+      column-gap: 64px;
+    }
+
+    &-bottom {
       flex-direction: column;
       row-gap: 24px;
       text-align: center;
     }
 
-    &--top {
-      column-gap: 64px;
+    &-footer {
+      flex-direction: column;
+      row-gap: 16px;
+      align-items: start;
     }
+  }
+
+  &__item {
+    @include hover-grow;
   }
 
   &__link {
@@ -35,6 +45,10 @@
         background-size: cover;
         margin-right: 4px;
       }
+    }
+
+    &--white {
+      color: $c-white;
     }
   }
 }
