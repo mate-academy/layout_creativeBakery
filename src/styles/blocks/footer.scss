@@ -1,0 +1,143 @@
+.footer {
+  background-color: $c-black;
+
+  &__content {
+    @include page-grid;
+
+    padding-block: 56px;
+
+    @include on-tablet {
+      grid-template-areas:
+        'logo logo logo logo contact-title contact-title contact-title contact-title'
+        'menu menu menu menu phone phone phone phone'
+        'menu menu menu menu email email email email'
+        'social social social social copyright copyright copyright copyright';
+    }
+
+    @include on-desktop {
+      grid-template-areas:
+        'logo logo logo logo contact-title contact-title contact-title contact-title'
+        'menu menu menu menu phone phone email email'
+        'social social social social copyright copyright copyright copyright';
+    }
+  }
+
+  &__logo-link {
+    margin-bottom: 40px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-area: logo;
+    }
+  }
+
+  &__logo {
+    @include hover-grow;
+
+    width: 168px;
+    height: 40px;
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-area: menu;
+    }
+  }
+
+  &__nav-title {
+    @extend %uppercase-text;
+
+    color: $c-gray;
+  }
+
+  &__title {
+    color: $c-white;
+    margin-bottom: 40px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-area: contact-title;
+    }
+  }
+
+  &__phone-wrapper {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    row-gap: 16px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-area: phone;
+    }
+  }
+
+  &__phone-title {
+    @extend %uppercase-text;
+
+    color: $c-gray;
+  }
+
+  &__phone-number {
+    @extend %body-text;
+    @include hover-grow;
+
+    color: $c-white;
+    text-decoration: none;
+  }
+
+  &__email-wrapper {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 16px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-area: email;
+    }
+  }
+
+  &__email-title {
+    @extend %uppercase-text;
+
+    color: $c-gray;
+  }
+
+  &__email-adress {
+    @extend %body-text;
+    @include hover-grow;
+
+    color: $c-white;
+    text-decoration: none;
+  }
+
+  &__social-wrapper {
+    margin-bottom: 40px;
+    display: flex;
+    column-gap: 32px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-area: social;
+      margin-bottom: 0;
+    }
+  }
+
+  &__copyright-wrapper {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-area: copyright;
+    }
+  }
+
+  &__copyright {
+    color: $c-gray;
+  }
+}

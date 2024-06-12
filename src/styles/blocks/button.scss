@@ -1,0 +1,47 @@
+.button {
+  border: 2px solid $c-accent-orange;
+  border-radius: 32px;
+  padding-block: 14px;
+  box-sizing: border-box;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url(/src/images/icons/icon-cookie-orange.svg);
+    background-size: cover;
+    margin-right: 4px;
+    transition: background-image 0.3s;
+  }
+
+  &:hover {
+    background-color: $c-accent-orange;
+    color: $c-white;
+
+    &::before {
+      background-image: url(/src/images/icons/Icon-cookie-hover.svg);
+    }
+  }
+
+  &:focus {
+    border: 2px solid $c-dark-orange;
+    background-color: $c-dark-orange;
+    color: $c-white;
+
+    &::before {
+      background-image: url(/src/images/icons/Icon-cookie-hover.svg);
+    }
+  }
+
+  &:disabled {
+    border: 2px solid $c-light-orange;
+    color: $c-light-orange;
+
+    &::before {
+      background-image: url(/src/images/icons/Icon-cookie-disabled.svg);
+    }
+  }
+}
