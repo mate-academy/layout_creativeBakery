@@ -1,7 +1,6 @@
 .menu {
   position: fixed;
-  left: 0;
-  right: 0;
+  inset: 0;
   z-index: 2;
 
   @include flex(column, 20px) {
@@ -13,7 +12,7 @@
   visibility: hidden;
   transform: translateX(-100%) translateY(-100%);
   transition: $time-average;
-  height: 90vh;
+  height: 100vh;
 
   &--active {
     pointer-events: all;
@@ -90,7 +89,7 @@
       width: 24px;
       height: auto;
 
-      &--active {
+      &--no-active {
         display: none;
       }
     }
@@ -141,20 +140,6 @@
   }
 
   @include breakpoint($desktop) {
-    height: 10vh;
-    top: 0;
-    left: 48%;
-
-    padding: 30px 44px 0;
-    pointer-events: all;
-    visibility: visible;
-    transform: translate(0);
-
-    flex-direction: row;
-    align-items: flex-start;
-
-    border-radius: 0 0 0 20px;
-
     &__list {
       width: 100%;
       flex-direction: row;

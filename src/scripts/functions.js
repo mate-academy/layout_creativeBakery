@@ -4,6 +4,12 @@
 export function querySelector(className) {
   return document.querySelector(`.${className}`);
 };
+
+export function breakpoint(breakpoint) {
+  return getComputedStyle(document.documentElement)
+        .getPropertyValue(breakpoint)
+        .slice(0, -2);
+};
 // #endregion
 
 // #region manipulation of class
@@ -75,7 +81,7 @@ export function templateHtmlInformationNotification(nameClass, content, method, 
         }, 5200);
 
   return (method === 'first')
-  ? querySelector(content).prepend(template)
-  : querySelector(content).appendChild(template);
+                  ? querySelector(content).prepend(template)
+                  : querySelector(content).appendChild(template);
 };
 // #endregion

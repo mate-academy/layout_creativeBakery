@@ -1,9 +1,16 @@
 .top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+
   @include flex(row, 0) {
     justify-content: space-between;
   }
 
-  padding: 16px 0;
+  border-radius: 0 0 10px 10px;
+  padding: 16px;
 
   &__logo {
     cursor: pointer;
@@ -66,13 +73,16 @@
     }
   }
 
-  @include breakpoint($tablet) {
-    margin: 0 -20px;
+  &__menu {
+    @include flex(row, 20px);
+
+    &--list {
+      @include flex(row, 20px);
+    }
   }
 
   @include breakpoint($desktop) {
-    margin: 0;
-    padding: 28px 0;
+    padding: 28px 32px;
 
     &__icon-menu {
       display: none;
