@@ -1,0 +1,81 @@
+:root {
+  --tablet: #{$tablet};
+  --desktop: #{$desktop};
+  --design: #{$design};
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.body {
+  @include flex(column, 100px);
+  @extend %inter;
+
+  overflow-x: hidden;
+  margin: 0 $m-retreat;
+
+  transition: 2s ease;
+  color: $black;
+
+  &__lock {
+    overflow: hidden;
+  }
+
+  @include breakpoint($tablet) {
+    margin: 0 $t-retreat;
+  }
+
+  @include breakpoint($design) {
+    margin: 0 $d-retreat;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+// information notification
+.popup-call {
+  @include flex(row, 3px);
+
+  transform: scale(0);
+  transition: $time-average;
+  color: $accent-orange;
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+
+    @include animation(phone-animation, 1s, linear) {
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &__dots {
+    @include flex(row, 5px);
+
+    font-size: 20px;
+
+    span {
+      @include animation(anime-blinking, 2s, ease-in-out) {
+        animation-iteration-count: infinite;
+        animation-delay: calc(0.5s * var(--elem));
+      }
+    }
+
+    span:first-child {
+      --elem: 1;
+    }
+
+    span:nth-child(2) {
+      --elem: 2;
+    }
+
+    span:last-child {
+      --elem: 3;
+    }
+  }
+}

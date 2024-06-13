@@ -1,0 +1,152 @@
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+
+  @include flex(column, 20px) {
+    justify-content: center;
+  }
+
+  pointer-events: none;
+  text-align: center;
+  visibility: hidden;
+  transform: translateX(-100%) translateY(-100%);
+  transition: $time-average;
+  height: 100vh;
+
+  &--active {
+    pointer-events: all;
+    visibility: visible;
+    transform: translate(0);
+  }
+
+  &__list {
+    @include flex(column, 20px);
+  }
+
+  &__item {
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 150%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      border: 1px solid transparent;
+      border-radius: inherit;
+    }
+
+    @include hover(transform, $scale, $time-fast) {
+      &::before {
+        @include animation(border-animation, $time-fast, linear);
+
+        border: 1px solid $black;
+        box-shadow: $shadow $black;
+      }
+    }
+
+    @include active(box-shadow, inset 5px 5px 20px $accent-orange) {
+      &::before {
+        border: none;
+        box-shadow: $shadow $accent-orange;
+      }
+
+      & > a {
+        color: $white;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+
+    @include font-style(400, 16px, 24px);
+
+    color: $black;
+  }
+
+  &__contact {
+    position: relative;
+
+    @include flex(row, 10px) {
+      justify-content: center;
+    }
+
+    cursor: pointer;
+    border-radius: 10px;
+    width: 200px;
+    height: 32px;
+
+    &--icon {
+      width: 24px;
+      height: auto;
+
+      &--no-active {
+        display: none;
+      }
+    }
+
+    &--text {
+      text-transform: uppercase;
+      color: $accent-orange;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+
+      width: 100%;
+      height: 100%;
+
+      border: 1px solid transparent;
+      border-radius: inherit;
+      transition: $time_average;
+    }
+
+    @include hover(transform, $scale, $time_fast) {
+      &::before {
+        @include animation(border-animation, $time-average, linear);
+
+        border: 1px solid $accent-orange;
+        box-shadow: $shadow $accent-orange;
+      }
+
+      .menu__contact--icon {
+        @include animation(phone-animation, $time-average, ease-in-out) {
+          animation-iteration-count: infinite;
+        }
+      }
+    }
+
+    @include active(box-shadow, inset 5px 5px 20px $accent-orange) {
+      &::before {
+        border: none;
+      }
+
+      .menu__contact--text {
+        color: $white;
+      }
+    }
+  }
+
+  @include breakpoint($desktop) {
+    &__list {
+      width: 100%;
+      flex-direction: row;
+    }
+
+    &__contact {
+      width: 300px;
+    }
+  }
+}

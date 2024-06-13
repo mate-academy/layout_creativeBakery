@@ -1,6 +1,153 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover($_property, $_toValue, $_speed) {
+  transition: #{$_property} $_speed;
   &:hover {
     #{$_property}: $_toValue;
+    @content;
+  }
+}
+
+@mixin active($_property, $_toValue) {
+  transform: #{$_property} 300ms;
+  &:active {
+    #{$_property}: $_toValue;
+    @content;
+  }
+}
+
+@mixin font-style($_weight, $_size, $_line-height) {
+  @extend %inter;
+
+  font-weight: $_weight;
+  font-size: $_size;
+  line-height: $_line-height;
+}
+
+@mixin media-breakpoint($_width, $_column) {
+  @media (min-width: $_width) {
+    grid-template-columns: repeat($_column, 1fr);
+    @content;
+  }
+}
+
+@mixin breakpoint($_width) {
+  @media (min-width: $_width) {
+    @content;
+  }
+}
+
+@mixin grid-common($_column, $column-gap) {
+  display: grid;
+  grid-template-columns: repeat($_column, 1fr);
+  column-gap: $column-gap;
+  align-items: center;
+  @content;
+}
+
+@mixin grid($_column) {
+  display: grid;
+  grid-template-columns: repeat($_column, 1fr);
+  column-gap: 16px;
+  @content;
+}
+
+@mixin flex($_direction, $_gap) {
+  display: flex;
+  flex-direction: $_direction;
+  gap: $_gap;
+  align-items: center;
+  @content;
+}
+
+@mixin animation($_name, $_duration, $_term) {
+  animation-name: $_name;
+  animation-duration: $_duration;
+  animation-timing-function: $_term;
+  @content;
+
+  @keyframes border-animation {
+    0% {
+      clip-path: ellipse(10% 10% at 10% 10%);
+    }
+    100% {
+      clip-path: ellipse(100% 100% at 60% 80%);
+    }
+  }
+
+  @keyframes phone-animation {
+    0% {
+      transform: translateY(0);
+    }
+
+    25% {
+      transform: translateY(2px);
+    }
+
+    50% {
+      transform: translateY(-2px) $scale;
+    }
+
+    75% {
+      transform: translateY(2px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes cookie-animation {
+    0% {
+      transform: scale(1) rotate(0);
+    }
+
+    25% {
+      transform: scale(0.9) rotate(20deg);
+    }
+
+    50% {
+      transform: scale(1.1) rotate(10deg);
+    }
+
+    75% {
+      transform: scale(0.9) rotate(20deg);
+    }
+
+    100% {
+      transform: scale(1) rotate(0);
+    }
+  }
+
+  @keyframes anime-arrow {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(340%);
+    }
+  }
+
+  @keyframes anime-blinking {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes anime-picture {
+    0% {
+      transform: scale(1.02);
+    }
+
+    100% {
+      transform: scale(1.2);
+    }
   }
 }

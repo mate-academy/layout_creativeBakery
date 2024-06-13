@@ -1,0 +1,165 @@
+.footer {
+  position: relative;
+
+  @include grid(2) {
+    row-gap: 40px;
+  }
+
+  width: 100%;
+  padding: 56px 0;
+  background-color: $black;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 - $m-retreat 0 - $m-retreat;
+    z-index: -1;
+    background-color: $black;
+  }
+
+  &__logo {
+    cursor: pointer;
+
+    @include hover(transform, $scale, $time-average) {
+      filter: drop-shadow($shadow $white);
+    }
+  }
+
+  &__contact-us,
+  &__menu {
+    grid-column: 1 / -1;
+
+    @include flex(column, 25px) {
+      align-items: flex-start;
+    }
+  }
+
+  &__item {
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+    border-radius: 10px;
+
+    @extend %hover-and-active;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  &__content-contact,
+  &__content-email {
+    @include flex(row, 50px);
+  }
+
+  &__list,
+  &__wrapper,
+  &__call-list,
+  &__email {
+    @include flex(column, 15px) {
+      align-items: flex-start;
+    }
+
+    padding: initial;
+  }
+
+  &__link {
+    display: block;
+    color: $white;
+  }
+
+  &__mail {
+    border-radius: 10px;
+    padding: 5px;
+    color: $white;
+
+    @extend %hover-and-active;
+  }
+
+  &__images {
+    display: none;
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    color: $gray;
+  }
+
+  &__social-network {
+    @include flex(row, 20px);
+  }
+
+  &__icon {
+    fill: currentColor;
+    color: $accent-orange;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__more {
+    @include hover(transform, $scale, $time-average) {
+      filter: drop-shadow($shadow $white);
+    }
+  }
+
+  &__text-bottom {
+    grid-column: 1 / -1;
+    color: $gray;
+  }
+
+  @include media-breakpoint($tablet, 8) {
+    column-gap: 24px;
+
+    &::before {
+      inset: 0 - $t-retreat 0 - $t-retreat;
+    }
+
+    &__logo {
+      grid-column: 1 / 3;
+      grid-row: 1;
+    }
+
+    &__title {
+      grid-column: 5 / -1;
+      grid-row: 1;
+
+      font-size: 56px;
+      line-height: 47px;
+    }
+
+    &__menu {
+      grid-column: 1 / 3;
+    }
+
+    &__contact-us {
+      grid-column: 5 / -1;
+    }
+
+    &__social-network {
+      grid-column: 1 / 3;
+    }
+
+    &__text-bottom {
+      grid-column: 5 / -1;
+    }
+  }
+
+  @include media-breakpoint($desktop, 8) {
+    &::before {
+      inset: 0 - $d-retreat 0 - $d-retreat;
+    }
+
+    &__contact-us {
+      flex-direction: row;
+    }
+
+    &__content-contact {
+      width: 230px;
+    }
+  }
+}
