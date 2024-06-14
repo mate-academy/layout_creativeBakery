@@ -1,0 +1,34 @@
+.nav {
+  &__list {
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    padding-bottom: 2px;
+
+    position: relative;
+
+    @include hover(color, $accent-orange-color);
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: $black-color-main;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}
