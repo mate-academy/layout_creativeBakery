@@ -1,0 +1,38 @@
+.top-bar {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include on-laptop {
+    padding: 28px 32px;
+  }
+
+  &__logo {
+    path {
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      animation:
+        draw-path 2s ease forwards,
+        change-color-top-bar 5s infinite alternate;
+    }
+  }
+}
+
+.top-bar-header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
+  z-index: 1;
+}
+
+.top-bar-header.scrolled {
+  background-color: pink;
+  opacity: 90%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
