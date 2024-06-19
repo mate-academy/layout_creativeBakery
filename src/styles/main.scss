@@ -1,7 +1,62 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import './blocks/header';
+@import './blocks/top-bar';
+@import './blocks/menu';
+@import './blocks/products';
+@import './blocks/about-us';
+@import './blocks/footer';
 
-body {
-  background: $c-gray;
+.page {
+  scroll-behavior: smooth;
+  font-family: Inter, sans-serif;
+
+  &__body {
+    margin: 0;
+    background: $light-backgroundcolor-blue;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateX(+100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}
+
+.main {
+  &__title {
+    grid-column: 1 / -1;
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 40.8px;
+    text-align: left;
+    text-transform: uppercase;
+    color: $color-footer-or-text-black;
+    margin: 0;
+
+    @include on-desktop {
+      font-size: 72px;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+    }
+  }
 }

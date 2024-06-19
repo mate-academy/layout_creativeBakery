@@ -1,0 +1,155 @@
+.menu {
+  background-color: $light-backgroundcolor-blue;
+  box-sizing: border-box;
+
+  height: 100vh;
+
+  font-weight: 700;
+  text-transform: uppercase;
+  overflow: auto;
+
+  &__top {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__content {
+    padding-block: 132px;
+    @include content-padding-inline;
+  }
+}
+
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+
+    @include on-tablet {
+      gap: 48px;
+    }
+
+    @include on-desktop {
+      display: flex;
+    }
+
+    &__desktop {
+      display: none;
+
+      @include on-desktop {
+        display: flex;
+        flex-direction: row;
+        gap: 64px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 4px;
+        align-items: stretch;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__link {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    position: relative;
+    color: $color-footer-or-text-black;
+    text-decoration: none;
+
+    &:hover {
+      color: $accent-color-orange;
+    }
+
+    &:focus {
+      color: $dark-color-orange;
+    }
+
+    @include on-tablet {
+      font-size: 32px;
+    }
+
+    &--contact-us {
+      display: flex;
+
+      color: $accent-color-orange;
+    }
+
+    &__desktop {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      text-align: left;
+      color: $color-footer-or-text-black;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+
+      &:hover {
+        color: $accent-color-orange;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $accent-color-orange;
+
+        transition: transform 0.3s;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $accent-color-orange;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__call--text--desktop {
+    margin: 0;
+    color: $accent-color-orange;
+  }
+
+  &__call {
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    display: flex;
+  }
+
+  &__picture--contact-us {
+    margin-right: 4px;
+  }
+}

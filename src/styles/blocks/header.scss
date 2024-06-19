@@ -1,0 +1,187 @@
+.header {
+  height: 100vh;
+
+  &__content {
+    @include page-grid;
+    @include padding-page;
+  }
+
+  &__paragraph {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 32px 0 32px;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      text-align: left;
+      margin: 80px 0 0 0;
+    }
+
+    @include on-desktop {
+      z-index: 1;
+      grid-row: 1;
+      grid-column: 1 / 3;
+      margin-top: 135px;
+      margin-left: 44px;
+    }
+
+    @include on-big-desktop {
+      grid-column: 1 / 3;
+      margin-top: 144px;
+    }
+  }
+
+  &__title {
+    color: $color-footer-or-text-black;
+    font-family: inherit;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 54.4px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    grid-column: 1 / -1;
+    margin: 0;
+
+    @include on-tablet {
+      font-size: 80px;
+      line-height: 68px;
+      grid-row: 2 / 3;
+      margin: 0;
+      line-height: 68px;
+      display: grid;
+      align-items: center;
+    }
+
+    @include on-desktop {
+      z-index: 1;
+      margin: 0;
+      grid-row: 1 / 2;
+
+      font-size: 136px;
+      font-weight: 400;
+      line-height: 115.6px;
+      letter-spacing: -0.05em;
+      display: grid;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    grid-column: 1 / -1;
+    width: 100%;
+
+    @include on-tablet {
+      grid-column: 3 / -3;
+      z-index: -1;
+      grid-row: 2 / 3;
+      margin-top: 16px;
+    }
+
+    @include on-desktop {
+      margin: 0;
+      z-index: -1;
+      grid-row: 1 / -1;
+    }
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 56px;
+  background-color: transparent;
+  border: 2px solid $accent-color-orange;
+  border-radius: 32px;
+  grid-column: 1 / -1;
+  text-decoration: none;
+  z-index: 2;
+
+  &:hover {
+    background-color: $accent-color-orange;
+    cursor: pointer;
+
+    .button__picture {
+      height: 24px;
+      width: 24px;
+      background-size: cover;
+      background-image: url(../images/icons/icon-cookie-white.png);
+    }
+
+    .button__text {
+      color: $color-text-white;
+    }
+  }
+
+  &:focus {
+    background-color: $dark-color-orange;
+    border: 2px solid $dark-color-orange;
+    cursor: pointer;
+
+    .button__picture {
+      height: 24px;
+      width: 24px;
+      background-size: cover;
+      background-image: url(../images/icons/icon-cookie-white.png);
+    }
+
+    .button__text {
+      color: $color-text-white;
+    }
+  }
+
+  &:disabled {
+    background-color: transparent;
+    border: 2px solid $light-color-orange;
+    cursor: pointer;
+
+    .button__picture {
+      height: 24px;
+      width: 24px;
+      background-size: cover;
+      background-image: url(../images/icons/icon-cookie-disabled.png);
+    }
+
+    .button__text {
+      color: $light-color-orange;
+    }
+  }
+
+  &__picture {
+    background-image: url(../images/icons/icon-cookie.png);
+    height: 24px;
+    width: 24px;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    cursor: pointer;
+    color: $accent-color-orange;
+  }
+
+  @include on-tablet {
+    margin-top: 80px;
+    grid-column: 3 / -3;
+  }
+
+  @include on-desktop {
+    grid-column: 1 / 3;
+    position: relative;
+    grid-row: 1 / -1;
+    margin-top: 395px;
+    margin-left: 44px;
+  }
+
+  @include on-big-desktop {
+    margin-top: 418px;
+  }
+}
