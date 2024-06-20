@@ -21,6 +21,7 @@
 
   &__menu {
     position: fixed;
+    z-index: 1;
     top: 0;
     right: 0;
     left: 0;
@@ -42,6 +43,20 @@
 }
 
 .main {
+  padding-top: 50px;
+
+  @include on-tablet {
+    padding-top: 200px;
+  }
+
+  @media (min-height: $tablet-min-height) and (max-height: $tablet-max-height) {
+    margin-top: 200px;
+  }
+
+  @include on-desktop {
+    padding-top: 0;
+  }
+
   &__title {
     grid-column: 1 / -1;
     font-family: Inter, sans-serif;
