@@ -37,18 +37,18 @@
   }
 
   &__cards {
-    @include page-grid;
-
-    grid-column: 1 / -1;
     margin-bottom: 56px;
-    row-gap: 56px;
+    padding-inline: 16px;
 
     @include on-tablet {
+      @include page-grid;
+
       grid-column: span 4;
-      row-gap: 80px;
     }
 
     @include on-desktop {
+      @include page-grid;
+
       --columns: 8;
 
       padding-inline: 44px;
@@ -58,6 +58,8 @@
     }
 
     @include on-big-desktop {
+      @include page-grid;
+
       justify-content: center;
       padding-inline: 124px;
     }
@@ -65,9 +67,7 @@
 
   &__card {
     justify-self: center;
-    grid-column: 1 / -1;
-    width: 288px;
-    height: 492px;
+    margin-bottom: 56px;
 
     @include hover(transform, scale(1.03));
 
@@ -105,7 +105,6 @@
 
   &__image {
     width: 100%;
-    height: 356px;
     border-radius: 8px;
 
     @include hover(transform, scale(1.03));
