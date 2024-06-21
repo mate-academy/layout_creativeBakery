@@ -1,0 +1,41 @@
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-position: center;
+
+  &--phone {
+    background-image: url(../images/icons/Icon-phone-2x.png);
+  }
+
+  &--menu {
+    display: none;
+    background-image: url(../images/icons/Icon-menu-2x.png);
+    transition: 0.3s;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &--close {
+    background-image: url(../images/icons/Icon-close-2x.png);
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &--order {
+    background-image: url(../images/icons/Icon-arrow-2x.png);
+  }
+
+  &--svg {
+    fill: $c-accent-orange;
+
+    @include hover(fill, $c-white);
+  }
+}

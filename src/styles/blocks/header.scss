@@ -1,0 +1,178 @@
+.header {
+  height: 100vh;
+  box-sizing: border-box;
+  margin-bottom: 178px;
+
+  @include onDesktop {
+    margin-bottom: 152px;
+  }
+
+  @include onTablet {
+    margin-bottom: 0;
+  }
+
+  @include onPhone {
+    margin-bottom: 64px;
+  }
+
+  &__content {
+    @include page-grid;
+
+    justify-content: center;
+    position: relative;
+  }
+
+  &__background {
+    position: absolute;
+    width: 100%;
+    grid-column: 3 / 7;
+    z-index: -1;
+
+    @include onDesktop {
+      margin-inline: 0;
+    }
+
+    @include onTablet {
+      align-self: center;
+    }
+
+    @include onPhone {
+      position: initial;
+      grid-column: span 2;
+    }
+  }
+
+  &__description {
+    margin: 144px 0 0;
+    grid-column: span 2;
+
+    @include onDesktop {
+      margin: 135px 0 0;
+    }
+
+    @include onTablet {
+      grid-column: span 4;
+      margin: 80px 0 0;
+    }
+
+    @include onPhone {
+      grid-column: span 2;
+      margin: 32px 0;
+    }
+  }
+
+  &__title {
+    display: grid;
+    justify-content: center;
+    grid-column: span 8;
+    line-height: 85%;
+    font-size: 144px;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    text-wrap: nowrap;
+    margin: 40px 0 0;
+
+    @include onDesktop {
+      font-size: 136px;
+      margin: 8px 0 0;
+    }
+
+    @include onTablet {
+      font-size: 80px;
+      margin: 146px 0 0;
+    }
+
+    @include onPhone {
+      font-size: 64px;
+      grid-column: span 2;
+      text-wrap: wrap;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 0;
+    margin: 64px 0 0;
+    height: 56px;
+
+    text-decoration: none;
+
+    border-radius: 32px;
+    border: 2px solid $c-accent-orange;
+
+    background-color: $c-light-blue;
+    color: $c-accent-orange;
+
+    transition: 0.7s;
+
+    grid-column: span 2;
+    font-family: inherit;
+    font-weight: 500;
+
+    &-content {
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      height: 16px;
+    }
+
+    &-icon {
+      background: url(../images/icons/Icon-cookie-2x.png);
+      background-position: center;
+      background-size: contain;
+    }
+
+    @include onTablet {
+      grid-column: 3 / 7;
+      margin: 210px 0 0;
+    }
+
+    @include onPhone {
+      grid-column: span 2;
+      margin: 0;
+    }
+
+    &--pink {
+      background-color: $c-light-pink;
+      color: $c-accent-orange;
+    }
+
+    &--blue {
+      background-color: $c-light-blue;
+      color: $c-accent-orange;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $c-accent-orange;
+      color: $c-white;
+
+      .header__button-icon {
+        transition: 0.7s;
+        background: url(../images/icons/Icon-cookie-white-2x.png);
+        background-position: center;
+        background-size: contain;
+      }
+    }
+
+    &:active {
+      border-color: $c-dark-orange;
+      background-color: $c-dark-orange;
+    }
+
+    &:disabled {
+      border-color: $c-light-orange;
+      color: $c-light-orange;
+
+      .header__button-icon {
+        background: url(../images/icons/Icon-cookie-light-orange-2x.png);
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+}

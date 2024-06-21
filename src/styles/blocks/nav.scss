@@ -1,0 +1,48 @@
+.nav {
+  @include page-grid;
+
+  height: calc(100vh - 64px);
+  align-items: center;
+  justify-content: center;
+
+  &__list {
+    display: grid;
+    grid-column: span 8;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 24px;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+
+    @include onPhone {
+      grid-column: span 2;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    @include body-text;
+    @include animated-undescore($c-black, -2px);
+  }
+
+  &__item {
+    display: grid;
+    justify-content: center;
+
+    &:not(:last-child) {
+      .nav__link {
+        color: $c-black;
+      }
+    }
+
+    &:last-child {
+      .nav__link::after {
+        background-color: $c-accent-orange;
+      }
+    }
+  }
+}
