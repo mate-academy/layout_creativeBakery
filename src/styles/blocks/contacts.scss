@@ -1,0 +1,115 @@
+.contacts {
+  &--bg-full-width {
+    background-color: $c-black;
+  }
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__logo-link {
+    height: 40px;
+    margin: 88px 0 61px;
+    grid-column: 1 / 3;
+
+    @include on-desktop {
+      margin: 88px 0 61px;
+    }
+
+    @include on-tablet {
+      margin: 88px 0 96px;
+    }
+
+    @include on-phone {
+      margin: 56px 0 40px;
+      grid-column: span 2;
+    }
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__logo-image {
+    height: 40px;
+  }
+
+  &__menu {
+    grid-column: 1 / 3;
+
+    @include on-phone {
+      grid-column: span 2;
+    }
+  }
+
+  &__title {
+    color: $c-white;
+    grid-column: 5 / -1;
+    grid-row: 1;
+    align-self: end;
+    margin: 88px 0 40px;
+    width: 100%;
+
+    @include on-tablet {
+      width: 50%;
+      margin: 88px 0 40px;
+    }
+
+    @include on-phone {
+      grid-column: span 2;
+      grid-row: 3;
+      margin: 64px 0 40px;
+    }
+  }
+
+  &__numbers {
+    grid-column: 5 / 7;
+
+    @include on-phone {
+      grid-column: span 2;
+    }
+  }
+
+  &__email {
+    grid-column: 7 / 9;
+
+    @include on-tablet {
+      grid-column: 5 / 7;
+    }
+
+    @include on-phone {
+      margin: 40px 0;
+      grid-column: span 2;
+    }
+  }
+
+  &__social {
+    height: 24px;
+    grid-column: 1 / 3;
+    margin: 48px 0 88px;
+
+    @include on-tablet {
+      margin: 48px 0 88px;
+    }
+
+    @include on-phone {
+      grid-column: span 2;
+      margin: 40px 0;
+    }
+  }
+
+  &__copyright {
+    margin: 48px 0 88px;
+    color: $c-gray;
+    grid-column: 5 / 7;
+
+    @include body-text;
+
+    @include on-tablet {
+      margin: 48px 0 88px;
+    }
+
+    @include on-phone {
+      grid-column: span 2;
+      margin: 0 0 56px;
+    }
+  }
+}

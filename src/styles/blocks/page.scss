@@ -1,0 +1,39 @@
+.page {
+  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+    background: $c-light-blue;
+    font-family: Inter, sans-serif;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.3s;
+    transform: translateX(-100%);
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &__switcher-color-palette {
+    @include switcher-styles;
+  }
+}
