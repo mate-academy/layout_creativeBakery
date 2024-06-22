@@ -50,16 +50,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-
-function toggleSwitcher() {
-  const switcher = document.querySelector('.page__switcher-color-palette');
-  const button = document.querySelector('.page__switcher-button');
-
-  if (!switcher.classList.contains('page__switcher--visible')) {
-    button.style.transform = 'rotate(540deg)';
-    switcher.classList.add('page__switcher--visible');
-  } else {
-    button.style.transform = 'rotate(0deg)';
-    switcher.classList.remove('page__switcher--visible');
-  }
-}
