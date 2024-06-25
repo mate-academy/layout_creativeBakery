@@ -1,0 +1,101 @@
+.header {
+  &__content {
+    padding-block: 32px 40px;
+    text-align: center;
+
+    @include on-tablet {
+      position: relative;
+
+      padding-block: 80px 228px;
+    }
+
+    @include on-desktop {
+      padding-block: 135px 161px;
+    }
+
+    @include on-desktop-xl {
+      padding-block: 144px 112px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      max-width: 280px;
+      margin-bottom: 146px;
+
+      text-align: left;
+    }
+
+    @include on-desktop {
+      margin-bottom: 8px;
+    }
+
+    @include on-desktop-xl {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    @include on-tablet {
+      margin-bottom: 210px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 64px;
+    }
+
+    @include animation(vibrate, 5s, ease) {
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &__img {
+    @include on-tablet {
+      position: absolute;
+      top: 144px;
+      left: 50%;
+      z-index: -1;
+
+      width: 326px;
+      aspect-ratio: 1 / 1;
+
+      transform: translateX(-50%);
+    }
+
+    @include on-desktop {
+      top: -25px;
+      width: 544px;
+    }
+
+    @include on-desktop-xl {
+      top: -10px;
+      width: 584px;
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+    max-width: 288px;
+
+    @include animation(pulse, 2s, ease-in-out) {
+      animation-iteration-count: infinite;
+    }
+
+    &:hover {
+      animation: none;
+    }
+
+    @include on-tablet {
+      max-width: 326px;
+    }
+
+    @include on-desktop {
+      margin-left: 0;
+      max-width: 280px;
+    }
+  }
+}

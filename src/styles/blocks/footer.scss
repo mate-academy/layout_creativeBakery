@@ -1,0 +1,120 @@
+.footer {
+  background-color: $main-text-color;
+  color: $main-text-color-white;
+
+  &__content {
+    padding-block: 56px;
+
+    @include grid;
+
+    gap: 40px 16px;
+
+    @include on-tablet {
+      padding-block: 88px;
+      row-gap: 40px;
+    }
+  }
+
+  &__top {
+    grid-column: 1 / -1;
+    margin-bottom: 24px;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__logo {
+    width: 168px;
+    height: 40px;
+  }
+
+  &__subtitle {
+    margin-bottom: 16px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  &__bottom {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      grid-row: 2;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      grid-row: 1;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__tel:hover {
+    color: $main-color;
+  }
+
+  &__email {
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      grid-row: 2;
+    }
+  }
+
+  &__mail:hover {
+    color: $main-color;
+  }
+
+  &__social {
+    grid-column: 1 / -1;
+    display: flex;
+    column-gap: 32px;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__links {
+    transition: transform $effectDuration;
+    &:hover {
+      filter: brightness(0) invert(1);
+    }
+
+    @include hover(scale, 1.2);
+  }
+
+  &__year {
+    color: $gray-color-titles;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+  }
+}

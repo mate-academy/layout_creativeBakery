@@ -1,6 +1,211 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $effectDuration;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop-xl {
+  @media (min-width: $desktopXL-min-width) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  @include on-desktop-xl {
+    padding-inline: 4px;
+  }
+}
+
+.container {
+  @include content-padding-inline;
+}
+
+@mixin grid {
+  --columns: 2;
+
+  display: grid;
+  gap: 56px 24px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 8;
+
+    row-gap: 80px;
+  }
+
+  @include on-desktop {
+    --columns: 8;
+  }
+}
+
+@mixin animation($_name, $_duration, $_term) {
+  animation-name: $_name;
+  animation-duration: $_duration;
+  animation-timing-function: $_term;
+  @content;
+
+  @keyframes pulse-cards {
+    0% {
+      transform: scale(1.01);
+    }
+
+    100% {
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(249, 81, 46, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    }
+  }
+
+  @keyframes ring {
+    0% {
+      transform: rotate(0);
+    }
+    5% {
+      transform: rotate(30deg);
+    }
+    10% {
+      transform: rotate(-28deg);
+    }
+    15% {
+      transform: rotate(34deg);
+    }
+    20% {
+      transform: rotate(-32deg);
+    }
+    25% {
+      transform: rotate(30deg);
+    }
+    30% {
+      transform: rotate(-28deg);
+    }
+    35% {
+      transform: rotate(26deg);
+    }
+    40% {
+      transform: rotate(-24deg);
+    }
+    45% {
+      transform: rotate(22deg);
+    }
+    50% {
+      transform: rotate(-20deg);
+    }
+    55% {
+      transform: rotate(18deg);
+    }
+    60% {
+      transform: rotate(-16deg);
+    }
+    65% {
+      transform: rotate(14deg);
+    }
+    70% {
+      transform: rotate(-12deg);
+    }
+    75% {
+      transform: rotate(10deg);
+    }
+    80% {
+      transform: rotate(-8deg);
+    }
+    85% {
+      transform: rotate(6deg);
+    }
+    90% {
+      transform: rotate(-4deg);
+    }
+    95% {
+      transform: rotate(2deg);
+    }
+    100% {
+      transform: rotate(-1deg);
+    }
+  }
+
+  @keyframes vibrate {
+    0% {
+      transform: translate(0);
+    }
+
+    20% {
+      transform: translate(2px, -2px);
+    }
+
+    40% {
+      transform: translate(2px, 2px);
+    }
+
+    60% {
+      transform: translate(-2px, 2px);
+    }
+
+    80% {
+      transform: translate(-2px, -2px);
+    }
+
+    100% {
+      transform: translate(0);
+    }
+  }
+
+  @keyframes jello {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
   }
 }

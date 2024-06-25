@@ -1,0 +1,38 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+
+  @include on-desktop {
+    padding: 28px 32px;
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+    &--icon {
+      &:hover {
+        @include animation(ring, 3s, ease-in-out) {
+          animation-iteration-count: infinite;
+        }
+      }
+    }
+  }
+
+  &__menu-icon {
+    @include on-desktop {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  width: 136px;
+  height: 32px;
+
+  @include hover(scale, 1.2);
+}
