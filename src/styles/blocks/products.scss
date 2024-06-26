@@ -1,0 +1,116 @@
+.products{
+  &__title{
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 40.8px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    color: $accent-orange;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+
+    @include on-tablet{
+      font-size: 56px;
+      line-height: 47.6px;
+    }
+
+    @include on-desktop{
+      font-size: 72px;
+      line-height: 61.2px;
+    }
+  }
+
+  &__text{
+    margin-bottom: 56px;
+  }
+}
+
+.card{
+  @include page-grid;
+
+  width: 100%;
+
+  &__content{
+    margin-bottom: 54px;
+  }
+
+  &__title{
+    color: $gray;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  &__text{
+    margin-bottom: 16px;
+  }
+
+  &__photo{
+    @include hover(transform, scale(1.1));
+
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__button{
+    text-decoration: none;
+    color: $accent-orange;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+
+    &:hover {
+      color: $dark-orange;
+      cursor: pointer;
+    }
+  }
+}
+
+
+.card--1,
+.card--3,
+.card--5{
+  @include on-tablet{
+    grid-column: 1 / span 4;
+  }
+}
+
+.card--2,
+.card--4,
+.card--6{
+  @include on-tablet{
+    grid-column: 5 / span 4;
+  }
+}
+
+.card--1,
+.card--5{
+  @include on-desktop{
+    grid-column: 1 / span 3;
+  }
+}
+
+.card--2,
+.card--6{
+  @include on-desktop{
+    grid-column: 4 / span 3;
+  }
+}
+
+.card--3{
+  @include on-desktop{
+    grid-column: 3 / span 3;
+  }
+}
+
+.card--4{
+  @include on-desktop{
+    grid-column: 6 / span 3;
+  }
+}

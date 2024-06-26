@@ -1,0 +1,76 @@
+@mixin on-mobile{
+  @media(min-width: $mobile-min-width){
+    @content;
+  }
+}
+
+@mixin on-tablet{
+  @media(min-width: $tablet-min-width){
+    @content;
+  }
+}
+
+@mixin on-desktop{
+  @media(min-width: $desktop-min-width){
+    @content;
+  }
+}
+
+@mixin on-desktop-xl{
+  @media(min-width: $desktop-xl-min-with){
+    @content;
+  }
+}
+
+@mixin hover($property, $toValue, $transition-time: 0.3s) {
+  transition: #{$property} $transition-time;
+
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin focus($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:focus {
+    #{$_property}: $_toValue;
+    border: none;
+  }
+}
+
+
+@mixin content-padding-inline(){
+  padding-inline: 16px;
+
+  @include on-tablet {
+  padding-inline: 44px;
+  }
+
+  @include on-desktop{
+    padding-inline: 44px;
+  }
+
+  @include on-desktop-xl{
+    padding: 44px;
+  }
+}
+
+@mixin page-grid{
+  display: grid;
+
+  @include on-tablet{
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include on-desktop{
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+
+  @include on-desktop-xl{
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+}
+
