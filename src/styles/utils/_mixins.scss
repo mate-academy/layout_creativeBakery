@@ -1,6 +1,48 @@
+@mixin on-tablet {
+  @media (min-width: $min-tablet-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $min-desktop-width) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 8;
+
+    column-gap: 24px;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin icon-before($color, $image-path) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  &::before {
+    content: '';
+    width: $icon-size;
+    height: $icon-size;
+    background-color: $color;
+    mask-image: url($image-path);
+    mask-size: cover;
   }
 }
