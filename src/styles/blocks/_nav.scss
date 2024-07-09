@@ -1,0 +1,46 @@
+.nav {
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: $nav-header-gap - 2 * $nav-link-area;
+
+    &--menu {
+      margin-top: 132px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &--footer {
+      flex-direction: column;
+      align-items: start;
+      gap: 16px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    gap: 4px;
+    text-decoration: none;
+    padding: $nav-link-area;
+
+    &--default {
+      color: inherit;
+    }
+
+    &--phone {
+      color: $c-accent-orange;
+      font-weight: 500;
+      text-transform: uppercase;
+
+      @include icon-before($c-accent-orange, '../images/icons/icon-phone.svg');
+    }
+
+    &--footer {
+      color: $c-white;
+      padding: 0;
+      line-height: 1.5;
+    }
+  }
+}
