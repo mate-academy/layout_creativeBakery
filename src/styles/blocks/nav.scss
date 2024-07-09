@@ -1,0 +1,86 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding-inline: 16px;
+
+  @include on-desktop {
+    height: 88px;
+    margin-inline: 30px;
+  }
+
+  &__logo-icon {
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__links {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+    margin-left: 54px;
+    transition: 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid #1c1a26;
+      padding-bottom: 4px;
+    }
+  }
+
+  &__link-contacts {
+    font-family: Inter, sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    line-height: 16px;
+    color: #f9512e;
+    text-align: left;
+    transition: 0.3s;
+
+    &::before {
+      content: '';
+      background-image: url(../images/icons/Icon-phone.svg);
+      background-repeat: no-repeat;
+      display: inline-block;
+      width: 26px;
+      height: 24px;
+      margin-bottom: -6px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid #f9512e;
+      padding-bottom: 4px;
+      transition: 0.3s;
+    }
+  }
+
+  &__link-menu {
+    transition: 0.3s;
+
+    @include on-desktop {
+      display: none;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
