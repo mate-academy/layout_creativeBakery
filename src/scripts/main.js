@@ -1,4 +1,4 @@
 'use strict';
 
-const mainTitle = document.getElementsByClassName('header__title')[0];
+const mainTitle = document.querySelector('.header__title');
 mainTitle.style.animationPlayState = 'running';
