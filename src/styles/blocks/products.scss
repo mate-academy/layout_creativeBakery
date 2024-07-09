@@ -1,0 +1,225 @@
+.products {
+  margin-bottom: 70px;
+
+  @include on-tablet {
+    margin-bottom: 140px;
+  }
+
+  &__wrapper {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 48px;
+    font-family: Inter, sans-serif;
+    line-height: 40.8px;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: -0.05em;
+    color: #f9512e;
+    margin-bottom: 26px;
+
+    @include on-tablet {
+      grid-column: 1 /-1;
+      font-size: 56px;
+      line-height: 48px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+      line-height: 61px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: left;
+    letter-spacing: -0.01em;
+    color: #1c1a26;
+    margin-bottom: 48px;
+
+    @include on-tablet {
+      grid-column: 1 /-1;
+      letter-spacing: 0.3px;
+      margin: 0 0 60px;
+    }
+
+    @include on-desktop {
+      letter-spacing: -0.01em;
+    }
+  }
+
+  &__photo {
+    margin-bottom: 14px;
+  }
+
+  &__foto {
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: 5px 5px 5px #9a9baa;
+    }
+  }
+
+  &__foto-mb {
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__foto-tab {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__foto-ds {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+
+    @include on-design {
+      display: none;
+    }
+  }
+
+  &__foto-big {
+    display: none;
+
+    @include on-design {
+      display: block;
+    }
+  }
+
+  &__card {
+    margin-bottom: 50px;
+  }
+
+  &__card--1 {
+    @include on-tablet {
+      grid-column: 1 /5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 /4;
+    }
+  }
+
+  &__card--2 {
+    @include on-tablet {
+      grid-column: 5 /-1;
+    }
+
+    @include on-desktop {
+      grid-column: 4 /7;
+    }
+  }
+
+  &__card--3 {
+    @include on-tablet {
+      grid-column: 1 /5;
+    }
+
+    @include on-desktop {
+      grid-column: 3 /6;
+    }
+  }
+
+  &__card--4 {
+    @include on-tablet {
+      grid-column: 5 /-1;
+    }
+
+    @include on-desktop {
+      grid-column: 6 /-1;
+    }
+  }
+
+  &__card--5 {
+    @include on-tablet {
+      grid-column: 1 /5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 /4;
+    }
+  }
+
+  &__card--6 {
+    @include on-tablet {
+      grid-column: 5 /-1;
+    }
+
+    @include on-desktop {
+      grid-column: 4 /7;
+    }
+  }
+
+  &__name {
+    font-family: Inter, sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    line-height: 16px;
+    color: #7f8096;
+    text-align: left;
+  }
+
+  &__card-description {
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    text-align: left;
+    color: #1c1a26;
+    margin: 10px 0 24px;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-family: Inter, sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    line-height: 16px;
+    color: #f9512e;
+    text-align: left;
+    transition: 0.3s;
+
+    &::before {
+      content: '';
+      background-image: url(../images/icons/Icon-arrow.svg);
+      display: inline-block;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+      margin: 0 4px -6px 0;
+    }
+
+    &:hover {
+      border-bottom: 1px solid #f9512e;
+      padding-bottom: 4px;
+      transition: 0.3s;
+    }
+  }
+}
