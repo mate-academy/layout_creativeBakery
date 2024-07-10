@@ -1,0 +1,51 @@
+@import '../utils';
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: $background-color;
+  position: fixed;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s;
+  overflow: auto;
+
+  &:target {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+
+    &__nav {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+      justify-content: center;
+
+      &__link {
+        color: $black;
+
+        @include hover(transform, scale(1.25));
+
+        @include on-desktop {
+          display: flex;
+        }
+
+        &--accent-color {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+}
