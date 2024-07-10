@@ -1,7 +1,43 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import 'blocks/header';
+@import 'blocks/button';
+@import 'blocks/icon';
+@import 'blocks/sidebar';
+@import 'blocks/topbar';
+@import 'blocks/content';
+@import 'blocks/whatWeBake';
+@import 'blocks/aboutUs';
+@import 'blocks/footer';
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  &:has(.sidebar:target) {
+    overflow: hidden;
+  }
+}
 
 body {
-  background: $c-gray;
+  background: $background-color;
+  margin: 0;
+}
+
+.logo {
+  width: 136px;
+  height: 32px;
+
+  @include hover(transform, scale(1.2));
+}
+
+a {
+  text-decoration: none;
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
 }
