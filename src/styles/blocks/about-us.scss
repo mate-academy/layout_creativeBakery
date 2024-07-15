@@ -1,71 +1,91 @@
 .about-us {
+  display: grid;
+
+  row-gap: 64px;
+
   background-image: url(/src/images/about-us/crumbs.png);
-  background-position: center;
+  background-position-y: 75%;
+  background-position-x: 50%;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-size: cover;
+
+  @include on-tablet {
+    row-gap: 72px;
+
+    background-position-y: 50%;
+    background-size: 69%;
+  }
+
+  @include on-desktop {
+    row-gap: 144px;
+
+    background-position-x: 67%;
+    background-size: 60%;
+    padding-bottom: 293px;
+  }
 }
 
 .about-us__info {
   @include page-grid;
 
-  margin-bottom: 64px;
+  row-gap: 32px;
 
-  @include on-tablet {
-    margin-bottom: 72px;
-  }
+  &__title {
+    font-family: Inter, sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    text-align: left;
+    color: $title-color;
 
-  @include on-desktop {
-    margin-bottom: 146px;
-  }
-}
+    grid-column: 1/-1;
 
-.about-us__title {
-  font-family: Inter, sans-serif;
-  font-size: 48px;
-  font-weight: 400;
-  letter-spacing: -0.05em;
-  text-align: left;
-  text-transform: uppercase;
-  color: $title-color;
-  margin-bottom: 32px;
+    @include on-tablet {
+      font-size: 56px;
 
-  grid-column: 1/-1;
-
-  @include on-tablet {
-  font-size: 56px;
-  grid-column: 1/5;
-  }
-
-  @include on-desktop {
-  font-size: 72px;
-  grid-column: 1/4;
-  }
-}
-
-.about-us__text {
-  font-family: Inter,sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  text-align: left;
-  color: $text-color;
-
-  grid-column: 1/-1;
-
-  @include on-tablet {
-    grid-column: 5/-1;
+      grid-column: span 4;
     }
+
+    @include on-desktop {
+      font-size: 72px;
+
+      grid-column: 1/4;
+    }
+  }
+
+  &__descritpion {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: $text-color;
+
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-tablet {
+      grid-column: 5/-1;
+    }
+
+  }
 }
 
 .about-us__stats {
   @include page-grid;
-  
+
   row-gap: 48px;
 
+  @include on-tablet {
+    row-gap: 80px;
+  }
 }
 
-.about-us__year {
+.about-us__stats__info {
   grid-column: 1/-1;
 
   @include on-tablet {
@@ -75,62 +95,24 @@
   @include on-desktop {
     grid-column: span 2;
   }
-}
 
-.about-us__companies {
-  grid-column: 1/-1;
-
-  @include on-tablet {
-    grid-column: span 4;
+  &__title {
+    font-family: Inter, sans-serif;
+    font-size: 96px;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    text-align: left;
+    color: $title-color;
   }
 
-  @include on-desktop {
-    grid-column: span 2;
-  }
-}
-
-.about-us__stores {
-  grid-column: 1/-1;
-
-  @include on-tablet {
-    grid-column: span 4;
+  &__description {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: $text-color;
   }
 
-  @include on-desktop {
-    grid-column: span 2;
-  }
-}
-
-.about-us__clients {
-  grid-column: 1/-1;
-
-  @include on-tablet {
-    grid-column: span 4;
-  }
-
-  @include on-desktop {
-    grid-column: span 2;
-  }
-}
-
-.about-us__information {
-  font-family: Inter, sans-serif;
-  font-size: 96px;
-  font-weight: 400;
-  line-height: 81.6px;
-  letter-spacing: -0.05em;
-  text-align: left;
-  color: $title-color;
-
-  margin-bottom: 8px;
-}
-
-.about-us__information-text {
-  font-family: Inter, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  text-align: left;
-  color: $text-color;
 }

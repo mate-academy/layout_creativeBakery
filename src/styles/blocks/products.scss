@@ -1,53 +1,66 @@
 .products {
-  margin-bottom: 72px;
+  display: grid;
+
+  row-gap: 56px;
 
   @include on-tablet {
-    margin-bottom: 152px;
-  }
-
-  @include on-desktop {
-    margin-bottom: 178px;
+    row-gap: 80px;
   }
 }
 
-.products__title {
-  font-family: Inter, sans-serif;
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 40.8px;
-  letter-spacing: -0.05em;
-  text-align: left;
-  color: $title-color;
+.products__info {
+  @include page-grid;
 
-  margin-bottom: 24px;
+  row-gap: 24px;
 
-  @include on-tablet {
-    font-size: 56px;
+  &__title {
+    font-family: Inter, sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    text-align: left;
+    color: $title-color;
+
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      font-size: 56px;
+
+      grid-column: span 5;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+
+      grid-column: span 4;
+    }
   }
 
-  @include on-desktop {
-    font-size: 72px;
+  &__description {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: $text-color;
+
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 6;
+    }
+
+    @include on-desktop {
+      grid-column:  span 5;
+    }
   }
 }
-
-.products__description {
-  font-family: Inter,sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  text-align: left;
-  color: $text-color;
-
-  margin-bottom: 56px;
-}
-
 
 .products__cards {
   @include page-grid;
-  
-  row-gap: 56px;
 
+  row-gap: 56px;
 
   @include on-tablet {
     row-gap: 80px;
@@ -61,61 +74,88 @@
     grid-column: span 4;
   }
 
-  @include on-desktop {
+  @include on-tablet {
     grid-column: span 3;
   }
-}
 
-.products__card--row {
-  @include on-desktop {
-    grid-column: 3/6;
+
+  &__photo {
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+
+    margin-bottom: 16px;
+
+    &:hover {
+      transform: translateY(-20);
+      transition: all .3s linear;
+      box-shadow: 5px 5px 5px 5px  grey;
+      border-radius: 8px;
+    }
   }
 
-}
+  &__title {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: uppercase;
+    color: $card-text-color;
 
+    margin-bottom: 8px;
+  }
 
-.products__card__photo {
-  margin-bottom: 16px;
-  border-radius: 8px;
-  width: 100%;
-}
+  &__description {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: $text-color;
 
-.products__card__title {
-  font-family: Inter, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  text-align: left;
-  color: #7F8096;
+    margin-bottom: 16px;
 
-  margin-bottom: 8px;
-}
+    &--margin {
+      margin-bottom: 35px;
+    }
 
-.products__card__info {
-  font-family: Inter, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  text-align: left;
-  color: $text-color;
+  }
 
-  margin-bottom: 16px;
-}
+  &__link {
+    display: flex;
+    align-items: center;
 
-.products__card__link {
-  display: flex;
-  align-items: center;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $title-color;
 
-  font-family: Inter, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  text-align: left;
-  text-decoration: none;
-  gap: 8px;
-  color: $title-color;
+    gap: 4px;
+
+    &:hover {
+      width: 30%;
+      border-radius: 6px;
+      background-color: #FFEEFC;
+      box-shadow: 0 0 5px 1px #F9512E;
+    }
+
+  }
+
+  &__img {
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--row {
+    @include on-desktop {
+      grid-column: 3/6;
+    }
+  }
 }
