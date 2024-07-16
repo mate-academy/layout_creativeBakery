@@ -1,6 +1,85 @@
+@import './vars';
+
+@mixin all-grids {
+  @include on-mobile {
+    @include mobile-grid;
+  }
+
+  @include on-tablet {
+    @include tablet-grid;
+  }
+
+  @include on-desktop {
+    @include desktop-grid;
+  }
+
+  @include on-desktop-xl {
+    @include desktop-xl-grid;
+  }
+}
+
+@mixin on-mobile {
+  @media (max-width: $mobile-max-width) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop-xl {
+  @media (min-width: $desktop-xl-min-width) {
+    @content;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin mobile-grid {
+  @media (max-width: $mobile-max-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 16px;
+    column-gap: 16px;
+  }
+}
+
+@mixin tablet-grid {
+  @media (min-width: $tablet-min-width) {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding-inline: 44px;
+    column-gap: 24px;
+  }
+}
+
+@mixin desktop-grid {
+  @media (min-width: $desktop-min-width) {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding-inline: 44px;
+    column-gap: 24px;
+  }
+}
+
+@mixin desktop-xl-grid {
+  @media (min-width: $desktop-xl-min-width) {
+    display: grid;
+    grid-template-columns: repeat(8, 128px);
+    column-gap: 24px;
   }
 }
