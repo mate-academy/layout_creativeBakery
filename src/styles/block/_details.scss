@@ -1,0 +1,116 @@
+.details {
+  background-color: #ffeefc;
+  height: 100%;
+
+  &__button {
+    display: flex;
+    align-items: center;
+  }
+
+  &__wraper {
+    @include page-grid;
+
+    @include on-tablet {
+      // padding: 0 16px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 24px;
+    color: $orange-color;
+    text-transform: uppercase;
+
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 40.8px;
+    letter-spacing: -0.05em;
+
+    text-align: left;
+
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 1/-1;
+
+      font-size: 56px;
+      font-weight: 400;
+      line-height: 47.6px;
+      letter-spacing: -0.05em;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+      line-height: 61.2px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: $font-black;
+
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 1/-1;
+    }
+  }
+}
+
+.detail {
+  transition: 0.3s;
+  cursor: pointer;
+
+  &__photo {
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  &:hover {
+    .detail__photo {
+      box-shadow: 5px 5px 13px rgb(197, 160, 160);
+    }
+
+    transform: scale(1.06);
+  }
+
+  grid-column: span 2;
+  margin-top: 56px;
+
+  @include on-tablet {
+    margin-top: 80px;
+    grid-column: span 4;
+  }
+
+  @include on-laptop {
+    grid-column: span 3;
+  }
+
+  &_align-right {
+    @include on-laptop {
+      grid-column: 3/6;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: 16px;
+    color: $gray-title-color;
+
+    text-transform: uppercase;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  &__description {
+    margin: 0;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+}

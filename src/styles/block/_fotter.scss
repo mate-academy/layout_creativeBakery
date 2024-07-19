@@ -1,0 +1,196 @@
+.footer {
+  // position: sticky;
+  bottom: 0;
+  z-index: -1;
+  margin: 0;
+  background-color: $footer-background-color;
+
+  &__content {
+    padding: 56px 0;
+
+    @include page-grid {
+      margin: 0;
+      padding-inline: 16px;
+    }
+
+    @include on-tablet {
+      padding: 88px 44px;
+    }
+  }
+
+  &__logo {
+    color: rgba($color: #7c2b2b, $alpha: 0);
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 76px;
+    grid-column: 1/-2;
+
+    height: 40px;
+    width: 168px;
+    background-image: url(/src/images/Logo-light.png);
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include on-tablet {
+      grid-column: 1/-5;
+    }
+  }
+
+  &__bottom-icon {
+    margin-top: 40px;
+  }
+
+  &__mail-link {
+    margin-top: 40px;
+    margin-bottom: 56px;
+  }
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    transition: 0.3s;
+
+    &:not(:first-child) {
+      &:hover {
+        text-shadow: -6 7px 3px rgb(87, 87, 87);
+        transform: scale(1.1);
+        transform-origin: left;
+      }
+
+      margin-top: 16px;
+    }
+  }
+
+  &__link {
+    color: $white-color;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+
+    &_header {
+      margin-top: 40px;
+      color: #7f8096;
+      text-transform: uppercase;
+    }
+
+    &_footer-mail {
+      color: #7f8096;
+    }
+  }
+}
+
+.title {
+  margin: 0;
+  color: $white-color;
+  text-transform: uppercase;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 40.8px;
+
+  @include on-tablet {
+    font-size: 56px;
+    line-height: 47.6px;
+    letter-spacing: -0.05em;
+  }
+
+  @include on-laptop {
+    font-size: 72px;
+    line-height: 61.2px;
+  }
+}
+
+.icons {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 24px;
+
+  &__icon {
+    color: rgba($color: #7c2b2b, $alpha: 0);
+    overflow: hidden;
+    cursor: pointer;
+    margin-left: 32px;
+    height: 24px;
+    width: 24px;
+    background-image: url(/src/images/icon/Icon-facebook.png);
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.4);
+    }
+    &--facebook {
+      margin: 0;
+    }
+    &--instagram {
+      background-image: url(/src/images/icon/Icon-instagram.png);
+    }
+
+    &--twitter {
+      background-image: url(/src/images/icon/Icon-twitter.png);
+    }
+  }
+}
+
+.footer-block {
+  margin-top: 40px;
+  grid-column: span 2;
+
+  &_menu {
+    @include on-tablet {
+      grid-column: 1/3;
+      grid-row: 2/2;
+    }
+  }
+  &_contact-us {
+    margin-top: 64px;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-column: 5/-2;
+    }
+
+    @include on-laptop {
+      grid-column: 5/-1;
+    }
+  }
+  &_contacts {
+    @include on-tablet {
+      grid-column: 5/-2;
+    }
+
+    @include on-laptop {
+      grid-column: 5/-4;
+    }
+  }
+  &_email {
+    @include on-tablet {
+      margin: 0;
+      grid-column: 5/-2;
+    }
+
+    @include on-laptop {
+      margin-top: 40px;
+      grid-column: 7/-1;
+    }
+  }
+  &_icons-list {
+    @include on-tablet {
+      margin-top: 48px;
+    }
+  }
+
+  &_mail-link {
+    @include on-tablet {
+      margin-top: 48px;
+      grid-column: 5/-2;
+    }
+  }
+}
