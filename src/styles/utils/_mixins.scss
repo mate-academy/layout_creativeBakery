@@ -4,3 +4,34 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: $laptop-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline {
+  padding-inline: 16px;
+
+  @include tablet {
+    padding-inline: 44px;
+  }
+
+  @include desktop {
+    padding-inline: 124px;
+    margin: 0 auto;
+  }
+}
