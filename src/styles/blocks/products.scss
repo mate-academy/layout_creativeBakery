@@ -1,0 +1,158 @@
+.products {
+  display: grid;
+
+  row-gap: 56px;
+
+  @include on-tablet {
+    row-gap: 80px;
+  }
+}
+
+.products__info {
+  @include page-grid;
+
+  row-gap: 24px;
+
+  &__title {
+    font-weight: 400;
+    font-size: 48px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-align: left;
+    color: $title-color;
+
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      font-size: 56px;
+
+      grid-column: span 5;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+
+      grid-column: span 4;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: $text-color;
+
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 6;
+    }
+
+    @include on-desktop {
+      grid-column:  span 5;
+    }
+  }
+}
+
+.products__cards {
+  @include page-grid;
+
+  row-gap: 56px;
+
+  @include on-tablet {
+    row-gap: 80px;
+  }
+}
+
+.products__card {
+  grid-column: 1/-1;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 3;
+  }
+
+
+  &__photo {
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+
+    transition: all .3s linear;
+
+    margin-bottom: 16px;
+
+    &:hover {
+      transform: translateY(-20);
+      box-shadow: 5px 5px 5px 5px  grey;
+      border-radius: 8px;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: uppercase;
+    color: $card-text-color;
+
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: $text-color;
+
+    margin-bottom: 16px;
+
+    &--margin {
+      margin-bottom: 35px;
+    }
+
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $title-color;
+
+    gap: 4px;
+
+    &:hover {
+      width: 30%;
+      border-radius: 6px;
+      background-color: #FFEEFC;
+      box-shadow: 0 0 5px 1px #F9512E;
+    }
+
+  }
+
+  &__img {
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--row {
+    @include on-desktop {
+      grid-column: 3/6;
+    }
+  }
+}
