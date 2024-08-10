@@ -1,0 +1,42 @@
+@import '../../utils';
+
+.footer {
+  background-color: $black;
+
+  @include all-grids;
+
+  grid-template-rows: repeat(3);
+
+  @include on-mobile {
+    display: block;
+    padding-inline: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #fff;
+
+    @include body-text;
+  }
+
+  &__logo {
+    @include on-mobile {
+      margin-block: 56px 40px;
+    }
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+  }
+
+  &__watermark {
+    @include body-text;
+
+    color: $grey;
+    margin: 0;
+
+    @include on-mobile {
+      padding-bottom: 56px;
+    }
+  }
+}

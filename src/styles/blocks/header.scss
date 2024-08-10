@@ -1,8 +1,6 @@
 @import '../utils';
 
 .header {
-  height: 100vh;
-
   &__list {
     display: inline-flex;
     justify-content: center;
@@ -133,15 +131,16 @@
         grid-column: span 4;
       }
 
-      width: auto;
       color: $black;
       text-align: center;
-      font-family: Inter, sans-serif;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 150%;
-      letter-spacing: -0.16px;
+
+      @include body-text;
+    }
+
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     &-title {
@@ -155,16 +154,8 @@
         grid-column: -1 / 1;
       }
 
-      width: auto;
       color: $black;
       text-align: center;
-      font-family: Inter, sans-serif;
-      font-size: 64px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 85%;
-      letter-spacing: -3.2px;
-      text-transform: uppercase;
       margin: 0;
     }
 
@@ -187,7 +178,6 @@
       align-items: center;
       gap: 4px;
       flex-shrink: 0;
-      text-transform: uppercase;
 
       border-radius: 32px;
       border: 2px solid $accent-orange;
@@ -206,6 +196,8 @@
       }
 
       &-text {
+        @include uppercase-text;
+
         color: $accent-orange;
       }
     }
