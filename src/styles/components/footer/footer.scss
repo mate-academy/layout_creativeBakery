@@ -1,0 +1,110 @@
+.footer {
+  &__wrapper {
+    padding: 56px 0;
+
+    background-color: $colorBlack;
+    color: $colorWhite;
+
+    @include onTablet {
+      padding: 88px 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      gap: 50px;
+    }
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 64px;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      gap: 103px;
+
+      &--gap {
+        gap: 40px;
+      }
+    }
+
+    @include onLaptop {
+      gap: 61px;
+
+      &--gap {
+        gap: 40px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 40px;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+    }
+  }
+
+  &__terms {
+    color: $colorGrey;
+  }
+}
+
+.contacts {
+  &__header {
+    max-width: 287px;
+    width: 100%;
+
+    @include onLaptop {
+      max-width: 100%;
+    }
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 40px;
+
+    @include onLaptop {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  &__item {
+    font-size: 24px;
+    color: $colorAccentOrange;
+
+    transition-duration: $transitionDuration;
+
+    @include onHover {
+      color: $colorWhite;
+      transform: $transformScale;
+    }
+  }
+}

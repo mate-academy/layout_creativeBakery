@@ -1,0 +1,154 @@
+.nav {
+  &__wrapper {
+    min-height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    &--padding {
+      padding-top: 8px;
+    }
+    &--title {
+      text-transform: uppercase;
+      font-weight: $fontWeightMedium;
+      line-height: $additionalLineHeight;
+
+      color: $colorGrey;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    @include after {
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+
+      display: block;
+
+      width: 0;
+      height: 1px;
+
+      background-color: $colorBlack;
+
+      transition-duration: $transitionDuration;
+    }
+
+    @include onHover {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    @include onTablet {
+      font-size: 25px;
+    }
+
+    @include onLaptop {
+      font-size: 16px;
+    }
+
+    &--contact {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      font-weight: $fontWeightMedium;
+      text-transform: uppercase;
+
+      color: $colorAccentOrange;
+
+      @include before {
+        content: '\e904';
+        font-family: 'icomoon';
+
+        font-size: 22px;
+
+        transition-duration: $transitionDuration;
+      }
+
+      @include after {
+        content: none;
+      }
+
+      @include onHover {
+        &::before {
+          transform: $transformScale;
+        }
+      }
+    }
+
+    &--color {
+      &::after {
+        background-color: $colorWhite;
+      }
+
+      @include onTablet {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.nav-header {
+  position: fixed;
+  left: 0;
+  top: 64px;
+
+  height: calc(100svh - 64px);
+  width: 100vw;
+
+  background-color: $colorLightBlue;
+
+  overflow: auto;
+
+  transform: translateX(100%);
+  transition-duration: 0.5s;
+
+  @include onLaptop {
+    position: relative;
+    left: unset;
+    top: unset;
+
+    height: auto;
+    width: max-content;
+
+    background-color: transparent;
+
+    overflow: unset;
+
+    transform: translateX(0);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    @include onTablet {
+      gap: 40px;
+    }
+
+    @include onLaptop {
+      flex-direction: row;
+    }
+  }
+
+  &--active {
+    transform: translateX(0);
+  }
+}
+
+.nav-footer {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
