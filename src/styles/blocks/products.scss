@@ -24,6 +24,7 @@
     }
 
     &--button {
+      position: relative;
       font-weight: 500;
       line-height: 16px;
       color: $accent-text-color;
@@ -36,6 +37,24 @@
       &::before {
         content: url(../images/icons/icon-arrow.svg);
         margin-right: 7px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        display: block;
+        height: 1px;
+        width: 105px;
+        background-color: $accent-text-color;
+
+        transition: $transition;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
       }
     }
   }
