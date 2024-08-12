@@ -1,0 +1,63 @@
+.menu {
+  z-index: 2;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $body-bg-color;
+
+  &__top {
+    margin-bottom: 30vh;
+    padding-block: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__close {
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-image: url(../images/icons/icon-close.svg);
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    transition: $transition;
+
+    &:hover {
+      color: $accent-text-color;
+      transform: scale(1.2);
+    }
+
+    &--primary {
+      font-weight: 500;
+      text-transform: uppercase;
+      color: $accent-text-color;
+
+      &::before {
+        content: url(../images/icons/icon-phone.svg);
+        margin-right: 7px;
+      }
+    }
+  }
+}
