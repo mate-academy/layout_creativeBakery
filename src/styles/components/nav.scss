@@ -1,4 +1,5 @@
 .nav {
+  text-align: center;
 
   &__list {
     list-style: none;
@@ -14,14 +15,20 @@
     text-decoration: none;
     color: inherit;
     display: block;
+    width: fit-content;
 
-    @include hover-line;
+    @include onDesktop {
+      @include hover-line;
+    }
   }
 
   &__link--contact {
     display: flex;
     align-items: center;
     gap: 4px;
+
+    text-transform: uppercase;
+    color: $c-accent;
 
     &::before {
       content: '';
