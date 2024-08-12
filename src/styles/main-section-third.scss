@@ -1,0 +1,136 @@
+@import 'utils';
+
+$margin-section-phone: 48px;
+
+.main__third {
+  &__top {
+    display: flex;
+
+    &__title {
+      color: $text-color;
+      text-transform: uppercase;
+    }
+
+    &__text {
+      @include text;
+    }
+  }
+
+  &__bottom {
+    &__title {
+      width: 280px;
+      margin-right: $grid-column-gap-desktop;
+      color: $text-color;
+      @include big-number;
+    }
+
+    &__text {
+      color: $gray;
+      @include post-title;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .main__third {
+    background: url(/src/images/Crumbs.svg) no-repeat;
+    background-position-y: 600px;
+    background-size: contain;
+    margin-bottom: $margin-bottom-third-phone - $margin-section-phone;
+
+    &__top {
+      display: block;
+      margin-bottom: $margin-bottom-third-main-top-phone;
+
+      &__title {
+        width: $width-third-main-top-phone;
+        @include h2-phone;
+        margin-bottom: 32px;
+      }
+
+      &__text {
+        width: $width-third-main-top-phone;
+      }
+    }
+
+    &__bottom {
+      &__section {
+        margin-bottom: $margin-section-phone;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .main__third {
+    background: url(/src/images/Crumbs.svg) no-repeat center;
+    background-size: contain;
+    margin-bottom: $margin-bottom-third-tablet;
+
+    &__top {
+      display: flex;
+      margin-bottom: $margin-bottom-third-main-top-tablet;
+
+      &__title {
+        width: $width-third-main-top-tablet;
+
+        @include h2-tablet;
+      }
+
+      &__text {
+        width: $width-third-main-top-tablet;
+      }
+    }
+
+    &__bottom {
+      display: flex;
+      &__top {
+        display: block;
+      }
+
+      &__bottom-text {
+        display: block;
+      }
+
+      &__section {
+        margin-bottom: 80px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  .main__third {
+    margin-bottom: $margin-bottom-third-desktop;
+
+    &__top {
+      margin-bottom: $margin-bottom-third-main-top-desktop;
+
+      & :not(:last-child) {
+        margin-right: $grid-column-gap-desktop;
+      }
+
+      &__title {
+        width: $width-third-main-top-desktop;
+        text-transform: uppercase;
+        @include h2-desktop;
+      }
+
+      &__text {
+        width: $width-third-main-top-desktop;
+      }
+    }
+
+    &__bottom {
+      display: flex;
+
+      &__top {
+        display: flex;
+      }
+
+      &__bottom-text {
+        display: flex;
+      }
+    }
+  }
+}

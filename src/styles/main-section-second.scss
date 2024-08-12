@@ -1,0 +1,142 @@
+@import 'utils';
+
+.main__second {
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    @include text;
+    margin-bottom: 80px;
+  }
+
+  &__content {
+    &:not(:last-child) {
+      margin-bottom: $margin-bottom-second-main-desktop;
+    }
+
+    &__item {
+      &__img {
+        border-radius: 8px;
+      }
+
+      &__category {
+        margin-top: 16px;
+        margin-bottom: 8px;
+        color: $gray;
+        @include category;
+      }
+
+      &__text {
+        @include text;
+
+        margin-bottom: 16px;
+      }
+
+      &__button {
+        cursor: pointer;
+        padding-left: 28px;
+        position: relative;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $orange-color;
+
+        @include category;
+        @include hover(transform, scale(1.2));
+
+        &::before {
+          content: url(/src/images/Icon-arrow.svg);
+          position: absolute;
+          left: 0;
+          bottom: -6px;
+        }
+
+        outline: 0;
+        border: none;
+        background-color: $body-background;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .main__second {
+    margin-bottom: $margin-bottom-second-main-phone;
+
+    &__title {
+      @include h2-phone;
+    }
+
+    &__content {
+      display: block;
+
+      &__item {
+        &:not(:last-child) {
+          margin-bottom: $margin-bottom-second-main-phone;
+        }
+
+        &__img {
+          width: $width-main-second-img-phone;
+          height: $height-main-second-img-phone;
+          margin-right: $grid-column-gap-desktop;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .main__second {
+    margin-bottom: $margin-bottom-second-main-tablet;
+
+    &__title {
+      @include h2-tablet;
+    }
+
+    &__content {
+      display: flex;
+
+      &__item {
+        &__img {
+          width: $width-main-second-img-tablet;
+          height: $height-main-second-img-tablet;
+        }
+
+        &__text {
+          width: $width-main-second-img-tablet;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  .main__second {
+    margin-bottom: $margin-bottom-second-main-desktop;
+
+    &__title {
+      @include h2-desktop;
+    }
+
+    &__content {
+      display: flex;
+
+      &--right {
+        width: fit-content;
+        transform: translate(33.5%);
+      }
+
+      &__item {
+        &__img {
+          width: $width-main-second-img-desktop;
+          height: $height-main-second-img-desktop;
+        }
+
+        &__text {
+          width: $width-main-second-img-desktop;
+        }
+      }
+    }
+  }
+}

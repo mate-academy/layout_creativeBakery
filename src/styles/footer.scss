@@ -1,0 +1,139 @@
+@import 'utils';
+
+.footer {
+  box-sizing: border-box;
+  &__container {
+    display: flex;
+    position: absolute;
+    background-color: $text-color;
+    width: 100%;
+    left: 0;
+  }
+
+  &__top {
+    &__list {
+      margin: 65px 0;
+      color: $gray;
+      list-style: none;
+      @include category;
+
+      & :first-child {
+        margin-top: 16px;
+      }
+
+      & :not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      &__item {
+        width: fit-content;
+        @include text;
+        @include hover(transform, scale(1.2));
+      }
+
+      &__link {
+        text-decoration: none;
+        text-transform: none;
+        color: $body-background;
+      }
+    }
+
+    &__icons {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      line-height: 0;
+
+      & :not(:last-child) {
+        margin-right: 16px;
+      }
+
+      &__block {
+        width: fit-content;
+        @include hover(transform, scale(1.2));
+      }
+    }
+  }
+
+  &__bottom {
+    &__title {
+      text-transform: uppercase;
+    }
+
+    &__year {
+      @include text;
+      color: $gray;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .footer {
+    height: $footer-heigth-phone;
+
+    &__top {
+      margin-bottom: 80px;
+    }
+
+    &__container {
+      display: block;
+      height: $footer-heigth-phone;
+      padding: 56px 16px;
+    }
+
+    &__bottom {
+      &__title {
+        @include h2-phone;
+        color: $body-background;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .footer {
+    height: $footer-heigth-tablet;
+
+    &__container {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      height: $footer-heigth-tablet;
+      padding: 84px 44px;
+    }
+
+    &__bottom {
+      &__title {
+        @include h2-tablet;
+        color: $body-background;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  .footer {
+    height: $footer-heigth-desktop;
+
+    &__container {
+      display: flex;
+      height: $footer-heigth-desktop;
+      padding: 84px 124px;
+    }
+
+    &__bottom {
+      &__lists {
+        display: flex;
+
+        & :not(:last-child) {
+          margin-right: 80px;
+        }
+      }
+
+      &__title {
+        @include h2-desktop;
+        color: $body-background;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@import 'utils';
+
+.sidebar {
+  z-index: 1111;
+  opacity: 0;
+  position: absolute;
+  background-color: $body-background;
+  top: -900px;
+  left: 0;
+  right: 0;
+  height: 100%;
+  @include transition;
+
+  &__logo {
+    @include hover(transform, scale(1.2));
+  }
+
+  &__close {
+    cursor: pointer;
+    @include hover(transform, scale(1.2));
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $padding-header-phone;
+    height: $header-heigth-tablet;
+  }
+
+  .list__center {
+    margin-top: 132px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__list {
+    list-style: none;
+
+    & :not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    &__item {
+      text-align: center;
+      @include hover(transform, scale(1.2));
+      
+      &--last {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $text-color;
+      @include text-link;
+
+
+      &--last {
+        display: flex;
+        text-transform: uppercase;
+        color: $orange-color;
+      }
+    }
+  }
+}
