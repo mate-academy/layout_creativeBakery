@@ -7,24 +7,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const sideLogo = document.getElementById('side-logo');
   
     burgerMenu.addEventListener('click', () => {
-      sideBar.style.display = 'block';
+      sideBar.style.top = '0';
+      sideBar.style.opacity = '1';
       document.body.style.overflow = "hidden"
     });
 
     close.addEventListener('click', () => {
-      sideBar.style.display = 'none';
+      sideBar.style.top = '-900px';
+      sideBar.style.opacity = '0';
        document.body.style.overflow = "auto"
     });
 
     sideLogo.addEventListener('click', () => {
-      sideBar.style.display = 'none';
+      sideBar.style.top = '-900px';
     });
 
     const arrTagLink = Array.from(sideBar.getElementsByClassName('sidebar__list__link'))
     
     arrTagLink.map(tag => {
       tag.addEventListener('click', () => {
-        sideBar.style.display = 'none';
+        sideBar.style.top = '-900px';
+        sideBar.style.opacity = '0';
         document.body.style.overflow = "auto"
       })
     })
