@@ -33,6 +33,10 @@
 
     @include onDesktop {
       margin-bottom: 61px;
+
+      &:focus {
+        box-shadow: 0 0 0 2px $c-white;
+      }
     }
   }
 
@@ -74,10 +78,22 @@
 
     @include onDesktop {
       grid-column: 1 / 6;
+
+      .icon--facebook, .icon--instagram, .icon--twitter {
+        &:focus {
+          box-shadow: 0 0 0 2px $c-white;
+        }
+      }
     }
   }
 
   &__copy {
-    margin: 0;
+    @include onTablet {
+      margin: 0 23px 0 0;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
   }
 }
