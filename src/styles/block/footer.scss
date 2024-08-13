@@ -1,0 +1,183 @@
+.footer {
+  background-color: $c-black;
+  padding-block: 56px;
+
+  @include on-tablet {
+    padding-bottom: 88px;
+  }
+
+  &__contacts-us {
+    @include page-grid;
+    @include content-padding-inline;
+
+    &-logo {
+      grid-column: 1 / -1;
+
+      @include hover(transform, scale(1.03));
+
+      @include on-tablet {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &-bottom {
+      grid-column: 1 / -1;
+
+      margin: 40px 0 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @include on-tablet {
+        grid-column: 1 / 5;
+        margin: 40px 0 0;
+      }
+
+      @include on-desktop {
+        margin: 40px 0 48px;
+      }
+    }
+
+    &-title {
+      color: $c-grey;
+
+      @include hover(transform, scale(1.03));
+    }
+
+    &-nav {
+      padding-top: 0;
+    }
+
+    &-list {
+      justify-content: left;
+      align-items: flex-start;
+    }
+
+    &-text {
+      color: $c-white;
+    }
+  }
+
+  &__nav-link {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      background-color: $c-white;
+      bottom: -8px;
+      height: 1px;
+      display: block;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &-title {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-area: 1 / 5 / auto / -1;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+
+    &-color {
+      color: $c-white;
+    }
+  }
+
+  &-title-desktop {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      color: $c-white;
+      grid-area: 1 / 5 / auto / -1;
+    }
+  }
+
+  &__left-block-1 {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: start;
+    padding-top: 40px;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__left-block-2 {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 40px;
+    align-items: start;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      padding: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      padding-top: 40px;
+    }
+  }
+
+  &__block-text {
+    color: $c-white;
+  }
+
+  &__icons {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    padding-block: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      padding-bottom: 0;
+    }
+
+    @include on-desktop {
+      padding: 0;
+    }
+  }
+
+  &__bottom {
+    grid-column: 1 / -1;
+
+    color: $c-white;
+    margin: 0;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      margin-top: 47px;
+    }
+
+    @include on-desktop {
+      margin: 0;
+    }
+  }
+}
