@@ -5,11 +5,13 @@
 
   @include all-grids;
 
-  grid-template-rows: repeat(3);
-
   @include on-mobile {
     display: block;
     padding-inline: 16px;
+  }
+
+  @include on-tablet {
+    padding-block: 88px;
   }
 
   &__link {
@@ -25,7 +27,13 @@
     }
 
     @include on-tablet {
+      grid-row: 1 / 2;
       grid-column: span 3;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      transition: transform 0.4s;
     }
   }
 

@@ -3,4 +3,20 @@
   gap: 32px;
 
   margin-bottom: 40px;
+
+  &--mobile {
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &--not-mobile {
+    @include on-mobile {
+      display: none;
+    }
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
 }

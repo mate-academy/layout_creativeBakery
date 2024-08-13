@@ -8,6 +8,13 @@
     gap: 64px;
     list-style-type: none;
     padding: 0;
+
+    &-item {
+      &:hover {
+        transform: scale(1.12);
+        transition: transform 0.4s;
+      }
+    }
   }
 
   &__products {
@@ -94,6 +101,11 @@
     width: 136px;
     height: 32px;
     background-image: url('../images/logos/logo-baker-lab.svg');
+
+    &:hover {
+      transform: scale(1.02);
+      transition: transform 0.4s;
+    }
   }
 
   &__menu {
@@ -121,7 +133,7 @@
 
     &-tagline {
       @include on-mobile {
-        justify-self: center;
+        // justify-self: center;
         grid-column: -1 / 1;
         margin-block: 32px;
       }
@@ -137,25 +149,40 @@
       @include body-text;
     }
 
-    &-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    // &-wrapper {
+    //   position: relative;
+    //   // display: block;
+    //   // display: inline-block;
+
+    //   @include on-tablet {
+    //     // @include tablet-grid;
+    //     grid-column: 3 / 7;
+    //   }
+
+    //   @include on-mobile {
+    //     position: static;
+    //   }
+    // }
 
     &-title {
+      text-align: center;
+
       @include on-mobile {
         justify-self: center;
         grid-column: -1 / 1;
       }
 
       @include on-tablet {
-        display: inline;
+        grid-column: -1 / 1;
+      }
+
+      @include on-desktop {
+        font-size: 136px;
+        text-align: center;
         grid-column: -1 / 1;
       }
 
       color: $black;
-      text-align: center;
       margin: 0;
     }
 
@@ -178,27 +205,44 @@
       align-items: center;
       gap: 4px;
       flex-shrink: 0;
+      cursor: pointer;
 
       border-radius: 32px;
       border: 2px solid $accent-orange;
       background-color: $light-blue;
 
-      // &:hover .header__banner-button-text {
-      //   color: $white;
-      // }
-
-      &:hover {
-        background: $accent-orange;
-      }
-
-      &:focus {
-        background: $dark-orange;
-      }
-
       &-text {
         @include uppercase-text;
 
         color: $accent-orange;
+      }
+
+      &:hover {
+        background: $accent-orange;
+        transition: background 0.4s;
+      }
+
+      &:focus {
+        border-color: $dark-orange;
+        background: $dark-orange;
+      }
+
+      &:hover .header__banner-button-text {
+        color: $white;
+        transition: color 0.4s;
+      }
+
+      &-icon--white {
+        display: none;
+      }
+
+      &:hover &-icon--white {
+        display: block;
+        transition: display 0.4s;
+      }
+
+      &:hover &-icon--red {
+        display: none;
       }
     }
 
@@ -208,12 +252,12 @@
       }
 
       @include on-tablet {
-        display: inline;
-        grid-column: 3 / 7;
+        grid-column: 3 / -3;
       }
 
       width: 100%;
       flex-shrink: 0;
+      background: $light-blue;
     }
   }
 }
