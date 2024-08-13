@@ -1,0 +1,99 @@
+.footer {
+  padding: 56px 0;
+  background-color: $c-black;
+  color: $c-white;
+
+  @include onTablet {
+    padding: 88px 0;
+  }
+
+  &__container {
+    @include page-grid;
+  }
+
+  &__head {
+    margin: 0 0 64px;
+    grid-column: span 2;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    @include onDesktop {
+      margin: 0 0 48px;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 96px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 61px;
+
+      &:focus {
+        box-shadow: 0 0 0 2px $c-white;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    color: $c-gray;
+  }
+
+  &__contacts {
+    margin: 0 0 40px;
+    grid-column: span 2;
+
+    @include onTablet {
+      margin: 0 0 48px;
+      grid-column: 5 / 8;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__bottom {
+    grid-column: span 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+
+      .icon--facebook, .icon--instagram, .icon--twitter {
+        &:focus {
+          box-shadow: 0 0 0 2px $c-white;
+        }
+      }
+    }
+  }
+
+  &__copy {
+    @include onTablet {
+      margin: 0 23px 0 0;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+}

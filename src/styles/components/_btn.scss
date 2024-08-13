@@ -1,0 +1,55 @@
+.btn {
+  text-decoration: none;
+  border: 2px solid $c-accent;
+  border-radius: 32px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $c-accent;
+  padding: 20px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/icons/icon-cookie.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  @include onDesktop {
+    transition:
+      border-color 0.5s,
+      background-color 0.5s,
+      color 0.5s;
+
+    &:hover {
+      border-color: transparent;
+      background-color: $c-accent;
+      color: $c-white;
+
+      &::before {
+        background-image: url('../images/icons/icon-cookie-hover.svg');
+      }
+    }
+
+    &:focus {
+      border-color: transparent;
+      background-color: $c-accent-dark;
+      color: $c-white;
+
+      &::before {
+        background-image: url('../images/icons/icon-cookie-hover.svg');
+      }
+    }
+  }
+}
