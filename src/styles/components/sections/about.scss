@@ -1,0 +1,115 @@
+.about {
+  padding: 72px 0;
+  background-image: url('../images/crumbs-small.png');
+  background-repeat: no-repeat;
+  background-position: 0 72%;
+  background-size: contain;
+
+  @include onTablet {
+    padding: 152px 0;
+
+    background-image: url('../images/crumbs-big.png');
+    background-position: center;
+    background-size: 526px 423px;
+  }
+
+  @include onDesktop {
+    padding: 178px 0 349px;
+
+    background-size: 718px 673px;
+  }
+
+  &__info {
+    margin: 0 0 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include onTablet {
+      margin: 0 0 72px;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 144px;
+    }
+  }
+
+  &__title,
+  &__text {
+    @include onTablet {
+      flex-basis: 328px;
+    }
+  }
+
+  &__title {
+    @include onDesktop {
+      flex-basis: 426px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+
+    @include onDesktop {
+      flex-basis: 544px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include onTablet {
+      flex-flow: row wrap;
+      gap: 80px 24px;
+    }
+
+    @include onDesktop {
+      flex-wrap: nowrap;
+      gap: 24px;
+    }
+  }
+
+  &__item {
+    @include onTablet {
+      flex-basis: 328px;
+      flex-grow: 1;
+    }
+
+    @include onDesktop {
+      transition:
+        box-shadow 0.5s,
+        transform 0.5s,
+        color 0.5s;
+      padding: 2px;
+      border-radius: 10px;
+
+      &:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transform: scale(1.02);
+
+        .about__item-num {
+          color: $c-accent-dark;
+        }
+      }
+    }
+  }
+
+  &__item-num {
+    display: block;
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    color: $c-accent;
+    margin-bottom: 8px;
+    transition: color 0.5s;
+  }
+}
