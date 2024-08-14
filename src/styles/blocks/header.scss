@@ -131,16 +131,39 @@
   &__banner {
     @include all-grids;
 
+    @include on-tablet {
+      background-image: url('/src/images/media/cookie.png');
+      background-size: 326px 328px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @include on-desktop {
+      background-size: 544px 546px;
+    }
+
+    @include on-desktop-xl {
+      background-size: 584px 586px;
+    }
+
     &-tagline {
       @include on-mobile {
-        // justify-self: center;
         grid-column: -1 / 1;
         margin-block: 32px;
       }
 
       @include on-tablet {
-        margin-block: 80px 16px;
+        margin-block: 80px 146px;
         grid-column: span 4;
+      }
+
+      @include on-desktop {
+        margin-block: 135px 8px;
+        grid-column: span 2;
+      }
+
+      @include on-desktop-xl {
+        margin-block: 144px 40px;
       }
 
       color: $black;
@@ -174,6 +197,7 @@
 
       @include on-tablet {
         grid-column: -1 / 1;
+        // margin-block: 146px 210px;
       }
 
       @include on-desktop {
@@ -193,8 +217,13 @@
       }
 
       @include on-tablet {
-        margin-top: 80px;
+        margin-top: 210px;
         grid-column: 3 / 7;
+      }
+
+      @include on-desktop {
+        margin-block: 64px 161px;
+        grid-column: span 2;
       }
 
       display: flex;
@@ -252,7 +281,7 @@
       }
 
       @include on-tablet {
-        grid-column: 3 / -3;
+        display: none;
       }
 
       width: 100%;
