@@ -1,0 +1,106 @@
+.header {
+  &__content {
+    @include content-padding-inline;
+
+    @include on-tablet {
+      position: relative;
+    }
+
+    @include on-desktop {
+      padding-block: 120px;
+    }
+
+    &-text {
+      text-align: center;
+      margin-block: 32px;
+
+      @include on-tablet {
+        width: 280px;
+        text-align: left;
+        margin: 80px 0 16px;
+      }
+
+      @include on-desktop {
+        width: 260px;
+
+        margin-bottom: -200px;
+        text-align: left;
+      }
+
+      @include on-the-design {
+        width: 280px;
+      }
+    }
+
+    &-title {
+      text-align: center;
+
+      @include on-tablet {
+        position: absolute;
+        inset: 194px 0 0;
+      }
+
+      @include on-desktop {
+        top: 270px;
+      }
+    }
+
+    &-img {
+      text-align: center;
+      margin: 0 auto;
+
+      &-mobile {
+        @include on-tablet {
+          display: none;
+        }
+      }
+
+      &-tablet {
+        display: none;
+
+        @include on-tablet {
+          display: block;
+          margin: 0 auto;
+        }
+
+        @include on-desktop {
+          display: none;
+        }
+      }
+
+      &-desktop {
+        display: none;
+
+        @include on-desktop {
+          display: block;
+          margin: 0 auto;
+        }
+
+        @include on-the-design {
+          display: none;
+        }
+      }
+
+      &-thedesign {
+        display: none;
+
+        @include on-the-design {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &-button {
+      margin-bottom: 40px;
+
+      @include on-tablet {
+        margin: 0 auto;
+      }
+
+      @include on-desktop {
+        margin: -160px 0;
+      }
+    }
+  }
+}

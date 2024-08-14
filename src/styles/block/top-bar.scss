@@ -1,0 +1,103 @@
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px;
+  align-items: center;
+
+  @include on-desktop {
+    padding: 28px 32px;
+  }
+
+  &__logo {
+    height: 32px;
+    width: 136px;
+
+    @include hover(transform, scale(1.03));
+  }
+
+  &__desktop {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: row;
+      gap: 64px;
+      align-items: center;
+    }
+
+    &-icon {
+      @include on-desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
+
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -8px;
+          display: block;
+          height: 1px;
+          width: 100%;
+          background-color: $c-accent-orange;
+
+          transition: transform 0.3s;
+          transform: scale(0);
+        }
+
+        &:hover::after {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      background-color: $c-black;
+      bottom: -8px;
+      height: 1px;
+      display: block;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__mobile-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-accent-orange;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
