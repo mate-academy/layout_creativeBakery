@@ -1,0 +1,42 @@
+.products {
+  @include page-grid;
+
+  row-gap: 56px;
+
+  @include on-tablet {
+    row-gap: 80px;
+  }
+
+  &__wrapper {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+  }
+
+  &__description {
+    margin: 0;
+    grid-column: 1 / -1;
+  }
+
+  &__block {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+    }
+
+    &--align-right {
+      @include on-desktop {
+        grid-column: 3 / span 3;
+      }
+    }
+  }
+}

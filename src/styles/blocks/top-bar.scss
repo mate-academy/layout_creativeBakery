@@ -1,0 +1,26 @@
+.top-bar {
+  @include content-padding-inline;
+
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    width: 136px;
+    height: 32px;
+
+    @include hover(transform, scale(1.2), $orange-text-color);
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      gap: 64px;
+      text-decoration: none;
+      list-style: none;
+    }
+  }
+}
