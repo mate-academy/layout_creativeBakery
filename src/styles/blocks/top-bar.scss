@@ -1,0 +1,62 @@
+.top-bar {
+  padding-block: 20px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include on-large-desktop {
+    padding-block: 32px;
+  }
+
+  &__wrapper {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include on-tablet {
+      grid-column: span 8;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 24px;
+    justify-self: end;
+
+    @include on-desktop {
+      display: none;
+    }
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    height: 24.6px;
+    transition: transform $effectDuration;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    border: none;
+
+    transition:
+      transform $effectDuration,
+      color $effectDuration;
+
+    @include hover(transform, scale(1.2));
+
+    color: initial;
+
+    @include focus(color, $dark-orange);
+  }
+}
