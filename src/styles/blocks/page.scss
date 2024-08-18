@@ -1,4 +1,27 @@
 .page {
   background-color: $light-blue-color;
   color: $black-color;
+  scroll-behavior: smooth;
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all $speed-animation;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      z-index: 2;
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden; /* not to scroll the page */
+  }
 }
