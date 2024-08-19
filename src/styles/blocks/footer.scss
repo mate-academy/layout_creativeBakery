@@ -1,0 +1,127 @@
+.footer {
+  background-color: $black-color;
+  padding-block: 56px;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  &__content {
+    @include on-tablet {
+      @include page-grid;
+
+      row-gap: 48px;
+    }
+  }
+
+  &__top-bar {
+    grid-column: 1 / 5;
+
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__contact {
+    grid-column: 5 / -1;
+
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__contact-lists {
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__bottom {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    grid-column: 1 / -1;
+  }
+
+  &__logo {
+    display: block;
+    width: 168px;
+    height: 40px;
+    background-image: url('../images/icons/logo-white.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    color: $white-color;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 40.8px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    text-transform: uppercase;
+
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: $white-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    text-decoration: none;
+
+    &--grey {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-align: left;
+
+      color: $grey-color;
+    }
+  }
+
+  &__media {
+    display: flex;
+    gap: 24px;
+
+    margin-bottom: 40px;
+  }
+
+  &__own {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+
+    color: $grey-color;
+  }
+}
