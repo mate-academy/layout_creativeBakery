@@ -35,28 +35,42 @@
   }
 
   &__products {
-    @include on-desktop {
-      @include page-grid;
+    @include page-grid;
+
+    row-gap: 56px;
+
+    @include on-tablet {
+      row-gap: 80px;
     }
   }
 
   &__products-group {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    grid-column: 1 / -1;
+
     @include on-tablet {
-      display: flex;
       gap: 24px;
-      margin-bottom: 80px;
     }
 
     &--one {
-      grid-column: 1 / 7;
+      @include on-desktop {
+        grid-column: 1 / 7;
+      }
     }
 
     &--two {
-      grid-column: 3 / -1;
+      @include on-desktop {
+        grid-column: 3 / -1;
+      }
     }
 
     &--three {
-      grid-column: 1 / 7;
+      @include on-desktop {
+        grid-column: 1 / 7;
+      }
     }
   }
 }
