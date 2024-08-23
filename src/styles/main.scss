@@ -1,7 +1,61 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import '../styles/blocks/page';
+@import '../styles/blocks/header';
+@import '../styles/blocks/top-bar';
+@import '../styles/blocks/icon';
+@import '../styles/blocks/nav';
+@import '../styles/blocks/menu';
+@import '../styles/blocks/hero';
+@import '../styles/blocks/card';
+@import '../styles/blocks/about-us';
+@import '../styles/blocks/footer';
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: $light-blue;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-large-desktop {
+    max-width: 1192px;
+    margin-inline: auto;
+    padding-inline: 124px;
+  }
+}
+
+.btn {
+  height: 52px;
+  color: $accent-orange;
+  background-color: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
 }
