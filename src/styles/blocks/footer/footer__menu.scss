@@ -25,10 +25,49 @@
     margin: 0;
   }
 
+  &--call-us {
+    grid-column: span 2;
+
+    @include on-desktop {
+      margin-block: 0 88px;
+    }
+  }
+
+  &--email-us {
+    grid-column: span 2;
+
+    @include on-tablet {
+      margin-bottom: 48px;
+    }
+
+    @include on-desktop {
+      margin-block: 0 88px;
+    }
+  }
+
+  &--menu {
+    @include on-tablet {
+      margin-block: 96px 104px;
+    }
+
+    @include on-desktop {
+      margin-block: 61px 48px;
+    }
+  }
+
   &-item {
     @include body-text;
 
     color: $white;
+    text-decoration: none;
+
+    &--call-us,
+    &--email-us,
+    &--menu {
+      @include uppercase-text;
+
+      color: $grey;
+    }
   }
 
   &-item:not(:last-child) {

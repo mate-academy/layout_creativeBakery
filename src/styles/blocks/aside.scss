@@ -24,10 +24,8 @@
   &__link {
     text-decoration: none;
     color: $black;
-    font-family: Inter, sans-serif;
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: -0.16px;
+
+    @include body-text;
 
     &--contact-us {
       color: $accent-orange;
@@ -40,7 +38,6 @@
   }
 
   &:target {
-    overflow-y: hidden;
     opacity: 1;
     pointer-events: all;
   }
@@ -66,4 +63,8 @@
       }
     }
   }
+}
+
+html:has(.aside:target) {
+  overflow: hidden;
 }
