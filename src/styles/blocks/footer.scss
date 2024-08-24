@@ -88,7 +88,18 @@
     }
   }
 
+  &__item {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: left;
+
+    color: $grey-color;
+  }
+
   &__link {
+    position: relative;
     color: $white-color;
     font-size: 16px;
     font-weight: 400;
@@ -96,15 +107,22 @@
     letter-spacing: -0.01em;
     text-align: center;
     text-decoration: none;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $accent-orange-color;
 
-    &--grey {
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 16px;
-      letter-spacing: 0.02em;
-      text-align: left;
+      transition: transform $speed-animation;
+      transform: scale(0);
+      transform-origin: left;
+    }
 
-      color: $grey-color;
+    &:hover::after {
+      transform: scale(1);
     }
   }
 
@@ -113,6 +131,10 @@
     gap: 24px;
 
     margin-bottom: 40px;
+  }
+
+  &__icon {
+    transition: all $speed-animation;
   }
 
   &__own {
