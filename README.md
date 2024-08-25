@@ -7,5 +7,5 @@ Implemented landing page according to [Figma design](https://www.figma.com/file/
 - Tablet 640px
 - Mobile (> 320px)
 
-[DEMO LINK](https://mikezhylka.github.io/layout_creativeBakery/).
+[DEMO LINK](https://mikezhylka.github.io/layout_creativeBakery/)
 
