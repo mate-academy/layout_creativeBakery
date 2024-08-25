@@ -1,0 +1,70 @@
+@import '../utils';
+
+.aside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  box-sizing: border-box;
+  background-color: $light-blue;
+  height: 100vh;
+
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+
+  &__navigation {
+    height: calc(100vh - $top-bar-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black;
+
+    @include body-text;
+
+    &--contact-us {
+      color: $accent-orange;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+  }
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+
+    list-style-type: none;
+
+    &-item {
+      text-decoration: none;
+      text-transform: capitalize;
+      color: $black;
+
+      &--uppercase {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+html:has(.aside:target) {
+  overflow: hidden;
+}

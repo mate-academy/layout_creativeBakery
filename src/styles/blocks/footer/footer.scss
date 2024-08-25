@@ -1,0 +1,55 @@
+@import '../../utils';
+
+.footer {
+  background-color: $black;
+
+  @include all-grids;
+
+  @include on-mobile {
+    display: block;
+    padding-inline: 16px;
+  }
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+      color: $grey;
+      transition: color 0.4s;
+    }
+
+    @include body-text;
+  }
+
+  &__logo {
+    @include on-mobile {
+      margin-block: 56px 40px;
+    }
+
+    @include on-tablet {
+      grid-row: 1 / 2;
+      grid-column: span 3;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      transition: transform 0.4s;
+    }
+  }
+
+  &__watermark {
+    @include body-text;
+
+    color: $grey;
+    margin: 0;
+
+    @include on-mobile {
+      padding-bottom: 56px;
+    }
+  }
+}

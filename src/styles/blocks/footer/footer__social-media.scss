@@ -1,0 +1,29 @@
+.footer__social-media {
+  display: flex;
+  gap: 32px;
+
+  margin-bottom: 40px;
+
+  &--mobile {
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &--not-mobile {
+    @include on-mobile {
+      display: none;
+    }
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.social-media {
+  &__fb:hover, &__ig:hover, &__twitter:hover {
+    transform: scale(1.12);
+    transition: transform .4s;
+  }
+}

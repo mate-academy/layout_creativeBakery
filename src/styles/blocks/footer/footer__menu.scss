@@ -1,0 +1,76 @@
+@import '../../utils';
+
+.footer__menu {
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  &-title {
+    @include on-mobile {
+      margin-block: 0 16px;
+    }
+
+    @include uppercase-text;
+
+    color: $grey;
+  }
+}
+
+.footer__navigation {
+  margin-block: 40px;
+
+  &-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &--call-us {
+    grid-column: span 2;
+
+    @include on-desktop {
+      margin-block: 0 88px;
+    }
+  }
+
+  &--email-us {
+    grid-column: span 2;
+
+    @include on-tablet {
+      margin-bottom: 48px;
+    }
+
+    @include on-desktop {
+      margin-block: 0 88px;
+    }
+  }
+
+  &--menu {
+    @include on-tablet {
+      margin-block: 96px 104px;
+    }
+
+    @include on-desktop {
+      margin-block: 61px 48px;
+    }
+  }
+
+  &-item {
+    @include body-text;
+
+    color: $white;
+    text-decoration: none;
+
+    &--call-us,
+    &--email-us,
+    &--menu {
+      @include uppercase-text;
+
+      color: $grey;
+    }
+  }
+
+  &-item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
