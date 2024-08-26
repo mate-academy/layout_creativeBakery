@@ -1,0 +1,63 @@
+.menu {
+  z-index: 2;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $c-light-pink;
+
+  &__close {
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-image: url(/src/images/icon/Icon-close.svg);
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__top {
+    margin-bottom: 30vh;
+    padding-block: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__list {
+    font-family: Inter, sans-serif;
+    padding: 0;
+    list-style: none;
+    margin: 132px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    color: inherit;
+    transition: all 0.4s;
+
+    &:hover {
+      color: $c-orange;
+      transform: scale(1.2);
+    }
+
+    &--primary {
+      font-weight: 500;
+      text-transform: uppercase;
+      color: $c-orange;
+
+      &::before {
+        content: url(/src/images/icon/Icon-phone.svg);
+        margin-right: 7px;
+      }
+    }
+  }
+}
