@@ -1,0 +1,153 @@
+.header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: $bg-main;
+  padding-inline: 20px;
+  z-index: 2;
+  opacity: 0.9;
+  transition: opacity $default-timing ease;
+
+  &.active {
+    opacity: 1;
+  }
+
+  @include on-desktop {
+    height: 88px;
+    padding-inline: 32px;
+  }
+
+  &__logo {
+    display: block;
+    transition: opacity $default-timing ease;
+    z-index: 1;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  &__burger {
+    &-btn {
+      display: block;
+      position: relative;
+      background-color: transparent;
+      width: 24px;
+      height: 24px;
+      border: none;
+      z-index: 1;
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    &-line {
+      width: 20px;
+      height: 2px;
+      background-color: $black;
+      position: absolute;
+      left: 2px;
+
+      &:first-of-type {
+        top: 8px;
+        transition: transform $default-timing ease;
+      }
+
+      &:last-of-type {
+        bottom: 8px;
+        transition: transform $default-timing ease;
+      }
+
+      .active & {
+        width: 16px;
+        left: 4px;
+
+        &:first-of-type {
+          transform: rotate(45deg);
+          top: 11px;
+        }
+
+        &:last-of-type {
+          transform: rotate(-45deg);
+          bottom: 11px;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    height: 100vh;
+    width: 100vw;
+    background-color: $bg-main;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition:
+      transform $default-timing ease-in,
+      opacity $default-timing ease-in;
+
+    .active & {
+      transform: translateX(-100vw);
+      opacity: 1;
+
+      @include on-desktop {
+        transform: translateX(0);
+      }
+    }
+
+    @include on-desktop {
+      opacity: 1;
+      transition: none;
+      position: static;
+      width: fit-content;
+      height: auto;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 64px;
+    }
+
+    &-link {
+      position: relative;
+      text-decoration: none;
+      transition: color $default-timing ease;
+
+      &:not(.header__list-link--contact) {
+        @include underline-hover;
+
+        color: $black;
+      }
+
+      &:hover {
+        color: $primary-main;
+      }
+
+      &:active {
+        color: $primary-dark;
+      }
+    }
+  }
+}
