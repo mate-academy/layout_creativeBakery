@@ -1,0 +1,121 @@
+.header {
+  @include page-grid;
+
+  &__text {
+    grid-column: 1 / -1;
+    padding: 32px 0;
+    color: $black;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      padding: 80px 0 16px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+      padding: 135px 0 8px;
+    }
+
+    @include on-big-screen {
+      grid-column: 1 / 3;
+      padding: 144px 0 0;
+    }
+  }
+
+  &__h1 {
+    grid-column: 1 / -1;
+    color: $accent-orange;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+
+    @include on-tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url(../images/header/header-cookie-bgi.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 328px;
+    }
+
+    @include on-desktop {
+      height: 546px;
+      position: absolute;
+      inset: 88px 0 0;
+    }
+
+    @include on-big-screen {
+      height: 586px;
+    }
+  }
+
+  &__bgi {
+    grid-column: 1 / -1;
+    width: 100%;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+}
+
+.button {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+  border: 2px solid $accent-orange;
+  border-radius: 32px;
+  background-color: $bgc-pink;
+  margin-bottom: 40px;
+  cursor: pointer;
+  z-index: 1;
+
+  &__link {
+    text-decoration: none;
+    color: $accent-orange;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 100%;
+    width: 100%;
+
+    @include hover(transform, scale(1.08));
+  }
+
+  &__link:hover {
+    color: $white;
+  }
+
+  &__link::before {
+    content: url(../images/icons/icon-cookie-default.svg);
+  }
+
+  &__link:hover::before {
+    content: url(../images/icons/icon-cookie-hover.svg);
+  }
+
+  &:hover {
+    background-color: $accent-orange;
+  }
+
+  @include on-tablet {
+    grid-column: 3 / 7;
+    margin-bottom: px;
+  }
+
+  @include on-desktop {
+    grid-column: 1 / 3;
+    margin: 188px 0 161px;
+  }
+
+  @include on-big-screen {
+    grid-column: 1 / 3;
+    margin: 226px 0 138px;
+  }
+}
