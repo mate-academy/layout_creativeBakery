@@ -1,0 +1,62 @@
+.btn {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: px-to-rem(16);
+  font-weight: 500;
+
+  &--outline {
+    border-radius: 32px;
+    border: 1px solid;
+    height: 56px;
+    padding: 20px;
+
+    &.btn--primary {
+      border-color: $primary-main;
+      color: $primary-main;
+      transition:
+        color $default-timing ease,
+        background-color $default-timing ease;
+
+      &:hover {
+        color: $white;
+        border-color: $white;
+        background-color: $primary-main;
+      }
+
+      &:active {
+        background-color: $primary-dark;
+      }
+    }
+  }
+
+  &--text {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 32px;
+
+    svg {
+      path {
+        fill: currentColor;
+      }
+    }
+
+    &.btn--primary {
+      @include underline-hover;
+
+      color: $primary-main;
+      transition: color $default-timing ease;
+
+      &:active {
+        color: $primary-dark;
+      }
+    }
+  }
+}

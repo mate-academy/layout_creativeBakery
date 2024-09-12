@@ -1,0 +1,118 @@
+.hero {
+  @include page-grid;
+
+  margin-top: 32px;
+  margin-bottom: 40px;
+
+  @include on-tablet {
+    margin-top: 80px;
+    margin-bottom: 228px;
+  }
+
+  @include on-desktop {
+    margin-top: 0;
+    margin-bottom: 66px;
+    position: relative;
+  }
+
+  @include on-desktop-xl {
+    margin-bottom: 26px;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-top: 32px;
+
+    @include on-tablet {
+      margin-top: 16px;
+      position: relative;
+      height: 328px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include on-desktop {
+      height: 546px;
+      margin-top: 0;
+    }
+
+    &-text {
+      color: $primary-main;
+      text-transform: uppercase;
+      text-align: center;
+
+      @include on-tablet {
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    &-cookie {
+      width: 288px;
+      height: 290px;
+      background: url('/src/images/images/sm/cookie-sm.png');
+      margin: 0 auto;
+
+      @include on-tablet {
+        background-image: url('/src/images/images/md/cookie-md.png');
+        width: 326px;
+        height: 328px;
+        position: absolute;
+        left: 50%;
+        margin-left: -163px;
+        top: 0;
+      }
+
+      @include on-desktop {
+        background-image: url('/src/images/images/lg/cookie-lg.png');
+        width: 544px;
+        height: 546px;
+        margin-left: -272px;
+      }
+
+      @include on-desktop-xl {
+        background-image: url('/src/images/images/xl/cookie-xl.png');
+        width: 584px;
+        height: 586px;
+        margin-left: -292px;
+      }
+    }
+  }
+
+  &__subtitle {
+    grid-column: 1 / -1;
+    color: $black;
+    text-align: center;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+      position: absolute;
+      left: 0;
+      top: 130px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 0 auto;
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+      margin-top: 80px;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      left: 0;
+      bottom: 95px;
+      grid-column: 1 / 3;
+    }
+  }
+}

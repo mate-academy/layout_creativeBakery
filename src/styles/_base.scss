@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Inter, sans-serif;
+  font-size: $html-font-size;
+  scroll-behavior: smooth;
+  overflow: hidden auto;
+  scroll-padding-top: 64px;
+
+  @include on-desktop {
+    scroll-padding-top: 88px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $bg-main;
+}
+
+p,
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop-xl {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1192px;
+  }
+}
+
+.grid {
+  @include page-grid;
+}

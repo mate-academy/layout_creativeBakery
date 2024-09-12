@@ -1,0 +1,149 @@
+.footer {
+  background-color: $black;
+  padding-block: 56px;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__subtitle {
+    color: $grey;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  &__link {
+    @include underline-hover;
+
+    color: $white;
+    text-decoration: none;
+  }
+
+  &__sitemap {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    &-logo {
+      display: block;
+      width: fit-content;
+    }
+
+    &-nav {
+      margin-top: 40px;
+
+      @include on-tablet {
+        margin-top: 96px;
+      }
+
+      @include on-desktop {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  &__contacts {
+    @include page-grid;
+
+    margin-top: 64px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      margin-top: 0;
+    }
+
+    &-title {
+      grid-column: 1 / -1;
+      text-transform: uppercase;
+      color: $white;
+    }
+
+    &-phones {
+      grid-column: 1 / -1;
+      margin-top: 40px;
+
+      @include on-desktop {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &-email {
+      grid-column: 1 / -1;
+      margin-top: 40px;
+
+      @include on-desktop {
+        grid-column: 5 / -1;
+      }
+    }
+  }
+
+  &__copyright {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+    margin-top: 40px;
+
+    @include on-tablet {
+      margin-top: 48px;
+    }
+
+    &-social {
+      &-list {
+        grid-column: 1 / -1;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        gap: 32px;
+
+        @include on-tablet {
+          grid-column: 1 / 5;
+        }
+      }
+
+      &-link {
+        display: block;
+
+        svg {
+          path {
+            transition: fill $default-timing ease;
+          }
+        }
+
+        &:hover,
+        &:active {
+          svg {
+            path {
+              fill: $white;
+            }
+          }
+        }
+      }
+    }
+
+    &-sign {
+      grid-column: 1 / -1;
+      color: $grey;
+      display: block;
+      margin-top: 40px;
+
+      @include on-tablet {
+        grid-column: 5 / -1;
+        margin-top: 0;
+      }
+    }
+  }
+}
