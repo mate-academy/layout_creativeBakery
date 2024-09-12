@@ -1,0 +1,36 @@
+.button {
+  border: 2px solid $accent-orange;
+  border-radius: 32px;
+  color: $accent-orange;
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 56px;
+
+  &--more {
+    grid-column: 1 / -1;
+    background-color: $light-pink;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+    }
+
+    &:hover {
+      background-color: $accent-orange;
+      color: $white;
+    }
+
+    &:focus {
+      background-color: $dark-orange;
+      color: $white;
+    }
+  }
+}
