@@ -1,0 +1,224 @@
+@import '../utils';
+
+
+
+.header {
+  @include column-flex;
+
+  gap: 32px;
+
+  &__container {
+    @include grid;
+
+    color: $main-black;
+    width: 100%;
+  }
+
+  &__top-bar {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 72px;
+    align-items: center;
+  }
+
+  &__main {
+    grid-column: 1 / -1;
+    text-align: center;
+
+    @include grid;
+
+    gap: 32px;
+  }
+
+  &__logo {
+    background-image: url(../images/header/Logo.svg);
+    display: block;
+    width: 136px;
+    height: 32px;
+    transition: $all-transition;
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__menu {
+    background-image: url(../images/header/Icon-menu.svg);
+    display: block;
+    width: 24px;
+    height: 24px;
+    transition: $all-transition;
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    grid-column: 1 / -1;
+  }
+
+  &__headline {
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    font-family: Inter, sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    display: flex;
+    color: $main-red;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 20px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    border: 2px solid $main-red;
+    border-radius: 32px;
+    transition: $all-transition;
+
+    &:hover {
+      background-color: $main-red;
+      color: $white;
+    }
+
+    &:active {
+      background-color: rgb(179, 52, 26);
+      border: 2px solid rgb(179, 52, 26);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+    }
+
+  }
+
+  &__navigation {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    gap: 64px;
+    align-items: center;
+  }
+
+  &__link {
+    display: block;
+    color: $main-black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    transition: $all-transition;
+
+    &:hover {
+      opacity: $hover-opacity;
+    }
+
+    &::after {
+      background-color: $main-black;
+      opacity: $hover-opacity;
+    }
+
+    &--red {
+      color: rgb(249, 81, 46);
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.32px;
+      text-align: left;
+      text-transform: uppercase;
+      position: relative;
+      margin-left: 30px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        background-image: url(../images/header/Icon-phone.svg);
+        width: 24px;
+        height: 24px;
+        left: -29px;
+        top: -3px;
+      }
+
+      &::after {
+        bottom: -5px;
+        background-color: $main-red;
+      }
+    }
+  }
+
+  &__switcher {
+    align-self: center;
+    @include column-flex;
+    align-items: center;
+    gap: 5px;
+
+    &-main {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+
+  &__change {
+    color: rgb(127, 128, 150);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &__color {
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &--blue {
+      color: #7272ff;
+    }
+  }
+
+  &__theme-switcher {
+    width: 50px;
+    padding: 5px;
+    background-color: $main-black;
+    border-radius: 20px;
+
+    &::before {
+      display: block;
+      cursor: pointer;
+      left: -2px;
+      top: -1px;
+      content: '';
+      background-color: rgb(255 217 209);
+      width: 50%;
+      padding-bottom: 50%;
+      border-radius: 50%;
+      transition: $main-transition;
+    }
+  }
+
+}

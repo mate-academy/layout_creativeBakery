@@ -1,0 +1,117 @@
+@import '../utils';
+
+
+.footer {
+  padding: 60px 0;
+  background: $main-black;
+  color: $white;
+  font-size: 16px;
+  font-weight: 400;
+
+  &__container,
+  &__menu,
+  &__contact,
+  &__socials,
+  &__navigation {
+    @include grid;
+  }
+
+  &__container,
+  &__contact,
+  &__menu,
+  &__socials {
+    row-gap: 40px;
+  }
+
+  &__menu,
+  &__contact,
+  &__socials,
+  &__logo,
+  &__navigation,
+  &__title,
+  &__icons,
+  &__copyright,
+  &__subtitle,
+  &__list {
+    grid-column: 1 / -1;
+  }
+
+  &-icons-white {
+    transition: $all-transition;
+    &:active {
+      opacity: 0.5;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__navigation {
+    row-gap: 16px;
+  }
+
+  &__list {
+    @include column-flex;
+    
+    gap: 16px;
+  }
+
+  &__socials {
+    align-items: center;
+  }
+
+  &__contact {
+    margin-top: 24px;
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 85%;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    color: rgb(127, 128, 150);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    &--icons {
+      transition: $all-transition;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    transition: $all-transition;
+
+    &:hover {
+      opacity: $hover-opacity;
+    }
+
+    &::after {
+      background-color: $white;
+    }
+  }
+
+  &__copyright {
+    color: rgb(127, 128, 150);
+    line-height: 150%;
+    letter-spacing: -0.16px;
+  }
+
+  &__icons-list {
+    display: flex;
+    gap: 34px;
+  }
+
+}
