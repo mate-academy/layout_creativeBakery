@@ -1,0 +1,55 @@
+.button {
+  max-width: 326px;
+  width: 100%;
+
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+
+  color: $colorAccentOrange;
+  background-color: transparent;
+
+  border: 2px solid $colorAccentOrange;
+  border-radius: 32px;
+  overflow: hidden;
+
+  text-transform: uppercase;
+  font-weight: $fontWeightMedium;
+  line-height: $additionalLineHeight;
+
+  transition-duration: $transitionDuration;
+
+  @include onLaptop {
+    max-width: 260px;
+  }
+
+  @include before {
+    content: '\e905';
+    font-family: 'icomoon';
+
+    color: $colorAccentOrange;
+  }
+
+  @include onHover {
+    background-color: $colorAccentOrange;
+    color: $colorWhite;
+
+    &::before {
+      color: $colorWhite;
+    }
+  }
+
+  &:focus {
+    background-color: $colorDarkOrange;
+    color: $colorWhite;
+
+    border-color: $colorDarkOrange;
+
+    &::before {
+      color: $colorWhite;
+    }
+  }
+}

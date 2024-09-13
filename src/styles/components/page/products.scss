@@ -1,0 +1,143 @@
+.products {
+  &__wrapper {
+    padding: 64px 0 0;
+
+    @include onTablet {
+      padding: 158px 0 0;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include lastChild {
+      margin-bottom: 56px;
+    }
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include onTablet {
+      gap: 80px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 56px;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    @include onLaptop {
+      &--left {
+        padding-left: 284px;
+      }
+
+      &--right {
+        padding-right: 284px;
+      }
+    }
+  }
+}
+
+.product-card {
+  &__wrapper {
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__header {
+    max-width: 100%;
+    width: 100%;
+
+    height: 60vh;
+    max-height: 424px;
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    @include onLaptop {
+      max-height: 512px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition-duration: $transitionDuration;
+
+    @include onHover {
+      transform: $transformScale;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 8px;
+  }
+
+  &__title {
+    color: $colorGrey;
+
+    font-weight: $fontWeightMedium;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 4px;
+
+    text-transform: uppercase;
+    font-weight: $fontWeightMedium;
+    line-height: $additionalLineHeight;
+    letter-spacing: 0.5px;
+
+    border: none;
+
+    color: $colorAccentOrange;
+
+    @include before {
+      content: '\e903';
+      font-family: 'icomoon';
+
+      color: $colorAccentOrange;
+
+      font-size: 20px;
+      font-weight: $fontWeightMedium;
+
+      transition-duration: $transitionDuration;
+    }
+
+    @include onHover {
+      &::before {
+        transform: translateX(-10px);
+      }
+    }
+  }
+}

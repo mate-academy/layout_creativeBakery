@@ -1,0 +1,43 @@
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onLaptop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin lastChild {
+  &:not(:last-child) {
+    @content;
+  }
+}
+
+@mixin before {
+  &::before {
+    content: '';
+    @content;
+  }
+}
+
+@mixin after {
+  &::after {
+    content: '';
+    @content;
+  }
+}
+
+@mixin onHover {
+  &:hover {
+    @content;
+  }
+}
