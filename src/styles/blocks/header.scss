@@ -1,0 +1,97 @@
+.header {
+  background-color: $bg-page-color;
+
+  &__content {
+    @include page-grid;
+
+    align-items: center;
+
+    @include on-tablet {
+      position: relative;
+    }
+
+    @include on-desktop {
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+      margin-bottom: 80px;
+    }
+
+    @include on-desktop {
+      grid-row: 1 / 4;
+    }
+  }
+
+  &__slogan {
+    grid-column: 1 / -1;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    margin-block: 32px;
+
+    @include on-tablet {
+      margin: 0;
+      margin-top: 80px;
+      grid-column: span 4;
+      text-align: start;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+      align-self: flex-end;
+      white-space: nowrap;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    font-size: 64px;
+    line-height: 54.4px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: -0.05em;
+    font-weight: 400;
+
+    @include on-tablet {
+      position: absolute;
+      left: 0;
+      right: 0;
+      font-size: 80px;
+      line-height: 68px;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+      line-height: 115.6px;
+      letter-spacing: -0.05em;
+    }
+
+    @include on-design {
+      font-size: 144px;
+      line-height: 122.4px;
+      letter-spacing: -0.05em;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+      grid-row: 3 / 4;
+      align-self: flex-start;
+    }
+  }
+}
