@@ -1,0 +1,107 @@
+.header {
+  &__bottom {
+    @include page-grid;
+    @include container-padding-inline;
+
+    box-sizing: border-box;
+    padding-block: 32px 40px;
+    height: calc(100vh - 64px);
+
+    @include on-tablet {
+      padding-block: 16px 80px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    text-align: center;
+    padding-bottom: 32px;
+
+    @media (orientation: landscape) {
+      grid-row: 1;
+      grid-column: 1 / -1;
+      align-self: flex-end;
+      padding-bottom: 8px;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / span 4;
+      text-align: left;
+      padding-bottom: 0;
+    }
+
+    @include on-desktop {
+      grid-row: 1;
+      grid-column: 1 / span 2;
+      align-self: flex-end;
+    }
+  }
+
+  &__title {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    color: $c-accent-orange;
+    text-align: center;
+
+      @media (orientation: landscape) {
+        z-index: 0;
+        align-self: center;
+    }
+
+    @include on-tablet {
+      z-index: 0;
+      align-self: center;
+      padding-block: 16px 80px;
+    }
+
+    @include on-desktop {
+      padding-block: 0;
+      grid-row: 2;
+      grid-column: 1 / span 8;
+    }
+  }
+
+  &__image {
+    grid-row: 3;
+    grid-column: 1 / -1;
+    place-self: center;
+    width: 85%;
+
+    @media (orientation: landscape) {
+      grid-row: 2;
+      place-self: center;
+      width: 25%;
+
+    }
+
+    @include on-tablet {
+      padding-block: 16px 80px;
+      grid-row: 2;
+      z-index: -1;
+      width: 45%;
+    }
+
+    @include on-desktop {
+      padding-block: 0;
+      grid-row: 1 / 4;
+      grid-column: 2 / 8;
+      width: 60%;
+      z-index: -1;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    grid-row: 4;
+
+    @include on-tablet {
+      grid-column: 3 / span 4;
+    }
+
+    @include on-desktop {
+      grid-row: 3;
+      grid-column: 1 / span 2;
+    }
+  }
+}

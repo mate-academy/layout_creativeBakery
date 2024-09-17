@@ -1,0 +1,81 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    padding: 0;
+    background-color: $c-light-pink;
+  }
+
+  &__header {
+    grid-template-rows: 64px auto;
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden; /* not to scroll the page */
+  }
+
+  &__menu {
+    @include page-grid;
+
+    background-color: $c-light-pink;
+    grid-template-rows: 64px auto;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $transition-time;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__products {
+    @include page-grid;
+    @include container-padding-inline;
+
+    padding-block: 64px 72px;
+    row-gap: 56px;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__about-us {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding-bottom: 72px;
+    background: url(/src/images/crumbs.png) no-repeat center 70%;
+    background-size: contain;
+
+    @include on-tablet {
+      background-size: 65%;
+      background-position-y: 25%;
+      gap: 72px;
+      padding-bottom: 152px;
+    }
+  }
+
+  &__footer {
+    @include page-grid;
+    @include container-padding-inline;
+
+    background: $c-black;
+    padding-block: 56px;
+    row-gap: 40px;
+
+    @include on-tablet {
+      padding-block: 88px;
+
+    }
+  }
+}
