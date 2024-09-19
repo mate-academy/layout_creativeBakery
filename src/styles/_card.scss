@@ -1,0 +1,67 @@
+.products__card {
+  flex-direction: column;
+  grid-column: 1/-1;
+  gap: 16px;
+  display: flex;
+
+  @media (min-width: 640px) {
+    grid-column: span 4;
+  }
+
+  @media (min-width: 1024px) {
+    grid-column: span 3;
+
+    &--3 {
+      grid-column: 3 / span 3;
+    }
+  }
+
+  &-photo {
+    object-fit: contain;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &-texts {
+    flex-direction: column;
+    gap: 8px;
+    display: flex;
+  }
+
+  &-title {
+    color: $secundary-color;
+  }
+
+  &-order {
+    cursor: pointer;
+    align-items: center;
+    gap: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    display: flex;
+
+    &--link {
+      color: $accent-color;
+      text-decoration: none;
+    }
+
+    &::before {
+      content: '';
+      background: url(../images/icons/Icon-arrow.png) 50% no-repeat;
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s;
+      display: block;
+    }
+
+    &:hover::before {
+      transform: translate(5px);
+    }
+  }
+}

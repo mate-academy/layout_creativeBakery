@@ -1,0 +1,103 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $body-bg-color;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__header {
+    box-sizing: border-box;
+    grid-template-rows: 64px auto;
+    height: 100vh;
+  }
+
+  &__menu {
+    opacity: 0;
+    pointer-events: none;
+    background-color: $body-bg-color;
+    grid-template-rows: 64px auto;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    column-gap: 16px;
+    height: 100vh;
+    transition: opacity 0.3s;
+    display: grid;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(8, minmax(80px, 128px));
+      column-gap: 24px;
+    }
+  }
+
+  &__products {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 56px 16px;
+    padding: 64px 16px 72px;
+    display: grid;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(8, minmax(80px, 128px));
+      column-gap: 24px;
+    }
+  }
+
+  &__about-us {
+    background: url(../images/Crumbs.png) 50% 70% / contain no-repeat;
+    flex-direction: column;
+    gap: 64px;
+    padding-bottom: 72px;
+    display: flex;
+
+    @media (min-width: 640px) {
+      background-position-y: 25%;
+      background-size: 65%;
+      gap: 72px;
+      padding-bottom: 152px;
+    }
+  }
+
+  &__footer {
+    background: $primary-color;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 40px 16px;
+    padding: 56px 16px;
+    display: grid;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+      padding: 88px 32px;
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(8, minmax(80px, 128px));
+    }
+  }
+}
+
+.page:has(.page__menu:target) {
+  overflow: hidden;
+}
+
+.page__menu:target {
+  opacity: 1;
+  pointer-events: all;
+}
