@@ -1,0 +1,65 @@
+.menu {
+  overflow-x: hidden;
+  background-color: $light-pink;
+
+  &__container {
+    box-sizing: border-box;
+    height: 100vh;
+    margin-inline: $content-margin--s;
+    padding-top: $content-margin--s;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__close-menu {
+    cursor: pointer;
+
+    @include hover(transform, scale(1.3));
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    @include body-text;
+
+    display: flex;
+    justify-content: center;
+    padding-block: 12px;
+
+    position: relative;
+    transition: background-color 2s;
+
+    @include hover(color, $accent-orange);
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: transparent;
+      width: 110vw;
+      margin-left: -#{$content-margin--m};
+      height: 100%;
+      top: 0;
+      left: 0;
+      transition: background-color $hover-duration;
+      z-index: -1;
+
+      @include on-mobile {
+        margin-left: -#{$content-margin--s};
+      }
+    }
+
+    &:hover::after {
+      background-color: $white;
+    }
+  }
+}

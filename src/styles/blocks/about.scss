@@ -1,0 +1,103 @@
+.about {
+  background-image: url('../images/crumbs.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  @include on-small-desktop {
+    background-position: 70%;
+  }
+
+  @include on-tablet {
+    background-position: center;
+    background-size: 60%;
+  }
+
+  @include on-mobile {
+    background-size: 100%;
+    background-attachment: fixed;
+  }
+
+  &__container {
+    @include content-limitation;
+
+    display: grid;
+    row-gap: 144px;
+    padding-bottom: 300px;
+
+    @include on-tablet {
+      padding-bottom: 0;
+      row-gap: 72px;
+    }
+
+    @include on-mobile {
+      padding-bottom: 0;
+      row-gap: 64px;
+    }
+  }
+
+  @include on-tablet {
+    row-gap: 72px;
+    padding-bottom: 0;
+  }
+
+  @include on-mobile {
+    gap: 64px;
+  }
+
+  &__top {
+    @include page-grid;
+
+    @include on-mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+
+  &__title {
+    color: $accent-orange;
+    grid-column: 1 / span 4;
+  }
+
+  &__desc {
+    @include body-text;
+
+    grid-column: 5 / span 4;
+  }
+
+  &__main {
+    @include page-grid;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+
+    @include on-mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+  }
+
+  &__stat {
+    grid-column: span 2;
+
+    display: grid;
+    row-gap: 8px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__value {
+    @include big-text;
+
+    color: $accent-orange;
+  }
+
+  &__label {
+    @include body-text;
+  }
+}
