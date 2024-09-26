@@ -1,0 +1,88 @@
+.recommended {
+  &__products {
+    font-family: Inter, sans-serif;
+    margin-top: 56px;
+    row-gap: 56px;
+
+    @include page-grid;
+
+    @include on-tablet {
+      margin-top: 80px;
+      row-gap: 80px;
+    }
+
+    &--name {
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 16px;
+      line-height: 16px;
+      color: $gray;
+      letter-spacing: 0.02em;
+    }
+    &--description {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+    }
+    &--button {
+      color: $c-orange;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      text-decoration: none;
+
+      &::before {
+        content: url(/src/images/icon/Icon-arrow.svg);
+        margin-right: 7px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: -4px;
+        height: 1px;
+        width: 105px;
+        transition: all 0.3s;
+        transform: scale(0);
+        transform-origin: left;
+        background-color: $c-orange;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__product {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+    }
+
+    &--right-1 {
+      @include on-laptop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--right-2 {
+      @include on-laptop {
+        grid-column: 6 / 9;
+      }
+    }
+  }
+}
