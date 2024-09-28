@@ -1,0 +1,27 @@
+.menu {
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  background: $color-light-blue;
+  opacity: 0;
+  pointer-events: none;
+  overflow: auto;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+
+    .top-bar__ul {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

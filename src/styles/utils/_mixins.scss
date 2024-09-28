@@ -4,3 +4,83 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-phone {
+  @media (min-width: $phone-min-width) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-mid-dekstop {
+  @media (min-width: $dekstop-mid-min-width) {
+    @content;
+  }
+}
+
+@mixin on-xl-dekstop {
+  @media (min-width: $dekstop-xl-min-width) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --columns-count: 2;
+  --columns-size: 1fr;
+
+  font-weight: 500;
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns-count), var(--columns-size));
+
+  @include on-tablet {
+    column-gap: 24px;
+
+    --columns-count: 8;
+  }
+
+  @include on-xl-dekstop {
+    --columns-size: 128px;
+    justify-content: center;
+  }
+}
+
+.container {
+  padding: 20px; // for padding on all page
+}
+
+@mixin upperCase {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 2%;
+}
+
+@mixin headingsSize {
+  font-size: 40px;
+  line-height: 41px;
+  letter-spacing: -5%;
+
+  @include on-tablet {
+    font-size: 55px;
+    line-height: 48px;
+  }
+
+  @include on-mid-dekstop {
+    font-size: 72px;
+    line-height: 61px;
+  }
+}
+
+@mixin bigText {
+  text-transform: uppercase;
+  font-size: 96px;
+  line-height: 81.6px;
+  letter-spacing: -5%;
+}
