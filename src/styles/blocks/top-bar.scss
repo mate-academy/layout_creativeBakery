@@ -24,6 +24,8 @@
     line-height: 24px;
     text-decoration: none;
     color: $color-black;
+    position: relative;
+    transition: 0.3s;
 
     &--block-phone {
       display: flex;
@@ -38,6 +40,43 @@
 
     &--footer {
       color: white;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: -30%;
+      border-bottom: 2px solid $color-accent-orange;
+      transition: all 0.3s;
+      transform: scale(0);
+      transform-origin: center;
+    }
+
+    &:hover {
+      color: $color-accent-orange;
+    }
+
+    &:hover::before {
+      transform: scale(1);
+    }
+
+    &:focus {
+      color: $color-dark-orange;
+    }
+
+    &:focus::before {
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: -30%;
+      border-bottom: 2px solid $color-dark-orange;
+      transition: all 0.3s;
+      transform-origin: center;
+      transform: scale(1);
     }
   }
 }

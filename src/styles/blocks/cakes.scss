@@ -47,16 +47,35 @@
     }
   }
 
+  &__icon {
+    display: flex;
+  }
+
   &__button {
     margin-top: 16px;
     display: flex;
     align-items: center;
     gap: 4px;
 
+    svg path {
+      fill: $color-accent-orange;
+      transition: all 0.3s;
+    }
+
     &__arrow {
       @include upper-case;
       text-decoration: none;
       color: $color-accent-orange;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      .cakes__button__arrow {
+        color: $color-dark-orange;
+      }
+      svg path {
+        fill: $color-dark-orange;
+      }
     }
   }
 }
