@@ -1,0 +1,155 @@
+.header {
+  height: 100vh;
+
+  &__content {
+    @include content-padding-inline;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include on-tablet {
+      @include page-grid;
+
+      background-image: url(/src/images/cookie.png);
+      background-position: center 208px;
+      background-size: 328px;
+      background-repeat: no-repeat;
+      align-items: start;
+    }
+
+    @include on-desktop {
+      background-position: center;
+      background-size: 546px;
+    }
+
+    @include on-xl-desktop {
+      background-size: 586px;
+    }
+  }
+
+  &__description {
+    margin-top: 32px;
+    text-align: center;
+
+    @include on-tablet {
+      margin-block: 80px 146px;
+      text-align: left;
+      grid-column: 1 / -1;
+      max-width: 280px;
+    }
+
+    @include on-desktop {
+      margin-block: 135px 8px;
+      grid-column: 1 / 3;
+    }
+
+    @include on-xl-desktop {
+      margin-block: 144px 40px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 64px;
+    line-height: 54.4px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    color: $orange-text-color;
+    text-transform: uppercase;
+    max-width: 288px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      max-width: 100%;
+      font-size: 80px;
+      font-weight: 400;
+      line-height: 68px;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+      line-height: 115.6px;
+    }
+
+    @include on-xl-desktop {
+      font-size: 144px;
+      line-height: 122.4px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-height: 290px;
+    object-fit: contain;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__title-button {
+    grid-column: 1 / -1;
+    width: 288px;
+    height: 56px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 20px 71px;
+    border-radius: 32px;
+    border: 2px solid $orange-text-color;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: $orange-text-color;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include hover(transform, scale(1.2), $orange-text-color);
+
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-image: url(/src/images/icons/icon-cookie.png);
+      background-size: cover;
+      margin-right: 4px;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: $orange-text-color;
+
+      &::before {
+        background-image: url(/src/images/icons/icon-cookie-hover.png);
+      }
+    }
+
+    &:focus {
+      background-color: $focus-color-button;
+      border-color: $focus-color-button;
+
+      &::before {
+        background-image: url(/src/images/icons/icon-cookie-hover.png);
+      }
+    }
+
+    @include on-tablet {
+      margin-top: 210px;
+      margin-inline: auto;
+      grid-column: 1 / -1;
+    }
+
+    @include on-desktop {
+      margin-block: 64px 161px;
+      margin-left: 0;
+    }
+
+    @include on-xl-desktop {
+      margin-block: 64px 138px;
+    }
+  }
+}
