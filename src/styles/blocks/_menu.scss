@@ -1,0 +1,86 @@
+.menu {
+  background-color: $white-color;
+  z-index: 1;
+  &__top {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include laptop {
+      padding-top: 32px;
+    }
+  }
+
+  &__logo {
+    width: 128px;
+    height: 25px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+    object-fit: contain;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+    object-fit: contain;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &-link {
+      font-size: 16px;
+      line-height: 24px;
+      color: $black-color;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+    }
+
+    &-item {
+      position: relative;
+      transition: all 0.3s ease;
+      margin-bottom: 24px;
+
+      &:hover {
+        transform: scale(1.1);
+
+        .menu__nav-link {
+          font-weight: 700;
+        }
+      }
+
+      &:last-child a {
+        color: $orange-color;
+        text-transform: uppercase;
+
+        &::before {
+          position: absolute;
+          content: '';
+          top: 0;
+          left: -30px;
+          width: 24px;
+          height: 24px;
+          background-image: url('../images/icons/social/icon-phone.svg');
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+}
