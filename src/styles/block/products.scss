@@ -1,0 +1,41 @@
+.products {
+  padding-top: 64px;
+
+  @include on-tablet {
+    padding-top: 152px;
+  }
+
+  &__heading-2 {
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    margin-bottom: 56px;
+  }
+
+  &__wrapper {
+    @include page-grid;
+
+    row-gap: 56px;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__product {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+
+      &:nth-child(3) {
+        grid-column: 3/6;
+      }
+    }
+  }
+}

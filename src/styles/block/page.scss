@@ -1,0 +1,121 @@
+.page {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+  color: $black-color;
+  letter-spacing: -0.01em;
+
+  background-color: $light-pink-color;
+
+  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__text {
+    padding: 0;
+    margin: 0;
+
+    &--footer {
+      color: $grey-color;
+    }
+  }
+
+  &__heading-1 {
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 64px;
+    line-height: 85%;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    color: #f9512e;
+    transform: translateX(-0.05em);
+
+    @include on-tablet {
+      font-size: 80px;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+    }
+  }
+
+  &__heading-2 {
+    padding: 0;
+    margin: 0;
+    font-size: 48px;
+    line-height: 85%;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $accent-orange;
+
+    @include on-tablet {
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+
+    &--footer {
+      color: #fff;
+    }
+  }
+
+  &__text-uppercase {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 100%;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey-color;
+
+    &--button {
+      color: $accent-orange;
+    }
+  }
+
+  &__text-big {
+    padding: 0;
+    margin: 0;
+    font-size: 96px;
+    line-height: 85%;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $accent-orange;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: all $effectDuration;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+  }
+}
