@@ -5,6 +5,12 @@
   }
 }
 
+@mixin page-grid {
+  display: grid;
+  column-gap: 24px;
+  grid-template-columns: repeat(8, 1fr);
+}
+
 @mixin on-desing {
   @media (min-width: $desing-min-widch) {
     @content;
@@ -28,6 +34,7 @@
 
   @include on-tablet {
     padding-inline: 32px;
+    margin-inline: auto;
   }
 
   @include on-desing {

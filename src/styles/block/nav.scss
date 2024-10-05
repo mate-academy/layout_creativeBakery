@@ -1,4 +1,18 @@
 .nav {
+  width: 100%;
+
+  &--footer {
+    margin-top: 64;
+
+    @include on-tablet {
+      margin-top: 75px;
+    }
+
+    @include on-desktop {
+      margin-top: 30px;
+    }
+  }
+
   &__list {
     margin-top: 134px;
     padding: 0;
@@ -6,23 +20,33 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    text-align: center;
 
-    @include on-desktop {
-      flex-direction: row;
-      margin: auto;
-      text-align: center;
-      align-items: center;
-      gap: 64px;
-      width: auto;
+    &--footer {
+      margin: 0;
+      gap: 16px;
     }
+  }
+
+  &--header {
+    flex-direction: row;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    gap: 64px;
+    width: auto;
   }
 
   &__item {
     display: block;
-    width: 228px;
 
-    @include on-desktop {
-      width: auto;
+    &--footer {
+      text-align: left;
+      text-decoration: none;
+    }
+
+    &--footers {
+      display: none;
     }
   }
 
@@ -42,14 +66,57 @@
     border: none;
     background-color: $color-page;
     cursor: pointer;
+    border-bottom: 1px solid $color-page;
 
-    &--icon {
+    &::before {
+      content: '';
+      background-image: url(../images/Icon-phone.png);
+      background-position: center;
+      background-repeat: no-repeat;
       height: 24px;
       width: 24px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $color-text;
     }
   }
   &__link {
     text-decoration: none;
     color: #1c1a26;
+
+    border-bottom: 1px solid $color-page;
+    width: fit-content;
+
+    &:hover {
+      border-bottom: 1px solid #000;
+    }
+
+    &--footer {
+      text-align: left;
+      color: #fff;
+      width: fit-content;
+      border-bottom: 1px solid black;
+
+      &:hover {
+        border-bottom: 1px solid #fff;
+      }
+    }
+
+    &--menu {
+      text-transform: Uppercase;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-align: left;
+      color: #7f8096;
+      pointer-events: none;
+      border: none;
+    }
   }
+}
+
+.footer {
+  padding-top: 61px;
 }

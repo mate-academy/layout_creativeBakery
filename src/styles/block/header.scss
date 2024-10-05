@@ -1,55 +1,61 @@
 .header {
   box-sizing: border-box;
+  min-height: 666px;
   height: 100vh;
 
-  // @include on-tablet {
-  //   background-image: url(../images/favicon.png);
-  //   background-repeat: no-repeat;
-  //   background-position: center;
-  // }
+  @include content-padding-inline;
 
   &__top {
+    height: calc(100vh - 64px);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 
     @include on-tablet {
-      justify-content: space-between;
-      height: calc(100vh - 64px);
+      max-width: 1130px;
+      margin-inline: auto;
+      display: grid;
+      justify-content: stretch;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 4fr 1fr 4fr;
+    }
+
+    @include on-desktop {
+      grid-template-rows: 1fr 1fr 3fr;
+      height: calc(100vh - 88px);
     }
   }
 
   &__item {
-    font-family: Inter, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: -0.01em;
-    margin: 32px 0;
-
-    @include on-tablet {
-      margin: 80px 0 0;
-    }
+    text-align: center;
 
     @include on-tablet {
       width: 100%;
       text-align: left;
+      grid-column: 1/-1;
+    }
+
+    @include on-desktop {
+      grid-row: 2;
     }
   }
 
   &__text {
     max-width: 280px;
+    margin: 0;
+    padding-block: 32px;
 
-    @include on-desktop{
+    @include on-desktop {
       max-width: 260px;
     }
 
-    @include on-desktop{
-      position: absolute;
-      max-width: 260px;
-      padding-left: 12px;
-      top: 223px;
+    @include on-desing {
+      max-width: 280px;
     }
   }
 
@@ -57,25 +63,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include on-tablet {
+      grid-column: 1/-1;
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      grid-row: 1/-1;
+    }
   }
 
-  &__img{
+  &__img {
     height: 290px;
     width: 288px;
 
-    @include on-tablet{
-      position: absolute;
+    @include on-tablet {
       z-index: -1;
-       width: 326px;
-       height: 328px;
-       top: 208px;
-
+      width: 326px;
+      height: 328px;
     }
 
-    @include on-desktop{
-       width: 544px;
-       height: 546px;
-       top: 88px;
+    @include on-desktop {
+      width: 544px;
+      height: 546px;
+    }
+
+    @include on-desing {
+      width: 584px;
+      height: 586px;
     }
   }
 
@@ -84,25 +100,37 @@
     font-size: 64px;
     font-weight: 400;
     line-height: 54.4px;
-    letter-spacing: -0.05em;
     text-align: center;
     color: $color-text;
     margin: 0;
     text-transform: uppercase;
 
-    @include on-tablet{
-    font-size: 80px;
-    line-height: 68px;
-    position: absolute;
-    top: 338px;
+    grid-column: 1/-1;
+    grid-row: 2;
 
+    @include on-tablet {
+      font-size: 80px;
+      line-height: 68px;
     }
 
-    @include on-desktop{
-      font-size: 136px;
-      line-height: 116px;
-     top: 303px;
+    @include on-desktop {
+      font-size: 132px;
+      line-height: 130px;
+      grid-row: 1/-1;
+    }
+  }
 
+  &__buttons {
+    display: flex;
+    justify-content: center;
+
+    @include on-tablet {
+      grid-column: 1/-1;
+    }
+
+    @include on-desktop {
+      grid-row: 3;
+      justify-content: left;
     }
   }
 
@@ -117,28 +145,41 @@
     height: 56px;
     gap: 4px;
     border-radius: 32px;
-    margin-bottom: 40px;
 
-    @include on-tablet{
-      width: 326px;
+    &::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(../images/button-icon.png);
     }
 
-    @include on-desktop{
-      position: absolute;
-      top: 483px;
+    @include on-tablet {
+      width: 326px;
+      height: 56px;
+    }
+
+    @include on-desktop {
       width: 260px;
     }
-  }
-}
 
+    @include on-desing {
+      width: 280px;
+      height: 56px;
+    }
 
-.menu__button{
-  height: 56px;
+    &:hover::before {
+      background-image: url(../images/button-icon2.png);
+    }
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+      background-color: #f9512e;
+    }
 
-  @include on-desktop{
-    width: 100%;
-    display: block;
-    align-items: start;
-
+    &:focus {
+      background-color: #b2341a;
+    }
   }
 }
