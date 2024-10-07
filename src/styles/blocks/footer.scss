@@ -1,0 +1,90 @@
+.footer {
+  background-color: $black;
+  color: $white;
+
+  &__container {
+    @include content-limitation;
+    @include page-grid;
+
+    padding-block: 88px;
+    row-gap: 40px;
+
+    @include on-mobile {
+      display: flex;
+      flex-direction: column;
+      padding-block: 56px;
+    }
+
+    & > * {
+      grid-column: span 4;
+    }
+  }
+
+  &__logo {
+    @include on-mobile {
+      order: -2;
+    }
+  }
+
+  &__menu {
+    padding-bottom: 8px;
+
+    @include on-mobile {
+      padding-bottom: 24px;
+      order: -1;
+    }
+  }
+
+  &__br {
+    display: none;
+
+    @include on-tablet {
+      display: inline;
+    }
+  }
+
+  &__label {
+    @include uppercase-text;
+
+    color: $grey;
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    @include body-text;
+    @include hover(color, $accent-orange);
+
+    display: flex;
+    width: fit-content;
+  }
+
+  &__communications {
+    display: grid;
+    column-gap: $grid-col-gap--m;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include on-tablet {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 40px;
+    }
+  }
+
+  &__communication {
+    grid-column: span 1;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__copyright {
+    color: $grey;
+  }
+}

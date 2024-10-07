@@ -1,0 +1,38 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: $accent-orange;
+
+  transition: all $hover-duration;
+
+  &--box {
+    height: 56px;
+    width: 100%;
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: $accent-orange;
+      color: $white;
+
+      & .icon--cookie {
+        background-image: url('../images/icons/cookie-active-icon.svg');
+      }
+    }
+
+    &:active {
+      background-color: $dark-orange;
+    }
+  }
+
+  &:hover .icon--phone {
+    animation: tilt 0.5s ease forwards;
+  }
+
+  &__text {
+    @include uppercase-text;
+  }
+}
