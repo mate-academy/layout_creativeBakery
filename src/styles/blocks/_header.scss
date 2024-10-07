@@ -1,0 +1,149 @@
+.header {
+
+  &__inner {
+    padding-top: 16px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-inline: 16px;
+
+    @include onDesctop {
+      padding-inline: 32px;
+    }
+  }
+
+  &__content {
+    @include paddingInline;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    @include onDesctop {
+      display: grid;
+      grid-template-columns: repeat(8, 118px);
+      column-gap: 24px;
+      grid-template-rows: repeat(5, 1fr);
+    }
+
+    @include onLargeDesctop {
+      grid-template-columns: repeat(8, 128px);
+      justify-content: center;
+    }
+  }
+
+  &__description {
+    text-align: center;
+    padding-block: 32px;
+
+    @include onTablet {
+      text-align: left;
+      max-width: 281px;
+      padding-bottom: 16px;
+      align-self: flex-start;
+    }
+
+    @include onDesctop {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+      max-width: 260px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 64px;
+    line-height: 54px;
+    letter-spacing: -5%;
+    font-weight: 400;
+    color: $accent-color;
+
+    @include onTablet{
+      position: absolute;
+
+      top: 41%;
+      font-size: 80px;
+      line-height: 68px;
+    }
+
+    @include onDesctop {
+      font-size: 130px;
+      line-height: 115px;
+      left: 0;
+      right: 0;
+    }
+
+    @include onLargeDesctop {
+      font-size: 144px;
+      line-height: 122px;
+      max-width: fit-content;
+      @include paddingInline;
+      left: 200;
+    }
+  }
+
+  &__title-image {
+    width: 326px;
+
+    @include onDesctop {
+      width: 544px;
+
+      grid-column: 3 / 7;
+      grid-row: 1 / -1;
+    }
+
+    @include onLargeDesctop {
+      width: 584px;
+    }
+  }
+
+  &__link {
+    box-sizing: border-box;
+    display: block;
+    padding-block: 16px;
+    margin-bottom: 40px;
+
+    border: 2px solid $accent-color;
+    border-radius: 32px;
+
+    width: 288px;
+    height: 56px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $accent-color;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 2%;
+    font-weight: 500;
+
+    &--position {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+    }
+
+    @include onTablet{
+      width: 326px;
+      margin-top: 80px;
+    }
+
+    @include onDesctop {
+      margin-top: 64px;
+      width: 260px;
+
+      grid-column: 1 / 3;
+      grid-row: 4 / 5;
+    }
+
+    @include onLargeDesctop {
+      width: 280px;
+    }
+  }
+}
