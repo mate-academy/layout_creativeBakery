@@ -54,18 +54,25 @@
   }
 
   &__link {
+  
+    svg path {
+      fill: $color-accent-orange;
+      transition: all 0.3s;
+    }
+
     text-decoration: none;
     color: white;
-    transition: fill 0.3s;
+    transition: color 0.3s;
 
     &:hover,
     &:focus {
+      color : $color-accent-orange;
+
       svg path {
         fill: white;
       }
     }
   }
-
   &__contact-us {
     font-size: 48px;
     grid-column: 1 / -1;
@@ -126,6 +133,11 @@
     &__mail {
       color: white;
       text-decoration: none;
+
+      transition: color 0.3s;
+      &:hover{
+        color : $color-accent-orange;
+      }
     }
 
     &--position {
@@ -154,5 +166,7 @@
     @include on-tablet {
       grid-column: 5 / -1;
     }
+
+
   }
 }

@@ -6,13 +6,16 @@
   top: 0;
   height: 100vh;
   background: $color-light-blue;
-  opacity: 0;
   pointer-events: none;
-  overflow: auto;
+  overflow: hidden;
+  transition: all 0.3s;
+  transform-origin: left;
+  transform: translateX(-100%);
+
 
   &:target {
-    opacity: 1;
     pointer-events: all;
+    transform: translateX(0%);
 
     .top-bar__ul {
       display: flex;
@@ -24,4 +27,8 @@
       transform: translate(-50%, -50%);
     }
   }
+}
+
+body:has(.menu:target){
+  overflow: hidden;
 }
