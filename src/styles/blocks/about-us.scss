@@ -1,0 +1,92 @@
+.about-us {
+  &__content {
+    position: relative;
+    @include page-grid;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include upper-case;
+    @include heading-size;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &--margin {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &--margin {
+      margin-bottom: 64px;
+
+      @include on-tablet {
+        margin-bottom: 72px;
+      }
+
+      @include on-mid-dekstop {
+        margin-bottom: 144px;
+      }
+    }
+  }
+
+  &__stats {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-mid-dekstop {
+      grid-column: span 2;
+    }
+
+    &-num {
+      @include big-text;
+    }
+
+    &-name {
+      color: $color-grey;
+
+      &--bottom {
+        margin-bottom: 48px;
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    background-image: url(../images/Crumbs.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 300px;
+    top: 50%;
+
+    @include on-tablet {
+      top: 10%;
+      left: 12%;
+      transform: translate(0%, 0%);
+      width: 530px;
+      height: 450px;
+    }
+
+    @include on-mid-dekstop {
+      top: 85%;
+      left: 50%;
+      transform: translate(-40%, -50%);
+      width: 720px;
+      height: 673px;
+    }
+  }
+}

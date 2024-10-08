@@ -1,0 +1,81 @@
+.cakes {
+  row-gap: 56px;
+  @include page-grid;
+
+  @include on-mid-dekstop {
+    row-gap: 80px;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-mid-dekstop {
+      grid-column: span 3;
+    }
+
+    &--donuts {
+      @include on-mid-dekstop {
+        grid-column: 3 / 6;
+      }
+
+      &-second {
+        @include on-mid-dekstop {
+          grid-column: 6 / -1;
+        }
+      }
+    }
+  }
+
+  &__description {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-mid-dekstop {
+      grid-column: span 3;
+    }
+  }
+
+  &__icon {
+    display: flex;
+  }
+
+  &__button {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    svg path {
+      fill: $color-accent-orange;
+      transition: all 0.3s;
+    }
+
+    &__arrow {
+      @include upper-case;
+      text-decoration: none;
+      color: $color-accent-orange;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      .cakes__button__arrow {
+        color: $color-dark-orange;
+      }
+      svg path {
+        fill: $color-dark-orange;
+      }
+    }
+  }
+}

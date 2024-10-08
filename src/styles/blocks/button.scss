@@ -1,0 +1,48 @@
+.button {
+  grid-column: 1 / -1;
+  border: 2px solid $color-accent-orange;
+  border-radius: 50px;
+  padding: 15px 63px;
+  background: $color-light-blue;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.3s;
+
+  &__text {
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 2%;
+    color: $color-accent-orange;
+    margin: 0;
+  }
+
+  @include on-tablet {
+    grid-column: 3 / 7;
+  }
+
+  @include on-mid-dekstop {
+    grid-column: 1 / 3;
+  }
+
+  &:hover {
+    background: $color-accent-orange;
+
+    .button__text {
+      color: white;
+    }
+
+    svg path {
+      fill: white;
+    }
+  }
+
+  &:focus {
+    border-color: $color-dark-orange;
+    background-color: $color-dark-orange;
+  }
+}
