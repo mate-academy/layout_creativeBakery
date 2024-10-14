@@ -1,0 +1,99 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/Crumbs.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 2 / -2;
+    }
+
+    @include on-desktop {
+      grid-column: 3 / -2;
+    }
+  }
+
+  @include on-tablet {
+    gap: 72px;
+  }
+
+  @include on-desktop {
+    gap: 144px;
+    padding-bottom: 293px;
+  }
+
+  &__heading {
+    @include page-grid;
+
+    row-gap: 32px;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    z-index: 1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    z-index: 1;
+
+    @include on-tablet {
+      grid-column: 5 / span 4;
+    }
+  }
+}
+
+.stats {
+  @include page-grid;
+
+  row-gap: 48px;
+  z-index: 1;
+
+  @include on-tablet {
+    row-gap: 80px;
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 2;
+  }
+
+  &__value {
+    font-size: 96px;
+    line-height: 81.6px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    color: $tittle-and-button-text-color;
+  }
+}

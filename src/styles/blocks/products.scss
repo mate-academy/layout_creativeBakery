@@ -1,0 +1,103 @@
+.products {
+  @include page-grid;
+
+  row-gap: 56px;
+
+  @include on-tablet {
+    row-gap: 80px;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    grid-column: 1 / -1;
+  }
+}
+
+.product-card {
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 3;
+  }
+
+  &:nth-child(4) {
+    @include on-desktop {
+      grid-column: 3 / span 3;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__category {
+    margin-top: 16px;
+  }
+
+  &__description {
+    margin-top: 8px;
+  }
+
+  &__button {
+    font-family: Inter-Bold, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $tittle-and-button-text-color;
+    margin-top: 16px;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $tittle-and-button-text-color;
+      transition: transform $animation-duration;
+
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &:focus {
+      .icon--arrow {
+        background-image: url(../images/icons/icon-arrow-focused.svg);
+      }
+
+      color: #b2341a;
+    }
+
+    &:focus::after {
+      background-color: #b2341a;
+      transform: scale(1);
+    }
+
+    &:disabled {
+      .icon--arrow {
+        background-image: url(../images/icons/icon-arrow-disabled.svg);
+      }
+
+      color: #fba28f;
+    }
+  }
+}

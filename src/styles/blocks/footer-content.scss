@@ -1,0 +1,105 @@
+.footer {
+  background-color: #1c1a26;
+
+  &__content {
+    @include page-grid;
+
+    row-gap: 40px;
+    padding-block: 56px;
+
+    @include on-tablet {
+      padding-block: 88px;
+      row-gap: 48px;
+    }
+  }
+
+  &__menu {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: space-between;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__logo {
+    height: 40px;
+    width: 168px;
+  }
+
+  &__contact-us {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      column-gap: 24px;
+    }
+  }
+
+  &__socials {
+    grid-column: 1 / -1;
+
+    display: flex;
+    gap: 32px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__copyright {
+    color: #7f8096;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+}
+
+.contact-us {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  row-gap: 40px;
+
+  &__title {
+    grid-column: 1 / -1;
+    margin: 24px 0 0;
+    color: $footer-text-color;
+
+    @include on-tablet {
+      margin: 0;
+    }
+  }
+
+  &__numbers,
+  &__emals {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include on-desktop {
+      grid-column: span 1;
+    }
+  }
+
+  &__number,
+  &__email {
+    text-decoration: none;
+    color: $footer-text-color;
+  }
+}
+
+.copyright {
+  color: #7f8096;
+}
