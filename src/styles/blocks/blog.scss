@@ -1,0 +1,133 @@
+.blog {
+  padding: 0 16px;
+  margin-bottom: 72px;
+
+  @include on-tablet {
+    padding: 0 44px;
+    margin-bottom: 152px;
+
+    background-image: url(./../images/img-crumbs.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 526px 493px;
+  }
+
+  @include on-desktop {
+    height: 673px;
+    margin-bottom: 56px;
+    background-size: 718px 673px;
+  }
+
+  @include on-big-desktop {
+    padding: 0 124px;
+  }
+
+  &__about {
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      display: flex;
+      column-gap: 24px;
+      margin-bottom: 72px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 144px;
+    }
+
+    @include on-big-desktop {
+      margin-bottom: 146px;
+    }
+
+    &-title {
+      margin: 0;
+      margin-bottom: 32px;
+      color: $colorTextHover;
+
+      @extend %h2-mobile;
+
+      @include on-tablet {
+        margin: 0;
+        height: 96px;
+        width: 338px;
+
+        @include h2-tablet;
+      }
+
+      @include on-desktop {
+        width: 544px;
+
+        @include h2-desktop;
+      }
+
+      @include on-big-desktop {
+        width: 584px;
+      }
+    }
+
+    &-description {
+      margin: 0;
+      color: $colorTextDark;
+
+      @include body-text;
+
+      @include on-tablet {
+        margin: 0;
+        width: 318px;
+        height: 216px;
+      }
+
+      @include on-desktop {
+        width: 544px;
+        height: 120px;
+      }
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+
+    background-image: url(./../images/img-crumbs.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 320px 300px;
+
+    @include on-tablet {
+      flex-flow: wrap;
+      flex-direction: row;
+      gap: 80px 24px;
+      background-image: none;
+    }
+  }
+
+  &__stat {
+    @include on-tablet {
+      width: 328px;
+    }
+
+    @include on-desktop {
+      width: 260px;
+    }
+
+    @include on-big-desktop {
+      width: 270px;
+    }
+
+    &-title {
+      margin: 0;
+      margin-bottom: 8px;
+      color: $colorTextHover;
+
+      @include big-text;
+    }
+
+    &-description {
+      margin: 0;
+      color: $colorTextDark;
+
+      @include body-text;
+    }
+  }
+}
