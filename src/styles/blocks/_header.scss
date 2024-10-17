@@ -2,6 +2,7 @@
 
   &__wrapper {
     height: 100vh;
+    position: relative;
   }
 
   &__top {
@@ -13,27 +14,22 @@
   }
 
   &__body {
-    display: grid;
-    justify-content: center;
-    justify-items: center;
     height: 100vh;
-    position: relative;
+    display: flex;
+    flex-direction: column;
 
     @include paddingInline;
 
     @include onTablet {
+      display: grid;
       grid-template-columns: repeat(8, 1fr);
-      grid-template-rows: repeat(3, 1fr);
       column-gap: 24px;
-    }
-
-    @include onDesctop {
-      grid-template-rows: 1fr 100px 1fr;
     }
 
     @include onLargeDesctop {
       grid-template-columns: repeat(8, 128px);
-      grid-template-rows: 200px 200px 200px;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -47,14 +43,14 @@
     padding-top: 32px;
 
     @include onTablet {
+      padding-top: 80px;
       grid-column: span 4;
       text-align: left;
     }
 
     @include onDesctop {
-      grid-column: 1 / 3;
-      padding-top: 0;
-      margin-top: 132px;
+      padding-top: 135px;
+      grid-column: span 2;
     }
   }
 
@@ -70,46 +66,46 @@
     padding-top: 32px;
 
     @include onTablet {
-      font-size: 80px;
-      line-height: 68px;
+      grid-column: 1 / -1;
+      margin-top: 146px;
       padding-top: 0;
 
-      position: absolute;
-      top: 45%;
+      font-size: 80px;
+      line-height: 68px;
     }
 
     @include onDesctop {
-      font-size: 136px;
-      line-height: 115px;
-      padding-top: 0;
-
-      top: 35%;
-    }
-
-    @include onLargeDesctop {
-      font-size: 144px;
-      line-height: 122px;
-      top: 25%;
+      font-size: 129px;
+      line-height: 115.6px;
+      margin-top: 0;
     }
   }
 
   &__image {
+    position: absolute;
+    top: 220px;
+    left: 16px;
+
+    z-index: -1;
+
     width: 288px;
 
     @include onTablet {
-      width: 326px;
+      top: 144px;
+      left: 221px;
 
-      grid-row: 2 / 3;
-      grid-column: 3 / 7;
+      width: 326px;
     }
 
     @include onDesctop {
-      grid-row: 1 / -1;
       width: 544px;
+      top: 0;
+      left: 328px;
     }
 
     @include onLargeDesctop {
-      width: 100%;
+      width: 584px;
+      left: 428px;
     }
   }
 
@@ -134,15 +130,15 @@
     border-radius: 32px;
     padding-block: 16px;
 
-    @include onTablet {
-      grid-row: 3 / -1;
-      grid-column: 3 / 7;
+    margin-top: 290px;
 
-      margin-top: 80px;
+    @include onTablet {
+      grid-column: 3 / 7;
+      margin-top: 210px;
     }
 
     @include onDesctop {
-      grid-column: 1 / 3;
+      grid-column: span 2;
       margin-top: 0;
     }
   }
@@ -150,13 +146,13 @@
   &__nav {
     display: none;
 
-    @include onDesctop {
-      display: block;
-    }
-
     &__list {
       display: flex;
       gap: 64px;
+    }
+
+    @include onDesctop {
+      display: block;
     }
   }
 
