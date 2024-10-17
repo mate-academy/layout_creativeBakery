@@ -1,0 +1,262 @@
+.header {
+  padding: 0 16px;
+  padding-top: 16px;
+  margin-bottom: 104px;
+
+  @include on-tablet {
+    padding: 0 44px;
+    padding-top: 16px;
+    margin: 0;
+    margin-bottom: 1px;
+  }
+
+  @include on-desktop {
+    padding-top: 28px;
+    margin-bottom: 152px;
+    background-image: url(../images/cookie-img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 574px 576px;
+  }
+
+  @include on-big-desktop {
+    padding: 0 124px;
+    padding-top: 28px;
+    background-size: 574px 576px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+
+    @include on-tablet {
+      margin-bottom: 96px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 163px;
+    }
+
+    @include on-big-desktop {
+      margin-bottom: 176px;
+    }
+
+    &-title {
+      height: 22px;
+      width: 136px;
+
+      &-img {
+        @include hover(transform, scale(1.2));
+      }
+    }
+
+    &-group {
+      display: none;
+
+      @include on-desktop {
+        display: flex;
+        column-gap: 64px;
+      }
+
+      &-link {
+        text-decoration: none;
+        color: $colorTextDark;
+
+        @include body-text;
+        @include hover-text(transform, scale(1.2));
+      }
+
+      &-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $colorPage;
+        height: 32px;
+        border: 0;
+        width: max-content;
+        color: $colorTextHover;
+        cursor: pointer;
+
+        @include uppercase;
+
+        &:hover {
+          border-bottom: 1px solid $colorButton;
+        }
+
+        &:focus {
+          color: $colorButtonFocused;
+          border-color: $colorButtonFocused;
+        }
+
+        &:disabled {
+          color: $colorButtonDisabled;
+          border-color: $colorButtonDisabled;
+        }
+
+        &-img {
+          height: 18px;
+          width: 18px;
+          background-image: url(../images/svg/icon-mobile.svg);
+          margin-right: 5px;
+        }
+
+        &:focus &-img {
+          background-image: url(../images/svg/icon-mobile-focused.svg);
+        }
+      }
+    }
+
+    &-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 24px;
+      width: 24px;
+
+      @include on-desktop {
+        display: none;
+      }
+
+      &-img {
+        @include hover(transform, scale(1.2));
+      }
+    }
+  }
+
+  &__group {
+    @include on-tablet {
+      background-image: url(../images/cookie-img.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 356px 358px;
+    }
+
+    @include on-desktop {
+      background-image: none;
+    }
+
+    &-description {
+      margin: 0;
+      margin-bottom: 32px;
+      color: $colorTextDark;
+      text-align: center;
+
+      @include body-text;
+
+      @include on-tablet {
+        width: 280px;
+        text-align: start;
+        margin-bottom: 146px;
+      }
+
+      @include on-desktop {
+        width: 260px;
+        margin-bottom: 8px;
+      }
+
+      @include on-big-desktop {
+        width: 280px;
+        margin-bottom: 40px;
+      }
+    }
+
+    &-title {
+      margin: 0;
+      color: $colorTextHover;
+      text-align: center;
+
+      @extend %h1-mobile;
+
+      @include on-tablet {
+        margin-bottom: 210px;
+
+        @include h1-tablet;
+      }
+
+      @include on-desktop {
+        margin-bottom: 64px;
+        font-family: Inter, sans-serif;
+        font-size: 130px;
+        font-weight: 400;
+        line-height: 115.6px;
+        letter-spacing: -0.05em;
+        text-align: center;
+      }
+
+      @include on-big-desktop {
+        font-size: 135px;
+        line-height: 122.4px;
+      }
+    }
+
+    &-img {
+      width: 288px;
+      height: 290px;
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+
+    &-button {
+      display: flex;
+      height: 56px;
+      width: 100%;
+      border: 2px solid $colorButton;
+      border-radius: 32px;
+      background-color: $colorPage;
+      color: $colorTextHover;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+      cursor: pointer;
+
+      @include uppercase;
+      @include hover(transform, scale(1.1));
+
+      @include on-tablet {
+        width: 326px;
+        margin: 0 auto;
+      }
+
+      @include on-desktop {
+        margin: 0;
+        width: 260px;
+      }
+
+      @include on-big-desktop {
+        width: 280px;
+      }
+
+      &:hover {
+        border: 0;
+        background-color: $colorButton;
+        color: $colorPage;
+      }
+
+      &:focus {
+        background-color: $colorButtonFocused;
+      }
+
+      &:disabled {
+        border: 2px solid $colorButtonDisabled;
+        color: $colorButtonDisabled;
+      }
+
+      &-img {
+        height: 20px;
+        width: 20px;
+        background-image: url(./../images/svg/icon-cookie.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 5px;
+      }
+
+      &:hover &-img {
+        background-image: url(./../images/svg/icon-cookie-hover.svg);
+      }
+    }
+  }
+}

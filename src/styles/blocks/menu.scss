@@ -1,0 +1,111 @@
+.menu {
+  padding: 0 16px;
+  padding-top: 16px;
+  height: 100vh;
+  opacity: 0;
+  background: $colorPage;
+  position: absolute;
+  pointer-events: none;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-100%);
+
+  @include on-tablet {
+    padding: 0 44px;
+    padding-top: 16px;
+  }
+
+  @include on-desktop {
+    display: none;
+  }
+
+  &:target {
+    position: absolute;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+    opacity: 1;
+    inset: 0;
+    pointer-events: all;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 152px;
+
+    &-title {
+      height: 32px;
+      width: 136px;
+
+      &-img {
+        @include hover(transform, scale(1.1));
+      }
+    }
+
+    &-cross {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 24px;
+      width: 24px;
+
+      &-img {
+        @include hover(transform, scale(1.2));
+      }
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 24px;
+
+    &-link {
+      text-decoration: none;
+      color: $colorTextDark;
+
+      @include body-text;
+      @include hover-text(transform, scale(1.2));
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $colorPage;
+      height: 32px;
+      border: 0;
+      width: max-content;
+      color: $colorTextHover;
+      cursor: pointer;
+
+      @include uppercase;
+
+      &:hover {
+        border-bottom: 1px solid $colorButton;
+      }
+
+      &:focus {
+        color: $colorButtonFocused;
+        border-color: $colorButtonFocused;
+      }
+
+      &:disabled {
+        color: $colorButtonDisabled;
+        border-color: $colorButtonDisabled;
+      }
+
+      &-img {
+        height: 18px;
+        width: 18px;
+        background-image: url(../images/svg/icon-mobile.svg);
+        margin-right: 5px;
+
+        &:focus &-img {
+          background-image: url(../images/svg/icon-mobile-focused.svg);
+        }
+      }
+    }
+  }
+}
