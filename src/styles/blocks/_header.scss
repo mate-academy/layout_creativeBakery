@@ -1,8 +1,9 @@
 .header {
 
   &__wrapper {
-    height: 100vh;
     position: relative;
+    display: flex;
+    justify-content: center;
   }
 
   &__top {
@@ -14,9 +15,9 @@
   }
 
   &__body {
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     @include paddingInline;
 
@@ -27,9 +28,9 @@
     }
 
     @include onLargeDesctop {
-      grid-template-columns: repeat(8, 128px);
-      align-items: center;
-      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
     }
   }
 
@@ -51,6 +52,10 @@
     @include onDesctop {
       padding-top: 135px;
       grid-column: span 2;
+    }
+
+    @include onLargeDesctop {
+      max-width: 281px;
     }
   }
 
@@ -79,12 +84,19 @@
       line-height: 115.6px;
       margin-top: 0;
     }
+
+    @include onLargeDesctop {
+      font-size: 139px;
+      line-height: 122px;
+
+      margin-top: 64px;
+    }
   }
 
   &__image {
     position: absolute;
     top: 220px;
-    left: 16px;
+    left: 5%;
 
     z-index: -1;
 
@@ -92,20 +104,21 @@
 
     @include onTablet {
       top: 144px;
-      left: 221px;
-
+      // left: 221px;
+      left: 29%;
       width: 326px;
     }
 
     @include onDesctop {
       width: 544px;
       top: 0;
-      left: 328px;
+      // left: 328px;
+      left: 25%;
     }
 
     @include onLargeDesctop {
       width: 584px;
-      left: 428px;
+      left: 35%;
     }
   }
 
@@ -140,6 +153,12 @@
     @include onDesctop {
       grid-column: span 2;
       margin-top: 0;
+    }
+
+    @include onLargeDesctop {
+      max-width: 280px;
+
+      margin-top: 64px;
     }
   }
 
