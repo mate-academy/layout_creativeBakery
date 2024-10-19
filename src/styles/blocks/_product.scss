@@ -1,0 +1,88 @@
+.product {
+
+  &__wrapper {
+    display: grid;
+    row-gap: 56px;
+
+    padding-top: 56px;
+
+    @include onTablet {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onLargeDesctop {
+      justify-content: center;
+      grid-template-columns: repeat(8, 128px);
+    }
+  }
+
+  &__cards {
+    cursor: pointer;
+    transition: 0.3s;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesctop {
+      grid-column: span 3;
+    }
+
+    &--left {
+      @include onDesctop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &:hover {
+      scale: 0.9;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+
+    color: $main-grey-color;
+
+    padding-top: 16px;
+  }
+
+  &__description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -1%;
+
+    padding-top: 8px;
+  }
+
+  &__order {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+
+    color: $accent-color;
+
+    padding-top: 16px;
+
+    &:hover {
+
+      color: $accent-color-dark;
+    }
+  }
+}

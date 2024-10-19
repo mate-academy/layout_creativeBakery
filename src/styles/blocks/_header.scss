@@ -18,6 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 288px;
 
     @include paddingInline;
 
@@ -25,12 +26,14 @@
       display: grid;
       grid-template-columns: repeat(8, 1fr);
       column-gap: 24px;
+      max-width: fit-content;
     }
 
     @include onLargeDesctop {
       display: flex;
       flex-direction: column;
       align-items: start;
+      max-width: fit-content;
     }
   }
 
@@ -150,6 +153,9 @@
     padding-block: 16px;
 
     margin-top: 290px;
+    margin-bottom: 40px;
+
+    transition: 0.3s;
 
     @include onTablet {
       grid-column: 3 / 7;
@@ -158,13 +164,24 @@
 
     @include onDesctop {
       grid-column: span 2;
-      margin-top: 0;
+      margin-top: 64px;
     }
 
     @include onLargeDesctop {
       max-width: 280px;
 
       margin-top: 64px;
+    }
+
+    &:hover {
+      background-color: $accent-color;
+      color: #fff;
+    }
+
+    &:focus {
+      background-color: $accent-color-dark;
+      border: 2px solid $accent-color-dark;
+      color: #fff;
     }
   }
 
@@ -178,6 +195,17 @@
 
     @include onDesctop {
       display: block;
+    }
+
+    &__link {
+      transition: 0.3s;
+
+      &:hover {
+        color: $accent-color;
+        border-bottom: 1px solid $accent-color;
+
+        padding-bottom: 5px;
+      }
     }
   }
 

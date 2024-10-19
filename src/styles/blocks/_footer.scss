@@ -1,0 +1,167 @@
+.footer {
+
+  &__wrapper {
+    background-color: $main-color;
+    padding-bottom: 88px;
+
+    @include paddingInline;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onLargeDesctop {
+      grid-template-columns: repeat(8, 128px);
+      justify-content: center;
+    }
+  }
+
+  &__menu {
+    padding-top: 56px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__contact {
+    padding-top: 64px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    &--grid {
+
+      @include onDesctop {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 24px;
+      }
+    }
+  }
+
+  &__logo {
+    width: 168px;
+  }
+
+  &__social {
+    display: flex;
+    gap: 32px;
+
+    padding-top: 40px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__copywrite {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -1%;
+
+    color: $main-grey-color;
+
+    padding-top: 40px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__contact-title {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 41px;
+    letter-spacing: -5%;
+
+    color: #fff;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 56px;
+      line-height: 47.6px;
+    }
+
+    @include onDesctop {
+      font-size: 72px;
+      line-height: 62.2px;
+
+      grid-column: span 4;
+    }
+  }
+}
+
+.footer-nav {
+
+  &__menu {
+    padding-top: 40px;
+
+    @include onTablet {
+      padding-top: 96px;
+    }
+
+    @include onDesctop {
+      padding-top: 61px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__item {
+    text-align: left;
+  }
+
+  &__link {
+    color: #fff;
+    transition: 0.3s;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &:focus {
+      color: $accent-color-dark;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+
+    color: $main-grey-color;
+  }
+
+  &__call-us {
+    padding-top: 40px;
+
+    @include onTablet {
+      padding-top: 96px;
+    }
+
+    @include onDesctop {
+      padding-top: 40px;
+      grid-column: span 2;
+    }
+  }
+
+  &__email {
+    padding-top: 40px;
+
+    @include onDesctop {
+      grid-column: span 2;
+    }
+  }
+
+}
