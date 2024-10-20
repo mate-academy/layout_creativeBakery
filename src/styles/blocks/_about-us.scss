@@ -1,0 +1,127 @@
+.about-us {
+
+  &__wrapper {
+    display: grid;
+    row-gap: 64px;
+
+    @include onTablet {
+      row-gap: 72px;
+    }
+
+    @include onDesctop {
+      row-gap: 144px;
+    }
+
+    @include onLargeDesctop {
+      justify-content: center;
+    }
+  }
+
+  &__header {
+    display: grid;
+
+    @include onTablet {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onDesctop {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onLargeDesctop {
+      grid-template-columns: repeat(8, 128px);
+      column-gap: 24px;
+    }
+  }
+
+  &__title {
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesctop {
+      grid-column: span 3;
+    }
+  }
+
+  &__description {
+
+    @include onTablet {
+      padding-top: 0;
+      grid-column: span 4;
+    }
+
+    @include onDesctop {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__body {
+    display: grid;
+    row-gap: 48px;
+
+    @include onTablet {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onLargeDesctop {
+      grid-template-columns: repeat(8, 128px);
+      column-gap: 24px;
+    }
+  }
+
+  &__item {
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesctop {
+      grid-column: span 2;
+    }
+  }
+
+  &__item-title {
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 81.6px;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+
+    color: $accent-color;
+  }
+
+  &__item-description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -1%;
+  }
+
+  &__bg {
+    position: absolute;
+    width: 320px;
+    z-index: -1;
+
+    transform: translate(0%, -164%);
+
+    @include onTablet {
+      transform: translate(15%, -97%);
+      width: 526px;
+    }
+
+    @include onDesctop {
+      width: 718px;
+      transform: translate(40%, -58%);
+    }
+
+    @include onLargeDesctop {
+      width: 718px;
+      transform: translate(66%, -55%);
+    }
+  }
+}
