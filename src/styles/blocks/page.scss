@@ -1,0 +1,38 @@
+.page {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.16px;
+  color: #1c1a26;
+  background-color: #ffeefc;
+
+  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    transition: all 0.5s;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    background-color: #ffeefc;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &__body {
+    min-width: 320px;
+  }
+}
