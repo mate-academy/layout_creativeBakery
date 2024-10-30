@@ -1,6 +1,47 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin on-tablet {
+  @media ($tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media ($desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-xldesign {
+  @media ($xl-designt-min-width) {
+    @content;
+  }
+}
+
+@mixin padding-inline() {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-xldesign {
+    padding-inline: 124px;
+  }
+}
+
+@mixin page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.5s;
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $toValue;
   }
 }
