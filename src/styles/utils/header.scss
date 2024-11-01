@@ -1,0 +1,140 @@
+.header {
+  &__content {
+    position: relative;
+  }
+
+  &__box {
+    @include on-desktop {
+      position: absolute;
+      inset: 0;
+      padding-top: 135px;
+    }
+  }
+
+  &__cookies {
+    object-fit: contain;
+    width: 100%;
+    height: 546px;
+
+    @media (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    padding: 32px 0;
+
+    @include on-tablet {
+      padding: 80px 0 16px;
+      text-align: left;
+      width: 280px;
+    }
+
+    @include on-desktop {
+      padding: 0 0 8px;
+    }
+
+    @include on-wide {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__basic {
+    position: relative;
+
+    @include on-tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 80px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 64px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    text-align: center;
+    color: $accent-orange;
+
+    @include on-tablet {
+      position: absolute;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+      line-height: 115px;
+      position: relative;
+      white-space: nowrap;
+    }
+  }
+
+  &__cookie {
+    width: 100%;
+
+    @include on-tablet {
+      width: 50%;
+    }
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__butt {
+    display: flex;
+    justify-content: center;
+
+    @include on-desktop {
+      justify-content: left;
+    }
+  }
+
+  &__button {
+    background-color: $light-pink;
+    width: 100%;
+    border: 2px solid $accent-orange;
+    color: $accent-orange;
+    border-radius: 32px;
+    cursor: pointer;
+    transition: $all-effect-duration;
+
+    &:hover {
+      background-color: $accent-orange;
+    }
+
+    &:focus {
+      background-color: $dark-orange;
+      border-color: $dark-orange;
+      color: $white;
+    }
+
+    @include on-tablet {
+      width: 326px;
+    }
+  }
+
+  &__learn {
+    transition: $all-effect-duration;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    height: 56px;
+
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(174%)
+        hue-rotate(240deg) brightness(120%) contrast(100%);
+    }
+
+    &:focus {
+      filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(174%)
+        hue-rotate(240deg) brightness(120%) contrast(100%);
+    }
+  }
+}

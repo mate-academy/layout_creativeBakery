@@ -1,0 +1,113 @@
+.footer {
+  background-color: $black;
+  padding: 56px 0;
+  display: flex;
+  flex-direction: column;
+
+  @include on-tablet {
+    display: grid;
+    padding: 88px 0;
+  }
+
+  &__product {
+    @include page-grid;
+  }
+
+  &__content {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 4/-1;
+    }
+
+    @include on-desktop {
+      display: flex;
+    }
+  }
+
+  &__logo {
+    width: 127.8px;
+    height: 24.16px;
+    display: block;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/Logo.svg);
+    filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(174%)
+      hue-rotate(240deg) brightness(120%) contrast(100%);
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/4;
+      grid-row: 1;
+    }
+  }
+
+  &__title {
+    color: $white;
+    margin: 0;
+    padding-top: 64px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      padding-top: 0;
+      grid-column: 4/-1;
+      grid-row: 1;
+    }
+  }
+
+  &__menu {
+    padding-top: 40px;
+    color: $gray;
+
+    @include on-tablet {
+      grid-column: 4/-1;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/4;
+    }
+
+    @include on-desktop {
+      width: 50%;
+    }
+  }
+
+  &__link {
+    color: $white;
+    transition: transform $effect-duration ease;
+
+    &:hover {
+      transform: $photo-transform;
+    }
+  }
+
+  &__icons {
+    padding-top: 40px;
+    display: flex;
+    gap: 32px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/4;
+    }
+  }
+
+  &__icon {
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(174%)
+        hue-rotate(240deg) brightness(120%) contrast(100%);
+    }
+
+    &:focus {
+      filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(174%)
+        hue-rotate(240deg) brightness(120%) contrast(100%);
+    }
+  }
+}

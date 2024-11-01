@@ -1,0 +1,85 @@
+.bake {
+  padding: 104px 0 72px;
+
+  @include on-tablet {
+    padding: 228px 0 152px;
+  }
+
+  @include on-desktop {
+    padding: 313px 0 178px;
+  }
+
+  &__title {
+    margin: 0;
+    color: $accent-orange;
+    padding-bottom: 24px;
+  }
+
+  &__body {
+    color: $black;
+    padding-bottom: 56px;
+
+    @include on-tablet {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    &--left {
+      @include on-desktop {
+        margin-right: 25%;
+      }
+    }
+
+    &--right {
+      padding: 56px 0;
+
+      @include on-tablet {
+        padding-bottom: 80px;
+      }
+
+      @include on-desktop {
+        margin-left: 25%;
+      }
+    }
+  }
+
+  &__name {
+    padding-bottom: 8px;
+    color: $gray;
+  }
+
+  &__description {
+    padding-bottom: 16px;
+  }
+
+  &__button {
+    border: none;
+    background-color: $light-pink;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $accent-orange;
+    transition: transform $effect-duration ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: $photo-transform;
+    }
+  }
+}
