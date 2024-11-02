@@ -1,0 +1,46 @@
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  &.path {
+    fill: currentColor;
+  }
+
+  background-repeat: no-repeat;
+
+  @include hover(transform, scale(1.05));
+
+  &--menu {
+    &:hover {
+      fill: $accent-color;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &--close {
+    fill: $text-color;
+    &:hover {
+      fill: $accent-color;
+    }
+  }
+
+  &--phone {
+    background-image: url(/src/images/icons/icon-phone.svg);
+  }
+
+  &--arrow {
+    background-image: url(/src/images/icons/icon-arrow.svg);
+  }
+
+  &--social {
+    fill: $accent-color;
+    &:hover {
+      transition: fill 0.3s;
+      fill: $white-text-color;
+    }
+  }
+}

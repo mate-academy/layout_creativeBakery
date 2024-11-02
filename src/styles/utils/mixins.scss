@@ -1,0 +1,47 @@
+@mixin on-tablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin on-xldesign {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin padding-inline() {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-xldesign {
+    padding-inline: 124px;
+  }
+}
+
+@mixin page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.5s;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
