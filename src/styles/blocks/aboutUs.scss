@@ -1,0 +1,53 @@
+@import '../utils';
+
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  background-image: url('../images/Crumbs.png');
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  background-size: 100%;
+
+  @include on-tablet {
+    gap: 72px;
+    background-size: auto 85%;
+    background-position: center;
+  }
+
+  @include on-desktop {
+    gap: 144px;
+    padding-bottom: 293px;
+    background-size: auto 100%;
+    background-position: 75% 50%;
+  }
+
+  @include on-design {
+    gap: 146px;
+    background-position: center;
+  }
+
+  &__top {
+    display: grid;
+    row-gap: 64px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    row-gap: 48px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 80px 24px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

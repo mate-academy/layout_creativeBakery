@@ -1,0 +1,110 @@
+@import '../utils';
+
+.footer {
+  background-color: $black;
+  color: $white;
+  padding: 56px 16px;
+  display: grid;
+  row-gap: 40px;
+
+  @include on-tablet {
+    padding: 88px 44px;
+  }
+
+  @include on-design {
+    padding: 88px 124px;
+  }
+
+  &__main {
+    display: grid;
+    row-gap: 40px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    @include on-tablet {
+      gap: 96px;
+    }
+
+    @include on-desktop {
+      gap: 61px;
+    }
+
+    &__links {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 16px;
+
+      &__link {
+        display: inline;
+        color: $white;
+
+        @include hover(transform, scale(1.25));
+      }
+    }
+  }
+
+  &__contacts {
+    display: grid;
+    row-gap: 40px;
+
+    &__title {
+      color: $white;
+      width: 200px;
+
+      @include on-desktop {
+        width: 500px;
+      }
+    }
+
+    &__content {
+      display: grid;
+      row-gap: 40px;
+
+      @include on-desktop {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 24px;
+      }
+
+      &__links {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+
+        &__link {
+          display: inline;
+          color: $white;
+
+          @include hover(transform, scale(1.25));
+        }
+      }
+    }
+  }
+
+  &__socials {
+    display: grid;
+    row-gap: 40px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+
+    &__links {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+    }
+  }
+}

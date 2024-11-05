@@ -1,0 +1,88 @@
+@import '../utils';
+
+.whatWeBake {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+
+  @include on-tablet {
+    gap: 80px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__category {
+    display: grid;
+    row-gap: 16px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: 3fr 3fr 2fr;
+      column-gap: 24;
+    }
+
+    &--right {
+      @include on-desktop {
+        grid-template-columns: 2fr 3fr 3fr;
+        column-gap: 24px;
+      }
+    }
+
+    &__displayed_desktop {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__img {
+      border-radius: 8px;
+      width: 100%;
+      object-fit: cover;
+      object-position: center center;
+      aspect-ratio: 3/4;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 3px 3px 10px $shadow-color;
+      }
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      &__type {
+        color: $gray;
+      }
+    }
+
+    &__order {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      cursor: pointer;
+      color: $accent-color;
+      width: 84px;
+
+      @include hover(transform, scale(1.2));
+    }
+  }
+}
