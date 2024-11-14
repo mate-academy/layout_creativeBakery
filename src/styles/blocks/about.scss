@@ -1,0 +1,98 @@
+.about {
+  background-image: url(../images/about-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+
+  @include on-tablet {
+    margin-bottom: 150px;
+    gap: 70px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 55px;
+    gap: 150px;
+    height: 100vh;
+  }
+
+  &__top {
+    @include grid;
+    row-gap: 32px;
+  }
+
+  &__title {
+    @extend %h2;
+    color: $orange_text_color;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__text {
+    @extend %body-text;
+    color: $main_text_color;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__bottom {
+    @include grid;
+    row-gap: 50px;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__block {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &:nth-child(2n) {
+      @include on-tablet {
+        grid-column: 6 / 9;
+      }
+
+      @include on-desktop {
+        grid-column: span 2;
+      }
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__big-text {
+    @extend %big-text;
+    color: $orange_text_color;
+  }
+
+  &__small-text {
+    @extend %body-text;
+    color: $main_text_color;
+  }
+}

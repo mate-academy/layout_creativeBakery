@@ -1,0 +1,54 @@
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 16px;
+
+  @include padding-inline-top-bar;
+
+  &__icon {
+    display: block;
+    background-size: cover;
+    background-image: url(../icons/icon-menu.svg);
+    color: $main-text-color;
+    height: 24px;
+    width: 24px;
+
+    @include hover(transform, scale(1.2));
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+
+    @include on-desktop {
+      gap: 64px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__logo-link {
+    display: inline-block;
+  }
+
+  &__logo {
+    display: block;
+    height: 32px;
+
+    @include hover(transform, scale(1.2));
+  }
+}

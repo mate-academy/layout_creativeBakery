@@ -1,0 +1,129 @@
+.header {
+  &__content {
+    @include grid;
+    grid-template-rows: auto 1fr auto;
+    text-align: center;
+    margin-block: 35px;
+  }
+
+  &__img {
+    width: 100%;
+    grid-column: 1 / -1;
+    z-index: -1;
+  }
+
+  &__text {
+    @extend %body-text;
+    margin-bottom: 32px;
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    @extend %h1;
+    color: $orange_text_color;
+    grid-column: 1 / -1;
+  }
+
+  &__btn {
+    @extend %upper-text;
+    grid-column: 1 / -1;
+    color: $orange_text_color;
+    border: 2px solid $orange_text_color;
+    border-radius: 32px;
+    padding-block: 20px;
+    background-color: $c-gray;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+
+    &-img {
+      color: $orange_text_color;
+
+      &:hover {
+        color: $white;
+      }
+
+      &:focus {
+        color: $white;
+      }
+
+      &:disabled {
+        color: $light-orange;
+      }
+    }
+
+    &:hover {
+      color: $white;
+      background-color: $orange_text_color;
+      border-color: $orange_text_color;
+    }
+
+    &:focus {
+      color: $white;
+      background-color: $dark-orange;
+      border-color: $dark-orange;
+    }
+
+    &:disabled {
+      color: $light-orange;
+      background-color: $c-gray;
+      border-color: $light-orange;
+    }
+  }
+
+  @include on-tablet {
+    &__content {
+      margin-block: 80px;
+      align-items: center;
+    }
+
+    &__text {
+      grid-column: 1 / 5;
+      margin-bottom: 15px;
+      text-align: left;
+      grid-row: 1;
+    }
+
+    &__title {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      text-align: center;
+    }
+
+    &__btn {
+      grid-column: 3 / 7;
+      margin-top: 80px;
+      grid-row: 3;
+    }
+
+    &__img {
+      grid-column: 3 / 7;
+      grid-row: 2;
+    }
+  }
+
+  @include on-desktop {
+    &__text {
+      grid-column: 1 / 3;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+
+    &__title {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+
+    &__btn {
+      grid-column: 1 / 3;
+      margin-top: 65px;
+    }
+
+    &__img {
+      grid-column: 3 / 7;
+    }
+  }
+}
