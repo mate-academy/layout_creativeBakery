@@ -1,0 +1,42 @@
+@use '../utils/vars' as vars;
+@use '../utils/mixins' as mix;
+@use '../utils/extends' as ext;
+@use '../fonts' as fonts;
+
+.page {
+  margin: 0;
+  background: vars.$c-gray;
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: vars.$black;
+  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all vars.$transition-time;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+}
+
+p {
+  margin: 0;
+}

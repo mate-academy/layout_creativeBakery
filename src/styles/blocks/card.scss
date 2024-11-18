@@ -1,0 +1,47 @@
+@use '../utils/vars' as vars;
+@use '../utils/mixins' as mix;
+@use '../utils/extends' as ext;
+
+.card {
+  width: 100%;
+  grid-column: 1 / -1;
+
+  @include mix.on-tablet {
+    grid-column: span 4;
+  }
+
+  @include mix.on-desktop-small {
+    grid-column: span 3;
+  }
+
+  &--right {
+    @include mix.on-desktop-small {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  &__title {
+    margin: 0;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: vars.$grey;
+    margin-bottom: 8px;
+  }
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: vars.$accent-orange;
+  }
+}

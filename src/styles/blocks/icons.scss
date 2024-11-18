@@ -1,0 +1,40 @@
+@use '../utils/vars' as vars;
+@use '../utils/mixins' as mix;
+@use '../utils/extends' as ext;
+
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-size: 18px 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--menu {
+    position: absolute;
+    top: 25px;
+    right: 16px;
+    background-image: url(../icons/icon-burger-menu.svg);
+
+    transition: vars.$transition-time;
+
+    &:hover {
+      background-image: url(../icons/icon-burger-menu-hover.svg);
+      background-size: 18px 18px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @include mix.on-desktop-small {
+      display: none;
+    }
+  }
+
+  &--close {
+    background-image: url(../icons/icon-close.png);
+  }
+
+  &--arrow {
+    background-image: url(../icons/icon-arrow.svg);
+  }
+}
