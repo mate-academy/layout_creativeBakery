@@ -20,9 +20,15 @@
     }
   }
 
+  &__link-photo {
+    text-decoration: none;
+  }
+
   &__photo {
     width: 100%;
     margin-bottom: 16px;
+
+    @include mix.hover(transform, scale(1.1));
   }
   &__title {
     margin: 0;
@@ -43,5 +49,18 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: vars.$accent-orange;
+    display: flex;
+    gap: 4px;
+    transition:
+      color vars.$transition-time,
+      background-image vars.$transition-time;
+
+    &:hover {
+      color: vars.$black;
+
+      .icon--arrow {
+        background-image: url(../icons/icon-arrow-black.svg);
+      }
+    }
   }
 }

@@ -15,9 +15,6 @@
     @include mix.on-desktop-small {
       padding: 0 44px;
       position: relative;
-    }
-
-    @include mix.on-desktop-large {
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -57,7 +54,7 @@
     grid-column: 1 / -1;
 
     @include mix.on-tablet {
-      font-size: clamp(67px, 10vw, 144px);
+      font-size: clamp(67px, 10vw, 136px);
       line-height: 68px;
       max-width: 100%;
       margin: 0 auto;
@@ -67,11 +64,7 @@
 
     @include mix.on-desktop-small {
       top: 43%;
-    }
-
-    @include mix.on-desktop-large {
-      font-size: 144px;
-      line-height: 122.4px;
+      width: 100%;
     }
   }
 
@@ -96,8 +89,22 @@
     }
   }
 
-  &__button {
+  &__link--button {
+    text-decoration: none;
     grid-column: 1 / -1;
+
+    @include mix.on-tablet {
+      grid-column: 3 / 7;
+      width: 100%;
+    }
+
+    @include mix.on-desktop-small {
+      grid-column: 1 / 3;
+      margin: auto 0;
+    }
+  }
+
+  &__button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,28 +126,13 @@
       color vars.$transition-time,
       background-color vars.$transition-time;
 
-    @include mix.on-tablet {
-      grid-column: 3 / 7;
-      width: 100%;
-    }
-
-    @include mix.on-desktop-small {
-      grid-column: 1 / 3;
-      margin: auto 0;
-    }
-
     &:hover {
       color: #fff;
       border: 2px solid vars.$accent-orange;
       background-color: vars.$accent-orange;
 
-      .header__button--icon {
-        width: 24px;
-        height: 24px;
+      .icon--button {
         background-image: url(../icons/cookie-eat-white.svg);
-        background-repeat: no-repeat;
-        background-size: 20px 20px;
-        background-position: center;
       }
     }
 
@@ -149,13 +141,8 @@
       border: 2px solid vars.$dark-orange;
       background-color: vars.$dark-orange;
 
-      .header__button--icon {
-        width: 24px;
-        height: 24px;
+      .icon--button {
         background-image: url(../icons/cookie-eat-white.svg);
-        background-repeat: no-repeat;
-        background-size: 20px 20px;
-        background-position: center;
       }
     }
 

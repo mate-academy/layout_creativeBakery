@@ -2,6 +2,58 @@
 @use '../utils/mixins' as mix;
 @use '../utils/extends' as ext;
 
-// .about {
-//   grid-row: 2 / -1;
-// }
+.about {
+  background-image: url(../images/pieceses\ of\ cookie.png);
+  background-size: contain;
+  background-position: bottom 174px center;
+  background-repeat: no-repeat;
+
+  @include mix.on-tablet {
+    background-position: center;
+  }
+
+  @include mix.on-desktop-small {
+    height: 673px;
+  }
+
+  &__top {
+    grid-column: 1 / 9;
+    margin-bottom: 64px;
+
+    @include mix.page-grid;
+
+    @include mix.on-tablet {
+      margin-bottom: 72px;
+    }
+
+    @include mix.on-desktop-small {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 9;
+
+    @include mix.on-tablet {
+      grid-column: 1 / 5;
+      width: 100%;
+    }
+
+    @include mix.on-desktop-small {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / 9;
+
+    @include mix.on-tablet {
+      grid-column: 5 / 9;
+      width: 100%;
+    }
+
+    @include mix.on-desktop-small {
+      grid-column: 5 / 9;
+    }
+  }
+}

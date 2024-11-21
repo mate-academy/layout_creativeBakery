@@ -1,0 +1,27 @@
+@use '../utils/vars' as vars;
+@use '../utils/mixins' as mix;
+@use '../utils/extends' as ext;
+
+.statistic {
+  @include mix.page-grid;
+
+  row-gap: 48px;
+
+  &__item {
+    grid-column: 1 / 9;
+
+    @include mix.on-tablet {
+      grid-column: span 4;
+    }
+
+    @include mix.on-desktop-small {
+      grid-column: span 2;
+    }
+  }
+
+  &__title {
+    font-size: 96px;
+    line-height: 81.6px;
+    color: vars.$accent-orange;
+  }
+}
