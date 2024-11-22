@@ -1,0 +1,79 @@
+@use '../utils/vars' as vars;
+@use '../utils/mixins' as mix;
+@use '../utils/extends' as ext;
+
+.nav {
+  &--menu {
+    height: 80%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: none;
+    justify-content: space-between;
+    gap: 64px;
+    list-style: none;
+
+    @include mix.on-desktop-small {
+      display: flex;
+    }
+
+    &--menu {
+      padding: 0;
+      list-style: none;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin: 0 auto;
+    }
+
+    &--footer {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      a {
+        color: #fff;
+
+        &:hover {
+          color: vars.$accent-orange;
+        }
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: vars.$black;
+    transition: all vars.$transition-time;
+
+    &:hover {
+      color: vars.$accent-orange;
+    }
+
+    &--contact {
+      display: flex;
+      justify-content: center;
+      text-transform: uppercase;
+      gap: 4px;
+      color: vars.$accent-orange;
+
+      &:hover {
+        color: vars.$black;
+        .icon--contact {
+          background-image: url(../icons/icon-phone-black.svg);
+        }
+      }
+    }
+  }
+}

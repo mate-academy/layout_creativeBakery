@@ -1,0 +1,154 @@
+@use '../utils/vars' as vars;
+@use '../utils/mixins' as mix;
+@use '../utils/extends' as ext;
+
+.header {
+  &__container {
+    padding: 32px 16px 40px;
+
+    @include mix.page-grid;
+
+    @include mix.on-tablet {
+      padding: 80px 44px;
+    }
+
+    @include mix.on-desktop-small {
+      padding: 0 44px;
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+
+  &__content {
+    height: 100vh;
+    text-align: center;
+  }
+
+  &__text {
+    max-width: 320px;
+    margin: 0 auto 32px;
+    grid-column: 1 / -1;
+
+    @include mix.on-tablet {
+      text-align: left;
+      margin: 0 0 16px;
+      grid-column: 1 / 6;
+    }
+
+    @include mix.on-desktop-small {
+      grid-column: 1 / 3;
+      margin: auto 0;
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 64px;
+    line-height: 54.4px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: vars.$accent-orange;
+    margin: 0 auto;
+    max-width: 320px;
+    grid-column: 1 / -1;
+
+    @include mix.on-tablet {
+      font-size: clamp(67px, 10vw, 136px);
+      line-height: 68px;
+      max-width: 100%;
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+    }
+
+    @include mix.on-desktop-small {
+      top: 43%;
+      width: 100%;
+    }
+  }
+
+  &__photo {
+    grid-column: 1 / -1;
+    width: 288px;
+    height: 290px;
+    margin: 0 auto;
+    object-fit: cover;
+
+    @include mix.on-tablet {
+      grid-column: 3 / 7;
+      width: 326px;
+      height: 328px;
+      margin-bottom: 80px;
+    }
+
+    @include mix.on-desktop-small {
+      grid-area: 1 / 3 / 3 / 7;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__link--button {
+    text-decoration: none;
+    grid-column: 1 / -1;
+
+    @include mix.on-tablet {
+      grid-column: 3 / 7;
+      width: 100%;
+    }
+
+    @include mix.on-desktop-small {
+      grid-column: 1 / 3;
+      margin: auto 0;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 326px;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: vars.$accent-orange;
+    border: 2px solid vars.$accent-orange;
+    border-radius: 32px;
+    transition:
+      color vars.$transition-time,
+      background-color vars.$transition-time;
+
+    &:hover {
+      color: #fff;
+      border: 2px solid vars.$accent-orange;
+      background-color: vars.$accent-orange;
+      cursor: pointer;
+
+      .icon--button {
+        background-image: url(../icons/cookie-eat-white.svg);
+      }
+    }
+
+    &:focus {
+      color: #fff;
+      border: 2px solid vars.$dark-orange;
+      background-color: vars.$dark-orange;
+
+      .icon--button {
+        background-image: url(../icons/cookie-eat-white.svg);
+      }
+    }
+
+    &--text {
+      font-family: Inter, sans-serif;
+    }
+  }
+}

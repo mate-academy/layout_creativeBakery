@@ -1,0 +1,72 @@
+@use '../utils/vars' as vars;
+@use '../utils/mixins' as mix;
+@use '../utils/extends' as ext;
+
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-size: 18px 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--menu {
+    position: absolute;
+    top: 25px;
+    right: 16px;
+    background-image: url(../icons/icon-burger-menu.svg);
+
+    transition: vars.$transition-time;
+
+    &:hover {
+      background-image: url(../icons/icon-burger-menu-hover.svg);
+      background-size: 18px 18px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @include mix.on-desktop-small {
+      display: none;
+    }
+  }
+
+  &--close {
+    background-image: url(../icons/icon-close.png);
+  }
+
+  &--arrow {
+    background-image: url(../icons/icon-arrow-orange.svg);
+  }
+
+  &--contact {
+    background-image: url(../icons/icon-phone-orange.svg);
+    transition: vars.$transition-time;
+  }
+
+  &--button {
+    background-image: url(../icons/cookie-eat-orange.svg);
+    background-size: 20px 20px;
+    transition: vars.$transition-time;
+  }
+
+  &--facebook {
+    fill: vars.$accent-orange;
+
+    @include mix.hover(fill, #fff);
+    @include mix.hover(transform, scale(1.2));
+  }
+
+  &--instagram {
+    fill: vars.$accent-orange;
+
+    @include mix.hover(fill, #fff);
+    @include mix.hover(transform, scale(1.2));
+  }
+
+  &--twitter {
+    fill: vars.$accent-orange;
+
+    @include mix.hover(fill, #fff);
+    @include mix.hover(transform, scale(1.2));
+  }
+}
