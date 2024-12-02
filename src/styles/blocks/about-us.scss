@@ -1,0 +1,116 @@
+.about-us {
+  @include padding-page;
+
+  margin: 72px 0;
+
+  @include on-tablet {
+    margin: 152px 0;
+    background-image: url(../images/bg/crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @include on-desktop {
+    margin: 178px 0 349px;
+    background-image: url(../images/bg/crumbs.png);
+    background-repeat: no-repeat;
+    grid-column: 3 / -1;
+    background-size: 718px 673px;
+  }
+
+  &__text {
+    @include page-grid;
+
+    &__title {
+      margin: 0;
+      grid-column: 1 / -1;
+      font-family: Inter, sans-serif;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+
+      @include on-tablet {
+        grid-column: 1 / 5;
+        font-size: 56px;
+        line-height: 85%;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 5;
+        font-size: 72px;
+      }
+    }
+
+    &__paragraph {
+      grid-column: 1 / -1;
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+      text-align: left;
+      margin: 32px 0 64px;
+
+      @include on-tablet {
+        grid-column: 5 / 9;
+        margin: 0 0 72px;
+      }
+
+      @include on-desktop {
+        grid-column: 5 / 9;
+        margin: 0 0 146px;
+      }
+    }
+  }
+
+  &__content {
+    @include page-grid;
+
+    background-image: url(../images/bg/crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 320px 300px;
+    display: grid;
+    row-gap: 50px;
+
+    @include on-tablet {
+      background-image: none;
+    }
+  }
+
+  &__num {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+
+    &--item {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      font-size: 96px;
+      font-weight: 400;
+      line-height: 81.6px;
+      letter-spacing: -0.05em;
+      text-align: left;
+      color: $color-footer-or-text-black;
+    }
+
+    &--text {
+      margin: 8px 0 0;
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+      text-align: left;
+      color: $color-text-grey;
+    }
+  }
+}
