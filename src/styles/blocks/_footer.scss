@@ -1,0 +1,100 @@
+.footer {
+  padding-block: 56px;
+  background-color: $c-black;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  &__container {
+    display: grid;
+    row-gap: 40px;
+
+    grid-template-areas:
+      'logo'
+      'menu'
+      'title'
+      'phone'
+      'email'
+      'social'
+      'copyright';
+
+    @include on-tablet {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'logo title'
+        'menu phone'
+        'menu email'
+        'social copyright';
+    }
+
+    @include on-desktop {
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-areas:
+        'logo title title'
+        'menu phone email'
+        'social copyright copyright';
+    }
+  }
+
+  &__logo__container {
+    grid-area: logo;
+  }
+
+  &__logo {
+    width: 168px;
+  }
+
+  &__section-title {
+    grid-area: title;
+  }
+
+  &__title {
+    color: $c-grey;
+    font: inherit;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &__menu,
+  &__phone,
+  &__email {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__menu {
+    grid-area: menu;
+  }
+
+  &__phone {
+    grid-area: phone;
+  }
+
+  &__email {
+    grid-area: email;
+  }
+
+  &__social {
+    grid-area: social;
+    display: flex;
+    gap: 32px;
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    margin: 0;
+    font: inherit;
+    color: $c_grey;
+    line-height: 1.5;
+  }
+
+  &__link {
+    color: $c-white;
+    text-decoration: none;
+    line-height: 1.5;
+  }
+}

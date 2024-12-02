@@ -1,0 +1,36 @@
+.page {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: $c-black;
+  scroll-behavior: smooth;
+  background-color: $c-light-pink;
+
+  &__body {
+    margin: 0;
+    min-width: $min-width;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    transform: translateY(-100%);
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+  }
+
+  &:has(&__menu:target) {
+    overflow: hidden;
+  }
+}
