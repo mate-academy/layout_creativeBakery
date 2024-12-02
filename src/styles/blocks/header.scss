@@ -1,0 +1,222 @@
+.header {
+  &__desc {
+    margin-top: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    color: $color-black;
+
+    @include on-tablet {
+      text-align: left;
+      margin-top: 80px;
+      width: 290px;
+      height: 48px;
+    }
+
+    @include on-desktop {
+      margin-top: 215px;
+      width: 260px;
+      height: 72px;
+    }
+
+    @include on-large-desktop {
+      width: 290px;
+      height: 48px;
+      margin-top: 224px;
+    }
+  }
+
+  &__title {
+    margin-top: 32px;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      font-size: 78px;
+      width: 100%;
+      margin-top: 0;
+      position: absolute;
+      top: 41%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include on-desktop {
+      font-size: 116px;
+      line-height: 110px;
+      top: 180%;
+      z-index: 10;
+    }
+
+    @include on-large-desktop {
+      font-size: 124px;
+      line-height: 110px;
+      top: 290%;
+      left: 51%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    &-container {
+      width: 288px;
+      height: 290px;
+      margin-inline: auto;
+
+      @include on-tablet {
+        width: 326px;
+        height: 328px;
+      }
+
+      @include on-desktop {
+        width: 544px;
+        height: 546px;
+        position: absolute;
+        top: -182%;
+        left: 0;
+        right: 0;
+        transform: translate(0, 0);
+        z-index: 0;
+      }
+
+      @include on-large-desktop {
+        width: 584px;
+        height: 586px;
+        top: -305%;
+      }
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    width: 288px;
+    height: 56px;
+    border: 2px solid $color-accent-orange;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4px;
+    margin-inline: auto;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &-title {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-align: left;
+      color: $color-accent-orange;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    &-icon {
+      background-image: url(../images/icons/button-icon.svg);
+      transition: background-image 0.3s;
+    }
+
+    &:hover {
+      background-color: $color-accent-orange;
+    }
+
+    &:hover &-title {
+      color: white;
+    }
+
+    &:hover &-icon {
+      background-image: url(../images/icons/button-icon-white.svg);
+    }
+
+    @include on-tablet {
+      width: 326px;
+      margin-top: 80px;
+    }
+
+    @include on-desktop {
+      width: 280px;
+      position: absolute;
+      top: 260%;
+    }
+
+    @include on-large-desktop {
+      top: 420%;
+    }
+  }
+
+  &__nav {
+    display: flex;
+
+    &-list {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      column-gap: 64px;
+    }
+
+    &-link {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      color: $color-black;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $color-dark-blue;
+      }
+    }
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      column-gap: 4px;
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      &-icon {
+        background-image: url(../images/icons/Icon-phone.svg);
+      }
+
+      &-text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 16px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        color: $color-accent-orange;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__top-bar-mobile {
+    @include on-desktop {
+      position: absolute;
+      left: -9999px;
+    }
+  }
+
+  &__top-bar-desktop {
+    position: absolute;
+    left: -9999px;
+
+    @include on-desktop {
+      left: 0;
+      top: 0;
+      right: 0;
+    }
+  }
+}
