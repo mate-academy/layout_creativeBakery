@@ -1,0 +1,135 @@
+.top-screen {
+  padding-block: 32px 40px;
+  margin-bottom: 64px;
+  position: relative;
+
+  @include on-tablet {
+    padding-block: 80px 228px;
+    margin-bottom: 0;
+  }
+
+  @include on-desktop {
+    padding-block: 135px 161px;
+    margin-bottom: 152px;
+  }
+
+  @include on-desktop {
+    padding-block: 144px 138px;
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    max-width: 280px;
+
+    @include on-tablet {
+      margin-bottom: 146px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 8px;
+      max-width: 260px;
+    }
+
+    @include on-desktop-big {
+      margin-bottom: 40px;
+      max-width: 280px;
+    }
+  }
+  &__title {
+    @include h1-font-styles;
+
+    @include on-tablet {
+      margin-bottom: 210px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 64px;
+    }
+  }
+  &__picture {
+    max-height: 290px;
+    object-fit: contain;
+
+    @include on-tablet {
+      z-index: -1;
+      max-width: 326px;
+      max-height: 328px;
+      position: absolute;
+      top: 144px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include on-desktop {
+      top: 0;
+      max-width: 544px;
+      max-height: 546px;
+    }
+
+    @include on-desktop-big {
+      max-width: 584px;
+      max-height: 586px;
+    }
+  }
+  &__button {
+    @include uppercase;
+
+    box-sizing: border-box;
+    text-decoration: none;
+    padding-block: 20px;
+    color: $accent-orange;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+    transition:
+      background-color 0.3s,
+      color 0.3s,
+      border 0.3s;
+
+    @include on-tablet {
+      max-width: 326px;
+      margin: 0 auto;
+    }
+
+    @include on-desktop {
+      margin: 0;
+    }
+
+    &::before {
+      content: url('../images/icons/Icon-cookie.svg');
+    }
+
+    &:hover {
+      background-color: $accent-orange;
+      color: $white;
+
+      &::before {
+        content: url('../images/icons/Icon-cookie-hover.svg');
+      }
+    }
+
+    &:focus {
+      background-color: $dark-orange;
+      color: $white;
+      border: 2px solid $dark-orange;
+
+      &::before {
+        content: url('../images/icons/Icon-cookie-hover.svg');
+      }
+    }
+
+    &[disabled] {
+      border: 2px solid $light-orange;
+      color: $light-orange;
+      pointer-events: none;
+
+      &::before {
+        content: url('../images/icons/Icon-cookie-disabled.svg');
+      }
+    }
+  }
+}
