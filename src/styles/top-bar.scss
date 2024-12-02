@@ -1,0 +1,59 @@
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 20px;
+
+  @include on-tablet {
+    margin: 28px 32px;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__conteiner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__theme {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border: 0;
+    background-color: var(--c-gray);
+    background-image: var(--theme-icon);
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @include hover(transform, scale(1.3));
+  }
+
+  &__logo {
+    height: 32px;
+    width: 136px;
+
+    @include hover(transform, scale(1.3));
+  }
+
+  &__menu {
+    background-image: url(../images/icons/icon-menu.svg);
+    height: 24px;
+    width: 24px;
+
+    &--close {
+      background-image: url(../images/icons/icon-close.svg);
+      height: 24px;
+      width: 24px;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+}
