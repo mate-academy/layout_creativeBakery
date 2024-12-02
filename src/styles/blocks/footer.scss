@@ -1,0 +1,161 @@
+.footer {
+  width: 100%;
+  background-color: $black-color;
+
+  &__wrapper {
+    padding-block: 56px;
+
+    @include page-grid;
+
+    row-gap: 40px;
+  }
+
+  &__top {
+    margin-bottom: 24px;
+
+    @include on-all-columns;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__logo {
+    width: 158px;
+    transition: transform $effectDuration;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__menu-subtitle {
+    margin-top: 40px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    color: $grey;
+    text-transform: uppercase;
+  }
+
+  &__nav-list {
+    gap: 16px;
+  }
+
+  &__nav-link {
+    color: $white;
+  }
+
+  &__contact {
+    @include on-all-columns;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__contact-title {
+    @extend %h2;
+
+    color: $white;
+
+    @include on-tablet {
+      font-size: 72px;
+    }
+  }
+
+  &__contact-subtitle {
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $grey;
+  }
+
+  &__contact-list {
+    gap: 16px;
+  }
+
+  &__contact-link {
+    color: $white;
+    text-decoration: none;
+    transition: color $effectDuration;
+
+    @include hover(color, $accent-orange);
+  }
+
+  &__social {
+    @include on-all-columns;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__social-list {
+    display: flex;
+    gap: 36px;
+  }
+
+  &__social-item {
+    @include hover(transform, scale(1.05));
+  }
+
+  &__social-link {
+    display: inline-block;
+
+    &:hover .social-icon,
+    &:focus .social-icon {
+      fill: $white;
+    }
+  }
+
+  &__copyright {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $grey;
+
+    @include on-all-columns;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+  }
+}
+
+.footer .footer__contact-title {
+  margin-bottom: 40px;
+}
+
+.contact {
+  &__wrapper {
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__phone {
+    margin-bottom: 40px;
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__mail {
+    @include on-desktop {
+      grid-column: 3 / -1;
+    }
+  }
+}
+
+.social {
+  &__icon {
+    @include hover(fill, $white);
+  }
+}
