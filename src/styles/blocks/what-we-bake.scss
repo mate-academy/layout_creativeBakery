@@ -1,0 +1,130 @@
+.what-we-bake {
+  @include inlinePadding;
+  @include pageGrid;
+
+  &__title {
+    grid-column: 1 / -1;
+
+    font-size: 48px;
+    line-height: 40.8px;
+
+    @include onTablet {
+      font-size: 56px;
+      line-height: 47.6px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      line-height: 61.2px;
+    }
+  }
+
+  &__description {
+    margin-block: 24px 56px;
+
+    grid-column: 1 / -1;
+
+    font-size: 16px;
+
+    @include onTablet {
+      margin-block: 24px 80px;
+    }
+  }
+
+  &__product {
+    grid-column: 1 / -1;
+
+    @for $number from 1 through 5 {
+      &-#{$number} {
+        margin-bottom: 56px;
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+      @for $number from 1 through 4 {
+        &-#{$number} {
+          margin-bottom: 80px;
+        }
+      }
+    }
+
+    @include onTablet {
+      @for $number from 1 through 6 {
+        @if ($number % 2 != 0) {
+          &-#{$number} {
+            grid-column: 1 / 5;
+          }
+        } @else {
+          &-#{$number} {
+            grid-column: 5 / -1;
+          }
+        }
+      }
+    }
+
+    @include onDesktop {
+      &-1,
+      &-5 {
+        grid-column: 1 / 4;
+      }
+
+      &-2,
+      &-6 {
+        grid-column: 4 / 7;
+      }
+
+      &-3 {
+        grid-column: 3 / 6;
+      }
+
+      &-4 {
+        grid-column: 6 / -1;
+      }
+    }
+  }
+
+  &__picture {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  &__type {
+    margin-block: 16px 8px;
+
+    color: #7f8096;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  &__info {
+    font-size: 16px;
+  }
+
+  &__order {
+    margin-top: 16px;
+    display: inline-block;
+    color: #f9512e;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      position: relative;
+      top: 5px;
+      width: 24px;
+      height: 24px;
+      background-image: url(../images/icons/icon-arrow.png);
+      background-size: cover;
+    }
+  }
+}

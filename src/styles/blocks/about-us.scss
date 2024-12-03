@@ -1,0 +1,148 @@
+.about-us {
+  position: relative;
+  margin-top: 72px;
+
+  @include onTablet {
+    margin-top: 152px;
+  }
+
+  @include onDesktop {
+    margin-top: 178px;
+  }
+
+  &__background {
+    position: absolute;
+    inset: 544px 0;
+    z-index: -1;
+    width: 100%;
+    padding-bottom: 93.75%;
+
+    & img {
+      width: 100%;
+      height: auto;
+    }
+
+    @include onTablet {
+      top: 51px;
+      width: calc(100% - 242px);
+      left: 121px;
+      right: 121px;
+    }
+
+    @include onDesktop {
+      width: calc(100% - 482px);
+      top: 0;
+      left: 325px;
+      right: 157px;
+    }
+
+    @include onWideDesktop {
+      width: calc(100% - 722px);
+      left: 361px;
+      right: 361px;
+    }
+  }
+
+  &__content {
+    @include inlinePadding;
+    @include pageGrid;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    font-size: 48px;
+    line-height: 40.8px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+
+      font-size: 56px;
+      line-height: 47.6px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+      line-height: 61.2px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+
+    margin-block: 32px 64px;
+
+    color: #1c1a26;
+    font-size: 16px;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+
+      margin-block: 0;
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+
+    @include onWideDesktop {
+      margin-bottom: 146px;
+    }
+  }
+
+  @each $item in $about-us-achievements {
+    &__#{$item} {
+      grid-column: 1 / -1;
+
+      @if ($item != 'clients') {
+        margin-bottom: 48px;
+      }
+
+      @include onTablet {
+        margin-bottom: 0;
+        @if ($item == 'foundation' or $item == 'companies') {
+          grid-column: 1 / 5;
+        }
+
+        @if ($item == 'stores' or $item == 'clients') {
+          grid-column: 5 / -1;
+        }
+
+        @if ($item == 'foundation' or $item == 'stores') {
+          margin-bottom: 80px;
+        }
+      }
+
+      @include onDesktop {
+        margin-bottom: 0;
+
+        @if ($item == 'foundation') {
+          grid-column: 1 / 3;
+        }
+
+        @if ($item == 'stores') {
+          grid-column: 3 / 5;
+        }
+
+        @if ($item == 'companies') {
+          grid-column: 5 / 7;
+        }
+
+        @if ($item == 'clients') {
+          grid-column: 7 / -1;
+        }
+      }
+    }
+  }
+
+  &__amount {
+    margin-bottom: 8px;
+    font-size: 96px;
+    line-height: 81.6px;
+  }
+
+  &__text {
+    font-size: 16px;
+  }
+}
