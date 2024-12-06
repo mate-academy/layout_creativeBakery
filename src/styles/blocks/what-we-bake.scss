@@ -1,6 +1,6 @@
 .what-we-bake {
-  @include inlinePadding;
-  @include pageGrid;
+  @include inline-padding;
+  @include page-grid;
 
   &__title {
     grid-column: 1 / -1;
@@ -8,12 +8,12 @@
     font-size: 48px;
     line-height: 40.8px;
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 56px;
       line-height: 47.6px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       font-size: 72px;
       line-height: 61.2px;
     }
@@ -26,7 +26,7 @@
 
     font-size: 16px;
 
-    @include onTablet {
+    @include on-tablet {
       margin-block: 24px 80px;
     }
   }
@@ -34,13 +34,15 @@
   &__product {
     grid-column: 1 / -1;
 
+    cursor: pointer;
+
     @for $number from 1 through 5 {
       &-#{$number} {
         margin-bottom: 56px;
       }
     }
 
-    @include onTablet {
+    @include on-tablet {
       margin-bottom: 0;
       @for $number from 1 through 4 {
         &-#{$number} {
@@ -49,7 +51,7 @@
       }
     }
 
-    @include onTablet {
+    @include on-tablet {
       @for $number from 1 through 6 {
         @if ($number % 2 != 0) {
           &-#{$number} {
@@ -63,7 +65,7 @@
       }
     }
 
-    @include onDesktop {
+    @include on-desktop {
       &-1,
       &-5 {
         grid-column: 1 / 4;
@@ -82,6 +84,10 @@
         grid-column: 6 / -1;
       }
     }
+
+    @include hover((
+      transform: scale(1.08)
+    ))
   }
 
   &__picture {
