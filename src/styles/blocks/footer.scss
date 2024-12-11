@@ -1,0 +1,231 @@
+.footer {
+  z-index: -1;
+  background-color: $main-text-color;
+
+  padding: 56px 16px;
+
+  @include on-tablet {
+    padding: 88px 44px;
+  }
+
+  @include on-desktop {
+    padding: 56px 44px;
+  }
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__navigation-wrapper {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__logo {
+    width: 168px;
+    height: 40px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 96px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 61px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 40px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / 9;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 9;
+    }
+
+    &-wrapper {
+      @include page-grid;
+    }
+
+    &-title {
+      margin: 0;
+      margin-bottom: 40px;
+      color: $second-text-color;
+    }
+
+    &-details {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      &--1 {
+        margin-bottom: 40px;
+        grid-column: 1 / -1;
+
+        @include on-tablet {
+          grid-column: 1 / -1;
+        }
+
+        @include on-desktop {
+          grid-column: 1 / 5;
+        }
+      }
+
+      &--2 {
+        grid-column: 1 / -1;
+
+        @include on-tablet {
+          grid-column: 1 / 2;
+        }
+
+        @include on-desktop {
+          grid-column: 5 / 9;
+        }
+      }
+
+      &--phone-number,
+      &--email {
+        font-family: $main-font-family;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: -0.01em;
+        text-align: left;
+        text-decoration: none;
+        color: $second-text-color;
+
+        &:hover {
+          color: $accenr-text-color;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-family: $main-font-family;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: uppercase;
+    color: #7f8096;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 64px;
+
+    &-subtitle {
+      margin-bottom: 16px;
+    }
+
+    &-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      &--link {
+        font-family: $main-font-family;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: -0.01em;
+        text-align: left;
+        text-decoration: none;
+        color: $second-text-color;
+
+        &:hover {
+          color: $accenr-text-color;
+        }
+      }
+    }
+  }
+
+  &__icons {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-size: cover;
+    filter: brightness(0) saturate(100%) invert(23%) sepia(78%) saturate(4762%)
+      hue-rotate(0deg) brightness(93%) contrast(86%);
+    transition: filter 0.03s ease;
+
+    &--facebook {
+      background-image: url(../icons/Icon-facebook.svg);
+    }
+
+    &--instagram {
+      background-image: url(../icons/Icon-instagram.svg);
+    }
+
+    &--twitter {
+      background-image: url(../icons/Icon-twitter.svg);
+    }
+
+    &:hover,
+    &:focus {
+      filter: brightness(0) saturate(100%) invert(100%);
+    }
+  }
+
+  &__copyright {
+    margin: 0;
+
+    font-family: $main-font-family;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: #7f8096;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / 9;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 9;
+    }
+  }
+}
