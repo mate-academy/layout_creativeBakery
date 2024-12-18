@@ -1,0 +1,125 @@
+@use 'utils' as *;
+
+.section-about {
+  position: relative;
+
+  @include responsive-grid;
+
+  &__background-image {
+    position: absolute;
+    transform-origin: 50% 50%;
+    object-fit: cover;
+    transform: translateX(-50%) rotate(180deg) scaleX(-1);
+    width: 100%;
+    z-index: -2;
+    left: 50%;
+    bottom: 15%;
+
+    @include responsive-settings-min(590px) {
+      bottom: 0;
+    }
+
+    @include responsive-settings-min($media-tablet) {
+      width: 530px;
+      bottom: 10%;
+    }
+
+    @include responsive-settings-min($media-laptop) {
+      width: 720px;
+      bottom: -80%;
+      left: 50%;
+    }
+  }
+
+  &__description-container {
+    margin-bottom: 64px;
+
+    @include grid-placement;
+    @include responsive-grid;
+
+    @include responsive-settings-min($media-tablet) {
+      margin-bottom: 72px;
+    }
+
+    @include responsive-settings-min($media-laptop) {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__page-title {
+    @include grid-placement;
+
+    @include responsive-settings-max($media-tablet) {
+      margin-bottom: 32px;
+    }
+
+    @include responsive-settings-min($media-tablet) {
+      @include grid-placement(1, 2, 1, 5);
+    }
+  }
+
+  &__paragraph {
+    @include base-font($f-paragraph-pc, $f-line-height-big);
+    @include grid-placement(2, 3);
+
+    @include responsive-settings-min($media-tablet) {
+      @include grid-placement(1, 2, 5, -1);
+    }
+  }
+
+  &__info {
+    @include grid-placement(2, 3);
+    @include responsive-grid;
+  }
+
+  &__category-container {
+    margin-bottom: 48px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @for $i from 1 through 4 {
+      &:nth-of-type(#{$i}) {
+        @include grid-placement($i, $i + 1);
+
+        @include responsive-settings-min($media-tablet) {
+          @if $i % 2 == 1 {
+            @include grid-placement(
+              calc(($i + 1) / 2),
+              calc(($i + 1) / 2) + 1,
+              1,
+              5
+            );
+          } @else {
+            @include grid-placement(calc($i / 2), calc($i / 2) + 1, 5, -1);
+          }
+        }
+
+        @include responsive-settings-min($media-laptop) {
+          @include grid-placement(1, 2, 2 span, 2 span);
+        }
+      }
+    }
+
+    @include responsive-settings-min($media-laptop) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__number {
+    @include base-font(
+      $f-main-text-pc,
+      $f-line-height-small,
+      $f-letter-spacing-regular
+    );
+
+    margin-bottom: 8px;
+  }
+
+  &__category {
+    @include base-font($f-paragraph-pc, $f-line-height-big);
+
+    color: $grey;
+  }
+}
