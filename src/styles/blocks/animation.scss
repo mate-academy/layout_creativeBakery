@@ -1,0 +1,35 @@
+@use 'utils' as *;
+
+.scroll-effect {
+  opacity: 0;
+  transform: translateX(0);
+  transition: all $duration-1 ease-in-out;
+
+  &.left {
+    transform: translateX(-99%);
+  }
+
+  &.right {
+    transform: translateX(99%);
+  }
+
+  &.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  &--1 {
+    transition-duration: $duration-1;
+    transition-delay: $delay-1;
+  }
+
+  &--2 {
+    transition-duration: $duration-2;
+    transition-delay: $delay-2;
+  }
+
+  &--3 {
+    transition-duration: $duration-3;
+    transition-delay: $delay-3;
+  }
+}

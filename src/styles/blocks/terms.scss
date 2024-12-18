@@ -1,0 +1,36 @@
+.terms {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include base-font($f-main-font);
+
+  padding: 40px;
+  height: 0;
+  transform: scale(0);
+  opacity: 0;
+  transition:
+    transform $duration,
+    opacity $duration;
+
+  &:target {
+    inset: 0;
+    height: 100vh;
+    z-index: 15;
+    transform: scale(1);
+    opacity: 1;
+    background-color: $white;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  &.is-closing {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
