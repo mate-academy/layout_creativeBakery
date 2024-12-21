@@ -1,0 +1,147 @@
+.hero {
+  margin-bottom: 64px;
+
+  @include on-tablet {
+    margin-bottom: 228px;
+  }
+
+  @include on-small-desktop {
+    margin-bottom: 152px;
+  }
+
+  &__content {
+    @include page-grid;
+
+    padding: 32px 0 40px;
+
+    @include on-tablet {
+      padding: 80px 0 0;
+    }
+
+    @include on-small-desktop {
+      padding-top: 135px;
+      padding-bottom: 160px;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      max-width: 280px;
+      text-align: left;
+      margin-bottom: 16px;
+    }
+
+    @include on-small-desktop {
+      margin-bottom: 8px;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__block {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      grid-column: 1 / -1;
+
+      margin-bottom: 80px;
+    }
+
+    @include on-small-desktop {
+      margin-bottom: 64px;
+      height: auto;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    text-align: center;
+
+    @include on-tablet {
+      position: absolute;
+    }
+
+    @include on-small-desktop {
+      position: static;
+      z-index: 1;
+    }
+  }
+
+  &__img {
+    display: block;
+
+    grid-column: 1 / -1;
+    width: 288px;
+    height: 290px;
+    margin: 0 auto;
+
+    @include on-tablet {
+      grid-column: 3 / span 4;
+
+      width: 326px;
+      height: 328px;
+    }
+
+    @include on-small-desktop {
+      position: absolute;
+
+      width: 544px;
+      height: 546px;
+    }
+  }
+
+  &__button {
+    color: $c-accent-orange;
+    grid-column: 1 / -1;
+    border: solid 2px $c-accent-orange;
+    border-radius: 32px;
+    padding-block: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-tablet {
+      grid-column: 3 / span 4;
+    }
+
+    @include on-small-desktop {
+      grid-column: 1 / 3;
+    }
+
+    &::before {
+      content: '';
+      background-image: url('../images/icons/cookie.svg');
+      display: block;
+      background-size: contain;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      color: $c-white;
+      background-color: $c-accent-orange;
+
+      &::before {
+        background-image: url('../images/icons/cookie-hover.svg');
+      }
+    }
+
+    &:active {
+      background-color: $c-dark-orange;
+      border-color: $c-dark-orange;
+    }
+  }
+}
