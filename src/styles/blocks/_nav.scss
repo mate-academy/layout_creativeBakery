@@ -1,0 +1,41 @@
+.nav {
+  &__link {
+    transition: all 0.3s;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 100%;
+      display: block;
+      position: absolute;
+      bottom: -8px;
+      height: 1px;
+      background-color: $c-accent-orange;
+
+      transition: all 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &:hover {
+      color: $c-accent-orange;
+    }
+
+    &-contact {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: $c-accent-orange;
+
+      &-icon {
+        display: block;
+      }
+
+      @include hover(transform, scale(1.1));
+    }
+  }
+}

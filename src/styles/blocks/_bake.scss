@@ -1,0 +1,88 @@
+.bake {
+  margin-bottom: 72px;
+
+  @include on-tablet {
+    margin-bottom: 152px;
+  }
+
+  @include on-small-desktop {
+    margin-bottom: 178px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    margin-bottom: 80px;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      gap: 80px;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include on-tablet {
+    grid-column: 4 span;
+  }
+
+  @include on-small-desktop {
+    grid-column: 3 span;
+  }
+
+  &:nth-child(3) {
+    @include on-small-desktop {
+      grid-column: 3 / 3 span;
+    }
+  }
+
+  &__img {
+    cursor: pointer;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    border-radius: 8px;
+
+    &:hover {
+      @include hover(transform, scale(1.02));
+
+      box-shadow: 3px 3px 10px $c-black;
+    }
+  }
+
+  &__name {
+    color: $c-grey;
+    margin-bottom: 8px;
+  }
+
+  &__order {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 84px;
+    color: $c-accent-orange;
+
+    @include hover(transform, scale(1.1));
+
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-image: url('../images/icons/arrow.svg');
+      display: block;
+    }
+  }
+}
