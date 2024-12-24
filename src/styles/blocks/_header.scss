@@ -1,0 +1,103 @@
+.header {
+  margin-bottom: 104px;
+
+  @include on-tablet {
+    margin-bottom: 128px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 313px;
+  }
+
+  @include on-design {
+    margin-bottom: 290px;
+  }
+
+  &__content {
+    @include on-tablet {
+      @include page-grid;
+
+      position: relative;
+    }
+  }
+
+  &__text {
+    margin-block: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: $c-black;
+
+    @include on-tablet {
+      grid-column: span 4;
+      text-align: left;
+      margin-block: 80px 0;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+      margin-block: 135px 8px;
+    }
+
+    @include on-design {
+      margin-block: 144px 40px;
+    }
+  }
+
+  &__main {
+    @include on-tablet {
+      grid-column: 1 / -1;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 80px;
+      display: flex;
+      position: relative;
+    }
+
+    @include on-desktop {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+
+    @include on-tablet {
+      position: absolute;
+    }
+
+    @include on-desktop {
+      z-index: 1;
+      position: static;
+      margin: 0;
+    }
+
+    @include on-design {
+      margin: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    min-height: 290px;
+
+    @include on-tablet {
+      width: 328px;
+      height: 326px;
+    }
+
+    @include on-desktop {
+      width: 544px;
+      height: 546px;
+      position: absolute;
+    }
+
+    @include on-design {
+      width: 584px;
+      height: 586px;
+    }
+  }
+}
