@@ -37,18 +37,30 @@
   }
 }
 
-@mixin responsive-font-size($size, $tablet-size, $laptop-size, $desktop-size) {
-  font-size: $size;
+@mixin responsive-property(
+  $property,
+  $mobile-value,
+  $tablet-value: null,
+  $laptop-value: null,
+  $desktop-value: null
+) {
+  #{$property}: $mobile-value;
 
-  @include on-tablet {
-    font-size: $tablet-size;
+  @if $tablet-value {
+    @include on-tablet {
+      #{$property}: $tablet-value;
+    }
   }
 
-  @include on-laptop {
-    font-size: $laptop-size;
+  @if $laptop-value {
+    @include on-laptop {
+      #{$property}: $laptop-value;
+    }
   }
 
-  @include on-desktop {
-    font-size: $desktop-size;
+  @if $desktop-value {
+    @include on-desktop {
+      #{$property}: $desktop-value;
+    }
   }
 }
