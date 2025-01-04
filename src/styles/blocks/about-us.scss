@@ -1,0 +1,45 @@
+.about-us {
+  background-image: url('../images/bg-crumbs.png');
+  background-repeat: no-repeat;
+  background-position: 50% 75%;
+  background-size: 100%;
+
+  @include on-tablet {
+    background-position: 50% 50%;
+    background-size: auto 80%;
+  }
+
+  @include on-laptop {
+    background-position: 55% 5%;
+    padding-bottom: 293px;
+  }
+
+  @include on-desktop {
+    background-position: 50% 0%;
+    background-size: auto auto;
+  }
+
+  &__content {
+    @include page-grid;
+    @include responsive-property(row-gap, 64px, 72px, 144px);
+  }
+
+  &__info {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+    row-gap: 32px;
+  }
+
+  &__title {
+    @include responsive-property(grid-column, $full-span-mobile, span 4);
+  }
+
+  &__text {
+    @include responsive-property(grid-column, $full-span-mobile, span 4);
+  }
+
+  &__achievements {
+    grid-column: 1 / -1;
+  }
+}

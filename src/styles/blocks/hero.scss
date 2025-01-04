@@ -5,17 +5,17 @@
 
   &__intro {
     @include responsive-property(margin-bottom, 32px, 16px, 8px, 40px);
+    @include responsive-property(
+      grid-column,
+      $full-span-mobile,
+      span 4,
+      span 2
+    );
 
-    grid-column: 1 / -1;
     text-align: center;
 
     @include on-tablet {
-      grid-column: 1 / 5;
       text-align: start;
-    }
-
-    @include on-laptop {
-      grid-column: span 2;
     }
   }
 
@@ -42,17 +42,13 @@
   }
 
   &__img {
-    max-width: 288px;
-    object-fit: cover;
+    @include responsive-property(max-width, 288px, 326px, 544px);
 
-    @include on-tablet {
-      max-width: 326px;
-    }
+    object-fit: cover;
 
     @include on-laptop {
       position: absolute;
       z-index: -1;
-      max-width: 544px;
     }
   }
 
