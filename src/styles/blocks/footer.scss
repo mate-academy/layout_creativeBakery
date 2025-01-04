@@ -1,0 +1,79 @@
+.footer {
+  @include responsive-property(padding-block, 56px, 88px);
+
+  background-color: $c-black;
+  color: $c-white;
+
+  &__content {
+    @include page-grid;
+
+    @include on-tablet {
+      row-gap: 48px;
+    }
+  }
+
+  &__menu {
+    @include responsive-property(grid-column, $full-span-mobile, span 4);
+    @include responsive-property(margin-bottom, 64px, 0);
+    @include responsive-property(row-gap, 40px, 88px, 55px);
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__lists-wrapper {
+    display: contents;
+
+    @include on-laptop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    &--contact-us {
+      grid-column: span 2;
+    }
+  }
+
+  &__subtitle {
+    color: $c-grey;
+  }
+
+  &__contact-us {
+    @include responsive-property(grid-column, $full-span-mobile, span 4);
+    @include responsive-property(margin-bottom, 40px, 0);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+
+    @include on-laptop {
+      display: block;
+    }
+  }
+
+  &__socials {
+    @include responsive-property(grid-column, $full-span-mobile, span 4);
+
+    margin-bottom: 40px;
+  }
+
+  &__copyrights {
+    @include responsive-property(grid-column, $full-span-mobile, span 4);
+
+    & p {
+      color: $c-grey;
+    }
+  }
+}
