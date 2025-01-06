@@ -23,16 +23,20 @@
     @include responsive-property(margin-bottom, 0, 80px, 64px);
     @extend %flex-center-column;
 
-    grid-column: 1 / -1;
     position: relative;
+
+    grid-column: 1 / -1;
   }
 
   &__title {
     @extend %flex-center-column;
 
+    z-index: 1;
+
     @include on-tablet {
-      display: block;
       position: absolute;
+      column-gap: 1rem;
+      flex-direction: row;
     }
 
     @include on-laptop {

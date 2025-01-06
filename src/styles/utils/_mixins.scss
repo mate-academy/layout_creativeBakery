@@ -64,3 +64,40 @@
     }
   }
 }
+
+@mixin hover-underline(
+  $hover-color,
+  $active-color,
+  $underline-height,
+  $duration: $transition-duration
+) {
+  position: relative;
+  transition: color $duration ease;
+
+  &::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: width $duration ease;
+    background-color: $hover-color;
+    width: 0;
+    height: $underline-height;
+    content: '';
+  }
+
+  &:hover {
+    color: $hover-color;
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &:active {
+    color: $active-color;
+
+    &::after {
+      background-color: $active-color;
+    }
+  }
+}

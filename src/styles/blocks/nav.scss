@@ -7,6 +7,7 @@
 
   &__link {
     @extend %flex-center;
+    @include hover-underline($c-accent-orange, $c-dark-orange, 2px);
 
     column-gap: 4px;
 
@@ -16,8 +17,26 @@
 
     &--phone {
       &::before {
+        width: 24px;
+        height: 24px;
         content: url('../images/icons/phone.svg');
       }
+
+      &:hover::before {
+        animation: tilt 0.5s ease;
+      }
+
+      &:active::before {
+        filter: brightness(80%);
+      }
+    }
+  }
+
+  &--menu {
+    .nav__list {
+      @extend %flex-center-column;
+
+      row-gap: 24px;
     }
   }
 }

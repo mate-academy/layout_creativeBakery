@@ -33,12 +33,16 @@
 
   &__list {
     display: flex;
-    flex-direction: column;
     row-gap: 16px;
+    flex-direction: column;
 
     &--contact-us {
       grid-column: span 2;
     }
+  }
+
+  &__link {
+    @include hover-underline($c-accent-orange, $c-dark-orange, 2px);
   }
 
   &__subtitle {
@@ -50,8 +54,8 @@
     @include responsive-property(margin-bottom, 40px, 0);
 
     display: flex;
-    flex-direction: column;
     row-gap: 40px;
+    flex-direction: column;
   }
 
   &__title {
@@ -59,7 +63,8 @@
     flex-direction: column;
 
     @include on-laptop {
-      display: block;
+      column-gap: 1rem;
+      flex-direction: row;
     }
   }
 

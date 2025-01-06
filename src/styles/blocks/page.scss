@@ -5,10 +5,28 @@
     @include responsive-property(margin-bottom, 32px, 80px, 135px, 144px);
   }
 
-  // &__menu {
-  // }
-  // &__main {
-  // }
-  // &__footer {
-  // }
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all $transition-duration ease;
+    pointer-events: none;
+
+    &:target {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__main {
+    @include responsive-property(margin-bottom, 72px, 152px, 56px);
+  }
 }

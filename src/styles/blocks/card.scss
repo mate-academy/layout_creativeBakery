@@ -8,8 +8,8 @@
   @include responsive-property(height, 492px, 560px, 648px, 696px);
 
   display: flex;
-  flex-direction: column;
   row-gap: 16px;
+  flex-direction: column;
 
   @include on-laptop {
     &:nth-child(4n + 1) {
@@ -33,17 +33,22 @@
   }
 
   &__img {
-    height: 100%;
+    transition: transform $transition-duration ease;
+    border-radius: 8px;
     width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
-    border-radius: 8px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__info {
     display: flex;
-    flex-direction: column;
     row-gap: 8px;
+    flex-direction: column;
   }
 
   &__title {
@@ -52,14 +57,36 @@
 
   &__order-link {
     display: flex;
-    align-items: center;
     column-gap: 4px;
+    align-items: center;
+    transition:
+      transform 0.6s ease,
+      color $transition-duration ease;
     color: $c-accent-orange;
 
     &::before {
-      content: url('../images/icons/arrow-right.svg');
-      height: 24px;
+      transition:
+        transform 0.6s ease,
+        filter $transition-duration ease;
       width: 24px;
+      height: 24px;
+      content: url('../images/icons/arrow-right.svg');
+    }
+
+    &:hover {
+      transform: translateX(-28px);
+      &::before {
+        transform: translateX(82px);
+        animation: pulse-opacity 0.6s;
+      }
+    }
+
+    &:active {
+      color: $c-dark-orange;
+
+      &::before {
+        filter: brightness(0.8);
+      }
     }
   }
 }
