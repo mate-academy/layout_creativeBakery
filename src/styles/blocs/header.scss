@@ -1,0 +1,715 @@
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // background: map-get($colors, background) ;
+  font-family: $primary-font-family;
+}
+
+
+// _header.scss
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: map-get($colors, background);
+  z-index: 100;
+
+  &__container {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 88px;
+  }
+
+  &__logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: map-get($colors, text);
+  }
+
+  &__toggle {
+    display: none;
+  }
+
+  &__burger {
+    display: none;
+    cursor: pointer;
+
+    @include breakpoint(tablet) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+      // position: relative;
+
+      span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: map-get($colors, text);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+    }
+  }
+
+  &__toggle:checked + .header__burger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  &__toggle:checked + .header__burger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &__toggle:checked + .header__burger span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+// _menu.scss
+.menu {
+  @include breakpoint(tablet) {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: map-get($colors, background);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .header__toggle:checked ~ & {
+      transform: translateX(0);
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+
+    @include breakpoint(tablet) {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: map-get($colors, text);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+
+    &--contact {
+      color: map-get($colors, primary);
+    }
+  }
+
+  &__icon--phone {
+    margin-right: 4px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+//-----hero----//
+
+.hero {
+  padding: 88px 0 0;
+
+
+  &__container {
+    @include container;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    height: 100vh;
+
+
+    @include breakpoint(tablet) {
+      padding-top: 60px;
+      height: auto;
+    }
+  }
+}
+
+.hero__subtitle-text {
+  width: 300px;
+  position: absolute;
+  top: 170px;
+  left: 0px;
+  font-size: map-get($size, primary);
+  font-weight: 400;
+
+  @include breakpoint(tablet) {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: auto;
+    margin-bottom: 30px;
+    padding: 0 20px;
+  }
+}
+
+.hero__image-wrapper {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.hero__image {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero__overlay-text {
+  font-size: 136px;
+  font-weight: 400;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  text-align: center;
+  overflow: hidden;
+
+  @include breakpoint(tablet) {
+    position: static;
+    font-size: 80px;
+    transform: none;
+    margin-bottom: 20px;
+    white-space: normal;
+    width: 100%;
+    padding: 0 20px;
+    overflow: hidden;
+  }
+
+  @include breakpoint(mobile) {
+    order: 1;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 20px;
+    font-size: 64px;
+  }
+}
+
+.hero__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 63px;
+  border: 1px solid map-get($colors, primary);
+  border-radius: 24px;
+  color: map-get($colors, primary);
+  text-decoration: none;
+  gap: 8px;
+  position: absolute;
+  bottom: 170px;
+  left: 0px;
+  font-size: map-get($size, primary);
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #F9512E;
+    color: white;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: #B2341A;
+    color: white;
+  }
+
+  &:disabled {
+    background-color: none;
+    border: 1px solid #FBA28F;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  @include breakpoint(tablet) {
+    position: relative;
+    bottom: auto;
+    width: 100%;
+  }
+}
+
+//-----products----//
+
+.products {
+  padding: 80px 0;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    font-size: 72px;
+    font-weight: 400;
+    margin-bottom: 24px;
+
+    @include breakpoint(tablet) {
+      font-size: 56px;
+      text-align: center;
+    }
+
+    @include breakpoint(mobile) {
+      font-size: 32px;
+    }
+  }
+
+  &__subtitle {
+    color: rgba(map-get($colors, text), 0.7);
+    margin-bottom: 80px;
+    font-size: map-get($size, primary);
+    font-weight: 400;
+
+    @include breakpoint(tablet) {
+      text-align: center;
+    }
+  }
+
+  &__grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include breakpoint(tablet) {
+      gap: 20px;
+    }
+    @include breakpoint(mobile) {
+      flex-direction: column;
+    }
+  }
+}
+
+.products__grid > .own,
+.products__grid > .three {
+  display: flex;
+  width: 70%;
+  align-self: flex-start;
+  gap: 24px;
+
+  @include breakpoint(tablet) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  @include breakpoint(mobile) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.products__grid >.two {
+  display: flex;
+  width: 70%;
+  align-self: flex-end;
+  gap: 24px;
+
+  @include breakpoint(tablet) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  @include breakpoint(mobile) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+  }
+}
+
+.product-card {
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__category {
+    font-size: map-get($size, primary);
+    text-transform: uppercase;
+    color: rgba(map-get($colors, text), 0.7);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  &__description {
+    font-size: map-get($size, primary);
+    line-height: 1.5;
+    color: map-get($colors, text);
+    margin-bottom: 16px;
+  }
+
+  &__order {
+    color: map-get($colors, primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.3s ease;
+    font-size: map-get($size, primary);
+
+    &:hover {
+      opacity: 0.8;
+      transform: translate(5px);
+    }
+  }
+
+  @include breakpoint(tablet) {
+    width: 100%;
+
+    &:nth-child(odd),
+    &:nth-child(even) {
+      margin: 0 auto;
+
+      .product-card__image {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+// _about.scss
+.about {
+  padding: 80px 0;
+  background: map-get($colors, background);
+  position: relative;
+  min-height: auto;
+
+  &__container {
+    @include container;
+    position: relative;
+    z-index: 2;
+
+    @include breakpoint(mobile) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  &__info {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+
+    @include breakpoint(tablet) {
+      // display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+    @include breakpoint(mobile) {
+      // display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+
+  }
+
+  &__title {
+    font-size: 72px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    max-width: 524px;
+    flex: 1;
+    font-family: $primary-font-family;
+
+    @include breakpoint(tablet) {
+      font-size: 56px;
+      line-height: 47.6px;
+    }
+
+    @include breakpoint(mobile) {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    max-width: 524px;
+    flex: 1;
+    font-size: 16px;
+
+    @include breakpoint(mobile) {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__stats {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 60px;
+
+    @include breakpoint(tablet) {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      width: 100%;
+    }
+
+    @include breakpoint(mobile) {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      width: 100%;
+    }
+  }
+
+  &__stat {
+    text-align: center;
+    flex: 1;
+
+    @include breakpoint(mobile) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__number {
+    font-size: 96px;
+    font-weight: 400;
+    margin-bottom: 10px;
+
+    @include breakpoint(mobile) {
+      font-size: 72px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__label {
+    color: map-get($colors, light);
+    font-size: 16px;
+
+    @include breakpoint(mobile) {
+      font-size: 14px;
+    }
+  }
+}
+
+.about__image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.about__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+// _footer.scss
+.footer {
+  background: map-get($colors, dark);
+  // color: map-get($colors, background);
+  padding: 88px 0;
+
+  &__container {
+    @include container;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+
+    @include breakpoint(tablet) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include breakpoint(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__logo {
+    // color: map-get($colors, background);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 61px;
+    display: block;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 96px;
+    }
+   }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 48px;
+
+    // @include breakpoint(tablet) {
+    //   margin-bottom: 104px;
+    // }
+    @include breakpoint(mobile) {
+      margin-bottom: 64px;
+    }
+
+  }
+
+  &__links-text {
+    color: map-get($colors, light);
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    padding-bottom: 16px;
+    color: map-get($colors, background);
+    text-decoration: none;
+
+    &:hover {
+      color: map-get($colors, primary);
+    }
+  }
+
+  &__contact {
+    &-title {
+      font-size: 72px;
+      margin-bottom: 40px;
+      color: map-get($colors, background);
+
+      @include breakpoint(tablet) {
+        font-size: 56px;
+        font-weight: 400;
+      }
+    }
+
+    &-number {
+      margin-bottom: 16px;
+      font-weight: 400;
+      color: map-get($colors, background);
+
+      @include breakpoint(tablet) {
+        // margin-bottom: 40px;
+      }
+    }
+
+    &-email {
+      color: map-get($colors, background);
+      font-size: map-get($size, primary);
+    }
+
+    &-label {
+      margin-bottom: 16px;
+      font-size: map-get($size, primary);
+      color: map-get($colors, light);
+    }
+
+    &-info {
+      max-width: 100%;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  &__social-icon {
+    margin-right: 32px;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.6;
+      transform: translate(6px);
+    }
+  }
+
+  &__copyright {
+    color: map-get($colors, light);
+    font-size: map-get($size, primary);
+    font-weight: 400;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer__contact-info--phone {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__contact-details {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-bottom: 88px;
+
+  @include breakpoint(tablet) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+}
+
+.footer__bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include breakpoint(tablet) {
+    grid-template-columns: 1fr;
+
+  }
+  @include breakpoint(mobile) {
+    grid-template-columns: 1fr;
+
+  }
+}
+
+
+

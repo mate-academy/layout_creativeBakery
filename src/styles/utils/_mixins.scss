@@ -1,6 +1,26 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+// @mixin hover($_property, $_toValue) {
+//   transition: #{$_property} 0.3s;
+//   &:hover {
+//     #{$_property}: $_toValue;
+//   }
+// }
+
+@mixin breakpoint($point) {
+  @media (min-width: map-get($breakpoints, $point)) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+
+  @include breakpoint(tablet) {
+    padding: 0 40px;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 0 20px;
   }
 }
