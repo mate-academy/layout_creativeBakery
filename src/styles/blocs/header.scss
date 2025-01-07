@@ -292,70 +292,89 @@
   }
 
   &__grid {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
+
+    // width: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 60px;
+
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 
     @include breakpoint(tablet) {
-      gap: 20px;
+      grid-template-columns: 1fr 1fr;
     }
     @include breakpoint(mobile) {
-      flex-direction: column;
+      grid-template-columns: 1fr;
     }
   }
 }
 
-.products__grid > .own,
-.products__grid > .three {
-  display: flex;
-  width: 70%;
-  align-self: flex-start;
-  gap: 24px;
+// .products__grid > .own,
+// .products__grid > .three {
+//   // display: flex;
+//   width: 70%;
+//   justify-self: start;
+//   gap: 24px;
 
-  @include breakpoint(tablet) {
-    width: 100%;
+//   @include breakpoint(tablet) {
+//     width: 100%;
 
-  }
-  @include breakpoint(mobile) {
-    width: 100%;
-    flex-direction: column;
+//   }
+//   @include breakpoint(mobile) {
+//     width: 100%;
+//     flex-direction: column;
 
-  }
-}
+//   }
+// }
 
-.products__grid >.two {
-  display: flex;
-  width: 70%;
-  align-self: flex-end;
-  gap: 24px;
+// .products__grid {
+//   // display: flex;
+//   width: 70%;
+//   justify-self: end;
+//   gap: 24px;
 
-  @include breakpoint(tablet) {
-    width: 100%;
-    // flex-direction: column;
-    align-self: center;
+//   @include breakpoint(tablet) {
+//     width: 100%;
+//     // flex-direction: column;
+//     align-self: center;
 
 
-  }
-  @include breakpoint(mobile) {
-    width: 100%;
-    flex-direction: column;
-  }
-}
+//   }
+//   @include breakpoint(mobile) {
+//     width: 100%;
+//     flex-direction: column;
+//   }
+// }
 
 .product-card {
-  width: calc(50% - 10px);
-  max-width: 300px;
+  // width: calc(50% - 10px);
+  // max-width: 300px;
 
-  @include breakpoint(mobile) {
-    width: calc(50% - 10px);
-    max-width: 300px;
+  // @include breakpoint(mobile) {
+  //   width: calc(50% - 10px);
+  //   max-width: 300px;
+
+  // }
+  // @include breakpoint(tablet) {
+  //   width: 50%;
+  //   flex-direction: column;
+  // }
+
+  max-width: 560px;
+
+  &:nth-child(1),
+  &:nth-child(2) {
+
+    justify-self: start;
 
   }
-  @include breakpoint(tablet) {
-    width: 50%;
-    flex-direction: column;
 
+  &:nth-child(3),
+  &:nth-child(4) {
+    justify-self: end;
 
   }
 
@@ -416,6 +435,8 @@
     }
   }
 }
+
+
 
 
 // _about.scss

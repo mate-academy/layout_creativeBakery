@@ -24,3 +24,18 @@
     padding: 0 20px;
   }
 }
+
+@mixin pageGrid($_columnGap) {
+  --gridColumns: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--gridColumns), minmax(0, 178px));
+  column-gap: $_columnGap;
+
+  justify-content: center;
+
+  @include onTablet() {
+    --gridColumns: 8;
+
+    margin: 0 auto;
+  }
+}
