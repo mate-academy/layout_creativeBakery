@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: $primary-font-family;
   scroll-behavior: smooth;
-
 }
 
 // _header.scss
@@ -168,8 +167,8 @@
 
 .hero__image-wrapper {
   position: relative;
-  width: 80%;
-  max-width: 600px;
+  width: 100%;
+  // max-width: 600px;
   margin-bottom: 20px;
 }
 
@@ -186,9 +185,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  white-space: nowrap;
   text-align: center;
-  // overflow: hidden;
 
   @include breakpoint(tablet) {
     position: static;
@@ -248,127 +245,62 @@
   }
 }
 
-//-----products----//
+// //-----products----//
 
 .products {
-  padding: 80px 0;
   background: map-get($colors, main);
-
   &__container {
     @include container;
   }
 
-  &__title {
-    font-size: 72px;
-    font-weight: 400;
-    margin-bottom: 24px;
-
-    @include breakpoint(tablet) {
-      font-size: 56px;
-      // text-align: center;
-    }
-
-    @include breakpoint(mobile) {
-      font-size: 32px;
-    }
-  }
-
-  &__subtitle {
-    color: rgba(map-get($colors, text), 0.7);
-    margin-bottom: 80px;
-    font-size: map-get($size, primary);
-    font-weight: 400;
-
-    @include breakpoint(tablet) {
-      text-align: center;
-    }
-  }
-
   &__grid {
-
-    // width: 100%;
-    // display: flex;
-    // flex-direction: column;
-    // gap: 60px;
-
-
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 60px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__grid-row {
+    display: flex;
+    gap: 24px;
+    width: 70%;
+
+    &:nth-child(even) {
+      margin-left: auto;
+    }
+
+    &:nth-child(odd) {
+      margin-right: auto;
+    }
 
     @include breakpoint(tablet) {
-      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      justify-content: center;
+
+      &:nth-child(even),
+      &:nth-child(odd) {
+        margin: 0;
+      }
     }
+
     @include breakpoint(mobile) {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+      align-items: center;
     }
   }
 }
 
-// .products__grid > .own,
-// .products__grid > .three {
-//   // display: flex;
-//   width: 70%;
-//   justify-self: start;
-//   gap: 24px;
-
-//   @include breakpoint(tablet) {
-//     width: 100%;
-
-//   }
-//   @include breakpoint(mobile) {
-//     width: 100%;
-//     flex-direction: column;
-
-//   }
-// }
-
-// .products__grid {
-//   // display: flex;
-//   width: 70%;
-//   justify-self: end;
-//   gap: 24px;
-
-//   @include breakpoint(tablet) {
-//     width: 100%;
-//     // flex-direction: column;
-//     align-self: center;
-
-
-//   }
-//   @include breakpoint(mobile) {
-//     width: 100%;
-//     flex-direction: column;
-//   }
-// }
-
 .product-card {
-  // width: calc(50% - 10px);
-  // max-width: 300px;
+  flex: 1;
+  max-width: calc(50% - 12px);
 
-  // @include breakpoint(mobile) {
-  //   width: calc(50% - 10px);
-  //   max-width: 300px;
-
-  // }
-  // @include breakpoint(tablet) {
-  //   width: 50%;
-  //   flex-direction: column;
-  // }
-
-  max-width: 560px;
-
-  &:nth-child(1),
-  &:nth-child(2) {
-
-    justify-self: start;
-
+  @include breakpoint(tablet) {
+    max-width: calc(50% - 12px);
   }
 
-  &:nth-child(3),
-  &:nth-child(4) {
-    justify-self: end;
-
+  @include breakpoint(mobile) {
+    max-width: 100%;
   }
 
   &__image {
@@ -384,53 +316,50 @@
   }
 
   &__category {
-    font-size: map-get($size, primary);
-    text-transform: uppercase;
-    color: rgba(map-get($colors, text), 0.7);
+    @include uppercase-text-styles;
     margin-bottom: 8px;
-    font-weight: 500;
+    color: $c-gray;
+    color: #7F8096;
   }
 
   &__description {
     font-size: map-get($size, primary);
-    line-height: 1.5;
-    color: map-get($colors, text);
+    font-weight: 400;
+    color: map-get($colors, dark);
+    margin-bottom: 16px;
+    line-height: 24px;
     margin-bottom: 16px;
   }
 
   &__order {
-    color: map-get($colors, primary);
-    text-decoration: none;
-    text-transform: uppercase;
-    display: inline-flex;
+    @include uppercase-text-styles;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
-    gap: 8px;
-    transition: opacity 0.3s ease;
-    font-size: map-get($size, primary);
+    gap: 4px;
+    color: map-get($colors, primary);
+
+    width: fit-content;
+    padding-block: 4px;
+
+    &::before {
+      content: "";
+      display: block;
+      align-items: center;
+      height: 24px;
+      width: 24px;
+      background-image: url("../images/icons/arrow.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
 
     &:hover {
+      transform: translate(2px, 2px);
       opacity: 0.8;
-      transform: translate(5px);
-    }
-  }
-
-  @include breakpoint(tablet) {
-    width: 100%;
-
-    &:nth-child(odd),
-    &:nth-child(even) {
-      margin: 0 auto;
-
-      .product-card__image {
-        width: 100%;
-        margin: 0;
-      }
+      border-radius: 5px;
     }
   }
 }
-
-
-
 
 // _about.scss
 .about {
@@ -586,7 +515,6 @@
 // _footer.scss
 .footer {
   background: map-get($colors, dark);
-  // color: map-get($colors, background);
   padding: 88px 0;
 
   &__container {
@@ -605,7 +533,6 @@
   }
 
   &__logo {
-    // color: map-get($colors, background);
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
@@ -627,10 +554,6 @@
     flex-direction: column;
     gap: 10px;
     margin-bottom: 48px;
-
-    // @include breakpoint(tablet) {
-    //   margin-bottom: 104px;
-    // }
     @include breakpoint(mobile) {
       margin-bottom: 64px;
     }
@@ -681,7 +604,6 @@
       }
 
       @include breakpoint(tablet) {
-        // margin-bottom: 40px;
       }
     }
 
