@@ -2,17 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // background: map-get($colors, background) ;
   font-family: $primary-font-family;
-}
+  scroll-behavior: smooth;
 
+}
 
 // _header.scss
 .header {
   position: fixed;
   width: 100%;
   top: 0;
-  background: map-get($colors, background);
+  background: map-get($colors, main);
   z-index: 100;
 
   &__container {
@@ -125,8 +125,7 @@
 
 .hero {
   padding: 88px 0 0;
-
-
+  background: map-get($colors, main);
   &__container {
     @include container;
     // overflow: hidden;
@@ -140,7 +139,7 @@
 
     @include breakpoint(tablet) {
       padding-top: 60px;
-
+      text-align: center;
       height: auto;
     }
   }
@@ -150,7 +149,7 @@
   width: 300px;
   position: absolute;
   top: 170px;
-  left: 0px;
+  left: 70px;
   font-size: map-get($size, primary);
   font-weight: 400;
 
@@ -160,6 +159,7 @@
     width: 100%;
     text-align: center;
     top: auto;
+    left: auto;
     margin-bottom: 30px;
     padding: 0 20px;
 
@@ -179,6 +179,7 @@
 }
 
 .hero__overlay-text {
+
   font-size: 136px;
   font-weight: 400;
   position: absolute;
@@ -196,9 +197,7 @@
     margin-bottom: 20px;
     white-space: normal;
     width: 100%;
-    padding: 0 20px;
     text-align: center;
-    align-items: center;
   }
 
   @include breakpoint(mobile) {
@@ -225,7 +224,7 @@
   gap: 8px;
   position: absolute;
   bottom: 170px;
-  left: 0px;
+  left: 70px;
   font-size: map-get($size, primary);
   font-weight: 500;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -251,6 +250,7 @@
   @include breakpoint(tablet) {
     position: relative;
     bottom: auto;
+    left: auto;
     width: 100%;
   }
 }
@@ -259,6 +259,7 @@
 
 .products {
   padding: 80px 0;
+  background: map-get($colors, main);
 
   &__container {
     @include container;
@@ -314,13 +315,12 @@
 
   @include breakpoint(tablet) {
     width: 100%;
-    flex-direction: column;
-    align-items: center;
+
   }
   @include breakpoint(mobile) {
     width: 100%;
     flex-direction: column;
-    align-items: center;
+
   }
 }
 
@@ -332,18 +332,32 @@
 
   @include breakpoint(tablet) {
     width: 100%;
-    flex-direction: column;
-    align-items: center;
+    // flex-direction: column;
+    align-self: center;
+
+
   }
   @include breakpoint(mobile) {
     width: 100%;
     flex-direction: column;
-    align-items: center;
-
   }
 }
 
 .product-card {
+  width: calc(50% - 10px);
+  max-width: 300px;
+
+  @include breakpoint(mobile) {
+    width: calc(50% - 10px);
+    max-width: 300px;
+
+  }
+  @include breakpoint(tablet) {
+    width: 50%;
+    flex-direction: column;
+
+
+  }
 
   &__image {
     width: 100%;
@@ -411,6 +425,10 @@
   position: relative;
   min-height: auto;
 
+  @include breakpoint(tablet) {
+    padding: 0;
+  }
+
   &__container {
     @include container;
     position: relative;
@@ -462,6 +480,7 @@
     @include breakpoint(mobile) {
       max-width: 100%;
       text-align: center;
+      font-size: 48px;
     }
   }
 
@@ -578,6 +597,11 @@
     font-weight: bold;
     margin-bottom: 61px;
     display: block;
+    transition:  0.3s ease;
+
+    &:hover {
+      @include hover(scale, 1.1);
+    }
 
     @include breakpoint(tablet) {
       margin-bottom: 96px;
@@ -625,12 +649,22 @@
         font-size: 56px;
         font-weight: 400;
       }
+
+      @include breakpoint(tablet) {
+        font-size: 48px;
+        font-weight: 400;
+      }
     }
 
     &-number {
       margin-bottom: 16px;
       font-weight: 400;
       color: map-get($colors, background);
+      cursor: pointer;
+
+      &:hover {
+          @include hover(text-shadow, 1px 0.5px 1px);
+      }
 
       @include breakpoint(tablet) {
         // margin-bottom: 40px;
@@ -640,12 +674,20 @@
     &-email {
       color: map-get($colors, background);
       font-size: map-get($size, primary);
+      word-wrap: break-word;
+      max-width: 100%;
+      cursor: pointer;
+
+      &:hover {
+        @include hover(text-shadow, 0.5px 0.5px 1px);
+    }
     }
 
     &-label {
       margin-bottom: 16px;
       font-size: map-get($size, primary);
       color: map-get($colors, light);
+
     }
 
     &-info {
@@ -697,6 +739,7 @@ a {
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
+    max-width: 100%;
   }
 
 }
@@ -711,6 +754,7 @@ a {
   }
   @include breakpoint(mobile) {
     grid-template-columns: 1fr;
+
 
   }
 }
