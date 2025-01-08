@@ -1,0 +1,139 @@
+.products {
+  background: map-get($colors, main);
+  &__container {
+    @include container;
+  }
+
+  @include breakpoint(tablet) {
+    margin-bottom: 72px;
+  }
+
+  &__title {
+    font-size: 56px;
+    font-weight: 400;
+    margin-bottom: 24px;
+
+    @include breakpoint(mobile) {
+      font-size: 48px;
+    }
+  }
+
+  &__subtitle {
+    font-size: map-get($size, primary);
+    font-weight: 400;
+    margin-bottom: 80px;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__grid-row {
+    display: flex;
+    gap: 24px;
+    width: 70%;
+
+    &:nth-child(even) {
+      margin-left: auto;
+    }
+
+    &:nth-child(odd) {
+      margin-right: auto;
+    }
+
+    @include breakpoint(tablet) {
+      width: 100%;
+      justify-content: center;
+
+      &:nth-child(even),
+      &:nth-child(odd) {
+        margin: 0;
+      }
+    }
+
+    @include breakpoint(mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.product-card {
+  flex: 1;
+  max-width: calc(50% - 12px);
+
+  @include breakpoint(tablet) {
+    max-width: calc(50% - 12px);
+  }
+
+  @include breakpoint(mobile) {
+    max-width: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__category {
+    @include uppercase-text-styles;
+    margin-bottom: 8px;
+    color: $c-gray;
+    color: #7F8096;
+  }
+
+  &__description {
+    font-size: map-get($size, primary);
+    font-weight: 400;
+    color: map-get($colors, dark);
+    margin-bottom: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+
+  &__order {
+    @include uppercase-text-styles;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    color: map-get($colors, primary);
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+
+    width: fit-content;
+    padding-block: 4px;
+
+    &::before {
+      content: "";
+      display: block;
+      align-items: center;
+      height: 24px;
+      width: 24px;
+      background-image: url("../images/icons/arrow.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    &:hover {
+      transform: translate(2px, 2px);
+      color: map-get($colors, secondary);
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+      &::before {
+        filter: brightness(1);
+      }
+    }
+  }
+}
