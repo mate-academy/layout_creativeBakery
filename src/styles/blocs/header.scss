@@ -6,6 +6,10 @@
   scroll-behavior: smooth;
 }
 
+.main {
+  background: map-get($colors, main);
+}
+
 // _header.scss
 .header {
   position: fixed;
@@ -140,7 +144,14 @@
       padding-top: 60px;
       text-align: center;
       height: auto;
+      margin-bottom: 228px;
     }
+    @include breakpoint(mobile) {
+      padding: 0;
+      text-align: center;
+      height: auto;
+    }
+
   }
 }
 
@@ -188,7 +199,7 @@
 
   @include breakpoint(tablet) {
     position: static;
-    font-size: 80px;
+    font-size: 64px;
     transform: none;
     margin-bottom: 20px;
     white-space: normal;
@@ -251,10 +262,28 @@
     @include container;
   }
 
+  &__title {
+    font-size: 56px;
+    font-weight: 400;
+    // letter-spacing: 47.6px;
+    margin-bottom: 24px;
+
+    @include breakpoint(mobile) {
+      font-size: 48px;
+
+    }
+  }
+
+  &__subtitle {
+    font-size: map-get($size, primary);
+    font-weight: 400;
+    margin-bottom: 80px;
+  }
+
   &__grid {
     display: grid;
     gap: 60px;
-    padding: 20px;
+    // padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
   }
