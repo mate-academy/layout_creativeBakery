@@ -1,0 +1,73 @@
+.product {
+  @for $i from 1 through 6 {
+    &--#{$i} {
+      grid-column: 1 / -1;
+
+      @include on-tablet {
+        @if $i % 2 == 1 {
+          grid-column: 1 / 5;
+        }
+
+        @if $i % 2 == 0 {
+          grid-column: 5 / -1;
+        }
+      }
+
+      @include on-desktop {
+        @if $i % 2 == 1 {
+          grid-column: 1 / 4;
+        }
+
+        @if $i % 2 == 0 {
+          grid-column: 4 / 7;
+        }
+
+        @if $i == 3 {
+          grid-column: 3 / 6;
+        }
+
+        @if $i == 4 {
+          grid-column: 6 / -1;
+        }
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 16px;
+
+    @include hover(scale, 0.9);
+  }
+
+  &__category {
+    @extend %uppercase;
+
+    color: $grey;
+    margin: 0;
+    margin-bottom: 8px;
+
+    @include hover(color, $accent-orange);
+  }
+
+  &__description {
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    position: relative;
+    width: 84px;
+    height: 32px;
+    padding: 0;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
