@@ -15,6 +15,11 @@
     .header__toggle:checked ~ & {
       transform: translateX(0);
     }
+
+    .header__toggle:checked ~ & ~ .page__body {
+      overflow: hidden;
+    }
+
   }
 
   &__list {
@@ -36,6 +41,18 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
+
+    @include breakpoint(tablet) {
+      &:active {
+        & ~ .header__toggle {
+          &:checked {
+            & ~ .menu {
+              transform: translateX(-100%);
+            }
+          }
+        }
+      }
+    }
 
     &--contact {
       color: map-get($colors, primary);
