@@ -4,3 +4,48 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin breakpoint($point) {
+  @media (max-width: map-get($breakpoints, $point)) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+
+  @include breakpoint(tablet) {
+    padding: 0 30px;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 0 20px;
+  }
+}
+
+@mixin pageGrid($_columnGap) {
+  --gridColumns: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--gridColumns), minmax(0, 178px));
+  column-gap: $_columnGap;
+
+  justify-content: center;
+
+  @include onTablet() {
+    --gridColumns: 8;
+
+    margin: 0 auto;
+  }
+}
+
+@mixin uppercase-text-styles {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}

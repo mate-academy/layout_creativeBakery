@@ -1,0 +1,116 @@
+.hero {
+  padding: 88px 0 0;
+  background: map-get($colors, main);
+  &__container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    height: 100vh;
+
+    @include breakpoint(tablet) {
+      padding-top: 60px;
+      text-align: center;
+      height: auto;
+      margin-bottom: 228px;
+    }
+    @include breakpoint(mobile) {
+      padding: 0;
+      text-align: center;
+      height: auto;
+    }
+  }
+}
+
+.hero__subtitle-text {
+  width: 300px;
+  position: absolute;
+  top: 170px;
+  left: 70px;
+  font-size: map-get($size, primary);
+  font-weight: 400;
+
+  @include breakpoint(tablet) {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: auto;
+    left: auto;
+    margin-bottom: 30px;
+    padding: 0 20px;
+  }
+}
+
+.hero__image-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.hero__image {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero__overlay-text {
+  font-size: 136px;
+  font-weight: 400;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  @include breakpoint(tablet) {
+    position: static;
+    font-size: 64px;
+    transform: none;
+    margin-bottom: 20px;
+    white-space: normal;
+    width: 100%;
+    text-align: center;
+  }
+
+  @include breakpoint(mobile) {
+    order: 1;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 20px;
+    font-size: 64px;
+  }
+}
+
+.hero__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 63px;
+  border: 1px solid map-get($colors, primary);
+  border-radius: 24px;
+  color: map-get($colors, primary);
+  text-decoration: none;
+  gap: 8px;
+  position: absolute;
+  bottom: 170px;
+  left: 70px;
+  font-size: map-get($size, primary);
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #a65e50;
+    color: white;
+  }
+
+  @include breakpoint(tablet) {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+  }
+}

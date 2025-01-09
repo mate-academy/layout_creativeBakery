@@ -1,0 +1,77 @@
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary-font-family;
+  scroll-behavior: smooth;
+
+}
+
+.main {
+  background: map-get($colors, main);
+}
+
+// _header.scss
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: map-get($colors, main);
+  z-index: 100;
+
+  &__container {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 88px;
+  }
+
+  &__logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: map-get($colors, text);
+  }
+
+  &__toggle {
+    display: none;
+  }
+
+  &__burger {
+    display: none;
+    cursor: pointer;
+
+    @include breakpoint(tablet) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+
+      span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: map-get($colors, text);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+    }
+  }
+
+  &__toggle:checked + .header__burger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  &__toggle:checked + .header__burger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &__toggle:checked + .header__burger span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+
+
+

@@ -1,0 +1,67 @@
+.menu {
+  @include breakpoint(tablet) {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: map-get($colors, background);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .header__toggle:checked ~ & {
+      transform: translateX(0);
+    }
+
+    .header__toggle:checked ~ & ~ .page__body {
+      overflow: hidden;
+    }
+
+  }
+
+  &__list {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+
+    @include breakpoint(tablet) {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: map-get($colors, text);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+
+    @include breakpoint(tablet) {
+      &:active {
+        & ~ .header__toggle {
+          &:checked {
+            & ~ .menu {
+              transform: translateX(-100%);
+            }
+          }
+        }
+      }
+    }
+
+    &--contact {
+      color: map-get($colors, primary);
+    }
+  }
+
+  &__icon--phone {
+    margin-right: 4px;
+    width: 18px;
+    height: 18px;
+  }
+}
