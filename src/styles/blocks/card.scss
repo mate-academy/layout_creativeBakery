@@ -1,0 +1,83 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  &__img {
+    border-radius: 8px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  &__title {
+    @include uppercase-text-style;
+
+    color: $grey-color;
+  }
+  &__description {
+    min-height: 48px;
+    text-wrap: balance;
+
+    @include on-tablet {
+      height: 100%;
+    }
+  }
+  &__button {
+    text-decoration: none;
+    &-img {
+      @include sizing(24px, 24px);
+
+      transition: all $effect-duration;
+      background-image: url(/src/images/icons/icon-arrow.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &-content {
+      @include flexing(inline-flex, center, flex-start);
+
+      gap: 4px;
+      padding-block: 4px;
+      position: relative;
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        background-color: $accent-orange;
+        transition: transform $effect-duration;
+        transform: scale(0);
+      }
+
+      &:hover::after,
+      &:active::after {
+        transform: scale(1);
+        transform-origin: left;
+      }
+      &:active::after {
+        background-color: $dark-orange;
+      }
+    }
+
+    &:focus .card__button-img {
+      background-image: url(/src/images/icons/Icon-arrow--active.png);
+    }
+
+    &-text {
+      color: $accent-orange;
+
+      @include uppercase-text-style;
+      &:active,
+      &:focus {
+        color: $dark-orange;
+      }
+    }
+  }
+  &:hover {
+    @include zoom-in;
+  }
+}

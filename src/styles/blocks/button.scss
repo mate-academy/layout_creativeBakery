@@ -1,0 +1,54 @@
+.button {
+  box-sizing: border-box;
+  transition: all 3s;
+  &__img {
+    transition: all $effect-duration;
+
+    @include sizing(24px, 24px);
+
+    background-image: url(/src/images/icons/Icon-cookie.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &__main {
+    @include hover(transform, scale(1.05));
+    @include uppercase-text-style;
+
+    color: $accent-orange;
+    background-color: inherit;
+    border: 2px solid $accent-orange;
+    gap: $button-gap;
+    border-radius: 32px;
+    grid-column: 1 / -1;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all $effect-duration;
+
+    @include flexing(flex, center, center);
+    @include sizing(288px, 56px);
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+      width: 100%;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / 3;
+    }
+    &:hover {
+      color: $white-color;
+      background-color: $accent-orange;
+      border: none;
+    }
+    &:active,
+    &:focus {
+      color: $white-color;
+      background-color: $dark-orange;
+      border: none;
+    }
+  }
+  &:hover .button__img {
+    background-image: url(/src/images/icons/Icon-cookie--hover.png);
+  }
+}
