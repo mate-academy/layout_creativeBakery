@@ -1,26 +1,5 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.section__card');
-  const section = document.querySelector('.section__what-we-bake');
-
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('animate');
-          }, index * 300);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-
-  cards.forEach(card => observer.observe(card));
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   const menu = document.getElementById("menu");
   const openMenuButton = document.querySelector(".icon--menu");
@@ -43,5 +22,55 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.classList.remove("menu--open");
       body.classList.remove("no-scroll");
     });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.section__card');
+  const desktopMinWidth = 1280;
+
+  function isDesktop() {
+    return window.innerWidth >= desktopMinWidth;
+  }
+
+  function showCardsImmediately() {
+    cards.forEach((card) => {
+      card.classList.remove('animate');
+      card.style.opacity = '1';
+      card.style.transform = 'none';
+    });
+  }
+
+  function setupAnimation() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('animate');
+            }, index * 300);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    cards.forEach((card) => {
+      observer.observe(card);
+    });
+  }
+
+  if (isDesktop()) {
+    setupAnimation();
+  } else {
+    showCardsImmediately();
+  }
+
+  window.addEventListener('resize', () => {
+    if (isDesktop()) {
+      setupAnimation();
+    } else {
+      showCardsImmediately();
+    }
   });
 });
