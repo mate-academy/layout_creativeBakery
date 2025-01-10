@@ -1,0 +1,136 @@
+.nav {
+  &__list {
+    @include flexing(flex, center, space-between);
+
+    list-style: none;
+    gap: 64px;
+    padding-inline: 0;
+    margin-block: 0;
+
+    &--column {
+      @include flex-column;
+
+      gap: 32px;
+    }
+
+    &--column-footer {
+      gap: 16px;
+      align-items: start;
+      flex-direction: column;
+    }
+  }
+  &__item {
+    &--header {
+      @include hover(transform, scale(1.1));
+    }
+  }
+  &__img {
+    &--phone {
+      @include sizing(24px, 24px);
+
+      background-image: url(/src/images/icons/Icon-phone.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      // & .nav__link:active {
+      //   background-image: url(/src/images/icons/Icon-phone--active.png);
+      // }
+    }
+  }
+  &__link {
+    text-decoration: none;
+    position: relative;
+    color: $black-color;
+
+    &:hover {
+      color: $accent-orange;
+    }
+    &:active,
+    &:focus {
+      color: $dark-orange;
+    }
+    &:focus .nav__img--phone {
+      background-image: url(/src/images/icons/Icon-phone--active.png);
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: -4px;
+      height: 1px;
+      background-color: $accent-orange;
+      transition: transform $effect-duration;
+      transform: scale(0);
+    }
+
+    &:hover::after,
+    &:active::after {
+      transform: scale(1);
+      transform-origin: left;
+    }
+    &:active::after {
+      background-color: $dark-orange;
+    }
+
+    &--footer {
+      @include hover(transform, scale(1.1));
+
+      text-decoration: none;
+      color: $white-color;
+      transform-origin: 0 50%;
+      &:hover {
+        color: white;
+        transform-origin: 0 50%;
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        position: absolute;
+        bottom: -4px;
+        height: 1px;
+        background-color: white;
+        transition: transform $effect-duration;
+        transform: scale(0);
+      }
+      &:hover::after,
+      &:active::after {
+        transform: scale(1);
+        transform-origin: left;
+      }
+      &:active::after {
+        background-color: white;
+      }
+    }
+    &--icon {
+      @include flexing(flex, center, space-between);
+
+      color: $accent-orange;
+      text-decoration: none;
+      text-transform: uppercase;
+      flex-direction: row;
+      gap: 4px;
+    }
+  }
+  &__title {
+    @include uppercase-text-style;
+
+    color: $grey-color;
+  }
+}
+
+.nav__img--phone .nav__link:active {
+  background-image: url(/src/images/icons/Icon-phone--active.png);
+}
+
+// .nav__link--footer {
+//   @include hover(transform, scale(1.1));
+
+//   &:hover {
+//     transform-origin: 0 50%;
+//   }
+// }

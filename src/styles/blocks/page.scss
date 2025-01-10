@@ -1,0 +1,50 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  &__body {
+    @include body-text-style;
+
+    color: $black-color;
+    background-color: $light-pink;
+    font-family: Inter, serif;
+    font-style: normal;
+    font-weight: normal;
+
+    scroll-behavior: smooth;
+    margin: 0;
+    min-width: $mobile-min-width;
+    overflow-x: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 2;
+
+    pointer-events: none;
+
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translate(50%, -50%);
+
+    &:target {
+      opacity: 1;
+      transform: translate(0, 0);
+      pointer-events: all;
+    }
+  }
+}
+
+* {
+  transition: all $effect-duration;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}

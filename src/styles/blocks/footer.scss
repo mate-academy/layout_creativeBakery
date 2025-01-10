@@ -1,0 +1,150 @@
+.footer {
+  background-color: $black-color;
+  width: 100vw;
+  margin-inline: auto;
+
+  padding-block: 56px;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+  &__content {
+    @include content-padding-inline;
+    @include flex-column;
+
+    @include on-tablet {
+      @include page-grid;
+      @include page-grid-rows;
+    }
+  }
+
+  &__logo-link {
+    text-decoration: none;
+    transform-origin: 0 50%;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      grid-row: 1;
+      grid-column: 1 / 5;
+    }
+  }
+  &__logo-img {
+    @include sizing(168px, 40px);
+  }
+
+  &__nav {
+    @include flex-column;
+
+    margin-top: 40px;
+    grid-column: 1 / -1;
+    gap: 16px;
+    transform-origin: 0 50%;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-column: 1 / 5;
+    }
+  }
+  &__title {
+    @include h2-text-style;
+    @include flex-column;
+
+    margin-top: 64px;
+    color: $white-color;
+    text-wrap: balance;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-column: 5 / 10;
+      grid-row: 1;
+    }
+  }
+  &__uppercase-text {
+    @include uppercase-text-style;
+
+    color: $grey-color;
+  }
+  &__contact {
+    @include flex-column;
+
+    gap: 16px;
+
+    @include on-desctop {
+      width: 260px;
+    }
+
+    @include on-big-desctop {
+      width: 280px;
+    }
+  }
+  &__contacts {
+    @include flex-column;
+
+    grid-column: 1 / -1;
+    margin-top: 40px;
+    gap: 40px;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-column: 5 / 9;
+      grid-row: 2;
+    }
+
+    @include on-desctop {
+      flex-direction: row;
+      gap: 24px;
+    }
+  }
+  &__icons {
+    @include flexing(flex, center, flex-start);
+
+    width: auto;
+    grid-column: 1 / -1;
+    margin-top: 40px;
+    gap: 32px;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__registration {
+    margin-top: 40px;
+    grid-column: 1 / -1;
+    color: $grey-color;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-column: 5 / 9;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: $white-color;
+    position: relative;
+    width: max-content;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      position: absolute;
+      bottom: -4px;
+      height: 1px;
+      background-color: white;
+      transition: transform $effect-duration;
+      transform: scale(0);
+    }
+    &:hover::after,
+    &:active::after {
+      transform: scale(1);
+      transform-origin: left;
+    }
+    &:active::after {
+      background-color: white;
+    }
+  }
+}
