@@ -1,0 +1,96 @@
+.card {
+  margin-bottom: 56px;
+
+  @include on-tablet {
+    grid-column: span 4;
+    margin-bottom: 80px;
+  }
+
+  &--one {
+    @include on-desktop {
+      grid-column: span 3;
+    }
+  }
+
+  &--two {
+    @include on-desktop {
+      grid-column: span 3;
+    }
+  }
+
+  &--three {
+    @include on-desktop {
+      grid-column: 3/6;
+    }
+  }
+
+  &--four {
+    @include on-desktop {
+      grid-column: 6/-1;
+    }
+  }
+
+  &--five {
+    @include on-desktop {
+      grid-column: span 3;
+    }
+  }
+
+  &--six {
+    @include on-desktop {
+      grid-column: span 3;
+    }
+  }
+
+  &__img {
+    display: flex;
+    object-fit: cover;
+    height: 356px;
+    width: 288px;
+    margin-bottom: 16px;
+
+    @include on-tablet {
+      width: 100%;
+    }
+
+    @include on-desktop {
+      height: 512px;
+    }
+  }
+
+  &__title {
+    color: $grey-color;
+    margin-bottom: 8px;
+
+    @include secondary-text-style;
+  }
+
+  &__info {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    color: $orange-color;
+
+    @include secondary-text-style;
+
+    padding-left: 28px;
+    position: relative;
+
+    @include hover(transform, scale(1.2));
+
+    &::before {
+      content: '';
+      background-image: url(../images/icons/icon-arrow.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 0;
+      bottom: -3px;
+    }
+  }
+}

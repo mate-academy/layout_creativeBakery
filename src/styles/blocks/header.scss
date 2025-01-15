@@ -1,0 +1,59 @@
+.header {
+  padding-bottom: 40px;
+  background-color: $background-color;
+
+  @include on-tablet {
+    padding-bottom: 228px;
+  }
+
+  @include on-desktop {
+    padding-bottom: 161px;
+  }
+
+  &__info {
+    margin-bottom: 32px;
+    text-align: center;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-bottom: 146px;
+      text-align: justify;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+  }
+
+  &__bg-img {
+    background-image: url(../images/header/Cookie.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 290px;
+
+    @include on-tablet {
+      position: absolute;
+      width: 326px;
+      height: 328px;
+      right: 177px;
+      top: 64px;
+    }
+
+    @include on-desktop {
+      width: 544px;
+      height: 546px;
+      top: -135px;
+      right: 284px;
+    }
+  }
+
+  &__grid {
+    @include on-tablet {
+      @include page-grid;
+
+      position: relative;
+    }
+  }
+}
