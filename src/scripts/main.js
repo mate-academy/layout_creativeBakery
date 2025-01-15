@@ -11,3 +11,16 @@ open.addEventListener('click', () => {
 close.addEventListener('click', () => {
   body.classList.remove('no-scroll');
 })
+
+const productCards = document.querySelectorAll('.product-card');
+
+window.addEventListener('scroll', () => {
+const scrollPosition = window.scrollY + window.innerHeight;
+  productCards.forEach(card => {
+      const sectionPosition = card.offsetTop;
+
+      if (scrollPosition > sectionPosition) {
+          card.classList.add('product-card--show');
+      }
+  });
+});
