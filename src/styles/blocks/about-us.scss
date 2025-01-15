@@ -1,0 +1,49 @@
+.about-us {
+  position: relative;
+  z-index: 12;
+
+  &__info {
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-bottom: 72px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include on-tablet {
+      grid-column: 1/-1;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      gap: 24px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 80px;
+
+    flex: 1 1 calc(50% - 24px); /* Кожен елемент займатиме 50% ширини мінус відступ */
+    box-sizing: border-box; /* Врахування відступів у розмірах */
+
+    @include on-desktop {
+      flex: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  @include on-tablet {
+    @include page-grid;
+  }
+}
