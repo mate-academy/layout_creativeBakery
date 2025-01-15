@@ -1,0 +1,121 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__photo {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__description {
+    height: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include font-inter-medium;
+
+    color: $light-font-color;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    margin: 0;
+  }
+
+  &__text {
+    @include font-inter-regular;
+
+    color: $black-color;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin: 0;
+  }
+
+  &__order {
+    height: 32px;
+    display: flex;
+    align-items: center;
+
+    &-arrow {
+      background-image: url('../images/icons/icon-arrow.png');
+      height: 24px;
+      width: 24px;
+      background-size: cover;
+      transition: $transform-time;
+    }
+
+    &-link {
+      @include font-inter-medium;
+
+      color: $orange-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-align: left;
+      transition: $transform-time;
+    }
+
+    &:hover {
+      .product-card__order-arrow {
+        background-image: url('../images/icons/icon-arrow-black.png');
+        transform: scale(1.1);
+      }
+
+      .product-card__order-link {
+        color: $black-color;
+      }
+    }
+  }
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  &--01 {
+    @include on-desktop {
+      grid-column: 1/4;
+    }
+  }
+
+  &--02 {
+    @include on-desktop {
+      grid-column: 4/7;
+    }
+  }
+
+  &--03 {
+    @include on-desktop {
+      grid-column: 3/6;
+    }
+  }
+
+  &--04 {
+    @include on-desktop {
+      grid-column: 6/9;
+    }
+  }
+
+  &--05 {
+    @include on-desktop {
+      grid-column: 1/4;
+    }
+  }
+
+  &--06 {
+    @include on-desktop {
+      grid-column: 4/7;
+    }
+  }
+}
