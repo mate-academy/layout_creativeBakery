@@ -1,0 +1,177 @@
+.product {
+  &-h2 {
+    @media screen and (min-width: 1200px) {
+      margin: 134px 0 0;
+    }
+
+    @media screen and (max-width: 1200px) and (min-width: 1024px) {
+      margin: 108px 0 0;
+    }
+
+    @media screen and (max-width: 1024px) and (min-width: 640px) {
+      margin: 184px 0 0;
+    }
+
+    @media screen and (max-width: 640px) {
+      margin: 88px 0 0;
+    }
+  }
+
+  &-title {
+    font-size: 16px;
+
+    @media screen and (min-width: 1200px) {
+      margin-top: 24px;
+    }
+
+    @media screen and (max-width: 1200px) and (min-width: 1024px) {
+      margin-top: 24px;
+    }
+
+    @media screen and (max-width: 1024px) and (min-width: 640px) {
+      margin-top: 24px;
+    }
+
+    @media screen and (max-width: 640px) {
+      margin-top: 24px;
+    }
+  }
+
+  &-grid {
+    margin-top: 80px;
+    display: grid;
+    grid-template-areas:
+      'item-1 item-1 item-1 item-2 item-2 item-2 . .'
+      '. . item-3 item-3 item-3 item-4 item-4 item-4'
+      'item-5 item-5 item-5 item-6 item-6 item-6 . .';
+
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: repeat(8, 128px);
+      gap: 24px;
+      row-gap: 80px;
+    }
+
+    @media screen and (max-width: 1200px) and (min-width: 640px) {
+      grid-template-columns: repeat(8, minmax(0, 118px));
+      gap: 24px;
+      row-gap: 80px;
+    }
+
+    @media screen and (max-width: 1024px) and (min-width: 640px) {
+      grid-template-areas:
+        'item-1 item-1 item-1 item-1 item-2 item-2 item-2 item-2'
+        'item-3 item-3 item-3 item-3 item-4 item-4 item-4 item-4'
+        'item-5 item-5 item-5 item-5 item-6 item-6 item-6 item-6';
+    }
+
+    @media screen and (max-width: 640px) {
+      margin-top: 56px;
+
+      grid-template-columns: repeat(2, minmax(136, 296));
+      gap: 16px;
+      row-gap: 80px;
+
+      grid-template-areas:
+        'item-1 item-1'
+        'item-2 item-2'
+        'item-3 item-3'
+        'item-4 item-4'
+        'item-5 item-5'
+        'item-6 item-6';
+    }
+  }
+
+  &-item {
+    border-radius: 8px;
+    overflow: hidden;
+    grid-column: span 3;
+  }
+
+  h3 {
+    margin-block: 16px 8px;
+    text-transform: uppercase;
+    color: $heder-gray;
+
+    @media screen and (min-width: 1200px) {
+      margin-block: 16px 8px;
+    }
+
+    @media screen and (max-width: 1200px) and (min-width: 1024px) {
+      margin-block: 16px 8px;
+    }
+
+    @media screen and (max-width: 1024px) and (min-width: 640px) {
+      margin-block: 16px 8px;
+    }
+
+    @media screen and (max-width: 640px) {
+      margin-block: 16px 8px;
+    }
+  }
+
+  .order-button {
+    width: 80px;
+    height: 33px;
+    display: block;
+    color: $accent-orange;
+    text-transform: uppercase;
+    margin-block: 24px 3px;
+    position: relative;
+    margin-inline-start: 28px;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -3px;
+      left: -28px;
+      width: 24px;
+      height: 24px;
+      background: url(../images/icon/Icon-arrow.png);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -24px;
+      width: 0%;
+      height: 1px;
+      background-color: $accent-orange;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+    &:focus {
+      color: $focus-color-but;
+
+      &::after {
+        width: 100%;
+        color: $focus-color-but;
+      }
+    }
+  }
+
+  @include grid-area-assign(
+    (
+      'item-1': 'item-1',
+      'item-2': 'item-2',
+      'item-3': 'item-3',
+      'item-4': 'item-4',
+      'item-5': 'item-5',
+      'item-6': 'item-6',
+    )
+  );
+
+  padding-inline: 4px;
+
+  @media screen and (max-width: 1200px) {
+    padding-inline: 44px;
+  }
+
+  @media screen and (max-width: 640px) {
+    padding-inline: 16px;
+  }
+}

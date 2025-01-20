@@ -4,3 +4,34 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin grid-area-assign($items) {
+  @each $name, $area in $items {
+    .#{$name} {
+      grid-area: #{$area};
+    }
+  }
+}
+
+@mixin grid-template {
+  display: grid;
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(8, 128px);
+    gap: 24px;
+    row-gap: 80px;
+  }
+
+  @media screen and (max-width: 1200px) and (min-width: 640px) {
+    // background-color: red;
+    grid-template-columns: repeat(8, minmax(0, 118px));
+    gap: 24px;
+    row-gap: 80px;
+  }
+
+  @media screen and (max-width: 640px) {
+    grid-template-columns: repeat(2, minmax(136, 296));
+    gap: 16px;
+    row-gap: 80px;
+  }
+}

@@ -1,0 +1,196 @@
+// .about {
+//   &-header {
+//     grid-template-areas: 'item-1 item-1 item-1 item-1 item-2 item-2 item-2 item-2';
+
+//     @include grid-template;
+
+//     @include grid-area-assign(
+//       (
+//         'item-1': 'item-1',
+//         'item-2': 'item-2',
+//         'item-3': 'item-3',
+//         'item-4': 'item-4',
+//         'item-5': 'item-5',
+//         'item-6': 'item-6',
+//       )
+//     );
+
+//     @media screen and (max-width: 640px) {
+//       grid-template-areas:
+//         'item-1 item-1'
+//         'item-2 item-2'
+//         'item-3 item-3'
+//         'item-4 item-4';
+//     }
+//   }
+
+//   &-stats {
+//     &-value {
+//       font-size: 96px;
+//       line-height: 85%;
+//       margin-bottom: 8px;
+//     }
+//     &-label {
+//       color: $heder-gray;
+//     }
+
+//     margin: 144px 0 0;
+//     grid-template-areas: 'item-1 item-1 item-2 item-2 item-3 item-3 item-4 item-4';
+//     gap: 24px;
+
+//     @media screen and (max-width: 1024px) and (min-width: 640px) {
+//       row-gap: 80px;
+//       grid-template-areas:
+//         'item-1 item-1 item-1 item-1 item-2 item-2 item-2 item-2'
+//         'item-3 item-3 item-3 item-3 item-4 item-4 item-4 item-4';
+//     }
+
+//     @media screen and (max-width: 1024px) and (min-width: 640px) {
+//       margin: 72px 0 0;
+//     }
+
+//     @media screen and (max-width: 640px) {
+//       grid-template-areas:
+//         'item-1 item-1'
+//         'item-2 item-2'
+//         'item-3 item-3'
+//         'item-4 item-4';
+//     }
+
+//     @include grid-template;
+//     @include grid-area-assign(
+//       (
+//         'item-1': 'item-1',
+//         'item-2': 'item-2',
+//         'item-3': 'item-3',
+//         'item-4': 'item-4',
+//         'item-5': 'item-5',
+//         'item-6': 'item-6',
+//       )
+//     );
+//   }
+
+//   background: url('../images/crumbs.png') no-repeat;
+//   background-position: 55% 185px;
+//   height: 873px;
+//   padding: 178px 4px 0;
+
+//   @media screen and (max-width: 1200px) and (min-width: 1024px) {
+//     padding-inline: 44px;
+//     background-position: 72% 180px;
+//   }
+
+//   @media screen and (max-width: 1024px) and (min-width: 640px) {
+//     background: url('../images/crumbs_526x493.png') no-repeat;
+//     padding-inline: 44px;
+
+//     padding-top: 152px;
+//     background-position: center;
+//   }
+
+//   @media screen and (max-width: 640px) {
+//     padding-inline: 16px;
+//     padding-top: 72px;
+//     height: auto;
+//     background-size: 320px 300px;
+//     background-position: 10px 75%;
+//   }
+// }
+
+.about {
+  &-header {
+    @include grid-template;
+
+    grid-template-areas: 'item-1 item-1 item-1 item-1 item-2 item-2 item-2 item-2';
+
+    @include grid-area-assign(
+      (
+        'item-1': 'item-1',
+        'item-2': 'item-2',
+        'item-3': 'item-3',
+        'item-4': 'item-4',
+        'item-5': 'item-5',
+        'item-6': 'item-6',
+      )
+    );
+
+    @media screen and (max-width: 640px) {
+      grid-template-areas:
+        'item-1 item-1'
+        'item-2 item-2';
+    }
+  }
+
+  &-stats {
+    margin: 144px 0 0;
+    grid-template-areas: 'item-1 item-1 item-2 item-2 item-3 item-3 item-4 item-4';
+    gap: 24px;
+
+    &-value {
+      font-size: 96px;
+      line-height: 85%;
+      margin-bottom: 8px;
+    }
+
+    &-label {
+      color: $heder-gray;
+    }
+
+    @media screen and (max-width: 1024px) and (min-width: 640px) {
+      row-gap: 80px;
+      grid-template-areas:
+        'item-1 item-1 item-1 item-1 item-2 item-2 item-2 item-2'
+        'item-3 item-3 item-3 item-3 item-4 item-4 item-4 item-4';
+    }
+
+    @media screen and (max-width: 1024px) and (min-width: 640px) {
+      margin: 72px 0 0;
+    }
+
+    @media screen and (max-width: 640px) {
+      margin: 64px 0 0;
+      grid-template-areas:
+        'item-1 item-1'
+        'item-2 item-2'
+        'item-3 item-3'
+        'item-4 item-4';
+    }
+
+    @include grid-area-assign(
+      (
+        'item-1': 'item-1',
+        'item-2': 'item-2',
+        'item-3': 'item-3',
+        'item-4': 'item-4',
+        'item-5': 'item-5',
+        'item-6': 'item-6',
+      )
+    );
+    @include grid-template;
+  }
+
+  background: url('../images/crumbs.png') no-repeat;
+  background-position: 55% 185px;
+  height: 873px;
+  padding: 178px 4px 0;
+
+  @media screen and (max-width: 1200px) and (min-width: 1024px) {
+    padding-inline: 44px;
+    background-position: 72% 180px;
+  }
+
+  @media screen and (max-width: 1024px) and (min-width: 640px) {
+    background: url('../images/crumbs_526x493.png') no-repeat;
+    padding-inline: 44px;
+    padding-top: 152px;
+    background-position: center;
+  }
+
+  @media screen and (max-width: 640px) {
+    padding-inline: 16px;
+    padding-top: 72px;
+    height: auto;
+    background-size: 320px 300px;
+    background-position: 10px 75%;
+  }
+}
