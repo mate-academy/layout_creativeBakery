@@ -1,0 +1,96 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &--top-bar {
+      text-align: center;
+      gap: 24px;
+
+      @include on-desktop {
+        flex-direction: row;
+        gap: 64px;
+      }
+    }
+
+    &--side-bar {
+      gap: 24px;
+      text-align: center;
+    }
+
+    &--blog {
+      gap: 16px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main-text-color;
+    position: relative;
+
+    @extend %body-text;
+
+    &--menu {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: $main-text-color;
+
+        transform: scale(0);
+        transform-origin: left;
+        transition: transform $effectDuration;
+      }
+    }
+
+    &:hover {
+      color: $accent-color;
+
+      &::after {
+        transform: scale(1);
+      }
+    }
+
+    &--phone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $accent-color;
+      gap: 4px;
+
+      @extend %uppercase;
+
+      &::after {
+        content: none;
+      }
+
+      @include hover(transform, scale(1.2));
+
+      &::before {
+        content: '';
+        background-image: url('../images/icons/icon-phone.png');
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &--blog {
+      @extend %body-text;
+
+      color: #fff;
+    }
+  }
+
+  &__title {
+    @extend %uppercase;
+
+    margin-top: 0;
+    color: $grey;
+  }
+}
