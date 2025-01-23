@@ -1,7 +1,48 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import './reset';
+@import './blocks/header';
+@import './blocks/top-bar';
+@import './blocks/aside';
+@import './blocks/products';
+@import './blocks/card';
+@import './blocks/about-us';
+@import './blocks/stat';
+@import './blocks/footer';
+@import './blocks/contact-us';
 
 body {
-  background: $c-gray;
+  font-family: Inter, serif;
+  background: #ffeefc;
+  color: $text-color;
+}
+
+body:has(.menu:target) {
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 41px;
+  letter-spacing: -0.05em;
+  text-align: left;
+  text-transform: uppercase;
+
+  color: $c-accent-red;
+
+  @include on-tablet {
+    font-size: 56px;
+    line-height: 48px;
+  }
+
+  @include on-desktop {
+    font-size: 72px;
+    line-height: 61px;
+  }
 }

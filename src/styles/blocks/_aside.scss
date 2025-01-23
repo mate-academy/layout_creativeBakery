@@ -1,0 +1,39 @@
+.menu {
+  position: fixed;
+  inset: 0;
+  transition: all 0.3s;
+  transform: translateX(100%);
+
+  background-color: #ffeefc;
+  box-sizing: border-box;
+  height: 100vh;
+  z-index: 3;
+
+  @include on-desktop {
+    display: none;
+  }
+
+  &:target {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+  }
+
+  &__nav {
+    padding-top: 132px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+}
