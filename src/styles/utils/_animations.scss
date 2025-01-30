@@ -1,0 +1,76 @@
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse-opacity {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.element-animation {
+  opacity: 0;
+  transition: all $animation-duration-medium ease;
+  transition-delay: $animation-delay-small;
+
+  &--left {
+    transform: translateX(-50%);
+  }
+
+  &--right {
+    transform: translateX(50%);
+  }
+
+  &--down {
+    transform: translateY(50%);
+  }
+
+  &--duration-s {
+    transition-duration: $animation-duration-small;
+  }
+
+  &--duration-m {
+    transition-duration: $animation-duration-medium;
+  }
+
+  &--duration-l {
+    transition-duration: $animation-duration-large;
+  }
+
+  &--delay-s {
+    transition-delay: $animation-delay-small;
+  }
+
+  &--delay-m {
+    transition-delay: $animation-delay-medium;
+  }
+
+  &--delay-l {
+    transition-delay: $animation-delay-large;
+  }
+
+  &.element-show {
+    transform: translate(0);
+    opacity: 1;
+  }
+}

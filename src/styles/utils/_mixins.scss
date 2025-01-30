@@ -4,3 +4,100 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-laptop {
+  @media (min-width: $laptop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 16px;
+
+  @include on-tablet {
+    --columns: 8;
+
+    column-gap: 24px;
+  }
+}
+
+@mixin responsive-property(
+  $property,
+  $mobile-value,
+  $tablet-value: null,
+  $laptop-value: null,
+  $desktop-value: null
+) {
+  #{$property}: $mobile-value;
+
+  @if $tablet-value {
+    @include on-tablet {
+      #{$property}: $tablet-value;
+    }
+  }
+
+  @if $laptop-value {
+    @include on-laptop {
+      #{$property}: $laptop-value;
+    }
+  }
+
+  @if $desktop-value {
+    @include on-desktop {
+      #{$property}: $desktop-value;
+    }
+  }
+}
+
+@mixin hover-underline(
+  $hover-color,
+  $active-color,
+  $underline-height,
+  $duration: $transition-duration
+) {
+  position: relative;
+  transition: color $duration ease;
+
+  &::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: width $duration ease;
+    background-color: $hover-color;
+    width: 0;
+    height: $underline-height;
+    content: '';
+  }
+
+  &:hover {
+    color: $hover-color;
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &:active {
+    color: $active-color;
+
+    &::after {
+      background-color: $active-color;
+    }
+  }
+}

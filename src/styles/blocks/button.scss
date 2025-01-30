@@ -1,0 +1,41 @@
+.button {
+  @extend %flex-center;
+
+  column-gap: 6px;
+  transition: all $transition-duration ease;
+  border: 2px solid $c-accent-orange;
+  border-radius: 32px;
+  padding-block: 16px;
+
+  color: $c-accent-orange;
+
+  &::before {
+    transition: filter $transition-duration ease;
+    width: 24px;
+    height: 24px;
+    content: url('../images/icons/cookie.svg');
+  }
+
+  &:hover {
+    background-color: $c-accent-orange;
+    color: $c-white;
+
+    &::before {
+      filter: grayscale(1) brightness(2);
+    }
+  }
+
+  &:active {
+    border-color: $c-dark-orange;
+    background-color: $c-dark-orange;
+  }
+
+  &--disabled {
+    border-color: $c-light-orange;
+    color: $c-light-orange;
+
+    &::before {
+      filter: opacity(0.8);
+    }
+  }
+}

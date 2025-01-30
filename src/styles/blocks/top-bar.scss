@@ -1,0 +1,40 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+
+  @include on-laptop {
+    padding: 28px 32px;
+  }
+
+  &__link {
+    transition: color $transition-duration ease;
+
+    &:hover {
+      color: $c-accent-orange;
+    }
+
+    &:active {
+      color: $c-dark-orange;
+    }
+
+    &--hidden-laptop {
+      @include on-laptop {
+        display: none;
+      }
+    }
+  }
+
+  &__icon {
+    @extend %flex-center;
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-laptop {
+      display: block;
+    }
+  }
+}

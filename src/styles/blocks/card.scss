@@ -1,0 +1,92 @@
+.cards {
+  @include page-grid;
+  @include responsive-property(row-gap, 56px, 80px);
+}
+
+.card {
+  @include responsive-property(grid-column, $full-span-mobile, span 4);
+  @include responsive-property(height, 492px, 560px, 648px, 696px);
+
+  display: flex;
+  row-gap: 16px;
+  flex-direction: column;
+
+  @include on-laptop {
+    &:nth-child(4n + 1) {
+      grid-column: 1 / 4;
+    }
+    &:nth-child(4n + 2) {
+      grid-column: 4 / 7;
+    }
+
+    &:nth-child(4n + 3) {
+      grid-column: 3 / 6;
+    }
+    &:nth-child(4n + 4) {
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__img-link {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__img {
+    transition: transform $transition-duration ease;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__info {
+    display: flex;
+    row-gap: 8px;
+    flex-direction: column;
+  }
+
+  &__title {
+    color: $c-grey;
+  }
+
+  &__order-link {
+    display: flex;
+    column-gap: 4px;
+    align-items: center;
+    transition:
+      transform 0.6s ease,
+      color $transition-duration ease;
+    color: $c-accent-orange;
+
+    &::before {
+      transition:
+        transform 0.6s ease,
+        filter $transition-duration ease;
+      width: 24px;
+      height: 24px;
+      content: url('../images/icons/arrow-right.svg');
+    }
+
+    &:hover {
+      transform: translateX(-28px);
+      &::before {
+        transform: translateX(82px);
+        animation: pulse-opacity 0.6s;
+      }
+    }
+
+    &:active {
+      color: $c-dark-orange;
+
+      &::before {
+        filter: brightness(0.8);
+      }
+    }
+  }
+}

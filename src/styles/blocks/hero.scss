@@ -1,0 +1,70 @@
+.hero {
+  &__content {
+    @include page-grid;
+  }
+
+  &__intro {
+    @include responsive-property(margin-bottom, 32px, 16px, 8px, 40px);
+    @include responsive-property(
+      grid-column,
+      $full-span-mobile,
+      span 4,
+      span 2
+    );
+
+    text-align: center;
+
+    @include on-tablet {
+      text-align: start;
+    }
+  }
+
+  &__wrapper {
+    @include responsive-property(margin-bottom, 0, 80px, 64px);
+    @extend %flex-center-column;
+
+    position: relative;
+
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    @extend %flex-center-column;
+
+    z-index: 1;
+
+    @include on-tablet {
+      position: absolute;
+      column-gap: 1rem;
+      flex-direction: row;
+    }
+
+    @include on-laptop {
+      position: static;
+      white-space: nowrap;
+    }
+  }
+
+  &__img {
+    @include responsive-property(max-width, 288px, 326px, 544px);
+
+    object-fit: cover;
+
+    @include on-laptop {
+      position: absolute;
+      z-index: -1;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 3 / -3;
+    }
+
+    @include on-laptop {
+      grid-column: span 2;
+    }
+  }
+}

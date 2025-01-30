@@ -1,0 +1,84 @@
+.footer {
+  @include responsive-property(padding-block, 56px, 88px);
+
+  background-color: $c-black;
+  color: $c-white;
+
+  &__content {
+    @include page-grid;
+
+    @include on-tablet {
+      row-gap: 48px;
+    }
+  }
+
+  &__menu {
+    @include responsive-property(grid-column, $full-span-mobile, span 4);
+    @include responsive-property(margin-bottom, 64px, 0);
+    @include responsive-property(row-gap, 40px, 88px, 55px);
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__lists-wrapper {
+    display: contents;
+
+    @include on-laptop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    row-gap: 16px;
+    flex-direction: column;
+
+    &--contact-us {
+      grid-column: span 2;
+    }
+  }
+
+  &__link {
+    @include hover-underline($c-accent-orange, $c-dark-orange, 2px);
+  }
+
+  &__subtitle {
+    color: $c-grey;
+  }
+
+  &__contact-us {
+    @include responsive-property(grid-column, $full-span-mobile, span 4);
+    @include responsive-property(margin-bottom, 40px, 0);
+
+    display: flex;
+    row-gap: 40px;
+    flex-direction: column;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+
+    @include on-laptop {
+      column-gap: 1rem;
+      flex-direction: row;
+    }
+  }
+
+  &__socials {
+    @include responsive-property(grid-column, $full-span-mobile, span 4);
+
+    margin-bottom: 40px;
+  }
+
+  &__copyrights {
+    @include responsive-property(grid-column, $full-span-mobile, span 4);
+
+    & p {
+      color: $c-grey;
+    }
+  }
+}
