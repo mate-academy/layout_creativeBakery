@@ -1,0 +1,105 @@
+.footer {
+  padding: 61px 16px 56px;
+  background-color: $color-black;
+  gap: 24px;
+
+  @include on-tablet {
+    padding: 88px 44px;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+      'menu menu menu menu contact-us contact-us contact-us contact-us'
+      'links links links links links links links links';
+  }
+
+  @include on-desktop {
+    padding: 88px 44px;
+  }
+
+  @include on-large {
+    padding: 88px 124px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 64px;
+    grid-area: menu;
+
+    @include on-tablet {
+      gap: 96px;
+    }
+
+    @include on-desktop {
+      gap: 61px;
+    }
+  }
+
+  &__contact-us {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 40px;
+    grid-area: contact-us;
+
+    @media screen and (min-width: 753px) {
+      gap: 96px;
+    }
+
+    @include on-desktop {
+      gap: 40px;
+    }
+
+    &-title {
+      @include headings-middle;
+
+      color: $color-wite;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    grid-area: links;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 24px;
+      grid-template-areas: 'social-media social-media social-media social-media copyright copyright copyright copyright';
+    }
+  }
+
+  &__icon {
+    color: $color-accent-orange;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__social-media {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+    grid-area: social-media;
+
+    &-link {
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &:hover .footer__icon {
+        color: $color-wite;
+      }
+    }
+  }
+
+  &__copyright {
+    color: $color-grey;
+    grid-area: copyright;
+  }
+}

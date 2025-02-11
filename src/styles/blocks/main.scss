@@ -1,0 +1,172 @@
+.main {
+  padding: 64px 16px 72px;
+
+  @include on-tablet {
+    padding: 0 44px 152px;
+  }
+
+  @include on-desktop {
+    padding: 152px 44px 56px;
+  }
+
+  @include on-large {
+    padding: 178px 124px 56px;
+  }
+
+  &__we-bake {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 56px;
+
+    @include on-tablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    @include headings-middle;
+  }
+
+  &__cake1 {
+    grid-area: cake1;
+  }
+
+  &__cake2 {
+    grid-area: cake2;
+  }
+
+  &__cake3 {
+    grid-area: cake3;
+  }
+
+  &__donut1 {
+    grid-area: donut1;
+  }
+
+  &__donut2 {
+    grid-area: donut2;
+  }
+
+  &__cookies {
+    grid-area: cookies;
+  }
+
+  &__product-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 72px;
+    gap: 56px;
+    grid-template-areas:
+      'cake1 cake1'
+      'cake2 cake2'
+      'donut1 donut1'
+      'donut2 donut2'
+      'cake3 cake3'
+      'cookies cookies';
+
+    @include on-tablet {
+      gap: 24px;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-areas:
+        'cake1 cake1 cake1 cake1 cake2 cake2 cake2 cake2'
+        'donut1 donut1 donut1 donut1 donut2 donut2 donut2 donut2'
+        'cake3 cake3 cake3 cake3 cookies cookies cookies cookies';
+
+      margin-bottom: 152px;
+    }
+
+    @include on-desktop {
+      grid-template-areas:
+        'cake1 cake1 cake1  cake2 cake2 cake2 . .'
+        '. . donut1  donut1 donut1 donut2  donut2 donut2'
+        'cake3 cake3  cake3 cookies  cookies cookies . .';
+
+      margin-bottom: 178px;
+    }
+  }
+
+  &__about-us {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    background-image: url(../images/about-us/crumbs-bg.png);
+    background-position: center;
+    background-size: cover;
+
+    &-title {
+      @include headings-middle;
+
+      grid-area: a-title;
+    }
+
+    &-description {
+      margin: 0;
+      grid-area: a-description;
+    }
+
+    &-data {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      &-title {
+        font-weight: 400;
+        font-size: 96px;
+        line-height: 81.6px;
+        letter-spacing: -5%;
+        margin: 0;
+      }
+
+      &-description {
+        margin: 0;
+        color: $color-grey;
+      }
+
+      &-1 {
+        grid-area: foundation;
+      }
+
+      &-2 {
+        grid-area: stores;
+      }
+
+      &-3 {
+        grid-area: companies;
+      }
+
+      &-4 {
+        grid-area: clients;
+      }
+    }
+  }
+
+  &__top-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 24px;
+      grid-template-areas: 'a-title a-title a-title a-title a-description a-description a-description a-description';
+    }
+  }
+
+  &__bottom-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 24px;
+      grid-template-areas:
+        'foundation foundation foundation foundation stores stores stores  stores'
+        'companies companies companies companies clients clients clients clients';
+    }
+  }
+}
