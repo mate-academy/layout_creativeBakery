@@ -1,6 +1,6 @@
 'use strict'
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   // Створюємо основні елементи до завантаження сторінки
   const body = document.body;
 
