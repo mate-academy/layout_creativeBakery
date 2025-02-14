@@ -15,6 +15,10 @@ The Creative Bakery landing page is structured to provide an aesthetically pleas
 - An "About Us" section that provides background on the bakery.
 - A footer with contact information and links to social media.
 
+## Demo 🧑‍🔧
+
+Page is available [here](https://mikezhylka.github.io/creative-bakery-landing/) !
+
 ## 🚀 Features
 
 - **Responsive design** for optimal viewing on various devices.
@@ -38,4 +42,24 @@ The landing page includes various sections that users can navigate through:
 - **Contact Us:** Includes contact information and links to social media.
 
 Users can click on the menu items or buttons to scroll smoothly to the respective sections.
+
+## 🖥️ How to Run Locally
+Follow these steps to run the project on your machine:
+
+Prerequisites
+Node.js v20.18.3 (Download)
+npm (comes with Node.js)
+Git (for cloning the repository)
+
+Step 1: Clone the Repository
+git clone https://github.com/mikezhylka/creative-bakery-landing.git
+
+Step 2: Check Node Version
+Ensure you’re using Node.js v20.18.3.
+
+Step 3: Install Dependencies
+npm install
+
+Step 4: Run the Development Server
+npm run start
 
