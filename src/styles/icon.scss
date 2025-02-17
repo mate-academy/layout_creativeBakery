@@ -1,0 +1,63 @@
+.icon {
+  display: block;
+
+  @include icon-size;
+  @include hover(transform, scale(1.2));
+
+  &--menu {
+    background-image: url(/src/images/icon-menu.png);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include on-desktop {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+  }
+
+  &--logo {
+    width: 136px;
+    height: 32px;
+
+    &-footer {
+      width: 168px;
+      height: 40px;
+      margin-bottom: 40px;
+
+      @include on-tablet {
+        margin-bottom: 96px;
+      }
+
+      @include on-desktop {
+        margin-bottom: 61px;
+      }
+    }
+  }
+
+  &--close {
+    background-image: url(/src/images/Icon-close.svg);
+  }
+
+  &--phone {
+    background-image: url(/src/images/Icon-phone.png);
+  }
+
+  &--cookie {
+    background-image: url(/src/images/Icon-cookie.svg);
+    width: 40%;
+    background-repeat: no-repeat;
+    background-position: right;
+
+    @include hover(transform, scale(1.05));
+
+    .header__button:hover &,
+    .header__button:focus & {
+      background-image: url(/src/images/Icon-cookie-hover.svg);
+    }
+
+    .header__button:disabled & {
+      background-image: url(/src/images/Icon-cookie-disabled.svg);
+    }
+  }
+}

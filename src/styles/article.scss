@@ -1,0 +1,64 @@
+.article {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: flex-start;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 3;
+  }
+
+  &__photo {
+    width: 288px;
+    grid-column: 1/-1;
+    justify-self: center;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-tablet {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    color: $text-grey;
+    line-height: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2%;
+    margin-bottom: 8px;
+    margin-top: 16px;
+    grid-column: 1/-1;
+  }
+
+  &__description {
+    grid-column: 1/-1;
+    text-align: left;
+  }
+
+  &__link {
+    position: relative;
+    margin-top: 16px;
+    grid-column: 1/-1;
+    padding-left: 28px;
+    text-decoration: none;
+    color: $header-color;
+
+    @include hover(transform, scale(1.2));
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+
+      @include icon-size;
+
+      background-image: url(/src/images/Icon-arrow.svg);
+      left: 4px;
+    }
+  }
+}

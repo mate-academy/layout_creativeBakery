@@ -1,0 +1,134 @@
+.footer {
+  @include padding-inline;
+
+  padding-block: 56px;
+  background-color: $text-color;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  @include on-desktop {
+    max-width: 100%;
+  }
+
+  &__logo {
+    width: 168px;
+    height: 40px;
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 85%;
+    color: $white-color;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-align: left;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      font-size: 56px;
+    }
+  }
+
+  &__menu {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/5;
+    }
+  }
+
+  &__nav {
+    grid-column: 1/-1;
+
+    &--email {
+      @include on-desktop {
+        grid-column: 2/-1;
+      }
+    }
+
+    &--contacts {
+      @include on-desktop {
+        grid-column: 1/2;
+      }
+    }
+  }
+
+  &__contacts {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 5/-1;
+      margin-top: 0;
+    }
+  }
+
+  &__icon {
+    @include icon-size;
+    @include hover(transform, scale(1.2));
+
+    &--facebook {
+      background-image: url(/src/images/Icon-facebook.svg);
+
+      &:hover,
+      &:focus {
+        background-image: url(/src/images/icon-facebook-hover.svg);
+      }
+    }
+
+    &--instagram {
+      background-image: url(/src/images/Icon-instagram.svg);
+
+      &:hover,
+      &:focus {
+        background-image: url(/src/images/icon-instagram-hover.svg);
+      }
+    }
+
+    &--twitter {
+      background-image: url(/src/images/Icon-twitter.svg);
+
+      &:hover,
+      &:focus {
+        background-image: url(/src/images/icon-twitter-hover.svg);
+      }
+    }
+  }
+
+  &__icons-links {
+    grid-column: 1/-1;
+    display: flex;
+    gap: 32px;
+
+    @include on-tablet {
+      grid-column: 1/5;
+    }
+  }
+
+  &__mark {
+    grid-column: 1/-1;
+    color: $text-grey;
+    text-align: left;
+
+    @include on-tablet {
+      grid-column: 5/-1;
+    }
+  }
+
+  &__content {
+    @include page-grid;
+
+    row-gap: 40px;
+    justify-content: center;
+
+    @include on-tablet {
+      row-gap: 48px;
+    }
+  }
+}
