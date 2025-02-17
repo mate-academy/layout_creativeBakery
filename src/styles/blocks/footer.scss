@@ -1,0 +1,67 @@
+.footer {
+  background-color: $main-text-color;
+
+  &__content {
+    padding-block: 88px;
+    display: flex;
+    justify-content: space-between;
+
+    @include on-phone {
+      flex-direction: column;
+      padding-block: 56px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 61px;
+    margin-bottom: 48px;
+
+    @include on-tablet {
+      margin-top: 96px;
+      margin-bottom: 104px;
+    }
+
+    @include on-phone {
+      margin-top: 40px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -0.3px;
+    color: $grey;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    color: #fff;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 34px;
+
+    &--none {
+      @include on-phone {
+        display: none;
+      }
+    }
+
+    &--adaptive {
+      display: none;
+
+      @include on-phone {
+        display: flex;
+      }
+    }
+  }
+
+  &__link {
+    @include hover(transform, scale(1.2));
+  }
+}

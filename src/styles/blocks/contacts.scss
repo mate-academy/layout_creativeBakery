@@ -1,0 +1,91 @@
+.contact {
+  margin-right: 50px;
+  width: 40%;
+
+  @include on-phone {
+    width: 90%;
+    margin-right: 0;
+  }
+  &__title {
+    font-size: 72px;
+    line-height: 61.2px;
+    letter-spacing: -3px;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      font-size: 56px;
+      line-height: 47.6px;
+    }
+
+    @include on-phone {
+      font-size: 48px;
+      line-height: 40.8px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 100px;
+
+    @include on-tablet {
+      flex-direction: column;
+      gap: 45px;
+    }
+
+    @include on-phone {
+      gap: 40px;
+    }
+  }
+
+  &__block {
+    width: 50%;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 88px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__sub-title {
+    text-transform: uppercase;
+    line-height: 16px;
+    letter-spacing: -0.2px;
+    color: $grey;
+    &--margin-bottom {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__item {
+    letter-spacing: -0.2px;
+    color: #fff;
+  }
+
+  &__text {
+    color: $grey;
+
+    &--none {
+      display: block;
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+    &--adaptive {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+      }
+    }
+  }
+}
