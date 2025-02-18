@@ -9,7 +9,9 @@
   opacity: 0;
   pointer-events: none;
 
-  transition: -100%;
+  transform:translateX(-100%);
+  transition: transform 0.4s ease;
+
 
   &__top {
     background-color: inherit;
@@ -28,6 +30,9 @@
   &__menu {
     width: 24px;
     height: 24px;
+    &:hover {
+      transform: scale(1.5);
+    }
   }
 
   &__content {
@@ -86,13 +91,32 @@
   letter-spacing: -0.01em;
   text-align: center;
   text-decoration: none;
+  position: relative;
 
   color: #1c1a26;
+
+  &::after {
+    content: "";
+    transform-origin: 0;
+    background-color: #292929;
+    width: 100%;
+    height: 1px;
+    transition: transform .3s;
+    display: block;
+    position: absolute;
+    bottom: -8px;
+    transform: scale(0);
+  }
+
+  &:hover::after {
+    transform: scale(1);
+    background: linear-gradient(to left, #38b0a2, #c9a633, #f90) ;
+  }
 }
 
 aside:target {
   overflow: hidden;
-  transition: 0;
+  transform: translateX(0);
   opacity: 1;
   pointer-events: all;
 }
