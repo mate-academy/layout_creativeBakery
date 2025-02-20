@@ -1,0 +1,205 @@
+.header {
+  &__top {
+    padding-block: 20px;
+    margin-bottom: 32px;
+
+    @include tablet {
+      margin-bottom: 80px;
+    }
+
+    @include laptop {
+      padding-top: 32px;
+      margin-bottom: 135px;
+    }
+
+    @include desktop {
+      margin-bottom: 124px;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav {
+    display: none;
+    z-index: 1;
+
+    @include laptop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 500px;
+    }
+
+    &-link {
+      font-size: 16px;
+      line-height: 24px;
+      color: $black-color;
+      letter-spacing: -0.01em;
+      font-weight: 400;
+    }
+
+    &-item {
+      position: relative;
+      transition: all 0.3s ease;
+      width: 120px;
+
+      &:hover {
+        transform: scale(1.05);
+
+        .header__nav-link {
+          font-weight: 700;
+        }
+      }
+
+      &:last-child a {
+        color: $orange-color;
+        text-transform: uppercase;
+
+        &::before {
+          position: absolute;
+          content: '';
+          top: 0;
+          left: -25px;
+          width: 24px;
+          height: 24px;
+          background-image: url('../images/icons/social/icon-phone.svg');
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include laptop {
+      display: none;
+    }
+  }
+
+  &__logo {
+    width: 128px;
+    height: 25px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+    object-fit: contain;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    &-cookie {
+      width: 75%;
+      display: flex;
+      margin: 0 auto;
+
+      @include laptop {
+        margin-top: -15%;
+        width: 50%;
+      }
+    }
+
+    &-title {
+      max-width: 288px;
+      width: 100%;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 32px;
+
+      @include tablet {
+        text-align: left;
+        margin: 0;
+      }
+    }
+
+    &-link {
+      font-size: 16px;
+      line-height: 16px;
+      color: $orange-color;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-left: 10px;
+      transition: all 0.3s ease;
+    }
+
+    &-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #f9512e;
+      border-radius: 32px;
+      max-width: 288px;
+      width: 100%;
+      height: 56px;
+      margin: 0 auto;
+
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      @include tablet {
+        width: 326px;
+      }
+
+      @include laptop {
+        width: 280px;
+        margin: 0;
+        margin-top: -15%;
+      }
+
+      &:hover {
+        background-color: $orange-color;
+
+        .header__content-icon path {
+          fill: $white-color;
+        }
+
+        .header__content-link {
+          color: $white-color;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: 58px;
+    line-height: 54px;
+    color: $orange-color;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+
+    @include tablet {
+      font-size: 79px;
+      line-height: 68px;
+      position: absolute;
+      top: 45%;
+    }
+
+    @include laptop {
+      font-size: 130px;
+      line-height: 115px;
+      top: 18%;
+    }
+
+    @include desktop {
+      font-size: 140px;
+      line-height: 122px;
+    }
+  }
+}
