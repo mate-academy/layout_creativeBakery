@@ -1,0 +1,51 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 16px;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-top: 16px;
+  }
+
+  &__image {
+    border-radius: 8px;
+
+  }
+
+  &__title {
+    @include uppercase-text;
+
+    color: $grey;
+  }
+
+  &__description {
+    @include body-text;
+
+    color: $black;
+    padding-top: 8px;
+    padding-bottom: 16px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    background-color: transparent;
+    height: 32px;
+    padding: 0;
+
+    @include uppercase-text;
+
+    color: $accent-orange;
+
+  }
+}
