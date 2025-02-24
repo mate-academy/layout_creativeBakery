@@ -1,10 +1,10 @@
-@mixin for-md-lg {
+@mixin for-m {
   @media (min-width: 640px) and (max-width: 1023px) {
     @content;
   }
 }
 
-@mixin for-lg {
+@mixin for-l {
   @media (min-width: 1024px) and (max-width: 1199px) {
     @content;
   }
@@ -22,12 +22,12 @@
   grid-template-columns: repeat(2, minmax(100px, 1fr));
   gap: 16px;
 
-  @include for-md-lg {
+  @include for-m {
     grid-template-columns: repeat(8, minmax(80px, 1fr));
     gap: 24px;
   }
 
-  @include for-lg {
+  @include for-l {
     grid-template-columns: repeat(8, minmax(80px, 1fr));
     gap: 24px;
   }
@@ -46,4 +46,95 @@
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+// Mixins for fonts
+
+// h1
+
+@mixin h1-font {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-size: 64px;
+  line-height: 85%;
+
+  @include for-m {
+    font-size: 80px;
+    line-height: 85%;
+  }
+
+  @include for-l {
+    font-size: 144px;
+    line-height: 85%;
+  }
+
+  @include for-xl {
+    font-size: 144px;
+    line-height: 85%;
+  }
+}
+
+// h2
+
+@mixin h2-font() {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-size: 48px;
+  line-height: 85%;
+
+  @include for-m {
+    font-size: 56px;
+    line-height: 85%;
+  }
+
+  @include for-l {
+    font-size: 72px;
+    line-height: 85%;
+  }
+
+  @include for-xl {
+    font-size: 72px;
+    line-height: 85%;
+  }
+}
+
+// big text
+
+@mixin big-text {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+// body text
+
+@mixin body-text {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+// uppercas text
+
+@mixin uppercase-text {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
