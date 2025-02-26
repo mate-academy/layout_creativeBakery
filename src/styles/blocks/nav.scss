@@ -1,0 +1,72 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+
+  @include for-m {
+    margin-bottom: 80px;
+  }
+
+  @include for-l {
+    margin-bottom: 0;
+  }
+
+  @include for-xl {
+    margin-bottom: 0;
+  }
+
+  &__logo {
+    max-width: 128px;
+    transition: transform 0.3s ease-in-out;
+
+    @include for-m {
+      max-width: 136px;
+    }
+
+    @include for-l {
+      max-width: 136px;
+    }
+
+    @include for-xl {
+      max-width: 136px;
+    }
+
+    &:hover {
+      transform: scale(1.03) translateX(0);
+    }
+  }
+
+  &__burger {
+    width: 24px;
+  }
+
+  &__links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  &__link {
+    padding-left: 64px;
+
+    @include body-text;
+
+    text-decoration: none;
+    color: $black;
+
+    &--phone {
+      @include uppercase-text;
+
+      text-decoration: none;
+      color: $accent-orange;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+}
