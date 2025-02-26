@@ -1,0 +1,81 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+  transition: transform 1s ease-in-out;
+  min-height: 100vh;
+  padding: 0 20px;
+  background-color: $light-pink;
+  z-index: 3;
+  box-sizing: border-box;
+
+  @include grid;
+
+  grid-template-rows: 180px auto;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__content {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 80px;
+    padding: 16px;
+
+    @include for-m {
+      grid-column: 1 / 9;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__list {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+
+    @include for-m {
+      grid-column: 1 / 9;
+      grid-row: 2 / 3;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__link {
+    @include body-text;
+
+    text-decoration: none;
+    color: $black;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05) translateX(0);
+    }
+
+    &--phone {
+      display: flex;
+      align-items: center;
+      color: $accent-orange;
+      margin-right: 4px;
+      text-decoration: none;
+      transition: transform 0.3s ease-in-out;
+
+      @include uppercase-text;
+
+      &:hover {
+        transform: scale(1.05) translateX(0);
+      }
+    }
+  }
+}
