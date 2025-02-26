@@ -16,6 +16,11 @@
 
   &__image {
     border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.03);
+    }
   }
 
   &__title {
@@ -41,9 +46,29 @@
     background-color: transparent;
     height: 32px;
     padding: 0;
+    text-decoration: none;
+    max-width: 85px;
 
     @include uppercase-text;
 
     color: $accent-orange;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.03) translateX(15px);
+      border-bottom: 1px solid $accent-orange;
+    }
+
+    &:focus {
+      cursor: pointer;
+      transform: scale(1.03);
+      border-bottom: 1px solid $dark-orange;
+      color: $dark-orange;
+
+      .button__img {
+        filter: brightness(0) saturate(100%) invert(28%) sepia(74%) saturate(1208%) hue-rotate(339deg) brightness(89%) contrast(104%);
+      }
+    }
   }
 }
