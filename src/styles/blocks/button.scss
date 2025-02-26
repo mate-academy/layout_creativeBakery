@@ -9,12 +9,54 @@
   border-radius: 32px;
   height: 56px;
   background-color: transparent;
+  cursor: pointer;
 
   @include uppercase-text;
 
   color: $accent-orange;
+  text-decoration: none;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 
   &__image {
     margin-right: 4px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    border: 2px solid $accent-orange;
+    background-color: $accent-orange;
+    color: $white;
+    cursor: pointer;
+    transform: scale(1.05) translateX(15px);
+  }
+
+  &:hover &__image {
+    filter: brightness(0) invert(1);
+  }
+
+  &:focus {
+    border: 2px solid $dark-orange;
+    background-color: $dark-orange;
+    color: $white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba($dark-orange, 0.4);
+  }
+
+  &:focus &__image {
+    filter: brightness(0) invert(1);
+  }
+
+  &:disabled {
+    border: 2px solid $light-orange;
+    background-color: transparent;
+    color: $light-orange;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &:disabled &__image {
+    filter: brightness(1.1) sepia(0.4) hue-rotate(-10deg) saturate(1.3);
   }
 }
