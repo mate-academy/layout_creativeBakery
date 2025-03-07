@@ -1,7 +1,30 @@
 @import 'utils';
-@import 'fonts';
-@import 'typography';
+@import 'blocks/header';
+@import 'blocks/aside';
+@import 'blocks/top-bar';
+@import 'blocks/icon';
+@import 'blocks/page';
+@import 'blocks/what-we-bake';
+@import 'blocks/about-us';
+@import 'blocks/footer';
 
 body {
-  background: $c-gray;
+  background: $bg-pink;
+  margin: auto;
+}
+
+main {
+  padding: 64px 0 72px;
+
+  @include on-tablet {
+    padding: 0 0 152px;
+  }
+
+  @include on-desktop {
+    padding: 0 0 56px;
+  }
+
+  .container {
+    @include content-padding-inline;
+  }
 }

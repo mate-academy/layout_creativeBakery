@@ -1,0 +1,75 @@
+.top-bar {
+  position: sticky;
+  top: 0;
+  padding-block: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include on-desktop {
+    padding-block: 28px;
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    height: 32px;
+    transition-duration: $efferctDuration;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__menu {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 64px;
+  }
+
+  &__item {
+    text-decoration: none;
+    display: flex;
+    color: $black-color;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    color: $black-color;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__link:hover {
+    transition-duration: $efferctDuration;
+    color: $red-color;
+  }
+
+  &__link--contact {
+    display: flex;
+    gap: 4px;
+    transition-duration: $efferctDuration;
+
+    @include hover(transform, scale(1.1));
+  }
+}
