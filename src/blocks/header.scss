@@ -1,0 +1,122 @@
+.header {
+  &__content {
+    margin-bottom: 64px;
+    text-align: center;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      margin-bottom: 152px;
+    }
+  }
+
+  &__wrapper {
+    @include page-grid;
+
+    @include on-tablet {
+      grid-template-rows: repeat(4, auto);
+    }
+
+    @include on-desktop {
+      grid-template-rows: repeat(3, auto);
+    }
+  }
+
+  &__description {
+    margin-block: 32px;
+    grid-column: 1 / -1;
+
+    @extend %body-text;
+
+    @include on-tablet {
+      margin-top: 80px;
+      margin-bottom: 16px;
+      grid-column: 1 / 5;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      margin-top: 135px;
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+      margin-bottom: 8px;
+    }
+
+    @include on-large-desktop {
+      margin-top: 144px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    grid-column: 1 / -1;
+    color: $accent-color;
+
+    @extend %h1;
+
+    @include on-tablet {
+      grid-row: 2 / 4;
+      align-self: center;
+    }
+
+    @include on-desktop {
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__img {
+    background-image: url('../images/header-cookie.png');
+    height: 290px;
+    width: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    grid-column: 1 / -1;
+    z-index: -1;
+
+    animation: spin 20s linear infinite;
+
+    @include on-tablet {
+      height: 328px;
+      grid-row: 2 / 4;
+    }
+
+    @include on-desktop {
+      height: 546px;
+      grid-row: 1 / -1;
+      margin-bottom: 66px;
+    }
+
+    @include on-large-desktop {
+      height: 586px;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__button {
+    display: grid;
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+    text-decoration: none;
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+      margin-bottom: 228px;
+      margin-top: 80px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+      grid-row: 3 / 4;
+      margin-top: 64px;
+      margin-bottom: 161px;
+    }
+
+    @include on-large-desktop {
+      margin-bottom: 138px;
+    }
+  }
+}
