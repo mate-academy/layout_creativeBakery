@@ -1,0 +1,57 @@
+.icon {
+  display: block;
+  height: 24px;
+  width: 24px;
+  background-size: cover;
+  background-position: center;
+  transition:
+    transform $effectDuration ease,
+    background-image $effectDuration ease;
+
+  @include hover(transform, scale(1.2));
+
+  &--menu {
+    background-image: url('../images/icons/icon-menu.png');
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &--close {
+    background-image: url('../images/icons/icon-close.png');
+  }
+
+  &--arrow {
+    background-image: url('../images/icons/icon-arrow.png');
+
+    animation: pulse 1s infinite ease-in-out;
+  }
+
+  &--facebook {
+    background-image: url('../images/icons/icon-facebook.png');
+
+    @include hover(
+      background-image,
+      url('../images/icons/icon-facebook-hover.png')
+    );
+  }
+
+  &--instagram {
+    background-image: url('../images/icons/icon-instagram.png');
+
+    @include hover(
+      background-image,
+      url('../images/icons/icon-instagram-hover.png')
+    );
+  }
+
+  &--twitter {
+    background-image: url('../images/icons/icon-twitter.png');
+
+    @include hover(
+      background-image,
+      url('../images/icons/icon-twitter-hover.png')
+    );
+  }
+}
