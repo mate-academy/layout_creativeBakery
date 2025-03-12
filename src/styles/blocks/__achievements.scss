@@ -1,0 +1,43 @@
+.achievements {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+
+  &__item {
+    grid-column: 1 / -1;
+  }
+
+  &__value {
+    margin: 0;
+    font-size: 96px;
+    line-height: $title-line-height;
+    letter-spacing: -4.8px;
+    text-transform: uppercase;
+    color: $accent-orange;
+    margin-bottom: 8px;
+  }
+
+  &__label {
+    margin: 0;
+    line-height: $text-line-height;
+    letter-spacing: $text-letter-spacing;
+  }
+
+  @media (min-width: 768px) {
+    gap: 80px 24px;
+
+    &__item {
+      grid-column: span 1;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0 24px;
+
+    &__item {
+      grid-column: span 2;
+    }
+  }
+}
