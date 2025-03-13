@@ -1,24 +1,75 @@
 .top-bar {
   display: flex;
-  align-items: center;
+  padding-block: 16px;
+
   justify-content: space-between;
+  align-items: center;
+
+  @include onDesktop {
+    margin-inline: -44px;
+  }
 
   &__logo {
-    transition: transform $transition-time;
-
-  &:hover {
-    transform: scale(1.2);
+    display: flex;
   }
+
+  &__image {
+    max-width: 136px;
+    max-height: 32px;
+
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__list {
-    list-style: none;
-    display: flex;
+    list-style-type: none;
+    flex-direction: row;
     gap: 64px;
+
+    margin: 0;
+    padding: 0;
+
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__contact-us {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+
+    &:hover {
+      text-shadow: 0.3px 0.3px 0.3px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 24px;
+      width: 24px;
+      background-image: url("../images/Icon-phone.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+    }
   }
 
   &__link {
     text-decoration: none;
+    @include page-text-styles;
+    color: $main-black;
+
+    &:hover {
+      text-shadow: 0.1px 0.1px 0.1px;
+    }
   }
 }
