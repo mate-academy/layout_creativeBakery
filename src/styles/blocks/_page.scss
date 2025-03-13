@@ -1,0 +1,32 @@
+.page {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: $font-style;
+  font-size: $font-size;
+  background-color: $page-light-bg;
+  color: $accent-black;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &:has(&__menu:target) {
+    overflow: hidden;
+  }
+}
