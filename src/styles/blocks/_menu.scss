@@ -1,7 +1,8 @@
 .menu {
   height: 100vh;
   background-color: $page-light-bg;
-  overflow: scroll;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s;
 
   &__content {
     padding: 132px 16px 196px;
@@ -12,5 +13,12 @@
     top: 0;
     z-index: 1;
     background-color: $page-light-bg;
+  }
+
+
+  &:target {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
   }
 }
