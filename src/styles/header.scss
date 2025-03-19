@@ -3,7 +3,13 @@
   @include contentPaddingInline;
 
   &__img {
-    animation: pulse 1.5s infinite ease-in-out;
+    @include onTablet {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+    }
   }
 
   &__hero {
@@ -63,16 +69,13 @@
       width: 288px;
       height: 290px;
       margin: 0 auto;
+      animation: pulse 1.5s infinite ease-in-out;
 
       @include onTablet {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
         width: 326px;
         height: 328px;
-        z-index: -1;
       }
+
 
       @include onDesktop {
         width: 544px;
@@ -88,7 +91,7 @@
     transition: background-color 0.5s, color 0.5s;
 
     @include onTablet {
-      grid-column: 3 / -3;
+      grid-column: span 3;
       margin-top: 210px;
       position: relative;
     }
