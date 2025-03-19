@@ -1,4 +1,7 @@
 .header {
+
+  @include contentPaddingInline;
+
   &__hero {
     @include pageGrid;
     margin-bottom: 64px;
@@ -12,13 +15,28 @@
     }
 
     &-title {
+      background-color: transparent;
       text-align: center;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 85%;
+      letter-spacing: -5%;
+      text-transform: uppercase;
       grid-column: 1 / -1;
+
+      @include onTablet {
+        font-size: 80px;
+      }
+
+      @include onDesktop {
+        font-size: 136px;
+      }
     }
 
     &-text {
-      text-align: center;
+      text-align: left;
       padding: 32px 0;
+
 
       grid-column: 1 / -1;
 
@@ -40,6 +58,7 @@
       width: 288px;
       height: 290px;
       margin: 0 auto;
+      animation: pulse 1.5s infinite ease-in-out;
 
       @include onTablet {
         position: absolute;
@@ -60,7 +79,7 @@
   &__button {
     @include button-header;
     grid-column: 1 / -1;
-    margin: 0 auto;
+
 
     transition: background-color 0.5s, color 0.5s;
 
@@ -106,3 +125,16 @@
   }
 
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
