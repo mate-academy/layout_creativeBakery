@@ -1,13 +1,13 @@
 .icon {
   display: block;
+  background-position: center;
+  background-repeat: no-repeat;
 
   @include icon-size;
   @include hover(transform, scale(1.2));
 
   &--menu {
     background-image: url(/src/images/icon-menu.png);
-    background-position: center;
-    background-repeat: no-repeat;
 
     @include on-desktop {
       opacity: 0;
@@ -19,20 +19,11 @@
   &--logo {
     width: 136px;
     height: 32px;
+  }
 
-    &-footer {
-      width: 168px;
-      height: 40px;
-      margin-bottom: 40px;
-
-      @include on-tablet {
-        margin-bottom: 96px;
-      }
-
-      @include on-desktop {
-        margin-bottom: 61px;
-      }
-    }
+  &--logo-footer {
+    width: 168px;
+    height: 40px;
   }
 
   &--close {
@@ -46,10 +37,10 @@
   &--cookie {
     background-image: url(/src/images/Icon-cookie.svg);
     width: 40%;
-    background-repeat: no-repeat;
     background-position: right;
+    padding-block: 16px;
 
-    @include hover(transform, scale(1.05));
+    @include hover(transform, scale(1));
 
     .header__button:hover &,
     .header__button:focus & {
@@ -58,6 +49,33 @@
 
     .header__button:disabled & {
       background-image: url(/src/images/Icon-cookie-disabled.svg);
+    }
+  }
+
+  &--facebook {
+    background-image: url(/src/images/Icon-facebook.svg);
+
+    &:hover,
+    &:focus {
+      background-image: url(/src/images/icon-facebook-hover.svg);
+    }
+  }
+
+  &--instagram {
+    background-image: url(/src/images/Icon-instagram.svg);
+
+    &:hover,
+    &:focus {
+      background-image: url(/src/images/icon-instagram-hover.svg);
+    }
+  }
+
+  &--twitter {
+    background-image: url(/src/images/Icon-twitter.svg);
+
+    &:hover,
+    &:focus {
+      background-image: url(/src/images/icon-twitter-hover.svg);
     }
   }
 }
