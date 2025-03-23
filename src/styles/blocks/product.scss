@@ -1,0 +1,50 @@
+.product {
+  grid-column: span $columnsMobile;
+
+  @include on-tablet {
+    grid-column: span $columnsTablet / 2;
+  }
+
+  @include on-desktop {
+    grid-column: span 3 / span 3;
+  }
+
+  &__right {
+    @include on-desktop {
+      grid-column: 3 / span 3;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+
+    @include hover(transform, scale(1.02));
+  }
+
+  &__category {
+    color: $c-gray;
+
+    @extend %uppercase-text;
+  }
+
+  &__description {
+    margin: 8px 0 16px;
+
+    @extend %body-text;
+  }
+
+  &__button {
+    text-decoration: none;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    color: $c-accent-orange;
+    width: max-content;
+
+    @extend %uppercase-text;
+    @include hover(transform, scale(1.2));
+  }
+}

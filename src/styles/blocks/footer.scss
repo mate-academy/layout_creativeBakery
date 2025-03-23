@@ -1,0 +1,145 @@
+.footer {
+  background-color: $c-black;
+  padding: 56px $side-indent-mobile;
+
+  @include page-grid;
+
+  @include on-tablet {
+    padding-inline: $side-indent-tablet;
+    padding-block: 88px;
+  }
+
+  &__content {
+    @include on-tablet {
+      grid-column: span $columnsTablet / 2;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    background-image: url(../images/Logo-white.png);
+    background-size: contain;
+    background-position: center;
+    width: 168px;
+    height: 40px;
+
+    @include on-desktop {
+      margin-bottom: 61px;
+    }
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__nav {
+    margin-top: 56px;
+
+    @media (min-width: 639px) and (max-width: 767px) {
+      margin-top: 96px;
+    }
+  }
+
+  &__nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+  }
+
+  &__contacts {
+    @include on-tablet {
+      grid-column: span $columnsTablet / 2;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat($columnsTablet / 2, 1fr);
+    }
+  }
+
+  &__contacts-title {
+    color: $c-gray;
+    margin-top: 40px;
+
+    @extend %uppercase-text;
+  }
+
+  &__contacts-text {
+    color: $c-white;
+    display: block;
+    margin-top: 16px;
+    width: max-content;
+    text-decoration: none;
+
+    @extend %body-text;
+    @include hover(transform, scale(1.2));
+  }
+
+  &__contacts-heading {
+    color: $c-white;
+    margin-top: 64px;
+
+    @include on-tablet {
+      margin-top: 0;
+    }
+
+    @include on-desktop {
+      grid-column: span $columnsTablet / 2;
+    }
+  }
+
+  &__contacts-phones {
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__contacts-email {
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+
+    @include page-grid;
+
+    @include on-tablet {
+      grid-column: span $columnsTablet;
+      margin-top: 48px;
+    }
+  }
+
+  &__bottom-socials {
+    margin-block: 40px;
+    display: flex;
+    gap: 32px;
+    color: $c-accent-orange;
+
+    @include on-tablet {
+      grid-column: span $columnsTablet / 2;
+    }
+  }
+
+  &__bottom-socials-link {
+    text-decoration: none;
+    color: $c-accent-orange;
+
+    @include hover(transform, scale(1.2));
+    @include hover(color, $c-white);
+  }
+
+  &__bottom-copyright {
+    margin-top: 40px;
+    color: $c-gray;
+
+    @extend %body-text;
+
+    @include on-tablet {
+      grid-column: span $columnsTablet / 2;
+    }
+  }
+}

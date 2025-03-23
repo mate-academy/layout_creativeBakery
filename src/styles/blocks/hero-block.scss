@@ -1,0 +1,139 @@
+.hero-block {
+  padding-bottom: 40px;
+
+  @include on-desktop {
+    height: 612px;
+    margin-bottom: 80px;
+    background-size: 546px 544px;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/Cookie.png);
+  }
+
+  @include on-desktop-large {
+    background-size: 586px 584px;
+  }
+
+  &__container {
+    padding-inline: $side-indent-mobile;
+
+    @include on-tablet {
+      padding-inline: $side-indent-tablet;
+    }
+  }
+
+  &__promo {
+    text-align: center;
+    padding-block: 32px;
+
+    @extend %body-text;
+
+    @include on-tablet {
+      width: 280px;
+      text-align: left;
+      padding-block: 80px 16px;
+    }
+
+    @include on-desktop {
+      width: 260px;
+      text-align: left;
+      padding-block: 135px 16px;
+    }
+
+    @include on-desktop-large {
+      width: 280px;
+      text-align: left;
+      padding-block: 144px 40px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    @include on-tablet {
+      height: 328px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 80px;
+      background-size: contain;
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-image: url(../images/Cookie.png);
+    }
+
+    @include on-desktop {
+      height: 100%;
+      font-size: 136px;
+      background: none;
+      margin-bottom: 64px;
+    }
+
+    @include on-desktop-large {
+      line-height: 144px;
+      font-size: 144px;
+    }
+  }
+
+  &__img {
+    min-height: 290px;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/Cookie.png);
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__button {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $c-accent-orange;
+    border-radius: 32px;
+    border: 2px solid $c-accent-orange;
+    box-sizing: border-box;
+    height: 56px;
+    width: 288px;
+    margin: 0 auto;
+
+    @extend %uppercase-text;
+    @include hover(background-color, $c-accent-orange);
+    @include hover(color, $c-white);
+    @include hover(border, none);
+    @include hover(transform, scale(1.1));
+
+    &:focus {
+      background-color: $c-dark-orange;
+      color: $c-white;
+      border: none;
+    }
+
+    &:disabled {
+      background-color: $c-light-orange;
+      color: $c-black;
+      border: 2px solid $c-light-orange;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
+    @include on-tablet {
+      width: 326px;
+    }
+
+    @include on-desktop {
+      width: 260px;
+      margin: 0;
+    }
+
+    @include on-desktop-large {
+      width: 280px;
+    }
+  }
+}
