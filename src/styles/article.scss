@@ -1,0 +1,66 @@
+.article {
+  grid-column: 1/-1;
+  text-align: left;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 3;
+  }
+
+  &--desktop-positioned {
+    @include on-desktop {
+      grid-column: 3/6;
+    }
+  }
+
+  &__photo {
+    width: 288px;
+    margin-inline: auto;
+    display: flex;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-tablet {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    color: $text-grey;
+    line-height: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2%;
+    margin-bottom: 8px;
+    margin-top: 16px;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    position: relative;
+    margin-top: 16px;
+    padding-left: 28px;
+    text-decoration: none;
+    color: $main-red;
+    display: block;
+    width: 84px;
+
+    @include hover(transform, scale(1.1));
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-image: url(/src/images/Icon-arrow.svg);
+      left: 4px;
+
+      @include icon-size;
+    }
+  }
+}
