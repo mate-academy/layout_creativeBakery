@@ -1,7 +1,235 @@
 @import 'utils';
-@import 'fonts';
-@import 'typography';
+@import 'page';
+@import 'header';
+@import 'top-bar';
+@import 'icon';
+@import 'menu';
+@import 'footer';
 
 body {
-  background: $c-gray;
+  font-family: Inter, serif;
+  box-sizing: border-box;
+}
+
+.main {
+
+  @include contentPaddingInline;
+
+  &__header {
+    margin-top: 64px;
+    font-weight: 400;
+    color: $main-black;
+    font-size: 48px;
+    letter-spacing: -5%;
+    line-height: 85%;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onDesktop {
+      font-size: 72px;
+    }
+  }
+
+  &__info {
+    margin-top: 24px;
+    @include page-text-styles;
+  }
+
+  &__articles-wrap {
+    @include pageGrid;
+    row-gap: 30px;
+
+    margin-bottom: 144px;
+  }
+
+  &__article {
+    margin-top: 56px;
+
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+      max-width: 582px;
+    }
+
+    &--middle-1 {
+      @include onDesktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--middle-2 {
+      @include onDesktop {
+        grid-column: 6 / -1;
+      }
+    }
+  }
+}
+
+.bake-category {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__photo {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__name {
+    @include uppercase-text-styles;
+    margin: 0;
+    color: $c-gray;
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  &__order {
+    @include uppercase-text-styles;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+    transition: transform 0.3s ease;
+    width: fit-content;
+    padding-block: 4px;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 24px;
+      width: 24px;
+      background-image: url("../images/Icon-arrow.png");
+    }
+
+    &:hover {
+      text-shadow: 1px 1px 5px rgba(255, 0, 255, 0.5);
+      border-radius: 5px;
+    }
+  }
+}
+
+.about-us {
+  margin-block: 72px;
+  margin-top: 178px;
+  background-image: url("../images/Crumbs.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  column-gap: 32px;
+  row-gap: 40px;
+
+  &__hero {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+
+    margin-bottom: 64px;
+
+    @include onTablet {
+      @include pageGrid;
+      row-gap: 72px;
+    }
+
+    &--header {
+      grid-column: 1 / -1;
+
+      font-style: normal;
+      font-weight: normal;
+      font-size: 48px;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+        font-size: 56px;
+      }
+
+      @include onDesktop {
+        font-size: 72px;
+      }
+    }
+
+    &--words {
+      grid-column: 1 / -1;
+      @include onTablet {
+        grid-column: 5 / 8;
+      }
+    }
+  }
+
+  &__info {
+
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include onTablet {
+      @include pageGrid;
+      padding-top: 72px;
+      padding-bottom: 140px;
+    }
+
+    @include onDesktop {
+      padding-top: 144px;
+      padding-bottom: 240px;
+    }
+  }
+
+  &__fact {
+    display: flex;
+    flex-direction: column;
+    padding-right: 8px;
+    gap: 8px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+    }
+
+    &--text {
+      color: $c-gray;
+      @include page-text-styles;
+      @include onTablet {
+        grid-column: span 2;
+      }
+    }
+
+    &--number {
+      color: $main-black;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 96px;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+
+      @include onTablet {
+        grid-column: span 2;
+      }
+    }
+  }
 }

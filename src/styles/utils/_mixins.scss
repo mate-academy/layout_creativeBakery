@@ -4,3 +4,84 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width){
+    @content;
+  }
+}
+
+@mixin page-text-styles {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+@mixin uppercase-text-styles {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+@mixin button-header {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0;
+
+  gap: 4px;
+  padding: 15px auto;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  max-height: 56px;
+  border-radius: 32px;
+  border: 2px solid $accent-orange;
+  background-color: inherit;
+  color: $accent-orange;
+
+  @include uppercase-text-styles;
+  padding-block: 18px;
+
+  @include onTablet() {
+    max-width: 326px;
+  }
+
+  @include onDesktop() {
+    max-width: 260px;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 20px;
+
+
+  @include onDesktop {
+    padding-inline: 44px;
+  }
+}
+
+@mixin pageGrid {
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include onTablet {
+    margin: 0 auto;
+    column-gap: 24px;
+    grid-template-columns: repeat(8, 1fr);
+  }
+}

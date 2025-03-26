@@ -1,0 +1,153 @@
+.header {
+
+  @include contentPaddingInline;
+
+  @include onDesktop {
+    min-height: 100vh;
+  }
+
+
+  &__img {
+    @include onTablet {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+    }
+  }
+
+  &__hero {
+    @include pageGrid;
+    min-height: 50vh;
+
+    &-wrap {
+      margin-bottom: 64px;
+      grid-column: 1 / -1;
+      @include onTablet {
+        position: relative;
+      }
+    }
+
+    &-title {
+      background-color: transparent;
+      text-align: center;
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 85%;
+      letter-spacing: -5%;
+      text-transform: uppercase;
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        font-size: 80px;
+      }
+
+      @include onDesktop {
+        font-size: 136px;
+      }
+    }
+
+    &-text {
+      text-align: center;
+      padding: 32px 0;
+
+
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        text-align: left;
+        grid-column: span 4;
+        padding-top: 80px;
+        margin-bottom: 146px;
+      }
+
+      @include onDesktop {
+        grid-column: span 2;
+        padding-top: 156px;
+        margin-bottom: 150px;
+      }
+    }
+
+    &-image {
+      grid-column: 1 / -1;
+      width: 288px;
+      height: 290px;
+      margin: 0 auto;
+      animation: pulse 1.5s infinite ease-in-out;
+
+      @include onTablet {
+        width: 326px;
+        height: 328px;
+      }
+
+
+      @include onDesktop {
+        width: 544px;
+        height: 546px;
+      }
+    }
+  }
+  &__button {
+    @include button-header;
+    grid-column: 1 / -1;
+
+
+    transition: background-color 0.5s, color 0.5s;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+      margin-top: 80px;
+      position: relative;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+      margin-top: 64px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 24px;
+      width: 24px;
+      background-image: url("../images/cookiefavicon.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &:hover {
+      transition: background-color 0.5s, color 0.5s;
+
+      background-color: $accent-orange;
+      color: $main-white;
+
+      &::before {
+        transition: background-image 0.5s;
+        background-image: url("../images/cookie-white.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    &:focus {
+      background-color: $dark-orange;
+    }
+  }
+
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
