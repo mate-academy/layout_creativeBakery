@@ -1,0 +1,270 @@
+.header {
+  &__nav {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include on-desktop {
+      padding: 28px 32px;
+    }
+  }
+
+  &__logo {
+    transition: all $timeAnimation;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__burger {
+    transition: all $timeAnimation;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__navs {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      gap: 64px;
+    }
+  }
+
+  &__navs-link {
+    position: relative;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    color: rgba(28, 26, 38, 1);
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 2px;
+      bottom: 0;
+      width: 100%;
+      background-color: black;
+      border-radius: 4px;
+
+      transition: all $timeAnimation;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__calls {
+    transition: all $timeAnimation;
+    text-decoration: none;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include on-desktop {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+  }
+
+  &__call {
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: rgba(249, 81, 46, 1);
+  }
+
+  &__main {
+    padding: 32px 16px 40px;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      padding: 80px 44px 0;
+    }
+
+    @include on-desktop {
+      padding: 135px 44px 161px;
+    }
+
+    @include on-big-desktop {
+      padding: 144px 124px 112px;
+    }
+  }
+
+  &__body-text {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    text-align: center;
+    color: rgba(28, 26, 38, 1);
+    padding-bottom: 32px;
+    max-width: 288px;
+    align-self: center;
+
+    @include on-tablet {
+      text-align: start;
+      align-self: start;
+      padding-bottom: 146px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 8px;
+      max-width: 260px;
+    }
+
+    @include on-big-desktop {
+      max-width: 288px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+    width: 288px;
+    height: 290px;
+    top: 270px;
+    align-self: center;
+
+    @include on-tablet {
+      width: 326px;
+      height: 328px;
+      top: 200px;
+    }
+
+    @include on-desktop {
+      width: 544px;
+      height: 546px;
+      top: 100px;
+    }
+
+    @include on-big-desktop {
+      width: 584px;
+      height: 586px;
+      top: 90px;
+    }
+  }
+
+  &__title {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgba(28, 26, 38, 1);
+    padding-bottom: 290px;
+    width: 288px;
+    align-self: center;
+
+    @include on-tablet {
+      font-size: 80px;
+      width: auto;
+      padding-bottom: 210px;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+      padding-bottom: 64px;
+      width: 100%;
+    }
+
+    @include on-big-desktop {
+      font-size: 144px;
+      width: 100%;
+    }
+  }
+
+  &__ref__button {
+    text-decoration: none;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: none;
+    border: 2px solid rgba(249, 81, 46, 1);
+    border-radius: 32px;
+    width: 100%;
+    height: 56px;
+    cursor: pointer;
+
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: rgba(249, 81, 46, 1);
+
+    transition: all $timeAnimation;
+
+    &:hover {
+      background-color: rgba(249, 81, 46, 1);
+      color: rgba(255, 255, 255, 1);
+    }
+
+    &:active {
+      background-color: rgba(178, 52, 26, 1);
+      color: rgba(255, 255, 255, 1);
+    }
+
+    &:disabled {
+      border: 2px solid rgba(251, 162, 143, 1);
+      color: rgba(251, 162, 143, 1);
+    }
+
+    @include on-tablet {
+      gap: 6px;
+      width: 326px;
+      align-self: center;
+    }
+
+    @include on-desktop {
+      width: 260px;
+      align-self: start;
+    }
+
+    @include on-big-desktop {
+      width: 280px;
+    }
+  }
+}
+
+.header__button:hover .header__button-icon path {
+  fill: white;
+}
+
+.header__button:active .header__button-icon path {
+  fill: white;
+}
+
+.header__button:disabled .header__button-icon path {
+  fill: rgba(251, 162, 143, 1);
+}

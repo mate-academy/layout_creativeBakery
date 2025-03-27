@@ -1,0 +1,154 @@
+.bake {
+  padding: 64px 16px 72px;
+
+  @include on-tablet {
+    padding: 152px 44px;
+  }
+
+  @include on-desktop {
+    padding: 178px 44px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include on-big-desktop {
+    padding: 178px 124px;
+  }
+
+  &__title {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+    padding-bottom: 24px;
+    color: rgba(28, 26, 38, 1);
+
+    @include on-tablet {
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__undertitle {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    padding-bottom: 56px;
+    color: rgba(28, 26, 38, 1);
+
+    @include on-tablet {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__blocks {
+    @include on-tablet {
+      display: flex;
+      gap: 24px;
+    }
+  }
+
+  &__blocks--one {
+    align-self: start;
+  }
+
+  &__blocks--two {
+    align-self: end;
+  }
+
+  &__blocks--three {
+    align-self: start;
+  }
+
+  &__block {
+    width: 100%;
+    height: auto;
+    padding-bottom: 56px;
+
+    &:last-child {
+      padding: 0;
+    }
+
+    @include on-tablet {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+    transition: all $timeAnimation;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+
+  &__block-title {
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: rgba(127, 128, 150, 1);
+    padding-bottom: 8px;
+  }
+
+  &__block-text {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    color: rgba(28, 26, 38, 1);
+    padding-bottom: 16px;
+
+    @include on-tablet {
+      max-width: 328px;
+    }
+
+    @include on-desktop {
+      max-width: 402px;
+    }
+
+    @include on-big-desktop {
+      max-width: 432px;
+    }
+  }
+
+  &__block-button {
+    width: 84px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: rgba(249, 81, 46, 1);
+    text-decoration: none;
+
+    transition: all $timeAnimation;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
