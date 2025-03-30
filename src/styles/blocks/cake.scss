@@ -1,0 +1,85 @@
+.cake {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 56px;
+
+  @include on-tablet {
+    margin-bottom: 80px;
+  }
+
+  &__button {
+    width: max-content;
+    height: 40px;
+    padding: 8px 16px 8px 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: $body-bc;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__title {
+    margin: 16px 0 0;
+    color: #7f8096;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin: 0;
+    margin-block: 8px;
+    width: 288px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+
+    @include on-tablet {
+      width: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.03);
+
+      @include on-tablet {
+        transform: scale(1.08);
+      }
+
+      @include on-desktop {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $orange;
+
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
