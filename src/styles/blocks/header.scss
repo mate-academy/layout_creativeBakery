@@ -1,0 +1,187 @@
+.header {
+  max-width: 1196px;
+  margin-inline: auto;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 64px;
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+
+    @include on-tablet {
+      padding-bottom: 228px;
+      position: relative;
+      gap: 146px;
+      padding-inline: 44px;
+    }
+
+    @include on-desktop {
+      @include page-grid;
+
+      row-gap: 8px;
+      padding-bottom: 161px;
+    }
+
+    @include on-desktop {
+      @include page-grid;
+
+      row-gap: 8px;
+      padding-bottom: 112px;
+    }
+
+    @include on-design {
+      row-gap: 40px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      gap: 64px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-align: center;
+    text-transform: uppercase;
+    width: 288px;
+
+    @include on-tablet {
+      font-size: 80px;
+      white-space: nowrap;
+      width: fit-content;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+      font-size: 136px;
+    }
+
+    @include on-design {
+      font-size: 144px;
+    }
+  }
+
+  &__desription {
+    margin: 32px 0;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    text-align: center;
+    width: 288px;
+
+    @include on-tablet {
+      margin-top: 80px;
+      width: 280px;
+      text-align: start;
+      align-self: flex-start;
+    }
+
+    @include on-desktop {
+      margin-bottom: 0;
+      margin-top: 135px;
+      grid-column: span 2;
+    }
+
+    @include on-design {
+      margin-top: 144px;
+    }
+  }
+
+  &__image {
+    width: 288px;
+    height: 290px;
+
+    @include on-tablet {
+      position: absolute;
+      width: 326px;
+      height: 328px;
+      top: 19%;
+      z-index: -1;
+    }
+
+    @include on-desktop {
+      left: 27%;
+      top: -5%;
+      width: 544px;
+      height: 546px;
+    }
+
+    @include on-design {
+      left: 28%;
+      top: -5%;
+      width: 584px;
+      height: 586px;
+    }
+  }
+
+  &__link {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    text-decoration: none;
+    color: $orange;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 288px;
+    height: 56px;
+    background-color: $body-bc;
+    border: 2px solid $orange;
+    border-radius: 32px;
+    cursor: pointer;
+    gap: 4px;
+
+    @include on-tablet {
+      width: 326px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+      width: 260px;
+      margin-top: 56px;
+      align-self: flex-start;
+    }
+
+    &:hover {
+      background-color: $orange;
+      border: none;
+      color: white;
+
+      & .icon--cookie {
+        background-image: url(/images/icons/icon-cookie-light.png);
+      }
+
+      & .header__link {
+        color: white;
+      }
+    }
+  }
+}
