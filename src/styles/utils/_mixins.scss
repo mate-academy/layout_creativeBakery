@@ -38,3 +38,22 @@
     grid-template-columns: repeat(8, 1fr);
   }
 }
+
+@mixin psevdo-after {
+  &::after {
+    content: '';
+    width: 100%;
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    bottom: -8px;
+    height: 1px;
+    transition: transform 0.3s;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}
