@@ -1,0 +1,63 @@
+.header {
+  &__container {
+    padding-inline: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+
+    @include on-desktop {
+      padding-inline: 32px;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    background-image: url(../images/Logo.png);
+    background-size: contain;
+    background-position: center;
+    width: 136px;
+    height: 32px;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__nav-link {
+    color: inherit;
+    text-decoration: none;
+
+    @extend %body-text;
+
+    &--contact-us {
+      text-decoration: none;
+      color: $c-accent-orange;
+      display: flex;
+      gap: 4px;
+      align-items: center;
+
+      @extend %uppercase-text;
+    }
+  }
+
+  &__nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    display: flex;
+    gap: 64px;
+  }
+
+  &__nav-item {
+    @include hover(transform, scale(1.2));
+  }
+}

@@ -1,0 +1,79 @@
+.about {
+  padding-inline: $side-indent-mobile;
+  margin-block: 72px;
+  color: $c-black;
+
+  @include on-tablet {
+    margin-block: 152px;
+    min-height: 300px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/Crumbs.png);
+  }
+
+  @include on-desktop {
+    min-height: 673px;
+    margin-block: 178px 56px;
+  }
+
+  &__container {
+    @include page-grid;
+  }
+
+  &__title {
+    grid-column: span $columnsTablet / 2;
+  }
+
+  &__description {
+    margin: 32px 0 0;
+    grid-column: span $columnsTablet / 2;
+
+    @extend %body-text;
+
+    @include on-tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__stats {
+    margin-top: 64px;
+    min-height: 300px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/Crumbs.png);
+
+    @include on-tablet {
+      background-image: none;
+    }
+
+    @include page-grid;
+
+    row-gap: 48px;
+  }
+
+  &__stat {
+    grid-column: span $columnsMobile;
+
+    @include on-tablet {
+      grid-column: span $columnsTablet / 2;
+    }
+
+    @include on-desktop {
+      grid-column: span $columnsTablet / 4;
+    }
+  }
+
+  &__stat-count {
+    margin-bottom: 8px;
+
+    @extend %big-text;
+  }
+
+  &__stat-description {
+    color: $c-gray;
+
+    @extend %body-text;
+  }
+}
