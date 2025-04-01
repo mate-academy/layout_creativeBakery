@@ -16,7 +16,11 @@
 
   @include grid;
 
-  grid-template-rows:minmax(64px auto) auto;
+  @include for-m {
+    padding: 0 44px;
+  }
+
+  grid-template-rows: 64px auto;
 
   &:target {
     transform: translateX(0);
@@ -27,9 +31,8 @@
     grid-row: 1 / 2;
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
     max-height: 80px;
-    padding: 16px;
 
     @include for-m {
       grid-column: 1 / 9;
@@ -49,7 +52,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    margin-top: 132px;
+    gap: 24px;
   }
 
   &__link {
@@ -76,6 +80,14 @@
       &:hover {
         transform: scale(1.05) translateX(0);
       }
+    }
+  }
+
+  &__logo {
+    max-width: 132px;
+
+    &--img {
+      max-width: 132px;
     }
   }
 }
