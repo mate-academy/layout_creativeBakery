@@ -1,0 +1,32 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+
+.content {
+  &--small {
+    @include for-l {
+      display: none;
+    }
+
+    @include for-xl {
+      display: none;
+    }
+  }
+
+  &--big {
+    display: none;
+
+    @include for-l {
+      display: flex;
+    }
+
+    @include for-xl {
+      display: flex;
+    }
+  }
+
+  @include for-m {
+    &--big {
+      display: none;
+    }
+  }
+}

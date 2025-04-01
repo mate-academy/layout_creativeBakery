@@ -1,0 +1,67 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  color: $accent-orange;
+  border: 2px solid $accent-orange;
+
+  cursor: pointer;
+  border-radius: 32px;
+
+  background-color: transparent;
+
+  @include uppercase-text;
+
+  text-decoration: none;
+
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+
+  &__image {
+    margin-right: 4px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    border: 2px solid $accent-orange;
+    color: $white;
+
+    background-color: $accent-orange;
+
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  &:hover &__image {
+    filter: brightness(0) invert(1);
+  }
+
+  &:focus {
+    border: 2px solid $dark-orange;
+    background-color: $dark-orange;
+    color: $white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba($dark-orange, 0.4);
+  }
+
+  &:focus &__image {
+    filter: brightness(0) invert(1);
+  }
+
+  &:disabled {
+    border: 2px solid $light-orange;
+    background-color: transparent;
+    color: $light-orange;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &:disabled &__image {
+    filter: brightness(1.1) sepia(0.4) hue-rotate(-10deg) saturate(1.3);
+  }
+}

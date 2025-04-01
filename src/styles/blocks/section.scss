@@ -1,0 +1,186 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+
+.section {
+  padding: 0 16px;
+  margin: 0 auto;
+  background-color: $light-pink;
+
+  @include grid;
+
+  @include for-m {
+    padding: 0 44px;
+  }
+
+  @include for-l {
+    padding: 0 44px;
+  }
+
+  @include for-xl {
+    padding: 0 124px;
+  }
+
+  &--about {
+    background-image: url(../images/Crumbs.svg);
+    background-position: 50% 70%;
+    background-repeat: no-repeat;
+    background-size: auto 320px;
+
+    @include for-m {
+      background-size: auto 493px;
+      background-position: 50% 50%;
+    }
+
+    @include for-l {
+      background-size: auto 673px;
+      background-position: 60% 70%;
+    }
+
+    @include for-xl {
+      background-size: auto 673px;
+      background-position: 60% 70%;
+    }
+  }
+
+  &__title {
+    margin-top: 64px;
+    grid-column: span 2;
+
+    @include for-m {
+      grid-column: 1 / 9;
+      margin-top: 0;
+    }
+
+    @include for-l {
+      grid-column: 1 / 9;
+    }
+
+    @include for-xl {
+      grid-column: 1 / 9;
+    }
+
+    &--about {
+      @include for-m {
+        grid-column: span 4;
+        margin-top: 152px;
+      }
+
+      @include for-l {
+        grid-column: span 4;
+        margin-top: 178px;
+      }
+
+      @include for-xl {
+        grid-column: span 4;
+        margin-top: 178px;
+      }
+    }
+  }
+
+  &__paragraph {
+    margin-top: 24px;
+    grid-column: span 2;
+
+    @include for-m {
+      grid-column: 1 / 9;
+    }
+
+    @include for-l {
+      grid-column: 1 / 9;
+    }
+
+    @include for-xl {
+      grid-column: 1 / 9;
+    }
+
+    &--about {
+      @include for-m {
+        grid-column: span 4;
+        margin-top: 152px;
+      }
+
+      @include for-l {
+        grid-column: span 4;
+        margin-top: 178px;
+      }
+
+      @include for-xl {
+        grid-column: span 4;
+        margin-top: 178px;
+      }
+    }
+  }
+
+  &__card {
+    margin-top: 56px;
+    grid-column: span 2;
+
+    @include for-m {
+      grid-column: span 4;
+    }
+
+    &--first {
+      @include for-l {
+        grid-column: 1 / 4;
+      }
+
+      @include for-xl {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--second {
+      @include for-l {
+        grid-column: 4 / 7;
+      }
+
+      @include for-xl {
+        grid-column: 4 / 7;
+      }
+    }
+
+    &--third {
+      @include for-l {
+        grid-column: 3 / 6;
+      }
+
+      @include for-xl {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--fourth {
+      @include for-l {
+        grid-column: 6 / 9;
+      }
+
+      @include for-xl {
+        grid-column: 6 / 9;
+      }
+    }
+  }
+
+  &__data {
+    display: grid;
+    grid-column: span 2;
+    margin-top: 64px;
+
+    @include for-m {
+      grid-column: 1 / 9;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 72px;
+    }
+
+    @include for-l {
+      grid-template-columns: repeat(4, 1fr);
+      grid-column: 1 / 9;
+      margin-top: 144px;
+    }
+
+    @include for-xl {
+      grid-template-columns: repeat(4, 1fr);
+      grid-column: 1 / 9;
+      margin-top: 144px;
+    }
+  }
+}

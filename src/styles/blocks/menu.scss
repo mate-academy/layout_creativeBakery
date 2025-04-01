@@ -1,0 +1,26 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+
+  &__paragraph {
+    @include body-text;
+
+    color: $white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    margin-bottom: 16px;
+
+    &:hover {
+      transform: scale(1.03) translateX(5px);
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+}

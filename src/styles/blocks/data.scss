@@ -1,0 +1,39 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+
+.data {
+  box-sizing: border-box;
+  margin-bottom: 56px;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    margin-bottom: 48px;
+
+    @include for-m {
+      margin-bottom: 152px;
+    }
+
+    @include for-l {
+      margin-bottom: 349px;
+    }
+
+    @include for-xl {
+      margin-bottom: 349px;
+    }
+  }
+
+  &__numbers {
+    @include big-text;
+
+    color: $accent-orange;
+  }
+
+  &__paragraph {
+    @include body-text;
+
+    color: $black;
+  }
+}

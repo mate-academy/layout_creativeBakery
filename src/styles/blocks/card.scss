@@ -1,0 +1,92 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  @include for-m {
+    justify-content: flex-start;
+  }
+
+  @include for-l {
+    justify-content: flex-start;
+  }
+
+  @include for-xl {
+    justify-content: flex-start;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    box-sizing: border-box;
+  }
+
+  &__image {
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &__title {
+    @include uppercase-text;
+
+    color: $grey;
+    margin-top: 16px;
+  }
+
+  &__description {
+    @include body-text;
+
+    color: $black;
+    padding-top: 8px;
+    padding-bottom: 16px;
+    justify-content: flex-start;
+    min-height: 30px;
+    flex-grow: 1;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    background-color: transparent;
+    height: 32px;
+    padding: 0;
+    text-decoration: none;
+    max-width: 85px;
+
+    @include uppercase-text;
+
+    color: $accent-orange;
+    transition: transform 0.3s ease-in-out;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05) translateX(5px);
+      border-bottom: 1px solid $accent-orange;
+    }
+
+    &:focus {
+      cursor: pointer;
+      transform: scale(1.03);
+      border-bottom: 1px solid $dark-orange;
+      color: $dark-orange;
+
+      .button__img {
+        filter: brightness(0) saturate(100%) invert(28%) sepia(74%)
+          saturate(1208%) hue-rotate(339deg) brightness(89%) contrast(104%);
+      }
+    }
+  }
+}

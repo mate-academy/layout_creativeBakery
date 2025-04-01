@@ -1,6 +1,140 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin for-m {
+  @media (min-width: 640px) and (max-width: 1023px) {
+    @content;
   }
+}
+
+@mixin for-l {
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin for-xl {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin grid() {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  gap: 0 16px;
+
+  @include for-m {
+    grid-template-columns: repeat(8, minmax(50px, 1fr));
+    gap: 0 24px;
+  }
+
+  @include for-l {
+    grid-template-columns: repeat(8, minmax(80px, 1fr));
+    gap: 0 24px;
+  }
+
+  @include for-xl {
+    grid-template-columns: repeat(8, minmax(110px, 1fr));
+    gap: 0 24px;
+  }
+}
+
+@mixin visually-hidden() {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+// Mixins for fonts
+
+// h1
+
+@mixin h1-font {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-size: 64px;
+  line-height: 85%;
+
+  @include for-m {
+    font-size: 76px;
+    line-height: 85%;
+  }
+
+  @include for-l {
+    font-size: 120px;
+    line-height: 85%;
+  }
+
+  @include for-xl {
+    font-size: 144px;
+    line-height: 85%;
+  }
+}
+
+// h2
+
+@mixin h2-font() {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-size: 48px;
+  line-height: 85%;
+
+  @include for-m {
+    font-size: 56px;
+    line-height: 85%;
+  }
+
+  @include for-l {
+    font-size: 72px;
+    line-height: 85%;
+  }
+
+  @include for-xl {
+    font-size: 72px;
+    line-height: 85%;
+  }
+}
+
+// big text
+
+@mixin big-text {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+// body text
+
+@mixin body-text {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+// uppercas text
+
+@mixin uppercase-text {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
