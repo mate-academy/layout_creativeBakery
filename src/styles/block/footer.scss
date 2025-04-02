@@ -1,0 +1,130 @@
+.footer {
+  background-color: $color-black;
+
+  @include content-padding-inline;
+
+  padding-block: 56px;
+
+  @include on-tablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+    padding-block: 88px;
+  }
+
+  &__logo {
+    height: 40px;
+
+    @include on-tablet {
+      grid-column: 1/5;
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $color-white;
+    margin: 64px 0 0;
+
+    @include on-tablet {
+      margin: 0;
+      grid-column: 5/-1;
+      font-size: 56px;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__block {
+    margin-top: 40px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+
+    &:nth-of-type(1) {
+      @include on-desktop {
+        grid-column: span 4;
+      }
+    }
+
+    &:nth-last-child(3) {
+      @include on-tablet {
+        grid-column: 5/-1;
+        margin: 0;
+      }
+
+      @include on-desktop {
+        grid-column: 7/-1;
+        margin-top: 40px;
+      }
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 2%;
+      text-transform: uppercase;
+      color: $color-gray;
+      margin: 0;
+    }
+
+    &__links {
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__link {
+      text-decoration: none;
+      margin-top: 16px;
+    }
+
+    &__link a {
+      text-decoration: none;
+      color: $color-white;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    gap: 32px;
+    margin: 40px 0;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin: 48px 0 0;
+    }
+
+    a:focus .icon {
+      background-color: $color-white;
+      outline: none;
+    }
+  }
+
+  &__copyright {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $color-gray;
+    margin: 0;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-top: 48px;
+    }
+  }
+}
