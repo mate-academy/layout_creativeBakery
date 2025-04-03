@@ -1,0 +1,151 @@
+.header {
+  margin-bottom: 104px;
+
+  @include on-tablet {
+    margin-bottom: 228px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 313px;
+  }
+
+  @include on-desktop-xl {
+    margin-bottom: 290px;
+  }
+
+  &-bottom {
+    @include content-padding-inline;
+
+    position: relative;
+
+    &__description {
+      margin: 32px 0;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      text-align: center;
+
+      @include on-tablet {
+        margin: 80px 0 146px;
+        width: 280px;
+        text-align: left;
+      }
+
+      @include on-desktop {
+        margin: 0;
+        padding: 135px 0 8px;
+        width: 260px;
+      }
+
+      @include on-desktop-xl {
+        width: 280px;
+        padding: 144px 0 40px;
+      }
+    }
+
+    &__title {
+      margin: 0;
+      font-size: 64px;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 400;
+      word-wrap: break-word;
+
+      @include on-tablet {
+        font-size: 80px;
+      }
+
+      @include on-desktop {
+        font-size: 136px;
+      }
+
+      @include on-desktop-xl {
+        font-size: 144px;
+      }
+    }
+
+    &__photo {
+      display: block;
+      margin: 0 auto;
+
+      @include on-tablet {
+        position: absolute;
+        top: 66px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        height: 328px;
+        width: 326px;
+      }
+
+      @include on-desktop {
+        top: 0;
+        width: 544;
+        height: 546;
+      }
+
+      @include on-desktop-xl {
+        width: 584;
+        height: 586;
+      }
+    }
+
+    &__button {
+      border: 2px solid $color-accent-orange;
+      border-radius: 32px;
+      height: 56px;
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      text-decoration: none;
+      color: $color-accent-orange;
+
+      &:hover {
+        background-color: $color-accent-orange;
+        color: $color-white;
+
+        .icon {
+          background-color: $color-white;
+        }
+      }
+
+      &:focus {
+        background-color: $color-dark-orange;
+        color: $color-white;
+        outline: none;
+
+        .icon {
+          background-color: $color-white;
+        }
+      }
+
+      &__text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 2%;
+        text-transform: uppercase;
+      }
+
+      @include on-tablet {
+        margin-top: 210px;
+        max-width: 326px;
+        margin-inline: auto;
+      }
+
+      @include on-desktop {
+        margin-top: 64px;
+        width: 260px;
+        margin-inline: 0;
+      }
+
+      @include on-desktop-xl {
+        width: 280px;
+      }
+    }
+  }
+}

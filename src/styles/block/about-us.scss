@@ -1,0 +1,100 @@
+.about-us {
+  margin: 72px 0;
+
+  @include content-padding-inline;
+
+  background-image: url(../images/Crumbs-mb.png);
+  background-repeat: no-repeat;
+  background-position: center 77%;
+
+  @include on-tablet {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+    margin: 152px 0;
+    background-position: center center;
+    background-size: 526px 493px;
+    background-image: url(../images/Crumbs-tb.png);
+  }
+
+  @include on-desktop {
+    background-size: 718px 673px;
+    margin: 178px 0 56px;
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    margin: 0;
+    grid-column: 1/5;
+
+    @include on-tablet {
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    grid-column: 5/-1;
+    margin: 32px 0 64px;
+
+    @include on-tablet {
+      margin: 0 0 72px;
+    }
+
+    @include on-desktop {
+      margin: 0;
+    }
+  }
+
+  &__stats {
+    margin-top: 48px;
+
+    @include on-tablet {
+      margin: 0;
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+      margin-top: 144px;
+      padding-bottom: 293px;
+    }
+
+    &:nth-last-child(-n + 2) {
+      @include on-tablet {
+        margin-top: 80px;
+      }
+
+      @include on-desktop {
+        margin-top: 144px;
+      }
+    }
+
+    &__title {
+      font-size: 96px;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: $color-black;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    &__descriprion {
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      color: $color-gray;
+      margin: 0;
+    }
+  }
+}
