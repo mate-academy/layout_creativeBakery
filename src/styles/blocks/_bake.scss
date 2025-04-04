@@ -74,15 +74,33 @@
     gap: 4px;
     width: 84px;
     color: $c-accent-orange;
-
-    @include hover(transform, scale(1.1));
+    transition: all 0.3s;
+    position: relative;
 
     &::before {
       content: '';
       width: 24px;
       height: 24px;
-      background-image: url('/src/images/icons/arrow.svg');
+      background-image: url('/images/icons/arrow.svg');
       display: block;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      display: block;
+      position: absolute;
+      bottom: -8px;
+      height: 1px;
+      background-color: $c-accent-orange;
+
+      transition: all 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
     }
   }
 }
