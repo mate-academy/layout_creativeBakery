@@ -1,0 +1,46 @@
+.header {
+  &__container {
+    @include on-tablet {
+      padding-inline: 16px;
+    }
+
+    @include on-small-desktop {
+      padding-inline: 32px;
+    }
+  }
+
+  &__top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-block: 16px;
+
+    @include on-small-desktop {
+      padding-block: 28px;
+    }
+  }
+
+  &__logo-link {
+    @include hover(transform, scale(1.1));
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-small-desktop {
+      display: block;
+    }
+
+    &-list {
+      display: flex;
+      gap: 64px;
+    }
+  }
+
+  &__menu {
+    &-icon {
+      display: block;
+    }
+  }
+}
