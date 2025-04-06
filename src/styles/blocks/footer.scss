@@ -1,0 +1,188 @@
+.footer {
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: $main-text-color;
+    padding-top: 56px;
+    padding-bottom: 56px;
+
+    @include on-tablet {
+      padding-top: 88px;
+      padding-bottom: 88px;
+    }
+  }
+
+  &__section-menu {
+    grid-column: 1 / 2;
+
+    @include on-tablet {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__section-contacts {
+    grid-column: 1 / 2;
+
+    @include on-tablet {
+      grid-column: 2 / 3;
+    }
+  }
+
+  &__section-socials {
+    grid-column: 1 / 2;
+    display: flex;
+    gap: 32px;
+    padding-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 2;
+      padding-bottom: 0;
+    }
+  }
+
+  &__section-copyright {
+    grid-column: 1 / 2;
+
+    @include on-tablet {
+      grid-column: 2 / 3;
+    }
+  }
+
+  &__logoBlock {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 168px;
+    padding-bottom: 40px;
+
+    @include on-tablet {
+      padding-bottom: 96px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 61px;
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    width: 100%;
+    user-select: none;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 48px;
+  }
+
+  &__title {
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $card-title-color;
+  }
+
+  &__text {
+    position: relative;
+    width: fit-content;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #fff;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: -4px;
+      height: 1px;
+      width: 100%;
+      background-color: #fff;
+      transform-origin: left;
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__contactsTitle {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+
+    @include on-tablet {
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 40px;
+    gap: 40px;
+
+    @include on-tablet {
+      padding-bottom: 0;
+    }
+
+    @include on-desktop {
+      gap: 0;
+    }
+
+    &--call {
+      grid-column: 1 / 2;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @include on-desktop {
+        grid-column: 1 / 2;
+      }
+    }
+
+    &--email {
+      grid-column: 1 / 2;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @include on-desktop {
+        grid-column: 2 / 3;
+      }
+    }
+  }
+
+  &__mark {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $card-title-color;
+  }
+}

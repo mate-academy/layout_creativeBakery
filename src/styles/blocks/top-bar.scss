@@ -1,0 +1,122 @@
+.top-bar {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Inter, sans-serif;
+
+  @include on-desktop {
+    padding: 28px 32px;
+  }
+
+  &__logoBlock {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    width: 136px;
+  }
+
+  &__navBlock {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+
+  &__burgerBlock {
+    display: block;
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    width: 100%;
+    user-select: none;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $main-text-color;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: -4px;
+      height: 1px;
+      width: 100%;
+      background-color: $main-text-color;
+      transform-origin: left;
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &--contact-us {
+      position: relative;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $decorate-color;
+
+      &::before {
+        content: '';
+        display: block;
+        height: 24px;
+        width: 24px;
+        margin-right: 7px;
+        background-image: url('../images/icons/icon-phone.png');
+        background-size: cover;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: -4px;
+        height: 1px;
+        width: 100%;
+        background-color: $decorate-color;
+        transform-origin: left;
+        transition: transform 0.3s;
+        transform: scale(0);
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 24px;
+
+    @include on-tablet {
+      gap: 32px;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 288px;
+  box-sizing: border-box;
+
+  @include on-tablet {
+    max-width: 328px;
+    width: fit-content;
+  }
+
+  @include on-tablet {
+    max-width: 328px;
+  }
+
+  @include on-desktop {
+    max-width: 402px;
+  }
+
+  @include on-design {
+    max-width: 432px;
+  }
+
+  &__image {
+    height: 356px;
+    width: 288px;
+    border-radius: 8px;
+    user-select: none;
+
+    @include on-tablet {
+      height: 424px;
+      width: 328px;
+    }
+
+    @include on-desktop {
+      height: 512px;
+      width: 402px;
+    }
+
+    @include on-design {
+      height: 560px;
+      width: 432px;
+    }
+  }
+
+  &__title {
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    color: $card-title-color;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: $main-text-color;
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $decorate-color;
+    box-sizing: border-box;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 24px;
+      width: 24px;
+      margin-right: 4px;
+      background-image: url('../images/icons/icon-arrow.png');
+      background-size: cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: -4px;
+      height: 1px;
+      width: 100%;
+      background-color: $decorate-color;
+      transform-origin: left;
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &:focus {
+      color: $focus-color;
+
+      &::before {
+        content: '';
+        background-image: url('../images/icons/icon-arrow-onFocus-x2.png');
+      }
+
+      &::after {
+        content: '';
+        background-color: $focus-color;
+      }
+    }
+  }
+}
