@@ -1,0 +1,86 @@
+.top-bar {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Inter, sans-serif;
+
+  @include on-desktop {
+    padding: 28px 32px;
+  }
+
+  &__logoBlock {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    width: 136px;
+  }
+
+  &__navBlock {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+
+  &__burgerBlock {
+    display: block;
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    width: 100%;
+    user-select: none;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main-text-color;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    &--contact-us {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $decorate-color;
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: '';
+        display: block;
+        height: 24px;
+        width: 24px;
+        margin-right: 7px;
+        background-image: url('../images/icons/icon-phone.png');
+        background-size: cover;
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 24px;
+
+    @include on-tablet {
+      gap: 32px;
+    }
+  }
+}
