@@ -93,6 +93,8 @@
   }
 
   &__text {
+    position: relative;
+    width: fit-content;
     font-family: Inter, sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -100,6 +102,23 @@
     letter-spacing: -0.01em;
     color: #fff;
     text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: -4px;
+      height: 1px;
+      width: 100%;
+      background-color: #fff;
+      transform-origin: left;
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
   }
 
   &__contactsTitle {
