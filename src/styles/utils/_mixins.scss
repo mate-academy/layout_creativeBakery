@@ -1,6 +1,55 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover-map($map, $pseudo: '') {
+  $selector: if($pseudo == '', '&:hover', '&:hover::#{$pseudo}');
+  transition: all 0.3s ease;
+
   &:hover {
-    #{$_property}: $_toValue;
+    @each $prop, $val in $map {
+      #{$prop}: #{$val};
+    }
+  }
+}
+
+@mixin hover-delay($property: all, $duration: 0.9s, $timing: ease) {
+  transition: $property $duration $timing;
+
+  &:hover {
+    @content
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $min-width-tablet) {
+    @content
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $min-width-desktop) {
+    @content
+  }
+}
+
+@mixin on-desktop-big {
+  @media (min-width: $min-width-desktop-big) {
+    @content
+  }
+}
+
+@mixin text-style(
+  $font-family,
+  $font-size,
+  $font-weight,
+  $uppercase: false
+) {
+  font-family: $font-family;
+
+  @if $font-size !=false {
+    font-size: $font-size;
+  }
+
+  font-weight: $font-weight;
+
+  @if $uppercase {
+    text-transform: uppercase;
   }
 }

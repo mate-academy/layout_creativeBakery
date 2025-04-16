@@ -1,0 +1,44 @@
+.menu {
+  height: 100vh;
+  background-color: $page-background;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.3s;
+  transform: translateX(-100%);
+  pointer-events: none;
+  padding-inline: $padding-inline-mobile;
+
+  @include on-tablet {
+    padding-inline: $padding-inline-tablet;
+  }
+
+  .top-bar {
+    margin-block-end: 132px;
+
+    .close-button {
+      @include hover-delay(background-color 0.3s ease) {
+        background-color: orange;
+      }
+    }
+  }
+
+  .aside-nav {
+    .menu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+}
+
+.menu.menu__open {
+  transform: translateX(0);
+  pointer-events: all;
+  opacity: 1;
+  z-index: 3;
+}
+
+

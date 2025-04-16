@@ -1,0 +1,47 @@
+@import "сard";
+
+.product-cards {
+  margin-block-end: 72px;
+
+  @include on-tablet {
+    margin-block-end: 152px;
+  }
+
+  @include on-desktop {
+    margin-block-end: 178px;
+  }
+
+  &__title {
+    @include text-style(
+        $font-family-inter, $font-size-9xl, $font-weight-regular, true
+    );
+    line-height: 85%;
+    letter-spacing: -0.05em;
+
+    color: $text-primary;
+    margin-block-end: 24px;
+
+    @include on-tablet {
+      font-size: $font-size-10xl;
+    }
+
+    @include on-desktop {
+      font-size: $font-size-12xl;
+    }
+  }
+
+  &__description {
+    @include text-style(
+        $font-family-inter, $font-size-md, $font-weight-regular, false
+    );
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    color: $text-primary;
+    margin-block-end: 56px;
+
+    @include on-tablet {
+      margin-block-end: 80px;
+    }
+  }
+}
