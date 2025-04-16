@@ -1,0 +1,56 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 16px;
+
+  @include on-tablet {
+    margin-inline: -18px;
+    margin-block-end: 80px;
+  }
+
+  @include on-desktop {
+    padding-block: 25px;
+  }
+
+  @include on-desktop-big {
+    margin-inline: -112px;
+  }
+
+  .logo {
+    width: 136px;
+    height: 32px;
+
+    .logo-img {
+      width: 100%;
+    }
+  }
+
+  .top-bar-btn {
+    width: 24px;
+    height: 24px;
+
+    @include hover-map((
+      animation: bounce 0.5s ease,
+      border-radius: 50%
+    ));
+
+    .top-bar-btn--img {
+      width: 100%;
+    }
+  }
+
+  .burger-button {
+    @include hover-delay(background-color 0.3s ease) {
+      background-color: lightgreen;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+
+    .burger-img {
+      width: 100%;
+    }
+  }
+}

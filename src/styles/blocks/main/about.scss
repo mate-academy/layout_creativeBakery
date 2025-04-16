@@ -1,0 +1,139 @@
+.about {
+  position: relative;
+
+  width: 100%;
+  z-index: 0;
+
+  margin-block-end: 72px;
+
+  @include on-tablet {
+    margin-block-end: 152px;
+  }
+
+  @include on-desktop {
+    margin-block-end: 56px;
+    padding-block-end: 293px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 170px;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-image: url("./../images/Crumbs.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: border-box;
+    z-index: -1;
+    pointer-events: none;
+    margin-inline-start: -$padding-inline-mobile;
+
+    @include on-tablet {
+      width: 77vw;
+      top: 0;
+      left: 70px;
+    }
+
+    @include on-desktop {
+      width: 58vw;
+      top: 20px;
+      left: 235px;
+    }
+
+    @include on-desktop-big {
+      //top: -10px;
+    }
+  }
+
+  &__description {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+      margin-block-end: 72px;
+    }
+
+    @include on-desktop {
+      margin-block-end: 144px;
+    }
+
+    .about__title {
+      @include text-style(
+          $font-family-inter, $font-size-9xl, $font-weight-regular, true
+      );
+      line-height: 85%;
+      letter-spacing: -0.05em;
+
+      color: $text-primary;
+      margin-block-end: 32px;
+
+      @include on-tablet {
+        font-size: clamp(48px, 7vw, 65px);
+
+        max-width: 630px;
+      }
+
+      @include on-desktop {
+        font-size: 72px;
+      }
+    }
+
+    .about__text {
+      @include text-style(
+          $font-family-inter, $font-size-md, $font-weight-regular, false
+      );
+      line-height: 150%;
+      letter-spacing: -0.01em;
+
+      color: $text-primary;
+      margin-block-end: 64px;
+    }
+  }
+
+  &__info {
+    display: grid;
+    row-gap: 48px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+      row-gap: 80px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .about__item {
+      .about__value {
+        @include text-style(
+            $font-family-inter, 96px, $font-weight-regular, true
+        );
+        line-height: 85%;
+        letter-spacing: -0.05em;
+
+        color: $text-primary;
+        margin-block-end: 8px;
+
+        @include on-tablet {
+          font-size: 96px;
+        }
+      }
+
+      .about__label {
+        @include text-style(
+            $font-family-inter, $font-size-md, $font-weight-regular, false
+        );
+        line-height: 150%;
+        letter-spacing: -0.01em;
+
+        color: $text-gray;
+        margin-block-end: 8px;
+      }
+    }
+  }
+}

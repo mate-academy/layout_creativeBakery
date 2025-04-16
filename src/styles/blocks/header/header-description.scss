@@ -1,0 +1,176 @@
+.header__description {
+  padding-block-start: 32px;
+
+  @include on-tablet {
+    padding-block: 0;
+  }
+
+  @include on-desktop {
+    position: relative;
+  }
+
+  .header__text {
+    max-width: 490px;
+    @include text-style(
+        $font-family-inter, $font-size-md, $font-weight-regular, false
+    );
+    text-align: center;
+    color: $text-primary;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    padding-block-end: 32px;
+    margin-inline: auto;
+
+    @include on-tablet {
+      max-width: 280px;
+      text-align: left;
+      margin-inline: initial;
+      margin-block-start: 16px;
+      padding-block-end: 0;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      top: 105px;
+      width: 260px;
+    }
+
+    @include on-desktop-big {
+      width: 280px;
+    }
+  }
+
+  .header__title-img-wrapper {
+    display: grid;
+    place-items: center;
+
+    @include on-tablet {
+      height: 328px;
+      margin-block-end: 80px;
+    }
+
+    .header__title {
+      max-width: 490px;
+      @include text-style(
+          $font-family-inter, $font-size-11xl, $font-weight-regular, true
+      );
+      text-align: center;
+      color: $text-primary;
+      line-height: 85%;
+      letter-spacing: -0.05em;
+      margin-inline: auto;
+
+      @include on-tablet {
+        grid-area: 1 / 1;
+        max-width: initial;
+        width: 100%;
+        margin-block-start: 20px;
+        z-index: 1;
+
+        font-size: clamp(67px, 10vw, 90px);
+        letter-spacing: -0.03em;
+      }
+
+      @include on-desktop {
+        font-size: 106px;
+      }
+
+      @include on-desktop-big {
+        font-size: 108px;
+      }
+    }
+
+    .header__img-box {
+      width: 288px;
+      height: 290px;
+      background-image: url("./../images/cookie.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-inline: auto;
+
+      @include on-tablet {
+        width: 326px;
+        grid-area: 1 / 1;
+        z-index: 0;
+      }
+
+      @include on-desktop {
+        width: 544px;
+        height: 546px;
+      }
+
+      @include on-desktop-big {
+        width: 584px;
+        height: 586px;
+      }
+
+      .header__img {
+        height: 100%;
+        display: block;
+        margin-inline: auto;
+      }
+    }
+  }
+
+  .header__btn {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: $text-secondary;
+    border: 2px solid $text-secondary;
+    border-radius: 32px;
+    padding-block: 15px;
+
+    &:hover {
+      color: white;
+      background-color: #F9512E;
+    }
+
+    &:focus {
+      color: white;
+      background-color: #B2341A;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+
+    @include text-style(
+        $font-family-inter, $font-size-md, $font-weight-medium, true
+    );
+    line-height: 100%;
+    letter-spacing: 0.02em;
+
+    @include on-tablet {
+      width: 326px;
+      margin-inline: auto;
+    }
+
+    @include on-desktop {
+      width: 260px;
+      margin-inline: initial;
+    }
+
+    @include on-desktop-big {
+      width: 280px;
+    }
+
+    .header__btn.btn-img {
+      color: #F9512E;
+
+      &:hover {
+        color: white;
+      }
+
+      &:focus {
+        color: white;
+      }
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+  }
+}

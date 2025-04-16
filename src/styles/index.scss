@@ -1,0 +1,64 @@
+@import 'utils';
+@import 'fonts';
+@import 'typography';
+@import "utils/keyframes";
+@import "blocks/top-bar";
+@import "blocks/nav";
+@import "blocks/header/header";
+@import "blocks/main/product-cards";
+@import "blocks/main/about";
+@import "blocks/footer/footer";
+@import "blocks/aside/aside";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  a {
+    list-style: none;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  input,
+  textarea {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $page-background;
+  padding-inline: $padding-inline-mobile;
+
+  @include on-tablet {
+    padding-inline: $padding-inline-tablet;
+  }
+
+  @include on-desktop {
+    padding-inline: $padding-inline-desktop;
+  }
+
+  @include on-desktop-big {
+    padding-inline: $padding-inline-desktop-big;
+  }
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
