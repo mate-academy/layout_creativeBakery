@@ -1,0 +1,28 @@
+.theme-switcher {
+  margin-left: auto;
+  margin-right: 32px;
+  width: 50px;
+  border-radius: 20px;
+  background-color: var(--theme-switcher-bg-color);
+  padding: 5px;
+  transition: background-color 0.3s;
+
+  @include on-desktop {
+    margin-right: 64px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    background-color: var(--theme-switcher-color);
+    width: 50%;
+    padding-bottom: 50%;
+    border-radius: 50%;
+
+    transition: transform 0.3s;
+  }
+
+  &--theme--pink::after {
+    transform: translateX(100%);
+  }
+}
