@@ -1,6 +1,42 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin link-flex {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@mixin icon-hover {
+  fill: $main-color;
+  transition: fill $time-funclion;
+
   &:hover {
-    #{$_property}: $_toValue;
+    fill: $accent-color;
   }
+
+  &:focus {
+    fill: $focus-color;
+  }
+}
+
+@mixin link-hover {
+  transition: color $time-funclion;
+
+  &:hover {
+    color: $accent-color;
+  }
+
+  &:focus {
+    color: $focus-color;
+  }
+}
+
+@mixin footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }

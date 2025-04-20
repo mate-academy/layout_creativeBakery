@@ -1,0 +1,103 @@
+.hero {
+  position: relative;
+  padding: 32px 16px 40px;
+
+  @media (min-width: 640px) {
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 80px;
+    padding-bottom: 228px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-left: 124px;
+    padding-right: 124px;
+    padding-bottom: 112px;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    @media (min-width: 768px) {
+      justify-content: space-between;
+      align-items: flex-start;
+      height: 82vh;
+    }
+
+    @media (min-width: 1200px) {
+      justify-content: center;
+      gap: 40px;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  &__title {
+    font-weight: $font-weight;
+    font-size: 62px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      font-size: 78px;
+      align-self: center;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 129px;
+      align-self: start;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 139px;
+    }
+  }
+  &__img {
+    @media (min-width: 768px) {
+      position: absolute;
+      top: 43%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+
+      animation: rotate-slow 20s linear infinite;
+    }
+
+    @media (min-width: 1440px) {
+      top: 47%;
+    }
+  }
+
+  &__link {
+    @media (min-width: 768px) {
+      align-self: center;
+    }
+
+    @media (min-width: 1200px) {
+      align-self: start;
+    }
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

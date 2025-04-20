@@ -1,0 +1,66 @@
+.mobile-menu {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 10;
+
+  width: 100%;
+  height: 100vh;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: $main-bg;
+  color: $main-bg;
+
+  opacity: 0;
+  transition:
+    transform $time-funclion,
+    opacity $time-funclion;
+  pointer-events: none;
+
+  &.active {
+    opacity: 1;
+    left: 0;
+    pointer-events: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__header {
+    @include header-top;
+
+    padding-bottom: 16px;
+  }
+
+  &__logo {
+    @include icon-hover;
+  }
+
+  &__close-btn {
+    border: none;
+    padding: 0;
+
+    background-color: transparent;
+
+    @include icon-hover;
+  }
+
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__link {
+    @include link-hover;
+
+    color: $main-color;
+  }
+}
