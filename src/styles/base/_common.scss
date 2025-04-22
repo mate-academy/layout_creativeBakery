@@ -1,0 +1,122 @@
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 16px;
+  padding-left: 16px;
+
+  @media (min-width: 640px) {
+    padding-right: 44px;
+    padding-left: 44px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-right: 124px;
+    padding-left: 124px;
+  }
+}
+
+.title {
+  font-size: 48px;
+  font-weight: $font-weight;
+  line-height: 85%;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+
+  @media (min-width: 768px) {
+    font-size: 55px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 72px;
+  }
+}
+
+.subtitle {
+  font-weight: 500;
+  line-height: 100%;
+  color: $second-color;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.main-link {
+  @include link-flex;
+
+  justify-content: center;
+  width: 100%;
+  max-width: 326px;
+  padding: 20px 0;
+  border: 2px solid $accent-color;
+  border-radius: 32px;
+  font-weight: 500;
+  color: $accent-color;
+  line-height: 100%;
+  background-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition:
+    background-color $time-funclion,
+    color $time-funclion;
+
+  &:hover {
+    background-color: $accent-color;
+    color: $light-color;
+  }
+
+  &:focus {
+    background-color: $focus-color;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 326px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 260px;
+  }
+}
+
+.second-link {
+  position: relative;
+  width: max-content;
+  padding: 4px 0;
+  @include link-flex;
+
+  font-weight: 500;
+  color: $accent-color;
+  line-height: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition:
+    fill $time-funclion,
+    color $time-funclion;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: $accent-color;
+    transform: translateX(-50%);
+    transition:
+      width $time-funclion,
+      left $time-funclion;
+  }
+
+  &:hover::after {
+    width: 100%;
+    left: 50%;
+  }
+
+  &:focus {
+    color: $focus-color;
+  }
+
+  &:focus::after {
+    background-color: $focus-color;
+  }
+}
