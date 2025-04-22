@@ -1,0 +1,30 @@
+.page {
+  scroll-behavior: smooth;
+  background-color: $c-light-pink;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1;
+    height: 100vh;
+    opacity: 0;
+    transition: all 0.5s;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    background-color: $c-light-pink;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+}
