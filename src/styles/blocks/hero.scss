@@ -1,0 +1,138 @@
+.hero {
+  padding-block: 32px 40px;
+
+  background-image: url(../images/hero/cookie.png);
+  background-repeat: no-repeat;
+  background-size: 288px 290px;
+  background-position: center calc(100% - 96px);;
+
+  @include on-tablet {
+    padding-block: 80px 161px;
+
+    background-size: 326px 328px;
+    background-position: center 144px;
+  }
+
+  @include on-desktop {
+    padding-block: 135px 161px;
+
+    background-size: 544px 546px;
+    background-position: center top;
+  }
+
+  @include on-big-desktop {
+    padding-block: 144px 112px;
+
+    background-size: 584px 586px;
+  }
+
+  &__content {
+    width: 100%;
+
+    @include page-grid;
+
+    margin-inline: auto;
+    grid-auto-flow: column;
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: $black-color;
+
+    @include on-tablet {
+      grid-column: 1 / span 4;
+
+      width: 280px;
+      margin-bottom: 146px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      margin-bottom: 8px;
+
+      grid-column: 1 / span 2;
+    }
+
+    @include on-big-desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    margin-bottom: 290px;
+    font-size: 64px;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      margin-bottom: 210px;
+      font-size: 80px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 64px;
+      font-size: 136px;
+    }
+
+    @include on-big-desktop {
+      margin-bottom: 64px;
+      font-size: 144px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    height: 56px;
+    border-radius: 32px;
+    background-color: transparent;
+    border: 2px solid $accent-orange-color;
+    color: $accent-orange-color;
+    transition: all 0.3s;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      grid-column: 3 / span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 2;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $accent-orange-color;
+      color: $white-color;
+
+      .icon {
+        background-image: url(../images/icons/icon-cookie-white.svg);
+        transition: background-image 0.3s;
+      }
+    }
+
+    &:focus {
+      background-color: $dark-orange-color;
+      border-color: $dark-orange-color;
+    }
+  }
+}

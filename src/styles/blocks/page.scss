@@ -1,0 +1,51 @@
+html {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+.page {
+  --background-color: #{$light-blue-color};
+  --text-color: #{$black-color};
+  --about-us-label-color: #{$grey-color};
+  --theme-switcher-bg-color: #{$black-color};
+  --theme-switcher-color: #{$light-blue-color};
+
+  max-width: 100vw;
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+
+  &--theme--pink {
+    --background-color: #{$light-pink-color};
+    --text-color: #{$accent-orange-color};
+    --about-us-label-color: #{$black-color};
+    --theme-switcher-bg-color: #{$accent-orange-color};
+    --theme-switcher-color: #{$light-pink-color};
+  }
+
+  &:has(&__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+}

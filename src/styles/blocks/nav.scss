@@ -1,0 +1,42 @@
+.nav {
+  &--top-bar {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    &--top-bar {
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+
+  &__link {
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: $black-color;
+
+    @include hover(color, $accent-orange-color);
+
+    &--contact-us {
+      background-image: url(../images/icons/icon-phone.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      color: $accent-orange-color;
+      text-transform: uppercase;
+      font-weight: 500;
+      line-height: 2;
+      letter-spacing: 0.02em;
+      padding-left: 28px;
+    }
+  }
+}
