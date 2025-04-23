@@ -1,0 +1,92 @@
+.card {
+  @include on-desktop {
+    width: 402px;
+  }
+
+  @include on-big-desktop {
+    width: 432px;
+  }
+
+  &__img {
+    height: 356px;
+    width: 288px;
+    margin-bottom: 16px;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-tablet {
+      width: 328px;
+      height: 424px;
+    }
+
+    @include on-desktop {
+      width: 402px;
+      height: 512px;
+    }
+
+    @include on-big-desktop {
+      width: 432px;
+      height: 560px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 8px;
+    color: $colorTextGrey;
+
+    @include uppercase;
+  }
+
+  &__description {
+    margin: 0;
+    margin-bottom: 16px;
+    height: 48px;
+    color: $colorTextDark;
+
+    @include body-text;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $colorPage;
+    height: 32px;
+    width: max-content;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    color: $colorTextHover;
+    cursor: pointer;
+
+    @include uppercase;
+    @include hover(transform, scale(1.2));
+
+    &:hover {
+      border-bottom: 1px solid $colorButton;
+    }
+
+    &:focus {
+      color: $colorButtonFocused;
+      border-color: $colorButtonFocused;
+    }
+
+    &:disabled {
+      color: $colorButtonDisabled;
+      border-color: $colorButtonDisabled;
+    }
+
+    &-img {
+      margin-right: 5px;
+      height: 16px;
+      width: 16px;
+      background-image: url(./../images/svg/icon-arrow-right.svg);
+      background-repeat: no-repeat;
+    }
+
+    &:focus &-img {
+      background-image: url(./../images/svg/icon-arrow-right-focused.svg);
+    }
+  }
+}
