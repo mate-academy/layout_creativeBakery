@@ -1,0 +1,55 @@
+.nav {
+  &__item {
+    list-style: none;
+
+    @include hover(color, $accent-color);
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 32px;
+
+    &:nth-child(-n + 1) {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $accent-color;
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__item--button {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+
+    @include hover(transform, scale(1.2));
+
+    & :last-child {
+      color: $accent-color;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  &__phone-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/phone-icon.svg);
+    background-position: left;
+  }
+}

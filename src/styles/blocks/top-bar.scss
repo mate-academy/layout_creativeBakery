@@ -1,0 +1,36 @@
+.top-bar {
+  height: $top-bar-height-mobile;
+
+  @include on-tablet {
+    height: $top-bar-height-tablet;
+  }
+
+  &__logo {
+    height: 32px;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__menu-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/menu-icon.svg);
+
+    @include hover(transform, scale(1.2));
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 64px;
+    }
+  }
+}

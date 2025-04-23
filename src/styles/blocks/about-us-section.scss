@@ -1,0 +1,103 @@
+.about-us-section {
+  grid-column: 1/-1;
+  margin-bottom: 72px;
+
+  @include on-tablet {
+    margin-bottom: 152px;
+    background-image: url(../images/crumbs-bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @include on-desktop {
+    padding-bottom: 292px;
+    margin-bottom: 56px;
+  }
+
+  &__top {
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      margin-bottom: 72px;
+
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 32px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+      grid-column: span 4;
+    }
+  }
+
+  &__description {
+    margin: 0;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__bottom {
+    background-image: url(../images/crumbs-bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include page-grid;
+
+    @include on-tablet {
+      background-image: none;
+    }
+  }
+
+  &__stat {
+    grid-column: span 2;
+    margin-bottom: 48px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(-n + 2) {
+      @include on-tablet {
+        margin-bottom: 80px;
+      }
+
+      @include on-desktop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__stat-value {
+    margin: 0 0 8px;
+
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $accent-color;
+  }
+  &__stat-label {
+    margin: 0;
+  }
+}
