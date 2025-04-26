@@ -1,0 +1,194 @@
+.about-us {
+  padding-top: 68px;
+  margin-top: -68px;
+
+  margin-bottom: 72px;
+
+  @include on-tablet {
+    margin-bottom: 152px;
+  }
+
+  @include on-laptop {
+    padding-top: 90px;
+    margin-top: -90px;
+
+    margin-bottom: 349px;
+  }
+
+  &__content {
+    @include page-grid;
+
+    position: relative;
+  }
+
+  &__background-image {
+    background-image: url(/src/images/about-us/crumbs-mobile-2x.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    position: absolute;
+    width: 100vw;
+    height: 300px;
+    top: 544px;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+
+    z-index: -1;
+
+    @include on-tablet {
+      background-image: url(/src/images/about-us/crumbs-main-1x.png);
+      height: 493px;
+      width: 526px;
+      top: 51px;
+    }
+
+    @include on-laptop {
+      width: 718px;
+      height: 673px;
+      inset: 0;
+      transform: translateX(0%);
+      grid-column: 3 / 8;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    font-size: 48px;
+    line-height: 40.8px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    color: $accent-orange-color;
+
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      font-size: 56px;
+      line-height: 47.6px;
+      grid-column: span 4;
+    }
+
+    @include on-laptop {
+      font-size: 72px;
+      line-height: 61.2px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      grid-column: span 4;
+
+      margin-bottom: 72px;
+    }
+
+    @include on-laptop {
+      line-height: 24px;
+
+      margin-bottom: 146px;
+    }
+  }
+
+  &__statistics {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include on-tablet {
+      &:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include on-laptop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__statistics-title {
+    font-size: 96px;
+    line-height: 81.6px;
+    letter-spacing: -0.05em;
+    color: $accent-orange-color;
+  }
+
+  &__statistics-year {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-row: 2;
+      grid-column: span 4;
+
+      margin-bottom: 80px;
+    }
+
+    @include on-laptop {
+      grid-column: span 2;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__statistics-stores {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-row: 2;
+      grid-column: span 4;
+
+      margin-bottom: 80px;
+    }
+
+    @include on-laptop {
+      grid-column: span 2;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__statistics-companies {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-row: 3;
+      grid-column: span 4;
+    }
+
+    @include on-laptop {
+      grid-row: 2;
+      grid-column: span 2;
+    }
+  }
+
+  &__statistics-clients {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-row: 3;
+      grid-column: span 4;
+    }
+
+    @include on-laptop {
+      grid-row: 2;
+      grid-column: span 2;
+    }
+  }
+}

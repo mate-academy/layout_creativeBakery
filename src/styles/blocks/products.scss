@@ -1,0 +1,202 @@
+:root {
+  --glow-hue: 222deg;
+  --shadow-hue: 180deg;
+  --spring-easing: linear(
+    0,
+    0,
+    0.01 0.9%,
+    0.04 1.8%,
+    0.16,
+    0.31 5.8%,
+    0.79 11.1%,
+    1.01 14.2%,
+    1.1,
+    1.16,
+    1.2,
+    1.22 20.3%,
+    1.23,
+    1.23,
+    1.23,
+    1.21 24.6%,
+    1.18 26.9%,
+    1.06 32.6%,
+    1.01 35.5%,
+    0.98,
+    0.97,
+    0.96,
+    0.95 42%,
+    0.95 44.1%,
+    0.95 46.5%,
+    1 57.2%,
+    1.01,
+    1.01 63.3%,
+    1.01 68.3%,
+    1 84%,
+    1
+  );
+  --spring-duration: 1.33s;
+}
+
+.products {
+  padding-top: 68px;
+  margin-top: -68px;
+
+  margin-bottom: 72px;
+
+  @include on-tablet {
+    margin-bottom: 152px;
+  }
+
+  @include on-laptop {
+    padding-top: 90px;
+    margin-top: -90px;
+
+    margin-bottom: 178px;
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 40.8px;
+    letter-spacing: -0.05em;
+    color: $accent-orange-color;
+
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+
+    margin-bottom: 56px;
+
+    @include on-tablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__cards {
+    @include page-grid;
+
+    gap: 56px;
+
+    @include on-tablet {
+      gap: 24px;
+      row-gap: 80px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-laptop {
+      &-position-left {
+        grid-column: span 3;
+      }
+
+      &-position-right-1 {
+        grid-column: 3 / 6;
+      }
+
+      &-position-right-2 {
+        grid-column: span 3;
+      }
+    }
+  }
+
+  &__card-image {
+    height: 356px;
+    width: 288px;
+
+    filter: drop-shadow(0 0 20px pink);
+
+    margin-bottom: 16px;
+
+    @media ((min-width: 640px) and (max-width: 767px)) {
+      width: 270px;
+    }
+
+    @media ((min-width: 768px) and (max-width: 1023px)) {
+      width: 328px;
+      height: 424px;
+    }
+
+    @include on-laptop {
+      width: 100%;
+      height: 512px;
+    }
+  }
+
+  &__card-content-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__card-name {
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $grey-color;
+
+    margin-bottom: 8px;
+  }
+
+  &__card-description {
+    letter-spacing: -0.01em;
+
+    height: 48px;
+    overflow: auto;
+
+    margin-bottom: 16px;
+  }
+
+  &__card-order {
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $accent-orange-color;
+    position: relative;
+    isolation: isolate;
+    padding: 0.8em 1.4em;
+    border-radius: 0.66em;
+    box-shadow:
+      0 2px 3px 1px hsl(var(--glow-hue) 50% 20% / 50%),
+      inset 0 -10px 20px -10px hsla(var(--shadow-hue), 10%, 90%, 95%);
+    background-image: linear-gradient(
+      315deg,
+      #ffc4ec -10%,
+      #efdbfd 50%,
+      #ffedd6 110%
+    );
+    transition: all var(--spring-duration) var(--spring-easing);
+    scale: 1;
+
+    &:active {
+      scale: 1.04;
+      transition-duration: calc(var(--spring-duration) * 0.5);
+    }
+
+    &:hover:not(:active),
+    &.active {
+      transition-duration: calc(var(--spring-duration) * 0.5);
+      scale: 1.04;
+      box-shadow:
+        0 4px 8px -2px hsl(var(--glow-hue) 50% 20% / 50%),
+        inset 0 0 0 transparent;
+    }
+  }
+}
