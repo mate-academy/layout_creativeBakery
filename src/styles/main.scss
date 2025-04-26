@@ -2,6 +2,307 @@
 @import 'fonts';
 @import 'typography';
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  background: $c-gray;
+  background: $light-pink;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-inline: 16px;
+
+  @include desktop {
+    padding-inline: 44px;
+  }
+}
+
+.bakery {
+  .header {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    background-color: $light-pink;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      height: 88px;
+      padding-block: 28px;
+    }
+
+    &--canTransform {
+      height: 100vh;
+    }
+
+    &__mobile-top-section {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-block: 16px;
+
+      @include desktop {
+        width: fit-content;
+        padding: 0;
+      }
+
+      .logo {
+        width: auto;
+        height: 32px;
+        cursor: pointer;
+
+        @include hover(scale, 1.1);
+      }
+
+      .burger {
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/icons/icon-menu.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+
+        @include hover(scale, 1.1);
+
+        &--canTransform {
+          background-image: url(../images/icons/icon-close.svg);
+        }
+
+        @include desktop {
+          display: none;
+        }
+      }
+    }
+
+    .nav {
+      width: 100%;
+      height: calc(100vh - 64px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      z-index: 5;
+      transform: translateX(100vw);
+      transition: transform 0.3s ease-in-out;
+      background-color: $light-pink;
+
+      &--canTransform {
+        transform: translateX(0);
+      }
+
+      @include desktop {
+        transform: translateX(0);
+        width: fit-content;
+        height: auto;
+        position: static;
+      }
+
+      &__list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+        align-items: center;
+        list-style: none;
+
+        @include desktop {
+          flex-direction: row;
+          justify-content: flex-end;
+          gap: 64px;
+        }
+      }
+
+      &__link {
+        @include body-text;
+        color: $black;
+        text-decoration: none;
+
+        &:visited {
+          color: $black;
+        }
+
+        @include hover(color, $accent-orange);
+
+        &--tel {
+          @include uppercase;
+          color: $accent-orange;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 4px;
+
+          @include hover(color, $black);
+
+          &::before {
+            content: url(../images//icons/icon-phone.svg);
+            display: flex;
+            width: 24px;
+            height: 24px;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  .sections {
+    .section {
+      &--greeting {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 32px;
+        padding-bottom: 40px;
+
+        @include tablet {
+          padding-top: 80px;
+          padding-bottom: 228px;
+          align-items: flex-start;
+        }
+
+        @include desktop {
+          padding-top: 135px;
+          padding-bottom: 161px;
+        }
+
+        .text {
+          @include body-text;
+          text-align: center;
+          color: $black;
+          padding-bottom: 32px;
+
+          @include tablet {
+            text-align: left;
+            padding-bottom: 16px;
+          }
+
+          @include tablet {
+            padding-bottom: 8px;
+          }
+        }
+
+        &__title {
+          @include h1;
+          color: $accent-orange;
+          text-align: center;
+        }
+
+        &__background {
+          width: 100%;
+          height: 290;
+          background-image: url(../images/Cookie.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+
+          @include tablet {
+            min-height: 328px;
+            position: absolute;
+            top: 50%;
+            height: 50%;
+            transform: translateX(-50%);
+            transform: translateY(-50%);
+            z-index: -1;
+          }
+
+          @include desktop {
+            top: 0;
+            height: 546px;
+          }
+        }
+
+        .button {
+          width: 288px;
+          height: 56px;
+          border: 2px solid $accent-orange;
+          border-radius: 32px;
+          background: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+
+          @include hover(background-color, $accent-orange);
+
+          @include tablet {
+            width: 326px;
+            margin: 0 auto;
+            margin-top: 80px;
+          }
+
+          @include desktop {
+            width: 260px;
+            margin: 0;
+          }
+
+          &__content {
+            @include uppercase;
+            color: $accent-orange;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            gap: 4px;
+
+            &::before {
+              content: url(../images//icons/icon-cookie.svg);
+              display: block;
+              width: 24px;
+              height: 24px;
+            }
+          }
+
+          &:hover {
+            .button__content {
+              color: $white;
+
+              &::before {
+                content: url(../images/icons/icon-cookie-white.svg);
+              }
+            }
+          }
+
+          &:active {
+            background-color: $dark-orange;
+          }
+
+          &:disabled {
+            border-color: $dark-orange;
+
+            .button__content {
+              color: $dark-orange;
+
+              &::before {
+                content: url(../images/icons/icon-cookie-disabled.svg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
