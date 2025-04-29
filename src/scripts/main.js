@@ -1,17 +1,18 @@
 'use strict';
 
 const body = document.body;
+const header = document.querySelector('.header');
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav');
-const header = document.querySelector('.header');
+const navItem = document.querySelectorAll('.nav__item');
 
-burger.addEventListener('click', () => {
+const toggleClasses = () => {
   header.classList.toggle('header--canTransform');
   burger.classList.toggle('burger--canTransform');
   nav.classList.toggle('nav--canTransform');
   body.classList.toggle('no-scroll');
+};
 
-  console.log('hello');
-});
+burger.addEventListener('click', toggleClasses);
 
-
+navItem.forEach(item => item.addEventListener('click', toggleClasses));

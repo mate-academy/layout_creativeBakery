@@ -8,12 +8,9 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: $light-pink;
+  scroll-behavior: smooth;
   padding: 0;
   margin: 0;
 }
@@ -24,7 +21,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding-inline: 16px;
 
@@ -157,7 +154,7 @@ body {
           justify-content: center;
           gap: 4px;
 
-          @include hover(color, $light-orange);
+          @include hover(color, $dark-orange);
 
           &::before {
             content: url(../images//icons/icon-phone.svg);
@@ -440,7 +437,7 @@ body {
                 height: 24px;
               }
 
-              @include hover(color, $light-orange);
+              @include hover(color, $dark-orange);
             }
           }
         }
@@ -613,7 +610,7 @@ body {
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
 
     &--page-sections {
       gap: 40px;
@@ -714,17 +711,13 @@ body {
     flex-direction: column;
     justify-content: space-between;
     gap: 40px;
-    padding-top: 40px;
 
     @include tablet {
       gap: 24px;
-      padding-top: 48px;
-      flex-direction: row;
     }
 
     &__socials {
       width: 288px;
-      height: 24px;
       display: flex;
       justify-content: flex-start;
       gap: 32px;
@@ -737,42 +730,23 @@ body {
       }
 
       @include desktop {
-        width: 260px;
+        width: 544px;
       }
 
-      &__icon {
-        width: 24px;
-        height: 24px;
-        display: inline-block;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        transition: filter 0.3s ease;
-        filter: brightness(1);
+      &__icon-facebook {
+        background-image: url(../images/icons/icon-facebook.svg);
 
-        &--facebook {
-          background-image: url(../images/icons/icon-facebook.svg);
-
-          &:hover {
-            background-image: url(../images/icons/icon-facebook-white.svg);
-          }
+        &:hover {
+          background-image: ;
         }
+      }
 
-        &--instagram {
-          background-image: url(../images/icons/icon-instagram.svg);
+      &__icon-instagram {
+        background-image: url(../images/icons/icon-instagram.svg);
+      }
 
-          &:hover {
-            background-image: url(../images/icons/icon-instagram-white.svg);
-          }
-        }
-
-        &--twitter {
-          background-image: url(../images/icons/icon-twitter.svg);
-
-          &:hover {
-            background-image: url(../images/icons/icon-twitter-white.svg);
-          }
-        }
+      &__icon-twitter {
+        background-image: url(../images/icons/icon-twitter.svg);
       }
     }
 
@@ -786,7 +760,7 @@ body {
       }
 
       @include desktop {
-        width: 544px;
+        width: 588px;
       }
     }
   }
