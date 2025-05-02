@@ -15,4 +15,6 @@ const toggleClasses = () => {
 
 burger.addEventListener('click', toggleClasses);
 
-navItem.forEach(item => item.addEventListener('click', toggleClasses));
+if (window.innerWidth < 1280) {
+  navItem.forEach((item) => item.addEventListener('click', toggleClasses));
+}
