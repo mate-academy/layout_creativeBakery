@@ -1,6 +1,4 @@
 .header {
-  // @include grid-layout;
-  // @include padding-layout;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -98,6 +96,10 @@
 
     @include hover(color, $color-primary);
 
+    &:focus {
+      color: $color-dark-orange;
+    }
+
     position: relative;
     &::after {
       content: '';
@@ -113,6 +115,11 @@
 
     &:hover::after {
       transform: scale(1);
+    }
+
+    &:focus::after {
+      transform: scale(1);
+      background-color: $color-dark-orange;
     }
 
     @include on-desktop {

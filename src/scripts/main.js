@@ -26,6 +26,7 @@ menuLinks.forEach((link) => {
   link.addEventListener('click', () => {
     if (menu.classList.contains('menu-active')) {
       toggleMenu();
+      document.body.style.overflow = '';
     }
   });
 });
