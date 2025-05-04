@@ -90,3 +90,30 @@
     padding-inline: 124px;
   }
 }
+
+@mixin hover-link-animation {
+  position: relative;
+  width: fit-content;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: -4px;
+    background-color: $color-text-very-light;
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform $transition-time;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+
+  &:focus::after {
+    transform: scale(1);
+    background-color: $color-secondary;
+  }
+}

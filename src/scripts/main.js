@@ -3,6 +3,8 @@
 const menu = document.querySelector('#menu');
 const menuToggle = document.querySelector('.nav__toggle');
 const menuLinks = document.querySelectorAll('.nav__link');
+const page = document.querySelector('.page');
+const switchTheme = document.querySelector('.header__switch-theme');
 
 const toggleMenu = () => {
   const isMenuOpen = menu.classList.contains('menu-active');
@@ -35,4 +37,8 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && menu.classList.contains('menu-active')) {
     toggleMenu();
   }
+});
+
+switchTheme.addEventListener('click', () => {
+  page.classList.toggle('blue-theme');
 });

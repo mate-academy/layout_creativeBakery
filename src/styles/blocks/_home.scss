@@ -71,8 +71,10 @@
   }
 
   &__title {
-    color: $color-primary;
+    color: $color-title-primary;
     margin: 0;
+    z-index: 1;
+    transition: 0.5s;
 
     @include on-tablet {
       position: absolute;
@@ -84,6 +86,7 @@
   }
 
   &__btn {
+    @include reset-links;
     @extend %uppercase;
 
     grid-column: 1 / -1;
@@ -113,7 +116,7 @@
     }
 
     &:hover {
-      color: $color-white;
+      color: $color-text-very-light;
       background-color: $color-primary;
       transition:
         color 0.3s,
@@ -125,9 +128,9 @@
     }
 
     &:focus {
-      color: $color-white;
-      background-color: $color-dark-orange;
-      border-color: $color-dark-orange;
+      color: $color-text-very-light;
+      background-color: $color-secondary;
+      border-color: $color-secondary;
       transition:
         color 0.3s,
         border-color 0.3s background-color 0.3s;

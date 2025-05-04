@@ -14,6 +14,21 @@
     }
   }
 
+  &__switch-theme {
+    background-color: $color-light-blue;
+    border: 1px solid $color-text-light;
+    opacity: 0.7;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-inline: 20px auto;
+    cursor: pointer;
+
+    .blue-theme & {
+      background-color: $color-light-pink;
+    }
+  }
+
   @include on-desktop {
     padding: 28px 32px;
   }
@@ -97,7 +112,7 @@
     @include hover(color, $color-primary);
 
     &:focus {
-      color: $color-dark-orange;
+      color: $color-secondary;
     }
 
     position: relative;
@@ -119,7 +134,7 @@
 
     &:focus::after {
       transform: scale(1);
-      background-color: $color-dark-orange;
+      background-color: $color-secondary;
     }
 
     @include on-desktop {
