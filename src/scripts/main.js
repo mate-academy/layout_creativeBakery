@@ -15,9 +15,18 @@ const toggleClasses = () => {
   body.classList.toggle('no-scroll');
 };
 
+function handleResize() {
+  if (window.innerWidth < 1280) {
+    navLinks.forEach((item) => {
+      item.addEventListener('click', toggleClasses);
+    });
+  } else {
+    navLinks.forEach((item) => {
+      item.removeEventListener('click', toggleClasses);
+    });
+  }
+}
+
 burger.addEventListener('click', toggleClasses);
 
-
-if (window.innerWidth < 1280) {
-  navLinks.forEach((item) => item.addEventListener('click', toggleClasses));
-}
+window.addEventListener('resize', handleResize);
