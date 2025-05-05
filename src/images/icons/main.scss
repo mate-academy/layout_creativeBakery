@@ -8,12 +8,9 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: $light-pink;
+  scroll-behavior: smooth;
   padding: 0;
   margin: 0;
 }
@@ -33,150 +30,147 @@ body {
   }
 }
 
-.header {
-  width: 100%;
-  height: 64px;
-  display: flex;
-  flex-direction: column;
-  background-color: $light-pink;
-  position: sticky;
-  z-index: 99;
-  top: 0;
-  left: 0;
-
-  @include desktop {
-    flex-direction: row;
-    justify-content: space-between;
-    height: 88px;
-    padding-block: 28px;
-  }
-
-  &--canTransform {
-    padding-inline: 16px;
-    position: fixed;
-    height: 100vh;
-  }
-
-  &__mobile-top-section {
+.bakery {
+  .header {
     width: 100%;
     height: 64px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: 16px;
+    flex-direction: column;
+    background-color: $light-pink;
+    position: sticky;
+    z-index: 99;
+    top: 0;
+    left: 0;
 
     @include desktop {
-      width: fit-content;
-      padding: 0;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 88px;
+      padding-block: 28px;
     }
-
-    .logo {
-      width: auto;
-      height: 32px;
-      cursor: pointer;
-
-      @include hover(scale, 1.1);
-    }
-
-    .burger {
-      width: 20px;
-      height: 20px;
-      background-image: url(../images/icons/icon-menu.svg);
-      background-position: center;
-      background-repeat: no-repeat;
-      cursor: pointer;
-
-      @include hover(scale, 1.1);
-
-      &--canTransform {
-        background-image: url(../images/icons/icon-close.svg);
-      }
-
-      @include desktop {
-        display: none;
-      }
-    }
-  }
-
-  .nav {
-    width: 100%;
-    height: calc(100vh - 64px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 64px;
-    left: 0;
-    z-index: 5;
-    transform: translateX(100vw);
-    transition: transform 0.3s ease-in-out;
-    background-color: $light-pink;
 
     &--canTransform {
-      transform: translateX(0);
+      height: 100vh;
     }
 
-    @include desktop {
-      transform: translateX(0);
-      width: fit-content;
-      height: auto;
-      position: static;
-    }
-
-    &__list {
-      margin: 0;
-      padding: 0;
+    &__mobile-top-section {
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 24px;
+      justify-content: space-between;
       align-items: center;
-      list-style: none;
+      padding-block: 16px;
 
       @include desktop {
-        flex-direction: row;
-        justify-content: flex-end;
-        gap: 64px;
+        width: fit-content;
+        padding: 0;
+      }
+
+      .logo {
+        width: auto;
+        height: 32px;
+        cursor: pointer;
+
+        @include hover(scale, 1.1);
+      }
+
+      .burger {
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/icons/icon-menu.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+
+        @include hover(scale, 1.1);
+
+        &--canTransform {
+          background-image: url(../images/icons/icon-close.svg);
+        }
+
+        @include desktop {
+          display: none;
+        }
       }
     }
 
-    &__link {
-      @include body-text;
+    .nav {
+      width: 100%;
+      height: calc(100vh - 64px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      z-index: 5;
+      transform: translateX(100vw);
+      transition: transform 0.3s ease-in-out;
+      background-color: $light-pink;
 
-      color: $black;
-      text-decoration: none;
-
-      &:visited {
-        color: $black;
+      &--canTransform {
+        transform: translateX(0);
       }
 
-      @include hover(color, $accent-orange);
+      @include desktop {
+        transform: translateX(0);
+        width: fit-content;
+        height: auto;
+        position: static;
+      }
 
-      &--tel {
-        @include uppercase;
-
-        color: $accent-orange;
+      &__list {
+        margin: 0;
+        padding: 0;
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
-        gap: 4px;
+        gap: 24px;
+        align-items: center;
+        list-style: none;
 
-        @include hover(color, $light-orange);
+        @include desktop {
+          flex-direction: row;
+          justify-content: flex-end;
+          gap: 64px;
+        }
+      }
 
-        &::before {
-          content: url(../images//icons/icon-phone.svg);
+      &__link {
+        @include body-text;
+
+        color: $black;
+        text-decoration: none;
+
+        &:visited {
+          color: $black;
+        }
+
+        @include hover(color, $accent-orange);
+
+        &--tel {
+          @include uppercase;
+
+          color: $accent-orange;
           display: flex;
-          width: 24px;
-          height: 24px;
           align-items: center;
           justify-content: center;
+          gap: 4px;
+
+          @include hover(color, $dark-orange);
+
+          &::before {
+            content: url(../images//icons/icon-phone.svg);
+            display: flex;
+            width: 24px;
+            height: 24px;
+            align-items: center;
+            justify-content: center;
+          }
         }
       }
     }
   }
-}
 
-.bakery {
   .sections {
     .section {
       &--greeting {
@@ -416,7 +410,6 @@ body {
 
               width: 100%;
               height: 100%;
-
               object-fit: cover;
             }
 
@@ -452,7 +445,7 @@ body {
                 height: 24px;
               }
 
-              @include hover(color, $light-orange);
+              @include hover(color, $dark-orange);
             }
           }
         }
@@ -495,12 +488,15 @@ body {
             height: 493px;
             object-fit: contain;
             top: 51px;
+            right: 50%;
+            transform: translateX(50%);
           }
 
           @include desktop {
             width: 718px;
             height: 673px;
             top: 0;
+            right: 157px;
           }
         }
 
@@ -567,7 +563,7 @@ body {
           }
 
           &__block {
-            min-width: 280px;
+            min-width: 288px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -601,10 +597,10 @@ body {
 
 .footer {
   background-color: $black;
-  padding-block: 56px;
+  padding: 56px 16px;
 
   @include tablet {
-    padding-block: 88px;
+    padding-block: 88px 44px;
   }
 
   &__info-sections {
@@ -626,7 +622,7 @@ body {
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
 
     &--page-sections {
       gap: 40px;
@@ -730,17 +726,13 @@ body {
     flex-direction: column;
     justify-content: space-between;
     gap: 40px;
-    padding-top: 40px;
 
     @include tablet {
       gap: 24px;
-      padding-top: 48px;
-      flex-direction: row;
     }
 
     &__socials {
       width: 288px;
-      height: 24px;
       display: flex;
       justify-content: flex-start;
       gap: 32px;
@@ -753,42 +745,23 @@ body {
       }
 
       @include desktop {
-        width: 260px;
+        width: 544px;
       }
 
-      &__icon {
-        width: 24px;
-        height: 24px;
-        display: inline-block;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        transition: filter 0.3s ease;
-        filter: brightness(1);
+      &__icon-facebook {
+        background-image: url(../images/icons/icon-facebook.svg);
 
-        &--facebook {
-          background-image: url(../images/icons/icon-facebook.svg);
-
-          &:hover {
-            background-image: url(../images/icons/icon-facebook-white.svg);
-          }
+        &:hover {
+          background-image:;
         }
+      }
 
-        &--instagram {
-          background-image: url(../images/icons/icon-instagram.svg);
+      &__icon-instagram {
+        background-image: url(../images/icons/icon-instagram.svg);
+      }
 
-          &:hover {
-            background-image: url(../images/icons/icon-instagram-white.svg);
-          }
-        }
-
-        &--twitter {
-          background-image: url(../images/icons/icon-twitter.svg);
-
-          &:hover {
-            background-image: url(../images/icons/icon-twitter-white.svg);
-          }
-        }
+      &__icon-twitter {
+        background-image: url(../images/icons/icon-twitter.svg);
       }
     }
 
@@ -803,7 +776,7 @@ body {
       }
 
       @include desktop {
-        width: 544px;
+        width: 588px;
       }
     }
   }
