@@ -4,7 +4,9 @@ const body = document.body;
 const header = document.querySelector('.header');
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav');
-const navItem = document.querySelectorAll('.nav__item');
+const navLinks = document.querySelectorAll('.nav__link');
+
+console.log(navLinks);
 
 const toggleClasses = () => {
   header.classList.toggle('header--canTransform');
@@ -15,6 +17,7 @@ const toggleClasses = () => {
 
 burger.addEventListener('click', toggleClasses);
 
+
 if (window.innerWidth < 1280) {
-  navItem.forEach((item) => item.addEventListener('click', toggleClasses));
+  navLinks.forEach((item) => item.addEventListener('click', toggleClasses));
 }
