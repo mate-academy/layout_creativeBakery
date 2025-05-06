@@ -1,0 +1,78 @@
+.cards {
+  @include page-grid;
+
+  justify-self: center;
+  row-gap: 56px;
+  padding-block: 56px 0;
+
+  @include on-tablet {
+    row-gap: 80px;
+    padding-block: 80px 0;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &--1 {
+      @include on-desktop {
+        grid-column: span 3;
+      }
+    }
+
+    &--3 {
+      @include on-desktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--4 {
+      @include on-desktop {
+        grid-column: 6 / -1;
+      }
+    }
+
+    @include hover(transform, scale(1.13));
+  }
+
+  &__img {
+    border-radius: 8px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    padding-block: 16px;
+    gap: 8px;
+  }
+
+  &__title {
+    @extend %uppercase;
+
+    color: $grey;
+  }
+
+  &__description {
+    @extend %body-text;
+  }
+
+  &__links {
+    display: flex;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 32px;
+    gap: 4px;
+
+    @extend %uppercase;
+    @include hover(transform, scale(1.05));
+  }
+}

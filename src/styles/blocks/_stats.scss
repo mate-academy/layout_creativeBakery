@@ -1,0 +1,39 @@
+.stats {
+  row-gap: 48px;
+
+  @include page-grid;
+
+  @include on-tablet {
+    row-gap: 80px;
+  }
+
+  &__stat {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    @extend %big-text;
+
+    text-align: left;
+  }
+
+  &__descriptions {
+    @extend %body-text;
+
+    text-align: left;
+  }
+}

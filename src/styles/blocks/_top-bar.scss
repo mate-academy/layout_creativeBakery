@@ -1,0 +1,168 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 16px;
+  padding-block-start: 16px;
+
+  @include on-desktop {
+    padding-inline: 32px;
+  }
+
+  &__burger-menu {
+    &--link {
+      color: $black;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__logo {
+    height: 40px;
+    width: max-content;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &--footer {
+    padding-block-start: 0;
+    padding-inline: 0;
+    align-items: start;
+
+    @include on-tablet {
+      height: 96px;
+    }
+
+    @include on-desktop {
+      height: 61px;
+    }
+  }
+}
+
+.menu {
+  opacity: 1;
+  transition: all 0.3s;
+
+  @include on-desktop {
+    display: none;
+  }
+
+  &--aside {
+    width: 100%;
+    height: 100%;
+    background-color: $light-pink;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(0);
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    @extend %uppercase;
+
+    text-align: left;
+    color: $grey;
+  }
+
+  &__links {
+    display: none;
+    gap: 16px;
+
+    @include on-desktop {
+      display: flex;
+    }
+
+    &--aside,
+    &--footer {
+      display: flex;
+    }
+    &--aside {
+      @include content-padding-inline;
+    }
+  }
+
+  &__nav {
+    &--aside {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding-block: 132px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 64px;
+    list-style: none;
+
+    &--aside,
+    &--footer {
+      flex-direction: column;
+      padding: 0;
+
+      @include on-desktop {
+        display: flex;
+      }
+    }
+
+    &--aside {
+      gap: 24px;
+    }
+
+    &--footer {
+      gap: 16px;
+      padding-block-start: 40px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--contact-us {
+      gap: 4px;
+
+      @include hover(transform, scale(1.05));
+    }
+
+    &--footer {
+      justify-content: left;
+    }
+  }
+
+  &__link {
+    @extend %body-text;
+    @include hover(color, $accent-orange);
+
+    &--contact-us {
+      @extend %uppercase;
+    }
+
+    &--footer {
+      color: $white;
+    }
+  }
+
+  &--header {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+    }
+  }
+}
+
+.page:has(.menu--aside:target) {
+  overflow: hidden;
+}
