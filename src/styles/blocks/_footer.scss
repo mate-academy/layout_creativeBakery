@@ -1,0 +1,128 @@
+.footer {
+  background-color: $black;
+
+  &__content-padding {
+    @include content-padding-inline;
+    @include page-grid;
+
+    row-gap: 64px;
+    padding-block: 56px;
+
+    @include on-tablet {
+      padding-block: 88px;
+    }
+  }
+
+  &__menu {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 32px;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &-link {
+      color: $accent-orange;
+
+      @include hover(color, $white);
+    }
+  }
+
+  &__copyright {
+    @extend %body-text;
+
+    color: $grey;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+}
+
+.contacts {
+  display: grid;
+  grid-column: span 2;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  &__title {
+    @extend %h2;
+
+    color: $white;
+
+    @include on-tablet {
+      height: 96px;
+    }
+
+    @include on-desktop {
+      height: 61px;
+    }
+  }
+
+  &__groups {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      grid-column: span 4;
+      gap: 40px;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 24px;
+    }
+  }
+
+  &__label {
+    @extend %uppercase;
+
+    color: $grey;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+
+    @extend %body-text;
+
+    color: $white;
+
+    @include hover(color, $accent-orange);
+  }
+
+  &__phone {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-block-start: 40px;
+
+    @include on-desktop {
+      grid-column: span 1;
+      padding-block: 0;
+    }
+  }
+
+  &__email {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include on-desktop {
+      grid-column: span 1;
+    }
+  }
+}
