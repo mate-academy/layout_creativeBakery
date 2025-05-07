@@ -1,0 +1,31 @@
+.top-bar {
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 1440px;
+    padding: 16px;
+
+    @include on-desktop {
+      padding: 28px 32px;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    display: flex;
+
+    &::before {
+      @include underline(-8px);
+    }
+
+    &:hover::before {
+      transform: scale(1);
+    }
+  }
+}

@@ -1,0 +1,126 @@
+@keyframes trin {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  20%,
+  32%,
+  44%,
+  56%,
+  68% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  23%,
+  35%,
+  47%,
+  59%,
+  71% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  26%,
+  38%,
+  50%,
+  62%,
+  74% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  29%,
+  41%,
+  53%,
+  65%,
+  77% {
+    transform: rotate3d(0, 0, 1, -15deg);
+  }
+  80% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.btn {
+  position: relative;
+
+  display: flex;
+  gap: 4px;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  color: $c-accent-orange;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition-timing-function: ease-in-out;
+  transition-duration: $effect-duration;
+  transition-property: background-color, color, border-color;
+
+  &--primary {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    padding-block: 14px;
+    border: 2px solid $c-accent-orange;
+    border-radius: 32px;
+
+    &:hover {
+      color: $c-white;
+      background-color: $c-accent-orange;
+
+      &::before {
+        background-color: $c-white;
+      }
+    }
+
+    &:focus {
+      border-color: $c-dark-orange;
+      background-color: $c-dark-orange;
+    }
+
+    &:disabled {
+      color: $c-light-orange;
+      background-color: $c-light-orange;
+    }
+  }
+
+  &--borderless {
+    width: fit-content;
+    padding-block: 4px;
+
+    &::after {
+      @include underline(4px);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &--icon--phone::before,
+  &--icon--cookie::before,
+  &--icon--arrow-right::before {
+    content: '';
+
+    display: block;
+
+    width: 24px;
+    height: 24px;
+
+    transition: background-color $effect-duration ease-in-out;
+  }
+
+  &--icon--phone::before {
+    @include icon(url(../../images/icons/icon-phone.svg));
+  }
+
+  &--icon--phone:hover::before {
+    animation: trin 1.5s linear infinite;
+  }
+
+  &--icon--cookie::before {
+    @include icon(url(../../images/icons/icon-cookie.svg));
+  }
+
+  &--icon--arrow-right::before {
+    @include icon(url(../../images/icons/Icon-arrow-right.svg));
+  }
+}
