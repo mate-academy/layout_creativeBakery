@@ -13,12 +13,13 @@
   }
 
   &__logo {
-    display: flex;
-    width: 168px;
-    height: 40px;
     position: relative;
 
+    display: flex;
     grid-column: 1 / -1;
+
+    width: 168px;
+    height: 40px;
 
     &::before {
       @include underline(-8px);
@@ -29,31 +30,31 @@
     }
 
     @include on-tablet {
-      grid-row: 1;
       grid-column: 4 span;
+      grid-row: 1;
     }
   }
 
   &__menu {
+    grid-column: 1 / -1;
     margin-bottom: 24px;
 
-    grid-column: 1 / -1;
-
     @include on-tablet {
-      grid-row: 2 span;
       grid-column: 4 span;
+      grid-row: 2 span;
     }
   }
 
   &__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
     display: flex;
+    grid-column: 1 / -1;
     flex-direction: column;
     gap: 16px;
 
-    grid-column: 1 / -1;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
 
     @include on-tablet {
       grid-column: 4 span;
@@ -65,27 +66,26 @@
   }
 
   &__item {
-    color: $c-gray;
     font-weight: 500;
     line-height: 1;
-    letter-spacing: 0.02em;
+    color: $c-gray;
     text-transform: uppercase;
+    letter-spacing: 0.02em;
   }
 
   &__link {
-    text-decoration: none;
-    text-transform: none;
-    color: $c-white;
     font-weight: 400;
     line-height: 1.5;
+    color: $c-white;
+    text-decoration: none;
+    text-transform: none;
 
     @include hover(color, $c-light-orange);
   }
 
   &__title {
-    color: $c-white;
-
     grid-column: 1 / -1;
+    color: $c-white;
 
     @include on-tablet {
       grid-column: 4 span;
@@ -96,25 +96,23 @@
 
   &__socials {
     display: flex;
+    grid-column: 1 / -1;
     gap: 32px;
 
-    grid-column: 1 / -1;
-
     @include on-tablet {
-      grid-row: 4;
       grid-column: 4 span;
+      grid-row: 4;
     }
   }
 
   &__copy {
-    color: $c-gray;
-    margin: 0;
-
     grid-column: 1 / -1;
+    margin: 0;
+    color: $c-gray;
 
     @include on-tablet {
-      grid-row: 4;
       grid-column: 4 span;
+      grid-row: 4;
     }
   }
 }

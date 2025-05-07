@@ -1,34 +1,36 @@
 .page {
+  scroll-behavior: smooth;
+
   font-family: Inter, sans-serif;
   font-size: 16px;
-  line-height: 150%;
   font-weight: 400;
+  line-height: 150%;
   color: $c-black;
   letter-spacing: -0.01em;
 
-  scroll-behavior: smooth;
-
   &__body {
-    margin: 0;
     min-width: 320px;
+    margin: 0;
     background-color: $c-light-blue;
   }
 
   &__menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    transition: all $effect-duration ease-in-out;
-    opacity: 0;
-    transform: translateX(-100%);
     pointer-events: none;
 
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateX(-100%);
+
+    opacity: 0;
+
+    transition: all $effect-duration ease-in-out;
+
     &:target {
-      opacity: 1;
-      transform: translateX(0%);
       pointer-events: all;
+      transform: translateX(0%);
+      opacity: 1;
     }
   }
 

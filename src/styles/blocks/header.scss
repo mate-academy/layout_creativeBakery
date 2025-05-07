@@ -1,8 +1,8 @@
 .header {
   background-image: url(../../images/hero-bg-cookie.png);
-  background-position-y: 75%;
-  background-position-x: 50%;
   background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 75%;
   background-size: 290px;
 
   @include on-tablet {
@@ -21,10 +21,10 @@
   }
 
   &__content {
-    height: 100vh;
-    max-height: 700px;
     display: grid;
     grid-template-rows: max-content 1fr;
+    height: 100vh;
+    max-height: 700px;
   }
 
   &__menu {
@@ -36,38 +36,39 @@
   }
 
   &__hero {
-    padding-block: 32px 40px;
+    grid-template-rows: max-content 1fr max-content;
+    justify-items: center;
     height: 100%;
+    padding-block: 32px 40px;
 
     @include page-grid;
 
-    justify-items: center;
-    grid-template-rows: max-content 1fr max-content;
-
     @include on-tablet {
-      padding-block: 80px 228px;
       grid-template-rows: 1fr 3fr max-content;
+      padding-block: 80px 228px;
     }
 
     @include on-desktop {
-      padding-block: 0;
       grid-template-rows: 1fr 1fr 1fr;
+      padding-block: 0;
     }
   }
 
   &__description {
+    grid-column: 1 / -1;
+    grid-row: 1;
+
     max-width: 288px;
     margin: 0;
     margin-bottom: 32px;
+
     text-align: center;
-    grid-row: 1;
-    grid-column: 1 / -1;
 
     @include on-tablet {
       grid-column: 1 / 5;
-      text-align: left;
       justify-self: flex-start;
       margin: 0;
+      text-align: left;
     }
 
     @include on-desktop {
@@ -81,41 +82,43 @@
   }
 
   &__title {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    margin: 0;
+    margin-bottom: auto;
+
     font-family: inherit;
     font-size: 64px;
     font-weight: 400;
     line-height: 85%;
-    letter-spacing: -0.05em;
     text-align: center;
     text-transform: uppercase;
-    margin: 0;
-    margin-bottom: auto;
-    grid-row: 2;
-    grid-column: 1 / -1;
+    letter-spacing: -0.05em;
 
     @include on-tablet {
-      font-size: 80px;
-      padding-top: 36px;
       margin-bottom: 210px;
+      padding-top: 36px;
+      font-size: 80px;
     }
 
     @include on-desktop {
       margin-bottom: auto;
-      font-size: 136px;
       padding-top: 12px;
+      font-size: 136px;
       letter-spacing: -0.06em;
     }
 
     @include on-desktop-lg {
-      font-size: 144px;
       padding-top: 22px;
+      font-size: 144px;
       letter-spacing: -0.04em;
     }
   }
 
   &__btn {
-    grid-row: 3;
     grid-column: 1 / -1;
+    grid-row: 3;
 
     @include on-tablet {
       grid-column: 3 / 7;
