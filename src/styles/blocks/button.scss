@@ -1,0 +1,58 @@
+.button {
+  grid-column: 1/-1;
+
+  @include on-tablet {
+    grid-column: 3/7;
+  }
+
+  @include on-desktop {
+    grid-column: 1/3;
+
+  }
+
+
+  &__style {
+    cursor: pointer;
+
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+
+    width: 288px;
+    height: 56px;
+    border: 2px solid #F9512E;
+    border-radius: 32px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    color: #F9512E;
+    text-transform: uppercase;
+
+    background-color: #EEF7FF;
+
+    &:hover {
+      background-color: #F9512E;
+      color: #EEF7FF;
+    }
+
+    &:active {
+      background-color: #B2341A;
+      border: #B2341A;
+
+    }
+
+    @include on-tablet {
+      max-width: 326px;
+    }
+
+    @include on-desktop {
+      grid-column: 1/3;
+
+      max-width: 280px;
+    }
+  }
+
+}

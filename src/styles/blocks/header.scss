@@ -1,0 +1,92 @@
+.header {
+
+  &__menu {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      gap: 64px;
+      align-items: center;
+    }
+  }
+
+  &__photo {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  &__cart {
+    @include page-grid;
+  }
+
+  &__text {
+    grid-column: 1/-1;
+
+    margin-bottom: 32px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: center;
+
+    @include on-tablet {
+      grid-column: 1/5;
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include on-desktop {
+      grid-column: 1/3;
+
+      margin-bottom: 8px;
+    }
+    }
+
+  &__center {
+    grid-column: 1/-1;
+    text-align: center;
+
+    @include on-tablet {
+      position: relative;
+
+      margin-bottom: 210px;
+    }
+
+    @include on-desktop {
+
+      margin-bottom: 64px;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+
+    margin: 0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 85%;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      position: relative;
+      z-index: 10;
+      white-space: nowrap;
+
+      font-size: 80px;
+    }
+
+    @include on-desktop {
+      font-size: 130px;
+    }
+  }
+}
