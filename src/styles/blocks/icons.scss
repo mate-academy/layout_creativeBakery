@@ -1,0 +1,85 @@
+.logo {
+  display: block;
+  animation: logo-scale-up 1.5s ease-in-out forwards;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@keyframes draw-path {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes change-color-top-bar {
+  0% {
+    fill: $black-color-main;
+  }
+
+  50% {
+    fill: $accent-orange-color;
+  }
+
+  100% {
+    fill: $dark-orange-color;
+  }
+}
+
+@keyframes change-color-footer {
+  0% {
+    fill: $white-color-main;
+  }
+
+  50% {
+    fill: $accent-orange-color;
+  }
+
+  100% {
+    fill: $dark-orange-color;
+  }
+}
+
+@keyframes logo-scale-up {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.icon {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+
+  @include on-tablet {
+    width: 30;
+    height: 30;
+
+    svg {
+      width: 30;
+      height: 30;
+    }
+  }
+
+  svg {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover svg {
+    transform: rotate(180deg);
+  }
+
+  &-burger {
+    @include on-laptop {
+      display: none;
+    }
+  }
+}

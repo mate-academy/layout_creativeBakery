@@ -1,0 +1,84 @@
+.contact-us {
+  &__title {
+    @include font-inter-regular;
+
+    color: $white-color;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    font-size: 48px;
+    line-height: 40.8px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+      font-size: 56px;
+      line-height: 47.6px;
+      grid-column: 5/9;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+      line-height: 61.2px;
+      grid-column: 5/9;
+    }
+  }
+
+  &__part {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-type {
+      @include font-inter-medium;
+
+      color: $light-font-color;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-align: left;
+      margin: 0;
+    }
+
+    &-value {
+      @include font-inter-regular;
+
+      color: $white-color;
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+      text-align: left;
+
+      @include hover(color, $orange-color);
+    }
+
+    &--phone {
+      @include on-tablet {
+        grid-column: 5/9;
+      }
+
+      @include on-desktop {
+        grid-column: 5/7;
+      }
+    }
+
+    &--email {
+      @include on-tablet {
+        grid-column: 5/9;
+        margin-top: -48px;
+      }
+
+      @include on-desktop {
+        grid-column: 7/9;
+        margin-top: 0;
+      }
+    }
+  }
+}

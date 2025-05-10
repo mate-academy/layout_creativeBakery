@@ -1,0 +1,158 @@
+.header {
+  &__content {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__bg {
+    position: absolute;
+    background-image: url('../images/cookie-bg.png');
+    background-position: center;
+    width: 288px;
+    height: 290px;
+    background-size: contain;
+    left: calc(50% - 144px);
+    bottom: 96px;
+    z-index: -1;
+
+    @include on-tablet {
+      height: 328px;
+      width: 326px;
+      bottom: 364px;
+      left: calc(50% - 163px);
+    }
+
+    @include on-desktop {
+      height: 546px;
+      width: 544px;
+      bottom: 66;
+      left: calc(50% - 272px);
+    }
+
+    @include on-large-screen {
+      height: 586px;
+      width: 584px;
+      bottom: 26px;
+      left: calc(50% - 292px);
+    }
+  }
+
+  &__description {
+    @include font-inter-regular;
+
+    color: $black-color;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    width: 280px;
+    margin: 0;
+    margin-top: 32px;
+
+    @include on-tablet {
+      margin-top: 80px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      margin-top: 135px;
+    }
+
+    @include on-large-screen {
+      margin-top: 144px;
+    }
+  }
+
+  &__title {
+    @include font-inter-regular;
+
+    color: $orange-color;
+    text-transform: uppercase;
+    font-size: 64px;
+    line-height: 54.4px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    margin: 0;
+    margin-top: 32px;
+
+    @include on-tablet {
+      font-size: 80px;
+      line-height: 68px;
+      margin-top: 146px;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+      line-height: 115.6px;
+      margin-top: 8px;
+    }
+
+    @include on-large-screen {
+      font-size: 144px;
+      line-height: 122.4px;
+      margin-top: 40px;
+    }
+  }
+
+  &__button {
+    @include font-inter-medium;
+
+    height: 56px;
+    width: 288px;
+    border-radius: 32px;
+    box-sizing: border-box;
+    border: 2px solid $orange-color;
+    background-color: $main-bg-color;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    align-items: center;
+    cursor: pointer;
+    margin: 290px auto 40px;
+    color: $orange-color;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    transition: $transform-time;
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-image: url('../images/icons/icon-cookie.png');
+      transition: $transform-time;
+    }
+
+    @include on-tablet {
+      width: 326px;
+      margin-top: 210px;
+      margin-bottom: 228px;
+    }
+
+    @include on-desktop {
+      width: 260px;
+      margin-left: 0;
+      margin-top: 64px;
+      margin-bottom: 161px;
+    }
+
+    @include on-large-screen {
+      width: 280px;
+      margin-bottom: 138px;
+    }
+
+    &:hover {
+      background-color: $orange-color;
+      color: $white-color;
+
+      .header__button-icon {
+        background-image: url('../images/icons/icon-cookie-white.png');
+      }
+    }
+  }
+}

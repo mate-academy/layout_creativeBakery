@@ -1,0 +1,54 @@
+.top-bar {
+  padding-block: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    height: 32px;
+    width: 136px;
+    object-fit: contain;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__icon {
+    height: 24px;
+    width: 24px;
+    background-size: contain;
+
+    &--menu {
+      background-image: url('../images/icons/icon-menu.png');
+      transition: $transform-time;
+
+      @include on-desktop {
+        display: none;
+      }
+
+      &:hover {
+        background-image: url('../images/icons/icon-menu-orange.png');
+        transform: scale(1.1);
+      }
+    }
+
+    &--close {
+      background-image: url('../images/icons/icon-close.png');
+      transition: $transform-time;
+
+      &:hover {
+        background-image: url('../images/icons/icon-close-orange.png');
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+}

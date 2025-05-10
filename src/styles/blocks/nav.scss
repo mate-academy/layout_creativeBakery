@@ -1,0 +1,58 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+
+  &__link {
+    @include font-inter-regular;
+
+    color: $black-color;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+
+    @include hover(color, $orange-color);
+  }
+
+  &__contact-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    &-icon {
+      height: 24px;
+      width: 24px;
+      background-size: contain;
+      background-image: url('../images/icons/icon-phone.png');
+      transition: $transform-time;
+    }
+
+    &-text {
+      @include font-inter-medium;
+
+      color: $orange-color;
+      text-transform: uppercase;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      text-align: left;
+      margin: 0;
+      transition: $transform-time;
+    }
+
+    &:hover {
+      .nav__contact-us-icon {
+        background-image: url('../images/icons/icon-phone-black.png');
+        transform: scale(1.1);
+      }
+
+      .nav__contact-us-text {
+        color: $black-color;
+      }
+    }
+  }
+}
