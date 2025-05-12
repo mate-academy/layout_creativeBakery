@@ -1,0 +1,49 @@
+.red-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &__tel {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+    background-image: url(../images/icons/Icon-phone.svg);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__contact {
+    text-decoration: none;
+    color: $red-color;
+    position: relative;
+    text-transform: uppercase;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $red-color;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

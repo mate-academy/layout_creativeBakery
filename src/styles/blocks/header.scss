@@ -1,0 +1,109 @@
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 64px;
+
+  @include on-tablet {
+    position: relative;
+    margin-bottom: 100px;
+  }
+
+  @include on-desktop {
+    height: 100dvh;
+    height: 100vh;
+  }
+
+  &__top-bar {
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      margin-bottom: 80px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 135px;
+    }
+
+    @include on-XL {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__content {
+    @include padding-inline;
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      text-align: left;
+      max-width: 280px;
+      margin-bottom: 100px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__title {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: clamp(1.8rem, 10vw, 10rem);
+    /*font-size: 64px;*/
+    line-height: 85%;
+    text-transform: uppercase;
+    color: $red-color;
+    text-align: center;
+    z-index: 1;
+
+    /*@include on-XL {
+      font-size: 144px;
+    }*/
+  }
+
+  &__img {
+    background-image: url(../images/img/header-cookie.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 75%;
+    padding-bottom: 75%;
+    margin: 0 auto;
+
+    @include on-tablet {
+      width: 42%;
+      padding-bottom: 42%;
+      position: absolute;
+      top: 30%;
+      left: 30%;
+      z-index: -1;
+    }
+
+    @media (min-width:760px) {
+      top: 23%;
+    }
+
+    @media (min-width:1000px) {
+      top: 15%;
+    }
+
+    /*@include on-desktop {
+      width: 40%;
+      padding-bottom: 40%;
+      top: 20%;
+    }*/
+  }
+
+  &__button {
+    @include on-tablet {
+      margin: 200px auto 0;
+    }
+
+    @include on-desktop {
+      margin: 64px 0 0;
+    }
+  }
+}
