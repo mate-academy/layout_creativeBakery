@@ -1,0 +1,157 @@
+.article {
+  margin-bottom: 72px;
+
+  @include on-tablet {
+    margin-bottom: 152px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 178px;
+  }
+
+  @include page-grid;
+
+  &__content {
+    grid-column: 1 / -1;
+    margin-bottom: 56px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &--cakes1 {
+      @include on-desktop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--cakes2 {
+      @include on-desktop {
+        grid-column: 4 / 7;
+      }
+    }
+
+    &--donuts1 {
+      @include on-desktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--donuts2 {
+      @include on-desktop {
+        grid-column: 6 / 9;
+      }
+    }
+
+    &--cookies1 {
+      @include on-desktop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--cookies2 {
+      @include on-desktop {
+        grid-column: 4 / 7;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 356px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    margin-bottom: 16px;
+
+    &:hover {
+      transform: scale(1.02);
+      transition: 0.3s ease-in-out;
+      box-shadow: 0 9px 18px #252931;
+    }
+
+    @include on-tablet {
+      height: 424px;
+    }
+
+    @include on-desktop {
+      height: 512px;
+    }
+
+    @include on-XL {
+      height: 560px;
+    }
+
+    &--cakes1 {
+      background-image: url(../images/img/cake-1.png);
+    }
+
+    &--cakes2 {
+      background-image: url(../images/img/cake-2.png);
+    }
+
+    &--donuts1 {
+      background-image: url(../images/img/donut-1.png);
+    }
+
+    &--donuts2 {
+      background-image: url(../images/img/donut-2.png);
+    }
+
+    &--cookies1 {
+      background-image: url(../images/img/cookies-1.png);
+    }
+
+    &--cookies2 {
+      background-image: url(../images/img/cookies-2.png);
+    }
+  }
+
+  &__title {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: $gray-color;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  &__item {
+    text-decoration: none;
+    color: $red-color;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &--arrow {
+      font-size: 26px;
+      font-weight: 600;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &--order {
+      font-family: 'Inter';
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

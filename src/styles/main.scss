@@ -2,6 +2,48 @@
 @import 'fonts';
 @import 'typography';
 
+@import 'blocks/header';
+@import 'blocks/top-bar';
+@import 'blocks/nav';
+@import 'blocks/icons';
+@import 'blocks/red-link';
+@import 'blocks/button';
+@import 'blocks/text';
+@import 'blocks/h2-title';
+@import 'blocks/article';
+@import 'blocks/about-us';
+@import 'blocks/footer';
+@import 'blocks/socials';
+@import 'blocks/menu';
+
+
 body {
   background: $c-gray;
+  width: 100%;
+}
+
+body:has(.menu:target) {
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.main {
+  @include padding-inline;
+
+  &__h2-title {
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    margin-bottom: 56px;
+
+    @include on-tablet {
+      margin-bottom: 80px;
+    }
+  }
 }

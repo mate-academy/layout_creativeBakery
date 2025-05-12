@@ -1,0 +1,41 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+
+  @media (max-width: 1439px) {
+    @include padding-inline;
+  }
+
+  @include on-desktop {
+    height: 88px;
+  }
+
+  @include on-XL {
+    padding-inline: 34px;
+  }
+
+  &__logo {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/icons/logo-black.svg);
+    height: 32px;
+    width: 136px;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: row;
+      gap: 64px;
+      color: $black-color;
+    }
+
+  }
+}
