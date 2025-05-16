@@ -1,0 +1,140 @@
+@import '../utils/mixins';
+
+.header {
+  &__bottom {
+    @include page-grid;
+  }
+
+  &__content {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__tittle {
+    position: static;
+
+    grid-column: 1 / -1;
+
+    margin: 0;
+
+    font-family: Inter, sans-serif;
+    font-size: 64px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 85%;
+    color: #f9512e;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+
+    @include on-tablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      grid-column: 1 / -1;
+
+      font-size: 80px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    @include on-desktop {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      grid-column: 1 / -1;
+
+      font-family: Inter, sans-serif;
+      font-size: 120px;
+      font-weight: 400;
+      line-height: 85%;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: -5%;
+      white-space: nowrap;
+    }
+
+    @include on-desktop-xl {
+      font-size: 144px;
+    }
+  }
+
+  &__top {
+    position: relative;
+
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: auto;
+
+    @include on-tablet {
+      flex-direction: row;
+    }
+
+    @include on-desktop {
+      position: relative;
+      top: 0;
+
+      align-self: start;
+
+      margin-top: -80px;
+      padding-top: 0;
+    }
+  }
+  &__product {
+    grid-column: 1 / -1;
+
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    @include on-tablet {
+      grid-column: span 4;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      position: relative;
+      top: 135px;
+      grid-column: span 2;
+      text-align: left;
+    }
+
+    @include on-desktop-xl {
+      position: relative;
+      top: 144px;
+      grid-column: span 3;
+      text-align: left;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    @include on-tablet {
+      width: 60%;
+    }
+
+    @include on-desktop {
+      width: 50%;
+    }
+  }
+}
