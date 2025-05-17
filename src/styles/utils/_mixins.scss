@@ -5,9 +5,9 @@
   }
 }
 
-@mixin transition($properties, $duration: 0.3s, $easing: ease) {
+@mixin transition($properties, $duration: $main-time-duration, $easing: ease) {
   // stylelint-disable-next-line scss/no-global-function-names
-  transition: #{list.join($properties, ', ')};
+  transition: #{join($properties, ', ')};
   transition-duration: $duration;
   transition-timing-function: $easing;
 }
