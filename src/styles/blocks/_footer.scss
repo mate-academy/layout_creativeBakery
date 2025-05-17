@@ -1,0 +1,141 @@
+.footer {
+  background-color: $main-black;
+  color: $main-white;
+
+  &__content {
+    @include content-padding-inline;
+
+    padding-block: 56px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      padding-block: 88px;
+    }
+  }
+
+  &__logo-link {
+    display: inline-block;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__menu {
+    &__link {
+      color: $main-white;
+
+      &:hover {
+        color: $accent-orange;
+      }
+    }
+  }
+
+  &__contact-us {
+    &__list {
+      @include on-tablet {
+        grid-column: 5 / 9;
+      }
+
+      @include on-desktop {
+        grid-column: 5 / 9;
+        grid-row: 2 / 3;
+      }
+
+      &--email {
+        @include on-desktop {
+          grid-column: 7 / 9;
+          grid-row: 2 / 3;
+        }
+      }
+    }
+
+    &__link {
+      &:hover {
+        color: $accent-orange;
+      }
+    }
+
+    &__title {
+      color: $main-white;
+
+      @include on-tablet {
+        grid-column: 5 / 9;
+        grid-row: 1 / 2;
+      }
+    }
+  }
+
+  &__social {
+    &__list {
+      display: flex;
+      gap: 32px;
+
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &__link {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      @include transition((filter, transform));
+
+      &--facebook {
+        background-image: url('/src/images/icons/social/facebook.svg');
+      }
+
+      &--instagram {
+        background-image: url('/src/images/icons/social/instagram.svg');
+      }
+
+      &--twitter {
+        background-image: url('/src/images/icons/social/twitter.svg');
+      }
+
+      &:hover {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+
+  &__rights {
+    color: $main-grey;
+
+    @include on-tablet {
+      grid-column: 5 / 9;
+    }
+  }
+}
+
+.footer li:first-child {
+  color: $main-grey;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+li a {
+  color: $main-white;
+}
