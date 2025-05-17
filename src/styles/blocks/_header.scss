@@ -1,0 +1,163 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+
+  &__logo {
+    display: flex;
+    z-index: 3;
+
+    &-image {
+      width: 136px;
+      height: 32px;
+    }
+  }
+
+  &__switch-theme {
+    background-color: $color-light-blue;
+    border: 1px solid $color-text-light;
+    opacity: 0.7;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-inline: 20px auto;
+    cursor: pointer;
+
+    .blue-theme & {
+      background-color: $color-light-pink;
+    }
+  }
+
+  @include on-desktop {
+    padding: 28px 32px;
+  }
+}
+
+.nav {
+  display: flex;
+
+  &__toggle {
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/icons/icon-menu.png');
+    background-size: contain;
+    z-index: 3;
+
+    @include hover-image('../images/icons/icon-menu-hover.png');
+
+    .menu-active & {
+      background-image: url('../images/icons/icon-close.png');
+
+      @include hover-image('../images/icons/icon-close-hover.png');
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__links {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+    }
+
+    @include on-tablet-mobile-only {
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      left: 0;
+      justify-content: center;
+      align-items: center;
+      width: 100dvw;
+      height: 100dvh;
+      background-color: $color-background;
+      z-index: 2;
+
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in-out;
+      transition-delay: 1s;
+
+      .menu-active & {
+        transform: translateX(0);
+        transition-delay: 0.1s;
+      }
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__link {
+    @include reset-links;
+
+    display: flex;
+    align-items: center;
+    margin: 0 0 24px;
+    gap: 4px;
+
+    &:last-child {
+      @extend %uppercase;
+
+      color: $color-primary;
+      margin-right: 0;
+    }
+
+    @include hover(color, $color-primary);
+
+    &:focus {
+      color: $color-secondary;
+    }
+
+    .span {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        bottom: -4px;
+        background-color: $color-primary;
+        transform: scale(0);
+        transform-origin: left;
+        transition: transform $transition-time;
+      }
+    }
+
+    &:hover .span::after {
+      transform: scale(1);
+    }
+
+    &:focus .span::after {
+      transform: scale(1);
+      background-color: $color-secondary;
+    }
+
+    @include on-desktop {
+      margin: 0 64px 0 0;
+    }
+
+    @include on-tablet-mobile-only {
+      opacity: 0;
+      transform: translateX(20px);
+      transition:
+        opacity 0.5s ease-in-out,
+        transform 0.5s ease-in-out;
+      transition-delay: calc((3 - var(--index, 0)) * 0.2s);
+
+      .menu-active & {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: calc((2.5 + var(--index, 0)) * 0.2s);
+      }
+    }
+  }
+}

@@ -1,0 +1,180 @@
+.products {
+  @include grid-layout;
+  @include padding-layout;
+
+  display: grid;
+  padding-block: 104px 72px;
+
+  &__card {
+    grid-column: 1 / -1;
+    margin: 0 0 56px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin: 0 0 80px;
+
+      &:nth-child(even) {
+        grid-column: 5 / -1;
+      }
+
+      &:nth-of-type(n+5) {
+        margin: 0;
+      }
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+      margin: 0 0 80px;
+
+      &:nth-child(even) {
+        grid-column: 4 / -1;
+      }
+
+      &:nth-of-type(3) {
+        grid-column: 3 / 5;
+      }
+
+      &:nth-of-type(4) {
+        grid-column: 6 / -1;
+      }
+
+      &:nth-of-type(n+5) {
+        margin: 0;
+      }
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    color: $color-title-primary;
+    transition: 0.5s;
+    margin: 0 0 24px;
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    margin: 0 0 56px;
+
+    @include on-tablet {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__photo {
+    width: 288px;
+    height: 356px;
+    border-radius: 8px;
+    margin: 0 0 16px;
+
+    @include hover(transform, scale(1.04));
+
+    @include on-tablet {
+      width: 328px;
+      height: 424px;
+    }
+
+    @include on-desktop {
+      width: 402px;
+      height: 512px;
+    }
+
+    @include on-desktop-xl {
+      width: 432px;
+      height: 560px;
+    }
+  }
+
+  &__category {
+    @extend %uppercase;
+
+    color: $color-text-light;
+    margin: 0 0 8px;
+  }
+
+  &__description {
+    margin: 0 0 16px;
+
+    @include on-tablet {
+      width: 328px;
+    }
+  }
+
+  &__btn {
+    @include reset-links;
+    @extend %uppercase;
+
+    color: $color-primary;
+    padding: 0;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &:focus {
+      color: $color-secondary;
+      transition: color $transition-time;
+    }
+
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+
+      mask-image: url('../images/icons/icon-arrow.png');
+      mask-size: contain;
+      mask-position: center;
+      mask-repeat: no-repeat;
+
+      background-color: $color-primary;
+      transition: background-color $transition-time;
+    }
+
+    &:focus::before {
+      background-color: $color-secondary;
+    }
+
+    .span {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        bottom: -4px;
+        background-color: $color-primary;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform $transition-time;
+      }
+    }
+
+    &:hover .span::after {
+      transform: scale(1);
+    }
+
+    &:focus .span::after {
+      transform: scale(1);
+      background-color: $color-secondary;
+      transition: background-color $transition-time;
+    }
+  }
+
+  @include on-tablet {
+    padding-block: 228px 152px;
+  }
+
+  @include on-desktop {
+    padding-block: 313px 178px;
+  }
+
+  @include on-desktop-xl {
+    padding-block: 290px 178px;
+  }
+}

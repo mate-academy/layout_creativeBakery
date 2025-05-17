@@ -1,0 +1,151 @@
+.home {
+  @include padding-layout;
+  @include grid-layout;
+
+  display: grid;
+  text-align: center;
+
+  &__text {
+    grid-column: 1 / -1;
+    margin-block: 32px;
+
+    @include on-tablet {
+      margin-block: 80px 16px;
+      width: 280px;
+      text-align: start;
+    }
+
+    @include on-desktop {
+      width: 250px;
+      margin-block: 135px 188px;
+    }
+
+    @include on-desktop-xl {
+      width: 280px;
+      margin-block: 144px 226px;
+    }
+  }
+
+  &__container {
+    grid-column: 1 / -1;
+    position: relative;
+    width: 100%;
+
+    @include on-tablet {
+      height: 328px;
+      margin-bottom: 80px;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      width: 92.5%;
+      height: 546px;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop-xl {
+      width: 82.5%;
+      height: 586px;
+    }
+  }
+
+  &__image-cookie {
+    width: 288px;
+    height: 290px;
+    z-index: 0;
+
+    @include on-tablet {
+      width: 326px;
+      height: 328px;
+    }
+
+    @include on-desktop {
+      width: 544px;
+      height: 546px;
+    }
+
+    @include on-desktop-xl {
+      width: 584px;
+      height: 586px;
+    }
+  }
+
+  &__title {
+    color: $color-title-primary;
+    margin: 0;
+    z-index: 1;
+    transition: 0.5s;
+
+    @include on-tablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__btn {
+    @include reset-links;
+    @extend %uppercase;
+
+    grid-column: 1 / -1;
+    color: $color-primary;
+    outline: none;
+    background: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 288px;
+    height: 56px;
+    border: 2px solid $color-primary;
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('../images/icons/icon-cookie.png');
+    }
+
+    &:hover {
+      color: $color-text-very-light;
+      background-color: $color-primary;
+      transition:
+        color 0.3s,
+        background-color 0.3s;
+
+      &::before {
+        background-image: url('../images/icons/icon-cookie-hover.png');
+      }
+    }
+
+    &:focus {
+      color: $color-text-very-light;
+      background-color: $color-secondary;
+      border-color: $color-secondary;
+      transition:
+        color 0.3s,
+        border-color 0.3s background-color 0.3s;
+
+      &::before {
+        background-image: url('../images/icons/icon-cookie-hover.png');
+      }
+    }
+
+    @include on-tablet {
+      grid-column: 3 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+    }
+  }
+}

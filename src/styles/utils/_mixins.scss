@@ -1,6 +1,119 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover($_property, $_toValue, $_duration: $transition-time) {
+  transition: #{$_property} $_duration ease;
+
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin hover-image($_hoverImage, $_duration: $transition-time) {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url($_hoverImage);
+    background-size: contain;
+    opacity: 0;
+    transition: opacity $_duration ease-in-out;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+@mixin on-tablet-mobile-only() {
+  @media (max-width: $breakpoint-tablet-mobile-only) {
+    @content;
+  }
+}
+
+@mixin on-tablet() {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin on-desktop() {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin on-desktop-xl() {
+  @media (min-width: $breakpoint-desktop-xl) {
+    @content;
+  }
+}
+
+@mixin reset-links {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin grid-layout {
+  grid-template-columns: repeat(2, 136px);
+  column-gap: 16px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(8, 64px);
+    column-gap: 24px;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(8, 118px);
+  }
+
+  @include on-desktop-xl {
+    grid-template-columns: repeat(8, 128px);
+  }
+}
+
+@mixin padding-layout {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop-xl {
+    padding-inline: 124px;
+  }
+}
+
+@mixin hover-link-animation {
+  position: relative;
+  width: fit-content;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: -4px;
+    background-color: $color-text-very-light;
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform $transition-time;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+
+  &:focus::after {
+    transform: scale(1);
+    background-color: $color-secondary;
   }
 }

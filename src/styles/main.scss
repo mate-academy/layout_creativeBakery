@@ -1,7 +1,24 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import 'blocks';
 
-body {
-  background: $c-gray;
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  margin: 0;
+  background: $color-background;
+  min-width: 320px;
+  transition: background-color 0.5s;
+
+  &:has(.menu:target) {
+    overflow: hidden;
+  }
+}
+
+.blue-theme {
+  --color-background: #{$color-light-blue};
+  --color-title-primary: #{$color-black};
 }
