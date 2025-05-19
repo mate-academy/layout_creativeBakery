@@ -1,0 +1,84 @@
+.about-us {
+  display: grid;
+  gap: 64px;
+  margin-bottom: 72px;
+
+  background-image: url(/src/images/crumbs.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 35% bottom 28%;
+
+  @include on-tablet {
+    gap: 72px;
+    margin-bottom: 152px;
+    background-position: center;
+  }
+
+  @include on-desktop {
+    height: 673px;
+    grid-column: 3 / 9;
+    gap: 144px;
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    &__title {
+      @include on-tablet {
+        grid-column: span 4;
+      }
+    }
+
+    &__description {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      @include on-tablet {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__cell {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__item {
+    font-size: 96px;
+    color: $accent-orange;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+  }
+}
+
+.page__body--theme--blue .about-us__item {
+  color: $main-black;
+}

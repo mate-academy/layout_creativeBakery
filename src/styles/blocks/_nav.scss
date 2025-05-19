@@ -1,0 +1,65 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 64px;
+    }
+  }
+
+  &__item {
+    &--phone {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-self: center;
+    }
+  }
+
+  &__link {
+    color: $main-black;
+    position: relative;
+    display: inline-block;
+
+    &--phone {
+      background-image: url(/src/images/icons/icon-phone.svg);
+    }
+
+    &--upper {
+      text-transform: uppercase;
+      color: $accent-orange;
+      letter-spacing: 2%;
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: $accent-orange;
+      bottom: -5px;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: right;
+
+      @include transition((transform));
+    }
+
+    &::before {
+      top: -5px;
+      transform-origin: left;
+    }
+
+    &:hover::after,
+    &:hover::before {
+      transform: scaleX(1);
+    }
+  }
+}
