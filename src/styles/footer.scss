@@ -1,0 +1,150 @@
+.footer {
+  background-color: $footer-background;
+  padding-block: 56px;
+
+  color: $footer-text-color;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  &__logo {
+    width: 168px;
+    height: 40px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__nav {
+    margin-block: 40px 64px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      grid-row: 2;
+      margin: 0;
+    }
+
+    @include on-desktop {
+      margin-bottom: 48px;
+    }
+
+    &__head {
+      margin-bottom: 16px;
+    }
+
+    &__list {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+}
+
+.contact-us {
+  @include on-tablet {
+    grid-column: span 4;
+    margin-bottom: 40px;
+  }
+}
+
+.call-us {
+  margin-block: 40px;
+
+  @include on-tablet {
+    margin: 0;
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 2;
+  }
+
+  &__head {
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    @include footer-link-opt;
+    @include hover(color, $links-hover-color);
+  }
+}
+
+.email-us {
+  @include on-tablet {
+    grid-column: 5 / span 4;
+    margin-bottom: 48px;
+  }
+
+  @include on-desktop {
+    grid-column: span 2;
+    margin: 0;
+  }
+
+  &__head {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    @include footer-link-opt;
+    @include hover(color, $links-hover-color);
+  }
+}
+
+.social-link {
+  display: flex;
+  gap: 32px;
+
+  margin-block: 40px;
+
+  @include on-tablet {
+    grid-column: span 4;
+    margin: 0;
+  }
+
+  &__icon {
+    transition-duration: 0.3s;
+
+    @include icon-size;
+  }
+}
+
+.facebook--icon {
+  background-image: url(../icon/icon-facebook.svg);
+
+  &:hover {
+    background-image: url(../icon/icon-facebook-white.svg);
+  }
+}
+
+.instagram--icon {
+  background-image: url(../icon/icon-instagram.svg);
+
+  &:hover {
+    background-image: url(../icon/icon-instagram-white.svg);
+  }
+}
+
+.x--icon {
+  background-image: url(../icon/icon-twitter.svg);
+
+  &:hover {
+    background-image: url(../icon/icon-twitter-white.svg);
+  }
+}
+
+.footer__copyright {
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: #7f8096;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+}
