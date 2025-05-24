@@ -1,0 +1,41 @@
+.nav__list {
+  display: flex;
+}
+
+.nav__item {
+  display: flex;
+}
+
+.nav__link {
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: inherit;
+  justify-content: center;
+
+  @include hover(color, $links-hover-color);
+
+  &:focus {
+    color: $links-focus-color;
+  }
+}
+
+.nav__contact-us {
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #f9512e;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+
+  @include hover(transform, scale(1.03));
+
+  &::before {
+    content: '';
+
+    @include icon-size;
+
+    background-image: url(../icon/icon-phone.svg);
+  }
+}

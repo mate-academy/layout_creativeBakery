@@ -1,0 +1,57 @@
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin icon-size() {
+  height: 24px;
+  width: 24px;
+}
+
+@mixin h-opt() {
+  font-weight: 400;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin nav-links-opt() {
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  color: #1c1a26;
+  justify-content: center;
+
+  &:hover {
+    color: $links-hover-color;
+  }
+
+  &:focus {
+    color: $links-focus-color;
+  }
+}
+
+@mixin footer-link-opt() {
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: inherit;
+}
+
+@mixin on-tablet() {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop() {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin on-big-screen() {
+  @media (min-width: $bigScreen-width) {
+    @content;
+  }
+}
