@@ -1,0 +1,35 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffeefc;
+
+    &--green {
+      background-color: #eef7ff;
+    }
+
+    &:has(.page__menu:target) {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    inset: 0;
+
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+      max-height: 100vh;
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+.footer {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: $main-text-color;
+  overflow-x: hidden;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    padding-block: 56px;
+    width: 100%;
+
+    @include content-space-inline;
+
+    @include on-tablet {
+      padding-block: 88px;
+
+      @include page-grid;
+
+      row-gap: 24px;
+    }
+  }
+
+  &-top {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+      gap: 96px;
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      gap: 61px;
+    }
+
+    &__logo-link {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      transform-origin: left;
+
+      @include hover(transform, scale(1.2));
+    }
+
+    &__nav {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      gap: 16px;
+      list-style: none;
+    }
+  }
+
+  &-contacts {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+
+    @include on-tablet {
+      margin-bottom: 0;
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      display: grid;
+      column-gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__title {
+      display: block;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+
+      @include on-desktop {
+        grid-column: 1/-1;
+      }
+    }
+
+    &__nav {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 16px;
+
+      &--email {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 16px;
+      }
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+
+    @include on-tablet {
+      grid-column: 1/-1;
+
+      @include page-grid;
+    }
+
+    &__socials {
+      @include on-tablet {
+        grid-column: span 4;
+      }
+    }
+
+    &__license {
+      display: block;
+      margin: 0;
+      padding: 0;
+
+      @include body-text;
+
+      color: #7f8096;
+
+      @include on-tablet {
+        grid-column: span 4;
+      }
+    }
+  }
+}
