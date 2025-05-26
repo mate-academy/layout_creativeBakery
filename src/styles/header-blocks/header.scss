@@ -1,0 +1,166 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-block: 32px 40px;
+    width: 100%;
+
+    @include on-tablet {
+      padding-block: 80px 228px;
+      position: relative;
+    }
+
+    @include on-desktop {
+      padding-block: 0 66px;
+    }
+
+    @include on-design {
+      padding-block: 0 26px;
+    }
+
+    @include content-space-inline;
+  }
+
+  &__info {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 32px;
+
+    @include body-text;
+
+    text-align: center;
+
+    @include on-tablet {
+      width: 280px;
+      text-align: left;
+      margin-bottom: 16px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 0;
+      position: absolute;
+      top: 20%;
+      width: 260px;
+    }
+
+    @include on-design {
+      top: 27%;
+      left: 4%;
+      width: 280px;
+    }
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #f9512e;
+
+    @include on-tablet {
+      position: absolute;
+      align-self: center;
+      top: 33%;
+    }
+
+    @include on-design {
+      top: 40%;
+    }
+  }
+
+  &__bg-image {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    @include on-tablet {
+      width: 326px;
+      height: 328px;
+      align-self: center;
+      margin-bottom: 80px;
+    }
+
+    @include on-desktop {
+      width: 544px;
+      height: 546px;
+      margin-bottom: 0;
+    }
+
+    @include on-design {
+      width: 584px;
+      height: 586px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    @include on-tablet {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    display: flex;
+    width: 288px;
+    height: 56px;
+    border: 2px solid #f9512e;
+    margin: 0;
+    border-radius: 28px;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/icons/cookie.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 62px;
+
+    @include uppercase;
+
+    text-decoration: none;
+    color: #f9512e;
+
+    @include on-desktop {
+      align-self: start;
+      position: absolute;
+      top: 75%;
+
+      @media (min-width: 1345px) {
+        top: 65%;
+      }
+    }
+
+    @include on-design {
+      top: 70%;
+      left: 4%;
+    }
+
+    &:hover {
+      background-color: #f9512e;
+      color: #fff;
+      background-image: url(../images/icons/cookie-hover.svg);
+    }
+
+    &:focus {
+      border: 2px solid #b2341a;
+      background-color: #b2341a;
+      color: #fff;
+      background-image: url(../images/icons/cookie-hover.svg);
+    }
+
+    &:disabled {
+      border: 2px solid #fba28f;
+      color: #fba28f;
+      background-image: url(../images/icons/cookie-disabled.svg);
+    }
+  }
+}

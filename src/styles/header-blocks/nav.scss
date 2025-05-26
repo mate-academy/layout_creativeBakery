@@ -1,0 +1,70 @@
+.nav {
+  list-style: none;
+
+  &__title {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    @include uppercase;
+
+    color: #7f8096;
+  }
+
+  &__link {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    @include body-text;
+
+    text-decoration: none;
+
+    @include hover(transform, scale(1.2));
+
+    &--menu {
+      @include on-tablet {
+        font-size: 24px;
+      }
+    }
+
+    &--white {
+      color: #fff;
+      transform-origin: left;
+    }
+  }
+
+  &__contact-us {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 136px;
+    height: 32px;
+    background-image: url(../images/icons/contact-us.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include hover(transform, scale(1.2));
+
+    &:hover {
+      background-color: #f9512e;
+      background-image: url(../images/icons/contact-us-hover.svg);
+    }
+
+    &:focus {
+      background-color: transparent;
+      background-image: url(../images/icons/contact-us-focus.svg);
+    }
+
+    &:disabled {
+      background-image: url(../images/icons/contact-us-disabled.svg);
+    }
+
+    &--menu {
+      @include on-tablet {
+        width: 180px;
+        height: 40px;
+      }
+    }
+  }
+}

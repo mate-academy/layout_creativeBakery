@@ -1,0 +1,80 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  @include on-tablet {
+    width: 50%;
+  }
+
+  &__image-place {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 16px;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 8px;
+
+    @include uppercase;
+
+    color: #7f8096;
+  }
+
+  &__description {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 16px;
+
+    @include body-text;
+
+    @include on-tablet {
+      height: 48px;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 84px;
+    height: 32px;
+    background-image: url(../images/icons/order.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include hover(transform, scale(1.2));
+
+    &:hover {
+      background-color: #f9512e;
+      background-image: url(../images/icons/order-hover.svg);
+    }
+
+    &:focus {
+      background-color: transparent;
+      background-image: url(../images/icons/order-focus.svg);
+    }
+
+    &:disabled {
+      background-image: url(../images/icons/order-disabled.svg);
+    }
+  }
+}
