@@ -1,7 +1,26 @@
+@use '../utils/vars' as *;
+@use '../utils/mixins' as *;
+
 .navigation {
-  // border:1px solid red;
+  position: fixed; // zamiast absolute
+  top: 0;
+  left: 0;
+  right: 0;
   height: 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 16px;
+  z-index: 1000;
+  background: $c-gray;
+
+  @include for-tablet {
+    height: 88px;
+    padding: 0 28px;
+  }
+
+  @include for-desktop {
+    height: 88px;
+    padding: 0 28px;
+  }
 }
