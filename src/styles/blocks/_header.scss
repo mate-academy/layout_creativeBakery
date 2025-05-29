@@ -2,23 +2,44 @@
 
 .header {
   @include grid;
-  
+
   min-width: 280px;
   justify-content: center;
+  padding-bottom: 160px;
 
   &__text {
     grid-column: 1/ -1;
+
+    @include for-tablet {
+      grid-column: 1 /5;
+    }
   }
 
   &__title {
     grid-column: 1 / -1;
+
+    @include for-tablet {
+      grid-column: 1 /9;
+      padding-top: 130px;
+    }
   }
 
   &__image {
     grid-column: 1/ -1;
+
+    @include for-tablet {
+      position: absolute;
+      z-index: -1;
+      top: 150px;
+    }
   }
 
   &__button {
     grid-column: 1/ -1;
+
+    @include for-tablet {
+      grid-column: 1 /9;
+      margin-top: 160px;
+    }
   }
 }
