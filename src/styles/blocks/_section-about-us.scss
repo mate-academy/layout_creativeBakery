@@ -10,10 +10,18 @@
 
   &__title {
     grid-column: 1/-1;
+
+    @include for-tablet {
+      grid-column: 1/5;
+    }
   }
 
   &__text {
     grid-column: 1/-1;
+
+    @include for-tablet {
+      grid-column: 5/ -1;
+    }
   }
 
   &__numbers {
@@ -22,6 +30,34 @@
     flex-direction: column;
     gap: 8px;
     padding-top: 30px;
+
+    @include for-tablet {
+      padding-top: 80px;
+    }
+
+    &--year {
+      @include for-tablet {
+        grid-column: 1/5;
+      }
+    }
+
+    &--stories {
+      @include for-tablet {
+        grid-column: 5/-1;
+      }
+    }
+
+    &--companies {
+      @include for-tablet {
+        grid-column: 1/5;
+      }
+    }
+
+    &--clients {
+      @include for-tablet {
+        grid-column: 5/-1;
+      }
+    }
   }
 
   &__image {
@@ -34,5 +70,12 @@
     background-size: cover;
     width: 320px;
     height: 300px;
+    z-index: -1;
+
+    @include for-tablet {
+      width: 526px;
+      height: 493px;
+      top: 40px;
+    }
   }
 }
