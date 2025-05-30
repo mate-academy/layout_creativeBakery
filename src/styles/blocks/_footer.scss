@@ -2,9 +2,10 @@
 
 .footer {
   background-color: black;
-  min-height: 100px;
   padding-top: 60px;
   padding-bottom: 80px;
+  display: flex;
+  justify-content: center;
 
   @include for-tablet {
     padding: 100px 44px;
@@ -15,12 +16,29 @@
   }
 
   &__container {
-    @include grid;
-
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     gap: 40px;
-    justify-content: center;
-    margin-left: 16px;
+    padding: 16px;
+    max-width: 320px;
+
+    @include for-tablet {
+      @include grid;
+
+      box-sizing: border-box;
+      gap: 40px;
+      justify-content: center;
+      margin-left: 16px;
+    }
+
+    @include for-desktop {
+      @include grid;
+
+      box-sizing: border-box;
+      gap: 40px;
+      justify-content: center;
+      margin-left: 16px;
+    }
 
     &--element {
       @include for-tablet {
@@ -29,7 +47,7 @@
     }
 
     &--logo {
-      grid-column: 1/-1;
+      grid-column: 1/2;
       margin-left: 5px;
 
       @include for-tablet {
