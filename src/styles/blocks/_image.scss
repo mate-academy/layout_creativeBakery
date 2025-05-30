@@ -1,0 +1,35 @@
+@use '../utils/mixins' as *;
+
+.image {
+  &__header {
+    justify-self: center;
+
+    @include for-desktop {
+      width: 544px;
+      height: 546px;
+    }
+  }
+
+  &__main {
+    width: 288px;
+    height: 356px;
+    border-radius: 8px;
+    background-size: contain;
+
+    @include for-tablet {
+      width: 328px;
+      height: 424px;
+    }
+
+    @include for-desktop {
+      width: 402px;
+      height: 512px;
+      border-radius: 8px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 0.4s ease;
+    }
+  }
+}

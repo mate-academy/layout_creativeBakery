@@ -1,0 +1,81 @@
+@use '../utils/mixins' as *;
+
+.title {
+  &__header {
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 32px;
+
+    @include for-desktop {
+      font-size: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__main {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+  }
+
+  &__product {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: #7f8096;
+  }
+
+  &__about-us {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+
+    @include for-desktop {
+      font-size: 72px;
+    }
+
+    &--numbers {
+      font-weight: 400;
+      font-size: 96px;
+      line-height: 85%;
+      letter-spacing: -5%;
+      text-transform: uppercase;
+    }
+  }
+  &__contact-us {
+    width: 280px;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+    color: #fff;
+
+    @include for-tablet {
+      padding-bottom: 30px;
+    }
+
+    @include for-desktop {
+      font-size: 72px;
+      width: 540px;
+      white-space: nowrap;
+    }
+  }
+}
+
+.title:not(.title__product):hover {
+  color: #f9512e;
+}
