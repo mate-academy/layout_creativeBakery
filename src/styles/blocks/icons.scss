@@ -1,12 +1,90 @@
 .icon {
-  height: 24px;
-  width: 24px;
-  flex-shrink: 0;
-
-  background-size: cover;
+  display: block;
   background-position: center;
+  background-repeat: no-repeat;
 
-  &.icon--menu {
+  @include icon-size;
+  @include hover(transform, scale(1.2));
+
+  &--menu {
     background-image: url(../images/icons/icon-menu.png);
+
+    @include on-desktop {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+  }
+
+  &--logo {
+    width: 136px;
+    height: 32px;
+  }
+
+  &--logo-footer {
+    width: 168px;
+    height: 40px;
+  }
+
+  &--cookie {
+    background-image: url(../images/icons/icon-cookie.png);
+    width: 40%;
+    background-position: right;
+    padding-block: 16px;
+
+    @include hover(transform, scale(1));
+
+    .header__button:hover &,
+    .header__button:focus & {
+      background-image: url(../images/icons/icon-cookie-hover.png);
+    }
+
+    .header__button:disabled & {
+      background-image: url(../images/icons/icon-cookie-disabled.png);
+    }
+  }
+
+  &--close {
+    background-image: url(../images/icons/icon-close.png);
+  }
+
+  &--phone {
+    background-image: url(../images/icons/icon-phone.png);
+  }
+
+  &--facebook {
+    fill: $main-red;
+    transition: 0.3s;
+    background-image: url(../images/icons/icon-facebook.png);
+
+    &:hover,
+    &:focus {
+      fill: $main-white;
+      background-image: url(/src/images/icons/icon-facebook-hover.svg);
+    }
+  }
+
+  &--instagram {
+    fill: $main-red;
+    transition: 0.3s;
+    background-image: url(/src/images/icons/icon-instagram-hover.svg);
+
+    &:hover,
+    &:focus {
+      fill: $main-white;
+      content: url(/src/images/icons/icon-instagram-hover.svg);
+    }
+  }
+
+  &--twitter {
+    fill: $main-red;
+    transition: 0.3s;
+    background-image: url(../images/icons/icon-twitter.png);
+
+    &:hover,
+    &:focus {
+      background-image: url(../images/icons/icon-twitter-hover.png);
+      fill: $main-white;
+    }
   }
 }

@@ -1,0 +1,33 @@
+.statistic {
+  @include page-grid;
+
+  row-gap: 48px;
+
+  @include on-tablet {
+    row-gap: 80px;
+  }
+
+  &__element {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__title {
+    margin-top: 8px;
+  }
+
+  &__value {
+    font-size: 96px;
+    line-height: 85%;
+    text-transform: uppercase;
+    letter-spacing: -5%;
+    color: $main-red;
+  }
+}
