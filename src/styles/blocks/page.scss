@@ -1,0 +1,60 @@
+.page {
+  scroll-behavior: smooth;
+
+  font-family: Inter, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+
+  background: $c-gray;
+
+  &__body {
+    min-width: 320px;
+    margin: 0;
+  }
+
+  &__menu {
+    pointer-events: none;
+
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateX(100%);
+
+    opacity: 0;
+    background-color: $c-gray;
+
+    transition: all 0.3s;
+
+    &:target {
+      pointer-events: all;
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .top-bar {
+      position: relative;
+      z-index: 101;
+    }
+
+    @include on-desktop {
+      pointer-events: all;
+
+      position: fixed;
+      z-index: 100;
+      transform: none;
+
+      margin: 0;
+
+      opacity: 1;
+      background-color: $c-gray;
+
+      transition: none;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}

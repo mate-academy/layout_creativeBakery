@@ -1,0 +1,87 @@
+.product {
+  @include page-grid;
+
+  row-gap: 56px;
+
+  @include on-tablet {
+    row-gap: 80px;
+  }
+
+  &__card {
+    display: grid;
+    grid-column: 1 / -1;
+    gap: 16px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      &:nth-child(4n + 1) {
+        grid-column: 1 / 4;
+      }
+
+      &:nth-child(4n + 2) {
+        grid-column: 4 / 7;
+      }
+
+      &:nth-child(4n + 3) {
+        grid-column: 3 / 6;
+      }
+
+      &:nth-child(4n + 4) {
+        grid-column: 6 / 9;
+      }
+    }
+  }
+
+  &__photo {
+    width: 100%;
+
+    @include hover(transform, scale(1.02));
+  }
+
+  &__category {
+    @extend %h3;
+
+    width: fit-content;
+    color: $c-darkGray;
+
+    @include button;
+    @include hover(transform, scale(1.2));
+  }
+
+  &__text {
+    @extend %p;
+
+    margin-block: 8px 0;
+    text-align: left;
+  }
+
+  &__button {
+    box-sizing: border-box;
+
+    @include button;
+
+    width: fit-content;
+
+    @include hover(transform, scale(1.2));
+
+    &-icon {
+      background-image: url(../images/icon/Icon-arrow.svg);
+
+      @include icon;
+    }
+
+    &-text {
+      @extend %h3;
+
+      color: $c-orange;
+    }
+  }
+
+  &__button:hover &__button-icon {
+    /* чтоб сбросить увеличение иконки при наведении на всю кнопку */
+    transform: none;
+  }
+}

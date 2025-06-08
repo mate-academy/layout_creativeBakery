@@ -1,0 +1,43 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+
+  @include on-desktop {
+    height: 88px;
+  }
+
+  &__icon-menu {
+    background-image: url(../images/icon/Icon-menu-black.svg);
+
+    @include icon;
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    width: 136px;
+    height: 32px;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__icon-close {
+    background-image: url(../images/icon/Icon-close.svg);
+
+    @include icon;
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    @include on-desktop {
+      display: none;
+    }
+  }
+}

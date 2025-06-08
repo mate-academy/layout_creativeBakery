@@ -1,0 +1,182 @@
+.footer {
+  background-color: $c-black;
+
+  &__content {
+    @include page-grid;
+
+    row-gap: 40px;
+    padding-block: 56px;
+
+    @include on-tablet {
+      row-gap: 48px;
+      padding-block: 88px;
+    }
+  }
+
+  &__menu {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &-title {
+      @extend %h3;
+
+      margin: 0;
+      margin-top: 40px;
+      color: $c-darkGray;
+
+      @include on-tablet {
+        margin-top: 96px;
+      }
+
+      @include on-desktop {
+        margin-top: 61px;
+      }
+    }
+
+    &-nav {
+      display: flex;
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    width: 136px;
+    height: 32px;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__nav-link {
+    @extend %p;
+
+    color: $c-white;
+    text-decoration: none;
+
+    @include hover-underline($c-white);
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+
+    margin: 0;
+    color: $c-white;
+
+    @include on-tablet {
+      max-width: 200px;
+    }
+
+    @include on-desktop {
+      max-width: none;
+    }
+  }
+
+  &__contact {
+    @include page-grid;
+
+    row-gap: 40px;
+    margin-top: 40px;
+
+    &-content {
+      display: flex;
+      grid-column: 1 / -1;
+      flex-direction: column;
+      row-gap: 16px;
+
+      @include on-desktop {
+        grid-column: span 4;
+      }
+    }
+
+    &-title {
+      @extend %h3;
+
+      margin: 0;
+      color: $c-darkGray;
+    }
+
+    &-email {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &-phone-email {
+      @extend %p;
+
+      color: $c-white;
+      text-decoration: none;
+
+      @include hover-underline($c-white);
+    }
+  }
+
+  &__social-buttons {
+    display: flex;
+    grid-column: 1 / -1;
+    gap: 32px;
+    justify-content: flex-start;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__social-icon {
+    @include icon;
+
+    &-fb {
+      background-image: url(../images/icon/Icon-facebook.svg);
+    }
+    &-inst {
+      background-image: url(../images/icon/Icon-instagram.svg);
+    }
+    &-x {
+      background-image: url(../images/icon/Icon-twitter.svg);
+    }
+  }
+
+  &__copyright {
+    @extend %p;
+
+    display: flex;
+    grid-column: 1 / -1;
+    color: $c-darkGray;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+}
