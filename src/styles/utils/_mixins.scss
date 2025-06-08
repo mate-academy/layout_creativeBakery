@@ -4,3 +4,104 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-tablet {
+  @media (min-width: 744px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline() {
+  /* горизонтальные паддинги при увеличении ширины экрана, увеличение иконок */
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop {
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+}
+
+.container {
+  /* отвечает за горизонтальные ограничения ( по ширине) */
+  @include content-padding-inline;
+}
+
+@mixin icon {
+  cursor: pointer;
+
+  display: block;
+
+  width: 24px;
+  height: 24px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include hover(transform, scale(1.2));
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 16px;
+
+  @include on-tablet {
+    --columns: 8;
+
+    column-gap: 24px;
+  }
+}
+
+@mixin button {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+}
+
+@mixin hover-underline($color) {
+  /* рисуем появляющуюся линию под навигацией */
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: -8px;
+    transform: scale(0);
+
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: $color;
+
+    transition: transform 0.3s;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:hover::after {
+    transform-origin: center; /* растягивается линия от левого края */
+    transform: scale(1); /* линия видима 1 */
+  }
+}

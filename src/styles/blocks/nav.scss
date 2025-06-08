@@ -1,0 +1,44 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+
+  &__link {
+    @extend %p;
+
+    color: $c-black;
+    text-decoration: none;
+  }
+
+  &__item {
+    /* рисуем появляющуюся линию под навигацией */
+
+    @include hover-underline($c-black);
+  }
+
+  &__link-contact {
+    @extend %h3;
+
+    display: flex;
+    gap: 4px;
+
+    padding: 4px;
+
+    color: $c-orange;
+    text-decoration: none;
+  }
+}
