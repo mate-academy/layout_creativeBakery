@@ -1,0 +1,104 @@
+.about {
+  &__inner {
+    background-image: url('../images/crumbs-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 56px;
+
+    @include on-tablet {
+      background-image: url('../images/crumbs-bg-tablet.png');
+      padding-bottom: 152px;
+    }
+
+    @include on-phone {
+      background-image: url('../images/crumbs-bg-phone.png');
+      padding-bottom: 72px;
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+    margin-bottom: 144px;
+
+    @include on-phone {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 16px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__info-title {
+    grid-column: span 4;
+
+    @include on-phone {
+      grid-column: span 2;
+    }
+  }
+
+  &__info-text {
+    grid-column: span 4;
+    max-width: 584px;
+
+    @include on-tablet {
+      max-width: 328px;
+    }
+
+    @include on-phone {
+      grid-column: span 2;
+    }
+  }
+
+  &__numbers {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 290px;
+
+    @include on-tablet {
+      padding-bottom: 0;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 80px 24px;
+    }
+
+    @include on-phone {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px 16px;
+    }
+  }
+
+  &__numbers-title {
+    @extend %inter-400;
+
+    font-size: 96px;
+    line-height: 85%;
+    color: $accent-color;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+
+    @include on-tablet {
+      max-width: 328px;
+      grid-column: span 4;
+    }
+
+    @include on-phone {
+      max-width: 288px;
+      grid-column: span 2;
+    }
+  }
+
+  &__numbers-span {
+    display: block;
+
+    @extend %inter-400;
+
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $main-color;
+    text-transform: none;
+  }
+}

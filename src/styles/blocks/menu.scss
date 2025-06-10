@@ -1,0 +1,53 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #ffeefc;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s;
+  transform: translateY(-100%);
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+    z-index: 4;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 24px;
+    margin-top: 132px;
+  }
+
+  &__link {
+    color: $main-color;
+
+    @include hover(color, $accent-color);
+
+    &--contact {
+      @extend %inter-500;
+
+      text-transform: uppercase;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      color: $accent-color;
+      padding-left: 5px;
+      position: relative;
+
+      &::after {
+        content: '';
+        background-image: url('../images/icons/phone.svg');
+        position: absolute;
+        left: -25px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

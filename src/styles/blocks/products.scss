@@ -1,0 +1,102 @@
+.products {
+  &__inner {
+    padding: 152px 0 178px;
+
+    @include on-tablet {
+      padding: 228px 0 152px;
+    }
+
+    @include on-phone {
+      padding: 64px 0 72px;
+    }
+  }
+
+  &__text {
+    margin: 24px 0 80px;
+
+    @include on-phone {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 80px 24px;
+
+    @include on-phone {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 56px 16px;
+      place-items: center;
+    }
+  }
+
+  &__item {
+    max-width: 432px;
+    grid-column: span 3;
+
+    @include on-tablet {
+      max-width: 328px;
+      grid-column: span 4;
+    }
+
+    @include on-phone {
+      max-width: 288px;
+      grid-column: span 2;
+    }
+  }
+
+  &__item--donuts {
+    grid-column: 3 / 6;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-phone {
+      grid-column: span 2;
+    }
+  }
+
+  &__img {
+    border-radius: 8px;
+  }
+
+  &__item-box {
+    padding-top: 16px;
+  }
+
+  &__title {
+    @extend %inter-500;
+
+    line-height: 100%;
+    color: #7f8096;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  &__descr {
+    margin: 8px 0 16px;
+    max-width: 400px;
+  }
+
+  &__link {
+    @extend %inter-500;
+
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $accent-color;
+    padding-left: 28px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: url('../images/icons/icon-arrow.svg');
+      width: 24px;
+      height: 24px;
+      left: 0;
+    }
+  }
+}
