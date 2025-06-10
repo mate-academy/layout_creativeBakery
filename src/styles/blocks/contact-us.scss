@@ -1,18 +1,34 @@
 .contact-us {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 16px;
-  row-gap: 40px;
+  grid-column: 1/ -1;
 
+  @include on-tablet {
+    grid-column: 5 / 8;
+    grid-row: 1;
+  }
+
+  @include on-desktop {
+    grid-column: 5 / -1;
+  }
+  
   &__title {
-    grid-column: 1 / 2;
     margin: 0;
     padding-top: 64px;
     font-weight: 400;
     font-size: 48px;
     line-height: 85%;
-    letter-spacing: -5%;
+    letter-spacing: -2.4px;
     text-transform: uppercase;
     color: #FFF;
+
+    @include on-tablet {
+      padding-top: 0;
+      font-size: 56px;
+      letter-spacing: -2.8px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+      letter-spacing: -3.6px;
+    }
   }
 }

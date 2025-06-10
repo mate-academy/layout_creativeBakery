@@ -1,14 +1,68 @@
 .about-us {
+  position: relative;
   padding-top: 72px;
 
   display: flex;
   flex-direction: column;
   gap: 64px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 616px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 300px;
+    background-image: url('/images/Crumbs.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 0;
+    pointer-events: none;
+
+    @include on-tablet {
+      top: 203px;
+      width: 526px;
+      height: 493px;
+    }
+
+    @include on-desktop {
+      width: 718px;
+      height: 673px;
+      top: 178px;
+      left: 0;
+      transform: translateX(281px);
+    }
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+
+  @include on-tablet {
+    padding-top: 152px;
+    gap: 72px;
+  }
+
+  @include on-desktop {
+    padding-top: 178px;
+    gap: 144px;
+  }
+
   &__container-text {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
     row-gap: 32px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+      row-gap: 0;
+    }
   }
 
   &__container-stats {
@@ -16,14 +70,30 @@
   }
 
   &__title {
+
+    position: relative;
+    z-index: 2;
     grid-column: 1 / -1;
     margin: 0;
     font-weight: 400;
     font-size: 48px;
     line-height: 85%;
-    letter-spacing: -5%;
+    letter-spacing: -2.8px;
     text-transform: uppercase;
     color: #F9512E;
+
+    @include on-tablet {
+      font-size: 56px;
+      letter-spacing: -2.8px;
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+      letter-spacing: -3.6px;
+      grid-column: 1 / 4;
+
+    }
   }
 
   &__description {
@@ -34,15 +104,13 @@
     line-height: 150%;
     letter-spacing: -1%;
     color: #1C1A26;
-  }
 
-  &__photo {
-    padding-top: 126px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 320px;
-    height: 300px;
-    margin: auto;
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / -1;
+    }
   }
 }

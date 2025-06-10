@@ -3,10 +3,19 @@
   flex-direction: column;
   gap: 56px;
 
+  @include  on-tablet {
+    gap: 80px;
+  }
+
   &__container-text {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
   }
 
   &__container-card {
@@ -14,6 +23,12 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
     row-gap: 56px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+      row-gap: 80px;
+    }
   }
 
 
@@ -23,11 +38,23 @@
     font-weight: 400;
     font-size: 48px;
     line-height: 85%;
-    letter-spacing: -5px;
+    letter-spacing: -2.4px;
     text-transform: uppercase;
     color: #F9512E;
 
     grid-column: 1 / -1;
+
+    @include on-tablet {
+      font-size: 56px;
+      letter-spacing: -2.8px;
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+      letter-spacing: -3.6px;
+      grid-column: 1 / 5;
+    }
   }
 
   &__text {
@@ -35,9 +62,17 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    letter-spacing: -1%;
+    letter-spacing: -0.16px;
     color: #1C1A26;
 
     grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+    }
   }
 }

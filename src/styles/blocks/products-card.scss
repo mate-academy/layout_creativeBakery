@@ -4,9 +4,23 @@
   gap: 16px;
   grid-column: 1 / -1;
 
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
   &__photo {
     width: 288px;
     height: 356px;
+
+    @include on-tablet {
+      width: 328px;
+      height: 424px;
+    }
+
+    @include on-desktop {
+      width: 402px;
+      height: 512px;
+    }
   }
 
   &__description {
@@ -17,7 +31,7 @@
       font-weight: 500;
       font-size: 16px;
       line-height: 100%;
-      letter-spacing: 2%;
+      letter-spacing: 0.32px;
       color: #7F8096;
     }
 
@@ -26,7 +40,7 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 150%;
-      letter-spacing: -1%;
+      letter-spacing: -0.16px;
       color: #1C1A26;
     }
   }
@@ -42,8 +56,43 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
-    letter-spacing: 2%;
+    letter-spacing: 0.32px;
     color: #F9512E;
   }
+}
 
+.products-card--one {
+  @include on-desktop {
+    grid-column: 1 / 4;
+  }
+}
+
+.products-card--two {
+  @include on-desktop {
+    grid-column: 4 / 7;
+  }
+}
+
+.products-card--three {
+  @include on-desktop {
+    grid-column: 3 / 6;
+  }
+}
+
+.products-card--four {
+  @include on-desktop {
+    grid-column: 6 / -1;
+  }
+}
+
+.products-card--five {
+  @include on-desktop {
+    grid-column: 1 / 4;
+  }
+}
+
+.products-card--six {
+  @include on-desktop {
+    grid-column: 4 / 7;
+  }
 }
