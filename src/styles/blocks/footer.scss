@@ -1,0 +1,153 @@
+.footer {
+  background-color: $main-color;
+
+  &__inner {
+    padding-block: 88px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  &__info {
+    grid-column: span 2;
+  }
+
+  &__logo {
+    height: 40px;
+
+    @include hover(transform, scale(1.2));
+
+    @include on-tablet {
+      height: 32px;
+    }
+  }
+
+  &__info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 60px 0 48px;
+
+    @include on-tablet {
+      margin: 96px 0 104px;
+    }
+  }
+
+  &__info-link {
+    color: #fff;
+
+    @include hover(color, $accent-color);
+  }
+
+  &__social {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  &__social-list {
+    display: flex;
+    gap: 32px;
+    grid-column: span 2;
+  }
+
+  &__social-link {
+    path {
+      transition: fill 0.3s;
+    }
+
+    &:hover path {
+      fill: #fff;
+    }
+
+    &:active path {
+      fill: #fff;
+    }
+  }
+
+  &__social-rights {
+    grid-column: 5 / 7;
+    color: $footer-subtitle;
+  }
+
+  &__contact {
+    grid-column: 5 / 8;
+  }
+
+  &__contact-title {
+    color: #fff;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      max-width: 320px;
+    }
+  }
+
+  &__contact-inner {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 24px;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__phone-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 88px;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__phone-link {
+    color: #fff;
+
+    @include hover(color, $accent-color);
+  }
+
+  &__email-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__email-link {
+    color: #fff;
+
+    @include hover(color, $accent-color);
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    &__inner {
+      padding-bottom: 56px;
+    }
+
+    &__content {
+      display: block;
+    }
+
+    &__info-list {
+      margin: 40px 0 64px;
+    }
+
+    &__social {
+      display: block;
+    }
+
+    &__social-list {
+      margin-bottom: 40px;
+    }
+  }
+}

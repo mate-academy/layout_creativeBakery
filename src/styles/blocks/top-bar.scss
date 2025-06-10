@@ -1,0 +1,93 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 32px;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #ffeefc;
+  z-index: 2;
+
+  @include on-tablet {
+    padding: 16px;
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    height: 32px;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__list {
+    display: flex;
+    gap: 64px;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__link {
+    color: $main-color;
+
+    @include hover(color, $accent-color);
+
+    &--contact {
+      @extend %inter-500;
+
+      text-transform: uppercase;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      color: $accent-color;
+      padding-left: 5px;
+      margin-left: 40px;
+      position: relative;
+
+      &::after {
+        content: '';
+        background-image: url('../images/icons/phone.svg');
+        position: absolute;
+        left: -25px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+    transition: all 0.3s;
+
+    @include on-tablet {
+      display: block;
+      background-image: url('../images/icons/icon-menu.svg');
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      background-image: url('../images/icons/icon-menu-hover.svg');
+    }
+
+    &--close {
+      transition: all 0.3s;
+
+      @include on-tablet {
+        background-image: url('../images/icons/icon-close.svg');
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        background-image: url('../images/icons/icon-close-hover.svg');
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+html,
+body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html:has(.menu:target) {
+  overflow: hidden;
+}
+
+body {
+  @extend %inter-400;
+
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: $main-color;
+  background-color: #ffeefc;
+}
+
+.container {
+  @include container;
+
+  box-sizing: content-box;
+  margin: 0 auto;
+}
+
+.title {
+  @extend %inter-400;
+
+  font-size: 72px;
+  line-height: 85%;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  color: $accent-color;
+
+  @include on-tablet {
+    font-size: 56px;
+  }
+
+  @include on-phone {
+    font-size: 48px;
+    max-width: 288px;
+  }
+}
+
+.list-title {
+  @extend %inter-500;
+
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $footer-subtitle;
+}
