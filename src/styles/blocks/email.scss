@@ -1,0 +1,44 @@
+.email {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-column: 1 / 2;
+  padding-top: 40px;
+
+  @include on-tablet {
+    padding-top: 0;
+    grid-column: 5 / 7;
+    grid-row: 3;
+  }
+
+  @include on-desktop {
+    padding-top: 40px;
+    grid-column: 7 / -1;
+    grid-row: 2;
+  }
+
+  &__name {
+    margin: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    color: #7F8096;
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.16px;
+    color: #FFF;
+    transition: transform, 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
