@@ -1,0 +1,45 @@
+.nav {
+  &__list {
+    display: flex;
+    gap: 64px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include on-tablet {
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+  }
+
+  &__item {
+    @include on-tablet {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__link {
+    @extend%main-text;
+
+    position: relative;
+    text-decoration-line: none;
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: 1px;
+      width: 100%;
+      background-color: $main-color;
+      left: 0;
+      bottom: 0;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      transform: scale(1);
+    }
+  }
+}

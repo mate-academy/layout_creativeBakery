@@ -1,0 +1,111 @@
+.about {
+  background-image: url(../images/about/crumbs-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 293px;
+
+  @include on-large-desktop {
+    background-position: right 157px center;
+  }
+
+  @include on-tablet {
+    padding-bottom: 0;
+    background-position: center;
+    background-size: 526px 493px;
+  }
+
+  @include on-phone {
+    background-size: contain;
+    background-position: bottom 174px center;
+  }
+
+  &__content {
+    @include grid;
+
+    row-gap: 144px;
+
+    @include on-tablet {
+      row-gap: 72px;
+    }
+
+    @include on-phone {
+      row-gap: 0;
+    }
+  }
+
+  &__title {
+    @extend%h2;
+
+    grid-column: 1 / 4;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__text {
+    @extend%main-text;
+
+    grid-column: 5 / -1;
+
+    @include on-phone {
+      grid-column: 1 / -1;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__list {
+    @include grid;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+
+    @include on-phone {
+      row-gap: 48px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-phone {
+      grid-column: span 2;
+    }
+  }
+
+  &__statistics {
+    @extend%big-text;
+
+    white-space: nowrap;
+  }
+
+  &__statistics-plus {
+    position: relative;
+    bottom: 10%;
+    right: 35px;
+  }
+
+  &__description {
+    @extend%main-text;
+
+    color: $secondary-color;
+  }
+}
