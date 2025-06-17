@@ -1,0 +1,126 @@
+.about-us {
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+  margin: 72px 0;
+  flex-direction: column;
+  gap: 64px;
+
+  @include tablet {
+    gap: 72px;
+  }
+
+  @include tablet-min768 {
+    margin: 152px 0;
+  }
+
+  @include desktop {
+    min-height: 673px;
+    margin: 178px 0 56px;
+    gap: 144px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%);
+    background-image: url('/img/crumbs.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    mix-blend-mode: multiply;
+    z-index: 0;
+    pointer-events: none;
+
+    width: 320px;
+    height: 300px;
+    bottom: 0;
+
+    @include tablet {
+      width: 526px;
+      left: 50%;
+      height: 493px;
+    }
+
+    @include desktop {
+      width: 718px;
+      height: 673px;
+    }
+  }
+
+  > * {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    &-title {
+      @include tablet {
+        width: 50%;
+      }
+    }
+
+    &-description {
+      @include tablet {
+        width: 50%;
+      }
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 80px 24px;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      @include tablet {
+        grid-column: span 4;
+      }
+
+      @include desktop {
+        grid-column: span 2;
+      }
+
+      &-title {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 96px;
+        line-height: 85%;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: var(--accent-orange);
+      }
+
+      &-description {
+        font-family: var(--font-family);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: -0.01em;
+        color: var(--black);
+      }
+    }
+  }
+}
