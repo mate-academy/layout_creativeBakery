@@ -1,0 +1,75 @@
+.mobile-overlay {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: var(--light-pink);
+  border: none;
+
+  &:modal {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 16px;
+  }
+
+  &__close-button {
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include hover {
+      color: var(--accent-orange);
+      transform: scale(1.1);
+    }
+  }
+
+  &__logo {
+    width: 136px;
+    height: 32px;
+
+    @include hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__list {
+    @include flex-center;
+
+    flex-direction: column;
+    row-gap: 24px;
+    min-height: 80vh;
+
+    .contact-us-button {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      justify-content: center;
+
+      padding: 4px;
+      border: none;
+
+      background: transparent;
+      border-radius: 32px;
+
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      color: var(--accent-orange);
+      text-transform: uppercase;
+
+      @include hover {
+        color: var(--white);
+        background-color: var(--accent-orange);
+      }
+    }
+  }
+}
