@@ -1,0 +1,138 @@
+.header {
+  align-items: center;
+  padding: 0 0 104px;
+
+  @media (min-width: 640px) {
+    padding: 0 0 228px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 0 313px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 0 0 290px;
+  }
+
+  &__slogan {
+    grid-column: 1 / 3;
+    margin: 0 0 32px;
+
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+
+    @media (min-width: 640px) {
+      margin: 0 0 146px;
+      grid-column: 1 / 5;
+      text-align: left;
+    }
+
+    @media (min-width: 1024px) {
+      margin: 0 0 8px;
+      grid-column: span 2;
+    }
+  }
+
+  &__title {
+    font-family: Inter, sans-serif;
+    margin: 0 0 290px;
+    margin-top: 20px;
+    grid-column: -1 / 1;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 85%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.06em;
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: 640px) {
+      font-size: 80px;
+      margin: 0 0 210px;
+      left: 0;
+    }
+
+    @media (min-width: 1024px) {
+      margin: 0 0 64px;
+      font-size: 130px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 144px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 290px;
+      background-image: url('../images/Cookie.png');
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @media (min-width: 640px) {
+        height: 328px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+
+        @media (min-width: 1024px) {
+          height: 546px;
+        }
+
+        @media (min-width: 1200px) {
+          height: 586px;
+        }
+      }
+    }
+  }
+
+  &__button {
+    text-decoration: none;
+    grid-column: 1 / 3;
+    color: #f9512e;
+    font-weight: 500;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    border: 2px solid #f9512e;
+    border-radius: 32px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    z-index: 2;
+
+    background-color: #eef7ff;
+    background-repeat: no-repeat;
+
+    @media (min-width: 640px) {
+      grid-column: 3 / 7;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 1 / 3;
+    }
+
+    &::before {
+      display: block;
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-image: url(../images/icons/Icon-cookie.svg);
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: cover;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+  }
+}
