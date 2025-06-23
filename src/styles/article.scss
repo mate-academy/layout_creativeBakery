@@ -1,0 +1,73 @@
+.article {
+  grid-column: 1/-1;
+  text-align: left;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 3;
+  }
+
+  &--desktop-positioned {
+    @include on-desktop {
+      grid-column: 3/6;
+    }
+  }
+
+  &__photo {
+    display: flex;
+    width: 288px;
+    margin-inline: auto;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-tablet {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-top: 16px;
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    line-height: 16px;
+    color: $text-grey;
+    text-transform: uppercase;
+    letter-spacing: 2%;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    position: relative;
+
+    display: block;
+
+    width: 84px;
+    margin-top: 16px;
+    padding-left: 28px;
+
+    color: $main-red;
+    text-decoration: none;
+
+    @include hover(transform, scale(1.1));
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      left: 4px;
+
+      display: block;
+
+      background-image: url(/images/Icon-arrow.svg);
+
+      @include icon-size;
+    }
+  }
+}

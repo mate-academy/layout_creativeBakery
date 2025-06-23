@@ -1,7 +1,21 @@
-@import 'utils';
-@import 'fonts';
-@import 'typography';
+.main {
+  &__content {
+    @include padding-inline;
 
-body {
-  background: $c-gray;
+    display: grid;
+    row-gap: 72px;
+    padding-top: 64px;
+    padding-bottom: 72px;
+
+    @include on-tablet {
+      row-gap: 152px;
+      padding-top: 0;
+      padding-bottom: 152px;
+    }
+
+    @include on-desktop {
+      padding-top: 152px;
+      padding-bottom: 56px;
+    }
+  }
 }

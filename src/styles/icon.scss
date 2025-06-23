@@ -1,0 +1,81 @@
+.icon {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include icon-size;
+  @include hover(transform, scale(1.2));
+
+  &--menu {
+    background-image: url(/images/icon-menu.png);
+
+    @include on-desktop {
+      pointer-events: none;
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &--logo {
+    width: 136px;
+    height: 32px;
+  }
+
+  &--logo-footer {
+    width: 168px;
+    height: 40px;
+  }
+
+  &--close {
+    background-image: url(/images/Icon-close.svg);
+  }
+
+  &--phone {
+    background-image: url(/images/Icon-phone.png);
+  }
+
+  &--cookie {
+    width: 40%;
+    padding-block: 16px;
+    background-image: url(/images/Icon-cookie.svg);
+    background-position: right;
+
+    @include hover(transform, scale(1));
+
+    .header__button:hover &,
+    .header__button:focus & {
+      background-image: url(/images/Icon-cookie-hover.svg);
+    }
+
+    .header__button:disabled & {
+      background-image: url(/images/Icon-cookie-disabled.svg);
+    }
+  }
+
+  &--facebook {
+    background-image: url(/images/Icon-facebook.svg);
+
+    &:hover,
+    &:focus {
+      background-image: url(/images/icon-facebook-hover.svg);
+    }
+  }
+
+  &--instagram {
+    background-image: url(/images/Icon-instagram.svg);
+
+    &:hover,
+    &:focus {
+      background-image: url(/images/icon-instagram-hover.svg);
+    }
+  }
+
+  &--twitter {
+    background-image: url(/images/Icon-twitter.svg);
+
+    &:hover,
+    &:focus {
+      background-image: url(/images/icon-twitter-hover.svg);
+    }
+  }
+}
