@@ -1,0 +1,49 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    &--top-bar {
+      align-items: center;
+      color: inherit;
+      gap: 24px;
+
+      @include on-desktop {
+        display: flex;
+        flex-direction: row;
+        gap: 64px;
+        margin-right: 64px;
+      }
+    }
+
+    &--footer {
+      align-items: start;
+      gap: 16px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &--top-bar {
+      position: relative;
+      display: block;
+      line-height: 56px;
+      color: inherit;
+
+      @include underline-hover(8px);
+    }
+
+    &--footer {
+      color: #fff;
+      position: relative;
+      display: block;
+
+      @include underline-hover(-8px);
+    }
+  }
+}

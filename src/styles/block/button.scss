@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  gap: 4px;
+  text-decoration: none;
+
+  &--contact-us {
+    @include hover(animation, trin 1.5s infinite linear, '.icon--phone');
+    @include active(color, $dark-orange, '.page__text-uppercase--button');
+    @include active(opacity, 1, '.icon--phone-active');
+  }
+
+  &--hero {
+    @include hover(background-color, $accent-orange);
+    @include hover(color, #fff, '.page__text-uppercase--button');
+    @include hover(opacity, 1, '.icon--cookie-hover');
+    @include active(background-color, $dark-orange);
+    @include active(border-color, $dark-orange);
+  }
+
+  &--product {
+    @include hover(transform, translateX(5px), '.icon--arrow');
+    @include active(color, $dark-orange, '.page__text-uppercase--button');
+    @include active(opacity, 1, '.icon--arrow-active');
+  }
+}
