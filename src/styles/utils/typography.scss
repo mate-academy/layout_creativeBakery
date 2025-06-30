@@ -1,0 +1,148 @@
+// Main styles
+@mixin big-text {
+  font-family: Inter, sans-serif;
+  font-size: 96px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 85%;
+  text-transform: uppercase;
+
+  /* identical to box height, or 82px */
+
+  letter-spacing: -0.05em;
+}
+
+@mixin body-text {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 150%;
+
+  /* identical to box height, or 24px */
+
+  letter-spacing: -0.01em;
+}
+
+@mixin uppercase {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 100%;
+  text-transform: uppercase;
+
+  /* identical to box height, or 16px */
+
+  letter-spacing: 0.02em;
+}
+
+// Mobile headings
+@mixin mobile-headings-h1 {
+  font-family: Inter, sans-serif;
+  font-size: 64px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 85%;
+  text-transform: uppercase;
+
+  /* or 54px */
+
+  letter-spacing: -0.05em;
+}
+
+@mixin mobile-headings-h2 {
+  font-family: Inter, sans-serif;
+  font-size: 48px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 85%;
+  text-transform: uppercase;
+
+  /* identical to box height, or 41px */
+
+  letter-spacing: -0.05em;
+}
+
+// Tablet headings
+@mixin tablet-headings-h1 {
+  font-family: Inter, sans-serif;
+  font-size: 80px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 85%;
+  text-transform: uppercase;
+
+  /* identical to box height, or 68px */
+
+  letter-spacing: -0.05em;
+}
+
+@mixin tablet-headings-h2 {
+  font-family: Inter, sans-serif;
+  font-size: 56px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 85%;
+  text-transform: uppercase;
+
+  /* identical to box height, or 48px */
+
+  letter-spacing: -0.05em;
+}
+
+// Desktop headings
+@mixin desktop-headings-h1 {
+  font-family: Inter, sans-serif;
+  font-size: 144px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 85%;
+  text-transform: uppercase;
+
+  /* or 122px */
+
+  letter-spacing: -0.05em;
+}
+
+@mixin desktop-headings-h2 {
+  font-family: Inter, sans-serif;
+  font-size: 72px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 85%;
+  text-transform: uppercase;
+
+  /* or 61px */
+
+  letter-spacing: -0.05em;
+}
+
+// Styles
+body {
+  @include body-text;
+}
+
+h1 {
+  @include mobile-headings-h1;
+
+  @include on-tablet {
+    @include tablet-headings-h1;
+  }
+
+  @include on-laptop {
+    @include desktop-headings-h1;
+  }
+}
+
+h2 {
+  @include mobile-headings-h2;
+
+  @include on-tablet {
+    @include tablet-headings-h2;
+  }
+
+  @include on-laptop {
+    @include desktop-headings-h2;
+  }
+}
