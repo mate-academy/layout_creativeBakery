@@ -1,0 +1,39 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+
+  @include on-laptop {
+    padding: 28px 32px;
+  }
+
+  &__logo-link {
+    display: flex;
+
+    @include action(hover, transform, scale(1.1), $animation-time);
+  }
+
+  &__logo {
+    height: 32px;
+  }
+
+  &__panel {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+
+    @include on-laptop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-laptop {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

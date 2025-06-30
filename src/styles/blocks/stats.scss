@@ -1,0 +1,31 @@
+.stats {
+  @include page-grid;
+
+  row-gap: 48px;
+
+  @include on-tablet {
+    row-gap: 80px;
+  }
+
+  &__block {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-laptop {
+      grid-column: span 2;
+    }
+  }
+
+  &__number {
+    @include big-text;
+
+    color: var(--color-page);
+  }
+
+  &__text {
+    color: $gray-color;
+  }
+}

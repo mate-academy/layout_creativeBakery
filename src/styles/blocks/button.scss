@@ -1,0 +1,45 @@
+.button {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding-block: 16px;
+  border: 2px solid $accent-orange-color;
+  border-radius: 32px;
+
+  color: $accent-orange-color;
+
+  background-color: inherit;
+
+  &:hover {
+    color: $white-color;
+    background-color: $accent-orange-color;
+    transition: all $animation-time;
+
+    .button__icon {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &:active {
+    border-color: $dark-orange-color;
+    color: $white-color;
+    background-color: $dark-orange-color;
+
+    .button__icon {
+      filter: brightness(0) invert(1);
+    }
+
+    @include action(hover, transform, scale(0.9), $animation-time);
+  }
+
+  &__text {
+    padding: 4px;
+    color: inherit;
+
+    @include uppercase;
+  }
+}

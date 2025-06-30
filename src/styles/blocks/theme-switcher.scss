@@ -1,0 +1,47 @@
+* {
+  transition:
+    background-color $animation-time,
+    color $animation-time;
+}
+
+:root {
+  --color-page: #f9512e;
+  --bg-color-page: #ffeefc;
+  --switch-transform: 0;
+}
+
+.theme-switcher {
+  --size-switcher: 30px;
+
+  @include on-laptop {
+    --size-switcher: 25px;
+  }
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  width: var(--size-switcher);
+  border: 3px solid var(--color-page);
+  border-radius: calc(var(--size-switcher) / 2);
+
+  background-color: var(--color-page);
+}
+
+.theme-switcher::after {
+  content: '';
+
+  position: relative;
+  transform: translateX(var(--switch-transform));
+
+  display: block;
+
+  width: calc(var(--size-switcher) / 2);
+  height: calc(var(--size-switcher) / 2);
+  border-radius: calc(var(--size-switcher) / 2);
+
+  background-color: var(--bg-color-page);
+
+  transition: transform $animation-time;
+}

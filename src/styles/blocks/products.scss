@@ -1,0 +1,36 @@
+.products {
+  @include page-grid;
+
+  row-gap: 56px;
+
+  @include on-tablet {
+    row-gap: 80px;
+  }
+
+  &__wrapper {
+    grid-column: 1 / -1;
+  }
+
+  &__heading {
+    margin-bottom: 24px;
+    color: var(--color-page);
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-laptop {
+      grid-column: span 3;
+    }
+
+    &:nth-of-type(4n + 3) {
+      @include on-laptop {
+        grid-column: 3 / 6;
+      }
+    }
+  }
+}

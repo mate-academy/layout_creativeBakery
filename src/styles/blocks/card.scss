@@ -1,0 +1,51 @@
+.card {
+  &__link-photo {
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
+
+  &__photo {
+    width: 100%;
+
+    @include action(hover, transform, scale(1.1), $animation-time);
+  }
+
+  &__title {
+    @include uppercase;
+
+    margin-bottom: 8px;
+    color: $gray-color;
+  }
+
+  &__info {
+    margin-bottom: 16px;
+  }
+
+  &__button {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background-color: inherit;
+
+    @include action(hover, transform, translate(10px), $animation-time);
+    @include action(active, transform, scale(0.9), $animation-time);
+
+    &-link {
+      display: flex;
+      align-items: center;
+    }
+
+    &-text {
+      @include uppercase;
+
+      color: $accent-orange-color;
+    }
+  }
+}
