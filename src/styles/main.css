@@ -5,6 +5,7 @@ h1 {
   font-weight: 400;
 }
 
+
 html,
 body,
 div,
@@ -57,13 +58,16 @@ td {
   font-family: inherit;
 }
 
+
 em {
   font-style: italic;
 }
 
+
 strong {
   font-weight: bold;
 }
+
 
 html,
 body {
@@ -71,14 +75,16 @@ body {
   padding: 0;
 }
 
+
 a {
   text-decoration: none;
   color: black;
 }
 
+
 @font-face {
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  src: url('../fonts/Roboto-Regular-webfont.woff') format('woff');
+  src: url("../fonts/Roboto-Regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -88,13 +94,16 @@ a {
   box-sizing: border-box;
 }
 
+
 body {
   background: #eef7ff;
 }
 
+
 .menu_open {
   overflow: hidden;
 }
+
 
 .header {
   height: 88px;
@@ -107,7 +116,7 @@ body {
 }
 
 .header::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -121,12 +130,12 @@ body {
 .header__logo {
   width: 136px;
   height: 32px;
-  background: url('../images/logo.png') center/contain no-repeat;
+  background: url("../images/logo.png") center/contain no-repeat;
   z-index: 10;
 }
 
 .header__menu {
-  z-index: 7;
+  z-index: 5;
 }
 
 .header__menu ul {
@@ -165,20 +174,36 @@ body {
   z-index: 10;
 }
 
-.header__burger_menu span {
+.header .burger_span {
+  transition: transform 0.5s linear;
   display: block;
   height: 2px;
   width: 100%;
   background: black;
 }
 
-.header__burger_menu span:first-of-type {
+.header__burger_menu--active .burger_span {
+  transform-origin: center center;
+  transition: transform 0.5s linear;
+}
+
+.header__burger_menu--active .burger_span:first-of-type {
+  transform: rotate(-45deg) translateX(-4px);
+}
+
+.header__burger_menu--active .burger_span:last-of-type {
+  transform: rotate(45deg) translateX(-4px);
+}
+
+.header .burger_span:first-of-type {
   margin-bottom: 4px;
 }
+
 
 main {
   padding: 0 124px;
 }
+
 
 .creative_bakery {
   position: relative;
@@ -197,14 +222,12 @@ main {
   z-index: 2;
 }
 
-.creative_bakery__cookie,
-.creative_bakery__learn_more,
-.creative_bakery__paragraph {
+.creative_bakery__cookie, .creative_bakery__learn_more, .creative_bakery__paragraph {
   position: absolute;
 }
 
 .creative_bakery__cookie {
-  background: url('../images/cookie_first_page.png') center/contain no-repeat;
+  background: url("../images/cookie_first_page.png") center/contain no-repeat;
   width: 584px;
   height: 586px;
   top: 50%;
@@ -243,6 +266,7 @@ main {
   top: 144px;
 }
 
+
 .what_we_bake {
   margin-bottom: 178px;
 }
@@ -263,18 +287,14 @@ main {
   margin-bottom: 80px;
 }
 
-.what_we_bake__cakes,
-.what_we_bake__donuts,
-.what_we_bake__cookies {
+.what_we_bake__cakes, .what_we_bake__donuts, .what_we_bake__cookies {
   display: flex;
   align-items: center;
   justify-content: start;
   gap: 24px;
 }
 
-.what_we_bake__cakes h3,
-.what_we_bake__donuts h3,
-.what_we_bake__cookies h3 {
+.what_we_bake__cakes h3, .what_we_bake__donuts h3, .what_we_bake__cookies h3 {
   margin-bottom: 8px;
   color: #7f8096;
   font-weight: 500;
@@ -282,9 +302,7 @@ main {
   text-transform: uppercase;
 }
 
-.what_we_bake__cakes p,
-.what_we_bake__donuts p,
-.what_we_bake__cookies p {
+.what_we_bake__cakes p, .what_we_bake__donuts p, .what_we_bake__cookies p {
   margin-bottom: 16px;
   color: #1c1a26;
   font-weight: 400;
@@ -292,17 +310,14 @@ main {
   line-height: 150%;
 }
 
-.what_we_bake__cakes .order_link span,
-.what_we_bake__donuts .order_link span,
-.what_we_bake__cookies .order_link span {
+.what_we_bake__cakes .order_link span, .what_we_bake__donuts .order_link span, .what_we_bake__cookies .order_link span {
   text-transform: uppercase;
   color: #f9512e;
   font-weight: 500;
   font-size: 16px;
 }
 
-.what_we_bake__cakes,
-.what_we_bake__donuts {
+.what_we_bake__cakes, .what_we_bake__donuts {
   margin-bottom: 84px;
 }
 
@@ -310,51 +325,32 @@ main {
   justify-content: end;
 }
 
-.what_we_bake__cakes_1,
-.what_we_bake__cakes_2,
-.what_we_bake__donuts_1,
-.what_we_bake__donuts_2,
-.what_we_bake__cookies_1,
-.what_we_bake__cookies_2 {
+.what_we_bake__cakes_1, .what_we_bake__cakes_2, .what_we_bake__donuts_1, .what_we_bake__donuts_2, .what_we_bake__cookies_1, .what_we_bake__cookies_2 {
   width: 432px;
 }
 
-.what_we_bake__cakes_1 > .order_image,
-.what_we_bake__cakes_2 > .order_image,
-.what_we_bake__donuts_1 > .order_image,
-.what_we_bake__donuts_2 > .order_image,
-.what_we_bake__cookies_1 > .order_image,
-.what_we_bake__cookies_2 > .order_image {
+.what_we_bake__cakes_1 > .order_image, .what_we_bake__cakes_2 > .order_image, .what_we_bake__donuts_1 > .order_image, .what_we_bake__donuts_2 > .order_image, .what_we_bake__cookies_1 > .order_image, .what_we_bake__cookies_2 > .order_image {
   margin-bottom: 16px;
 }
 
-.what_we_bake__cakes_1 .order_link,
-.what_we_bake__cakes_2 .order_link,
-.what_we_bake__donuts_1 .order_link,
-.what_we_bake__donuts_2 .order_link,
-.what_we_bake__cookies_1 .order_link,
-.what_we_bake__cookies_2 .order_link {
+.what_we_bake__cakes_1 .order_link, .what_we_bake__cakes_2 .order_link, .what_we_bake__donuts_1 .order_link, .what_we_bake__donuts_2 .order_link, .what_we_bake__cookies_1 .order_link, .what_we_bake__cookies_2 .order_link {
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
-.what_we_bake__cakes_1 .order_link__img,
-.what_we_bake__cakes_2 .order_link__img,
-.what_we_bake__donuts_1 .order_link__img,
-.what_we_bake__donuts_2 .order_link__img,
-.what_we_bake__cookies_1 .order_link__img,
-.what_we_bake__cookies_2 .order_link__img {
+.what_we_bake__cakes_1 .order_link__img, .what_we_bake__cakes_2 .order_link__img, .what_we_bake__donuts_1 .order_link__img, .what_we_bake__donuts_2 .order_link__img, .what_we_bake__cookies_1 .order_link__img, .what_we_bake__cookies_2 .order_link__img {
   width: 24px;
   height: 24px;
 }
+
 
 .about_us {
   margin-bottom: 350px;
   position: relative;
 }
 
-.about_us__img {
+.about_us__image {
   position: absolute;
   top: 0;
   left: 50%;
@@ -406,6 +402,7 @@ main {
   line-height: 150%;
 }
 
+
 footer {
   background: #1c1a26;
   padding: 88px 124px;
@@ -413,6 +410,7 @@ footer {
   align-items: start;
   justify-content: space-between;
 }
+
 
 .company_navigation,
 .contact_us {
@@ -449,12 +447,13 @@ footer {
   line-height: 150%;
 }
 
+
 .company_navigation {
   width: 50%;
 }
 
 .company_navigation__logo {
-  background: url('../images/logo_light.png') center/cover no-repeat;
+  background: url("../images/logo_light.png") center/cover no-repeat;
   width: 168px;
   height: 40px;
   margin-bottom: 61px;
@@ -470,6 +469,7 @@ footer {
   justify-content: start;
   gap: 32px;
 }
+
 
 .contact_us h1 {
   font-size: 72px;
@@ -490,6 +490,7 @@ footer {
 .contact_us p {
   color: #7f8096;
 }
+
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .header {
@@ -543,9 +544,7 @@ footer {
     font-size: 64px;
   }
 
-  .creative_bakery__cookie,
-  .creative_bakery__learn_more,
-  .creative_bakery__paragraph {
+  .creative_bakery__cookie, .creative_bakery__learn_more, .creative_bakery__paragraph {
     position: static;
   }
 
@@ -577,30 +576,18 @@ footer {
     margin-bottom: 56px;
   }
 
-  .what_we_bake__cakes,
-  .what_we_bake__donuts,
-  .what_we_bake__cookies {
+  .what_we_bake__cakes, .what_we_bake__donuts, .what_we_bake__cookies {
     margin: 0;
     flex-direction: column;
     justify-content: center;
   }
 
-  .what_we_bake__cakes_1,
-  .what_we_bake__cakes_2,
-  .what_we_bake__donuts_1,
-  .what_we_bake__donuts_2,
-  .what_we_bake__cookies_1,
-  .what_we_bake__cookies_2 {
+  .what_we_bake__cakes_1, .what_we_bake__cakes_2, .what_we_bake__donuts_1, .what_we_bake__donuts_2, .what_we_bake__cookies_1, .what_we_bake__cookies_2 {
     width: 100%;
     margin-bottom: 56px;
   }
 
-  .what_we_bake__cakes_1 > .order_image,
-  .what_we_bake__cakes_2 > .order_image,
-  .what_we_bake__donuts_1 > .order_image,
-  .what_we_bake__donuts_2 > .order_image,
-  .what_we_bake__cookies_1 > .order_image,
-  .what_we_bake__cookies_2 > .order_image {
+  .what_we_bake__cakes_1 > .order_image, .what_we_bake__cakes_2 > .order_image, .what_we_bake__donuts_1 > .order_image, .what_we_bake__donuts_2 > .order_image, .what_we_bake__cookies_1 > .order_image, .what_we_bake__cookies_2 > .order_image {
     width: 100%;
   }
 
@@ -609,7 +596,7 @@ footer {
     margin-bottom: 72px;
   }
 
-  .about_us > img {
+  .about_us__image {
     position: absolute;
     top: 400px;
     left: 220px;
@@ -654,6 +641,7 @@ footer {
     gap: 40px;
     margin-bottom: 40px;
   }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -725,27 +713,15 @@ footer {
     margin-bottom: 152px;
   }
 
-  .what_we_bake__cakes,
-  .what_we_bake__donuts,
-  .what_we_bake__cookies {
+  .what_we_bake__cakes, .what_we_bake__donuts, .what_we_bake__cookies {
     justify-content: center;
   }
 
-  .what_we_bake__cakes_1,
-  .what_we_bake__cakes_2,
-  .what_we_bake__donuts_1,
-  .what_we_bake__donuts_2,
-  .what_we_bake__cookies_1,
-  .what_we_bake__cookies_2 {
+  .what_we_bake__cakes_1, .what_we_bake__cakes_2, .what_we_bake__donuts_1, .what_we_bake__donuts_2, .what_we_bake__cookies_1, .what_we_bake__cookies_2 {
     width: 328px;
   }
 
-  .what_we_bake__cakes_1 > .order_image,
-  .what_we_bake__cakes_2 > .order_image,
-  .what_we_bake__donuts_1 > .order_image,
-  .what_we_bake__donuts_2 > .order_image,
-  .what_we_bake__cookies_1 > .order_image,
-  .what_we_bake__cookies_2 > .order_image {
+  .what_we_bake__cakes_1 > .order_image, .what_we_bake__cakes_2 > .order_image, .what_we_bake__donuts_1 > .order_image, .what_we_bake__donuts_2 > .order_image, .what_we_bake__cookies_1 > .order_image, .what_we_bake__cookies_2 > .order_image {
     width: 100%;
   }
 
@@ -772,6 +748,7 @@ footer {
   .contact_us h1 {
     line-height: 100%;
   }
+
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1439px) {
@@ -805,6 +782,7 @@ footer {
   footer {
     padding: 88px 44px;
   }
+
 }
 
 @media screen and (min-width: 1440px) {
@@ -820,6 +798,8 @@ footer {
   footer {
     padding: 88px 124px;
   }
+
 }
+
 
 /*# sourceMappingURL=main.css.map */
