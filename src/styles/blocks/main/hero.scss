@@ -1,0 +1,123 @@
+@import '/src/styles/utils';
+
+.hero {
+  padding-bottom: 40px;
+
+  @include page-grid;
+
+  @include on-tablet {
+    padding-bottom: 228px;
+  }
+
+  @include on-desktop {
+    padding-bottom: 66px;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  &__description {
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+
+    @include on-tablet {
+      grid-column: span 4;
+      width: 281px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      width: auto;
+      grid-column: 1 / span 2;
+      grid-row: 1;
+      align-self: end;
+      z-index: 5;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    margin-top: 32px;
+
+    @include page-grid;
+
+    @include on-tablet {
+      margin-top: 16px;
+      grid-column: 1 / -1;
+      place-items: center;
+    }
+
+    @include on-desktop {
+      margin-top: 0;
+      grid-row: 1 / -1;
+    }
+  }
+
+  &__title {
+    @include on-tablet {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      z-index: 5;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+      grid-row: 1;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: solid 2px $accent-orange;
+    border-radius: 32px;
+    background-color: $light-blue;
+    color: $accent-orange;
+    fill: $accent-orange;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 5;
+
+    @include on-tablet {
+      margin-top: 80px;
+      grid-column: 3 / 7;
+    }
+
+    @include on-desktop {
+      margin-top: 0;
+      grid-column: 1 / span 2;
+      grid-row: 3;
+    }
+
+    @include hover(
+      (
+        background-color: $accent-orange,
+        color: $white,
+        fill: $white,
+      )
+    );
+    @include active(
+      (
+        background-color: $dark-orange,
+        border-color: $dark-orange,
+        color: $white,
+        fill: $white,
+      )
+    );
+
+    &:disabled {
+      background-color: $light-blue;
+      border-color: $light-orange;
+      color: $light-orange;
+      fill: $light-orange;
+      cursor: not-allowed;
+    }
+  }
+}

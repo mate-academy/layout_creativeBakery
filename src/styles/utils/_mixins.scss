@@ -1,6 +1,65 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@use 'sass:list';
+
+@mixin hover($map) {
+  $transitions: ();
+
+  @each $prop, $val in $map {
+    $transitions: list.append($transitions, $prop $transition-duration, comma);
+  }
+
+  transition: $transitions;
+
   &:hover {
-    #{$_property}: $_toValue;
+    @each $prop, $val in $map {
+      #{$prop}: $val;
+    }
+  }
+}
+
+@mixin active($map) {
+  $transitions: ();
+
+  @each $prop, $val in $map {
+    $transitions: list.append($transitions, $prop $transition-duration, comma);
+  }
+
+  transition: $transitions;
+
+  &:active {
+    @each $prop, $val in $map {
+      #{$prop}: $val;
+    }
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-grand-desktop {
+  @media (min-width: $grand-desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  @include on-tablet {
+    --columns: 8;
+
+    display: grid;
+    column-gap: 24px;
+    grid-template-columns: repeat(var(--columns), 1fr);
+  }
+
+  @include on-grand-desktop {
+    grid-template-columns: repeat(var(--columns), 128px);
   }
 }
