@@ -1,0 +1,42 @@
+.product-card {
+  @include flex($direction: column, $align: flex-start);
+
+  &__preview-wrapper {
+    margin: 0;
+  }
+
+  &__preview {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+
+    @include transition(transform);
+
+    @include hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__preview-label {
+    text-transform: uppercase;
+    color: $grey;
+    margin: 16px 0 8px;
+
+    @include font(16px, 500, 1);
+  }
+
+  &__title {
+    color: $black;
+    margin: 0;
+
+    @include font(16px, 400, 1.5);
+  }
+
+  &__order-button {
+    margin-top: 16px;
+  }
+
+  &__order-icon {
+    background-image: url('../images/icons/icon-arrow.svg');
+  }
+}

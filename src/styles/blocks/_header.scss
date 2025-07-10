@@ -1,0 +1,25 @@
+.header {
+  height: 64px;
+  padding-inline: 16px;
+  background-color: $light-blue;
+
+  @include flex($justify: space-between, $align: center);
+
+  &__menu {
+    display: none;
+
+    @include on-laptop {
+      display: flex;
+    }
+  }
+
+  &__burger {
+    @include on-laptop {
+      display: none;
+    }
+  }
+
+  @include on-laptop {
+    height: 88px;
+  }
+}

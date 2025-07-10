@@ -1,0 +1,42 @@
+.menu {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 64px;
+
+    @include flex($align: center);
+
+    &--vertical {
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+
+  &__item {
+    text-align: center;
+
+    @include transition(transform);
+
+    @include hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: -1%;
+    color: $black;
+
+    @include font(16px, 400, 1.5);
+  }
+
+  &__phone-icon {
+    background-image: url('../images/icons/icon-phone.svg');
+
+    &:focus::before {
+      background-image: url('../images/icons/icon-phone-focus.svg');
+    }
+  }
+}
