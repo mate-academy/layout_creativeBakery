@@ -1,0 +1,53 @@
+.what-we-bake {
+  margin-top: 64px;
+
+  @include on-tablet {
+    margin-top: 0;
+  }
+
+  @include on-laptop {
+    margin-top: 152px;
+  }
+
+  @include on-desktop {
+    margin-top: 178px;
+  }
+
+  &__title {
+    margin: 0 0 24px;
+  }
+
+  &__description {
+    @extend %body-text;
+
+    margin: 0;
+  }
+
+  &__cards {
+    row-gap: 56px;
+    margin-top: 56px;
+
+    @include grid-page;
+
+    @include on-tablet {
+      row-gap: 80px;
+      margin-top: 80px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-laptop {
+      grid-column: span 3;
+
+      &:nth-child(4n + 3) {
+        grid-column: 3 / span 3;
+      }
+    }
+  }
+}

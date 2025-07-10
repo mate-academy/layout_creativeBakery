@@ -1,0 +1,34 @@
+.burger {
+  width: 24px;
+  height: 24px;
+
+  position: relative;
+
+  cursor: pointer;
+
+  &::before {
+    @extend %burger-line;
+
+    top: 8px;
+  }
+
+  &::after {
+    @extend %burger-line;
+
+    bottom: 8px;
+  }
+
+  &--close {
+    &::before {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &::after {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}

@@ -1,0 +1,147 @@
+.footer {
+  padding: 56px 0;
+  background-color: $black;
+
+  @include on-tablet {
+    padding: 88px 0;
+  }
+
+  &__content {
+    row-gap: 40px;
+
+    @include grid-page;
+
+    @include on-tablet {
+      row-gap: 0;
+    }
+  }
+
+  &__logo {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__links {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-bottom: 40px;
+
+      &--email {
+        grid-column: 5 / span 4;
+      }
+    }
+
+    @include on-laptop {
+      grid-column: span 2;
+
+      &--call-us {
+        grid-column: 5 / span 2;
+      }
+    }
+
+    &--social {
+      margin-bottom: 0;
+    }
+  }
+
+  &__links-title {
+    color: $grey;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+
+    @include font(16px, 500, 1);
+  }
+
+  &__links-list {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    gap: 16px;
+
+    @include flex($direction: column, $align: flex-start);
+
+    &--horizontal {
+      flex-direction: row;
+      gap: 32px;
+    }
+  }
+
+  &__link {
+    @extend %body-text;
+
+    color: $white;
+    text-decoration: none;
+    text-transform: capitalize;
+
+    @include transition(color);
+
+    @include hover {
+      color: $grey;
+    }
+
+    &--email {
+      text-transform: lowercase;
+    }
+  }
+
+  &__title {
+    color: $white;
+    margin: 24px 0 0;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-row-start: 1;
+      grid-column: 5 / span 4;
+      margin: 0 0 40px;
+    }
+  }
+
+  &__icon {
+    @include transition(background-image);
+
+    &--instagram {
+      background-image: url('../images/icons/icon-instagram.svg');
+
+      @include hover {
+        background-image: url('../images/icons/icon-instagram-hover.svg');
+      }
+    }
+
+    &--facebook {
+      background-image: url('../images/icons/icon-facebook.svg');
+
+      @include hover {
+        background-image: url('../images/icons/icon-facebook-hover.svg');
+      }
+    }
+
+    &--twitter {
+      background-image: url('../images/icons/icon-twitter.svg');
+
+      @include hover {
+        background-image: url('../images/icons/icon-twitter-hover.svg');
+      }
+    }
+  }
+
+  &__copyright {
+    @extend %body-text;
+
+    margin: 0;
+    color: $grey;
+    align-self: center;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-laptop {
+      grid-column: 5 / span 2;
+    }
+  }
+}

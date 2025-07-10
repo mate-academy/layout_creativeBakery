@@ -1,0 +1,73 @@
+.about-us {
+  margin-top: 72px;
+  background-image: url('../images/crumbs.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom 174px;
+
+  @include on-tablet {
+    margin-top: 152px;
+    background-position: center;
+    background-size: 526px;
+  }
+
+  @include on-laptop {
+    margin-top: 178px;
+    padding-bottom: 293px;
+    background-size: contain;
+    background-position: right 40% center;
+  }
+
+  @include on-desktop {
+    background-position: left 48% center;
+  }
+
+  &__top {
+    row-gap: 32px;
+
+    @include grid-page;
+  }
+
+  &__title {
+    margin: 0;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__description {
+    @extend %body-text;
+
+    margin: 0;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__cards {
+    margin-top: 64px;
+    row-gap: 48px;
+
+    @include grid-page;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-laptop {
+      grid-column: span 2;
+    }
+  }
+}

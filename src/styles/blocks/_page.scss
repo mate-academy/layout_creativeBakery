@@ -1,0 +1,37 @@
+.page {
+  background-color: $light-blue;
+  overflow: auto;
+  margin: 0;
+  min-width: 320px;
+
+  font-family: Inter, serif;
+  font-weight: 400;
+  line-height: 150%;
+
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  &__mobile-menu {
+    position: fixed;
+    inset: 0;
+    transform: translateX(-100%);
+    z-index: 1;
+
+    transition: $transition-duration transform;
+
+    &--active {
+      transform: translateX(0);
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &:has(&__mobile-menu--active) {
+    overflow: hidden;
+  }
+}

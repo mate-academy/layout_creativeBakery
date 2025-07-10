@@ -1,0 +1,130 @@
+.hero {
+  position: relative;
+  padding-block: 32px 40px;
+
+  @include grid-page;
+
+  &__description {
+    text-align: center;
+    grid-column: 1 / -1;
+    margin: 0 0 32px;
+
+    @include font(16px, 400, 1.5);
+
+    @include on-tablet {
+      grid-column: 1 / span 4;
+      text-align: left;
+      margin-bottom: 146px;
+    }
+
+    @include on-laptop {
+      grid-column: 1 / span 2;
+      margin: 135px 0 8px;
+    }
+
+    @include on-desktop {
+      margin: 144px 0 40px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0;
+    color: $black;
+
+    @include on-tablet {
+      margin-bottom: 210px;
+    }
+
+    @include on-laptop {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__image-wrapper {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: center;
+
+    @include on-tablet {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 40%;
+      transform: translateY(-55%);
+      z-index: -1;
+    }
+
+    @include on-laptop {
+      top: 0;
+      transform: translateY(0);
+    }
+  }
+
+  &__image {
+    width: 288px;
+    animation: spin-in 2s ease-out forwards;
+
+    @include on-tablet {
+      width: 326px;
+    }
+
+    @include on-laptop {
+      width: 544px;
+    }
+
+    @include on-desktop {
+      width: 584px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+
+      background-image: url('../images/icons/icon-cookie.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &:focus::before {
+      background-image: url('../images/icons/icon-cookie-hover.svg');
+    }
+
+    @include hover {
+      &::before {
+        background-image: url('../images/icons/icon-cookie-hover.svg');
+      }
+    }
+
+    @include on-tablet {
+      grid-column: 3 / span 4;
+    }
+
+    @include on-laptop {
+      grid-column: 1 / span 2;
+    }
+  }
+
+  @include on-tablet {
+    padding-block: 80px 228px;
+  }
+
+  @include on-laptop {
+    padding-block: 0 160px;
+  }
+
+  @include on-desktop {
+    padding-block: 0 112px;
+  }
+}
