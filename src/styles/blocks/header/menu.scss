@@ -1,0 +1,114 @@
+@import '/src/styles/utils';
+
+.menu {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 64px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 64px);
+  background-color: $light-blue;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 10;
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  &__nav {
+    text-align: center;
+
+    &-list {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      list-style: none;
+
+      &-link {
+        position: relative;
+        text-decoration: none;
+        color: $black;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          display: block;
+          height: 1px;
+          background-color: $black;
+
+          transition: 0.3s;
+          transform: scale(0);
+          transform-origin: left;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
+
+        &:hover::after {
+          transform: scale(1);
+        }
+      }
+
+      //   &-button {
+      //     position: relative;
+      //     padding: 4px 0;
+      //     display: flex;
+      //     align-items: center;
+      //     gap: 4px;
+      //     border: none;
+      //     background-color: transparent;
+      //     color: $accent-orange;
+      //     fill: $accent-orange;
+      //     font-size: 16px;
+      //     font-weight: 500;
+      //     text-transform: uppercase;
+      //     cursor: pointer;
+
+      //     &::after {
+      //       content: '';
+      //       position: absolute;
+      //       bottom: -4px;
+      //       display: block;
+      //       height: 1px;
+      //       width: 100%;
+      //       background-color: $accent-orange;
+
+      //       transition: 0.3s;
+      //       transform: scale(0);
+      //       transform-origin: left;
+      //     }
+
+      //     &:hover::after {
+      //       transform: scale(1);
+      //     }
+
+      //     @include active(
+      //       (
+      //         color: $dark-orange,
+      //         fill: $dark-orange,
+      //       )
+      //     );
+
+      //     &:active::after {
+      //       background-color: $dark-orange;
+      //     }
+
+      //     &:disabled {
+      //       color: $light-orange;
+      //       fill: $light-orange;
+      //       cursor: not-allowed;
+      //     }
+
+      //     &:disabled::after {
+      //       display: none;
+      //     }
+      //   }
+    }
+  }
+}
