@@ -1,0 +1,94 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+@use '../utils/tokens' as *;
+
+$font-primary: 'Inter', sans-serif;
+
+:root {
+  --font-size-body: 16px;
+  --font-family: #{$font-primary};
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  background-color: var(--background-color);
+  color: var(--text-color-default); // se quiser um texto padrão
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  font-weight: normal;
+}
+
+// ===== HEADINGS ===== //
+
+h1,
+.h1 {
+  font-family: $font-primary;
+  color: var(--heading-color);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+
+  font-size: 64px;
+  line-height: 0.85;
+
+  @include respond(tablet) {
+    font-size: 65px;
+  }
+
+  @include respond(desktop) {
+    font-size: 136px;
+  }
+}
+
+h2,
+.h2 {
+  font-family: $font-primary;
+  color: var(--heading-color);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+
+  font-size: 48px;
+  line-height: 0.85;
+
+  @include respond(tablet) {
+    font-size: 45px;
+  }
+
+  @include respond(desktop) {
+    font-size: 72px;
+  }
+}
+
+// ===== BIG TEXT ===== //
+
+.big-text {
+  font-family: $font-primary;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 96px;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+}
+
+// ===== UPPERCASE ===== //
+
+.uppercase-text {
+  font-family: $font-primary;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.footer-uppercase {
+  font-family: $font-primary;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: $color-grey;
+}

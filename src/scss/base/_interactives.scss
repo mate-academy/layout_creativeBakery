@@ -1,0 +1,30 @@
+@use '../utils/mixins' as *;
+
+/* ==========================================================================
+   _interactives.scss
+   Global interactive elements / Elementos interativos globais
+   Description: Universal usability rules applied to links, buttons and icons
+   Descrição: Regras universais de usabilidade aplicadas a links, botões e ícones
+   ========================================================================== */
+
+/* ==========================================================================
+   Global rules for interactive elements / Regras globais para interativos
+   ========================================================================== */
+
+a,
+button,
+[role='button'],
+[tabindex]:not([tabindex='-1']) {
+  @include interactive;
+}
+
+/* ==========================================================================
+   Prevents pointer issues in images inside interactive elements
+   Prevenção de conflitos em imagens interativas
+   ========================================================================== */
+a img,
+button img,
+[role='button'] img,
+[tabindex] img {
+  pointer-events: none;
+}

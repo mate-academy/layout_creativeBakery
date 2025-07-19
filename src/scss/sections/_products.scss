@@ -1,0 +1,120 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.products {
+  width: 288px;
+  height: auto;
+  margin-bottom: 72px;
+
+  @include scroll-margin-top(50px);
+
+  @include respond(tablet) {
+    width: 608px;
+
+    margin-bottom: 152px;
+  }
+
+  @include respond(desktop) {
+    width: 1180px;
+
+    margin-bottom: 178px;
+  }
+
+  &__text {
+    padding-top: 24px;
+
+    @include respond(tablet) {
+      padding-top: 24px;
+    }
+  }
+
+  &__grid {
+    @include respond(desktop) {
+      width: 1180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__container {
+    @include respond(tablet) {
+      width: 300px;
+
+      @include flex-column-center(10px);
+    }
+
+    @include respond(desktop) {
+      width: 820px;
+      gap: 16px;
+    }
+  }
+
+  &__card {
+    display: grid;
+    width: 288px;
+
+    @include respond(tablet) {
+      width: 300px;
+    }
+
+    @include respond(desktop) {
+      width: 402px;
+    }
+
+    &--img {
+      width: 288px;
+      height: 356px;
+      border-radius: 8px;
+      margin-top: 56px;
+
+      @include hover-zoom;
+
+      @include respond(tablet) {
+        width: 300px;
+        height: 355px;
+        margin-top: 80px;
+      }
+
+      @include respond(desktop) {
+        width: 402px;
+        height: 512px;
+      }
+    }
+
+    &--title {
+      color: $color-grey;
+      padding-top: 16px;
+
+      @include respond(desktop) {
+        font-size: 20px;
+      }
+    }
+
+    &--description {
+      /* font-size: 15px; */
+      padding-block: 8px 16px;
+
+      @include respond(desktop) {
+        font-size: 20px;
+      }
+    }
+
+    &--order {
+      width: 84px;
+      height: 32px;
+
+      @include flex-column-center(4px);
+
+      color: $color-accent-orange;
+    }
+  }
+}
+
+.left {
+  align-self: flex-start;
+}
+
+.right {
+  align-self: flex-end;
+}

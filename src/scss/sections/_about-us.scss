@@ -1,0 +1,160 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.about-us {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'image'
+    'data';
+  grid-template-rows: 130px 144px auto;
+  justify-items: flex-start;
+  position: relative;
+  max-width: 320px;
+
+  @include scroll-margin-top(50px);
+
+  @include respond(tablet) {
+    max-width: 640px;
+    justify-items: center;
+  }
+
+  @include respond(desktop) {
+    max-width: 1280px;
+    height: 715px;
+    margin-bottom: 56px;
+  }
+
+  &__header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    z-index: 1;
+    padding-bottom: 64px;
+
+    @include respond(tablet) {
+      flex-direction: row;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    @include respond(desktop) {
+      height: 125px;
+      padding-bottom: 0;
+    }
+
+    &--title,
+    &--text {
+      @include respond(tablet) {
+        width: 275px;
+      }
+
+      @include respond(desktop) {
+        width: 580px;
+      }
+    }
+
+    &--text {
+      font-size: 14px;
+
+      @include respond(tablet) {
+        font-size: 13.5px;
+      }
+
+      @include respond(desktop) {
+        font-size: 1em;
+      }
+    }
+  }
+
+  &__bg {
+    grid-area: image;
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    top: 480px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include respond(tablet) {
+      top: 85%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include respond(desktop) {
+      top: 210px;
+      left: 57%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--img {
+      width: 320px;
+      height: 300px;
+
+      @include respond(tablet) {
+        width: 450px;
+        height: 430px;
+      }
+
+      @include respond(desktop) {
+        width: 750px;
+        height: 680px;
+      }
+    }
+  }
+
+  &__data {
+    grid-area: data;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    z-index: 1;
+    margin-block: 64px 72px;
+
+    @include respond(tablet) {
+      flex-flow: row wrap;
+      justify-content: space-between;
+      margin-block: 0 152px;
+    }
+
+    @include respond(desktop) {
+      justify-content: space-evenly;
+      flex-flow: row wrap;
+    }
+
+    &--container {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+
+      @include respond(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 40px;
+      }
+    }
+
+    &--statistics {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+
+      @include respond(tablet) {
+        width: 275px;
+        height: 114px;
+
+        h1 {
+          font-size: 80px;
+        }
+      }
+
+      @include respond(desktop) {
+        width: 275px;
+        height: 114px;
+      }
+    }
+  }
+}

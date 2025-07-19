@@ -1,0 +1,152 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.footer {
+  background-color: $color-black;
+  width: 100vw;
+  height: 100%;
+
+  &__container {
+    @include container;
+
+    width: 288px;
+
+    color: $color-white;
+
+    @include respond(tablet) {
+      @include centered-container(640px);
+
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 320px 280px;
+      grid-template-areas:
+        'logo-menu contact-us'
+        'logo-menu contact-us '
+        'social-media copyright';
+    }
+
+    @include respond(desktop) {
+      @include centered-container(1280px);
+
+      grid-template-columns: 620px 580px;
+      grid-template-areas:
+        'logo-menu contact-us'
+        'social-media copyright';
+      margin-inline: auto;
+    }
+  }
+
+  &__logo {
+    grid-area: logo-menu;
+    margin-block: 56px 40px;
+
+    @include interactive;
+
+    @include respond(tablet) {
+      width: 200px;
+      margin-block: 88px 96px;
+    }
+  }
+
+  &__menu {
+    grid-area: logo-menu;
+
+    &--list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      &-item {
+        width: 260px;
+
+        @include interactive($scale: 1.1, $translateX: 10px);
+      }
+    }
+
+    @include respond(tablet) {
+      margin-top: 223px;
+    }
+
+    @include respond(desktop) {
+      margin-top: 180px;
+    }
+  }
+
+  &__contact-us {
+    grid-area: contact-us;
+    display: flex;
+    flex-direction: column;
+    margin-top: 64px;
+    gap: 40px;
+
+    @include scroll-margin-top(50px);
+
+    @include respond(tablet) {
+      margin-top: 88px;
+    }
+
+    &--content {
+      @include respond(desktop) {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+      }
+    }
+
+    &--container {
+      @include respond(desktop) {
+        width: 260px;
+      }
+
+      &-list-item {
+        @include interactive;
+      }
+    }
+
+    &--title {
+      h2 {
+        color: $color-white;
+
+        @include respond(tablet) {
+          font-size: 56px;
+        }
+      }
+    }
+
+    &--container-list,
+    &--email {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &--email-name {
+      @include interactive;
+    }
+  }
+
+  &__social-media {
+    grid-area: social-media;
+    padding-top: 40px;
+
+    &-list {
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+
+      &-item {
+        @include interactive;
+      }
+    }
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    margin-block: 40px 56px;
+    color: $color-grey;
+
+    @include respond(desktop) {
+      margin-bottom: 88px;
+    }
+  }
+}

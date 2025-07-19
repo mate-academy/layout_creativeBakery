@@ -1,0 +1,298 @@
+/* ==========================================================================
+   _mixins.scss | SCSS Reusable Mixins
+   Description: Helper functions for interaction, responsiveness, layout and components
+   Descrição: Funções auxiliares para interação, responsividade, layout e componentes
+   ========================================================================== */
+
+@use 'variables' as *;
+@use 'sass:map';
+
+/* =============================================================
+   INTERACTION / INTERAÇÃO
+   ============================================================= */
+
+/// @mixin hover-transition
+/// @desc Adds smooth transition on :hover for the given property
+/// @desc Aplica transição suave no estado :hover
+/// @param {String} $property - CSS property to animate
+/// @param {*} $toValue - value on hover
+/// @param {Time} $duration - animation duration (default: 0.3s)
+/// @param {String} $timing - timing function (default: ease)
+/// @example
+/// @include hover-transition(color, red);
+@mixin hover-transition($property, $toValue, $duration: 0.3s, $timing: ease) {
+  transition: #{$property} #{$duration} #{$timing};
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+/// @mixin hover-block
+/// @desc Wraps a block of styles inside :hover
+/// @desc Permite passar um bloco de estilos personalizados para o estado :hover
+/// @example
+/// @include hover-block {
+///   background-color: yellow;
+/// }
+@mixin hover-block {
+  &:hover {
+    @content;
+  }
+}
+
+/// @mixin hover-scale
+/// @desc Smooth scale effect on hover/focus
+/// @desc Aplica aumento de escala suave
+/// @param {Selector} $target - element to apply the transform
+/// @param {Number} $scale - scale factor (default: 1.1)
+/// @example
+/// @include hover-scale(.icon);
+@mixin hover-scale($target, $scale: 1.1) {
+  &:hover #{$target},
+  &:focus #{$target} {
+    transform: scale(#{$scale});
+  }
+}
+
+/// @mixin hover-zoom
+/// @desc Applies zoom (scale) and shadow effect smoothly on hover
+/// @desc Aplica efeito de zoom (escala) e sombra suavemente no estado hover
+/// @param {Number} $scale - scale factor (default: 1.05)
+/// @param {Time} $duration - animation duration (default: 0.3s)
+/// @param {String} $timing - timing function (default: ease)
+/// @example
+/// @include hover-zoom(1.02);
+@mixin hover-zoom($scale: 1.02, $duration: 0.3s, $timing: ease) {
+  transition:
+    transform #{$duration} #{$timing},
+    box-shadow #{$duration} #{$timing};
+
+  &:hover {
+    transform: scale(#{$scale});
+  }
+}
+
+/// @mixin focus-style
+/// @desc Applies custom styles for :focus and :focus-visible
+/// @desc Estilos aplicados nos estados :focus e :focus-visible
+/// @param {String} $outline - optional outline
+/// @example
+/// @include focus-style(2px solid orange) {
+///   background-color: lightblue;
+/// }
+@mixin focus-style($outline: null) {
+  &:focus,
+  &:focus-visible {
+    @if $outline {
+      outline: $outline;
+    }
+    @content;
+  }
+}
+
+/// @mixin interactive
+/// @desc Applies pointer cursor and interactive hover effects to clickable elements
+/// @desc Aplica cursor pointer e efeitos interativos no estado hover para elementos clicáveis
+/// @example
+/// @include interactive();
+@mixin interactive($scale: 1.05, $origin: center center, $translateX: 0) {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  transform-origin: $origin;
+
+  &:hover {
+    transform: scale($scale) translateX($translateX);
+  }
+}
+
+/* =============================================================
+   SCROLL / ROLAGEM
+   ============================================================= */
+
+/// @mixin scroll-margin-top
+/// @desc Applies scroll-margin-top spacing to elements
+/// @desc Aplica espaçamento com scroll-margin-top nos elementos
+/// @param {Length} $value - margin value from the top (e.g. 50px, 2rem)
+/// @example
+/// @include scroll-margin-top(50px);
+@mixin scroll-margin-top($value: 50px) {
+  scroll-margin-top: $value;
+  @content;
+}
+
+/* =============================================================
+   RESPONSIVENESS / RESPONSIVO
+   ============================================================= */
+
+/// @mixin respond
+/// @desc Wraps content in media queries based on $breakpoints map
+/// @desc Envolve conteúdo em media queries com base no mapa $breakpoints
+/// @param {String} $breakpoint - breakpoint key (mobile, tablet, desktop)
+/// @example
+/// @include respond(tablet) {
+///   font-size: 1.2rem;
+/// }
+@mixin respond($breakpoint) {
+  $value: map.get($breakpoints, $breakpoint);
+
+  @if $value {
+    @media (min-width: #{$value}) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' not found.";
+  }
+}
+
+/* =============================================================
+   LAYOUT
+   ============================================================= */
+
+/// @mixin container
+/// @desc Adds fluid horizontal margins and max-width based on breakpoints
+/// @desc Aplica margens laterais fluidas e largura máxima limitada
+/// @example
+/// @include container;
+@mixin container {
+  margin-inline: clamp(16px, 16px, map.get($grid-margin, mobile));
+
+  @include respond(tablet) {
+    margin-inline: clamp(16px, 16px, map.get($grid-margin, tablet));
+  }
+
+  @include respond(desktop) {
+    margin-inline: clamp(16px, 16px, map.get($grid-margin, desktop));
+    max-width: 1440px;
+  }
+}
+
+/// @mixin centered-container
+/// @desc Centers a block with a fixed max-width
+/// @desc Fixa tamanho de conteúdo para desktop
+/// @param {Number} $max-width - max container width (default: 1280px)
+/// @example
+/// @include centered-container(1024px);
+@mixin centered-container($max-width: 1280px) {
+  width: 100%;
+  max-width: $max-width;
+  margin-inline: auto;
+}
+
+/// @mixin grid-center
+/// @desc Centers content horizontally and vertically using grid
+/// @desc Centraliza conteúdo vertical e horizontal com grid
+/// @example
+/// @include grid-center;
+@mixin grid-center {
+  display: grid;
+  place-content: center;
+  grid-auto-flow: row;
+}
+
+/// @mixin flex-column-center
+/// @desc Aligns items horizontally in columns
+/// @desc Alinha itens horizontalmente em linha
+/// @param {Number | null} $gap - optional gap between items
+/// @example
+/// @include flex-column-center(1rem);
+@mixin flex-column-center($gap: null) {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+/// @mixin hero-grid-base
+/// @desc Base grid layout for hero section
+/// @desc Grid base para seção do tipo "hero"
+/// @param {Length} $colPadding - column side padding
+/// @example
+/// @include hero-grid-base(32px);
+@mixin hero-grid-base($colPadding: 16px) {
+  display: grid;
+  grid-template:
+    '. text .' auto
+    '. title .' auto
+    '. image .' auto
+    '. button .' auto /
+    #{$colPadding} 1fr #{$colPadding};
+}
+
+/// @mixin grid-column-center
+/// @desc Creates a column layout with horizontal centering
+/// @desc Cria grid em coluna com centralização horizontal
+/// @param {Number | null} $gap - optional row gap
+/// @example
+/// @include grid-column-center(2rem);
+@mixin grid-column-center($gap: null) {
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+/// @mixin grid-wrapper
+/// @desc Flexible grid layout with responsive gutters
+/// @desc Aplica margens negativas e flexibilidade para layout tipo grid
+/// @example
+/// @include grid-wrapper;
+@mixin grid-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @each $breakpoint, $gutter in $grid-gutter {
+    @include respond($breakpoint) {
+      margin-left: -#{$gutter / 2};
+      margin-right: -#{$gutter / 2};
+    }
+  }
+}
+
+/// @mixin column
+/// @desc Defines proportional column width with responsive padding
+/// @desc Define largura proporcional da coluna com paddings responsivos
+/// @param {Number} $span - number of columns (based on $grid-columns)
+/// @example
+/// @include column(4);
+@mixin column($span) {
+  $width: 100% * ($span / $grid-columns);
+
+  width: $width;
+
+  @each $breakpoint, $gutter in $grid-gutter {
+    @include respond($breakpoint) {
+      padding-left: #{$gutter / 2};
+      padding-right: #{$gutter / 2};
+    }
+  }
+}
+
+/* =============================================================
+   COMPONENTS / COMPONENTES
+   ============================================================= */
+
+/// @mixin button-style
+/// @desc Applies state-based button styles using placeholders
+/// @desc Aplica estilos de estado em botões utilizando placeholders
+/// @param {String} $state - button state (default, hover, focused, disabled)
+/// @example
+/// @include button-style(hover);
+@mixin button-style($state: default) {
+  @extend %btn-base;
+
+  @if $state == hover {
+    @extend %btn-hover;
+  } @else if $state == focused {
+    @extend %btn-focused;
+  } @else if $state == disabled {
+    @extend %btn-disabled;
+  }
+
+  @content;
+}

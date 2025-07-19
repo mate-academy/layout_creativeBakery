@@ -1,0 +1,86 @@
+/* ==========================================================================
+   _extends.scss | Reusable Style Placeholders
+   Description: Style extensions applied via @extend for components and utilities
+   Descrição: Extensões de estilo aplicáveis via @extend para componentes e utilitários
+   ==========================================================================
+*/
+
+@use './variables' as *;
+
+/* =============================================================
+   BUTTON STATES / ESTADOS DE BOTÕES
+   ============================================================= */
+
+/// @placeholder %btn-base
+/// @desc Base style for buttons — alignment, padding, font and color
+/// @desc Estilo base para botões — alinhamento, tamanho e cor padrão
+%btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: $border-radius-lg;
+  border: 2px solid $btn-default-color;
+  background-color: transparent;
+  color: $btn-default-color;
+  text-transform: uppercase;
+  transition: all 0.6s ease-in-out;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+/// @placeholder %btn-hover
+/// @desc Hover state for buttons — filled background and white text
+/// @desc Estado hover do botão — fundo colorido e texto branco
+%btn-hover {
+  background-color: $btn-hover-color;
+  color: $color-white;
+  border-color: $btn-hover-color;
+}
+
+/// @placeholder %btn-focused
+/// @desc Focused button state — dark background and high contrast
+/// @desc Estado focado do botão — fundo escuro com contraste
+%btn-focused {
+  background-color: $btn-focused-color;
+  color: $color-white;
+  border-color: $btn-focused-color;
+}
+
+/// @placeholder %btn-disabled
+/// @desc Disabled state for buttons — faded visuals and no pointer
+/// @desc Estado desabilitado do botão — visual atenuado com cursor bloqueado
+%btn-disabled {
+  color: $text-color-disabled;
+  border-color: $btn-disabled-color;
+  background-color: transparent;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* =============================================================
+   UTILITIES / UTILITÁRIOS
+   ============================================================= */
+
+/// @placeholder %flex-center
+/// @desc Utility to center content with flexbox
+/// @desc Utilitário para centralização flexível de conteúdo
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/// @placeholder %visually-hidden
+/// @desc Accessible hidden element without removing it from DOM
+/// @desc Elemento oculto visualmente (acessibilidade sem remover do DOM)
+%visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
