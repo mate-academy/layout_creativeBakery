@@ -1,0 +1,91 @@
+@use '../utils/variables' as *;
+@use '../utils/tokens' as *;
+@use '../utils/mixins' as *;
+
+.aside {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  transition:
+    transform 0.8s ease,
+    opacity 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+  background-color: var(--background-color);
+  z-index: 999;
+  overflow-y: auto;
+
+  &:target {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__menu {
+    @include grid-column-center;
+  }
+
+  &__menu--top {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    max-width: 640px;
+    min-width: 320px;
+    height: 64px;
+
+    @include respond(tablet) {
+      width: 640px;
+    }
+
+    &-logo {
+      width: 136px;
+      height: 32px;
+      justify-self: start;
+      margin: 16px auto auto 16px;
+
+      @include interactive;
+    }
+
+    &-close {
+      width: 24px;
+      height: 24px;
+      justify-self: end;
+      margin: 20px 16px auto;
+
+      @include interactive;
+    }
+  }
+
+  &__menu--list {
+    width: 288px;
+    height: 176px;
+    margin-top: 132px;
+
+    @include respond(tablet) {
+      transform: scale(1.4);
+    }
+
+    &-itens {
+      @include grid-column-center(24px);
+    }
+
+    &-item {
+      @include interactive;
+    }
+
+    &-contact {
+      @include flex-column-center(4px);
+
+      width: 136px;
+      align-items: center;
+      justify-self: center;
+      margin-block: 24px 196px;
+
+      color: $color-accent-orange;
+
+      @include interactive;
+    }
+  }
+}

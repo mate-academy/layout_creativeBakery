@@ -1,0 +1,170 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.hero {
+  @include hero-grid-base;
+
+  width: 100%;
+  height: 606px;
+  padding-block: 32px;
+
+  &__text {
+    grid-area: text;
+    height: 48px;
+    justify-self: center;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  &__img {
+    grid-area: image;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: $hero-image-size-mobile;
+      height: $hero-image-size-mobile;
+      align-self: center;
+    }
+  }
+
+  &__title {
+    width: 288px;
+    text-align: center;
+  }
+
+  &__button {
+    grid-area: button;
+    justify-self: center;
+
+    @include interactive;
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+      fill: $color-accent-orange;
+      transition:
+        fill 0.6s ease-in-out,
+        transform 0.3s ease;
+    }
+
+    &:hover .hero__button-icon,
+    &:focus .hero__button-icon {
+      fill: #fff;
+      transform: scale(1.1);
+    }
+
+    &:hover .hero__button-text,
+    &:focus .hero__button-text {
+      transform: scale(1.1);
+    }
+
+    &::after {
+      content: 'learn more';
+      font-size: 16px;
+      color: $color-accent-orange;
+      margin-right: 8px;
+      display: inline-block;
+      vertical-align: middle;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      color: $color-white;
+      transform: scale(1.1);
+    }
+  }
+
+  @include respond(tablet) {
+    @include hero-grid-base(44px);
+
+    height: 697px;
+
+    &__text {
+      text-align: start;
+      max-width: 280px;
+      justify-self: start;
+      margin-block: 48px 16px;
+    }
+
+    &__img {
+      @include grid-center;
+
+      width: 100%;
+      position: relative;
+      grid-area: image;
+      margin: 0;
+
+      img {
+        width: $hero-image-size-tablet;
+        height: $hero-image-size-tablet;
+        margin: 0 auto;
+      }
+    }
+
+    &__title {
+      width: 570px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+    }
+
+    &__button {
+      justify-self: center;
+      margin-block: 80px 228px;
+    }
+  }
+
+  @include respond(desktop) {
+    @include container;
+
+    grid-template:
+      'text . image .' 135px
+      '.    . image .' 1fr
+      'button . image .' 1fr / 44px 1fr 544px 1fr;
+    height: 610px;
+    align-items: start;
+    padding: 0;
+
+    &__text {
+      grid-area: text;
+      align-self: start;
+      width: 260px;
+      height: 72px;
+      margin: 135px auto auto 44px;
+    }
+
+    &__img {
+      @include grid-center;
+
+      width: 100%;
+      grid-area: image;
+
+      img {
+        width: $hero-image-size-desktop;
+        height: $hero-image-size-desktop;
+        margin: 0 auto;
+      }
+    }
+
+    &__title {
+      width: 1120px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+    }
+
+    &__button {
+      grid-area: button;
+      align-self: start;
+      margin: auto auto 161px 44px;
+    }
+  }
+}
