@@ -1,0 +1,151 @@
+.footer {
+  background-color: #1c1a26;
+  padding-block: 56px;
+
+  @include inline-padding;
+  @include page-grid;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  &__menu {
+    grid-column: span 2;
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-bottom: 0;
+    }
+  }
+
+  &__logo-link {
+    height: 40px;
+    display: flex;
+    margin: 0 0 40px;
+
+    @include on-tablet {
+      margin-bottom: 96px;
+    }
+
+    @media (min-width: 750px) {
+      margin-bottom: 48px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__contacts {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: 5 / span 4;
+      margin-bottom: 48px;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0 24px;
+      margin-bottom: 88px;
+      align-content: start;
+    }
+
+    & ul:nth-of-type(1) {
+      @include on-desktop {
+        grid-column: span 2;
+      }
+    }
+
+    & ul:nth-of-type(2) {
+      @include on-desktop {
+        grid-column: 3 / span 2;
+      }
+    }
+  }
+
+  &__title-contacts {
+    color: $footer-text-color;
+    margin: 0;
+
+    @include on-desktop {
+      grid-column: 1/-1;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__social-media {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  &__icon {
+    height: 24px;
+    width: 24px;
+    fill: $accent-color;
+    transition: fill $transitionDuration;
+
+    &:hover {
+      fill: #fff;
+    }
+  }
+
+  &__copyright {
+    grid-column: span 2;
+    color: $footer-secondary-color;
+    margin: 0;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__title {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $footer-secondary-color;
+  }
+
+  &__link {
+    display: flex;
+    height: 24px;
+    font-weight: inherit;
+    color: $footer-text-color;
+    transition: color $transitionDuration;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
