@@ -22,3 +22,38 @@
     @content;
   }
 }
+
+
+@mixin contentPaddingInline {
+  padding-inline: 16px;
+
+   @include on-tablet() {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop {
+    padding-inline: 44px;
+  }
+
+  @include on-tv {
+    padding-inline: 124px;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    column-gap: 24px;
+
+    --columns: 8;
+  }
+
+  @include on-desktop {
+    --columns: 8;
+  }
+}
