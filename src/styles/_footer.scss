@@ -1,0 +1,244 @@
+.footer {
+  padding: 60px 0;
+  color: $c-white;
+  background: $c-dark;
+
+  &__container {
+    display: grid;
+    gap: $mobile-gutter;
+    margin: 0 $mobile-margin;
+  }
+
+  &__brand {
+    display: flex;
+    grid-column: 1 / span 8;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (min-width: $tablet-min) {
+      grid-column: 1 / span 3;
+    }
+  }
+
+  &__logo-img {
+    width: 160px;
+
+    @media (min-width: $tablet-min) {
+      width: 200px;
+    }
+  }
+
+  &__nav-title {
+    margin: 0 0 16px;
+
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #7f8096;
+    letter-spacing: 0.05em;
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__nav-link {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: $c-white;
+    text-decoration: none;
+
+    @include hover(color, $c-orange);
+  }
+
+  &__social {
+    display: flex;
+    gap: 24px;
+
+    margin: 24px 0;
+    padding: 0;
+
+    list-style: none;
+
+    @media (min-width: $tablet-min) {
+      grid-column: 1 / span 3;
+      margin: 0;
+    }
+  }
+
+  &__social-icon {
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s ease;
+  }
+
+  &__social-link {
+    display: inline-flex;
+    color: $c-orange;
+
+    &:hover .footer__social-icon {
+      filter: brightness(0) saturate(100%) invert(100%);
+    }
+  }
+
+  &__contacts {
+    grid-column: 1 / span 8;
+    margin-top: 64px;
+
+    @media (min-width: $tablet-min) {
+      grid-column: 4 / span 5;
+      margin-top: 0;
+    }
+
+    @media (min-width: $desktop-min) {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: $desktop-gutter;
+    }
+  }
+
+  &__contacts-title {
+    @include h2-mobile;
+
+    margin: 0 0 40px;
+
+    @media (min-width: $tablet-min) {
+      @include h2-tablet;
+    }
+
+    @media (min-width: $desktop-min) {
+      @include h2-desktop;
+
+      grid-column: 1 / span 5;
+    }
+  }
+
+  &__contact-block {
+    margin-bottom: 40px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      margin: 0 0 24px;
+
+      font-family: Inter, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #7f8096;
+      letter-spacing: 0.05em;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+
+      &-item {
+        font-family: Inter, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.2;
+
+        a {
+          cursor: pointer;
+
+          font-family: Inter, sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1.2;
+          color: $c-white;
+          text-decoration: none;
+
+          transition: color 0.3s;
+
+          &:hover {
+            color: $c-orange;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $desktop-min) {
+      margin-bottom: 0;
+
+      &:first-of-type {
+        grid-column: 1 / span 2;
+      }
+
+      &:last-of-type {
+        grid-column: 3 / span 2;
+      }
+    }
+  }
+
+  &__email {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: $c-white;
+    text-decoration: none;
+
+    @include hover(color, $c-orange);
+  }
+
+  &__copyright {
+    grid-column: 1 / span 8;
+
+    margin-top: 0;
+
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #7f8096;
+
+    @media (min-width: $tablet-min) {
+      margin-top: 80px;
+    }
+
+    @media (min-width: $desktop-min) {
+      grid-column: 4 / span 2;
+      margin-top: 88px;
+    }
+  }
+
+  @media (min-width: $tablet-min) {
+    padding: 80px 0;
+
+    &__container {
+      grid-template-columns: repeat(8, 1fr);
+      gap: $tablet-gutter;
+      margin: 0 $tablet-margin;
+    }
+  }
+
+  @media (min-width: $desktop-min) {
+    padding: 100px 0;
+
+    &__container {
+      grid-template-columns: repeat(8, 1fr);
+      gap: $desktop-gutter;
+      max-width: $desktop-max-width;
+      margin: 0 auto;
+    }
+  }
+}

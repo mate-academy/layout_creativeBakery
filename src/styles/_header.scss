@@ -1,0 +1,379 @@
+.header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: $header-height;
+
+  background: $c-light-blue;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100%;
+    margin: 0 $mobile-margin;
+
+    @media (min-width: $tablet-min) {
+      margin: 0 $tablet-margin;
+    }
+
+    @media (min-width: $desktop-min) {
+      max-width: $desktop-max-width;
+      margin: 0 auto;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &__logo-img {
+    width: auto;
+    height: 32px;
+  }
+
+  &__nav {
+    display: none;
+
+    @media (min-width: $desktop-min) {
+      display: block;
+    }
+  }
+
+  &__burger {
+    display: flex;
+
+    @media (min-width: $desktop-min) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    @media (min-width: $desktop-min) {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: $nav-gap-desktop;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__item {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: $c-black;
+    text-decoration: none;
+
+    @include hover(color, $c-orange);
+
+    &-icon {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    &--contact {
+      position: relative;
+
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: $c-orange;
+
+      @include hover(color, $c-black);
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        right: 0;
+        bottom: -4px;
+        left: 0;
+        transform-origin: left;
+        transform: scaleX(0);
+
+        height: 1px;
+
+        background: $c-orange;
+
+        transition: transform 0.3s ease;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+
+      &:hover .nav__link-icon {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+.burger {
+  cursor: pointer;
+
+  position: relative;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+
+  background: none;
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transition: opacity 0.3s ease;
+
+    &--menu {
+      opacity: 1;
+      background-image: url('../images/icons/Icon-menu.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    &--close {
+      opacity: 1;
+      background-image: url('../images/icons/Icon-close.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+
+  &--active {
+    .burger__icon--menu {
+      opacity: 1;
+    }
+
+    .burger__icon--close {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    .burger__icon--menu {
+      background-image: url('../images/icons/Icon-menu_hover.svg');
+    }
+
+    .burger__icon--close {
+      background-image: url('../images/icons/Icon-close_hover.svg');
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  z-index: 1001;
+  inset: 0;
+  transform: translateX(100%);
+
+  width: 100vw;
+  height: 100vh;
+
+  background: $c-light-blue;
+
+  transition: transform 0.3s ease;
+
+  &--active {
+    transform: translateX(0);
+  }
+
+  &__close-button {
+    position: absolute;
+    z-index: 1002;
+    top: 18px;
+    right: 16px;
+
+    display: none;
+
+    @media (min-width: $tablet-min) {
+      right: 44px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    height: 100%;
+    padding-top: $header-height;
+
+    @media (min-width: $tablet-min) {
+      padding-top: $header-height;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $nav-gap-mobile;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @media (min-width: $tablet-min) {
+      gap: 32px;
+    }
+  }
+
+  &__item {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: $c-black;
+    text-decoration: none;
+
+    @include hover(color, $c-orange);
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    &--contact {
+      position: relative;
+      font-weight: 500;
+      color: $c-orange;
+
+      @include hover(color, $c-black);
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        right: 0;
+        bottom: -4px;
+        left: 0;
+        transform-origin: left;
+        transform: scaleX(0);
+
+        height: 1px;
+
+        background: $c-orange;
+
+        transition: transform 0.3s ease;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+
+      &:hover .menu__link-icon {
+        transform: translateX(4px);
+      }
+    }
+
+    @media (min-width: $tablet-min) {
+      font-size: 28px;
+    }
+  }
+
+  @media (min-width: $desktop-min) {
+    display: none;
+  }
+}
+
+.nav__link-text,
+.menu__link-text {
+  position: relative;
+  text-transform: uppercase;
+}
+
+.nav__link-text::after,
+.menu__link-text::after {
+  content: '';
+
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  left: 0;
+  transform-origin: left;
+  transform: scaleX(0);
+
+  height: 1px;
+
+  background: $c-orange;
+
+  transition: transform 0.3s ease;
+}
+
+.nav__link:hover .nav__link-text::after,
+.menu__link:hover .menu__link-text::after {
+  transform: scaleX(1);
+}
+
+.menu:target {
+  transform: translateX(0);
+}
+
+html:has(.menu:target) {
+  overflow: hidden;
+}
+
+.burger--close {
+  display: none;
+}
+
+html:has(.menu:target) .burger--open {
+  display: none;
+}
+
+html:has(.menu:target) .burger--close {
+  display: flex;
+}
+
+html:has(.menu:target) .menu__close-button {
+  display: flex;
+}
