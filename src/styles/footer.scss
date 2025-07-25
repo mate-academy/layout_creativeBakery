@@ -1,0 +1,143 @@
+.footer {
+  @include contentPaddingInline;
+  background-color: rgba(28, 26, 38, 1);
+  color: rgba(255, 255, 255, 1);
+  padding-block: 56px;
+  @include page-grid;
+  row-gap: 64px;
+
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  &__menu {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 1 / 2;
+    }
+
+    &-logo {
+      &-link {
+        width: 168px;
+        height: 40px;
+        display: block;
+        margin-bottom: 40px;
+
+        @include on-tablet {
+          margin-bottom: 96px;
+        }
+
+        @include on-desktop {
+          margin-bottom: 61px;
+        }
+      }
+    }
+  }
+
+    &__nav {
+      &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 64px;
+      }
+
+      &__link {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+
+
+
+  &__contact-us {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 5 / 8;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 9;
+    }
+
+    &-title {
+      margin-bottom: 40px;
+    }
+    &-ul {
+      list-style: none;
+
+      &-w {
+        color: rgba(127, 128, 150, 1);
+        text-transform: uppercase;
+        letter-spacing: 2%;
+        font-weight: 500;
+      }
+    }
+
+    &-calls {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 40px;
+    }
+
+    &-call-item {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 1);
+    }
+
+    &-emails {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+
+    @include on-desktop {
+      grid-column: 7 / 9;
+    }
+    }
+
+    &-email-item {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 1);
+    }
+
+    &-media-content {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+
+      &-img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+
+  }
+
+  &__bakerlab {
+    padding: 0;
+    @include page-grid;
+    grid-column: 1 / -1;
+    align-self: end;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    &-content {
+      color: rgba(127, 128, 150, 1);
+      text-align: left;
+      white-space: nowrap;
+    }
+
+  }
+}
+
