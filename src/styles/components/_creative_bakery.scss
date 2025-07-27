@@ -1,0 +1,155 @@
+.creative_bakery {
+  position: relative;
+  height: calc(674px - 88px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 178px;
+
+  &__title {
+    font-size: 134px;
+    line-height: 85%;
+    font-weight: 400;
+    text-align: center;
+    z-index: 2;
+  }
+
+  &__cookie,
+  &__learn_more,
+  &__paragraph {
+    position: absolute;
+  }
+
+  &__cookie {
+    background: url('../images/cookie_first_page.png') center/contain no-repeat;
+    width: 584px;
+    height: 586px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__learn_more {
+    width: 280px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $orange;
+    border-radius: 32px;
+    bottom: 112px;
+
+    .learn_more {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      &__text {
+        text-transform: uppercase;
+        color: $orange;
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    top: 144px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .creative_bakery {
+    margin-bottom: 104px;
+    height: auto;
+    flex-direction: column;
+
+    &__title {
+      padding: 0;
+      font-size: 64px;
+    }
+
+    &__cookie,
+    &__learn_more,
+    &__paragraph {
+      position: static;
+    }
+
+    &__cookie {
+      width: 100%;
+      height: 290px;
+      transform: none;
+    }
+
+    &__learn_more {
+      width: 100%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__paragraph {
+      width: 100%;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .creative_bakery {
+    &__title {
+      font-size: 80px;
+    }
+
+    &__cookie {
+      width: 328px;
+      height: 328px;
+    }
+
+    &__learn_more {
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+
+    &__paragraph {
+      max-width: 280px;
+      top: 80px;
+      left: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+  .creative_bakery {
+    padding: 0 44px;
+
+    &__learn_more {
+      left: 44px;
+    }
+
+    &__paragraph {
+      left: 44px;
+      top: 135px;
+      max-width: 260px;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .creative_bakery {
+    &__learn_more {
+      left: 124px;
+    }
+
+    &__paragraph {
+      left: 124px;
+      max-width: 280px;
+    }
+  }
+}
