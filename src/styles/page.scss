@@ -5,10 +5,12 @@
   color: $main-text-color;
   scroll-behavior: smooth;
   font-size: 16px;
+  transition: transform $main-transition-time;
 
   &__body {
   margin: 0;
   padding: 0;
+  min-width: 320px;
 }
 
   &__menu{
@@ -18,18 +20,50 @@
     top: 0;
     opacity: 0;
     pointer-events: none;
+    transition: all $main-transition-time;
+    transform: translateX(-100%);
 
     &:target {
       opacity: 1;
       pointer-events: all;
+      transform: translateX(0%);
     }
   }
 }
 
+.page--theme--pink {
+  background-color: rgba(255, 238, 252, 1);
 
+  h1, h2, h3 {
+    color: $main-hover-color;
+    transition: color $main-transition-time ease;
+  }
+}
+
+.theme--switcher {
+  width: 60px;
+  padding: 5px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+
+  &::after {
+    content: '';
+    background-color: black;
+    display: block;
+    width: 50%;
+    padding-bottom: 50%;
+    border-radius: 50%;
+    transition: transform $main-transition-time;
+  }
+
+}
 
 *{
   box-sizing: border-box;
 }
 
-
+.theme--switcher--theme--pink::after {
+  transform: translateX(100%);
+}

@@ -1,7 +1,7 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover($property, $toValue) {
+  transition: #{$property} $main-transition-time;
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $toValue;
   }
 }
 
@@ -24,10 +24,10 @@
 }
 
 
-@mixin contentPaddingInline {
+@mixin content-padding-inline {
   padding-inline: 16px;
 
-   @include on-tablet() {
+   @include on-tablet {
     padding-inline: 44px;
   }
 
@@ -55,6 +55,7 @@
 
   @include on-desktop {
     column-gap: 24px;
+
     --columns: 8;
   }
 }

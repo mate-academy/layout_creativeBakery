@@ -1,9 +1,13 @@
 .footer {
-  @include contentPaddingInline;
   background-color: rgba(28, 26, 38, 1);
+
+  @include content-padding-inline;
+
   color: rgba(255, 255, 255, 1);
   padding-block: 56px;
+
   @include page-grid;
+
   row-gap: 64px;
 
 
@@ -53,10 +57,11 @@
 
 
   &__contact-us {
+
     grid-column: span 2;
 
     @include on-tablet {
-      grid-column: 5 / 8;
+      grid-column: 5 / -1;
     }
 
     @include on-desktop {
@@ -66,8 +71,15 @@
     &-title {
       margin-bottom: 40px;
     }
+
     &-ul {
       list-style: none;
+
+      @include on-desktop {
+        display: flex;
+        flex-direction: row;
+        gap: 176px;
+      }
 
       &-w {
         color: rgba(127, 128, 150, 1);
@@ -91,21 +103,20 @@
       color: rgba(255, 255, 255, 1);
     }
 
+
+
     &-emails {
       display: flex;
       flex-direction: column;
       gap: 16px;
       margin: 0;
       padding: 0;
-
-    @include on-desktop {
-      grid-column: 7 / 9;
-    }
     }
 
     &-email-item {
       text-decoration: none;
       color: rgba(255, 255, 255, 1);
+
     }
 
     &-media-content {
@@ -113,9 +124,49 @@
       gap: 32px;
       align-items: center;
 
-      &-img {
+      &-img-inst {
         width: 24px;
         height: 24px;
+        background-position: center;
+        background-size: 24px 24px;
+        background-image: url(../images/Icon-instagram.png);
+        transition: background-image $main-transition-time;
+
+        @include hover(transform, scale(1.2));
+
+        &:hover {
+          background-image: url(../images/instagram-hover.svg);
+        }
+      }
+
+      &-img-face {
+        width: 24px;
+        height: 24px;
+        background-position: center;
+        background-size: 24px 24px;
+        background-image: url(../images/Icon-facebook.png);
+        transition: background-image $main-transition-time;
+
+        @include hover(transform, scale(1.2));
+
+        &:hover {
+          background-image: url(../images/facebook-hover.svg);
+        }
+      }
+
+      &-img-twit {
+        width: 24px;
+        height: 24px;
+        background-position: center;
+        background-size: 24px 24px;
+        background-image: url(../images/Icon-twitter.png);
+        transition: background-image $main-transition-time;
+
+        @include hover(transform, scale(1.2));
+
+        &:hover {
+          background-image: url(../images/twitter-hover.svg);
+        }
       }
     }
 
@@ -124,9 +175,11 @@
 
   &__bakerlab {
     padding: 0;
+    margin: 0;
+
     @include page-grid;
+
     grid-column: 1 / -1;
-    align-self: end;
 
     @include on-tablet {
       grid-column: 5 / -1;
@@ -136,6 +189,7 @@
       color: rgba(127, 128, 150, 1);
       text-align: left;
       white-space: nowrap;
+      margin: 0;
     }
 
   }

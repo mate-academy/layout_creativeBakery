@@ -21,6 +21,23 @@
   &__link {
     text-decoration: none;
     color: inherit;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: -8px;
+      height: 2px;background-color: $main-hover-color;
+      border-radius: 50%;
+      transition: transform $main-transition-time;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
 
     &--active {
       color: rgba(249, 81, 46, 1);
@@ -40,7 +57,7 @@
   }
 }
 
-.menu__nav {
+.menu-nav {
   display: flex;
   flex-direction: column;
   padding-top: 132px;
@@ -71,6 +88,24 @@
     text-decoration: none;
     color: inherit;
     text-align: center;
+    position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        bottom: -8px;
+        height: 2px;background-color: $main-hover-color;
+        border-radius: 50%;
+        transition: transform $main-transition-time;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
   }
 
   &__link--active {
