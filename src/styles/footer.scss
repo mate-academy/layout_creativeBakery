@@ -1,0 +1,197 @@
+.footer {
+  background-color: rgba(28, 26, 38, 1);
+
+  @include content-padding-inline;
+
+  color: rgba(255, 255, 255, 1);
+  padding-block: 56px;
+
+  @include page-grid;
+
+  row-gap: 64px;
+
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  &__menu {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 1 / 2;
+    }
+
+    &-logo {
+      &-link {
+        width: 168px;
+        height: 40px;
+        display: block;
+        margin-bottom: 40px;
+
+        @include on-tablet {
+          margin-bottom: 96px;
+        }
+
+        @include on-desktop {
+          margin-bottom: 61px;
+        }
+      }
+    }
+  }
+
+    &__nav {
+      &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 64px;
+      }
+
+      &__link {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+
+
+
+  &__contact-us {
+
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 9;
+    }
+
+    &-title {
+      margin-bottom: 40px;
+    }
+
+    &-ul {
+      list-style: none;
+
+      @include on-desktop {
+        display: flex;
+        flex-direction: row;
+        gap: 176px;
+      }
+
+      &-w {
+        color: rgba(127, 128, 150, 1);
+        text-transform: uppercase;
+        letter-spacing: 2%;
+        font-weight: 500;
+      }
+    }
+
+    &-calls {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 40px;
+    }
+
+    &-call-item {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 1);
+    }
+
+
+
+    &-emails {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-email-item {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 1);
+
+    }
+
+    &-media-content {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+
+      &-img-inst {
+        width: 24px;
+        height: 24px;
+        background-position: center;
+        background-size: 24px 24px;
+        background-image: url(../images/Icon-instagram.png);
+        transition: background-image $main-transition-time;
+
+        @include hover(transform, scale(1.2));
+
+        &:hover {
+          background-image: url(../images/instagram-hover.svg);
+        }
+      }
+
+      &-img-face {
+        width: 24px;
+        height: 24px;
+        background-position: center;
+        background-size: 24px 24px;
+        background-image: url(../images/Icon-facebook.png);
+        transition: background-image $main-transition-time;
+
+        @include hover(transform, scale(1.2));
+
+        &:hover {
+          background-image: url(../images/facebook-hover.svg);
+        }
+      }
+
+      &-img-twit {
+        width: 24px;
+        height: 24px;
+        background-position: center;
+        background-size: 24px 24px;
+        background-image: url(../images/Icon-twitter.png);
+        transition: background-image $main-transition-time;
+
+        @include hover(transform, scale(1.2));
+
+        &:hover {
+          background-image: url(../images/twitter-hover.svg);
+        }
+      }
+    }
+
+
+  }
+
+  &__bakerlab {
+    padding: 0;
+    margin: 0;
+
+    @include page-grid;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    &-content {
+      color: rgba(127, 128, 150, 1);
+      text-align: left;
+      white-space: nowrap;
+      margin: 0;
+    }
+
+  }
+}
+

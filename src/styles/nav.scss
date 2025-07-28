@@ -1,0 +1,120 @@
+.nav {
+  display: none;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: 64px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+}
+
+  &__item--active {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: -8px;
+      height: 2px;background-color: $main-hover-color;
+      border-radius: 50%;
+      transition: transform $main-transition-time;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &--active {
+      color: rgba(249, 81, 46, 1);
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      font-weight: 500;
+    }
+  }
+
+  @include on-desktop {
+    display: flex;
+  }
+
+  @include on-tv {
+    display: flex;
+  }
+}
+
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+  padding-top: 132px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item--active {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        bottom: -8px;
+        height: 2px;background-color: $main-hover-color;
+        border-radius: 50%;
+        transition: transform $main-transition-time;
+        transform: scale(0);
+        transform-origin: center;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+  }
+
+  &__link--active {
+    color: rgba(249, 81, 46, 1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 500;
+  }
+}
+
+

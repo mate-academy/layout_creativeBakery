@@ -1,0 +1,98 @@
+.about-us {
+  background-image: url(../images/Crumbs.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  margin-top: 72px;
+  padding-bottom: 56px;
+
+  @include on-tablet {
+    margin-top: 152px;
+    padding-bottom: 152px;
+  }
+
+  @include on-desktop {
+    margin-top: 178px;
+    padding-bottom: 56px;
+  }
+
+  &__text {
+    @include page-grid;
+    row-gap: 32px;
+    align-items: start;
+    align-items: center;
+    margin-bottom: 64px;
+
+      @include on-tablet {
+        margin-bottom: 72px;
+      }
+
+      @include on-desktop {
+        margin-bottom: 144px;
+      }
+
+    &--main {
+      grid-column: 1 / -1;
+
+
+      @include on-tablet {
+        grid-column: span 4;
+      }
+
+      @include on-desktop {
+        grid-column: span 3;
+      }
+    }
+
+    &--p {
+      grid-column: 1 / -1;
+
+      @include on-tablet {
+        grid-column: span 4;
+      }
+
+      @include on-tablet {
+        grid-column: 6 / 9;
+      }
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      margin-bottom: 293px;
+    }
+  }
+
+  &__stat {
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+
+    &-h {
+      font-weight: 400;
+      font-size: 96px;
+      line-height: 85%;
+      letter-spacing: -5%;
+      margin: 0;
+    }
+
+    &-p {
+      color: rgba(127, 128, 150, 1);
+    }
+  }
+
+}
