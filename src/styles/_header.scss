@@ -11,7 +11,7 @@
     margin-bottom: 152px;
   }
 
-  min-height: 100vh;
+  min-height: 100%;
 
   &__top {
     height: 64px;
@@ -46,12 +46,12 @@
     align-items: center;
     text-align: center;
 
-    @include on-tablet {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-    }
+    // @include on-tablet {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    // }
 
     @include on-desktop {
       background-image: url(../images/BigCookie.png);
@@ -68,20 +68,29 @@
     }
   }
 
+  &__main {
+    @include on-tablet {
+      position: relative;
+    }
+  }
+
   &__discription {
     padding-bottom: 16px;
+
 
     @include on-tablet {
       text-align: left;
       align-self: flex-start;
-      padding-top: 80px;
-      padding-bottom: 16px;
+      padding-top: 90px;
+      padding-bottom: 34px;
       max-width: 290px;
-      margin-left: 44px;
+      // margin-left: 44px;
     }
 
     @include on-desktop {
       margin-left: 0;
+      padding-top: 90px;
+      padding-bottom: 64px;
     }
 
 
@@ -110,6 +119,9 @@
       white-space: nowrap;
       position: absolute;
       top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
     }
 
     @include on-desktop {
@@ -199,7 +211,7 @@
     @include on-desktop {
       padding: 20px 63px;
       align-self: flex-start;
-      margin-top: 64px;
+      margin-top: 0px;
 
     }
 

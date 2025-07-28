@@ -6,6 +6,7 @@
   scroll-behavior: smooth;
   font-size: 16px;
   transition: transform $main-transition-time;
+  transition: background-color 0.5s, color 0.5s;
 
   &__body {
   margin: 0;
@@ -31,26 +32,31 @@
   }
 }
 
+  h1,
+  h2,
+  h3 {
+    transition: color $main-transition-time ease;
+  }
+
 .page--theme--pink {
   background-color: rgba(255, 238, 252, 1);
 
   h1, h2, h3 {
     color: $main-hover-color;
-    transition: color $main-transition-time ease;
   }
 }
 
 .theme--switcher {
   width: 60px;
   padding: 5px;
-  background-color: white;
+  background-color: $main-hover-color;
   display: flex;
   align-items: center;
   border-radius: 20px;
 
   &::after {
     content: '';
-    background-color: black;
+    background-color: white;
     display: block;
     width: 50%;
     padding-bottom: 50%;
