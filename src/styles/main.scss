@@ -12,8 +12,13 @@ $size-desktop: 1200px;
 $size-tablet: 1024px;
 $size-mobile: 640px;
 
+* {
+  outline: 1px solid red;
+}
+
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -26,8 +31,10 @@ body {
   font-style: normal;
   font-size: 16px;
   line-height: 150%;
+  height: 100%;
+  overflow-x: hidden;
 
-  &:has(input:checked) {
+  &:has(.header div input:checked) {
     overflow: hidden;
   }
 }
@@ -99,7 +106,7 @@ body {
 
     @media (max-width: $size-tablet) {
       opacity: 0;
-      position: absolute;
+      position: fixed;
       width: 100%;
       padding: 0;
       align-items: center;
