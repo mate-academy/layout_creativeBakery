@@ -1,0 +1,41 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px;
+
+  @include on-desktop {
+    padding: 32px 28px;
+    align-items: center;
+  }
+
+  @include on-desktop-xl {
+    padding: 28px 32px;
+  }
+
+  &__logo-link {
+    transition: $transition;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  &__menu-icon {
+    background: url(../images/icons/icon-menu.svg);
+    transition: $transition;
+
+    &:hover {
+      background: url(../images/icons/icon-menu-hover.svg);
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+
+    @include on-desktop-xl {
+      display: none;
+    }
+  }
+}

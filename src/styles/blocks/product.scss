@@ -1,0 +1,180 @@
+.product {
+  @include page-grid;
+
+  padding-top: 64px;
+  padding-bottom: 72px;
+
+  @include on-tablet {
+    padding-top: 0;
+    padding-bottom: 152px;
+  }
+
+  @include on-desktop {
+    padding-top: 152px;
+    padding-bottom: 178px;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    color: $accent-orange;
+    padding-top: 0;
+  }
+
+  &__about {
+    @extend %body-text;
+
+    grid-column: 1 / -1;
+    padding-top: 24px;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+
+    margin-top: 56px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    transition: $transition;
+
+    @include on-tablet {
+      margin-top: 80px;
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(105%);
+      cursor: pointer;
+    }
+  }
+
+  &__card {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  &__first {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__second {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 4 / 7;
+    }
+  }
+
+  &__third {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &__fourth {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__fifth {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__sixth {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 4 / 7;
+    }
+  }
+
+  &__type {
+    @extend %uppercase;
+
+    color: $grey;
+  }
+
+  &__description {
+    @extend %body-text;
+
+    color: $black;
+    padding-top: 8px;
+    padding-bottom: 16px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    &--more {
+      @include on-desktop {
+        &::before {
+          content: 'Cake with';
+        }
+      }
+    }
+  }
+
+  &__order {
+    @extend %uppercase;
+
+    text-decoration: none;
+    color: $accent-orange;
+    align-self: end;
+    transition: $transition;
+    display: inline-block;
+    width: fit-content;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: url(../images/icons/icon-arrow.svg);
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+      transition: $transition;
+    }
+
+    &:hover::before {
+      transform: translateX(88px);
+    }
+  }
+}
