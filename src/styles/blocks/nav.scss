@@ -1,0 +1,90 @@
+.nav-desktop {
+  display: none;
+
+  @extend %body-text;
+
+  @include on-desktop {
+    display: block;
+
+    &__list {
+      list-style: none;
+      display: flex;
+      gap: 64px;
+      align-items: center;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+    }
+
+    &__link {
+      color: $black;
+      text-decoration: none;
+      transition: $transition;
+      will-change: transform;
+
+      &:hover {
+        transform: scale(105%);
+      }
+
+      &--bold {
+        color: $accent-orange;
+        font-weight: 500;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          background: url('../images/icons/icon-phone.svg');
+
+          position: relative;
+          vertical-align: middle;
+          top: -2px;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  @extend %body-text;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $black;
+
+    &--bold {
+      @extend %uppercase;
+
+      color: $accent-orange;
+      font-weight: 500;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url('../images/icons/icon-phone.svg');
+
+        position: relative;
+        vertical-align: middle;
+        top: -1px;
+      }
+    }
+  }
+}

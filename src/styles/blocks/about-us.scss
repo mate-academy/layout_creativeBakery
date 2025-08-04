@@ -1,0 +1,152 @@
+.about-us {
+  @include page-grid;
+
+  position: relative;
+
+  &__title {
+    grid-column: 1 / -1;
+    color: $accent-orange;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 /5;
+    }
+  }
+
+  &__description {
+    @extend %body-text;
+
+    padding-top: 32px;
+    padding-bottom: 64px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / 9;
+      padding-top: 0;
+      padding-bottom: 72px;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / -1;
+      padding-top: 0;
+      padding-bottom: 146px;
+    }
+  }
+
+  &__year {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__stores {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 3 / 5;
+    }
+  }
+
+  &__companies {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__clients {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__stat {
+    @extend %big-text;
+
+    color: $accent-orange;
+    padding-bottom: 8px;
+  }
+
+  &__label {
+    @extend %body-text;
+
+    padding-bottom: 48px;
+
+    @include on-desktop {
+      padding-bottom: 293px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__crumbs {
+    position: absolute;
+    background-image: url(../images/crumbs.png);
+    width: 100%;
+    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 220px;
+    z-index: -1;
+
+    @include on-tablet {
+      // display: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 526px; // ширина картинки
+      height: 493px;
+      background-image: url(../images/crumbs.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+
+    @include on-desktop {
+      // display: none;
+      position: absolute;
+      grid-column: 3 / 8; // занимает с 3-й по 7-ю колонку
+      left: -10px;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-size: auto; // растягивает фон по размеру блока
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+
+    @include on-desktop-xl {
+      grid-column: auto;
+      background-position: center;
+      left: 0;
+    }
+  }
+
+  &--end {
+    padding-bottom: 0;
+  }
+}
