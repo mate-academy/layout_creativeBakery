@@ -1,0 +1,249 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+
+  margin-right: -16px;
+  margin-left: -16px;
+  padding: 56px 16px;
+
+  color: #fff;
+
+  background: #1c1a26;
+
+  &__container {
+    max-width: 1200px;
+
+    @include respond-to(tablet) {
+      @include grid-container;
+    }
+
+    @include respond-to(desktop) {
+      margin: 0 auto;
+    }
+  }
+
+  @include respond-to(tablet) {
+    margin-right: -44px;
+    margin-left: -44px;
+    padding: 88px 44px;
+  }
+
+  @include respond-to(desktop) {
+    margin: 0 auto;
+  }
+
+  &__wrapper {
+    @include respond-to(tablet) {
+      display: flex;
+      grid-column: 1 / span 4;
+      grid-row: 1;
+      flex-direction: column;
+      gap: 45px;
+    }
+
+    @include respond-to(desktop) {
+      gap: 60px;
+    }
+  }
+  &__top {
+    @include respond-to(tablet) {
+      grid-column: 1 / span 2;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include respond-to(mobile) {
+      margin-top: 40px;
+    }
+
+    @include respond-to(tablet) {
+      grid-column: 1 / span 4;
+      grid-row: 2;
+      margin-top: 0;
+    }
+
+    &-title {
+      margin: 0;
+
+      font-size: 16px;
+      font-weight: 400;
+      color: #7f8096;
+      text-transform: uppercase;
+      letter-spacing: 2%;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+    }
+    &-link {
+      font-size: 16px;
+      font-weight: 300;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -1%;
+
+      transition: $transition-time;
+
+      &:hover {
+        @include hover(color, #7f8096);
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include respond-to(mobile) {
+      gap: 40px;
+      margin-top: 64px;
+    }
+
+    @include respond-to(tablet) {
+      grid-column: 5 / span 4;
+      grid-row: 1;
+      margin-top: 0;
+    }
+
+    &-title {
+      margin: 0;
+
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 85%;
+      text-transform: uppercase;
+      letter-spacing: -5%;
+      word-break: break-word;
+      white-space: normal;
+
+      @include respond-to(tablet) {
+        font-size: 56px;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 72px;
+        white-space: nowrap;
+      }
+    }
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &-label {
+      margin: 0;
+
+      font-size: 16px;
+      font-weight: 400;
+      color: #7f8096;
+      text-transform: uppercase;
+      letter-spacing: 2%;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+    }
+  }
+
+  &__phone-link {
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -1%;
+
+    transition: $transition-time;
+
+    &:hover {
+      @include hover(color, #7f8096);
+    }
+  }
+
+  &__email {
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+
+    transition: $transition-time;
+
+    &:hover {
+      @include hover(color, #7f8096);
+    }
+  }
+
+  &__socials {
+    @include respond-to(mobile) {
+      margin-block: 40px;
+    }
+
+    @include respond-to(tablet) {
+      grid-column: 1 / span 2;
+      margin-block: 0;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &__socials-list {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__bottom {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 150%;
+    color: #7f8096;
+    letter-spacing: -1%;
+
+    @include respond-to(tablet) {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__icon {
+    filter: none;
+    transition: filter $transition-time;
+
+    &:hover {
+      filter: brightness(0) invert(1);
+    }
+  }
+}

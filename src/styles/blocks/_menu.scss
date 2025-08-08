@@ -1,0 +1,46 @@
+.menu {
+  z-index: 100;
+
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 16px 16px 40px;
+
+  background: $page-background-color;
+
+  @include respond-to(tablet) {
+    padding-inline: 44px;
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+  }
+}
+
+.page__menu {
+  pointer-events: none;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translateX(100%);
+
+  opacity: 0;
+
+  transition: $transition-time;
+
+  &:target {
+    pointer-events: all;
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.menu__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
