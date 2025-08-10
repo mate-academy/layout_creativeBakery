@@ -1,0 +1,144 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 72px;
+  margin-bottom: 72px;
+
+  background-image: url('../images/Crumbs.svg');
+  background-repeat: no-repeat;
+  background-position: center 65%;
+  background-size: contain;
+
+  @include respond-to(tablet) {
+    @include grid-container;
+
+    row-gap: 72px !important;
+  }
+
+  @include respond-to(desktop) {
+    row-gap: 144px;
+  margin-top: 178px;
+
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include respond-to(tablet) {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(8, 1fr);
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    @include respond-to(desktop) {
+      margin-bottom: 72px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-size: 48px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -5%;
+
+    @include respond-to(tablet) {
+      grid-column: 1 / span 4;
+      font-size: 56px;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 72px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: -1%;
+
+    @include respond-to(tablet) {
+      grid-column: 5 / span 4;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include respond-to(tablet) {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 24px;
+
+      margin-bottom: 350px;
+    }
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &-label {
+      font-weight: 300;
+      color: #7f8096;
+      letter-spacing: -1%;
+    }
+
+    &-value {
+      font-size: 96px;
+      letter-spacing: -5%;
+    }
+  }
+}
+
+.about-us__stat--1 {
+  @include respond-to(tablet) {
+    grid-column: 1 / span 4;
+  }
+
+  @include respond-to(desktop) {
+    grid-column: 1 / span 2;
+  }
+}
+
+.about-us__stat--2 {
+  @include respond-to(tablet) {
+    grid-column: 5 / span 4;
+  }
+
+  @include respond-to(desktop) {
+    grid-column: 3 / span 1;
+  }
+}
+
+.about-us__stat--3 {
+  @include respond-to(tablet) {
+    grid-column: 1 / span 4;
+  }
+
+  @include respond-to(desktop) {
+    grid-column: 5 / span 1;
+  }
+}
+
+.about-us__stat--4 {
+  @include respond-to(tablet) {
+    grid-column: 5 / span 4;
+  }
+
+  @include respond-to(desktop) {
+    grid-column: 7 / span 2;
+  }
+}

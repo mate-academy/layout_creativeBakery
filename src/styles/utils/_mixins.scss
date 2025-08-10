@@ -1,6 +1,40 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $transition-time;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+/* stylelint-disable scss/no-global-function-names */
+@mixin respond-to($breakpoint) {
+  $breakpoints-map: (
+    desktop-xl: 1200px,
+    desktop: 1024px,
+    tablet: 640px,
+    mobile: 320px,
+  );
+
+  @if map-has-key($breakpoints-map, $breakpoint) {
+    $value: map-get($breakpoints-map, $breakpoint);
+
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint: `#{$breakpoint}`.";
+  }
+}
+/* stylelint-enable scss/no-global-function-names */
+@mixin grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 24px;
+  }
+
+  @include respond-to(desktop-xl) {
+    grid-template-columns: repeat(8, 128px);
   }
 }
