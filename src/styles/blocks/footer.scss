@@ -1,0 +1,135 @@
+.footer {
+  color: $white;
+  background-color: #1c1a26;
+
+  &__wrapper {
+    @include page-grid;
+
+    row-gap: 40px;
+    padding-block: 56px;
+
+    @include on-tablet {
+      row-gap: 24px;
+      padding-block: 88px;
+    }
+
+    @include on-desktop {
+      row-gap: 48px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    margin-bottom: 40px;
+
+    font-size: 48px;
+    line-height: 85%;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    @include on-tablet {
+      font-size: 56px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 16px;
+
+    font-weight: 500;
+    line-height: 100%;
+    color: $secondary-text-color;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  &__link {
+    @include effects;
+    @include text-button-hover;
+  }
+
+  &__icon {
+    &:hover {
+      background: $white;
+    }
+  }
+
+  // #region footer menu
+
+  &__menu {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-bottom: 24px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-bottom: 0;
+    }
+  }
+
+  &__nav .nav__list {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  &__nav .nav__link {
+    color: $white;
+  }
+
+  // #endregion footer menu
+
+  // #region footer contact us
+  &__contact-info {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+
+    @include on-desktop {
+      grid-column: span 1;
+    }
+  }
+
+  // #endregion footer contact us
+
+  // #region footer social links and copyright
+  &__social-links {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 32px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-bottom: 0;
+    }
+  }
+
+  &__copyright {
+    color: $secondary-text-color;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+  }
+
+  // #endregion footer social links and copyright
+}

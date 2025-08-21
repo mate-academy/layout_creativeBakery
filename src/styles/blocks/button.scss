@@ -1,0 +1,89 @@
+.button {
+  cursor: pointer;
+
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+
+  height: 56px;
+  padding-block: 20px;
+  border: 2px solid $accent-color;
+  border-radius: 32px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  color: $accent-color;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include effects;
+
+  &::before {
+    content: '';
+
+    display: inline-block;
+    flex: 0 0 24px;
+
+    width: 24px;
+    height: 24px;
+
+    background-color: currentColor;
+
+    -webkit-mask: url('../images/icons/icon-cookie.svg') no-repeat center /
+      contain;
+    mask: url('../images/icons/icon-cookie.svg') no-repeat center / contain;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $accent-color;
+
+    &::before {
+      color: $white;
+    }
+  }
+
+  &:focus {
+    border-color: $focus-color;
+    color: $white;
+    background-color: $focus-color;
+
+    &::before {
+      color: $white;
+    }
+  }
+
+  &:disabled {
+    border-color: $secondary-color;
+    color: $secondary-color;
+    background-color: none;
+  }
+}
+
+.text__button {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+
+  color: $accent-color;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @include effects;
+
+  &::before {
+    content: '';
+
+    display: inline-block;
+
+    width: 24px;
+    height: 24px;
+
+    background-color: currentColor;
+  }
+
+  @include text-button-hover;
+}

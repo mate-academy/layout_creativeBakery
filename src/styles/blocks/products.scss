@@ -1,0 +1,95 @@
+.products {
+  &__wrapper {
+    @include page-grid;
+
+    row-gap: 56px;
+    margin-bottom: 72px;
+
+    @include on-tablet {
+      row-gap: 80px;
+      margin-bottom: 152px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 178px;
+    }
+  }
+
+  &__info {
+    grid-column: 1 / -1;
+  }
+  &__title {
+    margin-bottom: 24px;
+  }
+}
+
+.product {
+  display: flex;
+  grid-column: 1 / -1;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include effects;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 3;
+  }
+
+  &--3 {
+    @include on-desktop {
+      grid-column: 3 / 6;
+    }
+  }
+  &--4 {
+    @include on-desktop {
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 356px;
+    border-radius: 8px;
+    object-fit: cover;
+
+    @include on-tablet {
+      height: 424px;
+    }
+
+    @include on-desktop {
+      height: 512px;
+    }
+
+    @include on-big-screen {
+      height: 560px;
+    }
+  }
+  &__title {
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    line-height: 100%;
+    color: $secondary-text-color;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  &__button {
+    &::before {
+      -webkit-mask: url('../images/icons/icon-arrow.svg') no-repeat center /
+        contain;
+      mask: url('../images/icons/icon-arrow.svg') no-repeat center / contain;
+    }
+  }
+}
