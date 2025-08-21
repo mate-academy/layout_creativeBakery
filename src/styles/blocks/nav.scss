@@ -1,0 +1,29 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+
+    .nav__link {
+      color: $primary-color;
+
+      @include effects;
+      @include text-button-hover;
+    }
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+}
+
+.call-link {
+  &::before {
+    -webkit-mask: url('../images/icons/icon-phone.svg') no-repeat center /
+      contain;
+    mask: url('../images/icons/icon-phone.svg') no-repeat center / contain;
+  }
+}

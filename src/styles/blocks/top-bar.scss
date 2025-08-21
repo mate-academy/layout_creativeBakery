@@ -1,0 +1,33 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 16px;
+
+  @include on-tablet {
+    padding-block: 20px;
+  }
+
+  @include on-desktop {
+    padding-block: 28px;
+  }
+
+  .top-bar__logo {
+    display: block;
+    height: 32px;
+  }
+
+  &__nav {
+    pointer-events: none;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+
+    @include on-desktop {
+      pointer-events: auto;
+      display: flex;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
