@@ -1,0 +1,99 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 64px;
+      padding: 0;
+      margin: 0;
+    }
+
+    &--no-align {
+      align-items: start;
+      gap: 16px;
+    }
+
+    &--column {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    @include hover(transform, scale(1.1));
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $black;
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease,
+      text-shadow 0.3s ease;
+
+    &:hover {
+      color: var(--accent-orange);
+      text-shadow: var(--shadow);
+    }
+
+    &:focus {
+      color: $darkOrange;
+      text-shadow:
+        1px 1px 2px #fff,
+        0 0 12px #f9512e,
+        0 0 5px #b2341a;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: var(--accent-orange);
+
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+      box-shadow: var(--shadow);
+    }
+
+    &--uppercase {
+      @extend %uppercase;
+
+      padding-left: 24px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        background-image: url(/src/icons/Icon-phone.svg);
+        background-repeat: no-repeat;
+        padding-right: 4px;
+        width: 24px;
+        height: 24px;
+        transform: translateX(-100%);
+      }
+    }
+
+    &--white {
+      color: $white;
+
+      &:focus {
+        color: $darkOrange;
+        text-shadow:
+          1px 1px 2px #000,
+          0 0 12px #f9512e,
+          0 0 5px #b2341a;
+      }
+    }
+  }
+}
