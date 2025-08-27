@@ -1,0 +1,92 @@
+.page {
+  @extend %body-text;
+
+  background-color: var(--light-pink);
+  color: $black;
+  scroll-behavior: smooth;
+
+  &__body {
+    min-width: 320px;
+  }
+
+  &__box {
+    background-color: var(--light-pink);
+    position: relative;
+    z-index: 4;
+  }
+
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: var(--light-pink);
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+  &__cake {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 64px;
+    padding: 32px 0 40px;
+    height: auto;
+    min-height: calc(100vh - 64px);
+
+    @include on-tablet {
+      padding: 80px 0 228px;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      padding: 0;
+      margin-bottom: 152px;
+      min-height: calc(100vh - 88px);
+    }
+  }
+
+  &__menu {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    background-color: var(--light-pink);
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+    z-index: 2;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &__products {
+    margin-bottom: 72px;
+
+    @include on-tablet {
+      margin-bottom: 152px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 178px;
+    }
+  }
+
+  &__about-us {
+    margin-bottom: 72px;
+
+    @include on-tablet {
+      margin-bottom: 152px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 56px;
+    }
+  }
+}
