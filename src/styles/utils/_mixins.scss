@@ -1,6 +1,150 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-big-desktop {
+  @media (min-width: $big-desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline() {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-big-desktop {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 124px;
+  }
+}
+
+.container {
+  @include content-padding-inline;
+}
+
+@mixin page-grid {
+  display: grid;
+  grid-template-columns: repeat($grid-columns-mobile, 1fr);
+  column-gap: $grid-gap-mobile;
+
+  @include on-tablet {
+    grid-template-columns: repeat($grid-columns-tablet, 1fr);
+    column-gap: $grid-gap-tablet;
+  }
+}
+
+@mixin text-base(
+  $size: 16px,
+  $line: 150%,
+  $spacing: -0.01em,
+  $color: $color-dark
+) {
+  margin: 0;
+
+  font-size: $size;
+  line-height: $line;
+  color: $color;
+  letter-spacing: $spacing;
+}
+
+@mixin title-style($size, $color: $color-primary) {
+  margin: 0;
+
+  font-size: $size;
+  font-weight: 400;
+  line-height: 85%;
+  color: $color;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+@mixin button-base($width, $height: 56px, $color: $color-primary) {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+
+  width: $width;
+  height: $height;
+  border: 2px solid $color;
+  border-radius: 32px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  color: $color;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+@mixin list-column($gap: 16px) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+@mixin list-row($gap: 32px) {
+  @include list-column((0));
+
+  flex-direction: row;
+  gap: $gap;
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} $animation-speed;
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $toValue;
+  }
+}
+
+@mixin social-icon {
+  transition: filter $animation-speed;
+
+  &:hover {
+    filter: brightness(0) invert(1);
+  }
+}
+
+@mixin nav-link-hover {
+  position: relative;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transform-origin: left;
+    transform: scaleX(0);
+
+    display: block;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: $color-primary;
+
+    transition: transform $animation-speed;
+  }
+  &:hover::after {
+    transform: scaleX(1);
   }
 }

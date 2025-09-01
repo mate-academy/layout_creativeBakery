@@ -1,0 +1,35 @@
+.stats {
+  @include page-grid;
+
+  row-gap: 48px;
+
+  @include on-big-desktop {
+    row-gap: 80px;
+  }
+
+  &__stat {
+    grid-column: 1 /-1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__big-text {
+    margin: 0;
+
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 85%;
+    color: $color-primary;
+    letter-spacing: -0.05em;
+  }
+
+  &__small-text {
+    @include text-base;
+  }
+}

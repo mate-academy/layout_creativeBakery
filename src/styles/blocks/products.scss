@@ -1,0 +1,72 @@
+.products {
+  margin-bottom: 72px;
+
+  @include on-tablet {
+    margin-bottom: 152px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 178px;
+  }
+  &__item {
+    transform: translateX(-50px);
+    grid-column: 1 / -1;
+
+    // для анімації
+    opacity: 0;
+    transition: all 0.6s ease-out;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      &:nth-child(1) {
+        grid-column: 1 / span 3;
+      }
+      &:nth-child(2) {
+        grid-column: 4 / span 3;
+      }
+      &:nth-child(3) {
+        grid-column: 3 / span 3;
+      }
+      &:nth-child(4) {
+        grid-column: 6 / span 3;
+      }
+      &:nth-child(5) {
+        grid-column: 1 / span 3;
+      }
+      &:nth-child(6) {
+        grid-column: 4 / span 3;
+      }
+    }
+
+    &.is-visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  &__items {
+    @include page-grid;
+
+    row-gap: 56px;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+
+    // Смарт-ховер
+    &:hover .products__item {
+      transform: scale(0.95);
+      opacity: 0.5;
+      transition: all $animation-speed ease;
+    }
+
+    .products__item:hover {
+      transform: scale(1);
+      opacity: 1;
+      transition: all $animation-speed ease;
+    }
+  }
+}
