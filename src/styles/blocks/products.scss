@@ -1,0 +1,41 @@
+.products {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 56px;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+  }
+  &__item {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+    }
+  }
+  &__line {
+    @include page-grid;
+
+    row-gap: 56px;
+
+    &--reversed {
+      .products__item {
+        @include on-desktop {
+          &:first-child {
+            grid-column: 3 / span 3;
+          }
+
+          &:last-child {
+            grid-column: 6 / span 3;
+          }
+        }
+      }
+    }
+  }
+}

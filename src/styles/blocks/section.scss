@@ -1,0 +1,55 @@
+.section {
+  &__top {
+    @include page-grid;
+
+    row-gap: 24px;
+    margin-bottom: 56px;
+
+    @include on-tablet {
+      margin-bottom: 80px;
+    }
+    &--column {
+      row-gap: 32px;
+      margin-bottom: 64px;
+
+      @include on-tablet {
+        margin-bottom: 72px;
+      }
+
+      @include on-desktop {
+        margin-bottom: 144px;
+      }
+    }
+  }
+  &__title {
+    margin: 0;
+    grid-column: 1 / -1;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    color: $text-secondary-color;
+
+    &--column {
+      grid-column: span 4;
+    }
+
+    @include on-tablet {
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    grid-column: 1 / -1;
+
+    &--column {
+      grid-column: span 4;
+    }
+  }
+}
