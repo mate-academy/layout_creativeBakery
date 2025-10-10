@@ -1,0 +1,52 @@
+.product-card {
+  @include flex-container(column, unset, 16px);
+
+  &__image {
+    display: block;
+    border-radius: 8px;
+    max-width: 100%;
+
+    @include hover-scale;
+  }
+
+  &__title {
+    @extend %uppercase;
+
+    color: $gray;
+  }
+
+  &__description {
+    @extend %body-text;
+  }
+
+  &__button {
+    @extend %uppercase;
+
+    @include flex-container(row-reverse, left, unset);
+    
+    align-items: center;
+
+    border: none;
+    color: $accent-orange;
+    text-transform: uppercase;
+
+    transition: all 0.3s;
+
+    @include hover-scale;
+
+    &:focus{
+      color: $dark-orange;
+
+      .icon--arrow {
+        background-image: url(/src/images/icons/buttons/arrow-focus.svg);
+      }
+    }
+    &:disabled {
+      color: $light-orange;
+
+      .icon--arrow {
+        background-image: url(/src/images/icons/buttons/arrow-disabled.svg);
+      }
+    }
+  }
+}

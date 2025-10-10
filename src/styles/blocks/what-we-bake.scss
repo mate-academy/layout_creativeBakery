@@ -1,0 +1,98 @@
+.what-we-bake {
+  @include page-grid;
+  @include padding-block;
+
+  &__title {
+    @extend %h1;
+
+    font-size: clamp(48px, 10vw, 72px);
+    grid-column: 1 / -1;
+    padding-bottom: 24px;
+
+    @include on-tablet {
+      grid-row: 1;
+    }
+  }
+
+  &__subtitle {
+    @extend %body-text;
+    
+    grid-column: 1 / -1;
+    padding-bottom: 56px;
+
+    @include on-tablet {
+      grid-row: 2;
+    }
+  }
+
+  &__product-card {
+    grid-column: 1 / -1;
+    padding-bottom: 80px;
+
+    &:nth-of-type(1) {
+      @include on-tablet {
+        grid-row: 3;
+        grid-column: span 4;
+      }
+
+      @include on-desktop {
+        grid-column: span 3;
+      }
+    }
+
+    &:nth-of-type(2) {
+      @include on-tablet {
+        grid-row: 3;
+        grid-column: span 4;
+      }
+
+      @include on-desktop {
+        grid-column: span 3;
+      }
+    }
+
+    &:nth-of-type(3) {
+      @include on-tablet {
+        grid-row: 4;
+        grid-column: span 4;
+      }
+
+      @include on-desktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &:nth-of-type(4) {
+      @include on-tablet {
+        grid-row: 4;
+        grid-column: span 4;
+      }
+
+      @include on-desktop {
+        grid-column: 6 / 9;
+      }
+    }
+
+    &:nth-of-type(5) {
+      @include on-tablet {
+        grid-row: 5;
+        grid-column: span 4;
+      }
+
+      @include on-desktop {
+        grid-column: span 3;
+      }
+    }
+
+    &:nth-of-type(6) {
+      @include on-tablet {
+        grid-row: 5;
+        grid-column: span 4;
+      }
+
+      @include on-desktop {
+        grid-column: span 3;
+      }
+    }
+  }
+}
