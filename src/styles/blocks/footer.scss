@@ -1,0 +1,167 @@
+.footer {
+  display: grid;
+  grid-column: 1/-1;
+  gap: 24px;
+
+  padding: 56px 16px;
+
+  background-color: #1c1a26;
+
+  @include on-tablet {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 88px 44px;
+    text-align: left;
+  }
+
+  @include on-large-desktop {
+    padding: 88px 124px;
+  }
+
+  &__padding {
+    padding: 40px 0 0;
+  }
+
+  &-grid-container {
+    display: grid;
+    grid-template-areas:
+      'menu'
+      'contact'
+      'social'
+      'copyright';
+    grid-template-columns: 1fr;
+
+    @include on-tablet {
+      grid-template-areas:
+        'menu contact'
+        'social copyright';
+      grid-template-columns: 1fr 1fr;
+      column-gap: $grid-gap-xl;
+    }
+
+    @include on-desktop {
+      grid-template-areas:
+        'menu contact'
+        'social copyright';
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__menu {
+    grid-area: menu;
+  }
+
+  &__contact-section {
+    grid-area: contact;
+  }
+
+  &__social-links {
+    display: flex;
+    grid-area: social;
+    align-items: center;
+    justify-content: center;
+
+    @include on-tablet {
+      justify-content: flex-start;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    grid-area: copyright;
+    align-items: end;
+
+    @include on-tablet {
+      justify-content: flex-start;
+    }
+  }
+
+  &-contact-inner-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include on-desktop {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 75px;
+    }
+  }
+
+  &__logo {
+    cursor: pointer;
+    display: flex;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.link {
+  cursor: pointer;
+  display: inline-block;
+  color: $color-white;
+  text-decoration: none;
+
+  @include hover(transform, scale(1.1));
+
+  &-gray {
+    color: $color-gray;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.list-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.section-title {
+  margin: 0;
+  padding: 64px 0 0;
+
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 85%;
+  color: $color-white;
+  text-transform: uppercase;
+
+  @include on-tablet {
+    padding: 0;
+    font-size: 56px;
+  }
+
+  @include on-desktop {
+    font-size: 72px;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 32px;
+
+  img {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+
+    @include hover(transform, scale(1.1));
+  }
+}
+
+.bakerlab-2022 {
+  margin: 0;
+  padding: 40px 0 0;
+  font-size: 16px;
+  color: $color-gray;
+
+  @include on-desktop {
+    padding: 0;
+  }
+}
