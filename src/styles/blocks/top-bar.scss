@@ -1,0 +1,54 @@
+.top-bar {
+  @include flex-container(unset, space-between, unset);
+
+  align-items: center;
+  padding: 16px;
+
+  @include on-tablet {
+    padding: 28px 32px;
+  }
+
+  &__logo {
+    @include hover-scale;
+  }
+
+  &__logo-img {
+    @include logo-img-properties(132px);
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      @include flex-container(row, unset, 64px);
+
+      align-items: center;
+    }
+
+    // &--open {
+    //   @include flex-container(column, unset, 24px);
+
+    //   z-index: 100;
+    //   align-items: center;
+    //   padding-top: 150px;
+
+    //   position: fixed;
+    //   left: 0;
+    //   width: 100%;
+    //   height: calc(100vh - $top-bar-height);
+    //   top: $top-bar-height;
+    //   background-color: $light-pink;
+    // }
+  }
+
+  &__menu-icon {
+    @include on-phone {
+      display: block;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+}

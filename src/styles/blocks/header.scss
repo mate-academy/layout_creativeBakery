@@ -1,24 +1,6 @@
 .header {
   position: relative;
 
-  &__logo {
-    width: 132px;
-    @include hover-scale;
-  }
-
-  &__top {
-    @include flex-container(unset, space-between, unset);
-
-    align-items: center;
-    padding: 16px;
-
-    @include on-tablet {
-      padding: 28px 32px;
-    }
-
-    grid-column: 1 / -1;
-  }
-
   &__nav {
     @include on-phone {
       display: none;
@@ -43,53 +25,6 @@
       height: calc(100vh - $top-bar-height);
       top: $top-bar-height;
       background-color: $light-pink;
-    }
-  }
-
-  &__menu-button {
-    @include on-phone {
-      display: block;
-    }
-
-    @include on-desktop {
-      display: none;
-    }
-  }
-
-  &__link {
-    @extend %body-text;
-
-    position: relative;
-
-    &--button {
-      @include icon-with-text;
-
-      @extend %uppercase;
-
-      color: $accent-orange;
-
-      &:hover {
-        @include hover-scale;
-      }
-    }
-
-    &--highlight {
-      &::after {
-        content: '';
-        position: absolute;
-        display: block;
-        height: 2px;
-        width: 100%;
-        background-color: $accent-orange;
-
-        transition: transform 0.3s;
-        transform: scale(0);
-        transform-origin: left;
-      }
-
-      &:hover::after {
-        transform: scale(1);
-      }
     }
   }
 
