@@ -1,0 +1,138 @@
+.footer {
+  @include page-grid;
+  @include padding-block;
+
+  row-gap: 30px;
+  background-color: $black;
+  color: $white;
+
+  &__logo {
+    grid-column: 1 / -1;
+    grid-row: 1;
+
+    @include hover-scale;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__logo-img {
+    @include logo-img-properties(168px);
+  }
+
+  &__title {
+    @extend %h1;
+
+    color: $white;
+    font-size: clamp(48px, 5vw, 72px);
+
+    grid-row: 3;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-row: 1;
+      grid-column: 5 / 8;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__subtitle {
+    @extend %uppercase;
+
+    color: $gray;
+  }
+
+  &__nav-link {
+    @extend %body-text;
+  }
+
+  &__list {
+    @include flex-container(column, unset, 16px);
+  }
+
+  &__menu {
+    grid-row: 2;
+    grid-column: 1 / 1;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__call-us {
+    grid-row: 4;
+    grid-column: 1 / 1;
+
+    @include on-tablet {
+      grid-row: 2;
+      grid-column: 5 / 7;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__email-us {
+    grid-row: 5;
+    grid-column: 1 / 1;
+
+    @include on-tablet {
+      grid-row: 3;
+      grid-column: 5 / 7;
+    }
+
+    @include on-desktop {
+      grid-row: 2;
+      grid-column: 7 / 9;
+    }
+  }
+
+  &__social-media {
+    @include flex-container(row, unset, 32px);
+
+    grid-row: 6;
+    grid-column: 1 / 1;
+
+    @include on-tablet {
+      grid-row: 4;
+      grid-column: 1 / 3;
+    }
+
+    @include on-desktop {
+      grid-row: 3;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__copy-rights {
+    grid-row: 7;
+    grid-column: 1 / 1;
+
+    @include on-tablet {
+      grid-row: 4;
+      grid-column: 5 / 7;
+    }
+
+    @include on-desktop {
+      grid-row: 3;
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__item {
+    @include hover-scale;
+  }
+}

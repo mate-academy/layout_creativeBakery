@@ -1,6 +1,124 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover-scale {
+  transition: transform 0.3s;
+
   &:hover {
-    #{$_property}: $_toValue;
+    cursor: pointer;
+    transform: scale(1.03);
   }
+}
+
+@mixin hover($property, $value) {
+  transition: $property 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    #{$property}: $value;
+  }
+}
+
+@mixin media-icon-change($url) {
+  transition: background-image 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    background-image: url($url);
+  }
+
+  &:focus {
+    cursor: pointer;
+    background-image: url($url);
+  }
+}
+
+@mixin padding-inline {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+}
+
+@mixin padding-block {
+  padding-block: 32px;
+
+  @include on-tablet {
+    padding-block: 80px;
+  }
+}
+
+@mixin page-grid {
+  display: grid;
+  gap: 16px;
+  padding: 0 16px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include on-tablet {
+    gap: 24px;
+    padding: 0 44px;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  @include on-big-desktop {
+    padding: 0;
+    grid-template-columns: repeat(8, 128px);
+    justify-content: center;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin on-phone {
+  @media (min-width: $phone-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin on-big-desktop {
+  @media (min-width: 1201px) {
+    @content;
+  }
+}
+
+@mixin icon-properties {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+}
+
+@mixin icon-with-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2px;
+}
+
+@mixin flex-container($direction, $justify-content, $gap-value) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  gap: $gap-value;
+}
+
+@mixin logo-img-properties($width) {
+  display: block;
+  cursor: pointer;
+  width: $width;
 }
