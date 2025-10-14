@@ -1,0 +1,41 @@
+@import '../utils';
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 64px;
+  padding: 0 16px;
+
+  @include on-tablet {
+    padding: 0 20.5px;
+  }
+
+  @include on-desktop {
+    height: 88px;
+    padding: 0 25px 0 16px;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 64px;
+    align-items: center;
+    justify-content: space-between;
+
+    &__link {
+      display: none;
+      color: $black;
+
+      @include hover(transform, scale(1.25));
+
+      @include on-desktop {
+        display: flex;
+      }
+
+      &--accent-color {
+        color: $accent-color;
+      }
+    }
+  }
+}
