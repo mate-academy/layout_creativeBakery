@@ -14,6 +14,24 @@
   }
 }
 
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 16px;
+
+  @include on-tablet {
+    --columns: 8;
+
+    column-gap: 24px;
+  }
+
+  @include on-desktop {
+    --columns: 8;
+  }
+}
+
 @mixin content-padding-inline() {
   padding-inline: 16px;
 
@@ -98,6 +116,13 @@
   font-style: normal;
   line-height: 150%;
   letter-spacing: -0.01em;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .page {
@@ -214,11 +239,17 @@
   &__content {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+
+    // height: 100%;
     height: 100vh;
+
+    // @include on-tablet{
+    //   height: 100vh;
+    // }
   }
 
   &__bottom {
-    margin: 0;
     padding-bottom: 40px;
 
     @include on-tablet {
@@ -287,6 +318,7 @@
     height: 56px;
     margin: 0;
     margin-top: 290px;
+    margin-bottom: 40px;
     border: 2px solid #f9512e;
     border-radius: 32px;
 
@@ -295,7 +327,7 @@
     }
 
     @include on-desktop {
-      margin: 64px 852px 0 0;
+      margin: 64px 852px 0;
     }
   }
   &__icon {
@@ -318,9 +350,7 @@
 
 .menu {
   box-sizing: border-box;
-
-  // height: 100vh;
-  // font-family: Inter, sans-serif;
+  height: 100vh;
   background-color: #eef7ff;
 
   &__top {
@@ -411,6 +441,214 @@
 
     @include on-desktop {
       display: none;
+    }
+  }
+}
+
+.main {
+  &__content {
+    display: grid;
+    row-gap: 72px;
+    padding-block: 72px;
+    color: #1c1a26;
+
+    @include on-tablet {
+      row-gap: 152px;
+      padding-block: 152px;
+    }
+
+    @include on-desktop {
+      row-gap: 178px;
+      padding-block: 178px;
+    }
+  }
+}
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+
+  &__name {
+    @include h1-style;
+
+    margin: 0;
+    margin-top: 64px;
+    text-align: left;
+
+    // @include on-tablet{
+    //   margin-top: 284px;
+    // }
+  }
+
+  &__subtitle {
+    @include main-text;
+
+    margin: 0;
+    margin-top: 24px;
+  }
+
+  &__cards {
+    @include page-grid;
+
+    row-gap: 56px;
+    margin-top: 56px;
+
+    @include on-tablet {
+      column-gap: 80px;
+      align-items: start;
+      margin-top: 80px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+  }
+
+  &__title {
+    margin: 16px 0 8px;
+
+    @include uppercase;
+
+    color: #7f8096;
+  }
+
+  &__info {
+    margin: 0;
+
+    @include main-text;
+
+    color: #1c1a26;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+
+    background-image: url(../images/icons/icon-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  &__link {
+    @include uppercase;
+
+    color: #f9512e;
+    text-decoration: none;
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+      &:nth-child(3),
+      :nth-child(4) {
+        grid-column: 3 / span 3;
+      }
+    }
+  }
+}
+
+.blog {
+  background-image: url(../images/crumbs.png);
+  background-repeat: no-repeat;
+  background-position: center 69%;
+  background-size: 100%;
+
+  @include on-tablet {
+    background-position: 50% 58%;
+    background-size: 80%;
+  }
+
+  @include on-desktop {
+    background-position: 70% 5%;
+    background-size: 65%;
+  }
+
+  &__description {
+    @include on-tablet {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__name {
+    @include h2-style;
+
+    margin: 0;
+
+    // margin-top: 72px;
+    text-align: left;
+
+    @include on-tablet {
+      width: 50%;
+      margin: 0;
+    }
+  }
+
+  &__info {
+    @include main-text;
+
+    margin: 32px 0 16px;
+    color: #1c1a26;
+
+    @include on-tablet {
+      width: 50%;
+      margin: 0;
+    }
+  }
+
+  &__count {
+    @include big-text;
+
+    margin: 0;
+    color: #1c1a26;
+  }
+  &__subtitle {
+    @include main-text;
+
+    margin: 0;
+    color: #7f8096;
+  }
+
+  &__cards {
+    margin-bottom: 72px;
+
+    @include page-grid;
+
+    @include on-tablet {
+      row-gap: 80px;
+      margin-top: 72px;
+      margin-bottom: 152px;
+    }
+
+    @include on-desktop {
+      margin-top: 144px;
+      margin-bottom: 349px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+    margin-top: 48px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin: 0;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
     }
   }
 }
