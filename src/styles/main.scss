@@ -92,7 +92,7 @@
 @mixin big-text {
   font-family: Inter, sans-serif;
   font-size: 96px;
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   line-height: 85%;
   text-transform: uppercase;
@@ -112,7 +112,7 @@
 @mixin main-text {
   font-family: Inter, sans-serif;
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   line-height: 150%;
   letter-spacing: -0.01em;
@@ -649,6 +649,163 @@ body {
 
     @include on-desktop {
       grid-column: span 2;
+    }
+  }
+}
+
+.footer {
+  $socials-icons: (
+    'facebook': url(../images/icons/icon-facebook.svg),
+    'instagram': url(../images/icons/icon-instagram.svg),
+    'twitter': url(../images/icons/icon-twitter.svg),
+  );
+
+  background-color: #1c1a26;
+  &__logo {
+    display: flex;
+    width: 168px;
+    height: 40px;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__content {
+    padding: 56px 0;
+  }
+
+  &__list {
+    margin: 0;
+    margin-top: 40px;
+    padding: 0;
+
+    @include on-desktop {
+      &--call,
+      &--email {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  &__link {
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+
+    @include main-text;
+
+    &--name {
+      @include uppercase;
+
+      color: #7f8096;
+    }
+  }
+  &__item {
+    margin: 0;
+    margin-top: 16px;
+    list-style: none;
+
+    &:first-child {
+      @include on-desktop {
+        margin: 0;
+      }
+    }
+  }
+
+  &__title {
+    @include h2-style;
+
+    margin: 0;
+    margin-top: 64px;
+    color: #fff;
+
+    @include on-tablet {
+      margin: 0;
+    }
+
+    @include on-desktop {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__notice {
+    @include main-text;
+
+    margin: 0;
+    margin-top: 40px;
+    color: #7f8096;
+
+    @include on-tablet {
+      margin: 0;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+
+    @include on-tablet {
+      margin: 0;
+    }
+  }
+
+  &__social {
+    width: 24px;
+    height: 24px;
+    margin-right: 32px;
+
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__menus {
+    @include page-grid;
+  }
+
+  &__menu,
+  &__contact,
+  &__socials,
+  &__notice {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__menu {
+    .footer__list:first-of-type {
+      @include on-tablet {
+        margin-top: 96px;
+      }
+
+      @include on-desktop {
+        margin-top: 61px;
+      }
+    }
+  }
+
+  &__info {
+    @include page-grid;
+
+    @include on-tablet {
+      margin-top: 48px;
+    }
+  }
+
+  &__contact-info {
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      gap: 24px;
+    }
+  }
+
+  @each $name, $url in $socials-icons {
+    &__social--#{$name} {
+      background-image: $url;
     }
   }
 }
