@@ -14,6 +14,12 @@
   }
 }
 
+@mixin on-design {
+  @media (min-width: 1440) {
+    @content;
+  }
+}
+
 @mixin page-grid {
   --columns: 2;
 
@@ -40,9 +46,14 @@
   }
 
   @include on-desktop {
-    max-width: 1200px;
     margin-inline: auto;
     padding-inline: 44px;
+  }
+
+  @include on-design {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 124px;
   }
 }
 
@@ -224,40 +235,36 @@ body {
   background-color: #eef7ff;
   background-image: url('../images/cookie.png');
   background-repeat: no-repeat;
-  background-position: center 80%;
+  background-position: center 70%;
   background-size: 288px 290px;
 
   @include on-tablet {
-    background-position: center 68%;
+    background-position: center 50%;
   }
 
   @include on-desktop {
-    background-position: center 35%;
+    background-position: center 60%;
     background-size: 544px 546px;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
-    // height: 100%;
-    height: 100vh;
-
-    // @include on-tablet{
-    //   height: 100vh;
-    // }
   }
 
   &__bottom {
-    padding-bottom: 40px;
+    padding-bottom: 32px;
 
     @include on-tablet {
-      padding-bottom: 228px;
+      padding-bottom: 76px;
     }
 
     @include on-desktop {
-      padding-bottom: 161px;
+      padding-bottom: 135px;
+    }
+
+    @include on-design {
+      padding-bottom: 112px;
     }
   }
   &__subtitle {
@@ -269,15 +276,19 @@ body {
     text-align: center;
 
     @include on-tablet {
+      width: 280px;
       margin-top: 80px;
-      padding-right: 400px;
       text-align: left;
     }
 
     @include on-desktop {
+      width: 260px;
       margin-top: 135px;
-      padding-right: 852px;
-      text-align: left;
+    }
+
+    @include on-design {
+      width: 280px;
+      margin-top: 144px;
     }
   }
   &__title {
@@ -306,6 +317,10 @@ body {
       text-transform: uppercase;
       letter-spacing: -0.05em;
     }
+
+    @include on-design {
+      margin-top: 40px;
+    }
   }
   &__button {
     display: flex;
@@ -318,16 +333,57 @@ body {
     height: 56px;
     margin: 0;
     margin-top: 290px;
-    margin-bottom: 40px;
     border: 2px solid #f9512e;
     border-radius: 32px;
+
+    transition: all 0.3s;
+
+    @at-root &:hover {
+      background-color: #f9512e;
+
+      .header__icon {
+        background-image: url(../images/icons/icon-cookie-white.svg);
+      }
+      .header__link {
+        color: #fff;
+      }
+    }
+
+    @at-root &:active {
+      border: solid 2px #b2341a;
+      background-color: #b2341a;
+
+      .header__icon {
+        background-image: url(../images/icons/icon-cookie-white.svg);
+      }
+      .header__link {
+        color: #fff;
+      }
+    }
+
+    @at-root &:disabled {
+      border: solid 2px #fba28f;
+
+      .header__icon {
+        background-image: url(../images/icons/icon-cookie-disabled.svg);
+      }
+      .header__link {
+        color: #fba28f;
+      }
+    }
 
     @include on-tablet {
       margin: 210px 177px 0;
     }
 
     @include on-desktop {
-      margin: 64px 852px 0;
+      width: 260px;
+      margin: 0;
+      margin-top: 64px;
+    }
+
+    @include on-design {
+      width: 280px;
     }
   }
   &__icon {
@@ -472,7 +528,8 @@ body {
     @include h1-style;
 
     margin: 0;
-    margin-top: 64px;
+
+    // margin-top: 64px;
     text-align: left;
 
     // @include on-tablet{
@@ -659,6 +716,11 @@ body {
     'instagram': url(../images/icons/icon-instagram.svg),
     'twitter': url(../images/icons/icon-twitter.svg),
   );
+  $socials-icons-hover: (
+    'facebook': url(../images/icons/icon-facebook-white.svg),
+    'instagram': url(../images/icons/icon-instagram-white.png),
+    'twitter': url(../images/icons/icon-twitter-white.svg),
+  );
 
   background-color: #1c1a26;
   &__logo {
@@ -758,6 +820,8 @@ body {
 
     background-position: center;
     background-size: cover;
+
+    @include hover(transform, scale(1.2));
   }
 
   &__menus {
@@ -806,6 +870,14 @@ body {
   @each $name, $url in $socials-icons {
     &__social--#{$name} {
       background-image: $url;
+    }
+  }
+
+  @each $name, $url in $socials-icons-hover {
+    &__social--#{$name} {
+      &:hover {
+        background-image: $url;
+      }
     }
   }
 }
