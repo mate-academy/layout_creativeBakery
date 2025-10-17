@@ -131,13 +131,13 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
 .page {
-  scroll-behavior: smooth;
   color: #1c1a26;
 
   @include main-text;
@@ -185,6 +185,7 @@ body {
   }
 
   &__logo {
+    cursor: pointer;
     display: flex;
     width: 136px;
     height: 32px;
@@ -197,11 +198,14 @@ body {
     gap: 64px;
   }
   &__nav {
+    cursor: pointer;
     display: none;
     color: #1c1a26;
     text-decoration: none;
 
     @include main-text;
+
+    @include hover(transform, scale(1.2));
 
     &:nth-last-child(2) {
       @include on-desktop {
@@ -323,6 +327,8 @@ body {
     }
   }
   &__button {
+    cursor: pointer;
+
     display: flex;
     flex-direction: row;
     gap: 4px;
@@ -430,6 +436,8 @@ body {
 }
 
 .nav__link {
+  cursor: pointer;
+
   position: relative;
 
   display: block;
@@ -439,10 +447,6 @@ body {
 
   transition: transform 0.3s;
 
-  // font-weight: 400;
-  // font-size: 16px;
-  // line-height: 150%;
-  // letter-spacing: -1%;
   @include main-text;
 
   @include hover(transform, scale(1.2));
@@ -475,9 +479,13 @@ body {
 }
 
 .icon {
+  cursor: pointer;
+
   display: block;
+
   width: 24px;
   height: 24px;
+
   background-size: cover;
 
   @include hover(transform, scale(1.2));
@@ -528,13 +536,7 @@ body {
     @include h1-style;
 
     margin: 0;
-
-    // margin-top: 64px;
     text-align: left;
-
-    // @include on-tablet{
-    //   margin-top: 284px;
-    // }
   }
 
   &__subtitle {
@@ -559,6 +561,8 @@ body {
 
   &__photo {
     width: 100%;
+
+    @include hover(transform, scale(1.05));
   }
 
   &__title {
@@ -578,9 +582,12 @@ body {
   }
 
   &__button {
+    cursor: pointer;
     display: flex;
     align-items: center;
     margin-top: 16px;
+
+    @include hover(transform, translateX(10px));
   }
 
   &__icon {
@@ -724,6 +731,7 @@ body {
 
   background-color: #1c1a26;
   &__logo {
+    cursor: pointer;
     display: flex;
     width: 168px;
     height: 40px;
@@ -749,6 +757,10 @@ body {
   }
 
   &__link {
+    cursor: pointer;
+
+    display: inline-block;
+
     color: #fff;
     text-align: left;
     text-decoration: none;
@@ -760,6 +772,8 @@ body {
 
       color: #7f8096;
     }
+
+    @include hover(transform, scale(1.2));
   }
   &__item {
     margin: 0;
@@ -814,6 +828,8 @@ body {
   }
 
   &__social {
+    cursor: pointer;
+
     width: 24px;
     height: 24px;
     margin-right: 32px;
