@@ -1,1 +1,25 @@
-$c-gray: #eee;
+$themes: (
+  'blue': (
+    bg-color: #eef7ff,
+    heading-color: #1c1a26,
+  ),
+  'pink': (
+    bg-color: #ffeefc,
+    heading-color: #f9512e,
+  ),
+);
+$theme: 'blue';
+
+@use 'sass:map';
+
+$bg-color: map.get(map.get($themes, $theme), bg-color);
+$heading-color: map.get(map.get($themes, $theme), heading-color);
+$button-active-color: #b2341a;
+$main-orange-color: #f9512e;
+$button-disabled-color: #fba28f;
+$main-black-color: #1c1a26;
+$text-grey-color: #7f8096;
+$white: #fff;
+$tablet-size: 576px;
+$desktop-size: 1024px;
+$design-size: 1440px;

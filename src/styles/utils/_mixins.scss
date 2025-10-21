@@ -1,6 +1,126 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin on-tablet {
+  @media (min-width: $tablet-size) {
+    @content;
   }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-size) {
+    @content;
+  }
+}
+
+@mixin on-design {
+  @media (min-width: $design-size) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 16px;
+
+  @include on-tablet {
+    --columns: 8;
+
+    column-gap: 24px;
+  }
+
+  @include on-desktop {
+    --columns: 8;
+  }
+}
+
+@mixin content-padding-inline() {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop {
+    margin-inline: auto;
+    padding-inline: 44px;
+  }
+
+  @include on-design {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 124px;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.3s;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin h1-style {
+  font-family: Inter, sans-serif;
+  font-size: 64px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 85%;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+
+  @include on-tablet {
+    font-size: 80px;
+  }
+
+  @include on-desktop {
+    font-size: 144px;
+  }
+}
+
+@mixin h2-style {
+  font-family: Inter, sans-serif;
+  font-size: 48px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 85%;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+
+  @include on-tablet {
+    font-size: 56px;
+  }
+
+  @include on-desktop {
+    font-size: 72px;
+  }
+}
+
+@mixin big-text {
+  font-family: Inter, sans-serif;
+  font-size: 96px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 85%;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+@mixin uppercase {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 100%;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+@mixin main-text {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: -0.01em;
 }
