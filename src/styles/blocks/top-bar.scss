@@ -1,0 +1,63 @@
+.top-bar {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-block: 16px;
+
+  @include on-desktop {
+    padding-block: 28px;
+  }
+
+  &__logo {
+    cursor: pointer;
+    display: flex;
+    width: 136px;
+    height: 32px;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__navs {
+    display: flex;
+    gap: 64px;
+  }
+  &__nav {
+    cursor: pointer;
+    display: none;
+    color: $main-black-color;
+    text-decoration: none;
+
+    @include main-text;
+
+    @include hover(transform, scale(1.2));
+
+    &:nth-last-child(2) {
+      @include on-desktop {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        justify-content: center;
+
+        color: $main-orange-color;
+
+        @include uppercase;
+      }
+    }
+
+    @include on-desktop {
+      display: inline-block;
+    }
+  }
+  &__icon {
+    width: 24px;
+    height: 24px;
+
+    background-image: url(../images/icons/icon-phone.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}

@@ -1,0 +1,96 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+
+  &__name {
+    @include h1-style;
+
+    margin: 0;
+    color: $heading-color;
+    text-align: left;
+  }
+
+  &__subtitle {
+    @include main-text;
+
+    margin: 0;
+    margin-top: 24px;
+  }
+
+  &__cards {
+    @include page-grid;
+
+    row-gap: 56px;
+    margin-top: 56px;
+
+    @include on-tablet {
+      column-gap: 80px;
+      align-items: start;
+      margin-top: 80px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    border-radius: 8px;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__title {
+    margin: 16px 0 8px;
+
+    @include uppercase;
+
+    color: $text-grey-color;
+  }
+
+  &__info {
+    margin: 0;
+
+    @include main-text;
+
+    color: $main-black-color;
+  }
+
+  &__button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+
+    @include hover(transform, translateX(10px));
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+
+    background-image: url(../images/icons/icon-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  &__link {
+    @include uppercase;
+
+    color: $main-orange-color;
+    text-decoration: none;
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+      &:nth-child(3),
+      :nth-child(4) {
+        grid-column: 3 / span 3;
+      }
+    }
+  }
+}

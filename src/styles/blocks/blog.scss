@@ -1,0 +1,92 @@
+.blog {
+  background-image: url(../images/crumbs.png);
+  background-repeat: no-repeat;
+  background-position: center 69%;
+  background-size: 100%;
+
+  @include on-tablet {
+    background-position: 50% 58%;
+    background-size: 80%;
+  }
+
+  @include on-desktop {
+    background-position: 70% 5%;
+    background-size: 65%;
+  }
+
+  &__description {
+    @include on-tablet {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__name {
+    @include h2-style;
+
+    margin: 0;
+    color: $heading-color;
+    text-align: left;
+
+    @include on-tablet {
+      width: 50%;
+      margin: 0;
+    }
+  }
+
+  &__info {
+    @include main-text;
+
+    margin: 32px 0 16px;
+    color: $main-black-color;
+
+    @include on-tablet {
+      width: 50%;
+      margin: 0;
+    }
+  }
+
+  &__count {
+    @include big-text;
+
+    margin: 0;
+    color: $heading-color;
+  }
+  &__subtitle {
+    @include main-text;
+
+    margin: 0;
+    color: $text-grey-color;
+  }
+
+  &__cards {
+    margin-bottom: 72px;
+
+    @include page-grid;
+
+    @include on-tablet {
+      row-gap: 80px;
+      margin-top: 72px;
+      margin-bottom: 152px;
+    }
+
+    @include on-desktop {
+      margin-top: 144px;
+      margin-bottom: 349px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+    margin-top: 48px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin: 0;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+}

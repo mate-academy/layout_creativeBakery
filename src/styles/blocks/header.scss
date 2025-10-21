@@ -1,0 +1,174 @@
+.header {
+  background-color: $bg-color;
+  background-image: url('../images/cookie.png');
+  background-repeat: no-repeat;
+  background-position: center 70%;
+  background-size: 288px 290px;
+
+  @include on-tablet {
+    background-position: center 50%;
+  }
+
+  @include on-desktop {
+    background-position: center 60%;
+    background-size: 544px 546px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__bottom {
+    padding-bottom: 32px;
+
+    @include on-tablet {
+      padding-bottom: 76px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 135px;
+    }
+
+    @include on-design {
+      padding-bottom: 112px;
+    }
+  }
+  &__subtitle {
+    @include main-text;
+
+    margin: 0;
+    margin-top: 32px;
+    color: $main-black-color;
+    text-align: center;
+
+    @include on-tablet {
+      width: 280px;
+      margin-top: 80px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      width: 260px;
+      margin-top: 135px;
+    }
+
+    @include on-design {
+      width: 280px;
+      margin-top: 144px;
+    }
+  }
+  &__title {
+    display: flex;
+    justify-content: center;
+
+    margin: 0;
+    margin-top: 32px;
+
+    color: $heading-color;
+    text-align: center;
+
+    @include h1-style;
+
+    @include on-tablet {
+      margin-top: 146px;
+    }
+
+    @include on-desktop {
+      margin-top: 8px;
+
+      font-size: 136px;
+      font-weight: 400;
+      line-height: 85%;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+    }
+
+    @include on-design {
+      margin-top: 40px;
+    }
+  }
+  &__button {
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    height: 56px;
+    margin: 0;
+    margin-top: 290px;
+    border: 2px solid $main-orange-color;
+    border-radius: 32px;
+
+    transition: all 0.3s;
+
+    @at-root &:hover {
+      background-color: $main-orange-color;
+
+      .header__icon {
+        background-image: url(../images/icons/icon-cookie-white.svg);
+      }
+      .header__link {
+        color: $white;
+      }
+    }
+
+    @at-root &:active {
+      border: solid 2px $button-active-color;
+      background-color: $button-active-color;
+
+      .header__icon {
+        background-image: url(../images/icons/icon-cookie-white.svg);
+      }
+      .header__link {
+        color: $white;
+      }
+    }
+
+    @at-root &:disabled {
+      border: solid 2px $button-disabled-color;
+
+      .header__icon {
+        background-image: url(../images/icons/icon-cookie-disabled.svg);
+      }
+      .header__link {
+        color: $button-disabled-color;
+      }
+    }
+
+    @include on-tablet {
+      margin: 210px 177px 0;
+    }
+
+    @include on-desktop {
+      width: 260px;
+      margin: 0;
+      margin-top: 64px;
+    }
+
+    @include on-design {
+      width: 280px;
+    }
+  }
+  &__icon {
+    width: 24px;
+    height: 24px;
+
+    background-image: url(../images/icons/icon-cookie.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__link {
+    color: $main-orange-color;
+    text-decoration: none;
+
+    @include uppercase;
+  }
+}
