@@ -4,3 +4,90 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $dekstop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-design {
+  @media (min-width: $design-min-width) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  display: grid;
+
+  --columns: 2;
+  --gutter: 16px;
+
+  max-width: 320;
+  padding: 0 16px;
+  margin: 0 auto;
+
+  column-gap: var(--gutter);
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 8;
+    --gutter: 24px;
+
+    max-width: 1280px;
+    padding: 0 44px;
+  }
+
+  @include on-desktop {
+    --columns: 8;
+    --gutter: 24px;
+
+    max-width: 1440px;
+  }
+
+  @include on-design {
+    --columns: 8;
+    --gutter: 24px;
+
+    padding: 0 128px;
+  }
+}
+
+@mixin page-grid-two {
+  display: grid;
+
+  --columns: 2;
+  --gutter: 16px;
+
+  max-width: 320px;
+  padding: 0 16px;
+  margin: 0 auto;
+
+  column-gap: var(--gutter);
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 8;
+    --gutter: 24px;
+
+    max-width: 1280px;
+  }
+
+  @include on-desktop {
+    --columns: 8;
+    --gutter: 24px;
+
+    max-width: 2000px;
+  }
+
+  @include on-design {
+    --columns: 8;
+    --gutter: 24px;
+  }
+}
