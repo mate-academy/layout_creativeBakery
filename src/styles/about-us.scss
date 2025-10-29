@@ -1,0 +1,59 @@
+.about-us {
+  background-image: url(../images/background-image-main.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include page-grid;
+  &__description {
+    margin: 0;
+    padding-bottom: 64px;
+
+    @include on-tablet {
+      padding-bottom: 72px;
+    }
+
+    @include on-desktop-small {
+      padding-bottom: 144px;
+    }
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    white-space: nowrap;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__statistic {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop-small {
+      grid-column: span 2;
+    }
+
+    &:last-child {
+      margin-bottom: 72px;
+
+      @include on-tablet {
+        margin-bottom: 152px;
+      }
+
+      @include on-desktop-small {
+        margin-bottom: 349px;
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+.footer {
+  background-color: #1c1a26;
+
+  &__container {
+    @include content-padding-inline;
+
+    display: grid;
+    row-gap: 64px;
+    padding-block: 56px;
+  }
+
+  &__content {
+    @include page-grid;
+
+    row-gap: 40px;
+  }
+
+  &__menu {
+    margin-bottom: 24px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__contacts {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop-small {
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__email {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop-small {
+      padding-top: 100px;
+      grid-column: 7 / -1;
+      grid-row: 1;
+    }
+  }
+
+  &-social {
+    @include page-grid;
+
+    align-items: center;
+    row-gap: 40px;
+
+    &__blog {
+      grid-column: 1 / -1;
+
+      @include on-tablet {
+        grid-column: span 4;
+      }
+    }
+
+    &__copyright {
+      grid-column: 1 / -1;
+
+      @include on-tablet {
+        grid-column: 5 / -1;
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+
+  a {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+
+    @include hover-card(transform, scale(1.1));
+  }
+
+  &__title {
+    margin: 0;
+    color: #7f8096;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    padding-top: 16px;
+  }
+
+  &__describe {
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 16px;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    font-weight: 400;
+  }
+
+  &__button {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #f9512e;
+    line-height: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 2%;
+    max-width: 84px;
+    margin-top: auto;
+
+    @include hover(transform, translate(20px));
+
+    span {
+      position: relative;
+      padding-left: 24px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        background-image: url(../images/icons/icon-order.png);
+        width: 16px;
+        height: 16px;
+        background-size: cover;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
