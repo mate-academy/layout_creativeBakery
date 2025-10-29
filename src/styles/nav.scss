@@ -1,0 +1,56 @@
+.nav {
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 64px;
+
+    &--vertical {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 132px;
+      gap: 24px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+
+    &--phone {
+      text-transform: uppercase;
+      display: flex;
+      color: #f9512e;
+      align-items: center;
+
+      &::before {
+        content: '';
+        background-image: url('../images/icons/nav-icon-phone.png');
+        background-size: contain;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        padding-right: 4px;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &--horizontal {
+    display: none;
+    pointer-events: none;
+    opacity: 0;
+
+    @include on-desktop-small {
+      display: flex;
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+
+  &__item {
+    @include hover(transform, scale(1.1));
+    @include underline;
+  }
+}

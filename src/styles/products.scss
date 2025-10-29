@@ -1,0 +1,46 @@
+.products {
+  &__cards {
+    @include page-grid;
+
+    row-gap: 56px;
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &:nth-child(1) {
+      @include on-desktop-small {
+        grid-column: 1 / 4;
+      }
+    }
+    &:nth-child(2) {
+      @include on-desktop-small {
+        grid-column: 4 / 7;
+      }
+    }
+    &:nth-child(3) {
+      @include on-desktop-small {
+        grid-column: 3 / 6;
+      }
+    }
+    &:nth-child(4) {
+      @include on-desktop-small {
+        grid-column: 6 / -1;
+      }
+    }
+    &:nth-child(5) {
+      @include on-desktop-small {
+        grid-column: 1 / 4;
+      }
+    }
+    &:nth-child(6) {
+      @include on-desktop-small {
+        grid-column: 4 / 7;
+      }
+    }
+  }
+}
