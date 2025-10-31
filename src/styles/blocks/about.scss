@@ -1,0 +1,113 @@
+@use '../utils/mixins' as *;
+@use '../variable.scss' as *;
+
+.about {
+  background-image: url(/src/images/about/crumbs.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-width: 300px;
+  min-height: 320px;
+
+  // .about__body
+
+  &__body {
+    padding-bottom: 72px;
+
+    @include tablet {
+      padding-bottom: 152px;
+    }
+
+    @include desktop {
+      padding-bottom: 56px;
+    }
+  }
+
+  // .about__top
+
+  &__top {
+    margin-bottom: 64px;
+
+    @include tablet {
+      // margin-bottom: 0;
+
+      @include page-grid;
+
+      margin-bottom: 72px;
+    }
+  }
+
+  // .about__title
+
+  &__title {
+    margin-bottom: 32px;
+
+    @include tablet {
+      margin-bottom: 0;
+      grid-column: span 4; // 🔹 на tablet — 4 колонки
+    }
+  }
+
+  // .about__description
+
+  &__description {
+    @include tablet {
+      grid-column: span 4; // 🔹 на tablet — 4 колонки
+    }
+  }
+
+  // .about__content
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+
+    @include desktop {
+      flex-direction: row;
+      row-gap: 0;
+
+      @include page-grid;
+    }
+  }
+
+  // .about__column
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+
+    @include tablet {
+      @include page-grid;
+    }
+
+    @include desktop {
+      grid-column: span 4; // 🔹 на tablet — 4 колонки
+    }
+  }
+
+  // .about__item
+
+  &__item {
+    @include tablet {
+      grid-column: span 4; // 🔹 на tablet — 4 колонки
+    }
+  }
+
+  // .about__num
+
+  &__num {
+    font-size: 96px;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    margin-bottom: 8px;
+  }
+
+  // .about__sabtitle
+
+  &__sabtitle {
+    line-height: 1.5;
+    color: $color-text-gray;
+  }
+}
