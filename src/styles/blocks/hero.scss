@@ -1,0 +1,188 @@
+@use '../utils/mixins' as *;
+@use '../variable.scss' as *;
+
+.hero {
+  // .hero__body
+
+  &__body {
+    position: relative;
+    padding: 92px 0 40px;
+    min-height: 100vh;
+
+    @include tablet {
+      padding: 144px 0 110px;
+    }
+
+    @include desktop {
+      padding: 199px 0 58px;
+    }
+
+    @include large {
+      padding: 232px 0 58px;
+    }
+  }
+
+  &__content {
+    @include desktop {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+    }
+  }
+
+  // .hero__text
+
+  &__text {
+    margin-bottom: 32px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: -0.05em;
+
+    @include tablet {
+      margin-bottom: 146px;
+      text-align: left;
+      max-width: 280px;
+    }
+
+    @include desktop {
+      margin-bottom: 8px;
+      max-width: 250px;
+    }
+
+    @include large {
+      max-width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+
+  // .hero__title
+
+  &__title {
+    font-size: 64px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    z-index: 100;
+
+    @include tablet {
+      margin-bottom: 180px;
+      font-size: 80px;
+    }
+
+    @include desktop {
+      font-size: 136px;
+      margin-bottom: 64px;
+      white-space: nowrap;
+    }
+
+    @include large {
+      font-size: 144px;
+    }
+  }
+
+  // .hero__pic
+
+  &__pic {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+
+    @include tablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 326px;
+      max-height: 328px;
+    }
+
+    @include desktop {
+      max-width: 544px;
+      max-height: 546px;
+    }
+
+    @include large {
+      max-width: 584px;
+      max-height: 586px;
+    }
+  }
+
+  &__btn-icon {
+    color: $color-link;
+    transition: color $transition-duration;
+  }
+
+  // .hero__btn
+
+  &__btn {
+    display: flex;
+    column-gap: 4px;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    color: $color-link;
+    text-transform: uppercase;
+    font-weight: $font-weight-medium;
+    line-height: 1.3;
+    width: 100%;
+    border: 2px solid $color-link;
+    border-radius: 32px;
+    padding-top: 1px;
+    transition:
+      color $transition-duration,
+      background-color $transition-duration,
+      border-color $transition-duration;
+
+    @include tablet {
+      max-width: 326px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 100;
+    }
+
+    @include desktop {
+      display: inline-flex;
+    }
+
+    &:hover {
+      color: white;
+      background-color: $color-link;
+
+      .hero__btn-icon {
+        color: white;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $link-focused;
+      color: white;
+      border: 2px solid $link-focused;
+
+      .hero__btn-icon {
+        color: white; // 👈 додай це
+      }
+    }
+
+    /* 🔸 Модифікатори відображення */
+    &--mobile {
+      display: flex; // показуємо на мобільних
+
+      @include desktop {
+        display: none; // ховаємо на десктопі
+      }
+    }
+
+    &--desktop {
+      display: none; // ховаємо на мобільних
+
+      @include desktop {
+        display: inline-flex; // показуємо на десктопі
+      }
+    }
+  }
+}

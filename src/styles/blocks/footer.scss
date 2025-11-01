@@ -1,0 +1,177 @@
+@use '../utils/mixins' as *;
+@use '../variable.scss' as *;
+
+.footer {
+  background-color: $background-black;
+
+  // .footer__body
+
+  &__body {
+    padding: 56px 0;
+
+    @include tablet {
+      padding: 88px 0;
+    }
+  }
+
+  &__top {
+    @include page-grid; // підключаємо твою міксин-сітку
+  }
+
+  &__content {
+    margin-bottom: 40px;
+
+    @include tablet {
+      @include page-grid; // підключаємо твою міксин-сітку
+    }
+  }
+
+  // .footer__column
+
+  &__column {
+    @include tablet {
+      grid-column: span 4; // 🔹 на tablet — 4 колонки
+    }
+  }
+
+  // .footer__logo
+
+  &__logo {
+    display: block;
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 0;
+      grid-column: span 4; // 🔹 на tablet — 4 колонки
+    }
+  }
+
+  // .footer__item
+
+  &__items {
+    text-transform: uppercase;
+    line-height: 1;
+    color: $color-text-gray;
+    font-weight: $font-weight-medium;
+    margin-bottom: 16px;
+  }
+
+  // .footer__nav
+
+  &__nav {
+    margin-bottom: 64px;
+  }
+
+  // .footer__list
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  // .footer__link
+
+  &__link {
+    line-height: 1.5;
+    color: white;
+    font-weight: $font-weight-normal;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // .footer__social
+
+  &__social {
+    @include tablet {
+      grid-column: span 4; // 🔹 на tablet — 4 колонки
+    }
+  }
+
+  // .footer__title
+
+  .footer {
+    &__title {
+      margin-bottom: 40px;
+      max-width: 288px;
+
+      @include tablet {
+        grid-column: span 4; // 🔹 на tablet — 4 колонки
+      }
+
+      @include desktop {
+        max-width: 100%;
+      }
+    }
+
+    &__title--desk {
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    &__title--mobile {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  // .footer__column-column
+
+  &__column-column {
+    @include desktop {
+      @include page-grid; // підключаємо твою міксин-сітку
+    }
+  }
+
+  // .footer__part
+
+  &__part {
+    margin-bottom: 40px;
+
+    @include desktop {
+      grid-column: span 4; // 🔹 на tablet — 4 колонки
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include tablet {
+      @include page-grid; // підключаємо твою міксин-сітку
+    }
+  }
+
+  &__copyright {
+    color: $color-text-gray;
+    line-height: 1.5;
+
+    @include tablet {
+      grid-column: span 4; // 🔹 на tablet — 4 колонки
+    }
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  // .social__link
+
+  &__link {
+    color: $color-link;
+    transition: color $transition-duration ease 0s;
+
+    &:hover {
+      color: white;
+    }
+  }
+}

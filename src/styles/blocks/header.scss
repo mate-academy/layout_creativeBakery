@@ -1,0 +1,229 @@
+@use '../utils/mixins' as *;
+@use '../variable.scss' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 110;
+  background-color: transparent;
+  transition:
+    background-color $transition-duration ease,
+    box-shadow $transition-duration ease;
+
+  &__container-head {
+    max-width: 1470px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    gap: 15px;
+
+    @include tablet {
+      padding: 28px 0;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 100;
+  }
+
+  &__icon {
+    width: 100%;
+    transition: transform $transition-duration ease 0s;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: $background-gray;
+    transform: translateX(0);
+    transition: transform $transition-duration ease;
+
+    @include tablet {
+      position: relative;
+      height: auto;
+      transform: none;
+      background: transparent;
+      flex-direction: row;
+      justify-content: flex-end;
+      left: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      margin-right: 64px;
+      flex-direction: row;
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    line-height: 1.5;
+    color: $color-text;
+    text-transform: capitalize;
+
+    @include tablet {
+      position: relative;
+      transition: all $transition-duration ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 0;
+        height: 1px;
+        background-color: $color-link;
+        transition: all $transition-duration ease;
+      }
+
+      /* базовий стан для hover і focus (колір + підкреслення) */
+      &:hover,
+      &:focus {
+        color: $color-link;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      /* Для клавіатурної навігації — видимий фокус */
+      &:focus-visible {
+        outline: 3px solid rgba($color-link, 0.15); /* або інший видимий стиль */
+        outline-offset: 4px;
+      }
+
+      /* Якщо хочеш окремий колір саме для фокусу */
+      &:focus {
+        /* не прибирай outline повністю — краще задати свій */
+        color: $link-focused;
+        &::after {
+          background-color: $link-focused;
+        }
+      }
+    }
+  }
+
+  &__contact-phone {
+    display: block;
+    background-image: url(/src/images/header/icon-phone.svg);
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  &__contact-link {
+    text-transform: uppercase;
+    color: $color-link;
+    line-height: 1;
+    letter-spacing: 2%;
+    font-weight: $font-weight-medium;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+
+    &:hover .header__contact-phone {
+      animation: phone-ring 0.8s infinite ease;
+    }
+  }
+}
+
+.header--scrolled {
+  background-color: hsla(0deg, 0%, 100%, 0.92);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header__burger {
+  background: url(/src/images/header/icon-menu.svg) center/contain no-repeat;
+  width: 24px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+
+  &--active {
+    background-image: url(/src/images/header/icon-close.svg);
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.action-visible {
+  transform: translateX(
+    100%
+  ); // або translateX(0) якщо хочеш щоб зліва виїжджало
+}
+
+@keyframes phone-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  70% {
+    transform: rotate(6deg);
+  }
+  80% {
+    transform: rotate(-3deg);
+  }
+  90% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

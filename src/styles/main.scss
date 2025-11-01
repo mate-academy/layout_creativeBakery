@@ -1,7 +1,88 @@
-@import 'utils';
-@import 'fonts';
-@import 'typography';
+@use './utils/mixins' as *;
+@use './null';
+@use './variable' as *;
+@use '../styles/blocks/header.scss';
+@use '../styles/blocks/hero.scss';
+@use '../styles/blocks/what.scss';
+@use '../styles/blocks/about.scss';
+@use '../styles/blocks/footer.scss';
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 89px;
+}
 
 body {
-  background: $c-gray;
+  font-family: $font-inter;
+  font-optical-sizing: auto;
+  font-weight: $font-weight-normal;
+  font-style: normal;
+  color: $color-text;
+  background-color: $background-gray;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1 1 auto;
+}
+
+[class*='__container'] {
+  max-width: 1220px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+[class*='__container-header'] {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.title {
+  font-size: 48px;
+  line-height: 0.85;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+
+  @include tablet {
+    font-size: 56px;
+  }
+
+  @include desktop {
+    font-size: 72px;
+  }
+}
+
+.title-white {
+  color: white;
+  font-size: 48px;
+  line-height: 0.85;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+
+  @include tablet {
+    font-size: 56px;
+  }
+
+  @include desktop {
+    font-size: 72px;
+  }
+}
+
+.description {
+  line-height: 1.5;
+  letter-spacing: -0.01em;
 }

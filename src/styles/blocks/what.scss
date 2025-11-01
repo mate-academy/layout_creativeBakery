@@ -1,0 +1,181 @@
+@use '../utils/mixins' as *;
+@use '../variable.scss' as *;
+
+.what {
+  // .what__body
+
+  &__body {
+    padding-bottom: 72px;
+
+    @include tablet {
+      padding-bottom: 152px;
+    }
+
+    @include desktop {
+      padding-bottom: 178px;
+    }
+  }
+
+  // .what__title
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  // .what__description
+
+  &__description {
+    margin-bottom: 56px;
+
+    @include tablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  // .what__content
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 56px;
+
+    @include tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__row {
+    // підключаємо твою міксин-сітку
+    @include page-grid;
+
+    row-gap: 56px;
+
+    @include tablet {
+      row-gap: 0;
+    }
+  }
+
+  // .what__item
+
+  &__item {
+    grid-column: span 2;
+
+    @include tablet {
+      grid-column: span 4;
+    }
+
+    @include desktop {
+      grid-column: span 3;
+    }
+  }
+}
+
+// .what__item
+
+.item--1 {
+  @include desktop {
+    grid-column: 3 / 6;
+  }
+}
+
+.item--2 {
+  @include desktop {
+    grid-column: 6 / 9;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  // .item__pic
+
+  &__pic {
+    display: block;
+    border-radius: 8px;
+    aspect-ratio: 288 / 356;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    transition: transform $transition-duration ease 0s;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+
+  // .item__block-text
+
+  &__block-text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+  }
+
+  // .item__subtitle
+
+  &__subtitle {
+    text-transform: uppercase;
+    font-weight: $font-weight-medium;
+    color: $color-text-gray;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  // .item__text
+
+  &__text {
+    margin-bottom: 16px;
+    flex-grow: 1;
+  }
+
+  &__arrow {
+    display: block;
+    background-image: url(/src/images/what/icon-arrow.png);
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    animation: arrow 1s ease-in-out infinite;
+  }
+
+  // .item__link
+
+  &__link {
+    margin-top: auto;
+    text-transform: uppercase;
+    font-weight: $font-weight-medium;
+    line-height: 1;
+    color: $color-link;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 4px;
+    transition: color $transition-duration ease 0s;
+
+    &:hover {
+      color: $link-focused;
+
+      .item__arrow {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  // .item__arrow
+}
+
+@keyframes arrow {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
