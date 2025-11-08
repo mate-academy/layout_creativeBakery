@@ -1,0 +1,133 @@
+.what-we-bake {
+  grid-column: span 8;
+  margin-top: 152px;
+
+  @include grid-template;
+
+  &__title {
+    grid-column: span 8;
+    margin: 0;
+    color: $accent-orange;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    grid-column: span 8;
+    margin-top: 24px;
+  }
+
+  &__content {
+    margin-top: 80px;
+    grid-column: span 8;
+
+    @include grid-template;
+
+    row-gap: 80;
+
+    @include on-phone {
+      row-gap: 56px;
+    }
+  }
+
+  &__card {
+    grid-column: span 3;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &-img {
+      border-radius: 8px;
+      width: 100%;
+      transition-duration: 0.3s;
+
+      &:hover {
+        scale: 1.1;
+      }
+
+      &-wrapper {
+        border-radius: 8px;
+        overflow: hidden;
+      }
+    }
+
+    &-title {
+      margin-top: 16px;
+      color: $grey;
+    }
+
+    &-text {
+      margin-top: 8px;
+      color: $black;
+    }
+
+    &-link {
+      width: fit-content;
+      position: relative;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      text-decoration: none;
+
+      &-text {
+        color: $accent-orange;
+        text-decoration: none;
+      }
+
+      &::before {
+        position: absolute;
+        background-color: $accent-orange;
+        content: '';
+        width: 0;
+        height: 1px;
+        bottom: -4px;
+        transition-duration: 0.3s;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+
+      &:focus {
+        & .uppercase {
+          color: $dark-orange;
+        }
+
+        & .icon {
+          background-color: $dark-orange;
+        }
+
+        &::before {
+          width: 100%;
+          background-color: $dark-orange;
+        }
+      }
+
+      &:disabled {
+        & .uppercase {
+          color: $light-orange;
+        }
+
+        & .icon {
+          background-color: $light-orange;
+        }
+
+        &::before {
+          width: 100%;
+          background-color: $light-orange;
+        }
+      }
+    }
+  }
+
+  &__blank {
+    grid-column: span 2;
+
+    @include on-tablet {
+      position: absolute;
+    }
+  }
+}

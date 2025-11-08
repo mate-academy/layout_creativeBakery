@@ -1,0 +1,76 @@
+.about-us {
+  background-image: url(../images/Crumbs.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  grid-column: span 8;
+  margin-top: 178px;
+  padding-bottom: 350px;
+  width: 100%;
+
+  @include grid-template;
+
+  @include on-tablet {
+    padding-bottom: 152px;
+  }
+
+  &__title {
+    margin: 0;
+    color: $accent-orange;
+    text-transform: uppercase;
+    grid-column: span 4;
+
+    @include on-phone {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__description {
+    grid-column: span 4;
+    color: $black;
+
+    @include on-phone {
+      grid-column: 1 / -1;
+      margin-top: 32px;
+    }
+  }
+
+  &__list {
+    grid-column: span 8;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 144px;
+
+    @include grid-template;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+
+    @include on-phone {
+      margin-top: 64px;
+      grid-column: span 2;
+    }
+
+    &-item {
+      grid-column: span 2;
+
+      @include on-tablet {
+        grid-column: span 4;
+      }
+
+      @include on-phone {
+        grid-column: span 2;
+      }
+
+      &-title {
+        color: $accent-orange;
+      }
+
+      &-text {
+        margin-top: 8px;
+        color: $black;
+      }
+    }
+  }
+}
