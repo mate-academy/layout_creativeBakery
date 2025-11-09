@@ -1,0 +1,149 @@
+.footer {
+  display: flex;
+  background-color: $black;
+  justify-content: center;
+  font-family: Inter, sans-serif;
+
+  &__content {
+    box-sizing: border-box;
+    padding: 88px 0;
+
+    @include grid-template;
+
+    @include on-desktop {
+      padding: 88px 44px;
+    }
+  }
+
+  &__socials {
+    display: grid;
+    grid-template-columns: repeat(4, 128px);
+    grid-column: span 4;
+    grid-template-rows: 60px 1fr;
+    gap: 40px 24px;
+
+    @include on-phone {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 24px;
+      grid-template-rows: 40px 1fr;
+      grid-column: span 2;
+    }
+  }
+
+  &__contacts {
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: repeat(4, 128px);
+    grid-template-rows: 60px 1fr;
+    row-gap: 40px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 60px 1fr;
+      row-gap: 40px;
+    }
+
+    @include on-phone {
+      margin-top: 40px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 60px 1fr;
+      row-gap: 40px;
+      grid-column: span 2;
+    }
+
+    &-title {
+      margin: 0;
+      padding: 0;
+      grid-column: span 4;
+      color: white;
+      text-transform: uppercase;
+
+      @include on-phone {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  &__logo {
+    grid-column: span 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 168px;
+    height: 40px;
+
+    @include on-phone {
+      grid-column: span 2;
+    }
+  }
+
+  &__list {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 16px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-phone {
+      grid-column: span 2;
+    }
+
+    &-title {
+      color: $grey;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  &__socials-list {
+    grid-column: span 4;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    margin-top: 48px;
+    gap: 32px;
+
+    &-icon {
+      display: flex;
+
+      &:hover .icon {
+        background-color: white;
+      }
+    }
+
+    @include on-phone {
+      grid-column: span 2;
+    }
+  }
+
+  &__icons-list {
+    grid-column: span 8;
+
+    @include grid-template;
+
+    @include on-phone {
+      grid-column: span 2;
+    }
+  }
+
+  &__copyright {
+    margin-top: 48px;
+    grid-column: span 4;
+    color: $grey;
+
+    @include on-phone {
+      grid-column: span 2;
+    }
+  }
+}

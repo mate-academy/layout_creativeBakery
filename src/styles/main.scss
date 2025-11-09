@@ -1,7 +1,39 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import 'icon';
+@import 'header';
+@import 'what-we-bake';
+@import 'about-us';
+@import 'footer';
 
-body {
-  background: $c-gray;
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 0;
+    margin: 0;
+    background: $light-pink;
+  }
+
+  &__main {
+    @include grid-template;
+
+    align-self: center;
+
+    @include on-desktop {
+      margin: 0 44px;
+    }
+
+    @include on-tablet {
+      margin: 0 44px;
+    }
+
+    @include on-phone {
+      margin: 0 16px;
+    }
+  }
 }
