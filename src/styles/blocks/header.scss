@@ -1,0 +1,155 @@
+.header {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100dvh;
+  margin: 0 auto;
+
+  @include on-tablet {
+    position: relative;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include on-desktop {
+      align-items: start;
+    }
+  }
+
+  &__about {
+    width: 288px;
+    margin: 32px auto;
+
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.16px;
+
+    @include on-tablet {
+      width: 280px;
+      margin: 80px 0 16px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      width: 260px;
+      margin: 135px 0 8px;
+    }
+
+    @include on-big-desktop {
+      width: 280px;
+      margin: 144px 0 40px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-size: 64px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 85%;
+    color: $accent-orange;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+
+    @include on-tablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      font-size: 80px;
+      white-space: nowrap;
+    }
+
+    @include on-desktop {
+      font-size: 124px;
+    }
+
+    @include on-big-desktop {
+      font-size: 144px;
+    }
+  }
+
+  &__img {
+    display: block;
+    max-width: 100%;
+  }
+
+  &__button {
+    cursor: pointer;
+
+    position: relative;
+
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+
+    width: 288px;
+    margin-bottom: 40px;
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+
+    text-decoration: none;
+
+    &--text {
+      padding: 20px 0;
+
+      font-weight: 500;
+      line-height: 100%;
+      color: $accent-orange;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    &:hover {
+      background-color: $accent-orange;
+      transition: $effectDuration;
+
+      .header__button--text {
+        color: $white;
+      }
+
+      .icon--button {
+        background-image: url('../images/Icon-cookie-white.png');
+      }
+    }
+
+    @include on-tablet {
+      margin: 80px 0 228px;
+    }
+
+    @include on-desktop {
+      width: 260px;
+      margin-top: -150px;
+    }
+
+    @include on-big-desktop {
+      width: 280px;
+    }
+  }
+
+  &__img-container {
+    position: relative;
+    max-width: 288px;
+    margin: 0 auto;
+
+    @include on-tablet {
+      max-width: 326px;
+    }
+
+    @include on-desktop {
+      max-width: 544px;
+    }
+
+    @include on-big-desktop {
+      max-width: 584px;
+    }
+  }
+}
