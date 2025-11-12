@@ -50,37 +50,16 @@
   }
 
   &__wrapper-photo {
-    position: relative;
-    overflow: hidden;
     display: grid;
-
-    @include hover(transform, scale(1.03));
+    transition:
+      transform $effectDuriation,
+      filter 0.3s ease;
 
     @include on-desktop {
-      &::after {
-        content: '';
-
-        position: absolute;
-        inset: 0;
-        transform-origin: top;
-        transform: scale(0);
-
-        display: block;
-
-        border: 2px solid $page-orange-color;
-        border-radius: 8px;
-
-        opacity: 0.6;
-
-        transition: transform $effectDuriation;
-      }
-
-      &:hover::after {
-        transform: scale(1);
-      }
-
       &:hover {
         cursor: pointer;
+        transform: scale(1.03);
+        filter: brightness(1.05);
       }
     }
   }
@@ -109,6 +88,8 @@
   }
 
   &__to-order {
+    @include hover(transform, scale(1.03));
+
     display: flex;
     gap: 4px;
     align-items: center;
@@ -117,16 +98,11 @@
     margin-top: 16px;
     padding-block: 4px;
 
-    text-decoration: none;
-  }
-
-  &__order-sign {
     font-weight: 500;
     line-height: 100%;
     color: $page-orange-color;
+    text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-
-    @include hover(transform, scale(1.1));
   }
 }
