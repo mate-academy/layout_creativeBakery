@@ -1,0 +1,115 @@
+.about-us {
+  position: relative;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    z-index: 0;
+    bottom: 220px;
+    left: -19px;
+
+    width: 320px;
+    height: 300px;
+
+    @include on-tablet {
+      bottom: 180px;
+      left: 75px;
+      width: 526px;
+      height: 493px;
+    }
+
+    @include on-desktop {
+      bottom: 50px;
+      left: 275px;
+      width: 718px;
+      height: 673px;
+    }
+
+    opacity: 0.9;
+    background-image: url(../images/bg-crumbs.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @include page-grid;
+
+  padding-block: 72px;
+
+  @include on-tablet {
+    padding-block: 152px;
+
+    & > :nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include on-desktop {
+    padding-top: 178px;
+    padding-bottom: 349px;
+  }
+
+  &__title {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &-description {
+      grid-column: span 2;
+      margin-top: 32px;
+      margin-bottom: 64px;
+
+      @include on-tablet {
+        grid-column: span 4;
+        margin-top: 0;
+      }
+
+      @include on-desktop {
+        margin-bottom: 146px;
+      }
+    }
+  }
+
+  &__number {
+    grid-column: span 2;
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-bottom: 80px;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+      margin-bottom: 0;
+    }
+
+    &-text {
+      position: relative;
+      z-index: 1;
+
+      font-size: 96px;
+      line-height: 85%;
+      color: $page-orange-color;
+      letter-spacing: -0.05em;
+
+      @include hover(transform, scale(1.03));
+    }
+  }
+}

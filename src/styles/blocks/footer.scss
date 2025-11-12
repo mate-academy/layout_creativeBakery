@@ -1,0 +1,151 @@
+.footer {
+  box-sizing: border-box;
+  width: 100%;
+  padding-block: 56px;
+  background-color: $page-main-text-color;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  // #region grid-layout
+
+  &__wrapper {
+    @include page-grid;
+  }
+
+  &__logo-link,
+  &__menu-list,
+  &__blog {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__title,
+  &__contacts-list,
+  &__emails-list,
+  &__copyright {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__logo-link,
+  &__title {
+    @include on-tablet {
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__menu-list,
+  &__contacts-list {
+    @include on-tablet {
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__contacts-list {
+    @include on-desktop {
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__emails-list {
+    margin-top: 0;
+
+    @include on-desktop {
+      grid-column: 7 / 9;
+      margin-top: 40px;
+    }
+  }
+
+  // #endregion
+
+  &__logo {
+    @include hover(transform, scale(1.1));
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin-top: $footer-margin-top;
+
+    color: #fff;
+
+    &-item {
+      width: fit-content;
+      list-style: none;
+      transition: transform $effectDuriation;
+
+      &:hover {
+        transform: translateX(5px);
+      }
+    }
+
+    &-name {
+      font-weight: 500;
+      line-height: 100%;
+      color: #7f8096;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      list-style: none;
+    }
+  }
+
+  &__title {
+    margin-top: 64px;
+    color: #fff;
+
+    @include on-tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      color: #f9512f;
+    }
+  }
+
+  &__blog {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin-top: $footer-margin-top;
+
+    @include on-desktop {
+      margin-top: 48px;
+    }
+
+    &-link {
+      color: #f9512e;
+      transition: all $effectDuriation;
+
+      &:hover {
+        transform: scale(1.2);
+        color: #fff;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: $footer-margin-top;
+    color: #7f8096;
+
+    @include on-tablet {
+      margin-top: 48px;
+    }
+  }
+}
