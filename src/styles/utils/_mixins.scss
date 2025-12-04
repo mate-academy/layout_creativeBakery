@@ -27,7 +27,6 @@
   @include on-desktop {
     margin: 0;
     margin-inline: auto;
-    max-width: 1020px;
     padding-inline: 124px;
   }
 }
@@ -37,19 +36,19 @@
 }
 
 @mixin page-grid {
-  --columns: 2;
-
   display: grid;
+  grid-template-columns: repeat(2, 136px);
   gap: 16px;
-  grid-template-columns: repeat(var(--columns), 1fr);
 
   @include on-tablet {
-    --columns: 8;
+    grid-template-columns: repeat(8, 1fr);
 
     column-gap: 24px;
   }
 
   @include on-desktop {
-    --columns: 8;
+    grid-template-columns: repeat(8, 1fr);
+
+    column-gap: 24px;
   }
 }

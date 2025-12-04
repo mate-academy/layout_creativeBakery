@@ -1,21 +1,74 @@
 .footer {
-  width: 100%;
   background-color: $text-color;
+  padding-top: 40px;
+
+  @include on-tablet {
+    padding-top: 88px;
+  }
+
+  @include on-desktop {
+    padding-top: 88px;
+  }
 
   &__inner {
-    @include page-grid;
     @include content-padding-inline;
+
+    max-width: 1440px;
+    margin: 0 auto;
+    align-items: start;
+
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      gap: 24px;
+    }
+
+    @include on-desktop {
+      // display: flex;
+      // flex-direction: row;
+      // gap: 328px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      flex-direction: row;
+    }
+
+    @include on-desktop {
+      gap: 328px;
+    }
   }
 }
 
 .nav {
-  grid-column: 1 / span 2;
   display: flex;
   flex-direction: column;
-  padding-top: 88px;
+  width: 288px;
+
+  @include on-tablet {
+    width: 328px;
+  }
+
+  @include on-desktop {
+    width: 280px;
+  }
 
   &__logo-link {
     display: flex;
+
+    @include on-tablet {
+      height: 128px;
+    }
+
+    @include on-desktop {
+      height: 61px;
+    }
   }
 
   &__logo {
@@ -27,8 +80,11 @@
     width: 100%;
     flex-direction: column;
     gap: 16px;
-    padding-top: 61px;
-    padding-bottom: 48px;
+    padding-top: 40px;
+
+    @include on-desktop {
+      padding-top: 61px;
+    }
 
     &--title {
       text-transform: uppercase;
@@ -47,19 +103,6 @@
       font-size: 16px;
       font-weight: 400;
       list-style: none;
-    }
-  }
-
-  &__social {
-    display: flex;
-    flex-direction: row;
-    gap: 32px;
-
-    &--icon {
-      img {
-        width: 24px;
-        height: 24px;
-      }
     }
   }
 }
