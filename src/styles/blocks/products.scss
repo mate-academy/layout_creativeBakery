@@ -12,9 +12,11 @@
     font-weight: 400;
     text-transform: uppercase;
     padding-bottom: 24px;
+    padding-left: 16px;
 
     @include on-tablet {
       font-size: 56px;
+      padding-left: 0;
     }
 
     @include on-desktop {
@@ -27,9 +29,13 @@
     font-size: 16px;
     font-weight: 400;
     padding-bottom: 56px;
+    padding-left: 16px;
+    width: 288px;
 
     @include on-tablet {
       padding-bottom: 80px;
+      width: 680px;
+      padding-left: 0;
     }
 
     @include on-desktop {
@@ -41,6 +47,7 @@
     @include page-grid;
 
     row-gap: 56px;
+    justify-content: center;
 
     @include on-desktop {
       row-gap: 80px;
@@ -118,6 +125,7 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.3s;
+      border-radius: 8px;
     }
   }
 
@@ -142,5 +150,17 @@
     color: $accent-color;
     text-transform: uppercase;
     text-decoration: none;
+    cursor: pointer;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      transition: fill 0.3s ease;
+    }
+
+    &:hover {
+      color: $menu-item-color;
+    }
   }
 }
