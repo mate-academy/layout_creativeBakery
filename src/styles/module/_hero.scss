@@ -1,0 +1,131 @@
+.hero {
+    @include container;
+    
+    position: relative;
+    max-width: 1192px;
+    padding-top: 32px;
+    padding-bottom: 40px;
+
+    > * {
+        grid-column: 1 / -1;
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 2;
+        text-align: center;
+
+        @media (min-width: $tablet-min-width) {
+            max-width: 282px;
+            text-align: left;
+        }
+
+        @media (min-width: $desktop-min-width) {
+            max-width: 260px;
+        }
+
+         @media (min-width: $desktop-wide-min-width) {
+            position: relative;
+            top: 27px;
+
+            max-width: 292px;
+            margin-top: 46px;
+
+            line-height: 1.5;
+        }
+    }
+
+    &__title {
+        font-size: 64px;
+        font-weight: 400;
+        line-height: 1;
+        color: $c-orange;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+
+        @media (min-width: $tablet-min-width) {
+            position: absolute;
+            top: 39%;
+            left: 50%;
+            transform: translate(-50%, -39%);
+
+            width: 89vw;
+
+            font-size: 80px;
+        }
+
+        @media (min-width: $desktop-min-width) {
+            position: relative;
+            font-size: 139px;
+        }
+    }
+
+    &__bg {
+        width: 100%;
+        margin: 0 auto;
+
+        @media (min-width: $tablet-min-width) {
+            max-width: 326px;
+        }
+
+        @media (min-width: $desktop-min-width) {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            left: 0;
+
+            max-width: 544px;
+        }
+
+
+        @media (min-width: $desktop-wide-min-width) {
+            max-width: 595px;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        justify-content: center;
+
+        width: 288px;
+        height: 56px;
+        margin: 0 auto;
+        border: 2px solid $c-orange;
+        border-radius: 32px;
+
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 100%;
+        color: $c-orange;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        &:hover {
+            svg path {
+                fill: #fff;
+            }
+        }
+
+         @media (min-width: $desktop-min-width) {
+            margin: 0;
+        }
+
+
+        @include hover(color, #ffffff);
+        @include hover(background-color, $c-orange);
+
+        @include focus(background-color, $c-orange-focus);
+    }
+
+    @media (min-width: $tablet-min-width) {
+        padding-top: 80px;
+        padding-bottom: 230px;
+    }
+
+}

@@ -1,0 +1,137 @@
+.bake {
+    @include container;
+
+    max-width: 1192px;
+    padding-top: 58px;
+
+    > * {
+        grid-column: 1 / -1;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    &__title {
+        font-size: 47px;
+        font-weight: 400;
+        line-height: 1;
+        color: $c-orange;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+
+        @media (min-width: $tablet-min-width) {
+            font-size: 64px;
+        }
+
+        @media (min-width: $desktop-min-width) {           
+            margin-bottom: 59px;
+            font-size: 72px;
+        }
+    }
+
+    p {
+        margin-bottom: 43px;
+        font-size: 16px;
+        line-height: 1.5;
+
+        @media (min-width: $tablet-min-width) {
+            margin-bottom: 54px;
+        }
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        &--end {
+            @media (min-width: $desktop-min-width) {        
+                justify-content: flex-end;
+            }
+        }
+
+        &__item {
+            margin-bottom: 51px;
+
+            @media (min-width: $tablet-min-width) {        
+                margin-bottom: 59px;
+            }
+
+            @media (min-width: $desktop-min-width) {        
+                max-width: 400px;
+            }
+
+            @media (min-width: $desktop-wide-min-width) {        
+                max-width: 432px;
+            }
+        }
+
+        img {
+            cursor: pointer;
+            max-height: 356px;
+            margin-bottom: 13px;
+            border-radius: 8px;
+
+            @include hover(transform, scale(1.1));
+
+            @media (min-width: $tablet-min-width) {        
+                max-height: fit-content;
+            }
+        }
+
+        &__category {
+            margin-bottom: 8px;
+
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1;
+            color: $c-dark-blue;
+            text-transform: uppercase;
+            letter-spacing: 2%;
+        }
+
+        &__desc {
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        &__link {
+            display: flex;
+
+            padding-left: 5px;
+
+            font-size: 16px;
+            color: $c-orange;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            @include hover(color, $c-orange);
+            @include hover(text-decoration, underline);
+
+            @include focus(color, $c-orange-focus);
+
+            &::before {
+                content: '';
+
+                display: inline-block;
+
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+
+                background-image: url('../images/arrow-icon.svg');
+                background-repeat: no-repeat;
+            }
+        }
+
+        @media (min-width: $tablet-min-width) {
+            flex-direction: row;
+            gap: 24px;
+        }
+    }
+}

@@ -1,0 +1,134 @@
+.header {
+    @include container;
+
+    align-items: center;
+    min-height: 64px;
+
+    &__left {
+        grid-column: span 1;
+
+        @media (min-width: $tablet-min-width) {
+            grid-column: span 2;
+        }
+    }
+
+    &__right {
+        display: flex;
+        justify-content: flex-end;
+
+        @media (min-width: $tablet-min-width) {
+            grid-column: span 4 / -1;
+        }
+    }
+
+    &__toggle {
+        cursor: pointer;
+        display: block;
+        border: none;
+
+        &:hover {
+            svg path {
+                fill: $c-orange;
+            }
+        }
+
+        &:focus {
+            svg path {
+                fill: $c-orange-focus;
+            }
+        }
+        
+        .close {
+            display: none;
+        }
+
+        @media (min-width: $desktop-min-width) {
+            display: none;
+        }
+    }
+
+    &__menu {
+        display: none;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        width: 100%;
+        max-width: 500px;
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        a {
+            display: block;
+
+            font-size: 16px;
+            line-height: 1.5;
+            color: $c-black;
+            text-decoration: none;
+
+            @include hover(color, $c-orange);
+            @include hover(text-decoration, underline);
+
+
+            @include focus(color, $c-orange-focus);
+        }
+
+        @media (min-width: $desktop-min-width) {
+            display: flex;
+        }
+    }
+
+    .hightlight {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+
+        color: $c-orange;
+        text-transform: uppercase;
+    }
+
+     @media (min-width: $tablet-min-width) {
+        padding: 0 20px;
+    }
+
+    @media (min-width: $desktop-min-width) {
+        padding: 0 32px;
+    }
+}
+
+._menu-open {
+    overflow: hidden;
+
+    .header {
+
+        &__toggle {
+            .menu {
+                display: none;
+            }
+             .close {
+                display: block;
+            }
+        }
+
+        &__menu {
+            position: fixed;
+            z-index: 10;
+            top: 60px;
+            left: 0;
+
+            display: flex;
+            flex-flow: column wrap;
+            gap: 24px;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+
+            background: $c-blue;
+        }
+    }
+}

@@ -1,0 +1,134 @@
+footer {
+    background-color: $c-black;
+}
+
+.footer {
+    @include container;
+
+    max-width: 1192px;
+    padding-top: 61px;
+    padding-bottom: 56px;
+
+    > * {
+        grid-column: 1 / -1; 
+
+        @media (min-width: $tablet-min-width) {                
+            grid-column: auto; 
+        }
+    }
+
+    &__name {
+        margin-top: 64px;
+
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 85%;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+
+        @media (min-width: $tablet-min-width) {                
+            margin-top: 0;
+        }
+
+        @media (min-width: $desktop-wide-min-width) {        
+            font-size: 72px;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-flow: column wrap;
+        gap: 16px;
+        margin-top: 40px;
+
+        @media (min-width: $desktop-min-width) {
+            margin-top: 63px;
+        }
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+        color: $c-dark-blue;
+        text-transform: uppercase;
+    }
+
+    &__list {
+        display: flex;
+        flex-flow: column wrap;
+        gap: 16px;
+        list-style: none;
+
+        @media (min-width: $desktop-min-width) {
+            gap: 21px;
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-flow: column wrap;
+        
+        .footer {
+            &__name {
+                width: 100%;
+            }
+
+            &__menu {
+                @media (min-width: $tablet-min-width) {
+                    width: 47%;
+                    margin-top: 0;
+                }
+            }
+        }
+
+        @media (min-width: $tablet-min-width) {
+            flex-direction: row;
+        }
+
+        @media (min-width: $desktop-min-width) {        
+            justify-content: space-between;
+        }
+    }
+
+    &__link {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+
+        @include hover(color, $c-orange);
+        @include focus(color, $c-orange-focus);
+    }
+
+    .socials {
+        display: flex;
+        gap: 16px;
+        margin-top: 40px;
+
+        a:hover {
+            svg path {
+                fill: #fff;
+            }
+        }
+
+        @media (min-width: $desktop-min-width) {
+            gap: 45px;        
+            margin-top: 28px;
+        }
+    }
+
+    .copyrights {
+        margin-top: 40px;
+        color: $c-dark-blue;
+
+        @media (min-width: $desktop-min-width) {        
+            margin-top: 28px;
+        }
+    }
+
+    @media (min-width: $tablet-min-width) {        
+        grid-template-columns: 1fr 1fr;
+        padding-top: 92px;
+    }
+}
