@@ -1,6 +1,90 @@
+@use 'sass:map';
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $animation-speed;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-big-desktop {
+  @media (min-width: $big-desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin set-font($fontProperties) {
+  $sizeMap: map.get($fontProperties, size);
+
+  font-family: map.get($fontProperties, font);
+  font-size: font-size($sizeMap, mobile);
+  font-weight: map.get($fontProperties, weight);
+  font-style: map.get($fontProperties, style);
+  line-height: map.get($fontProperties, height);
+  text-transform: map.get($fontProperties, transorm);
+  letter-spacing: map.get($fontProperties, spacing);
+
+  @include on-tablet {
+    font-size: font-size($sizeMap, tablet, mobile);
+  }
+
+  @include on-desktop {
+    font-size: font-size($sizeMap, desktop, tablet, mobile);
+  }
+
+  @include on-big-desktop {
+    font-size: font-size($sizeMap, big-desktop, desktop, tablet, mobile);
+  }
+}
+
+@mixin set-padding-inline {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop {
+    padding-inline: 44px;
+  }
+
+  @include on-big-desktop {
+    padding-inline: calc((100% - 1192px) / 2);
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: 56px 16px;
+
+  @include on-tablet {
+    --columns: 8;
+
+    gap: 80px 24px;
+  }
+}
+
+@function font-size($map, $keys...) {
+  @each $key in $keys {
+    @if map.has-key($map, $key) {
+      @return map.get($map, $key);
+    }
+  }
+
+  @return null;
 }
