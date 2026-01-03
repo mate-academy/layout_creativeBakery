@@ -1,0 +1,72 @@
+.button {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+
+  color: $color-accent-orange;
+  text-decoration: none;
+
+  &--with-icon {
+    justify-content: center;
+
+    box-sizing: border-box;
+    width: 248px;
+    height: 56px;
+    border: 2px solid $color-accent-orange;
+    border-radius: 32px;
+
+    @include on-tablet {
+      width: 326px;
+    }
+
+    @include on-desktop {
+      width: 260px;
+    }
+
+    @include on-big-desktop {
+      width: 280px;
+    }
+
+    &:hover {
+      height: 56px;
+      border: none;
+      color: white;
+      background-color: $color-accent-orange;
+    }
+
+    &:active {
+      background-color: $color-dark-orange;
+    }
+  }
+
+  &--text {
+    position: relative;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -4px;
+
+      width: 0;
+      height: 1px;
+
+      background-color: $color-accent-orange;
+
+      transition: width $animation-speed;
+    }
+
+    &:hover::after {
+      display: block;
+      width: 100%;
+    }
+
+    &:active {
+      color: $color-dark-orange;
+    }
+
+    &:active::after {
+      background-color: $color-dark-orange;
+    }
+  }
+}

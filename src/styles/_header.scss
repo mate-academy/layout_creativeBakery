@@ -1,0 +1,105 @@
+.header {
+  text-align: center;
+
+  &__bottom {
+    padding-top: 32px;
+
+    @include on-tablet {
+      padding-top: 80px;
+    }
+
+    @include on-desktop {
+      padding-top: 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include on-tablet {
+      position: relative;
+      align-items: normal;
+    }
+  }
+
+  &__description {
+    margin-bottom: 32px;
+    color: $color-black;
+
+    @include on-tablet {
+      max-width: 280px;
+      margin: 0;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      max-width: 260px;
+      margin-top: 135px;
+      margin-bottom: 8px;
+    }
+
+    @include on-big-desktop {
+      max-width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    margin: 0;
+    color: $color-accent-orange;
+
+    @include on-tablet {
+      z-index: 1;
+      margin-top: 146px;
+      margin-bottom: 210px;
+    }
+
+    @include on-desktop {
+      width: 100%;
+      margin-top: 8px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__background {
+    width: 288px;
+    height: 290px;
+
+    @include on-tablet {
+      --width: 326px;
+
+      position: absolute;
+      top: 64px;
+      left: calc((100% - var(--width)) / 2);
+
+      width: var(--width);
+      height: 328px;
+    }
+
+    @include on-desktop {
+      --width: 544px;
+
+      top: 0;
+      height: 546px;
+    }
+
+    @include on-big-desktop {
+      --width: 584px;
+
+      height: 586px;
+    }
+  }
+
+  &__button {
+    @include on-tablet {
+      align-self: center;
+    }
+
+    @include on-desktop {
+      align-self: flex-start;
+    }
+  }
+}
