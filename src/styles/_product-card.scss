@@ -1,0 +1,41 @@
+.product-card {
+  grid-column: span 2;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 3;
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 8px;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__name {
+    display: block;
+    margin-bottom: 8px;
+    color: $color-grey;
+  }
+
+  &__description {
+    display: block;
+    margin-bottom: 16px;
+    color: $color-black;
+  }
+
+  &__link {
+    width: 84px;
+  }
+
+  &:nth-child(3) {
+    @include on-desktop {
+      grid-column: 3 / 6;
+    }
+  }
+}
