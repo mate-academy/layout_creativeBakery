@@ -1,0 +1,166 @@
+.footer {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 24px;
+
+  padding: 56px 16px;
+
+  background-color: #1c1a26;
+
+  @include on-tablet {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 88px 44px;
+    text-align: left;
+  }
+
+  @include on-big-laptop {
+    padding: 88px 124px;
+  }
+
+  &-grid-container {
+    display: grid;
+    grid-template-areas:
+      'menu'
+      'contact'
+      'social'
+      'copyright';
+    grid-template-columns: 1fr;
+
+    @include on-tablet {
+      grid-template-areas:
+        'menu contact'
+        'social copyright';
+      grid-template-columns: 1fr 1fr;
+      column-gap: 24px;
+    }
+  }
+
+  &__menu {
+    grid-area: menu;
+  }
+
+  &__contact-section {
+    grid-area: contact;
+  }
+
+  &__logo {
+    cursor: pointer;
+    transform-origin: left center;
+    display: flex;
+    transition: transform 0.3s ease;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__padding {
+    padding: 40px 0 0;
+  }
+
+  &-contact-inner-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include on-mid-laptop {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 24px;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    grid-area: copyright;
+    align-items: end;
+
+    @include on-tablet {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.list-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+
+  @include hover(transform, scale(1.2));
+
+  &-gray {
+    color: #7f8096;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.section-title {
+  margin: 0;
+  padding: 64px 0 0;
+
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 85%;
+  color: #fff;
+  text-transform: uppercase;
+
+  @include on-tablet {
+    padding: 0;
+    font-size: 56px;
+  }
+
+  @include on-mid-laptop {
+    font-size: 72px;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 32px;
+
+  img {
+    cursor: pointer;
+
+    display: block;
+
+    width: 24px;
+    height: 24px;
+
+    transition: filter 0.3s ease;
+  }
+
+  &__link-footer {
+    display: inline-block;
+    outline: none;
+    transition: transform 0.3s ease;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.2);
+
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}
+
+.bakerlab-2022 {
+  margin: 0;
+  padding: 40px 0 0;
+  font-size: 16px;
+  color: #7f8096;
+
+  @include on-mid-laptop {
+    padding: 0;
+  }
+}

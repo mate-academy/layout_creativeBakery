@@ -1,0 +1,86 @@
+.products {
+  overflow-x: hidden;
+  display: grid;
+  grid-column: 1 / -1;
+
+  box-sizing: border-box;
+  width: 100%;
+
+  @include page-grid;
+
+  &__image {
+    cursor: pointer;
+
+    display: block;
+
+    height: 356px;
+    margin: 56px 0 0;
+    border-radius: 8px;
+
+    object-fit: cover;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-tablet {
+      width: 328px;
+      height: 424px;
+      margin: 80px 0 0;
+    }
+
+    @include on-mid-laptop {
+      width: 402px;
+      height: 512px;
+    }
+
+    @include on-big-laptop {
+      width: 432px;
+      height: 560px;
+    }
+  }
+}
+
+.card {
+  grid-column: span 2;
+  justify-self: center;
+  width: 320px;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-mid-laptop {
+    grid-column: span 3;
+
+    //   $starts: (1, 4, 3, 6, 1, 4);
+
+    //   @for $i from 1 through length($starts) {
+    //     &:nth-child(6n + #{$i}) {
+    //       grid-column-start: nth($starts, $i) / span 3;
+    //     }
+    //  }
+
+    &:nth-child(6n + 1) {
+      grid-column: 1 / span 3;
+    }
+
+    &:nth-child(6n + 2) {
+      grid-column: 4 / span 3;
+    }
+
+    &:nth-child(6n + 3) {
+      grid-column: 3 / span 3;
+    }
+
+    &:nth-child(6n + 4) {
+      grid-column: 6 / span 3;
+    }
+
+    &:nth-child(6n + 5) {
+      grid-column: 1 / span 3;
+    }
+
+    &:nth-child(6n + 6) {
+      grid-column: 4 / span 3;
+    }
+  }
+}

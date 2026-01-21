@@ -1,0 +1,46 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+
+  @include on-tablet {
+    height: 64px;
+  }
+
+  @include on-mid-laptop {
+    height: 88px;
+  }
+
+  &__logo {
+    cursor: pointer;
+    display: flex;
+    padding: 16px;
+
+    @include hover(transform, scale(1.2));
+
+    @include on-mid-laptop {
+      padding: 28px 32px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-mid-laptop {
+      display: block;
+      margin: 28px 32px 28px 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 64px;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+    list-style: none;
+  }
+}

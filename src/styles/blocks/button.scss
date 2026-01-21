@@ -1,0 +1,112 @@
+.button {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 288px;
+  height: 56px;
+  margin: 290px auto 104px;
+  border: 2px solid #f9512e;
+  border-radius: 32px;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: #f9512e;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  background-color: $main-bg-color;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:disabled {
+    cursor: not-allowed;
+    border-color: #fba28f;
+    color: #fba28f;
+    background-color: transparent;
+  }
+
+  &:hover:not(:disabled) {
+    border-bottom: #f9512e;
+    color: #eef7ff;
+    background-color: #f9512e;
+  }
+
+  &:focus:not(:disabled) {
+    border-color: #b2341a;
+    color: #eef7ff;
+    background-color: #b2341a;
+  }
+
+  @include on-tablet {
+    width: 326px;
+    margin: 210px auto 228px;
+  }
+
+  @include on-mid-laptop {
+    width: 260px;
+    height: 56px;
+    margin: 64px 0;
+  }
+
+  @include on-big-laptop {
+    width: 280px;
+    height: 56px;
+    margin: 124px 0;
+  }
+
+  &__content {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  &__icon {
+    &--default {
+      display: block;
+    }
+
+    &--hover {
+      display: none;
+    }
+  }
+
+  &:disabled &__icon {
+    &--default {
+      display: block;
+    }
+
+    &--hover {
+      display: none;
+    }
+  }
+
+  &:is(:hover, :focus):not(:disabled) &__icon {
+    &--default {
+      display: none;
+    }
+
+    &--hover {
+      display: block;
+    }
+  }
+
+  &__order {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    margin: 16px 0 0;
+
+    color: #f9512e;
+    text-transform: uppercase;
+    transform-origin: left center;
+
+    @include hover(transform, scale(1.05));
+  }
+}
