@@ -3,7 +3,7 @@
 
 ## Tech review
 
-1. Add [favicon](http://joxi.ru/MAjagDPid4DEl2)
+1. Use the logo as a favicon
 2. Add a smooth scroll for the whole page (`scroll-behavior: smooth;`)
 3. Logos in header and footer should be links to home page
 4. Make sure when you click on logo there is no 404 error (Use `href="#"` in `anchor tag`)
