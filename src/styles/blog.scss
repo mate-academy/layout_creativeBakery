@@ -1,0 +1,47 @@
+.blog {
+  @include page-grid;
+
+  row-gap: 48px;
+  padding-bottom: 72px;
+  object-fit: contain;
+
+  @include on-tablet{
+    row-gap: 80px;
+    padding-bottom: 152px;
+  }
+
+  @include on-desktop{
+    padding-bottom: 349px;
+  }
+
+  &__content {
+    display: block;
+    transform-origin: center;
+
+    @include hover(transform, scale(1.1));
+
+    grid-column: 1 / -1;
+    margin-bottom: 8px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+
+    &--number {
+      @include content-big;
+
+      margin: 0;
+      font-size: 96px;
+    }
+
+    &--text {
+      @include description;
+
+      margin: 0;
+    }
+  }
+}
