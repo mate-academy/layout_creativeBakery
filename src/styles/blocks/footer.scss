@@ -1,0 +1,148 @@
+.footer {
+  padding-block: 56px;
+  background-color: $dark-text;
+
+  &__logo-link {
+    display: block;
+    width: 168px;
+    height: 40px;
+    color: $white-text;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: left;
+
+    &--right {
+      @include on-tablet {
+        grid-column: 4 / -1;
+      }
+
+      @include on-desktop-l {
+        grid-column: 5 / -1;
+      }
+    }
+
+    &--left {
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+    }
+  }
+
+  &__section-subtitle {
+    margin: 0;
+    font-size: 16px;
+    color: $grey-text;
+    text-transform: uppercase;
+  }
+
+  &__section-title {
+    margin: 0;
+
+    font-size: 48px;
+    line-height: 85%;
+    color: $white-text;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      grid-column: 4 / -1;
+      grid-row-start: 1;
+      font-size: 56px;
+    }
+
+    @include on-desktop-l {
+      grid-column: 5 / -1;
+      grid-row-start: 1;
+      font-size: 72px;
+    }
+  }
+
+  &__section-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__list {
+    gap: 16px;
+  }
+
+  &__nav-item {
+    display: flex;
+    justify-content: left;
+  }
+
+  &__nav-link {
+    position: relative;
+
+    width: fit-content;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $white-text;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+
+    @include hover(transform, scale(1.1));
+    @include underline-hover($white-text, 1px, -4px, 0.3s);
+  }
+
+  &__socials {
+    display: flex;
+    gap: 32px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__icon {
+    display: block;
+
+    width: 24px;
+    height: 24px;
+
+    color: $red-text;
+
+    transition: color 0.3s;
+
+    @include hover(transform, scale(1.1));
+
+    &:hover {
+      color: $white-text;
+    }
+  }
+
+  &__watermark {
+    color: $grey-text;
+
+    @include on-tablet {
+      grid-column: 4 / -1;
+      grid-row-start: 3;
+    }
+
+    @include on-desktop-l {
+      grid-column: 5 / -1;
+      grid-row-start: 3;
+    }
+  }
+}

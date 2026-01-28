@@ -1,0 +1,128 @@
+.about {
+  position: relative;
+
+  margin-bottom: 56px;
+
+  background-image: url(../images/Crumbs.png);
+  background-repeat: no-repeat;
+  background-position: top 500px left 0;
+  background-size: 320px auto;
+
+  @include on-tablet {
+    background-position: center;
+    background-size: 526px auto;
+  }
+
+  @include on-desktop-l {
+    min-height: 675px;
+    background-position: left 281px top 0;
+    background-size: 715px auto;
+  }
+
+  &__achive {
+    position: relative;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-desktop-l {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 85%;
+    color: $dark-text;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+
+    transition: color 0.3s;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop-l {
+      font-size: 72px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 64px;
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    margin: 0;
+    margin-bottom: 72px;
+    padding: 0;
+
+    text-align: left;
+
+    @include on-tablet {
+      gap: 80px;
+
+      @include page-grid;
+    }
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    text-align: left;
+
+    transition: color 0.3s;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop-l {
+      grid-column: span 2;
+    }
+  }
+
+  &__stat-value {
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+  }
+
+  &__stat-label {
+    margin: 0;
+    padding: 0;
+    color: $grey-text;
+  }
+}

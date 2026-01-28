@@ -1,0 +1,42 @@
+.header {
+  &__content {
+    position: relative;
+  }
+}
+
+.theme-switcher {
+  position: absolute;
+  right: 64px;
+
+  width: 40px;
+  padding: 5px;
+  border: $grey-text 2px solid;
+  border-radius: 20px;
+
+  transition: border-color 0.3s;
+
+  @include on-desktop-l {
+    right: 32px;
+  }
+}
+
+.theme-switcher::after {
+  content: '';
+
+  display: block;
+
+  width: 50%;
+  padding-bottom: 50%;
+  border-radius: 50%;
+
+  background-color: $grey-text;
+
+  transition:
+    transform 0.3s,
+    color 0.3s;
+}
+
+.theme-switcher--theme--red::after {
+  transform: translateX(100%);
+  background-color: $red-text;
+}

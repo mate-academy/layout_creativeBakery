@@ -4,3 +4,81 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-tablet() {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop-l() {
+  @media (min-width: $desktop-l-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop-xl() {
+  @media (min-width: $desktop-xl-min-width) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline() {
+  margin: 0 auto;
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop-l {
+    max-width: 1020px;
+  }
+
+  @include on-desktop-xl {
+    max-width: 1201px;
+    margin-inline: auto;
+  }
+}
+
+.container {
+  @include content-padding-inline;
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 20px;
+
+  @include on-tablet {
+    --columns: 8;
+
+    column-gap: 24px;
+  }
+}
+
+@mixin underline-hover($color, $height, $offset, $duration) {
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: #{$offset};
+    transform-origin: center;
+    transform: scale(0);
+
+    display: block;
+
+    width: 100%;
+    height: #{$height};
+
+    background-color: $color;
+
+    transition: transform 0.3s;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}

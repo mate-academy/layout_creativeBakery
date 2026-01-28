@@ -1,0 +1,37 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0;
+  padding: 16px;
+
+  transition: background-color 0.3s;
+
+  @include on-desktop-l {
+    padding: 28px 32px;
+  }
+
+  &__mobile {
+    @include on-desktop-l {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop-l {
+      padding-right: 80px;
+    }
+
+    @include on-desktop-l {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__logo-img {
+    @include hover(transform, scale(1.1));
+  }
+}

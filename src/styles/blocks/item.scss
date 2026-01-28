@@ -1,0 +1,37 @@
+.item {
+  &__card {
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop-l {
+      grid-column: span 3;
+    }
+
+    &--right {
+      @include on-desktop-l {
+        &:nth-child(3) {
+          grid-column: 3 / 6;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    margin: 0;
+    margin-bottom: 72px;
+    padding: 0;
+
+    list-style: none;
+
+    @include on-tablet {
+      @include page-grid;
+
+      justify-items: end;
+    }
+  }
+}

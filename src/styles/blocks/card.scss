@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__img {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__description {
+    margin: 0;
+    line-height: 150%;
+    color: $dark-text;
+
+    &--break--xl {
+      display: none;
+
+      @include on-desktop-xl {
+        display: inline;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    line-height: 100%;
+    color: $grey-text;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
