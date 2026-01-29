@@ -1,0 +1,281 @@
+.nav-hiden {
+  @include displayhidden {
+    display: none;
+  }
+}
+
+.hidden {
+  @include on-desktop {
+    display: none;
+
+  }
+}
+
+.header {
+  @include page-grid;
+
+  &__top {
+    display: flex;
+    grid-column: 1/-1;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-block: 20px;
+
+    &-right {
+      display: flex;
+
+      &-nav {
+        &-ul {
+          display: flex;
+          flex-direction: row;
+          gap: 64px;
+          list-style: none;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-column: 1/-1;
+    grid-template-columns: subgrid;
+    text-align: center;
+
+    @include on-tablet {
+      position: relative;
+
+    }
+
+    &-desc {
+      @include body-text;
+
+      grid-column: 1/span 2;
+      grid-row: 1;
+      padding-block: 32px;
+
+      @include on-tablet {
+        grid-column: 1/ span 2;
+        align-self: center;
+        padding-block: 80px;
+
+      }
+
+      @include on-desktop {
+        grid-column: 1/span 2;
+        grid-row: 1;
+      }
+    }
+
+    &-img {
+      width: 100%;
+
+      @include column-span-img;
+
+      @include on-tablet {
+        grid-row-start: 1;
+      }
+
+
+      &-title {
+        @include text-h1;
+
+        z-index: 2;
+        width: 100%;
+        background-color: transparent;
+
+        @include on-tablet {
+          @include padding-page;
+
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          width: 90%;
+
+          @include hover-orange;
+        }
+
+      }
+
+      &-imagem {
+        z-index: 1;
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &-bot {
+      grid-column: span 2;
+      margin-top: 20px; // Espaçamento entre a imagem e o botão
+
+
+
+      @include on-tablet {
+        grid-column: 3 /span 4;
+        grid-row: 3;
+
+      }
+
+      @include on-desktop {
+        grid-column: 1/span 2;
+        grid-row: 2;
+        align-self: flex-start;
+      }
+
+
+      &-link {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        &-button {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          justify-content: center;
+
+          width: 100%;
+
+          color: $ascent-orange;
+
+          @include button-default;
+
+          &-svg {
+            fill: $ascent-orange;
+          }
+
+          &:hover {
+            color: white;
+            background-color: $ascent-orange;
+
+            .header__content-bot-link-button-svg {
+              fill: $white;
+            }
+          }
+
+          &:focus {
+            border-color: $dark-orange;
+            color: white;
+            background-color: $dark-orange;
+
+            .header__content-bot-link-button-svg {
+              fill: $white;
+
+            }
+
+          }
+
+          &:disabled {
+            color: $light-orange;
+            background-color: $white;
+
+            .header__content-bot-link-button-svg {
+              fill: $light-orange;
+
+            }
+          }
+
+
+
+          // &-icon {
+          //   background-image: url(../images/icon/icon-cookie.png);
+          // }
+        }
+      }
+    }
+  }
+
+  // Menu que se sobrepõe
+  &__menu {
+    pointer-events: none;
+
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translate(100%);
+
+    grid-column: 1/-1;
+
+    height: 100vh;
+
+    opacity: 0;
+    background-color: #fff;
+
+    transition: all 0.3 ease;
+
+    @include padding-page;
+
+
+    &:target {
+      pointer-events: all;
+      transform: translate(0);
+      opacity: 1;
+    }
+
+    &-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 20px;
+
+      &-logo {
+        align-items: center;
+      }
+
+      
+    }
+
+    &-nav {
+
+      &-ul {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+
+        height: 40vh;
+
+        text-align: center;
+        list-style: none;
+
+        @include on-desktop {
+          height: 50vh;
+        }
+
+
+        &-li {
+          &-link {
+            color: $black;
+
+            &:hover {
+              color: $ascent-orange;
+            }
+
+            &-c {
+              line-height: 100%;
+              color: $black;
+              text-transform: uppercase;
+              letter-spacing: 2%;
+
+              &:hover {
+                color: $ascent-orange;
+
+                .icon-svg-phone {
+                  fill: $ascent-orange;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+}

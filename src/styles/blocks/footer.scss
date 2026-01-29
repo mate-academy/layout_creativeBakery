@@ -1,0 +1,157 @@
+.footer {
+  color: $white;
+  background-color: $black;
+
+  @include page-grid;
+  @include padding-page;
+  @include padding-block-bottom;
+
+  &__nav {
+    @include footer-span232;
+
+    padding-bottom: 64px;
+
+    &-logo {
+      padding-bottom: 24px;
+
+      @include on-tablet {
+        padding-bottom: 80px;
+      }
+
+      @include on-desktop {
+        padding-bottom: 44px;
+      }
+
+      &-svg {
+        fill: $white;
+        transition: fill 0.3s;
+
+        &:hover {
+          fill: $ascent-orange;
+        }
+
+        &:focus {
+          fill: $dark-orange;
+        }
+      }
+    }
+
+    &-ul {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      list-style: none;
+
+      &-li {
+        color: $gray;
+
+        &-link {
+          color: $white;
+          text-decoration: none;
+
+          &:hover {
+            color: $ascent-orange;
+          }
+        }
+      }
+    }
+  }
+
+  &__contact {
+    @include footer-span25;
+
+    &-title {
+      @include text-h2;
+
+      padding-bottom: 24px;
+    }
+
+    &-list {
+
+      @include on-desktop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 40px;
+
+      }
+
+      &-ul {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        list-style: none;
+
+
+        &-li {
+          grid-column: 1;
+          color: $gray;
+
+
+          &-link {
+            @include body-text;
+
+            color: $white;
+          }
+        }
+      }
+
+      &-ul2 {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        list-style: none;
+
+        &-li {
+          color: $gray;
+
+          &-link {
+            color: $white;
+            text-decoration: none;
+
+            @include body-text;
+          }
+        }
+
+      }
+    }
+
+
+  }
+
+  &-logo {
+    display: flex;
+    gap: 32px;
+    padding-block: 40px;
+
+    @include footer-span232;
+
+    &-svg {
+      fill: $white;
+
+      &:hover {
+        fill: $ascent-orange;
+      }
+
+      &:focus {
+        fill: $dark-orange;
+      }
+
+    }
+  }
+
+  &-allrights {
+    @include footer-span25;
+
+    place-self: center start;
+    color: $gray;
+  }
+}
+
+.email {
+  padding-top: 24px;
+
+  @include on-desktop {
+    padding: 0;
+  }
+
+}
