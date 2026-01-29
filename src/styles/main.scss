@@ -1,87 +1,10 @@
-@import 'utils';
-@import 'fonts';
-@import 'typography';
+@import 'base/utils';
+@import 'base/page';
+@import 'base/typography';
+@import 'base/fonts';
+
 @import 'blocks/header';
 @import 'blocks/about';
 @import 'blocks/products';
 @import 'blocks/footer';
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-}
-
-.page {
-  background-color: $light-blue;
-
-  @include body-text;
-
-  // remove o barra de rolagem se o page tiver com o #ativo no url.
-  &:has([id="#menu"]:target) {
-    overflow: hidden;
-  }
-}
-
-
-.icon {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-}
-
-.logo {
-  height: 24px;
-}
-
-
-
-.link {
-  text-decoration: none;
-}
-
-
-.icon-svg {
-  fill: $black;
-
-  &:hover {
-    fill: $ascent-orange;
-  }
-
-  &:focus {
-    fill: $dark-orange;
-  }
-
-  &:disabled {
-    fill: $light-orange;
-  }
-}
-
-.contact-us {
-  display: inline-flex; // Alinha ícone e texto na mesma linha
-  gap: 8px; // Cria o espaçamento entre o telefone e o texto
-  align-items: center; // Centraliza verticalmente o ícone com o texto
-  width: auto;
-}
-
-.contact-us-icon {
-  display: block;
-  width: 24px;
-  height: 24px;
-  background-image: url(../images/icon/icon-phone.png);
-}
-
-
-
-.arrow-icon {
-  display: inline-block;
-
-  width: 24px;
-  height: 24px;
-
-  background-image: url(/src/images/icon/icon-arrow.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
