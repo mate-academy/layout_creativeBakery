@@ -1,0 +1,267 @@
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width:768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width:1024px) {
+    @content;
+  }
+}
+
+@mixin on-large-desktop {
+  @media (min-width:1200px) {
+    @content;
+  }
+}
+
+// Fontes
+
+@mixin font-priorits {
+  font-family: Inter, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 85%;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+@mixin text-h1 {
+  /* Mobile headings/H1 */
+  @include font-priorits;
+
+  font-size: 64px;
+
+  /* or 54px */
+
+
+  @include on-tablet {
+    font-size: 80px;
+  }
+
+  @include on-desktop {
+    font-size: 136px;
+  }
+
+  @include on-large-desktop {
+    font-size: 144px;
+  }
+}
+
+@mixin text-h2 {
+  /* Mobile headings/H2 */
+  @include font-priorits;
+  @include hover-orange;
+
+  font-size: 48px;
+
+  /* identical to box height, or 41px */
+
+
+  @include on-tablet {
+    font-size: 56px;
+
+  }
+
+  @include on-desktop {
+    font-size: 72px;
+
+  }
+}
+
+@mixin big-text {
+  /* Big text */
+  @include font-priorits;
+
+  font-size: 96px;
+
+}
+
+@mixin body-text {
+  /* Body text */
+
+  font-family: Inter, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 150%;
+
+  /* identical to box height, or 24px */
+
+  letter-spacing: -1%;
+}
+
+@mixin uppercase-inter {
+  /* Uppercase */
+
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 100%;
+
+  /* identical to box height, or 16px */
+  color: $gray;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+// padding page
+
+@mixin padding-page {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-large-desktop {
+    padding-inline: 124px;
+  }
+}
+
+// layout grid
+
+@mixin page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  @include padding-page;
+
+  @include on-tablet {
+    column-gap: 24px;
+
+  }
+
+  @include on-tablet {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  @include on-large-desktop {
+    column-width: 128px;
+  }
+}
+
+@mixin button-default {
+  @include uppercase-inter;
+
+  height: 56px;
+  border: 2px solid $ascent-orange;
+  border-radius: 32px;
+  background-color: transparent;
+
+
+}
+
+// column span
+
+@mixin column-span242 {
+  grid-column: span 2;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 2;
+  }
+}
+
+@mixin column-span243 {
+  grid-column: span 2;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 3;
+  }
+}
+
+@mixin column-span24 {
+  grid-column: span 2;
+  grid-row: span 1;
+
+  @include on-tablet {
+    grid-column: span 4;
+    grid-row: unset;
+
+  }
+}
+
+@mixin column-span23 {
+  grid-column: span 2;
+
+  @include on-tablet {
+    grid-column: span 3;
+    grid-row: 1;
+
+  }
+}
+
+@mixin column-span-img {
+  grid-column: span 2;
+
+  @include on-tablet {
+    grid-column: 3 /span 4;
+    grid-row: 1/span 2;
+  }
+
+}
+
+@mixin gap-products {
+  gap: 56px;
+
+  @include on-tablet {
+    gap: 80px;
+  }
+}
+
+@mixin padding-block-bottom {
+  padding-block: 56px;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+}
+
+@mixin hover-orange {
+  &:hover {
+    color: $ascent-orange;
+  }
+}
+
+@mixin footer-span232 {
+  grid-column: span 2;
+
+  @include on-tablet {
+    grid-column: 1/span 3;
+  }
+
+  @include on-desktop {
+    grid-column: 1/span 2
+  }
+}
+
+@mixin footer-span25 {
+  grid-column: span 2;
+
+  @include on-tablet {
+    grid-column: 5/span 3;
+  }
+}
+
+@mixin displayhidden {
+  @media (max-width:1024px) {
+    @content;
+  }
+}
