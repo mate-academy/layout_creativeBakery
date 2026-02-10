@@ -1,0 +1,140 @@
+.footer {
+  padding-block: 56px;
+  background-color: $col-text-main;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  &__container {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__menu {
+    margin-block: 40px 64px;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      grid-row: 2;
+      margin-block-end: 0;
+    }
+
+    @include on-desktop {
+      margin-block: 0 48px;
+    }
+
+    &-title {
+      margin-block-start: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    color: white;
+    letter-spacing: -0.01em;
+
+    @include btn-hov-line(white);
+  }
+
+  &__contact-us {
+    &-title {
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 85%;
+      color: white;
+      letter-spacing: -0.05em;
+
+      @include on-tablet {
+        grid-column: 5 / 9;
+        grid-row: 1;
+        font-size: 56px;
+      }
+
+      @include on-desktop {
+        margin-block-end: 40px;
+        font-size: 72px;
+      }
+    }
+  }
+
+  &__call-us {
+    margin-block: 40px;
+
+    @include on-tablet {
+      grid-column: 5 / 9;
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 7;
+      margin-block: 0 48px;
+    }
+  }
+
+  &__email-us {
+    @include on-tablet {
+      grid-column: 5 / 9;
+      margin-block-end: 48px;
+    }
+
+    @include on-desktop {
+      grid-column: 7/9;
+      grid-row: 2;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    margin-block: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      grid-row: 4;
+      margin: 0;
+    }
+
+    a img {
+      transition: 0.4s ease-in-out;
+    }
+
+    a img:hover {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &__copyright {
+    font-size: 16px;
+    font-weight: 400;
+    color: $col-text-grey;
+    letter-spacing: -0.01em;
+
+    @include on-tablet {
+      grid-column: 5 / 9;
+      grid-row: 4;
+      margin-block-start: 0;
+    }
+  }
+}
+
+.footer .logo {
+  align-items: start;
+  height: 40px;
+  filter: invert(100%);
+
+  @include on-tablet {
+    grid-column: 1 / 5;
+  }
+}
+
+.icon__facebook {
+  align-self: center;
+}

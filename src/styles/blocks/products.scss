@@ -1,0 +1,75 @@
+.products {
+  padding-block: 64px 72px;
+
+  @include on-tablet {
+    @include page-grid;
+  }
+
+  @include on-desktop {
+    padding-block-end: 98px;
+  }
+
+  &__title {
+    margin-block-end: 24px;
+
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 85%;
+    color: $col-text-accent;
+    letter-spacing: -0.05em;
+
+    @include on-tablet {
+      grid-column: span 8;
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+  &__subtitle {
+    @include on-tablet {
+      grid-column: span 8;
+    }
+  }
+
+  &__card {
+    margin-block: 56px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-block: 80px;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+      &--grid-right {
+        grid-column: 3 / span 3; // Явно кажемо почати з 6-ї
+      }
+    }
+
+    // &--grid-right {
+    //   grid-column: 3 / span 3; // Явно кажемо почати з 6-ї
+    // }
+
+    &-image {
+      width: 100%;
+    }
+
+    &-title {
+      margin-block: 16px 8px;
+
+      font-weight: 500;
+      line-height: 100%;
+      color: $col-text-grey;
+      letter-spacing: -0.02em;
+    }
+
+    &-description {
+      margin-block-end: 16px;
+    }
+    &-button {
+      @include btn-hov-line;
+    }
+  }
+}

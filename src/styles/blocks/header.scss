@@ -1,0 +1,122 @@
+.header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  height: 64px;
+  padding: 16px;
+
+  background-color: $col-body;
+
+  @include on-desktop {
+    position: unset;
+
+    flex-direction: row;
+
+    max-width: 1440px;
+    height: 88px;
+    margin-inline: auto;
+    padding-inline: 32px;
+  }
+}
+
+.logo-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.menu-toggle {
+  visibility: hidden;
+
+  @include on-desktop {
+    display: none;
+  }
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  @include on-desktop {
+    display: none;
+  }
+
+  &__line {
+    width: 100%;
+    height: 2px;
+    background-color: $col-text-main;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.nav {
+  position: fixed;
+  inset: $height-header-mobile 0 0 0;
+  transform: translateX(100%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background-color: $col-body;
+
+  transition: transform 0.3s ease-in-out;
+
+  @include on-desktop {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    gap: 64px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+
+  &__link {
+    color: $col-text-main;
+
+    @include btn-hov-line($col-text-main, $col-text-main);
+  }
+  &__button {
+    @include btn-hov-line;
+
+    z-index: 1000;
+  }
+}
+
+.menu-toggle:checked ~ .nav {
+  // opacity: 1;
+  // visibility: visible;
+  z-index: 1000;
+  transform: translateX(0%);
+}
+
+.menu-toggle:checked ~ .burger .burger__line {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.menu-toggle:checked ~ .burger .burger__line:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}

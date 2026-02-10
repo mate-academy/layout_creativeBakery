@@ -1,0 +1,90 @@
+.about-us {
+  position: relative; // База для позиціонування
+  overflow: hidden; // Щоб картинка не створювала горизонтальний скрол
+  margin-block-end: 72px;
+
+  @include on-tablet {
+    @include page-grid;
+  }
+
+  @include on-desktop {
+    row-gap: 144px;
+    min-height: 673px;
+    margin-block: 0 56px;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 85%;
+    color: $col-text-accent;
+    letter-spacing: -0.05em;
+
+    @include on-tablet {
+      grid-column: span 4;
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+      font-size: 72px;
+    }
+  }
+
+  &__subtitle {
+    margin-block: 32px 16px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-block: 0 72px;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / -1;
+      margin-block: 0;
+    }
+  }
+
+  &__stats {
+    margin-block: 48px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-block: 0 80px;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+
+    &-title {
+      margin-block-end: 8px;
+
+      font-size: 96px;
+      font-weight: 400;
+      line-height: 85%;
+      color: $col-text-accent;
+    }
+  }
+
+  &__bg-image {
+    position: absolute;
+    z-index: -1; // Ховаємо під текст
+    // Мобільна версія: десь знизу праворуч
+    top: 50%;
+    width: 100%;
+
+    @include on-tablet {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 77.5%;
+    }
+
+    @include on-desktop {
+      grid-column: 3/ -2;
+      width: auto;
+      height: 100%;
+    }
+  }
+}
