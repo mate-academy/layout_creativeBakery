@@ -65,6 +65,7 @@
     text-transform: uppercase;
     letter-spacing: 2%;
 
+    transition: all $transition-duration;
   }
 
   &__button-more::before {
@@ -80,6 +81,70 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+
+    transition: all $transition-duration;
   }
 
+  &__button-more:hover {
+    background-color: $accent-orange;
+    color: $white;
+  }
+
+  &__button-more:hover::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+
+    display: inline-block;
+
+    margin-right: 4px;
+
+    background-image: url(../images/Icon-cookie-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+    &__button-more:focus {
+    background-color: $focused-button-color;
+    border-color: $focused-button-color;
+    outline: none;
+    color: $white;
+  }
+
+  &__button-more:focus::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+
+    display: inline-block;
+
+    margin-right: 4px;
+
+    background-image: url(../images/Icon-cookie-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  &__button-more:disabled {
+    color: $disabled-button-color;
+    background-color: transparent;
+    border-color: $disabled-button-color;
+  }
+
+  &__button-more:disabled::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+
+    display: inline-block;
+
+    margin-right: 4px;
+
+    background-image: url(../images/Icon-cookie-disabled.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
 }
