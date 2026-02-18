@@ -5,6 +5,7 @@
 @import 'blocks/header';
 @import 'blocks/menu';
 @import 'blocks/products';
+@import 'blocks/about-us';
 
 .page {
   scroll-behavior: smooth;
@@ -13,62 +14,149 @@
 .page__body {
   margin: 0;
   background: $page-color;
-
-  @include margin-inline;
 }
 
-.about-us {
-  &__title {
-    margin: 72px 0 0;
+.footer {
+  @include padding-inline;
 
+  background-color: $main-text-color;
+
+  &__top-bar {
+    padding: 0;
+    }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin-top: 40px;
+  }
+}
+
+.top-bar {
+
+  &__logo--white {
+    background-image: url(../images/top-bar/Logo-white.png);
+    margin-top: 56px;
+  }
+}
+
+.nav {
+
+  &__title {
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $text-color-grey;
+
+    margin: 0;
+  }
+
+  &__list-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link-footer {
+    position: relative;
+    color: $white;
+    text-decoration: none;
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      background-color: $white;
+      height: 1px;
+      display: block;
+      width: 100%;
+
+      transition: transform $transition-duration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+}
+
+.contact-us {
+  margin-top: 64px;
+
+  &__title {
     font-family: $font-family;
     font-weight: 400;
     font-size: 48px;
     line-height: 85%;
     letter-spacing: -5%;
     text-transform: uppercase;
-    color: $accent-orange;
+    color: $white;
+
+    margin: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
   }
 
   &__description {
-    margin: 32px 0 0;
+    margin: 0;
 
     font-family: $font-family;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 16px;
-    line-height: 150%;
-    letter-spacing: -1%;
-    color: $main-text-color;
-  }
-
-  &__statistic {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-
-    margin-top: 64px;
-
-    background-image: url(../images/Crumbs-background.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 0 120px;
-    width: 100%;
-    height: auto;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $text-color-grey;
   }
 
   &__number {
+    position: relative;
+    width: max-content;
     margin: 0;
 
-    font-family: $font-family;
-    font-weight: 400;
-    font-size: 96px;
-    line-height: 85%;
-    letter-spacing: -5%;
-    text-transform: uppercase;
-    color: $accent-orange;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      background-color: $white;
+      height: 1px;
+      display: block;
+      width: 100%;
+
+      transition: transform $transition-duration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
   }
 
-  &__text {
+  &__tel {
     margin: 0;
 
     font-family: $font-family;
@@ -76,9 +164,78 @@
     font-size: 16px;
     line-height: 150%;
     letter-spacing: -1%;
-    color: $main-text-color;
+    color: $white;
+    text-decoration: none;
+  }
+
+  &__info {
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__email {
+    margin: 0;
+  }
+
+  &__link {
+    position: relative;
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    color: $white;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      background-color: $white;
+      height: 1px;
+      display: block;
+      width: 100%;
+
+      transition: transform $transition-duration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__icons {
+    margin-top: 40px;
+
+    display: flex;
+    gap: 32px;
+  }
+
+  &__icon {
+    @include icon-size;
+
+    transition: transform $transition-duration;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__copy {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    color: $text-color-grey;
+
+    margin: 0;
+    padding: 40px 0 56px;
   }
 }
-
-
-
