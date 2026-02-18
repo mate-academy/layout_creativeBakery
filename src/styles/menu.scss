@@ -1,0 +1,35 @@
+.menu {
+  padding: 16px;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-y: auto;
+  background: $c-blue-light;
+  opacity: 0;
+  pointer-events: none;
+
+  scroll-behavior: smooth;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.page__menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &:target body {
+    overflow: hidden;
+  }
+}
