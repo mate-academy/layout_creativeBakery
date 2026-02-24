@@ -1,32 +1,36 @@
 .menu {
-  padding: 16px;
+  pointer-events: none;
+  scroll-behavior: smooth;
+
+  overflow-y: auto;
+
   box-sizing: border-box;
   height: 100vh;
-  overflow-y: auto;
-  background: $c-blue-light;
-  opacity: 0;
-  pointer-events: none;
+  padding: 16px;
 
-  scroll-behavior: smooth;
+  opacity: 0;
+  background: $c-blue-light;
 
   &__top {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 }
 
 .page__menu {
+  pointer-events: none;
+
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+
   opacity: 0;
-  pointer-events: none;
 
   &:target {
-    opacity: 1;
     pointer-events: all;
+    opacity: 1;
   }
 
   &:target body {

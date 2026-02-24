@@ -1,21 +1,57 @@
 .header__button {
+  cursor: pointer;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   box-sizing: border-box;
   width: 288px;
   height: 56px;
   margin: 0 auto;
   border: 2px solid $c-orange-accent;
-  color: $c-orange-accent;
-  background-color: $c-blue-light;
   border-radius: 32px;
+
+  color: $c-orange-accent;
   text-transform: uppercase;
-  cursor: pointer;
+
+  background-color: $c-blue-light;
 
   transition:
     color 0.3s,
     background-color 0.3s;
+
+  &::before {
+    content: '';
+
+    display: inline-block;
+
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+
+    background-image: url('../images/Icon-cookie.png');
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    color: $c-white;
+    background-color: $c-orange-accent;
+  }
+
+  &:focus {
+    border-color: $c-orange-dark;
+    color: $c-white;
+    background-color: $c-orange-dark;
+  }
+
+  &:hover::before {
+    background-image: url('../images/icon-cookie-hover.png');
+  }
+
+  &:focus::before {
+    background-image: url('../images/icon-cookie-hover.png');
+  }
 
   @media (min-width: 640px) {
     width: 326px;
@@ -28,34 +64,5 @@
 
   @media (min-width: 1440px) {
     width: 280px;
-  }
-
-  &:hover {
-    color: $c-white;
-    background-color: $c-orange-accent;
-  }
-
-  &:focus {
-    color: $c-white;
-    background-color: $c-orange-dark;
-    border-color: $c-orange-dark;
-  }
-
-  &::before {
-    content: '';
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    margin-right: 4px;
-    background-image: url('../images/Icon-cookie.png');
-    background-repeat: no-repeat;
-  }
-
-  &:hover::before {
-    background-image: url('../images/icon-cookie-hover.png');
-  }
-
-  &:focus::before {
-    background-image: url('../images/icon-cookie-hover.png');
   }
 }
