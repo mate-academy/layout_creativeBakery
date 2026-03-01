@@ -1,0 +1,45 @@
+.page {
+  scroll-behavior: smooth;
+  background-color: $light-pink;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 150%;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__header {
+    padding-bottom: 40px;
+  }
+
+  &__layout-main {
+    margin-top: 104px;
+  }
+
+  &__menu {
+    background-color: $light-pink;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    min-height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    transition-duration: 0.3s;
+    transform: translate(-100%);
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(0);
+    }
+  }
+
+  &__footer {
+    margin-top: 72px;
+    @include on-tablet-big {
+      margin-top: 300px;
+    }
+  }
+}

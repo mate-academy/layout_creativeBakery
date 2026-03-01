@@ -1,0 +1,123 @@
+.header {
+  &__content {
+    @include content-padding;
+  }
+
+  &__bottom {
+    position: relative;
+
+    justify-items: center;
+
+    @include page-grid;
+  }
+
+  &__description {
+    margin-top: 32px;
+    grid-column: 1/-1;
+    font-size: 16px;
+    letter-spacing: -1%;
+    text-align: center;
+
+    @include on-tablet {
+      margin-top: 100px;
+      grid-column: 1/5;
+      text-align: left;
+    }
+
+    @include on-tablet-big {
+      grid-column: 1/3;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-align: center;
+    color: $light-orange;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 32px;
+
+    @include on-tablet {
+      font-size: 80px;
+      top: 40%;
+      position: absolute;
+    }
+
+    @include on-tablet {
+      @media (min-width: 1250px) {
+        font-size: 135px;
+        top: 30%;
+      }
+    }
+  }
+
+  &__cookie {
+    grid-column: 1/-1;
+    width: 100%;
+
+    @include on-tablet {
+      grid-column: 3/7;
+    }
+  }
+
+  &__button {
+    border-radius: 32px;
+    border: 2px solid $light-orange;
+    height: 56px;
+    grid-column: 1/-1;
+    width: 100%;
+    text-decoration: none;
+    color: $light-orange;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+
+    transition: all 0.3s;
+
+    &::before {
+      content: '';
+      background-image: url(/src/images/icon/cookie-icon.svg);
+      height: 20px;
+      width: 20px;
+    }
+
+    &:hover {
+      color: white;
+      background-color: $light-orange;
+    }
+
+    &:hover::before {
+      content: '';
+      background-image: url(/src/images/icon/cookie-icon-white.svg);
+    }
+
+    &:active {
+      background-color: $dark-orange;
+      border: $dark-orange;
+    }
+
+    @include on-tablet {
+      grid-column: 3/7;
+
+      bottom: 0;
+      margin-top: 80px;
+    }
+
+    @include on-tablet-big {
+      position: relative;
+      bottom: 200px;
+      grid-column: 1/3;
+      margin: 0;
+    }
+  }
+}

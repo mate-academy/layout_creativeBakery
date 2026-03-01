@@ -1,0 +1,108 @@
+.products {
+  &__container {
+    @include content-padding;
+
+    @include page-grid;
+
+    row-gap: 56px;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__top {
+    grid-column: 1/-1;
+  }
+
+  &__describe {
+    margin: 0;
+    margin-top: 24px;
+  }
+
+  &__photo {
+    width: 100%;
+  }
+
+  &__product {
+    @include hover(transform, scale(1.03));
+
+    grid-column: span 2;
+    display: grid;
+    row-gap: 16px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &-info {
+      display: grid;
+      row-gap: 8px;
+    }
+
+    &-title {
+      color: $c-dark-gray;
+      font-weight: 500;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    @include on-tablet-big {
+      &--cakes {
+        grid-column: 1/4;
+      }
+
+      &--bisquits {
+        grid-column: 4/7;
+      }
+
+      &--donuts {
+        grid-column: 3/6;
+      }
+
+      &--donut {
+        grid-column: 6/-1;
+      }
+
+      &--browny {
+        grid-column: 1/4;
+      }
+
+      &--cookies {
+        grid-column: 4/7;
+      }
+    }
+
+    &-description {
+      color: $text-color;
+    }
+  }
+
+  &__order {
+    display: flex;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: $light-orange;
+    text-decoration: none;
+    transform: translate(8px);
+
+    &::before {
+      content: '';
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(/src/images/icon/arrow-icon.svg);
+      height: 15.5px;
+      width: 16px;
+      transform: translate(-8px);
+    }
+
+    &:hover::before {
+      content: '';
+      transition: transform 0.3s;
+      transform: translate(1px);
+    }
+  }
+}

@@ -1,0 +1,75 @@
+.blog {
+  &__content {
+    @include content-padding;
+
+    @include page-grid;
+
+    row-gap: 48px;
+    position: relative;
+
+    @include on-tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__product {
+    display: grid;
+    row-gap: 8px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      &--year {
+        grid-column: 1/5;
+      }
+      &--companies {
+        grid-column: 1/5;
+      }
+      &--stores {
+        grid-column: 5/-1;
+      }
+      &--clients {
+        grid-column: 5/-1;
+      }
+    }
+
+    @include on-tablet {
+      @media (min-width: 1200px) {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+    color: $light-orange;
+  }
+
+  &__description {
+    color: $text-color;
+  }
+
+  &__background {
+    position: absolute;
+    z-index: -1;
+    bottom: 246px;
+    width: 100%;
+
+    grid-column: 1/-1;
+    object-fit: contain;
+
+    @include on-tablet {
+      grid-column: 2/-2;
+      bottom: 50px;
+      max-width: 550px;
+    }
+
+    @include on-tablet-big {
+      grid-column: 3/-1;
+      max-width: 750px;
+      bottom: -250px;
+    }
+  }
+}

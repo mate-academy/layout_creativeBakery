@@ -1,0 +1,98 @@
+.nav {
+  margin-top: 132px;
+
+  @include on-tablet-big {
+    margin: 0;
+  }
+
+  &--header {
+    display: none;
+
+    @include on-tablet-big {
+      display: block;
+    }
+  }
+
+  &--footer {
+    margin: 0;
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include on-tablet-big {
+      flex-direction: row;
+      gap: 64px;
+    }
+
+    &--footer{
+      @include on-tablet-big {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+
+  }
+
+  &__link {
+    margin: auto;
+    width: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: $text-color;
+    justify-content: center;
+
+    &::after {
+      transition: all 0.3s;
+
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      bottom: -8px;
+      height: 1px;
+      background-color: $text-color;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      content: '';
+      transform: scale(1);
+    }
+
+    &--footer {
+      color: #fff;
+      display: block;
+      margin: 0;
+
+      &::after {
+        content: '';
+        background-color: #fff;
+      }
+    }
+  }
+  &__contacts {
+    color: $light-orange;
+    text-transform: uppercase;
+
+    &::before {
+      background-repeat: no-repeat;
+      content: '';
+      background-image: url(/src/images/icon/orange-phone-icon.svg);
+      height: $icon-size;
+      width: $icon-size;
+    }
+
+    &::after {
+      content: '';
+      background-color: $light-orange;
+    }
+  }
+}
