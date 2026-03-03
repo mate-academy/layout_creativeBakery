@@ -1,0 +1,91 @@
+.about-us {
+  @include page-grid;
+
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    top: 544px;
+    left: -16px;
+    width: 100%;
+    z-index: -1;
+
+    @include on-tablet {
+      top: 51px;
+      left: 77px;
+    }
+
+    @include on-desktop-small {
+      top: 0;
+      left: 281px;
+    }
+
+    @include on-desktop-big {
+      top: 0;
+      left: 237px;
+    }
+  }
+
+  &__title {
+    margin-bottom: $spacing-4;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__text {
+    margin-bottom: $spacing-8;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-bottom: $spacing-9;
+    }
+
+    @include on-desktop-small {
+      margin-bottom: 144px;
+    }
+
+    @include on-desktop-big {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__stats {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+    margin-bottom: $spacing-9;
+
+    &-number {
+      font-size: 96px;
+      display: block;
+      line-height: 1;
+    }
+
+    @include on-desktop-small {
+      margin-bottom: $spacing-7;
+    }
+
+    &-item {
+      grid-column: span 2;
+      margin-bottom: $spacing-6;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include on-tablet {
+        grid-column: span 4;
+        margin-bottom: $spacing-10;
+      }
+
+      @include on-desktop-small {
+        grid-column: span 2;
+        margin-bottom: 293px;
+      }
+    }
+  }
+}
