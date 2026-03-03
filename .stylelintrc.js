@@ -1,9 +1,7 @@
 module.exports = {
-  extends: "@mate-academy/stylelint-config",
-  plugins: [
-    "stylelint-scss"
-  ],
+  extends: '@mate-academy/stylelint-config',
+  plugins: ['stylelint-scss'],
   rules: {
-    "declaration-empty-line-before": null
-  }
+    'declaration-empty-line-before': null,
+  },
 };
