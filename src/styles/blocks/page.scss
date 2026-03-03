@@ -1,0 +1,35 @@
+.page {
+  font-family: Inter, sans-serif;
+  font-size: $spacing-2;
+  line-height: 150%;
+  font-weight: 400;
+  color: $dark-color;
+  background-color: $bg-color;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
+
+.container {
+  @include content-padding-inline;
+
+  overflow-x: hidden;
+}
