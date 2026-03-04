@@ -1,0 +1,38 @@
+.page {
+  user-select: none;
+
+  font-family: Inter, sans-serif;
+  font-size: $txt-regular-font-size;
+  font-weight: $txt-regular-font-weight;
+  font-style: normal;
+  line-height: $txt-regular-line-height;
+  color: $txt-color-dark;
+  letter-spacing: $txt-regular-letter-spacing;
+
+  background-color: $bg-color;
+
+  &__body {
+    min-width: 320px;
+    margin: 0;
+  }
+
+  &__menu {
+    pointer-events: none;
+
+    position: fixed;
+    inset: 0;
+    transform: translateX(-100%);
+
+    transition: all $transition-time;
+
+    &:target {
+      pointer-events: all;
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}

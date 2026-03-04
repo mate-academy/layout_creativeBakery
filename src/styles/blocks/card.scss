@@ -1,0 +1,52 @@
+.card {
+  grid-column: span 2;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 3;
+  }
+
+  &__photo {
+    width: 100%;
+    margin: 0;
+    border-radius: 8px;
+    object-fit: cover;
+
+    @include hover(transform, scale($transform-card-scale));
+  }
+
+  &__description {
+    display: grid;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  &__title {
+    margin: 0;
+    color: $txt-color-title;
+
+    @include txt-style-title;
+  }
+
+  &__quote {
+    margin: 0;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-content: center;
+
+    padding-top: 8px;
+
+    color: $color-accent;
+
+    @include txt-style-title;
+    @include hover-title;
+    @include hover(transform, scale($transform-button-scale));
+  }
+}

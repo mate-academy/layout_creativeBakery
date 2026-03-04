@@ -1,0 +1,94 @@
+.about-us {
+  position: relative;
+  overflow: hidden;
+
+  @include on-desktop {
+    padding-bottom: 350px;
+  }
+
+  &__content {
+    @include page-grid;
+
+    row-gap: 32px;
+
+    &--achievement {
+      row-gap: 48px;
+      margin-top: 64px;
+
+      @include on-tablet {
+        row-gap: 80px;
+        margin-top: 72px;
+      }
+
+      @include on-desktop {
+        margin-top: 144px;
+      }
+    }
+  }
+
+  &__title {
+    z-index: 5;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__description {
+    z-index: 5;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__achievement {
+    z-index: 5;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__achievement-title {
+    margin: 0;
+    font-size: 96px;
+  }
+
+  &__achievement-description {
+    color: $txt-color-title;
+  }
+
+  &__bg-photo {
+    position: absolute;
+    z-index: 0;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 400px;
+    height: auto;
+
+    @include hover(
+      transform,
+      translate(-50%, -50%) scale($transform-photo-scale)
+    );
+
+    @include on-tablet {
+      top: 45%;
+      width: 550px;
+    }
+
+    @include on-desktop {
+      top: 50%;
+      width: 750px;
+    }
+  }
+}
