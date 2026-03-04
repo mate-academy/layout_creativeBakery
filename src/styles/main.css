@@ -210,6 +210,11 @@
   display: block;
   width: 100%;
   height: auto;
+  transition: transform 0.3s;
+}
+
+.header__img:hover {
+  transform: scale(1.08);
 }
 
 @media (min-width: 640px) {
@@ -227,6 +232,9 @@
 
     width: 50%;
     max-width: 600px;
+  }
+  .header__img:hover {
+    transform: translateX(-50%) scale(1.08);
   }
 }
 
@@ -485,6 +493,7 @@
   text-transform: uppercase;
   letter-spacing: 0.02em;
 
+  transition: all 0.3s;
   transition: transform 0.3s;
 }
 
@@ -570,6 +579,8 @@
 }
 
 .products__wrapper {
+  --columns: 2;
+
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
   gap: 56px 16px;
@@ -577,9 +588,6 @@
 
   width: 100%;
   margin-top: 56px;
-
-  /* stylelint-disable-next-line order/order */
-  --columns: 2;
 }
 
 @media (min-width: 640px) {
@@ -647,6 +655,12 @@
 
   -o-object-fit: cover;
   object-fit: cover;
+
+  transition: transform 0.3s;
+}
+
+.card__photo:hover {
+  transform: scale(1.01);
 }
 
 .card__description {
@@ -688,8 +702,44 @@
   transition: transform 0.3s;
 }
 
+.card__link::after {
+  content: '';
+
+  position: absolute;
+  bottom: -8px;
+  transform-origin: left;
+  transform: scale(0);
+
+  display: block;
+
+  width: 100%;
+  height: 1px;
+
+  background-color: rgb(249, 81, 46);
+
+  transition: transform 0.3s;
+}
+
 .card__link:hover {
   transform: scale(1.04);
+  color: rgb(249, 81, 46);
+}
+
+.card__link:hover::after {
+  transform: scale(1);
+}
+
+.card__link:focus {
+  color: rgb(178, 52, 26);
+}
+
+.card__link:focus::after {
+  transform: scale(1);
+  background-color: rgb(178, 52, 26);
+}
+
+.card__link:disabled {
+  color: rgb(251, 162, 143);
 }
 
 .about-us {
@@ -708,8 +758,8 @@
 
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
-  gap: 16px 32px;
   -moz-column-gap: 16px;
+  column-gap: 16px 32px;
 }
 
 @media (min-width: 640px) {
@@ -747,6 +797,7 @@
 }
 
 .about-us__title {
+  z-index: 5;
   grid-column: 1/-1;
 }
 
@@ -757,6 +808,7 @@
 }
 
 .about-us__description {
+  z-index: 5;
   grid-column: 1/-1;
 }
 
@@ -767,6 +819,7 @@
 }
 
 .about-us__achievement {
+  z-index: 5;
   grid-column: span 2;
 }
 
@@ -792,16 +845,20 @@
 }
 
 .about-us__bg-photo {
-  pointer-events: none;
-
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   width: 400px;
   height: auto;
+
+  transition: transform 0.3s;
+}
+
+.about-us__bg-photo:hover {
+  transform: translate(-50%, -50%) scale(1.08);
 }
 
 @media (min-width: 640px) {
@@ -833,8 +890,8 @@
 
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
-  gap: 16px 40px;
   -moz-column-gap: 16px;
+  column-gap: 16px 40px;
 }
 
 @media (min-width: 640px) {
@@ -942,7 +999,7 @@
   text-decoration: none;
   word-break: break-all;
   overflow-wrap: break-word;
-  /* stylelint-disable-next-line order/properties-order */
+
   transition: transform 0.3s;
 }
 
