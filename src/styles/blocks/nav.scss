@@ -1,0 +1,51 @@
+.nav {
+  &--header {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 64px;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    &--menu {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    @include hover(transform, scale($transform-icon-scale));
+  }
+
+  &__link {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    caret-color: transparent;
+
+    &--contact {
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+      justify-content: center;
+
+      color: $color-accent;
+
+      @include txt-style-title;
+    }
+
+    @include hover-title;
+  }
+}

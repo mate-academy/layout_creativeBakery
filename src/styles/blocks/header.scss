@@ -1,0 +1,176 @@
+.header {
+  position: relative;
+
+  &__content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  &__main-content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+
+    padding-top: 32px;
+
+    @include on-tablet {
+      padding-top: 80px;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      display: block;
+
+      width: max-content;
+      padding-top: 0;
+    }
+  }
+
+  &__hero-wrapper {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    @include on-tablet {
+      justify-content: center;
+      height: 100%;
+    }
+
+    @include on-desktop {
+      position: static;
+      transform: none;
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__quote {
+    width: 100%;
+    margin: 0 0 32px;
+    text-align: center;
+
+    @include on-tablet {
+      align-self: flex-start;
+      max-width: 280px;
+      margin: 0 0 16px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      z-index: 15;
+      bottom: calc(100% + 8px);
+      left: 0;
+
+      width: 260px;
+      margin: 0;
+    }
+
+    @include on-design {
+      bottom: calc(100% + 40px);
+      width: 280px;
+    }
+  }
+
+  &__title {
+    pointer-events: none;
+
+    z-index: 5;
+
+    margin: 0;
+
+    font-size: 64px;
+    text-align: center;
+    white-space: normal;
+
+    &--break {
+      display: block;
+
+      @include on-tablet {
+        display: inline;
+      }
+    }
+
+    @include txt-style-big-title;
+
+    @include on-tablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: max-content;
+
+      font-size: clamp(60px, 10vw, 80px);
+      white-space: nowrap;
+    }
+
+    @include on-desktop {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+
+      display: block;
+
+      font-size: clamp(80px, 12vw, 136px);
+      white-space: nowrap;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    @include on-tablet {
+      width: 50%;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 50%;
+      max-width: 600px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    @include on-tablet {
+      z-index: 20;
+      width: 50%;
+      margin-top: 80px;
+      padding: 16px 0;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      top: calc(100% + 64px);
+      left: 0;
+
+      width: 260px;
+      margin: 0;
+    }
+  }
+}

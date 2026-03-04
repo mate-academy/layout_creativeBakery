@@ -1,6 +1,111 @@
+@mixin on-tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin on-design {
+  @media (min-width: $design-width) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline() {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+}
+
+.container {
+  @include content-padding-inline;
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 16px;
+
+  @include on-tablet {
+    --columns: 8;
+
+    column-gap: 24px;
+  }
+
+  @include on-design {
+    column-width: 128px;
+  }
+}
+
+@mixin txt-style-title {
+  font-weight: $txt-title-font-weight;
+  line-height: $txt-title-line-height;
+  text-decoration: none;
+  text-transform: $txt-transform;
+  letter-spacing: $txt-title-letter-spacing;
+}
+
+@mixin txt-style-big-title {
+  font-weight: $txt-regular-font-weight;
+  line-height: $txt-big-line-height;
+  text-decoration: none;
+  text-transform: $txt-transform;
+  letter-spacing: $txt-big-letter-spacing;
+}
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $transition-time;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin hover-title {
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: -8px;
+    transform-origin: left;
+    transform: scale(0);
+
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: $color-accent;
+
+    transition: transform $transition-time;
+  }
+
+  &:hover {
+    color: $color-accent;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+
+  &:focus {
+    color: $color-focused;
+  }
+
+  &:focus::after {
+    transform: scale(1);
+    background-color: $color-focused;
+  }
+
+  &:disabled {
+    color: $color-disabled;
   }
 }

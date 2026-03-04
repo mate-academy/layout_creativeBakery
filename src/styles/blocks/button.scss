@@ -1,0 +1,44 @@
+.button {
+  box-sizing: border-box;
+  padding: 18px 0;
+  border: $button-border solid $color-accent;
+  border-radius: $button-radius;
+
+  color: $color-accent;
+  text-decoration: none;
+
+  transition: all $transition-time;
+
+  @include txt-style-title;
+
+  @include hover(transform, scale($transform-button-scale));
+
+  &:hover {
+    color: $txt-color-light;
+    background-color: $color-accent;
+
+    .icon--cookie {
+      background-image: url(../images/icons/icon-cookie-hovered.svg);
+    }
+  }
+
+  &:focus {
+    border-color: $color-focused;
+    color: $txt-color-light;
+    background-color: $color-focused;
+
+    .icon--cookie {
+      background-image: url(../images/icons/icon-cookie-hovered.svg);
+    }
+  }
+
+  &:disabled {
+    border-color: $color-disabled;
+    color: $color-disabled;
+    background-color: $bg-color;
+
+    .icon--cookie {
+      background-image: url(../images/icons/icon-cookie-disabled.svg);
+    }
+  }
+}
