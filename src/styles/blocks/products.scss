@@ -1,0 +1,144 @@
+.product {
+  @include margin-inline;
+
+  &__content--tablet {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__content--desktop {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__title {
+    margin: 104px 0 0;
+
+    @include on-tablet {
+      margin-top: 200px;
+
+      font-size: 56px;
+    }
+
+    @include on-dekstop {
+      font-size: 72px;
+    }
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+    color: $accent-orange;
+  }
+
+  &__description {
+    margin: 24px 0 0;
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    color: $main-text-color;
+  }
+}
+
+.goods {
+  margin-top: 56px;
+
+  @include on-tablet {
+    margin-top: 80px;
+  }
+
+  @include on-dekstop {
+    max-width: 402px;
+  }
+
+  &__img{
+    @include product-img-size;
+
+    object-fit: cover;
+    border-radius: 8px;
+
+    margin-bottom: 16px;
+    transition: transform $transition-duration ease;
+  }
+
+  &__img:hover {
+    transform: scale($scale);
+  }
+
+  &__category {
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $text-color-grey;
+
+    text-decoration: none;
+  }
+
+  &__description {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    color: $main-text-color;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: flex-start;
+    margin-top: 16px;
+    padding: 0;
+
+    border: none;
+    background: none;
+
+    cursor: pointer;
+
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $accent-orange;
+  }
+
+  &__button::before {
+    content: '';
+
+    @include icon-size;
+
+    display: inline-block;
+
+    background-image: url(../images/Icon-arrow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+    &__button:hover {
+      @keyframes order {
+        0%{
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(10px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      animation: order 0.6s ease-in-out;
+  }
+}

@@ -1,7 +1,287 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import 'blocks/top-bar';
+@import 'blocks/header';
+@import 'blocks/menu';
+@import 'blocks/products';
+@import 'blocks/about-us';
 
-body {
-  background: $c-gray;
+.page {
+  scroll-behavior: smooth;
+}
+
+.page__body {
+  margin: 0;
+  background: $page-color;
+}
+
+.footer {
+  @include padding-inline;
+
+  background-color: $main-text-color;
+
+  @include on-tablet {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+
+  &__top-bar {
+    padding: 0;
+    }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding-top: 40px;
+
+    @include on-tablet {
+      padding-top: 64px;
+    }
+  }
+}
+
+.top-bar {
+
+  &__logo--white {
+    background-image: url(../images/top-bar/Logo-white.png);
+  }
+}
+
+.nav {
+
+  &__title {
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $text-color-grey;
+
+    margin: 0;
+  }
+
+  &__list-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link-footer {
+    position: relative;
+    color: $white;
+    text-decoration: none;
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      background-color: $white;
+      height: 1px;
+      display: block;
+      width: 100%;
+
+      transition: transform $transition-duration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+}
+
+.contact-us {
+  margin-top: 64px;
+
+  @include on-tablet {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+    color: $white;
+
+    margin: 0;
+
+    max-width: 270px;
+
+    @include on-tablet {
+      font-size: 56px;
+    }
+
+    @include on-dekstop {
+      font-size: 72px;
+      max-width: 544px;
+    }
+  }
+
+  &__information {
+    @include on-dekstop {
+     display: flex;
+     flex-direction: row;
+     gap: 24px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+    width: 260px;
+
+    @include on-dekstop {
+      margin-top: 50px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $text-color-grey;
+  }
+
+  &__number {
+    position: relative;
+    width: max-content;
+    margin: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      background-color: $white;
+      height: 1px;
+      display: block;
+      width: 100%;
+
+      transition: transform $transition-duration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__tel {
+    margin: 0;
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    color: $white;
+    text-decoration: none;
+  }
+
+  &__info {
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include on-dekstop {
+      margin-top: 50px;
+    }
+  }
+
+  &__email {
+    margin: 0;
+  }
+
+  &__link {
+    position: relative;
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    color: $white;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      background-color: $white;
+      height: 1px;
+      display: block;
+      width: 100%;
+
+      transition: transform $transition-duration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__icons {
+    margin-top: 40px;
+
+    display: flex;
+    gap: 32px;
+
+    @include on-tablet {
+      align-self: flex-start
+    }
+  }
+
+  &__icon {
+    @include icon-size;
+
+    transition: transform $transition-duration;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__copy {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    color: $text-color-grey;
+
+    margin: 0;
+    padding: 40px 0 56px;
+  }
 }

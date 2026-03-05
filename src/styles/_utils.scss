@@ -1,3 +1,73 @@
 @import 'utils/vars';
 @import 'utils/mixins';
 @import 'utils/extends';
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-dekstop {
+  @media (min-width: $dekstop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-max {
+  @media (min-width: $max-min-width) {
+    @content;
+  }
+}
+
+@mixin margin-inline {
+  margin-inline: 16px;
+
+  @media (min-width: $tablet-min-width) {
+    margin-inline: 44px;
+  }
+
+  @media (min-width: $max-min-width) {
+    margin-inline: 124px;
+  }
+}
+
+@mixin padding-inline {
+  padding-inline: 16px;
+
+  @media (min-width: $tablet-min-width) {
+    padding-inline: 44px;
+  }
+
+  @media (min-width: $max-min-width) {
+    padding-inline: 124px;
+  }
+}
+
+@mixin top-bar-margin-inline {
+  margin-inline: 16px;
+
+  @media (min-width: $dekstop-min-width) {
+    margin-inline: 32px;
+  }
+}
+
+@mixin product-img-size {
+  width: 100%;
+  aspect-ratio: 326 / 328; // 🔥 як у твоєму макеті
+  height: auto;            // можна лишити, але не обов’язково
+  object-fit: cover;
+  display: block;
+
+  @include on-dekstop {
+    width: 402px;
+    height: 648px;
+  }
+}
+
+@mixin icon-size {
+  width: 24px;
+  height: 24px;
+}
+
+

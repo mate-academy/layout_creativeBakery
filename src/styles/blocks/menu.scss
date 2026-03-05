@@ -1,0 +1,117 @@
+.page__menu {
+  position: fixed;
+  inset: 0; // це = top:0 right:0 bottom:0 left:0
+  opacity: 0;
+  pointer-events: none;
+
+  display: grid;
+
+  background-color: $page-color;
+
+  transition: all $transition-duration ease-in-out;
+  transform: translateX(-100%);
+
+  @include on-dekstop {
+    display: none;
+  }
+}
+
+.page__menu:target {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.menu__nav {
+  position: absolute;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+}
+
+.nav {
+  &__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0;
+
+  margin: 0;
+}
+
+  &__item {
+    list-style: none;
+    text-align: center;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    text-decoration: none;
+    color: $main-text-color;
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      justify-content: center;
+      height: 1px;
+      width: 100%;
+      bottom: -8px;
+      background-color: $main-text-color;
+
+      transition: transform $transition-duration;
+      transform: scale(0);
+      transform-origin: center;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__link--contact {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 2%;
+  text-transform: uppercase;
+  color: $accent-orange;
+
+  margin-top: 8px;
+ }
+
+  &__link--contact::before {
+    content: '';
+
+    @include icon-size;
+
+    display: inline-block;
+
+    background-image: url(../images/Icon-phone.png);
+    background-size: contain;
+  }
+}
+
+html:has(.page__menu:target),
+body:has(.page__menu:target) {
+  overflow: hidden;  // прибирає скрол сторінки
+  height: 100%;
+}
+
+// якщо всередині сторінки є .page__menu:target (тобто URL = #menu) → html і body перестають скролитись.
+

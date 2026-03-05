@@ -1,0 +1,137 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 16px;
+
+  @include top-bar-margin-inline;
+
+  &__logo {
+    background-image: url(../images/top-bar/Logo.png);
+    width: 136px;
+    height: 32px;
+    background-size: contain;
+
+    transition: all $transition-duration ease;
+  }
+
+  &__logo:hover {
+    transform: scale($scale);
+  }
+
+  &__icon-menu {
+    display: block;
+    background-image: url(../images/top-bar/Icon-menu.png);
+
+    @include icon-size;
+
+    background-size: contain;
+
+    align-self: center;
+
+    transition: all $transition-duration ease;
+
+    @include on-dekstop {
+      display: none;
+    }
+  }
+
+    &__icon-menu:hover {
+    transform: scale($scale);
+  }
+
+  &__icon-close {
+    background-image: url(../images/top-bar/Icon-close.png);
+
+    @include icon-size;
+
+    background-size: contain;
+
+    align-self: center;
+  }
+
+  &__icon-close:hover {
+    transform: scale($scale);
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-dekstop {
+      display: block;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+
+    list-style: none;
+  }
+
+  &__nav-item {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    color: $main-text-color;
+
+    transition: transform $transition-duration;
+
+    &:hover {
+      transform: scale($scale);
+    }
+  }
+
+  &__nav-link--contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $accent-orange;
+
+    &::before {
+      content: '';
+
+      @include icon-size;
+
+      display: inline-block;
+      background-image: url(../images/Icon-phone.png);
+      background-size: contain;
+    }
+  }
+
+
+
+}
+
+.menu__top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 2;
+
+  @include top-bar-margin-inline;
+}
+
+.footer__top-bar {
+  margin: 0;
+}

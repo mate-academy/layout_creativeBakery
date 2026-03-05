@@ -1,0 +1,225 @@
+.header {
+  min-height: 100vh;
+
+  &__content {
+    @include padding-inline;
+
+    @include on-tablet {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 178px;
+    }
+  }
+
+  &__description {
+    font-family: $font-family;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: -0.01em;
+
+    margin-top: 32px;
+    margin-bottom: 0;
+
+    @include on-tablet {
+      text-align: left;
+      width: 280px;
+
+      margin-top: 80px;
+
+      @include on-dekstop {
+        transform: translateY(100px);
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 64px;
+    font-style: normal;
+    line-height: 85%;
+    text-align: center;
+    letter-spacing: -5%;
+    color: $accent-orange;
+    text-transform: uppercase;
+
+    margin-top: 32px;
+    margin-bottom: 0;
+
+    @include on-tablet {
+      transform: translateY(-60px);
+      font-size: 80px;
+    }
+
+    @include on-dekstop {
+      transform: translateY(-90px);
+      font-size: 136px;
+    }
+  }
+
+  &__img--desktop {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+      width: 326px;
+      height: 328px;
+
+      background-image: url(../images/Cookie-header.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      pointer-events: none;
+
+      @include on-dekstop {
+        width: 544px;
+        height: 546px;
+      }
+    }
+  }
+
+  &__img--mobile {
+    width: 100%;
+    height: auto;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    @include on-dekstop {
+      justify-content: flex-start;
+      transform: translateY(-200px);
+    }
+  }
+
+  &__button-more {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 288px;
+    height: 56px;
+    padding: 0;
+
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+    background: none;
+
+    cursor: pointer;
+
+    color: $accent-orange;
+
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 100%;
+    text-transform: uppercase;
+    letter-spacing: 2%;
+
+    transition: all $transition-duration;
+  }
+
+  &__button-more::before {
+    content: '';
+
+    @include icon-size;
+
+    display: inline-block;
+
+    margin-right: 4px;
+
+    background-image: url(../images/Icon-cookie.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    transition: all $transition-duration;
+  }
+
+  &__button-more:hover {
+    background-color: $accent-orange;
+    color: $white;
+  }
+
+  &__button-more:hover::before {
+    content: '';
+
+    @include icon-size;
+
+    display: inline-block;
+
+    margin-right: 4px;
+
+    background-image: url(../images/Icon-cookie-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+    &__button-more:focus {
+    background-color: $focused-button-color;
+    border-color: $focused-button-color;
+    outline: none;
+    color: $white;
+  }
+
+  &__button-more:focus::before {
+    content: '';
+
+    @include icon-size;
+
+    display: inline-block;
+
+    margin-right: 4px;
+
+    background-image: url(../images/Icon-cookie-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  &__button-more:disabled {
+    color: $disabled-button-color;
+    background-color: transparent;
+    border-color: $disabled-button-color;
+  }
+
+  &__button-more:disabled::before {
+    content: '';
+
+    @include icon-size;
+
+    display: inline-block;
+
+    margin-right: 4px;
+
+    background-image: url(../images/Icon-cookie-disabled.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
