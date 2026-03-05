@@ -21,6 +21,12 @@
 
   background-color: $main-text-color;
 
+  @include on-tablet {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+
   &__top-bar {
     padding: 0;
     }
@@ -30,7 +36,11 @@
     flex-direction: column;
     gap: 16px;
 
-    margin-top: 40px;
+    padding-top: 40px;
+
+    @include on-tablet {
+      padding-top: 64px;
+    }
   }
 }
 
@@ -38,7 +48,6 @@
 
   &__logo--white {
     background-image: url(../images/top-bar/Logo-white.png);
-    margin-top: 56px;
   }
 }
 
@@ -101,6 +110,11 @@
 .contact-us {
   margin-top: 64px;
 
+  @include on-tablet {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__title {
     font-family: $font-family;
     font-weight: 400;
@@ -111,6 +125,25 @@
     color: $white;
 
     margin: 0;
+
+    max-width: 270px;
+
+    @include on-tablet {
+      font-size: 56px;
+    }
+
+    @include on-dekstop {
+      font-size: 72px;
+      max-width: 544px;
+    }
+  }
+
+  &__information {
+    @include on-dekstop {
+     display: flex;
+     flex-direction: row;
+     gap: 24px;
+    }
   }
 
   &__content {
@@ -118,6 +151,11 @@
     flex-direction: column;
     gap: 16px;
     margin-top: 40px;
+    width: 260px;
+
+    @include on-dekstop {
+      margin-top: 50px;
+    }
   }
 
   &__description {
@@ -174,6 +212,10 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+
+    @include on-dekstop {
+      margin-top: 50px;
+    }
   }
 
   &__email {
@@ -215,6 +257,10 @@
 
     display: flex;
     gap: 32px;
+
+    @include on-tablet {
+      align-self: flex-start
+    }
   }
 
   &__icon {

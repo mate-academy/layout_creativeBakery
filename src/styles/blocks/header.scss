@@ -1,6 +1,18 @@
 .header {
-  @include margin-inline;
-  
+  min-height: 100vh;
+
+  &__content {
+    @include padding-inline;
+
+    @include on-tablet {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 178px;
+    }
+  }
+
   &__description {
     font-family: $font-family;
     font-size: 16px;
@@ -12,9 +24,24 @@
 
     margin-top: 32px;
     margin-bottom: 0;
+
+    @include on-tablet {
+      text-align: left;
+      width: 280px;
+
+      margin-top: 80px;
+
+      @include on-dekstop {
+        transform: translateY(100px);
+      }
+    }
   }
 
   &__title {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+
     font-family: $font-family;
     font-weight: 400;
     font-size: 64px;
@@ -27,16 +54,62 @@
 
     margin-top: 32px;
     margin-bottom: 0;
+
+    @include on-tablet {
+      transform: translateY(-60px);
+      font-size: 80px;
+    }
+
+    @include on-dekstop {
+      transform: translateY(-90px);
+      font-size: 136px;
+    }
   }
 
-  &__img {
+  &__img--desktop {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+      width: 326px;
+      height: 328px;
+
+      background-image: url(../images/Cookie-header.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      pointer-events: none;
+
+      @include on-dekstop {
+        width: 544px;
+        height: 546px;
+      }
+    }
+  }
+
+  &__img--mobile {
     width: 100%;
     height: auto;
+
+    @include on-tablet {
+      display: none;
+    }
   }
 
   &__button {
     display: flex;
     justify-content: center;
+
+    @include on-dekstop {
+      justify-content: flex-start;
+      transform: translateY(-200px);
+    }
   }
 
   &__button-more {
@@ -149,3 +222,4 @@
     background-position: center;
   }
 }
+

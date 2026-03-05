@@ -1,7 +1,28 @@
 .product {
   @include margin-inline;
+
+  &__content--tablet {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__content--desktop {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   &__title {
     margin: 104px 0 0;
+
+    @include on-tablet {
+      margin-top: 200px;
+
+      font-size: 56px;
+    }
+
+    @include on-dekstop {
+      font-size: 72px;
+    }
 
     font-family: $font-family;
     font-weight: 400;
@@ -26,6 +47,14 @@
 
 .goods {
   margin-top: 56px;
+
+  @include on-tablet {
+    margin-top: 80px;
+  }
+
+  @include on-dekstop {
+    max-width: 402px;
+  }
 
   &__img{
     @include product-img-size;
