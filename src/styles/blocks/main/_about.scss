@@ -1,0 +1,83 @@
+@use '../../utils/mixins' as *;
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  padding: 0 16px 72px;
+  margin: 0 auto;
+  max-width: 1440px;
+
+  background-image: url(../images/Crumbs-320.png);
+  background-repeat: no-repeat;
+  background-position: 50% 72%;
+
+  @include tablet {
+    width: auto;
+    gap: 72px;
+    padding: 0 44px 152px;
+    background-image: url(../images/Crumbs-768.png);
+    background-position: 50% 20%;
+  }
+
+  @include desktop1024 {
+    gap: 144px;
+    height: 750px;
+    padding: 0 44px 56px;
+    background-image: url(../images/Crumbs-1200.png);
+    background-position: 71% 10%;
+  }
+
+  @include desktop1200 {
+    gap: 144px;
+    height: 750px;
+    padding: 0 124px 56px;
+    background-image: url(../images/Crumbs-1200.png);
+    background-position: 75% 0;
+  }
+}
+
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: auto;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  &__title {
+    width: 288px;
+    color: #f9512e;
+
+    @include tablet {
+      min-width: 328px;
+      max-width: 456px;
+      width: auto;
+      letter-spacing: -0.6px;
+    }
+  }
+
+  &__text {
+    min-width: 288px;
+    color: #1c1a26;
+
+    @include tablet {
+      min-width: 328px;
+      max-width: 456px;
+      width: auto;
+    }
+
+    @include desktop1024 {
+      max-width: 544px;
+    }
+
+    @include desktop1200 {
+      max-width: 584px;
+    }
+  }
+}

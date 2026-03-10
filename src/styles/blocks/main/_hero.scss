@@ -1,0 +1,161 @@
+@use '../../utils/mixins' as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+
+  @include tablet {
+    padding: 80px 44px 0;
+    position: relative;
+  }
+
+  @include desktop1024 {
+    height: 612px;
+    padding: 0 44px;
+  }
+
+  @include desktop1200 {
+    padding: 0 124px;
+  }
+
+  &__text {
+    width: 281px;
+    text-align: center;
+    align-self: flex-start;
+
+    @include tablet {
+      text-align: left;
+    }
+
+    @include desktop1024 {
+      align-self: flex-start;
+      position: absolute;
+      top: 24.5%;
+      width: 260px;
+      padding: 0;
+    }
+
+    @include desktop1200 {
+      width: 290px;
+      top: 23%;
+    }
+  }
+
+  &__title {
+    width: auto;
+    display: flex;
+    place-self: center;
+
+    font-family: Inter, sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 85%;
+    letter-spacing: -0.5px;
+    color: #f9512e;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 32px;
+
+    @include tablet {
+      z-index: 1;
+      position: absolute;
+      top: 45%;
+      font-size: 80px;
+      padding-top: 0;
+    }
+
+    @include desktop1024 {
+      font-size: 111px;
+      top: 39%;
+    }
+
+    @include desktop1200 {
+      font-size: clamp(112px, 9.4vw, 144px);
+      top: 39%;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: auto;
+
+    @include tablet {
+      padding: 16px 0 80px;
+    }
+
+    @include desktop1024 {
+      padding: 0;
+    }
+  }
+
+  &__button {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    place-self: center;
+    width: 288px;
+    height: 56px;
+    border: 2px solid #f9512e;
+    border-radius: 32px;
+
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: Medium;
+    line-height: 100%;
+    color: #f9512e;
+    text-transform: uppercase;
+    letter-spacing: 2%;
+    text-decoration: none;
+
+    @include tablet {
+      width: 326px;
+    }
+
+    @include desktop1024 {
+      width: 260px;
+      margin: 0;
+      position: absolute;
+      left: 44px;
+      bottom: 32%;
+      &:hover,
+      &:focus {
+        background-color: rgba(249, 81, 46, 1);
+        color: rgba(255, 255, 255, 1);
+        border-bottom: 2px solid white;
+
+        .hero__button-icon {
+          filter: brightness(0) invert(1);
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 130px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 1);
+        bottom: 9px;
+        left: 25%;
+        transform: scaleX(0);
+      }
+
+      &:hover::after,
+      &:focus::after {
+        transform: scaleX(1);
+      }
+    }
+
+    @include desktop1200 {
+      width: 280px;
+      margin: 0;
+      left: 124px;
+      bottom: 22%;
+    }
+  }
+}

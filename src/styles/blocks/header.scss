@@ -1,0 +1,102 @@
+@use '../utils/mixins' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 18px 20px 20px;
+
+  &__button {
+    width: 20px;
+    height: 8px;
+
+    @include desktop1024 {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    padding: 16px 18px 20px 20px;
+  }
+
+  @include desktop1024 {
+    padding: 32px 32px 28px 36px;
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translateX(-100%);
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 132px;
+
+  height: 100dvh;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  padding: 20px 16px 20px 20px;
+
+  background-color: rgba(255, 238, 252, 1);
+
+  transition: transform 0.3s ease;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include desktop1024 {
+    position: static;
+    transform: translate(0);
+    height: auto;
+    justify-self: flex-end;
+    padding: 0;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+    @include desktop1024 {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-self: center;
+
+    list-style: none;
+
+    @include desktop1024 {
+      flex-direction: row;
+      gap: 64px;
+    }
+
+    &-link {
+      color: rgba(28, 26, 38, 1);
+      text-decoration: none;
+    }
+
+    &-phone-link {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      font-style: Medium;
+      line-height: 100%;
+      color: rgba(249, 81, 46, 1);
+      text-transform: uppercase;
+      letter-spacing: 2%;
+    }
+  }
+}

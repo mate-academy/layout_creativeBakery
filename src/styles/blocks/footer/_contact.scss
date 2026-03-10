@@ -1,0 +1,102 @@
+@use '../../utils/mixins' as *;
+
+.footer {
+  &__title {
+    color: rgba(255, 255, 255, 1);
+    grid-column: 5 / 8;
+    grid-row: 1 / 2;
+
+    @include tablet {
+      width: 328px;
+    }
+
+    @include desktop1024 {
+      width: 450px;
+    }
+  }
+
+  &__call {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 288px;
+    grid-column: 5 / 8;
+
+    &-title {
+      color: rgba(127, 128, 150, 1);
+    }
+
+    &-list {
+      width: 288px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      list-style: none;
+
+      &-link {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+
+  &__email {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-title {
+      color: rgba(127, 128, 150, 1);
+    }
+
+    &-link {
+      color: rgba(255, 255, 255, 1);
+      text-decoration: none;
+    }
+  }
+
+  &__copyright {
+    color: rgba(127, 128, 150, 1);
+
+    @include tablet {
+      width: 328px;
+      grid-column: 5 / 8;
+      grid-row: 3 / 3;
+    }
+  }
+}
+
+.social {
+  @include tablet {
+    grid-column: 1 / 2;
+  }
+
+  &__container {
+    display: flex;
+    gap: 34px;
+  }
+
+  @include desktop1024 {
+    &__link {
+      &:hover,
+      &:focus {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  @include tablet {
+    grid-column: 5 / 8;
+  }
+
+  @include desktop1024 {
+    max-width: 1200px;
+    flex-direction: row;
+    grid-column: 5 / 8;
+  }
+}

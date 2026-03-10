@@ -1,0 +1,113 @@
+@use '../../utils/mixins' as *;
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1440px;
+  gap: 56px;
+  padding: 64px 16px 72px;
+
+  @include tablet {
+    padding: 228px 44px 152px;
+  }
+
+  @include desktop1024 {
+    gap: 80px;
+    padding: 152px 44px 178px;
+  }
+
+  @include desktop1200 {
+    gap: 80px;
+    padding: 152px 124px 178px;
+  }
+}
+
+.main {
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 386px;
+
+    @include tablet {
+      max-width: none;
+    }
+
+    &-title {
+      color: rgba(249, 81, 46, 1);
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    align-items: center;
+
+    @include tablet {
+      flex-flow: row wrap;
+      gap: 24px;
+      row-gap: 80px;
+      &-cakes {
+        justify-content: flex-start;
+      }
+
+      &-donuts {
+        justify-content: flex-end;
+      }
+
+      &-cookies {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: auto;
+
+    @include desktop1024 {
+      &-picture {
+        transition: transform 0.3s ease;
+        &:hover,
+        &:focus {
+          transform: scale(1.08);
+        }
+      }
+    }
+
+    &-description {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &-title {
+      color: rgba(127, 128, 150, 1);
+    }
+
+    &-text {
+      width: 280px;
+      letter-spacing: -0.5px;
+
+      @include tablet {
+        width: 320px;
+      }
+
+      @include desktop1024 {
+        width: 380px;
+      }
+    }
+
+    &-button {
+      display: flex;
+      gap: 8px;
+      align-self: flex-start;
+      text-decoration: none;
+      color: rgba(249, 81, 46, 1);
+    }
+  }
+}

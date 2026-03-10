@@ -1,0 +1,51 @@
+@use '../../utils/mixins' as *;
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+  width: 100%;
+
+  @include tablet {
+    flex-flow: row wrap;
+    gap: 24px;
+    margin: 0 auto;
+    row-gap: 80px;
+  }
+
+  &__values {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include tablet {
+      min-width: 328px;
+      width: auto;
+    }
+
+    @include desktop1024 {
+      min-width: 216px;
+      width: 23%;
+    }
+
+    &-number {
+      font-family: Inter, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 96px;
+      line-height: 85%;
+      text-transform: uppercase;
+      color: #f9512e;
+    }
+
+    &-type {
+      font-family: Inter, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 16px;
+      line-height: 150%;
+      color: #1c1a26;
+    }
+  }
+}

@@ -1,7 +1,38 @@
-@import 'utils';
-@import 'fonts';
-@import 'typography';
+@use 'utils/reset';
+@use 'utils/mixins';
+@use 'utils/fonts';
+
+@use 'blocks/header';
+
+@use 'blocks/main/hero';
+@use 'blocks/main/main';
+@use 'blocks/main/about';
+@use 'blocks/main/stats';
+
+@use 'blocks/footer/footer';
+@use 'blocks/footer/menu';
+@use 'blocks/footer/contact';
 
 body {
-  background: $c-gray;
+  background: rgba(255, 238, 252, 1);
+}
+
+@media (min-width: 1024px) {
+  a {
+    border-bottom: 1px solid transparent;
+    transition:
+      color 0.3s ease,
+      border-bottom 0.3s ease;
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid currentColor;
+      color: rgba(249, 81, 46, 1);
+    }
+  }
+}
+
+.logo--hover:hover,
+.logo--hover:focus {
+  filter: invert(39%) sepia(86%) saturate(2100%) hue-rotate(346deg)
+    brightness(101%) contrast(96%);
 }
