@@ -1,0 +1,137 @@
+.footer {
+  background-color: $black;
+  @include page-grid;
+
+  padding-block: 56px;
+  @include on-tablet {
+    padding-block: 88px;
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-title {
+      color: $grey;
+      text-transform: uppercase;
+    }
+    &-link {
+      text-decoration: none;
+      color: $white;
+      transition: color $translition-duration;
+
+      &:hover {
+        color: $accent-orange;
+      }
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+    align-content: center;
+    height: 40px;
+    width: 168px;
+    margin-bottom: 40px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    color: $white;
+
+    transition: color $translition-duration;
+    &:hover {
+      color: $accent-orange;
+    }
+  }
+
+  &__menu {
+    grid-column: span 2;
+    margin-block: 0 64px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    grid-column: span 2;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop-1024 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      &--container {
+        grid-column: span 2;
+      }
+    }
+
+    &-title {
+      font-size: 48px;
+      text-transform: uppercase;
+      color: $white;
+
+      @include on-tablet {
+        font-size: 56px;
+      }
+
+      @include on-desktop-1024 {
+        grid-column: span 4;
+        font-size: 72px;
+      }
+    }
+  }
+
+  &__social-media {
+    grid-column: span 2;
+    display: flex;
+    gap: 32px;
+    justify-content: start;
+    padding: 0;
+    list-style: none;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &-icon {
+      display: block;
+      width: 24px;
+      height: 24px;
+      color: $accent-orange;
+      transition: color $translition-duration;
+      &:hover {
+        color: $white;
+      }
+    }
+
+    &-icon-link {
+      display: block;
+      text-decoration: none;
+    }
+  }
+
+  &__copyright {
+    display: inline-block;
+    align-self: center;
+    font-size: 16px;
+    color: $grey;
+    grid-column: span 2;
+    margin-top: 40px;
+    @include on-tablet {
+      margin-top: 0;
+      grid-column: span 4;
+    }
+  }
+}

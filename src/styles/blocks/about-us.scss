@@ -1,0 +1,84 @@
+.about-us {
+  --grid-column: span 2;
+  --font-size-title: 48px;
+
+  background-image: url(../images/background/crumbs.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  margin-top: 72px;
+  padding-bottom: 72px;
+
+  @include on-tablet {
+    --grid-column: span 4;
+    --font-size-title: 56px;
+
+    margin-top: 152px;
+    padding-bottom: 152px;
+  }
+
+  @include on-desktop-1024 {
+    --font-size-title: 72px;
+
+    margin-top: 178px;
+    padding-bottom: 350px;
+  }
+
+  &__top {
+    row-gap: 32px;
+
+    @include page-grid;
+  }
+
+  &__bottom {
+    margin-top: 64px;
+    row-gap: 48px;
+
+    @include page-grid;
+
+    @include on-tablet {
+      margin-top: 72px;
+      row-gap: 80px;
+    }
+
+    @include on-desktop-1024 {
+      margin-top: 144px;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    color: $accent-orange;
+
+    letter-spacing: -5%;
+    text-transform: uppercase;
+    font-size: var(--font-size-title);
+    grid-column: var(--grid-column);
+  }
+
+  &__description {
+    font-size: 16px;
+    display: inline-block;
+    grid-column: var(--grid-column);
+  }
+
+  &__stat-block {
+    grid-column: var(--grid-column);
+
+    @include on-desktop-1024 {
+      grid-column: span 2;
+    }
+
+    &-value {
+      text-transform: uppercase;
+      letter-spacing: -5%;
+      font-size: 96px;
+      color: $accent-orange;
+    }
+
+    &-label {
+      font-size: 16px;
+    }
+  }
+}

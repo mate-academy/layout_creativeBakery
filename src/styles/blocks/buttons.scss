@@ -1,0 +1,86 @@
+.button-first {
+  display: flex;
+  font-weight: 500;
+  color: $accent-orange;
+  gap: 7px;
+  text-transform: uppercase;
+  letter-spacing: 2%;
+  text-decoration: none;
+  transition:
+    color 0.3s,
+    transform 0.3s;
+  @include hover-underline;
+
+  @include icon-button('../images/Vector.svg', $accent-orange);
+
+  &:focus::before {
+    background-color: $dark-orange;
+  }
+
+  &:focus {
+    color: $dark-orange;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:hover::before {
+    transform: scale(1.2);
+  }
+
+  &--order {
+    @include icon-button('../images/right-arrow.svg', $accent-orange);
+
+    width: fit-content;
+  }
+}
+
+.button-second {
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  color: $accent-orange;
+  gap: 7px;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 32px;
+  border: 2px solid $accent-orange;
+  text-transform: uppercase;
+  letter-spacing: 2%;
+  text-decoration: none;
+  transition:
+    color $translition-duration,
+    transform $translition-duration,
+    background-color $translition-duration;
+
+  @include icon-button('../images/Vector.svg', $accent-orange) {
+    transition: $translition-duration;
+  }
+
+  &:focus {
+    background-color: $dark-orange;
+    border-color: $dark-orange;
+    color: $white;
+    &::before {
+      background-color: $white;
+    }
+  }
+  &:hover {
+    border-color: $accent-orange;
+    background-color: $accent-orange;
+    color: $white;
+    &::before {
+      background-color: $white;
+    }
+  }
+
+  &:disabled {
+    color: $light-orange;
+    background-color: transparent;
+    border-color: $light-orange;
+    &::before {
+      background-color: $light-orange;
+    }
+  }
+}
