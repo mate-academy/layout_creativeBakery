@@ -1,6 +1,26 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@use 'vars' as *;
+
+@mixin hover($property, $to-value) {
+  transition: #{$property} $transition-duration $transition-timing;
+
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $to-value;
   }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  outline: 2px solid $color-accent;
+  outline-offset: 4px;
 }
