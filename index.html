@@ -1,5 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class="page"
+  id="top"
+>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -7,631 +11,384 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>Creative Bakery</title>
+    <meta
+      name="description"
+      content="Creative Bakery landing page with responsive layout, product cards, about section, and contact footer."
+    />
     <link
       rel="icon"
-      type="image/svg+xml"
       href="./src/images/favicon.svg"
     />
+    <script
+      type="module"
+      src="./src/scripts/main.js"
+    ></script>
     <link
       rel="stylesheet"
       href="./src/styles/main.scss"
     />
   </head>
-  <body class="page">
-    <header class="header">
-      <div class="container">
-        <div class="header__bar">
-          <a
-            class="logo"
-            href="#"
-            aria-label="Creative Bakery home"
-          >
-            <span class="logo__icon" aria-hidden="true">
-              <svg
-                class="logo__svg"
-                viewBox="0 0 48 48"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  cx="24"
-                  cy="24"
-                  r="20"
-                  fill="#fbc66d"
-                />
-                <circle
-                  cx="18"
-                  cy="18"
-                  r="2.5"
-                  fill="#f9512e"
-                />
-                <circle
-                  cx="29"
-                  cy="17"
-                  r="2"
-                  fill="#f9512e"
-                />
-                <circle
-                  cx="31"
-                  cy="28"
-                  r="2.5"
-                  fill="#f9512e"
-                />
-                <circle
-                  cx="18"
-                  cy="31"
-                  r="2"
-                  fill="#f9512e"
-                />
-              </svg>
-            </span>
-            <span class="logo__text">
-              Creative
-              <span class="logo__text-accent">Bakery</span>
-            </span>
-          </a>
+  <body class="page__body page__body--theme-pink">
+    <header
+      class="header"
+      id="home"
+    >
+      <div class="header__inner">
+        <a
+          class="logo header__logo"
+          href="#top"
+          aria-label="Creative Bakery home"
+        >
+          Bakerlab
+        </a>
 
-          <nav
-            class="nav"
-            aria-label="Primary navigation"
-          >
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a
-                  class="nav__link"
-                  href="#products"
-                >
-                  Products
-                </a>
-              </li>
-              <li class="nav__item">
-                <a
-                  class="nav__link"
-                  href="#about"
-                >
-                  About us
-                </a>
-              </li>
-              <li class="nav__item">
-                <a
-                  class="nav__link"
-                  href="#blog"
-                >
-                  Blog
-                </a>
-              </li>
-              <li class="nav__item">
-                <a
-                  class="nav__link"
-                  href="#contact"
-                >
-                  Contact us
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <button
+          class="header__burger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+        </button>
 
-        <div class="hero">
-          <div class="hero__content">
-            <p class="hero__eyebrow">
-              We bake your fantasies - croissants, cakes, cookies, and
-              cupcakes.
-            </p>
-
-            <h1 class="hero__title">Creative Bakery</h1>
-
-            <p class="hero__description">
-              Small-batch pastries, custom dessert tables, and celebration
-              cakes designed to turn everyday cravings into warm rituals worth
-              sharing.
-            </p>
-
-            <div class="hero__actions">
+        <nav
+          class="nav header__nav"
+          aria-label="Main navigation"
+        >
+          <ul class="nav__list">
+            <li class="nav__item">
               <a
-                class="button"
+                class="nav__link"
+                href="#products"
+              >
+                Products
+              </a>
+            </li>
+            <li class="nav__item">
+              <a
+                class="nav__link"
                 href="#about"
               >
-                Learn more
+                About Us
               </a>
-
+            </li>
+            <li class="nav__item">
               <a
-                class="button button--secondary"
-                href="#contact"
+                class="nav__link"
+                href="#blog"
               >
-                Order now
+                Blog
               </a>
-            </div>
+            </li>
+          </ul>
+        </nav>
 
-            <ul class="hero__details">
-              <li class="hero__detail">
-                <span class="hero__detail-value">2015</span>
-                <span class="hero__detail-label">Foundation year</span>
-              </li>
-              <li class="hero__detail">
-                <span class="hero__detail-value">23</span>
-                <span class="hero__detail-label">Stores</span>
-              </li>
-              <li class="hero__detail">
-                <span class="hero__detail-value">10k+</span>
-                <span class="hero__detail-label">Happy clients</span>
-              </li>
-            </ul>
-          </div>
-
-          <div
-            class="hero__art"
+        <a
+          class="header__contact"
+          href="#contact"
+        >
+          <img
+            class="header__contact-icon"
+            src="./src/images/icon-phone.svg"
+            alt=""
             aria-hidden="true"
-          >
-            <svg
-              class="hero__illustration"
-              viewBox="0 0 520 520"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="262"
-                cy="264"
-                r="186"
-                fill="#fbc66d"
-              />
-              <circle
-                cx="260"
-                cy="260"
-                r="142"
-                fill="#f8f1d8"
-              />
-              <path
-                d="M183 207c29-41 95-56 147-34 39 17 64 46 75 89-65-7-92 17-126 45-27 22-55 34-96 28-34-5-58-27-70-59 17-27 39-45 70-69z"
-                fill="#f9512e"
-              />
-              <path
-                d="M153 348c17-47 69-79 122-75 50 4 91 32 110 75-27 24-65 41-119 41-54 0-90-17-113-41z"
-                fill="#ffd7d1"
-              />
-              <path
-                d="M355 118c39 8 73 31 95 64-29 17-61 18-93 10-29-8-55-25-73-49 19-19 42-29 71-25z"
-                fill="#f2a95f"
-              />
-              <circle
-                cx="182"
-                cy="154"
-                r="14"
-                fill="#f9512e"
-              />
-              <circle
-                cx="231"
-                cy="108"
-                r="9"
-                fill="#f9512e"
-              />
-              <circle
-                cx="337"
-                cy="164"
-                r="12"
-                fill="#f9512e"
-              />
-              <circle
-                cx="382"
-                cy="244"
-                r="11"
-                fill="#f8f1d8"
-              />
-              <circle
-                cx="177"
-                cy="252"
-                r="12"
-                fill="#f8f1d8"
-              />
-              <circle
-                cx="238"
-                cy="334"
-                r="10"
-                fill="#f9512e"
-              />
-              <circle
-                cx="316"
-                cy="324"
-                r="13"
-                fill="#f9512e"
-              />
-              <circle
-                cx="382"
-                cy="328"
-                r="8"
-                fill="#f9512e"
-              />
-              <path
-                d="M118 127c27-25 69-30 101-11-10 27-31 47-60 57-23 8-46 7-68-1 3-18 11-33 27-45z"
-                fill="#ffe2b1"
-              />
-            </svg>
-          </div>
-        </div>
+          />
+          Contact us
+        </a>
       </div>
     </header>
 
-    <main class="main">
+    <aside
+      class="mobile-menu"
+      id="mobile-menu"
+      aria-hidden="true"
+    >
+      <div class="mobile-menu__panel">
+        <div class="mobile-menu__header">
+          <a
+            class="logo mobile-menu__logo"
+            href="#top"
+          >
+            Bakerlab
+          </a>
+
+          <button
+            class="mobile-menu__close"
+            type="button"
+            aria-label="Close menu"
+          >
+            <img
+              class="mobile-menu__close-icon"
+              src="./src/images/icon-close.svg"
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
+        </div>
+
+        <nav
+          class="mobile-menu__nav"
+          aria-label="Mobile navigation"
+        >
+          <a
+            class="mobile-menu__link"
+            href="#products"
+          >
+            Products
+          </a>
+          <a
+            class="mobile-menu__link"
+            href="#about"
+          >
+            About Us
+          </a>
+          <a
+            class="mobile-menu__link"
+            href="#blog"
+          >
+            Blog
+          </a>
+          <a
+            class="mobile-menu__link mobile-menu__link--accent"
+            href="#contact"
+          >
+            Contact us
+          </a>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="hero">
+        <div class="hero__inner">
+          <p class="hero__eyebrow">
+            We bake your fantasies &mdash; croissants,
+            cakes, cookies, and cupcakes.
+          </p>
+
+          <h1 class="hero__title">Creative Bakery</h1>
+
+          <a
+            class="button hero__button"
+            href="#about"
+          >
+            <span
+              class="button__icon"
+              aria-hidden="true"
+            ></span>
+            Learn more
+          </a>
+
+          <div
+            class="hero__visual"
+            aria-hidden="true"
+          >
+            <img
+              class="hero__image"
+              src="./src/images/cookie-hero.svg"
+              alt="Chocolate chip cookie"
+            />
+          </div>
+        </div>
+      </section>
+
       <section
         class="products"
         id="products"
       >
         <div class="container">
-          <div class="section-heading">
-            <p class="section-heading__eyebrow">What we bake</p>
-            <h2 class="section-heading__title">
-              Handmade pastries with a playful finish
-            </h2>
-            <p class="section-heading__description">
-              We customize every batch around your event, your favorite flavors,
-              and the kind of moment you want people to remember.
-            </p>
-          </div>
+          <h2 class="section-title">What we bake</h2>
+          <p class="section-description">
+            We can customize our cookies right for your needs. Just imagine it.
+          </p>
 
           <div class="products__grid">
-            <article class="product-card product-card--berry">
+            <article class="product-card">
               <a
-                class="product-card__media"
+                class="product-card__image-link"
                 href="#contact"
-                aria-label="Order Berry Cloud cake"
+                aria-label="Order oatmeal cookies cake"
               >
-                <svg
-                  class="product-card__illustration"
-                  viewBox="0 0 260 200"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="54"
-                    y="122"
-                    width="152"
-                    height="38"
-                    rx="18"
-                    fill="#f3b3b6"
-                  />
-                  <rect
-                    x="42"
-                    y="92"
-                    width="176"
-                    height="40"
-                    rx="20"
-                    fill="#fff0ef"
-                  />
-                  <path
-                    d="M70 92c17-24 44-38 60-38 21 0 40 10 60 38H70z"
-                    fill="#ffdbe3"
-                  />
-                  <circle
-                    cx="98"
-                    cy="71"
-                    r="8"
-                    fill="#f9512e"
-                  />
-                  <circle
-                    cx="130"
-                    cy="61"
-                    r="9"
-                    fill="#f9512e"
-                  />
-                  <circle
-                    cx="162"
-                    cy="71"
-                    r="8"
-                    fill="#f9512e"
-                  />
-                </svg>
+                <img
+                  class="product-card__image"
+                  src="./src/images/product-01.jpg"
+                  alt="Oatmeal cookies cake with orange slices"
+                />
               </a>
               <p class="product-card__category">Cakes</p>
-              <h3 class="product-card__title">Berry Cloud</h3>
-              <p class="product-card__description">
-                Vanilla sponge, whipped mascarpone, and bright berries tucked
-                between every soft layer.
-              </p>
+              <h3 class="product-card__title">
+                Oatmeal cookies with golden raisins, orange zest and chocolate
+                chips
+              </h3>
               <a
                 class="product-card__link"
                 href="#contact"
               >
+                <img
+                  class="product-card__icon"
+                  src="./src/images/icon-arrow.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
                 Order
               </a>
             </article>
 
-            <article class="product-card product-card--mocha">
+            <article class="product-card">
               <a
-                class="product-card__media"
+                class="product-card__image-link"
                 href="#contact"
-                aria-label="Order Mocha Velvet cake"
+                aria-label="Order chocolate biscuit cake"
               >
-                <svg
-                  class="product-card__illustration"
-                  viewBox="0 0 260 200"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="50"
-                    y="124"
-                    width="160"
-                    height="32"
-                    rx="16"
-                    fill="#8d5a50"
-                  />
-                  <rect
-                    x="40"
-                    y="92"
-                    width="180"
-                    height="42"
-                    rx="21"
-                    fill="#d9b4a0"
-                  />
-                  <path
-                    d="M58 92c16-30 45-44 72-44 30 0 56 14 72 44H58z"
-                    fill="#fff2e8"
-                  />
-                  <circle
-                    cx="102"
-                    cy="68"
-                    r="9"
-                    fill="#4e342e"
-                  />
-                  <circle
-                    cx="130"
-                    cy="58"
-                    r="10"
-                    fill="#4e342e"
-                  />
-                  <circle
-                    cx="159"
-                    cy="68"
-                    r="9"
-                    fill="#4e342e"
-                  />
-                </svg>
+                <img
+                  class="product-card__image"
+                  src="./src/images/product-02.jpg"
+                  alt="Chocolate biscuit coffee cake with almonds and chocolate"
+                />
               </a>
               <p class="product-card__category">Cakes</p>
-              <h3 class="product-card__title">Mocha Velvet</h3>
-              <p class="product-card__description">
-                Chocolate biscuit, silky coffee cream, and a cocoa finish for
-                slow afternoon celebrations.
-              </p>
+              <h3 class="product-card__title">
+                Chocolate biscuit coffee cake topped with a buttercream and
+                powder
+              </h3>
               <a
                 class="product-card__link"
                 href="#contact"
               >
+                <img
+                  class="product-card__icon"
+                  src="./src/images/icon-arrow.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
                 Order
               </a>
             </article>
 
-            <article class="product-card product-card--cinnamon">
+            <article class="product-card">
               <a
-                class="product-card__media"
+                class="product-card__image-link"
                 href="#contact"
-                aria-label="Order Cinnamon Loop donuts"
+                aria-label="Order light glazed donuts"
               >
-                <svg
-                  class="product-card__illustration"
-                  viewBox="0 0 260 200"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="110"
-                    cy="104"
-                    r="50"
-                    fill="#d18f50"
-                  />
-                  <circle
-                    cx="110"
-                    cy="104"
-                    r="20"
-                    fill="#fff1dc"
-                  />
-                  <path
-                    d="M66 89c10-16 32-27 52-27 25 0 46 11 58 31-22 7-38 8-57 8-18 0-34-2-53-12z"
-                    fill="#ffd7c4"
-                  />
-                  <circle
-                    cx="162"
-                    cy="120"
-                    r="30"
-                    fill="#fbc66d"
-                  />
-                  <circle
-                    cx="162"
-                    cy="120"
-                    r="11"
-                    fill="#fff1dc"
-                  />
-                </svg>
+                <img
+                  class="product-card__image"
+                  src="./src/images/product-03.jpg"
+                  alt="Glazed donuts on plates"
+                />
               </a>
               <p class="product-card__category">Donuts</p>
-              <h3 class="product-card__title">Cinnamon Loop</h3>
-              <p class="product-card__description">
-                Airy dough rings glazed in vanilla sugar and dusted with a
-                warm cinnamon finish.
-              </p>
+              <h3 class="product-card__title">
+                Light multi-layered croissant strewn with cinnamon and almond
+                bits
+              </h3>
               <a
                 class="product-card__link"
                 href="#contact"
               >
+                <img
+                  class="product-card__icon"
+                  src="./src/images/icon-arrow.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
                 Order
               </a>
             </article>
 
-            <article class="product-card product-card--almond">
+            <article class="product-card">
               <a
-                class="product-card__media"
+                class="product-card__image-link"
                 href="#contact"
-                aria-label="Order Almond Twist pastry"
+                aria-label="Order coconut and nuts donut"
               >
-                <svg
-                  class="product-card__illustration"
-                  viewBox="0 0 260 200"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M55 118c18-36 53-58 86-58 31 0 60 14 78 42-22 24-44 38-73 44-34 7-63-2-91-28z"
-                    fill="#efb15c"
-                  />
-                  <path
-                    d="M74 115c18-25 41-39 66-39 22 0 42 9 57 28-22 13-41 20-64 20-22 0-39-3-59-9z"
-                    fill="#fff1da"
-                  />
-                  <ellipse
-                    cx="109"
-                    cy="84"
-                    rx="9"
-                    ry="5"
-                    fill="#f7e8c6"
-                  />
-                  <ellipse
-                    cx="138"
-                    cy="75"
-                    rx="10"
-                    ry="5"
-                    fill="#f7e8c6"
-                  />
-                  <ellipse
-                    cx="169"
-                    cy="83"
-                    rx="9"
-                    ry="5"
-                    fill="#f7e8c6"
-                  />
-                </svg>
+                <img
+                  class="product-card__image"
+                  src="./src/images/product-04.jpg"
+                  alt="White glazed donut with walnuts and coconut"
+                />
               </a>
-              <p class="product-card__category">Pastries</p>
-              <h3 class="product-card__title">Almond Twist</h3>
-              <p class="product-card__description">
-                Flaky layers curled with almond cream, toasted slices, and a
-                buttery crackle in every bite.
-              </p>
+              <p class="product-card__category">Donuts</p>
+              <h3 class="product-card__title">
+                Light multi-layered croissant strewn with coconut and nuts
+              </h3>
               <a
                 class="product-card__link"
                 href="#contact"
               >
+                <img
+                  class="product-card__icon"
+                  src="./src/images/icon-arrow.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
                 Order
               </a>
             </article>
 
-            <article class="product-card product-card--oat">
+            <article class="product-card">
               <a
-                class="product-card__media"
+                class="product-card__image-link"
                 href="#contact"
-                aria-label="Order Golden Oat cookies"
+                aria-label="Order chocolate cake"
               >
-                <svg
-                  class="product-card__illustration"
-                  viewBox="0 0 260 200"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="102"
-                    cy="102"
-                    r="42"
-                    fill="#fbc66d"
-                  />
-                  <circle
-                    cx="152"
-                    cy="122"
-                    r="34"
-                    fill="#efb15c"
-                  />
-                  <circle
-                    cx="101"
-                    cy="87"
-                    r="4"
-                    fill="#f9512e"
-                  />
-                  <circle
-                    cx="86"
-                    cy="110"
-                    r="4"
-                    fill="#f9512e"
-                  />
-                  <circle
-                    cx="116"
-                    cy="120"
-                    r="5"
-                    fill="#f9512e"
-                  />
-                  <circle
-                    cx="151"
-                    cy="110"
-                    r="4"
-                    fill="#8d5a50"
-                  />
-                  <circle
-                    cx="137"
-                    cy="130"
-                    r="4"
-                    fill="#8d5a50"
-                  />
-                  <circle
-                    cx="165"
-                    cy="132"
-                    r="4"
-                    fill="#8d5a50"
-                  />
-                </svg>
+                <img
+                  class="product-card__image"
+                  src="./src/images/product-05.jpg"
+                  alt="Chocolate cake with powdered sugar"
+                />
+              </a>
+              <p class="product-card__category">Cakes</p>
+              <h3 class="product-card__title">
+                Chocolate salted caramel, vanilla fruit pebbles
+              </h3>
+              <a
+                class="product-card__link"
+                href="#contact"
+              >
+                <img
+                  class="product-card__icon"
+                  src="./src/images/icon-arrow.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                Order
+              </a>
+            </article>
+
+            <article
+              class="product-card"
+              id="blog"
+            >
+              <a
+                class="product-card__image-link"
+                href="#contact"
+                aria-label="Order assorted cookies"
+              >
+                <img
+                  class="product-card__image"
+                  src="./src/images/product-06.jpg"
+                  alt="Assorted cookies on pink background"
+                />
               </a>
               <p class="product-card__category">Cookies</p>
-              <h3 class="product-card__title">Golden Oat</h3>
-              <p class="product-card__description">
-                Soft oatmeal cookies with citrus zest, dark chocolate chips,
-                and a gently caramel edge.
-              </p>
+              <h3 class="product-card__title">
+                Oatmeal cookies with golden raisins, orange zest and chocolate
+                chips
+              </h3>
               <a
                 class="product-card__link"
                 href="#contact"
               >
-                Order
-              </a>
-            </article>
-
-            <article class="product-card product-card--citrus">
-              <a
-                class="product-card__media"
-                href="#contact"
-                aria-label="Order Citrus Bloom cupcakes"
-              >
-                <svg
-                  class="product-card__illustration"
-                  viewBox="0 0 260 200"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M86 134h88l-10 34H96l-10-34z"
-                    fill="#f2a95f"
-                  />
-                  <path
-                    d="M78 120c0-22 17-40 38-40 5-18 21-31 40-31 22 0 40 18 40 40 16 2 29 16 29 33H78v-2z"
-                    fill="#ffd7d1"
-                  />
-                  <circle
-                    cx="130"
-                    cy="73"
-                    r="8"
-                    fill="#f9512e"
-                  />
-                  <circle
-                    cx="112"
-                    cy="95"
-                    r="5"
-                    fill="#fff0ef"
-                  />
-                  <circle
-                    cx="148"
-                    cy="95"
-                    r="5"
-                    fill="#fff0ef"
-                  />
-                </svg>
-              </a>
-              <p class="product-card__category">Cupcakes</p>
-              <h3 class="product-card__title">Citrus Bloom</h3>
-              <p class="product-card__description">
-                Tender cupcakes crowned with tangy frosting and bright orange
-                notes for easy gifting.
-              </p>
-              <a
-                class="product-card__link"
-                href="#contact"
-              >
+                <img
+                  class="product-card__icon"
+                  src="./src/images/icon-arrow.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
                 Order
               </a>
             </article>
@@ -643,285 +400,215 @@
         class="about"
         id="about"
       >
-        <div class="container">
-          <div class="about__layout">
-            <div class="section-heading">
-              <p class="section-heading__eyebrow">Few words about us</p>
-              <h2 class="section-heading__title">
-                We turn bakery counters into memory makers
-              </h2>
-            </div>
+        <div class="container about__container">
+          <div class="about__heading">
+            <h2 class="section-title section-title--about">
+              Few words about us
+            </h2>
+          </div>
 
+          <div class="about__content">
             <p class="about__text">
-              Since 2015, Creative Bakery has grown from one small kitchen into
-              a warm network of pastry spaces where every tray is baked with
-              care, every order is finished by hand, and every dessert table is
-              designed to feel personal.
+              Like many design teams, Onfido made the transition from Abstract +
+              Sketch, to Figma in the last couple of years. One of the common
+              resistance points internally before making that switch, was
+              Figma's lack of Git-style branching that Abstract enabled. The
+              design team had come to rely on branching and had built a lot of
+              our processes around it.
             </p>
+          </div>
 
-            <div class="about__stats">
-              <article class="stat-card">
-                <p class="stat-card__value">2015</p>
-                <p class="stat-card__label">Foundation year</p>
-              </article>
+          <img
+            class="about__crumbs"
+            src="./src/images/crumbs-decor.svg"
+            alt=""
+            aria-hidden="true"
+          />
 
-              <article class="stat-card">
-                <p class="stat-card__value">23</p>
-                <p class="stat-card__label">Stores</p>
-              </article>
+          <div class="about__stats">
+            <article class="stat-card">
+              <h3 class="stat-card__value">2015</h3>
+              <p class="stat-card__label">Foundation year</p>
+            </article>
 
-              <article class="stat-card">
-                <p class="stat-card__value">155</p>
-                <p class="stat-card__label">Partner companies</p>
-              </article>
+            <article class="stat-card">
+              <h3 class="stat-card__value">23</h3>
+              <p class="stat-card__label">Stores</p>
+            </article>
 
-              <article class="stat-card">
-                <p class="stat-card__value">10k+</p>
-                <p class="stat-card__label">Clients served</p>
-              </article>
-            </div>
+            <article class="stat-card">
+              <h3 class="stat-card__value">155</h3>
+              <p class="stat-card__label">Companies</p>
+            </article>
+
+            <article class="stat-card">
+              <h3 class="stat-card__value">10k+</h3>
+              <p class="stat-card__label">Clients</p>
+            </article>
           </div>
         </div>
       </section>
+
+      <div
+        id="terms"
+        hidden
+      ></div>
     </main>
 
     <footer
       class="footer"
       id="contact"
     >
-      <div class="container">
-        <div class="footer__grid">
-          <div class="footer__column">
-            <a
-              class="logo logo--footer"
-              href="#"
-              aria-label="Creative Bakery home"
-            >
-              <span class="logo__icon" aria-hidden="true">
-                <svg
-                  class="logo__svg"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="24"
-                    cy="24"
-                    r="20"
-                    fill="#fbc66d"
-                  />
-                  <circle
-                    cx="18"
-                    cy="18"
-                    r="2.5"
-                    fill="#1f1d2b"
-                  />
-                  <circle
-                    cx="29"
-                    cy="17"
-                    r="2"
-                    fill="#1f1d2b"
-                  />
-                  <circle
-                    cx="31"
-                    cy="28"
-                    r="2.5"
-                    fill="#1f1d2b"
-                  />
-                  <circle
-                    cx="18"
-                    cy="31"
-                    r="2"
-                    fill="#1f1d2b"
-                  />
-                </svg>
-              </span>
-              <span class="logo__text">
-                Creative
-                <span class="logo__text-accent">Bakery</span>
-              </span>
-            </a>
-            <p class="footer__summary">
-              Hand-finished cakes, flaky pastries, and custom dessert tables
-              baked fresh every day.
-            </p>
-          </div>
+      <div class="container footer__container">
+        <div class="footer__brand">
+          <a
+            class="footer__logo-link"
+            href="#top"
+            aria-label="Creative Bakery home"
+          >
+            <img
+              class="footer__logo"
+              src="./src/images/logo-footer.svg"
+              alt="Bakerlab logo"
+            />
+          </a>
 
-          <div class="footer__column">
+          <nav
+            class="footer__nav"
+            aria-label="Footer navigation"
+          >
             <p class="footer__title">Menu</p>
-            <ul class="footer__list">
-              <li class="footer__item">
+            <ul class="footer__menu-list">
+              <li>
                 <a
-                  class="footer__link"
+                  class="footer__menu-link"
                   href="#products"
                 >
                   Products
                 </a>
               </li>
-              <li class="footer__item">
+              <li>
                 <a
-                  class="footer__link"
+                  class="footer__menu-link"
                   href="#about"
                 >
-                  About us
+                  About Us
                 </a>
               </li>
-              <li class="footer__item">
+              <li>
                 <a
-                  class="footer__link"
+                  class="footer__menu-link"
                   href="#blog"
                 >
                   Blog
                 </a>
               </li>
-              <li class="footer__item">
+              <li>
                 <a
-                  class="footer__link"
-                  href="#contact"
+                  class="footer__menu-link"
+                  href="#terms"
                 >
-                  Contact us
+                  Terms &amp; Privacy
                 </a>
               </li>
             </ul>
-          </div>
+          </nav>
 
-          <div class="footer__column">
-            <p class="footer__title">Call us</p>
-            <ul class="footer__list">
-              <li class="footer__item">
-                <a
-                  class="footer__link"
-                  href="tel:+16295550129"
-                >
-                  (629) 555-0129
-                </a>
-              </li>
-              <li class="footer__item">
-                <a
-                  class="footer__link"
-                  href="tel:+16035550123"
-                >
-                  (603) 555-0123
-                </a>
-              </li>
-              <li class="footer__item">
-                <a
-                  class="footer__link"
-                  href="tel:+17045550127"
-                >
-                  (704) 555-0127
-                </a>
-              </li>
-            </ul>
-
-            <p class="footer__title footer__title--spaced">Email us</p>
+          <div class="footer__socials">
             <a
-              class="footer__link"
-              href="mailto:bakerlab@example.com"
+              class="footer__social-link"
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
             >
-              bakerlab@example.com
+              <img
+                src="./src/images/icon-facebook.svg"
+                alt=""
+              />
+            </a>
+            <a
+              class="footer__social-link"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+            >
+              <img
+                src="./src/images/icon-instagram.svg"
+                alt=""
+              />
+            </a>
+            <a
+              class="footer__social-link footer__social-link--twitter"
+              href="https://x.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Twitter / X"
+            >
+              <img
+                class="footer__social-image footer__social-image--default"
+                src="./src/images/icon-twitter.svg"
+                alt=""
+              />
+              <img
+                class="footer__social-image footer__social-image--hover"
+                src="./src/images/icon-twitter-hover.svg"
+                alt=""
+              />
             </a>
           </div>
+        </div>
 
-          <div
-            class="footer__column footer__column--social"
-            id="blog"
-          >
-            <p class="footer__title">Blog</p>
-            <p class="footer__summary">
-              Follow our daily bakes, behind-the-scenes moments, and seasonal
-              pastry launches on social media.
-            </p>
+        <div class="footer__contact-block">
+          <h2 class="footer__heading">Contact us</h2>
 
-            <div class="socials">
+          <div class="footer__columns">
+            <div>
+              <p class="footer__title">Call us</p>
+              <ul class="footer__contact-list">
+                <li>
+                  <a
+                    class="footer__contact-link"
+                    href="tel:+6205550129"
+                  >
+                    (629) 555-0129
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="footer__contact-link"
+                    href="tel:+6035550123"
+                  >
+                    (603) 555-0123
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="footer__contact-link"
+                    href="tel:+7045550127"
+                  >
+                    (704) 555-0127
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p class="footer__title">Email us</p>
               <a
-                class="socials__link"
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
+                class="footer__contact-link"
+                href="mailto:bakerlab@example.com"
               >
-                <svg
-                  class="socials__icon"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="3.5"
-                    y="3.5"
-                    width="17"
-                    height="17"
-                    rx="5"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                  />
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="4"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                  />
-                  <circle
-                    cx="17.2"
-                    cy="6.8"
-                    r="1.2"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a>
-
-              <a
-                class="socials__link"
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook"
-              >
-                <svg
-                  class="socials__icon"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.3 20.5v-7h2.4l.4-2.8h-2.8V8.9c0-.8.2-1.4 1.4-1.4h1.5V5.1c-.7-.1-1.5-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v1.9H8v2.8h2.3v7h3z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a>
-
-              <a
-                class="socials__link"
-                href="https://x.com/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="X"
-              >
-                <svg
-                  class="socials__icon"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.1 4.5h3.4l4 5.5 4.7-5.5h1.8l-5.7 6.7 6.6 8.3h-3.5l-4.4-5.8-5 5.8H5.1l6-7-6-7.8zm2 1.5 9.4 12h1.2L8.4 6h-1.3z"
-                    fill="currentColor"
-                  />
-                </svg>
+                bakerlab@example.com
               </a>
             </div>
           </div>
-        </div>
 
-        <div class="footer__bottom">
-          <p class="footer__copyright">© Creative Bakery 2026</p>
+          <p class="footer__copyright">&copy; Bakerlab 2022</p>
         </div>
       </div>
     </footer>
-
-    <script
-      type="module"
-      src="./src/scripts/main.js"
-    ></script>
   </body>
 </html>
+
