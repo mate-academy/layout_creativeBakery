@@ -1,0 +1,107 @@
+.about {
+  @include padding-inline;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+
+  box-sizing: border-box;
+  padding-block: 72px;
+
+  @include on-tablet {
+    gap: 72px;
+    padding-block: 152px;
+  }
+
+  @include on-desktop {
+    gap: 144px;
+    padding-block: 178px 349px;
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+  &__description {
+    @include on-tablet {
+      min-height: 216px;
+    }
+  }
+
+  &__blog {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      row-gap: 80px;
+    }
+
+    @include on-desktop {
+      gap: 20px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__small-info {
+    color: $footer-secondary-text;
+  }
+
+  &__picture {
+    position: absolute;
+    z-index: -1;
+    bottom: 246px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: block;
+
+    width: 320px;
+    height: 300px;
+
+    background-image: url('../images/about-image/crumbs.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include on-tablet {
+      bottom: 204px;
+      width: 526px;
+      height: 493px;
+    }
+
+    @include on-desktop {
+      bottom: 56px;
+      left: 27%;
+      transform: translateX(27%);
+
+      width: 718px;
+      height: 673px;
+    }
+  }
+}

@@ -1,0 +1,139 @@
+.products {
+  @include padding-inline;
+
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  margin-top: 64px;
+
+  @include on-tablet {
+    gap: 80px;
+  }
+
+  @include on-desktop {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    @include on-desktop {
+      &--left {
+        grid-column: 1 / 7;
+      }
+
+      &--right {
+        grid-column: 3 / -1;
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__name {
+    margin-top: 8px;
+    color: $footer-secondary-text;
+  }
+
+  &__description {
+    min-height: 72px;
+  }
+
+  &__order {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    width: fit-content;
+
+    color: $accent-color;
+    text-decoration: none;
+
+    &::before {
+      content: '';
+
+      display: block;
+
+      width: 24px;
+      height: 24px;
+      margin-right: 4px;
+
+      background-image: url('../images/icons/icon-arrow.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 0;
+      height: 1px;
+
+      background-color: $accent-color;
+
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+
+      &::before {
+        animation: jump 0.5s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20%);
+  }
+}

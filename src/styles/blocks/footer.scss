@@ -1,0 +1,212 @@
+.footer {
+  @include padding-inline;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  padding-block: 56px;
+
+  color: $footer-text;
+
+  background-color: $main-color;
+
+  @include on-tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 48px;
+    padding-block: 88px;
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 24px;
+
+    @include on-tablet {
+      gap: 96px;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      gap: 61px;
+    }
+  }
+
+  &__logo {
+    cursor: pointer;
+
+    position: relative;
+
+    display: block;
+
+    width: 168px;
+    height: 40px;
+
+    background-image: url('../images/logos/footer-logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 0;
+      height: 2px;
+      border-radius: 1px;
+
+      background-color: $accent-color;
+
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__br {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__title {
+    @include on-desktop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__call {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include on-desktop {
+      grid-column: 1;
+    }
+  }
+
+  &__call-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+  }
+
+  &__email {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include on-desktop {
+      grid-column: 2;
+    }
+  }
+
+  &__link {
+    position: relative;
+    width: fit-content;
+    color: inherit;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 0;
+      height: 1px;
+
+      background-color: $accent-color;
+
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__social-icon {
+    cursor: pointer;
+
+    width: 24px;
+    height: 24px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    transition: background-image 0.3s ease;
+
+    &--facebook {
+      background-image: url('../images/social-icons/facebook.svg');
+
+      &:hover {
+        background-image: url('../images/social-icons/facebook-hover.svg');
+      }
+    }
+
+    &--x {
+      background-image: url('../images/social-icons/x.svg');
+
+      &:hover {
+        background-image: url('../images/social-icons/x-hover.svg');
+      }
+    }
+
+    &--instagram {
+      background-image: url('../images/social-icons/instagram.svg');
+
+      &:hover {
+        background-image: url('../images/social-icons/instagram-hover.svg');
+      }
+    }
+  }
+
+  &__subtitles {
+    color: $footer-secondary-text;
+  }
+}
