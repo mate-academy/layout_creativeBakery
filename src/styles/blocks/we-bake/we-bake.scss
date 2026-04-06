@@ -1,0 +1,137 @@
+.we-bake-container {
+  margin: 0 auto;
+  padding: 32px 16px 0;
+
+  @include tablet {
+    padding: 0 44px;
+  }
+
+  @include desktop {
+    max-width: 1200px;
+    padding: 152px 44px 178px;
+  }
+
+  @include desktop-wide {
+    max-width: 1440px;
+    padding: 152px 124px 178px;
+  }
+}
+
+.we-bake {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__title {
+    @extend %h2-mobile;
+
+    text-align: left;
+  }
+
+  &__text {
+    @extend %body-text;
+  }
+
+  @include tablet {
+    &__wrapper {
+      margin-right: 190px;
+    }
+    &__title {
+      font-size: 56px;
+    }
+  }
+
+  @include desktop {
+    align-items: start;
+    justify-content: start;
+    &__wrapper {
+      margin: 0;
+    }
+    &__title {
+      font-size: 72px;
+    }
+  }
+}
+
+.link {
+  &__btn {
+    &-icon-order {
+      mask-image: url('/src//images/icons/Icon-arrow.svg');
+    }
+  }
+}
+
+.product-card-wrapper {
+  display: grid;
+  justify-content: center;
+  row-gap: 56px;
+  margin-top: 56px;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 328px);
+    gap: 24px;
+    margin-top: 80px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(2, 402px);
+    justify-content: start;
+    width: 100%;
+    &:nth-child(3) {
+      justify-content: end;
+    }
+  }
+}
+
+.product-card {
+  width: 288px;
+
+  &__image {
+    width: inherit;
+    height: 356px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    transition: transform 0.5s;
+
+    @include desktop {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__name {
+    @extend %text-uppercase;
+
+    margin-bottom: 8px;
+    color: $c-grey;
+  }
+
+  &__text {
+    @extend %body-text;
+
+    margin-bottom: 16px;
+  }
+
+  @include tablet {
+    width: 328px;
+
+    &__image {
+      height: 424px;
+    }
+  }
+
+  @include desktop {
+    width: 402px;
+
+    &__image {
+      height: 512px;
+    }
+  }
+}

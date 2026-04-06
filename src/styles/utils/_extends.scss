@@ -1,4 +1,182 @@
-%h1 {
-  font-family: Roboto, sans-serif;
+%h1-desktop {
+  display: block;
+
+  font-family: Inter, sans-serif;
   font-weight: 400;
+  font-size: 144px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  color: $c-accent-orange;
+}
+
+%h2-desktop {
+  @extend %h1-desktop;
+
+  font-size: 72px;
+}
+
+%h1-tablet {
+  @extend %h1-desktop;
+
+  font-size: 80px;
+}
+
+%h2-tablet {
+  @extend %h2-desktop;
+
+  font-size: 56px;
+}
+
+%h1-mobile {
+  @extend %h1-desktop;
+
+  font-size: 64px;
+}
+
+%h2-mobile {
+  @extend %h2-desktop;
+
+  font-size: 48px;
+}
+
+%big-text {
+  display: block;
+
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 85%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $c-accent-orange;
+}
+
+%body-text {
+  display: block;
+
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: $c-black;
+}
+
+%text-uppercase {
+  display: block;
+
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $c-accent-orange;
+}
+
+%button {
+  width: 288px;
+  height: 56px;
+  border-radius: 32px;
+  border: 2px solid $c-accent-orange;
+
+  .button__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .button__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background-color: $c-accent-orange;
+
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+  .button__text {
+    @extend %text-uppercase;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: $c-accent-orange;
+    .button__icon {
+      background-color: $c-white;
+    }
+    .button__text {
+      color: $c-white;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: $c-dark-orange;
+    border-color: $c-dark-orange;
+
+    .button__icon {
+      background-color: $c-white;
+    }
+    .button__text {
+      color: $c-white;
+    }
+  }
+
+  &:disabled {
+    border-color: $c-light-orange;
+    .button__icon {
+      background-color: $c-light-orange;
+    }
+    .button__text {
+      color: $c-light-orange;
+    }
+  }
+}
+
+%link {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: max-content;
+  gap: 4px;
+  &:hover,
+  &:focus {
+    .link__btn-icon {
+      background-color: $c-dark-orange;
+    }
+    .link__text {
+      color: $c-dark-orange;
+    }
+  }
+
+  .link__btn-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: $c-accent-orange;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+  .link__text {
+    @extend %text-uppercase;
+  }
+}
+
+%logo {
+  .logo-icon {
+    display: block;
+    width: 168px;
+    height: 40px;
+
+    background-color: $c-black;
+
+    mask-image: url('/src//images/icons/Logo.svg');
+
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
 }

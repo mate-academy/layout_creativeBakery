@@ -1,0 +1,146 @@
+.header-container {
+  padding: 16px 20px 16px 16px;
+  margin: 0 auto;
+
+  @include desktop {
+    padding: 28px 32px;
+    max-width: 1200px;
+  }
+
+  @include desktop-wide {
+    max-width: 1440px;
+  }
+}
+
+.header {
+  position: relative;
+  z-index: 102;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__burger-menu {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background-color: $c-black;
+    mask-image: url('/src//images/icons/Icon-menu.svg');
+
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    &:hover {
+      background-color: $c-accent-orange;
+    }
+    &--open {
+      mask-image: url('/src//images/icons/Icon-close.svg');
+    }
+  }
+  &__burger-btn {
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
+.logo-btn {
+  @extend %logo;
+  .logo-icon {
+    height: 32px;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 64px;
+  z-index: 100;
+
+  background-color: $c-light-pink;
+
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  &__list {
+    margin-top: 132px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &--open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include desktop {
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    margin-top: 0;
+    &__list {
+      margin-top: 0;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 64px;
+    }
+  }
+}
+
+.menu-item {
+  @include desktop {
+    &:last-child {
+      margin-left: -44px;
+    }
+  }
+}
+
+.menu-link {
+  @extend %body-text;
+
+  &:hover,
+  &:focus {
+    color: $c-accent-orange;
+  }
+}
+
+.link {
+  @extend %link;
+
+  &__btn {
+    &-icon-contact-us {
+      mask-image: url('/src/images/icons/Icon-phone.svg');
+    }
+    &-icon-theme-switcher {
+      display: block;
+      width: 18px;
+      height: 18px;
+      background-color: $c-accent-orange;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-image: url('/src/images/icons/theme.svg');
+
+      &:hover {
+        background-color: $c-dark-orange;
+      }
+    }
+  }
+}
+
+.menu-link-contact-us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
