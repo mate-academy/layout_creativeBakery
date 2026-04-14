@@ -1,6 +1,48 @@
+@mixin tablet {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat($grid-columns-mobile, 1fr);
+  gap: $grid-gap-mobile;
+
+  @include tablet {
+    grid-template-columns: repeat($grid-columns-tablet, 1fr);
+    gap: $grid-gap-tablet;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat($grid-columns-desktop, 1fr);
+    gap: $grid-gap-desktop;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 1px;
+  height: 1px;
+
+  white-space: nowrap;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
 }

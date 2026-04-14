@@ -1,0 +1,43 @@
+.button {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 56px;
+  border: 2px solid $c-accent-orange;
+  border-radius: 32px;
+
+  @include tablet {
+    max-width: 326px;
+  }
+
+  @include desktop {
+    max-width: 260px;
+  }
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &__icon {
+    flex-shrink: 0;
+
+    width: 24px;
+    height: 24px;
+
+    fill: $c-accent-orange;
+
+    transition: fill 0.3s ease;
+  }
+
+  &:hover {
+    color: $c-white;
+    background-color: $c-accent-orange;
+
+    .button__icon {
+      fill: $c-white;
+    }
+  }
+}

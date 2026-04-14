@@ -1,0 +1,126 @@
+.about {
+  @include grid;
+
+  row-gap: 0;
+
+  margin-top: 72px;
+  margin-bottom: 72px;
+
+  background-image: url('../images/crumbs.png');
+  background-repeat: no-repeat;
+  background-position: center 72%;
+  background-size: 300px auto;
+
+  @include tablet {
+    margin-top: 152px;
+    margin-bottom: 152px;
+    background-position: center;
+    background-size: 493px auto;
+  }
+
+  @include desktop {
+    margin-top: 178px;
+    margin-bottom: 56px;
+    background-size: 673px auto;
+  }
+
+  &__content {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    gap: 64px;
+
+    @include tablet {
+      gap: 72px;
+    }
+
+    @include desktop {
+      gap: 144px;
+      margin-bottom: 293px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 24px;
+    }
+  }
+
+  &__title {
+    min-width: 328px;
+    color: $c-accent-orange;
+
+    @include desktop {
+      flex: 1;
+    }
+  }
+
+  &__description {
+    @include desktop {
+      flex: 1;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include tablet {
+      gap: 80px;
+    }
+
+    @include desktop {
+      flex-direction: row;
+      gap: 24px;
+    }
+  }
+
+  &__stats-group {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    @include desktop {
+      flex: 1;
+      flex-direction: row;
+      gap: 24px;
+    }
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include tablet {
+      flex: 1;
+    }
+  }
+
+  &__value {
+    @extend %big-text;
+
+    display: inline-block;
+    color: $c-accent-orange;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+      text-shadow:
+        0 0 12px rgba($c-accent-orange, 0.7),
+        0 0 25px rgba($c-accent-orange, 0.4);
+      filter: brightness(1.2);
+    }
+  }
+}

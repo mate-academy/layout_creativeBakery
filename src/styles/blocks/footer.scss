@@ -1,0 +1,192 @@
+.footer {
+  overflow: hidden;
+  width: 100%;
+  background-color: $c-black;
+
+  &__inner {
+    @include grid;
+
+    row-gap: 0;
+  }
+
+  &__content {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    gap: 64px;
+
+    margin-top: 56px;
+    margin-bottom: 40px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 24px;
+      margin-top: 88px;
+      margin-bottom: 48px;
+    }
+
+    @include desktop {
+      gap: 308px;
+    }
+  }
+
+  &__socials-links {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    gap: 40px;
+
+    margin-bottom: 56px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 24px;
+      margin-bottom: 88px;
+    }
+
+    @include desktop {
+      gap: 308px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include tablet {
+      flex: 1;
+      gap: 96px;
+    }
+
+    @include desktop {
+      gap: 61px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 168px;
+    height: 40px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__menu-title {
+    @extend %uppercase-text;
+
+    color: $c-grey-dark;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    color: $c-white;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $c-accent-orange;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include tablet {
+      flex: 1;
+    }
+  }
+
+  &__contacts-title {
+    color: $c-white;
+
+    @include desktop {
+      min-width: 544px;
+    }
+  }
+
+  &__contacts-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include desktop {
+      flex-direction: row;
+      gap: 24px;
+    }
+  }
+
+  &__phone {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include desktop {
+      flex: 1;
+    }
+  }
+
+  &__email {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include desktop {
+      flex: 1;
+    }
+  }
+
+  &__label {
+    @extend %uppercase-text;
+
+    color: $c-grey-dark;
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+
+    @include tablet {
+      flex: 1;
+    }
+  }
+
+  &__social {
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &__copyright {
+    color: $c-grey-dark;
+
+    @include tablet {
+      flex: 1;
+      min-width: 544px;
+    }
+  }
+}

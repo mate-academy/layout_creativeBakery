@@ -1,0 +1,76 @@
+.menu {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  transform: translateY(-100%);
+
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 16px;
+
+  background: $c-light-pink;
+
+  transition: transform 0.3s ease;
+
+  &.menu--active {
+    transform: translateY(0);
+  }
+
+  @include tablet {
+    padding: 0 44px;
+  }
+
+  @include desktop {
+    position: static;
+    inset: auto;
+    transform: none;
+
+    overflow-y: visible;
+    justify-content: center;
+
+    width: auto;
+    height: auto;
+    padding: 0;
+
+    background-color: transparent;
+
+    transition: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include desktop {
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    align-self: center;
+
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    &--phone {
+      @extend %uppercase-text;
+
+      color: $c-accent-orange;
+    }
+  }
+}
