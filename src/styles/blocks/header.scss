@@ -1,0 +1,99 @@
+.header {
+  padding: 16px;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: $background-color;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  @include on-desktop {
+    padding: 28px 32px;
+  }
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: 136px;
+    height: 32px;
+    @include hover(transform, scale(1.2));
+  }
+
+  &__menu {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  &__nav-item {
+    list-style: none;
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    color: $text-color;
+    text-decoration: none;
+    transition: color $effectDuration;
+
+    @include hover(transform, scale(1.05));
+
+    &:hover {
+      color: $main-text-color;
+    }
+
+    &:active {
+      color: $grey-color;
+    }
+
+    &--contact {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 2%;
+      text-transform: uppercase;
+      color: $main-text-color;
+    }
+  }
+
+  &__icon {
+    display: block;
+    background-image: url(../icons/Icon-menu.svg);
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+
+    &--close {
+      background-image: url(../icons/Icon-close.svg);
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+}

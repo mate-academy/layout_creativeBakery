@@ -1,0 +1,161 @@
+.products {
+  margin-top: 64px;
+
+  @include on-tablet {
+    margin-top: 0;
+  }
+
+  @include on-desktop {
+    margin-top: 152px;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+    color: $main-text-color;
+
+    @include on-tablet {
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__text {
+    padding-top: 24px;
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include on-tablet {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: auto;
+      column-gap: 24px;
+    }
+  }
+}
+
+.product__item {
+  padding-top: 56px;
+  list-style: none;
+
+  @include on-tablet {
+    padding-top: 80px;
+
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    padding-top: 80px;
+
+    grid-column: span 3;
+
+    &--end {
+      grid-column: -7/ -4;
+      justify-self: end;
+    }
+  }
+}
+
+.button {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__text {
+    font-weight: 500;
+
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $main-text-color;
+  }
+}
+
+.product-card {
+  &__wrapper {
+    display: flex;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    @include hover(transform, scale(1.05));
+  }
+
+  &__category {
+    display: inline-block;
+    padding-top: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $grey-color;
+  }
+
+  &__description {
+    margin: 0;
+    padding-top: 8px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+  }
+
+  &__button {
+    display: inline-block;
+    margin-top: 16px;
+    border: none;
+    background: none;
+    padding: 0;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      transform $effectDuration,
+      color $effectDuration,
+      filter $effectDuration;
+
+    @include hover(transform, scale(1.05));
+
+    &:hover {
+      .button__text {
+        color: $text-color;
+      }
+
+      .button__icon {
+        filter: brightness(0);
+      }
+    }
+  }
+}

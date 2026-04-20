@@ -1,0 +1,183 @@
+.hero {
+  padding-bottom: 40px;
+
+  @include on-tablet {
+    padding-bottom: 228px;
+  }
+
+  @include on-desktop {
+    padding-bottom: 66px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    width: 100%;
+
+    @include on-tablet {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: auto;
+      column-gap: 24px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding: 32px 0;
+    grid-column: 1 / -1;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+    text-align: center;
+
+    @include on-tablet {
+      padding: 80px 0 16px;
+      grid-column: 1 / 5;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      padding-top: 135px;
+      padding-bottom: 0;
+      grid-column: 1 / 3;
+      grid-row: 1;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    grid-column: 1 / -1;
+
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-align: center;
+    text-transform: uppercase;
+    color: $main-text-color;
+
+    @include on-tablet {
+      width: 100%;
+      grid-column: 1 / -1;
+      grid-row: 2;
+      align-self: center;
+      z-index: 2;
+
+      font-size: 80px;
+    }
+
+    @include on-desktop {
+      grid-row: 1;
+      font-size: clamp(80px, 10vw, 136px);
+      white-space: nowrap;
+    }
+  }
+
+  &__image-wrapper {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: center;
+
+    @include on-tablet {
+      grid-column: 1 / 9;
+      grid-row: 2;
+      z-index: 1;
+    }
+
+    @include on-desktop {
+      grid-row: 1;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+
+    @include on-tablet {
+      max-width: 500px;
+    }
+
+    @include on-desktop {
+      max-width: 550px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    cursor: pointer;
+    z-index: 2;
+    text-decoration: none;
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+      grid-row: 1;
+      align-self: end;
+    }
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 20px 0;
+
+  font-weight: 500;
+
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 2%;
+  text-transform: uppercase;
+  color: inherit;
+  cursor: pointer;
+
+  border-radius: 50px;
+  background: none;
+  border: 2px solid $main-text-color;
+  transition: all, $effectDuration;
+
+  &:hover {
+    background-color: $main-text-color;
+
+    .button__text {
+      color: $link-color;
+    }
+
+    .button__icon {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &:active,
+  &:focus {
+    background-color: $focused-button;
+    border: 2px solid $focused-button;
+
+    .button__text {
+      color: $link-color;
+    }
+
+    .button__icon {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  @include on-tablet {
+    margin-top: 80px;
+  }
+
+  @include on-desktop {
+    margin-top: 0;
+  }
+}

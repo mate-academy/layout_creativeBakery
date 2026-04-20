@@ -1,0 +1,123 @@
+.about-us {
+  margin: 72px 0;
+
+  @include on-tablet {
+    margin: 152px 0;
+  }
+
+  @include on-desktop {
+    margin: 178px 0 56px;
+  }
+
+  &__container {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+      background-image: url(/src/images/Crumbs.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @include on-desktop {
+      padding-bottom: 293px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+    color: $main-text-color;
+
+    @include on-tablet {
+      font-size: 56px;
+      grid-column: 1 / 5;
+    }
+
+    @include on-tablet {
+      font-size: 72px;
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    padding-top: 32px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+
+    @include on-tablet {
+      padding-top: 0;
+      grid-column: -5 / -1;
+    }
+  }
+
+  &__list {
+    background-image: url(/src/images/Crumbs.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 48px;
+
+    @include on-tablet {
+      padding-top: 72px;
+      background: none;
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 80px 24px;
+    }
+
+    @include on-desktop {
+      padding-top: 144px;
+    }
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+}
+
+.statistic {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__number {
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+    color: $main-text-color;
+  }
+
+  &__label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+  }
+
+  @include hover(transform, scale(1.2));
+}
