@@ -1,0 +1,136 @@
+.contact-us {
+
+  &__num {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    grid-column: 1 / -1;
+    @include md {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__title {
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+
+    @include md {
+      font-size: 58px;
+    }
+
+    @include lg {
+      font-size: 72px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include lg {
+      flex-direction: row;
+      justify-content: space-between;
+
+      & > :nth-child(n) {
+        width: calc(50% - var(--footer-x-gap) / 2);
+      }
+    }
+  }
+
+  &__email {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__media {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 40px;
+    grid-column: 1 / -1;
+
+    @include md {
+      flex-direction: row;
+      max-height: 24px;
+      gap: 24px;
+
+      & > :nth-child(n) {
+        width: calc(50% - var(--footer-x-gap) / 2);
+      }
+    }
+  }
+
+  &__bakerlab {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / -1;
+    gap: 40px;
+
+    @include md {
+      grid-column: span calc(var(--columns) / 2);
+      gap: 96px;
+    }
+
+    @include lg {
+      gap: 61px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    cursor: pointer;
+
+    &--icon {
+      width: 24px;
+      margin-right: 32px;
+      height: 24px;
+      transition: 0.3s;
+
+      &:hover {
+        filter: grayscale(100%) brightness(100);
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__wrapper {
+    grid-column: 1 / -1;
+
+    @include md {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__footer {
+    color: #7f8096;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -1%;
+  }
+}
+
+.contact-us__title-wrapper {
+
+  @include md {
+    height: 96px;
+  }
+
+  @include lg {
+    height: 61px;
+  }
+}
