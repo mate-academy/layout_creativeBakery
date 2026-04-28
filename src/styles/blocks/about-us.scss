@@ -1,0 +1,96 @@
+@use '../utils/text-styles.scss' as styles;
+@use '../utils/vars' as vars;
+@use './../utils/mixins' as mix;
+
+.about-us {
+  &--offset {
+    margin-bottom: 100px;
+  }
+
+  &__content {
+    @include mix.grid-layout;
+
+    background-image: url(../images/Crumbs.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__headline {
+    @include mix.grid-layout;
+
+    grid-column: 1 / -1;
+    margin: 0;
+    margin-bottom: 64px;
+
+    @include mix.on-tablet {
+      margin-bottom: 72px;
+    }
+
+    @include mix.on-desktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__title {
+    @include styles.h2-styles;
+
+    margin: 0;
+    grid-column: 1 /-1;
+    margin-bottom: 32px;
+
+    @include mix.on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__description {
+    @include styles.body-text-styles;
+
+    margin: 0;
+    grid-column: 1 / -1;
+    @include mix.on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__stats {
+    @include mix.grid-layout;
+
+    grid-column: 1 / -1;
+    row-gap: 48px;
+
+    @include mix.on-tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__details {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include mix.on-tablet {
+      grid-column: span 4;
+    }
+
+    @include mix.on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__number {
+    @include styles.big-text-styles;
+    @include mix.hover(transform, scale((1.05)));
+
+    margin: 0;
+    color: vars.$accent-orange;
+  }
+
+  &__information-type {
+    margin: 0;
+
+    @include styles.body-text-styles;
+  }
+}

@@ -1,0 +1,11 @@
+@use '../utils/text-styles.scss' as styles;
+
+.page {
+  scroll-behavior: smooth;
+  &__body {
+    @include styles.body-text-styles;
+    &:has(.menu:target) {
+      overflow: hidden; /* not to scroll the page */
+    }
+  }
+}

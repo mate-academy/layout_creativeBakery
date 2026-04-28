@@ -1,0 +1,48 @@
+@use '../utils/text-styles.scss' as styles;
+@use '../utils/mixins' as mix;
+
+.products {
+  &--offset {
+    margin: 104px 0 72px;
+
+    @include mix.on-tablet {
+      margin-top: 220px;
+      margin-bottom: 152px;
+    }
+
+    @include mix.on-tablet {
+      margin-top: 150px;
+      margin-bottom: 178px;
+    }
+  }
+
+  &__content {
+    @include mix.grid-layout;
+
+    row-gap: 56px;
+
+    @include mix.on-tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__heading {
+    margin: 0;
+    padding: 0;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__title {
+    margin: 0;
+    @include styles.h2-styles;
+  }
+
+  &__description {
+    @include styles.body-text-styles;
+
+    margin: 0;
+  }
+}

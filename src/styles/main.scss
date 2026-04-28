@@ -1,7 +1,98 @@
-@import 'utils';
-@import 'fonts';
-@import 'typography';
+@use './utils/vars' as vars;
+@use './utils/mixins' as mix;
+@use './utils/text-styles' as styles;
+
+@use 'utils';
+@use 'fonts';
+@use './blocks/header';
+@use './blocks/nav';
+@use './blocks/page';
+@use './blocks/hero';
+@use './utils/text-styles';
+@use './blocks/menu';
+@use './blocks/top-bar';
+@use './blocks/products';
+@use './blocks/product-card';
+@use './blocks/about-us';
+@use './blocks/footer';
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  margin: 0;
+}
+
+.default-button--bordered {
+  @include mix.link-reset;
+  @include styles.uppercase-text-styles;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: vars.$accent-orange;
+  height: 56px;
+  padding: 0;
+  border: 2px solid currentColor;
+  border-radius: 32px;
+  transition: all vars.$transition-duration;
+
+  &:hover {
+    background-color: vars.$accent-orange;
+    color: #fff;
+  }
+
+  &:focus {
+    background-color: vars.$dark-orange;
+  }
+
+  &:disabled {
+    color: vars.$light-orange;
+    background-color: currentColor;
+    border-color: currentColor;
+  }
+}
+
+.default-button--borderless {
+  @include styles.uppercase-text-styles;
+
+  position: relative;
+  color: vars.$accent-orange;
+  width: fit-content;
+  transition: all vars.$transition-duration;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    display: block;
+    bottom: -4px;
+    background-color: currentColor;
+    width: 100%;
+    height: 1px;
+    transition: transform vars.$transition-duration;
+    transform: scale(0);
+  }
+
+  &:hover {
+    cursor: pointer;
+    &::after {
+      transform: scale(1);
+    }
+  }
+
+  &:focus {
+    color: vars.$dark-orange;
+  }
+
+  &:disabled {
+    color: vars.$light-orange;
+    border-color: currentColor;
+  }
 }

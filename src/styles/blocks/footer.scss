@@ -1,0 +1,159 @@
+@use '../utils/text-styles.scss' as styles;
+@use '../utils/vars' as vars;
+@use './../utils/mixins' as mix;
+
+.footer {
+  background-color: vars.$plain-text;
+
+  &__content {
+    @include mix.grid-layout;
+
+    grid-row: auto;
+    row-gap: 40px;
+
+    padding-top: 56px;
+    padding-bottom: 56px;
+
+    @include mix.on-tablet {
+      padding-top: 88px;
+      padding-bottom: 88px;
+    }
+  }
+
+  &__logo-link {
+    grid-column: 1 / -1;
+
+    @include mix.on-tablet {
+      grid-column: span 4;
+      grid-row: 1;
+    }
+
+    @include mix.on-desktop {
+      grid-column: span 2;
+    }
+  }
+  &__logo {
+    @include mix.hover(transform, scale(1.2));
+  }
+
+  &__menu-title {
+    @include styles.uppercase-text-styles;
+
+    color: vars.$grey;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__list {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 16px;
+
+    @include mix.on-tablet {
+      grid-column: span 4;
+    }
+
+    &--menu {
+      @include mix.on-tablet {
+        grid-row: 2;
+      }
+      @include mix.on-desktop {
+        grid-column: span 2;
+      }
+    }
+
+    &--call-us {
+      @include mix.on-tablet {
+        grid-row: 2;
+      }
+
+      @include mix.on-desktop {
+        grid-column: 5 / 7;
+      }
+    }
+    &--email-us {
+      @include mix.on-tablet {
+        grid-column: 5 / -1;
+        grid-row: 3;
+      }
+      @include mix.on-desktop {
+        grid-column: 7 / -1;
+        grid-row: 2;
+      }
+    }
+  }
+
+  &__link {
+    @include mix.link-reset;
+
+    color: #fff;
+
+    @include mix.hover(color, vars.$accent-orange);
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include styles.h2-styles;
+
+    margin: 0;
+    padding-top: 24px;
+    color: #fff;
+
+    @include mix.on-tablet {
+      grid-column: span 4;
+      grid-row: 1;
+      padding-top: 0;
+    }
+
+    @include mix.on-desktop {
+      grid-column: 5 / -1;
+      grid-row: 1;
+    }
+  }
+
+  &__icons {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 32px;
+
+    @include mix.on-tablet {
+      grid-column: span 4;
+      grid-row: 4;
+    }
+
+    @include mix.on-desktop {
+      grid-column: span 2;
+      grid-row: 3;
+    }
+  }
+
+  &__icon {
+    text-decoration: none;
+
+    @include mix.hover(transform, scale(1.2));
+    @include mix.link-reset;
+  }
+
+  &__bottom-text {
+    grid-column: 1 / -1;
+    @include styles.body-text-styles;
+
+    color: vars.$grey;
+    margin: 0;
+
+    @include mix.on-tablet {
+      grid-column: span 4;
+      grid-row: 4;
+    }
+
+    @include mix.on-desktop {
+      grid-column: 5 / 7;
+      grid-row: 3;
+    }
+  }
+}

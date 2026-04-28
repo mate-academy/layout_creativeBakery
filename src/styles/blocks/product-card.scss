@@ -1,0 +1,68 @@
+@use '../utils/mixins' as mix;
+@use '../utils/vars' as vars;
+@use '../utils/text-styles' as styles;
+
+.product-card {
+  grid-column: 1 / -1;
+
+  @include mix.on-tablet {
+    grid-column: span 4;
+  }
+
+  @include mix.on-desktop {
+    &--1 {
+      grid-column: 1 / 4;
+    }
+
+    &--2 {
+      grid-column: 4 / 7;
+    }
+
+    &--3 {
+      grid-column: 3 / 6;
+    }
+
+    &--4 {
+      grid-column: 6 / -1;
+    }
+
+    &--5 {
+      grid-column: 1 / 4;
+    }
+
+    &--6 {
+      grid-column: 4 / 7;
+    }
+  }
+  &__link {
+    @include mix.link-reset;
+  }
+
+  &__image {
+    width: 100%;
+
+    @include mix.hover(transform, scale(1.02));
+  }
+
+  &__name {
+    margin: 0;
+    margin-top: 16px;
+  }
+
+  &__description {
+    @include styles.body-text-styles;
+
+    margin: 0;
+    margin-top: 8px;
+  }
+
+  &__button {
+    margin: 0;
+    margin-top: 16px;
+    @include mix.link-reset;
+  }
+
+  &__icon {
+    fill: vars.$accent-orange;
+  }
+}

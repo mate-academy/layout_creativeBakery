@@ -1,0 +1,50 @@
+@use '../utils/text-styles.scss' as styles;
+@use '../utils/mixins' as mix;
+@use '../utils/vars' as vars;
+
+.menu {
+  top: 0;
+  right: 0;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  transition: transform 1s;
+  transform: translateX(-100vw);
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fff;
+
+  &__content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &:target {
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    gap: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    align-self: center;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  &__link {
+    @include mix.link-reset;
+    @include styles.body-text-styles;
+    @include mix.hover(color, vars.$accent-orange);
+  }
+}

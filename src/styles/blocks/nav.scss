@@ -1,0 +1,46 @@
+@use '../utils/mixins' as mix;
+@use '../utils/vars' as vars;
+@use '../utils/text-styles.scss' as styles;
+
+.nav {
+  &__content {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__top {
+    flex: 1;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: none;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    gap: 64px;
+
+    @include mix.on-desktop {
+      display: flex;
+    }
+  }
+
+  &__link {
+    @include mix.link-reset;
+    @include styles.body-text-styles;
+    @include mix.hover(color, vars.$accent-orange);
+  }
+
+  &__item {
+    padding-block: 30px;
+  }
+}
+
+.phone-icon {
+  fill: currentColor;
+}
