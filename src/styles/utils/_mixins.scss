@@ -1,6 +1,149 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin constant-padding-inline() {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 72px;
+  }
+
+  @include on-desktop {
+    padding-inline: 44px;
+    margin-inline: auto;
+  }
+}
+
+.container {
+  @include constant-padding-inline;
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} $effectDuration;
+
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $toValue;
+  }
+}
+
+@mixin page-grid {
+  display: grid;
+
+  --columns: 2;
+
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 6;
+  }
+
+  @include on-desktop {
+    --columns: 8;
+  }
+}
+
+@mixin button-pill {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  height: 56px;
+  padding-inline: 32px;
+  border: 2px solid $accent-text-color;
+  border-radius: 32px;
+  background-color: transparent;
+  color: $accent-text-color;
+  font-family: $secondary-font;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all $effectDuration ease;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &::before {
+    transition: filter $effectDuration ease;
+  }
+
+  &:hover {
+    background-color: $accent-text-color;
+    color: #fff;
+
+    &::before {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &:active,
+  &:focus {
+    background-color: #b83318;
+    border-color: #b83318;
+    color: #fff;
+    outline: none;
+
+    &::before {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: $accent-text-color;
+  text-decoration: none;
+  font-family: $secondary-font;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all $effectDuration ease;
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width $effectDuration ease;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &:active,
+  &:focus {
+    color: #b83318;
+    outline: none;
+
+    &::after {
+      width: 100%;
+      background-color: #b83318;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
   }
 }

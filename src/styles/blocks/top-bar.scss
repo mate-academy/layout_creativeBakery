@@ -1,0 +1,84 @@
+.top-bar {
+  overflow: hidden;
+
+  padding-block: 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include on-tablet {
+    padding-block: 28px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    height: 32px;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      height: 24px;
+    }
+  }
+
+  &__nav {
+    display: none;
+    gap: 64px;
+    align-items: center;
+
+    @include on-desktop {
+      display: flex;
+    }
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: $main-text-color;
+    font-size: 16px;
+    font-weight: 400;
+
+    @include hover(color, $accent-text-color);
+  }
+
+  &__contact-us {
+    @include button-text;
+
+    display: none;
+
+    @include on-desktop {
+      display: inline-flex;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-image: url(../images/icons/Icon-phone.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .icon--menu {
+    @include on-desktop {
+      display: none;
+    }
+  }
+}

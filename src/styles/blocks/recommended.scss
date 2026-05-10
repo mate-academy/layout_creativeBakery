@@ -1,0 +1,37 @@
+.recommended {
+  overflow: hidden;
+
+  &__products {
+    @include page-grid;
+
+    gap: 40px 24px;
+  }
+
+  &__product {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column-end: span 3;
+
+      &:nth-child(4n + 1) {
+        grid-column-start: 1;
+      }
+
+      &:nth-child(4n + 2) {
+        grid-column-start: 4;
+      }
+
+      &:nth-child(4n + 3) {
+        grid-column-start: 3;
+      }
+
+      &:nth-child(4n + 4) {
+        grid-column-start: 6;
+      }
+    }
+  }
+}

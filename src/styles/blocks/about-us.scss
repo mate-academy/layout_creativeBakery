@@ -1,0 +1,120 @@
+.about-us {
+  @include page-grid;
+
+  padding-block: 48px;
+  overflow: hidden;
+
+  background-image: url(../images/Crumbs.png);
+  background-repeat: no-repeat;
+  background-position: 50% 70%;
+  background-size: 330px;
+
+  @include on-tablet {
+    padding-block: 100px;
+    background-position: 50% 45%;
+    background-size: 550px;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin: 0;
+    margin-bottom: 32px;
+    font-size: 48px;
+    line-height: 0.9;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $accent-text-color;
+    letter-spacing: -0.02em;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      grid-row: 1;
+      font-size: 56px;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+      font-size: 80px;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      display: contents;
+    }
+  }
+
+  &__desc {
+    grid-column: 1 / -1;
+    font-size: 16px;
+    color: $main-text-color;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -1%;
+
+    @include on-tablet {
+      grid-column: 4 / 7;
+      grid-row: 1;
+      margin-block: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__grid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 48px;
+    margin-top: 64px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 40px;
+      grid-row: 2;
+      margin-top: 100px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 140px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__number {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 0.8;
+    color: $accent-text-color;
+    margin: 0;
+    letter-spacing: -0.05em;
+
+    @include on-tablet {
+      font-size: 96px;
+    }
+
+    @include on-desktop {
+      font-size: 120px;
+    }
+  }
+
+  &__label {
+    font-size: 16px;
+    color: $main-text-color;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -1%;
+    margin: 0;
+  }
+}
