@@ -1,0 +1,29 @@
+.header {
+  &__inner {
+    @extend %top-bar-base;
+    @include on-desktop {
+      padding: 28px 32px;
+    }
+    @include on-desktop {
+      max-width: 1280px;
+      margin-inline: auto;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    column-gap: 64px;
+  }
+
+  &__nav-link {
+    @include underline($main-text-color);
+  }
+}

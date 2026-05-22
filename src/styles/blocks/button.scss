@@ -1,0 +1,29 @@
+.button {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  column-gap: 4px;
+  align-items: center;
+  @extend %uppercase-label;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 1px;
+    background-color: $accent-color;
+    width: 100%;
+    bottom: 0;
+    transform: scale(0);
+    transition: transform $effect-duration;
+  }
+
+  &:hover::after {
+    transform-origin: left;
+    transform: scale(1);
+  }
+
+  &__text {
+    color: $accent-color;
+  }
+}

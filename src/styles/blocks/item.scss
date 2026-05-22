@@ -1,0 +1,33 @@
+.item {
+  &__img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: transform $effect-duration;
+  }
+
+  &__link {
+    display: block;
+    overflow: hidden;
+    &:hover {
+      .item__img {
+        transform: scale(1.03);
+      }
+      .icon--arrow {
+        transform: translateX(3px);
+      }
+    }
+  }
+
+  &__title {
+    color: $secondary-text-color;
+    font-size: 16px;
+    margin-bottom: 8px;
+    @extend %uppercase-label;
+  }
+
+  &__description {
+    color: $main-text-color;
+    margin-bottom: 16px;
+  }
+}
