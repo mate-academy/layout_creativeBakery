@@ -1,0 +1,39 @@
+@use '../../utils/index' as *;
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 64px;
+  }
+
+  &__link {
+    @extend %body-text;
+
+    position: relative;
+    color: $black;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+    }
+
+    &--contacts {
+      padding-left: 28px;
+      text-transform: uppercase;
+      letter-spacing: 2%;
+      color: $orange;
+
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-image: url(../images/icons/header/Icon-phone.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}
