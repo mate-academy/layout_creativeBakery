@@ -20,7 +20,7 @@
 }
 
 @mixin on-design {
-  @media (min-width: $desktop-min-width) {
+  @media (min-width: $design-min-width) {
     @content;
   }
 }
@@ -46,8 +46,20 @@
   column-gap: 16px;
 
   @include on-tablet {
-    --clumns: 8;
+    --columns: 8;
 
     column-gap: 24px;
   }
+
+}
+
+@mixin mask($path) {
+  mask-image: url($path);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: cover;
+  -webkit-mask-image: url($path);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: cover;
 }

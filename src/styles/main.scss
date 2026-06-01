@@ -3,7 +3,30 @@
 @use 'utils/index' as *;
 @use 'blocks/index' as *;
 @use 'header/header' as *;
+@use 'main/index' as *;
+@use 'aside/menu' as *;
 
 body {
   background: $Light-pink;
+}
+
+.page {
+  position: relative;
+
+  &__menu {
+    position: fixed;
+    z-index: 2;
+
+    opacity: 0;
+    transform: translateY(-100%);
+    transform-origin: right;
+    transition: all $transition;
+
+    background: $Light-pink;
+
+    &:target {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
