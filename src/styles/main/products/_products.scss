@@ -1,0 +1,68 @@
+@use '../../utils/index' as *;
+
+.products {
+  &__container {
+    @include padding-inline;
+    @include grid-page;
+
+    row-gap: 56px;
+
+    @include on-desktop {
+        row-gap: 80px;
+      }
+  }
+
+  &__title-container {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__title {
+    @extend %h2;
+
+    color: $orange;
+  }
+
+  &__paragraph {
+    @extend %body-text;
+
+    color: $black;
+  }
+
+  &__article {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    &--one,
+    &--five {
+      @include on-desktop {
+        grid-column: 1 / span 3;
+      }
+    }
+
+    &--two,
+    &--six {
+      @include on-desktop {
+        grid-column: 4 / span 3;
+      }
+    }
+
+    &--three {
+      @include on-desktop {
+        grid-column: 3 / span 3;
+      }
+    }
+
+    &--four {
+      @include on-desktop {
+        grid-column: 6 / span 3;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@use '../../utils/index' as *;
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding-block: 72px;
+
+  background-image: url('../images/main/crumbs.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  @include on-tablet {
+    gap: 72px;
+    padding-block: 152px;
+    background-size: 70%;
+  }
+
+  @include on-desktop {
+    gap: 144px;
+    padding-block: 178px 349px;
+    background-size: 50%;
+  }
+
+  @include padding-inline;
+
+  &__container-title {
+    @include grid-page;
+
+    row-gap: 32px;
+  }
+
+  &__title {
+    @extend %h2;
+
+    grid-column: 1 / -1;
+    color: $orange;
+
+    @include on-tablet {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  &__paragraph {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / span 4;
+    }
+  }
+
+  &__stat {
+    @include grid-page;
+
+    row-gap: 48px;
+
+    @include on-tablet {
+      row-gap: 60px;
+    }
+  }
+
+  &__stat-block {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__paragraph,
+  &__stat-label {
+    @extend %body-text;
+
+    color: $black;
+  }
+
+  &__stat-value {
+    @extend %big-text;
+
+    color: $orange;
+  }
+}

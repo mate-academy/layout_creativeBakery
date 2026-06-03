@@ -1,0 +1,55 @@
+@use '../../utils/index' as *;
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+  &__container-image {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__h3-title {
+    @extend %button-text;
+
+    margin-bottom: 8px;
+    color: $grey;
+  }
+
+  &__link-container {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    padding-left: 28px;
+  }
+
+  &__link {
+    @extend %button-text;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    color: $orange;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      left: -28px;
+      width: 24px;
+      height: 24px;
+      background-image: url(../images/icons/main/icon-arrow.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
