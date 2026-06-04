@@ -1,0 +1,136 @@
+@use '../utils/index' as *;
+
+.footer {
+  background-color: $black;
+
+  &__container {
+    padding-block: 56px;
+
+    @include on-tablet {
+      row-gap: 48px;
+      padding-block: 88px;
+    }
+
+    @include padding-inline;
+    @include grid-page;
+  }
+
+  &__menu {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / span 4;
+      gap: 96px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+
+  &__contact {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+
+    padding-top: 64px;
+
+    @include on-tablet {
+      grid-column: 5 / span 4;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px 24px;
+
+      padding-top: 0;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+
+    color: $white;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &--container-tel,
+    &--container-email {
+      grid-column: 1 / -1;
+
+      @include on-desktop {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  &__item-title {
+    @extend %button-text;
+
+    color: $grey;
+  }
+
+  &__link {
+    @extend %body-text;
+
+    color: $white;
+
+    @include hover(color, $orange);
+  }
+
+  &__social-madia {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 32px;
+
+    @include on-tablet {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  &__social-link {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: $orange;
+
+    &--face {
+      @include mask('../images/icons/footer/Icon-facebook.svg');
+    }
+
+    &--insta {
+      @include mask('../images/icons/footer/Icon-instagram.svg');
+    }
+
+    &--x {
+      @include mask('../images/icons/footer/x.svg');
+    }
+
+    @include hover(background-color, $white);
+  }
+
+  &__copyright {
+    @extend %body-text;
+
+    margin-top: 40px;
+    color: $grey;
+
+    @include on-tablet {
+      grid-column: 5 / span 4;
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@use '../../utils/index' as *;
+
+.top-bar {
+  display: flex;
+  align-items: center;
+
+  padding: 20px;
+
+  @include on-desktop {
+    padding: 28px 32px;
+  }
+
+  &__menu {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+
+    cursor: pointer;
+
+    background-image: url(../images/icons/header/Icon-menu-open.svg);
+
+    @include hover(transform, scale(1.2));
+
+    @include on-desktop {
+      display: none;
+    }
+
+    &--close {
+      background-image: url(../images/icons/header/Icon-menu-close.svg);
+    }
+  }
+}

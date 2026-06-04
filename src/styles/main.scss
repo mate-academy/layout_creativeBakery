@@ -1,7 +1,39 @@
-@import 'utils';
-@import 'fonts';
-@import 'typography';
+@use 'utils' as *;
+@use 'typography' as *;
+@use 'utils/index' as *;
+@use 'blocks/index' as *;
+@use 'header/header' as *;
+@use 'main/index' as *;
+@use 'aside/menu' as *;
+@use 'footer/footer' as *;
 
 body {
-  background: $c-gray;
+  background: $Light-pink;
+}
+
+.page {
+  position: relative;
+  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+
+    opacity: 0;
+    transform: translateY(-100%);
+    transform-origin: right;
+    transition: all $transition;
+
+    background: $Light-pink;
+
+    &:target {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }

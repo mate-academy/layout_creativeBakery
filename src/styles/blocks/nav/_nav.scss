@@ -1,0 +1,69 @@
+@use '../../utils/index' as *;
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 64px;
+
+    &--menu {
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+  }
+
+  &__link {
+    @extend %body-text;
+
+    position: relative;
+    pointer-events: all;
+    color: $black;
+
+    transition: color $transition;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $orange;
+
+      transform: scale(0);
+      transform-origin: left;
+      transition: transform $transition;
+    }
+
+    &:hover {
+        color: $orange;
+      }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &--contacts {
+      padding-left: 28px;
+      text-transform: uppercase;
+      color: $orange;
+      letter-spacing: 2%;
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        display: block;
+
+        width: 24px;
+        height: 24px;
+
+        background-image: url(../images/icons/header/Icon-phone.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}
