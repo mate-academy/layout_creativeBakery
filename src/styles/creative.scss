@@ -1,0 +1,148 @@
+@use './utils/mixins' as *;
+@use './utils/vars' as *;
+
+.creative {
+  @include padd;
+
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-block: 32px 60px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablet {
+    @include grid;
+
+    padding-block: 80px 228px;
+  }
+
+  @include desktop {
+    padding-block: 0 66px;
+    justify-content: space-between;
+  }
+
+  &__text {
+    margin: 0 0 32px;
+    text-align: center;
+
+    @include tablet {
+      grid-column: 1 / span 4;
+      text-align: start;
+      margin: 0;
+    }
+
+    @include desktop {
+      align-self: end;
+      grid-column: 1 / 3;
+      grid-row: 1;
+      transform: translateY(50px);
+    }
+
+    @include desktop-b {
+      transform: translateY(30px);
+      width: 280px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 64px;
+    line-height: 85%;
+    letter-spacing: -5%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $red;
+
+    @include tablet {
+      font-size: 80px;
+      line-height: 85%;
+      grid-row: 2;
+      grid-column: 1 / -1;
+    }
+
+    @include desktop {
+      font-size: 116px;
+      align-items: center;
+    }
+
+    @include desktop-b {
+      font-size: 120px;
+    }
+  }
+
+  &__image {
+    height: 290px;
+    width: 100%;
+    object-fit: contain;
+    z-index: -1;
+
+    @include tablet {
+      grid-column: 3 / span 4;
+      grid-row: 2;
+      height: 328px;
+    }
+
+    @include desktop {
+      grid-column: 3 / span 4;
+      height: 100%;
+    }
+
+    @include desktop {
+      grid-row: 1 / span 3;
+    }
+  }
+
+  &__link-btn {
+    height: 56px;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 32px;
+    border: 2px solid $red;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: $red;
+    font-weight: 500;
+
+    @include tablet {
+      grid-column: 3 / span 4;
+      margin-top: 50px;
+    }
+
+    @include desktop {
+      grid-column: 1 / span 2;
+      grid-row: 3;
+      margin-top: 0;
+      align-self: flex-start;
+
+      &:hover {
+        @include hover(null, $red);
+
+        color: $white;
+        .creative__link-img {
+          filter: brightness(0) invert(1);
+        }
+      }
+
+      &:focus {
+        background-color: rgba(178, 52, 26, 1);
+        color: $white;
+        .creative__link-img {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+  }
+
+  &__link-img {
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+  }
+}

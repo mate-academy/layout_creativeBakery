@@ -1,0 +1,86 @@
+@use './utils/mixins' as *;
+@use './utils/vars' as *;
+
+.about-us {
+  @include padd;
+
+  max-width: 1200px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding-bottom: 72px;
+  background-image: url(../images/Crumbs.png);
+  background-position: 0 68%;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include tablet {
+    @include grid;
+
+    padding-bottom: 102px;
+    background-position: 121px 51px;
+    background-size: 526px 493px;
+  }
+
+  @include desktop {
+    padding-bottom: 350px;
+    background-size: 718px 673px;
+    background-position: top;
+  }
+
+  &__title {
+    grid-column: 1 / span 4;
+  }
+
+  &__text {
+    margin-block: 32px 64px;
+
+    @include tablet {
+      grid-column: 5 / -1;
+      margin: 0 0 42px;
+    }
+
+    @include desktop {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include tablet {
+      @include grid;
+
+      grid-column: span 8;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include tablet {
+      grid-column: span 4;
+      padding-bottom: 50px;
+    }
+
+    @include desktop {
+      grid-column: span 2;
+    }
+
+    &-num {
+      font-size: 96px;
+      font-weight: 400;
+      letter-spacing: -5px;
+      line-height: 85%;
+      text-transform: uppercase;
+      color: $red;
+    }
+
+    &-description {
+      margin: 0;
+    }
+  }
+}
