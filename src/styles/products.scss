@@ -1,0 +1,107 @@
+@use './utils/mixins' as *;
+@use './utils/vars' as *;
+
+.products {
+  @include padd;
+
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-block: 64px 72px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+
+  @include tablet {
+    @include grid;
+
+    padding-block: 0 152px;
+  }
+
+  @include desktop {
+    row-gap: 80px;
+    padding-bottom: 178px;
+  }
+
+  &__title-box {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include tablet {
+      grid-column: span 8;
+    }
+  }
+
+  &__title {
+    @include hover(null, null, 0 0 8px $red);
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include hover(1.1);
+    @include tablet {
+      padding-top: 50px;
+      grid-column: span 4;
+    }
+
+    @include desktop {
+      padding: 0;
+      grid-column: span 3;
+
+      &:nth-child(4) {
+        grid-column: 3 / 6;
+      }
+
+      &:nth-child(5) {
+        grid-column: 6 / -1;
+      }
+    }
+
+    &__name {
+      margin: 0;
+      color: $gray;
+      text-transform: uppercase;
+      letter-spacing: 2%;
+      line-height: 100%;
+      font-weight: 500;
+    }
+
+    &__text {
+      margin: 0;
+      margin-top: -8px;
+
+      @include hover(null, null, 0 0 8px $red);
+    }
+
+    &__link {
+      height: 32px;
+      width: 84px;
+      color: $red;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-transform: uppercase;
+      line-height: 100%;
+      letter-spacing: 2%;
+      font-weight: 500;
+
+      @include hover(null, null, 0 0 8px $red);
+
+      &-img {
+        width: 16px;
+        height: 16px;
+        object-fit: contain;
+        display: block;
+      }
+    }
+  }
+}

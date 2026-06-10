@@ -1,0 +1,62 @@
+@use './utils/mixins' as *;
+@use './utils/vars' as *;
+
+.top-bar {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-block: 20px;
+  padding-inline: 20px;
+
+  @include desktop {
+    padding: 28px 32px;
+  }
+
+  &__logo-img {
+    display: block;
+    object-fit: contain;
+    height: 25px;
+    width: 128px;
+
+    @include hover(1.1);
+  }
+
+  &__btn {
+    height: 24px;
+    width: 24px;
+    background-size: 20px 8px;
+    background-position: center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+
+    @include hover(1.1);
+    @include desktop {
+      display: none;
+    }
+
+    &--menu {
+      background-image: url(../images/Menu-burger.png);
+
+      @include hover(1.1);
+    }
+  }
+
+  &__nav.nav {
+    padding: 0;
+    display: none;
+
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__nav-list.nav__list {
+    margin: 0;
+    flex-direction: row;
+    gap: 64px;
+  }
+}
