@@ -1,0 +1,45 @@
+.burger {
+  position: relative;
+  z-index: 3000;
+  width: 24px;
+  height: 24px;
+
+  @include on-desktop {
+    display: none;
+  }
+
+  &__line {
+    position: absolute;
+    left: 2px;
+    transform-origin: center;
+
+    width: 20px;
+    height: 2px;
+
+    background-color: $black;
+
+    transition: $effectDuration;
+
+    &:nth-child(1) {
+      top: 6px;
+    }
+
+    &:nth-child(2) {
+      top: 14px;
+    }
+  }
+
+  &.is-open {
+    .burger__line {
+      &:nth-child(1) {
+        top: 11px;
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        top: 11px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

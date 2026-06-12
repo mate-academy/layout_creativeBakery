@@ -1,0 +1,289 @@
+.header {
+  position: relative;
+
+  // ================= TOP BAR =================
+  &__top {
+    position: relative;
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px;
+
+    @include on-desktop {
+      padding: 28px 32px;
+    }
+  }
+
+  // ================= LOGO =================
+  &__logo {
+    position: relative;
+    z-index: 2100;
+
+    &-img {
+      display: block;
+      width: auto;
+      height: 24px;
+    }
+  }
+
+  // ================= BURGER =================
+  &__burger {
+    position: relative;
+    z-index: 2100;
+    width: 24px;
+    height: 24px;
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  // ================= MENU (MOBILE FULLSCREEN) =================
+  &__menu {
+    pointer-events: none;
+
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    visibility: hidden;
+    opacity: 0;
+    background-color: $light-pink;
+
+    transition:
+      opacity $effectDuration ease,
+      visibility $effectDuration ease;
+
+    @include on-desktop {
+      pointer-events: auto;
+
+      position: static;
+      inset: auto;
+
+      flex-direction: row;
+      justify-content: flex-end;
+
+      visibility: visible;
+      opacity: 1;
+      background: transparent;
+    }
+
+    &.is-open {
+      pointer-events: auto;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  // ================= LIST =================
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 64px;
+    }
+  }
+
+  // ================= LINKS =================
+  &__link {
+    position: relative;
+
+    display: inline-block;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: inherit;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+
+    transition: color $effectDuration ease;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      transform-origin: center;
+      transform: scaleX(0);
+
+      width: 100%;
+      height: 1px;
+
+      background: currentColor;
+
+      transition: transform $effectDuration ease;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    &--contact {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      color: $accent-orange;
+    }
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  // ================= HERO =================
+  &__hero {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 32px 16px 40px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      padding-top: 80px;
+      padding-inline: 44px;
+    }
+
+    @include on-desktop {
+      padding-top: 135px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      margin-bottom: 146px;
+      text-align: left;
+    }
+
+    @include on-small-desktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+
+    font-size: 64px;
+    line-height: 85%;
+    color: $accent-orange;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      font-size: 80px;
+    }
+
+    @include on-small-desktop {
+      font-size: 100px;
+    }
+
+    @include on-desktop {
+      font-size: 136px;
+      white-space: nowrap;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: 2;
+    width: 288px;
+
+    @include on-tablet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+
+      width: 326px;
+    }
+
+    @include on-small-desktop {
+      width: 500px;
+    }
+
+    @include on-desktop {
+      width: 544px;
+    }
+  }
+
+  // ================= BUTTON =================
+  &__button {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+
+    width: 288px;
+    height: 56px;
+    margin-top: 20px;
+    border: 2px solid $accent-orange;
+    border-radius: 32px;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: $accent-orange;
+    text-transform: uppercase;
+
+    transition: all $effectDuration ease;
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: $accent-orange;
+    }
+
+    &:hover .header__button-icon {
+      filter: brightness(0) invert(1);
+    }
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      width: 326px;
+      margin: 210px auto 0;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+      width: 280px;
+      margin-top: 64px;
+    }
+  }
+}

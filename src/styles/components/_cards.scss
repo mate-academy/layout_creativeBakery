@@ -1,0 +1,113 @@
+.card {
+  overflow: hidden;
+
+  &-1,
+  &-3,
+  &-5 {
+    @include on-tablet {
+      grid-column: 1 /5;
+    }
+  }
+
+  &-2,
+  &-4,
+  &-6 {
+    @include on-tablet {
+      grid-column: 5 /-1;
+    }
+  }
+
+  &-1,
+  &-5 {
+    @include on-desktop {
+      grid-column: 1 /4;
+    }
+  }
+
+  &-2,
+  &-6 {
+    @include on-desktop {
+      grid-column: 4 /7;
+    }
+  }
+
+  &-3 {
+    @include on-desktop {
+      grid-column: 3 /6;
+    }
+  }
+
+  &-4 {
+    @include on-desktop {
+      grid-column: 6 /-1;
+    }
+  }
+
+  &__image {
+    aspect-ratio: 288 / 356;
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+
+    object-fit: cover;
+
+    transition: transform $effectDuration ease;
+
+    @include on-tablet {
+      aspect-ratio: 328 / 424;
+    }
+
+    @include on-desktop {
+      aspect-ratio: 402 / 512;
+    }
+
+    @include on-large-desktop {
+      aspect-ratio: 432 / 560;
+    }
+  }
+
+  &:hover &__image {
+    transform: scale(1.05);
+  }
+
+  &__title {
+    margin-bottom: 8px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    color: $grey;
+    text-transform: uppercase;
+    letter-spacing: 2%;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $black;
+    letter-spacing: -1%;
+  }
+
+  &__button {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    color: $accent-orange;
+    text-transform: uppercase;
+    letter-spacing: 2%;
+
+    transition:
+      transform $effectDuration ease,
+      color $effectDuration ease;
+
+    &:hover {
+      transform: translateX(4px);
+    }
+  }
+}

@@ -1,0 +1,189 @@
+.footer {
+  padding: 56px 16px;
+  background-color: $black;
+
+  @include on-tablet {
+    @include page-grid;
+
+    padding: 93px 44px 88px;
+  }
+
+  @include on-desktop {
+    padding: 88px 44px;
+  }
+
+  @include on-desktop {
+    padding-inline: 124px;
+  }
+
+  &__menu {
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      grid-column: 1 /4;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 45px;
+
+    @include on-tablet {
+      margin-bottom: 101px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 66px;
+    }
+
+    @include on-desktop {
+      padding-inline: 124px;
+    }
+  }
+
+  &__phones {
+    margin-bottom: 40px;
+  }
+
+  &__contacts {
+    @include on-tablet {
+      grid-column: 5 /-1;
+    }
+
+    &-info {
+      @include on-desktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 24px;
+      }
+    }
+
+    &-label {
+      margin-bottom: 16px;
+
+      font-size: 16px;
+      font-weight: 500;
+      font-style: normal;
+      line-height: 100%;
+      color: $grey;
+      text-transform: uppercase;
+      letter-spacing: 2%;
+    }
+
+    &-title {
+      margin-bottom: 40px;
+      padding-right: 100px;
+
+      font-size: 48px;
+      line-height: 85%;
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: -5%;
+
+      @include on-tablet {
+        font-size: 56px;
+      }
+
+      @include on-desktop {
+        padding-right: 0;
+        font-size: 72px;
+      }
+    }
+
+    &-link {
+      display: block;
+
+      margin-bottom: 16px;
+
+      font-size: 16px;
+      font-style: normal;
+      line-height: 150%;
+      color: $white;
+      letter-spacing: -1%;
+
+      transition: color $effectDuration ease;
+
+      &:hover,
+      &:focus-visible {
+        color: $light-orange;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    position: relative;
+
+    display: inline-block;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $white;
+    letter-spacing: -1%;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      transform-origin: center;
+      transform: scaleX(0);
+
+      width: 100%;
+      height: 1px;
+
+      background: currentColor;
+
+      transition: transform $effectDuration ease;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &__email {
+    margin-bottom: 40px;
+  }
+
+  &__social {
+    @include on-tablet {
+      grid-column: 1 /3;
+    }
+
+    &-link {
+      display: inline-block;
+
+      width: 24px;
+      margin-right: 32px;
+      margin-bottom: 40px;
+
+      color: $accent-orange;
+      text-align: center;
+
+      transition: color $effectDuration ease;
+
+      &:hover,
+      &:focus-visible {
+        color: $light-orange;
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: 16px;
+    line-height: 150%;
+    color: $grey;
+    letter-spacing: -1%;
+
+    @include on-tablet {
+      grid-column: 5 /-1;
+    }
+  }
+}

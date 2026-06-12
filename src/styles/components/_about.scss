@@ -1,0 +1,148 @@
+.about {
+  position: relative;
+  overflow: hidden;
+  padding: 36px 16px 72px;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    z-index: -2;
+    top: 190px;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url('/src/images/Crumbs.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include on-tablet {
+      inset: 0;
+    }
+  }
+
+  @include on-tablet {
+    @include page-grid;
+
+    padding: 0 44px 152px;
+  }
+
+  @include on-desktop {
+    padding-bottom: 349px;
+    padding-inline: 124px;
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    font-size: 48px;
+    line-height: 85%;
+    color: $accent-orange;
+    text-transform: uppercase;
+    letter-spacing: -5%;
+
+    @include on-tablet {
+      grid-column: 1 /5;
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 64px;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $black;
+    letter-spacing: -1%;
+
+    @include on-tablet {
+      grid-column: 5 /-1;
+      margin-bottom: 72px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include on-small-tablet {
+      @include page-grid;
+
+      grid-column: 1 / -1;
+      column-gap: 112px;
+    }
+
+    @include on-desktop {
+      row-gap: 24px;
+    }
+  }
+
+  &__item {
+    &-1,
+    &-3 {
+      @include on-tablet {
+        grid-column: 1 /5;
+      }
+    }
+
+    &-2,
+    &-4 {
+      @include on-tablet {
+        grid-column: 5 /-1;
+      }
+    }
+
+    &-1 {
+      @include on-desktop {
+        grid-column: 1/3;
+      }
+    }
+
+    &-2 {
+      @include on-desktop {
+        grid-column: 3/5;
+      }
+    }
+
+    &-3 {
+      @include on-desktop {
+        grid-column: 5/7;
+      }
+    }
+
+    &-4 {
+      @include on-desktop {
+        grid-column: 7/-1;
+      }
+    }
+  }
+
+  &__number {
+    margin-bottom: 8px;
+
+    font-size: 96px;
+    font-style: normal;
+    line-height: 85%;
+    color: $accent-orange;
+    text-transform: uppercase;
+    letter-spacing: -5%;
+  }
+
+  &__label {
+    font-size: 16px;
+    line-height: 150%;
+    color: $black;
+    letter-spacing: -1%;
+  }
+}
