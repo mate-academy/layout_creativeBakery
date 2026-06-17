@@ -1,0 +1,67 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0 32px;
+  position: relative;
+
+  &__logo {
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s;
+    width: 136px;
+    height: 32px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include on-tablet {
+      display: none;
+    }
+
+    @include on-mini-desktop {
+      display: flex;
+      gap: 64px;
+      align-items: center;
+    }
+
+    @include on-desktop {
+      display: flex;
+      gap: 64px;
+    }
+  }
+}
+
+.menu {
+  color: $text-color;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  height: auto;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: $accent-color;
+  }
+
+  &--contact {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $accent-color;
+    text-transform: uppercase;
+
+    img {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

@@ -1,0 +1,364 @@
+.header {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  &__bottom-wrapper {
+    @include content-padding-inline;
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    background-image: url(../images/Cookie.svg);
+    background-repeat: no-repeat;
+    background-size: 288px 290px;
+    background-position: 50% 60%;
+
+    @media (min-width: 640px) and (max-width: 671px) {
+      background-position: 50% 40%;
+    }
+
+    @include on-small-tablet {
+      background-size: 326px 328px;
+      background-position: 50% 50%;
+    }
+
+    @include on-tablet {
+      background-position: 50% 25%;
+    }
+
+    @include on-big-tablet {
+      background-size: 544px 546px;
+      background-position: 50% 50%;
+    }
+
+    @include on-mini-desktop {
+      background-position: 50% 20%;
+    }
+
+    @include on-desktop {
+      background-size: 584px 586px;
+      background-position: 50% 20%;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    @include on-tablet {
+      text-align: left;
+    }
+
+    @include on-desktop {
+      text-align: left;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    color: $text-color;
+    padding-bottom: 32px;
+
+    @include on-small-tablet {
+      padding-top: 32px;
+    }
+
+    @include on-tablet {
+      padding-top: 80px;
+      padding-bottom: 146px;
+    }
+
+    @include on-big-tablet {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      width: 260px;
+    }
+
+    @include on-mini-desktop {
+      padding-top: 150px;
+      padding-bottom: 8px;
+      width: 260px;
+    }
+
+    @include on-desktop {
+      padding-top: 164px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 64px;
+    color: $accent-color;
+    text-transform: uppercase;
+
+    padding-bottom: 290px;
+
+    @include on-tablet {
+      font-size: 70px;
+      padding-bottom: 210px;
+    }
+
+    @include on-mini-desktop {
+      font-size: 110px;
+      padding-bottom: 64px;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      font-size: 110px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 64px;
+      line-height: 85%;
+      letter-spacing: -5%;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 288px;
+    height: 56px;
+    margin-left: auto;
+    margin-right: auto;
+
+    gap: 4px;
+
+    font-size: 16px;
+    text-transform: uppercase;
+    color: $accent-color;
+
+    border-radius: 32px;
+    border: 2px solid $accent-color;
+    background-color: $back-color;
+
+    cursor: pointer;
+
+    &:hover {
+      color: $back-color;
+      background-color: $accent-color;
+    }
+
+    &:focus {
+      color: $back-color;
+      border-color: $focused-cookie-color;
+      background-color: $focused-cookie-color;
+    }
+
+    &:disabled {
+      color: $back-color;
+      border-color: $disabled-cookie-color;
+      background-color: $disabled-cookie-color;
+    }
+
+    @include on-tablet {
+      width: 326px;
+    }
+
+    @include on-big-tablet {
+      width: 260px;
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    @include on-desktop {
+      width: 280px;
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+}
+
+.burger {
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 16px;
+  top: 20px;
+
+  background: url('../images/icon/Icon-menu.svg') center/contain no-repeat;
+  z-index: 1100;
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+
+  @include on-mini-desktop {
+    display: none;
+  }
+
+  @include on-desktop {
+    display: none;
+  }
+}
+
+.icon--close {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 16px;
+
+  width: 24px;
+  height: 24px;
+
+  background: url('../images/icon/Icon-close (1).svg') center/contain no-repeat;
+
+  z-index: 1101;
+
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: $back-color;
+
+  transform: translateX(100%);
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: transform 0.3s ease;
+
+  z-index: 1000;
+
+  @include on-desktop {
+    display: none;
+  }
+}
+
+.mobile-menu__top {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.mobile-menu__logo {
+  display: block;
+  width: 136px;
+
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+
+  a:not(.mobile-menu--contact) {
+    position: relative;
+
+    display: block;
+
+    padding: 12px 0;
+
+    font-size: 16px;
+
+    color: $text-color;
+    text-decoration: none;
+    text-align: center;
+
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 6px;
+
+      width: 0;
+      height: 2px;
+
+      background-color: $accent-color;
+
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 40%;
+    }
+  }
+}
+
+.mobile-menu--contact,
+.header__contact,
+.top-bar__menu .menu--contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  color: $accent-color;
+  text-transform: uppercase;
+
+  transition: transform 0.3s ease;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.header__button svg {
+  transition: transform 0.3s ease;
+}
+
+.header__button:hover svg {
+  transform: rotate(15deg) scale(1.1);
+}
+
+.mobile-menu:target {
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu:target .icon--close {
+  display: block;
+}
+
+body:has(.mobile-menu:target) .burger {
+  display: none;
+}

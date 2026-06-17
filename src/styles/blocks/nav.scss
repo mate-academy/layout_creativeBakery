@@ -1,0 +1,137 @@
+.footer {
+  background-color: $text-color;
+  padding-top: 40px;
+
+  @include on-tablet {
+    padding-top: 88px;
+  }
+
+  @include on-desktop {
+    padding-top: 88px;
+  }
+
+  &__inner {
+    @include content-padding-inline;
+
+    max-width: 1440px;
+    margin: 0 auto;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      gap: 24px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-small-tablet {
+      flex-direction: row;
+    }
+
+    @include on-tablet {
+      flex-direction: row;
+    }
+
+    @include on-mini-desktop {
+      gap: 308px;
+    }
+
+    @include on-desktop {
+      gap: 328px;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  width: 288px;
+
+  @include on-tablet {
+    width: 328px;
+  }
+
+  @include on-mini-desktop {
+    width: 260px;
+  }
+
+  @include on-desktop {
+    width: 280px;
+  }
+
+  &__logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include on-tablet {
+      height: 128px;
+    }
+
+    @include on-mini-desktop {
+      height: 57px;
+    }
+
+    @include on-desktop {
+      height: 61px;
+    }
+  }
+
+  &__logo {
+    height: 40px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__menu {
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 40px;
+
+    @include on-desktop {
+      padding-top: 61px;
+    }
+
+    &--title {
+      text-transform: uppercase;
+      font-weight: 500;
+      color: $product-title-color;
+    }
+
+    &--list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &--item {
+      list-style: none;
+
+      a {
+        color: $menu-item-color;
+        font-size: 16px;
+        font-weight: 400;
+        text-decoration: none;
+        display: inline-block;
+
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+}
