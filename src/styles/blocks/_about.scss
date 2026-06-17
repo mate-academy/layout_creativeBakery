@@ -1,0 +1,133 @@
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+
+  margin-top: 72px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 24px;
+    margin-top: 0;
+  }
+
+  @include on-desktop {
+    grid-template-rows: repeat(2, auto);
+    padding-bottom: 293px;
+  }
+
+  &__title {
+    z-index: 1;
+    grid-column: span 2;
+    margin-bottom: 32px;
+    color: $accent;
+
+    @include font-style($h2-mobile);
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin: 0;
+
+      @include font-style($h2-tablet);
+    }
+
+    @include on-desktop {
+      @include font-style($h2-desktop);
+    }
+  }
+
+  &__text {
+    z-index: 1;
+    grid-column: span 2;
+    margin-bottom: 64px;
+    color: $black-color;
+
+    @include font-style($body-text);
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-bottom: 72px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 2;
+    gap: 48px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-column: span 8;
+      column-gap: 24px;
+    }
+
+    @include on-desktop {
+      grid-row: 2;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    z-index: 0;
+    bottom: 246px;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include on-tablet {
+      bottom: 204px;
+      left: 121px;
+
+      width: 526px;
+      height: 493px;
+    }
+
+    @include on-desktop {
+      bottom: 56px;
+      left: 325px;
+
+      width: 718px;
+      height: 673px;
+    }
+
+    @include on-big-screen {
+      left: 361px;
+    }
+  }
+}
+
+.stat {
+  z-index: 1;
+
+  @include on-tablet {
+    grid-column: span 4;
+    row-gap: 80px;
+  }
+
+  @include on-desktop {
+    grid-column: span 2;
+  }
+
+  &__value {
+    margin-bottom: 8px;
+    color: $accent;
+
+    @include font-style($big-text);
+  }
+
+  &__desc {
+    color: $black-color;
+
+    @include font-style($body-text);
+  }
+}

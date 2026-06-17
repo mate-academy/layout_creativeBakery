@@ -1,0 +1,61 @@
+.btn {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+
+  &__icon {
+    display: block;
+
+    width: 24px;
+    height: 24px;
+
+    background-color: $accent;
+
+    mask-image: url(../images/icons/cookie.png);
+  }
+
+  &__text {
+    color: $accent;
+
+    @include font-style($upper-text);
+  }
+
+  &:hover {
+    background-color: $accent;
+
+    .btn__icon {
+      background-color: $white-color;
+    }
+
+    .btn__text {
+      color: $white-color;
+    }
+  }
+
+  &:focus {
+    border: none;
+    background-color: $dark;
+    outline: none;
+
+    .btn__icon {
+      background-color: $white-color;
+    }
+
+    .btn__text {
+      color: $white-color;
+    }
+  }
+
+  &:disabled {
+    border-color: $light;
+
+    .btn__icon {
+      background-color: $light;
+    }
+
+    .btn__text {
+      color: $light;
+    }
+  }
+}

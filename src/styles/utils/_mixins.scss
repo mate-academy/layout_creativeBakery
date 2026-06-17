@@ -1,6 +1,36 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@use 'sass:map';
+
+@mixin on-mobile {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin on-big-screen {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin font-style($map) {
+  font-size: map.get($map, 'font-size');
+  font-weight: map.get($map, 'font-weight');
+  line-height: map.get($map, 'line-height');
+  letter-spacing: map.get($map, 'letter-spacing');
+
+  @if map.has-key($map, 'text-transform') {
+    text-transform: map.get($map, 'text-transform');
   }
 }
