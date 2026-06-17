@@ -2,7 +2,6 @@
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     min-height: 100vh;
   }
 
@@ -188,8 +187,8 @@
   position: absolute;
   width: 24px;
   height: 24px;
-  right: 24px;
-  top: 16px;
+  right: 16px;
+  top: 20px;
 
   background: url('../images/icon/Icon-menu.svg') center/contain no-repeat;
   z-index: 1100;
@@ -213,15 +212,15 @@
 .icon--close {
   display: none;
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 20px;
+  right: 16px;
 
   width: 24px;
   height: 24px;
 
   background: url('../images/icon/Icon-close (1).svg') center/contain no-repeat;
 
-  z-index: 1100;
+  z-index: 1101;
 
   cursor: pointer;
 
@@ -256,18 +255,6 @@
   @include on-desktop {
     display: none;
   }
-}
-
-.mobile-menu.is-open {
-  transform: translateX(0);
-
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.mobile-menu.is-open ~ .burger {
-  display: none;
 }
 
 .mobile-menu__top {
@@ -368,10 +355,10 @@
   pointer-events: auto;
 }
 
-.mobile-menu:target ~ .burger {
-  display: none;
+.mobile-menu:target .icon--close {
+  display: block;
 }
 
-.mobile-menu:target ~ .icon--close {
-  display: block;
+body:has(.mobile-menu:target) .burger {
+  display: none;
 }
