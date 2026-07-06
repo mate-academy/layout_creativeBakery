@@ -1,0 +1,38 @@
+/* stylelint-disable order/properties-order */
+
+.nav {
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+
+  @include on-desktop {
+    flex-direction: row;
+    gap: 64px;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-dark;
+
+    @include hover(color, $color-orange);
+  }
+
+  &__link--contact {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: $color-orange;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__link--contact::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/Icon-phone.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

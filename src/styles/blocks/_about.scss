@@ -1,0 +1,93 @@
+/* stylelint-disable order/properties-order */
+
+.about {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 16px;
+  background-image: url('../images/bolacha-02.png');
+  background-repeat: no-repeat;
+  background-position: center 120px;
+  background-size: min(100%, 560px);
+
+  @include on-tablet {
+    padding: 120px 44px 150px;
+  }
+
+  @include on-desktop {
+    padding: 120px 36px 190px;
+    background-position: center 80px;
+  }
+
+  &__intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-bottom: 72px;
+    }
+  }
+
+  &__title {
+    color: $color-orange;
+    font-size: 48px;
+    line-height: 85%;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__text {
+    max-width: 540px;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__text-line {
+    display: inline;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin: 0;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 80px 24px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  &__number {
+    margin-bottom: 8px;
+    color: $color-orange;
+    font-size: 96px;
+    line-height: 85%;
+    text-transform: uppercase;
+  }
+
+  &__label {
+    margin: 0;
+    color: $color-gray;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
