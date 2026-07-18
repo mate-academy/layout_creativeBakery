@@ -1,4 +1,42 @@
-%h1 {
-  font-family: Roboto, sans-serif;
+@use 'vars' as *;
+
+%heading {
+  font-family: $font-main;
   font-weight: 400;
+  font-style: normal;
+  line-height: $lh-headings; // 0.85
+  text-transform: uppercase;
+  letter-spacing: $ls-headings; // -0.05em
+}
+
+%h1 {
+  @extend %heading;
+
+  font-size: $fs-h1-mobile;
+
+  @media (min-width: $bp-tablet) {
+    font-size: $fs-h1-tablet;
+  }
+
+  @media (min-width: $bp-desktop) {
+    font-size: $fs-h1-desktop;
+  }
+
+  @media (min-width: $bp-desktop-xl) {
+    font-size: $fs-h1-xl-desktop;
+  }
+}
+
+%h2 {
+  @extend %heading;
+
+  font-size: $fs-h2-mobile;
+
+  @media (min-width: $bp-tablet) {
+    font-size: $fs-h2-tablet;
+  }
+
+  @media (min-width: $bp-desktop) {
+    font-size: $fs-h2-desktop;
+  }
 }

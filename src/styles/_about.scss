@@ -1,0 +1,115 @@
+@use 'utils' as *;
+
+.about {
+  position: relative;
+  background-color: $c-light-blue;
+
+  &__container {
+    position: relative;
+
+    padding-bottom: 72px;
+
+    background-image: url('../images/Crumbs.webp');
+    background-repeat: no-repeat;
+    background-position: center 70%;
+    background-size: clamp(320px, 65vw, 718px) auto;
+
+    @include respond-to('tablet') {
+      padding-bottom: 150px;
+      background-position: 50% 20%;
+    }
+
+    @include respond-to('desktop') {
+      padding-bottom: 350px;
+      background-position: 70% 0%;
+    }
+
+    @include respond-to('desktop-xl') {
+      background-position: center 10%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 64px;
+
+    @include respond-to('tablet') {
+      flex-direction: row;
+      gap: 24px;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      margin-bottom: 72px;
+    }
+
+    @include respond-to('desktop') {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $c-black;
+
+    @include respond-to('tablet') {
+      width: 50%;
+    }
+  }
+
+  &__text {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.5;
+    color: $c-grey;
+    letter-spacing: -0.01em;
+
+    @include respond-to('tablet') {
+      width: 50%;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include respond-to('tablet') {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 80px 24px;
+    }
+
+    @include respond-to('desktop') {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 44px;
+    }
+
+    @include respond-to('desktop-xl') {
+      gap: 48px;
+    }
+  }
+
+  &__stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__stat-value {
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 0.85;
+    color: $c-black;
+    letter-spacing: -0.05em;
+  }
+
+  &__stat-label {
+    font-size: 16px;
+    line-height: 1.5;
+    color: $c-grey;
+    letter-spacing: -0.01em;
+  }
+}

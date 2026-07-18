@@ -1,0 +1,136 @@
+@use 'utils' as *;
+@use 'base' as *;
+
+.hero {
+  padding: 32px 0; // Контролируем высоту паддингами
+  background-color: $c-light-blue;
+
+  @include respond-to('tablet') {
+    padding: 80px 0;
+  }
+
+  @include respond-to('desktop') {
+    padding: 135px 0 171px;
+  }
+
+  @include respond-to('desktop-xl') {
+    padding: 144px 0 132px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100%;
+
+    text-align: center;
+  }
+
+  &__intro {
+    max-width: 280px;
+    margin-bottom: 32px;
+
+    font-family: $font-main;
+    font-size: $fs-body;
+    line-height: $lh-body;
+    color: $c-grey;
+    letter-spacing: $ls-body;
+
+    @include respond-to('tablet') {
+      align-self: flex-start;
+      max-width: 340px;
+      margin-bottom: 146px;
+      text-align: left;
+    }
+
+    @include respond-to('desktop') {
+      max-width: 260px;
+      margin-bottom: 8px;
+    }
+
+    @include respond-to('desktop-xl') {
+      max-width: 260px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    @include respond-to('tablet') {
+      margin-bottom: 210px;
+    }
+
+    @include respond-to('desktop') {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__image {
+    position: static;
+    transform: none;
+
+    display: block;
+
+    width: 288px;
+    height: auto;
+
+    @include respond-to('tablet') {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 326px;
+    }
+
+    @include respond-to('desktop') {
+      width: 544px;
+    }
+
+    @include respond-to('desktop-xl') {
+      width: 584px;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 288px;
+
+    @include respond-to('tablet') {
+      width: 326px;
+      max-width: none;
+    }
+
+    @include respond-to('desktop') {
+      align-self: flex-start;
+      width: 260px;
+    }
+
+    @include respond-to('desktop-xl') {
+      width: 280px;
+    }
+  }
+}

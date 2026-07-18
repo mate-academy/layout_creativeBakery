@@ -1,0 +1,74 @@
+// src\styles\_products.scss
+@use 'utils' as *;
+
+.products {
+  padding: 64px 0 72px;
+  background-color: $c-light-blue;
+
+  @include respond-to('tablet') {
+    padding: 152px 0;
+  }
+
+  @include respond-to('desktop') {
+    padding: 178px 0;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__subtitle {
+    margin-bottom: 56px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include respond-to('tablet') {
+      gap: 80px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    width: 100%;
+
+    .products-card {
+      width: 100%;
+
+      @include respond-to('tablet') {
+        width: calc(50% - 12px);
+      }
+
+      @include respond-to('desktop') {
+        width: 402px;
+      }
+
+      @include respond-to('desktop-xl') {
+        width: 432px;
+      }
+    }
+
+    @include respond-to('tablet') {
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    @include respond-to('desktop') {
+      justify-content: flex-start;
+
+      &:nth-child(even) {
+        justify-content: flex-end;
+      }
+    }
+  }
+}
