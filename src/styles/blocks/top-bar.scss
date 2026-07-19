@@ -1,0 +1,106 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 64px;
+  margin-inline: $margin-main;
+
+  @include on-tablet {
+    margin-inline: 16px;
+  }
+
+  @include on-desktop {
+    height: 88px;
+    margin-inline: 32px;
+  }
+
+  &__menu-icon {
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__logo {
+    width: 136px;
+    height: 32px;
+
+    img {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__nav {
+    display: none;
+    flex: 1;
+    column-gap: 64px;
+    align-items: center;
+
+    @include on-desktop {
+      display: flex;
+    }
+
+    &-link {
+      position: relative;
+
+      display: flex;
+
+      line-height: 150%;
+      color: $color-text-black;
+      letter-spacing: -1%;
+
+      @include on-desktop {
+        overflow: hidden;
+        padding-bottom: 4px;
+      }
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform-origin: left;
+        transform: scaleX(0);
+
+        display: none;
+
+        width: 100%;
+        height: 2px;
+
+        background-color: $color-text-secondary;
+
+        transition: transform $time-animation linear;
+
+        @include on-desktop {
+          display: block;
+        }
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+
+      &--accept {
+        display: flex;
+        column-gap: 4px;
+
+        font-weight: 500;
+        color: $color-text-secondary;
+        text-transform: uppercase;
+        letter-spacing: 2%;
+
+        &::after {
+          display: none !important;
+        }
+
+        &:hover .icon {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}

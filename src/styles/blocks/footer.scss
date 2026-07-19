@@ -1,0 +1,222 @@
+.footer {
+  --count: 2;
+
+  @include on-tablet {
+    --count: 8;
+
+    column-gap: 24px;
+  }
+
+  color: $color-bg-primary;
+  background-color: $color-text-black;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(var(--count), 1fr);
+    column-gap: 16px;
+    padding-block: 56px;
+
+    @include on-tablet {
+      column-gap: 24px;
+      padding-block: 88px;
+    }
+  }
+
+  &__logo {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / -5;
+      order: 1;
+    }
+
+    img {
+      width: 168px;
+      height: 40px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    row-gap: 16px;
+
+    margin-block: 40px 65px;
+
+    @include on-tablet {
+      grid-column: 1 / -5;
+      order: 3;
+      margin-block: 40px 0;
+    }
+
+    &-title {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 100%;
+      color: $color-text-gray;
+      text-transform: uppercase;
+      letter-spacing: 2%;
+    }
+
+    &-link {
+      width: fit-content;
+      line-height: 150%;
+      letter-spacing: -1%;
+      transition: color $time-animation linear;
+
+      &:hover {
+        color: $color-text-secondary;
+      }
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    font-size: 48px;
+    line-height: 85%;
+    text-transform: uppercase;
+    letter-spacing: -5%;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      order: 1;
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    row-gap: 16px;
+
+    margin-block: 40px;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      order: 4;
+      margin-block: 40px;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 7;
+    }
+
+    &-title {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 100%;
+      color: $color-text-gray;
+      text-transform: uppercase;
+      letter-spacing: 2%;
+    }
+
+    &-tel {
+      width: fit-content;
+      line-height: 150%;
+      letter-spacing: -1%;
+      transition: color $time-animation linear;
+
+      &:hover {
+        color: $color-text-secondary;
+      }
+    }
+  }
+
+  &__email {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    row-gap: 16px;
+
+    width: fit-content;
+
+    transition: color $time-animation linear;
+
+    &:hover {
+      color: $color-text-secondary;
+    }
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      order: 5;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      margin-top: 40px;
+    }
+
+    &-title {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 100%;
+      color: $color-text-gray;
+      text-transform: uppercase;
+      letter-spacing: 2%;
+    }
+
+    &-item {
+      line-height: 150%;
+      letter-spacing: -1%;
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(var(--count), 1fr);
+    column-gap: 16px;
+    order: 6;
+
+    @include on-tablet {
+      column-gap: 24px;
+      align-items: center;
+      margin-top: 48px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    grid-column: 1 / -1;
+    column-gap: 32px;
+    margin-block: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / -5;
+      margin-block: 0;
+    }
+
+    a {
+      display: flex;
+    }
+
+    &-icon {
+      color: $color-text-secondary;
+      transition: color $time-animation linear;
+
+      &:hover {
+        color: $color-bg-primary;
+      }
+    }
+  }
+
+  &__copyright {
+    grid-column: 1 / -1;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-text-gray;
+    letter-spacing: -1%;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+  }
+}
