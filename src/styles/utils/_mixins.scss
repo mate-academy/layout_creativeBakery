@@ -1,6 +1,32 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin on-tablet {
+  @media (min-width: 640px) {
+    @content;
   }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin button-reset {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  font: inherit;
+  font-family: Inter, sans-serif;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  outline: none;
 }

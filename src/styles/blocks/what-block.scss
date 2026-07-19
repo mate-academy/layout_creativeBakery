@@ -1,0 +1,123 @@
+.what-block {
+  --count: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--count), 1fr);
+  gap: 56px 16px;
+
+  &--margin {
+    margin-block: 104px 72px;
+
+    @include on-tablet {
+      margin-block: 228px 152px;
+    }
+
+    @include on-desktop {
+      margin-block: 338px 178px;
+    }
+  }
+
+  &__top {
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 85px;
+    color: $color-text-secondary;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__description {
+    margin-top: 24px;
+    line-height: 150%;
+    letter-spacing: -1%;
+  }
+
+  &__element {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+    }
+
+    &--3-5 {
+      @include on-desktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--6-8 {
+      @include on-desktop {
+        grid-column: 6 / -1;
+      }
+    }
+
+    &-image {
+      overflow: hidden;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform $time-animation linear;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+    }
+
+    &-text {
+      padding-top: 16px;
+
+      font-weight: 500;
+      line-height: 100%;
+      color: $color-text-gray;
+      text-transform: uppercase;
+      letter-spacing: 2%;
+    }
+
+    &-description {
+      padding-block: 8px 16px;
+      line-height: 150%;
+      color: $color-text-black;
+      letter-spacing: -1%;
+    }
+
+    &-link {
+      display: flex;
+      column-gap: 4px;
+
+      font-weight: 500;
+      color: $color-text-secondary;
+      text-transform: uppercase;
+      letter-spacing: 2%;
+
+      &:hover .icon {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  @include on-tablet {
+    --count: 8;
+
+    gap: 80px 24px;
+  }
+}
