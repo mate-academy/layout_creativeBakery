@@ -1,0 +1,39 @@
+@use '../utils' as *;
+
+.top-bar {
+  @include padding-inline-top-bar;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+
+  @include on-desktop {
+    height: 88px;
+  }
+
+  &__icon-close {
+    @include hover(transform, rotate(45deg));
+  }
+
+  &__touch {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 64px;
+    align-items: center;
+  }
+
+  &__link {
+    color: $c-black;
+    text-decoration: none;
+
+    @include hover(color, $c-dark-orange);
+  }
+}

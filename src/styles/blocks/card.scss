@@ -1,0 +1,57 @@
+@use '../utils' as *;
+
+@keyframes arrow-move {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(3px);
+  }
+}
+
+.card {
+  &__photo {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+
+    @include hover(transform, scale(1.01));
+
+    @include on-tablet {
+      height: 424px;
+      object-fit: cover;
+    }
+
+    @include on-desktop {
+      height: 512px;
+    }
+
+    @include on-design {
+      width: 432px;
+      height: 560px;
+    }
+  }
+
+  &__title {
+    @include uppercase;
+
+    margin-bottom: 8px;
+    color: $c-gray;
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    @media (hover: hover) {
+      &:hover {
+        .card__icon {
+          animation: arrow-move $transition-duration ease-in-out infinite
+            alternate;
+        }
+      }
+    }
+  }
+}

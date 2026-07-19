@@ -1,0 +1,39 @@
+@use '../utils' as *;
+
+.about-us {
+  @include on-tablet {
+    background-image: url(/src/images/crumbs.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+  }
+
+  @include on-desktop {
+    padding-bottom: 293px;
+  }
+
+  &__text {
+    @include content-padding-inline;
+
+    margin-bottom: 64px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 72px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      margin: 0;
+    }
+  }
+}
