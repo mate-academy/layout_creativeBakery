@@ -1,0 +1,31 @@
+@use '../utils' as *;
+
+@keyframes phone-wiggle {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(15deg);
+  }
+}
+
+.icon-link {
+  @include uppercase;
+
+  display: flex;
+  gap: 4px;
+  align-items: center;
+
+  color: $c-accent-orange;
+  text-decoration: none;
+
+  @media (hover: hover) {
+    &:hover {
+      .icon-link__phone {
+        animation: phone-wiggle $transition-duration ease-in-out infinite
+          alternate;
+      }
+    }
+  }
+}

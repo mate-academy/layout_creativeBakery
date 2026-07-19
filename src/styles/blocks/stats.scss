@@ -1,0 +1,42 @@
+@use '../utils' as *;
+
+.stats {
+  background-image: url(/src/images/crumbs.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  @include on-tablet {
+    background-image: none;
+  }
+
+  &__list {
+    @include content-padding-inline;
+
+    display: grid;
+    gap: 48px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  &__value {
+    @include big-text;
+  }
+
+  &__label {
+    color: $c-gray;
+  }
+}

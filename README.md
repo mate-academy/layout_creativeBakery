@@ -1,30 +1,43 @@
-# Creative Bakery landing page
+# Creative Bakerlab
 
-Implement landing page according to [Figma design](https://www.figma.com/file/dY3izAm0Vspsmra4lQWQIP/Bakerlab-FE-students?node-id=0%3A1) - Use BEM and SCSS
+## Brief Project Description
 
-- The design 1440px
-- Desktop 1280px
-- Tablet 640px
-- Mobile (> 320px)
+Creative Bakerlab is a responsive landing page for a bakery brand, showcasing its product range (cakes, cookies, donuts), a short "About us" section with key stats, and contact information. The project was built to practice modern responsive layout, semantic HTML, BEM methodology, and CSS-only interactivity without relying on JavaScript for UI behavior.
+
+## Technologies Used
+
+- HTML5 (semantic markup)
+- CSS3
+- SCSS / Sass
+- BEM methodology
+- Google Fonts (Inter)
+- Vite
+- Stylelint
+- Prettier
+
+## Features
+
+- Responsive mobile-first layout (mobile 320px → tablet 640px → desktop 1024px → design 1440px)
+- CSS Grid layout system (`page-grid` mixin) across breakpoints
+- CSS-only mobile menu using `:target` and `:has()` — no JavaScript
+- Body scroll lock while the menu is open, controlled entirely via `:has()`
+- Smooth scroll navigation via in-page anchor links
+- `prefers-reduced-motion` support via CSS
+- Touch-friendly interactions guarded with `@media (hover: hover)`
+- Animated "order" arrow icon on product card hover
+- Facebook / Instagram / Twitter social links via SVG sprite (`<use>`)
+- Semantic HTML5 (`<header>`, `<main>`, `<footer>`, `<article>`, `<nav>`, `<aside>`, `<dl>/<dt>/<dd>`)
+- Accessibility basics: `aria-label` on icon-only links, `aria-hidden` on decorative icons, descriptive `alt` text on all images
+- Lazy-loaded product images (`loading="lazy"`)
+- `scrollbar-gutter: stable` to prevent layout shift on scroll
+- Modular SCSS architecture (`blocks/`, `utils/`)
+
+## Preview
+
+- [DEMO LINK](https://Alex3777-prog.github.io/layout_creativeBakery)
+
+## Design Reference
+
+- [Figma design](https://www.figma.com/design/dY3izAm0Vspsmra4lQWQIP/Bakerlab_FE-students?node-id=11342-1117&p=f&t=nP3iAuP271igx6Uz-0)
 
 
-## Github flow
-1. **Fork** the repo.
-2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
-3. Run `npm install` (or just `npm i`).
-4. Run `npm start`.
-5. Open one more terminal window for the next steps.
-6. `git checkout -b develop` - to create new branch and switch on it.
-7. Write you code in `src` folder.
-8. Run `npm run lint` and fix code style errors.
-9. Run `npm run deploy` to deploy your solution to `gh-pages`.
-10. `git add . && git commit -m 'solution'` to save your changes.
-11. `git push origin develop` - to send you code for PR.
-12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
-13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/layout_creativeBakery/).
-14. Copy `DEMO LINK` to the PR description.
-
-> To update you PR repeat steps 7-11.
-
-15. Check yourself using the [CHECKLIST](https://github.com/mate-academy/layout_creativeBakery/blob/master/checklist.md) when finished;

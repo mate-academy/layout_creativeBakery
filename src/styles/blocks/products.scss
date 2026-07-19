@@ -1,0 +1,45 @@
+@use '../utils' as *;
+
+.products {
+  &__container {
+    @include content-padding-inline;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    margin-bottom: 54px;
+
+    @include on-tablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 56px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 80px 24px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(8, 1fr);
+      row-gap: 80px;
+    }
+  }
+
+  &__item {
+    @include on-desktop {
+      grid-column-end: span 3;
+
+      &:nth-child(4n + 3) {
+        grid-column-start: 3;
+      }
+    }
+  }
+}

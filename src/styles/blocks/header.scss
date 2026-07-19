@@ -1,0 +1,164 @@
+@use '../utils' as *;
+
+.header {
+  &__top-bar {
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      margin-bottom: 80px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon-menu {
+    @include hover(transform, scale(1.07));
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__container {
+    @include content-padding-inline;
+    @include content-max-width;
+
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 228px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    text-align: center;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: column;
+      padding-block: 135px 161px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      max-width: 300px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      max-width: 260px;
+      margin-bottom: 8px;
+    }
+
+    @include on-design {
+      max-width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    @include heading-1;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      align-self: center;
+
+      line-height: 0.85;
+      letter-spacing: -5px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 64px;
+      font-size: 136px;
+    }
+
+    @include on-design {
+      font-size: 144px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+
+    @include on-tablet {
+      z-index: -1;
+      grid-column: 3 / 7;
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -53%);
+
+      width: 544px;
+      height: 546px;
+    }
+
+    @include on-design {
+      width: 584px;
+      height: 586px;
+    }
+  }
+
+  &__button {
+    justify-content: center;
+
+    padding-block: 16px;
+    border: 2px solid $c-accent-orange;
+    border-radius: 32px;
+
+    transition: all $transition-duration;
+
+    &:focus-visible {
+      color: $c-white;
+      background-color: $c-accent-orange;
+    }
+
+    &:active {
+      border-color: $c-dark-orange;
+      background-color: $c-dark-orange;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $c-white;
+        background-color: $c-accent-orange;
+      }
+    }
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+      grid-row: 3;
+      margin-block-start: 80px;
+    }
+
+    @include on-desktop {
+      max-width: 260px;
+      margin: 0;
+    }
+  }
+
+  &__button-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
