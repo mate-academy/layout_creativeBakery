@@ -4,3 +4,46 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin desktop {
+  @media (max-width: #{$bp-desktop}) {
+    @content;
+  }
+}
+
+@mixin header-collapse {
+  @media (max-width: #{$bp-header}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$bp-mobile}) {
+    @content;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+
+  white-space: nowrap;
+
+  clip: rect(0, 0, 0, 0);
+}
+
+@mixin uppercase-label {
+  font-family: $font-body;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  text-transform: uppercase;
+  letter-spacing: $uppercase-letter-spacing;
+}

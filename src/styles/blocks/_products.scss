@@ -1,0 +1,136 @@
+.products {
+  scroll-margin-top: 88px;
+
+  padding-top: 178px;
+  padding-bottom: 178px;
+
+  background-color: var(--color-bg);
+
+  transition: background-color $transition;
+
+  @include header-collapse {
+    scroll-margin-top: 64px;
+    padding-top: 120px;
+    padding-bottom: 152px;
+  }
+
+  @include mobile {
+    padding-top: 64px;
+    padding-bottom: 72px;
+  }
+
+  &__title {
+    font-size: $h2-desktop;
+    font-weight: 400;
+    line-height: $h2-desktop-lh;
+    text-transform: uppercase;
+    letter-spacing: $heading-letter-spacing;
+
+    @include desktop {
+      font-size: $h2-tablet;
+      line-height: $h2-tablet-lh;
+    }
+
+    @include mobile {
+      font-size: $h2-mobile;
+      line-height: $h2-mobile-lh;
+    }
+  }
+
+  &__description {
+    margin-top: 24px;
+  }
+
+  &__catalog {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 80px 24px;
+    margin-top: 80px;
+
+    @include header-collapse {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 80px 24px;
+    }
+
+    @include mobile {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 56px;
+      margin-top: 56px;
+    }
+  }
+}
+
+.product-card {
+  grid-column: span 3;
+
+  &:nth-child(2n) {
+    grid-column: 4 / span 3;
+  }
+
+  &--shifted:nth-child(3) {
+    grid-column: 3 / span 3;
+  }
+
+  &--shifted:nth-child(4) {
+    grid-column: 6 / span 3;
+  }
+
+  @include header-collapse {
+    grid-column: auto;
+
+    &:nth-child(2n),
+    &--shifted:nth-child(3),
+    &--shifted:nth-child(4) {
+      grid-column: auto;
+    }
+  }
+
+  &__image {
+    aspect-ratio: 3 / 4;
+    width: 100%;
+    border-radius: $radius-s;
+
+    object-fit: cover;
+
+    transition: transform $transition;
+  }
+
+  &:hover &__image {
+    transform: scale(1.04);
+  }
+
+  &__category {
+    margin-top: 16px;
+    color: $color-grey;
+
+    @include uppercase-label;
+  }
+
+  &__description {
+    min-height: 48px;
+    margin-top: 8px;
+  }
+
+  &__order {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+
+    margin-top: 16px;
+
+    color: $color-accent-orange;
+
+    transition: color $transition;
+
+    @include uppercase-label;
+
+    &:hover {
+      color: $color-dark-orange;
+    }
+  }
+
+  &__order img {
+    width: 24px;
+    height: 24px;
+  }
+}

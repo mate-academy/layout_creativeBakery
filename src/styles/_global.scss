@@ -1,0 +1,121 @@
+:root {
+  --color-bg: #{$color-light-pink};
+}
+
+[data-theme='blue'] {
+  --color-bg: #{$color-light-blue};
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+
+  font-family: $font-body;
+  font-size: $body-text;
+  line-height: $body-text-lh;
+  color: $color-black;
+  letter-spacing: $body-letter-spacing;
+
+  background-color: var(--color-bg);
+
+  transition: background-color $transition;
+}
+
+body.is-menu-open {
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: $width-design;
+  margin: 0 auto;
+  padding: 0 $margin-desktop;
+
+  @include desktop {
+    padding: 0 $margin-desktop-md;
+  }
+
+  @include mobile {
+    padding: 0 $margin-mobile;
+  }
+}
+
+.h1 {
+  font-family: $font-body;
+  font-size: $h1-desktop;
+  font-weight: 600;
+  line-height: $h1-desktop-lh;
+  text-transform: uppercase;
+  letter-spacing: $heading-letter-spacing;
+
+  @include desktop {
+    font-size: $h1-tablet;
+    line-height: $h1-tablet-lh;
+  }
+
+  @include mobile {
+    font-size: $h1-mobile;
+    line-height: $h1-mobile-lh;
+  }
+}
+
+.h2 {
+  font-family: $font-body;
+  font-size: $h2-desktop;
+  font-weight: 600;
+  line-height: $h2-desktop-lh;
+  text-transform: uppercase;
+  letter-spacing: $heading-letter-spacing;
+
+  @include desktop {
+    font-size: $h2-tablet;
+    line-height: $h2-tablet-lh;
+  }
+
+  @include mobile {
+    font-size: $h2-mobile;
+    line-height: $h2-mobile-lh;
+  }
+}
+
+.btn {
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 32px;
+  padding: 8px 24px;
+  border-radius: $radius-pill;
+
+  font-family: $font-body;
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-white;
+
+  background-color: $color-accent-orange;
+
+  transition:
+    background-color $transition,
+    transform $transition;
+
+  &:hover {
+    transform: translateY(-2px);
+    background-color: $color-dark-orange;
+  }
+}
+
+.btn--large {
+  height: 56px;
+  padding: 16px 32px;
+  font-size: 16px;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}

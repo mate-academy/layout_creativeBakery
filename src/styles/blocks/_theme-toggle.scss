@@ -1,0 +1,44 @@
+.theme-toggle {
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+
+  &__track {
+    position: relative;
+
+    width: 48px;
+    height: 26px;
+    border: 1px solid rgba(28, 26, 38, 0.15);
+    border-radius: $radius-pill;
+
+    background: linear-gradient(
+      90deg,
+      $color-light-pink 50%,
+      $color-light-blue 50%
+    );
+  }
+
+  &__thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    background-color: $color-white;
+    box-shadow: 0 1px 3px rgba(28, 26, 38, 0.3);
+
+    transition: transform $transition;
+  }
+
+  &[aria-pressed='true'] &__thumb {
+    transform: translateX(22px);
+  }
+
+  &:hover &__thumb {
+    box-shadow: 0 1px 5px rgba(28, 26, 38, 0.45);
+  }
+}

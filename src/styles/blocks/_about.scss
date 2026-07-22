@@ -1,0 +1,143 @@
+.about {
+  scroll-margin-top: 88px;
+
+  overflow: hidden;
+
+  padding-bottom: 349px;
+
+  background-color: var(--color-bg);
+
+  transition: background-color $transition;
+
+  @include header-collapse {
+    scroll-margin-top: 64px;
+    padding-bottom: 152px;
+  }
+
+  @include mobile {
+    padding-bottom: 72px;
+  }
+
+  &__inner {
+    isolation: isolate;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    row-gap: 144px;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      aspect-ratio: 1077 / 1010;
+      width: min(100%, 1077px);
+
+      background-image: url('/src/images/crumbs.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    @include header-collapse {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: 72px;
+    }
+
+    @include mobile {
+      display: block;
+
+      &::before {
+        top: 35%;
+        width: calc(100% - 32px);
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+
+    @include header-collapse {
+      grid-template-columns: subgrid;
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / span 4;
+
+    font-size: $h2-desktop;
+    font-weight: 400;
+    line-height: $h2-desktop-lh;
+    text-transform: uppercase;
+    letter-spacing: $heading-letter-spacing;
+
+    @include desktop {
+      font-size: $h2-tablet;
+      line-height: $h2-tablet-lh;
+    }
+
+    @include header-collapse {
+      grid-column: 1;
+    }
+
+    @include mobile {
+      font-size: $h2-mobile;
+      line-height: $h2-mobile-lh;
+    }
+  }
+
+  &__description {
+    grid-column: 5 / -1;
+    max-width: 496px;
+
+    @include header-collapse {
+      grid-column: 2;
+    }
+
+    @include mobile {
+      margin-top: 32px;
+    }
+  }
+
+  &__stats {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 24px;
+
+    @include header-collapse {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 80px 24px;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      margin-top: 64px;
+    }
+  }
+
+  &__number {
+    font-size: $big-text;
+    font-weight: 400;
+    line-height: $big-text-lh;
+    text-transform: uppercase;
+    letter-spacing: $heading-letter-spacing;
+  }
+
+  &__label {
+    margin-top: 8px 0 0;
+    color: $color-grey;
+  }
+}

@@ -1,19 +1,471 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Bakery</title>
+
+    <link
+      rel="icon" type="image/svg+xml"
+      href="/src/images/logo.svg"
     />
-    <title>Title</title>
+
     <link
       rel="stylesheet"
-      href="src/styles/main.scss"
+      href="/src/styles/main.scss"
     />
   </head>
+
   <body>
-    <h1>Hello Mate Academy</h1>
-    <script src="src/scripts/main.js"></script>
+    <header class="header">
+      <div class="container header__inner">
+        <a href="#top" class="header__logo">
+          <img
+            class="header__logo-mark"
+            src="/src/images/logo.svg"
+            alt="Bakerlab logo"
+          />
+        </a>
+
+        <input
+          type="checkbox"
+          id="menu-toggle"
+          class="menu-toggle"
+        />
+
+        <div class="header__right">
+          <nav class="header__nav">
+            <ul class="header__list">
+              <li>
+                <a href="#products" class="header__link">
+                  Products
+                </a>
+              </li>
+
+              <li>
+                <a href="#about" class="header__link">
+                  About Us
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="header__link">
+                  Blog
+                </a>
+              </li>
+
+              <li>
+                <a href="tel:+16295550129" class="header__contact">
+                  <img
+                    src="/src/images/phone.svg"
+                    class="header__contact-icon"
+                    alt="Phone icon"
+                  />
+
+                  Contact us
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <button
+            type="button"
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-pressed="false"
+            aria-label="Switch background theme (pink / blue)"
+          >
+            <span class="theme-toggle__track">
+              <span class="theme-toggle__thumb"></span>
+            </span>
+          </button>
+
+          <label
+            for="menu-toggle"
+            class="header__burger"
+            aria-label="Open menu"
+          >
+            <img
+              src="/src/images/icon-menu.svg"
+              alt="Menu"
+              class="header__burger-icon"
+            />
+          </label>
+        </div>
+
+        <div class="mobile-menu">
+          <div class="mobile-menu__top">
+            <a href="#top" class="header__logo">
+              <img
+                class="header__logo-mark"
+                src="/src/images/logo.svg"
+                alt="Bakerlab logo"
+              />
+            </a>
+
+            <label
+              for="menu-toggle"
+              class="mobile-menu__close"
+              aria-label="Close menu"
+            >
+              <img
+                src="/src/images/icon-close.svg"
+                alt="Close"
+                class="mobile-menu__close-icon"
+              />
+            </label>
+          </div>
+
+          <ul class="mobile-menu__list">
+            <li>
+              <a href="#products" class="mobile-menu__link">
+                Products
+              </a>
+            </li>
+
+            <li>
+              <a href="#about" class="mobile-menu__link">
+                About Us
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="mobile-menu__link">
+                Blog
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+16295550129" class="mobile-menu__contact">
+                <img
+                  src="/src/images/phone.svg"
+                  class="mobile-menu__contact-icon"
+                  alt="Phone icon"
+                />
+
+                Contact us
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__inner">
+          <p class="hero__description">
+            We bake your fantasies - croissants, cakes, cookies, and cupcakes.
+          </p>
+
+          <div class="hero__showcase">
+            <h1 class="hero__title" id="hero-title">
+              Creative bakery
+            </h1>
+
+            <img
+              class="hero__image"
+              src="/src/images/cookie.png"  alt="Chocolate chip cookie"
+            />
+          </div>
+
+          <a class="hero__button" href="#products">
+            <img
+              class="hero__button-icon"
+              src="/src/images/cookie-button.svg"
+              alt="Cookie icon"
+            />
+
+            Learn more
+          </a>
+        </div>
+      </section>
+
+      <section
+        class="products"
+        id="products"
+        aria-labelledby="products-title"
+      >
+        <div class="container">
+          <h2 class="products__title" id="products-title">
+            What we bake
+          </h2>
+
+          <p class="products__description">
+            We can customize our cookies right for your needs. Just imagine it
+          </p>
+
+          <div class="products__catalog">
+            <article class="product-card">
+              <img
+                class="product-card__image"
+                src="/src/images/lemon-cake.png"
+                alt="Lemon cake with white icing"
+              />
+
+              <p class="product-card__category">Cakes</p>
+
+              <p class="product-card__description">
+                Oatmeal cookies with golden raisins, orange zest and chocolate
+                chips
+              </p>
+
+              <a class="product-card__order" href="mailto:bakerlab@example.com?subject=Cake%20order">
+                <img src="/src/images/icon-arrow.svg" alt="Arrow icon" />
+
+                Order
+              </a>
+            </article>
+
+            <article class="product-card">
+              <img
+                class="product-card__image"
+                src="/src/images/cake.png"
+                alt="Chocolate biscuit coffee cake"
+              />
+
+              <p class="product-card__category">Cakes</p>
+
+              <p class="product-card__description">
+                Chocolate biscuit coffee cake topped with a buttercream and
+                powder
+              </p>
+
+              <a class="product-card__order" href="mailto:bakerlab@example.com?subject=Cake%20order">
+                <img src="/src/images/icon-arrow.svg" alt="Arrow icon" />
+
+                Order
+              </a>
+            </article>
+
+            <article class="product-card product-card--shifted">
+              <img
+                class="product-card__image"
+                src="/src/images/donuts.png"
+                alt="Croissant with cinnamon and almonds"
+              />
+
+              <p class="product-card__category">Donuts</p>
+
+              <p class="product-card__description">
+                Light multi-layered croissant strewn with cinnamon and almond
+                petals
+              </p>
+
+              <a class="product-card__order" href="mailto:bakerlab@example.com?subject=Donut%20order">
+                <img src="/src/images/icon-arrow.svg" alt="Arrow icon" />
+
+                Order
+              </a>
+            </article>
+
+            <article class="product-card product-card--shifted">
+              <img
+                class="product-card__image"
+                src="/src/images/donut.png"
+                alt="Croissant with coconut and nuts"
+              />
+
+              <p class="product-card__category">Donuts</p>
+
+              <p class="product-card__description">
+                Light multi-layered croissant strewn with coconut and nuts
+              </p>
+
+              <a class="product-card__order" href="mailto:bakerlab@example.com?subject=Donut%20order">
+                <img src="/src/images/icon-arrow.svg" alt="Arrow icon" />
+
+                Order
+              </a>
+            </article>
+
+            <article class="product-card">
+              <img
+                class="product-card__image"
+                src="/src/images/chocolate-cake.png"
+                alt="Chocolate salted caramel cake"
+              />
+
+              <p class="product-card__category">Cakes</p>
+
+              <p class="product-card__description">
+                Chocolate salted caramel, vanilla frutti pebbles
+              </p>
+
+              <a class="product-card__order" href="mailto:bakerlab@example.com?subject=Cake%20order">
+                <img src="/src/images/icon-arrow.svg" alt="Arrow icon" />
+
+                Order
+              </a>
+            </article>
+
+            <article class="product-card">
+              <img
+                class="product-card__image"
+                src="/src/images/cookies.png"
+                alt="Oatmeal cookies with chocolate chips"
+              />
+
+              <p class="product-card__category">Cookies</p>
+
+              <p class="product-card__description">
+                Oatmeal cookies with golden raisins, orange zest and chocolate
+                chips
+              </p>
+
+              <a class="product-card__order" href="mailto:bakerlab@example.com?subject=Cookie%20order">
+                <img src="/src/images/icon-arrow.svg" alt="Arrow icon" />
+
+                Order
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        class="about" id="about"
+        aria-labelledby="about-title"
+      >
+        <div class="container about__inner">
+          <div class="about__content">
+            <h2 class="about__title" id="about-title">Few words about us</h2>
+
+            <p class="about__description">
+              Like many design teams, Onfido made the transition from Abstract + Sketch, to Figma in the last couple of years. One of
+              the common resistance points internally before making that switch, was Figma’s lack of Git-style branching that Abstract
+              enabled. The design team had come to rely on branching and had built a lot of our processes around it.
+            </p>
+          </div>
+
+          <dl class="about__stats">
+            <div class="about__stat">
+              <dt class="about__number">2015</dt>
+              <dd class="about__label">Foundation year</dd>
+            </div>
+
+            <div class="about__stat">
+              <dt class="about__number">23</dt>
+              <dd class="about__label">Stores</dd>
+            </div>
+
+            <div class="about__stat">
+              <dt class="about__number">155</dt>
+              <dd class="about__label">Companies</dd>
+            </div>
+
+            <div class="about__stat">
+              <dt class="about__number">10K+</dt>
+              <dd class="about__label">Clients</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <a
+          class="footer__logo"
+          href="#top"
+          aria-label="Bakerlab home"
+        >
+          <img
+            class="footer__logo-image"
+            src="/src/images/logo.svg"
+            alt="Bakerlab"
+          />
+        </a>
+
+        <nav class="footer__menu" aria-label="Footer navigation">
+          <h2 class="footer__heading">Menu</h2>
+
+          <ul class="footer__list">
+            <li><a class="footer__link" href="#products">Products</a></li>
+            <li><a class="footer__link" href="#about">About us</a></li>
+            <li><a class="footer__link" href="#top">Blog</a></li>
+            <li><a class="footer__link" href="#top">Terms &amp; Privacy</a></li>
+          </ul>
+        </nav>
+
+        <section class="footer__contacts" aria-labelledby="contacts-title">
+          <h2 class="footer__title" id="contacts-title">Contact us</h2>
+
+          <div class="footer__contact-list">
+            <div class="footer__contact">
+              <p class="footer__contact-label">Call us</p>
+              <ul class="footer__phones">
+                <li>
+                  <a class="footer__link" href="tel:+16295550129">
+                    (629) 555-0129
+                  </a>
+                </li>
+
+                <li>
+                  <a class="footer__link" href="tel:+16035550123">
+                    (603) 555-0123
+                  </a>
+                </li>
+
+                <li>
+                  <a class="footer__link" href="tel:+17045550127">
+                    (704) 555-0127
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer__contact">
+              <p class="footer__contact-label">Email us</p>
+              <a class="footer__link" href="mailto:bakerlab@example.com">
+                bakerlab@example.com
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <ul class="footer__socials" aria-label="Social media">
+          <li>
+            <a
+              class="footer__social-link"
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <img src="/src/images/facebook.svg" alt="Facebook" />
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="footer__social-link"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <img src="/src/images/instagram.svg" alt="Instagram" />
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="footer__social-link"
+              href="https://twitter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter">
+              <img src="/src/images/twiteer.svg" alt="Twitter" />
+            </a>
+          </li>
+        </ul>
+
+        <p class="footer__copyright">&copy; Bakerlab 2022</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/scripts/main.js"></script>
   </body>
+
 </html>

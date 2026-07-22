@@ -1,0 +1,228 @@
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  background-color: var(--color-bg);
+
+  transition: background-color $transition;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 88px;
+    padding: 0 32px;
+
+    @include header-collapse {
+      height: 64px;
+      padding: 0 16px;
+    }
+  }
+
+  &__logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition:
+      opacity $transition,
+      transform $transition;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__logo-mark {
+    width: auto;
+    height: 32px;
+  }
+
+  &__right {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+
+    @include header-collapse {
+      gap: 16px;
+    }
+  }
+
+  &__nav {
+    @include header-collapse {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 64px;
+    align-items: center;
+  }
+
+  &__link {
+    cursor: pointer;
+
+    font-family: $font-body;
+    font-size: 16px;
+    font-weight: 400;
+    color: $color-black;
+
+    &:hover {
+      color: $color-accent-orange;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &__contact {
+    cursor: pointer;
+
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+
+    font-weight: 500;
+    color: $color-accent-orange;
+
+    transition:
+      color $transition,
+      opacity $transition;
+
+    @include uppercase-label;
+
+    @include header-collapse {
+      display: none;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__contact-icon {
+    width: 18px;
+    height: 18px;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__burger {
+    cursor: pointer;
+    display: none;
+    transition: opacity $transition;
+
+    @include header-collapse {
+      display: block;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.menu-toggle {
+  @include visually-hidden;
+}
+
+.mobile-menu {
+  position: fixed;
+  z-index: 99;
+  inset: 0;
+  transform: translateX(100%);
+
+  display: none;
+  flex-direction: column;
+
+  background-color: var(--color-bg);
+
+  transition: transform $transition;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  &__close {
+    cursor: pointer;
+    transition: opacity $transition;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+
+    margin-top: 132px;
+  }
+
+  &__link {
+    cursor: pointer;
+
+    font-family: $font-body;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $color-black;
+    text-align: center;
+    letter-spacing: -1%;
+
+    transition: color $transition;
+
+    &:hover {
+      color: $color-accent-orange;
+    }
+  }
+
+  &__contact {
+    cursor: pointer;
+
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+
+    color: $color-accent-orange;
+
+    transition:
+      color $transition,
+      opacity $transition;
+
+    @include uppercase-label;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__contact-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.menu-toggle:checked ~ .mobile-menu {
+  transform: translateX(0);
+  display: flex;
+}
