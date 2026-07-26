@@ -1,0 +1,110 @@
+.about {
+  position: relative;
+  overflow: hidden;
+
+  & .container {
+    position: static;
+  }
+
+  &__image {
+    display: flex;
+    position: absolute;
+    width: 320px;
+    z-index: -1;
+    bottom: 174px;
+
+    @include on-tablet {
+      width: 526px;
+      top: 51px;
+      right: 110px;
+    }
+
+    @include on-desktop {
+      width: 718px;
+      height: 673px;
+      top: 0;
+      right: 157px;
+    }
+
+    @include on-desktop-big {
+      right: 361px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 64px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 0 0 72px;
+    }
+
+    @include on-desktop {
+      margin: 0 0 144px;
+    }
+
+    &-text {
+      margin: 0 0 32px;
+      white-space: nowrap;
+      color: $color-accent-orange;
+
+      @include on-tablet {
+        margin: 0;
+      }
+    }
+
+    &-description {
+      margin: 0;
+    }
+
+    @include on-tablet {
+      gap: 24px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: $color-accent-orange;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+  }
+
+  &__item {
+    @include on-tablet {
+      margin: 0 0 56px;
+    }
+
+    @include on-desktop {
+      margin: 0;
+    }
+  }
+
+  &__number {
+    @extend %big-text;
+
+    margin: 0 0 8px;
+  }
+
+  &__text {
+    @extend %body-text;
+
+    color: $color-grey;
+
+    margin: 0;
+  }
+}
