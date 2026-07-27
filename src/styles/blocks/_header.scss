@@ -1,10 +1,6 @@
 .header {
   padding: 16px 0;
 
-  &__burger-check {
-    display: none;
-  }
-
   &__logo {
     @include hover(opacity, 0.8);
 
@@ -42,6 +38,10 @@
     justify-content: center;
     gap: 32px;
     z-index: 100;
+
+    &:target {
+      display: flex;
+    }
   }
 
   &__nav-top {
@@ -88,10 +88,6 @@
     }
   }
 
-  &__burger-check:checked ~ .container .header__nav {
-    display: flex;
-  }
-
   @include on-desktop {
     padding: 28px 0;
 
@@ -111,6 +107,10 @@
 
     &__nav-top {
       display: none;
+
+      &:target {
+      display: flex;
+    }
     }
   }
 }
