@@ -1,0 +1,150 @@
+.hero {
+  padding: 72px 120px 120px;
+}
+
+.hero__text {
+  width: 280px;
+  margin: 40px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.hero__content {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 350px;
+  margin-top: 8px;
+}
+
+.hero__title {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  font-size: 144px;
+  font-weight: 400;
+  line-height: 0.85;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+}
+
+.hero__image {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 500px;
+  height: auto;
+}
+
+.hero__button {
+  cursor: pointer;
+
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  width: 220px;
+  height: 56px;
+  margin-top: 8px;
+  border: 2px solid #f9512e;
+  border-radius: 32px;
+
+  font-weight: 700;
+  color: #f9512e;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s,
+    background-color 0.3s,
+    transform 0.3s;
+
+  &:hover {
+    transform: scale(1.03);
+    color: #fff;
+    background-color: #f9512e;
+  }
+}
+
+.hero__button-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Tablet: 640px até 1279px */
+@include on-tablet {
+  .hero {
+    padding: 48px 72px 100px;
+  }
+
+  .hero__text {
+    margin-top: 32px;
+  }
+
+  .hero__content {
+    min-height: 330px;
+  }
+
+  .hero__title {
+    font-size: 96px;
+  }
+
+  .hero__image {
+    width: 400px;
+  }
+}
+
+/* Mobile: até 639px */
+@include on-mobile {
+  .hero {
+    padding: 48px 16px 72px;
+  }
+
+  .hero__text {
+    width: 100%;
+    max-width: 280px;
+    margin: 48px 0 24px;
+    font-size: 14px;
+  }
+
+  .hero__content {
+    min-height: 270px;
+    margin-top: 0;
+  }
+
+  .hero__title {
+    max-width: 100%;
+
+    font-size: clamp(40px, 12vw, 52px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    white-space: normal;
+  }
+
+  .hero__image {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 300px;
+    height: auto;
+  }
+
+  .hero__button {
+    width: 100%;
+    margin-top: 24px;
+  }
+}

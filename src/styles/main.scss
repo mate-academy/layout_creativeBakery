@@ -1,7 +1,57 @@
-@import 'utils';
-@import 'fonts';
-@import 'typography';
+@import './fonts';
+@import './utils/variables';
+@import './utils/mixins';
+
+@import './blocks/header';
+@import './blocks/hero';
+@import './blocks/products';
+@import './blocks/about';
+@import './blocks/footer';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  min-width: 320px;
+  margin: 0;
+
+  font-family: Roboto, Arial, sans-serif;
+  color: #1c1a26;
+
+  background-color: #eef7ff;
+}
+
+img {
+  max-width: 100%;
+}
+
+.header,
+.hero,
+.products,
+.about {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.footer {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+
+@include on-mobile {
+  .container {
+    padding-inline: 16px;
+  }
 }

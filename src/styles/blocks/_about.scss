@@ -1,0 +1,122 @@
+.about {
+  position: relative;
+
+  padding: 120px 0 160px;
+
+  background-image: url('../images/crumbs.png');
+  background-repeat: no-repeat;
+  background-position: center 40px;
+  background-size: 600px auto;
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    margin-bottom: 136px;
+  }
+
+  &__title {
+    margin: 0;
+
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 0.85;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    max-width: 584px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+.stat {
+  &__number {
+    margin: 0 0 8px;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 0.85;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #7f8096;
+  }
+}
+
+/* Tablet: 640px até 1279px */
+@include on-tablet {
+  .about {
+    padding: 100px 0 120px;
+    background-position: center 80px;
+    background-size: 480px auto;
+
+    &__content {
+      margin-bottom: 96px;
+    }
+
+    &__title {
+      font-size: 56px;
+    }
+
+    &__stats {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .stat__number {
+    font-size: 48px;
+  }
+
+  .stat__text {
+    font-size: 14px;
+  }
+}
+
+/* Mobile: até 639px */
+@include on-mobile {
+  .about {
+    padding: 72px 0;
+    background-position: center 120px;
+    background-size: 320px auto;
+
+    &__content {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+
+    &__title {
+      font-size: 48px;
+      line-height: 0.9;
+    }
+
+    &__text {
+      max-width: 100%;
+      font-size: 14px;
+    }
+
+    &__stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 48px 24px;
+    }
+  }
+
+  .stat__number {
+    font-size: 48px;
+  }
+
+  .stat__text {
+    font-size: 14px;
+  }
+}

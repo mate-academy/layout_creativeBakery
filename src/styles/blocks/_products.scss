@@ -1,0 +1,153 @@
+.products {
+  padding: 120px 0 64px;
+
+  &__top {
+    width: 100%;
+    max-width: 584px;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    margin: 0 0 24px;
+
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 80px 24px;
+  }
+}
+
+.product {
+  grid-column: span 3;
+  width: 100%;
+
+  &:nth-child(1) {
+    grid-column: 1 / 4;
+  }
+
+  &:nth-child(2) {
+    grid-column: 4 / 7;
+  }
+
+  &:nth-child(3) {
+    grid-column: 3 / 6;
+  }
+
+  &:nth-child(4) {
+    grid-column: 6 / 9;
+  }
+
+  &:nth-child(5) {
+    grid-column: 1 / 4;
+  }
+
+  &:nth-child(6) {
+    grid-column: 4 / 7;
+  }
+
+  &__image {
+    display: block;
+
+    aspect-ratio: 432 / 560;
+    width: 100%;
+    border-radius: 8px;
+
+    object-fit: cover;
+  }
+
+  &__category {
+    margin: 16px 0 8px;
+
+    font-size: 12px;
+    line-height: 1;
+    color: #7f8096;
+    text-transform: uppercase;
+  }
+
+  &__name {
+    margin: 0 0 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  &__order {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #f9512e;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::before {
+      content: '→';
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    &:hover {
+      color: #b2341a;
+    }
+  }
+}
+
+@include on-tablet {
+  .products {
+    padding: 100px 0;
+
+    &__top {
+      margin-bottom: 80px;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 80px 24px;
+    }
+  }
+
+  .product,
+  .product:nth-child(n) {
+    grid-column: auto;
+  }
+}
+
+@include on-mobile {
+  .products {
+    padding: 72px 0;
+
+    &__top {
+      margin-bottom: 56px;
+    }
+
+    &__title {
+      margin-bottom: 24px;
+      font-size: 48px;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 56px;
+    }
+  }
+
+  .product,
+  .product:nth-child(n) {
+    grid-column: auto;
+  }
+}
