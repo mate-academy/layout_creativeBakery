@@ -1,7 +1,541 @@
-@import 'utils';
-@import 'fonts';
-@import 'typography';
+@use './utils/vars' as vars;
+@use './utils/mixins' as mixin;
+@use 'reset';
+@use './utils/typography';
 
-body {
-  background: $c-gray;
+.nav {
+  &__list {
+    @include mixin.flex-center;
+
+    &-item {
+      @include mixin.flex-center;
+    }
+  }
+}
+
+.btn {
+  @include mixin.flex-center;
+
+  gap: 4px;
+
+  border: 2px solid vars.$accent-orange-color;
+  border-radius: 32px;
+  background-color: transparent;
+
+  padding: 16px;
+
+  color: vars.$accent-orange-color;
+
+  cursor: pointer;
+
+  @include mixin.hover('background-color', vars.$accent-orange-color);
+  @include mixin.hover('color', vars.$white-color);
+
+  &:active {
+    color: vars.$white-color;
+    background-color: vars.$dark-orange-color;
+    border-color: vars.$dark-orange-color;
+  }
+}
+
+.card {
+  display: flex;
+  grid-column: 1 / -1;
+  flex-direction: column;
+  gap: 16px;
+
+  @include mixin.tablet {
+    grid-column: auto / span 4;
+  }
+
+  @include mixin.desktop {
+    grid-column: auto / span 3;
+  }
+
+  &__img {
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  &:nth-child(4n + 3) {
+    @include mixin.desktop {
+      grid-column: 3 / span 3;
+    }
+  }
+
+  &:nth-child(4n + 4) {
+    @include mixin.desktop {
+      grid-column: 6 / span 3;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    color: vars.$gray-color;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 4px;
+
+    background-color: transparent;
+    border: none;
+    color: vars.$accent-orange-color;
+    cursor: pointer;
+
+    max-width: 85px;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.close-icon {
+  display: none;
+}
+
+.header {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  justify-content: space-between;
+  height: vars.$header-size-m;
+
+  @include mixin.tablet {
+    height: vars.$header-size-td;
+  }
+
+  @include mixin.desktop {
+    padding: 28px 32px;
+  }
+
+  &__nav {
+    display: none;
+
+    @include mixin.desktop {
+      display: block;
+    }
+
+    &-list {
+      gap: 64px;
+
+      &-item {
+        gap: 4px;
+
+        &:last-child {
+          text-transform: uppercase;
+          color: vars.$accent-orange-color;
+        }
+      }
+    }
+  }
+
+  &--open {
+    .header__nav {
+      display: block;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      top: vars.$header-size-m;
+      right: 0;
+      left: 0;
+
+      overflow: hidden;
+      padding: 132px;
+
+      z-index: 100;
+      background-color: vars.$pink-color;
+
+      @include mixin.tablet {
+        top: vars.$header-size-td;
+      }
+    }
+
+    .header__nav-list {
+      @include mixin.flex-center;
+
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .menu-icon {
+      display: none;
+    }
+
+    .close-icon {
+      display: block;
+    }
+  }
+
+  &__logo-container {
+    width: 136px;
+  }
+
+  &__logo {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__menu {
+    background-color: transparent;
+    border: none;
+  }
+
+  &__icon {
+    filter: brightness(0);
+    cursor: pointer;
+
+    @include mixin.desktop {
+      display: none;
+    }
+  }
+}
+
+.container {
+  max-width: vars.$max-screen-width;
+  padding: 0 16px;
+  margin: 0 auto;
+
+  @include mixin.tablet {
+    padding: 0 44px;
+  }
+}
+
+.first-screen {
+  @include mixin.responsive-grid;
+
+  grid-template-rows: repeat(8, auto);
+
+  padding: 32px 0;
+
+  position: relative;
+
+  &__text {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    margin-bottom: 32px;
+    text-align: center;
+    font-weight: 400;
+
+    @include mixin.tablet {
+      margin-bottom: 0;
+      grid-column: 1 / 4;
+      text-align: left;
+    }
+
+    @include mixin.desktop {
+      grid-column: 1 / 3;
+      grid-row: 4;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    text-align: center;
+    color: vars.$accent-orange-color;
+
+    @include mixin.tablet {
+      grid-row: 5;
+    }
+  }
+
+  &__img-con {
+    grid-column: 1 / -1;
+    grid-row: 3 / 8;
+    max-width: 584px;
+
+    @include mixin.tablet {
+      grid-column: 3 / 7;
+      grid-row: 3 / 8;
+      z-index: -1;
+    }
+  }
+
+  &__img {
+    object-fit: contain;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+    grid-row: 8;
+
+    @include mixin.tablet {
+      grid-column: 3 / 7;
+      grid-row: 8;
+    }
+
+    @include mixin.desktop {
+      grid-column: 1 / 3;
+      grid-row: 7 / 8;
+    }
+  }
+}
+
+.products {
+  margin-top: 64px;
+
+  @include mixin.tablet {
+    margin-top: 120px;
+  }
+
+  @include mixin.desktop {
+    margin-top: 150px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+
+    @include mixin.tablet {
+      grid-template-columns: repeat(8, 1fr);
+      gap: 24px;
+      row-gap: 80px;
+    }
+  }
+
+  &__title {
+    color: vars.$accent-orange-color;
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    margin-bottom: 56px;
+
+    @include mixin.tablet {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.about-us {
+  @include mixin.responsive-grid;
+
+  gap: 24px;
+
+  position: relative;
+
+  margin-top: 72px;
+
+  @include mixin.tablet {
+    row-gap: 72px;
+    margin-top: 152px;
+  }
+
+  @include mixin.desktop {
+    row-gap: 144px;
+    margin-top: 178px;
+  }
+
+  &__background {
+    position: absolute;
+    max-width: 100%;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+
+    @include mixin.tablet {
+      top: 0;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    color: vars.$accent-orange-color;
+    margin-bottom: 32px;
+
+    @include mixin.tablet {
+      grid-column: span 4;
+    }
+
+    &-break::after {
+      @include mixin.tablet {
+        content: '';
+        display: block;
+      }
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+
+    @include mixin.tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__stats {
+    @include mixin.responsive-grid;
+
+    grid-column: 1 / -1;
+
+    gap: 48px;
+  }
+
+  &__stat {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+
+    @include mixin.tablet {
+      grid-column: span 4;
+    }
+
+    @include mixin.desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__stat-title {
+    color: vars.$accent-orange-color;
+  }
+}
+
+.footer {
+  @include mixin.responsive-grid;
+
+  gap: 40px;
+
+  background-color: vars.$black-color;
+  margin-top: 300px;
+  color: vars.$white-color;
+
+  padding: 56px 16px;
+
+  @include mixin.tablet {
+    padding: 88px 44px;
+  }
+
+  &__logo {
+    grid-column: 1 / -1;
+    filter: brightness(0) invert(1);
+
+    @include mixin.tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include mixin.tablet {
+      grid-column: 1 / 5;
+      grid-row: 2 / 3;
+    }
+
+    &-title {
+      color: vars.$gray-color;
+    }
+  }
+
+  &__nav-list {
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include mixin.tablet {
+      grid-column: 5 / -1;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__numbers {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include mixin.tablet {
+      height: fit-content;
+      grid-row: 2 / 3;
+      grid-column: 5 / -1;
+    }
+
+    @include mixin.desktop {
+      grid-row: 2 / 3;
+      grid-column: 5 / 6;
+    }
+
+    &-title {
+      color: vars.$gray-color;
+    }
+  }
+
+  &__nums-list,
+  &__email-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__email {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include mixin.tablet {
+      grid-row: 3 / 4;
+      grid-column: 5 / -1;
+    }
+
+    @include mixin.desktop {
+      grid-row: 2 / 3;
+      grid-column: 6 / -1;
+    }
+
+    &-title {
+      color: vars.$gray-color;
+    }
+  }
+
+  &__socials {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 32px;
+
+    &-item {
+      @include mixin.hover('fill', currentColor);
+    }
+
+    @include mixin.tablet {
+      grid-row: 3 / 4;
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__watermark {
+    grid-column: 1 / -1;
+
+    color: vars.$gray-color;
+
+    @include mixin.tablet {
+      grid-row: 4;
+      grid-column: 5 / -1;
+    }
+
+    @include mixin.desktop {
+      grid-row: 3;
+      grid-column: 5 / -1;
+    }
+  }
 }

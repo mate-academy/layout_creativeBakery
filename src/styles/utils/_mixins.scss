@@ -1,6 +1,35 @@
+@use './vars' as vars;
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin responsive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media screen and (min-width: vars.$tablet-width) {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: vars.$tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: vars.$desktop-width) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
