@@ -1,0 +1,158 @@
+.page {
+  scroll-behavior: smooth;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background-color: $color-light-pink;
+}
+
+.page__body {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  box-sizing: border-box;
+  min-height: 100vh;
+  margin: auto;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include on-desktop {
+      --grid-columns: 8;
+
+      display: grid;
+      grid-template-columns: repeat(var(--grid-columns), 1fr);
+      gap: 24px;
+      align-items: center;
+
+      padding-top: 144px;
+    }
+  }
+
+  &__title {
+    order: 2;
+    font-size: 64px;
+    color: $color-orange;
+    text-align: center;
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      align-self: center;
+      order: 3;
+
+      font-size: 100px;
+      text-align: center;
+    }
+  }
+
+  &__img {
+    order: 3;
+
+    width: 288px;
+    height: 290px;
+
+    background-image: url('/src/images/Cookie.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include on-tablet {
+      width: 326px;
+      height: 328px;
+    }
+
+    @include on-laptop {
+      width: 544px;
+      height: 546px;
+      background-image: url('/src/images/Cookie-x2.png');
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      place-self: center center;
+      order: 2;
+
+      width: 584px;
+      height: 586px;
+    }
+  }
+
+  &__desc {
+    order: 1;
+    margin: 32px 16px;
+    text-align: center;
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+      grid-row: 1;
+      align-self: start;
+
+
+      margin: 0;
+
+      text-align: left;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    order: 4;
+
+    box-sizing: border-box;
+    width: 288px;
+    height: 56px;
+    margin-bottom: 40px;
+    border: 2px solid $color-orange;
+    border-radius: 32px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    color: $color-orange;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+
+    transition: all 0.3s ease;
+
+    &::before {
+      content: '';
+
+      display: inline-block;
+
+      width: 20px;
+      height: 20px;
+
+      background-image: url(/src/icons/icon-cookie.png);
+      background-size: contain;
+    }
+    &:hover {
+      color: $color-white;
+      background-color: $color-orange;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &:hover::before {
+      background-image: url(/src/icons/icon-cookie-white.png);
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+      grid-row: 2;
+      justify-self: start;
+      margin: 0;
+    }
+  }
+}

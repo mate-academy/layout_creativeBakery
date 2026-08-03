@@ -1,0 +1,134 @@
+.page__menu {
+  pointer-events: none;
+
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translateX(100%);
+
+  opacity: 0;
+
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+  &:target {
+    pointer-events: all;
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+html:has(.page__menu:target),
+body:has(.page__menu:target) {
+  overflow: hidden;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 16px;
+}
+
+.menu {
+  font-weight: 400;
+  background-color: $color-light-pink;
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  @include on-laptop {
+    .nav__list {
+      display: flex;
+      flex-direction: row;
+      column-gap: 64px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  &__link {
+    position: relative;
+
+    font-size: 16px;
+    line-height: 1.5;
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -8px;
+      transform: scale(0);
+
+      display: block;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: currentColor;
+
+      transition: transform 0.3s;
+    }
+    &:hover::after {
+      transform-origin: left;
+      transform: scale(1);
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+
+    background-image: url(/src/icons/icon-phone.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include hover(transform, scale(1.2));
+  }
+  &__link--contact {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    color: $color-orange;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
+
+.nav--desktop {
+  display: none;
+
+  @include on-laptop {
+    display: block;
+  }
+}

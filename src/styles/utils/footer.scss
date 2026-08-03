@@ -1,0 +1,196 @@
+.footer {
+  margin-top: 72px;
+  padding-block: 56px;
+  background-color: $color-black;
+
+  @include on-tablet {
+    margin-top: 152px;
+    padding-block: 88px;
+  }
+
+  @include on-laptop {
+    margin-top: 56px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__contacts-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    @include on-tablet {
+      --grid-columns: 8;
+
+      display: grid;
+      grid-template-columns: repeat(var(--grid-columns), 1fr);
+      column-gap: 24px;
+    }
+  }
+  &__left {
+    grid-column: 1 / span 2;
+
+    @include on-tablet {
+      grid-column: 1 / span 2;
+    }
+  }
+  &__right {
+    grid-column: 1 / span 2;
+
+    @include on-tablet {
+      grid-column: 5 /-2;
+      row-gap: 32px;
+    }
+  }
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      --grid-columns: 8;
+
+      display: grid;
+      grid-template-columns: repeat(var(--grid-columns), 1fr);
+      column-gap: 24px;
+    }
+  }
+  &__logo {
+    display: inline-block;
+    margin-bottom: 48px;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__nav-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__link {
+    color: $color-white;
+    text-decoration: none;
+
+    @include hover(text-shadow, 0 0 5px rgba(255, 255, 255, 0.9));
+  }
+  &__main-title {
+    margin-top: 64px;
+    padding-bottom: 40px;
+    font-size: 48px;
+    color: $color-white;
+
+    @include on-tablet {
+      max-width: 300px;
+      margin-top: 0;
+      font-size: 56px;
+    }
+
+    @include on-laptop {
+      max-width: none;
+    }
+  }
+  &__subtitle {
+    margin: 0;
+
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1;
+    color: $color-grey;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
+
+.footer__social-block {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+
+  padding-block: 40px;
+
+  color: $color-white;
+
+  @include on-tablet {
+    grid-column: 1 / span 4;
+  }
+}
+
+.footer__social-icon {
+  display: inline-block;
+
+  width: 24px;
+  height: 24px;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  transition:
+    transform 0.2s ease-in-out,
+    background-image 0.2s ease-in-out;
+}
+
+.footer__social-icon--facebook {
+  background-image: url('/src/icons/Icon-facebook.svg');
+  &:hover {
+    transform: translateY(-2px) scale(1.1);
+    background-image: url('/src/icons/Icon-facebook-white.svg');
+  }
+}
+
+.footer__social-icon--instagram {
+  background-image: url('/src/icons/Icon-instagram.svg');
+  &:hover {
+    transform: translateY(-2px) scale(1.1);
+    background-image: url('/src/icons/Icon-instagram-white.svg');
+  }
+}
+
+.footer__social-icon--twitter {
+  background-image: url('/src/icons/Icon-twitter.svg');
+  &:hover {
+    transform: translateY(-2px) scale(1.1);
+    background-image: url('/src/icons/Icon-twitter-white.svg');
+  }
+}
+
+.footer__copyright {
+  color: $color-grey;
+
+  @include on-tablet {
+    grid-column: 5 / -1;
+    align-self: center;
+  }
+}
