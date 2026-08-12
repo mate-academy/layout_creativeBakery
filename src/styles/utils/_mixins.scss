@@ -1,3 +1,35 @@
+@mixin onTablet {
+  @media (min-width: 776px) {
+    @content;
+  }
+}
+
+@mixin onMonitor {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin onLargeMonitor {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin contentPadingInline() {
+  padding-inline: 16px;
+
+  @include onTablet {
+    padding-inline: 44px;
+  }
+  @include onMonitor {
+    padding-inline: 44px;
+  }
+  @include onLargeMonitor {
+    padding-inline: 128px;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {

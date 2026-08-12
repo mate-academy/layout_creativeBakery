@@ -1,0 +1,82 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(2, 328px);
+    gap: 80px 24px;
+    justify-content: center;
+  }
+
+  @include onMonitor {
+    justify-content: start;
+
+    grid-template-columns: repeat(3, 328px);
+
+    grid-template-areas:
+      'card1 card2 .'
+      '.card3 card4'
+      'card5 card6.';
+
+    .card-one {
+      grid-area: card1;
+    }
+    .card-two {
+      grid-area: card2;
+    }
+    .card-three {
+      grid-area: card3;
+    }
+    .card-four {
+      grid-area: card4;
+    }
+    .card-five {
+      grid-area: card5;
+    }
+    .card-six {
+      grid-area: card6;
+    }
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__img {
+    border-radius: 8px;
+  }
+
+  &__text-title {
+    color: $-grey;
+    font-family: inter-medium, sans-serif;
+  }
+
+  &__text {
+    margin-block: 8px 16px;
+  }
+
+  &__button {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    color: $-accent-orange;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inter-medium, sans-serif;
+  }
+}
