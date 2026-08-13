@@ -1,7 +1,9 @@
 .header {
-  margin-bottom: 40px;
-  @include contentPadingInline;
-  @include onTablet {
+  min-height: 100vh;
+
+  @include content-pading-inline;
+
+  @include kebab-case {
     background-image: url(/images/main-img/cookie.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -12,13 +14,13 @@
     text-align: center;
     margin-block: 32px;
 
-    @include onTablet {
+    @include kebab-case {
       margin-block: 80px 146px;
       text-align: left;
       width: 280px;
     }
 
-    @include onMonitor {
+    @include on-monitor {
       margin-block: 135px;
     }
   }
@@ -26,7 +28,7 @@
   &__img {
     width: 100%;
 
-    @include onTablet {
+    @include kebab-case {
       display: none;
     }
   }
@@ -64,12 +66,12 @@
       color: $-white;
     }
 
-    @include onTablet {
+    @include kebab-case {
       margin: 0 auto;
       margin-block: 210px 228px;
     }
 
-    @include onMonitor {
+    @include on-monitor {
       margin-block: 84px 181px;
       margin-inline: 0;
     }
@@ -81,7 +83,9 @@
 }
 
 .aside {
-  @include contentPadingInline;
+  @include content-pading-inline;
+  overflow: hidden;
+
   position: fixed;
   top: 0;
   right: 0;
@@ -99,16 +103,18 @@
 
 .main {
   margin-block: 64px 72px;
-  @include contentPadingInline;
+
+  @include content-pading-inline;
+
   display: flex;
   flex-direction: column;
   gap: 80px;
 
-  @include onTablet {
+  @include kebab-case {
     margin-block: 152px;
   }
 
-  @include onMonitor {
+  @include on-monitor {
     margin-block: 178px 56px;
   }
 }
@@ -118,11 +124,11 @@
   flex-direction: column;
   gap: 64px;
 
-  @include onTablet {
+  @include kebab-case {
     gap: 72px;
   }
 
-  @include onMonitor {
+  @include on-monitor {
     gap: 146px;
   }
 
@@ -131,26 +137,27 @@
     flex-direction: column;
     gap: 32px;
 
-    @include onTablet {
+    @include kebab-case {
       flex-direction: row;
     }
 
-    @include onMonitor {
+    @include on-monitor {
       justify-content: space-between;
     }
   }
 
   &__text {
-    @include onTablet {
+    @include kebab-case {
       width: 328px;
     }
-    @include onMonitor {
+
+    @include on-monitor {
       width: 544px;
     }
   }
 
   &__title {
-    @include onTablet {
+    @include kebab-case {
       width: 328px;
     }
   }
@@ -160,12 +167,12 @@
     flex-direction: column;
     gap: 64px;
 
-    @include onTablet {
+    @include kebab-case {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @include onMonitor {
+    @include on-monitor {
       grid-template-columns: repeat(4, 280px);
       gap: 24px;
       margin-bottom: 293px;
@@ -175,13 +182,15 @@
 
 .footer {
   background-color: $-black;
-  @include contentPadingInline;
+
+  @include content-pading-inline;
+
   padding-block: 56px;
   display: flex;
   flex-direction: column;
   gap: 40px;
 
-  @include onTablet {
+  @include kebab-case {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
@@ -198,12 +207,12 @@
   flex-direction: column;
   gap: 40px;
 
-  @include onMonitor {
+  @include on-monitor {
     display: grid;
-    grid-template-areas:
-      'co.'
-      'ca em';
 
+    grid-template-areas:
+      'co co'
+      'ca em';
     .footer-center__title-text {
       grid-area: co;
     }

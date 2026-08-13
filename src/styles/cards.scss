@@ -3,20 +3,20 @@
   flex-direction: column;
   gap: 56px;
 
-  @include onTablet {
+  @include kebab-case {
     display: grid;
     grid-template-columns: repeat(2, 328px);
     gap: 80px 24px;
     justify-content: center;
   }
 
-  @include onMonitor {
+  @include on-monitor {
     justify-content: start;
 
     grid-template-columns: repeat(3, 328px);
 
     grid-template-areas:
-      'card1 card2 .'
+      'card1 card2.'
       '.card3 card4'
       'card5 card6.';
 
@@ -45,6 +45,10 @@
     flex-direction: column;
     gap: 24px;
   }
+
+  @include on-large {
+    justify-content: center;
+  }
 }
 
 .card {
@@ -54,6 +58,8 @@
 
   &__img {
     border-radius: 8px;
+
+    @include hover(transform, scale(1.05));
   }
 
   &__text-title {
@@ -78,5 +84,7 @@
     font-size: 16px;
     font-weight: 500;
     font-family: inter-medium, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
   }
 }

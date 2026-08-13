@@ -1,31 +1,33 @@
-@mixin onTablet {
+@mixin kebab-case {
   @media (min-width: 776px) {
     @content;
   }
 }
 
-@mixin onMonitor {
+@mixin on-monitor {
   @media (min-width: 1200px) {
     @content;
   }
 }
 
-@mixin onLargeMonitor {
+@mixin on-large {
   @media (min-width: 1400px) {
     @content;
   }
 }
 
-@mixin contentPadingInline() {
+@mixin content-pading-inline() {
   padding-inline: 16px;
 
-  @include onTablet {
+  @include kebab-case {
     padding-inline: 44px;
   }
-  @include onMonitor {
+
+  @include on-monitor {
     padding-inline: 44px;
   }
-  @include onLargeMonitor {
+
+  @include on-large {
     padding-inline: 128px;
   }
 }
