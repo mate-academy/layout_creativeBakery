@@ -1,0 +1,91 @@
+@use '../abstract' as *;
+
+.footer {
+  background-color: var(--color-black);
+
+  &__inner {
+    @include grid-page;
+
+    grid-template-rows: repeat(6, auto);
+    padding-block: 56px;
+
+    @include tablet {
+      grid-template-rows: repeat(3, auto);
+      padding-block: 88px;
+    }
+  }
+
+  &__logo {
+    grid-column: 1 / span 2;
+    align-self: start;
+
+    @include tablet {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  &__navigation {
+    display: contents;
+  }
+
+  &__menu {
+    grid-column: 1 / span 2;
+
+    @include tablet {
+      grid-column: 1 / span 4;
+    }
+
+    &-title {
+      margin-bottom: var(--footer-small-title-MB);
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      color: var(--color-white);
+    }
+
+    &-link {
+      @include footer-hover-effect;
+    }
+  }
+
+  &__body {
+    display: contents;
+  }
+
+  &__contacts-title {
+    @include font-h2;
+
+    margin-top: 64px;
+    grid-column: 1 / span 2;
+    color: var(--color-white);
+
+    @include tablet {
+      margin-top: 0;
+      grid-row: 1;
+      grid-column: 5 / span 4;
+    }
+  }
+
+  &__extra {
+    display: contents;
+  }
+
+  &__menu,
+  &__copyright {
+    margin-top: var(--footer-block-MT);
+  }
+
+  &__copyright {
+    grid-column: 1 / span 2;
+    color: var(--color-grey);
+
+    @include tablet {
+      margin-top: 48px;
+      grid-row: 3;
+      grid-column: 5 / span 4;
+    }
+  }
+}

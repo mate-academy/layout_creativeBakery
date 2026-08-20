@@ -1,0 +1,43 @@
+@use '../abstract' as *;
+
+.page {
+  @include font-body;
+
+  color: var(--color-black);
+  background-color: var(--page-bg);
+  transition: background-color var(--transition-duration) ease;
+
+  &:has(.menu:target) {
+    overflow: hidden;
+  }
+}
+
+.page--theme--pink {
+  --page-bg: var(--color-light-pink);
+  --title-color: var(--color-accent-orange);
+  --big-font-color: var(--color-accent-orange);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  @include reset-link;
+}
+
+button {
+  @include reset-button;
+}
+
+h4,
+.h4 {
+  @include font-uppercase;
+
+  color: var(--color-grey);
+  font-size: 16px;
+}

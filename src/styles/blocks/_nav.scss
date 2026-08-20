@@ -1,0 +1,52 @@
+@use '../abstract' as *;
+
+.nav {
+  &__list {
+    display: flex;
+    column-gap: 64px;
+    align-items: center;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 60px;
+
+    &:not(.button)::after {
+      content: '';
+
+      position: absolute;
+      bottom: 8px;
+
+      scale: 0;
+
+      width: 100%;
+      height: 2px;
+
+      background-color: currentColor;
+
+      transition-duration: inherit;
+    }
+
+    @include hover {
+      &::after {
+        scale: 1;
+      }
+    }
+  }
+
+  &--vertical {
+    .nav__list {
+      @include flex-center;
+
+      flex-direction: column;
+      row-gap: 24px;
+    }
+
+    .nav__link {
+      height: auto;
+      padding: 8px 0;
+    }
+  }
+}

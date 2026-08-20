@@ -1,0 +1,45 @@
+@use '../abstract' as *;
+
+.contacts {
+  margin-top: var(--footer-block-MT);
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--footer-block-MT);
+  grid-column: 1 / span 2;
+  color: var(--color-white);
+
+  @include tablet {
+    grid-row: 2;
+    grid-column: 5 / span 4;
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  &__call-us-title,
+  &__email-us-title {
+    margin-bottom: var(--footer-small-title-MB);
+  }
+
+  &__call-us-body p {
+    --paragraphMarginBottom: 16px;
+  }
+
+  &__call-us {
+    @include desktop {
+      grid-column: 1 / span 2;
+    }
+  }
+
+  &__email-us {
+    @include desktop {
+      grid-column: 3 / span 2;
+    }
+  }
+
+  &__link {
+    @include footer-hover-effect;
+  }
+}

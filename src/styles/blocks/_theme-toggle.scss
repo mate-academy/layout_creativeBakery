@@ -1,0 +1,69 @@
+@use '../abstract' as *;
+
+.theme-toggle {
+  position: relative;
+  width: 64px;
+  height: 24px;
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    display: block;
+    width: 60px;
+    height: 30px;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 4px;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--color-accent-orange);
+      border-radius: 50px;
+      box-sizing: border-box;
+      transition: 0.5s ease top, 0.5s ease left, 0.5s ease width, 0.5s ease height, 0.5s ease border-color;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 30px;
+      border: 2px solid var(--color-black);
+      border-radius: 50px;
+      box-sizing: border-box;
+      transition: 0.5s ease top, 0.5s ease right, 0.5s ease width, 0.5s ease height, 0.5s ease border-color;
+    }
+  }
+
+  &__input:checked + &__label::before {
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 30px;
+    border-color: var(--color-black);
+    border: 2px solid var(--color-black);
+  }
+
+  &__input:checked + &__label::after {
+    top: 5px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    border-color: var(--color-accent-orange);
+    border: 2px solid var(--color-accent-orange);
+  }
+
+  &__input:focus-visible + &__label {
+    outline: 2px solid var(--color-black);
+    outline-offset: 4px;
+  }
+}

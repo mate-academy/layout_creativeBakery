@@ -1,0 +1,45 @@
+@use '../abstract' as *;
+
+.soc1als {
+  display: contents;
+
+  &__list {
+    margin-top: var(--footer-block-MT);
+    display: flex;
+    column-gap: 32px;
+    grid-column: 1 / span 2;
+
+    @include tablet {
+      grid-row: 3;
+      grid-column: 1 / span 4;
+      align-items: end;
+    }
+
+    @include desktop {
+      margin-top: 48px;
+    }
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__link svg {
+    color: var(--color-accent-orange);
+    transition-duration: var(--transition-duration);
+
+    @include hover {
+      color: var(--color-white);
+      translate: 0 -5px;
+      scale: 1.2;
+    }
+  }
+
+  &__link {
+    &:focus-visible {
+      svg {
+        color: var(--color-white);
+      }
+    }
+  }
+}

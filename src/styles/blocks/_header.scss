@@ -1,0 +1,31 @@
+@use '../abstract' as *;
+
+.header {
+  --headerPaddingY: 16px;
+  --headerPaddingX: 16px;
+
+  padding: var(--headerPaddingY) var(--headerPaddingX);
+
+  @include desktop {
+    --headerPaddingY: 28px;
+    --headerPaddingX: 32px;
+
+    padding: var(--headerPaddingY) var(--headerPaddingX) 0;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 64px;
+  }
+
+  &__wrapper {
+    display: flex;
+    column-gap: 24px;
+  }
+
+  &__menu {
+    margin-left: auto;
+  }
+}

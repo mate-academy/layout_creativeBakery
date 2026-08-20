@@ -1,0 +1,39 @@
+@use '../abstract' as *;
+
+.achievements {
+  &__list {
+    @include grid-page;
+
+    row-gap: 48px;
+
+    @include tablet {
+      row-gap: 80px;
+    }
+
+    @include desktop {
+      padding-bottom: 294px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    grid-column: 1 / span 2;
+    flex-direction: column;
+    row-gap: 8px;
+
+    @include tablet {
+      grid-column: span 4;
+    }
+
+    @include desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__value {
+    @include font-big;
+
+    color: var(--big-font-color);
+    transition-duration: var(--transition-duration);
+  }
+}

@@ -1,0 +1,32 @@
+@use '../abstract' as *;
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  align-items: start;
+
+  &__image {
+    display: block;
+    width: 100%;
+    border-radius: var(--border-radius-small);
+    transition-duration: var(--transition-duration);
+
+    @include hover {
+      scale: 1.05;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  &__name {
+    @include font-uppercase;
+
+    font-size: 16px;
+    color: var(--color-grey);
+  }
+}

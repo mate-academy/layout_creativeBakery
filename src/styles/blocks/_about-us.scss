@@ -1,0 +1,67 @@
+@use '../abstract' as *;
+
+.about-us {
+  &__inner {
+    margin-bottom: 72px;
+
+    background-image: url('../images/crumbs.webp');
+    background-position: 0 75%;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+
+    @include tablet {
+      margin-bottom: 152px;
+      background-position: center;
+      background-size: 77%;
+    }
+
+    @include desktop {
+      margin-bottom: 56px;
+      background-position: 70%;
+      background-size: contain;
+    }
+  }
+
+  &__header {
+    @include grid-page;
+
+    row-gap: 32px;
+    margin-bottom: 64px;
+
+    @include tablet {
+      margin-bottom: 72px;
+    }
+
+    @include desktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__title {
+    @include font-h2;
+
+    grid-column: 1 / span 2;
+    color: var(--title-color);
+    transition-duration: var(--transition-duration);
+
+    @include tablet {
+      grid-column: 1 / span 4;
+    }
+
+    @include desktop {
+      grid-column: 1 / span 3;
+
+      // added clamp for font-size from 56px to 72px. Better solution for adaptive design!
+      font-size: clamp(3.5rem, -2.32rem + 9.09vw, 4.5rem);
+    }
+  }
+
+  &__description {
+    grid-column: 1 / span 2;
+
+    @include tablet {
+      grid-column: 5 / span 4;
+    }
+  }
+}

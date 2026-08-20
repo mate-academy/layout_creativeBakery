@@ -1,0 +1,23 @@
+@use '../abstract' as *;
+
+.icon {
+  @include square(24px);
+
+  transition-duration: var(--transition-duration);
+
+  &--menu {
+    background: url('../images/icons/icon-burger-menu.svg') center/contain no-repeat;
+
+    @include hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &--close {
+    background: url('../images/icons/icon-close.svg') center/contain no-repeat;
+
+    @include hover {
+      transform: rotate(50deg) scale(1.2);
+    }
+  }
+}

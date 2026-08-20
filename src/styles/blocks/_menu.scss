@@ -1,0 +1,38 @@
+@use '../abstract' as *;
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 100vh;
+  pointer-events: none;
+  background-color: var(--page-bg);
+  transform: scale(0);
+  opacity: 0;
+  transition-duration: var(--transition-duration);
+
+  &:target {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+    z-index: 1;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+
+    &:not(:last-child) {
+      margin-bottom: 132px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    column-gap: 24px;
+  }
+}

@@ -1,0 +1,78 @@
+@use '../abstract' as *;
+
+.products {
+  &__inner {
+    margin-bottom: 72px;
+
+    @include tablet {
+      margin-bottom: 152px;
+    }
+
+    @include desktop {
+      margin-bottom: 178px;
+    }
+  }
+
+  &__header {
+    @include grid-page;
+  }
+
+  &__title {
+    @include font-h2;
+
+    grid-column: 1 / span 2;
+    margin-bottom: 24px;
+    color: var(--title-color);
+    transition-duration: var(--transition-duration);
+
+    @include tablet {
+      grid-column: 1 / span 5;
+    }
+
+    @include desktop {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / span 2;
+    margin-bottom: 56px;
+
+    @include tablet {
+      grid-column: 1 / span 6;
+      margin-bottom: 80px;
+    }
+
+    @include desktop {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  &__list {
+    @include grid-page;
+
+    row-gap: 56px;
+
+    @include tablet {
+      row-gap: 80px;
+    }
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+
+    @include tablet {
+      grid-column: span 4;
+    }
+
+    @include desktop {
+      grid-column: span 3;
+    }
+
+    &--right-start {
+      @include desktop {
+        grid-column: 3 / span 3;
+      }
+    }
+  }
+}
