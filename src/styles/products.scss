@@ -1,0 +1,244 @@
+.products {
+  display: flex;
+  flex-direction: column;
+
+  @include on-tablets {
+    @include page-grid;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+
+    font-family: $font-inter;
+    font-size: 48px;
+    font-weight: 400;
+    font-style: Regular;
+    line-height: 85%;
+    color: $c-orange;
+    text-transform: uppercase;
+    letter-spacing: -5%;
+
+    @include on-tablets {
+      grid-column: 1 / 6;
+      font-size: 56px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 56px;
+
+    font-family: $font-inter;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: Regular;
+    line-height: 150%;
+    color: $c-black;
+    letter-spacing: -1%;
+
+    @include on-tablets {
+      grid-column: 1 / 7;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__image {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: 356px;
+    max-height: 512px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: $time-transition;
+    }
+
+    @include on-tablets {
+      height: 424px;
+    }
+
+    @include on-desktop {
+      height: 512px;
+    }
+
+    &--image-1 {
+      background-image: url(../images/laranja.png);
+    }
+
+    &--image-2 {
+      background-image: url(../images/biscuit.png);
+    }
+
+    &--image-3 {
+      background-image: url(../images/coconut.png);
+    }
+
+    &--image-4 {
+      background-image: url(../images/rosq.png);
+    }
+
+    &--image-5 {
+      background-image: url(../images/caramel.png);
+      background-size: cover;
+    }
+
+    &--image-6 {
+      background-image: url(../images/cookies.png);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 64px;
+
+    @include on-tablets {
+      margin-bottom: 88px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 80px;
+    }
+
+    &--grid-1 {
+      @include on-tablets {
+        grid-column: 1 / 5;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--grid-2 {
+      @include on-tablets {
+        grid-column: 5 / 9;
+      }
+
+      @include on-desktop {
+        grid-column: 4 / 7;
+      }
+    }
+
+    &--grid-3 {
+      @include on-tablets {
+        grid-column: 1 / 5;
+      }
+
+      @include on-desktop {
+        grid-column: 3 / 6;
+      }
+    }
+
+    &--grid-4 {
+      @include on-tablets {
+        grid-column: 5 / 9;
+      }
+
+      @include on-desktop {
+        grid-column: 6 / 9;
+      }
+    }
+
+    &--grid-5 {
+      @include on-tablets {
+        grid-column: 1 / 5;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 4;
+        margin-bottom: 178px;
+      }
+    }
+
+    &--grid-6 {
+      @include on-tablets {
+        grid-column: 5 / 9;
+      }
+
+      @include on-desktop {
+        grid-column: 4 / 7;
+        margin-bottom: 178px;
+      }
+    }
+  }
+
+  &__type {
+    margin-bottom: 8px;
+
+    font-family: $font-inter;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: Medium;
+    line-height: 100%;
+    color: $c-gray;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 2%;
+  }
+
+  &__text {
+    margin-bottom: 16px;
+
+    font-family: $font-inter;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: Regular;
+    line-height: 150%;
+    text-align: left;
+    letter-spacing: -1%;
+  }
+
+  &__link {
+    position: relative;
+
+    font-family: $font-inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    color: $c-orange;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2%;
+
+    &--orange {
+      &::after {
+        content: '';
+
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+
+        width: 0;
+        height: 3px;
+
+        background-color: $c-orange;
+
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__image-arrow {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__container-link {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4px;
+    align-items: center;
+  }
+}

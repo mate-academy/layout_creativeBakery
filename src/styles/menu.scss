@@ -1,0 +1,109 @@
+.menu {
+  width: auto;
+  height: 100vh;
+  background-color: $c-pink;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    align-items: center;
+
+    list-style: none;
+  }
+
+  &__item {
+    &--flex {
+      display: flex;
+      flex-direction: row;
+      column-gap: 6px;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    font-family: $font-inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $c-black;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: -1%;
+
+    &-image {
+      display: block;
+
+      width: 20px;
+      height: 20px;
+
+      background-color: $c-orange;
+
+      -webkit-mask-image: url(../images/cellphone.svg);
+      mask-image: url(../images/cellphone.svg);
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+    }
+
+    &--orange {
+      position: relative;
+
+      font-weight: 500;
+      line-height: 100%;
+      color: $c-orange;
+      text-transform: uppercase;
+      letter-spacing: 2%;
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+
+        display: inline-block;
+
+        width: 0;
+        height: 2px;
+
+        background-color: $c-orange;
+
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+      &:focus::after {
+        background-color: $c-darkOrange;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:focus {
+        color: $c-darkOrange;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  &__content {
+    @include content-padding-inline;
+  }
+
+  &__top {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    margin-bottom: 132px;
+  }
+
+  &__icon-close {
+    width: 20px;
+    height: 20px;
+  }
+}

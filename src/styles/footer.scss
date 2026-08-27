@@ -1,0 +1,234 @@
+.baseboard {
+  width: auto;
+  height: 914px;
+
+  @include content-padding-inline;
+
+  background-color: $c-black;
+
+  @include on-tablets {
+    height: 616px;
+  }
+
+  @include on-desktop {
+    height: 525px;
+  }
+
+  &__footer {
+    @include on-tablets {
+      @include page-grid;
+    }
+  }
+
+  &__image {
+    width: 157px;
+    height: 30px;
+    margin-top: 61px;
+    margin-bottom: 45px;
+
+    @include on-tablets {
+      grid-column: 1 / 4;
+      margin-top: 93px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 64px;
+
+    @include on-tablets {
+      grid-column: 1 / 4;
+      grid-row: 2;
+    }
+
+    &--margin-bottom-0 {
+      margin-bottom: 0;
+    }
+
+    &--margin-bottom {
+      margin-bottom: 40px;
+
+      @include on-tablets {
+        margin-bottom: 0;
+      }
+    }
+
+    &--grid {
+      @include on-tablets {
+        grid-column: 5 / 8;
+      }
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+  }
+
+  &__nav-menu {
+    margin-bottom: 16px;
+
+    font-family: $font-inter;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: Medium;
+    line-height: 100%;
+    color: $c-gray;
+    text-transform: uppercase;
+    letter-spacing: 2%;
+  }
+
+  &__nav-contact {
+    margin-bottom: 40px;
+
+    @include on-tablets {
+      grid-column: 5 / 8;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 9;
+      grid-row: 2;
+    }
+
+    &-email {
+      font-family: $font-inter;
+      font-size: 16px;
+      font-weight: 400;
+      font-style: Regular;
+      line-height: 150%;
+      color: $c-white;
+      text-decoration: none;
+      letter-spacing: -1%;
+    }
+  }
+
+  &__nav-email {
+    margin-bottom: 16px;
+  }
+
+  &__nav-link {
+    font-family: $font-inter;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: Regular;
+    line-height: 150%;
+    color: $c-white;
+    text-decoration: none;
+    letter-spacing: -1%;
+  }
+
+  &__nav-socialmedia {
+    margin-bottom: 40px;
+
+    @include on-tablets {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+      grid-row: 3;
+      margin-top: 48px;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: row;
+      column-gap: 39px;
+      list-style: none;
+    }
+
+    &-image {
+      cursor: pointer;
+
+      display: block;
+
+      width: 20px;
+      height: 20px;
+
+      text-decoration: none;
+
+      background-color: $c-orange;
+
+      transition: all 0.2s ease-in-out;
+
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+
+      &:hover {
+        background-color: $c-white;
+
+        .baseboard__nav-socialmedia-image {
+          &:focus {
+            background-color: $c-white;
+          }
+        }
+      }
+
+      &--facebook {
+        -webkit-mask-image: url(../images/facebook.svg);
+        mask-image: url(../images/facebook.svg);
+      }
+
+      &--instagram {
+        -webkit-mask-image: url(../images/instagram.svg);
+        mask-image: url(../images/instagram.svg);
+      }
+
+      &--x {
+        -webkit-mask-image: url(../images/x.svg);
+        mask-image: url(../images/x.svg);
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    font-family: $font-inter;
+    font-size: 48px;
+    font-weight: 400;
+    font-style: Regular;
+    line-height: 85%;
+    color: $c-white;
+    text-transform: uppercase;
+    letter-spacing: -5%;
+
+    @include on-tablets {
+      grid-column: 5 / 8;
+      grid-row: 1;
+      font-size: 56px;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 9;
+      font-size: 72px;
+    }
+
+    &--margin-top {
+      margin-top: 88px;
+    }
+  }
+
+  &__title-info {
+    font-family: $font-inter;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: Regular;
+    line-height: 150%;
+    color: $c-gray;
+    letter-spacing: -1%;
+
+    @include on-tablets {
+      grid-column: 5 / 8;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 7;
+    }
+  }
+}
