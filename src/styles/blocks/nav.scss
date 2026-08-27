@@ -1,0 +1,90 @@
+@use '../utils' as *;
+
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    @extend %body-text;
+
+    position: relative;
+    display: inline-flex;
+    color: $c-black;
+
+    @include hover(color, $c-accent-orange);
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: -4px;
+      left: 0;
+      height: 2px;
+      background-color: currentColor;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform $effect-duration;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    &:focus-visible {
+      color: $c-dark-orange;
+      outline: none;
+    }
+
+    &--contact {
+      @extend %uppercase;
+
+      align-items: center;
+      gap: 4px;
+      color: $c-accent-orange;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  &--header {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav__list {
+      gap: 64px;
+    }
+  }
+
+  &--menu {
+    margin-top: 132px;
+
+    .nav__list {
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+  }
+
+  &--footer {
+    margin-top: 16px;
+
+    .nav__list {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .nav__link {
+      color: $c-white;
+    }
+  }
+}

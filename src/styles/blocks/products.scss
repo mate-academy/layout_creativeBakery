@@ -1,0 +1,25 @@
+@use '../utils' as *;
+
+.products {
+  &__title {
+    color: $c-accent-orange;
+  }
+
+  &__description {
+    @extend %body-text;
+
+    margin-top: 24px;
+  }
+
+  &__list {
+    @include page-grid;
+
+    row-gap: 56px;
+    margin-top: 56px;
+
+    @include on-tablet {
+      row-gap: 80px;
+      margin-top: 80px;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@use '../utils' as *;
+
+.about-us {
+  margin-top: 72px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    isolation: isolate;
+    z-index: -1;
+    aspect-ratio: 718 / 673;
+    background-image: url('../images/Crumbs.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+
+    bottom: 160px;
+    left: 50%;
+    width: 320px;
+    transform: translateX(-50%);
+
+    @include on-tablet {
+      left: 50%;
+      top: 50px;
+      width: 526px;
+    }
+
+    @include on-desktop {
+      top: 0;
+      left: 57%;
+      width: 718px;
+    }
+  }
+
+  @include on-tablet {
+    margin-top: 152px;
+  }
+
+  @include on-desktop {
+    margin-top: 178px;
+  }
+
+  &__intro {
+    @include page-grid;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    color: $c-accent-orange;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      grid-row: 1;
+    }
+  }
+
+  &__description {
+    @extend %body-text;
+
+    grid-column: 1 / -1;
+    margin-top: 32px;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      margin-top: 0;
+    }
+  }
+
+  &__stats {
+    @include page-grid;
+
+    row-gap: 48px;
+    margin-top: 64px;
+
+    @include on-tablet {
+      row-gap: 80px;
+      margin-top: 72px;
+    }
+
+    @include on-desktop {
+      margin-top: 144px;
+    }
+  }
+
+  &__stat {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    gap: 8px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__number {
+    @extend %big-text;
+
+    color: $c-accent-orange;
+  }
+
+  &__stat-label {
+    @extend %body-text;
+  }
+}

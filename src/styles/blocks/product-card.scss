@@ -1,0 +1,86 @@
+@use '../utils' as *;
+
+.product-card {
+  grid-column: 1 / -1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    grid-column: span 3;
+
+    &:nth-child(4n + 1) {
+      grid-column: 1 / 4;
+    }
+
+    &:nth-child(4n + 2) {
+      grid-column: 4 / 7;
+    }
+
+    &:nth-child(4n + 3) {
+      grid-column: 3 / 6;
+    }
+
+    &:nth-child(4n + 4) {
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__category {
+    @extend %uppercase;
+
+    color: $c-gray;
+  }
+
+  &__description {
+    @extend %body-text;
+  }
+
+  &__order {
+    @extend %uppercase;
+
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    gap: 4px;
+    color: $c-accent-orange;
+    transition: color $effect-duration;
+
+    &:focus-visible {
+      color: $c-dark-orange;
+      outline: 2px solid $c-dark-orange;
+      outline-offset: 4px;
+    }
+  }
+
+  &__order-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    transition: transform $effect-duration;
+  }
+
+  &__order:hover &__order-icon,
+  &__order:focus-visible &__order-icon {
+    transform: translateX(4px);
+  }
+}

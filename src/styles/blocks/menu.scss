@@ -1,0 +1,75 @@
+@use '../utils' as *;
+
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  padding-inline: 16px;
+  visibility: hidden;
+  opacity: 0;
+  background-color: $c-light-pink;
+  transform: translateX(-100%);
+  pointer-events: none;
+  transition:
+    opacity $effect-duration,
+    transform $effect-duration,
+    visibility 0s $effect-duration;
+
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    transition:
+      opacity $effect-duration,
+      transform $effect-duration;
+  }
+
+  @include on-tablet {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(-100%);
+      pointer-events: none;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 16px;
+  }
+
+  &__logo {
+    width: 136px;
+    height: 32px;
+
+    &:focus-visible {
+      outline: 2px solid $c-accent-orange;
+      outline-offset: 4px;
+    }
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    color: $c-black;
+
+    @include hover(color, $c-accent-orange);
+
+    &:focus-visible {
+      color: $c-accent-orange;
+      outline: 2px solid $c-accent-orange;
+      outline-offset: 4px;
+    }
+  }
+}

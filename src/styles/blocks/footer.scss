@@ -1,0 +1,163 @@
+@use '../utils' as *;
+
+.footer {
+  padding-block: 56px;
+  color: $c-white;
+  background-color: $c-black;
+
+  @include on-tablet {
+    padding-block: 88px;
+  }
+
+  &__container {
+    @include content-padding-inline;
+  }
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__menu {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      grid-row: 1;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 136px;
+    filter: brightness(0) invert(1);
+
+    @include hover(opacity, 0.7);
+
+    &:focus-visible {
+      outline: 2px solid $c-accent-orange;
+      outline-offset: 4px;
+    }
+  }
+
+  &__menu-title,
+  &__contact-title {
+    @extend %uppercase;
+
+    color: $c-gray;
+  }
+
+  &__menu-title {
+    margin-top: 40px;
+
+    @include on-tablet {
+      margin-top: 88px;
+    }
+
+    @include on-desktop {
+      margin-top: 64px;
+    }
+  }
+
+  &__contacts {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+    margin-top: 64px;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      grid-row: 1;
+      margin-top: 0;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 24px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    color: $c-white;
+  }
+
+  &__phones,
+  &__emails {
+    margin-top: 40px;
+  }
+
+  &__contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  &__contact-link {
+    @extend %body-text;
+
+    display: inline-block;
+    margin-top: 16px;
+    color: $c-white;
+
+    @include hover(color, $c-accent-orange);
+
+    &:focus-visible {
+      color: $c-accent-orange;
+      outline: 2px solid $c-accent-orange;
+      outline-offset: 4px;
+    }
+  }
+
+  &__contact-list &__contact-link {
+    margin-top: 0;
+  }
+
+  &__bottom {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 24px;
+      align-items: center;
+      margin-top: 48px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__social-link {
+    display: flex;
+    color: $c-accent-orange;
+    transition: color $effect-duration;
+
+    &:hover,
+    &:focus-visible {
+      color: $c-white;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $c-white;
+      outline-offset: 4px;
+    }
+  }
+
+  &__social-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__copyright {
+    @extend %body-text;
+
+    color: $c-gray;
+  }
+}
