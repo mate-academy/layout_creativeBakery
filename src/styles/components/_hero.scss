@@ -1,13 +1,19 @@
 .hero {
   display: grid;
-  align-items: center;
-  justify-items: center;
+  place-items: center;
 
   font-family: $font-main;
   font-weight: 400;
+  margin-bottom: 104px;
 
   @include on-tablet {
     @include page-grid;
+    margin-bottom: 228px;
+  }
+
+  @include on-desktop {
+    align-items: start;
+    margin-bottom: 218px;
   }
 
   &__intro {
@@ -44,6 +50,7 @@
     letter-spacing: -0.05em;
     font-family: $font-main;
     margin-top: 32px;
+    margin-bottom: 0;
 
     @include on-tablet {
       font-size: 80px;
@@ -53,7 +60,8 @@
     }
 
     @include on-desktop {
-      font-size: 136px;
+      margin-top: 40px;
+      font-size: 126px;
       grid-row: 2;
       grid-column: 1 / -1;
     }
@@ -97,8 +105,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    padding: 16px 32px;
+    padding: 16px 0;
     width: 100%;
     max-width: 288px;
     text-transform: uppercase;
@@ -147,6 +154,10 @@
       pointer-events: none;
     }
 
+    &-text {
+      padding: 4px;
+    }
+
     &-icon {
       flex-shrink: 0;
       width: 24px;
@@ -157,7 +168,7 @@
       background-position: center;
     }
 
-        &--disabled &-icon {
+    &--disabled &-icon {
       background-image: url(../images/icons/Vector.svg);
     }
 
