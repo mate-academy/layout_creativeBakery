@@ -14,19 +14,26 @@
 
   &__menu {
     position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
+    inset: 0;
+    z-index: 100;
 
     pointer-events: none;
-    transform: translateX(-100%);
+    transform: translateX(100%);
     opacity: 0;
     transition: all $effect-duration;
 
     &:target {
       pointer-events: all;
-      transform: translateX(0);
       opacity: 1;
+      transform: translateX(0);
+    }
+
+    @include on-tablet {
+      display: none;
     }
   }
+}
+
+.page:has(.page__menu:target) {
+  overflow: hidden;
 }

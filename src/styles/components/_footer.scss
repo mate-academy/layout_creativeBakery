@@ -1,0 +1,159 @@
+.footer {
+  background-color: $black;
+
+  &__inner {
+    @include page-grid;
+    
+    row-gap: 40px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+
+    @include on-tablet {
+      row-gap: 0;
+      padding-top: 93px;
+      padding-bottom: 93px;
+    }
+
+    @include on-desktop {
+      padding-top: 88px;
+      padding-bottom: 88px;
+    }
+  }
+
+  &__title {
+    color: $white;
+    margin-bottom: 40px;
+  }
+
+  &__snap {
+    display: block;
+    margin-bottom: 16px;
+    font-weight: 500;
+    color: $grey;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+
+    @include hover(color, $accent-orange);
+  }
+
+  &__brand {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__logo {
+    display: block;
+    height: 40px;
+    width: 168px;
+    margin-bottom: 40px;
+
+    &-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    @include hover(transform, scale(1.05));
+  }
+
+  &__contacts {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    @include on-desktop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__meta {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      @include page-grid;
+
+      grid-column: 1 / -1;
+      grid-row: 2;
+      margin-top: 104px;
+    }
+
+    @include on-desktop {
+      @include page-grid;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    margin: 0 0 40px;
+    padding: 0;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__copyright {
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / -1;
+    }
+
+    &-text {
+      margin: 0;
+      color: $grey;
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+    }
+  }
+}

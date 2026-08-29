@@ -42,12 +42,23 @@
     }
   }
 
-  @include hover(transform, scale(1.02));
-
   &__image {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 16px;
+    object-fit: cover;
+
+    min-height: 356px;
+
+    @include on-tablet {
+      min-height: 512px;
+    }
+
+    @include on-desktop {
+      min-height: 560px;
+    }
+
+    @include hover(transform, scale(1.02));
   }
 
   &__category {
@@ -82,16 +93,6 @@
     margin-top: auto;
 
     cursor: pointer;
-
-    &-icon {
-      flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      background-image: url(../images/icons/arrow.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
 
     &-text {
       padding: 4px;
