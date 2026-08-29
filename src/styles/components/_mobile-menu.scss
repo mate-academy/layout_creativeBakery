@@ -1,0 +1,56 @@
+.mobile-menu {
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: auto;
+  background-color: $light-pink;
+
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 16px;
+  }
+
+  &__list {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 24px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    width: fit-content;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $black;
+
+    @include hover(color, $accent-orange);
+
+    &--contact {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      line-height: 100%;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: $accent-orange;
+
+      @include hover(transform, $scale);
+    }
+  }
+}
