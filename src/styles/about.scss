@@ -1,0 +1,74 @@
+.about {
+  position: relative;
+  @include content-padding-inline;
+  &__top {
+    margin-bottom: 64px;
+    h2,
+    p {
+      @include on-tablet {
+        margin: 0;
+        margin-top: 120px;
+        padding: 0;
+      }
+    }
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 32px;
+      align-items: start;
+    }
+  }
+  &__bottom {
+    position: relative;
+    z-index: 0;
+    background-image: url('../images/media/crumbs.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  &__stats {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      padding-bottom: 100px;
+    }
+    @include on-small-desktop {
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      gap: 24px;
+      padding-bottom: 240px;
+    }
+  }
+  &__stat {
+    gap: 8px;
+    padding-bottom: 32px;
+    &-title {
+      margin: 0;
+    }
+    @include on-small-desktop {
+      grid-column: span 2;
+      padding-bottom: 0;
+    }
+  }
+  @include on-tablet {
+    background-image: url('../images/media/crumbs.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: calc(100% - 240px) auto;
+    &__bottom {
+      background-image: none;
+    }
+  }
+  @include on-small-desktop {
+    background-image: url('../images/media/crumbs.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: min(526px, 100%) min(493px, 100%);
+    &__bottom {
+      background-image: none;
+    }
+  }
+}
