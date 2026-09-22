@@ -1,0 +1,38 @@
+.socials {
+  @extend %reset-list;
+
+  display: flex;
+  gap: 32px;
+
+  &__link {
+    display: block;
+    color: $c-accent;
+
+    @include hover(color, $c-white);
+
+    &::before {
+      @extend %icon;
+
+      content: '';
+      display: block;
+    }
+
+    &:focus-visible {
+      color: $c-white;
+      outline: 2px solid $c-white;
+      outline-offset: 4px;
+    }
+
+    &--facebook::before {
+      mask-image: url('/src/images/icons/Icon-facebook.png');
+    }
+
+    &--instagram::before {
+      mask-image: url('/src/images/icons/Icon-instagram.png');
+    }
+
+    &--twitter::before {
+      mask-image: url('/src/images/icons/Icon-twitter.png');
+    }
+  }
+}

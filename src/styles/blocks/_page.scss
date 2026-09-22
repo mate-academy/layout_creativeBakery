@@ -1,0 +1,33 @@
+.page {
+  scroll-behavior: smooth;
+  scroll-padding-top: $header-height-mobile;
+
+  @include desktop {
+    scroll-padding-top: 0;
+  }
+
+  @include reduced-motion {
+    scroll-behavior: auto;
+  }
+
+  &__body {
+    @extend %text-body;
+
+    min-width: 320px;
+    margin: 0;
+    padding-top: $header-height-mobile;
+
+    font-family: $font-main;
+    color: $c-black;
+
+    background-color: $c-light-blue;
+
+    @include desktop {
+      padding-top: 0;
+    }
+  }
+
+  &--locked {
+    overflow: hidden;
+  }
+}

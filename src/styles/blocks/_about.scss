@@ -1,0 +1,97 @@
+// on mobile the crumbs lie behind the second and third stats
+$crumbs-offset-mobile: 174px;
+
+.about {
+  padding-top: 72px;
+  padding-bottom: 72px;
+
+  @include tablet {
+    padding-top: 152px;
+    padding-bottom: 152px;
+  }
+
+  @include desktop {
+    padding-top: 178px;
+    padding-bottom: 349px;
+  }
+
+  &__content {
+    @extend %container;
+
+    position: relative;
+
+    @include tablet {
+      @include grid-8;
+    }
+
+    &::before {
+      pointer-events: none;
+      content: '';
+
+      position: absolute;
+      z-index: -1;
+      bottom: $crumbs-offset-mobile;
+      left: 0;
+
+      aspect-ratio: 718 / 673;
+      width: 100%;
+
+      background: url('/src/images/back-ground.png') center / contain no-repeat;
+      mix-blend-mode: multiply;
+
+      @include tablet {
+        top: 51px;
+        bottom: auto;
+        left: 50%;
+        translate: -50% 0;
+
+        width: $crumbs-width-tablet;
+      }
+
+      @include desktop {
+        top: 0;
+        width: $crumbs-width-desktop;
+      }
+    }
+  }
+
+  &__title {
+    @extend %h2;
+
+    @include tablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__text {
+    margin-top: 32px;
+
+    @include tablet {
+      grid-column: 5 / 9;
+      margin-top: 0;
+    }
+  }
+
+  &__stats {
+    @extend %reset-list;
+
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-top: 64px;
+
+    @include tablet {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 80px $gutter;
+
+      margin-top: 72px;
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 144px;
+    }
+  }
+}

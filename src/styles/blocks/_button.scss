@@ -1,0 +1,81 @@
+.button {
+  @extend %text-label;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  height: 56px;
+  padding: 0 24px;
+  border: 2px solid $c-accent;
+  border-radius: $radius-button;
+
+  font-family: $font-main;
+  color: $c-accent;
+  text-decoration: none;
+
+  background-color: transparent;
+
+  transition:
+    color $transition-duration,
+    background-color $transition-duration,
+    border-color $transition-duration,
+    box-shadow $transition-duration;
+
+  @include can-hover {
+    &:hover {
+      color: $c-white;
+      background-color: $c-accent;
+    }
+  }
+
+  &:focus-visible,
+  &:active {
+    border-color: $c-dark-orange;
+    color: $c-white;
+    background-color: $c-dark-orange;
+    outline: none;
+  }
+
+  &--borderless {
+    height: 32px;
+    padding: 4px 0;
+    border: 0;
+    border-radius: 0;
+
+    @include can-hover {
+      &:hover {
+        color: $c-accent;
+        background-color: transparent;
+        box-shadow: inset 0 -1px 0 currentColor;
+      }
+    }
+
+    &:focus-visible,
+    &:active {
+      color: $c-dark-orange;
+      background-color: transparent;
+      box-shadow: inset 0 -1px 0 currentColor;
+    }
+  }
+
+  &__icon {
+    @extend %icon;
+
+    &--cookie {
+      mask-image: url('/src/images/icons/Icon-cookie.png');
+    }
+
+    &--phone {
+      mask-image: url('/src/images/icons/Icon-phone.png');
+    }
+
+    &--arrow {
+      mask-image: url('/src/images/icons/Icon-arrow.png');
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.header {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  background-color: $c-light-blue;
+
+  @include desktop {
+    position: static;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: content-box;
+    max-width: $container-width-mobile;
+    height: $header-height-mobile;
+    margin: 0 auto;
+    padding: 0 $header-padding-mobile;
+
+    @include tablet {
+      max-width: $header-width;
+    }
+
+    @include desktop {
+      height: $header-height-desktop;
+      padding: 0 $header-padding-desktop;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__burger {
+    @extend %icon-button;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__burger-icon {
+    @extend %icon;
+
+    mask-image: url('/src/images/icons/Icon-menu.png');
+  }
+}

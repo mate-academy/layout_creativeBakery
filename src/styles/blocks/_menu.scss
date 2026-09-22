@@ -1,0 +1,85 @@
+// the list starts 196px from the top of the screen in Figma: 64px header + 132px
+$menu-list-offset: 132px;
+
+.menu {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+
+  overflow-y: auto;
+
+  visibility: hidden;
+  opacity: 0;
+  background-color: $c-light-blue;
+
+  transition:
+    opacity $transition-duration,
+    visibility $transition-duration;
+
+  &--open {
+    visibility: visible;
+    opacity: 1;
+
+    // show instantly, so the close button can take focus right away
+    transition:
+      opacity $transition-duration,
+      visibility 0s;
+  }
+
+  @include desktop {
+    display: none;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: content-box;
+    max-width: $container-width-mobile;
+    height: $header-height-mobile;
+    margin: 0 auto;
+    padding: 0 $header-padding-mobile;
+
+    @include tablet {
+      max-width: none;
+    }
+  }
+
+  &__close {
+    @extend %icon-button;
+  }
+
+  &__close-icon {
+    @extend %icon;
+
+    mask-image: url('/src/images/icons/Icon-close.png');
+  }
+
+  &__list {
+    @extend %reset-list;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+
+    padding: $menu-list-offset $header-padding-mobile 64px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    @extend %link-focus;
+
+    display: block;
+    color: $c-black;
+    text-align: center;
+    text-decoration: none;
+
+    @include hover(color, $c-accent);
+  }
+}
