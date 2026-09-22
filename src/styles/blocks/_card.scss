@@ -1,0 +1,83 @@
+.card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  min-height: 0;
+
+  // on desktop the card has a fixed shape (Figma 432x696 and 402x648), the photo takes the free space
+  @include desktop {
+    aspect-ratio: 432 / 696;
+  }
+
+  &__media {
+    position: relative;
+
+    overflow: hidden;
+    flex-grow: 1;
+
+    // photo sizes from Figma: 288x356 on mobile, 328x424 on tablet
+    aspect-ratio: 288 / 356;
+    min-height: 0;
+    border-radius: $radius-photo;
+
+    @include tablet {
+      aspect-ratio: 328 / 424;
+    }
+
+    @include desktop {
+      aspect-ratio: auto;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform $transition-duration;
+  }
+
+  @include can-hover {
+    &:hover &__photo {
+      transform: scale(1.05);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__category {
+    @extend %text-label;
+
+    color: $c-grey;
+  }
+
+  &__title {
+    @extend %text-body;
+
+    min-height: 48px;
+    margin: 8px 0 0;
+  }
+
+  &__order {
+    margin-top: 16px;
+
+    // the whole card is clickable
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+  }
+}
