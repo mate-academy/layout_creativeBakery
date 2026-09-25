@@ -1,0 +1,57 @@
+// Menu (Mobile 320) 11342:1810 — на md используется та же раскладка
+.menu {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+
+  overflow-y: auto;
+
+  visibility: hidden;
+  opacity: 0;
+  background-color: $c-light-pink;
+
+  transition:
+    opacity $duration $easing,
+    visibility $duration $easing;
+
+  &--open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @include lg {
+    display: none;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: $header-h-sm;
+    padding-inline: 16px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+
+    padding: 132px 16px 32px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  &__link {
+    display: block;
+    color: $c-black;
+
+    @include hover(color, $c-accent);
+  }
+}

@@ -1,6 +1,52 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
+  transition: #{$_property} $duration $easing;
+
+  &:hover,
+  &:focus-visible {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin md {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $bp-xl) {
+    @content;
+  }
+}
+
+@mixin below-lg {
+  @media (max-width: ($bp-lg - 1px)) {
+    @content;
+  }
+}
+
+// 8-колоночная сетка md+ / 2-колоночная sm
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: $gutter-sm;
+
+  @include md {
+    grid-template-columns: repeat($grid-cols, minmax(0, 1fr));
+    column-gap: $gutter;
+  }
+}
+
+@mixin heading($size, $line-height: $lh-heading) {
+  font-size: $size;
+  font-weight: 400;
+  line-height: $line-height;
+  text-transform: uppercase;
+  letter-spacing: $ls-heading;
 }

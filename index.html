@@ -1,19 +1,615 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Title</title>
+      content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Bakerlab — creative bakery: croissants, cakes, cookies and cupcakes baked to your fantasies.">
+    <title>Creative Bakery</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="src/images/favicon.svg">
+    <link
+      rel="preload"
+      href="src/fonts/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous">
     <link
       rel="stylesheet"
-      href="src/styles/main.scss"
-    />
+      href="src/styles/main.scss">
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
-    <script src="src/scripts/main.js"></script>
+  <body class="page">
+    <header class="header">
+      <div class="header__inner">
+        <a
+          href="#"
+          class="logo header__logo"
+          aria-label="Bakerlab — home"
+        >
+          <svg class="logo__icon">
+            <use href="src/images/icons.svg#logo"></use>
+          </svg>
+        </a>
+
+        <nav class="nav header__nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#products" class="nav__link">Products</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About Us</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Blog</a>
+            </li>
+          </ul>
+        </nav>
+
+        <a
+          href="#contacts"
+          class="button button--borderless header__contact"
+        >
+          <svg class="button__icon" aria-hidden="true">
+            <use href="src/images/icons.svg#phone"></use>
+          </svg>
+          <span class="button__label">Contact us</span>
+        </a>
+
+        <button
+          type="button"
+          class="icon-button header__burger"
+          aria-label="Open menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          data-menu-open="true"
+        >
+          <svg class="icon-button__icon" aria-hidden="true">
+            <use href="src/images/icons.svg#menu"></use>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <aside
+      class="menu"
+      id="menu"
+      aria-label="Mobile menu"
+    >
+      <div class="menu__top">
+        <a
+          href="#"
+          class="logo menu__logo"
+          aria-label="Bakerlab — home"
+          data-menu-close="true"
+        >
+          <svg class="logo__icon">
+            <use href="src/images/icons.svg#logo"></use>
+          </svg>
+        </a>
+
+        <button
+          type="button"
+          class="icon-button menu__close"
+          aria-label="Close menu"
+          data-menu-close="true"
+        >
+          <svg class="icon-button__icon" aria-hidden="true">
+            <use href="src/images/icons.svg#close"></use>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="menu__nav">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a href="#products" class="menu__link" data-menu-close="true">Products</a>
+          </li>
+          <li class="menu__item">
+            <a href="#about" class="menu__link" data-menu-close="true">About Us</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link" data-menu-close="true">Blog</a>
+          </li>
+        </ul>
+
+        <a
+          href="#contacts"
+          class="button button--borderless menu__contact"
+          data-menu-close="true"
+        >
+          <svg class="button__icon" aria-hidden="true">
+            <use href="src/images/icons.svg#phone"></use>
+          </svg>
+          <span class="button__label">Contact us</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <section class="hero">
+        <div class="container hero__inner">
+          <p class="hero__text">
+            We bake your fantasies — croissants, cakes, cookies, and cupcakes.
+          </p>
+
+          <h1 class="hero__title">Creative bakery</h1>
+
+          <picture class="hero__cookie">
+            <source
+              type="image/webp"
+              srcset="
+                src/images/cookie-584.webp 584w,
+                src/images/cookie-927.webp 927w
+              "
+              sizes="(min-width: 1200px) 584px, (min-width: 1024px) 544px, (min-width: 640px) 326px, 288px">
+            <img
+              class="hero__cookie-img"
+              src="src/images/cookie-584.png"
+              srcset="
+                src/images/cookie-584.png 584w,
+                src/images/cookie-927.png 927w
+              "
+              sizes="(min-width: 1200px) 584px, (min-width: 1024px) 544px, (min-width: 640px) 326px, 288px"
+              width="584"
+              height="586"
+              alt="Chocolate chip cookie with a bite taken out">
+          </picture>
+
+          <a
+            href="#about"
+            class="button hero__button"
+          >
+            <svg class="button__icon" aria-hidden="true">
+              <use href="src/images/icons.svg#cookie"></use>
+            </svg>
+            <span class="button__label">Learn more</span>
+          </a>
+        </div>
+      </section>
+
+      <section
+        class="products"
+        id="products"
+      >
+        <div class="container">
+          <h2 class="products__title">What we bake</h2>
+          <p class="products__text">
+            We can customize our cookies right for your needs. Just imagine it
+          </p>
+
+          <ul class="products__list">
+            <li class="products__item">
+              <article class="card">
+                <a
+                  href="#contacts"
+                  class="card__photo"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="
+                        src/images/products/photo-01-432.webp 432w,
+                        src/images/products/photo-01-864.webp 864w
+                      "
+                      sizes="(min-width: 1200px) 432px, (min-width: 1024px) 34vw, (min-width: 640px) 45vw, 92vw">
+                    <img
+                      class="card__img"
+                      src="src/images/products/photo-01-432.jpg"
+                      srcset="
+                        src/images/products/photo-01-432.jpg 432w,
+                        src/images/products/photo-01-864.jpg 864w
+                      "
+                      sizes="(min-width: 1200px) 432px, (min-width: 1024px) 34vw, (min-width: 640px) 45vw, 92vw"
+                      width="432"
+                      height="560"
+                      alt="Lemon loaf cakes with icing and orange slices"
+                      loading="lazy">
+                  </picture>
+                </a>
+                <div class="card__content">
+                  <p class="card__category">Cakes</p>
+                  <p class="card__text">
+                    Oatmeal cookies with golden raisins, orange zest and chocolate chips
+                  </p>
+                  <a
+                    href="#contacts"
+                    class="button button--borderless card__button"
+                  >
+                    <svg class="button__icon" aria-hidden="true">
+                      <use href="src/images/icons.svg#arrow"></use>
+                    </svg>
+                    <span class="button__label">Order</span>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="products__item">
+              <article class="card">
+                <a
+                  href="#contacts"
+                  class="card__photo"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="
+                        src/images/products/photo-06-432.webp 432w,
+                        src/images/products/photo-06-864.webp 864w
+                      "
+                      sizes="(min-width: 1200px) 432px, (min-width: 1024px) 34vw, (min-width: 640px) 45vw, 92vw">
+                    <img
+                      class="card__img"
+                      src="src/images/products/photo-06-432.jpg"
+                      srcset="
+                        src/images/products/photo-06-432.jpg 432w,
+                        src/images/products/photo-06-864.jpg 864w
+                      "
+                      sizes="(min-width: 1200px) 432px, (min-width: 1024px) 34vw, (min-width: 640px) 45vw, 92vw"
+                      width="432"
+                      height="560"
+                      alt="Chocolate biscuit coffee cake topped with almond flakes"
+                      loading="lazy">
+                  </picture>
+                </a>
+                <div class="card__content">
+                  <p class="card__category">Cakes</p>
+                  <p class="card__text">
+                    Chocolate biscuit coffee cake topped with a buttercream and powder
+                  </p>
+                  <a
+                    href="#contacts"
+                    class="button button--borderless card__button"
+                  >
+                    <svg class="button__icon" aria-hidden="true">
+                      <use href="src/images/icons.svg#arrow"></use>
+                    </svg>
+                    <span class="button__label">Order</span>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="products__item">
+              <article class="card">
+                <a
+                  href="#contacts"
+                  class="card__photo"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="
+                        src/images/products/photo-05-432.webp 432w,
+                        src/images/products/photo-05-864.webp 864w
+                      "
+                      sizes="(min-width: 1200px) 432px, (min-width: 1024px) 34vw, (min-width: 640px) 45vw, 92vw">
+                    <img
+                      class="card__img"
+                      src="src/images/products/photo-05-432.jpg"
+                      srcset="
+                        src/images/products/photo-05-432.jpg 432w,
+                        src/images/products/photo-05-864.jpg 864w
+                      "
+                      sizes="(min-width: 1200px) 432px, (min-width: 1024px) 34vw, (min-width: 640px) 45vw, 92vw"
+                      width="432"
+                      height="560"
+                      alt="Glazed donuts with nuts on a white plate"
+                      loading="lazy">
+                  </picture>
+                </a>
+                <div class="card__content">
+                  <p class="card__category">Donuts</p>
+                  <p class="card__text">
+                    Light multi-layered croissant strewn with cinammon and almond “petals”
+                  </p>
+                  <a
+                    href="#contacts"
+                    class="button button--borderless card__button"
+                  >
+                    <svg class="button__icon" aria-hidden="true">
+                      <use href="src/images/icons.svg#arrow"></use>
+                    </svg>
+                    <span class="button__label">Order</span>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="products__item">
+              <article class="card">
+                <a
+                  href="#contacts"
+                  class="card__photo"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="
+                        src/images/products/photo-04-432.webp 432w,
+                        src/images/products/photo-04-864.webp 864w
+                      "
+                      sizes="(min-width: 1200px) 432px, (min-width: 1024px) 34vw, (min-width: 640px) 45vw, 92vw">
+                    <img
+                      class="card__img"
+                      src="src/images/products/photo-04-432.jpg"
+                      srcset="
+                        src/images/products/photo-04-432.jpg 432w,
+                        src/images/products/photo-04-864.jpg 864w
+                      "
+                      sizes="(min-width: 1200px) 432px, (min-width: 1024px) 34vw, (min-width: 640px) 45vw, 92vw"
+                      width="432"
+                      height="560"
+                      alt="Donut with coconut cream and walnuts"
+                      loading="lazy">
+                  </picture>
+                </a>
+                <div class="card__content">
+                  <p class="card__category">Donuts</p>
+                  <p class="card__text">
+                    Light multi-layered croissant strewn with coconut and nuts
+                  </p>
+                  <a
+                    href="#contacts"
+                    class="button button--borderless card__button"
+                  >
+                    <svg class="button__icon" aria-hidden="true">
+                      <use href="src/images/icons.svg#arrow"></use>
+                    </svg>
+                    <span class="button__label">Order</span>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="products__item">
+              <article class="card">
+                <a
+                  href="#contacts"
+                  class="card__photo"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="
+                        src/images/products/photo-03-432.webp 432w,
+                        src/images/products/photo-03-864.webp 864w
+                      "
+                      sizes="(min-width: 1200px) 432px, (min-width: 1024px) 34vw, (min-width: 640px) 45vw, 92vw">
+                    <img
+                      class="card__img"
+                      src="src/images/products/photo-03-432.jpg"
+                      srcset="
+                        src/images/products/photo-03-432.jpg 432w,
+                        src/images/products/photo-03-864.jpg 864w
+                      "
+                      sizes="(min-width: 1200px) 432px, (min-width: 1024px) 34vw, (min-width: 640px) 45vw, 92vw"
+                      width="432"
+                      height="560"
+                      alt="Cake with salted caramel and coconut crumble"
+                      loading="lazy">
+                  </picture>
+                </a>
+                <div class="card__content">
+                  <p class="card__category">Cakes</p>
+                  <p class="card__text">
+                    Cake with chocolate salted caramel, Vanilla frutti pebbles inside
+                  </p>
+                  <a
+                    href="#contacts"
+                    class="button button--borderless card__button"
+                  >
+                    <svg class="button__icon" aria-hidden="true">
+                      <use href="src/images/icons.svg#arrow"></use>
+                    </svg>
+                    <span class="button__label">Order</span>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="products__item">
+              <article class="card">
+                <a
+                  href="#contacts"
+                  class="card__photo"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="
+                        src/images/products/photo-02-432.webp 432w,
+                        src/images/products/photo-02-864.webp 864w
+                      "
+                      sizes="(min-width: 1200px) 432px, (min-width: 1024px) 34vw, (min-width: 640px) 45vw, 92vw">
+                    <img
+                      class="card__img"
+                      src="src/images/products/photo-02-432.jpg"
+                      srcset="
+                        src/images/products/photo-02-432.jpg 432w,
+                        src/images/products/photo-02-864.jpg 864w
+                      "
+                      sizes="(min-width: 1200px) 432px, (min-width: 1024px) 34vw, (min-width: 640px) 45vw, 92vw"
+                      width="432"
+                      height="560"
+                      alt="Oatmeal and chocolate cookies on a pink background"
+                      loading="lazy">
+                  </picture>
+                </a>
+                <div class="card__content">
+                  <p class="card__category">Cookies</p>
+                  <p class="card__text">
+                    Oatmeal cookies with golden raisins, orange zest and chocolate chips
+                  </p>
+                  <a
+                    href="#contacts"
+                    class="button button--borderless card__button"
+                  >
+                    <svg class="button__icon" aria-hidden="true">
+                      <use href="src/images/icons.svg#arrow"></use>
+                    </svg>
+                    <span class="button__label">Order</span>
+                  </a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section
+        class="about"
+        id="about"
+      >
+        <div class="container about__inner">
+          <picture class="about__crumbs">
+            <source
+              type="image/webp"
+              srcset="src/images/crumbs.webp">
+            <img
+              class="about__crumbs-img"
+              src="src/images/crumbs.png"
+              width="718"
+              height="673"
+              alt="Cookie crumbs"
+              loading="lazy">
+          </picture>
+
+          <h2 class="about__title">Few words About us</h2>
+          <p class="about__text">
+            Like many design teams, Onfido made the transition from Abstract + Sketch, to Figma in the last couple of years. One of the common resistance points internally before making that switch, was Figma’s lack of Git-style branching that Abstract enabled. The design team had come to rely on branching and had built a lot of our processes around it.
+          </p>
+
+          <ul class="about__stats">
+            <li class="stat">
+              <p class="stat__value">2015</p>
+              <p class="stat__label">Foundation year</p>
+            </li>
+            <li class="stat">
+              <p class="stat__value">23</p>
+              <p class="stat__label">Stores</p>
+            </li>
+            <li class="stat">
+              <p class="stat__value">155</p>
+              <p class="stat__label">Companies</p>
+            </li>
+            <li class="stat">
+              <p class="stat__value">10k+</p>
+              <p class="stat__label">Clients</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="footer"
+      id="contacts"
+    >
+      <div class="container footer__inner">
+        <a
+          href="#"
+          class="logo footer__logo"
+          aria-label="Bakerlab — home"
+        >
+          <svg class="logo__icon">
+            <use href="src/images/icons.svg#logo"></use>
+          </svg>
+        </a>
+
+        <h2 class="footer__title">Contact us</h2>
+
+        <nav class="footer__menu footer__group">
+          <p class="footer__label">Menu</p>
+          <ul class="footer__list">
+            <li><a href="#products" class="footer__link">Products</a></li>
+            <li><a href="#about" class="footer__link">About Us</a></li>
+            <li><a href="#" class="footer__link">Blog</a></li>
+            <li><a href="#" class="footer__link">Terms &amp; Privacy</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__phones footer__group">
+          <p class="footer__label">Call us</p>
+          <ul class="footer__list">
+            <li><a href="tel:+16295550129" class="footer__link">(629) 555-0129</a></li>
+            <li><a href="tel:+16035550123" class="footer__link">(603) 555-0123</a></li>
+            <li><a href="tel:+17045550127" class="footer__link">(704) 555-0127</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__email footer__group">
+          <p class="footer__label">Email us</p>
+          <ul class="footer__list">
+            <li>
+              <a href="mailto:bakerlab@example.com" class="footer__link">bakerlab@example.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="footer__social social">
+          <li class="social__item">
+            <a
+              href="https://www.facebook.com/"
+              class="social__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <svg class="social__icon" aria-hidden="true">
+                <use href="src/images/icons.svg#facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social__item">
+            <a
+              href="https://www.instagram.com/"
+              class="social__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <svg class="social__icon" aria-hidden="true">
+                <use href="src/images/icons.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social__item">
+            <a
+              href="https://twitter.com/"
+              class="social__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <svg class="social__icon" aria-hidden="true">
+                <use href="src/images/icons.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+
+        <p class="footer__copy">© Bakerlab 2022</p>
+      </div>
+    </footer>
+
+    <script type="module" src="src/scripts/main.js"></script>
   </body>
 </html>

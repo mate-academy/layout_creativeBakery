@@ -1,0 +1,102 @@
+// About: xl 11342:1141, lg 11342:1206, md 11342:1516, sm 11342:1622
+.about {
+  padding-bottom: 72px;
+
+  @include md {
+    padding-bottom: 152px;
+  }
+
+  @include lg {
+    padding-bottom: 56px;
+  }
+
+  &__inner {
+    position: relative;
+    align-content: start;
+    align-items: start;
+
+    @include grid;
+
+    @include lg {
+      min-height: 673px; // высота Crumbs
+    }
+  }
+
+  &__crumbs {
+    pointer-events: none;
+
+    position: absolute;
+    top: 544px;
+    left: calc(50% - 160px);
+
+    width: 320px;
+    height: 300px;
+
+    mix-blend-mode: multiply;
+
+    @include md {
+      top: 51px;
+      left: calc(50% - 263px);
+      width: 526px;
+      height: 493px;
+    }
+
+    // lg: центр крошек сдвинут на +84px от центра кадра 1200 (x=325)
+    @include lg {
+      top: 0;
+      left: calc(50% - 275px);
+      width: 718px;
+      height: 673px;
+    }
+
+    @include xl {
+      left: calc(50% - 359px);
+    }
+  }
+
+  &__crumbs-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title,
+  &__text,
+  &__stats {
+    position: relative;
+    z-index: 1;
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    @include md {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  &__text {
+    margin-top: 32px;
+
+    @include md {
+      grid-column: 5 / span 4;
+      margin-top: 0;
+    }
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 48px;
+    margin-top: 64px;
+
+    @include md {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 80px $gutter;
+      margin-top: 72px;
+    }
+
+    @include lg {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 144px;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+// Product card 11342:1803
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__photo {
+    cursor: pointer;
+
+    overflow: hidden;
+    display: block;
+
+    aspect-ratio: 288 / 356;
+    border-radius: 8px;
+
+    @include md {
+      aspect-ratio: 328 / 424;
+    }
+
+    @include lg {
+      aspect-ratio: 402 / 512;
+    }
+
+    @include xl {
+      aspect-ratio: 432 / 560;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $duration $easing;
+  }
+
+  &__photo:hover &__img,
+  &__photo:focus-visible &__img {
+    transform: scale(1.05);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__category {
+    @extend %uppercase;
+
+    color: $c-grey;
+  }
+
+  &__text {
+    margin-top: 8px;
+  }
+
+  &__button {
+    margin-top: 16px;
+  }
+}

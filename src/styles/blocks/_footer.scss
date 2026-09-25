@@ -1,0 +1,112 @@
+// Footer: xl 11342:1182, lg 11342:1247, md 11342:1534, sm 11342:1654
+.footer {
+  color: $c-white;
+  background-color: $c-black;
+
+  &__inner {
+    display: grid;
+    grid-template-areas:
+      'logo'
+      'menu'
+      'title'
+      'phones'
+      'email'
+      'social'
+      'copy';
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+
+    padding-top: 56px;
+    padding-bottom: 56px;
+
+    @include md {
+      grid-template-areas:
+        'logo logo logo logo title title title title'
+        'menu menu menu menu phones phones phones phones'
+        'menu menu menu menu email email email email'
+        'social social social social copy copy copy copy';
+      grid-template-columns: repeat($grid-cols, minmax(0, 1fr));
+      column-gap: $gutter;
+
+      padding-top: 88px;
+      padding-bottom: 88px;
+    }
+
+    @include lg {
+      grid-template-areas:
+        'logo logo . . title title title title'
+        'menu menu . . phones phones email email'
+        'social social . . copy copy . .';
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+    width: 168px;
+    height: 40px;
+    color: $c-white;
+  }
+
+  &__title {
+    grid-area: title;
+    margin-top: 64px;
+    color: $c-white;
+
+    @include md {
+      margin-top: 0;
+    }
+  }
+
+  &__menu {
+    grid-area: menu;
+    margin-top: 40px;
+  }
+
+  &__phones {
+    grid-area: phones;
+    margin-top: 40px;
+  }
+
+  &__email {
+    grid-area: email;
+    margin-top: 40px;
+  }
+
+  &__social {
+    grid-area: social;
+    margin-top: 40px;
+
+    @include md {
+      margin-top: 48px;
+    }
+  }
+
+  &__copy {
+    grid-area: copy;
+    margin-top: 40px;
+    color: $c-grey;
+
+    @include md {
+      margin-top: 48px;
+    }
+  }
+
+  &__label {
+    @extend %uppercase;
+
+    color: $c-grey;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  &__link {
+    color: $c-white;
+
+    @include hover(color, $c-accent);
+  }
+}

@@ -1,4 +1,61 @@
-%h1 {
-  font-family: Roboto, sans-serif;
+// Main styles — frame 11342:1788
+// line-height в px — значения из спецификаций стилей (85% → округлённые px)
+%body-text {
+  font-size: 16px;
   font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+%uppercase {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+%big-text {
+  @include heading(96px, 82px);
+}
+
+// Headings — frames 11342:1755 / 1768 / 1778
+%h1 {
+  color: $c-accent;
+  text-align: center;
+
+  @include heading(64px, 54px);
+
+  // md/lg: в одну строку, как в кадрах. Размер кадра — потолок, ниже
+  // масштаб от ширины колонки кадра: 80px / 680, 136px / 1112
+  @include md {
+    font-size: min(80px, calc((100vw - #{2 * $margin-md}) * 80 / 680));
+    line-height: $lh-heading;
+    white-space: nowrap;
+  }
+
+  @include lg {
+    font-size: min(136px, calc((100vw - #{2 * $margin-md}) * 136 / 1112));
+  }
+
+  @include xl {
+    font-size: 144px;
+    line-height: 122px;
+  }
+}
+
+%h2 {
+  color: $c-accent;
+
+  @include heading(48px, 41px);
+
+  @include md {
+    font-size: 56px;
+    line-height: 48px;
+  }
+
+  @include lg {
+    font-size: 72px;
+    line-height: 61px;
+  }
 }
