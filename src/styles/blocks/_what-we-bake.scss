@@ -1,0 +1,89 @@
+.what-we-bake {
+  padding-top: 64px;
+
+  &__inner {
+    @include grid;
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    margin-bottom: 56px;
+  }
+
+  &__description {
+    margin-top: 16px;
+  }
+
+  &__list {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    row-gap: 56px;
+
+    @include tablet-small {
+      row-gap: 80px;
+    }
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+
+    @include tablet-small {
+      grid-column: span 4;
+    }
+
+    @include desktop-small {
+      &:nth-child(1) {
+        grid-column: 1 / 4;
+      }
+      &:nth-child(2) {
+        grid-column: 4 / 7;
+      }
+      &:nth-child(3) {
+        grid-column: 3 / 6;
+      }
+      &:nth-child(4) {
+        grid-column: 6 / 9;
+      }
+      &:nth-child(5) {
+        grid-column: 1 / 4;
+      }
+      &:nth-child(6) {
+        grid-column: 4 / 7;
+      }
+    }
+  }
+
+  &__image {
+    aspect-ratio: 140 / 181;
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__card-text {
+    margin-top: 16px;
+  }
+
+  &__card-title {
+    @extend %uppercase-text;
+
+    color: $c-gray;
+  }
+
+  &__card-description {
+    margin-top: 8px;
+  }
+
+  &__order-link {
+    margin-top: 16px;
+  }
+
+  &__order-icon {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+  }
+}
