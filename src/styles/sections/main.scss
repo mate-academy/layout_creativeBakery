@@ -1,0 +1,145 @@
+.main {
+  margin-top: 104px;
+  grid-column: 1 / -1;
+  box-sizing: border-box;
+
+  padding: 0 16px;
+
+  @media (min-width: 768px) {
+    padding: 0 44px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-top: 188px;
+  }
+
+  // &__info {
+  // }
+  // &__title {
+  // }
+
+  &__par {
+    margin-top: 24px;
+  }
+
+  ////
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    padding: 0;
+    margin: 0;
+    margin-top: 54px;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    &-element {
+      min-width: 0;
+      margin: 0;
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px 56px;
+
+      &-wrapper {
+        display: contents;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      gap: 24px 56px;
+      align-items: start;
+
+      &-wrapper--part1 > .main__list-element:nth-child(1) {
+        grid-column: 1 / 4;
+        grid-row: 1;
+      }
+
+      &-wrapper--part1 > .main__list-element:nth-child(2) {
+        grid-column: 4 / 7;
+        grid-row: 1;
+      }
+
+      &-wrapper--part2 > .main__list-element:nth-child(1) {
+        grid-column: 3 / 6;
+        grid-row: 2;
+      }
+
+      &-wrapper--part2 > .main__list-element:nth-child(2) {
+        grid-column: 6 / 9;
+        grid-row: 2;
+      }
+
+      &-wrapper--part3 > .main__list-element:nth-child(1) {
+        grid-column: 1 / 4;
+        grid-row: 3;
+      }
+
+      &-wrapper--part3 > .main__list-element:nth-child(2) {
+        grid-column: 4 / 7;
+        grid-row: 3;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+
+    @media (min-width: 768px) {
+      max-width: 450px;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 750px;
+    }
+
+    &-name {
+      margin-top: 16px;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 16px;
+      letter-spacing: 2%;
+      text-transform: uppercase;
+      color: $grey;
+    }
+
+    &-par {
+      margin-top: 8px;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: -1%;
+    }
+  }
+
+  &__image:hover {
+    transform: scale(1.01);
+    border: solid 1px $accentOrange;
+    box-shadow: 0 0 20px 5px rgba(255, 102, 0, 0.6);
+  }
+
+  &__button {
+    margin-top: 24px;
+
+    // &-icon {
+    // }
+  }
+}
