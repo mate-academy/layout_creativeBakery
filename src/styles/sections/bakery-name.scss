@@ -1,0 +1,86 @@
+.bakery-name {
+  grid-column: 1 / -1;
+  margin-top: 16px;
+  box-sizing: border-box;
+
+  padding: 0 16px;
+
+  @media (min-width: 768px) {
+    padding: 0 44px;
+  }
+
+  &__par {
+    // text-align: center;
+  }
+
+  &__title {
+    margin-top: 32px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+
+    @media (min-width: 768px) {
+      position: relative;
+      margin-top: 146px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 170px;
+    }
+  }
+
+  &__title:hover {
+    transform: rotate(6deg) scale(1.1);
+    font-weight: 650;
+  }
+
+  &__cookie {
+    height: auto;
+    width: 100%;
+    max-height: 700px;
+    aspect-ratio: 1 / 1;
+    background-image: url('../images/Cookie.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: rotation 45s linear infinite;
+
+    @media (min-width: 768px) {
+      position: absolute;
+      max-height: 446px;
+      inset: 0;
+      top: 150px;
+      z-index: -1;
+    }
+
+    @media (min-width: 1200px) {
+      position: absolute;
+      max-height: 646px;
+      top: 93px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-self: center;
+    text-align: center;
+    transition: all 0.5 ease-in-out;
+
+    @media (min-width: 768px) {
+      margin-top: 210px;
+    }
+
+    @media (min-width: 1200px) {
+      justify-self: start;
+      margin-top: 64px;
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
