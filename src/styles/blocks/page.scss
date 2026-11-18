@@ -1,0 +1,23 @@
+.page {
+  position: relative;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    opacity: 0;
+    background-color: $light-pink;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      z-index: 1;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.top-bar {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 64px;
+  justify-content: space-between;
+  background-color: $light-pink;
+  padding: 16px;
+
+  @include on-desktop-1024 {
+    padding: 28px 32px;
+
+    height: 88px;
+  }
+
+  &__logo {
+    display: block;
+    height: 32px;
+    width: 136px;
+    object-fit: fill;
+    color: #1c1a26;
+    transition-property: color;
+    transition-duration: $translition-duration;
+    &:hover {
+      color: #f9512e;
+    }
+  }
+
+  &__nav {
+    display: none;
+    @include on-desktop-1024 {
+      display: inline-block;
+    }
+  }
+
+  &__open-menu {
+    color: #f9512e;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: $black;
+    transition: background-color $translition-duration;
+    transition: transform $translition-duration;
+    -webkit-mask: url(../images/burger-menu.svg) no-repeat center / contain;
+    mask: url(../images/burger-menu.svg) no-repeat center / contain;
+
+    &:hover {
+      transform: scale(1.2);
+      background-color: $accent-orange;
+    }
+
+    @include on-desktop-1024 {
+      display: none;
+    }
+  }
+}
