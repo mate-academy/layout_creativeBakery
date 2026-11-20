@@ -1,6 +1,97 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@use 'sass:map';
+
+$breakpoints: (
+  laptop: 1199px,
+  tablet: 1023px,
+  mobile: 639px,
+);
+
+@mixin on($name) {
+  @media (max-width: map.get($breakpoints, $name)) {
+    @content;
   }
+}
+
+@mixin container {
+  padding-inline: max(44px, (100% - $container) / 2);
+
+  @include on(mobile) {
+    padding-inline: 16px;
+  }
+}
+
+@mixin body-text {
+  font-family: $font-main;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: $c-black;
+}
+
+@mixin uppercase-text {
+  font-family: $font-main;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+@mixin heading($size) {
+  font-family: $font-main;
+  font-size: $size;
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+@mixin h2 {
+  @include heading(72px);
+
+  @include on(tablet) {
+    font-size: 56px;
+  }
+
+  @include on(mobile) {
+    font-size: 48px;
+  }
+}
+
+@mixin hover-underline {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width $transition;
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    width: 100%;
+  }
+}
+
+@mixin hover-scale($scale: 1.04) {
+  transition: transform $transition;
+
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+@mixin icon($url, $size: 24px) {
+  content: '';
+  flex-shrink: 0;
+  width: $size;
+  height: $size;
+  background-color: currentColor;
+  mask: url($url) center / contain no-repeat;
 }

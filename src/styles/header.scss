@@ -1,0 +1,116 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  padding-inline: 32px;
+
+  @include on(tablet) {
+    height: 64px;
+    padding-inline: 16px;
+  }
+
+  &__logo {
+    display: flex;
+  }
+
+  &__nav {
+    @include on(tablet) {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+    cursor: pointer;
+
+    @include on(tablet) {
+      display: flex;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    @extend %reset-list;
+
+    display: flex;
+    column-gap: 64px;
+    align-items: center;
+  }
+
+  &--vertical &__list {
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  &__link {
+    @include body-text;
+    @include hover-underline;
+
+    display: inline-flex;
+    column-gap: 4px;
+    align-items: center;
+
+    &--contacts {
+      @include uppercase-text;
+
+      color: $c-accent;
+
+      &::before {
+        @include icon('../images/Icon-phone.svg');
+      }
+    }
+  }
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu {
+  display: none;
+
+  @include on(tablet) {
+    position: fixed;
+    z-index: 10;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: $c-bg;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity $transition,
+      visibility $transition;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding-inline: 16px;
+  }
+
+  &__logo,
+  &__close {
+    display: flex;
+  }
+
+  &__close {
+    cursor: pointer;
+  }
+
+  &__nav {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.menu-toggle:checked ~ .menu {
+  opacity: 1;
+  visibility: visible;
+}
