@@ -1,0 +1,160 @@
+.footer {
+  @include container;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 40px auto 48px auto;
+  column-gap: 24px;
+  padding-block: 88px;
+  background-color: $c-black;
+
+  @include on(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 40px auto 40px auto 48px auto;
+  }
+
+  @include on(mobile) {
+    grid-template-columns: 1fr;
+    grid-template-rows:
+      auto 40px auto 64px auto 40px auto
+      40px auto 40px auto 40px auto;
+    padding-block: 56px;
+  }
+
+  &__logo {
+    display: flex;
+    grid-row: 1;
+    grid-column: 1;
+    align-self: start;
+  }
+
+  &__title {
+    @include h2;
+
+    grid-row: 1;
+    grid-column: 3 / 5;
+    color: $c-white;
+
+    @include on(tablet) {
+      grid-column: 2;
+    }
+
+    @include on(mobile) {
+      grid-row: 5;
+      grid-column: 1;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    align-items: flex-start;
+
+    &--menu {
+      grid-row: 3;
+      grid-column: 1;
+
+      @include on(tablet) {
+        grid-row: 3 / 6;
+      }
+
+      @include on(mobile) {
+        grid-row: 3;
+      }
+    }
+
+    &--numbers {
+      grid-row: 3;
+      grid-column: 3;
+
+      @include on(tablet) {
+        grid-column: 2;
+      }
+
+      @include on(mobile) {
+        grid-row: 7;
+        grid-column: 1;
+      }
+    }
+
+    &--email {
+      grid-row: 3;
+      grid-column: 4;
+
+      @include on(tablet) {
+        grid-row: 5;
+        grid-column: 2;
+      }
+
+      @include on(mobile) {
+        grid-row: 9;
+        grid-column: 1;
+      }
+    }
+  }
+
+  &__label {
+    @include uppercase-text;
+
+    color: $c-grey;
+  }
+
+  &__list {
+    @extend %reset-list;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    align-items: flex-start;
+  }
+
+  &__link {
+    @include body-text;
+    @include hover-underline;
+
+    color: $c-white;
+  }
+
+  &__social {
+    display: flex;
+    grid-row: 5;
+    grid-column: 1;
+    column-gap: 32px;
+
+    @include on(tablet) {
+      grid-row: 7;
+    }
+
+    @include on(mobile) {
+      grid-row: 11;
+    }
+  }
+
+  &__social-link {
+    display: flex;
+    color: $c-accent;
+    transition: color $transition;
+
+    &:hover,
+    &:focus-visible {
+      color: $c-white;
+    }
+  }
+
+  &__copyright {
+    grid-row: 5;
+    grid-column: 3;
+    color: $c-grey;
+
+    @include on(tablet) {
+      grid-row: 7;
+      grid-column: 2;
+    }
+
+    @include on(mobile) {
+      grid-row: 13;
+      grid-column: 1;
+    }
+  }
+}

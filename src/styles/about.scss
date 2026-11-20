@@ -1,0 +1,91 @@
+.about {
+  @include container;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 144px auto;
+  column-gap: 24px;
+  padding-block: 178px 349px;
+  background-image: image-set(
+    url('../images/crumbs_1.webp') 1x,
+    url('../images/crumbs@2x_1.webp') 2x
+  );
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 718px auto;
+  background-origin: content-box;
+
+  @include on(tablet) {
+    grid-template-rows: auto 72px auto;
+    padding-block: 152px;
+    background-position: center top 51px;
+    background-size: 526px auto;
+  }
+
+  @include on(mobile) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 32px auto 64px auto;
+    padding-block: 72px;
+    background-position: center top 544px;
+    background-size: 320px auto;
+  }
+
+  &__title {
+    @include h2;
+
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  &__text {
+    grid-row: 1;
+    grid-column: 2;
+
+    @include on(mobile) {
+      grid-row: 3;
+      grid-column: 1;
+    }
+  }
+
+  &__stats {
+    grid-row: 3;
+    grid-column: 1 / -1;
+
+    @include on(mobile) {
+      grid-row: 5;
+    }
+  }
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 80px 24px;
+
+  @include on(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include on(mobile) {
+    grid-template-columns: 1fr;
+    row-gap: 48px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 8px;
+  }
+
+  &__label {
+    @include body-text;
+
+    color: $c-grey;
+  }
+
+  &__value {
+    @include heading(96px);
+
+    color: $c-black;
+  }
+}

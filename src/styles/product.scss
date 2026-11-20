@@ -1,0 +1,143 @@
+.product {
+  @include container;
+
+  display: grid;
+  grid-template-rows: auto 24px auto 80px auto;
+  padding-top: 178px;
+
+  @include on(laptop) {
+    padding-top: 218px;
+  }
+
+  @include on(tablet) {
+    padding-top: 152px;
+  }
+
+  @include on(mobile) {
+    grid-template-rows: auto 24px auto 56px auto;
+    padding-top: 64px;
+  }
+
+  &__title {
+    @include h2;
+
+    grid-row: 1;
+  }
+
+  &__subtitle {
+    grid-row: 3;
+    max-width: 584px;
+  }
+
+  &__list {
+    @extend %reset-list;
+
+    display: grid;
+    grid-row: 5;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 80px 24px;
+
+    @include on(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include on(mobile) {
+      grid-template-columns: 1fr;
+      row-gap: 56px;
+    }
+  }
+
+  &__item {
+    &:nth-child(1),
+    &:nth-child(5) {
+      grid-column: 1 / 4;
+    }
+
+    &:nth-child(2),
+    &:nth-child(6) {
+      grid-column: 4 / 7;
+    }
+
+    &:nth-child(3) {
+      grid-column: 3 / 6;
+    }
+
+    &:nth-child(4) {
+      grid-column: 6 / 9;
+    }
+
+    @include on(tablet) {
+      &:nth-child(n) {
+        grid-column: auto;
+      }
+    }
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  align-items: flex-start;
+
+  &__photo {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 8px;
+    aspect-ratio: 432 / 560;
+
+    @include on(tablet) {
+      aspect-ratio: 328 / 424;
+    }
+
+    @include on(mobile) {
+      aspect-ratio: 288 / 356;
+    }
+  }
+
+  &__image {
+    @include hover-scale;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  &__category {
+    @include uppercase-text;
+
+    color: $c-grey;
+  }
+
+  &__text {
+    @include body-text;
+  }
+
+  &__link {
+    @include uppercase-text;
+    @include hover-underline;
+
+    display: inline-flex;
+    column-gap: 4px;
+    align-items: center;
+    padding-block: 4px;
+    color: $c-accent;
+
+    &::before {
+      @include icon('../images/Icon-arrow.svg');
+
+      transition: transform $transition;
+    }
+
+    &:hover::before {
+      transform: translateX(4px);
+    }
+  }
+}
