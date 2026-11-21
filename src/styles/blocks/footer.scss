@@ -1,0 +1,56 @@
+.footer {
+  color: $white-accent;
+  background-color: $main-text-color;
+
+  @include on-tablet {
+    height: 616px;
+  }
+
+  @include on-md-desktop {
+    height: 525px;
+  }
+
+  &__wrapper {
+    @include page-grid;
+
+    row-gap: 64px;
+    padding-block: 56px;
+
+    @include on-tablet {
+      row-gap: 0;
+      padding-block: 88px;
+    }
+  }
+
+  &__bottom {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+    row-gap: 48px;
+
+    @include on-tablet {
+      row-gap: 0;
+    }
+  }
+
+  &__copyright {
+    grid-column: 1 / -1;
+    margin-top: -24px;
+
+    @include on-tablet {
+      grid-column: 5 / span 4;
+      margin-top: 48px;
+    }
+
+    @include on-md-desktop {
+      grid-column: 5 / span 2;
+    }
+
+    p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: capitalize;
+    }
+  }
+}

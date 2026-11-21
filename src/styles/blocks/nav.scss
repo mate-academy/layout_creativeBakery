@@ -1,0 +1,72 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__link {
+    transform-origin: center;
+
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+
+    color: $main-text-color;
+    text-decoration: none;
+
+    transition: color $effect-duration ease;
+
+    @include hover(transform, scale(1.2));
+
+    &:hover {
+      color: $title-color;
+    }
+
+    &--uppercase {
+      color: $title-color;
+      text-transform: uppercase;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include on-md-desktop {
+    position: static;
+    display: block;
+    width: 499px;
+
+    &:target {
+      position: static;
+      inset: auto;
+
+      display: block;
+
+      width: 499px;
+      height: auto;
+      padding: 0;
+
+      background-color: transparent;
+    }
+
+    .nav__list {
+      flex-direction: row;
+      gap: 64px;
+      justify-content: space-between;
+    }
+  }
+}

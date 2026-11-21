@@ -1,0 +1,52 @@
+.socials {
+  display: flex;
+  grid-column: 1 / -1;
+  column-gap: 32px;
+  margin-top: -24px;
+
+  @include on-tablet {
+    grid-column: span 2;
+    margin-top: 48px;
+  }
+
+  &__icon {
+    display: block;
+
+    width: 24px;
+    height: 24px;
+
+    background-color: $title-color;
+
+    transition: background-color $effect-duration ease;
+
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    &--facebook {
+      mask-image: url(../../src/icons/icon-facebook.svg);
+    }
+
+    &--instagram {
+      mask-image: url(../../src/icons/icon-instagram.svg);
+    }
+
+    &--twitter {
+      mask-image: url(../../src/icons/icon-twitter.svg);
+    }
+  }
+
+  &__link {
+    transform-origin: center;
+    display: block;
+    color: $white-accent;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      .socials__icon {
+        background-color: $white-accent;
+      }
+    }
+  }
+}
