@@ -1,0 +1,103 @@
+.about-us {
+  scroll-margin-top: 64px;
+  position: relative;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    z-index: -1;
+    inset: 0 -16px 174px;
+
+    background-image: url(../../src/images/bgImgs/about-us-crumbs.webp);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  @include on-tablet {
+    &::before {
+      content: '';
+      inset: 51px 77px 52px;
+    }
+  }
+
+  @include on-md-desktop {
+    height: 673px;
+
+    &::before {
+      content: '';
+      inset: 0 113px 0 281px;
+    }
+  }
+
+  @include on-xl-desktop {
+    &::before {
+      content: '';
+      inset: 0;
+    }
+  }
+
+  &__section-frame {
+    @include page-grid;
+  }
+
+  &__wrapper {
+    row-gap: 48px;
+    padding-top: 64px;
+
+    @include page-grid;
+
+    @include on-tablet {
+      row-gap: 80px;
+      padding-top: 72px;
+    }
+
+    @include on-md-desktop {
+      row-gap: 80px;
+      padding-top: 144px;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    row-gap: 8px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-md-desktop {
+      grid-column: span 2;
+      height: 293px;
+    }
+
+    &-value {
+      margin: 0;
+
+      font-size: 96px;
+      line-height: 85%;
+      color: $title-color;
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+    }
+
+    &-title {
+      margin: 0;
+    }
+  }
+
+  .section__title {
+    margin: 0 0 32px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-md-desktop {
+      margin: 0;
+    }
+  }
+}

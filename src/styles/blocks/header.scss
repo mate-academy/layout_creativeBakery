@@ -1,0 +1,217 @@
+.header {
+  @include on-tablet {
+    height: 900px;
+  }
+
+  @include on-md-desktop {
+    height: 700px;
+  }
+
+  &__content {
+    @include page-grid;
+
+    position: relative;
+
+    container-type: inline-size;
+    align-content: flex-start;
+
+    box-sizing: border-box;
+    height: auto;
+    max-height: 606px;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      z-index: -1;
+      top: 220px;
+      bottom: 96px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 288px;
+      height: 290px;
+
+      background-image: url(../../src/images/bgImgs/bitten-cookie.webp);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: contain;
+
+      @include on-tablet {
+        top: 144px;
+        bottom: 364px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 326px;
+        height: 328px;
+
+        background-position: center;
+      }
+
+      @include on-md-desktop {
+        top: 0;
+        width: 544px;
+        height: 546px;
+      }
+
+      @include on-xl-desktop {
+        width: 584px;
+        height: 586px;
+      }
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    width: 100%;
+    max-width: 288px;
+    height: auto;
+    min-height: 48px;
+    margin-block: 32px;
+
+    color: $main-text-color;
+    text-align: center;
+
+    @include on-tablet {
+      grid-column: span 5;
+      place-self: flex-start flex-start;
+      margin-block: 80px 0;
+      text-align: start;
+    }
+
+    @include on-md-desktop {
+      grid-column: 1 / 3;
+      width: 260px;
+      height: 72px;
+      margin-block: 135px 8px;
+    }
+
+    @include on-xl-desktop {
+      width: 280px;
+      height: 48px;
+      margin-block: 144px 40px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    max-width: 288px;
+    margin: 0;
+
+    // min-height: 108px;
+
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 85%;
+    color: $title-color;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    white-space: normal;
+
+    @include on-tablet {
+      justify-self: stretch;
+
+      // font-size: 80px;
+      max-width: none;
+      margin-block: 146px 210px;
+
+      font-size: 11.7cqi;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+
+    @include on-md-desktop {
+      margin-block: 0 64px;
+      font-size: 11.8cqi;
+
+      // font-size: 136px;
+      letter-spacing: -0.01em;
+    }
+
+    @include on-xl-desktop {
+      // font-size: 144px;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    grid-column: 1 / -1;
+    flex-shrink: 0;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+
+    box-sizing: border-box;
+    width: 288px;
+    height: 56px;
+    margin-block: 290px 40px;
+    border: 2px solid $title-color;
+    border-radius: 144px;
+
+    font-weight: 500;
+    line-height: 100%;
+    color: $title-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+
+    transition: all $effect-duration ease;
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+      width: 326px;
+      margin-block: 0 228px;
+    }
+
+    @include on-md-desktop {
+      grid-column: 1 / 3;
+      width: 260px;
+      margin-block: 0 161px;
+    }
+
+    @include on-xl-desktop {
+      width: 280px;
+      margin-block: 0 138px;
+    }
+
+    &-icon {
+      flex-shrink: 0;
+
+      width: 24px;
+      height: 24px;
+
+      background-color: $title-color;
+
+      mask: url(../../src/icons/icon-cookie.svg) center / contain no-repeat;
+
+      transition: background-color $effect-duration ease;
+    }
+
+    &:hover {
+      border-color: $title-color;
+      color: $white-accent;
+      background-color: $title-color;
+
+      .header__btn-icon {
+        background-color: $white-accent;
+      }
+    }
+
+    &:focus {
+      border-color: $focused-accent;
+      color: $white-accent;
+      background-color: $focused-accent;
+
+      .header__btn-icon {
+        background-color: $white-accent;
+      }
+    }
+  }
+}

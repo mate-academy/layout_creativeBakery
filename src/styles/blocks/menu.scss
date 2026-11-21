@@ -1,0 +1,33 @@
+.menu {
+  z-index: 2;
+
+  overflow-y: auto;
+
+  box-sizing: border-box;
+  height: 100vh; // according to Figma's design it should be 566px;
+
+  background-color: $main-bg-color;
+
+  &__top {
+    padding: 16px;
+  }
+
+  &__bottom {
+    margin-top: 132px;
+  }
+
+  @include on-md-desktop {
+    z-index: auto;
+    overflow: visible;
+    height: auto;
+    background-color: transparent;
+
+    &__top {
+      display: none;
+    }
+
+    &__bottom {
+      margin-top: 0;
+    }
+  }
+}
